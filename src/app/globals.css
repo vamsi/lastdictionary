@@ -1,0 +1,267 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  The Last Dictionary is set like an editorial reference: paper and ink, hard edges, a serif for
+  reading and a mono for labels. Every family of words has its own two-colour panel.
+  The shadcn primitives read their semantic tokens (background, popover, border…) from this palette.
+*/
+:root {
+  --paper: #fcf7f4;
+  --paper-2: #f3ece8;
+  --ink: #141112;
+  --ink-2: #4f4847;
+  --ink-3: #776e6c;
+  --line: #141112;
+  --line-2: #e6ddd9;
+  --scrim: rgb(20 17 18 / 0.42);
+  --shadow-panel: 0 18px 50px rgb(20 17 18 / 0.16);
+  --hl: #f1df86;
+  --hl-ink: #141112;
+  --f1-bg: #dde5ee;
+  --f1-ink: #132440;
+  --f2-bg: #dce8da;
+  --f2-ink: #163a25;
+  --f3-bg: #ece4c3;
+  --f3-ink: #1e205e;
+  --f4-bg: #f5e0cf;
+  --f4-ink: #4b1f12;
+  --f5-bg: #e6deee;
+  --f5-ink: #2e1b3d;
+  --f6-bg: #f4dcdd;
+  --f6-ink: #4d1a28;
+  --f7-bg: #e8e3dd;
+  --f7-ink: #2a2725;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--ink-2);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
+  --destructive: #a3321f;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--ink);
+  --radius: 0px;
+
+  --navh: 48px;
+  --gut: max(16px, env(safe-area-inset-left, 0px));
+  --wrap: 1200px;
+}
+
+.dark {
+  --paper: #1e1718;
+  --paper-2: #282021;
+  --ink: #f6efeb;
+  --ink-2: #c7bcb7;
+  --ink-3: #9a8f8b;
+  --line: #6a5e5c;
+  --line-2: #382e2f;
+  --scrim: rgb(0 0 0 / 0.62);
+  --shadow-panel: 0 18px 60px rgb(0 0 0 / 0.55);
+  --hl: #6b5a16;
+  --hl-ink: #fff4cc;
+  --f1-bg: #172437;
+  --f1-ink: #cad7e7;
+  --f2-bg: #152e1e;
+  --f2-ink: #c6dcc4;
+  --f3-bg: #262650;
+  --f3-ink: #e5daa8;
+  --f4-bg: #3b1c11;
+  --f4-ink: #f2cbb0;
+  --f5-bg: #291b37;
+  --f5-ink: #dccdeb;
+  --f6-bg: #4d1a28;
+  --f6-ink: #ebadcb;
+  --f7-bg: #2c2826;
+  --f7-ink: #e4ded6;
+  --destructive: #e07a63;
+  color-scheme: dark;
+}
+
+/* Family panels: set the pair once, use `bg-fam text-fam-ink` inside. */
+.fam-1 {
+  --fb: var(--f1-bg);
+  --fi: var(--f1-ink);
+}
+.fam-2 {
+  --fb: var(--f2-bg);
+  --fi: var(--f2-ink);
+}
+.fam-3 {
+  --fb: var(--f3-bg);
+  --fi: var(--f3-ink);
+}
+.fam-4 {
+  --fb: var(--f4-bg);
+  --fi: var(--f4-ink);
+}
+.fam-5 {
+  --fb: var(--f5-bg);
+  --fi: var(--f5-ink);
+}
+.fam-6 {
+  --fb: var(--f6-bg);
+  --fi: var(--f6-ink);
+}
+.fam-7 {
+  --fb: var(--f7-bg);
+  --fi: var(--f7-ink);
+}
+
+@theme inline {
+  --font-serif:
+    var(--font-newsreader), "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-mono:
+    var(--font-dm-mono), ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans: var(--font-serif);
+  --font-heading: var(--font-serif);
+
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-hl: var(--hl);
+  --color-hl-ink: var(--hl-ink);
+  --color-fam: var(--fb);
+  --color-fam-ink: var(--fi);
+  --color-scrim: var(--scrim);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+
+  --shadow-panel: var(--shadow-panel);
+  --spacing-navh: var(--navh);
+  --spacing-gut: var(--gut);
+  --container-wrap: var(--wrap);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--navh) + 24px);
+  }
+  body {
+    @apply bg-background text-foreground font-serif antialiased;
+    font-size: 18px;
+    font-weight: 430;
+    line-height: 1.55;
+    font-optical-sizing: auto;
+    font-kerning: normal;
+  }
+  a {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: var(--ink-3);
+  }
+  a:hover {
+    text-decoration-color: currentColor;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--hl);
+    color: var(--hl-ink);
+  }
+  mark {
+    background: var(--hl);
+    color: var(--hl-ink);
+    padding: 0 1px;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-weight: 600;
+  }
+  button {
+    font: inherit;
+    color: inherit;
+  }
+  svg {
+    display: inline-block;
+  }
+  math {
+    font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", math;
+  }
+}
+
+/* Small typographic helpers that read better as classes than as long utility strings. */
+@utility kick {
+  @apply font-mono text-sm font-normal leading-snug;
+}
+@utility wrap {
+  @apply mx-auto w-full max-w-wrap;
+}
+@utility gutter {
+  padding-left: var(--gut);
+  padding-right: var(--gut);
+}
+@utility link-quiet {
+  text-decoration-line: none;
+  &:hover {
+    text-decoration-line: underline;
+    text-decoration-color: currentColor;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fade 0.24s ease-out both;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0.45;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
