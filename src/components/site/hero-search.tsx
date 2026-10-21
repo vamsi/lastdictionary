@@ -12,14 +12,17 @@ export function HeroSearch() {
       onClick={openSearch}
       onPointerEnter={() => void loadSearchIndex()}
       aria-label="Look up a word"
-      className="mt-2 flex h-14 w-full cursor-text items-stretch border border-line bg-paper p-0 text-left"
+      className="flex h-16 w-full cursor-text items-stretch border border-line bg-paper p-0 text-left shadow-[0_1px_0_var(--line)] hover:shadow-[0_2px_0_var(--line)]"
     >
-      <span className="flex min-w-0 flex-1 items-center gap-3 overflow-hidden whitespace-nowrap px-4 font-mono text-[15px] text-ink-3">
-        <Search className="size-4 shrink-0" strokeWidth={1.6} />
+      <span className="flex min-w-0 flex-1 items-center gap-3.5 overflow-hidden whitespace-nowrap px-5 font-serif text-[19px] text-ink-3 italic sm:text-[21px]">
+        <Search className="size-[18px] shrink-0 not-italic" strokeWidth={1.6} />
         Look up a word
       </span>
-      <span className="flex items-center bg-ink px-[22px] font-mono text-paper text-sm">
+      <span className="flex items-center gap-2.5 bg-ink px-5 font-mono text-paper text-sm sm:px-6">
         Search
+        <kbd className="hidden border border-current px-[5px] font-mono text-xs opacity-70 sm:inline">
+          /
+        </kbd>
       </span>
     </button>
   );
