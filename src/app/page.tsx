@@ -36,8 +36,8 @@ export default function HomePage() {
         }}
       />
 
-      <section className="grid border border-line min-[900px]:grid-cols-2">
-        <div className="flex min-w-0 flex-col gap-[22px] border-line border-b px-5 py-7 min-[900px]:border-r min-[900px]:border-b-0 min-[900px]:px-11 min-[900px]:pt-11 min-[900px]:pb-10">
+      <section className="grid border border-line md:grid-cols-2">
+        <div className="flex min-w-0 flex-col gap-[22px] border-line border-b px-5 py-7 md:border-r md:border-b-0 md:px-11 md:pt-11 md:pb-10">
           <span className="kick inline-block self-start border-line border-b pb-[9px]">
             First Edition · <b>{meta.editionDate}</b>
           </span>
@@ -55,14 +55,16 @@ export default function HomePage() {
             {meta.tryWords
               .filter((id) => dict.byId.has(id))
               .map((id) => (
-                <Link key={id} href={entryPath(id)} className="mr-3.5 whitespace-nowrap text-ink">
-                  {dict.byId.get(id)?.term}
-                </Link>
+                <span key={id}>
+                  <Link href={entryPath(id)} className="whitespace-nowrap text-ink">
+                    {dict.byId.get(id)?.term}
+                  </Link>{" "}
+                </span>
               ))}
           </p>
         </div>
         <div
-          className={`fam-${wotdFamily.n} flex min-w-0 flex-col gap-3.5 bg-fam px-5 py-7 text-fam-ink min-[900px]:px-11 min-[900px]:pt-10 min-[900px]:pb-[42px]`}
+          className={`fam-${wotdFamily.n} flex min-w-0 flex-col gap-3.5 bg-fam px-5 py-7 text-fam-ink md:px-11 md:pt-10 md:pb-[42px]`}
         >
           <div className="kick flex justify-between gap-3 border-current border-b pb-3">
             <span>Word of the day</span>
@@ -108,7 +110,7 @@ export default function HomePage() {
                   {nf(f.count)} words
                 </span>
               </div>
-              <div className="grid min-w-0 gap-4 px-[18px] pt-5 pb-[22px] min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] min-[900px]:gap-x-11 sm:px-7 sm:pt-6 sm:pb-[26px]">
+              <div className="grid min-w-0 gap-4 px-[18px] pt-5 pb-[22px] md:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] md:gap-x-11 sm:px-7 sm:pt-6 sm:pb-[26px]">
                 <div>
                   <h3 className="text-3xl leading-[1.1]">{f.name}</h3>
                   <p className="mt-2.5 text-[17px] leading-[1.45]">{f.desc}</p>
@@ -134,7 +136,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="mt-[76px] grid gap-16 min-[900px]:grid-cols-2 min-[900px]:gap-14">
+      <div className="mt-[76px] grid gap-16 md:grid-cols-2 md:gap-14">
         <section>
           <BlockHeading
             title="Start with the essentials"
