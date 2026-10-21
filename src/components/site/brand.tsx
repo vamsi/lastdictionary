@@ -10,11 +10,7 @@ export function Brand({
   large?: boolean;
 }) {
   return (
-    <Link
-      href="/"
-      className="flex min-w-0 items-center gap-3.5 no-underline"
-      aria-label={`${title}, home`}
-    >
+    <Link href="/" className="flex min-h-11 min-w-0 items-center gap-3.5 no-underline">
       <span className="size-6 shrink-0 bg-ink" aria-hidden="true" />
       <span className="grid min-w-0">
         <b

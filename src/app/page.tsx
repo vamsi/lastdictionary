@@ -45,12 +45,12 @@ export default function HomePage() {
             {dict.years.min}–{dict.years.max}
           </span>
         </div>
-        <h1 className="mt-7 max-w-[11em] text-[clamp(56px,10.5vw,136px)] leading-[0.94] tracking-[-0.03em] md:mt-9">
+        <h1 className="mt-7 max-w-[11em] text-[clamp(44px,10.5vw,136px)] leading-[0.94] tracking-[-0.03em] [overflow-wrap:anywhere] md:mt-9">
           Intelligence, <em>defined.</em>
         </h1>
         <div className="mt-9 grid items-start gap-9 md:mt-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-12 lg:gap-16">
           <div className="flex min-w-0 flex-col gap-6">
-            <p className="max-w-[26em] text-[clamp(20px,2vw,24px)] text-ink-2 leading-[1.4]">
+            <p className="max-w-[26em] text-[clamp(20px,2vw,24px)] text-ink-2 leading-[1.5]">
               {nf(entries.length)} words about minds and machines, from Bayes’ theorem to
               superintelligence. Each is explained in plain words first, then precisely, with the
               year it was born.
@@ -62,7 +62,7 @@ export default function HomePage() {
                 .filter((id) => dict.byId.has(id))
                 .map((id) => (
                   <span key={id}>
-                    <Link href={entryPath(id)} className="whitespace-nowrap text-ink">
+                    <Link href={entryPath(id)} className="text-ink">
                       {dict.byId.get(id)?.term}
                     </Link>{" "}
                   </span>
@@ -70,7 +70,8 @@ export default function HomePage() {
             </p>
             <Link
               href="/contents"
-              className="group mt-2 flex items-center gap-3 self-start font-mono text-ink-3 text-sm no-underline hover:text-ink"
+              className="group mt-1 flex min-h-11 items-center gap-3 self-start font-mono text-ink-3 text-sm no-underline hover:text-ink"
+              aria-label="Seven families of words: the contents"
             >
               <span className="flex gap-1" aria-hidden="true">
                 {dict.families.map((f) => (
@@ -80,7 +81,7 @@ export default function HomePage() {
                   />
                 ))}
               </span>
-              Seven families of words →
+              Seven families of words&nbsp;→
             </Link>
           </div>
           <div
@@ -91,7 +92,10 @@ export default function HomePage() {
               <span>{ordinalDate(today)}</span>
             </div>
             <h2 className="mt-3 text-[clamp(40px,4.6vw,60px)] leading-none tracking-[-0.02em] [overflow-wrap:anywhere]">
-              <Link href={entryPath(wotd.id)} className="link-quiet hover:decoration-2">
+              <Link
+                href={entryPath(wotd.id)}
+                className="link-quiet inline-flex min-h-11 items-center hover:decoration-2"
+              >
                 {wotd.term}
               </Link>
             </h2>
@@ -103,7 +107,8 @@ export default function HomePage() {
             <p className="mt-1 mb-1 text-[21px] leading-[1.4]">{wotd.plain}</p>
             <Link
               href={entryPath(wotd.id)}
-              className="mt-auto inline-flex items-center gap-2 self-start border border-current px-4 pt-3 pb-[11px] font-mono text-sm leading-none no-underline hover:bg-fam-ink hover:text-fam"
+              className="mt-auto inline-flex min-h-11 items-center gap-2 self-start border border-current px-4 font-mono text-sm leading-none no-underline hover:bg-fam-ink hover:text-fam"
+              aria-label={`Read the entry: ${wotd.term}`}
             >
               Read the entry →
             </Link>
@@ -115,7 +120,11 @@ export default function HomePage() {
         <BlockHeading
           title="Seven families of words"
           aside={
-            <Link href="/contents" className="link-quiet">
+            <Link
+              href="/contents"
+              className="link-quiet"
+              aria-label="Contents: all families and domains"
+            >
               Contents →
             </Link>
           }
@@ -146,7 +155,7 @@ export default function HomePage() {
                         <Link href={domainPath(d)} className="link-quiet">
                           {taxonomy.domains[d]?.name}
                         </Link>
-                        <span className="ml-1.5 opacity-70">{nf(dict.domainCounts[d] ?? 0)}</span>
+                        <span className="ml-1.5">{nf(dict.domainCounts[d] ?? 0)}</span>
                       </li>
                     ))}
                   </ul>
@@ -162,23 +171,22 @@ export default function HomePage() {
           <BlockHeading
             title="Start with the essentials"
             aside={
-              <Link href="/essentials" className="link-quiet">
+              <Link
+                href="/essentials"
+                className="link-quiet"
+                aria-label={`All ${nf(dict.essentials.length)} essentials`}
+              >
                 All {nf(dict.essentials.length)} →
               </Link>
             }
           />
-          <p className="text-[19px] leading-[1.8]">
-            {dict.essentialsByReference.slice(0, 40).map((id, i) => (
-              <span key={id}>
-                {i > 0 && (
-                  <span className="mx-[0.1em] text-ink-3" aria-hidden="true">
-                    {" · "}
-                  </span>
-                )}
-                <EntryLink dict={dict} id={id} className="link-quiet whitespace-nowrap" />
-              </span>
+          <ul className="m-0 flex list-none flex-wrap gap-x-[0.55em] gap-y-1 p-0 text-[19px] leading-[1.8] [&>li+li]:before:mr-[0.55em] [&>li+li]:before:text-ink-3 [&>li+li]:before:content-['·']">
+            {dict.essentialsByReference.slice(0, 40).map((id) => (
+              <li key={id}>
+                <EntryLink dict={dict} id={id} />
+              </li>
             ))}
-          </p>
+          </ul>
         </section>
         <section>
           <BlockHeading
@@ -190,7 +198,7 @@ export default function HomePage() {
             }
           />
           <DecadeChart decades={dict.decades} compact />
-          <p className="mt-3 font-mono text-[13px] text-ink-3 leading-relaxed">{dict.decadeNote}</p>
+          <p className="mt-3 font-mono text-ink-3 text-sm leading-relaxed">{dict.decadeNote}</p>
         </section>
       </div>
     </div>
@@ -201,7 +209,11 @@ export function BlockHeading({ title, aside }: { title: string; aside?: React.Re
   return (
     <div className="mb-5 flex items-baseline justify-between gap-3 border-line border-b pb-3">
       <h2 className="text-[27px] leading-[1.15]">{title}</h2>
-      {aside && <span className="kick whitespace-nowrap text-ink-2">{aside}</span>}
+      {aside && (
+        <span className="kick inline-flex min-h-11 items-center whitespace-nowrap text-ink-2 [&>a]:inline-flex [&>a]:min-h-11 [&>a]:items-center">
+          {aside}
+        </span>
+      )}
     </div>
   );
 }

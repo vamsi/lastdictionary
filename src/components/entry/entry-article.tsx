@@ -1,5 +1,6 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { letterPath } from "@/components/az/letters";
+import { LangText } from "@/components/lang-text";
 import Link from "@/components/link";
 import { EntryLink, RichText } from "@/components/rich-text";
 import { yearPath } from "@/components/timeline/decades";
@@ -41,7 +42,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
   const A = (n: number): ReactNode =>
     annotated ? (
       <span
-        className="mx-1 inline-grid size-5 place-items-center bg-fam-ink align-[4px] font-mono font-medium text-[11px] text-fam not-italic leading-none [.e-main_&]:bg-ink [.e-main_&]:text-paper [.e-side_&]:bg-ink [.e-side_&]:text-paper"
+        className="mx-1 inline-grid size-[22px] place-items-center bg-fam-ink align-[4px] font-mono font-medium text-fam text-xs not-italic leading-none [.e-main_&]:bg-ink [.e-main_&]:text-paper [.e-side_&]:bg-ink [.e-side_&]:text-paper"
         aria-hidden="true"
       >
         {n}
@@ -61,16 +62,19 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
         className={`bg-fam text-fam-ink ${annotated ? "px-[18px] py-[22px] sm:px-7 sm:py-[26px]" : "px-5 py-[26px] sm:px-10 sm:py-[34px]"}`}
       >
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2.5">
-          <div className="kick flex flex-wrap items-baseline border-current border-b pb-[9px]">
-            <Link href={domainPath(entry.domain)} className="link-quiet -my-1 py-1">
+          <div className="kick flex flex-wrap items-stretch border-current border-b">
+            <Link
+              href={domainPath(entry.domain)}
+              className="link-quiet inline-flex min-h-11 items-center"
+            >
               {taxonomy.domains[entry.domain]?.name}
             </Link>
             {(entry.domains ?? []).map((d) => (
               <span key={d}>
-                <span className="mx-2.5 opacity-55" aria-hidden="true">
+                <span className="mx-2.5 self-center opacity-55" aria-hidden="true">
                   /
                 </span>
-                <Link href={domainPath(d)} className="link-quiet -my-1 py-1">
+                <Link href={domainPath(d)} className="link-quiet inline-flex min-h-11 items-center">
                   {taxonomy.domains[d]?.name ?? d}
                 </Link>
               </span>
@@ -98,11 +102,19 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
           </span>
           {entry.pronunciation && <span>/{entry.pronunciation}/</span>}
           {entry.also?.length ? (
-            <span className="opacity-85">Also: {entry.also.join(", ")}</span>
+            <span>
+              Also:{" "}
+              {entry.also.map((a, i) => (
+                <Fragment key={a}>
+                  {i > 0 && ", "}
+                  <LangText text={a} />
+                </Fragment>
+              ))}
+            </span>
           ) : null}
         </div>
-        <p className="mt-[22px] max-w-[33em] font-normal text-[clamp(21px,2.4vw,28px)] leading-[1.36]">
-          <span className="mb-2.5 block font-mono text-[13px] leading-snug opacity-80">
+        <p className="mt-[22px] max-w-[33em] font-normal text-[clamp(21px,2.4vw,28px)] leading-[1.5]">
+          <span className="mb-2.5 block font-mono text-sm leading-normal">
             In plain words{A(5)}
           </span>
           {entry.plain}
@@ -147,7 +159,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
                   —
                 </span>
               )}
-              <span className="mt-2 block text-[12.5px] text-ink-3">
+              <span className="mt-2 block text-ink-3 text-sm">
                 {entry.year !== undefined
                   ? isOrg
                     ? "Year founded"
@@ -162,31 +174,33 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
               {[1, 2, 3].map((n) => (
                 <i
                   key={n}
-                  className={`h-2 w-5 border border-ink ${rank <= 4 - n ? "bg-ink" : ""}`}
+                  className={`h-2 w-5 border border-ink ${rank <= 4 - n ? "level-on bg-ink" : ""}`}
                 />
               ))}
             </div>
           </SideBox>
           {tokens.length > 0 && (
             <SideBox label={<>As a model reads it{A(4)}</>}>
-              <span className="flex flex-wrap gap-1">
+              <ul className="m-0 flex list-none flex-wrap gap-1 p-0" aria-label="Tokens">
                 {tokens.map((t, i) => (
-                  <span
+                  <li
                     key={tokens.slice(0, i + 1).join("|")}
-                    className="whitespace-pre border border-line px-1.5 py-px text-[13px]"
+                    className="whitespace-pre border border-line px-1.5 py-px text-xs"
                   >
                     {t.startsWith(" ") ? (
                       <>
-                        <span className="text-ink-3">␣</span>
+                        <span className="text-ink-3" aria-hidden="true">
+                          ␣
+                        </span>
                         {t.slice(1)}
                       </>
                     ) : (
                       t
                     )}
-                  </span>
+                  </li>
                 ))}
-              </span>
-              <span className="mt-2 block text-[12.5px] text-ink-3">
+              </ul>
+              <span className="mt-2 block text-ink-3 text-sm">
                 {tokens.length} {tokens.length === 1 ? "token" : "tokens"} in the o200k tokenizer
               </span>
             </SideBox>
@@ -292,7 +306,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
                           href={s.url}
                           target="_blank"
                           rel="noopener"
-                          className="font-mono text-[13px] text-ink-3 [overflow-wrap:anywhere]"
+                          className="font-mono text-ink-3 text-sm [overflow-wrap:anywhere]"
                         >
                           {s.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
                         </a>
@@ -332,7 +346,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
                   href={entryPath(prev.id)}
                   className="group flex min-w-0 flex-col gap-1.5 px-[22px] pt-[18px] pb-5 no-underline hover:bg-ink hover:text-paper"
                 >
-                  <span className="font-mono text-[13px] text-ink-3 group-hover:text-inherit group-hover:opacity-75">
+                  <span className="font-mono text-ink-3 text-sm group-hover:text-inherit">
                     ← Previous
                   </span>
                   <b className="font-semibold text-[22px] leading-[1.2] [overflow-wrap:anywhere]">
@@ -347,7 +361,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
                   href={entryPath(next.id)}
                   className="group flex min-w-0 flex-col items-end gap-1.5 border-line border-t px-[22px] pt-[18px] pb-5 text-right no-underline hover:bg-ink hover:text-paper sm:border-t-0 sm:border-l"
                 >
-                  <span className="font-mono text-[13px] text-ink-3 group-hover:text-inherit group-hover:opacity-75">
+                  <span className="font-mono text-ink-3 text-sm group-hover:text-inherit">
                     Next →
                   </span>
                   <b className="font-semibold text-[22px] leading-[1.2] [overflow-wrap:anywhere]">
@@ -372,14 +386,19 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
   );
 }
 
+/** A usage label. The pill links to its definition on the About page, so the meaning is one tap away. */
 function Label({ label, title }: { label: string; title: string }) {
   return (
-    <span
-      className="whitespace-nowrap border border-current px-[7px] pt-[5px] pb-1 font-mono text-xs leading-none"
+    <a
+      href="/about#labels"
+      className="inline-flex min-h-11 items-center no-underline"
+      aria-label={`${label}: ${title}`}
       title={title}
     >
-      {label}
-    </span>
+      <span className="whitespace-nowrap border border-current px-[7px] pt-[5px] pb-1 font-mono text-xs leading-none">
+        {label}
+      </span>
+    </a>
   );
 }
 
@@ -441,14 +460,18 @@ function Nearby({ dict, entry }: { dict: Dictionary; entry: Entry }) {
             <Link
               href={entryPath(e.id)}
               aria-current={e.id === entry.id ? "page" : undefined}
-              className="block overflow-hidden text-ellipsis whitespace-nowrap py-[3px] text-ink-3 no-underline hover:text-ink hover:underline aria-[current=page]:text-ink aria-[current=page]:before:content-['→_']"
+              className="block overflow-hidden text-ellipsis whitespace-nowrap py-[11.5px] text-ink-3 no-underline hover:text-ink hover:underline aria-[current=page]:text-ink aria-[current=page]:before:content-['→_']"
             >
               {e.term}
             </Link>
           </li>
         ))}
       </ol>
-      <Link href={letterPath(letter)} className="mt-2.5 inline-block text-ink underline">
+      <Link
+        href={letterPath(letter)}
+        className="mt-1 inline-flex min-h-11 items-center text-ink underline"
+        aria-label={`All of ${letter} in the A–Z`}
+      >
         All of {letter}
       </Link>
     </div>

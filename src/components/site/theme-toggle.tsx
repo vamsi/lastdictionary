@@ -22,7 +22,7 @@ export function ThemeToggle() {
       onClick={() => setTheme(dark ? "light" : "dark")}
       aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
       title="Switch theme"
-      className="grid size-10 shrink-0 cursor-pointer place-items-center border border-line bg-transparent hover:bg-ink hover:text-paper"
+      className="grid size-11 shrink-0 cursor-pointer place-items-center border border-line bg-transparent hover:bg-ink hover:text-paper"
     >
       {dark ? (
         <Sun className="size-[18px]" strokeWidth={1.5} />
@@ -52,7 +52,7 @@ export function ThemeSegment() {
           type="button"
           onClick={() => setTheme(choice)}
           aria-pressed={current === choice}
-          className="cursor-pointer border-line px-3 pt-2 pb-[7px] font-mono text-[13px] capitalize not-first:border-l hover:bg-paper-2 aria-pressed:bg-ink aria-pressed:text-paper aria-pressed:hover:bg-ink"
+          className="min-h-11 cursor-pointer border-line px-3.5 font-mono text-[13px] capitalize not-first:border-l hover:bg-paper-2 aria-pressed:bg-ink aria-pressed:text-paper aria-pressed:hover:bg-ink"
         >
           {choice}
         </button>

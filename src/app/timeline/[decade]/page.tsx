@@ -94,13 +94,18 @@ export default async function DecadePage({ params }: PageProps<"/timeline/[decad
               <div className="font-mono text-[15px] leading-[1.75] tabular-nums">
                 {yearLabel(y)}
               </div>
-              <div className="flex flex-wrap gap-x-[18px] gap-y-0.5 text-[17.5px]">
+              <ul
+                className="m-0 flex list-none flex-wrap gap-x-[18px] gap-y-0.5 p-0 text-[17.5px]"
+                aria-label={`Words born in ${yearLabel(y)}`}
+              >
                 {list.map((e) => (
-                  <a key={e.id} href={entryPath(e.id)} className="link-quiet">
-                    {e.term}
-                  </a>
+                  <li key={e.id}>
+                    <a href={entryPath(e.id)} className="link-quiet">
+                      {e.term}
+                    </a>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           );
         })}

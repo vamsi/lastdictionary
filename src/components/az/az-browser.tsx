@@ -21,7 +21,7 @@ export interface AzBrowserProps {
 }
 
 const chip =
-  "h-auto cursor-pointer rounded-none border border-line bg-transparent px-2.5 pt-[7px] pb-1.5 font-mono text-[13px] leading-none hover:bg-paper-2 data-pressed:bg-ink data-pressed:text-paper data-pressed:hover:bg-ink";
+  "h-auto min-h-11 cursor-pointer rounded-none border border-line bg-transparent px-3 font-mono text-[13px] leading-none hover:bg-paper-2 data-pressed:bg-ink data-pressed:text-paper data-pressed:hover:bg-ink";
 
 /** Level, label and domain filters over every word. Unfiltered, the letter overview shows through. */
 export function AzBrowser({ levels, labels, domainGroups, total, children }: AzBrowserProps) {
@@ -62,6 +62,12 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
     setDomain("");
   };
 
+  const status = active
+    ? filtered
+      ? `${nf(filtered.length)} of ${nf(total)} entries`
+      : "Loading…"
+    : `${nf(total)} entries`;
+
   return (
     <>
       <fieldset className="flex flex-wrap items-center gap-x-7 gap-y-3 border-line border-b py-4 font-mono text-sm">
@@ -73,6 +79,7 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
             value={levelSel}
             onValueChange={(v) => setLevelSel(v as string[])}
             spacing={1.5}
+            aria-label="Level"
           >
             {levels.map((l) => (
               <ToggleGroupItem key={l.rank} value={String(l.rank)} className={chip}>
@@ -88,6 +95,7 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
             value={labelSel}
             onValueChange={(v) => setLabelSel(v as string[])}
             spacing={1.5}
+            aria-label="Label"
           >
             {[...labels, "starred"].map((l) => (
               <ToggleGroupItem key={l} value={l} className={chip}>
@@ -104,7 +112,7 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
             id="az-domain"
             value={domain}
             onChange={(ev) => setDomain(ev.target.value)}
-            className="max-w-full border border-line bg-paper px-2 py-1.5 font-mono text-[13px] text-ink"
+            className="min-h-11 max-w-full border border-line bg-paper px-2 font-mono text-[13px] text-ink"
           >
             <option value="">
               All {domainGroups.reduce((n, g) => n + g.domains.length, 0)} domains
@@ -121,18 +129,14 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
           </select>
         </div>
         <div className="flex items-center gap-3.5 text-ink-3 sm:ml-auto">
-          <span>
-            {active
-              ? filtered
-                ? `${nf(filtered.length)} of ${nf(total)} entries`
-                : "Loading…"
-              : `${nf(total)} entries`}
+          <span role="status" aria-live="polite">
+            {status}
           </span>
           {active && (
             <button
               type="button"
               onClick={clear}
-              className="cursor-pointer border-0 bg-transparent p-0 text-ink underline"
+              className="min-h-11 cursor-pointer border-0 bg-transparent p-0 text-ink underline"
             >
               Clear filters
             </button>
@@ -151,15 +155,17 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
                 {g.items.map((e) => (
                   <li
                     key={e.id}
-                    className="grid gap-x-9 gap-y-1 border-line-2 border-b pt-[15px] pb-4 sm:grid-cols-[minmax(0,290px)_minmax(0,1fr)]"
+                    className="grid gap-x-9 gap-y-1 border-line-2 border-b py-2.5 sm:grid-cols-[minmax(0,290px)_minmax(0,1fr)]"
                   >
                     <Link
                       href={entryPath(e.id)}
-                      className="link-quiet font-semibold text-xl leading-[1.3] [overflow-wrap:anywhere]"
+                      className="link-quiet flex min-h-11 items-center font-semibold text-xl leading-[1.3] [overflow-wrap:anywhere]"
                     >
                       {e.t}
                     </Link>
-                    <span className="text-[16.5px] text-ink-2 leading-normal">{e.pl}</span>
+                    <span className="max-w-[62ch] self-center text-[16.5px] text-ink-2 leading-normal">
+                      {e.pl}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -171,7 +177,7 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
               <button
                 type="button"
                 onClick={clear}
-                className="cursor-pointer border-0 bg-transparent p-0 text-ink underline"
+                className="min-h-11 cursor-pointer border-0 bg-transparent p-0 text-ink underline"
               >
                 Clear filters
               </button>
@@ -197,7 +203,7 @@ export function LetterBar({
 }) {
   return (
     <nav
-      className="sticky top-[calc(env(safe-area-inset-top,0px)+var(--navh))] z-[6] flex flex-wrap border-line border-b bg-paper"
+      className="sticky-bar top-[calc(env(safe-area-inset-top,0px)+var(--navh))] z-[6] flex flex-wrap border-line border-b bg-paper"
       aria-label="Jump to letter"
     >
       {letters.map((l) => (
@@ -205,7 +211,7 @@ export function LetterBar({
           key={l}
           href={anchors ? `#${letterAnchor(l)}` : letterPath(l)}
           aria-current={l === current ? "page" : undefined}
-          className="grid h-[38px] min-w-[34px] place-items-center font-semibold text-[17px] no-underline hover:bg-ink hover:text-paper aria-[current=page]:bg-ink aria-[current=page]:text-paper"
+          className="grid min-h-11 min-w-11 place-items-center font-semibold text-[17px] no-underline hover:bg-ink hover:text-paper aria-[current=page]:bg-ink aria-[current=page]:text-paper"
         >
           {l}
         </a>

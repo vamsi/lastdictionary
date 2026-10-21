@@ -70,7 +70,7 @@ export default function AzPage() {
                 className="group flex h-full flex-col gap-2 px-4 pt-3 pb-4 no-underline hover:bg-ink hover:text-paper"
               >
                 <span className="font-semibold text-[44px] leading-none">{letter}</span>
-                <span className="font-mono text-[12.5px] text-ink-3 leading-snug group-hover:text-inherit group-hover:opacity-75">
+                <span className="font-mono text-ink-3 text-sm leading-snug group-hover:text-inherit">
                   {nf(n.words)} {n.words === 1 ? "word" : "words"}
                   {n.names ? ` · ${nf(n.names)} other ${n.names === 1 ? "name" : "names"}` : ""}
                 </span>

@@ -14,7 +14,7 @@
   --paper-2: #f3ece8;
   --ink: #141112;
   --ink-2: #4f4847;
-  --ink-3: #776e6c;
+  --ink-3: #524b4a;
   --line: #141112;
   --line-2: #e6ddd9;
   --scrim: rgb(20 17 18 / 0.42);
@@ -66,12 +66,12 @@
   --paper-2: #282021;
   --ink: #f6efeb;
   --ink-2: #c7bcb7;
-  --ink-3: #9a8f8b;
-  --line: #6a5e5c;
+  --ink-3: #bdb0ab;
+  --line: #7f716e;
   --line-2: #382e2f;
   --scrim: rgb(0 0 0 / 0.62);
   --shadow-panel: 0 18px 60px rgb(0 0 0 / 0.55);
-  --hl: #6b5a16;
+  --hl: #564812;
   --hl-ink: #fff4cc;
   --f1-bg: #172437;
   --f1-ink: #cad7e7;
@@ -127,6 +127,10 @@
   --breakpoint-md: 56.25rem;
   --breakpoint-lg: 68.75rem;
   --breakpoint-xl: 77.5rem;
+
+  /* The smallest text on the site is 13px; captions and labels are 14px. */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.5;
 }
 
 @theme inline {
@@ -196,8 +200,10 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 1.55;
-    font-optical-sizing: auto;
     font-kerning: normal;
+  }
+  p {
+    text-wrap: pretty;
   }
   a {
     text-decoration-line: underline;
@@ -258,6 +264,24 @@
   }
 }
 
+@layer components {
+  /* Secondary bars stick under the navbar, but not on very short viewports (400% zoom). */
+  .sticky-bar {
+    position: sticky;
+  }
+  @media (max-height: 500px) {
+    .sticky-bar {
+      position: static;
+    }
+  }
+  /* On phones the section links scroll sideways; fade the edge so the overflow is visible. */
+  @media (max-width: 39.99rem) {
+    .nav-scroll {
+      mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent);
+    }
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .fade-in {
     animation: fade 0.24s ease-out both;
@@ -271,5 +295,49 @@
       opacity: 1;
       transform: none;
     }
+  }
+}
+
+/* Readers who prefer reduced motion get no entrance animations or transitions (dialog, toasts, hover). */
+@media (prefers-reduced-motion: reduce) {
+  .animate-in,
+  .animate-out,
+  .fade-in,
+  .transition-all,
+  .transition-opacity,
+  .transition-colors {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+}
+
+/* Readers who ask for more contrast get a flatter palette: no tertiary greys, no hairlines. */
+@media (prefers-contrast: more) {
+  :root,
+  .dark {
+    --ink-2: var(--ink);
+    --ink-3: var(--ink);
+    --line-2: var(--line);
+    --paper-2: var(--paper);
+  }
+}
+
+/* Windows High Contrast and similar modes keep the chart bars, level meter and selected rows visible. */
+@media (forced-colors: active) {
+  .chart-bar {
+    fill: CanvasText;
+  }
+  .chart-bar-dim {
+    fill: GrayText;
+  }
+  .level-on {
+    background: CanvasText;
+    forced-color-adjust: none;
+  }
+  [role="option"][aria-selected="true"] {
+    background: Highlight;
+    color: HighlightText;
+    forced-color-adjust: none;
   }
 }

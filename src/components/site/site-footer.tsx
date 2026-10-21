@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";
 import { Brand } from "./brand";
+import { ShortcutsToggle } from "./shortcuts-toggle";
 import { FooterNav } from "./site-header";
 import { ThemeSegment } from "./theme-toggle";
 
@@ -31,9 +32,12 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
           </p>
         </div>
         <FooterNav />
-        <div>
-          <span className="mb-2 block text-ink-3">Theme</span>
-          <ThemeSegment />
+        <div className="grid content-start gap-7">
+          <div>
+            <span className="mb-2 block text-ink-3">Theme</span>
+            <ThemeSegment />
+          </div>
+          <ShortcutsToggle />
         </div>
       </div>
     </footer>

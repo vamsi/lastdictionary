@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { SHORTCUTS_KEY, useSetting } from "@/hooks/use-setting";
 import { loadSearchIndex } from "@/lib/search-client";
 import { useSearch } from "./search-provider";
 
@@ -22,10 +23,11 @@ export function preloadSearch() {
   void loadSearchIndex();
 }
 
-/** Global shortcuts (`/`, ⌘K) and the lazily mounted palette. Lives once, in the layout. */
+/** Global shortcuts (⌘K always; `/` when single-key shortcuts are on) and the lazily mounted palette. */
 export function SearchRoot(props: SearchRootProps) {
   const { open, setOpen } = useSearch();
   const [mounted, setMounted] = useState(false);
+  const [shortcuts] = useSetting(SHORTCUTS_KEY, true);
 
   useEffect(() => {
     if (open) setMounted(true);
@@ -38,7 +40,7 @@ export function SearchRoot(props: SearchRootProps) {
         setOpen(!open);
         return;
       }
-      if (open || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+      if (!shortcuts || open || ev.metaKey || ev.ctrlKey || ev.altKey) return;
       const el = document.activeElement as HTMLElement | null;
       const typing = el && (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable);
       if (ev.key === "/" && !typing) {
@@ -48,7 +50,7 @@ export function SearchRoot(props: SearchRootProps) {
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [open, setOpen]);
+  }, [open, setOpen, shortcuts]);
 
   return mounted ? <SearchPalette {...props} /> : null;
 }

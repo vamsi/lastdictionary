@@ -10,7 +10,15 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const dict = getDictionary();
   const edition = monthToDate(dict.meta.datePublished);
-  const pages = ["/", "/contents", "/a-z", "/timeline", "/essentials", "/about"].map((p) => ({
+  const pages = [
+    "/",
+    "/contents",
+    "/a-z",
+    "/timeline",
+    "/essentials",
+    "/about",
+    "/accessibility",
+  ].map((p) => ({
     url: absoluteUrl(dict, p),
     lastModified: edition,
   }));

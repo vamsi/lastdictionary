@@ -11,15 +11,17 @@ export function WordList({ dict, ids }: { dict: Dictionary; ids: readonly string
         return (
           <li
             key={id}
-            className="grid gap-x-9 gap-y-1 border-line-2 border-b pt-[15px] pb-4 [contain-intrinsic-size:auto_64px] [content-visibility:auto] sm:grid-cols-[minmax(0,290px)_minmax(0,1fr)]"
+            className="grid gap-x-9 gap-y-1 border-line-2 border-b py-2.5 [contain-intrinsic-size:auto_72px] [content-visibility:auto] sm:grid-cols-[minmax(0,290px)_minmax(0,1fr)]"
           >
             <a
               href={entryPath(id)}
-              className="link-quiet font-semibold text-xl leading-[1.3] [overflow-wrap:anywhere]"
+              className="link-quiet flex min-h-11 items-center font-semibold text-xl leading-[1.3] [overflow-wrap:anywhere]"
             >
               {e.term}
             </a>
-            <span className="text-[16.5px] text-ink-2 leading-normal">{e.plain}</span>
+            <span className="max-w-[62ch] self-center text-[16.5px] text-ink-2 leading-normal">
+              {e.plain}
+            </span>
           </li>
         );
       })}

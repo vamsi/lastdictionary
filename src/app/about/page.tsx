@@ -136,7 +136,7 @@ export default function AboutPage() {
         >
           <span className="hidden border-line border-b pb-2 text-ink-2 lg:block">On this page</span>
           {SECTIONS.map(([id, label]) => (
-            <a key={id} href={`#${id}`} className="link-quiet">
+            <a key={id} href={`#${id}`} className="link-quiet flex min-h-11 items-center">
               {label}
             </a>
           ))}
@@ -223,14 +223,14 @@ export default function AboutPage() {
           <Table>
             {Object.entries(taxonomy.pos).map(([abbr, name]) => (
               <tr key={abbr}>
-                <th>{abbr}</th>
+                <th scope="row">{abbr}</th>
                 <td>
                   {abbr === "prop. n." ? "proper noun: a named system, law, event or work" : name}
                 </td>
               </tr>
             ))}
             <tr>
-              <th>s.v.</th>
+              <th scope="row">s.v.</th>
               <td>
                 <i>sub verbo</i>, "under the word": used when citing an entry
               </td>
@@ -240,7 +240,7 @@ export default function AboutPage() {
           <Table>
             {Object.entries(taxonomy.labels).map(([label, desc]) => (
               <tr key={label}>
-                <th>
+                <th scope="row">
                   <span className="whitespace-nowrap border border-current px-[7px] pt-[5px] pb-1 font-mono text-xs text-ink leading-none">
                     {label}
                   </span>
@@ -252,18 +252,18 @@ export default function AboutPage() {
           <h3>Levels</h3>
           <Table>
             <tr>
-              <th>Essential</th>
+              <th scope="row">Essential</th>
               <td>
                 A newcomer needs it to follow AI news. There are {nf(dict.essentials.length)}; see{" "}
                 <Link href="/essentials">the essentials</Link>.
               </td>
             </tr>
             <tr>
-              <th>Core</th>
+              <th scope="row">Core</th>
               <td>The working vocabulary of practitioners.</td>
             </tr>
             <tr>
-              <th>Specialist</th>
+              <th scope="row">Specialist</th>
               <td>Research vocabulary and niche terms.</td>
             </tr>
           </Table>
@@ -272,7 +272,11 @@ export default function AboutPage() {
             {dict.families.map((f) =>
               f.domains.map((d, k) => (
                 <tr key={d}>
-                  {k === 0 && <th rowSpan={f.domains.length}>{f.name}</th>}
+                  {k === 0 && (
+                    <th scope="rowgroup" rowSpan={f.domains.length}>
+                      {f.name}
+                    </th>
+                  )}
                   <td>
                     <Link href={domainPath(d)}>{taxonomy.domains[d]?.name}</Link>
                   </td>
@@ -413,6 +417,11 @@ export default function AboutPage() {
             <a href="https://github.com/vamsi/lastdictionary/issues/new/choose">Open an issue</a>{" "}
             with the entry and a source, or fix it directly. The contributing guide explains the
             fields, the style rules and how to check your work before you send it.
+          </p>
+          <p>
+            The site is built to WCAG 2.2 AAA where that is sensible; the{" "}
+            <Link href="/accessibility">accessibility statement</Link> says what was tested, what
+            the exceptions are, and how to report a problem.
           </p>
         </div>
       </div>

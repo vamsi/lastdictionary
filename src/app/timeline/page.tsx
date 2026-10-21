@@ -52,25 +52,34 @@ export default function TimelinePage() {
               key={d.label}
               className="grid gap-x-6 gap-y-2 border-line-2 border-b py-5 md:grid-cols-[200px_minmax(0,1fr)_auto] md:items-baseline"
             >
-              <a href={decadePath(d)} className="link-quiet font-semibold text-[28px] leading-none">
+              <a
+                href={decadePath(d)}
+                className="link-quiet inline-flex min-h-11 items-center font-semibold text-[28px] leading-none"
+              >
                 {d.label}
               </a>
-              <p className="m-0 text-[17px] text-ink-2 leading-[1.6]">
-                {ids.map((id, i) => (
-                  <span key={id}>
-                    {i > 0 && (
-                      <span className="mx-[0.1em] text-ink-3" aria-hidden="true">
-                        {" · "}
-                      </span>
-                    )}
-                    <a href={entryPath(id)} className="link-quiet whitespace-nowrap text-ink">
+              <ul
+                className="m-0 flex list-none flex-wrap gap-x-[0.5em] p-0 text-[17px] text-ink-2 leading-[1.6] [&>li+li]:before:mr-[0.5em] [&>li+li]:before:text-ink-3 [&>li+li]:before:content-['·']"
+                aria-label={`First words of the ${d.label}`}
+              >
+                {ids.map((id) => (
+                  <li key={id}>
+                    <a href={entryPath(id)} className="text-ink">
                       {dict.byId.get(id)?.term}
                     </a>
-                  </span>
+                  </li>
                 ))}
-                {d.n > ids.length && <span className="text-ink-3"> …</span>}
-              </p>
-              <a href={decadePath(d)} className="kick link-quiet whitespace-nowrap text-ink-2">
+                {d.n > ids.length && (
+                  <li className="text-ink-3" aria-hidden="true">
+                    …
+                  </li>
+                )}
+              </ul>
+              <a
+                href={decadePath(d)}
+                className="kick link-quiet inline-flex min-h-11 items-center whitespace-nowrap text-ink-2"
+                aria-label={`${nf(d.n)} words born in the ${d.label}`}
+              >
                 {nf(d.n)} words →
               </a>
             </li>

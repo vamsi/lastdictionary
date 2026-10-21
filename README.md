@@ -101,6 +101,10 @@ data/               the dictionary (see above)
 public/             favicon, social image; generated files land here at build and are git-ignored
 ```
 
+## Accessibility
+
+The site is built to WCAG 2.2 AAA where that is sensible: every text colour is at least 7:1 against its background in both themes (`pnpm test` checks the palette), no text is smaller than 13 px, standalone controls are at least 44 px, single-key shortcuts can be switched off, and reduced motion, more-contrast and forced-colour preferences are honoured. `pnpm a11y` serves the build and runs axe-core with the A, AA and AAA rule sets on every kind of page in light and dark, desktop and phone, including the open search dialog; CI fails on any violation. The documented exceptions are on the [accessibility statement](https://lastdictionary.com/accessibility).
+
 ## Search engines and answer engines
 
 Every page is static HTML with a canonical URL, a title and description written for the snippet, Open Graph and Twitter cards (each entry has a generated card), and a typed Schema.org graph: `WebSite` with a `SearchAction` (`/?q=word` opens the search with the word typed), `DefinedTerm` and breadcrumbs on entries, `CollectionPage` lists on domain and letter pages, and a `Dataset` describing the downloads. `sitemap.xml` and `robots.txt` are generated; `llms.txt` and `llms-full.txt` give AI crawlers a map of the site and every definition. Security headers and cache rules live in `vercel.json`. `pnpm build` then Lighthouse on `out/` is the check: 100 in every category on desktop and, with CDN-like latency, on mobile.

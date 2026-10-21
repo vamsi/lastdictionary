@@ -21,7 +21,7 @@ export function EntryActions({ id, citation, url, text }: Props) {
   const { isStarred, toggle } = useStarred();
   const starred = isStarred(id);
   const button =
-    "w-full cursor-pointer justify-start border-0 bg-paper px-4 pt-3 pb-[11px] text-left font-mono text-sm leading-none hover:bg-ink hover:text-paper aria-pressed:bg-ink aria-pressed:text-paper";
+    "flex min-h-11 w-full cursor-pointer items-center justify-start border-0 bg-paper px-4 text-left font-mono text-sm leading-none hover:bg-ink hover:text-paper aria-pressed:bg-ink aria-pressed:text-paper";
   return (
     <div className="grid gap-px border border-line bg-line">
       <button type="button" className={button} onClick={() => copy(citation, "Citation copied")}>

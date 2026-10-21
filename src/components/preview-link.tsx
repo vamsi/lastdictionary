@@ -13,12 +13,13 @@ export interface Preview {
 }
 
 const OPEN_DELAY = 250;
+const CLOSE_DELAY = 150;
 const MARGIN = 16;
 
 /**
  * A link to an entry that shows its plain-words definition on hover or keyboard focus.
- * Hand-rolled rather than a popover library: it is on every entry page dozens of times, and all it
- * needs is a delay, a position below (or above) the link, and to go away on scroll or Escape.
+ * The pointer may travel onto the card; Escape, scrolling or leaving both closes it. Screen readers
+ * get the same words through a permanent description, so focus announces them without waiting.
  */
 export function PreviewLink({
   href,
@@ -34,17 +35,21 @@ export function PreviewLink({
   const id = useId();
   const anchor = useRef<HTMLAnchorElement>(null);
   const card = useRef<HTMLDivElement>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const openTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const [open, setOpen] = useState(false);
   const [style, setStyle] = useState<{ top: number; left: number; width: number }>();
 
   const show = (immediate = false) => {
-    clearTimeout(timer.current);
-    timer.current = setTimeout(() => setOpen(true), immediate ? 0 : OPEN_DELAY);
+    clearTimeout(closeTimer.current);
+    clearTimeout(openTimer.current);
+    openTimer.current = setTimeout(() => setOpen(true), immediate ? 0 : OPEN_DELAY);
   };
-  const hide = () => {
-    clearTimeout(timer.current);
-    setOpen(false);
+  const hide = (immediate = false) => {
+    clearTimeout(openTimer.current);
+    clearTimeout(closeTimer.current);
+    if (immediate) setOpen(false);
+    else closeTimer.current = setTimeout(() => setOpen(false), CLOSE_DELAY);
   };
 
   // Place the card under the link, or above it when there is no room below.
@@ -73,9 +78,16 @@ export function PreviewLink({
     };
   }, [open]);
 
-  useEffect(() => () => clearTimeout(timer.current), []);
+  useEffect(
+    () => () => {
+      clearTimeout(openTimer.current);
+      clearTimeout(closeTimer.current);
+    },
+    [],
+  );
 
   const fine = () => window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const descriptionId = `${id}-d`;
 
   return (
     <>
@@ -83,26 +95,31 @@ export function PreviewLink({
         ref={anchor}
         href={href}
         className={className}
-        aria-describedby={open ? id : undefined}
+        aria-describedby={descriptionId}
         onMouseEnter={() => fine() && show()}
-        onMouseLeave={hide}
+        onMouseLeave={() => hide()}
         onFocus={() => show(true)}
-        onBlur={hide}
+        onBlur={() => hide(true)}
       >
         {children}
       </Link>
+      <span id={descriptionId} className="sr-only">
+        {preview.term}, {preview.pos}: {preview.plain}
+      </span>
       {open &&
         createPortal(
           <div
             ref={card}
-            id={id}
             role="tooltip"
+            aria-hidden="true"
+            onMouseEnter={() => show(true)}
+            onMouseLeave={() => hide()}
             style={
               style
                 ? { top: style.top, left: style.left, width: style.width }
                 : { top: -9999, left: 0 }
             }
-            className="pointer-events-none fixed z-40 border border-line bg-paper p-4 pb-[15px] text-[15.5px] text-ink leading-[1.45] shadow-panel"
+            className="fixed z-40 border border-line bg-paper p-4 pb-[15px] text-[15.5px] text-ink leading-[1.5] shadow-panel"
           >
             <b className="block font-semibold text-[21px] leading-[1.2]">{preview.term}</b>
             <span className="mt-[3px] mb-2 block font-mono text-ink-3 text-xs">
