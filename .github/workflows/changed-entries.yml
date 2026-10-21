@@ -15,7 +15,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v8
+      - uses: actions/github-script@v9
         env:
           PREVIEW_BASE: ${{ vars.PREVIEW_BASE_URL }}
         with:
