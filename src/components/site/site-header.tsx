@@ -1,6 +1,7 @@
 import Link from "@/components/link";
 import { SearchButton } from "@/components/search/search-button";
 import type { Dictionary } from "@/lib/dictionary";
+import { WORDMARK } from "@/lib/site";
 import { Brand } from "./brand";
 import { NavLink } from "./nav-link";
 import { RandomButton } from "./random-button";
@@ -20,7 +21,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
     <>
       <header className="gutter">
         <div className="wrap flex items-center justify-between gap-4 pt-4 pb-3.5 sm:pt-5 sm:pb-[18px]">
-          <Brand title={meta.title} />
+          <Brand title={WORDMARK} />
           <ThemeToggle />
         </div>
       </header>

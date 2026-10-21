@@ -5,6 +5,9 @@ import type { Entry } from "./schema";
 /** The positioning line: used in the home title, the social card and the structured data. */
 export const TAGLINE = "The dictionary of intelligence";
 
+/** The name as the masthead sets it. The formal title, "The Last Dictionary", stays in the data, titles and citations. */
+export const WORDMARK = "Last Dictionary";
+
 export const entryPath = (id: string) => `/${id}`;
 export const domainPath = (code: string) => `/domain/${code}`;
 

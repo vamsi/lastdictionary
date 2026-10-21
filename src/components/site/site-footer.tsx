@@ -1,5 +1,6 @@
 import type { Dictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";
+import { WORDMARK } from "@/lib/site";
 import { Brand } from "./brand";
 import { ShortcutsToggle } from "./shortcuts-toggle";
 import { FooterNav } from "./site-header";
@@ -11,7 +12,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
     <footer className="gutter">
       <div className="wrap mt-[120px] grid gap-8 border-line border-t pt-[34px] pb-12 font-mono text-sm leading-relaxed sm:grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="sm:max-md:col-span-2">
-          <Brand title={meta.title} large />
+          <Brand title={WORDMARK} large />
           <p className="mt-3.5 text-ink-3">
             {meta.edition} · {nf(entries.length)} entries
             <br />
