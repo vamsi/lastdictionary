@@ -41,7 +41,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
             <Pipe />
             <RandomButton className="min-h-11 cursor-pointer border-0 bg-transparent px-2 font-mono text-ink text-sm hover:underline hover:underline-offset-[0.3em]" />
           </div>
-          <span className="hidden self-center whitespace-nowrap font-mono text-[13px] text-ink-3 md:inline">
+          <span className="hidden self-center whitespace-nowrap font-mono text-sm text-ink-3 lg:inline">
             First Edition · {meta.editionDate} · {nf(entries.length)} entries
           </span>
           <SearchButton />

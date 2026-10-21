@@ -21,7 +21,7 @@ export interface AzBrowserProps {
 }
 
 const chip =
-  "h-auto min-h-11 cursor-pointer rounded-none border border-line bg-transparent px-3 font-mono text-[13px] leading-none hover:bg-paper-2 data-pressed:bg-ink data-pressed:text-paper data-pressed:hover:bg-ink";
+  "h-auto min-h-11 cursor-pointer rounded-none border border-line bg-transparent px-3 font-mono text-sm leading-none hover:bg-paper-2 data-pressed:bg-ink data-pressed:text-paper data-pressed:hover:bg-ink";
 
 /** Level, label and domain filters over every word. Unfiltered, the letter overview shows through. */
 export function AzBrowser({ levels, labels, domainGroups, total, children }: AzBrowserProps) {
@@ -79,6 +79,7 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
             value={levelSel}
             onValueChange={(v) => setLevelSel(v as string[])}
             spacing={1.5}
+            className="flex-wrap"
             aria-label="Level"
           >
             {levels.map((l) => (
@@ -95,6 +96,7 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
             value={labelSel}
             onValueChange={(v) => setLabelSel(v as string[])}
             spacing={1.5}
+            className="flex-wrap"
             aria-label="Label"
           >
             {[...labels, "starred"].map((l) => (
@@ -104,7 +106,7 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
             ))}
           </ToggleGroup>
         </div>
-        <div className="flex flex-wrap items-center gap-1.5">
+        <div className="flex min-w-0 flex-wrap items-center gap-1.5 max-sm:w-full">
           <label className="mr-1 text-ink-3" htmlFor="az-domain">
             Domain
           </label>
@@ -112,7 +114,7 @@ export function AzBrowser({ levels, labels, domainGroups, total, children }: AzB
             id="az-domain"
             value={domain}
             onChange={(ev) => setDomain(ev.target.value)}
-            className="min-h-11 max-w-full border border-line bg-paper px-2 font-mono text-[13px] text-ink"
+            className="min-h-11 min-w-0 max-w-full border border-line bg-paper px-2 font-mono text-sm text-ink max-sm:w-full"
           >
             <option value="">
               All {domainGroups.reduce((n, g) => n + g.domains.length, 0)} domains

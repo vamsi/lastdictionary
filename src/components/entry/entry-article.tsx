@@ -42,7 +42,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
   const A = (n: number): ReactNode =>
     annotated ? (
       <span
-        className="mx-1 inline-grid size-[22px] place-items-center bg-fam-ink align-[4px] font-mono font-medium text-fam text-xs not-italic leading-none [.e-main_&]:bg-ink [.e-main_&]:text-paper [.e-side_&]:bg-ink [.e-side_&]:text-paper"
+        className="mx-1 inline-grid size-[22px] place-items-center bg-fam-ink align-[4px] font-mono font-medium text-fam text-sm not-italic leading-none [.e-main_&]:bg-ink [.e-main_&]:text-paper [.e-side_&]:bg-ink [.e-side_&]:text-paper"
         aria-hidden="true"
       >
         {n}
@@ -185,7 +185,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
                 {tokens.map((t, i) => (
                   <li
                     key={tokens.slice(0, i + 1).join("|")}
-                    className="whitespace-pre border border-line px-1.5 py-px text-xs"
+                    className="whitespace-pre border border-line px-1.5 py-px text-sm"
                   >
                     {t.startsWith(" ") ? (
                       <>
@@ -395,7 +395,7 @@ function Label({ label, title }: { label: string; title: string }) {
       aria-label={`${label}: ${title}`}
       title={title}
     >
-      <span className="whitespace-nowrap border border-current px-[7px] pt-[5px] pb-1 font-mono text-xs leading-none">
+      <span className="whitespace-nowrap border border-current px-[7px] pt-[5px] pb-1 font-mono text-sm leading-none">
         {label}
       </span>
     </a>
@@ -460,7 +460,7 @@ function Nearby({ dict, entry }: { dict: Dictionary; entry: Entry }) {
             <Link
               href={entryPath(e.id)}
               aria-current={e.id === entry.id ? "page" : undefined}
-              className="block overflow-hidden text-ellipsis whitespace-nowrap py-[11.5px] text-ink-3 no-underline hover:text-ink hover:underline aria-[current=page]:text-ink aria-[current=page]:before:content-['→_']"
+              className="block min-h-11 overflow-hidden text-ellipsis whitespace-nowrap py-[11.5px] text-ink-3 no-underline hover:text-ink hover:underline aria-[current=page]:text-ink aria-[current=page]:before:content-['→_']"
             >
               {e.term}
             </Link>

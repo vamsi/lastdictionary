@@ -19,7 +19,7 @@ export function SearchButton() {
       Search
       {/* biome-ignore lint/a11y/noAriaHiddenOnFocusable: the key hint is decoration and is not focusable */}
       <kbd
-        className="hidden border border-current px-[5px] font-mono text-xs sm:inline"
+        className="hidden border border-current px-[5px] font-mono text-sm sm:inline"
         aria-hidden="true"
       >
         /

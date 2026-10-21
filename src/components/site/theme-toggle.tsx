@@ -52,7 +52,7 @@ export function ThemeSegment() {
           type="button"
           onClick={() => setTheme(choice)}
           aria-pressed={current === choice}
-          className="min-h-11 cursor-pointer border-line px-3.5 font-mono text-[13px] capitalize not-first:border-l hover:bg-paper-2 aria-pressed:bg-ink aria-pressed:text-paper aria-pressed:hover:bg-ink"
+          className="min-h-11 cursor-pointer border-line px-3.5 font-mono text-sm capitalize not-first:border-l hover:bg-paper-2 aria-pressed:bg-ink aria-pressed:text-paper aria-pressed:hover:bg-ink"
         >
           {choice}
         </button>

@@ -122,7 +122,7 @@ export function PreviewLink({
             className="fixed z-40 border border-line bg-paper p-4 pb-[15px] text-[15.5px] text-ink leading-[1.5] shadow-panel"
           >
             <b className="block font-semibold text-[21px] leading-[1.2]">{preview.term}</b>
-            <span className="mt-[3px] mb-2 block font-mono text-ink-3 text-xs">
+            <span className="mt-[3px] mb-2 block font-mono text-ink-3 text-sm">
               {preview.pos} · {preview.domain}
               {preview.year ? ` · born ${preview.year}` : ""}
             </span>

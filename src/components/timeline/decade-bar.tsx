@@ -5,7 +5,7 @@ import { decadePath } from "./decades";
 export function DecadeBar({ decades, current }: { decades: Decade[]; current?: Decade }) {
   return (
     <nav
-      className="sticky-bar top-[calc(env(safe-area-inset-top,0px)+var(--navh))] z-[6] flex flex-wrap border-line border-b bg-paper font-mono text-[13px]"
+      className="sticky-bar top-[calc(env(safe-area-inset-top,0px)+var(--navh))] z-[6] flex flex-wrap border-line border-b bg-paper font-mono text-sm"
       aria-label="Jump to decade"
     >
       {decades.map((d) => (

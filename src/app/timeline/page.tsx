@@ -39,7 +39,7 @@ export default function TimelinePage() {
         year.
       </PageHeader>
       <DecadeChart decades={dict.decades} />
-      <p className="mt-3 font-mono text-[13px] text-ink-3 leading-relaxed">{dict.decadeNote}</p>
+      <p className="mt-3 font-mono text-sm text-ink-3 leading-relaxed">{dict.decadeNote}</p>
       <ol className="m-0 mt-12 list-none p-0">
         {dict.decades.map((d) => {
           const ids = dict.entries

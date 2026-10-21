@@ -53,7 +53,7 @@ export function Toaster() {
         <button
           type="button"
           onClick={dismiss}
-          className="min-h-11 cursor-pointer whitespace-nowrap bg-ink px-4 font-mono text-[13px] text-paper"
+          className="min-h-11 cursor-pointer whitespace-nowrap bg-ink px-4 font-mono text-sm text-paper"
           title="Dismiss"
         >
           {state.message}

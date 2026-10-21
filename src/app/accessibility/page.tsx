@@ -41,7 +41,7 @@ export default function AccessibilityPage() {
           <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines 2.2</a> at
           level <b>AAA</b>, with the exceptions listed below. Every text colour has at least a 7:1
           contrast ratio against its background in both the light and dark themes, no text is
-          smaller than 13 pixels, body text is 18 pixels with generous line spacing, and standalone
+          smaller than 14 pixels, body text is 18 pixels with generous line spacing, and standalone
           controls are at least 44 by 44 pixels.
         </p>
 

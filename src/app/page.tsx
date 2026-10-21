@@ -136,13 +136,15 @@ export default function HomePage() {
               className={`fam-${f.n} grid min-w-0 grid-cols-[40px_minmax(0,1fr)] bg-fam text-fam-ink sm:grid-cols-[56px_minmax(0,1fr)]`}
             >
               <div className="flex justify-center border-current border-r py-[22px]">
-                <span className="whitespace-nowrap font-mono text-[13px] [writing-mode:vertical-rl] rotate-180">
+                <span className="whitespace-nowrap font-mono text-sm [writing-mode:vertical-rl] rotate-180">
                   {nf(f.count)} words
                 </span>
               </div>
               <div className="grid min-w-0 gap-4 px-[18px] pt-5 pb-[22px] md:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] md:gap-x-11 sm:px-7 sm:pt-6 sm:pb-[26px]">
                 <div>
-                  <h3 className="text-3xl leading-[1.1]">{f.name}</h3>
+                  <h3 className="text-[clamp(26px,8vw,30px)] leading-[1.1] [overflow-wrap:anywhere]">
+                    {f.name}
+                  </h3>
                   <p className="mt-2.5 text-[17px] leading-[1.45]">{f.desc}</p>
                 </div>
                 <div>

@@ -22,7 +22,7 @@ export function ShortcutsToggle() {
         role="switch"
         aria-checked={checked}
         onClick={() => setOn(!checked)}
-        className="inline-flex min-h-11 cursor-pointer items-center gap-3 border border-line px-3.5 font-mono text-[13px] hover:bg-paper-2"
+        className="inline-flex min-h-11 cursor-pointer items-center gap-3 border border-line px-3.5 font-mono text-sm hover:bg-paper-2"
       >
         <span
           aria-hidden="true"
@@ -30,7 +30,7 @@ export function ShortcutsToggle() {
         />
         Single-key shortcuts {checked ? "on" : "off"}
       </button>
-      <span className="mt-2 block text-ink-3 text-xs">
+      <span className="mt-2 block text-ink-3 text-sm">
         / to search · ← → to the neighboring words · ⌘K always opens search
       </span>
     </div>

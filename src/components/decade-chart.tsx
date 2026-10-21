@@ -37,7 +37,7 @@ export function DecadeChart({
       >
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className={`block h-auto w-full ${compact ? "" : "min-w-[520px]"} [&_text]:fill-ink-3 [&_text]:font-mono ${compact ? "[&_text]:text-sm" : "[&_text]:text-xs"}`}
+          className={`block h-auto w-full ${compact ? "" : "min-w-[520px]"} [&_text]:fill-ink-3 [&_text]:font-mono [&_text]:text-sm`}
         >
           <title>Words born per decade</title>
           {ticks.map((t) => (

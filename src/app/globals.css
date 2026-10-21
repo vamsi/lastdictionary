@@ -128,8 +128,8 @@
   --breakpoint-lg: 68.75rem;
   --breakpoint-xl: 77.5rem;
 
-  /* The smallest text on the site is 13px; captions and labels are 14px. */
-  --text-xs: 0.8125rem;
+  /* Nothing on the site is smaller than 14px. text-xs is pinned to the same size as text-sm so a stray use can never go below. */
+  --text-xs: 0.875rem;
   --text-xs--line-height: 1.5;
 }
 

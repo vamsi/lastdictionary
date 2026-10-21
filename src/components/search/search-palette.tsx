@@ -205,7 +205,7 @@ export function SearchPalette({ domainNames, tryWords, total }: Props) {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="esc, close search"
-            className="min-w-11 cursor-pointer self-stretch border-line border-l px-4 font-mono text-[13px] hover:bg-ink hover:text-paper"
+            className="min-w-11 cursor-pointer self-stretch border-line border-l px-4 font-mono text-sm hover:bg-ink hover:text-paper"
           >
             esc
           </button>

@@ -206,7 +206,7 @@ export default function AboutPage() {
               <ol className="m-0 mt-[26px] grid list-none gap-3.5 p-0 text-[16.5px]">
                 {KEY.map(([name, desc], k) => (
                   <li key={name} className="grid grid-cols-[30px_minmax(0,1fr)] gap-2">
-                    <span className="inline-grid size-5 place-items-center bg-ink font-mono font-medium text-[11px] text-paper leading-none">
+                    <span className="inline-grid size-[22px] place-items-center bg-ink font-mono font-medium text-paper text-sm leading-none">
                       {k + 1}
                     </span>
                     <div>
@@ -241,7 +241,7 @@ export default function AboutPage() {
             {Object.entries(taxonomy.labels).map(([label, desc]) => (
               <tr key={label}>
                 <th scope="row">
-                  <span className="whitespace-nowrap border border-current px-[7px] pt-[5px] pb-1 font-mono text-xs text-ink leading-none">
+                  <span className="whitespace-nowrap border border-current px-[7px] pt-[5px] pb-1 font-mono text-sm text-ink leading-none">
                     {label}
                   </span>
                 </th>
@@ -280,9 +280,7 @@ export default function AboutPage() {
                   <td>
                     <Link href={domainPath(d)}>{taxonomy.domains[d]?.name}</Link>
                   </td>
-                  <td className="font-mono text-[13.5px] text-ink-3">
-                    {nf(dict.domainCounts[d] ?? 0)}
-                  </td>
+                  <td className="font-mono text-sm text-ink-3">{nf(dict.domainCounts[d] ?? 0)}</td>
                 </tr>
               )),
             )}
@@ -411,9 +409,11 @@ export default function AboutPage() {
           <h2 id="contribute">Contribute</h2>
           <p>
             The dictionary is maintained in the open at{" "}
-            <a href="https://github.com/vamsi/lastdictionary">github.com/vamsi/lastdictionary</a>.
-            Each entry is one small YAML file, so a correction is a one-file pull request, and a new
-            word is a new file. Found an error?{" "}
+            <a href="https://github.com/vamsi/lastdictionary" className="[overflow-wrap:anywhere]">
+              github.com/vamsi/lastdictionary
+            </a>
+            . Each entry is one small YAML file, so a correction is a one-file pull request, and a
+            new word is a new file. Found an error?{" "}
             <a href="https://github.com/vamsi/lastdictionary/issues/new/choose">Open an issue</a>{" "}
             with the entry and a source, or fix it directly. The contributing guide explains the
             fields, the style rules and how to check your work before you send it.
@@ -432,7 +432,7 @@ export default function AboutPage() {
 function Table({ children }: { children: ReactNode }) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full border-collapse text-[16px] [&_td]:border-line-2 [&_td]:border-b [&_td]:py-[9px] [&_td]:pr-3.5 [&_td]:text-left [&_td]:align-top [&_th]:whitespace-nowrap [&_th]:border-line-2 [&_th]:border-b [&_th]:py-[9px] [&_th]:pr-3.5 [&_th]:text-left [&_th]:align-top [&_th]:font-mono [&_th]:font-normal [&_th]:text-[13.5px] [&_th]:text-ink-2">
+      <table className="w-full border-collapse text-[16px] [&_td]:border-line-2 [&_td]:border-b [&_td]:py-[9px] [&_td]:pr-3.5 [&_td]:text-left [&_td]:align-top [&_th]:whitespace-nowrap [&_th]:border-line-2 [&_th]:border-b [&_th]:py-[9px] [&_th]:pr-3.5 [&_th]:text-left [&_th]:align-top [&_th]:font-mono [&_th]:font-normal [&_th]:text-sm [&_th]:text-ink-2">
         <tbody>{children}</tbody>
       </table>
     </div>
@@ -458,7 +458,7 @@ function Lineage({
           {title}
         </h3>
         <p className="!mb-2">{children}</p>
-        <p className="!mb-0 font-mono text-[13.5px] text-ink-2">We took: {took}</p>
+        <p className="!mb-0 font-mono text-sm text-ink-2">We took: {took}</p>
       </div>
     </div>
   );
