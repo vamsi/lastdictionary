@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: direct alignment algorithm
+id: direct-alignment-algorithm
+pos: n.
+also:
+  - DAA
+  - direct alignment
+  - offline preference optimization
+  - reward-free alignment
+domain: train
+domains:
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Any method that tunes an AI directly on examples of preferred and dispreferred answers, skipping
+  the separate scoring model and trial-and-error training used in classic RLHF.
+senses:
+  - definition: >-
+      A family of preference-optimization methods that update a language model directly from
+      [[preference-data|preference data]] with a supervised-style loss, without training an explicit
+      [[reward-model|reward model]] or sampling from the policy during training. Most define an
+      implicit reward from the model's own probabilities, usually the log-ratio to a
+      [[reference-model|reference model]], and fit it to the data with a pairwise or pointwise loss.
+      Members include [[direct-preference-optimization|direct preference optimization]] (logistic
+      loss), IPO (squared loss, to resist overfitting deterministic preferences), SLiC-HF (hinge
+      loss), [[kahneman-tversky-optimization|KTO]] (unpaired binary labels), and reference-free
+      variants such as ORPO, which folds preference learning into SFT, and SimPO, which uses
+      length-normalized log-probabilities. They are cheap and stable, but because they learn from a
+      fixed dataset they can exploit its quirks, such as length, and they still exhibit
+      [[reward-overoptimization|reward overoptimization]]; online and iterative versions resample
+      data from the current policy.
+    example: >-
+      Every direct alignment algorithm we tried overfit within one epoch unless we raised β.
+origin: >-
+  The family grew from SLiC-HF (Yao Zhao and colleagues at Google, May 2023) and DPO (Rafael
+  Rafailov and colleagues, May 2023), followed by IPO (Mohammad Gheshlaghi Azar and colleagues,
+  October 2023), KTO, ORPO and SimPO (2024). Shangmin Guo and colleagues grouped such methods in
+  February 2024 as 'direct alignment from preferences' (DAP); Rafailov and colleagues used 'direct
+  alignment algorithms' in a June 2024 study of overoptimization, and the name has since appeared in
+  surveys and textbooks.
+year: 2024
+note: >-
+  Also called offline or reward-free preference optimization. Whether these methods can match online
+  RL with a reward model, especially for reasoning, remains debated.
+see_also:
+  - direct preference optimization
+  - Kahneman–Tversky optimization
+  - reinforcement learning from human feedback
+  - reference model
+  - preference data
+  - reward overoptimization
+contrast:
+  - reinforcement learning from human feedback
+  - proximal policy optimization
+sources:
+  - text: >-
+      Rafailov, R. et al. (2024). Scaling Laws for Reward Model Overoptimization in Direct Alignment
+      Algorithms. arXiv:2406.02900.
+    url: https://arxiv.org/abs/2406.02900
+  - text: >-
+      Zhao, Y., Joshi, R., Liu, T., Khalman, M., Saleh, M. & Liu, P. J. (2023). SLiC-HF: Sequence
+      Likelihood Calibration with Human Feedback. arXiv:2305.10425.
+    url: https://arxiv.org/abs/2305.10425
+  - text: >-
+      Azar, M. G. et al. (2023). A General Theoretical Paradigm to Understand Learning from Human
+      Preferences. AISTATS 2024.

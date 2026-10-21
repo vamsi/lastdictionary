@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: StyleGAN
+id: stylegan
+pos: prop. n.
+also:
+  - StyleGAN2
+  - StyleGAN2-ADA
+  - StyleGAN3
+  - style-based generator
+pronunciation: STYLE-gan
+domain: gen
+domains:
+  - dl
+  - society
+level: core
+plain: >-
+  An image-generating network from NVIDIA, famous for photorealistic faces of people who do not
+  exist, that sets coarse traits such as head angle and face shape separately from fine details such
+  as coloring and skin texture.
+senses:
+  - definition: >-
+      A [[generative-adversarial-network|generative adversarial network]] architecture whose
+      generator injects a learned 'style' at every resolution. A mapping network of eight fully
+      connected layers transforms the input noise vector z into an intermediate latent vector w;
+      learned affine transforms of w then modulate each convolutional block of a synthesis network
+      that starts from a learned constant tensor, originally through adaptive instance normalization
+      (AdaIN), while per-layer noise inputs add stochastic detail such as the placement of hairs.
+      Because w enters at every scale, styles can be mixed — coarse layers set pose and face shape,
+      fine layers color and texture — and the intermediate W space is far more disentangled than z,
+      making it a standard space for GAN inversion and semantic editing. StyleGAN2 (2020) replaced
+      AdaIN with weight demodulation to remove blob-like artifacts, StyleGAN2-ADA added adaptive
+      data augmentation for small datasets, and StyleGAN3 (2021) made the generator alias-free so
+      that textures no longer stick to pixel coordinates.
+    example: We projected the photo into StyleGAN's W space and nudged the 'age' direction.
+origin: >-
+  Introduced by Tero Karras, Samuli Laine and Timo Aila of NVIDIA in a paper posted in December 2018
+  (CVPR 2019), together with FFHQ, a dataset of 70,000 high-quality face photographs from Flickr.
+  Code followed in February 2019, when Phillip Wang's website This Person Does Not Exist, showing a
+  new generated face on every reload, brought the model wide public attention.
+year: 2018
+note: >-
+  StyleGAN faces quickly became a staple of fake social-media profiles, an early mass use of
+  [[synthetic-media|synthetic media]]; see [[deepfake|deepfake]].
+see_also:
+  - generative adversarial network
+  - style transfer
+  - latent space
+  - deepfake
+  - synthetic media
+  - image-to-image translation
+sources:
+  - text: >-
+      Karras, T., Laine, S. & Aila, T. (2019). A Style-Based Generator Architecture for Generative
+      Adversarial Networks. CVPR 2019. arXiv:1812.04948.
+    url: https://arxiv.org/abs/1812.04948
+  - text: NVIDIA (2019). Flickr-Faces-HQ Dataset (FFHQ). GitHub.
+    url: https://github.com/NVlabs/ffhq-dataset

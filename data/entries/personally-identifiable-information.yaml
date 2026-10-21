@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: personally identifiable information
+id: personally-identifiable-information
+pos: n.
+also:
+  - PII
+  - personal data
+  - personal information
+domain: data
+domains:
+  - sec
+  - gov
+labels:
+  - legal
+level: core
+plain: >-
+  Information that can identify a specific person, such as a name, address, phone number or ID
+  number — or several facts that together point to one person.
+senses:
+  - definition: >-
+      Information that identifies a particular person, either on its own or once linked with other
+      data; US federal guidance defines it as information that 'can be used to distinguish or trace
+      an individual's identity'. Direct identifiers include names, government ID numbers, passport
+      and account numbers, email addresses and biometric records; quasi-identifiers such as birth
+      date, postcode and gender are not unique on their own but can single people out in combination
+      — in a classic finding, about 87% of the 1990 US population was unique on ZIP code, gender and
+      full birth date. Web-scale [[training-data|training data]] inevitably contains PII, and models
+      can [[memorization|memorize]] and reproduce it, as [[training-data-extraction|training data
+      extraction]] attacks have shown. Data pipelines therefore detect and redact or mask it, using
+      pattern matching for emails, phone numbers and IP addresses and
+      [[named-entity-recognition|named-entity recognition]] for names, alongside opt-outs,
+      [[machine-unlearning|machine unlearning]] and [[differential-privacy|differential privacy]];
+      no method is complete.
+    example: The PII scrubber replaced every email address in the crawl with a placeholder.
+origin: >-
+  A US privacy term, defined for federal agencies in Office of Management and Budget memorandum
+  M-07-16 (2007) and NIST Special Publication 800-122 (2010); the current federal definition is in
+  OMB Circular A-130 (2016), and M-07-16 was replaced by M-17-12 (2017). Latanya Sweeney's research
+  of the late 1990s showed that combinations of innocuous attributes can re-identify people,
+  undermining naive anonymization.
+note: >-
+  PII has no single legal definition. EU law instead uses 'personal data' (GDPR, Art. 4(1)), which
+  is broader: any information relating to an identified or identifiable person, including online
+  identifiers. Pseudonymized data remains personal data under the GDPR.
+see_also:
+  - training data extraction
+  - memorization
+  - differential privacy
+  - data cleaning
+  - machine unlearning
+  - data pipeline
+sources:
+  - text: >-
+      McCallister, E., Grance, T. & Scarfone, K. (2010). Guide to Protecting the Confidentiality of
+      Personally Identifiable Information (PII). NIST Special Publication 800-122.
+  - text: >-
+      Sweeney, L. (2000). Simple Demographics Often Identify People Uniquely. Carnegie Mellon
+      University, Data Privacy Working Paper 3.
+standards: >-
+  OMB Circular A-130 (2016); NIST SP 800-122 (2010). EU counterpart: 'personal data', GDPR (Reg.
+  (EU) 2016/679), Art. 4(1)
+as_of: 2026-10

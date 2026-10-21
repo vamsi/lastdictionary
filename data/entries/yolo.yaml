@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: YOLO
+id: yolo
+pos: prop. n.
+also:
+  - You Only Look Once
+  - YOLOv3
+  - YOLOv5
+  - YOLOv8
+  - YOLO11
+  - YOLO26
+  - YOLO27
+pronunciation: YOH-loh
+domain: percep
+domains:
+  - infer
+  - hist
+level: core
+plain: >-
+  A family of fast object-detection models that look at an image once and immediately output boxes
+  and labels for everything they recognize, quick enough for live video.
+senses:
+  - definition: >-
+      A family of one-stage, real-time [[object-detection|object detectors]] descended from 'You
+      Only Look Once'. Region-based detectors such as [[r-cnn|R-CNN]] classified some 2,000
+      candidate regions and needed seconds per image; the original YOLO instead made every
+      prediction in one forward pass of a single [[convolutional-neural-network|convolutional neural
+      network]], reaching 45 frames per second at some cost in localization accuracy. It split the
+      image into a 7 × 7 grid, and each cell output two [[bounding-box|bounding boxes]] with
+      confidence scores and one set of class probabilities; the whole network was trained end to
+      end. Successors added [[anchor-box|anchor boxes]] (YOLOv2) and multi-scale prediction
+      (YOLOv3), then anchor-free heads, separate classification and regression branches and heavy
+      [[data-augmentation|data augmentation]]; recent releases also handle
+      [[instance-segmentation|instance segmentation]], [[pose-estimation|pose estimation]] and
+      rotated boxes. YOLOv10 (2024) dropped [[non-maximum-suppression|non-maximum suppression]] to
+      simplify deployment, and Ultralytics YOLO26 (released January 2026) offers an optional
+      NMS-free prediction head. YOLO models are a default choice for detection on edge devices,
+      drones, robots and video analytics.
+    example: >-
+      We fine-tuned a small YOLO model on 3,000 labeled shelf photos and it runs at 60 fps on the
+      store's camera box.
+origin: >-
+  Introduced by Joseph Redmon, Santosh Divvala, Ross Girshick and Ali Farhadi (University of
+  Washington, Allen Institute for AI, Facebook AI Research) in a June 2015 arXiv paper presented at
+  CVPR 2016; the name puns on the slogan 'you only live once'. Redmon released YOLOv2 and YOLOv3,
+  then left vision research in 2020 citing military and privacy uses; later versions came from other
+  groups, notably the company Ultralytics.
+year: 2015
+note: >-
+  Version numbers are not one lineage: YOLOv4, v6, v7, v9, v10 and v12 come from different academic
+  and industrial teams, and 'YOLO' now names a design style as much as a model. As of October 2026,
+  Ultralytics had unveiled YOLO27 (September 2026) but not yet released it. Not to be confused with
+  a [[yolo-run|YOLO run]].
+see_also:
+  - object detection
+  - R-CNN
+  - DETR
+  - non-maximum suppression
+  - anchor box
+  - edge AI
+contrast:
+  - R-CNN
+sources:
+  - text: >-
+      Redmon, J., Divvala, S., Girshick, R. & Farhadi, A. (2016). You Only Look Once: Unified,
+      Real-Time Object Detection. CVPR 2016.
+    url: https://arxiv.org/abs/1506.02640
+  - text: >-
+      Sapkota, R. & Karkee, M. (2025). Ultralytics YOLO Evolution: An Overview of YOLO26, YOLO11,
+      YOLOv8, and YOLOv5 Object Detectors for Computer Vision and Pattern Recognition.
+      arXiv:2510.09653 (v4, September 2026, retitled to add YOLO27).
+    url: https://arxiv.org/abs/2510.09653
+  - text: >-
+      Ultralytics (2026). Key highlights from Ultralytics YOLO Vision 2026. Ultralytics blog.
+    url: https://www.ultralytics.com/blog/key-highlights-from-ultralytics-yolo-vision-2026
+as_of: 2026-10

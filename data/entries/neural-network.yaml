@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neural network
+id: neural-network
+pos: n.
+also:
+  - artificial neural network
+  - ANN
+  - neural net
+  - NN
+domain: core
+domains:
+  - dl
+  - hist
+level: essential
+plain: >-
+  A kind of computer program that learns a task from examples by tuning thousands to billions of
+  connections between simple number-crunching units, an arrangement loosely inspired by nerve cells
+  in the brain.
+senses:
+  - context: Machine learning
+    definition: >-
+      A [[model|model]] that builds a complicated function out of many instances of one simple
+      operation, the [[artificial-neuron|artificial neuron]], which takes a weighted sum of its
+      inputs, adds a [[bias|bias]] and applies a nonlinear [[activation-function|activation
+      function]]. Units are usually organized in [[layer|layers]], each feeding the next, and the
+      connection strengths, or [[weights|weights]], are [[parameter|parameters]] fitted to data,
+      usually by [[backpropagation|backpropagation]] and [[gradient-descent|gradient descent]] on a
+      [[loss-function|loss function]]. With enough units, networks can approximate a very wide class
+      of functions (the [[universal-approximation-theorem|universal approximation theorem]]).
+      Architectures differ in how units connect: [[feedforward-neural-network|feedforward]] networks
+      such as the [[multilayer-perceptron|multilayer perceptron]];
+      [[convolutional-neural-network|convolutional]] networks for grids such as images;
+      [[recurrent-neural-network|recurrent]] networks for sequences; [[graph-neural-network|graph]]
+      networks; and [[transformer|transformers]], which underlie [[large-language-model|large
+      language models]]. Training networks with many layers is the subject of [[deep-learning|deep
+      learning]].
+    example: >-
+      The neural network learned to flag weld defects that the inspectors' checklist missed.
+  - context: Neuroscience
+    definition: >-
+      A population of biological neurons connected by synapses, such as a circuit in the brain.
+      Artificial networks borrowed the vocabulary of neurons, synapses and firing from neuroscience,
+      but they are drastically simplified and are trained by methods, such as backpropagation, with
+      no established counterpart in brains.
+origin: >-
+  Warren McCulloch and Walter Pitts's 1943 paper modeled neurons as logical threshold units
+  connected in 'nets'; Frank Rosenblatt's [[perceptron|perceptron]] (1958) added learning. After the
+  critique in [[perceptrons-book|Perceptrons]] (1969), the approach revived in the 1980s with
+  backpropagation and the [[connectionism|connectionist]] movement, when 'artificial neural network'
+  became standard, and again after 2006 under the banner of [[deep-learning|deep learning]].
+year: 1943
+note: >-
+  The brain analogy is loose: artificial neurons are arithmetic operations, not cells, and talk of a
+  network 'thinking' is metaphor. 'Neural network' names the model family; [[deep-learning|deep
+  learning]] names the practice of training deep ones.
+see_also:
+  - artificial neuron
+  - deep learning
+  - perceptron
+  - backpropagation
+  - McCulloch–Pitts neuron
+  - transformer
+  - connectionism
+  - weights
+contrast:
+  - symbolic AI
+  - decision tree
+sources:
+  - text: >-
+      McCulloch, W. S. & Pitts, W. (1943). A Logical Calculus of the Ideas Immanent in Nervous
+      Activity. Bulletin of Mathematical Biophysics, 5, 115–133.
+  - text: >-
+      Rumelhart, D. E., Hinton, G. E. & Williams, R. J. (1986). Learning Representations by
+      Back-propagating Errors. Nature, 323, 533–536.

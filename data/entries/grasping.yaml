@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: grasping
+id: grasping
+pos: n.
+also:
+  - robotic grasping
+  - grasp
+  - grasp planning
+  - grasp synthesis
+  - grasp detection
+domain: robot
+domains:
+  - percep
+  - rl
+level: core
+plain: >-
+  How a robot picks up and holds an object securely with a gripper or hand: deciding where to put
+  its fingers or suction cup and how hard to squeeze.
+senses:
+  - definition: >-
+      The robotic problem of choosing and executing a configuration of an [[end-effector|end
+      effector]] on an object — contact locations, approach direction, finger closure and force — so
+      that the object is held stably despite disturbances, often in a way that suits the next step
+      of a task (grasping a mug by its handle in order to pour). Analytical grasp planning uses
+      object geometry and contact mechanics: a grasp achieves force closure if its contacts can
+      resist any external force and torque, and quality metrics score how robustly. Data-driven
+      methods instead predict grasp success from camera or depth images with
+      [[convolutional-neural-network|convolutional networks]] trained on large synthetic datasets,
+      such as Dex-Net, or on real trial and error, as in Google's multi-arm grasping experiments and
+      QT-Opt. Suction cups and parallel-jaw grippers dominate industrial picking;
+      [[tactile-sensing|tactile sensing]] and closed-loop regrasping help with slippery, transparent
+      or deformable objects. Grasping is one stage of [[manipulation|manipulation]], preceded by
+      perception and followed by transport and placement.
+    example: >-
+      The planner tries the top-ranked suction point first, then falls back to the parallel gripper.
+origin: >-
+  Analytical grasp theory grew out of 1980s research on multi-fingered hands and contact mechanics,
+  notably Kenneth Salisbury's work on the Stanford/JPL hand and closure analyses by Van-Duc Nguyen
+  and others. Learning-based grasping took off between 2015 and 2018 with deep networks, Dex-Net
+  (Jeffrey Mahler, Ken Goldberg and colleagues, 2017) and large-scale self-supervised data
+  collection.
+note: >-
+  'Grasp' is also a count noun for one candidate hand pose, as in 'grasp detection'. Force closure
+  is a property of where the contacts are, not of how hard the gripper squeezes.
+see_also:
+  - manipulation
+  - end effector
+  - dexterous manipulation
+  - tactile sensing
+  - robot learning
+  - pose estimation
+sources:
+  - text: >-
+      Mahler, J. et al. (2017). Dex-Net 2.0: Deep Learning to Plan Robust Grasps with Synthetic
+      Point Clouds and Analytic Grasp Metrics. Robotics: Science and Systems.
+  - text: >-
+      Levine, S. et al. (2018). Learning hand-eye coordination for robotic grasping with deep
+      learning and large-scale data collection. International Journal of Robotics Research 37(4–5).

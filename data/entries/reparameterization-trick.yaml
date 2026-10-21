@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reparameterization trick
+id: reparameterization-trick
+pos: n.
+also:
+  - reparametrization trick
+  - pathwise gradient
+  - pathwise derivative estimator
+  - reparameterization gradient
+domain: gen
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A trick that rewrites a random draw as fixed numbers plus separate, outside randomness, so that a
+  neural network can still learn through a step that involves chance.
+senses:
+  - definition: >-
+      A technique for computing low-variance gradients of an expectation with respect to the
+      parameters of the distribution being sampled. Instead of drawing z directly from q_φ(z), one
+      writes z as a deterministic, differentiable function of φ and parameter-free noise — for a
+      Gaussian, z = μ + σ ⊙ ε with ε drawn from a standard normal — so that gradients flow through μ
+      and σ by ordinary [[backpropagation|backpropagation]]. It is what makes the
+      [[variational-autoencoder|variational autoencoder]] trainable end to end, and it is also used
+      in [[soft-actor-critic|soft actor–critic]], Bayesian neural networks and other stochastic
+      models. Compared with the score-function ([[reinforce|REINFORCE]]) estimator it usually has
+      much lower variance, but it requires a differentiable sampling path; discrete variables need
+      continuous relaxations such as the Gumbel-softmax (Concrete) distribution.
+formula_latex: \nabla_\phi \, \mathbb{E}_{z \sim q_\phi}[f(z)] = \mathbb{E}_{\epsilon \sim
+  \mathcal{N}(0, I)}\big[\nabla_\phi f(\mu_\phi + \sigma_\phi \odot \epsilon)\big]
+origin: >-
+  Pathwise gradient estimators were developed in operations research and simulation from the 1980s.
+  Diederik Kingma and Max Welling named the 'reparameterization trick' in 'Auto-Encoding Variational
+  Bayes' (posted December 2013); Danilo Rezende, Shakir Mohamed and Daan Wierstra described the same
+  idea as stochastic backpropagation weeks later.
+year: 2013
+see_also:
+  - variational autoencoder
+  - evidence lower bound
+  - REINFORCE
+  - backpropagation
+  - soft actor–critic
+  - policy gradient
+contrast:
+  - REINFORCE
+sources:
+  - text: >-
+      Kingma, D. P. & Welling, M. (2013). Auto-Encoding Variational Bayes. arXiv:1312.6114.
+    url: https://arxiv.org/abs/1312.6114
+  - text: >-
+      Rezende, D. J., Mohamed, S. & Wierstra, D. (2014). Stochastic Backpropagation and Approximate
+      Inference in Deep Generative Models. arXiv:1401.4082.
+    url: https://arxiv.org/abs/1401.4082

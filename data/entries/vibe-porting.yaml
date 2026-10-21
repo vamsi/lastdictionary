@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vibe porting
+id: vibe-porting
+pos: n.
+also:
+  - vibe-port
+  - vibespiling
+domain: eng
+domains:
+  - agents
+  - gov
+labels:
+  - slang
+  - emerging
+level: specialist
+plain: >-
+  Using AI coding agents to translate a whole software project into another programming language,
+  usually checking the result against the original project's tests.
+senses:
+  - definition: >-
+      The use of [[coding-agent|coding agents]] to port an existing codebase from one programming
+      language to another, or to reimplement it from scratch, typically using the original project's
+      test suite both as the specification and as an automatic check of the result. Ports that once
+      took months were reported in hours: in December 2025 Simon Willison ported an HTML5 parser
+      from Python to JavaScript in about four and a half hours. The practice raised legal questions
+      in 2026 about whether agent-written reimplementations escape the original's license. When the
+      maintainer of the Python library chardet released an AI-assisted 'ground-up' rewrite under the
+      permissive MIT license in March 2026, its original author objected that LGPL code could not be
+      relicensed this way, reviving debate over what counts as a clean-room implementation when the
+      model may have been trained on the original.
+    example: >-
+      We vibe-ported the validator to Rust over a weekend; the old test suite did most of the
+      reviewing.
+origin: >-
+  Formed on the model of [[vibe-coding|vibe coding]] and used by Simon Willison from December 2025
+  as a recurring blog category; Anil Madhavapeddy used the related 'vibespiling' (vibe transpiling)
+  the same month. Usage is still largely confined to developer blogs.
+year: 2025
+note: >-
+  Using reimplementation to shed copyleft obligations has been dubbed 'license washing'. A co-author
+  of the GPLv3 and LGPLv3 saw no clear basis for requiring the chardet rewrite to stay under the
+  LGPL, which shows how unsettled the question is.
+see_also:
+  - vibe coding
+  - agentic coding
+  - coding agent
+  - AI copyright litigation
+  - fair use and AI training
+  - dark factory
+sources:
+  - text: >-
+      Willison, S. (2026). Can coding agents relicense open source through a "clean room"
+      implementation of code? Simon Willison's Weblog, 5 March 2026.
+    url: https://simonwillison.net/2026/Mar/5/chardet/
+  - text: >-
+      Willison, S. (2025). I ported JustHTML from Python to JavaScript with Codex CLI and GPT-5.2 in
+      4.5 hours. Simon Willison's Weblog, 15 December 2025.
+    url: https://simonwillison.net/2025/Dec/15/porting-justhtml/
+  - text: Willison, S. Posts tagged vibe-porting. Simon Willison's Weblog.
+    url: https://simonwillison.net/tags/vibe-porting/
+as_of: 2026-10

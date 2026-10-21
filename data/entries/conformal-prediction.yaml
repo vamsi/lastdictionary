@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: conformal prediction
+id: conformal-prediction
+pos: n.
+also:
+  - conformal inference
+  - split conformal prediction
+  - inductive conformal prediction
+  - conformalized quantile regression
+  - prediction set
+  - nonconformity score
+domain: ml
+domains:
+  - math
+  - eval
+  - safety
+level: specialist
+plain: >-
+  A way to wrap any prediction model so that, instead of one guess, it gives a range or set of
+  answers that contains the truth a chosen share of the time, such as 90%.
+senses:
+  - definition: >-
+      A framework for turning the outputs of any predictive model into prediction sets (for
+      classification) or intervals (for regression) with a guaranteed coverage rate: for a chosen
+      error level α, the set contains the true answer with probability at least 1 − α, assuming only
+      that the data are exchangeable, as independent and identically distributed data are. In the
+      widely used split (inductive) version, a held-out calibration set is scored with a
+      nonconformity score — such as the absolute residual, or one minus the probability given to the
+      true class — and a quantile of those scores, with a small finite-sample correction, sets the
+      threshold for new predictions. The guarantee holds for any model and sample size but is
+      marginal, averaged over inputs rather than conditional on each one, and it is no longer
+      guaranteed under [[distribution-shift|distribution shift]] that breaks exchangeability.
+      Adaptive scores give harder inputs larger sets, a practical uncertainty signal; applications
+      include medical triage, [[quantile-regression|quantile regression]] intervals and calibrated
+      [[abstention|abstention]] or fact filtering for [[large-language-model|language models]].
+    example: >-
+      With split conformal prediction at α = 0.1, the classifier returns one label for easy scans
+      and three for ambiguous ones.
+formula_latex: \Pr\big(Y_{n+1} \in C(X_{n+1})\big) \ge 1 - \alpha
+origin: >-
+  Introduced by Alexander Gammerman, Vladimir Vovk and Vladimir Vapnik in 1998 ('learning by
+  transduction'), followed by a p-value formulation from Craig Saunders and colleagues (1999) and
+  the split variant, first called inductive confidence machines, by Harris Papadopoulos and
+  colleagues (2002). Vovk, Gammerman and Glenn Shafer's 'Algorithmic Learning in a Random World'
+  (2005) systematized it, and work by Jing Lei, Larry Wasserman and others in the 2010s spread it
+  through statistics.
+year: 1998
+note: >-
+  A 90% guarantee is an average over the data distribution: sets can systematically miss for
+  particular subgroups. The name refers to how well a new example 'conforms' to earlier ones, not to
+  conformal maps in geometry.
+see_also:
+  - calibration
+  - quantile regression
+  - abstention
+  - distribution shift
+  - confidence interval
+  - bootstrap
+contrast:
+  - calibration
+sources:
+  - text: >-
+      Vovk, V., Gammerman, A. & Shafer, G. (2005). Algorithmic Learning in a Random World. Springer.
+  - text: >-
+      Angelopoulos, A. N. & Bates, S. (2021). A Gentle Introduction to Conformal Prediction and
+      Distribution-Free Uncertainty Quantification. arXiv:2107.07511.

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: protected attribute
+id: protected-attribute
+pos: n.
+also:
+  - protected characteristic
+  - protected class
+  - sensitive attribute
+  - protected ground
+domain: society
+domains:
+  - gov
+  - ml
+labels:
+  - legal
+level: core
+plain: >-
+  A personal trait, such as race, sex, religion, age or disability, that the law says must not be
+  used to treat people unfairly.
+senses:
+  - definition: >-
+      A personal characteristic on which discrimination is prohibited by law, and, in
+      [[algorithmic-fairness|algorithmic fairness]], the variable (often written A) across whose
+      values fairness is measured. Lists vary by jurisdiction and sector: US federal law covers
+      race, color, religion, sex, national origin, age (40 and over), disability and genetic
+      information, among others; the UK Equality Act 2010 names nine protected characteristics;
+      Article 21 of the EU Charter of Fundamental Rights gives an open-ended list. Deleting the
+      attribute from a model's inputs rarely prevents discrimination, because other features act as
+      proxies (see [[fairness-through-unawareness|fairness through unawareness]]), while measuring
+      or correcting bias usually requires collecting it, which creates tension with data-protection
+      rules on sensitive data.
+    example: >-
+      We hold out the protected attribute from training but keep it in the evaluation set so we can
+      measure disparities.
+origin: >-
+  The legal idea comes from civil-rights legislation such as the US Civil Rights Act of 1964
+  ('protected class' became the usual term in later case law). 'Sensitive attribute' and 'protected
+  attribute' became standard machine-learning vocabulary with discrimination-aware data mining from
+  about 2008.
+note: >-
+  The GDPR's 'special categories of personal data' (Art. 9), such as ethnic origin or health,
+  overlap with but differ from protected grounds. The EU AI Act lets providers of high-risk systems
+  process such data under strict safeguards where strictly necessary to detect and correct bias;
+  since July 2026 this rule (formerly Art. 10(5)) is Article 4a, which extends it to deployers and
+  to other AI systems and models.
+see_also:
+  - algorithmic bias
+  - disparate impact
+  - proxy discrimination
+  - fairness through unawareness
+  - demographic parity
+  - group fairness
+sources:
+  - text: Equality Act 2010 (UK), c. 15, Part 2, Chapter 1.
+standards: >-
+  UK Equality Act 2010, s. 4 ('protected characteristics'); Charter of Fundamental Rights of the
+  European Union, Art. 21
+as_of: 2026-10

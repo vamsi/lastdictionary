@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tensor parallelism
+id: tensor-parallelism
+pos: n.
+also:
+  - TP
+  - intra-layer model parallelism
+  - tensor model parallelism
+  - tensor slicing
+domain: train
+domains:
+  - hw
+  - infer
+level: specialist
+plain: >-
+  Splitting the individual giant tables of numbers inside each layer of a model across several
+  chips, so that every chip does a slice of every calculation at the same time.
+senses:
+  - definition: >-
+      A form of [[model-parallelism|model parallelism]] that shards individual weight matrices
+      within a layer across devices, so that each device computes part of every
+      [[matrix-multiplication|matrix multiplication]]. In the Megatron-LM scheme for
+      [[transformer|transformers]], the first linear layer of the
+      [[feed-forward-network|feed-forward network]] is split by columns and the second by rows, so
+      the feed-forward block needs only one [[all-reduce|all-reduce]] in the forward pass and one in
+      the backward pass; attention is split by heads in the same way. Tensor parallelism cuts
+      per-device memory for weights and activations and the latency of each step, but its frequent,
+      latency-sensitive collectives need very high bandwidth, so it is normally kept within a node
+      or rack linked by [[nvlink|NVLink]] or similar, at degrees of about 2–8 (more on rack-scale
+      systems). It is also widely used at inference to serve models too large for one accelerator,
+      and is often paired with [[sequence-parallelism|sequence parallelism]] for the operations
+      between the matrix multiplications.
+    example: >-
+      We run tensor parallelism of 8 inside each node and pipeline parallelism across nodes.
+origin: >-
+  Generalized by Noam Shazeer and colleagues' Mesh-TensorFlow (2018), which let any tensor dimension
+  be split over a processor mesh, and made standard for GPU transformer training by Mohammad Shoeybi
+  and colleagues' Megatron-LM (NVIDIA, 2019), which called it intra-layer model parallelism; 'tensor
+  parallelism' became the usual name by about 2021.
+year: 2018
+see_also:
+  - model parallelism
+  - Megatron-LM
+  - pipeline parallelism
+  - sequence parallelism
+  - all-reduce
+  - NVLink
+  - 3D parallelism
+sources:
+  - text: >-
+      Shoeybi, M., Patwary, M., Puri, R., LeGresley, P., Casper, J. & Catanzaro, B. (2019).
+      Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism.
+      arXiv:1909.08053.
+    url: https://arxiv.org/abs/1909.08053
+  - text: >-
+      Shazeer, N. et al. (2018). Mesh-TensorFlow: Deep Learning for Supercomputers. arXiv:1811.02084.
+    url: https://arxiv.org/abs/1811.02084

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LangChain
+id: langchain
+pos: prop. n.
+also:
+  - LangChain Expression Language
+  - LCEL
+  - LangSmith
+  - langchain-classic
+domain: eng
+domains:
+  - agents
+  - llm
+labels:
+  - trademark
+level: core
+plain: >-
+  A popular free software toolkit, and the company behind it, for building applications that connect
+  AI language models to documents, databases, tools and multi-step workflows.
+senses:
+  - definition: >-
+      An open-source framework, in Python and JavaScript, for building applications and
+      [[ai-agent|agents]] on [[large-language-model|language models]], and the company that
+      maintains it. Its integrations put several hundred third-party services, from model vendors
+      and [[embedding|embedding]] services to [[vector-database|vector stores]], document loaders
+      and [[tool|tools]], behind shared programming interfaces, alongside components for prompts,
+      output parsing, memory and [[retrieval-augmented-generation|retrieval]]. Early versions
+      centered on 'chains' — fixed sequences of model calls and processing steps — composed from
+      2023 with the LangChain Expression Language. Version 1.0 (October 2025) recentered the library
+      on a single agent abstraction that runs a tool-calling [[agent-loop|agent loop]] on the
+      [[langgraph|LangGraph]] runtime, with middleware hooks for features such as human approval,
+      summarization and personal-data redaction, and moved legacy chains to a separate package. The
+      company also sells LangSmith, a platform for [[llm-observability|tracing]], evaluation and
+      deployment. LangChain was the most widely adopted framework of the 2023 boom and drew
+      sustained criticism for heavy abstraction and frequent breaking changes.
+    example: >-
+      We used LangChain for the prototype because it already had loaders for every document format
+      we needed.
+origin: >-
+  Released as an open-source Python library in October 2022 by Harrison Chase, then a
+  machine-learning engineer at the startup Robust Intelligence, weeks before [[chatgpt|ChatGPT]]'s
+  launch; Chase co-founded the company in early 2023. The name joins 'language model' and 'chain'.
+  LangChain 1.0 and LangGraph 1.0 were released together on 22 October 2025.
+year: 2022
+note: >-
+  A chain in the original sense, a scripted sequence of model calls, is close to
+  [[prompt-chaining|prompt chaining]]. Critics argued that the abstractions hid the prompts actually
+  sent to models; the 1.0 redesign aimed to address this.
+see_also:
+  - LangGraph
+  - LlamaIndex
+  - agent framework
+  - retrieval-augmented generation
+  - prompt chaining
+  - LLM observability
+  - DSPy
+sources:
+  - text: >-
+      LangChain (2025). LangChain and LangGraph Agent Frameworks Reach v1.0 Milestones. LangChain
+      blog, 22 October 2025.
+    url: https://www.langchain.com/blog/langchain-langgraph-1dot0
+as_of: 2026-10

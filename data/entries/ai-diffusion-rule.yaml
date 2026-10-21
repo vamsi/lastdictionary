@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI Diffusion Rule
+id: ai-diffusion-rule
+pos: prop. n.
+also:
+  - Framework for Artificial Intelligence Diffusion
+  - AI diffusion framework
+domain: gov
+domains:
+  - hw
+  - hist
+labels:
+  - legal
+  - historical
+level: specialist
+plain: >-
+  A 2025 US rule, cancelled before it took effect, that would have sorted the world's countries into
+  three groups with different limits on how many advanced AI chips they could buy.
+senses:
+  - definition: >-
+      An interim final rule issued by the US Bureau of Industry and Security on January 13, 2025, in
+      the last week of the Biden administration, to govern the worldwide spread of advanced AI
+      computing. It sorted destinations into three tiers: the United States and 18 close allies and
+      partners (Tier 1) could receive advanced chips without restriction; arms-embargoed countries
+      including China and Russia (Tier 3) were effectively barred; and most other countries (Tier 2)
+      faced caps on total computing power, which companies could exceed by qualifying as 'validated
+      end users' meeting security standards. Small orders, below roughly 1,700 H100-equivalents,
+      were exempt. It also created the first export control on AI [[weights|model weights]] (ECCN
+      4E091), covering closed models trained with more than 10²⁶ operations while exempting
+      [[open-weight-model|open-weight models]]. Chipmakers, cloud providers and many Tier 2
+      governments objected, and on May 13, 2025, two days before its May 15 compliance date, the
+      Trump administration announced that it would not enforce the rule and would rescind it.
+    example: >-
+      Under the AI Diffusion Rule, a data center in a Tier 2 country would have needed
+      validated-end-user status to exceed its cap.
+origin: >-
+  Developed by the Commerce Department under Secretary Gina Raimondo and published in the Federal
+  Register in January 2025; its rescission was announced on May 13, 2025 together with guidance that
+  using Huawei's Ascend chips anywhere risked violating US export controls.
+year: 2025
+note: >-
+  Its successor policy relied on bilateral arrangements, notably large chip and data-center
+  agreements with the United Arab Emirates and Saudi Arabia in May 2025, rather than a global tier
+  system. It remains the most ambitious attempt so far to apply [[compute-governance|compute
+  governance]] worldwide.
+see_also:
+  - export controls on AI chips
+  - compute governance
+  - compute threshold
+  - know-your-customer for compute
+  - export control directive
+  - sovereign AI
+  - open-weight model
+sources:
+  - text: >-
+      Bureau of Industry and Security (2025). Framework for Artificial Intelligence Diffusion.
+      Interim final rule, 90 Fed. Reg. 4544 (January 15, 2025).
+  - text: >-
+      Akin Gump (2025). BIS Rescinds Its AI Diffusion Rule and Issues Compliance Guidance Regarding
+      Advanced Computing Items.
+standards: >-
+  Framework for Artificial Intelligence Diffusion, 90 Fed. Reg. 4544 (January 15, 2025); rescission
+  announced by BIS on May 13, 2025
+as_of: 2026-10

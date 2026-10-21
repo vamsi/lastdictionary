@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Othello-GPT
+id: othello-gpt
+pos: prop. n.
+also:
+  - OthelloGPT
+domain: interp
+domains:
+  - llm
+  - hist
+level: specialist
+plain: >-
+  A small language model trained only on lists of moves from the board game Othello, which
+  researchers found had built an internal picture of the board — evidence that such models can form
+  world models.
+senses:
+  - definition: >-
+      A GPT-style [[transformer|transformer]] trained to predict legal next moves in the board game
+      Othello from sequences of move tokens alone, with no access to the board or the rules, used as
+      a test case for whether sequence models learn [[world-model|world models]]. Kenneth Li and
+      colleagues found that the board state could be recovered from its activations with nonlinear
+      [[probing|probes]] but not linear ones, and that editing the probed representation changed the
+      model's predictions in line with the edited board, showing that the representation is causally
+      used. Neel Nanda then showed that the board is linearly represented once squares are described
+      relative to the player to move — 'mine' versus 'theirs' rather than black versus white —
+      supporting the [[linear-representation-hypothesis|linear representation hypothesis]].
+      Othello-GPT became a standard [[toy-model|toy model]] for sparse-autoencoder and circuit
+      research and a touchstone in debates over whether language models learn only surface
+      statistics.
+    example: >-
+      As in Othello-GPT, a probe recovered the full board state from the residual stream.
+origin: >-
+  Introduced by Kenneth Li, Aspen Hopkins, David Bau, Fernanda Viégas, Hanspeter Pfister and Martin
+  Wattenberg in 'Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic
+  Task' (October 2022; ICLR 2023). Nanda's linear follow-up appeared as blog posts in March 2023 and
+  in a paper with Andrew Lee and Wattenberg (BlackboxNLP 2023).
+year: 2022
+see_also:
+  - world model
+  - probing
+  - linear representation hypothesis
+  - toy model
+  - linear probe
+  - mechanistic interpretability
+sources:
+  - text: >-
+      Li, K., Hopkins, A. K., Bau, D., Viégas, F., Pfister, H. & Wattenberg, M. (2023). Emergent
+      World Representations: Exploring a Sequence Model Trained on a Synthetic Task. ICLR 2023.
+      arXiv:2210.13382.
+    url: https://arxiv.org/abs/2210.13382
+  - text: >-
+      Nanda, N., Lee, A. & Wattenberg, M. (2023). Emergent Linear Representations in World Models of
+      Self-Supervised Sequence Models. BlackboxNLP 2023.

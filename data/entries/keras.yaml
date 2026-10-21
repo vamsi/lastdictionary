@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Keras
+id: keras
+pos: prop. n.
+also:
+  - tf.keras
+  - Keras 3
+  - Keras Core
+domain: eng
+domains:
+  - dl
+labels:
+  - trademark
+level: core
+plain: >-
+  A free, beginner-friendly Python library for building neural networks from ready-made layers in a
+  few lines of code, while a larger toolkit underneath does the heavy computing.
+senses:
+  - definition: >-
+      A high-level Python library for defining and training neural networks in very little code,
+      trading low-level control for brevity and readability. Models are assembled from layer objects
+      in one of three styles — the Sequential API for linear stacks, the functional API for graphs
+      of layers with multiple inputs and outputs, and subclassing for full control — then configured
+      with compile (choosing optimizer, [[loss-function|loss]] and metrics), trained with fit,
+      assessed with evaluate and applied with predict. Keras delegates tensor computation to a
+      backend: at first [[theano|Theano]], soon also [[tensorflow|TensorFlow]] and, from 2017,
+      Microsoft's CNTK. TensorFlow bundled it as tf.keras from 2017; after multi-backend Keras was
+      discontinued in 2019–2020 it was TensorFlow-only until Keras 3 (2023) added [[jax|JAX]] and
+      [[pytorch|PyTorch]] backends, so the same model code can run on different frameworks.
+      Companion libraries such as KerasHub provide pretrained models. Its compile-and-fit pattern
+      influenced many later high-level libraries.
+    example: >-
+      For the class project, a dozen lines of Keras produced a working image classifier.
+origin: >-
+  Created by François Chollet and released in March 2015, initially running on Theano. The name is
+  the Greek word for horn, alluding to the gate of horn in the Odyssey through which truthful dreams
+  pass. Google, where Chollet worked, made it TensorFlow's official high-level API, and Keras 3
+  restored multi-backend support in November 2023.
+year: 2015
+see_also:
+  - TensorFlow
+  - PyTorch
+  - JAX
+  - Theano
+  - deep learning
+  - scikit-learn

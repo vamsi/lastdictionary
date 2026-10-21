@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: teleoperation
+id: teleoperation
+pos: n.
+also:
+  - teleoperate
+  - teleoperated
+  - teleop
+  - remote operation
+  - telerobotics
+  - telepresence
+  - remote assistance
+domain: robot
+domains:
+  - data
+  - safety
+level: core
+plain: >-
+  Controlling a robot or machine from a distance, with a person steering it in real time using a
+  joystick, a matching 'puppet' arm, a VR headset or a screen.
+senses:
+  - definition: >-
+      Control of a robot or machine by a person who is not at its location, sending commands over a
+      link and receiving sensor feedback — usually video, sometimes force or touch. Interfaces range
+      from joysticks and screens to leader–follower setups, in which the operator moves a
+      kinematically matched leader arm and the remote follower copies it, and virtual-reality
+      headsets with hand tracking. Bilateral teleoperation returns contact forces to the operator
+      through haptics; delays on long or wireless links can destabilize such loops. Traditional uses
+      include handling hazardous materials, bomb disposal, deep-sea and space work, remote surgery
+      and drone piloting. Two newer uses matter for AI. Teleoperation is the main source of
+      demonstration data for [[imitation-learning|imitation learning]] in [[robot-learning|robot
+      learning]], made cheap by low-cost rigs such as ALOHA; and it backs up autonomy, as when
+      remote operators assist stuck [[robotaxi|robotaxis]] or when makers of home robots have staff
+      complete tasks their software cannot. Whether a robot demonstration was teleoperated is
+      therefore an important disclosure.
+    example: >-
+      Half of the training data came from teleoperation with a leader–follower arm pair.
+origin: >-
+  From Greek tele-, 'far'. Raymond Goertz built mechanical and then electrically driven master–slave
+  manipulators at Argonne National Laboratory from the late 1940s to handle radioactive material;
+  Marvin Minsky's 1980 essay 'Telepresence' named the goal of feeling present at the remote site.
+note: >-
+  Teleoperated robots are not autonomous, and promotional videos sometimes blur the two. For
+  automated vehicles, 'remote assistance' (advising the vehicle) is distinguished from 'remote
+  driving' (controlling it directly).
+see_also:
+  - imitation learning
+  - robot learning
+  - action chunking
+  - human-in-the-loop
+  - robotaxi
+  - humanoid robot
+  - human–robot interaction
+sources:
+  - text: >-
+      Sheridan, T. B. (1992). Telerobotics, Automation, and Human Supervisory Control. MIT Press.
+  - text: Minsky, M. (1980). Telepresence. Omni, June 1980.
+as_of: 2026-10

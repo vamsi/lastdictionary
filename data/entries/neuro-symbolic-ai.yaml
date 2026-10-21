@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neuro-symbolic AI
+id: neuro-symbolic-ai
+pos: n.
+also:
+  - neurosymbolic AI
+  - neural-symbolic AI
+  - neuro-symbolic
+  - neurosymbolic
+  - neural-symbolic integration
+  - hybrid AI
+domain: sym
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  AI that combines neural networks, which learn patterns from data, with symbolic methods, which
+  follow explicit rules and logic, aiming for systems that both learn flexibly and reason reliably.
+senses:
+  - definition: >-
+      The family of approaches that integrate [[neural-network|neural networks]], which learn
+      statistical patterns from raw data, with [[symbolic-ai|symbolic]] components — logic, rules,
+      programs, [[knowledge-graph|knowledge graphs]], search procedures, solvers — which supply
+      explicit structure, exact reasoning, compositionality and interpretability. Integration takes
+      many forms: neural networks that call symbolic solvers or [[tool-use|tools]]; symbolic search
+      guided by learned heuristics, as in [[alphago|AlphaGo]]'s [[monte-carlo-tree-search|Monte
+      Carlo tree search]]; neural models that emit programs or logical forms executed symbolically,
+      as in [[program-aided-language-model|program-aided]] reasoning; differentiable relaxations of
+      logic used as layers or training constraints; and neural modules inside a symbolic
+      architecture. Prominent recent systems pair a [[large-language-model|language model]] that
+      proposes candidate steps with a symbolic engine that deduces their consequences or a proof
+      checker that verifies them, as in [[alphageometry|AlphaGeometry]] and
+      [[alphaproof|AlphaProof]] respectively. Proponents argue that such hybrids are needed for
+      robust reasoning and generalization; skeptics expect scaled neural networks to acquire these
+      abilities internally.
+    example: >-
+      It's a neuro-symbolic pipeline: the model writes Datalog rules and the engine evaluates them.
+origin: >-
+  Research on 'neural-symbolic' integration dates from the late 1980s and early 1990s and was
+  consolidated in Artur d'Avila Garcez, Krysia Broda and Dov Gabbay's Neural-Symbolic Learning
+  Systems (2002). The label 'neuro-symbolic' (or 'neurosymbolic') spread widely from about 2019,
+  with the MIT–IBM Neuro-Symbolic Concept Learner and Henry Kautz's 2020 AAAI lecture 'The Third AI
+  Summer', which classified integration types; Gary Marcus has long argued for hybrid models.
+note: >-
+  The label covers very different systems, from a chatbot that calls a calculator to differentiable
+  theorem provers, so general claims about 'neuro-symbolic AI' deserve scrutiny. The
+  symbolic–connectionist debate and the [[neats-and-scruffies|neats and scruffies]] dispute are its
+  historical background.
+see_also:
+  - symbolic AI
+  - connectionism
+  - program synthesis
+  - AlphaGeometry
+  - AlphaProof
+  - Markov logic network
+  - tool use
+  - Gary Marcus
+contrast:
+  - connectionism
+sources:
+  - text: >-
+      d'Avila Garcez, A. S., Broda, K. B. & Gabbay, D. M. (2002). Neural-Symbolic Learning Systems:
+      Foundations and Applications. Springer.
+  - text: >-
+      Mao, J., Gan, C., Kohli, P., Tenenbaum, J. B. & Wu, J. (2019). The Neuro-Symbolic Concept
+      Learner. ICLR 2019.
+  - text: >-
+      Kautz, H. (2022). The Third AI Summer: AAAI Robert S. Engelmore Memorial Lecture. AI Magazine
+      43(1), 105–125.
+as_of: 2026-10

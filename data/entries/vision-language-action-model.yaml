@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vision-language-action model
+id: vision-language-action-model
+pos: n.
+also:
+  - VLA
+  - VLA model
+  - vision-language-action
+domain: robot
+domains:
+  - llm
+  - percep
+  - rl
+labels:
+  - emerging
+level: core
+plain: >-
+  An AI model that looks through a robot's cameras, reads an instruction such as 'put the cup in the
+  sink', and turns both straight into the robot's movements.
+senses:
+  - definition: >-
+      A [[robot-foundation-model|robot foundation model]] made by teaching a pretrained
+      [[vision-language-model|vision-language model]] to act: from camera images, a natural-language
+      instruction and usually the robot's joint readings it produces motor commands, so that what
+      the model absorbed from web-scale images and text — object names, spatial relations, simple
+      reasoning — carries over to control. Actions are emitted either as discrete [[token|tokens]]
+      decoded autoregressively (RT-2 split each action dimension into 256 bins) or as continuous
+      values from a [[diffusion-model|diffusion]] or [[flow-matching|flow matching]] 'action expert'
+      attached to the language backbone, as in π0, which outputs [[action-chunking|chunks]] of
+      future actions for smooth, high-frequency control. Training mixes demonstration data from many
+      robots ([[open-x-embodiment|Open X-Embodiment]]) with vision-language data that preserves
+      general knowledge. Many systems pair a slower reasoning component with a fast reactive
+      controller. Open problems include reliability over long tasks, contact-rich
+      [[dexterous-manipulation|dexterity]], safety and comparable evaluation.
+    example: >-
+      We fine-tuned an open VLA on 200 demonstrations, and it handled mugs it had never seen.
+origin: >-
+  Named in Google DeepMind's RT-2 paper (Anthony Brohan and colleagues, July 2023), which called its
+  models 'vision-language-action models (VLA)'. Open-weight successors followed, including OpenVLA
+  (7 billion parameters, June 2024) and Physical Intelligence's π0 (October 2024); by 2025–2026
+  systems such as Gemini Robotics, NVIDIA's GR00T N models, Figure's Helix and later π models made
+  VLAs the dominant paradigm in robot learning.
+year: 2023
+note: >-
+  Not every robot foundation model is a VLA: some take no language input or are trained without a
+  vision-language backbone. Reported success rates depend heavily on the robots, tasks and scenes
+  used and are rarely comparable across papers.
+see_also:
+  - RT-2
+  - robot foundation model
+  - generalist robot policy
+  - vision-language model
+  - diffusion policy
+  - action chunking
+  - Open X-Embodiment
+  - cross-embodiment learning
+contrast:
+  - vision-language model
+sources:
+  - text: >-
+      Brohan, A. et al. (2023). RT-2: Vision-Language-Action Models Transfer Web Knowledge to
+      Robotic Control. arXiv:2307.15818.
+    url: https://arxiv.org/abs/2307.15818
+  - text: >-
+      Kim, M. J. et al. (2024). OpenVLA: An Open-Source Vision-Language-Action Model.
+      arXiv:2406.09246.
+    url: https://arxiv.org/abs/2406.09246v3
+  - text: >-
+      Black, K. et al. (2024). π0: A Vision-Language-Action Flow Model for General Robot Control.
+      arXiv:2410.24164.
+    url: https://arxiv.org/abs/2410.24164v1
+as_of: 2026-10

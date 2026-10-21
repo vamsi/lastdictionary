@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RMSProp
+id: rmsprop
+pos: prop. n.
+also:
+  - root mean square propagation
+domain: dl
+domains:
+  - rl
+level: core
+plain: >-
+  A training method that scales each setting's step by how large its recent changes have been, so
+  jumpy settings move cautiously and quiet ones move faster.
+senses:
+  - definition: >-
+      An adaptive [[optimizer|optimizer]] that divides each parameter's gradient by the square root
+      of an exponential moving average of its recent squared gradients — the root mean square that
+      gives the method its name — typically with decay 0.9 or 0.99 and a small constant added for
+      stability. Like [[adagrad|AdaGrad]] it equalizes step sizes across parameters whose gradients
+      differ widely in scale, but because old gradients are forgotten the effective
+      [[learning-rate|learning rate]] does not shrink to zero, which suits the non-stationary,
+      non-convex objectives of deep learning. Variants add [[momentum|momentum]] or 'center' the
+      estimate by subtracting the squared mean gradient. RMSProp trained several landmark
+      [[deep-reinforcement-learning|deep reinforcement learning]] systems, including the 2015
+      [[deep-q-network|deep Q-network]] and [[a3c|A3C]]; adding momentum on the gradient and bias
+      correction turns it essentially into [[adam|Adam]].
+    example: The DQN baseline uses RMSProp with a learning rate of 2.5e-4.
+origin: >-
+  Presented by Geoffrey Hinton in lecture 6 of his 2012 Coursera course 'Neural Networks for Machine
+  Learning'. Accounts of who devised it differ: the customary citation pairs Hinton with Tijmen
+  Tieleman, while some accounts credit Hinton's students James Martens and Ilya Sutskever. The name
+  echoes Rprop ('resilient propagation', Martin Riedmiller and Heinrich Braun, 1993), a sign-based
+  full-batch method that RMSProp adapts to mini-batches.
+year: 2012
+note: >-
+  Unusually for so widely used an algorithm, it has no paper; the customary citation is 'Tieleman &
+  Hinton (2012), Lecture 6.5'.
+see_also:
+  - AdaGrad
+  - Adam
+  - optimizer
+  - momentum
+  - learning rate
+  - deep Q-network
+sources:
+  - text: >-
+      Tieleman, T. & Hinton, G. (2012). Lecture 6.5 — RMSProp: Divide the gradient by a running
+      average of its recent magnitude. Coursera: Neural Networks for Machine Learning.

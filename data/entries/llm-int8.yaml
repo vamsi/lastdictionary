@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LLM.int8()
+id: llm-int8
+pos: prop. n.
+also:
+  - int8 inference
+  - 8-bit loading
+domain: infer
+domains:
+  - llm
+level: specialist
+plain: >-
+  An early, widely used method for running very large language models with 8-bit numbers, roughly
+  halving their memory needs, by keeping a few unusually large values at higher precision.
+senses:
+  - definition: >-
+      A method for running [[transformer|transformer]] language models with 8-bit integer matrix
+      multiplication without losing accuracy. Simple 8-bit schemes fail on large models because a
+      handful of hidden-state dimensions carry extreme values, 'outlier features' that its authors
+      showed appear systematically once models pass several billion parameters. LLM.int8() deals
+      with them in two parts: each row and column entering a matrix product gets its own scaling
+      constant (vector-wise [[quantization|quantization]]), and the few outlier dimensions are
+      pulled out and multiplied in 16-bit precision, a tiny fraction of the work, while everything
+      else uses 8-bit integers. This halved inference memory with no measurable degradation up to
+      175 billion parameters, enough to fit the largest open models of 2022, such as OPT-175B and
+      BLOOM, onto one machine with consumer graphics cards. Its integration into the bitsandbytes
+      library and Hugging Face Transformers made 8-bit loading routine and led directly to 4-bit
+      fine-tuning with [[qlora|QLoRA]].
+    example: >-
+      Load the model with LLM.int8() if your GPU has only half the memory the 16-bit weights need.
+origin: >-
+  Introduced by Tim Dettmers, Mike Lewis, Younes Belkada and Luke Zettlemoyer, from the University
+  of Washington, Meta AI and Hugging Face (arXiv, August 2022; NeurIPS 2022). The name is styled as
+  a method call that casts an LLM to 8-bit integers.
+year: 2022
+note: >-
+  The outlier features it documented became a central concern of later methods such as
+  [[smoothquant|SmoothQuant]] and [[awq|AWQ]], and of interpretability work on unusually large
+  activations.
+see_also:
+  - quantization
+  - post-training quantization
+  - SmoothQuant
+  - QLoRA
+  - GPTQ
+sources:
+  - text: >-
+      Dettmers, T., Lewis, M., Belkada, Y. & Zettlemoyer, L. (2022). LLM.int8(): 8-bit Matrix
+      Multiplication for Transformers at Scale. NeurIPS 2022. arXiv:2208.07339.
+    url: https://arxiv.org/abs/2208.07339

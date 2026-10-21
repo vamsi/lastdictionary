@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: infohazard
+id: infohazard
+pos: n.
+also:
+  - information hazard
+  - cognitohazard
+  - memetic hazard
+domain: culture
+domains:
+  - safety
+  - sec
+level: specialist
+plain: >-
+  Information that could cause harm simply by being shared or known — for example, details that
+  would make a dangerous weapon easier to build.
+senses:
+  - definition: >-
+      A danger posed by knowledge itself: true information whose circulation could do harm directly
+      or equip someone to do harm, in the sense formalized by Nick Bostrom. His typology
+      distinguishes, among others, data hazards (such as the genome of a dangerous pathogen), idea
+      hazards (a general approach that could be misused), attention hazards (signaling that
+      something is promising or vulnerable) and hazards to the knower. In AI governance the concept
+      underlies decisions to withhold model weights, dangerous-capability findings or research
+      details, and the concern about [[cbrn-risk|CBRN]] uplift that shapes model safeguards. In
+      internet culture, especially the [[rationalist-community|rationalist community]], the clipped
+      form 'infohazard' is also used loosely or jokingly for ideas thought harmful merely to
+      contemplate, of which [[roko-s-basilisk|Roko's basilisk]] is the best-known example.
+    example: >-
+      The team treated the jailbreak write-up as an infohazard and shared it only with the affected
+      labs.
+origin: >-
+  'Information hazard' was formalized by the philosopher Nick Bostrom in 'Information Hazards: A
+  Typology of Potential Harms from Knowledge' (Review of Contemporary Philosophy, 2011); the
+  contraction 'infohazard' spread on LessWrong and in collaborative fiction such as the SCP
+  Foundation wiki during the 2010s. The underlying concern is older, from nuclear secrecy to
+  dual-use research in biology.
+year: 2011
+note: >-
+  Labeling something an infohazard can itself draw attention to it, a dynamic Bostrom discusses and
+  the Streisand effect around Roko's basilisk illustrates.
+see_also:
+  - Roko's basilisk
+  - CBRN risk
+  - Nick Bostrom
+  - open-weight model
+  - rationalist community
+  - dual-use
+sources:
+  - text: >-
+      Bostrom, N. (2011). Information Hazards: A Typology of Potential Harms from Knowledge. Review
+      of Contemporary Philosophy, 10, 44–79.

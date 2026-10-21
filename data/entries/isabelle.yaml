@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Isabelle
+id: isabelle
+pos: prop. n.
+also:
+  - Isabelle/HOL
+  - Sledgehammer
+  - Archive of Formal Proofs
+domain: sym
+domains:
+  - math
+  - eng
+level: specialist
+plain: >-
+  A widely used proof-checking program in which people write mathematics and verified software; it
+  is known for automation that calls other theorem provers to finish routine steps.
+senses:
+  - definition: >-
+      A generic [[interactive-theorem-proving|proof assistant]] whose most widely used instance,
+      Isabelle/HOL, is based on higher-order logic. Following the LCF design, every proof is checked
+      by a small trusted kernel. Users write structured, human-readable proofs in the Isar language,
+      and the Sledgehammer tool sends goals to external [[automated-theorem-proving|automated
+      provers]] and [[satisfiability-modulo-theories|SMT solvers]] and then reconstructs their
+      proofs inside Isabelle, an approach to proof automation that other systems have imitated. The
+      Archive of Formal Proofs, a refereed online collection begun in 2004, holds a large body of
+      formalized mathematics and computer science. Isabelle/HOL was used to verify the seL4
+      operating-system microkernel and, alongside [[lean|Lean]], appears in machine-learning
+      theorem-proving benchmarks such as miniF2F.
+origin: >-
+  Created by Lawrence Paulson at the University of Cambridge and first released in 1986, then
+  developed jointly with Tobias Nipkow's group at the Technical University of Munich, with Makarius
+  Wenzel as a principal developer. Paulson named it after the daughter of Gérard Huet, a creator of
+  [[rocq|Coq]].
+year: 1986
+see_also:
+  - interactive theorem proving
+  - Lean
+  - Rocq
+  - automated theorem proving
+  - formal verification
+  - autoformalization
+sources:
+  - text: >-
+      Nipkow, T., Paulson, L. C. & Wenzel, M. (2002). Isabelle/HOL: A Proof Assistant for
+      Higher-Order Logic. LNCS 2283. Springer.
+  - text: >-
+      Klein, G. et al. (2009). seL4: Formal Verification of an OS Kernel. Proceedings of SOSP 2009,
+      207–220.

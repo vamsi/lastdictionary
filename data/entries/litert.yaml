@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LiteRT
+id: litert
+pos: prop. n.
+also:
+  - TensorFlow Lite
+  - TFLite
+  - LiteRT Micro
+  - .tflite
+domain: eng
+domains:
+  - infer
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  Google's free software for running AI models on phones, small gadgets and microcontrollers; it was
+  called TensorFlow Lite until 2024 and is used inside many Android and iPhone apps.
+senses:
+  - definition: >-
+      An open-source inference engine from Google that runs trained models on the device itself
+      rather than on a server; it was called TensorFlow Lite until 2024. Models are converted into a
+      compact FlatBuffers file (.tflite), usually with [[quantization|quantization]] to 8-bit
+      integers or 16-bit floating point, and executed by a small interpreter on Android, iOS,
+      embedded Linux and the web, and, in a reduced 'Micro' variant, on microcontrollers with only
+      kilobytes of memory. Delegates hand supported operations to GPUs, digital signal processors
+      and [[npu|NPUs]], including Google's Edge TPU. Although it began as part of
+      [[tensorflow|TensorFlow]], LiteRT accepts models converted from [[pytorch|PyTorch]] and
+      [[jax|JAX]] through Google's AI Edge tools, and it underlies higher-level offerings such as
+      MediaPipe and on-device generative-AI interfaces. It is among the most widely deployed
+      inference engines, powering vision, speech, text and recommendation features in mobile
+      applications.
+    example: >-
+      We quantized the keyword model to int8 and shipped it as a LiteRT file on the microcontroller.
+origin: >-
+  Announced as TensorFlow Lite at Google I/O in May 2017, with a developer preview that November,
+  succeeding TensorFlow Mobile. Google renamed it LiteRT, short for 'Lite Runtime', in September
+  2024 to reflect its support for models from several frameworks.
+year: 2017
+see_also:
+  - TensorFlow
+  - on-device AI
+  - TinyML
+  - Core ML
+  - ExecuTorch
+  - quantization
+  - edge AI
+sources:
+  - text: >-
+      Google for Developers (2024). TensorFlow Lite is now LiteRT. Google Developers Blog, 4
+      September 2024.
+    url: https://developers.googleblog.com/en/tensorflow-lite-is-now-litert/
+as_of: 2026-10

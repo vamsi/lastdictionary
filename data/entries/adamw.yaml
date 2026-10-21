@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AdamW
+id: adamw
+pos: prop. n.
+also:
+  - Adam with decoupled weight decay
+  - decoupled weight decay
+domain: dl
+domains:
+  - train
+  - llm
+level: core
+plain: >-
+  A corrected version of the popular Adam training method that applies its steady pull toward
+  smaller weights separately from the main update. It is the standard choice for training large
+  language models.
+senses:
+  - definition: >-
+      A variant of [[adam|Adam]] that applies [[weight-decay|weight decay]] directly to the
+      parameters — shrinking each by a small fraction at every step (in most libraries, the learning
+      rate times the decay coefficient) — instead of adding an L2 penalty to the loss. The
+      difference matters only for adaptive methods: Adam divides an L2 penalty's gradient by its
+      second-moment estimate, so weights with large historical gradients are shrunk less than
+      intended, whereas under plain [[stochastic-gradient-descent|stochastic gradient descent]] the
+      two formulations coincide. Decoupling restores uniform shrinkage, and its authors found that
+      it made good decay values much less dependent on the [[learning-rate|learning rate]]. AdamW
+      generally generalizes better than Adam with L2 and became the default optimizer for
+      [[transformer|transformer]] [[pretraining|pretraining]] and fine-tuning; a widely copied
+      large-language-model recipe (Meta's LLaMA, 2023) uses β₁ = 0.9, β₂ = 0.95, decay 0.1,
+      [[gradient-clipping|gradient clipping]] at 1.0, warmup and cosine decay. As of 2026 it remains
+      the baseline against which new optimizers such as [[muon|Muon]] are measured, and it still
+      trains the embeddings and normalization parameters of Muon-trained models.
+    example: >-
+      We fine-tuned with AdamW at 2e-5 and weight decay 0.01, excluding biases and norms from decay.
+origin: >-
+  Introduced by Ilya Loshchilov and Frank Hutter in 'Decoupled Weight Decay Regularization' (arXiv
+  November 2017, first circulated as 'Fixing Weight Decay Regularization in Adam'; ICLR 2019). BERT
+  (2018) already used a decoupled form, and deep-learning frameworks added dedicated AdamW classes
+  by 2019.
+year: 2017
+note: >-
+  In many libraries, plain 'Adam' with a weight_decay argument implements L2 regularization, not
+  AdamW — a common silent bug. Decoupled decay is usually multiplied by the scheduled learning rate,
+  so its effective strength depends on both.
+see_also:
+  - Adam
+  - weight decay
+  - regularization
+  - optimizer
+  - Muon
+  - learning rate schedule
+sources:
+  - text: >-
+      Loshchilov, I. & Hutter, F. (2019). Decoupled Weight Decay Regularization. ICLR 2019.
+    url: https://arxiv.org/abs/1711.05101
+as_of: 2026-10

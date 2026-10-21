@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: class imbalance
+id: class-imbalance
+pos: n.
+also:
+  - imbalanced data
+  - imbalanced classification
+  - class imbalance problem
+  - skewed classes
+  - minority class
+  - oversampling
+  - undersampling
+  - cost-sensitive learning
+  - class weighting
+domain: ml
+domains:
+  - data
+  - eval
+level: core
+plain: >-
+  When one category is far rarer than the others in the data — say, one fraud case per thousand
+  transactions — so a model can look accurate while missing nearly every rare case that matters.
+senses:
+  - definition: >-
+      A skew in the class distribution of a [[classification|classification]] dataset in which one
+      or more minority classes are much rarer than the majority, as in fraud detection, disease
+      screening or defect detection, where ratios of 1:100 to 1:10,000 are common. Imbalance makes
+      [[accuracy|accuracy]] misleading — always predicting the majority class can score 99.9% — and
+      pushes learners toward the majority, especially when minority examples are few in absolute
+      number or overlap with majority ones. Responses work at several levels: evaluating with
+      [[precision|precision]], [[recall|recall]], [[f1-score|F1 score]] and
+      [[precision-recall-curve|precision–recall]] analysis instead of accuracy; resampling, by
+      undersampling the majority, oversampling the minority or synthesizing examples with
+      [[smote|SMOTE]]; cost-sensitive learning, which weights minority-class errors more heavily in
+      the loss; and moving the decision threshold. Resampling distorts predicted probabilities,
+      which then need recalibrating (see [[calibration|calibration]]); with strong learners and a
+      well-chosen threshold, simple class weighting often works as well as synthetic oversampling.
+    example: >-
+      With 0.2% positives, we tuned the threshold on the precision–recall curve instead of reporting
+      accuracy.
+origin: >-
+  Recognized as a distinct machine-learning problem in the 1990s, for example in Miroslav Kubat and
+  Stan Matwin's 'one-sided selection' method (1997). Nathalie Japkowicz and Shaju Stephen's
+  systematic study (2002) and Haibo He and Edwardo Garcia's survey 'Learning from Imbalanced Data'
+  (2009) consolidated the field and its vocabulary.
+year: 1997
+note: >-
+  Distinct from [[sampling-bias|sampling bias]], where the sample misrepresents the population, and
+  from the [[long-tail|long tail]] of rare categories in large label spaces, though they often
+  co-occur.
+see_also:
+  - SMOTE
+  - precision–recall curve
+  - F1 score
+  - binary classification
+  - calibration
+  - anomaly detection
+contrast:
+  - sampling bias
+sources:
+  - text: >-
+      Japkowicz, N. & Stephen, S. (2002). The Class Imbalance Problem: A Systematic Study.
+      Intelligent Data Analysis, 6(5), 429–449.
+  - text: >-
+      He, H. & Garcia, E. A. (2009). Learning from Imbalanced Data. IEEE Transactions on Knowledge
+      and Data Engineering, 21(9), 1263–1284.

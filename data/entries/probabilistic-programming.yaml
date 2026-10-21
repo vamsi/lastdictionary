@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: probabilistic programming
+id: probabilistic-programming
+pos: n.
+also:
+  - probabilistic programming language
+  - PPL
+  - Stan
+  - Pyro
+  - PyMC
+  - BUGS
+domain: sym
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  Writing a statistical model as an ordinary-looking program that includes random choices, and
+  letting the system work out automatically which hidden values best explain the observed data.
+senses:
+  - definition: >-
+      An approach to statistical modeling in which a model is written as a program that makes random
+      choices (draws from distributions) and conditions on observed data, and a general-purpose
+      [[inference-engine|inference engine]] then computes the posterior distribution over the
+      program's unobserved variables. Separating the model from the inference algorithm lets users
+      express complex, hierarchical or even recursive models without deriving algorithms by hand.
+      Back ends use [[markov-chain-monte-carlo|Markov chain Monte Carlo]] (notably Hamiltonian Monte
+      Carlo, as in Stan), [[variational-inference|variational inference]] (as in Pyro), sequential
+      Monte Carlo or exact enumeration, usually with automatic differentiation. Probabilistic
+      programming generalizes [[probabilistic-graphical-model|graphical models]] to models whose
+      structure need not be fixed in advance, and it is widely used in scientific modeling,
+      epidemiology, experiment analysis and Bayesian models of cognition.
+    example: >-
+      In the probabilistic program, each school's effect is drawn from a shared distribution, and
+      Stan infers both levels at once.
+origin: >-
+  BUGS (Bayesian inference Using Gibbs Sampling), begun around 1989 at the MRC Biostatistics Unit in
+  Cambridge, was the first widely used system. Church (2008), from Noah Goodman, Joshua Tenenbaum
+  and colleagues at MIT, made universal probabilistic programming in a Lisp dialect influential;
+  Stan (2012), Pyro (2017) and PyMC brought the approach into mainstream statistics and machine
+  learning.
+year: 1989
+see_also:
+  - probabilistic graphical model
+  - Bayesian inference
+  - Markov chain Monte Carlo
+  - variational inference
+  - Bayesian network
+sources:
+  - text: >-
+      Goodman, N. D., Mansinghka, V. K., Roy, D., Bonawitz, K. & Tenenbaum, J. B. (2008). Church: A
+      Language for Generative Models. Proceedings of UAI 2008.
+  - text: >-
+      Carpenter, B. et al. (2017). Stan: A Probabilistic Programming Language. Journal of
+      Statistical Software 76(1).

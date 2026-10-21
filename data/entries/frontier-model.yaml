@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: frontier model
+id: frontier-model
+pos: n.
+also:
+  - frontier AI model
+  - frontier LLM
+domain: llm
+domains:
+  - gov
+  - safety
+level: essential
+plain: >-
+  One of the most capable AI models in existence at a given time, built by a handful of leading labs
+  at great cost, and the main target of AI safety rules.
+senses:
+  - context: General
+    definition: >-
+      A [[general-purpose-ai|general-purpose]] model at or near the leading edge of capability at a
+      given time — typically a [[large-language-model|large language model]] or
+      [[multimodal-large-language-model|multimodal model]] trained with the largest
+      [[training-compute|training compute]] budgets by a [[frontier-lab|frontier lab]]. The boundary
+      is relative and moves: a frontier model of one year is usually matched by mid-sized or
+      [[open-weight-model|open-weight]] models within a year or two. Safety researchers and
+      policymakers use the term for models whose new capabilities could create severe risks, which
+      motivates [[dangerous-capability-evaluation|dangerous-capability evaluations]], pre-deployment
+      testing, [[responsible-scaling-policy|responsible scaling policies]] and incident reporting.
+    example: Every new frontier model goes through third-party evaluation before release.
+  - context: Law
+    definition: >-
+      A statutory category usually defined by a [[compute-threshold|compute threshold]].
+      California's [[sb-53|SB 53]], the Transparency in Frontier Artificial Intelligence Act (signed
+      September 2025, in force January 2026), defines a frontier model as a
+      [[foundation-model|foundation model]] trained using more than 10^26 integer or floating-point
+      operations, counting compute from the original training run and from later fine-tuning,
+      reinforcement learning or other material modifications. All frontier developers must publish
+      transparency reports and report critical safety incidents; large frontier developers (annual
+      revenue above $500 million) must also publish a frontier AI framework. New York's
+      [[raise-act|RAISE Act]], as amended in March 2026 and effective January 2027, adopts a nearly
+      identical definition. The EU AI Act's analogous category is the
+      [[general-purpose-ai-model-with-systemic-risk|general-purpose AI model with systemic risk]],
+      presumed above 10^25 floating-point operations.
+    labels:
+      - legal
+origin: >-
+  Popularized in mid-2023. Markus Anderljung and colleagues' July 2023 paper 'Frontier AI
+  Regulation' characterized frontier models by the potential for dangerous capabilities severe
+  enough to threaten public safety, and Anthropic, Google, Microsoft and OpenAI founded the
+  [[frontier-model-forum|Frontier Model Forum]] the same month. The UK's November 2023
+  [[ai-safety-summit|AI Safety Summit]] adopted '[[frontier-ai|frontier AI]]', and California's SB
+  53 (2025) wrote 'frontier model' into law.
+year: 2023
+note: >-
+  Because 'frontier' is relative, fixed compute thresholds can capture models no longer at the
+  frontier and miss efficient ones that are. Compare [[frontier-ai|frontier AI]], the policy
+  umbrella term, and [[foundation-model|foundation model]], which says nothing about capability
+  level.
+see_also:
+  - frontier AI
+  - frontier lab
+  - foundation model
+  - compute threshold
+  - SB 53
+  - general-purpose AI model with systemic risk
+  - dangerous capability evaluation
+  - Frontier Model Forum
+contrast:
+  - small language model
+sources:
+  - text: >-
+      Anderljung, M., Barnhart, J., Korinek, A., Leung, J., O'Keefe, C. et al. (2023). Frontier AI
+      Regulation: Managing Emerging Risks to Public Safety. arXiv:2307.03718.
+    url: https://arxiv.org/abs/2307.03718
+standards: California Business and Professions Code §22757.11(i) (added by SB 53, 2025)
+as_of: 2026-10

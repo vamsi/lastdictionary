@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: oracle AI
+id: oracle-ai
+pos: n.
+also:
+  - oracle
+  - AI oracle
+  - question-answering AI
+domain: asi
+domains:
+  - safety
+level: specialist
+plain: >-
+  An AI kept to answering questions, without acting in the world on its own. Proposed as a safer
+  kind of superintelligence, though its answers could still steer the people who read them.
+senses:
+  - definition: >-
+      An AI system designed or restricted to answer questions rather than take actions, proposed as
+      a way to obtain the benefits of [[superintelligence|superintelligence]] while limiting its
+      ability to cause harm. In [[nick-bostrom|Nick Bostrom]]'s classification of system types, the
+      oracle sits beside the genie (which carries out commands), the sovereign (which acts
+      autonomously on open-ended goals) and the [[tool-ai|tool]]. Analyses identify residual risks:
+      an oracle can manipulate the people who read its answers, its predictions can be
+      self-fulfilling, and a goal of answering well may motivate it to acquire resources or escape
+      confinement. Proposed safeguards include restricting answers to yes/no or multiple choice,
+      consulting several isolated oracles, and counterfactual oracles whose answers are scored only
+      in cases where nobody reads them. Yoshua Bengio's 2025 proposal for a non-agentic 'Scientist
+      AI' is a recent descendant of the idea.
+    example: >-
+      An oracle AI that only answers questions can still change the world through the answers it
+      chooses.
+origin: >-
+  Discussed in AI-risk circles in the 2000s and analyzed systematically by Stuart Armstrong, Anders
+  Sandberg and Nick Bostrom in 'Thinking Inside the Box: Controlling and Using an Oracle AI' (Minds
+  and Machines, 2012); Bostrom's Superintelligence (2014) added the oracle–genie–sovereign typology.
+year: 2012
+see_also:
+  - tool AI
+  - AI box
+  - capability control
+  - control problem
+  - comprehensive AI services
+  - AI agent
+contrast:
+  - AI agent
+sources:
+  - text: >-
+      Armstrong, S., Sandberg, A. & Bostrom, N. (2012). Thinking Inside the Box: Controlling and
+      Using an Oracle AI. Minds and Machines 22(4).
+  - text: >-
+      Bengio, Y. et al. (2025). Superintelligent Agents Pose Catastrophic Risks: Can Scientist AI
+      Offer a Safer Path? arXiv:2502.15657.

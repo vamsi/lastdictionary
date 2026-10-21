@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: physics simulator
+id: physics-simulator
+pos: n.
+also:
+  - physics engine
+  - robot simulator
+  - rigid-body simulator
+  - differentiable simulator
+  - simulation environment
+domain: robot
+domains:
+  - rl
+  - eng
+level: core
+plain: >-
+  Software that imitates how real objects move, collide, bend and fall, so robots and their AI can
+  be designed, trained and tested on a computer before touching the real world.
+senses:
+  - definition: >-
+      Software that numerically integrates the equations of motion of a virtual world — rigid bodies
+      linked by joints, contacts and friction, sometimes soft bodies, cloth and fluids, plus
+      simulated sensors such as cameras and [[lidar|lidar]] — so that robots can be designed,
+      programmed, trained and tested without hardware. At each small time step a simulator detects
+      collisions, solves for contact and constraint forces (the hard and approximate part) and
+      advances positions and velocities. Robotics simulators couple a physics engine with robot
+      models (joint limits, motors, sensors) and rendering; widely used ones include
+      [[mujoco|MuJoCo]], Bullet/PyBullet, Gazebo, Drake, NVIDIA's Isaac Sim and Isaac Lab, and
+      Genesis. GPU-parallel simulators run thousands of environments at once, which made large-scale
+      [[reinforcement-learning|reinforcement learning]] for robots practical, and differentiable
+      simulators expose gradients for optimization. Trade-offs between speed, accuracy and
+      stability, especially for contact, create the reality gap that
+      [[sim-to-real-transfer|sim-to-real transfer]] must bridge. Learned video [[world-model|world
+      models]] are an emerging data-driven complement.
+    example: >-
+      We run 4,096 simulated quadrupeds in parallel on one GPU and get a walking policy in an hour.
+origin: >-
+  Robot simulation dates to the 1980s. Open-source engines such as the Open Dynamics Engine (Russell
+  Smith, 2001) and Bullet (Erwin Coumans, mid-2000s) and the Gazebo simulator (Nathan Koenig and
+  Andrew Howard, 2004) made it routine, followed by MuJoCo (2012) and GPU-parallel simulators such
+  as NVIDIA's Isaac Gym (2021).
+note: >-
+  Game physics engines favor speed and plausibility; robotics needs accuracy, stability and
+  repeatability, especially for contact, so the two families have diverged.
+see_also:
+  - MuJoCo
+  - sim-to-real transfer
+  - domain randomization
+  - digital twin
+  - world foundation model
+  - Gymnasium
+  - reinforcement learning
+contrast:
+  - world model
+sources:
+  - text: >-
+      Koenig, N. & Howard, A. (2004). Design and use paradigms for Gazebo, an open-source
+      multi-robot simulator. Proc. IEEE/RSJ IROS 2004.
+  - text: >-
+      Todorov, E., Erez, T. & Tassa, Y. (2012). MuJoCo: A physics engine for model-based control.
+      Proc. IEEE/RSJ IROS 2012.
+as_of: 2026-10

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model soup
+id: model-soup
+pos: n.
+also:
+  - model soups
+  - uniform soup
+  - greedy soup
+domain: train
+domains:
+  - dl
+level: specialist
+plain: >-
+  A single model made by averaging the internal numbers of several copies of a model that were
+  fine-tuned in slightly different ways, often doing better than any one of them.
+senses:
+  - definition: >-
+      A single network formed by taking the element-wise mean of the [[weights|weights]] of several
+      fine-tuned versions of one pretrained [[checkpoint|checkpoint]], runs that differed in
+      [[hyperparameter|hyperparameters]], data order or augmentation. A uniform soup averages all
+      ingredients; a greedy soup adds them one at a time, in order of validation accuracy, keeping
+      each only if it helps. It works because fine-tunes of one pretrained model tend to land in the
+      same wide, low-loss basin, so their mean is itself a good solution that often beats every
+      ingredient, especially under [[distribution-shift|distribution shift]]; and unlike an output
+      [[ensemble-learning|ensemble]], it runs at the cost of a single model. Rather than keeping the
+      best run of a hyperparameter sweep and throwing the rest away, a soup puts them all to use;
+      one made from ViT-G models set an ImageNet record of 90.94 percent top-1 accuracy. Model soups
+      are the simplest case of [[model-merging|model merging]].
+    example: >-
+      Instead of keeping only the best of our twelve fine-tuning runs, we made a greedy soup and
+      gained a point.
+origin: >-
+  Introduced by Mitchell Wortsman, Gabriel Ilharco and colleagues in March 2022 and published at
+  ICML 2022. The culinary name plays on combining ingredients; the method built on earlier evidence
+  that fine-tuned models are linearly connected by low-loss paths.
+year: 2022
+note: >-
+  Soups fail when ingredients are fine-tuned too far apart or from different initializations,
+  because their average leaves the shared basin.
+see_also:
+  - model merging
+  - task arithmetic
+  - ensemble learning
+  - exponential moving average of weights
+  - loss landscape
+  - fine-tuning
+contrast:
+  - ensemble learning
+sources:
+  - text: >-
+      Wortsman, M. et al. (2022). Model soups: averaging weights of multiple fine-tuned models
+      improves accuracy without increasing inference time. ICML 2022. arXiv:2203.05482.
+    url: https://arxiv.org/abs/2203.05482

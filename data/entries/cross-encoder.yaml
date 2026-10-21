@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cross-encoder
+id: cross-encoder
+pos: n.
+also:
+  - cross-encoder reranker
+domain: eng
+domains:
+  - llm
+  - dl
+level: core
+plain: >-
+  An AI model that reads a question and a candidate passage together, side by side, and outputs one
+  relevance score. Accurate but slow, so it is used to reorder a short list.
+senses:
+  - definition: >-
+      A model that scores a pair of texts — typically a query and a candidate document — by feeding
+      them jointly into one [[transformer|transformer]] encoder, separated by a special token, so
+      that [[self-attention|self-attention]] lets every token of one text attend to every token of
+      the other, and mapping the joint representation to a relevance or similarity score. This
+      early, full interaction makes cross-encoders the most accurate common architecture for
+      [[reranking|reranking]] and for sentence-pair tasks such as paraphrase detection and natural
+      language inference. But nothing can be precomputed: every query–document pair needs its own
+      [[forward-pass|forward pass]], so scoring millions of documents per query is impractical.
+      Systems therefore shortlist candidates with a fast [[bi-encoder|bi-encoder]] or [[bm25|BM25]]
+      and reorder them with a cross-encoder, or distill cross-encoder judgments into bi-encoders.
+    example: The cross-encoder takes 40 ms per pair, so we only run it on the top 50 hits.
+origin: >-
+  Rodrigo Nogueira and Kyunghyun Cho's BERT passage reranker (2019) is the classic example. The
+  name, paired with 'bi-encoder', appears in the Poly-encoders paper by Samuel Humeau, Kurt Shuster,
+  Marie-Anne Lachaux and Jason Weston (Facebook AI Research, April 2019) and spread through Nils
+  Reimers's Sentence-Transformers library.
+year: 2019
+see_also:
+  - bi-encoder
+  - reranking
+  - late interaction
+  - ColBERT
+  - BERT
+  - self-attention
+contrast:
+  - bi-encoder
+sources:
+  - text: >-
+      Humeau, S., Shuster, K., Lachaux, M.-A. & Weston, J. (2019). Poly-encoders: Transformer
+      Architectures and Pre-training Strategies for Fast and Accurate Multi-sentence Scoring.
+      arXiv:1905.01969.
+    url: https://arxiv.org/abs/1905.01969
+  - text: Nogueira, R. & Cho, K. (2019). Passage Re-ranking with BERT. arXiv:1901.04085.
+    url: https://arxiv.org/abs/1901.04085

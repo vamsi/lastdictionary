@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cross-entropy
+id: cross-entropy
+pos: n.
+also:
+  - cross-entropy loss
+  - CE loss
+  - categorical cross-entropy
+  - binary cross-entropy
+  - softmax cross-entropy
+domain: math
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  A score of how surprised a model's predictions are by what actually happens; lower is better.
+  Language models are trained mainly by driving this number down on real text.
+senses:
+  - definition: >-
+      A measure of how poorly a distribution q anticipates outcomes that actually follow a
+      distribution p: the [[expected-value|average]], with outcomes weighted by p, of the surprise
+      −log q(x). In coding terms, it is the expected bits (or nats) per symbol when a code tuned to
+      q is used for data that really come from p. It equals the [[entropy|entropy]] of p plus the
+      [[kullback-leibler-divergence|Kullback–Leibler divergence]] KL(p ‖ q), so it is minimized, at
+      H(p), exactly when q = p. As a loss, p is the empirical distribution of training targets and q
+      the model's predicted distribution, usually produced by [[softmax|softmax]]; with one-hot
+      targets it reduces to the negative [[log-likelihood|log-likelihood]] of the correct class, so
+      minimizing it is [[maximum-likelihood-estimation|maximum likelihood estimation]]. It is the
+      standard classification loss (binary cross-entropy is also called [[log-loss|log loss]]) and
+      the loss of [[next-token-prediction|next-token prediction]] in [[large-language-model|language
+      models]], whose average per-token cross-entropy is reported directly or as
+      [[perplexity|perplexity]]. Its gradient with respect to the logits is simply the predicted
+      minus the target probabilities.
+    example: >-
+      Validation cross-entropy dropped from 2.31 to 2.24 nats after we deduplicated the corpus.
+formula_latex: H(p, q) = -\sum_{x} p(x)\,\log q(x) = H(p) + \mathrm{KL}(p\,\Vert\,q)
+origin: >-
+  The quantity is implicit in Claude Shannon's coding theory (1948) and in Solomon Kullback and
+  Richard Leibler's 1951 work. The name was established in information theory by 1980, sometimes for
+  the KL divergence itself, as in John Shore and Rodney Johnson's axiomatic 'principle of minimum
+  cross-entropy' (1980); its first use is not established. Neural-network researchers adopted it as
+  a classification loss from the late 1980s, and it gradually displaced squared error.
+note: >-
+  Some older and statistical texts use 'cross-entropy' for the
+  [[kullback-leibler-divergence|Kullback–Leibler divergence]]. The two differ by the entropy of the
+  data, which is constant during training, so they have the same minimizer.
+see_also:
+  - entropy
+  - Kullback–Leibler divergence
+  - log-likelihood
+  - softmax
+  - perplexity
+  - log loss
+  - next-token prediction

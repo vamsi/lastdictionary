@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: uplift modeling
+id: uplift-modeling
+pos: n.
+also:
+  - uplift modelling
+  - uplift model
+  - incremental response modeling
+  - true lift modeling
+  - net lift modeling
+  - differential response modeling
+domain: ml
+domains:
+  - math
+  - society
+level: specialist
+plain: >-
+  Predicting not who will buy, recover or respond, but whose behavior will actually change because
+  of an action such as a discount or a treatment, so that it is offered only where it makes a
+  difference.
+senses:
+  - definition: >-
+      A predictive method that targets the difference an intervention makes rather than the outcome
+      itself: for each person, it estimates how much an action such as a drug, a discount or a call
+      to a wavering customer would shift their expected outcome compared with doing nothing. In
+      [[causal-inference|causal inference]] terms this is the conditional average treatment effect
+      given the person's features. Because no one is observed both treated and untreated, models are
+      trained on data in which treatment was assigned at random, as in an [[a-b-testing|A/B test]],
+      or with careful adjustment for confounding. Approaches include separate outcome models for
+      treated and control groups (the two-model or T-learner), a single model with treatment as a
+      feature (S-learner), X-learners, class-transformation tricks, uplift [[decision-tree|decision
+      trees]] whose splits maximize the treatment–control difference, and causal forests. Evaluation
+      uses Qini and uplift curves on held-out randomized data. Marketers classically divide
+      customers into persuadables, sure things, lost causes and 'sleeping dogs', whom an offer would
+      put off.
+    example: >-
+      The uplift model told us to stop calling loyal customers, since the retention call made no
+      difference to them.
+formula_latex: \tau(\mathbf{x}) = \mathbb{E}[\,Y \mid \mathbf{X} = \mathbf{x}, T = 1\,] -
+  \mathbb{E}[\,Y \mid \mathbf{X} = \mathbf{x}, T = 0\,]
+origin: >-
+  Developed in direct marketing in the late 1990s and early 2000s, notably by Nicholas Radcliffe and
+  Patrick Surry ('differential response analysis', 1999), Victor Lo ('true lift model', 2002) and
+  Behram Hansotia and Brad Rukstales ('incremental value modeling', 2002). Uplift trees by Piotr
+  Rzepakowski and Szymon Jaroszewicz (2012) and the meta-learner framework of Sören Künzel and
+  colleagues (2019) tied it to machine learning and causal inference.
+year: 1999
+note: >-
+  Ordinary response models target people likely to buy anyway, wasting offers on sure things and
+  provoking sleeping dogs; uplift models target the change itself. Unrelated to the safety sense of
+  uplift, which measures how much an AI model increases a person's ability to cause harm (see
+  [[uplift-study|uplift study]]).
+see_also:
+  - causal inference
+  - A/B testing
+  - counterfactual
+  - structural causal model
+  - random forest
+  - click-through rate prediction
+contrast:
+  - uplift study
+sources:
+  - text: >-
+      Radcliffe, N. J. & Surry, P. D. (1999). Differential Response Analysis: Modeling True Response
+      by Isolating the Effect of a Single Action. Proc. Credit Scoring and Credit Control VI,
+      Edinburgh.
+  - text: >-
+      Künzel, S. R., Sekhon, J. S., Bickel, P. J. & Yu, B. (2019). Metalearners for Estimating
+      Heterogeneous Treatment Effects Using Machine Learning. PNAS 116(10), 4156–4165.

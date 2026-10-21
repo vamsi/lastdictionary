@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: blurry JPEG of the web
+id: blurry-jpeg-of-the-web
+pos: phr.
+also:
+  - blurry JPEG
+  - lossy compression of the web
+domain: culture
+domains:
+  - llm
+  - mind
+labels:
+  - figurative
+level: specialist
+plain: >-
+  Writer Ted Chiang's 2023 comparison of ChatGPT to a low-quality compressed photo of the internet:
+  it keeps the gist of what it learned but blurs the details and fills gaps with plausible guesses.
+senses:
+  - definition: >-
+      A metaphor characterizing a [[large-language-model|large language model]] as a lossy
+      compression of its training text, like a heavily compressed JPEG image: it preserves
+      statistical regularities and the gist of much of the web but cannot reproduce exact details,
+      and fills the gaps by plausible interpolation. On this view [[hallucination|hallucinations]]
+      are compression artifacts, and fluent paraphrase creates a misleading impression of
+      understanding, much as a blurry image looks acceptable at a glance. The essay also predicted
+      that training models on their own output would degrade them, like re-saving a JPEG repeatedly,
+      anticipating concerns about [[model-collapse|model collapse]]. Critics reply that compression
+      and understanding are not opposites — compressing text well may require modeling its
+      underlying structure — a view tied to arguments that [[next-token-prediction|next-token
+      prediction]] can induce [[world-model|world models]].
+    example: >-
+      If the model is a blurry JPEG of the web, retrieval is how you get the sharp original back.
+origin: >-
+  From the science-fiction writer Ted Chiang's essay 'ChatGPT Is a Blurry JPEG of the Web',
+  published in The New Yorker on 9 February 2023. The essay opened with a 2013 case in which a Xerox
+  photocopier's compression scheme silently altered numbers in scanned documents.
+year: 2023
+see_also:
+  - stochastic parrot
+  - model collapse
+  - hallucination
+  - fancy autocomplete
+  - world model
+  - next-token prediction
+sources:
+  - text: >-
+      Chiang, T. (2023). ChatGPT Is a Blurry JPEG of the Web. The New Yorker, 9 February 2023.

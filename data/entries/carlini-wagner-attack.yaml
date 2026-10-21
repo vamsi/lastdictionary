@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Carlini–Wagner attack
+id: carlini-wagner-attack
+pos: n.
+also:
+  - C&W attack
+  - CW attack
+domain: sec
+domains:
+  - dl
+level: specialist
+plain: >-
+  A careful, optimization-based way of finding the smallest change to an input that fools a neural
+  network; it broke several defenses that had looked secure.
+senses:
+  - definition: >-
+      A family of [[white-box-attack|white-box]] attacks that find minimal-distortion
+      [[adversarial-example|adversarial examples]] under ℓ0, ℓ2 or ℓ∞ distance by solving an
+      optimization problem: minimize the size of the perturbation plus a constant times a margin
+      loss on the [[logit|logits]] that stops rewarding progress once the target class leads by a
+      confidence margin κ. A change of variables keeps pixel values in range, and binary search
+      tunes the trade-off constant; a larger κ yields examples that transfer better. The ℓ2 version
+      became a standard benchmark attack, and its introduction showed that defensive distillation,
+      then a leading defense, gave essentially no robustness.
+    example: >-
+      Defensive distillation held up against FGSM but collapsed under the Carlini–Wagner attack.
+formula_latex: \min_{\delta} \; \|\delta\|_2^2 + c \cdot \max\Big(\max_{i \ne t} Z(x+\delta)_i -
+  Z(x+\delta)_t, \; -\kappa\Big)
+origin: >-
+  Introduced by Nicholas Carlini and David Wagner of the University of California, Berkeley, in
+  'Towards Evaluating the Robustness of Neural Networks' (arXiv August 2016; IEEE Symposium on
+  Security and Privacy 2017).
+year: 2016
+see_also:
+  - adversarial example
+  - projected gradient descent attack
+  - fast gradient sign method
+  - gradient masking
+  - adversarial robustness
+sources:
+  - text: >-
+      Carlini, N. & Wagner, D. (2017). Towards Evaluating the Robustness of Neural Networks. IEEE
+      S&P 2017. arXiv:1608.04644.

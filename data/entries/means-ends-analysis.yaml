@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: means–ends analysis
+id: means-ends-analysis
+pos: n.
+also:
+  - MEA
+  - difference reduction
+domain: sym
+domains:
+  - hist
+  - mind
+level: specialist
+plain: >-
+  A problem-solving method that compares where you are with where you want to be, picks an action
+  that shrinks the biggest difference, and sets itself smaller goals when that action cannot yet be
+  taken.
+senses:
+  - definition: >-
+      A problem-solving strategy that repeatedly identifies a difference between the current state
+      and the goal, selects an operator relevant to reducing that difference (using a table linking
+      types of difference to operators), and, if the operator's preconditions are not met,
+      recursively sets up the subgoal of satisfying them. Tackling differences in order of
+      importance gives a crude hierarchy, and the recursion mixes goal-directed
+      [[backward-chaining|backward]] reasoning with forward action. Means–ends analysis was the core
+      mechanism of the [[general-problem-solver|General Problem Solver]] and influenced
+      [[strips|STRIPS]] and later [[automated-planning|automated planning]] as well as cognitive
+      models of human problem solving. It fails when reducing one difference undoes another, as in
+      the blocks-world puzzle known as the Sussman anomaly.
+origin: >-
+  Introduced by Allen Newell, Cliff Shaw and Herbert Simon in the General Problem Solver
+  (1957–1959), modeled on think-aloud protocols of people solving logic problems; Newell and Simon's
+  Human Problem Solving (1972) developed it as a psychological theory.
+year: 1959
+see_also:
+  - General Problem Solver
+  - automated planning
+  - STRIPS
+  - backward chaining
+  - state space search
+  - Allen Newell
+sources:
+  - text: >-
+      Newell, A., Shaw, J. C. & Simon, H. A. (1959). Report on a General Problem-Solving Program.
+      Proceedings of the International Conference on Information Processing, UNESCO, Paris.

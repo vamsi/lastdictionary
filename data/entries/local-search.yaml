@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: local search
+id: local-search
+pos: n.
+also:
+  - local search algorithm
+  - neighborhood search
+  - stochastic local search
+  - WalkSAT
+  - min-conflicts
+  - 2-opt
+domain: sym
+domains:
+  - math
+level: specialist
+plain: >-
+  A family of problem-solving methods that start with some complete answer, however poor, and keep
+  improving it by small changes, instead of building an answer piece by piece from scratch.
+senses:
+  - definition: >-
+      A class of search and optimization methods that work on complete candidate solutions, moving
+      from the current solution to a neighbor defined by a small change — flipping one variable,
+      swapping two cities in a tour, reassigning one task — guided by an objective function. Because
+      they keep only the current state (or a few), they need little memory and scale to very large
+      problems, but they are incomplete: they cannot prove that no solution exists or that the one
+      found is optimal. Members include [[hill-climbing|hill climbing]],
+      [[simulated-annealing|simulated annealing]], [[tabu-search|tabu search]], the min-conflicts
+      heuristic for [[constraint-satisfaction-problem|constraint satisfaction]], GSAT and WalkSAT
+      for [[boolean-satisfiability-problem|SAT]], and 2-opt and Lin–Kernighan moves for the
+      traveling salesman problem; population-based [[metaheuristic|metaheuristics]] combine local
+      search with recombination.
+origin: >-
+  Neighborhood-improvement methods for the traveling salesman problem date from G. A. Croes's 2-opt
+  (1958) and Shen Lin and Brian Kernighan's 1973 algorithm. In AI, the min-conflicts heuristic
+  (Steven Minton and colleagues, 1990) and GSAT (Bart Selman, Hector Levesque and David Mitchell,
+  1992) showed local search solving constraint and SAT problems far larger than systematic methods
+  could handle.
+year: 1958
+see_also:
+  - hill climbing
+  - simulated annealing
+  - tabu search
+  - metaheuristic
+  - constraint satisfaction problem
+  - Boolean satisfiability problem
+contrast:
+  - state space search
+sources:
+  - text: >-
+      Selman, B., Levesque, H. & Mitchell, D. (1992). A New Method for Solving Hard Satisfiability
+      Problems. Proceedings of AAAI-92, 440–446.
+  - text: >-
+      Hoos, H. H. & Stützle, T. (2004). Stochastic Local Search: Foundations and Applications.
+      Morgan Kaufmann.

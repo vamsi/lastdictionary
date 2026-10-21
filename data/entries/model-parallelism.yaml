@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model parallelism
+id: model-parallelism
+pos: n.
+also:
+  - model-parallel training
+  - model sharding
+domain: train
+domains:
+  - hw
+level: core
+plain: >-
+  Splitting a single AI model that is too big for one chip into pieces spread over several chips,
+  which must constantly pass intermediate results to each other as they work.
+senses:
+  - definition: >-
+      Any parallelization strategy that partitions a model's parameters and computation across
+      devices, as opposed to replicating the model as in [[data-parallelism|data parallelism]]. Its
+      main forms are [[tensor-parallelism|tensor parallelism]] (splitting individual weight matrices
+      within a layer), [[pipeline-parallelism|pipeline parallelism]] (assigning consecutive layers
+      to different devices), [[expert-parallelism|expert parallelism]] (placing different experts of
+      a [[mixture-of-experts|mixture of experts]] on different devices) and
+      [[sequence-parallelism|sequence]] or [[context-parallelism|context parallelism]] (splitting
+      activations along the sequence). Model parallelism makes it possible to train models whose
+      weights, optimizer state or activations exceed one accelerator's memory, at the cost of
+      frequent communication of activations and gradients, which is why the most
+      communication-intensive forms are confined to fast links within a node or rack. In practice it
+      is combined with data parallelism in [[3d-parallelism|multi-dimensional]] layouts.
+origin: >-
+  Google's DistBelief system (Jeffrey Dean and colleagues, 2012) described model parallelism
+  explicitly, partitioning networks across machines, and AlexNet (2012) split its layers across two
+  GPUs. Mesh-TensorFlow (2018), GPipe (2018) and Megatron-LM (2019) made it practical for very large
+  transformers.
+year: 2012
+note: >-
+  Some authors, including the Megatron-LM paper, use 'model parallelism' to mean
+  [[tensor-parallelism|tensor parallelism]] specifically. Not to be confused with running several
+  separate models in parallel.
+see_also:
+  - tensor parallelism
+  - pipeline parallelism
+  - expert parallelism
+  - context parallelism
+  - data parallelism
+  - 3D parallelism
+  - Megatron-LM
+contrast:
+  - data parallelism
+sources:
+  - text: Dean, J. et al. (2012). Large Scale Distributed Deep Networks. NeurIPS 2012.
+  - text: >-
+      Shazeer, N., Cheng, Y., Parmar, N. et al. (2018). Mesh-TensorFlow: Deep Learning for
+      Supercomputers. arXiv:1811.02084.
+    url: https://arxiv.org/abs/1811.02084

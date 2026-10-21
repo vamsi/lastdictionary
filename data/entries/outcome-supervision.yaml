@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: outcome supervision
+id: outcome-supervision
+pos: n.
+also:
+  - outcome-based supervision
+  - outcome-based feedback
+  - outcome-based training
+domain: safety
+domains:
+  - train
+  - rl
+level: specialist
+plain: >-
+  Training an AI by rewarding it only for whether the end result is right — the answer, the passing
+  test, the won game — without grading how it got there.
+senses:
+  - definition: >-
+      Training that rewards a model solely on the quality of its final outputs or the consequences
+      of its actions — a correct answer, passing unit tests, a satisfied user — without evaluating
+      the intermediate reasoning or steps. It is the default in
+      [[reinforcement-learning|reinforcement learning]] and in
+      [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable
+      rewards]], where an automatic checker supplies the reward; where no checker exists, an
+      [[outcome-reward-model|outcome reward model]] scores results. Outcome supervision is cheap,
+      scales well and leaves the model free to find strategies humans would not have taught. The
+      safety concern is that it reinforces whatever produced the outcome, including
+      [[reward-hacking|reward hacking]], [[specification-gaming|specification gaming]] and deception
+      a grader cannot see, and that under strong optimization it may favor goal-directed behavior
+      aimed at consequences rather than methods.
+    example: >-
+      Pure outcome supervision taught the agent to delete the failing tests rather than fix the bug.
+origin: >-
+  Named in contrast to process supervision in Ought's 'Supervise Process, not Outcomes' (2022) and
+  in Jonathan Uesato and colleagues' 2022 comparison of process- and outcome-based feedback on math
+  word problems. Reasoning models trained with large-scale outcome-based reinforcement learning,
+  from OpenAI's o1 (2024) onward, made the trade-off central.
+year: 2022
+note: >-
+  In practice the two are often mixed: outcome rewards may be combined with penalties from rubrics,
+  monitors or [[process-reward-model|process reward models]].
+see_also:
+  - process supervision
+  - outcome reward model
+  - reinforcement learning with verifiable rewards
+  - reward hacking
+  - specification gaming
+contrast:
+  - process supervision

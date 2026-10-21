@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ExecuTorch
+id: executorch
+pos: prop. n.
+also:
+  - PyTorch Edge
+  - PyTorch Mobile
+  - .pte
+pronunciation: eg-ZEK-yoo-torch
+domain: eng
+domains:
+  - infer
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  Meta's free software for running PyTorch AI models directly on phones, wearables and other small
+  devices, without needing an internet connection or a data center.
+senses:
+  - definition: >-
+      An open-source runtime and toolchain from the [[pytorch|PyTorch]] project for deploying models
+      on mobile, embedded and edge devices and on personal computers. A model is captured from
+      PyTorch with torch.export as a graph of standardized operators, transformed and optionally
+      [[quantization|quantized]], partitioned so that supported parts are delegated to hardware back
+      ends — CPU libraries such as XNNPACK, Apple's [[core-ml|Core ML]] and Metal, Qualcomm,
+      MediaTek and Samsung [[npu|NPUs]], Arm accelerators, Vulkan GPUs and others — and serialized
+      as a .pte program file, which a small C++ runtime without any Python dependency loads and
+      executes. Because the whole path stays within PyTorch, developers avoid converting models into
+      another framework's format, a frequent source of errors. ExecuTorch replaced the older PyTorch
+      Mobile, supports language, speech and vision models, and runs on-device features in Meta's
+      apps and smart glasses.
+    example: >-
+      We exported the wake-word model with ExecuTorch and delegated it to the phone's NPU.
+origin: >-
+  Introduced by Meta and the PyTorch community as a preview in October 2023, as part of the PyTorch
+  Edge effort with hardware partners such as Arm, Apple and Qualcomm; a beta followed in October
+  2024 and version 1.0 on 22 October 2025.
+year: 2023
+see_also:
+  - PyTorch
+  - on-device AI
+  - Core ML
+  - LiteRT
+  - edge AI
+  - quantization
+sources:
+  - text: >-
+      PyTorch Team at Meta (2025). Introducing ExecuTorch 1.0. PyTorch blog, 22 October 2025.
+    url: https://pytorch.org/blog/introducing-executorch-1-0/
+as_of: 2026-10

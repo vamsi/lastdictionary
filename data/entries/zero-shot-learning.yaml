@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: zero-shot learning
+id: zero-shot-learning
+pos: n.
+also:
+  - zero-shot
+  - ZSL
+  - zero-shot prompting
+  - zero-shot transfer
+  - zero-shot classification
+domain: llm
+domains:
+  - ml
+  - percep
+level: core
+plain: >-
+  Doing a task without being shown a single example of it — say, an AI sorting reviews into positive
+  and negative just from being told to, or recognizing an animal it never saw in training.
+senses:
+  - context: Language models
+    definition: >-
+      Performing a task specified only by a natural-language instruction or description, with no
+      worked examples in the [[prompt|prompt]] and no task-specific training. Zero-shot ability
+      comes from [[pretraining|pretraining]] on diverse text and is greatly strengthened by
+      [[instruction-tuning|instruction tuning]]; it is the baseline setting against which
+      [[few-shot-prompting|few-shot prompting]] and [[fine-tuning|fine-tuning]] are compared.
+      Zero-shot [[chain-of-thought|chain of thought]] adds only a generic cue to reason step by
+      step.
+    example: >-
+      Zero-shot, the model labeled support tickets at 88% accuracy; five examples pushed it to 93%.
+  - context: Classical machine learning
+    definition: >-
+      Classifying examples of categories that were entirely absent from the training data, by way of
+      side information that describes every category, seen or unseen: lists of attributes (aquatic,
+      spotted, four-legged), [[word-embedding|word embeddings]] of the class names, or short text
+      descriptions. A model that has learned to detect the attributes from images of known species
+      can then name an animal it has never seen, by matching the attributes it detects against each
+      unseen species' description. Contrastive image–text models such as [[clip|CLIP]] made
+      zero-shot image classification, by comparing images with class-name prompts, routine.
+origin: >-
+  Hugo Larochelle, Dumitru Erhan and Yoshua Bengio described 'zero-data learning' in 2008; the name
+  'zero-shot learning' appears in Mark Palatucci and colleagues' 2009 NIPS paper, alongside
+  Christoph Lampert and colleagues' attribute-based classifiers of the same year. For language
+  models, [[gpt-2|GPT-2]] (2019) framed tasks as zero-shot, and [[gpt-3|GPT-3]] (2020) fixed the
+  zero-, one- and few-shot vocabulary.
+year: 2009
+note: >-
+  In the LLM sense, 'zero-shot' says nothing about whether similar tasks appeared in the training
+  data; strong zero-shot results may partly reflect [[data-contamination|data contamination]].
+see_also:
+  - few-shot prompting
+  - in-context learning
+  - few-shot learning
+  - instruction tuning
+  - transfer learning
+  - CLIP
+  - generalization
+contrast:
+  - few-shot prompting
+  - fine-tuning
+sources:
+  - text: >-
+      Palatucci, M., Pomerleau, D., Hinton, G. E. & Mitchell, T. M. (2009). Zero-Shot Learning with
+      Semantic Output Codes. NIPS 2009.
+  - text: >-
+      Wei, J. et al. (2022). Finetuned Language Models Are Zero-Shot Learners. ICLR 2022.
+    url: https://arxiv.org/abs/2109.01652

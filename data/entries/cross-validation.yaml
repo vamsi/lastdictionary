@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cross-validation
+id: cross-validation
+pos: n.
+also:
+  - k-fold cross-validation
+  - CV
+  - leave-one-out cross-validation
+  - LOOCV
+  - stratified k-fold
+  - nested cross-validation
+  - time-series cross-validation
+  - rotation estimation
+domain: ml
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  A fair way to test a model when data are limited: split the data into several parts, train on all
+  but one, test on the part left out, and rotate so every part takes a turn.
+senses:
+  - definition: >-
+      A model-evaluation technique that reuses one dataset: on each round a model is trained on part
+      of the data and scored on the withheld remainder, and the pooled scores estimate how well the
+      modeling procedure generalizes or rank competing models and
+      [[hyperparameter|hyperparameters]]. In k-fold form the data are cut into k folds (usually 5 or
+      10), each withheld exactly once; the k scores are averaged, their spread indicating
+      variability. Leave-one-out uses as many folds as examples. Variants respect the structure of
+      the data: stratified folds preserve class proportions, grouped folds keep all records of one
+      patient or user together, and time-series cross-validation always trains on the past and
+      validates on the future, using rolling or expanding windows. Nested cross-validation runs an
+      inner tuning loop inside an outer evaluation loop so that the reported estimate is not biased
+      by tuning. Every preprocessing step must be fitted within the training folds to avoid
+      [[data-leakage|data leakage]]. Because it costs k training runs, cross-validation is routine
+      for classical models but rare for large neural networks, which use a single
+      [[validation-set|validation set]].
+    example: >-
+      Five-fold cross-validation put the model at 0.81 ± 0.02 AUC, so the 0.83 holdout score was no
+      fluke.
+origin: >-
+  Early forms appear in psychological testing from the 1930s; Charles Mosier's 1951 paper discussed
+  designs for cross-validation. Mervyn Stone (1974) and Seymour Geisser (1975) set out the modern
+  theory of cross-validation for prediction and model choice, and Ron Kohavi's 1995 study
+  popularized stratified 10-fold cross-validation in machine learning.
+year: 1951
+note: >-
+  Cross-validation evaluates a modeling procedure rather than one fitted model: after choosing
+  settings, refit on all training data. Tuning and reporting with the same folds gives optimistic
+  scores.
+see_also:
+  - validation set
+  - training set
+  - test set
+  - model selection
+  - hyperparameter tuning
+  - data leakage
+  - bootstrap
+  - overfitting
+sources:
+  - text: >-
+      Stone, M. (1974). Cross-Validatory Choice and Assessment of Statistical Predictions. Journal
+      of the Royal Statistical Society, Series B 36(2).
+  - text: >-
+      Geisser, S. (1975). The Predictive Sample Reuse Method with Applications. Journal of the
+      American Statistical Association 70(350).
+  - text: >-
+      Kohavi, R. (1995). A Study of Cross-Validation and Bootstrap for Accuracy Estimation and Model
+      Selection. Proc. IJCAI 1995.

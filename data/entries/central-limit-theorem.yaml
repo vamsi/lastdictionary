@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: central limit theorem
+id: central-limit-theorem
+pos: n.
+also:
+  - CLT
+domain: math
+domains:
+  - ml
+  - eval
+level: core
+plain: >-
+  The mathematical reason bell curves are everywhere: add up many small independent random effects
+  and the total is almost always bell-shaped, whatever the individual effects look like.
+senses:
+  - definition: >-
+      A theorem about the shape of averages: for [[i-i-d|i.i.d.]] random variables with mean μ and
+      finite [[variance|variance]] σ², the mean of n of them, minus μ and multiplied by √n/σ, has a
+      distribution that approaches the standard [[normal-distribution|normal distribution]] as n
+      grows, no matter how the individual variables are distributed; versions exist for
+      non-identical and weakly dependent variables. In practice a sample mean is roughly normal with
+      mean μ and standard deviation σ/√n, so estimation error falls like 1/√n. The theorem justifies
+      normal-based [[confidence-interval|confidence intervals]], error bars and
+      [[hypothesis-testing|significance tests]] — including the error bars that should accompany
+      [[benchmark|benchmark]] scores — and explains why [[monte-carlo-method|Monte Carlo]] error
+      shrinks as 1/√N. It also motivates Gaussian models of noise and explains why sums over many
+      random weights at initialization are roughly Gaussian, the basis of infinite-width limits such
+      as network [[gaussian-process|Gaussian processes]] and the [[neural-tangent-kernel|neural
+      tangent kernel]]. Convergence can be slow for skewed or heavy-tailed data, and the theorem
+      fails without finite variance.
+    example: >-
+      With 500 questions and 70 percent accuracy, the CLT gives a standard error of about 2 points.
+formula_latex: \sqrt{n}\,\big(\bar{X}_n - \mu\big) \xrightarrow{\;d\;} \mathcal{N}(0, \sigma^2)
+origin: >-
+  Abraham de Moivre proved a special case for coin tossing in 1733, and Pierre-Simon Laplace
+  generalized it in 1810–1812; Aleksandr Lyapunov (1901) and Jarl Waldemar Lindeberg (1922) gave
+  rigorous general conditions. George Pólya named it the 'central' limit theorem in 1920, for its
+  central place in probability theory.
+year: 1920
+see_also:
+  - normal distribution
+  - law of large numbers
+  - confidence interval
+  - variance
+  - Monte Carlo method
+  - i.i.d.
+sources:
+  - text: >-
+      Pólya, G. (1920). Über den zentralen Grenzwertsatz der Wahrscheinlichkeitsrechnung und das
+      Momentenproblem. Mathematische Zeitschrift, 8.

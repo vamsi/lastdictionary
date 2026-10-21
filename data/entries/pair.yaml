@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PAIR
+id: pair
+pos: abbr.
+also:
+  - Prompt Automatic Iterative Refinement
+  - PAIR attack
+  - PAIR jailbreak
+domain: sec
+domains:
+  - safety
+  - eval
+  - llm
+level: specialist
+plain: >-
+  An automated way to test chatbot safety in which one AI keeps rewriting a request to try to trick
+  another AI into breaking its rules, learning from each refusal.
+senses:
+  - definition: >-
+      An automated [[black-box-attack|black-box]] [[jailbreak|jailbreak]] method that pits one
+      [[large-language-model|large language model]], the attacker, against another, the target,
+      rewriting a candidate prompt round after round in light of the target's replies. In each round
+      the attacker sees the target's response and a score from a judge model rating whether the
+      response accomplishes the prohibited objective, reflects on why the attempt fell short, and
+      proposes an improved prompt; several such streams run in parallel. Because it needs only query
+      access and produces natural-language prompts, PAIR transfers between models and is harder to
+      catch with perplexity filters than token-level optimization attacks such as
+      [[universal-adversarial-suffix|GCG]], and its authors reported success often within twenty
+      queries. It became a standard baseline in [[red-teaming|red teaming]] suites and benchmarks
+      such as [[harmbench|HarmBench]] and JailbreakBench and inspired tree-search successors such as
+      TAP (Tree of Attacks with Pruning). Defenses include adversarial [[safety-training|safety
+      training]], input and output [[safety-classifier|safety classifiers]] and monitoring of
+      repeated attempts.
+    example: >-
+      PAIR got past the new guardrail in about a dozen queries, so we added it to the nightly
+      red-teaming run.
+origin: >-
+  Introduced by Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J. Pappas and
+  Eric Wong of the University of Pennsylvania in 'Jailbreaking Black Box Large Language Models in
+  Twenty Queries' (arXiv, October 2023), later published at the 2025 IEEE Conference on Secure and
+  Trustworthy Machine Learning (SaTML).
+year: 2023
+note: >-
+  Not to be confused with Google's People + AI Research (PAIR) initiative on human-centered AI
+  design.
+see_also:
+  - jailbreak
+  - red teaming
+  - attack success rate
+  - StrongREJECT
+  - HarmBench
+  - LLM-as-a-judge
+  - multi-turn jailbreak
+sources:
+  - text: >-
+      Chao, P., Robey, A., Dobriban, E., Hassani, H., Pappas, G. J. & Wong, E. (2023). Jailbreaking
+      Black Box Large Language Models in Twenty Queries. arXiv:2310.08419; IEEE SaTML 2025.
+    url: https://arxiv.org/abs/2310.08419
+  - text: >-
+      Mehrotra, A. et al. (2024). Tree of Attacks: Jailbreaking Black-Box LLMs Automatically.
+      NeurIPS 2024.

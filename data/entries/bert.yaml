@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BERT
+id: bert
+pos: prop. n.
+also:
+  - Bidirectional Encoder Representations from Transformers
+  - RoBERTa
+  - DistilBERT
+  - ALBERT
+  - DeBERTa
+  - ModernBERT
+  - BERTology
+pronunciation: BURT
+domain: llm
+domains:
+  - hist
+level: core
+plain: >-
+  An influential 2018 Google language model that learned to understand text by filling in hidden
+  words. It made search engines and many language tools much better at grasping meaning in context.
+senses:
+  - definition: >-
+      A pretrained [[encoder-only-transformer|encoder-only transformer]] (Bidirectional Encoder
+      Representations from Transformers) released by Google in 2018. It was pretrained on
+      BooksCorpus and English Wikipedia, about 3.3 billion words, with two objectives —
+      [[masked-language-model|masked language modeling]] and next-sentence prediction — in a Base
+      size of 110 million parameters and a Large size of 340 million, using a
+      [[wordpiece|WordPiece]] vocabulary of about 30,000 tokens. At release, adding one
+      task-specific output layer and fine-tuning all the weights set records on eleven NLP tasks —
+      among them SQuAD question answering and the tasks of the GLUE suite, where BERT scored 80.5
+      overall — and popularized the pretrain-then-[[fine-tuning|fine-tune]] paradigm. Google began
+      using it in Search in 2019. Variants followed: RoBERTa (more data, no next-sentence task),
+      DistilBERT (distilled), ALBERT (parameter sharing), DeBERTa (disentangled attention),
+      ModernBERT (2024), and many multilingual and domain-specific versions.
+    example: A BERT-base classifier fine-tuned on 5,000 labeled tickets reached 94% accuracy.
+origin: >-
+  Introduced by Jacob Devlin, Ming-Wei Chang, Kenton Lee and Kristina Toutanova of Google AI
+  Language (arXiv, October 2018; NAACL 2019, best long paper). The name continued the Sesame Street
+  naming fashion begun earlier in 2018 by the Allen Institute's ELMo.
+year: 2018
+note: >-
+  BERT is not a chatbot and generates text poorly; its strength is contextual representations.
+  'BERTology' is the study of what such models learn.
+see_also:
+  - encoder-only transformer
+  - masked language model
+  - WordPiece
+  - transformer
+  - GPT
+  - T5
+  - fine-tuning
+contrast:
+  - GPT
+sources:
+  - text: >-
+      Devlin, J., Chang, M.-W., Lee, K. & Toutanova, K. (2019). BERT: Pre-training of Deep
+      Bidirectional Transformers for Language Understanding. NAACL 2019.
+    url: https://arxiv.org/abs/1810.04805

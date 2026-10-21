@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: active learning
+id: active-learning
+pos: n.
+also:
+  - query learning
+  - uncertainty sampling
+  - query by committee
+  - pool-based active learning
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  A way to train a model with fewer labeled examples by letting it choose which unlabeled examples a
+  person should label next, usually the ones it is most unsure about.
+senses:
+  - definition: >-
+      A learning setting in which the learner helps decide what gets labeled, nominating the
+      examples it expects to learn most from, so that a target accuracy is reached with far fewer
+      labels than random annotation would need. In the common pool-based form, a model trained on a
+      small labeled set scores a large pool of unlabeled examples, the most informative are sent to
+      an annotator (the 'oracle'), and the model is retrained, repeating until the labeling budget
+      is spent. Selection rules range from estimating which labels would most change the model or
+      cut its error, through ensemble disagreement (query by committee) and batch diversity, to the
+      simplest and commonest, uncertainty sampling of the least confident or highest-entropy
+      predictions. Active learning suits domains where labels are expensive, such as medical images,
+      legal documents and rare events. Its pitfalls: queried samples cluster near the decision
+      boundary and so misrepresent the data distribution, and gains over random sampling can vanish
+      when strong pretrained models are used. [[weak-supervision|Weak supervision]] and
+      model-assisted labeling are complementary ways to cut [[data-labeling|data labeling]] costs.
+    example: >-
+      Active learning got the defect classifier to 95% recall with 1,800 labeled images instead of
+      the 10,000 we had budgeted.
+origin: >-
+  Grew out of statistical optimal experimental design and Dana Angluin's 1988 learning-theory work
+  on queries. H. Sebastian Seung, Manfred Opper and Haim Sompolinsky introduced query by committee
+  in 1992; David Cohn, Les Atlas and Richard Ladner's 'Improving Generalization with Active
+  Learning' (1994) helped name the field, and David Lewis and William Gale proposed uncertainty
+  sampling the same year. Burr Settles's 2009 survey became the standard reference.
+year: 1994
+see_also:
+  - data labeling
+  - annotation
+  - weak supervision
+  - semi-supervised learning
+  - online learning
+  - human-in-the-loop
+  - multi-armed bandit
+sources:
+  - text: >-
+      Settles, B. (2009). Active Learning Literature Survey. Computer Sciences Technical Report
+      1648, University of Wisconsin–Madison.
+  - text: >-
+      Cohn, D., Atlas, L. & Ladner, R. (1994). Improving Generalization with Active Learning.
+      Machine Learning 15(2).
+  - text: >-
+      Lewis, D. D. & Gale, W. A. (1994). A Sequential Algorithm for Training Text Classifiers. Proc.
+      SIGIR 1994.

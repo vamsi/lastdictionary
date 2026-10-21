@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: conceptual dependency
+id: conceptual-dependency
+pos: n.
+also:
+  - conceptual dependency theory
+  - CD theory
+  - primitive acts
+domain: sym
+domains:
+  - hist
+  - llm
+labels:
+  - historical
+level: specialist
+plain: >-
+  A 1970s theory for representing the meaning of sentences with a small set of basic actions, so
+  that 'John gave Mary a book' and 'Mary got a book from John' come out the same.
+senses:
+  - definition: >-
+      A theory and notation for representing the meaning of natural-language sentences independently
+      of their wording or language, by decomposing events into a small set of primitive acts — such
+      as ATRANS (transfer of possession), PTRANS (change of location), MTRANS (transfer of
+      information), PROPEL, INGEST and EXPEL — connected to actors, objects, recipients, instruments
+      and causal links between states and events. Paraphrases receive identical representations, and
+      inferences attach to the primitives: any ATRANS implies that the recipient now has the object.
+      Conceptual dependency underpinned 1970s language-understanding programs at Stanford and Yale
+      such as MARGIE, SAM and PAM and the higher-level structures of [[script|scripts]], plans and
+      goals. Critics argued that no fixed set of primitives can capture all meaning; its ideas
+      resurface in [[semantic-parsing|semantic parsing]] and event-based
+      [[knowledge-representation|knowledge representations]].
+origin: >-
+  Introduced by Roger Schank in his 1969 University of Texas doctoral thesis, 'A Conceptual
+  Dependency Representation for a Computer-Oriented Semantics', developed at Stanford and set out in
+  full in a 1972 paper in Cognitive Psychology. The Stanford MARGIE system (reported at IJCAI 1973,
+  described in the 1975 book Conceptual Information Processing) used it for parsing, inference and
+  paraphrase generation; Schank continued the work at Yale from 1974.
+year: 1969
+see_also:
+  - script
+  - frame
+  - semantic network
+  - knowledge representation
+  - semantic parsing
+  - commonsense reasoning
+sources:
+  - text: >-
+      Schank, R. C. (1972). Conceptual Dependency: A Theory of Natural Language Understanding.
+      Cognitive Psychology 3(4), 552–631.

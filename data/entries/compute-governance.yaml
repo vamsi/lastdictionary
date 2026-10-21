@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: compute governance
+id: compute-governance
+pos: n.
+also:
+  - governance of compute
+  - compute-based governance
+  - computing power governance
+domain: gov
+domains:
+  - hw
+  - safety
+level: core
+plain: >-
+  Using control over the computer chips and data centers that AI depends on — who can buy them,
+  where they go, how they are used — as a way to oversee powerful AI.
+senses:
+  - definition: >-
+      The use of computing power ([[compute|compute]]) — AI chips, the data centers that house them
+      and the cloud services that rent them — as a point of leverage for AI policy. In the framing
+      of Girish Sastry, Lennart Heim and colleagues (2024), compute is an unusually workable lever
+      because it is 'detectable, excludable, and quantifiable' and comes from a concentrated supply
+      chain: big training runs need big, power-hungry facilities that are hard to hide; chips are
+      physical goods that can be counted and withheld; and a handful of firms such as
+      [[nvidia|Nvidia]], [[tsmc|TSMC]] and the Dutch lithography maker ASML control key stages of
+      production. Tools include [[export-controls-on-ai-chips|export controls on AI chips]],
+      reporting duties keyed to [[compute-threshold|compute thresholds]],
+      [[know-your-customer-for-compute|know-your-customer]] rules for cloud providers, chip
+      registries, [[on-chip-governance-mechanisms|on-chip governance mechanisms]] and public compute
+      for researchers. Critics note that algorithmic efficiency gains,
+      [[knowledge-distillation|distillation]] and growing [[test-time-compute|inference-time
+      compute]] weaken training compute as a proxy for risk, and that controls invite smuggling and
+      evasion.
+    example: >-
+      Compute governance works only as long as frontier training still needs tens of thousands of
+      top-end chips.
+origin: >-
+  Discussed by researchers at the Centre for the Governance of AI (GovAI) and elsewhere from about
+  2021. Yonadav Shavit's 2023 proposal for verifying training runs through compute monitoring and
+  the multi-author paper 'Computing Power and the Governance of Artificial Intelligence' (Girish
+  Sastry, Lennart Heim et al., 2024) gave the field a systematic form; US chip export controls
+  (2022) and [[executive-order-14110|Executive Order 14110]] (2023) were early applications.
+see_also:
+  - compute threshold
+  - export controls on AI chips
+  - know-your-customer for compute
+  - on-chip governance mechanisms
+  - AI Diffusion Rule
+  - training compute
+sources:
+  - text: >-
+      Sastry, G., Heim, L., Belfield, H., Anderljung, M., Brundage, M., Hazell, J., O'Keefe, C.,
+      Hadfield, G. K. et al. (2024). Computing Power and the Governance of Artificial Intelligence.
+      arXiv:2402.08797.
+  - text: >-
+      Shavit, Y. (2023). What Does It Take to Catch a Chinchilla? Verifying Rules on Large-Scale
+      Neural Network Training via Compute Monitoring. arXiv:2303.11341.

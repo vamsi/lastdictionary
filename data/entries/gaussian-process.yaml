@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gaussian process
+id: gaussian-process
+pos: n.
+also:
+  - GP
+  - Gaussian process regression
+  - GPR
+  - kriging
+  - covariance function
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A way of predicting an unknown curve or surface that gives not just a best guess at each point but
+  an honest error bar, narrow near measured points and wide far from them.
+senses:
+  - definition: >-
+      A [[probability-distribution|probability distribution]] over functions, fully specified by a
+      mean function and a covariance (kernel) function that encodes assumptions such as smoothness,
+      length scale or periodicity; technically, a random function whose values at any finite set of
+      inputs are jointly Gaussian. In Gaussian process regression, a GP [[prior|prior]] over
+      functions combined with Gaussian observation noise gives a closed-form
+      [[posterior|posterior]]: a predictive mean and variance at every input, with uncertainty
+      growing away from the data. Kernel hyperparameters are fit by maximizing the marginal
+      likelihood. GPs are [[nonparametric-model|nonparametric]] and data-efficient but cost O(n³)
+      time in the number of training points, motivating sparse and inducing-point approximations;
+      classification needs approximate inference. They are the standard surrogate model in
+      [[bayesian-optimization|Bayesian optimization]], a staple of geostatistics, and the limit of
+      infinitely wide neural networks at initialization.
+    example: >-
+      With only 40 expensive simulations, a Gaussian process gave us both a response surface and
+      where to sample next.
+formula_latex: f \sim \mathcal{GP}\big(m(\mathbf{x}),\, k(\mathbf{x}, \mathbf{x}')\big), \qquad
+  \bar{f}_* = m(\mathbf{x}_*) + \mathbf{k}_*^{\top}(K + \sigma_n^2 I)^{-1}(\mathbf{y} - \mathbf{m})
+origin: >-
+  Studied in probability theory by the 1940s — Joseph Doob's paper 'The Elementary Gaussian
+  Processes' (1944) uses the name — notably in Andrey Kolmogorov's and Norbert Wiener's work on
+  prediction of stationary processes. Prediction with them emerged in geostatistics as kriging, from
+  Danie Krige's 1951 mining thesis and Georges Matheron's theory (from 1960). Radford Neal (1996)
+  linked them to infinitely wide neural networks, and Christopher Williams and Carl Edward Rasmussen
+  (1996; book 2006) brought them into mainstream machine learning.
+year: 1944
+note: >-
+  Not to be confused with a [[gaussian-mixture-model|Gaussian mixture model]]. Kriging and GP
+  regression are the same mathematics under different names; kernel [[ridge-regression|ridge
+  regression]], with its penalty set to the noise variance, gives the same predictive mean without
+  the variance.
+see_also:
+  - Bayesian optimization
+  - kernel trick
+  - Bayesian inference
+  - nonparametric model
+  - ridge regression
+  - neural tangent kernel
+contrast:
+  - Gaussian mixture model
+sources:
+  - text: >-
+      Rasmussen, C. E. & Williams, C. K. I. (2006). Gaussian Processes for Machine Learning. MIT
+      Press.
+  - text: >-
+      Williams, C. K. I. & Rasmussen, C. E. (1996). Gaussian Processes for Regression. Advances in
+      Neural Information Processing Systems 8.

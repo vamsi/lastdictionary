@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Claude Code
+id: claude-code
+pos: prop. n.
+domain: agents
+domains:
+  - eng
+labels:
+  - trademark
+level: core
+plain: >-
+  A coding assistant from Anthropic that works as an agent: given a programming task, it explores
+  the project, changes the code and runs programs to check its work, from the web, a desktop app, an
+  editor or a terminal.
+senses:
+  - definition: >-
+      A [[coding-agent|coding agent]] product from Anthropic for [[agentic-coding|agentic coding]],
+      in which Claude models work directly in a developer's environment — searching the repository,
+      making edits, running shell commands, builds and tests, and handling git — under a
+      [[permission-system|permission system]] that asks before risky actions unless configured
+      otherwise. Around the core [[agent-loop|agent loop]] it popularized harness features now
+      common across agents: a CLAUDE.md [[agent-instruction-file|agent instruction file]] loaded
+      into every session, [[subagent|subagents]] with separate contexts, lifecycle [[hook|hooks]],
+      [[agent-skill|skills]], plugins, [[model-context-protocol|MCP]] integrations, an
+      operating-system-level [[sandbox|sandbox]] for shell commands, and headless and cloud modes
+      for [[background-agent|background]] work. Its runtime was also released as a software
+      development kit, renamed the Claude Agent SDK in September 2025 to reflect its use for agents
+      beyond coding.
+    example: >-
+      I asked Claude Code to bump the dependency, fix whatever broke and open a pull request.
+origin: >-
+  Released by Anthropic as a research preview on 24 February 2025 alongside Claude 3.7 Sonnet,
+  initially as a command-line tool, and made generally available on 22 May 2025 with editor and
+  GitHub integrations. Hooks (30 June 2025), custom subagents (24 July 2025), plugins (9 October
+  2025) and a web version (October 2025) followed.
+year: 2025
+note: >-
+  Often cited as the archetypal agent [[harness|harness]]: the same Claude models behave differently
+  inside it than in a chat app.
+see_also:
+  - coding agent
+  - agentic coding
+  - harness
+  - agent instruction file
+  - hook
+  - subagent
+  - Claude
+sources:
+  - text: Anthropic (2025). Claude 3.7 Sonnet and Claude Code. 24 February 2025.
+    url: https://anthropic.com/news/claude-3-7-sonnet
+  - text: Anthropic. How Claude remembers your project. Claude Code documentation.
+    url: https://code.claude.com/docs/en/memory
+  - text: >-
+      Shihipar, T. (2025). Building agents with the Claude Agent SDK. Anthropic, 29 September 2025.
+    url: https://claude.com/resources/articles/building-agents-with-the-claude-agent-sdk
+as_of: 2026-10

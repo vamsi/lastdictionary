@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Elo rating
+id: elo-rating
+pos: n.
+also:
+  - Elo
+  - Elo score
+  - Elo rating system
+  - Arena score
+pronunciation: EE-loh
+domain: eval
+domains:
+  - math
+  - rl
+level: core
+plain: >-
+  A number that ranks players — or AI models — from the results of head-to-head contests, rising
+  when you beat a strong opponent and falling when you lose to a weak one.
+senses:
+  - definition: >-
+      A rating system that estimates competitors' relative strength from pairwise outcomes. Each
+      competitor has a rating, and the difference between two ratings predicts the expected score of
+      a match through a logistic curve (formula below): a 400-point advantage implies roughly
+      10-to-1 odds. After each game a rating moves by K × (actual score − expected score), where the
+      K-factor sets the size of updates. In AI, Elo-style ratings rank game-playing programs such as
+      chess engines and [[alphago|AlphaGo]], agents trained by [[self-play|self-play]],
+      competitive-programming performance ('Codeforces Elo') and language models compared by human
+      votes on [[lmarena|LMArena]]. Because sequential updates depend on the order of games, model
+      leaderboards now usually fit a [[bradley-terry-model|Bradley–Terry model]] to all comparisons
+      at once, as Chatbot Arena has done since December 2023, and report the result on an Elo-like
+      scale.
+    example: >-
+      A 100-point Elo gap means the stronger model should win about 64% of head-to-head votes.
+formula_latex: E_A = \frac{1}{1 + 10^{(R_B - R_A)/400}}
+origin: >-
+  Devised by Arpad Elo, a Hungarian-American physics professor and chess master. The United States
+  Chess Federation adopted his system in 1960 and FIDE in 1970, and Elo described it in The Rating
+  of Chessplayers, Past and Present (1978). LMSYS's Chatbot Arena brought Elo ratings to
+  language-model evaluation in May 2023.
+year: 1960
+note: >-
+  Elo is a surname, not an acronym, so 'ELO' is wrong. Ratings are relative to a pool of
+  competitors: numbers from different leaderboards or periods cannot be compared directly.
+see_also:
+  - Bradley–Terry model
+  - LMArena
+  - leaderboard
+  - win rate
+  - self-play
+  - AlphaGo
+sources:
+  - text: >-
+      Elo, A. E. (1978). The Rating of Chessplayers, Past and Present. Arco Publishing.

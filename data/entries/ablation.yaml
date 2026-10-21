@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ablation
+id: ablation
+pos: n.
+also:
+  - ablate
+  - ablation study
+  - zero ablation
+  - mean ablation
+  - resample ablation
+  - knockout
+domain: interp
+domains:
+  - ml
+  - eval
+level: core
+plain: >-
+  Removing or switching off a part of an AI system to see what changes — whether an ingredient of an
+  experiment's design or a single unit inside a trained network.
+senses:
+  - context: Interpretability
+    definition: >-
+      An intervention that removes the contribution of a model component — a neuron,
+      [[attention-head|attention head]], layer, feature or direction — during the
+      [[forward-pass|forward pass]] and measures the effect on behavior, to test whether the
+      component is necessary. Variants differ in what replaces the activation: zero ablation sets it
+      to zero; mean ablation substitutes its average over a reference dataset; resample ablation
+      substitutes its value on another, randomly chosen input. Because zeroing can push activations
+      far outside their normal range, mean and resample ablation are usually preferred. Ablation can
+      understate a component's role when other components compensate — self-repair, as with the
+      backup name movers of the [[indirect-object-identification|indirect object identification]]
+      circuit — and overstate it when the ablation itself disrupts the network. Ablating a single
+      direction, such as a [[refusal-direction|refusal direction]], is also used to edit or steer
+      models.
+    example: >-
+      Mean-ablating head 9.6 drops task accuracy sharply, but backup heads recover part of it.
+  - context: Experimental methodology
+    definition: >-
+      Short for ablation study: an experiment that removes or replaces one part of a learning system
+      — a loss term, data source, architectural module or training trick — while holding the rest
+      fixed, to measure that part's contribution. Ablation tables are a standard section of
+      machine-learning papers.
+origin: >-
+  From Latin ablatio, 'removal', via surgery and neuroscience, where lesioning brain tissue to study
+  its function dates to the 19th century. Paul Cohen and Adele Howe (1988) credited Allen Newell
+  with bringing the term into AI in his 1974 tutorial on speech understanding systems (published
+  1975), as a way to assess the contribution of components of complex systems.
+year: 1975
+note: >-
+  'Ablation' and 'knockout' are used interchangeably in interpretability; 'lesion' is the
+  neuroscience term. A directional ablation removes one direction from activations rather than a
+  whole component.
+see_also:
+  - activation patching
+  - causal scrubbing
+  - circuit
+  - refusal direction
+  - concept erasure
+  - indirect object identification
+sources:
+  - text: >-
+      Newell, A. (1975). A Tutorial on Speech Understanding Systems. In D. R. Reddy (ed.), Speech
+      Recognition: Invited Papers Presented at the 1974 IEEE Symposium. Academic Press.
+  - text: >-
+      Cohen, P. R. & Howe, A. E. (1988). How Evaluation Guides AI Research. AI Magazine 9(4).

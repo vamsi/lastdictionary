@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Jensen's inequality
+id: jensen-s-inequality
+pos: n.
+also:
+  - Jensen inequality
+domain: math
+domains:
+  - gen
+  - ml
+level: specialist
+plain: >-
+  A rule saying that for a bowl-shaped curve, the average of the outputs is at least the output of
+  the average. It is the hidden step behind many proofs in machine learning.
+senses:
+  - definition: >-
+      The inequality f(E[X]) ≤ E[f(X)] for any convex function f and [[random-variable|random
+      variable]] X — the probabilistic form of the fact that a chord of a convex curve lies above
+      the curve — with the direction reversed for concave functions such as the logarithm. It
+      underpins much of probabilistic machine learning. Applied to the concave logarithm it gives
+      log E[w] ≥ E[log w], which yields the [[evidence-lower-bound|evidence lower bound]] used in
+      [[variational-inference|variational inference]] and [[variational-autoencoder|variational
+      autoencoders]] and the monotone-improvement proof of the
+      [[expectation-maximization-algorithm|expectation–maximization algorithm]]. It shows that the
+      [[kullback-leibler-divergence|Kullback–Leibler divergence]] and [[mutual-information|mutual
+      information]] are nonnegative, and it explains why, for a convex loss, an ensemble's averaged
+      prediction scores at least as well as its members do on average. It also gives its name to the
+      [[jensen-shannon-divergence|Jensen–Shannon divergence]].
+    example: >-
+      Applying Jensen's inequality to the log marginal likelihood gives the ELBO in one line.
+formula_latex: f\big(\mathbb{E}[X]\big) \le \mathbb{E}\big[f(X)\big] \qquad \text{for convex } f
+origin: >-
+  Published by the Danish mathematician and telephone engineer Johan Jensen in 'Sur les fonctions
+  convexes et les inégalités entre les valeurs moyennes' (Acta Mathematica, 1906), after a Danish
+  version in 1905; special cases had been proved earlier, for example by Otto Hölder in 1889.
+year: 1906
+see_also:
+  - evidence lower bound
+  - Kullback–Leibler divergence
+  - convex optimization
+  - expectation–maximization algorithm
+  - Jensen–Shannon divergence
+  - variational inference
+sources:
+  - text: >-
+      Jensen, J. L. W. V. (1906). Sur les fonctions convexes et les inégalités entre les valeurs
+      moyennes. Acta Mathematica, 30.

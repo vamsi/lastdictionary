@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: predictive policing
+id: predictive-policing
+pos: n.
+also:
+  - crime forecasting
+  - place-based predictive policing
+  - person-based predictive policing
+domain: society
+domains:
+  - gov
+  - ml
+labels:
+  - contested
+level: core
+plain: >-
+  Using computer programs to forecast where crimes are likely to happen, or who is likely to be
+  involved, so that police can decide where to patrol or whom to watch.
+senses:
+  - definition: >-
+      The use of statistical and machine-learning models on historical crime, arrest and other data
+      to forecast where and when crime is likely (place-based) or which individuals are likely to
+      offend or be victimized (person-based), in order to allocate police attention. Place-based
+      systems such as PredPol, later renamed Geolitica, adapted earthquake-aftershock models to
+      crime reports; person-based systems such as Chicago's Strategic Subject List scored
+      individuals. Proponents say forecasts help target scarce patrols where crime concentrates;
+      critics argue that because the data record policing rather than crime itself, models send
+      officers back to already heavily policed neighborhoods, which then generate more recorded
+      incidents in a self-reinforcing feedback loop, and that evidence of crime reduction is weak.
+      Several US cities ended such programs from 2019 onward, and the [[eu-ai-act|EU AI Act]]
+      prohibits assessing an individual's risk of offending based solely on profiling or personality
+      traits.
+    example: >-
+      The city dropped its predictive policing contract after an evaluation found no measurable
+      effect on burglaries.
+origin: >-
+  The phrase spread in the late 2000s, building on 1990s crime mapping and hot-spot policing: Los
+  Angeles police chief William Bratton promoted forecasting-led policing, and by 2009 the US
+  National Institute of Justice was convening symposia on it. Its first use is not established.
+  PredPol, spun out of UCLA research by Jeffrey Brantingham and George Mohler, launched commercially
+  in 2012.
+year: 2009
+note: >-
+  Kristian Lum and William Isaac (2016) simulated a drug-crime model trained on Oakland arrest data
+  and showed it would concentrate patrols in Black and low-income neighborhoods, although
+  public-health surveys suggested drug use was spread far more evenly.
+see_also:
+  - algorithmic bias
+  - COMPAS
+  - AI surveillance
+  - facial recognition
+  - prohibited AI practices
+  - algorithmic accountability
+sources:
+  - text: Lum, K. & Isaac, W. (2016). To predict and serve? Significance 13(5), 14–19.
+  - text: >-
+      Ensign, D., Friedler, S. A., Neville, S., Scheidegger, C. & Venkatasubramanian, S. (2018).
+      Runaway Feedback Loops in Predictive Policing. Proceedings of Machine Learning Research 81
+      (FAT* 2018).

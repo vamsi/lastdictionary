@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: situational awareness
+id: situational-awareness
+pos: n.
+also:
+  - situationally aware
+  - situationally aware model
+domain: safety
+domains:
+  - eval
+  - asi
+level: core
+plain: >-
+  An AI model's grasp of its own position — that it is an AI, how it was trained, whether it is
+  being tested. Also the title of a widely read 2024 essay on the race toward human-level AI.
+senses:
+  - context: Model property
+    definition: >-
+      What an AI model knows about what it is and where it stands — that it is an AI model, which
+      model it is, how it was trained and deployed, who built it and who is using it, and whether an
+      input looks more like training, a test or real use — together with its capacity to let that
+      knowledge guide its actions. Situational awareness makes an assistant more useful, but it is
+      also a prerequisite for [[deceptive-alignment|deceptive alignment]],
+      [[alignment-faking|alignment faking]], [[sandbagging|sandbagging]] and other
+      [[scheming|scheming]], because a model must recognize when it is observed in order to behave
+      differently when it is not. It is measured with benchmarks such as the Situational Awareness
+      Dataset (SAD, 2024; over 13,000 questions in seven task categories) and with tests of
+      out-of-context reasoning, in which a model applies descriptions of itself absorbed during
+      training. Recognizing tests specifically is [[evaluation-awareness|evaluation awareness]].
+    example: >-
+      As its situational awareness grew, the model began remarking in its reasoning that the
+      scenario looked like a test.
+  - context: Aschenbrenner essay
+    definition: >-
+      'Situational Awareness: The Decade Ahead', a June 2024 essay series by Leopold Aschenbrenner,
+      a former member of OpenAI's [[superalignment|superalignment]] team. It argued that
+      [[artificial-general-intelligence|artificial general intelligence]] was plausible by about
+      2027, that [[superintelligence|superintelligence]] could follow within years through
+      [[automated-ai-research|automated AI research]], that trillion-dollar compute clusters would
+      be built, and that the United States government would need a national AGI effort ('The
+      Project') and much stronger security against espionage. Widely read in technology and policy
+      circles, it was criticized for its timelines and its nationalist framing of an AI race.
+origin: >-
+  Borrowed from aviation and human-factors research, where Mica Endsley's 1995 model defined
+  situation awareness as perceiving, comprehending and projecting one's environment. Ajeya Cotra and
+  Richard Ngo and colleagues used it in 2022 for a model's understanding of its own training
+  situation; Lukas Berglund and colleagues proposed ways to measure it in 2023, and Aschenbrenner's
+  essay gave the phrase a second, popular life.
+year: 2022
+note: >-
+  Not to be confused with [[consciousness|consciousness]] or self-awareness in the philosophical
+  sense: the term concerns usable knowledge, not experience.
+see_also:
+  - evaluation awareness
+  - deceptive alignment
+  - alignment faking
+  - scheming
+  - introspection
+  - AI timelines
+  - superalignment
+contrast:
+  - consciousness
+sources:
+  - text: >-
+      Berglund, L., Cooper Stickland, A., Balesni, M., Kaufmann, M., Tong, M., Korbak, T.,
+      Kokotajlo, D. & Evans, O. (2023). Taken out of context: On measuring situational awareness in
+      LLMs. arXiv:2309.00667.
+    url: https://arxiv.org/abs/2309.00667
+  - text: >-
+      Laine, R., Chughtai, B., Betley, J., Hariharan, K., Scheurer, J., Balesni, M., Hobbhahn, M.,
+      Meinke, A. & Evans, O. (2024). Me, Myself, and AI: The Situational Awareness Dataset (SAD) for
+      LLMs. arXiv:2407.04694.
+    url: https://arxiv.org/abs/2407.04694
+  - text: >-
+      Aschenbrenner, L. (2024). Situational Awareness: The Decade Ahead. Essay series,
+      situational-awareness.ai.

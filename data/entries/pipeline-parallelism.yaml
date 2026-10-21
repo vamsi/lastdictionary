@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pipeline parallelism
+id: pipeline-parallelism
+pos: n.
+also:
+  - PP
+  - pipeline model parallelism
+  - inter-layer model parallelism
+  - pipeline bubble
+  - 1F1B
+domain: train
+domains:
+  - hw
+level: specialist
+plain: >-
+  Splitting a model's layers into consecutive stages on different chips, like stations on an
+  assembly line, and streaming small batches of data through so that every station stays busy.
+senses:
+  - definition: >-
+      A form of [[model-parallelism|model parallelism]] that partitions a network's layers into
+      sequential stages on different devices and splits each [[mini-batch|mini-batch]] into
+      micro-batches that flow through the stages like an assembly line, so that different stages
+      work on different micro-batches at once. Only activations at stage boundaries, and their
+      gradients, are communicated, point to point, which suits slower links between nodes. Its
+      inefficiency is the pipeline bubble: idle time while the pipeline fills and drains, a fraction
+      (p − 1)/(m + p − 1) of each step for p stages and m micro-batches under the simple GPipe
+      schedule. Later schedules reduce the bubble or memory: one-forward-one-backward (1F1B)
+      interleaving, Megatron-LM's interleaved virtual stages, 'zero-bubble' schedules that split the
+      backward pass, and DeepSeek's DualPipe, which overlaps computation with communication.
+      Asynchronous variants such as PipeDream avoid flushing the pipeline but must manage stale
+      weights.
+    example: >-
+      With 16 pipeline stages and 64 micro-batches, the bubble still took about 19% of each step.
+formula_latex: \text{bubble fraction} = \frac{p - 1}{m + p - 1}
+origin: >-
+  Pipelining is old in computer architecture. For neural-network training it was introduced at scale
+  by PipeDream (Aaron Harlap, Deepak Narayanan and colleagues, June 2018) and Google's GPipe
+  (Yanping Huang and colleagues, November 2018); Narayanan and colleagues' interleaved schedule
+  (2021) became standard in Megatron-LM.
+year: 2018
+see_also:
+  - model parallelism
+  - tensor parallelism
+  - 3D parallelism
+  - Megatron-LM
+  - mini-batch
+  - distributed training
+sources:
+  - text: >-
+      Huang, Y., Cheng, Y., Bapna, A., Firat, O., Chen, M. X. et al. (2018). GPipe: Efficient
+      Training of Giant Neural Networks using Pipeline Parallelism. arXiv:1811.06965.
+    url: https://arxiv.org/abs/1811.06965
+  - text: >-
+      Harlap, A., Narayanan, D., Phanishayee, A. et al. (2018). PipeDream: Fast and Efficient
+      Pipeline Parallel DNN Training. arXiv:1806.03377.
+    url: https://arxiv.org/abs/1806.03377
+  - text: >-
+      Narayanan, D., Shoeybi, M., Casper, J. et al. (2021). Efficient Large-Scale Language Model
+      Training on GPU Clusters Using Megatron-LM. arXiv:2104.04473.
+    url: https://arxiv.org/abs/2104.04473

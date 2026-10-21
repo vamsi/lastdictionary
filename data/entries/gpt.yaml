@@ -1,0 +1,80 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPT
+id: gpt
+pos: abbr.
+also:
+  - generative pre-trained transformer
+  - generative pretrained transformer
+  - GPTs
+  - GPT Store
+domain: llm
+domains:
+  - hist
+  - society
+level: essential
+plain: >-
+  Short for 'generative pre-trained transformer', the family of OpenAI models behind ChatGPT. The
+  letters are also used loosely for any similar chatbot model.
+senses:
+  - context: OpenAI models
+    definition: >-
+      A series of [[large-language-model|large language models]] developed by OpenAI, each a
+      [[decoder-only-transformer|decoder-only transformer]] [[pretraining|pretrained]] by
+      [[next-token-prediction|next-token prediction]] on large text corpora: GPT (2018, 117 million
+      parameters), [[gpt-2|GPT-2]] (2019, 1.5 billion), [[gpt-3|GPT-3]] (2020, 175 billion) and
+      [[gpt-4|GPT-4]] (2023, multimodal, size undisclosed), followed by GPT-4o (2024), GPT-4.1 and
+      GPT-5 (2025) and later versions. GPT-3.5 models powered the original [[chatgpt|ChatGPT]]
+      (November 2022). Successive releases showed that scaling one basic recipe produced
+      qualitatively new abilities, such as GPT-3's [[in-context-learning|few-shot learning]].
+    example: The paper compares GPT-2 and GPT-3 checkpoints on the same probe.
+    labels:
+      - trademark
+  - context: Generic
+    definition: >-
+      Any generative pretrained [[transformer|transformer]] [[language-model|language model]] or
+      chatbot built on one, whoever made it, as in 'a GPT for legal research'. Developers of other
+      model families generally avoid the usage for their own products.
+    labels:
+      - informal
+  - context: OpenAI product
+    definition: >-
+      A custom version of ChatGPT configured with instructions, files and tools, a feature OpenAI
+      introduced as 'GPTs' in November 2023 and distributed through its GPT Store from January 2024.
+    labels:
+      - trademark
+  - context: Economics
+    definition: >-
+      General-purpose technology: in the sense set out by the economists Timothy Bresnahan and
+      Manuel Trajtenberg (1995), a technology that becomes pervasive across the economy, keeps
+      improving and spawns complementary innovations; electricity, the steam engine and computing
+      are standard examples. The 2023 paper 'GPTs are GPTs' by Tyna Eloundou and colleagues argued
+      that LLMs qualify.
+origin: >-
+  OpenAI's June 2018 report 'Improving Language Understanding by Generative Pre-Training', by Alec
+  Radford, Karthik Narasimhan, Tim Salimans and Ilya Sutskever, introduced the model; the acronym
+  was in use by October 2018, when Google's BERT paper compared against 'OpenAI GPT'. 'General
+  purpose technology' in economics dates from Timothy Bresnahan and Manuel Trajtenberg (1995).
+year: 2018
+note: >-
+  The US Patent and Trademark Office refused OpenAI's application to register 'GPT' as merely
+  descriptive (February 2024) and, in May 2025, as likely generic. Not every chatbot is a GPT model:
+  Claude, Gemini and Llama are separate families from other developers.
+see_also:
+  - ChatGPT
+  - GPT-2
+  - GPT-3
+  - GPT-4
+  - decoder-only transformer
+  - large language model
+  - BERT
+contrast:
+  - BERT
+sources:
+  - text: >-
+      Radford, A., Narasimhan, K., Salimans, T. & Sutskever, I. (2018). Improving Language
+      Understanding by Generative Pre-Training. OpenAI technical report.
+  - text: >-
+      Eloundou, T., Manning, S., Mishkin, P. & Rock, D. (2023). GPTs are GPTs: An Early Look at the
+      Labor Market Impact Potential of Large Language Models. arXiv; Science 2024.
+as_of: 2026-10

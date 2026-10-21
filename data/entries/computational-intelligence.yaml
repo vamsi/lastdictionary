@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: computational intelligence
+id: computational-intelligence
+pos: n.
+also:
+  - CI
+domain: core
+domains:
+  - sym
+  - dl
+  - hist
+level: specialist
+plain: >-
+  A family of AI methods inspired by nature, such as neural networks, fuzzy logic and evolutionary
+  algorithms, that learn or adapt from numbers rather than following explicit logical rules.
+senses:
+  - definition: >-
+      An umbrella term for computational methods modeled loosely on nature, or on the vagueness of
+      human language, that solve problems by learning, adaptation and approximation rather than
+      explicit symbolic reasoning: chiefly [[neural-network|neural networks]], [[fuzzy-logic|fuzzy
+      logic]] and [[evolutionary-computation|evolutionary computation]], often extended to
+      [[swarm-intelligence|swarm intelligence]], artificial immune systems and probabilistic
+      methods. James Bezdek's influential 1994 definition called a system computationally
+      intelligent when it works only with low-level numerical data, has pattern-recognition
+      components, does not use knowledge in the symbolic-AI sense, and shows adaptivity and fault
+      tolerance. The term is partly institutional, naming the IEEE Computational Intelligence
+      Society and its conferences and journals. Some authors use it as a synonym for
+      [[artificial-intelligence|artificial intelligence]], notably David Poole, Alan Mackworth and
+      Randy Goebel's textbook Computational Intelligence (1998), while others contrast it with
+      [[symbolic-ai|symbolic AI]].
+    example: >-
+      The plant's controller was built with computational intelligence methods: a fuzzy rule base
+      tuned by a genetic algorithm.
+origin: >-
+  The earliest widely cited use is the title of the journal Computational Intelligence, founded in
+  1985. The IEEE Neural Networks Council (founded 1989) organized the first IEEE World Congress on
+  Computational Intelligence in Orlando in 1994, where Bezdek offered his definition; the council
+  became the IEEE Neural Networks Society in 2001 and was renamed the IEEE Computational
+  Intelligence Society about two years later.
+year: 1985
+note: >-
+  Largely overlaps with [[soft-computing|soft computing]]; the difference is mostly one of community
+  and emphasis. The boundary with mainstream machine learning has blurred, since neural networks now
+  dominate both.
+see_also:
+  - soft computing
+  - fuzzy logic
+  - evolutionary computation
+  - neural network
+  - swarm intelligence
+  - genetic algorithm
+  - artificial intelligence
+contrast:
+  - symbolic AI
+sources:
+  - text: >-
+      Bezdek, J. C. (1994). What Is Computational Intelligence? In Zurada, J. M., Marks, R. J. &
+      Robinson, C. J. (eds), Computational Intelligence: Imitating Life. IEEE Press.
+  - text: >-
+      Poole, D., Mackworth, A. & Goebel, R. (1998). Computational Intelligence: A Logical Approach.
+      Oxford University Press.

@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fully convolutional network
+id: fully-convolutional-network
+pos: n.
+also:
+  - FCN
+  - fully convolutional neural network
+domain: dl
+domains:
+  - percep
+level: specialist
+plain: >-
+  An image network made only of scanning-window layers, with no fixed-size final layers, so it can
+  take pictures of any size and label every pixel.
+senses:
+  - definition: >-
+      A [[convolutional-neural-network|convolutional neural network]] built without
+      [[fully-connected-layer|fully connected layers]], from [[convolution|convolutional]],
+      [[pooling|pooling]] and upsampling layers alone, so that for an input of whatever size it
+      returns a map of predictions, one per location, rather than a single label. Rewriting a
+      classifier's fully connected layers as equivalent convolutions lets it be applied densely
+      across a whole image in one pass. For [[semantic-segmentation|semantic segmentation]], coarse
+      deep [[feature-map|feature maps]] are upsampled, by [[transposed-convolution|transposed
+      convolutions]] or interpolation, and fused with finer maps from earlier layers through skip
+      connections, yielding a class prediction for every pixel. The design underlies most later
+      segmentation and dense-prediction networks, including [[u-net|U-Net]], and the convolutional
+      backbones of many object detectors.
+    example: >-
+      Because the model is fully convolutional, we can run it on the full 4K frame without resizing.
+origin: >-
+  Introduced for segmentation by Jonathan Long, Evan Shelhamer and Trevor Darrell of UC Berkeley in
+  'Fully Convolutional Networks for Semantic Segmentation' (arXiv, November 2014; CVPR 2015). Dense,
+  sliding-window application of convolutional classifiers had been explored earlier, for example in
+  Pierre Sermanet and colleagues' OverFeat (2013).
+year: 2014
+see_also:
+  - semantic segmentation
+  - U-Net
+  - transposed convolution
+  - convolutional neural network
+  - image segmentation
+sources:
+  - text: >-
+      Long, J., Shelhamer, E. & Darrell, T. (2015). Fully Convolutional Networks for Semantic
+      Segmentation. CVPR 2015.

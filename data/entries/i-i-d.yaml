@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: i.i.d.
+id: i-i-d
+pos: abbr.
+also:
+  - iid
+  - IID
+  - independent and identically distributed
+  - independently and identically distributed
+domain: math
+domains:
+  - ml
+  - data
+level: core
+plain: >-
+  Short for 'independent and identically distributed': every data point is produced the same way,
+  and none influences any other — like repeated rolls of one fair die.
+senses:
+  - definition: >-
+      Describing a collection of [[random-variable|random variables]] that are mutually independent
+      and share one [[probability-distribution|probability distribution]]. The i.i.d. assumption
+      underlies most classical statistics and learning theory: the [[law-of-large-numbers|law of
+      large numbers]], the [[central-limit-theorem|central limit theorem]], [[pac-learning|PAC
+      learning]] bounds and the use of a held-out [[test-set|test set]] to predict future
+      performance all assume that training and test examples are i.i.d. draws from a single
+      distribution. Practice routinely violates it: time series and conversations are dependent,
+      data arrive in clusters, and deployment data drift away from training data
+      ([[distribution-shift|distribution shift]], [[out-of-distribution|out-of-distribution]]
+      inputs). Learning from non-i.i.d. streams is the concern of [[online-learning|online
+      learning]] and [[continual-learning|continual learning]], and reinforcement learning breaks
+      the assumption because an agent's actions shape its own data — one reason
+      [[experience-replay|experience replay]] shuffles stored transitions.
+    example: >-
+      Splitting by user rather than by row keeps the test set closer to i.i.d. with respect to
+      future traffic.
+origin: >-
+  The assumption is implicit in Jacob Bernoulli's 1713 law of large numbers for repeated trials and
+  was made explicit in 20th-century probability theory. The phrase 'independent and identically
+  distributed' and its abbreviation became standard in 20th-century mathematical statistics; their
+  first uses are not established.
+see_also:
+  - random variable
+  - law of large numbers
+  - central limit theorem
+  - distribution shift
+  - out-of-distribution
+  - test set

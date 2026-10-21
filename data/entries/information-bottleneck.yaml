@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: information bottleneck
+id: information-bottleneck
+pos: n.
+also:
+  - information bottleneck principle
+  - information bottleneck method
+  - IB
+  - variational information bottleneck
+domain: math
+domains:
+  - dl
+  - interp
+level: specialist
+plain: >-
+  The idea that a good internal summary of data keeps exactly the details needed for the task and
+  discards everything else, as a good note-taker does.
+senses:
+  - definition: >-
+      A principle and method, introduced by Naftali Tishby, Fernando Pereira and William Bialek in
+      1999, for summarizing an input X by a representation T that discards as much of X as it can
+      while staying informative about a target Y: one minimizes the [[mutual-information|mutual
+      information]] I(X; T) minus β times I(T; Y), with β setting the balance between compression
+      and prediction. Unlike classic rate–distortion theory, which needs a distortion measure chosen
+      in advance, it lets the target variable define what counts as relevant. The variational
+      information bottleneck (Alexander Alemi and colleagues, 2016) made the objective trainable as
+      a regularizer for neural networks, closely related to the [[evidence-lower-bound|evidence
+      lower bound]] of [[variational-autoencoder|VAEs]].
+    example: >-
+      Treat the summary as an information bottleneck: keep only what helps predict the label.
+  - context: Deep learning theory
+    definition: >-
+      The hypothesis, advanced by Naftali Tishby and colleagues in 2015–2017, that deep-network
+      training proceeds in two phases — first fitting the labels, then compressing representations
+      of the input — and that this compression explains [[generalization|generalization]]. Later
+      work (Andrew Saxe and colleagues, 2018) found that apparent compression depends on the
+      [[activation-function|activation function]] and on how mutual information is estimated, and
+      the claim remains disputed.
+    labels:
+      - contested
+formula_latex: \min_{p(t\mid x)} \; I(X;T) - \beta\, I(T;Y)
+origin: >-
+  Introduced by Naftali Tishby, Fernando Pereira and William Bialek in 'The Information Bottleneck
+  Method' (Allerton Conference, 1999; arXiv 2000). Tishby and Noga Zaslavsky proposed it as a theory
+  of deep learning in 2015, and Ravid Shwartz-Ziv and Tishby's 2017 'Opening the Black Box of Deep
+  Neural Networks via Information' popularized the compression-phase claim.
+year: 1999
+see_also:
+  - mutual information
+  - information theory
+  - minimum description length
+  - generalization
+  - representation learning
+  - variational autoencoder
+sources:
+  - text: >-
+      Tishby, N., Pereira, F. C. & Bialek, W. (1999). The Information Bottleneck Method. Proc. 37th
+      Allerton Conference on Communication, Control and Computing.
+  - text: >-
+      Saxe, A. M. et al. (2018). On the Information Bottleneck Theory of Deep Learning. ICLR 2018.

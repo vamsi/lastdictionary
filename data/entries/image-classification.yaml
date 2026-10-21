@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: image classification
+id: image-classification
+pos: n.
+also:
+  - image recognition
+  - image classifier
+  - top-1 accuracy
+  - top-5 accuracy
+domain: percep
+domains:
+  - dl
+  - eval
+level: essential
+plain: >-
+  Teaching a computer to say what a picture shows by choosing a label, such as 'cat', 'pneumonia' or
+  'stop sign', from a fixed list of possibilities.
+senses:
+  - definition: >-
+      The task of assigning one or more labels from a predefined set of categories to a whole image,
+      without locating objects within it. A model, today usually a
+      [[convolutional-neural-network|convolutional neural network]] or [[vision-transformer|vision
+      transformer]], maps pixels to a vector of class scores, which a [[softmax|softmax]] turns into
+      probabilities for single-label ([[multiclass-classification|multiclass]]) problems and
+      independent sigmoids for [[multilabel-classification|multilabel]] ones; it is trained with
+      [[cross-entropy|cross-entropy]] on labeled examples. Performance is reported as top-1 accuracy
+      (the highest-scoring class is correct) and top-5 accuracy (the correct class is among the five
+      highest). Benchmarks such as [[mnist|MNIST]], CIFAR-10 and [[imagenet|ImageNet]] drove
+      progress: in the 2012 ImageNet challenge [[alexnet|AlexNet]] reached 15.3% top-5 error against
+      the runner-up's 26.2%, and by 2015 [[resnet|ResNet]] ensembles reached about 3.6%, below a
+      widely cited estimate of human error (about 5%). Since 2021, image–text models such as
+      [[clip|CLIP]] can also classify 'zero-shot' by comparing an image with a text description of
+      each class.
+    example: >-
+      We froze the backbone and trained only a linear image-classification head on 2,000 labeled
+      X-rays.
+origin: >-
+  Recognizing printed characters and other visual patterns was among the first problems of
+  [[pattern-recognition|pattern recognition]] in the 1950s, and the classification of satellite
+  image pixels into land-cover types was standard in remote sensing by the 1970s. The deep-learning
+  era began with the ImageNet Large Scale Visual Recognition Challenge (2010–2017), above all
+  AlexNet's 2012 win.
+note: >-
+  Classification answers 'what is in this image?' but not 'where?': that is
+  [[object-detection|object detection]] (boxes) or [[image-segmentation|image segmentation]]
+  (pixels). High benchmark accuracy can hide reliance on backgrounds or textures and poor robustness
+  to [[distribution-shift|distribution shift]].
+see_also:
+  - object detection
+  - ImageNet
+  - AlexNet
+  - convolutional neural network
+  - vision transformer
+  - multiclass classification
+  - CLIP
+contrast:
+  - object detection
+  - image segmentation
+sources:
+  - text: >-
+      Krizhevsky, A., Sutskever, I. & Hinton, G. E. (2012). ImageNet Classification with Deep
+      Convolutional Neural Networks. NeurIPS 2012.
+  - text: >-
+      Russakovsky, O. et al. (2015). ImageNet Large Scale Visual Recognition Challenge.
+      International Journal of Computer Vision 115, 211–252.

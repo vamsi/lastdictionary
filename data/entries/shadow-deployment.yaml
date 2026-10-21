@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: shadow deployment
+id: shadow-deployment
+pos: n.
+also:
+  - shadow mode
+  - shadow testing
+  - dark launch
+  - traffic mirroring
+  - silent deployment
+domain: eng
+domains:
+  - eval
+level: specialist
+plain: >-
+  Quietly running a new AI model alongside the old one on real requests, recording its answers
+  without showing them to anyone, to check it behaves well before it takes over.
+senses:
+  - definition: >-
+      A release technique in which a candidate model receives a copy of live production traffic and
+      makes predictions that are logged but not acted upon, while the incumbent model continues to
+      serve users. Comparing the two on identical real inputs reveals disagreements, errors,
+      [[latency|latency]] and cost under realistic load, crashes on unusual inputs, and
+      [[training-serving-skew|training–serving skew]], all without user-facing risk. Shadowing has
+      limits: users never react to the shadow model's outputs, so effects on engagement or
+      downstream behavior require an [[a-b-testing|A/B test]] or [[canary-deployment|canary
+      deployment]], and accuracy can be judged only when labels arrive or through human or model
+      review of disagreements. It also multiplies inference cost for the mirrored traffic, and the
+      shadow system must be prevented from causing side effects such as sending messages or writing
+      to production databases.
+    example: >-
+      We ran the new claims model in shadow deployment for a month and reviewed every case where it
+      disagreed with the old one.
+origin: >-
+  Adapted from web-operations practices such as dark launching, used by Facebook engineers around
+  2008, and traffic mirroring. 'Shadow mode' became widely known in 2016, when Tesla said it was
+  running Autopilot software silently in customers' cars to compare its decisions with those of
+  drivers.
+note: >-
+  Distinct from a [[canary-deployment|canary deployment]], in which a small share of users do
+  receive the new model's outputs.
+see_also:
+  - canary deployment
+  - A/B testing
+  - model deployment
+  - model monitoring
+  - MLOps
+contrast:
+  - canary deployment

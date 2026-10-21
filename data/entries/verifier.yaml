@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: verifier
+id: verifier
+pos: n.
+also:
+  - grader
+  - checker
+  - verification model
+domain: train
+domains:
+  - llm
+  - sym
+  - eval
+level: core
+plain: >-
+  A program or AI model that checks whether a proposed answer is correct — by running tests,
+  comparing with a known result or judging the reasoning — so that good answers can be picked or
+  rewarded.
+senses:
+  - context: Language models
+    definition: >-
+      A component that assesses a generator's candidate outputs for correctness, used to select
+      among samples at inference time ([[best-of-n-sampling|best-of-n sampling]], search) or to
+      supply rewards in training. Verifiers range from exact checkers — answer matching against a
+      reference, test execution, compilers, proof assistants — to learned models:
+      [[outcome-reward-model|outcome]] and [[process-reward-model|process]] reward models that
+      output a probability of correctness, and generative verifiers that reason in natural language
+      before giving a verdict. Their value rests on the observation that checking is often easier
+      than solving, so a verifier can lift performance beyond the generator's single-attempt
+      accuracy (a difference sometimes called the generation–verification gap). Exact verifiers
+      enable [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable
+      rewards]]; learned ones can be fooled, so optimizing hard against them invites
+      [[reward-overoptimization|reward overoptimization]].
+    example: >-
+      Our verifier runs the hidden test suite, so the policy only gets credit for code that actually
+      passes.
+  - context: Formal methods and complexity
+    definition: >-
+      A procedure that checks a purported proof or certificate: a proof assistant's kernel checking
+      a formal proof, or the efficient checker in an interactive proof system, which accepts a more
+      powerful prover's claims only if they survive its tests. Formal verifiers such as the Lean
+      kernel let models be trained and evaluated on mathematics with guaranteed-correct feedback,
+      and prover–verifier games train models to produce solutions that weaker checkers can confirm.
+origin: >-
+  The complexity-theory sense comes from interactive proofs (Shafi Goldwasser, Silvio Micali and
+  Charles Rackoff; László Babai; both 1985). In language modeling, Karl Cobbe and colleagues at
+  OpenAI (2021) trained verifiers to rank sampled solutions to GSM8K problems, establishing the
+  generate-then-verify pattern behind later reward models and reasoning systems.
+year: 2021
+note: >-
+  Usage overlaps with [[reward-model|reward model]] and [[llm-as-a-judge|LLM-as-a-judge]]:
+  'verifier' stresses correctness, 'reward model' preference, and 'judge' evaluation. A 'verifiable'
+  task is one with an automatic checker, not necessarily a formal proof.
+see_also:
+  - outcome reward model
+  - process reward model
+  - reward model
+  - best-of-n sampling
+  - reinforcement learning with verifiable rewards
+  - LLM-as-a-judge
+  - interactive theorem proving
+contrast:
+  - reward model
+  - LLM-as-a-judge
+sources:
+  - text: >-
+      Cobbe, K. et al. (2021). Training Verifiers to Solve Math Word Problems. arXiv:2110.14168.
+    url: https://arxiv.org/abs/2110.14168
+  - text: >-
+      Goldwasser, S., Micali, S. & Rackoff, C. (1985). The Knowledge Complexity of Interactive
+      Proof-Systems. Proc. 17th ACM Symposium on Theory of Computing.

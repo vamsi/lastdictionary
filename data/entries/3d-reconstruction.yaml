@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: 3D reconstruction
+id: 3d-reconstruction
+pos: n.
+also:
+  - three-dimensional reconstruction
+  - photogrammetry
+  - multi-view stereo
+  - MVS
+  - scene reconstruction
+  - DUSt3R
+  - VGGT
+domain: percep
+domains:
+  - robot
+  - gen
+level: core
+plain: >-
+  Building a 3D model of an object or place, its shape and often its colors, from photos, video or
+  depth-sensor scans.
+senses:
+  - definition: >-
+      The recovery of the three-dimensional shape, and often the appearance, of objects or scenes
+      from two-dimensional images or other measurements. The classical image-based pipeline is
+      [[structure-from-motion|structure from motion]], which estimates camera poses and a sparse
+      [[point-cloud|point cloud]], followed by multi-view stereo, which computes dense depth, and
+      surface reconstruction, which turns points into a textured mesh. Active methods measure
+      geometry directly with laser scanners, structured light, time-of-flight cameras or
+      [[lidar|lidar]]. Neural methods represent the scene implicitly: signed-distance and occupancy
+      networks (2019), [[neural-radiance-field|neural radiance fields]] (2020) and
+      [[gaussian-splatting|Gaussian splatting]] (2023) fit a scene representation to posed images by
+      differentiable rendering. Since late 2023, feed-forward networks predict geometry directly
+      from a handful of uncalibrated images: DUSt3R regresses 'pointmaps', and VGGT (2025) outputs
+      camera parameters, depth maps and point tracks in under a second; other models reconstruct
+      objects and people from a single image. Applications include mapping and surveying,
+      cultural-heritage preservation, film and game assets, augmented and virtual reality, robotics,
+      medicine and [[digital-twin|digital twins]].
+    example: >-
+      The drone's 300 photos give a 3D reconstruction of the bridge accurate enough to measure crack
+      widths.
+origin: >-
+  Measuring 3D shape from photographs began with 19th-century photogrammetry (Aimé Laussedat in
+  France; Albrecht Meydenbauer, who named it in German in 1867). In computer vision, Lawrence
+  Roberts's 1963 thesis recovered 3D blocks from images, and Christopher Longuet-Higgins's
+  eight-point algorithm (1981) formalized the geometry of two views.
+note: >-
+  'Reconstruction' implies recovering actual geometry from measurements; generating plausible 3D
+  content from text or a single image is closer to generative modeling, though the two increasingly
+  overlap.
+see_also:
+  - structure from motion
+  - point cloud
+  - neural radiance field
+  - Gaussian splatting
+  - depth estimation
+  - simultaneous localization and mapping
+  - digital twin
+sources:
+  - text: >-
+      Wang, S., Leroy, V., Cabon, Y., Chidlovskii, B. & Revaud, J. (2024). DUSt3R: Geometric 3D
+      Vision Made Easy. CVPR 2024.
+    url: https://arxiv.org/abs/2312.14132
+  - text: >-
+      Wang, J., Chen, M., Karaev, N., Vedaldi, A., Rupprecht, C. & Novotny, D. (2025). VGGT: Visual
+      Geometry Grounded Transformer. CVPR 2025.
+    url: https://arxiv.org/abs/2503.11651
+  - text: >-
+      Hartley, R. & Zisserman, A. (2004). Multiple View Geometry in Computer Vision, 2nd ed.
+      Cambridge University Press.

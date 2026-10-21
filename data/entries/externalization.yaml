@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: externalization
+id: externalization
+pos: n.
+also:
+  - externalized capability
+  - capability externalization
+domain: agents
+domains:
+  - llm
+  - eng
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Moving an AI agent's know-how and memory out of the model itself and into files, tools and rules
+  around it, so the whole system can do more than the model alone.
+senses:
+  - context: Agents
+    definition: >-
+      The practice and design principle of moving an AI agent's capabilities out of the model's
+      weights and [[context-window|context window]] into external infrastructure that the model
+      consults and operates: [[agent-memory|memory]] stores that carry state across time, libraries
+      of [[agent-skill|skills]] that hold procedural know-how, protocols such as the
+      [[model-context-protocol|Model Context Protocol]] that fix how the agent interacts with tools
+      and other agents, and a [[harness|harness]] that coordinates these into governed execution.
+      Drawing on the idea of cognitive artifacts — tools such as notebooks and checklists that turn
+      hard mental work into easier tasks — proponents argue that much recent agent progress has come
+      from reorganizing the runtime around a model rather than changing its weights, and frame a
+      trade-off between parametric capability, held in the model, and externalized capability, held
+      in its surroundings.
+    example: >-
+      Instead of fine-tuning, we went for externalization: a skills folder, a memory file and
+      stricter tool schemas.
+origin: >-
+  Used as the organizing concept of the survey 'Externalization in LLM Agents: A Unified Review of
+  Memory, Skills, Protocols and Harness Engineering' by Chenyu Zhou, Weinan Zhang and 19 co-authors,
+  posted to arXiv on 9 April 2026. The notion of externalized cognition has older roots in cognitive
+  science and the extended-mind thesis.
+year: 2026
+see_also:
+  - harness
+  - agent memory
+  - agent skill
+  - Model Context Protocol
+  - context engineering
+  - extended mind
+contrast:
+  - parametric knowledge
+sources:
+  - text: >-
+      Zhou, C., … Zhang, W. (2026). Externalization in LLM Agents: A Unified Review of Memory,
+      Skills, Protocols and Harness Engineering. arXiv:2604.08224.
+    url: https://arxiv.org/abs/2604.08224
+as_of: 2026-10

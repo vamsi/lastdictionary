@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gradient inversion attack
+id: gradient-inversion-attack
+pos: n.
+also:
+  - gradient leakage
+  - deep leakage from gradients
+  - DLG
+  - gradient inversion
+domain: sec
+domains:
+  - ml
+  - dl
+level: specialist
+plain: >-
+  Rebuilding someone's private training data — such as photos or text — just from the model updates
+  their device shared during collaborative training.
+senses:
+  - definition: >-
+      A privacy attack that reconstructs training examples from the [[gradient|gradients]] or weight
+      updates a client shares, as in [[federated-learning|federated learning]]. The attacker
+      initializes dummy inputs and labels and optimizes them so that the gradient they would produce
+      matches the observed one; with a small batch the solution often recovers recognizable images
+      or exact text. Labels can sometimes be read off directly from the final layer's gradient, and
+      image priors or a malicious server that modifies the model can make reconstruction work for
+      larger batches. The attack shows that sharing updates rather than data is not a privacy
+      guarantee. Defenses include [[secure-aggregation|secure aggregation]],
+      [[differential-privacy|differential privacy]] noise, larger batches and gradient compression,
+      though only differential privacy gives provable protection.
+    example: >-
+      From a single shared gradient, the gradient inversion attack recovered a near-pixel-perfect
+      copy of the patient's scan.
+origin: >-
+  Introduced by Ligeng Zhu, Zhijian Liu and Song Han in 'Deep Leakage from Gradients' (NeurIPS
+  2019). Bo Zhao and colleagues (iDLG, 2020) extracted labels analytically, and Jonas Geiping and
+  colleagues' 'Inverting Gradients — How easy is it to break privacy in federated learning?'
+  (NeurIPS 2020) extended reconstruction to realistic networks and batches.
+year: 2019
+see_also:
+  - federated learning
+  - model inversion
+  - secure aggregation
+  - differential privacy
+  - membership inference attack
+sources:
+  - text: Zhu, L., Liu, Z. & Han, S. (2019). Deep Leakage from Gradients. NeurIPS 2019.

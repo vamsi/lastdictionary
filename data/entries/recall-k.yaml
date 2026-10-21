@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: recall@k
+id: recall-k
+pos: n.
+also:
+  - recall at k
+  - R@k
+  - hit rate@k
+  - success@k
+domain: eng
+domains:
+  - eval
+level: core
+plain: >-
+  A score for search systems: of all the right answers that exist, what fraction showed up in the
+  top k results? Higher means fewer relevant items were missed.
+senses:
+  - context: Retrieval evaluation
+    definition: >-
+      The fraction of all relevant items for a query that appear among the top k retrieved results,
+      averaged over a set of queries. It is the [[recall|recall]] of a ranked list cut off at k and
+      ignores the order within the top k. Recall@k is the key metric for first-stage retrievers and
+      for the retrieval step of [[retrieval-augmented-generation|retrieval-augmented generation]],
+      since a passage that is never retrieved cannot be used, whatever happens later; ordering
+      quality is then measured with [[precision|precision]]@k, [[mean-reciprocal-rank|mean
+      reciprocal rank]] or [[normalized-discounted-cumulative-gain|nDCG]]. A common simplification,
+      hit rate@k (or success@k), records only whether at least one relevant item appears in the top
+      k, and papers do not always say which of the two they report.
+    example: >-
+      Recall@20 is 0.94, so retrieval isn't the bottleneck; the model is ignoring good passages.
+  - context: Vector search
+    definition: >-
+      For [[approximate-nearest-neighbor-search|approximate nearest neighbor search]], the fraction
+      of the true k nearest neighbors (as found by exact search) that the approximate index returns.
+      It measures the index's fidelity to exact search, not relevance to users.
+formula_latex: \mathrm{Recall@}k=\frac{\lvert \mathrm{Rel}_q\cap \mathrm{Top}_k(q)\rvert}{\lvert
+  \mathrm{Rel}_q\rvert}
+origin: >-
+  Recall and precision were adopted as retrieval measures in the 1950s and 1960s, notably in Cyril
+  Cleverdon's Cranfield experiments; cutoff-based versions became standard with ranked retrieval and
+  NIST's TREC evaluations from the 1990s.
+see_also:
+  - recall
+  - precision
+  - mean reciprocal rank
+  - normalized discounted cumulative gain
+  - approximate nearest neighbor search
+  - information retrieval
+  - evaluation

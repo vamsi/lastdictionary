@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: remote attestation
+id: remote-attestation
+pos: n.
+also:
+  - attestation
+  - attestation report
+domain: sec
+domains:
+  - hw
+  - gov
+level: specialist
+plain: >-
+  A way for a computer to prove to someone far away exactly what software it is running, using a
+  signature built into its hardware, so they can decide whether to trust it.
+senses:
+  - definition: >-
+      A protocol by which a device or [[trusted-execution-environment|trusted execution
+      environment]] proves to a remote verifier what code and configuration it is running. The
+      hardware measures (hashes) the software as it loads and signs the measurements with a key
+      rooted in the manufacturer; the verifier checks the signature chain and compares the
+      measurements with expected values before releasing secrets or data. In AI systems, attestation
+      lets users confirm that an inference service runs audited code before sending sensitive
+      inputs, lets developers release model-weight decryption keys only to approved environments,
+      and is central to proposals for hardware-enabled compute governance, in which chips could
+      prove where and how they are used. It proves what was loaded, not that the code is free of
+      bugs.
+    example: >-
+      The client refused to send any data until remote attestation confirmed the enclave was running
+      the published build.
+origin: >-
+  Developed in the trusted-computing movement around 2000: the Trusted Computing Platform Alliance
+  (formed 1999, later the Trusted Computing Group) specified the Trusted Platform Module, whose
+  signed measurements enabled attestation. Enclave attestation came with Intel SGX (2015) and
+  confidential-VM technologies.
+see_also:
+  - trusted execution environment
+  - confidential computing
+  - compute governance
+  - model weight security
+sources:
+  - text: >-
+      Coker, G. et al. (2011). Principles of Remote Attestation. International Journal of
+      Information Security 10(2).

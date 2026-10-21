@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: friendly AI
+id: friendly-ai
+pos: n.
+also:
+  - FAI
+  - friendliness
+domain: asi
+domains:
+  - safety
+  - hist
+labels:
+  - deprecated
+level: specialist
+plain: >-
+  An early name for AI built so that it reliably benefits people rather than harming them. The
+  problem it named is now usually called AI alignment.
+senses:
+  - definition: >-
+      A highly capable or superintelligent AI whose goals are such that its effect on humanity is
+      beneficial rather than harmful, and the research program of designing such systems. In Eliezer
+      Yudkowsky's usage, capitalized as Friendly AI, the word was a term of art: friendliness meant
+      not a warm personality but a goal architecture that stays benevolent through
+      [[recursive-self-improvement|recursive self-improvement]], since a [[seed-ai|seed AI]] would
+      amplify whatever goals it started with. The program stressed getting goals right before
+      building capable systems, keeping goals stable under self-modification, and rejecting the
+      anthropomorphic assumption that an intelligent machine would be kind by default. From the
+      mid-2010s [[ai-alignment|AI alignment]] and [[value-alignment|value alignment]] replaced it as
+      the standard terms, partly because 'friendly' invited misunderstanding.
+    example: What the 2001 papers called Friendly AI, a 2026 paper would call alignment.
+origin: >-
+  Introduced by Eliezer Yudkowsky in Creating Friendly AI 1.0: The Analysis and Design of Benevolent
+  Goal Architectures (Singularity Institute, 2001). The Singularity Institute, renamed the Machine
+  Intelligence Research Institute in 2013, shifted to the language of alignment by the mid-2010s.
+year: 2001
+note: >-
+  Not the same as a friendly chatbot persona: a model can be pleasant in tone and still misaligned.
+see_also:
+  - AI alignment
+  - value alignment
+  - coherent extrapolated volition
+  - seed AI
+  - Eliezer Yudkowsky
+  - Machine Intelligence Research Institute
+sources:
+  - text: >-
+      Yudkowsky, E. (2001). Creating Friendly AI 1.0: The Analysis and Design of Benevolent Goal
+      Architectures. Singularity Institute for Artificial Intelligence.
+    url: https://intelligence.org/files/CFAI.pdf

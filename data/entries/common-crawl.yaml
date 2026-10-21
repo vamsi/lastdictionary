@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Common Crawl
+id: common-crawl
+pos: prop. n.
+also:
+  - Common Crawl Foundation
+  - CCBot
+  - CC-MAIN
+domain: data
+domains:
+  - llm
+  - gov
+level: core
+plain: >-
+  A nonprofit's free archive of the public web, begun in 2008 and now refreshed with snapshots of
+  billions of pages every month or two. Most large language models learned much of what they know
+  from text taken from it.
+senses:
+  - definition: >-
+      A public archive of web snapshots that the Common Crawl Foundation, a US nonprofit, collects
+      and gives away for anyone to use. Its crawler, CCBot, gathers a new snapshot every month or
+      two — typically a few billion pages, each crawl labeled like CC-MAIN-2024-10 — and releases
+      raw page captures (WARC files), metadata (WAT) and extracted plain text (WET) free of charge
+      through cloud storage; the cumulative archive is measured in petabytes. Common Crawl is the
+      main raw source of [[pretraining-data|pretraining data]] for open and closed models alike:
+      filtered versions supplied about 60% of the training mix of [[gpt-3|GPT-3]] and the bulk of
+      corpora such as [[c4|C4]], RefinedWeb, [[fineweb|FineWeb]] and DCLM. Because it is unfiltered,
+      its text must be extracted, language-identified, deduplicated and
+      [[quality-filtering|quality-filtered]] before use, and audits have found hate speech, personal
+      data and copyrighted and paywalled material in it.
+    example: >-
+      We started from the 2024 Common Crawl snapshots and kept about 10% of the extracted text.
+origin: >-
+  Founded in 2007 by the entrepreneur Gil Elbaz to give researchers and startups web-scale data of
+  the kind then held only by large search companies; crawl data has been collected since 2008. Its
+  use as AI training material took off at the end of the 2010s.
+year: 2007
+note: >-
+  Common Crawl says it honors robots.txt and removal requests, but a 2025 investigation in The
+  Atlantic reported that paywalled articles and content from publishers who had asked for removal
+  remained in its archives. By 2025 CCBot was among the crawlers most often blocked by major
+  websites.
+see_also:
+  - web crawler
+  - C4
+  - FineWeb
+  - pretraining data
+  - robots.txt
+  - quality filtering
+  - web scraping
+sources:
+  - text: Common Crawl Foundation. Overview.
+    url: https://commoncrawl.org/overview
+as_of: 2026-10

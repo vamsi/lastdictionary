@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: isolation forest
+id: isolation-forest
+pos: n.
+also:
+  - iForest
+  - isolation-based anomaly detection
+  - extended isolation forest
+domain: ml
+domains:
+  - sec
+level: core
+plain: >-
+  A method for spotting unusual data points by repeatedly slicing the data at random: odd points get
+  cut off from the rest after only a few slices, while ordinary points take many.
+senses:
+  - definition: >-
+      An unsupervised [[anomaly-detection|anomaly detection]] algorithm that isolates points rather
+      than modeling normal data. It builds an ensemble of random binary trees (isolation trees),
+      each grown on a small random subsample (256 points in the original paper) by repeatedly
+      choosing a random feature and a random split value between that feature's minimum and maximum,
+      until points are isolated or a depth limit is reached. Because anomalies are few and
+      different, they tend to be separated close to the root, so their average path length across
+      the trees is short. The anomaly score normalizes the mean path length by c(n), the average
+      path length of an unsuccessful search in a binary search tree built on n points: scores near 1
+      indicate anomalies, while scores well below 0.5 indicate normal points. The method runs in
+      linear time with little memory, needs no distance computations and copes with many features,
+      but its axis-parallel cuts create scoring artifacts that the extended isolation forest, which
+      cuts along random slopes, reduces.
+    example: >-
+      The isolation forest scored the gift-card purchase burst at 0.78, far above anything else that
+      day.
+formula_latex: s(x, n) = 2^{-\mathbb{E}[h(x)] / c(n)}
+origin: >-
+  Introduced by Fei Tony Liu, Kai Ming Ting and Zhi-Hua Zhou at the 2008 IEEE International
+  Conference on Data Mining (ICDM), with an extended version, 'Isolation-Based Anomaly Detection',
+  in ACM Transactions on Knowledge Discovery from Data. Sahand Hariri, Matias Carrasco Kind and
+  Robert Brunner proposed the extended isolation forest in 2018.
+year: 2008
+note: >-
+  Despite the name, it is not a [[random-forest|random forest]]: its trees are unsupervised, splits
+  are random rather than optimized, and only path lengths are used.
+see_also:
+  - anomaly detection
+  - random forest
+  - decision tree
+  - ensemble learning
+  - density estimation
+  - DBSCAN
+sources:
+  - text: >-
+      Liu, F. T., Ting, K. M. & Zhou, Z.-H. (2008). Isolation Forest. Proc. 8th IEEE International
+      Conference on Data Mining (ICDM).
+  - text: >-
+      Liu, F. T., Ting, K. M. & Zhou, Z.-H. (2012). Isolation-Based Anomaly Detection. ACM
+      Transactions on Knowledge Discovery from Data 6(1).
+  - text: >-
+      Hariri, S., Carrasco Kind, M. & Brunner, R. J. (2021). Extended Isolation Forest. IEEE
+      Transactions on Knowledge and Data Engineering 33(4).

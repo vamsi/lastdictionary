@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data licensing
+id: data-licensing
+pos: n.
+also:
+  - dataset license
+  - data license
+  - training data licensing
+  - content licensing deal
+domain: data
+domains:
+  - gov
+  - society
+level: core
+plain: >-
+  The legal permissions that say who may use a dataset or a body of content, for what purposes and
+  on what terms — including whether it may be used to train AI.
+senses:
+  - definition: >-
+      The terms, set by contract or license grant, under which data or content may be copied, used,
+      modified, shared and commercialized, and the market practice of paying for such rights. Open
+      datasets usually carry public licenses: Creative Commons variants (CC BY, CC BY-SA, CC0, with
+      or without non-commercial clauses), Open Data Commons licenses such as ODC-By, and, for code,
+      permissive (MIT, Apache 2.0) or copyleft (GPL) licenses. A dataset's license covers the
+      compilation; the underlying works may carry different rights, which is why
+      [[data-provenance|data provenance]] tracing matters — a 2023 audit of more than 1,800 text
+      datasets found licenses omitted 70% or more of the time on popular hosting sites. Since 2023,
+      AI developers have also signed deals with news publishers, stock-media libraries, academic
+      publishers and online platforms for training and display rights, while the lawfulness of
+      unlicensed training remains contested (see [[fair-use-and-ai-training|fair use and AI
+      training]], [[text-and-data-mining-exception|text and data mining exception]]).
+    example: >-
+      The corpus is ODC-By, but several subsets inherit non-commercial terms from their sources.
+origin: >-
+  Public licenses for creative content began with Creative Commons (2002) and for databases with the
+  Open Data Commons licenses (from about 2008). AI-specific practice took shape after 2023 through
+  publisher deals and audits such as Shayne Longpre and colleagues' Data Provenance Initiative
+  (2023).
+note: >-
+  A permissive license on a dataset does not settle whether training on it is lawful, and
+  attribution or share-alike terms raise unresolved questions about what a trained model owes its
+  sources. A [[model-license|model license]] governs model weights, not data.
+see_also:
+  - data provenance
+  - opt-out
+  - fair use and AI training
+  - text and data mining exception
+  - AI copyright litigation
+  - robots.txt
+contrast:
+  - model license
+sources:
+  - text: >-
+      Longpre, S. et al. (2023). The Data Provenance Initiative: A Large Scale Audit of Dataset
+      Licensing & Attribution in AI. arXiv:2310.16787.
+    url: https://arxiv.org/abs/2310.16787
+as_of: 2026-10

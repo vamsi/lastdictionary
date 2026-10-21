@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generalized linear model
+id: generalized-linear-model
+pos: n.
+also:
+  - GLM
+  - generalised linear model
+  - link function
+  - Poisson regression
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A family of statistical models that extends straight-line regression to outcomes such as yes/no
+  answers, counts or waiting times, by linking the average outcome to a weighted sum of inputs
+  through a suitable curve.
+senses:
+  - definition: >-
+      A class of [[regression|regression]] models in which the response follows a distribution from
+      the exponential family — such as Gaussian, binomial, Poisson or gamma — and its mean is
+      related to a linear predictor (a weighted sum of the inputs) through a link function. Choosing
+      the distribution and link recovers familiar models: Gaussian with identity link gives
+      [[linear-regression|linear regression]]; binomial with logit link gives
+      [[logistic-regression|logistic regression]]; Poisson with log link gives Poisson regression
+      for counts. Coefficients are estimated by [[maximum-likelihood-estimation|maximum
+      likelihood]], classically with iteratively reweighted least squares, and fit is assessed by
+      the deviance. GLMs remain the workhorse of actuarial pricing, epidemiology and the social
+      sciences, and their [[regularization|regularized]] forms are strong [[baseline|baselines]] in
+      machine learning.
+    example: >-
+      We priced claims frequency with a Poisson GLM and a log link, using exposure as an offset.
+formula_latex: g\big(\mathbb{E}[y \mid \mathbf{x}]\big) = \mathbf{x}^{\top}\boldsymbol\beta
+origin: >-
+  Introduced by John Nelder and Robert Wedderburn in 'Generalized Linear Models' (Journal of the
+  Royal Statistical Society, Series A, 1972), which unified linear, logistic, Poisson and other
+  regressions under one theory and fitted them by iteratively reweighted least squares. The GLIM
+  software and Peter McCullagh and Nelder's book of the same name (2nd ed. 1989) spread the
+  approach.
+year: 1972
+note: >-
+  Not the same as the general linear model (linear regression with Gaussian errors, including
+  ANOVA); the two names are easily confused. A [[generalized-additive-model|generalized additive
+  model]] replaces the linear predictor with a sum of smooth functions.
+see_also:
+  - linear regression
+  - logistic regression
+  - regression
+  - maximum likelihood estimation
+  - generalized additive model
+  - survival analysis
+contrast:
+  - generalized additive model
+sources:
+  - text: >-
+      Nelder, J. A. & Wedderburn, R. W. M. (1972). Generalized Linear Models. Journal of the Royal
+      Statistical Society, Series A, 135(3), 370–384. doi:10.2307/2344614.

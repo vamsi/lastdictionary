@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: automated decision-making
+id: automated-decision-making
+pos: n.
+also:
+  - ADM
+  - automated decisionmaking technology
+  - ADMT
+  - automated decision system
+  - solely automated decision
+domain: gov
+domains:
+  - society
+  - core
+labels:
+  - legal
+level: core
+plain: >-
+  When a computer system, rather than a person, makes or effectively makes a decision about someone
+  — such as approving credit, screening job applicants or flagging possible welfare fraud.
+senses:
+  - definition: >-
+      Decision-making in which a computer system effectively settles an outcome for an individual,
+      with human involvement absent or nominal; it often rests on profiling, the automated
+      evaluation of personal characteristics to predict behavior or traits. Data-protection law
+      treats it as a distinct risk. Article 22 of the EU's General Data Protection Regulation (GDPR)
+      sets a default rule against decisions based solely on automated processing that have legal or
+      similarly significant effects; such decisions are allowed only when needed for a contract,
+      authorized by law or explicitly consented to, and even then the person can obtain human review
+      and challenge the outcome. In SCHUFA (C-634/21, 2023) the Court of Justice of the EU held that
+      a credit score can itself be such a decision when lenders rely on it decisively. California's
+      privacy regulator adopted rules on automated decisionmaking technology (ADMT) in 2025,
+      requiring pre-use notice, opt-out and access rights for significant decisions, with compliance
+      due from January 2027. Much policy debate concerns what counts as meaningful
+      [[human-in-the-loop|human review]], given [[automation-bias|automation bias]].
+    example: >-
+      Because the loan refusal was fully automated decision-making, the bank had to offer human
+      review.
+origin: >-
+  The legal concept traces to France's 1978 data-protection law and Article 15 of the EU's 1995 Data
+  Protection Directive on 'automated individual decisions', carried forward into GDPR Article 22
+  (2016). The abbreviation ADM became common in policy writing around 2018–2019, for example in
+  AlgorithmWatch's 'Automating Society' reports.
+year: 1995
+note: >-
+  The UK's Data (Use and Access) Act 2025 relaxed the general prohibition, allowing significant
+  automated decisions with safeguards except where sensitive data are involved. Token human sign-off
+  that merely rubber-stamps an output does not make a decision less automated.
+see_also:
+  - right to explanation
+  - algorithmic impact assessment
+  - human-in-the-loop
+  - automation bias
+  - algorithmic accountability
+  - Colorado AI Act
+  - automated employment decision tool
+standards: GDPR (Reg. (EU) 2016/679), Art. 22
+as_of: 2026-10

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: WebText
+id: webtext
+pos: prop. n.
+also:
+  - OpenWebText
+  - WebText2
+domain: data
+domains:
+  - llm
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  The private collection of about eight million web pages, chosen because Reddit users had linked to
+  them, that OpenAI used in 2019 to train GPT-2.
+senses:
+  - definition: >-
+      A text corpus of about 40 GB from roughly 8 million documents, built by OpenAI to train
+      [[gpt-2|GPT-2]]. Instead of filtering raw crawls with rules, it used human curation as a proxy
+      for quality: it collected pages linked from Reddit posts that had received at least three
+      karma, about 45 million links up to December 2017, then extracted the text, deduplicated it
+      and removed Wikipedia articles to limit overlap with evaluation data. WebText showed that a
+      diverse, moderately filtered web corpus could teach one model many tasks without task-specific
+      supervision. It was never released in full (OpenAI later shared about a quarter of a million
+      of its documents to support research on detecting generated text); the volunteer replication
+      OpenWebText (2019) and its successor OpenWebText2, part of [[the-pile|The Pile]], filled the
+      gap, and an expanded WebText2 formed part of the training mix of [[gpt-3|GPT-3]].
+    example: OpenWebText was the closest public stand-in for GPT-2's training data.
+origin: >-
+  Described in 'Language Models are Unsupervised Multitask Learners' (OpenAI, February 2019) by Alec
+  Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei and Ilya Sutskever, the GPT-2 report.
+  Aaron Gokaslan and Vanya Cohen released OpenWebText later in 2019.
+year: 2019
+note: >-
+  Using upvotes as a quality signal imports the demographics and tastes of a single platform's
+  users. Not to be confused with generic 'web text', meaning any text taken from the web.
+see_also:
+  - GPT-2
+  - GPT-3
+  - pretraining data
+  - quality filtering
+  - The Pile
+  - corpus
+sources:
+  - text: >-
+      Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. & Sutskever, I. (2019). Language Models
+      are Unsupervised Multitask Learners. OpenAI technical report.

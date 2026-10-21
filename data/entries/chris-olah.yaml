@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Chris Olah
+id: chris-olah
+sort_as: Olah Chris
+pos: prop. n.
+also:
+  - Christopher Olah
+domain: people
+domains:
+  - interp
+  - safety
+  - dl
+level: core
+plain: >-
+  A Canadian researcher who pioneered ways of looking inside neural networks to see what they have
+  learned, and a co-founder of the AI company Anthropic.
+senses:
+  - definition: >-
+      Canadian researcher, the figure most associated with
+      [[mechanistic-interpretability|mechanistic interpretability]] (a term credited to him), who
+      co-founded [[anthropic|Anthropic]] in 2021 and leads its interpretability research. Without a
+      university degree, he joined [[google-brain|Google Brain]], initially as an intern,
+      co-authored the 2015 'Inceptionism' post that introduced DeepDream, and developed
+      [[feature-visualization|feature visualization]] and attribution methods; his explanatory
+      essays and the online journal [[distill|Distill]] (2017), which he co-founded with Shan
+      Carter, set new standards for visual explanation. At [[openai|OpenAI]] (2018–2020) he led work
+      treating networks as [[feature-interpretability|features]] connected by [[circuit|circuits]]
+      and proposed the [[universality-hypothesis|universality hypothesis]]. At Anthropic his team
+      has published, largely in the [[transformer-circuits-thread|Transformer Circuits Thread]], on
+      transformer circuits and [[induction-head|induction heads]], [[superposition|superposition]]
+      (2022), [[sparse-autoencoder|sparse-autoencoder]] dictionaries that extract interpretable
+      features, first from a one-layer model (2023) and then by the million from a [[claude|Claude]]
+      model (2024), and [[attribution-graph|attribution graphs]] for [[circuit-tracing|circuit
+      tracing]] (2025).
+see_also:
+  - mechanistic interpretability
+  - feature visualization
+  - circuit
+  - superposition
+  - sparse autoencoder
+  - induction head
+  - Anthropic
+sources:
+  - text: >-
+      Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M. & Carter, S. (2020). Zoom In: An
+      Introduction to Circuits. Distill.
+  - text: >-
+      Elhage, N. et al. (2022). Toy Models of Superposition. Transformer Circuits Thread.
+  - text: >-
+      Templeton, A. et al. (2024). Scaling Monosemanticity: Extracting Interpretable Features from
+      Claude 3 Sonnet. Transformer Circuits Thread.

@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: softmax
+id: softmax
+pos: n.
+also:
+  - softmax function
+  - normalized exponential function
+domain: dl
+domains:
+  - math
+  - llm
+level: core
+plain: >-
+  A formula that turns a list of raw scores into probabilities — all positive and adding up to one —
+  with the biggest share going to the highest score.
+senses:
+  - definition: >-
+      The function that maps a vector of real-valued scores ([[logit|logits]]) to a probability
+      distribution by exponentiating each component and dividing by the sum of all the exponentials.
+      It preserves the ranking of the scores, is differentiable, and is the standard final layer for
+      multiclass classification and for [[next-token-prediction|next-token prediction]] in
+      [[large-language-model|language models]]; it also normalizes the weights in
+      [[attention|attention]]. Dividing the logits by a [[temperature|temperature]] T first flattens
+      the distribution (T > 1) or sharpens it (T < 1); as T approaches 0 it approaches a hard arg
+      max, hence the name.
+formula_latex: \operatorname{softmax}(\mathbf{z})_i = \frac{e^{z_i / T}}{\sum_{j} e^{z_j / T}}
+origin: >-
+  The normalized exponential appears in Ludwig Boltzmann's statistical mechanics (1868) and later in
+  decision theory. The name 'softmax' was coined by John S. Bridle in two conference papers
+  presented in 1989 (published 1990) on neural-network classifiers, as a smooth ('soft') version of
+  the arg max.
+year: 1989
+see_also:
+  - logit
+  - cross-entropy
+  - temperature
+  - attention
+  - sigmoid function
+  - activation function
+contrast:
+  - sigmoid function
+sources:
+  - text: >-
+      Bridle, J. S. (1990). Probabilistic Interpretation of Feedforward Classification Network
+      Outputs, with Relationships to Statistical Pattern Recognition. In Neurocomputing (NATO ASI
+      Series F68).

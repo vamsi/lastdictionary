@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Kyunghyun Cho
+id: kyunghyun-cho
+sort_as: Cho Kyunghyun
+pos: prop. n.
+also:
+  - 조경현
+pronunciation: KYUNG-hyun JOH
+domain: people
+domains:
+  - dl
+  - llm
+level: specialist
+plain: >-
+  A South Korean computer scientist who co-invented the encoder–decoder approach to neural machine
+  translation and the gated recurrent unit, and co-wrote the paper that introduced attention.
+senses:
+  - definition: >-
+      South Korean computer scientist, a professor at New York University since 2015 who has also
+      directed frontier research at Genentech's Prescient Design. As a postdoctoral researcher with
+      [[yoshua-bengio|Yoshua Bengio]] in Montreal he led the 2014 paper that introduced the RNN
+      encoder–decoder for [[machine-translation|machine translation]] (see
+      [[encoder-decoder-architecture|encoder–decoder architecture]]) together with a simplified
+      gated unit, the [[gated-recurrent-unit|gated recurrent unit]] (GRU). Later that year he
+      co-authored, with [[dzmitry-bahdanau|Dzmitry Bahdanau]] and Bengio, the paper that added an
+      [[attention|attention]] mechanism, letting the decoder consult all encoder states rather than
+      a single fixed vector. With the [[sequence-to-sequence-model|sequence-to-sequence]] work of
+      Google researchers, these papers founded neural machine translation, which displaced
+      phrase-based statistical systems in commercial translators within about two years. His later
+      research spans natural language processing and machine learning for health and science. He
+      received the Samsung Ho-Am Prize in Engineering in 2021.
+see_also:
+  - gated recurrent unit
+  - encoder–decoder architecture
+  - attention
+  - sequence-to-sequence model
+  - machine translation
+  - Dzmitry Bahdanau
+sources:
+  - text: >-
+      Cho, K. et al. (2014). Learning Phrase Representations using RNN Encoder–Decoder for
+      Statistical Machine Translation. EMNLP 2014.
+  - text: >-
+      Bahdanau, D., Cho, K. & Bengio, Y. (2015). Neural Machine Translation by Jointly Learning to
+      Align and Translate. ICLR 2015.
+as_of: 2026-10

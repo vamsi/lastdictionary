@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gödel machine
+id: godel-machine
+pos: n.
+also:
+  - Goedel machine
+pronunciation: GER-dl
+domain: asi
+domains:
+  - sym
+level: specialist
+plain: >-
+  A purely theoretical design, proposed by Jürgen Schmidhuber, for a program allowed to change
+  anything about itself, including how it learns, but only once it has proved that the change is an
+  improvement.
+senses:
+  - definition: >-
+      A formal blueprint for a fully self-referential problem solver: nothing in its own program is
+      off-limits to modification, not even its learning method or the machinery that makes the
+      modifications, but a change is carried out only when a built-in theorem prover has derived a
+      proof that it raises the system's expected [[utility-function|utility]], measured against a
+      fixed goal and axioms describing the system's own hardware, initial software and environment.
+      Because the proof must also account for the time spent searching, Jürgen Schmidhuber argued
+      that each accepted self-rewrite is globally optimal relative to those axioms rather than a
+      local improvement. The design is not practical: useful changes can rarely be proved beneficial
+      in advance, and its self-reference inherits the limits of Gödel's incompleteness theorems. It
+      remains a reference point in discussions of [[recursive-self-improvement|recursive
+      self-improvement]].
+    example: >-
+      Unlike a Gödel machine, the agent accepts a self-edit after a benchmark run, not a proof.
+origin: >-
+  Proposed by Jürgen Schmidhuber in a technical report posted to arXiv on 25 September 2003, 'Goedel
+  Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements',
+  and developed in later papers. Named after the logician Kurt Gödel, whose 1931 self-referential
+  formulas inspired the construction.
+year: 2003
+note: >-
+  Revived in 2025 by the [[darwin-godel-machine|Darwin Gödel Machine]], which replaces proofs with
+  empirical testing.
+see_also:
+  - recursive self-improvement
+  - Darwin Gödel Machine
+  - seed AI
+  - AIXI
+  - Jürgen Schmidhuber
+  - intelligence explosion
+  - automated theorem proving
+sources:
+  - text: >-
+      Schmidhuber, J. (2003). Goedel Machines: Self-Referential Universal Problem Solvers Making
+      Provably Optimal Self-Improvements. arXiv:cs/0309048.
+    url: https://arxiv.org/abs/cs/0309048

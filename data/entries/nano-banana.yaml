@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Nano Banana
+id: nano-banana
+pos: prop. n.
+also:
+  - Gemini 2.5 Flash Image
+  - Nano Banana Pro
+  - Gemini 3 Pro Image
+  - Nano Banana 2
+  - Gemini 3.1 Flash Image
+  - Nano Banana 2.1
+domain: gen
+domains:
+  - llm
+  - culture
+labels:
+  - trademark
+  - emerging
+level: core
+plain: >-
+  The nickname, later Google's official branding, for its Gemini image models, a viral hit in 2025
+  for editing photos from simple instructions while keeping people looking like themselves.
+senses:
+  - definition: >-
+      The popular name for Google DeepMind's image generation and editing models built into its
+      Gemini [[multimodal-large-language-model|multimodal models]]: Gemini 2.5 Flash Image (August
+      2025), Gemini 3 Pro Image, branded Nano Banana Pro (November 2025), and Gemini 3.1 Flash
+      Image, branded Nano Banana 2 (February 2026); as of October 2026 the newest was Nano Banana
+      2.1. Unlike stand-alone [[text-to-image-model|text-to-image models]], they create and edit
+      images within a conversation, drawing on the language model's world knowledge, and are noted
+      for [[instruction-based-image-editing|instruction-based image editing]] that keeps a person's
+      or object's identity consistent across edits, for blending several reference images and, in
+      later versions, for legible text. Outputs carry [[synthid|SynthID]] watermarks. Within weeks
+      of launch, Google reported more than 10 million new Gemini app users and over 200 million
+      image edits, helped by a viral trend of turning selfies into photorealistic toy-figurine
+      images. In August 2026 Google retired its [[imagen|Imagen]] models from the Gemini API in
+      favor of these models.
+    example: >-
+      Nano Banana swapped the jacket and the background but kept her face exactly the same.
+origin: >-
+  'Nano Banana' was the codename under which the first model was tested anonymously on the LMArena
+  leaderboard from 12 August 2025. Google confirmed its identity at public release on 26 August 2025
+  and then adopted the nickname as branding; it reportedly derives from nicknames of Google DeepMind
+  product manager Naina Raisinghani.
+year: 2025
+see_also:
+  - Imagen
+  - instruction-based image editing
+  - text-to-image model
+  - multimodal large language model
+  - SynthID
+  - LMArena
+sources:
+  - text: >-
+      Google (2026). Migrate from Imagen to a Gemini Image model ('Nano Banana'). Firebase AI Logic
+      documentation.
+    url: https://firebase.google.com/docs/ai-logic/imagen-models-migration
+  - text: Google (2026). Gemini models. Gemini API documentation.
+    url: https://ai.google.dev/gemini-api/docs/models
+as_of: 2026-10

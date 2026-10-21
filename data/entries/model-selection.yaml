@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model selection
+id: model-selection
+pos: n.
+also:
+  - model comparison
+  - model choice
+  - structural risk minimization
+domain: ml
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  Choosing, from several candidate models or settings, the one most likely to work best on new data,
+  rather than the one that merely fits the existing data best.
+senses:
+  - definition: >-
+      The task of choosing among candidate models (different algorithms, feature sets, complexities
+      or [[hyperparameter|hyperparameter]] settings) the one expected to generalize best. Fit to the
+      training data is a misleading criterion, because more flexible models always fit better
+      ([[overfitting|overfitting]]), so model selection either estimates out-of-sample performance
+      or trades fit against complexity. Empirical approaches score candidates on a
+      [[validation-set|validation set]] or by [[cross-validation|cross-validation]]. Analytic
+      approaches use penalized criteria such as the [[akaike-information-criterion|Akaike
+      information criterion]], the [[bayesian-information-criterion|Bayesian information criterion]]
+      and [[minimum-description-length|minimum description length]], or the Bayesian model evidence
+      (marginal likelihood), which automatically penalizes unneeded flexibility; structural risk
+      minimization chooses complexity using generalization bounds. Because selection itself uses
+      data, the chosen model's validation score is optimistically biased, so an independent
+      [[test-set|test set]] or nested cross-validation is needed for an honest estimate. In practice
+      selection also weighs cost, latency, interpretability and robustness, and for very large
+      models it often reduces to comparing checkpoints and a few architectures guided by
+      [[scaling-laws|scaling laws]].
+    example: >-
+      Model selection by 10-fold cross-validation favored depth-6 trees over both shallower and
+      deeper ones.
+origin: >-
+  A classical problem of statistics, formalized in the 1960s and 1970s by Colin Mallows's Cp
+  statistic, Hirotugu Akaike's information criterion (1973), cross-validatory choice (Mervyn Stone,
+  1974) and Gideon Schwarz's Bayesian criterion (1978). Vladimir Vapnik and Alexey Chervonenkis's
+  structural risk minimization (1970s) offered a learning-theory route.
+see_also:
+  - cross-validation
+  - validation set
+  - Akaike information criterion
+  - Bayesian information criterion
+  - overfitting
+  - hyperparameter tuning
+  - minimum description length
+  - bias–variance tradeoff
+sources:
+  - text: >-
+      Burnham, K. P. & Anderson, D. R. (2002). Model Selection and Multimodel Inference: A Practical
+      Information-Theoretic Approach, 2nd ed. New York: Springer.
+  - text: >-
+      Stone, M. (1974). Cross-Validatory Choice and Assessment of Statistical Predictions. Journal
+      of the Royal Statistical Society, Series B 36(2).

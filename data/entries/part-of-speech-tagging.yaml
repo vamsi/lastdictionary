@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: part-of-speech tagging
+id: part-of-speech-tagging
+pos: n.
+also:
+  - POS tagging
+  - PoS tagging
+  - word-class tagging
+  - grammatical tagging
+  - POS tagger
+  - tagset
+domain: llm
+domains:
+  - ml
+  - hist
+level: specialist
+plain: >-
+  Labeling each word in a sentence with its grammatical role — noun, verb, adjective and so on — as
+  in 'Time (noun) flies (verb) like (preposition) an arrow'.
+senses:
+  - definition: >-
+      The task of assigning each word (token) in a text a grammatical category from a tagset, such
+      as noun, verb, adjective or determiner, often with finer distinctions such as plural noun or
+      past-tense verb. The difficulty is ambiguity — 'book' may be a noun or a verb, 'that' a
+      determiner, pronoun or conjunction — resolved from context. Classic approaches were rule-based
+      taggers, [[hidden-markov-model|hidden Markov models]] decoded with the Viterbi algorithm,
+      transformation-based learning, and maximum-entropy and conditional-random-field models; neural
+      taggers followed. English taggers trained on newswire exceed 97% per-token accuracy, close to
+      agreement between human annotators. Once a standard first stage of
+      [[natural-language-processing|natural language processing]] pipelines, feeding
+      [[syntactic-parsing|syntactic parsing]] and [[information-extraction|information extraction]],
+      it is now mostly implicit in neural models, though still used in linguistics, corpus
+      annotation and work on [[low-resource-language|low-resource languages]].
+    example: The tagger labeled 'flies' as a noun, so the parse fell apart.
+origin: >-
+  Automatic tagging began with the [[brown-corpus|Brown Corpus]] of American English (1960s), much
+  of which was tagged with the rule-based TAGGIT program in the early 1970s. Statistical taggers by
+  Kenneth Church and Steven DeRose (1988) and the Penn Treebank tagset (Mitchell Marcus and
+  colleagues, 1993) defined the field's standard setting.
+year: 1971
+see_also:
+  - syntactic parsing
+  - natural language processing
+  - hidden Markov model
+  - corpus
+  - named-entity recognition
+  - computational linguistics
+  - Brown Corpus
+sources:
+  - text: >-
+      Marcus, M. P., Santorini, B. & Marcinkiewicz, M. A. (1993). Building a Large Annotated Corpus
+      of English: The Penn Treebank. Computational Linguistics 19(2), 313–330.
+  - text: >-
+      Church, K. W. (1988). A Stochastic Parts Program and Noun Phrase Parser for Unrestricted Text.
+      Second Conference on Applied Natural Language Processing (ANLP 1988).

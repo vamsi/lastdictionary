@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bernard Widrow
+id: bernard-widrow
+sort_as: Widrow Bernard
+pos: prop. n.
+domain: people
+domains:
+  - dl
+  - hist
+level: specialist
+dates: 1929–2025
+plain: >-
+  An American electrical engineer who in 1960 built ADALINE, an early trainable neural unit, and
+  invented a learning rule that adjusts weights to reduce errors, still at the heart of adaptive
+  filters.
+senses:
+  - definition: >-
+      American electrical engineer at Stanford University whose least mean squares (LMS) algorithm
+      of 1960, devised with his student Marcian 'Ted' Hoff, became the workhorse of adaptive signal
+      processing and an early form of neural-network learning. Also called the Widrow–Hoff or delta
+      rule, LMS adjusts a linear unit's weights in proportion to its error on each example — an
+      early instance of [[stochastic-gradient-descent|stochastic gradient descent]] — and the pair
+      used it in [[adaline|ADALINE]], a trainable threshold unit built in hardware with
+      electrochemical memistors; MADALINE networks of many such units followed for pattern
+      recognition and adaptive control. Echo cancellers, noise cancellers and adaptive antennas came
+      to rely on LMS, the subject of his book 'Adaptive Signal Processing' (1985, with Samuel
+      Stearns), and its step-size constant is an ancestor of the modern [[learning-rate|learning
+      rate]]. Honors include the IEEE Alexander Graham Bell Medal (1986) and the Benjamin Franklin
+      Medal (2001).
+see_also:
+  - ADALINE
+  - stochastic gradient descent
+  - learning rate
+  - perceptron
+  - online learning
+  - Frank Rosenblatt
+sources:
+  - text: >-
+      Widrow, B. & Hoff, M. E. (1960). Adaptive Switching Circuits. IRE WESCON Convention Record,
+      Part 4: 96–104.
+  - text: Widrow, B. & Stearns, S. D. (1985). Adaptive Signal Processing. Prentice-Hall.

@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Chris Watkins
+id: chris-watkins
+sort_as: Watkins Chris
+pos: prop. n.
+also:
+  - Christopher Watkins
+  - Christopher J. C. H. Watkins
+domain: people
+domains:
+  - rl
+  - hist
+level: specialist
+plain: >-
+  A British computer scientist who invented Q-learning in 1989, a simple way for an agent to learn
+  which action is best in each situation purely from trial and error.
+senses:
+  - definition: >-
+      British computer scientist at Royal Holloway, University of London, who introduced
+      [[q-learning|Q-learning]] in his 1989 Cambridge doctoral thesis, 'Learning from Delayed
+      Rewards'. Drawing on animal-learning psychology and on [[dynamic-programming|dynamic
+      programming]], he proposed learning the value of each action in each state directly from
+      experience — nudging the estimate toward the reward received plus the discounted value of the
+      best next action — without needing a model of the environment; with Peter Dayan he proved in
+      1992 that the method converges to the optimal action values provided every state–action pair
+      continues to be tried. As the first widely adopted [[off-policy|off-policy]],
+      [[model-free-reinforcement-learning|model-free]] control algorithm, Q-learning became a
+      cornerstone of [[reinforcement-learning|reinforcement learning]], and its combination with
+      deep networks in the [[deep-q-network|deep Q-network]] (2013–2015) launched
+      [[deep-reinforcement-learning|deep reinforcement learning]]. The thesis also helped connect
+      temporal-difference methods with dynamic programming in the framework of
+      [[markov-decision-process|Markov decision processes]].
+see_also:
+  - Q-learning
+  - off-policy
+  - temporal difference learning
+  - deep Q-network
+  - Markov decision process
+  - Richard Bellman
+sources:
+  - text: >-
+      Watkins, C. J. C. H. (1989). Learning from Delayed Rewards. PhD thesis, University of
+      Cambridge.
+  - text: >-
+      Watkins, C. J. C. H. & Dayan, P. (1992). Q-learning. Machine Learning 8(3–4): 279–292.

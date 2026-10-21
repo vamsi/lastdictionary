@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: interpretability
+id: interpretability
+pos: n.
+also:
+  - AI interpretability
+  - model interpretability
+  - interpretable
+domain: interp
+domains:
+  - safety
+  - ml
+level: essential
+plain: >-
+  The effort to understand how an AI system arrives at its outputs — what information it uses and
+  how it combines it — instead of treating it as a sealed black box.
+senses:
+  - definition: >-
+      The extent to which humans can trace how and why a model reaches its outputs, and the research
+      field that develops methods for doing so. The field divides along several axes:
+      [[interpretable-model|intrinsically interpretable models]] (sparse linear models, small
+      decision trees, [[generalized-additive-model|additive models]]) versus
+      [[post-hoc-explanation|post hoc explanation]] of already-trained [[black-box|black boxes]];
+      local accounts of a single prediction versus global accounts of overall behavior; and
+      input-level [[feature-attribution|feature attribution]], such as [[saliency-map|saliency
+      maps]] and [[shap|SHAP]], versus analysis of a network's internal [[activation|activations]]
+      and [[weights|weights]]. For [[deep-learning|deep networks]], and especially
+      [[large-language-model|large language models]], the internal approach —
+      [[mechanistic-interpretability|mechanistic interpretability]] — has grown fastest since about
+      2020, with tools such as [[probing|probes]], [[sparse-autoencoder|sparse autoencoders]],
+      [[activation-patching|activation patching]] and [[circuit-tracing|circuit tracing]].
+      Motivations include debugging, scientific understanding, legal accountability and
+      [[ai-safety|AI safety]]: for instance, detecting deception or hidden objectives that
+      behavioral tests could miss.
+    example: >-
+      Behavioral evals tell us what the model does; interpretability is how we hope to learn why.
+origin: >-
+  Statisticians and expert-system builders discussed 'interpretable' models for decades, and rule
+  extraction from trained neural networks was an active topic in the 1990s. The noun became the name
+  of a machine-learning field in the mid-2010s, marked by the ICML Workshop on Human
+  Interpretability in Machine Learning (from 2016), Zachary Lipton's 'The Mythos of Model
+  Interpretability' (2016) and Finale Doshi-Velez and Been Kim's call for a rigorous science of
+  interpretable machine learning (2017).
+note: >-
+  Often used interchangeably with [[explainability|explainability]]. Where the two are
+  distinguished, interpretability usually means understanding a model's mechanism and explainability
+  means producing human-readable reasons for particular outputs, but usage is inconsistent. Lipton
+  argued that the word bundles several distinct goals and is often left undefined.
+see_also:
+  - mechanistic interpretability
+  - explainability
+  - explainable AI
+  - feature attribution
+  - probing
+  - sparse autoencoder
+  - AI safety
+contrast:
+  - black box
+sources:
+  - text: >-
+      Lipton, Z. C. (2016). The Mythos of Model Interpretability. ICML Workshop on Human
+      Interpretability in Machine Learning; later in ACM Queue (2018).
+  - text: >-
+      Doshi-Velez, F. & Kim, B. (2017). Towards A Rigorous Science of Interpretable Machine
+      Learning. arXiv preprint.

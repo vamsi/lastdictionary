@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gradient boosting
+id: gradient-boosting
+pos: n.
+also:
+  - gradient boosting machine
+  - GBM
+  - gradient-boosted trees
+  - gradient boosted decision trees
+  - GBDT
+  - stochastic gradient boosting
+  - MART
+domain: ml
+domains:
+  - math
+  - eng
+level: core
+plain: >-
+  A method that builds a strong predictor by adding small decision trees one at a time, each trained
+  to correct the errors that remain after all the trees before it.
+senses:
+  - definition: >-
+      A [[boosting|boosting]] method that builds an additive model stage by stage: each new base
+      learner, usually a small regression tree, is fitted to the pseudo-residuals — the negative
+      [[gradient|gradient]] of a differentiable [[loss-function|loss function]] with respect to the
+      current ensemble's predictions — and added with a small learning rate (shrinkage). Because
+      only the loss's gradient is needed, one algorithm covers squared error, absolute error,
+      [[log-loss|log loss]] for classification, [[quantile-regression|quantile]] and ranking losses.
+      The main hyperparameters are the number of trees, learning rate, tree depth or leaf count, and
+      row and column subsampling (stochastic gradient boosting), with [[early-stopping|early
+      stopping]] on a [[validation-set|validation set]] guarding against
+      [[overfitting|overfitting]]. Modern implementations — [[xgboost|XGBoost]],
+      [[lightgbm|LightGBM]] and [[catboost|CatBoost]] — add second-order (Newton) steps,
+      histogram-based split finding and regularized objectives, and gradient-boosted trees are a
+      default high-accuracy method for [[tabular-data|tabular data]].
+    example: >-
+      Lowering the learning rate to 0.02 and adding trees until early stopping fired gave our best
+      gradient boosting model.
+formula_latex: F_m(\mathbf{x}) = F_{m-1}(\mathbf{x}) + \nu\, h_m(\mathbf{x}), \qquad h_m \approx
+  \arg\min_{h} \sum_{i} \Big( -\frac{\partial L(y_i, F_{m-1}(\mathbf{x}_i))}{\partial
+  F_{m-1}(\mathbf{x}_i)} - h(\mathbf{x}_i) \Big)^{2}
+origin: >-
+  Leo Breiman's 1997 Berkeley report 'Arcing the Edge' treated boosting as optimization of a cost
+  function. Jerome Friedman's 'Greedy Function Approximation: A Gradient Boosting Machine' (1999
+  technical report; Annals of Statistics, 2001) gave the general algorithm and its name, together
+  with stochastic gradient boosting (1999; published 2002). Llew Mason, Jonathan Baxter, Peter
+  Bartlett and Marcus Frean independently framed boosting as functional gradient descent in 1999.
+year: 1999
+note: >-
+  Friedman called the tree version MART (multiple additive regression trees). On images, audio and
+  text, deep networks dominate; on tables, boosted trees often match or beat them.
+see_also:
+  - boosting
+  - XGBoost
+  - LightGBM
+  - CatBoost
+  - decision tree
+  - tabular data
+  - learning to rank
+contrast:
+  - random forest
+sources:
+  - text: >-
+      Friedman, J. H. (2001). Greedy Function Approximation: A Gradient Boosting Machine. The Annals
+      of Statistics, 29(5), 1189–1232.
+    url: https://projecteuclid.org/euclid.aos/1013203451
+  - text: >-
+      Mason, L., Baxter, J., Bartlett, P. & Frean, M. (1999). Boosting Algorithms as Gradient
+      Descent. Advances in Neural Information Processing Systems 12.

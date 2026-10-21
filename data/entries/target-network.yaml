@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: target network
+id: target-network
+pos: n.
+also:
+  - target Q-network
+  - Polyak averaging
+  - soft target update
+domain: rl
+domains:
+  - dl
+level: specialist
+plain: >-
+  A slowly updated copy of an AI agent's learning network, used to compute the goals it learns
+  toward, so those goals do not shift every time the network changes.
+senses:
+  - definition: >-
+      A copy of a value network whose parameters are held fixed, or changed only slowly, and used to
+      compute the bootstrapped targets of [[temporal-difference-learning|temporal-difference]]
+      updates, such as r + γ max Q(s′, a′) in [[q-learning|Q-learning]]. Without it, the network
+      being trained also produces its own targets, so every update moves the target as well — a
+      feedback loop that can cause oscillation or divergence, one face of the [[deadly-triad|deadly
+      triad]]. The [[deep-q-network|deep Q-network]] copied the online weights into the target
+      network every 10,000 updates ('hard' updates); continuous-control methods such as
+      [[deep-deterministic-policy-gradient|DDPG]] and [[soft-actor-critic|soft actor–critic]]
+      instead let the target track the online weights through an exponential moving average (Polyak
+      averaging, with a rate such as 0.005). Double DQN also uses the target network to evaluate the
+      action chosen by the online network, reducing overestimation. Similar slowly averaged 'target'
+      copies appear in self-supervised methods such as BYOL.
+    example: >-
+      We switched from hard target updates to Polyak averaging with τ = 0.005, and the Q-values
+      stopped oscillating.
+origin: >-
+  Introduced in DeepMind's Nature paper on the [[deep-q-network|deep Q-network]] (Volodymyr Mnih and
+  colleagues, 2015), which described the separate target network as a key stabilizer missing from
+  the 2013 version; soft target updates came with DDPG (Timothy Lillicrap and colleagues, 2015).
+year: 2015
+see_also:
+  - deep Q-network
+  - experience replay
+  - Q-learning
+  - deadly triad
+  - deep deterministic policy gradient
+  - soft actor–critic
+sources:
+  - text: >-
+      Mnih, V. et al. (2015). Human-level control through deep reinforcement learning. Nature 518,
+      529–533.

@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: audio language model
+id: audio-language-model
+pos: n.
+also:
+  - audio LLM
+  - large audio language model
+  - LALM
+  - speech language model
+  - spoken language model
+  - SpeechLM
+  - AudioLM
+domain: percep
+domains:
+  - llm
+  - gen
+labels:
+  - emerging
+level: core
+plain: >-
+  An AI language model that can take in sound, such as speech, music and everyday noises, and
+  understand or generate it, much as text chatbots handle words.
+senses:
+  - context: Audio understanding
+    definition: >-
+      A [[multimodal-large-language-model|multimodal large language model]] that accepts audio as
+      input, and sometimes produces it, so that it can transcribe, translate, summarize and answer
+      questions about speech, environmental sounds and music, and follow spoken instructions. The
+      usual design attaches an audio encoder (often [[whisper|Whisper]]'s encoder or another
+      pretrained model operating on [[mel-spectrogram|mel spectrograms]]) through a projection or
+      adapter layer to a text [[large-language-model|large language model]], which then treats the
+      resulting audio embeddings like [[token|tokens]]; training mixes speech recognition, audio
+      captioning, question answering and instruction data. Early examples include SALMONN and
+      Qwen-Audio (both 2023); by 2025 several frontier multimodal models, such as GPT-4o and Gemini,
+      accepted audio natively. Benchmarks probe spoken content, speaker and emotion cues, sound
+      events and musical reasoning. Such models underpin [[speech-to-speech-model|speech-to-speech]]
+      assistants, meeting analysis and audio search.
+    example: >-
+      We ask the audio language model whether the caller sounds confused, not just what they said.
+  - context: Audio generation
+    definition: >-
+      A model that generates audio by [[next-token-prediction|next-token prediction]] over discrete
+      audio tokens, treating sound as a language: 'semantic' tokens from a self-supervised speech
+      model typically capture content and structure, while 'acoustic' tokens from a
+      [[neural-audio-codec|neural audio codec]] capture voice and recording detail. Examples include
+      Meta's Generative Spoken Language Modeling (2021), Google's AudioLM (2022) and
+      codec-language-model [[text-to-speech|text-to-speech]] such as VALL-E (2023); the same
+      approach underlies much [[music-generation|music generation]].
+origin: >-
+  Language modeling over discrete speech units was pioneered in Kushal Lakhotia and colleagues'
+  'Generative Spoken Language Modeling' at Meta (2021); Zalán Borsos and colleagues' AudioLM at
+  Google (September 2022) popularized the name. Instruction-following audio-understanding models
+  followed from 2023 as multimodal LLMs extended to sound.
+year: 2022
+note: >-
+  Terminology is unsettled: 'speech language model' often means models restricted to speech, while
+  'audio language model' also covers music and environmental sound. Not to be confused with a text
+  [[language-model|language model]] that merely reads speech transcripts.
+see_also:
+  - multimodal large language model
+  - speech-to-speech model
+  - neural audio codec
+  - Whisper
+  - speech recognition
+  - sound event detection
+sources:
+  - text: >-
+      Borsos, Z. et al. (2022). AudioLM: A Language Modeling Approach to Audio Generation.
+      arXiv:2209.03143.
+    url: https://arxiv.org/abs/2209.03143
+  - text: >-
+      Lakhotia, K. et al. (2021). On Generative Spoken Language Modeling from Raw Audio.
+      Transactions of the Association for Computational Linguistics 9.
+  - text: >-
+      Chu, Y. et al. (2023). Qwen-Audio: Advancing Universal Audio Understanding via Unified
+      Large-Scale Audio-Language Models. arXiv preprint.
+as_of: 2026-10

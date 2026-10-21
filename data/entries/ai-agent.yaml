@@ -1,0 +1,80 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI agent
+id: ai-agent
+pos: n.
+also:
+  - LLM agent
+  - language agent
+  - autonomous agent
+  - AI agents
+domain: agents
+domains:
+  - llm
+  - core
+level: essential
+plain: >-
+  An AI system that does not just answer but acts: given a goal, it decides on steps, uses tools
+  such as a browser or code editor, checks the results and keeps going until the job is done.
+senses:
+  - context: Language-model agents
+    definition: >-
+      A software system that pursues a goal over many steps by letting a
+      [[large-language-model|large language model]] decide, turn by turn, which [[tool|tool]] to use
+      next — search, code execution, file editing, web browsing, other software — and feeding each
+      tool's output back to it, rather than producing a single response. The model supplies the
+      decisions; a [[harness|harness]] runs the [[agent-loop|agent loop]], executes the
+      [[tool-call|tool calls]], manages [[context-window|context]] and permissions, and stops when
+      the goal is met or a limit is reached. Agents vary in autonomy (how much they do without human
+      approval), horizon (minutes to days of work) and environment (a terminal, a browser, a whole
+      desktop); familiar types include [[coding-agent|coding agents]], [[browser-agent|browser
+      agents]], [[deep-research|deep research]] agents and [[computer-use|computer-use]] agents.
+      Simon Willison's widely quoted 2025 summary: 'An LLM agent runs tools in a loop to achieve a
+      goal.'
+    example: >-
+      We replaced the scripted pipeline with an AI agent that decides for itself which records to
+      query.
+  - context: Classical AI
+    definition: >-
+      In the classic textbook sense set out by Stuart Russell and Peter Norvig, anything that takes
+      in its surroundings through sensors and affects them through actuators, from a simple reflex
+      agent to a learning, goal-based or utility-maximizing one; see [[intelligent-agent|intelligent
+      agent]] and the hub entry [[agent|agent]], which cover this sense and the
+      reinforcement-learning sense.
+origin: >-
+  'Agent' entered AI through 1980s–1990s research on autonomous and software agents and the
+  agent-centered framing of Stuart Russell and Peter Norvig's textbook (1995). The language-model
+  sense grew from 2022 systems that let models call tools ([[mrkl-system|MRKL]], [[react|ReAct]]),
+  burst into public view with [[autogpt|AutoGPT]] and [[babyagi|BabyAGI]] in spring 2023, and became
+  industry vocabulary in 2024–2025 as laboratories shipped coding, browsing and research agents.
+year: 2022
+note: >-
+  Usage is loose: marketing applies 'agent' to chatbots and fixed automations, while researchers
+  stress that agency comes in degrees (see [[agentic-ai|agentic AI]]). Anthropic's influential
+  distinction separates agents, which choose their own steps, from [[agentic-workflow|workflows]]
+  that follow predefined code paths. Willison had earlier crowdsourced 211 definitions on Twitter
+  before settling on his.
+see_also:
+  - agentic AI
+  - agent loop
+  - harness
+  - tool use
+  - multi-agent system
+  - levels of autonomy
+  - coding agent
+  - intelligent agent
+contrast:
+  - chatbot
+  - agentic workflow
+sources:
+  - text: >-
+      Willison, S. (2025). I think 'agent' may finally have a widely enough agreed upon definition
+      to be useful jargon now. Simon Willison's Weblog, 18 September 2025.
+    url: https://simonwillison.net/2025/Sep/18/agents
+  - text: >-
+      Kapoor, S., Stroebl, B., Siegel, Z. S., Nadgir, N. & Narayanan, A. (2024). AI Agents That
+      Matter. arXiv:2407.01502.
+    url: https://arxiv.org/abs/2407.01502
+  - text: >-
+      Schluntz, E. & Zhang, B. (2024). Building effective agents. Anthropic, 19 December 2024.
+    url: https://www.anthropic.com/research/building-effective-agents

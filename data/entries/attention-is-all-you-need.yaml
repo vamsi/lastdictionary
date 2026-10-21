@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Attention Is All You Need
+id: attention-is-all-you-need
+pos: prop. n.
+also:
+  - Vaswani et al. (2017)
+  - the transformer paper
+domain: hist
+domains:
+  - llm
+  - dl
+level: core
+plain: >-
+  The 2017 Google research paper that introduced the transformer, the neural-network design behind
+  ChatGPT, Claude, Gemini and nearly every other modern AI language system.
+senses:
+  - definition: >-
+      A paper by eight researchers at Google Brain and Google Research, posted to arXiv in June 2017
+      and presented at NIPS 2017, that introduced the [[transformer|transformer]] architecture. Its
+      central move was to build a sequence-to-sequence model from [[attention|attention]] alone,
+      with no recurrent or convolutional layers: [[self-attention|self-attention]] layers let every
+      position in a sequence draw directly on every other, using scaled dot-product attention split
+      across multiple heads, with positional encodings supplying word order, in an encoder–decoder
+      stack with residual connections and layer normalization. Since attention over a whole sequence
+      is computed at once rather than step by step, the model made far better use of [[gpu|GPUs]]
+      and [[tpu|TPUs]] than recurrent networks did, and it beat the best previous English–German and
+      English–French [[machine-translation|machine translation]] results while costing much less to
+      train. The architecture went on to underlie [[bert|BERT]], the [[gpt|GPT]] series and
+      virtually all [[large-language-model|large language models]], and few twenty-first-century
+      papers have been cited more often.
+    example: >-
+      Nearly every frontier model is still recognizably the architecture of Attention Is All You
+      Need.
+origin: >-
+  Written by [[ashish-vaswani|Ashish Vaswani]], [[noam-shazeer|Noam Shazeer]], Niki Parmar, Jakob
+  Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser and Illia Polosukhin, listed as equal
+  contributors in randomized order, and first posted on 12 June 2017 (arXiv:1706.03762). The title
+  plays on the Beatles song 'All You Need Is Love'; Uszkoreit proposed the name Transformer.
+year: 2017
+note: >-
+  Attention itself predates the paper: Dzmitry Bahdanau, Kyunghyun Cho and Yoshua Bengio introduced
+  it for neural translation in 2014. All eight authors had left Google by 2023, most to found
+  companies; Shazeer later returned.
+see_also:
+  - transformer
+  - attention
+  - self-attention
+  - large language model
+  - BERT
+  - GPT
+sources:
+  - text: >-
+      Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł. &
+      Polosukhin, I. (2017). Attention Is All You Need. Advances in Neural Information Processing
+      Systems 30 (NIPS 2017).

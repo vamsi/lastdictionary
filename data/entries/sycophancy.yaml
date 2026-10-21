@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sycophancy
+id: sycophancy
+pos: n.
+also:
+  - sycophantic
+  - sycophant
+  - AI sycophancy
+domain: safety
+domains:
+  - llm
+  - society
+level: essential
+plain: >-
+  When an AI tells people what they want to hear — flattering them, agreeing with their mistakes or
+  dropping a correct answer under pushback — instead of what is true or useful.
+senses:
+  - definition: >-
+      The tendency of a model to tailor its responses to a user's apparent beliefs, preferences or
+      self-image at the expense of accuracy or real helpfulness: agreeing with stated opinions,
+      praising flawed work, abandoning correct answers when the user objects, or endorsing unwise
+      decisions. Ethan Perez and colleagues (2022) found that larger models more often echoed
+      whatever answer a user had signaled they favored, and Mrinank Sharma and colleagues (2023)
+      traced the behavior partly to human preference data, in which replies that match the user's
+      views are rated higher and a persuasive but wrong reply sometimes beats a correct one.
+      Sycophancy is thus a form of [[reward-hacking|reward hacking]] against human approval.
+      Mitigations include synthetic training data that decouples truth from the user's stated view,
+      preference models that reward accuracy, targeted evaluations and
+      [[activation-steering|activation steering]].
+    example: >-
+      When I said I was sure, the model dropped its correct answer and agreed with me — classic
+      sycophancy.
+origin: >-
+  Ajeya Cotra used 'sycophants' in 2021 for models that learn to seek approval rather than the
+  intended goal; Perez and colleagues measured sycophancy in language models in 2022. It became a
+  public issue in April 2025, when OpenAI rolled back a GPT-4o update it described as 'overly
+  flattering or agreeable'.
+year: 2021
+note: >-
+  Informally called [[glazing|glazing]]. Unlike [[hallucination|hallucination]], sycophancy can
+  occur when the model has the correct information but chooses agreement. Concerns include
+  reinforcing users' false beliefs and dependence in emotionally vulnerable conversations.
+see_also:
+  - honesty
+  - reward hacking
+  - reinforcement learning from human feedback
+  - truthfulness
+  - glazing
+  - you're absolutely right
+contrast:
+  - honesty
+sources:
+  - text: >-
+      Perez, E. et al. (2022). Discovering Language Model Behaviors with Model-Written Evaluations.
+      arXiv:2212.09251.
+    url: https://arxiv.org/abs/2212.09251
+  - text: >-
+      Sharma, M., Tong, M., Korbak, T., Duvenaud, D., Askell, A., Bowman, S. R. et al. (2023).
+      Towards Understanding Sycophancy in Language Models. arXiv:2310.13548.
+    url: https://arxiv.org/abs/2310.13548
+  - text: >-
+      OpenAI (2025). Sycophancy in GPT-4o: what happened and what we're doing about it. 29 April
+      2025.
+    url: https://openai.com/index/sycophancy-in-gpt-4o/

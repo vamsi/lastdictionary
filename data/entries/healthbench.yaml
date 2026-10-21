@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: HealthBench
+id: healthbench
+pos: prop. n.
+also:
+  - HealthBench Hard
+  - HealthBench Consensus
+domain: eval
+domains:
+  - safety
+  - society
+level: specialist
+plain: >-
+  An OpenAI test of how well AI chatbots handle health conversations, grading 5,000 realistic chats
+  against checklists written by 262 doctors from 60 countries.
+senses:
+  - definition: >-
+      An open benchmark of model behavior in health care built from 5,000 realistic multi-turn
+      chats, in which the person talking to the model is either a member of the public or a
+      clinician; each chat is graded against its own rubric, written by physicians — 262 of them,
+      with practice experience across 60 countries — for 48,562 distinct criteria overall. Each
+      criterion awards or deducts points for a specific behavior, such as advising emergency care
+      when warranted or avoiding an unsupported claim, and a model-based grader checks each one, so
+      a response's score is the points earned divided by the maximum possible. Conversations fall
+      into seven themes, including emergency referrals, responding under uncertainty, global health
+      and context seeking, and criteria are tagged by axes such as accuracy, completeness, context
+      awareness and instruction following. Subsets include HealthBench Consensus, whose criteria
+      were validated by multiple physicians, and HealthBench Hard. At release, OpenAI reported that
+      physicians could improve on responses from its September 2024 models but no longer on those
+      from its April 2025 models.
+    example: >-
+      On HealthBench Hard the model still misses emergency-referral criteria in about a fifth of
+      conversations.
+origin: >-
+  Released by OpenAI on 12 May 2025, developed with its network of physicians; the accompanying
+  paper was led by Rahul K. Arora.
+year: 2025
+note: >-
+  Rubric scores measure agreement with physicians' expectations in simulated chats, as judged by a
+  model; they are not clinical-outcome data and do not establish safety for medical use. Because a
+  model developer built it, independent replication matters.
+see_also:
+  - LLM-as-a-judge
+  - rubric reward
+  - human evaluation
+  - AI safety
+  - abstention
+  - evaluation
+sources:
+  - text: OpenAI (2025). Introducing HealthBench.
+    url: https://openai.com/index/healthbench/
+  - text: >-
+      Arora, R. K. et al. (2025). HealthBench: Evaluating Large Language Models Towards Improved
+      Human Health. arXiv preprint.
+as_of: 2026-10

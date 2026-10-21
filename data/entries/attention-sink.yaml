@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: attention sink
+id: attention-sink
+pos: n.
+also:
+  - sink token
+  - attention sinks
+domain: llm
+domains:
+  - interp
+  - infer
+level: specialist
+plain: >-
+  A quirk of language models: they pour a large share of their attention onto the very first word of
+  the text, even when it means nothing, as a place to park attention they do not need.
+senses:
+  - definition: >-
+      A token, usually the first in the sequence or a beginning-of-sequence marker, that receives a
+      disproportionately large share of attention weight across many heads and layers regardless of
+      its content. Because [[softmax|softmax]] weights must sum to one, a head that has nothing
+      useful to look at must still place its weight somewhere, and models learn to send that surplus
+      to a position that is always visible and whose value vector adds little. Sinks matter in
+      practice: evicting the first tokens from a [[sliding-window-attention|sliding-window]]
+      [[kv-cache|KV cache]] makes [[perplexity|perplexity]] explode, while keeping a few sink
+      tokens, as in StreamingLLM, restores stable generation over millions of tokens. They are
+      associated with very large activations that complicate [[quantization|quantization]]. Remedies
+      include a dedicated learned sink token, an extra constant in the softmax denominator, or
+      gating of the attention output.
+    example: >-
+      Keep the four sink tokens when you evict old cache entries, or quality collapses once the
+      window fills.
+origin: >-
+  Named by Guangxuan Xiao, Yuandong Tian, Beidi Chen, Song Han and Mike Lewis in 'Efficient
+  Streaming Language Models with Attention Sinks' (arXiv, September 2023; ICLR 2024). Heavy
+  attention to special tokens had already been noticed in BERT by Kevin Clark and colleagues (2019).
+year: 2023
+note: >-
+  Evan Miller's 2023 post 'Attention Is Off By One' proposed adding 1 to the softmax denominator for
+  a related reason. Some 2025 open-weight models, such as OpenAI's gpt-oss, build learned sink terms
+  into attention.
+see_also:
+  - attention
+  - softmax
+  - sliding window attention
+  - KV cache
+  - long context
+  - quantization
+sources:
+  - text: >-
+      Xiao, G., Tian, Y., Chen, B., Han, S. & Lewis, M. (2023). Efficient Streaming Language Models
+      with Attention Sinks. arXiv:2309.17453; ICLR 2024.
+    url: https://arxiv.org/abs/2309.17453
+  - text: >-
+      Clark, K., Khandelwal, U., Levy, O. & Manning, C. D. (2019). What Does BERT Look At? An
+      Analysis of BERT's Attention. BlackboxNLP 2019.

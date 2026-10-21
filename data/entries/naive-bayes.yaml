@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: naive Bayes
+id: naive-bayes
+pos: n.
+also:
+  - naive Bayes classifier
+  - simple Bayes
+  - idiot's Bayes
+  - independence Bayes
+  - multinomial naive Bayes
+  - Gaussian naive Bayes
+  - Bayesian spam filter
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A simple, fast way of sorting items into categories using probabilities, which pretends that each
+  clue is independent of the others. It is the classic technique behind early email spam filters.
+senses:
+  - definition: >-
+      A simple probabilistic classification method that scores each class with
+      [[bayes-theorem|Bayes' theorem]] after assuming that, within each class, the features are
+      independent of one another — the 'naive' assumption — so the class-conditional likelihood
+      factorizes into a product of one-feature terms. Each term is estimated separately — from word
+      counts in the multinomial and Bernoulli variants used for text, from per-class means and
+      variances in Gaussian naive Bayes — with additive (Laplace) smoothing to avoid zero
+      probabilities, and the predicted class is the one with the highest [[posterior|posterior]],
+      computed in log space. Training is a single counting pass, and the model copes with many
+      features and little data. The independence assumption is almost always false and the resulting
+      probabilities are poorly calibrated, usually overconfident, yet classifications are often good
+      because only the ranking of classes matters. It is the textbook generative counterpart of
+      [[logistic-regression|logistic regression]].
+    example: >-
+      A naive Bayes baseline on bag-of-words features took two seconds to train and set the bar at
+      86% accuracy.
+formula_latex: \hat{y} = \arg\max_{y} \; P(y) \prod_{j=1}^{d} P(x_j \mid y)
+origin: >-
+  Bayesian classification with independent features was studied in 1960s text retrieval and pattern
+  recognition — Melvin Maron's 1961 work on automatic indexing is often cited — and in early
+  computer-aided medical diagnosis. It became famous through spam filtering: Mehran Sahami and
+  colleagues published a naive Bayes spam filter in 1998, and Paul Graham's essay 'A Plan for Spam'
+  (2002) popularized Bayesian filtering.
+year: 1961
+note: >-
+  'Naive' refers to the independence assumption, not to Bayesian statistics. Andrew Ng and Michael
+  Jordan (2001) showed that it can approach its best error with fewer examples than logistic
+  regression, though its eventual error is usually higher.
+see_also:
+  - Bayes' theorem
+  - logistic regression
+  - generative model
+  - discriminative model
+  - text classification
+  - classification
+contrast:
+  - logistic regression
+sources:
+  - text: >-
+      Maron, M. E. (1961). Automatic Indexing: An Experimental Inquiry. Journal of the ACM, 8(3),
+      404–417.
+  - text: >-
+      Ng, A. Y. & Jordan, M. I. (2001). On Discriminative vs. Generative Classifiers: A Comparison
+      of Logistic Regression and Naive Bayes. Advances in Neural Information Processing Systems 14.

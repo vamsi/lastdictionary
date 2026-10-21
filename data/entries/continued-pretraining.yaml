@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: continued pretraining
+id: continued-pretraining
+pos: n.
+also:
+  - continual pretraining
+  - continual pre-training
+  - domain-adaptive pretraining
+  - DAPT
+  - task-adaptive pretraining
+  - TAPT
+domain: train
+domains:
+  - llm
+  - data
+level: core
+plain: >-
+  Taking an already-trained AI model and resuming its broad, read-everything training on new
+  material — a specialty such as medicine or law, a new language, or fresher data — rather than
+  starting from scratch.
+senses:
+  - definition: >-
+      Further training of a pretrained model with its original self-supervised objective — for
+      language models, [[next-token-prediction|next-token prediction]] on unlabeled text — on a new
+      corpus, to add domain knowledge, languages, modalities, longer context or more recent
+      information while reusing the original investment. Unlike [[supervised-fine-tuning|supervised
+      fine-tuning]], it uses raw text, often hundreds of billions of tokens: Meta's Code Llama, for
+      example, continued Llama 2's pretraining on 500 billion tokens of mostly code. The main risks
+      are [[catastrophic-forgetting|catastrophic forgetting]] of general abilities and instability
+      when the learning rate is raised again. Standard remedies are mixing in a fraction of the
+      original data ('replay'), re-warming and re-decaying the [[learning-rate|learning rate]], and
+      starting from a [[checkpoint|checkpoint]] taken before the original decay, which
+      [[warmup-stable-decay-schedule|warmup-stable-decay schedules]] make convenient.
+    example: >-
+      Continued pretraining on 80 billion tokens of legal text cut perplexity on contracts by a
+      third.
+origin: >-
+  Early examples include BioBERT (Jinhyuk Lee and colleagues, 2019), which continued BERT's
+  pretraining on biomedical text. Suchin Gururangan and colleagues' 'Don't Stop Pretraining' (ACL
+  2020) systematized domain- and task-adaptive pretraining, and the practice became routine with
+  open-weight LLMs from 2023.
+year: 2019
+note: >-
+  Distinguish from [[mid-training|mid-training]], a planned late stage of the original recipe aimed
+  at broad capabilities, and from [[continual-learning|continual learning]], ongoing learning from a
+  data stream without forgetting. Long-context extension is described under both this name and
+  mid-training. 'Continued' and 'continual' pretraining are used almost interchangeably.
+see_also:
+  - pretraining
+  - mid-training
+  - catastrophic forgetting
+  - fine-tuning
+  - transfer learning
+  - warmup-stable-decay schedule
+contrast:
+  - supervised fine-tuning
+sources:
+  - text: >-
+      Gururangan, S., Marasović, A., Swayamdipta, S., Lo, K., Beltagy, I., Downey, D. & Smith, N. A.
+      (2020). Don't Stop Pretraining: Adapt Language Models to Domains and Tasks. ACL 2020.
+  - text: >-
+      Rozière, B. et al. (2023). Code Llama: Open Foundation Models for Code. arXiv:2308.12950.

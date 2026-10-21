@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: The Society of Mind
+id: the-society-of-mind
+pos: prop. n.
+also:
+  - Society of Mind
+  - society of mind theory
+domain: mind
+domains:
+  - hist
+  - agents
+  - sym
+level: core
+plain: >-
+  AI pioneer Marvin Minsky's 1986 book arguing that intelligence comes from huge numbers of tiny,
+  simple processes working together, no one of which is smart by itself.
+senses:
+  - definition: >-
+      [[marvin-minsky|Marvin Minsky]]'s 1986 book, and the theory of mind it lays out, on which
+      intelligence is not a single faculty but the joint product of a vast number of simple
+      processes — Minsky's 'agents' — each too simple to understand anything by itself. Agents
+      combine into agencies that compete, cooperate and suppress one another; memories are explained
+      by K-lines, which reactivate the set of agents that were active when a problem was solved, and
+      structures such as [[frame|frames]] organize expectations. Written as some 270 one-page
+      essays, the book is a sketch rather than a formal or implemented model, and it argues against
+      a unified self or central controller. It influenced research on
+      [[multi-agent-system|multi-agent systems]], behavior-based robotics and
+      [[cognitive-architecture|cognitive architectures]], and its title is often borrowed for
+      [[large-language-model|language-model]] systems in which several agents debate or collaborate
+      on a task.
+    example: >-
+      The paper frames its team of debating LLM agents as a society of mind, though Minsky's agents
+      were far simpler.
+origin: >-
+  Developed by Marvin Minsky with Seymour Papert at MIT from the early 1970s, partly prompted by
+  attempts to make a robot arm and camera build towers of children's blocks, and published by Simon
+  & Schuster in 1986. Minsky extended the theory to emotions and reflective thinking in The Emotion
+  Machine (2006).
+year: 1986
+note: >-
+  Minsky's agents are internal mental processes, not the autonomous software [[ai-agent|AI agents]]
+  of current usage; multi-agent LLM papers use the phrase loosely.
+see_also:
+  - Marvin Minsky
+  - multi-agent system
+  - frame
+  - cognitive architecture
+  - symbolic AI
+  - global workspace theory
+sources:
+  - text: Minsky, M. (1986). The Society of Mind. Simon & Schuster.
+  - text: >-
+      Du, Y., Li, S., Torralba, A., Tenenbaum, J. B. & Mordatch, I. (2023). Improving Factuality and
+      Reasoning in Language Models through Multiagent Debate. arXiv:2305.14325.

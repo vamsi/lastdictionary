@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MLE-bench
+id: mle-bench
+pos: prop. n.
+domain: eval
+domains:
+  - agents
+  - asi
+level: specialist
+plain: >-
+  A test that gives AI agents 75 real data-science competitions from Kaggle and checks whether their
+  solutions would have won medals against human teams.
+senses:
+  - definition: >-
+      A benchmark that tests whether [[ai-agent|AI agents]] can do the whole job of a
+      machine-learning engineer — reading a task, preparing the data, training and tuning models and
+      submitting predictions — on 75 past [[kaggle|Kaggle]] competitions in tabular prediction,
+      computer vision, natural-language processing and signal processing. Each competition is
+      reproduced offline with its dataset, a grading script and a snapshot of the human leaderboard,
+      so an agent's submission can be ranked against the original competitors and awarded the
+      bronze, silver or gold medal it would have earned. The headline metric is the share of
+      competitions in which an agent wins any medal. When it was released, the strongest
+      configuration tested, OpenAI's o1-preview running in the AIDE agent scaffold, earned a bronze
+      medal or better in 16.9% of the competitions, and did markedly better when allowed more
+      attempts and time. It is used to track progress toward [[automated-ai-research|automated AI
+      research]].
+    example: >-
+      With 24 hours per competition, the agent medals on MLE-bench about twice as often as with
+      eight.
+origin: >-
+  Introduced by Jun Shern Chan, Neil Chowdhury, Oliver Jaffe and colleagues at OpenAI in October
+  2024, and presented at ICLR 2025. OpenAI uses it in its [[preparedness-framework|Preparedness
+  Framework]] evaluations of AI self-improvement.
+year: 2024
+note: >-
+  Kaggle competitions and winning write-ups are public, so contamination is a known risk; the
+  authors supply tools to detect plagiarism and prior familiarity with a competition.
+see_also:
+  - Kaggle
+  - automated AI research
+  - RE-Bench
+  - AI agent
+  - Preparedness Framework
+  - dangerous capability evaluation
+sources:
+  - text: >-
+      Chan, J. S., Chowdhury, N., Jaffe, O. et al. (2024). MLE-bench: Evaluating Machine Learning
+      Agents on Machine Learning Engineering. arXiv:2410.07095.
+    url: https://arxiv.org/abs/2410.07095

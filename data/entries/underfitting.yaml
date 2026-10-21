@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: underfitting
+id: underfitting
+pos: n.
+also:
+  - underfit
+  - under-fitting
+  - underfitted
+domain: ml
+domains:
+  - dl
+level: core
+plain: >-
+  When a model is too simple, or trained too little, to capture the real pattern in the data, so it
+  does poorly even on the examples it learned from.
+senses:
+  - definition: >-
+      The failure in which a model does not represent even the regularities present in its own
+      training data, so that its error is high on the training set and about as high on new data.
+      Causes include insufficient capacity (a straight line fit to a curved relationship), overly
+      strong [[regularization|regularization]], uninformative or too few [[feature|features]], and
+      stopping training too early. It corresponds to the high-bias side of the
+      [[bias-variance-tradeoff|bias–variance tradeoff]] and is recognized by training and validation
+      errors that are both high and close together, often with a [[learning-curve|learning curve]]
+      that has plateaued. Remedies are the reverse of those for [[overfitting|overfitting]]: more
+      flexible models, richer features, weaker regularization or longer training. Large language
+      models are typically pretrained in a regime where they see most data only once and loss keeps
+      falling with more data and compute along [[scaling-laws|scaling laws]], so overall they sit
+      nearer the underfitting side, though they can still memorize passages repeated in their data.
+    example: >-
+      Both training and validation loss plateaued at 0.9, so the model is underfitting; add capacity
+      before adding regularization.
+origin: >-
+  Formed as the counterpart of 'overfitting' in statistics and machine learning; its first use has
+  not been established, but the paired terms were common in textbook treatments of model complexity
+  by the 1990s.
+see_also:
+  - overfitting
+  - bias–variance tradeoff
+  - learning curve
+  - regularization
+  - model selection
+  - scaling laws
+contrast:
+  - overfitting

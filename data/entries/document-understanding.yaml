@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: document understanding
+id: document-understanding
+pos: n.
+also:
+  - document AI
+  - document intelligence
+  - intelligent document processing
+  - IDP
+  - visually rich document understanding
+  - document parsing
+  - layout analysis
+  - key information extraction
+domain: percep
+domains:
+  - llm
+  - eng
+level: core
+plain: >-
+  Using AI to read documents such as invoices, forms, contracts and scientific papers the way a
+  person does, taking in layout, tables and charts as well as words, to pull out the information
+  needed.
+senses:
+  - definition: >-
+      The automatic extraction of structure and meaning from documents whose information is carried
+      by layout and visual elements as well as by text: forms, invoices, receipts, contracts,
+      scientific papers, slides and reports. Component tasks include layout analysis (finding
+      titles, paragraphs, figures and tables, and their reading order), table structure recognition,
+      key information extraction (for example invoice number, date and total), document
+      classification and document [[visual-question-answering|question answering]]. Pipelines first
+      ran [[optical-character-recognition|optical character recognition]] and then models combining
+      each word's text with its position on the page and the page image (LayoutLM, 2019, and its
+      successors). OCR-free models such as Donut (2021) read pixels directly, and since 2023
+      [[multimodal-large-language-model|multimodal language models]] parse whole pages into text,
+      Markdown or JSON and answer questions about charts and tables. Benchmarks include FUNSD and
+      CORD (forms and receipts), DocVQA, ChartQA and DocLayNet. Document understanding feeds
+      [[retrieval-augmented-generation|retrieval-augmented generation]] systems, where mistakes in
+      tables or reading order quietly degrade answers.
+    example: >-
+      The parser gets the line items right, but tables that span two pages still come out as
+      separate fragments.
+origin: >-
+  Grew out of document image analysis, which has had its own conference, the International
+  Conference on Document Analysis and Recognition (ICDAR), since 1991. The modern multimodal
+  approach began with Yiheng Xu and colleagues' LayoutLM at Microsoft Research Asia (arXiv December
+  2019), and the commercial label 'document AI' spread from about 2020.
+note: >-
+  Distinct from [[optical-character-recognition|optical character recognition]], which only
+  transcribes characters, and from text-only [[natural-language-processing|natural language
+  processing]], which ignores layout.
+see_also:
+  - optical character recognition
+  - visual question answering
+  - multimodal large language model
+  - retrieval-augmented generation
+  - chunking
+  - structured outputs
+sources:
+  - text: >-
+      Xu, Y., Li, M., Cui, L., Huang, S., Wei, F. & Zhou, M. (2020). LayoutLM: Pre-training of Text
+      and Layout for Document Image Understanding. KDD 2020.
+  - text: >-
+      Mathew, M., Karatzas, D. & Jawahar, C. V. (2021). DocVQA: A Dataset for VQA on Document
+      Images. WACV 2021.
+as_of: 2026-10

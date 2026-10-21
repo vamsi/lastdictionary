@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: loss curve
+id: loss-curve
+pos: n.
+also:
+  - training curve
+  - loss plot
+  - training loss curve
+  - validation loss curve
+domain: train
+domains:
+  - dl
+  - eval
+level: core
+plain: >-
+  A graph of a model's error as training goes on. A healthy curve drops steeply and then keeps
+  sloping gently downward; bumps, jumps or flat stretches can warn engineers that something is
+  wrong.
+senses:
+  - definition: >-
+      A chart that tracks how a model's [[loss-function|loss]] falls, or fails to fall, as training
+      proceeds — measured in steps, tokens seen or [[training-compute|training compute]] — usually
+      drawn for both the training data and a held-out [[validation-set|validation set]]. In
+      large-model [[pretraining|pretraining]], where most data are seen only once, training and
+      validation curves nearly coincide, and the curve is often read on log–log axes, where steady
+      improvement looks close to a straight line ([[power-law|power law]]). Engineers watch it for
+      divergence, [[loss-spike|loss spikes]] and plateaus, compare runs at equal tokens or FLOP, and
+      fit [[scaling-laws|scaling laws]] to it. Its shape also reflects the
+      [[learning-rate-schedule|learning rate schedule]]: under a
+      [[warmup-stable-decay-schedule|warmup-stable-decay schedule]] the loss falls slowly in the
+      stable phase and then drops sharply during decay, so mid-run values understate final quality.
+      Per-batch loss is noisy, so curves are usually smoothed with a moving average.
+    example: The loss curve flattened at 1.9 until the decay phase, then dropped to 1.75.
+origin: >-
+  Learning curves date back to Hermann Ebbinghaus's memory experiments (1885). 'Loss curve' became
+  the everyday deep-learning term as training tools logged loss continuously, from TensorBoard
+  (2015) to experiment trackers such as Weights & Biases.
+note: >-
+  Often used interchangeably with [[learning-curve|learning curve]], which in classical machine
+  learning more often plots performance against training-set size. A falling training loss with
+  rising validation loss signals [[overfitting|overfitting]].
+see_also:
+  - loss spike
+  - learning curve
+  - scaling laws
+  - training run
+  - warmup-stable-decay schedule
+  - validation set
+contrast:
+  - learning curve

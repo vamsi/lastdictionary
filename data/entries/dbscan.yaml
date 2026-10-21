@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DBSCAN
+id: dbscan
+pos: n.
+also:
+  - density-based spatial clustering of applications with noise
+  - HDBSCAN
+  - OPTICS
+  - density-based clustering
+pronunciation: DEE-bee-scan
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  A clustering method that finds groups as crowded regions of data separated by sparse ones, so it
+  can discover oddly shaped groups and set stray points aside as noise.
+senses:
+  - definition: >-
+      A density-based [[clustering|clustering]] algorithm ('density-based spatial clustering of
+      applications with noise') controlled by two parameters: a neighborhood radius ε and a minimum
+      count minPts. A point with at least minPts points within distance ε is a core point; a cluster
+      is a maximal set of core points connected through overlapping neighborhoods, together with
+      border points that lie within ε of a core point; all remaining points are labeled noise.
+      DBSCAN recovers clusters of any shape, sets outliers aside explicitly and does not have to be
+      told how many clusters to look for, and with a spatial index it is usually fast on
+      low-dimensional data, though its worst case is quadratic. Its weaknesses are a single global
+      density threshold, which fails when clusters differ in density, sensitivity to ε, and poor
+      behavior in high dimensions, where distances concentrate ([[curse-of-dimensionality|curse of
+      dimensionality]]). OPTICS and HDBSCAN generalize it to varying densities and return a
+      hierarchy of clusters.
+    example: >-
+      DBSCAN labeled 3% of the GPS pings as noise and found the delivery hubs without being told how
+      many there were.
+origin: >-
+  Introduced by Martin Ester, Hans-Peter Kriegel, Jörg Sander and Xiaowei Xu at the Second
+  International Conference on Knowledge Discovery and Data Mining (KDD-96) in 1996. It became one of
+  the most cited clustering algorithms and received the ACM SIGKDD Test of Time Award in 2014.
+  Ricardo Campello, Davoud Moulavi and Sander introduced the hierarchical variant HDBSCAN in 2013.
+year: 1996
+see_also:
+  - clustering
+  - k-means clustering
+  - hierarchical clustering
+  - anomaly detection
+  - density estimation
+  - curse of dimensionality
+contrast:
+  - k-means clustering
+sources:
+  - text: >-
+      Ester, M., Kriegel, H.-P., Sander, J. & Xu, X. (1996). A Density-Based Algorithm for
+      Discovering Clusters in Large Spatial Databases with Noise. Proc. KDD-96, AAAI Press.
+  - text: >-
+      Campello, R. J. G. B., Moulavi, D. & Sander, J. (2013). Density-Based Clustering Based on
+      Hierarchical Density Estimates. Proc. PAKDD 2013.

@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Markov property
+id: markov-property
+pos: n.
+also:
+  - Markov assumption
+  - memorylessness
+domain: rl
+domains:
+  - math
+level: core
+plain: >-
+  The assumption that the future depends only on the present situation, not on how you got there —
+  so knowing the current state is enough to predict what happens next.
+senses:
+  - definition: >-
+      The property of a stochastic process whose future is conditionally independent of its past
+      given its present [[state|state]]. In decision processes the condition includes the current
+      [[action|action]] and extends to the [[reward|reward]]. The property is what lets a
+      [[markov-decision-process|Markov decision process]] be solved with recursive
+      [[bellman-equation|Bellman equations]] and lets an optimal [[policy|policy]] depend on the
+      current state alone. Whether it holds depends on how the state is defined: a single Atari
+      frame is not Markov because it hides velocities, but a stack of recent frames approximately
+      is; any process can be made Markov by putting enough history into the state, at the cost of a
+      larger state space. When observations lack the property, the problem is a
+      [[partially-observable-markov-decision-process|partially observable Markov decision process]].
+    example: >-
+      A single frame violates the Markov property, so the agent cannot tell which way the ball is
+      moving.
+formula_latex: \Pr\left( S_{t+1} \mid S_t, A_t, S_{t-1}, A_{t-1}, \ldots, S_0 \right) = \Pr\left(
+  S_{t+1} \mid S_t, A_t \right)
+origin: >-
+  Named after the Russian mathematician Andrey Markov, who from 1906 studied sequences of dependent
+  random variables now called [[markov-chain|Markov chains]]. The eponymous name for the
+  conditional-independence property spread through probability theory in the following decades, and
+  Bellman's 1957 'Markovian decision process' carried it into decision-making.
+year: 1906
+see_also:
+  - Markov chain
+  - Markov decision process
+  - state
+  - partially observable Markov decision process
+  - hidden Markov model

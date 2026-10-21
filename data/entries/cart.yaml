@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: CART
+id: cart
+pos: abbr.
+also:
+  - Classification and Regression Trees
+  - classification and regression tree
+  - cost-complexity pruning
+  - surrogate split
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  A classic recipe for building decision trees that splits data two ways at every step, works for
+  both categories and numbers, and then trims the tree back so it does not memorize noise.
+senses:
+  - definition: >-
+      A decision-tree methodology, named after the 1984 monograph that defined it, for growing
+      binary [[decision-tree|trees]] for both [[classification|classification]] and
+      [[regression|regression]]. Each internal node splits on one feature (optionally on a linear
+      combination of features) into exactly two children, chosen to maximize the decrease in
+      [[gini-impurity|Gini impurity]] or the 'twoing' criterion for classification, or in squared
+      error for regression. CART deliberately grows a large tree and then applies cost-complexity
+      (weakest-link) [[pruning|pruning]], choosing the subtree size by
+      [[cross-validation|cross-validation]]. It handles missing values with surrogate splits that
+      mimic the primary split using other features, and it provides an early measure of variable
+      importance. Its binary splits, regression trees and pruning scheme underlie most modern tree
+      software, including scikit-learn's trees and the base learners of [[gradient-boosting|gradient
+      boosting]] libraries.
+    example: >-
+      We used CART-style cost-complexity pruning and picked the smallest tree within one standard
+      error of the best cross-validated error.
+origin: >-
+  Defined in the book 'Classification and Regression Trees' (Wadsworth, 1984) by Leo Breiman, Jerome
+  Friedman, Richard Olshen and Charles Stone, which built on the AID (1963) and THAID (1972)
+  survey-analysis programs and added cross-validated pruning. A commercial implementation was sold
+  under the trademarked CART name by Salford Systems, now part of Minitab.
+year: 1984
+note: >-
+  R's standard implementation is called rpart ('recursive partitioning') because, as its authors
+  explain, CART is the trademarked name of one commercial implementation and 'tree' was already
+  taken by an S-PLUS routine. Scikit-learn describes its trees as an optimized version of CART.
+see_also:
+  - decision tree
+  - Gini impurity
+  - pruning
+  - ID3
+  - C4.5
+  - random forest
+  - cross-validation
+contrast:
+  - C4.5
+sources:
+  - text: >-
+      Breiman, L., Friedman, J. H., Olshen, R. A. & Stone, C. J. (1984). Classification and
+      Regression Trees. Belmont, CA: Wadsworth.
+  - text: >-
+      Loh, W.-Y. (2014). Fifty Years of Classification and Regression Trees. International
+      Statistical Review, 82(3), 329–348.
+    url: https://pages.stat.wisc.edu/~loh/treeprogs/guide/LohISI14.pdf

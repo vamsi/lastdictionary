@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: levels of driving automation
+id: levels-of-driving-automation
+pos: n.
+also:
+  - SAE levels
+  - SAE J3016
+  - Level 2
+  - Level 3
+  - Level 4
+  - Level 5
+  - Level 2+
+domain: robot
+domains:
+  - gov
+  - safety
+level: essential
+plain: >-
+  A six-step scale, from Level 0 to Level 5, describing how much of the driving a car's automation
+  does and how much the human must still watch the road and be ready to take over.
+senses:
+  - definition: >-
+      A taxonomy, defined in the SAE International standard J3016, that classifies driving
+      automation by the division of labor between human and system rather than by technology. Level
+      0 (no driving automation): the human drives, perhaps helped by alerts or by brief automatic
+      interventions such as emergency braking. Level 1 (driver assistance): the system controls
+      either steering or speed. Level 2 (partial automation): it controls both, but the human must
+      supervise continuously and remains responsible. Level 3 (conditional automation): within its
+      [[operational-design-domain|operational design domain]] the system performs the whole driving
+      task, including monitoring the road, but a fallback-ready human must take over when asked.
+      Level 4 (high automation): the system drives and handles its own fallback within its domain,
+      needing no human. Level 5 (full automation): it can drive wherever a human could. Levels 1–2
+      are [[advanced-driver-assistance-system|driver-support features]]; Levels 3–5 are automated
+      driving systems. The levels describe features rather than vehicles, so one car may offer
+      several.
+    example: >-
+      It's a Level 2 system, so legally you're still the driver even with your hands off the wheel.
+origin: >-
+  SAE International first issued J3016 in January 2014; revisions in 2016, 2018 and April 2021
+  refined the definitions, and the 2021 text was also issued jointly with ISO as ISO/SAE PAS 22736
+  (August 2021). The US National Highway Traffic Safety Administration adopted the SAE levels in its
+  2016 automated-vehicles policy, replacing its own five-level scheme of 2013, and regulators and
+  manufacturers worldwide now use them.
+year: 2014
+note: >-
+  Often misread as a ranking of capability: a Level 4 shuttle confined to one campus is not 'better'
+  than a Level 2 system usable anywhere. 'Level 2+' is a marketing term, not part of the standard.
+  Level 3 approvals, such as Mercedes-Benz's Drive Pilot under UN Regulation No. 157, have been rare
+  and narrowly limited.
+see_also:
+  - autonomous vehicle
+  - advanced driver-assistance system
+  - operational design domain
+  - robotaxi
+  - levels of autonomy
+  - human oversight
+sources:
+  - text: >-
+      SAE International (2021). J3016_202104: Taxonomy and Definitions for Terms Related to Driving
+      Automation Systems for On-Road Motor Vehicles.
+standards: >-
+  SAE J3016 (current revision J3016_202104); also published as ISO/SAE PAS 22736:2021
+as_of: 2026-10

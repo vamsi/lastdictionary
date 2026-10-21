@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bayesian optimization
+id: bayesian-optimization
+pos: n.
+also:
+  - BO
+  - sequential model-based optimization
+  - SMBO
+  - acquisition function
+  - expected improvement
+  - tree-structured Parzen estimator
+  - TPE
+domain: ml
+domains:
+  - math
+  - eng
+level: core
+plain: >-
+  A smart way to tune settings when each test is expensive: build a statistical guess of how
+  settings affect results, then try whichever setting that guess says is most promising next.
+senses:
+  - definition: >-
+      A method for finding the best input to a costly, possibly noisy function that can be evaluated
+      but not analyzed, such as a model's validation score as a function of its hyperparameters
+      ([[hyperparameter-tuning|hyperparameter tuning]], its best-known use). After each trial it
+      refits a probabilistic stand-in for the objective (the surrogate) to all results so far and
+      consults it to pick the next point. The classic surrogate is a [[gaussian-process|Gaussian
+      process]], which gives both a predicted value and an uncertainty everywhere; alternatives
+      include random forests (as in the SMAC tool) and the tree-structured Parzen estimator, which
+      models the densities of good and bad configurations. An acquisition function, such as expected
+      improvement, probability of improvement or an [[upper-confidence-bound|upper confidence
+      bound]], scores candidate points by balancing exploitation (sampling where the surrogate
+      predicts good values) against exploration (sampling where it is uncertain); maximizing it is
+      cheap compared with evaluating the real objective. It suits problems with up to roughly 20
+      continuous dimensions; beyond tuning, it is used in experimental design, materials and drug
+      discovery, and robotics.
+    example: >-
+      Bayesian optimization found a better learning-rate schedule in 30 trials than random search
+      did in 150.
+formula_latex: \alpha_{\mathrm{EI}}(\mathbf{x}) = \mathbb{E}\big[\max\big(0,\; f(\mathbf{x}) -
+  f(\mathbf{x}^{+})\big)\big]
+origin: >-
+  Harold Kushner's 1964 work on locating the maximum of a noisy function, and Jonas Mockus's
+  research in the 1970s, which introduced the expected-improvement criterion and to which the name
+  is usually credited, founded the approach. The EGO algorithm of Donald Jones, Matthias Schonlau
+  and William Welch (1998) popularized it for engineering design, and Jasper Snoek, Hugo Larochelle
+  and Ryan Adams's 2012 paper made it a standard tool for tuning machine-learning models.
+year: 1975
+note: >-
+  Not a method for training Bayesian models: 'Bayesian' refers to the probabilistic surrogate, which
+  is updated by Bayes' rule as observations arrive. In the formula, x⁺ is the best point found so
+  far.
+see_also:
+  - hyperparameter tuning
+  - Gaussian process
+  - random search
+  - grid search
+  - AutoML
+  - upper confidence bound
+  - Hyperband
+contrast:
+  - Bayesian inference
+sources:
+  - text: >-
+      Mockus, J. (1975). On Bayesian Methods for Seeking the Extremum. In Optimization Techniques
+      IFIP Technical Conference, LNCS 27. Springer.
+  - text: >-
+      Jones, D. R., Schonlau, M. & Welch, W. J. (1998). Efficient Global Optimization of Expensive
+      Black-Box Functions. Journal of Global Optimization 13(4).
+  - text: >-
+      Snoek, J., Larochelle, H. & Adams, R. P. (2012). Practical Bayesian Optimization of Machine
+      Learning Algorithms. Advances in Neural Information Processing Systems 25.

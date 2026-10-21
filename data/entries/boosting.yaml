@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: boosting
+id: boosting
+pos: n.
+also:
+  - boost
+  - boosted model
+  - boosted trees
+  - weak learner
+  - strong learner
+  - arcing
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  Building a strong predictor from many weak ones trained one after another, where each new model
+  concentrates on the mistakes the previous ones made.
+senses:
+  - definition: >-
+      A family of [[ensemble-learning|ensemble learning]] methods that combine many weak learners —
+      models only slightly better than chance, typically shallow [[decision-tree|decision trees]] —
+      into a strong one by training them sequentially, each new learner focusing on the examples or
+      residual errors the current ensemble handles worst, and summing their weighted predictions.
+      [[adaboost|AdaBoost]] does this by reweighting misclassified examples;
+      [[gradient-boosting|gradient boosting]] fits each new learner to the negative
+      [[gradient|gradient]] of a loss with respect to the current predictions, which casts boosting
+      as gradient descent in function space and as stagewise fitting of an additive model. Boosting
+      chiefly lowers bias, though it can lower variance too; it can overfit if run too long and is
+      controlled by the number of rounds, the learning rate (shrinkage) and the depth of each
+      learner. Gradient-boosted trees such as [[xgboost|XGBoost]], [[lightgbm|LightGBM]] and
+      [[catboost|CatBoost]] are among the strongest methods for [[tabular-data|tabular data]].
+    example: >-
+      Boosting stumps for 400 rounds beat a single deep tree by six points of accuracy.
+origin: >-
+  Grew from a theoretical question posed by Michael Kearns and Leslie Valiant (1988–1989), first in
+  Kearns's unpublished note 'Thoughts on Hypothesis Boosting' (1988): can a learner that is only
+  weakly better than guessing be 'boosted' into an arbitrarily accurate one? Robert Schapire proved
+  it could in 'The Strength of Weak Learnability' (1990), and Yoav Freund's boost-by-majority
+  followed. Freund and Schapire's AdaBoost (1995) made boosting practical; Jerome Friedman, Trevor
+  Hastie and Robert Tibshirani recast it as additive modeling (2000).
+year: 1990
+note: >-
+  Contrast with [[bagging|bagging]], which trains models independently and in parallel to reduce
+  variance.
+see_also:
+  - AdaBoost
+  - gradient boosting
+  - ensemble learning
+  - bagging
+  - XGBoost
+  - PAC learning
+  - decision tree
+contrast:
+  - bagging
+sources:
+  - text: >-
+      Schapire, R. E. (1990). The Strength of Weak Learnability. Machine Learning, 5(2), 197–227.
+  - text: >-
+      Friedman, J., Hastie, T. & Tibshirani, R. (2000). Additive Logistic Regression: A Statistical
+      View of Boosting. The Annals of Statistics, 28(2), 337–407.

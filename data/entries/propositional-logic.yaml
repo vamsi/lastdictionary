@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: propositional logic
+id: propositional-logic
+pos: n.
+also:
+  - propositional calculus
+  - sentential logic
+  - Boolean logic
+  - zeroth-order logic
+  - statement logic
+domain: sym
+domains:
+  - math
+level: core
+plain: >-
+  The simplest formal logic: whole statements that are either true or false, joined by 'and', 'or',
+  'not' and 'if… then', with exact rules for working out whether the combination is true.
+senses:
+  - definition: >-
+      A formal logic whose atomic formulas are propositional variables (p, q, r…), each standing for
+      a whole statement that is true or false, combined with connectives such as ¬ (not), ∧ (and), ∨
+      (or), → (implies) and ↔ (if and only if). Truth tables fix the meaning: an assignment of truth
+      values to the variables determines the value of every formula. A formula is satisfiable if
+      some assignment makes it true and valid (a tautology) if every assignment does. Unlike
+      [[first-order-logic|first-order logic]], it has no quantifiers and no internal structure
+      within statements, so 'every bird flies' can be expressed only by listing cases; in exchange,
+      validity is decidable, although deciding satisfiability is the canonical
+      [[np-complete|NP-complete]] problem, [[boolean-satisfiability-problem|SAT]]. It underlies
+      digital circuit design, SAT-based verification and planning as satisfiability.
+origin: >-
+  Truth-functional reasoning with connectives goes back to the Stoic logicians, notably Chrysippus
+  in the 3rd century BCE. George Boole algebraized it in The Mathematical Analysis of Logic (1847)
+  and The Laws of Thought (1854); Frege axiomatized it in 1879, and Emil Post and Ludwig
+  Wittgenstein made truth tables explicit in 1921.
+year: 1847
+see_also:
+  - first-order logic
+  - Boolean satisfiability problem
+  - resolution
+  - Horn clause
+  - fuzzy logic
+contrast:
+  - first-order logic
+  - fuzzy logic
+sources:
+  - text: >-
+      Boole, G. (1854). An Investigation of the Laws of Thought. Walton and Maberly, London.
+  - text: >-
+      Post, E. L. (1921). Introduction to a General Theory of Elementary Propositions. American
+      Journal of Mathematics 43(3), 163–185.

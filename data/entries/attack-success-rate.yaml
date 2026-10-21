@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: attack success rate
+id: attack-success-rate
+pos: n.
+also:
+  - ASR
+domain: sec
+domains:
+  - eval
+  - safety
+level: specialist
+plain: >-
+  The share of attempts in which an attack works — for example, the percentage of forbidden requests
+  a model ends up answering when it is attacked.
+senses:
+  - definition: >-
+      An evaluation metric giving the fraction of attack attempts that achieve the attacker's goal
+      under a stated [[threat-model|threat model]] and budget: misclassification for
+      [[adversarial-example|adversarial examples]] (often one minus robust accuracy), trigger
+      activation for [[backdoor-attack|backdoors]], or, for [[jailbreak|jailbreaks]] and
+      [[prompt-injection|prompt injection]], the fraction of harmful requests or injected tasks that
+      the model carries out. In language-model evaluations, success is usually judged by a
+      classifier or another model acting as judge, so results depend heavily on that judge, on
+      whether several attempts per request count (best-of-n), and on whether a merely non-refusing
+      but useless answer counts as harmful. Benchmarks such as [[harmbench|HarmBench]] standardize
+      these choices so that numbers are comparable across papers.
+    example: With 100 attempts per behavior, the attack success rate rose from 12% to 89%.
+origin: >-
+  A long-standing metric in security and adversarial machine learning; it became the headline number
+  of jailbreak and prompt-injection papers from 2023. Alexandra Souly and colleagues' StrongREJECT
+  benchmark (2024) showed that lenient judges had inflated many reported rates.
+note: >-
+  An ASR is meaningless without its attack budget, judge and definition of success; comparisons
+  across papers that differ in these are unreliable.
+see_also:
+  - jailbreak
+  - HarmBench
+  - adversarial robustness
+  - red teaming
+  - prompt injection
+sources:
+  - text: >-
+      Souly, A. et al. (2024). A StrongREJECT for Empty Jailbreaks. NeurIPS 2024 Datasets and
+      Benchmarks Track.

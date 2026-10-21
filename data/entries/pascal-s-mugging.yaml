@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Pascal's mugging
+id: pascal-s-mugging
+pos: n.
+domain: asi
+domains:
+  - math
+  - mind
+level: specialist
+plain: >-
+  A puzzle about decisions: if someone promises an astronomically huge reward or threatens a huge
+  disaster, even a tiny chance they are honest seems to justify paying them, which looks absurd.
+senses:
+  - definition: >-
+      A thought experiment in decision theory in which a stranger promises to produce an
+      astronomically large benefit, or avert an astronomically large harm, in exchange for a small
+      payment such as the contents of a wallet. Because the promised stakes can be made large enough
+      to outweigh any finite skepticism, a naive [[expected-value|expected-utility]] maximizer
+      appears obliged to pay, even though the claim is almost certainly false. The puzzle shows that
+      unbounded utilities combined with probabilities that do not shrink fast enough make
+      expected-value reasoning exploitable. Proposed responses include bounded utility functions,
+      treating sufficiently small probabilities as zero, and penalizing claims in proportion to
+      their stakes. In AI debates the phrase is used, often critically, against arguments that small
+      probabilities of existential catastrophe or of vast future value should dominate decisions,
+      and as a design concern for AI agents that could be manipulated by such offers.
+    example: >-
+      Critics call a 0.01% extinction risk driving all policy a Pascal's mugging; defenders say the
+      risk is far higher than that.
+origin: >-
+  Formulated by Eliezer Yudkowsky in a 2007 Overcoming Bias post, 'Pascal's Mugging: Tiny
+  Probabilities of Vast Utilities'; Nick Bostrom published a version as a dialogue in the journal
+  Analysis (2009). The name adapts Pascal's wager, Blaise Pascal's 17th-century argument for belief
+  in God.
+year: 2007
+see_also:
+  - longtermism
+  - expected value
+  - existential risk
+  - p(doom)
+  - effective altruism
+sources:
+  - text: Bostrom, N. (2009). Pascal's mugging. Analysis 69(3).

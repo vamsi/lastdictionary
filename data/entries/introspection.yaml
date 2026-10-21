@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: introspection
+id: introspection
+pos: n.
+also:
+  - introspective
+  - introspective awareness
+  - self-report
+  - machine introspection
+domain: mind
+domains:
+  - interp
+  - safety
+level: core
+plain: >-
+  Looking inward to observe your own thoughts and feelings. For AI, the question is whether a model
+  can accurately report what is actually happening inside it, rather than guessing or making it up.
+senses:
+  - context: Psychology and philosophy
+    definition: >-
+      The process by which a subject gains knowledge of their own current mental states — thoughts,
+      feelings, perceptual experiences — in a way not available to others. Trained introspection was
+      the main method of early experimental psychology (Wilhelm Wundt, Edward Titchener) until
+      disagreements between laboratories and the rise of behaviorism discredited it; later studies
+      showed that people often confabulate the reasons for their choices. Philosophers debate
+      whether introspection is a kind of inner perception, an inference from available evidence, or
+      not a single faculty at all.
+  - context: AI
+    definition: >-
+      The capacity of a model to report accurately on its own internal states — which concepts are
+      active in its [[activation|activations]], what it is about to do, how it reached an answer —
+      when the reports are causally grounded in those states rather than inferred from training data
+      about how language models or people typically behave. Experiments test this by planting known
+      states and checking the reports: in concept injection, researchers add a
+      [[steering-vector|steering vector]] for a concept to the model's activations and ask whether
+      it notices anything unusual. Results published in 2025 found some such awareness in the most
+      capable models tested, but described it as highly unreliable and context-dependent. Reliable
+      introspection would aid [[interpretability|interpretability]], honesty and assessments of
+      [[machine-consciousness|machine consciousness]]; unreliable self-report is a form of
+      [[confabulation|confabulation]].
+    example: >-
+      Before trusting the model's account of its reasoning, check whether the report reflects
+      introspection or after-the-fact reconstruction.
+    labels:
+      - emerging
+origin: >-
+  From Latin introspicere, 'to look into'. As a scientific method, introspection flourished in
+  German and American laboratories from the 1870s to the 1910s. For language models, Felix Binder
+  and colleagues tested introspection in 2024, and Jack Lindsey's concept-injection experiments at
+  Anthropic (published October 2025; arXiv, January 2026) reported 'emergent introspective
+  awareness'.
+note: >-
+  A self-report can be accurate for the wrong reason, for example by predicting what a typical model
+  would say; experiments therefore require that reports depend causally on the internal state.
+  Overlaps with, but differs from, [[situational-awareness|situational awareness]], a model's
+  knowledge of its own circumstances.
+see_also:
+  - metacognition
+  - confabulation
+  - interpretability
+  - steering vector
+  - chain-of-thought faithfulness
+  - machine consciousness
+  - higher-order theories of consciousness
+sources:
+  - text: >-
+      Lindsey, J. (2025). Emergent Introspective Awareness in Large Language Models. Transformer
+      Circuits Thread; arXiv:2601.01828 (2026).
+    url: https://arxiv.org/abs/2601.01828v1
+  - text: >-
+      Binder, F. J., Chua, J., Korbak, T. et al. (2024). Looking Inward: Language Models Can Learn
+      About Themselves by Introspection. arXiv:2410.13787.
+    url: https://arxiv.org/abs/2410.13787
+  - text: >-
+      Nisbett, R. E. & Wilson, T. D. (1977). Telling More Than We Can Know: Verbal Reports on Mental
+      Processes. Psychological Review 84(3), 231–259.
+as_of: 2026-10

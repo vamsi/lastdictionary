@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feed-forward network
+id: feed-forward-network
+pos: n.
+also:
+  - FFN
+  - MLP block
+  - MLP layer
+  - MLP sublayer
+  - position-wise feed-forward network
+  - feed-forward layer
+domain: llm
+domains:
+  - dl
+  - interp
+level: core
+plain: >-
+  The part of each transformer layer that works on every word separately, after attention has mixed
+  in context. It holds most of a model's adjustable numbers and is thought to store much of its
+  knowledge.
+senses:
+  - definition: >-
+      The sublayer of a [[transformer|transformer]] block that applies the same small
+      [[multilayer-perceptron|multilayer perceptron]] independently at every position: a linear map
+      expands the hidden vector (classically to four times the model width), a nonlinearity such as
+      [[relu|ReLU]] or [[gelu|GELU]] is applied, and a second linear map projects back, the result
+      being added to the [[residual-stream|residual stream]]. Most current LLMs use gated variants
+      such as [[swiglu|SwiGLU]], with three weight matrices and an expansion of about 8/3 to keep
+      the parameter count similar. In a dense transformer the FFNs hold roughly two-thirds of the
+      non-embedding parameters, and interpretability work treats them as key–value memories storing
+      factual and lexical associations. In [[mixture-of-experts|mixture-of-experts]] models, the FFN
+      is the component replaced by many parallel expert networks chosen by a [[router|router]].
+    example: >-
+      Most of the factual recall we traced ran through mid-layer MLPs rather than attention.
+formula_latex: \mathrm{FFN}(x) = W_2\, \phi(W_1 x + b_1) + b_2
+origin: >-
+  Called the 'position-wise feed-forward network' in 'Attention Is All You Need' (2017). Noam
+  Shazeer's 'GLU Variants Improve Transformer' (2020) introduced the gated forms later adopted by
+  PaLM, LLaMA and successors; Mor Geva and colleagues (2020) framed these layers as key–value
+  memories.
+year: 2017
+note: >-
+  Interpretability writing usually calls it the MLP. 'Feed-forward' contrasts with recurrence; for
+  the general architecture see [[feedforward-neural-network|feedforward neural network]].
+see_also:
+  - transformer
+  - SwiGLU
+  - mixture of experts
+  - multilayer perceptron
+  - residual stream
+  - attention
+contrast:
+  - feedforward neural network
+sources:
+  - text: Shazeer, N. (2020). GLU Variants Improve Transformer. arXiv:2002.05202.
+    url: https://arxiv.org/abs/2002.05202
+  - text: >-
+      Geva, M., Schuster, R., Berant, J. & Levy, O. (2020). Transformer Feed-Forward Layers Are
+      Key-Value Memories. arXiv:2012.14913; EMNLP 2021.
+    url: https://arxiv.org/abs/2012.14913

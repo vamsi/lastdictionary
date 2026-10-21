@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: kernel fusion
+id: kernel-fusion
+pos: n.
+also:
+  - operator fusion
+  - fused kernel
+  - layer fusion
+  - op fusion
+domain: infer
+domains:
+  - hw
+  - dl
+level: specialist
+plain: >-
+  Merging several small calculation steps into one, so a chip finishes them in a single pass instead
+  of saving and reloading data in between, like cooking at the counter without returning ingredients
+  to the fridge after each step.
+senses:
+  - definition: >-
+      An optimization that merges a sequence of operations, each of which would otherwise run as a
+      separate GPU [[kernel|kernel]] (a function launched on the device), into one kernel that keeps
+      intermediate results in registers or on-chip [[sram|SRAM]]. Unfused, every operation reads its
+      inputs from off-chip memory, writes its outputs back and pays a launch overhead; for
+      elementwise and reduction steps such as adding a bias, applying an
+      [[activation-function|activation function]], [[layer-normalization|layer normalization]],
+      [[dropout|dropout]] or [[softmax|softmax]], that traffic rather than arithmetic dominates run
+      time. Fusing them, often into the epilogue of a preceding matrix multiplication, raises
+      [[arithmetic-intensity|arithmetic intensity]] and speeds [[memory-bound|memory-bound]]
+      workloads. Fusion is done by hand in libraries such as [[flashattention|FlashAttention]] and
+      cuDNN, and automatically by [[ai-compiler|AI compilers]] such as [[xla|XLA]], TVM, TensorRT
+      and PyTorch's torch.compile, which often generates [[triton|Triton]] code.
+    example: >-
+      Fusing the bias, GELU and dropout into the matmul epilogue saved about 15 percent of step time.
+origin: >-
+  Descends from loop fusion, a compiler optimization studied since the 1970s. 'Kernel fusion'
+  appears in GPU-computing research by about 2010, and became central to deep learning with graph
+  compilers such as XLA (2017) and TVM (2018), NVIDIA's TensorRT, and hand-fused attention kernels
+  such as FlashAttention (2022).
+note: >-
+  'Kernel' here means a GPU program, not the [[kernel-trick|kernel trick]] of kernel methods or an
+  operating-system kernel; see the hub [[kernel|kernel]].
+see_also:
+  - AI compiler
+  - FlashAttention
+  - memory-bound
+  - arithmetic intensity
+  - Triton
+  - XLA
+contrast:
+  - kernel trick

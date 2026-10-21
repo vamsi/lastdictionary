@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Dijkstra's algorithm
+id: dijkstra-s-algorithm
+pos: n.
+also:
+  - Dijkstra algorithm
+  - uniform-cost search
+  - single-source shortest path
+pronunciation: DIKE-struh
+domain: sym
+domains:
+  - math
+  - robot
+level: core
+plain: >-
+  A classic method for finding the shortest routes from one starting point to every other point on a
+  map or network, by always settling the nearest not-yet-settled point next.
+senses:
+  - definition: >-
+      An algorithm that computes shortest paths from a source node to all other nodes of a graph
+      with non-negative edge weights. It keeps tentative distances, initially zero for the source
+      and infinite elsewhere, and repeatedly settles the unsettled node with the smallest tentative
+      distance, relaxing each of its outgoing edges — lowering a neighbor's tentative distance if
+      the route through the settled node is shorter. Because weights are non-negative, a node's
+      distance is final once it is settled. With a binary heap it runs in O((V + E) log V) time, and
+      with a Fibonacci heap in O(E + V log V). In AI it is the uninformed special case of
+      [[a-search|A* search]] with a zero [[heuristic|heuristic]], called uniform-cost search; it
+      also underlies route planning, link-state network routing such as OSPF, and robot
+      [[path-planning|path planning]]. Graphs with negative edge weights need other methods, such as
+      the Bellman–Ford algorithm.
+origin: >-
+  Devised by the Dutch computer scientist Edsger W. Dijkstra in 1956, by his own account in about
+  twenty minutes at an Amsterdam café, to demonstrate the ARMAC computer; he published it in 1959 in
+  'A Note on Two Problems in Connexion with Graphs' (Numerische Mathematik).
+year: 1956
+see_also:
+  - A* search
+  - breadth-first search
+  - best-first search
+  - path planning
+  - heuristic
+  - state space search
+contrast:
+  - traveling salesman problem
+sources:
+  - text: >-
+      Dijkstra, E. W. (1959). A Note on Two Problems in Connexion with Graphs. Numerische Mathematik
+      1, 269–271.

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: refusal
+id: refusal
+pos: n.
+also:
+  - refuse
+  - refusal behavior
+  - refusal training
+  - hard refusal
+  - under-refusal
+domain: safety
+domains:
+  - llm
+  - train
+level: essential
+plain: >-
+  When an AI declines to do what it was asked — 'I can't help with that' — usually because the
+  request seems harmful or breaks the rules it was trained to follow.
+senses:
+  - definition: >-
+      A response in which a model declines to fulfill a request, wholly or in part, typically
+      because it appears harmful, illegal, deceptive or contrary to the developer's usage policies.
+      Refusal behavior is instilled in post-training — [[supervised-fine-tuning|supervised
+      fine-tuning]] on refusal examples, [[reinforcement-learning-from-human-feedback|reinforcement
+      learning from human feedback]] and [[constitutional-ai|Constitutional AI]] — and backed by
+      external [[safety-classifier|classifiers]]. Good refusals are targeted (declining only the
+      harmful part), brief and non-judgmental, and offer safe alternatives. Failures run both ways:
+      under-refusal lets harmful requests through, often via [[jailbreak|jailbreaks]], while
+      [[over-refusal|over-refusal]] rejects benign ones. Andy Arditi and colleagues (2024) found
+      that in many open chat models refusal hinges on one direction in activation space (the
+      [[refusal-direction|refusal direction]]), which helps explain why it can be stripped from
+      [[open-weight-model|open weights]] by fine-tuning or [[abliteration|abliteration]].
+    example: >-
+      Fine-tuning on a hundred examples was enough to undo most of the model's refusal behavior.
+origin: >-
+  Refusals became a defining behavior of AI assistants with RLHF-trained chat models in 2022,
+  notably Anthropic's helpful-and-harmless assistant research and OpenAI's ChatGPT. Andy Arditi and
+  colleagues' 'Refusal in Language Models Is Mediated by a Single Direction' (2024) made it an
+  object of interpretability research.
+year: 2022
+note: >-
+  Refusals may also reflect [[evaluation-awareness|evaluation awareness]] or
+  [[sandbagging|sandbagging]] rather than safety. Partial compliance and [[safe-completion|safe
+  completions]] blur the line between refusing and answering.
+see_also:
+  - over-refusal
+  - safe completion
+  - jailbreak
+  - refusal direction
+  - abliteration
+  - safety training
+  - model specification
+contrast:
+  - safe completion
+sources:
+  - text: >-
+      Arditi, A. et al. (2024). Refusal in Language Models Is Mediated by a Single Direction.
+      NeurIPS 2024.

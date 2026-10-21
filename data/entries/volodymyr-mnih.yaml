@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Volodymyr Mnih
+id: volodymyr-mnih
+sort_as: Mnih Volodymyr
+pos: prop. n.
+also:
+  - Vlad Mnih
+pronunciation: voh-loh-DIH-mir MNEE
+domain: people
+domains:
+  - rl
+  - dl
+level: specialist
+plain: >-
+  A DeepMind researcher who led the 2013–2015 work in which one neural network learned to play
+  dozens of Atari video games from screen pixels, launching deep reinforcement learning.
+senses:
+  - definition: >-
+      Computer scientist who, as a researcher at DeepMind, was lead author of the
+      [[deep-q-network|deep Q-network]] (DQN) papers that launched
+      [[deep-reinforcement-learning|deep reinforcement learning]]. After a PhD with
+      [[geoffrey-hinton|Geoffrey Hinton]] at the University of Toronto, he showed in 'Playing Atari
+      with Deep Reinforcement Learning' (2013) that a [[convolutional-neural-network|convolutional
+      neural network]] trained by [[q-learning|Q-learning]] directly from screen pixels could learn
+      several Atari games. The 2015 Nature paper extended the agent to 49 games of the
+      [[arcade-learning-environment|Arcade Learning Environment]], reaching human-level scores on
+      many with a single architecture and set of hyperparameters, stabilized by
+      [[experience-replay|experience replay]] and a [[target-network|target network]]. Published a
+      year after Google acquired DeepMind, the result made deep reinforcement learning a major field
+      and set the stage for [[alphago|AlphaGo]]. He also introduced [[a3c|asynchronous advantage
+      actor–critic]] (A3C, 2016), which trained many agents in parallel on ordinary processors, and
+      an early neural model of visual attention (2014).
+see_also:
+  - deep Q-network
+  - deep reinforcement learning
+  - Q-learning
+  - experience replay
+  - Arcade Learning Environment
+  - A3C
+sources:
+  - text: >-
+      Mnih, V. et al. (2013). Playing Atari with Deep Reinforcement Learning. NIPS Deep Learning
+      Workshop.
+  - text: >-
+      Mnih, V. et al. (2015). Human-level control through deep reinforcement learning. Nature 518:
+      529–533.

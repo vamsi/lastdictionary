@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Redwood Research
+id: redwood-research
+pos: prop. n.
+also:
+  - Redwood
+domain: orgs
+domains:
+  - safety
+level: specialist
+plain: >-
+  A small Berkeley nonprofit known for the idea of 'AI control': safeguards meant to keep powerful
+  AI from doing damage even if the AI were secretly working against the people using it.
+senses:
+  - definition: >-
+      A Berkeley safety-research nonprofit that originated [[ai-control|AI control]], the study of
+      how to get useful work from powerful models without disaster even on the pessimistic
+      assumption that they are misaligned and looking for ways around the safeguards. Its
+      researchers design protocols — such as [[trusted-monitoring|trusted monitoring]] by weaker
+      models, editing or auditing suspicious outputs, and restricting permissions — and test them
+      with [[control-evaluation|control evaluations]] in which a red team plays the misaligned
+      model. With Anthropic it co-authored the December 2024 study of [[alignment-faking|alignment
+      faking]] in Claude. Earlier projects included adversarial training of a classifier to block
+      injurious text with very high reliability (2022) and causal scrubbing, a method for testing
+      interpretability hypotheses. It advises AI companies and governments on control measures and
+      on risks from [[automated-ai-research|automated AI research]].
+origin: >-
+  Founded in 2021 in Berkeley, California; its founders included Nate Thomas and Buck Shlegeris. Its
+  AI control agenda was set out in a December 2023 paper by Ryan Greenblatt, Shlegeris and
+  colleagues.
+year: 2021
+see_also:
+  - AI control
+  - trusted monitoring
+  - control evaluation
+  - untrusted monitoring
+  - alignment faking
+  - scheming
+sources:
+  - text: >-
+      Greenblatt, R., Shlegeris, B., Sachan, K. & Roger, F. (2024). AI Control: Improving Safety
+      Despite Intentional Subversion. ICML 2024.
+  - text: >-
+      Greenblatt, R. et al. (2024). Alignment Faking in Large Language Models. Anthropic and Redwood
+      Research.
+as_of: 2026-10

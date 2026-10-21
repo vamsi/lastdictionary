@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: accumulated local effects
+id: accumulated-local-effects
+pos: n.
+also:
+  - ALE
+  - ALE plot
+  - accumulated local effects plot
+domain: interp
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  A chart of how a model's predictions change with one input, built from small local comparisons so
+  it stays reliable when inputs are related to each other, unlike simpler average-based charts.
+senses:
+  - definition: >-
+      A method for plotting the main effect of a feature on a model's predictions that remains valid
+      when features are correlated. The feature's range is divided into intervals, typically at
+      quantiles; within each interval, the change in prediction as the feature moves from the
+      interval's lower to its upper edge is computed only for instances that actually fall in that
+      interval and averaged, and these local differences are accumulated across intervals and
+      centered so that the effect averages to zero. Because each comparison uses realistic data
+      points and small changes, ALE avoids the extrapolation to impossible feature combinations that
+      biases [[partial-dependence-plot|partial dependence]] under correlation, and it separates a
+      feature's effect from those of correlated features. Second-order ALE plots show pure two-way
+      interactions. Results depend on the number of intervals, and effects are conditional on the
+      data within each one.
+    example: >-
+      Unlike the partial dependence plot, the ALE plot showed no effect of bedroom count once floor
+      area was accounted for.
+origin: >-
+  Introduced by Daniel W. Apley and Jingyu Zhu in 'Visualizing the Effects of Predictor Variables in
+  Black Box Supervised Learning Models' (arXiv, 2016; Journal of the Royal Statistical Society,
+  Series B, 2020).
+year: 2016
+see_also:
+  - partial dependence plot
+  - individual conditional expectation
+  - global explanation
+  - feature importance
+  - model-agnostic
+sources:
+  - text: >-
+      Apley, D. W. & Zhu, J. (2020). Visualizing the Effects of Predictor Variables in Black Box
+      Supervised Learning Models. Journal of the Royal Statistical Society Series B 82(4),
+      1059–1086.

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: soft actor–critic
+id: soft-actor-critic
+pos: n.
+also:
+  - SAC
+domain: rl
+domains:
+  - robot
+level: specialist
+plain: >-
+  A method for training AI agents, popular in robotics, that rewards the agent both for succeeding
+  and for keeping its behavior varied, which helps it explore and learn reliably from reused
+  experience.
+senses:
+  - definition: >-
+      An [[off-policy|off-policy]] [[actor-critic|actor–critic]] algorithm for continuous control
+      based on maximum-entropy [[reinforcement-learning|reinforcement learning]]: the agent
+      maximizes expected [[return|return]] plus the entropy of its [[policy|policy]] in every
+      [[state|state]], weighted by a temperature α. The entropy term pays the agent for keeping its
+      choices as varied as success allows, which improves exploration, prevents premature collapse
+      onto one behavior and makes learning robust to hyperparameters and random seeds. SAC learns a
+      stochastic Gaussian actor using the [[reparameterization-trick|reparameterization trick]], two
+      'soft' [[q-function|Q-functions]] whose minimum curbs overestimation, and slowly averaged
+      [[target-network|target networks]], and it trains on a [[experience-replay|replay buffer]],
+      making it far more sample-efficient than [[on-policy|on-policy]] methods. A later version
+      tunes α automatically to reach a target entropy. SAC became a standard baseline for simulated
+      and real-robot learning, including legged locomotion learned from a few hours of real-world
+      experience.
+    example: >-
+      SAC with automatic entropy tuning was the only method that worked on all our robot tasks
+      without retuning.
+formula_latex: J(\pi) = \sum_{t} \mathbb{E}_{(s_t, a_t) \sim \pi}\left[ r(s_t, a_t) + \alpha\,
+  \mathcal{H}\left( \pi(\cdot \mid s_t) \right) \right]
+origin: >-
+  Introduced by Tuomas Haarnoja, Aurick Zhou, Pieter Abbeel and Sergey Levine at UC Berkeley in
+  'Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic
+  Actor' (arXiv, January 2018; ICML 2018), following Haarnoja's soft Q-learning (2017) and Brian
+  Ziebart's maximum-entropy framework (2008–2010).
+year: 2018
+see_also:
+  - actor–critic
+  - entropy regularization
+  - off-policy
+  - deep deterministic policy gradient
+  - experience replay
+  - robot learning
+sources:
+  - text: >-
+      Haarnoja, T., Zhou, A., Abbeel, P. & Levine, S. (2018). Soft Actor-Critic: Off-Policy Maximum
+      Entropy Deep Reinforcement Learning with a Stochastic Actor. ICML 2018. arXiv:1801.01290.
+    url: https://arxiv.org/abs/1801.01290
+  - text: >-
+      Haarnoja, T. et al. (2019). Learning to Walk via Deep Reinforcement Learning. Robotics:
+      Science and Systems (RSS) 2019.

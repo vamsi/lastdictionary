@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: right to explanation
+id: right-to-explanation
+pos: n.
+also:
+  - right to an explanation
+domain: gov
+domains:
+  - interp
+  - society
+labels:
+  - legal
+  - contested
+level: core
+plain: >-
+  The idea that a person affected by a decision made or shaped by an algorithm — a refused loan, a
+  rejected job application — is entitled to a meaningful account of why.
+senses:
+  - definition: >-
+      An individual's entitlement to an intelligible account of how an automated system reached, or
+      contributed to, a decision about them. Its existence under the EU's General Data Protection
+      Regulation (GDPR) was long debated: Article 22 restricts solely
+      [[automated-decision-making|automated decisions]] with legal or similarly significant effects,
+      Articles 13–15 require 'meaningful information about the logic involved', and only the
+      non-binding Recital 71 mentions obtaining an explanation. In Dun & Bradstreet Austria
+      (C-203/22, 2025) the Court of Justice of the EU held that people are entitled to a concise,
+      intelligible explanation of the procedure and principles actually applied to their data. The
+      [[eu-ai-act|EU AI Act]] (Art. 86) adds an express right to explanation for decisions based on
+      certain [[high-risk-ai-system|high-risk AI systems]]. In US consumer credit, the Equal Credit
+      Opportunity Act requires lenders to state specific reasons for adverse decisions, including
+      when they use complex models.
+    example: >-
+      Citing her right to explanation, she asked the insurer which factors had driven the automated
+      refusal.
+origin: >-
+  The debate was launched by Bryce Goodman and Seth Flaxman's 2016 paper arguing that the GDPR
+  creates a right to explanation; Sandra Wachter, Brent Mittelstadt and Luciano Floridi (2017)
+  countered that it guarantees at most a right to be informed, while Andrew Selbst and Julia Powles
+  (2017) defended a functional right. The dispute helped drive research on
+  [[explainable-ai|explainable AI]].
+year: 2016
+note: >-
+  A legal explanation need not expose a model's internals: counterfactual explanations (you would
+  have been approved had your income been higher), proposed by Wachter and colleagues in 2017, are
+  one way to comply. Post hoc explanations may not faithfully reflect how a model actually reached
+  its output.
+see_also:
+  - automated decision-making
+  - explainable AI
+  - interpretability
+  - algorithmic accountability
+  - counterfactual explanation
+  - Blueprint for an AI Bill of Rights
+sources:
+  - text: >-
+      Goodman, B. & Flaxman, S. (2017). European Union Regulations on Algorithmic Decision-Making
+      and a 'Right to Explanation'. AI Magazine 38(3). (First circulated 2016.)
+  - text: >-
+      Wachter, S., Mittelstadt, B. & Floridi, L. (2017). Why a Right to Explanation of Automated
+      Decision-Making Does Not Exist in the General Data Protection Regulation. International Data
+      Privacy Law 7(2).
+standards: >-
+  GDPR (Reg. (EU) 2016/679), Arts. 13(2)(f), 14(2)(g), 15(1)(h) and 22; EU AI Act (Reg. (EU)
+  2024/1689), Art. 86
+as_of: 2026-10

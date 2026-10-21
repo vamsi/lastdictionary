@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: constrained decoding
+id: constrained-decoding
+pos: n.
+also:
+  - guided generation
+  - grammar-constrained decoding
+  - structured generation
+  - grammar-based sampling
+  - GBNF
+  - lexically constrained decoding
+  - grid beam search
+domain: llm
+domains:
+  - eng
+level: core
+plain: >-
+  Forcing an AI model's output to follow a required format — such as valid code or a fill-in form —
+  by blocking, at every step, any word that would break the rules.
+senses:
+  - definition: >-
+      A [[decoding|decoding]] technique that restricts which [[token|tokens]] a
+      [[language-model|language model]] may produce at each step so that the output is guaranteed to
+      satisfy a formal constraint, typically by masking the [[logit|logits]] of disallowed tokens
+      before sampling. Constraints may be lexical (required words or phrases, as in grid beam search
+      for translation), a regular expression, a [[json-schema|JSON Schema]] or a context-free
+      grammar. Efficient implementations compile the constraint into a finite-state machine or
+      pushdown automaton and precompute, for each state, which vocabulary tokens are valid, taking
+      care with tokens that span several grammar symbols. Constrained decoding underlies the strict
+      modes of [[structured-outputs|structured outputs]] and [[json-mode|JSON mode]] in commercial
+      APIs and the grammar features of open-source engines. It guarantees syntax, not correctness,
+      and overly tight constraints can lower quality by pushing the model away from its preferred
+      phrasing.
+    example: >-
+      With constrained decoding against the schema, every response parses — we deleted the retry
+      logic.
+origin: >-
+  Lexically constrained decoding with grid beam search was introduced by Chris Hokamp and Qun Liu
+  (April 2017; ACL 2017). Brandon T. Willard and Rémi Louf's finite-state formulation and Outlines
+  library (July 2023), llama.cpp's GBNF grammars (2023) and OpenAI's strict structured outputs
+  (August 2024) brought grammar-constrained generation into mainstream use.
+year: 2017
+see_also:
+  - structured outputs
+  - JSON mode
+  - JSON Schema
+  - logit bias
+  - decoding
+  - beam search
+sources:
+  - text: >-
+      Hokamp, C. & Liu, Q. (2017). Lexically Constrained Decoding for Sequence Generation Using Grid
+      Beam Search. ACL 2017.
+    url: https://arxiv.org/abs/1704.07138
+  - text: >-
+      Willard, B. T. & Louf, R. (2023). Efficient Guided Generation for Large Language Models.
+      arXiv:2307.09702.
+    url: https://arxiv.org/abs/2307.09702

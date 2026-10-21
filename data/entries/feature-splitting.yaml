@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature splitting
+id: feature-splitting
+pos: n.
+also:
+  - feature split
+domain: interp
+domains:
+  - dl
+level: specialist
+plain: >-
+  What happens when a concept-finding tool is given more room: a broad concept it found before
+  breaks into several narrower ones, much as 'animal' might split into 'dog', 'cat' and 'bird'.
+senses:
+  - definition: >-
+      The phenomenon in which a [[feature-interpretability|feature]] learned by a small
+      [[sparse-autoencoder|sparse autoencoder]] dictionary is replaced, in a larger dictionary
+      trained on the same [[activation|activations]], by a family of more specific features that
+      together cover roughly the same inputs. In Anthropic's 'Towards Monosemanticity' (2023), for
+      instance, a single base64 feature in a small dictionary split into several more specialized
+      base64 features in larger ones, and later work found the same pattern at far larger scales.
+      Feature splitting shows that there is no single correct number of features: the granularity of
+      the concepts an SAE finds depends on dictionary size, and related features across sizes can be
+      arranged into trees. It is related to [[feature-absorption|feature absorption]], in which a
+      general feature is left with unexplained gaps where specific features have taken over.
+    example: >-
+      At 16k latents there is one math feature; at 262k it has split into algebra, geometry and
+      LaTeX formatting.
+origin: >-
+  Named and described by Trenton Bricken, Adly Templeton, Joshua Batson and colleagues in
+  Anthropic's 'Towards Monosemanticity' (October 2023), which compared dictionaries of different
+  sizes trained on the same one-layer transformer.
+year: 2023
+note: >-
+  Splitting is read by some as evidence that a model's features form a hierarchy and by others as an
+  artifact of the sparsity objective; either way it complicates any claim to have found 'the'
+  features of a model.
+see_also:
+  - sparse autoencoder
+  - feature absorption
+  - dictionary learning
+  - feature (interpretability)
+  - monosemanticity
+sources:
+  - text: >-
+      Bricken, T., Templeton, A., Batson, J. et al. (2023). Towards Monosemanticity: Decomposing
+      Language Models With Dictionary Learning. Transformer Circuits Thread.

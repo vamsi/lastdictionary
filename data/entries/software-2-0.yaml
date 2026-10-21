@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Software 2.0
+id: software-2-0
+pos: n.
+domain: culture
+domains:
+  - eng
+  - dl
+level: core
+plain: >-
+  Andrej Karpathy's 2017 name for software whose behavior is learned from examples by a neural
+  network instead of being written line by line by programmers.
+senses:
+  - definition: >-
+      Software whose behavior is determined by the learned [[parameter|weights]] of a
+      [[neural-network|neural network]] rather than by hand-written instructions. In this framing,
+      developers stop writing the program directly; they curate [[dataset|datasets]], choose an
+      architecture and objective, and let [[gradient-descent|optimization]] search the space of
+      possible programs, so that the resulting 'code' is millions of numbers no one reads. Andrej
+      Karpathy contrasted it with Software 1.0 — explicit code in languages such as Python or C++ —
+      and predicted it would progressively absorb tasks such as vision, speech recognition and
+      translation. He listed its advantages (uniform computation, fixed run time and memory, easy
+      porting to specialized chips) and its costs (opacity, silent failures, inherited biases).
+    example: Our lane detector went Software 2.0 years ago; the hand-tuned rules are gone.
+origin: >-
+  Coined by Andrej Karpathy, then director of AI at Tesla, in an essay titled 'Software 2.0'
+  published on Medium in November 2017. He extended the scheme in 2025 with [[software-3-0|Software
+  3.0]], in which natural-language prompts program large language models.
+year: 2017
+see_also:
+  - Software 3.0
+  - Andrej Karpathy
+  - neural network
+  - deep learning
+  - English is the hottest new programming language
+  - the bitter lesson
+sources:
+  - text: Karpathy, A. (2017). Software 2.0. Medium, 11 November 2017.

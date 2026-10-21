@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hallucination
+id: hallucination
+pos: n.
+also:
+  - hallucinate
+  - AI hallucination
+domain: llm
+domains:
+  - safety
+  - society
+labels:
+  - figurative
+  - contested
+level: essential
+plain: >-
+  When an AI states something false or made up — a fake fact, quotation or source — fluently and
+  confidently, as if it were true.
+senses:
+  - context: Language models
+    definition: >-
+      Output from a generative model that is fluent and plausible but unsupported by its input or by
+      fact: invented citations, nonexistent software functions, wrong figures, or claims
+      contradicting a supplied document. Researchers distinguish intrinsic hallucination
+      (contradicting the source) from extrinsic (adding unverifiable content), and factuality errors
+      from faithfulness errors. Contributing causes include training objectives that reward
+      plausible continuations over calibrated uncertainty, gaps in [[parametric-knowledge|parametric
+      knowledge]] and sampling randomness. Mitigations include
+      [[retrieval-augmented-generation|retrieval-augmented generation]], citation and verification
+      steps, training models to abstain, and better [[calibration|calibration]].
+    example: The model hallucinated two court cases that do not exist.
+  - context: Computer vision (earlier sense)
+    definition: >-
+      The generation of plausible detail not present in the input, as in face hallucination
+      (inferring a high-resolution face from a low-resolution image). Here the word was neutral or
+      even positive.
+origin: >-
+  Simon Baker and Takeo Kanade used 'hallucinating faces' for super-resolution in 2000. Around
+  2017–2018 the word was adopted in neural machine translation and summarization for unfaithful
+  output, and it became a household word after ChatGPT's release in late 2022. Cambridge Dictionary
+  named 'hallucinate' its Word of the Year for 2023.
+year: 2000
+note: >-
+  Critics argue the metaphor wrongly implies perception or a mind, and some prefer
+  [[confabulation|confabulation]], 'fabrication' or simply 'error'. Not every unwanted output is a
+  hallucination: refusals, bias and outdated information are different failures.
+see_also:
+  - confabulation
+  - grounding
+  - retrieval-augmented generation
+  - calibration
+  - factuality
+  - sycophancy
+contrast:
+  - grounding
+sources:
+  - text: >-
+      Baker, S. & Kanade, T. (2000). Hallucinating Faces. Proc. 4th IEEE International Conference on
+      Automatic Face and Gesture Recognition.
+  - text: >-
+      Maynez, J., Narayan, S., Bohnet, B. & McDonald, R. (2020). On Faithfulness and Factuality in
+      Abstractive Summarization. ACL 2020.

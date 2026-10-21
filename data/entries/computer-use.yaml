@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: computer use
+id: computer-use
+pos: n.
+also:
+  - computer-use agent
+  - computer-using agent
+  - CUA
+  - computer use tool
+domain: agents
+domains:
+  - percep
+  - llm
+  - sec
+level: essential
+plain: >-
+  An AI's ability to work a computer through its normal screen and controls: it studies pictures of
+  what is displayed and sends mouse and keyboard actions, so it can use ordinary apps that were
+  built for people.
+senses:
+  - definition: >-
+      The capability of a model to operate a graphical computer environment through its human
+      interface: the model receives screenshots (sometimes supplemented by accessibility data),
+      reasons about what is on screen, and issues low-level actions — move the pointer to pixel
+      coordinates, click, drag, scroll, type, press keys — which a [[harness|harness]] executes on a
+      real or virtual machine before returning a fresh screenshot. Because it works with any
+      application a person can use, computer use extends [[ai-agent|agents]] to legacy software,
+      websites and desktop tools that lack APIs; the costs are slowness, brittleness when layouts
+      change and errors in locating elements. Exposure to arbitrary on-screen content makes
+      [[prompt-injection|prompt injection]] a central risk, so providers advise running computer-use
+      agents in isolated virtual machines with minimal privileges and having a human confirm
+      consequential actions such as purchases. Progress is tracked on benchmarks such as
+      [[osworld|OSWorld]].
+    example: We automated the old invoicing app with computer use because it has no API.
+origin: >-
+  Anthropic released computer use in public beta with an upgraded Claude 3.5 Sonnet on 22 October
+  2024, the first such offering from a frontier model; it scored 14.9% on OSWorld's screenshot-only
+  setting, where humans score about 72%. OpenAI followed with its Computer-Using Agent, powering the
+  Operator product, on 23 January 2025 (38.1% on OSWorld), and other laboratories released similar
+  capabilities.
+year: 2024
+note: >-
+  Unlike traditional robotic process automation, which replays scripted interface steps,
+  computer-use agents decide each action from what they see. Broader than a [[browser-agent|browser
+  agent]]; [[gui-agent|GUI agent]] is the research term covering desktop, web and mobile interfaces.
+see_also:
+  - GUI agent
+  - browser agent
+  - OSWorld
+  - AI agent
+  - prompt injection
+  - sandbox
+  - agent–computer interface
+sources:
+  - text: Anthropic. Computer use tool. Claude API documentation.
+    url: https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool
+  - text: OpenAI (2025). Computer-Using Agent. 23 January 2025.
+    url: https://openai.com/index/computer-using-agent/
+as_of: 2026-10

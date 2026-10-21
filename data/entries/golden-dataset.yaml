@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: golden dataset
+id: golden-dataset
+pos: n.
+also:
+  - golden set
+  - gold set
+  - gold-standard dataset
+  - gold data
+  - golden test set
+domain: data
+domains:
+  - eval
+  - eng
+level: core
+plain: >-
+  A small, carefully checked set of example questions with known good answers, used as a trusted
+  yardstick to test an AI system every time it changes.
+senses:
+  - definition: >-
+      A curated, version-controlled collection of inputs paired with verified reference outputs or
+      grading criteria, used as the authoritative test of a model or AI application. Golden datasets
+      are usually small (dozens to a few thousand items), built or reviewed by domain experts, and
+      designed to cover core use cases, known failure modes and edge cases rather than to mirror
+      real traffic statistically. In AI engineering they act as regression tests: each change to a
+      prompt, model, retrieval setup or [[harness|harness]] is scored against the golden set — by
+      exact match, rubric or [[llm-as-a-judge|model judge]] — before release (see
+      [[evals-driven-development|evals-driven development]]). In annotation projects, 'gold' items
+      with known answers are also slipped into labeling queues to monitor worker accuracy.
+    example: >-
+      The new prompt raised the golden-set pass rate from 82% to 91%, so we shipped it.
+origin: >-
+  Echoes 'gold standard' — used in medicine and corpus annotation for the best available reference —
+  and software testing's 'golden' files and 'golden masters', known-good outputs against which a
+  program is checked. Gold and golden test sets were in use before large language models; the phrase
+  became common in language-model application engineering from about 2023.
+note: >-
+  A golden dataset must be kept out of training data and prompt examples, or it stops measuring
+  anything (see [[data-contamination|data contamination]]). It complements rather than replaces
+  public [[benchmark|benchmarks]] and live monitoring.
+see_also:
+  - ground truth
+  - evaluation
+  - evals-driven development
+  - test set
+  - benchmark
+  - LLM-as-a-judge
+  - data contamination

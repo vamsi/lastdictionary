@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: counterfactual explanation
+id: counterfactual-explanation
+pos: n.
+also:
+  - counterfactual explanations
+  - CFE
+  - what-if explanation
+  - contrastive explanation
+domain: interp
+domains:
+  - gov
+  - society
+  - ml
+level: core
+plain: >-
+  An explanation that tells someone the smallest change that would have produced a different outcome
+  — for example, that the application would have been accepted if it had listed two more years of
+  work experience.
+senses:
+  - definition: >-
+      An explanation of an individual decision in the form of a minimal change to the input that
+      would have changed the model's output to a specified alternative: if X had been different, the
+      outcome would have been Y. Generating one is an optimization problem: find a point x′ close to
+      the original input x — under a distance that favors changing few features — for which the
+      model returns the desired output, usually with constraints that x′ be plausible under the data
+      distribution and alter only mutable features. Desiderata include proximity, sparsity,
+      plausibility, actionability, diversity (offering several alternatives) and causal consistency
+      (respecting how features affect one another). Counterfactuals need no access to model
+      internals and can be understood without technical training, which made them attractive under
+      data-protection law; but they are not unique, may not survive retraining, and say little about
+      the model as a whole.
+    example: >-
+      The counterfactual explanation said two fewer open credit lines would have flipped the
+      decision.
+origin: >-
+  Popularized in machine learning by Sandra Wachter, Brent Mittelstadt and Chris Russell in
+  'Counterfactual Explanations without Opening the Black Box: Automated Decisions and the GDPR'
+  (arXiv, 2017; Harvard Journal of Law & Technology, 2018), drawing on philosophical accounts of
+  counterfactual causation such as David Lewis's (1973). David Martens and Foster Provost (2014) had
+  already explained document classifications by the smallest set of words whose removal changes the
+  prediction.
+year: 2017
+note: >-
+  Distinguish [[counterfactual-fairness|counterfactual fairness]], a fairness criterion, and the
+  general notion of a [[counterfactual|counterfactual]]. A counterfactual explanation states what
+  would flip this model's decision, not what the person ought to do; turning it into feasible advice
+  is the aim of [[algorithmic-recourse|algorithmic recourse]].
+see_also:
+  - algorithmic recourse
+  - local explanation
+  - right to explanation
+  - counterfactual
+  - model-agnostic
+  - feature attribution
+contrast:
+  - counterfactual fairness
+sources:
+  - text: >-
+      Wachter, S., Mittelstadt, B. & Russell, C. (2018). Counterfactual Explanations without Opening
+      the Black Box: Automated Decisions and the GDPR. Harvard Journal of Law & Technology 31(2),
+      841–887.
+  - text: >-
+      Mothilal, R. K., Sharma, A. & Tan, C. (2020). Explaining Machine Learning Classifiers through
+      Diverse Counterfactual Explanations. Proceedings of ACM FAT* 2020.

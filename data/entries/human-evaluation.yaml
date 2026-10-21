@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: human evaluation
+id: human-evaluation
+pos: n.
+also:
+  - human eval
+  - human rating
+  - human judgment
+  - manual evaluation
+domain: eval
+domains:
+  - data
+  - society
+level: core
+plain: >-
+  Judging an AI's outputs by asking people to rate or compare them, because for many tasks —
+  writing, conversation, translation — no automatic score captures quality well.
+senses:
+  - definition: >-
+      Assessment of system outputs by human judges rather than automatic metrics. Common protocols
+      are absolute ratings on Likert scales (for fluency, adequacy or helpfulness), pairwise or
+      side-by-side preferences, rankings, error annotation against a typology such as
+      Multidimensional Quality Metrics (MQM) in translation, and task-based studies that test
+      whether outputs actually help people. Judges may be crowdworkers, domain experts or real
+      users, as on [[lmarena|LMArena]]. Human evaluation is the reference against which
+      [[bleu|BLEU]], [[rouge|ROUGE]] and [[llm-as-a-judge|model graders]] are validated, but it is
+      costly, slow and noisy: designs must control for rater expertise, fatigue, presentation order
+      and population, and should report [[inter-annotator-agreement|inter-annotator agreement]].
+      Raters also tend to favor longer, more confident answers, which can reward fluent errors.
+    example: >-
+      Automatic metrics favored system B, but blind human evaluation by professional translators
+      preferred A.
+origin: >-
+  Early human judgments of machine translation include John B. Carroll's intelligibility and
+  fidelity ratings for the 1966 [[alpac-report|ALPAC report]]; DARPA's translation evaluations in
+  the 1990s standardized 'adequacy' and 'fluency' scales. Large-scale preference judgments became
+  central with [[reinforcement-learning-from-human-feedback|reinforcement learning from human
+  feedback]] (2017–2022) and crowdsourced arenas (2023).
+year: 1966
+note: >-
+  Not automatically more valid than automatic metrics: rushed or unqualified raters can reward
+  confident mistakes, and experts disagree. In an [[uplift-study|uplift study]], people are the
+  subjects being measured rather than the judges.
+see_also:
+  - LLM-as-a-judge
+  - inter-annotator agreement
+  - LMArena
+  - win rate
+  - crowdsourcing
+  - ALPAC report
+  - reinforcement learning from human feedback
+contrast:
+  - BLEU
+  - ROUGE
+sources:
+  - text: >-
+      ALPAC (1966). Language and Machines: Computers in Translation and Linguistics. National
+      Academy of Sciences–National Research Council.
+  - text: >-
+      Freitag, M. et al. (2021). Experts, Errors, and Context: A Large-Scale Study of Human
+      Evaluation for Machine Translation. Transactions of the ACL, 9.

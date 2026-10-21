@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: responsible AI
+id: responsible-ai
+pos: n.
+also:
+  - RAI
+  - responsible artificial intelligence
+domain: society
+domains:
+  - gov
+  - eng
+level: core
+plain: >-
+  An umbrella name for the practices organizations use to keep their AI systems fair, safe, private
+  and accountable, from the first design meeting to everyday use.
+senses:
+  - definition: >-
+      An organizational approach that turns [[ai-ethics|AI ethics]] principles into processes, roles
+      and tools across the AI lifecycle: impact and risk assessments, fairness and robustness
+      testing, documentation such as [[model-card|model cards]] and
+      [[datasheet-for-datasets|datasheets]], [[human-oversight|human oversight]], incident response,
+      review boards and release sign-offs. Corporate frameworks differ in wording but return to the
+      same few commitments, chiefly fairness, safety, privacy, transparency and accountability, and
+      increasingly map them onto external requirements such as the
+      [[nist-ai-risk-management-framework|NIST AI Risk Management Framework]], the management-system
+      standard [[iso-iec-42001|ISO/IEC 42001]] and the [[eu-ai-act|EU AI Act]]. The term stresses
+      the conduct and accountability of the developer or deployer, whereas
+      [[trustworthy-ai|trustworthy AI]] stresses properties of the system.
+    example: >-
+      No model ships until the responsible AI team has signed off on the impact assessment.
+origin: >-
+  Used sporadically before, the phrase took off in 2017–2019 as technology companies published AI
+  principles (Microsoft and Google both in 2018) and created internal responsible-AI offices;
+  Virginia Dignum's book Responsible Artificial Intelligence (2019) gave it an academic framing. By
+  the 2020s it named a job family and a compliance function.
+note: >-
+  Critics point out that responsible-AI teams have been cut when they conflicted with product goals
+  (several large companies shrank or disbanded such teams in 2022–2023), and that self-governance
+  without external enforcement risks [[ethics-washing|ethics washing]].
+see_also:
+  - AI ethics
+  - trustworthy AI
+  - AI governance
+  - algorithmic impact assessment
+  - model card
+  - AI audit
+  - human oversight
+contrast:
+  - ethics washing
+sources:
+  - text: >-
+      Dignum, V. (2019). Responsible Artificial Intelligence: How to Develop and Use AI in a
+      Responsible Way. Springer.

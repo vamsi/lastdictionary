@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: long-horizon task
+id: long-horizon-task
+pos: n.
+also:
+  - long-horizon
+  - long-running task
+  - long-horizon agent
+  - long-horizon planning
+domain: agents
+domains:
+  - eval
+  - rl
+  - asi
+level: core
+plain: >-
+  A job that takes many steps and a long time — hours or days of work rather than a single answer —
+  so an AI must stay on track and recover from its own mistakes.
+senses:
+  - definition: >-
+      A task whose completion requires a long sequence of dependent actions and decisions, measured
+      in steps, wall-clock time or the time a skilled human would need. Such tasks stress abilities
+      that short benchmarks miss: keeping track of goals and state across many [[agent-loop|agent
+      loop]] iterations, managing a [[context-window|context window]] that overflows, noticing and
+      correcting earlier errors before they compound, and judging when work is truly finished.
+      Because small per-step error rates multiply, reliability on long tasks falls quickly unless an
+      agent can check its own work. METR's [[metr-time-horizon|time-horizon]] metric measures
+      progress as the length of human task an agent completes with 50% success; its March 2025 study
+      found that length doubling roughly every seven months since 2019, with Claude 3.7 Sonnet then
+      near 50 minutes.
+    example: >-
+      Short coding puzzles are saturated; the open question is long-horizon tasks like a two-day
+      refactor.
+origin: >-
+  'Horizon' comes from control theory and [[reinforcement-learning|reinforcement learning]] (finite
+  and infinite horizons, planning horizons), where long-horizon tasks were a standing challenge in
+  games and robotics. Applied to language-model agents from about 2023, the phrase became central to
+  capability forecasting after METR's 2025 time-horizon paper (Thomas Kwa, Ben West et al.).
+note: >-
+  Length is not the same as difficulty: a long but routine task may be easier than a short one
+  requiring insight. Sustained long-horizon autonomy is a threshold in several frontier-AI risk
+  frameworks.
+see_also:
+  - METR time horizon
+  - agent loop
+  - compaction
+  - self-correction
+  - task decomposition
+  - RE-Bench
+  - background agent
+sources:
+  - text: >-
+      Kwa, T., West, B. et al. (2025). Measuring AI Ability to Complete Long Software Tasks.
+      arXiv:2503.14499 (NeurIPS 2025).
+    url: https://arxiv.org/abs/2503.14499
+as_of: 2026-10

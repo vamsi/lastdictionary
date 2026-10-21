@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RWKV
+id: rwkv
+pos: prop. n.
+also:
+  - Receptance Weighted Key Value
+  - RWKV-7
+  - Goose
+  - Finch
+  - Eagle
+domain: llm
+domains:
+  - dl
+level: specialist
+plain: >-
+  An open-source language model design that works like an old-style recurrent network when writing
+  text, using constant memory, yet can be trained quickly in parallel like a transformer.
+senses:
+  - definition: >-
+      A neural architecture (Receptance Weighted Key Value) designed to train like a
+      [[transformer|transformer]], with all positions processed in parallel, yet run like a
+      [[recurrent-neural-network|recurrent network]], keeping only a fixed-size state while
+      generating. Each block has a time-mixing sublayer — a form of [[linear-attention|linear
+      attention]] in which past keys and values are accumulated with learned exponential decay and
+      gated by a 'receptance' vector — and a channel-mixing sublayer that plays the role of the
+      [[feed-forward-network|feed-forward network]]. During generation each layer just updates its
+      state, so cost per token does not grow with context. Its 2023 paper reported models of up to
+      14 billion parameters, larger than any dense RNN trained before, that performed about as well
+      as transformers of similar size. Later versions added data-dependent decay (RWKV-6, 'Finch')
+      and generalized delta-rule state updates (RWKV-7, 'Goose', 2025). Like other fixed-state
+      models, it is weaker than attention at exact recall over long contexts.
+    example: >-
+      On the phone, the RWKV model's memory use stays flat however long the conversation gets.
+origin: >-
+  Developed by Bo Peng as an open-source project (first public code, RWKV-1, in August 2021), later
+  supported by EleutherAI and a volunteer community and now a Linux Foundation AI project, and
+  described in 'RWKV: Reinventing RNNs for the Transformer Era' (Bo Peng and colleagues, May 2023;
+  Findings of EMNLP 2023).
+year: 2021
+see_also:
+  - linear attention
+  - recurrent neural network
+  - state space model
+  - Mamba
+  - hybrid architecture
+  - transformer
+sources:
+  - text: >-
+      Peng, B., Alcaide, E., Anthony, Q., Albalak, A. et al. (2023). RWKV: Reinventing RNNs for the
+      Transformer Era. Findings of EMNLP 2023.
+    url: https://arxiv.org/abs/2305.13048

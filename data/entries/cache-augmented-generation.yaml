@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cache-augmented generation
+id: cache-augmented-generation
+pos: n.
+also:
+  - CAG
+domain: agents
+domains:
+  - infer
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  An alternative to search-based AI answering: load the whole knowledge base, if it is small enough,
+  into the model's context once, save the model's processed state, and reuse it for every question.
+senses:
+  - definition: >-
+      An alternative to [[retrieval-augmented-generation|retrieval-augmented generation]] for small
+      knowledge bases: instead of searching for passages at every query, the whole collection is
+      loaded once into a [[long-context|long-context]] model's [[context-window|context window]],
+      the model's intermediate state for that text (its [[kv-cache|KV cache]]) is saved, and each
+      question is answered by appending it to the saved state. With no search step there is nothing
+      to [[chunking|chunk]] or index and no retrieval to wait for or get wrong, and
+      [[prompt-caching|prompt caching]] makes the reuse cheap. Its limits are those of long contexts
+      — the knowledge base must fit, costs grow with its size, and [[context-rot|context rot]] and
+      [[lost-in-the-middle|lost in the middle]] effects still apply — so it suits small, stable
+      collections such as a product manual or a set of policies, while retrieval-augmented
+      generation remains preferable for large or fast-changing corpora.
+    example: >-
+      Our handbook is only 80,000 tokens, so cache-augmented generation beat the RAG pipeline on
+      both latency and accuracy.
+origin: >-
+  Named by Brian J. Chan, Chao-Ting Chen, Jui-Hung Cheng and Hen-Hsen Huang in 'Don't Do RAG: When
+  Cache-Augmented Generation is All You Need for Knowledge Tasks' (arXiv, December 2024; short paper
+  at the ACM Web Conference 2025). Practitioners had already advised loading small knowledge bases
+  whole; Anthropic's September 2024 contextual-retrieval post, for example, suggested skipping RAG
+  for knowledge bases under about 200,000 tokens.
+year: 2024
+see_also:
+  - retrieval-augmented generation
+  - prompt caching
+  - KV cache
+  - long context
+  - context window
+  - context rot
+contrast:
+  - retrieval-augmented generation
+sources:
+  - text: >-
+      Chan, B. J., Chen, C.-T., Cheng, J.-H. & Huang, H.-H. (2024). Don't Do RAG: When
+      Cache-Augmented Generation is All You Need for Knowledge Tasks. arXiv:2412.15605; ACM Web
+      Conference 2025 (short paper).
+    url: https://arxiv.org/abs/2412.15605
+  - text: Anthropic (2024). Introducing Contextual Retrieval, 19 September 2024.
+    url: https://www.anthropic.com/news/contextual-retrieval
+as_of: 2026-10

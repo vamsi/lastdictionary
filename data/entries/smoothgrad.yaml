@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SmoothGrad
+id: smoothgrad
+pos: n.
+also:
+  - smooth grad
+  - smoothed gradients
+domain: interp
+domains:
+  - dl
+  - percep
+level: specialist
+plain: >-
+  A trick for making explanation heat maps less speckled: compute the map for many noisy copies of
+  the input and average them, so random flicker cancels out.
+senses:
+  - definition: >-
+      A technique that reduces visual noise in gradient-based [[saliency-map|saliency maps]] by
+      averaging the maps computed for many copies of the input, each perturbed with Gaussian noise.
+      Gradients of deep networks fluctuate sharply at small scales, so a single map looks speckled
+      even when the decision depends on coherent regions; averaging over a few dozen noisy samples,
+      with noise of roughly 10–20% of the input range, smooths these fluctuations. SmoothGrad can
+      wrap any gradient-based method, including [[integrated-gradients|integrated gradients]], and
+      adding noise during training further sharpens the maps. It improves the visual coherence of
+      maps but does not by itself establish their [[faithfulness|faithfulness]].
+    example: >-
+      Raw gradients looked like static, but with SmoothGrad the outline of the bird emerged.
+origin: >-
+  Introduced by Daniel Smilkov, Nikhil Thorat, Been Kim, Fernanda Viégas and Martin Wattenberg of
+  Google in 'SmoothGrad: removing noise by adding noise' (arXiv, June 2017).
+year: 2017
+see_also:
+  - saliency map
+  - integrated gradients
+  - feature attribution
+  - Grad-CAM
+  - faithfulness
+sources:
+  - text: >-
+      Smilkov, D., Thorat, N., Kim, B., Viégas, F. & Wattenberg, M. (2017). SmoothGrad: removing
+      noise by adding noise. arXiv:1706.03825.
+    url: https://arxiv.org/abs/1706.03825

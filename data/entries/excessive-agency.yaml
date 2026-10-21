@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: excessive agency
+id: excessive-agency
+pos: n.
+also:
+  - over-permissioned agent
+  - excessive permissions
+  - excessive autonomy
+domain: sec
+domains:
+  - agents
+  - gov
+level: specialist
+plain: >-
+  Giving an AI system more power than its job needs — too many tools, too-broad permissions or too
+  little human sign-off — so that a mistake or a trick can do real damage.
+senses:
+  - definition: >-
+      A vulnerability class in LLM applications and [[ai-agent|agents]] in which the system is
+      granted more functionality, permissions or autonomy than its task requires, so that
+      hallucinated, manipulated ([[prompt-injection|prompt-injected]]) or simply mistaken model
+      outputs turn into damaging actions. The [[owasp-top-10-for-llm-applications|OWASP Top 10 for
+      LLM Applications]] distinguishes excessive functionality (tools that can do more than needed,
+      such as a mail tool that can also delete), excessive permissions (credentials with broad
+      access to downstream systems) and excessive autonomy (high-impact actions without human
+      confirmation). Mitigations apply the principle of least privilege: narrow, purpose-built
+      tools, per-user scoped credentials, authorization enforced outside the model,
+      [[sandbox|sandboxing]] and human approval for irreversible actions.
+    example: >-
+      The audit flagged excessive agency: the summarization agent held a token that could delete
+      production databases.
+origin: >-
+  Named as a risk category in the first OWASP Top 10 for Large Language Model Applications (version
+  1.0, August 2023), where it was LLM08. It rose to LLM06 in the 2025 edition and to LLM03 in the
+  2026 edition (August 2026), reflecting the spread of agents.
+year: 2023
+see_also:
+  - OWASP Top 10 for LLM Applications
+  - prompt injection
+  - lethal trifecta
+  - permission system
+  - sandbox
+  - confused deputy
+sources:
+  - text: >-
+      OWASP GenAI Security Project (2026). OWASP GenAI LLM Top 10 2026: LLM03 Excessive Agency.
+    url: https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/
+as_of: 2026-10

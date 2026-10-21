@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: automation bias
+id: automation-bias
+pos: n.
+also:
+  - automation complacency
+  - automation-induced complacency
+domain: society
+domains:
+  - safety
+  - core
+level: core
+plain: >-
+  The habit of trusting a computer's suggestion too much: following it even when it is wrong, or
+  missing problems because the machine did not flag them.
+senses:
+  - definition: >-
+      A cognitive bias in which people who work with an automated aid give its output more weight
+      than their own observations and reasoning, and check the situation less carefully as a result.
+      Researchers distinguish errors of commission, acting on a wrong recommendation that other cues
+      contradict, from errors of omission, overlooking a problem because the aid raised no alert.
+      Contributing factors include workload, time pressure, a system's apparent authority and past
+      reliability, and diffusion of responsibility between person and machine. First studied in
+      aircraft cockpits and later in clinical decision support, it is a central problem for
+      [[human-in-the-loop|human-in-the-loop]] oversight of AI, because a reviewer who rubber-stamps
+      model outputs provides little protection. Countermeasures include displaying uncertainty,
+      requiring an independent judgment before revealing the AI's answer, training, and clear
+      accountability for final decisions.
+    example: >-
+      Because of automation bias, readers were more likely to miss tumors the software had failed to
+      mark.
+origin: >-
+  Named in aviation human-factors research by Kathleen Mosier, Linda Skitka and colleagues in the
+  mid-1990s; an early statement is Mosier and Skitka's chapter 'Human Decision Makers and Automated
+  Decision Aids: Made for Each Other?' (1996), followed by flight-simulation studies in 1998–1999.
+  It developed alongside work on automation misuse and complacency, such as Raja Parasuraman and
+  Victor Riley's 'Humans and Automation: Use, Misuse, Disuse, Abuse' (1997).
+year: 1996
+note: >-
+  The [[eu-ai-act|EU AI Act]] (Art. 14(4)(b)) names automation bias explicitly, requiring that
+  people overseeing [[high-risk-ai-system|high-risk AI systems]] be enabled to stay aware of it. The
+  opposite failure is [[algorithm-aversion|algorithm aversion]].
+see_also:
+  - overreliance
+  - algorithm aversion
+  - human oversight
+  - human-in-the-loop
+  - moral crumple zone
+  - deskilling
+contrast:
+  - algorithm aversion
+sources:
+  - text: >-
+      Skitka, L. J., Mosier, K. L. & Burdick, M. (1999). Does automation bias decision-making?
+      International Journal of Human-Computer Studies 51(5), 991–1006.
+  - text: >-
+      Parasuraman, R. & Manzey, D. H. (2010). Complacency and Bias in Human Use of Automation: An
+      Attentional Integration. Human Factors 52(3), 381–410.
+standards: EU AI Act (Reg. (EU) 2024/1689), Art. 14(4)(b)

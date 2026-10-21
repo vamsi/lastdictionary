@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: classifier guidance
+id: classifier-guidance
+pos: n.
+also:
+  - classifier-guided diffusion
+  - CLIP guidance
+domain: gen
+domains:
+  - dl
+level: specialist
+plain: >-
+  A way to push a diffusion image generator toward a requested category by consulting a separate
+  image-recognition model at every step, trading variety for images that more clearly show the
+  target.
+senses:
+  - definition: >-
+      A method for conditioning a [[diffusion-model|diffusion model]] by adding, at each sampling
+      step, the gradient of a separate classifier's log-probability for the desired class, computed
+      on the noisy intermediate sample and multiplied by a guidance scale. By Bayes' rule this
+      gradient converts the unconditional score into that of the class-conditional distribution;
+      scales above one sharpen the distribution, improving fidelity and class adherence at the cost
+      of diversity. The classifier must be trained on noised images at every noise level, an extra
+      burden, and its gradients can push toward adversarial patterns rather than meaningful
+      features. A variant, CLIP guidance, uses the gradient of image–text similarity from a
+      [[clip|CLIP]] model to steer generation toward a caption. Classifier guidance has been largely
+      superseded by [[classifier-free-guidance|classifier-free guidance]], which needs no extra
+      model.
+origin: >-
+  Introduced by Prafulla Dhariwal and Alex Nichol of OpenAI in 'Diffusion Models Beat GANs on Image
+  Synthesis' (posted May 2021; NeurIPS 2021), whose guided ImageNet models surpassed the best GANs
+  on sample-quality metrics. Steering diffusion sampling with classifier gradients had been sketched
+  earlier by Sohl-Dickstein and colleagues (2015) and Song and colleagues (2020).
+year: 2021
+see_also:
+  - classifier-free guidance
+  - diffusion model
+  - CLIP
+  - score-based generative model
+  - Fréchet inception distance
+contrast:
+  - classifier-free guidance
+sources:
+  - text: >-
+      Dhariwal, P. & Nichol, A. (2021). Diffusion Models Beat GANs on Image Synthesis. NeurIPS 2021.
+      arXiv:2105.05233.
+    url: https://arxiv.org/abs/2105.05233

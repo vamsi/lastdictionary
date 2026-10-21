@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: test-time compute
+id: test-time-compute
+pos: n.
+also:
+  - inference-time compute
+  - test-time scaling
+  - inference scaling
+  - inference-time scaling
+  - TTC
+domain: llm
+domains:
+  - infer
+  - rl
+level: core
+plain: >-
+  The computing effort an AI model spends while answering a question, as opposed to while being
+  trained. Letting a model think longer or try many answers can make it markedly smarter.
+senses:
+  - definition: >-
+      Computation spent at [[inference|inference]] time on a given input, and by extension the
+      strategy of improving outputs by increasing it rather than by training a bigger model. Methods
+      are parallel — sampling many candidate answers and choosing by majority vote
+      ([[self-consistency|self-consistency]]) or with a [[verifier|verifier]] or
+      [[reward-model|reward model]] ([[best-of-n-sampling|best-of-n sampling]]) — sequential,
+      generating longer [[reasoning-trace|reasoning traces]] that revise themselves, or structured
+      search such as [[tree-of-thoughts|tree of thoughts]] or [[monte-carlo-tree-search|Monte Carlo
+      tree search]]. On many reasoning tasks accuracy rises roughly linearly with the logarithm of
+      test-time compute, a relationship called test-time or inference scaling; gains are largest
+      where answers can be checked and smallest for knowledge the model lacks. Spending compute per
+      query rather than once in training changes pricing, energy use and the assumptions of
+      compute-based governance.
+    example: >-
+      Doubling test-time compute bought us more accuracy than the next model size up would have.
+origin: >-
+  Trading search at play time against training was familiar from game AI: [[alphago|AlphaGo]] relied
+  on tree search, and Andy Jones's 2021 experiments on the board game Hex quantified the exchange
+  rate between train-time and test-time compute. The idea moved to the center of LLM research in
+  2024, when Charlie Snell and colleagues (August) showed a smaller model with optimally allocated
+  test-time compute could beat one 14 times larger, and OpenAI's o1 (September) reported gains from
+  time spent thinking.
+year: 2021
+note: >-
+  Not to be confused with [[test-time-training|test-time training]], which updates weights on each
+  test input. 'Inference compute' in economic discussions usually means all serving compute, not
+  extra reasoning per query.
+see_also:
+  - reasoning model
+  - thinking budget
+  - chain of thought
+  - self-consistency
+  - best-of-n sampling
+  - scaling laws
+  - inference cost
+  - verifier
+contrast:
+  - training compute
+  - test-time training
+sources:
+  - text: >-
+      Snell, C., Lee, J., Xu, K. & Kumar, A. (2024). Scaling LLM Test-Time Compute Optimally can be
+      More Effective than Scaling Model Parameters. arXiv:2408.03314 (ICLR 2025).
+    url: https://arxiv.org/abs/2408.03314v1
+  - text: Jones, A. L. (2021). Scaling Scaling Laws with Board Games. arXiv:2104.03113.
+    url: https://arxiv.org/abs/2104.03113
+  - text: OpenAI (2024). Learning to Reason with LLMs. OpenAI blog.
+    url: https://openai.com/index/learning-to-reason-with-llms/

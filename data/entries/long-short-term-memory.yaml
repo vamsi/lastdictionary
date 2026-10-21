@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: long short-term memory
+id: long-short-term-memory
+pos: n.
+also:
+  - LSTM
+  - LSTM network
+  - xLSTM
+domain: dl
+domains:
+  - llm
+  - percep
+level: core
+plain: >-
+  A type of recurrent network with a separate memory lane and learned 'gates' that decide what to
+  remember, forget and output, letting it keep track of information over long sequences.
+senses:
+  - definition: >-
+      A [[recurrent-neural-network|recurrent neural network]] unit built around a second memory
+      vector, the cell state, which from step to step is changed only by elementwise scaling and
+      addition; along this additive path, originally called the 'constant error carousel',
+      information and error signals can survive hundreds of steps, countering the
+      [[vanishing-gradient-problem|vanishing gradient problem]]. Three [[sigmoid-function|sigmoid]]
+      gates, each computed from the current input and the previous hidden state, regulate the path:
+      the forget gate sets how much of the old cell state is kept, the input gate how much of a new
+      candidate is added, and the output gate how much of the tanh-squashed cell state becomes the
+      new hidden state. From about 2007 to 2017 LSTMs were the workhorse of sequence modeling,
+      behind leading systems for speech and handwriting recognition, [[machine-translation|machine
+      translation]] and language modeling. xLSTM (2024) revisited the design with exponential gating
+      and a parallelizable matrix memory to compete with [[transformer|transformers]].
+    example: >-
+      A two-layer LSTM with 512 units was our strongest baseline before we tried transformers.
+formula_latex: \mathbf{c}_t = \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \mathbf{g}_t,
+  \qquad \mathbf{h}_t = \mathbf{o}_t \odot \tanh(\mathbf{c}_t)
+origin: >-
+  Sepp Hochreiter analyzed vanishing gradients in his 1991 diploma thesis supervised by Jürgen
+  Schmidhuber; the two introduced LSTM in a 1995 technical report and the much-cited 1997 Neural
+  Computation paper. Felix Gers, Schmidhuber and Fred Cummins added the now-standard forget gate
+  (1999–2000). Google deployed LSTMs in speech recognition (2015) and Google Translate (2016); a
+  team led by Hochreiter published xLSTM in May 2024.
+year: 1995
+see_also:
+  - recurrent neural network
+  - gated recurrent unit
+  - vanishing gradient problem
+  - backpropagation through time
+  - sequence-to-sequence model
+  - highway network
+  - bidirectional recurrent neural network
+contrast:
+  - transformer
+sources:
+  - text: >-
+      Hochreiter, S. & Schmidhuber, J. (1997). Long Short-Term Memory. Neural Computation, 9(8),
+      1735–1780.
+  - text: >-
+      Gers, F. A., Schmidhuber, J. & Cummins, F. (2000). Learning to Forget: Continual Prediction
+      with LSTM. Neural Computation, 12(10), 2451–2471.

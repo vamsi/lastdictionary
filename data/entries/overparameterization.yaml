@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: overparameterization
+id: overparameterization
+pos: n.
+also:
+  - overparametrization
+  - over-parameterization
+  - overparameterized model
+domain: dl
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  Giving a model far more adjustable settings than it would seem to need — often more than it has
+  training examples. Classic theory predicted this would backfire; in deep learning it usually
+  helps.
+senses:
+  - definition: >-
+      The condition in which a model has more parameters than needed to fit its training data
+      exactly — often more parameters than training examples — so that infinitely many settings
+      achieve zero training loss. Classical statistics associated this with severe
+      [[overfitting|overfitting]], yet overparameterized neural networks routinely generalize well,
+      can fit even randomly labeled data, and often improve as they grow. Proposed explanations
+      include optimization benefits (wider networks have more benign [[loss-landscape|loss
+      landscapes]] and, in the [[neural-tangent-kernel|neural tangent kernel]] regime, provably
+      reach zero training loss); [[implicit-regularization|implicit regularization]] by
+      [[gradient-descent|gradient descent]], which selects simple, low-norm interpolating solutions;
+      the [[double-descent|double descent]] curve beyond the interpolation threshold; and
+      [[benign-overfitting|benign overfitting]] theory, which shows when fitting noise does little
+      harm. The [[lottery-ticket-hypothesis|lottery ticket hypothesis]] adds that extra parameters
+      supply many candidate subnetworks. Large language models reverse the usual ratio, typically
+      training on far more tokens than they have parameters, so the label fits them less well than
+      it fits image classifiers.
+origin: >-
+  The term comes from statistics and system identification, where an overparameterized model has
+  more parameters than the data can determine. Its rehabilitation in deep learning dates to the
+  2010s: Behnam Neyshabur and colleagues (2014) and Chiyuan Zhang and colleagues' 'Understanding
+  deep learning requires rethinking generalization' (2016), which showed networks memorizing random
+  labels, set the agenda for later theory.
+see_also:
+  - double descent
+  - benign overfitting
+  - implicit regularization
+  - neural tangent kernel
+  - lottery ticket hypothesis
+  - overfitting
+  - parameter count
+sources:
+  - text: >-
+      Zhang, C., Bengio, S., Hardt, M., Recht, B. & Vinyals, O. (2017). Understanding deep learning
+      requires rethinking generalization. ICLR 2017.
+    url: https://arxiv.org/abs/1611.03530

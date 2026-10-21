@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: threat model
+id: threat-model
+pos: n.
+also:
+  - threat modeling
+  - threat modelling
+  - adversary model
+domain: sec
+domains:
+  - safety
+  - eng
+level: core
+plain: >-
+  A clear statement of who might attack a system, what they want, what they know and what they can
+  do — the yardstick for judging whether a defense is good enough.
+senses:
+  - definition: >-
+      An explicit specification of the adversary against which a system's security is claimed: the
+      attacker's goals (a targeted misclassification, leaking training data, stealing
+      [[weights|weights]]), knowledge (full access to parameters in a [[white-box-attack|white-box]]
+      setting, outputs only in a [[black-box-attack|black-box]] one) and capabilities (the size of
+      permitted perturbations, the number of queries, which inputs, documents or training data can
+      be touched). In [[adversarial-machine-learning|adversarial machine learning]], a robustness
+      claim is meaningful only relative to a threat model, such as perturbations within an ℓ∞ ball
+      of radius 8/255. For [[ai-agent|agents]] it also maps trust boundaries: which content is
+      untrusted, which [[tool|tools]] can act, and what data is reachable. Threat modeling, the
+      practice of building one, determines which defenses and evaluations are needed.
+    example: >-
+      Our threat model assumes the attacker can edit web pages the agent reads but cannot see its
+      system prompt.
+origin: >-
+  A long-standing concept in computer security. Structured threat modeling spread through software
+  engineering after Loren Kohnfelder and Praerit Garg at Microsoft introduced the STRIDE categories
+  in 1999. In machine learning, Nicholas Carlini and colleagues' 'On Evaluating Adversarial
+  Robustness' (2019) made precise threat-model statements a norm for robustness papers.
+see_also:
+  - adversarial machine learning
+  - AI security
+  - white-box attack
+  - black-box attack
+  - adversarial robustness
+  - red teaming
+sources:
+  - text: >-
+      Carlini, N. et al. (2019). On Evaluating Adversarial Robustness. arXiv:1902.06705.

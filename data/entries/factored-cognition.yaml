@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: factored cognition
+id: factored-cognition
+pos: n.
+domain: safety
+domains:
+  - agents
+  - mind
+level: specialist
+plain: >-
+  The idea that a hard thinking task can be broken into many small, separately checkable pieces,
+  each simple enough for a person or an AI to handle in a short time.
+senses:
+  - definition: >-
+      The hypothesis, and the research program testing it, that complex cognitive work, such as
+      answering hard questions or writing and evaluating arguments, can be split into many small
+      pieces, each handled in a short time by someone who never sees the whole problem, and each
+      checkable on its own. It is the key assumption behind [[iterated-amplification|iterated
+      amplification]], [[hch|HCH]] and some forms of [[ai-debate|AI debate]]: if it holds, a human
+      overseer never needs to understand an entire superhuman computation, only individual steps.
+      Ought's experiments of this kind, in which participants with a few minutes and limited context
+      answered decomposed subquestions or evaluated arguments one step at a time, did not settle the
+      question. Its practical descendants include [[task-decomposition|task decomposition]] and
+      [[orchestrator-worker-pattern|orchestrator–worker]] agent designs, though these serve
+      capability rather than oversight.
+    example: >-
+      If factored cognition fails for research taste, amplification cannot supervise the hardest
+      parts of science.
+origin: >-
+  Developed by Andreas Stuhlmüller and colleagues at the research nonprofit Ought, building on Paul
+  Christiano's amplification proposals; Stuhlmüller's talk 'Factored Cognition' (April–May 2018) set
+  out the agenda. Ought's experiments with many short-lived human participants, such as factored
+  evaluation of arguments (reported January 2020), were followed from 2022 by tools for decomposing
+  tasks with language models.
+year: 2018
+note: >-
+  A philosophical as well as technical bet: critics argue that much expertise cannot be made
+  explicit and divided up, an echo of [[polanyi-s-paradox|Polanyi's paradox]].
+see_also:
+  - iterated amplification
+  - HCH
+  - task decomposition
+  - AI debate
+  - scalable oversight
+  - Polanyi's paradox
+sources:
+  - text: >-
+      Stuhlmüller, A. (2018). Factored Cognition. Ought presentation (state of work as of May 2018);
+      transcript on the AI Alignment Forum, December 2018.
+    url: https://ought.org/presentations/factored-cognition-2018-05

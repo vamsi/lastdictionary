@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RMSNorm
+id: rmsnorm
+pos: n.
+also:
+  - root mean square layer normalization
+  - RMS norm
+  - RMS normalization
+domain: dl
+domains:
+  - llm
+level: specialist
+plain: >-
+  A simpler, faster version of the layer that keeps a network's internal numbers at a steady scale.
+  Most recent large language models use it.
+senses:
+  - definition: >-
+      A [[normalization-layer|normalization layer]] that divides each example's activation vector by
+      its root mean square and multiplies by a learned per-feature gain, omitting the mean
+      subtraction (re-centering) and usually the bias of [[layer-normalization|layer
+      normalization]]. Its authors argued that re-scaling invariance, not re-centering, is what
+      makes LayerNorm effective; dropping the mean computation saves time, and they reported
+      running-time reductions of 7–64% across models at comparable accuracy. As of 2026 it is the
+      normalization used by LLaMA, Mistral, Qwen, DeepSeek and most other open-weight
+      [[large-language-model|language models]], typically in a pre-norm arrangement;
+      [[qk-norm|QK-norm]] applies such a normalization (in many recent models, RMSNorm) to attention
+      queries and keys to prevent [[training-instability|instabilities]] from growing attention
+      logits.
+    example: >-
+      The model uses RMSNorm with epsilon 1e-6 before every attention and feed-forward block.
+formula_latex: \operatorname{RMSNorm}(\mathbf{x}) =
+  \frac{\mathbf{x}}{\sqrt{\frac{1}{d}\sum_{i=1}^{d} x_i^2 + \epsilon}} \odot \mathbf{g}
+origin: >-
+  Introduced by Biao Zhang and Rico Sennrich of the University of Edinburgh in 'Root Mean Square
+  Layer Normalization' (arXiv, October 2019; NeurIPS 2019). Google's T5 (2019) used a similar
+  scale-only layer normalization, and Meta's LLaMA (2023) made RMSNorm the default for open-weight
+  models.
+year: 2019
+see_also:
+  - layer normalization
+  - normalization layer
+  - batch normalization
+  - transformer
+  - large language model
+sources:
+  - text: >-
+      Zhang, B. & Sennrich, R. (2019). Root Mean Square Layer Normalization. arXiv:1910.07467;
+      NeurIPS 2019.
+    url: https://arxiv.org/abs/1910.07467
+as_of: 2026-10

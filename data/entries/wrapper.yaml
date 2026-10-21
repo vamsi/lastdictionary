@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: wrapper
+id: wrapper
+pos: n.
+also:
+  - GPT wrapper
+  - AI wrapper
+  - thin wrapper
+  - LLM wrapper
+domain: culture
+domains:
+  - eng
+  - society
+labels:
+  - informal
+level: core
+plain: >-
+  A product built mostly on top of someone else's AI model, adding a simple interface or a few
+  instructions; often used as a put-down implying the product is easy to copy.
+senses:
+  - definition: >-
+      An application whose core capability comes from calling a third-party
+      [[foundation-model|foundation model]] through a [[model-api|model API]], with the product
+      contributing an interface, [[prompt|prompts]], integrations or workflow around it. 'Thin
+      wrapper' is pejorative: it implies little defensible value, because the model provider or a
+      competitor can replicate the feature, and because each new model release may absorb it
+      outright — startups are said to be 'steamrolled' by an update. Defenders reply that nearly all
+      software wraps something, and that the hard parts — distribution, proprietary data,
+      evaluation, user experience and the surrounding [[harness|harness]] — are where durable value
+      lies.
+    example: Investors kept calling us a GPT wrapper until they saw the retention numbers.
+origin: >-
+  In programming, 'wrapper' has long meant code that encloses another component behind a new
+  interface. The dismissive AI sense ('just a GPT wrapper') spread among investors and on social
+  media in 2023, as thousands of startups were built on OpenAI's API in the months after ChatGPT's
+  launch.
+year: 2023
+note: >-
+  Several fast-growing companies of 2024–2025, including the coding editor Cursor and the answer
+  engine Perplexity, were widely dismissed as wrappers early on; the debate is really about where a
+  [[moat|moat]] can come from.
+see_also:
+  - moat
+  - foundation model
+  - model API
+  - harness
+  - AI-native
+  - GPU poor
+as_of: 2026-10

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: INT8
+id: int8
+pos: abbr.
+also:
+  - 8-bit integer
+  - INT4
+  - integer quantization
+domain: hw
+domains:
+  - infer
+level: core
+plain: >-
+  Storing numbers as whole numbers from −128 to 127 using 8 bits. AI models converted to this format
+  run faster and need a quarter of the memory of 32-bit versions.
+senses:
+  - definition: >-
+      An 8-bit signed integer format representing 256 evenly spaced values (−128 to 127), used in AI
+      for [[quantization|quantized]] [[weights|weights]] and activations. Real values are mapped to
+      integers with a scale factor (and optionally a zero point) chosen per tensor, per channel or
+      per group; integer multiply–accumulates are summed in 32-bit accumulators and rescaled. INT8
+      arithmetic is cheaper in silicon area and energy than floating point, which made it the
+      standard for [[npu|NPUs]], early accelerators such as the first [[tpu|TPU]], and server
+      inference via [[post-training-quantization|post-training quantization]] or
+      [[quantization-aware-training|quantization-aware training]]. Large language models complicate
+      it because a few activation channels carry extreme outliers, a problem addressed by methods
+      such as LLM.int8() and SmoothQuant. INT4 (16 values) is common for weight-only quantization,
+      while floating-point [[fp8|FP8]] and [[fp4|FP4]] compete with integer formats on newer
+      hardware.
+origin: >-
+  Eight-bit integer inference of neural networks was demonstrated on CPUs by Vincent Vanhoucke,
+  Andrew Senior and Mark Mao (2011) and became mainstream with Google's integer-only inference
+  scheme (Benoit Jacob and colleagues, 2017–2018) and hardware such as the first TPU. Tim Dettmers
+  and colleagues extended it to large language models with LLM.int8() (2022).
+year: 2011
+see_also:
+  - quantization
+  - post-training quantization
+  - quantization-aware training
+  - FP8
+  - floating-point format
+  - TOPS
+  - NPU
+contrast:
+  - FP8
+sources:
+  - text: >-
+      Jacob, B. et al. (2018). Quantization and Training of Neural Networks for Efficient
+      Integer-Arithmetic-Only Inference. Proceedings of CVPR 2018.
+  - text: >-
+      Dettmers, T., Lewis, M., Belkada, Y. & Zettlemoyer, L. (2022). LLM.int8(): 8-bit Matrix
+      Multiplication for Transformers at Scale. NeurIPS 2022.

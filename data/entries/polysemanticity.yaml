@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: polysemanticity
+id: polysemanticity
+pos: n.
+also:
+  - polysemantic
+  - polysemantic neuron
+domain: interp
+domains:
+  - dl
+level: core
+plain: >-
+  When a single artificial neuron responds to several unrelated things — say, bird beaks, bicycle
+  wheels and a particular typeface — so that no single label describes what it does.
+senses:
+  - definition: >-
+      The property of a network unit, usually a neuron, that activates for several unrelated
+      [[feature-interpretability|features]]: Anthropic's 2023 monosemanticity study, for example,
+      described one neuron in a small language model responding to academic citations, English
+      dialogue, HTTP requests and Korean text. Polysemanticity is the main obstacle to interpreting
+      networks neuron by neuron. The leading explanation is [[superposition|superposition]]: when a
+      model must represent more features than it has neurons, features are spread across overlapping
+      directions, so each neuron takes part in many. Polysemanticity can also arise incidentally
+      from training dynamics even when capacity would suffice. Remedies either change the model —
+      architectures or penalties that encourage [[monosemanticity|monosemanticity]], such as the
+      softmax linear unit — or decompose its activations after training with
+      [[dictionary-learning|dictionary learning]], whose features are usually far more interpretable
+      than neurons.
+    example: That neuron is hopelessly polysemantic; look at the SAE features instead.
+origin: >-
+  Borrowed from linguistics, where polysemy means one word having several meanings. 'Polysemantic
+  neurons' were described in Chris Olah and colleagues' 'Zoom In' (Distill, March 2020), which
+  opened the Circuits work on image models, and became a central concern after Anthropic's studies
+  of superposition (2022) and monosemanticity (2023).
+year: 2020
+note: >-
+  The closest neuroscience analogue is mixed selectivity: neurons tuned to combinations of task
+  variables. Polysemanticity is a property of units, not of the features themselves.
+see_also:
+  - superposition
+  - feature (interpretability)
+  - sparse autoencoder
+  - dictionary learning
+  - privileged basis
+  - artificial neuron
+contrast:
+  - monosemanticity
+sources:
+  - text: >-
+      Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M. & Carter, S. (2020). Zoom In: An
+      Introduction to Circuits. Distill.
+    url: https://distill.pub/2020/circuits/zoom-in/
+  - text: >-
+      Lecomte, V., Thaman, K., Schaeffer, R., Bashkansky, N., Chow, T. & Koyejo, S. (2024). What
+      Causes Polysemanticity? An Alternative Origin Story of Mixed Selectivity from Incidental
+      Causes. arXiv preprint.

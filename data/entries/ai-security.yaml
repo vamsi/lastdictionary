@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI security
+id: ai-security
+pos: n.
+also:
+  - security of AI
+  - ML security
+  - machine learning security
+  - AI cybersecurity
+domain: sec
+domains:
+  - safety
+  - gov
+level: essential
+plain: >-
+  Protecting AI systems — their data, models and surrounding software — from being attacked, stolen
+  or tricked, and dealing with the ways AI itself can be used to attack others.
+senses:
+  - definition: >-
+      The field concerned with the confidentiality, integrity and availability of AI systems, and
+      with the security consequences of AI capabilities. It covers attacks across a model's life
+      cycle — [[data-poisoning|data poisoning]] and [[backdoor-attack|backdoors]] during training,
+      [[evasion-attack|evasion]] and [[jailbreak|jailbreaks]] at inference,
+      [[prompt-injection|prompt injection]] against applications and [[ai-agent|agents]],
+      [[model-extraction|model extraction]], privacy attacks such as
+      [[membership-inference-attack|membership inference]], and theft of [[weights|weights]] —
+      together with defenses such as [[adversarial-training|adversarial training]],
+      [[guardrails|guardrails]], [[differential-privacy|differential privacy]],
+      [[confidential-computing|confidential computing]] and [[ai-supply-chain-security|supply-chain
+      controls]]. It also studies AI as a tool for attackers and defenders
+      ([[ai-enabled-cyberattack|AI-enabled cyberattack]],
+      [[ai-assisted-vulnerability-discovery|AI-assisted vulnerability discovery]]). Work is
+      organized around an explicit [[threat-model|threat model]] and shared catalogs such as
+      [[mitre-atlas|MITRE ATLAS]] and the [[owasp-top-10-for-llm-applications|OWASP Top 10 for LLM
+      Applications]].
+    example: >-
+      The AI security review flagged that the support agent could both read customer records and
+      send email.
+origin: >-
+  Grew out of 2000s research on adversarial classification and spam-filter evasion (Nilesh Dalvi and
+  colleagues, 2004; Daniel Lowd and Christopher Meek, 2005) and the later
+  [[adversarial-machine-learning|adversarial machine learning]] literature. 'AI security' became a
+  common umbrella label around 2019–2023, as companies formed dedicated AI red teams and governments
+  issued joint guidance such as the UK–US Guidelines for Secure AI System Development (November
+  2023).
+note: >-
+  Often distinguished from [[ai-safety|AI safety]]: security concerns deliberate adversaries, safety
+  concerns harm from a system's own behavior, including [[misalignment|misalignment]]. The line
+  blurs — [[jailbreak|jailbreaks]], [[misuse|misuse]] and [[weight-exfiltration|weight
+  exfiltration]] matter to both. Some also separate 'security of AI' (protecting AI systems) from
+  'AI for security' (using AI in cyber defense).
+see_also:
+  - adversarial machine learning
+  - threat model
+  - prompt injection
+  - jailbreak
+  - data poisoning
+  - red teaming
+  - MITRE ATLAS
+  - AI supply chain security
+contrast:
+  - AI safety
+sources:
+  - text: >-
+      UK National Cyber Security Centre & US Cybersecurity and Infrastructure Security Agency
+      (2023). Guidelines for Secure AI System Development.
+  - text: >-
+      Vassilev, A. et al. (2025). Adversarial Machine Learning: A Taxonomy and Terminology of
+      Attacks and Mitigations. NIST AI 100-2 E2025.

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: question answering
+id: question-answering
+pos: n.
+also:
+  - QA
+  - open-domain question answering
+  - extractive question answering
+  - closed-book question answering
+  - reading comprehension
+domain: llm
+domains:
+  - eval
+  - agents
+level: core
+plain: >-
+  Systems that reply to people's questions with the right answer, whether by finding it in a passage
+  they are given, searching a database or the web, or drawing on what they already know.
+senses:
+  - definition: >-
+      The task of returning correct answers to questions expressed in natural language. Settings are
+      distinguished by where the answer comes from: extractive QA, or reading comprehension, selects
+      a span from a supplied passage, as in [[squad|SQuAD]]; open-domain QA must first retrieve
+      relevant documents from a large collection such as the web; knowledge-base QA translates the
+      question into a structured query ([[semantic-parsing|semantic parsing]]); and closed-book QA
+      answers from [[parametric-knowledge|parametric knowledge]] alone. Answers may be short facts,
+      yes or no, multiple-choice letters or long-form explanations, and evaluation uses
+      [[exact-match|exact match]], token-overlap F1 or human and model judgment. Large language
+      models with [[retrieval-augmented-generation|retrieval-augmented generation]] and
+      [[deep-research|deep research]] agents now handle most QA, but multi-hop, unanswerable and
+      long-tail questions remain hard.
+    example: >-
+      Open-domain question answering improved once we added a reranker before the reader model.
+origin: >-
+  BASEBALL (Bert Green Jr. and colleagues, 1961) answered questions about a season's games from a
+  database, and William Woods's LUNAR, demonstrated in 1971, answered geologists' questions about
+  Apollo moon rocks. The TREC question-answering track (from 1999), [[ibm-watson|IBM Watson]]'s
+  Jeopardy! win (2011) and SQuAD (2016) marked later eras.
+year: 1961
+see_also:
+  - SQuAD
+  - retrieval-augmented generation
+  - information retrieval
+  - parametric knowledge
+  - IBM Watson
+  - visual question answering
+  - deep research
+sources:
+  - text: >-
+      Green, B. F., Jr., Wolf, A. K., Chomsky, C. & Laughery, K. (1961). Baseball: An Automatic
+      Question-Answerer. Proceedings of the Western Joint IRE-AIEE-ACM Computer Conference.
+  - text: >-
+      Rajpurkar, P., Zhang, J., Lopyrev, K. & Liang, P. (2016). SQuAD: 100,000+ Questions for
+      Machine Comprehension of Text. EMNLP 2016.

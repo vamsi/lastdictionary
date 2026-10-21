@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: toy model
+id: toy-model
+pos: n.
+also:
+  - toy models
+  - toy setting
+domain: interp
+domains:
+  - dl
+level: specialist
+plain: >-
+  A deliberately tiny, simplified AI model trained on an artificial task, small enough for
+  researchers to understand completely and use to test ideas about how big models work.
+senses:
+  - definition: >-
+      A deliberately small or simplified neural network, trained on synthetic data or a narrow
+      algorithmic task, used to study a phenomenon where it can be fully analyzed and then to form
+      hypotheses about larger models. Examples in interpretability include ReLU networks
+      reconstructing sparse synthetic features (in 'Toy Models of Superposition'); one- and
+      two-layer attention-only [[transformer|transformers]]; small transformers trained on modular
+      addition, whose learned algorithm based on discrete Fourier transforms and trigonometric
+      identities was fully reverse-engineered in the study of [[grokking|grokking]]; and
+      [[othello-gpt|Othello-GPT]]. Because ground truth is known, toy models are ideal for
+      validating methods such as [[sparse-autoencoder|sparse autoencoders]] and
+      [[automated-circuit-discovery|automated circuit discovery]]. Their main risk is
+      unrepresentativeness: a mechanism seen in a small idealized setting may be absent, or look
+      different, in production models.
+    example: >-
+      Before scaling up, test the new SAE variant on a toy model where we know the true features.
+origin: >-
+  Borrowed from physics, where toy models are idealized systems that isolate one effect; the phrase
+  has long been used informally in machine learning. In interpretability it was popularized by
+  Nelson Elhage and colleagues' 'Toy Models of Superposition' (Anthropic, 2022) and Neel Nanda and
+  colleagues' 'Progress Measures for Grokking via Mechanistic Interpretability' (2023).
+see_also:
+  - superposition
+  - grokking
+  - Othello-GPT
+  - mechanistic interpretability
+  - universality hypothesis
+  - model organism of misalignment
+sources:
+  - text: >-
+      Elhage, N. et al. (2022). Toy Models of Superposition. Transformer Circuits Thread.
+    url: https://transformer-circuits.pub/2022/toy_model/index.html
+  - text: >-
+      Nanda, N., Chan, L., Lieberum, T., Smith, J. & Steinhardt, J. (2023). Progress Measures for
+      Grokking via Mechanistic Interpretability. ICLR 2023.

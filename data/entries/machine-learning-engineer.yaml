@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: machine learning engineer
+id: machine-learning-engineer
+pos: n.
+also:
+  - ML engineer
+  - MLE
+domain: eng
+domains:
+  - ml
+  - society
+level: core
+plain: >-
+  An engineer who turns machine-learning ideas into working systems: preparing data, training and
+  testing models, and running them reliably inside real products.
+senses:
+  - definition: >-
+      A software engineer who designs, trains, evaluates, deploys and maintains
+      [[machine-learning|machine learning]] models in production systems, bridging data science and
+      software engineering. Typical responsibilities include building data and
+      [[feature-engineering|feature]] pipelines, selecting and training models, tuning
+      [[hyperparameter|hyperparameters]], optimizing models for [[latency|latency]] and cost,
+      packaging and [[model-deployment|deploying]] them, and setting up
+      [[model-monitoring|monitoring]] and retraining under [[mlops|MLOps]] practices. Compared with
+      a data scientist, an ML engineer concentrates less on analysis for business decisions and more
+      on production code and scale; compared with a research scientist, less on new methods and more
+      on reliable application. At AI laboratories the title also covers engineers who build
+      large-scale training and inference infrastructure. Since 2023 the newer title [[ai-engineer|AI
+      engineer]] has been used for engineers who build on pretrained models instead of training
+      their own.
+    example: >-
+      The machine learning engineer rewrote the feature pipeline so that training and serving share
+      the same code.
+origin: >-
+  The title spread in the mid-2010s as technology companies separated production model-building from
+  analytical data-science roles and machine learning moved into search ranking, recommendations and
+  advertising; it was a common job title by the late 2010s.
+see_also:
+  - AI engineer
+  - data science
+  - MLOps
+  - AI engineering
+  - model deployment
+  - feature engineering
+contrast:
+  - AI engineer

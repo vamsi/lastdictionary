@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generative recommendation
+id: generative-recommendation
+pos: n.
+also:
+  - generative recommender
+  - generative recommenders
+  - generative retrieval for recommendation
+  - Semantic ID
+  - HSTU
+domain: ml
+domains:
+  - llm
+  - eng
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A newer approach to recommendation that uses language-model-style AI to predict the next item a
+  person will want, one step at a time, much as a chatbot predicts the next word.
+senses:
+  - definition: >-
+      An approach to [[recommender-system|recommender systems]] that casts recommendation as
+      sequence generation: a [[transformer|transformer]] trained on users' interaction histories,
+      treated as token sequences, predicts or generates the next item or action, instead of scoring
+      candidates with separately engineered retrieval and ranking models. Two main lines exist.
+      Generative retrieval gives each item a Semantic ID, a short sequence of discrete codes learned
+      from item content (for example by residual [[vector-quantization|vector quantization]]), and
+      decodes the ID of the next item autoregressively in place of
+      [[approximate-nearest-neighbor-search|approximate nearest neighbor search]] over embeddings;
+      because similar items share code prefixes, new items can be recommended more easily
+      ([[cold-start-problem|cold start problem]]). Generative recommenders in the sense of Meta's
+      HSTU architecture treat retrieval and ranking as sequential transduction over long,
+      high-cardinality streams of user actions and report quality improving as a [[power-law|power
+      law]] in training compute, which conventional deep recommendation models had failed to show.
+      Serving cost, latency and fast-changing catalogs remain practical obstacles.
+    example: >-
+      Our pilot decodes Semantic IDs for the next three videos instead of scoring a million
+      candidates.
+origin: >-
+  Shashank Rajput and colleagues at Google introduced generative retrieval with Semantic IDs for
+  recommendation in a May 2023 preprint, 'Recommender Systems with Generative Retrieval'. Jiaqi Zhai
+  and colleagues at Meta named their framework 'Generative Recommenders' in 'Actions Speak Louder
+  than Words' (February 2024; ICML 2024), reporting a 1.5-trillion-parameter model deployed in
+  production. Other large platforms, among them Kuaishou with OneRec, reported similar systems in
+  2025.
+year: 2023
+see_also:
+  - recommender system
+  - two-tower model
+  - transformer
+  - next-token prediction
+  - vector quantization
+  - scaling laws
+  - cold start problem
+sources:
+  - text: >-
+      Rajput, S. et al. (2023). Recommender Systems with Generative Retrieval. Advances in Neural
+      Information Processing Systems 36 (NeurIPS 2023). arXiv:2305.05065.
+    url: https://arxiv.org/abs/2305.05065
+  - text: >-
+      Zhai, J. et al. (2024). Actions Speak Louder than Words: Trillion-Parameter Sequential
+      Transducers for Generative Recommendations. Proc. ICML 2024. arXiv:2402.17152.
+    url: https://arxiv.org/abs/2402.17152
+as_of: 2026-10

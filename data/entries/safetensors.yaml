@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: safetensors
+id: safetensors
+pos: n.
+also:
+  - safetensors format
+pronunciation: SAFE-ten-serz
+domain: eng
+domains:
+  - sec
+  - infer
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A file format for storing an AI model's learned numbers that cannot hide harmful programs and
+  loads very quickly, replacing older formats that could run code when opened.
+senses:
+  - definition: >-
+      A file format and accompanying library, created by [[hugging-face|Hugging Face]], for
+      distributing tensors such as model [[weights|weights]] without the code-execution risk of
+      older formats and without giving up loading speed. A file consists of an eight-byte length
+      field, a JSON header listing each tensor's name, data type, shape and byte offsets (plus
+      optional metadata), and a flat block of raw tensor data. Because the format holds only data
+      and no executable instructions, loading a file cannot run code — unlike PyTorch's earlier
+      default of Python pickle serialization, in which a crafted [[checkpoint|checkpoint]] could
+      execute arbitrary commands on the machine that loads it. The simple layout also allows
+      memory-mapping and lazy loading of individual tensors, which speeds the loading of large
+      models and lets them be split across devices without reading whole files. Safetensors became
+      the default weight format on the Hugging Face Hub and in many frameworks; it stores tensors
+      only, so tokenizers and configuration travel in separate files.
+    example: >-
+      Only download checkpoints in safetensors format; the pickle files in that repository could run
+      code on load.
+origin: >-
+  Created at Hugging Face in 2022, principally by Nicolas Patry, in response to the security risks
+  of pickle-based checkpoints. After an external security audit by Trail of Bits in 2023,
+  commissioned together with EleutherAI and Stability AI, Hugging Face made it the default format
+  for saving models in its libraries.
+year: 2022
+note: >-
+  Safe loading is not the same as a safe model: a safetensors file can still contain
+  [[backdoor-attack|backdoored]] or otherwise harmful weights. [[gguf|GGUF]] plays a similar role
+  for quantized models run locally.
+see_also:
+  - Hugging Face
+  - PyTorch
+  - GGUF
+  - weights
+  - checkpoint
+  - ONNX

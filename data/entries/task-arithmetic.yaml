@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: task arithmetic
+id: task-arithmetic
+pos: n.
+also:
+  - task vector
+  - task vectors
+domain: train
+domains:
+  - dl
+  - interp
+level: specialist
+plain: >-
+  Editing an AI model by adding or subtracting the changes that fine-tuning made to it, as if skills
+  were arrows that can be added together or reversed.
+senses:
+  - definition: >-
+      A method of editing models in weight space using task vectors: the element-wise difference
+      between a model's [[weights|weights]] after [[fine-tuning|fine-tuning]] on a task and the
+      pretrained weights it started from. Three operations follow: adding a scaled task vector to
+      the base model gives it the task; summing several builds one model with all of them
+      ([[model-merging|model merging]]); and negating a vector removes a behavior — toxic
+      generation, say, or a task to be unlearned — while leaving others largely intact. Vectors can
+      even be combined by analogy: for tasks related as 'A is to B as C is to D', the vectors of the
+      first three yield gains on the fourth with no data from it. Task arithmetic works because
+      fine-tuning moves weights only a short distance, in a roughly linear region around the
+      pretrained model. Interference between task vectors limits how many can be combined,
+      motivating methods such as TIES-merging and DARE. Related ideas include chat vectors, which
+      transfer instruction following between models that share a base.
+    example: >-
+      Subtracting the toxicity task vector cut toxic completions sharply while the benchmark scores
+      barely moved.
+formula_latex: \theta_{\text{new}} = \theta_{\text{pre}} + \sum_{i} \lambda_i\, \tau_i, \qquad
+  \tau_i = \theta^{(i)}_{\text{ft}} - \theta_{\text{pre}}
+origin: >-
+  Introduced by Gabriel Ilharco, Marco Tulio Ribeiro, Mitchell Wortsman, Suchin Gururangan, Ludwig
+  Schmidt, Hannaneh Hajishirzi and Ali Farhadi in December 2022 and published at ICLR 2023. The name
+  echoes the arithmetic of word vectors, as in the classic king − man + woman ≈ queen.
+year: 2022
+note: >-
+  Task vectors live in weight space; not to be confused with [[function-vector|function vectors]] or
+  [[steering-vector|steering vectors]], which are directions in activation space.
+see_also:
+  - model merging
+  - model soup
+  - fine-tuning
+  - low-rank adaptation
+  - machine unlearning
+  - word2vec
+contrast:
+  - steering vector
+  - function vector
+sources:
+  - text: >-
+      Ilharco, G. et al. (2022). Editing Models with Task Arithmetic. ICLR 2023. arXiv:2212.04089.
+    url: https://arxiv.org/abs/2212.04089

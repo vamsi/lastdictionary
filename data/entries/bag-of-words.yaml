@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bag of words
+id: bag-of-words
+pos: n.
+also:
+  - bag-of-words model
+  - BoW
+  - BOW
+domain: llm
+domains:
+  - ml
+  - data
+level: core
+plain: >-
+  A simple way of turning text into numbers by counting how often each word appears and ignoring
+  word order — like describing a recipe only by its shopping list.
+senses:
+  - definition: >-
+      A way of encoding a text that records only which words it contains and how often, as if the
+      words had been cut apart and shaken together in a bag: the result is a vector with one
+      dimension per vocabulary item holding a count, a 0/1 indicator or a weight such as
+      [[tf-idf|TF-IDF]], and nothing about sentence structure or the sequence of words survives. It
+      turns documents of any length into fixed-length feature vectors for [[text-classification|text
+      classification]], clustering, [[topic-model|topic models]] and
+      [[information-retrieval|information retrieval]], and remained a strong baseline for decades
+      because which words occur says much about what a document is about. Its limits — 'dog bites
+      man' equals 'man bites dog', synonyms occupy unrelated dimensions, and vectors are
+      high-dimensional and sparse — motivated n-gram features, [[word-embedding|word embeddings]]
+      and contextual models. Computer vision borrowed the idea as the 'bag of visual words', which
+      counts occurrences of clustered local image features.
+    example: >-
+      A bag-of-words logistic regression still beats our fine-tuned model on the old spam set.
+origin: >-
+  The phrase appears in Zellig Harris's 1954 article 'Distributional Structure', in a passage
+  arguing that language is more than a bag of words. As a technique it underlies the
+  [[vector-space-model|vector space model]] of retrieval developed by Gerard Salton and colleagues
+  in the 1960s and 1970s.
+year: 1954
+see_also:
+  - TF-IDF
+  - text classification
+  - vector space model
+  - information retrieval
+  - word embedding
+  - topic model
+  - distributional hypothesis
+contrast:
+  - word embedding
+sources:
+  - text: Harris, Z. S. (1954). Distributional Structure. Word 10(2–3), 146–162.

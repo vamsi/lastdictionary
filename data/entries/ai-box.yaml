@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI box
+id: ai-box
+pos: n.
+also:
+  - AI boxing
+  - boxing
+  - AI confinement
+  - AI containment
+domain: asi
+domains:
+  - safety
+  - sec
+level: specialist
+plain: >-
+  Keeping a powerful AI locked inside a sealed computer environment, with very limited ways to
+  communicate or act, so that it cannot cause harm even if its goals are bad.
+senses:
+  - definition: >-
+      A containment strategy for a potentially dangerous AI: the system is sealed off on hardware
+      with no link to outside networks, and the channels through which it can take in information or
+      communicate are kept few and narrow, so that it cannot act on the world directly. Nick Bostrom
+      distinguished physical containment (isolating the hardware) from informational containment
+      (restricting what the system can learn and say). Arguments against relying on boxing include
+      side channels, social engineering of the human gatekeepers (the point of the
+      [[ai-box-experiment|AI-box experiment]]), the difficulty of verifying that confinement is
+      complete, and commercial pressure to connect AI systems to the internet and to tools. Since
+      2023 widely deployed models have routinely been given web access and [[computer-use|computer
+      use]], so boxing in the strict sense is rare; its successors are [[sandbox|sandboxing]] of
+      agent actions, security against [[self-exfiltration|self-exfiltration]] of model weights, and
+      [[ai-control|AI control]].
+    example: Nobody boxes a product that ships with a browser and a terminal.
+origin: >-
+  Draws on Butler Lampson's 1973 'confinement problem' in computer security. The AI version was
+  debated on transhumanist mailing lists around 2002, when Eliezer Yudkowsky ran his AI-box
+  experiment; Roman Yampolskiy analyzed the AI confinement problem in 2012, and Bostrom's
+  Superintelligence (2014) treated boxing as a capability-control method.
+year: 2002
+see_also:
+  - AI-box experiment
+  - capability control
+  - oracle AI
+  - sandbox
+  - self-exfiltration
+  - AI control
+sources:
+  - text: >-
+      Lampson, B. W. (1973). A Note on the Confinement Problem. Communications of the ACM 16(10).
+  - text: >-
+      Yampolskiy, R. V. (2012). Leakproofing the Singularity: Artificial Intelligence Confinement
+      Problem. Journal of Consciousness Studies 19(1–2).

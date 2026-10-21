@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: long context
+id: long-context
+pos: n.
+also:
+  - long-context model
+  - long-context LLM
+  - long-context modeling
+domain: llm
+domains:
+  - infer
+  - eval
+level: core
+plain: >-
+  The ability of an AI model to work with very long inputs — whole books, codebases or hours of
+  transcripts — in one go, and the techniques that make this possible.
+senses:
+  - definition: >-
+      The capacity of a [[language-model|language model]] to accept and make effective use of very
+      long inputs, conventionally tens of thousands of [[token|tokens]] or more, and the research
+      area concerned with it. The obstacles are computational — [[self-attention|self-attention]]
+      cost grows quadratically with length and the [[kv-cache|KV cache]] linearly — and statistical:
+      models must be trained or adapted on long sequences, and [[positional-encoding|position
+      encodings]] must cope with distances unseen in pretraining. Techniques include fused attention
+      kernels ([[flashattention|FlashAttention]]); [[sparse-attention|sparse]],
+      [[sliding-window-attention|sliding-window]] and [[linear-attention|linear]] attention;
+      [[hybrid-architecture|hybrid]] models with [[state-space-model|state-space]] layers; KV-cache
+      compression; [[sequence-parallelism|sequence parallelism]]; and [[context-extension|context
+      extension]] followed by long-sequence training. Evaluation separates nominal length from
+      effective use, from [[needle-in-a-haystack|needle in a haystack]] retrieval to multi-hop
+      reasoning over long documents, and performance typically degrades with length.
+    example: >-
+      Long context did not remove the need for retrieval; it changed how much we retrieve.
+origin: >-
+  Efficient long-sequence transformers were an active research topic from 2019 (Sparse Transformer,
+  Transformer-XL, then Longformer in 2020). Long context became a headline product feature in
+  2023–2024, when Anthropic offered 100,000-token windows (May 2023) and Google's Gemini 1.5 reached
+  one million tokens (February 2024).
+see_also:
+  - context window
+  - context extension
+  - sparse attention
+  - KV cache
+  - needle in a haystack
+  - context rot
+  - state space model
+contrast:
+  - retrieval-augmented generation
+as_of: 2026-10

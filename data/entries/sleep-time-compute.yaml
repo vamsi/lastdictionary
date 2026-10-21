@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sleep-time compute
+id: sleep-time-compute
+pos: n.
+domain: infer
+domains:
+  - agents
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Letting an AI think about your documents or project while it would otherwise sit idle, before you
+  ask anything, so it can answer later questions faster and more cheaply.
+senses:
+  - definition: >-
+      Extra computation a [[large-language-model|large language model]] performs on a body of
+      context while no one is asking it anything (a codebase, a document collection, a long-running
+      conversation), working out in advance what is likely to be asked and saving useful
+      intermediate conclusions for later. Moving this share of [[test-time-compute|test-time
+      compute]] into idle time makes eventual answers faster and cheaper, and the up-front work can
+      be reused by every later question about the same material. The introducing paper found that
+      the advantage tracks how foreseeable the questions are. On math benchmarks rebuilt so that a
+      context precedes each question, the method reached the same accuracy with roughly a fifth of
+      the answer-time compute and raised accuracy by up to 13–18% when more offline compute was
+      spent; when related questions shared a context, the average cost per question fell by a factor
+      of 2.5.
+    example: >-
+      Overnight sleep-time compute let the agent pre-digest the repo, so morning questions came back
+      in seconds.
+origin: >-
+  Introduced by Kevin Lin, Charlie Snell, Yu Wang, Charles Packer, Sarah Wooders, Ion Stoica and
+  Joseph E. Gonzalez (Letta and the University of California, Berkeley) in 'Sleep-time Compute:
+  Beyond Inference Scaling at Test-time', posted to arXiv on 17 April 2025.
+year: 2025
+see_also:
+  - test-time compute
+  - agent memory
+  - prompt caching
+  - background agent
+  - inference cost
+  - KV cache
+sources:
+  - text: >-
+      Lin, K., Snell, C., Wang, Y., Packer, C., Wooders, S., Stoica, I. & Gonzalez, J. E. (2025).
+      Sleep-time Compute: Beyond Inference Scaling at Test-time. arXiv:2504.13171.
+    url: https://arxiv.org/abs/2504.13171
+as_of: 2026-10

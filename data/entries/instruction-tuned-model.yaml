@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: instruction-tuned model
+id: instruction-tuned-model
+pos: n.
+also:
+  - instruct model
+  - instruction-following model
+  - IT model
+  - instruction-tuned LLM
+domain: llm
+domains:
+  - train
+level: core
+plain: >-
+  A language model given extra training on examples of instructions paired with good responses, so
+  it does what you ask instead of merely continuing your text.
+senses:
+  - definition: >-
+      A [[language-model|language model]] that, after [[pretraining|pretraining]], has been
+      [[fine-tuning|fine-tuned]] on instructions or task descriptions paired with desired outputs
+      ([[instruction-tuning|instruction tuning]]), usually followed by preference optimization such
+      as [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]]
+      or [[direct-preference-optimization|direct preference optimization]]. Compared with its
+      [[base-model|base model]], it answers directly, respects constraints on format and length,
+      generalizes to unseen tasks described in plain language ([[zero-shot-learning|zero-shot]]) and
+      is more predictable and safer, at some cost in output diversity. Open-weight releases mark
+      such checkpoints with suffixes such as '-Instruct' or '-it'. Most instruction-tuned models are
+      also [[chat-model|chat models]] and the terms are often used interchangeably, although
+      single-turn instruction models preceded multi-turn chat formats.
+    example: >-
+      Use the instruct checkpoint for the extraction pipeline; the base model ignores the output
+      format.
+origin: >-
+  Jason Wei and colleagues at Google named and popularized instruction tuning with FLAN (September
+  2021), fine-tuning a 137-billion-parameter model on more than 60 tasks phrased as instructions;
+  Swaroop Mishra and colleagues' Natural Instructions dataset (April 2021) had explored the idea.
+  Victor Sanh and colleagues' T0 (October 2021) and OpenAI's [[instructgpt|InstructGPT]] (2022)
+  followed; human raters preferred outputs of a 1.3-billion-parameter InstructGPT model to those of
+  the 175-billion-parameter GPT-3.
+year: 2021
+see_also:
+  - instruction tuning
+  - base model
+  - chat model
+  - instruction following
+  - supervised fine-tuning
+  - reinforcement learning from human feedback
+  - instruction dataset
+contrast:
+  - base model
+sources:
+  - text: >-
+      Wei, J. et al. (2022). Finetuned Language Models Are Zero-Shot Learners. ICLR 2022.
+    url: https://arxiv.org/abs/2109.01652
+  - text: >-
+      Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback.
+      NeurIPS 2022.
+    url: https://arxiv.org/abs/2203.02155

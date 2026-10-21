@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: open-source AI
+id: open-source-ai
+pos: n.
+also:
+  - Open Source AI Definition
+  - OSAID
+  - open-source model
+  - open-washing
+  - openwashing
+domain: eng
+domains:
+  - gov
+  - society
+labels:
+  - contested
+level: essential
+plain: >-
+  AI released, ideally with its code and details of its training data and not just the finished
+  model, so that anyone may use, inspect, alter, share and even rebuild it. How open is open enough
+  is debated.
+senses:
+  - definition: >-
+      An AI model or system whose release carries over to AI the freedoms that open-source licenses
+      secure for software, and supplies the materials needed to exercise them. The most cited
+      benchmark, the Open Source Initiative's Open Source AI Definition 1.0 (October 2024), lists
+      the freedoms as using the system for any purpose, studying how it works, modifying it and
+      sharing it, and requires the preferred form for making changes: the model
+      [[weights|parameters]], the full code for training and running it, and enough information
+      about the training data for a skilled person to build a 'substantially equivalent system',
+      though not necessarily the data itself, a compromise criticized from both sides. Few prominent
+      models qualify; examples cited as meeting the bar include [[eleutherai|EleutherAI]]'s Pythia
+      and the [[allen-institute-for-ai|Allen Institute for AI]]'s OLMo, which publish data, code and
+      checkpoints. The label is widely applied to [[open-weight-model|open-weight models]] with
+      restrictive licenses, a practice critics call open-washing, and openness is increasingly
+      assessed as a gradient across components rather than a yes-or-no property.
+    example: >-
+      Under the OSI definition, a model whose license bans use by competitors cannot be called
+      open-source AI.
+origin: >-
+  Open-source principles date from the free-software movement of the 1980s and the Open Source
+  Definition of 1998. Applying them to machine learning became contentious in 2023, when Meta
+  described its restrictively licensed Llama 2 as open source; the Open Source Initiative ran a
+  two-year consultation and published the Open Source AI Definition 1.0 in October 2024.
+note: >-
+  Debate centers on training data: some argue that without it a model cannot be studied or rebuilt
+  and so is not truly open; others reply that legal and privacy limits on sharing data would make
+  such a standard unattainable. The [[eu-ai-act|EU AI Act]] grants limited exemptions to models
+  released under free and open-source licenses.
+see_also:
+  - open-weight model
+  - model license
+  - proprietary model
+  - Hugging Face
+  - data licensing
+  - EU AI Act
+contrast:
+  - proprietary model
+sources:
+  - text: Open Source Initiative (2024). The Open Source AI Definition 1.0.
+  - text: >-
+      Liesenfeld, A. & Dingemanse, M. (2024). Rethinking open source generative AI: open-washing and
+      the EU AI Act. Proceedings of ACM FAccT 2024.
+as_of: 2026-10

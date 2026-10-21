@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: world model
+id: world-model
+pos: n.
+also:
+  - world models
+  - world simulator
+  - internal model
+  - dynamics model
+domain: rl
+domains:
+  - gen
+  - mind
+  - robot
+level: essential
+plain: >-
+  An AI's internal simulation of how its world works, which lets it predict what will happen next —
+  especially in response to its own actions — and so plan, imagine or practice without acting for
+  real.
+senses:
+  - context: Reinforcement learning
+    definition: >-
+      A learned model of an [[environment|environment]]'s dynamics that predicts future observations
+      or latent [[state|states]], and usually [[reward|rewards]], given the current state and a
+      proposed [[action|action]], so that an agent can plan or train in imagination. Typical designs
+      encode observations into a compact latent space, model transitions there with a recurrent or
+      [[transformer|transformer]] network, and decode rewards and sometimes images.
+      [[model-based-reinforcement-learning|Model-based reinforcement learning]] uses world models to
+      choose actions by search or [[model-predictive-control|model predictive control]], to train
+      policies on imagined [[rollout|rollouts]] — as in Dreamer, whose third version (2023)
+      collected diamonds in Minecraft from scratch without human data — or to predict only
+      planning-relevant quantities, as in [[muzero|MuZero]]. The main weakness is compounding error:
+      small prediction mistakes grow over long imagined horizons and can be exploited by the policy.
+    example: >-
+      We trained the policy entirely inside the world model and then transferred it to the real car.
+  - context: Generative media and robotics
+    definition: >-
+      A large [[generative-model|generative model]], usually trained on video, that generates an
+      explorable environment frame by frame in response to user or agent actions, aiming to simulate
+      physics, objects and their persistence. Google DeepMind's Genie (2024) learned controllable
+      worlds from unlabeled internet video, and Genie 3 (August 2025) produced 720p worlds navigable
+      in real time at 24 frames per second for a few minutes. 'World foundation models' are also
+      offered for training robots and vehicles in simulation. Some labs describe
+      [[text-to-video-model|video generators]] such as [[sora|Sora]] as world simulators, a claim
+      critics dispute because plausible pixels need not obey consistent physics.
+    labels:
+      - emerging
+  - context: Cognitive science and language models
+    definition: >-
+      An internal representation of the structure of the world — objects, causes, other agents —
+      that a person, animal or AI system uses to predict and reason, as opposed to relying on
+      surface statistics. Whether [[large-language-model|large language models]] form world models
+      in this sense is debated: probing studies such as [[othello-gpt|Othello-GPT]] found
+      board-state representations in a model trained only on move sequences, while critics argue
+      such representations are partial and brittle. Yann LeCun, among others, argues that future AI
+      needs world models learned from sensory data rather than text.
+    labels:
+      - contested
+origin: >-
+  Kenneth Craik (1943) proposed that minds carry 'small-scale models' of external reality. In
+  symbolic AI the STRIPS planner (Richard Fikes and Nils Nilsson, 1971) called its logical
+  description of the robot's surroundings a world model. Jürgen Schmidhuber built learned recurrent
+  world models for RL from 1990, and David Ha and Schmidhuber's 'World Models' (2018) popularized
+  the term in deep learning; from 2024 it spread to interactive video generators.
+year: 1971
+note: >-
+  The term is used loosely: a world model may be a small dynamics network, a video generator or a
+  hypothesized cognitive structure. Useful questions are what it predicts, conditioned on what, and
+  how it is used; a video model that is not conditioned on actions cannot by itself support
+  planning.
+see_also:
+  - model-based reinforcement learning
+  - MuZero
+  - Dyna
+  - generative model
+  - text-to-video model
+  - physics simulator
+  - Othello-GPT
+  - predictive processing
+contrast:
+  - model-free reinforcement learning
+sources:
+  - text: Ha, D. & Schmidhuber, J. (2018). World Models. arXiv:1803.10122.
+    url: https://arxiv.org/abs/1803.10122
+  - text: >-
+      Bruce, J. et al. (2024). Genie: Generative Interactive Environments. arXiv:2402.15391.
+    url: https://arxiv.org/abs/2402.15391
+  - text: >-
+      Hafner, D., Pasukonis, J., Ba, J. & Lillicrap, T. (2023). Mastering Diverse Domains through
+      World Models. arXiv:2301.04104.
+    url: https://arxiv.org/abs/2301.04104
+as_of: 2026-10

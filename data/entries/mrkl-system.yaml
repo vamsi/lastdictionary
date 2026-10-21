@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MRKL system
+id: mrkl-system
+pos: n.
+also:
+  - MRKL
+  - Modular Reasoning, Knowledge and Language
+pronunciation: MIR-uh-kul
+domain: agents
+domains:
+  - llm
+  - sym
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  An early design, pronounced 'miracle', in which a language model acts as a switchboard, sending
+  each part of a question to the right specialist — a calculator, a database, a search tool — and
+  combining the answers.
+senses:
+  - definition: >-
+      A modular, neuro-symbolic architecture ('Modular Reasoning, Knowledge and Language') in which
+      a router built around a [[large-language-model|large language model]] sends each input, or
+      part of it, to one of several expert modules — neural models or symbolic components such as
+      calculators, currency converters, databases and APIs — and composes their outputs into an
+      answer. The motivation was that language models alone lack current knowledge, reliable
+      arithmetic and access to proprietary data, and that retraining them is costly; delegating to
+      discrete experts keeps the model general while making particular capabilities exact and
+      updatable. AI21 Labs implemented the idea as Jurassic-X. The design anticipated
+      [[tool-use|tool use]] and [[function-calling|function calling]], and LangChain's first agents
+      (late 2022) were described as MRKL agents that used [[react|ReAct]]-style prompting to choose
+      tools.
+    example: >-
+      LangChain's original zero-shot agent was essentially a MRKL system with ReAct prompting.
+origin: >-
+  Proposed by Ehud Karpas, Omri Abend, Yonatan Belinkov, Yoav Shoham, Amnon Shashua and colleagues
+  at AI21 Labs in a paper posted on 1 May 2022; the acronym was chosen to be pronounced 'miracle'.
+year: 2022
+see_also:
+  - tool use
+  - ReAct
+  - augmented language model
+  - neuro-symbolic AI
+  - Toolformer
+  - agent framework
+sources:
+  - text: >-
+      Karpas, E., Abend, O., Belinkov, Y. et al. (2022). MRKL Systems: A modular, neuro-symbolic
+      architecture that combines large language models, external knowledge sources and discrete
+      reasoning. arXiv:2205.00445.
+    url: https://arxiv.org/abs/2205.00445

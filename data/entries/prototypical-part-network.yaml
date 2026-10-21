@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prototypical part network
+id: prototypical-part-network
+pos: n.
+also:
+  - ProtoPNet
+  - prototype network
+  - prototype-based model
+  - this looks like that
+domain: interp
+domains:
+  - percep
+  - dl
+level: specialist
+plain: >-
+  An image classifier that explains each decision by pointing to parts of the picture that resemble
+  typical examples it learned — this part looks like that part of a known bird.
+senses:
+  - definition: >-
+      An [[interpretable-model|interpretable]] deep image classifier that reasons by comparison with
+      learned prototypes, each a patch-level representation tied to part of a real training image,
+      such as the head of a particular bird. A [[convolutional-neural-network|convolutional neural
+      network]] backbone maps the input to a grid of patch embeddings; a prototype layer scores how
+      similar each prototype is to the closest patch of the input; and a final linear layer turns
+      these similarity scores into class [[logit|logits]]. After training, each prototype is
+      projected onto its nearest training patch so it can be shown, and every prediction can be
+      explained as 'this part of the image looks like that prototypical part', with each match's
+      contribution. Tested on fine-grained recognition of bird species and car models, a single
+      network roughly matched an otherwise identical uninterpretable one, and combining several came
+      close to the strongest deep models then available. Critics note that similarity in the
+      network's latent space need not match similarity as people perceive it.
+    example: >-
+      ProtoPNet justified 'red-winged blackbird' by matching the wing patch to three prototypes from
+      training photos.
+origin: >-
+  Introduced by Chaofan Chen, Oscar Li, Chaofan Tao, Alina Jade Barnett, Jonathan Su and Cynthia
+  Rudin, mostly of Duke University, in 'This Looks Like That: Deep Learning for Interpretable Image
+  Recognition' (arXiv, June 2018; NeurIPS 2019), building on prototype-based case reasoning by Oscar
+  Li and colleagues (2018).
+year: 2018
+note: >-
+  Part of the case-based-reasoning tradition in interpretable machine learning; successors such as
+  ProtoTree and transformer-based variants refine the prototype layer.
+see_also:
+  - interpretable model
+  - concept bottleneck model
+  - convolutional neural network
+  - explainable AI
+  - post hoc explanation
+contrast:
+  - post hoc explanation
+sources:
+  - text: >-
+      Chen, C., Li, O., Tao, C., Barnett, A. J., Su, J. & Rudin, C. (2019). This Looks Like That:
+      Deep Learning for Interpretable Image Recognition. NeurIPS 2019.

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: advantage function
+id: advantage-function
+pos: n.
+also:
+  - advantage
+  - A(s, a)
+  - advantage estimate
+domain: rl
+domains:
+  - train
+level: core
+plain: >-
+  A measure of how much better or worse one particular move is than the agent's typical move in the
+  same situation. Positive means better than usual; negative means worse.
+senses:
+  - definition: >-
+      The difference between the [[q-function|action value]] of taking a particular
+      [[action|action]] and the [[value-function|value]] of the [[state|state]] under the current
+      [[policy|policy]]. It isolates the contribution of the action from how good the situation
+      already was, so its expectation under the policy itself is zero. In [[policy-gradient|policy
+      gradient]] methods, weighting each action's log-probability gradient by its advantage rather
+      than by the raw [[return|return]] leaves the gradient unbiased while greatly reducing its
+      variance; practical estimates trade a little bias for further variance reduction. Advantages
+      are estimated with a learned critic, from one-step TD errors, or by
+      [[generalized-advantage-estimation|generalized advantage estimation]] in
+      [[actor-critic|actor–critic]] methods and [[proximal-policy-optimization|proximal policy
+      optimization]]; [[group-relative-policy-optimization|group relative policy optimization]]
+      instead compares each sampled answer's reward with the mean reward of a group of answers to
+      the same prompt, scaled by their standard deviation. Dueling network architectures learn value
+      and advantage streams separately.
+    example: >-
+      Responses that beat the group average get positive advantages and become more likely.
+formula_latex: A_\pi(s,a) = q_\pi(s,a) - v_\pi(s)
+origin: >-
+  Leemon Baird introduced 'advantage updating' in a 1993 technical report for the U.S. Air Force's
+  Wright Laboratory, learning each action's advantage separately from state values so that learning
+  would work with very small time steps. The quantity became standard in policy-gradient methods
+  through actor–critic work and John Schulman and colleagues'
+  [[generalized-advantage-estimation|generalized advantage estimation]] (2015).
+year: 1993
+see_also:
+  - Q-function
+  - value function
+  - generalized advantage estimation
+  - actor–critic
+  - proximal policy optimization
+  - policy gradient
+  - group relative policy optimization
+sources:
+  - text: >-
+      Baird, L. C. (1993). Advantage Updating. Technical report WL-TR-93-1146, Wright Laboratory,
+      Wright-Patterson Air Force Base.
+  - text: >-
+      Wang, Z. et al. (2016). Dueling Network Architectures for Deep Reinforcement Learning. ICML
+      2016.

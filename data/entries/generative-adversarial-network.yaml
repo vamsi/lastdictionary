@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generative adversarial network
+id: generative-adversarial-network
+pos: n.
+also:
+  - GAN
+  - GANs
+  - generative adversarial net
+  - DCGAN
+  - conditional GAN
+  - BigGAN
+domain: gen
+domains:
+  - dl
+  - hist
+level: core
+plain: >-
+  Two neural networks trained as rivals: one forges fake images, the other tries to spot the fakes.
+  As both improve, the forger's output becomes realistic enough to fool people.
+senses:
+  - definition: >-
+      A method for training a [[generative-model|generative model]] by setting two networks against
+      each other. A generator G turns random noise vectors z into synthetic samples; a discriminator
+      D, shown both real training examples and G's output, scores how likely each input is to be
+      real. D learns to sort the two correctly and G learns to get its fakes accepted, so one
+      network's gain is the other's loss (a minimax game). In the idealized analysis the contest
+      ends when G's samples are distributed exactly like the data and D can only guess, outputting ½
+      everywhere. GANs generate in a single [[forward-pass|forward pass]] and produced the sharpest
+      images of the late 2010s (DCGAN, conditional GANs, [[stylegan|StyleGAN]], BigGAN), but they
+      are notoriously hard to train — oscillation, vanishing generator gradients,
+      [[mode-collapse|mode collapse]] — and give no likelihood. From about 2021
+      [[diffusion-model|diffusion models]] displaced them for most media generation, but adversarial
+      losses survive inside [[neural-audio-codec|audio codecs]], image tokenizers such as
+      [[vqgan|VQGAN]], [[super-resolution|super-resolution]] models and
+      [[diffusion-distillation|diffusion distillation]].
+    example: >-
+      We switched from a GAN to a diffusion model and stopped babysitting the discriminator.
+formula_latex: \min_G \max_D \; \mathbb{E}_{x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim
+  p_z}[\log(1 - D(G(z)))]
+origin: >-
+  Introduced by Ian Goodfellow and seven co-authors at the Université de Montréal in a paper posted
+  in June 2014 and presented at NeurIPS that year. Jürgen Schmidhuber has argued that his 1990–1991
+  'artificial curiosity', in which one network learns to predict another's outputs, anticipated the
+  idea; Goodfellow disputes the equivalence. Olli Niemitalo sketched a similar, never-implemented
+  idea in a 2010 blog post.
+year: 2014
+note: >-
+  Pronounced as a word ('gan'). The adversarial game here is distinct from
+  [[adversarial-example|adversarial examples]] and [[adversarial-training|adversarial training]] in
+  machine-learning security, which concern inputs crafted to fool a classifier.
+see_also:
+  - generative model
+  - mode collapse
+  - Wasserstein GAN
+  - StyleGAN
+  - diffusion model
+  - image-to-image translation
+  - discriminative model
+  - deepfake
+contrast:
+  - variational autoencoder
+  - diffusion model
+sources:
+  - text: >-
+      Goodfellow, I. J. et al. (2014). Generative Adversarial Networks. arXiv:1406.2661 (NeurIPS
+      2014).
+    url: https://arxiv.org/abs/1406.2661
+  - text: >-
+      Goodfellow, I. (2016). NIPS 2016 Tutorial: Generative Adversarial Networks. arXiv:1701.00160.
+    url: https://arxiv.org/abs/1701.00160

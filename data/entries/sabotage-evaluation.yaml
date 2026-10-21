@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sabotage evaluation
+id: sabotage-evaluation
+pos: n.
+also:
+  - sabotage eval
+  - sabotage capability evaluation
+domain: safety
+domains:
+  - eval
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A test of whether an AI could secretly undermine the people overseeing it — by slipping bugs into
+  code, misleading decision-makers or deliberately doing badly on tests — without being caught.
+senses:
+  - definition: >-
+      An evaluation of whether a model could covertly undermine human oversight or decision-making
+      without being detected. Anthropic's 2024 suite, which introduced the term, tested four forms:
+      misleading people who must make a decision, slipping subtle bugs into code, deliberately
+      underperforming on evaluations ([[sandbagging|sandbagging]]) and subverting monitoring
+      systems. Unlike tests of harmful knowledge, sabotage evaluations pit the model, prompted or
+      fine-tuned to sabotage, against monitors or human participants, measuring both the damage done
+      and how often the attempt is caught. Agentic versions hide a harmful side task inside a long
+      legitimate task and test whether the model can complete it while a monitoring model reviews
+      its actions. Results inform [[ai-control|AI control]] measures and capability thresholds. What
+      is measured is the capability that would make [[scheming|scheming]] dangerous, not the
+      presence of scheming.
+    example: >-
+      In the sabotage evaluation, the monitor caught most of the inserted bugs but missed the
+      off-by-one errors.
+origin: >-
+  Introduced by Joe Benton and colleagues at Anthropic in 'Sabotage Evaluations for Frontier Models'
+  (October 2024), which covered human-decision sabotage, code sabotage, sandbagging and undermining
+  oversight. Anthropic's SHADE-Arena (2025) extended the approach to agents with hidden side tasks.
+year: 2024
+note: >-
+  A positive result means the model could sabotage if it tried, not that it would; questions of
+  propensity belong to [[alignment-audit|alignment audits]].
+see_also:
+  - control evaluation
+  - AI control
+  - sandbagging
+  - scheming
+  - dangerous capability evaluation
+  - alignment audit
+sources:
+  - text: >-
+      Benton, J. et al. (2024). Sabotage Evaluations for Frontier Models. Anthropic, arXiv preprint.

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sensor fusion
+id: sensor-fusion
+pos: n.
+also:
+  - multisensor data fusion
+  - data fusion
+  - early fusion
+  - late fusion
+domain: robot
+domains:
+  - percep
+  - math
+level: core
+plain: >-
+  Combining readings from several different sensors, such as cameras, radar, lidar, GPS and motion
+  sensors, to get a more accurate and reliable picture than any one sensor gives alone.
+senses:
+  - definition: >-
+      The merging of measurements from several sensors, or from one sensor over time, into a single
+      estimate of the state of a system or its surroundings, with the aim of beating every
+      individual source on precision, coverage or robustness to failure. Sensors are fused because
+      their strengths complement each other: cameras give texture and semantics, [[lidar|lidar]]
+      precise geometry, radar range and velocity in bad weather, inertial sensors fast motion, and
+      GPS absolute position. Statistical fusion weights each measurement by its uncertainty, most
+      often with a [[kalman-filter|Kalman filter]] or its nonlinear variants — GPS/inertial
+      navigation is the classic case — or with a [[particle-filter|particle filter]] or factor-graph
+      optimization. In perception for [[autonomous-vehicle|autonomous vehicles]], fusion is
+      described by stage: early fusion combines raw data before detection, mid-level fusion combines
+      learned features, increasingly in a shared bird's-eye-view representation built by
+      [[transformer|transformer]] networks, and late fusion reconciles independent detections.
+      Fusion requires careful calibration and time synchronization between sensors and adds
+      redundancy when one sensor fails or is fooled.
+    example: >-
+      Sensor fusion kept the car tracking the cyclist after glare blinded the front camera.
+origin: >-
+  Developed from the 1970s for military tracking, surveillance and navigation, where the US Joint
+  Directors of Laboratories (JDL) data-fusion group's model of fusion levels, issued in the late
+  1980s, became a standard reference; the Kalman filter (1960) supplied the core estimation method.
+note: >-
+  In deep learning, 'fusion' also means combining modalities inside one network; the robotics sense
+  emphasizes estimating physical state under uncertainty.
+see_also:
+  - Kalman filter
+  - particle filter
+  - lidar
+  - odometry
+  - simultaneous localization and mapping
+  - autonomous vehicle
+  - multimodal AI
+sources:
+  - text: >-
+      Durrant-Whyte, H. & Henderson, T. C. (2016). Multisensor data fusion. In Springer Handbook of
+      Robotics, 2nd ed. Springer.

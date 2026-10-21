@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: artificial neuron
+id: artificial-neuron
+pos: n.
+also:
+  - neuron
+  - unit
+  - node
+  - neural unit
+domain: dl
+domains:
+  - core
+  - hist
+level: essential
+plain: >-
+  The basic building block of a neural network: a tiny calculator that multiplies each incoming
+  number by a weight, adds them up, and passes the total through a simple function to decide its
+  output.
+senses:
+  - definition: >-
+      The unit of computation from which [[neural-network|neural networks]] are assembled: it scores
+      its inputs by a weighted sum plus a [[bias|bias]] term and then applies an
+      [[activation-function|activation function]] to that score, y = φ(w·x + b). The
+      [[weights|weights]] and bias are the [[parameter|parameters]] adjusted during
+      [[training|training]]; the activation supplies the nonlinearity that lets networks of neurons
+      represent more than linear maps. Neurons are arranged in [[layer|layers]], and a neural
+      network is a composition of many of them. The model is loosely inspired by biological neurons,
+      which integrate synaptic inputs and fire when a threshold is crossed, but it abstracts away
+      spikes, timing, dendritic computation and chemistry; [[spiking-neural-network|spiking
+      neurons]] restore some of these details. In practice, deep-learning code rarely represents
+      neurons individually: a whole layer of them is computed as one [[matrix-multiplication|matrix
+      multiplication]] followed by an elementwise function.
+    example: >-
+      Each artificial neuron in the hidden layer sees all 784 pixel values but weights them
+      differently.
+formula_latex: y = \varphi\Big(\sum_{i=1}^{n} w_i x_i + b\Big)
+origin: >-
+  Warren McCulloch and Walter Pitts proposed the first formal model in 1943: a binary threshold unit
+  computing logical propositions. Frank Rosenblatt's perceptron (1957–58) added learnable weights,
+  and Bernard Widrow's ADALINE (1960) treated the threshold as a trainable bias weight. Smooth,
+  differentiable activations became standard with backpropagation in the 1980s. Leon Harmon's 1959
+  note 'Artificial neuron' in Science, describing a transistor circuit, is an early printed use of
+  the phrase.
+year: 1943
+note: >-
+  In interpretability, 'neuron' means one coordinate of a layer's activation vector; such neurons
+  often respond to many unrelated concepts ([[polysemanticity|polysemanticity]]), which is why
+  researchers analyze [[feature-interpretability|features]] instead.
+see_also:
+  - perceptron
+  - McCulloch–Pitts neuron
+  - activation function
+  - layer
+  - neural network
+  - weights
+  - spiking neural network
+contrast:
+  - spiking neural network
+sources:
+  - text: >-
+      McCulloch, W. S. & Pitts, W. (1943). A Logical Calculus of the Ideas Immanent in Nervous
+      Activity. Bulletin of Mathematical Biophysics, 5, 115–133.

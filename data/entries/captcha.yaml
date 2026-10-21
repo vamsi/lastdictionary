@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: CAPTCHA
+id: captcha
+pos: n.
+also:
+  - Completely Automated Public Turing test to tell Computers and Humans Apart
+  - reCAPTCHA
+  - human verification challenge
+pronunciation: KAP-chuh
+domain: sec
+domains:
+  - hist
+  - society
+  - percep
+level: core
+plain: >-
+  A small test on websites, like typing wavy letters or clicking every picture with a traffic light,
+  meant to be easy for people but hard for computer programs, so as to keep automated bots out.
+senses:
+  - definition: >-
+      An automatically generated and graded puzzle that websites use to let people through and keep
+      bots out, guarding sign-ups, logins, comment forms, ticket sales and content against automated
+      abuse. Its security rests on a task believed easy for people but hard for machines: reading
+      distorted text, transcribing audio, selecting images that contain a given object or solving a
+      small puzzle. It inverts the [[turing-test|Turing test]]: a machine is the examiner and the
+      human the examinee, hence the name 'reverse Turing test'. Each advance in
+      [[optical-character-recognition|optical character recognition]] and image recognition has
+      narrowed that gap: neural networks read distorted text and street numbers at near-human or
+      better accuracy by the mid-2010s, and a 2023 study found bots solving many deployed CAPTCHAs
+      faster and more accurately than people. Services have therefore shifted toward invisible risk
+      scoring of browser behavior and device signals, proof-of-work challenges and cryptographic
+      attestation tokens. CAPTCHAs also burden users, especially disabled users, and AI
+      [[browser-agent|browser agents]] acting for real people blur the human–bot line they rely on.
+    example: The sign-up form now shows a CAPTCHA only when the risk score looks automated.
+origin: >-
+  According to its creators, the acronym was coined in 2000 at Carnegie Mellon University by Luis
+  von Ahn, Manuel Blum, Nicholas Hopper and John Langford, who published 'CAPTCHA: Using Hard AI
+  Problems for Security' at Eurocrypt 2003; AltaVista had used a similar test against automated
+  submissions around 1997. Von Ahn's reCAPTCHA (2007) put human answers to work digitizing books and
+  was acquired by Google in 2009.
+year: 2000
+note: >-
+  The [[gpt-4|GPT-4]] system card (2023) describes the model, in an evaluation, persuading a hired
+  human worker to solve a CAPTCHA for it by claiming a vision impairment, an often-cited example of
+  [[ai-deception|AI deception]]. Computer-use agents are commonly designed to hand such challenges
+  back to the user.
+see_also:
+  - Turing test
+  - optical character recognition
+  - adversarial example
+  - browser agent
+  - computer use
+  - web scraping
+  - AI deception
+sources:
+  - text: >-
+      von Ahn, L., Blum, M., Hopper, N. J. & Langford, J. (2003). CAPTCHA: Using Hard AI Problems
+      for Security. Proc. Eurocrypt 2003.
+  - text: >-
+      von Ahn, L., Maurer, B., McMillen, C., Abraham, D. & Blum, M. (2008). reCAPTCHA: Human-Based
+      Character Recognition via Web Security Measures. Science 321(5895), 1465–1468.
+  - text: >-
+      Searles, A. et al. (2023). An Empirical Study & Evaluation of Modern CAPTCHAs. Proc. USENIX
+      Security 2023.
+as_of: 2026-10

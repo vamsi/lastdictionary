@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Brown Corpus
+id: brown-corpus
+pos: prop. n.
+also:
+  - Brown University Standard Corpus of Present-Day American English
+domain: data
+domains:
+  - hist
+  - llm
+labels:
+  - historical
+level: specialist
+plain: >-
+  The first large collection of English text stored on computer for research: about a million words
+  from 500 American publications of 1961, assembled at Brown University in the 1960s.
+senses:
+  - definition: >-
+      A [[corpus|corpus]] of 1,014,312 words of edited American prose that appeared in print during
+      1961, cut into 500 samples of roughly 2,000 words each and allocated across 15 genres, from
+      press reportage to learned writing and romance fiction. Its explicit sampling design made it
+      the model of a balanced, representative corpus, and its word-frequency counts became standard
+      references in linguistics and psychology. A later version tagged every word with one of about
+      80 part-of-speech categories, supplying training and test data for early statistical taggers
+      and setting the format for successors such as the Lancaster–Oslo/Bergen (LOB) corpus of
+      British English.
+    example: >-
+      Early part-of-speech taggers were trained and scored on the hand-checked tags of the Brown
+      Corpus.
+origin: >-
+  Compiled by W. Nelson Francis and Henry Kučera at Brown University in Providence, Rhode Island,
+  with U.S. Office of Education funding in 1963–64. Kučera and Francis's frequency study,
+  Computational Analysis of Present-Day American English (1967), made it widely known.
+year: 1964
+note: >-
+  Tiny by today's standards — the pretraining data of a large language model is millions of times
+  larger — but it established that language can be studied from a documented, machine-readable
+  sample.
+see_also:
+  - corpus
+  - annotation
+  - natural language processing
+  - pretraining data
+  - dataset
+sources:
+  - text: >-
+      Kučera, H. & Francis, W. N. (1967). Computational Analysis of Present-Day American English.
+      Brown University Press.

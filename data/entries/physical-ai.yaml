@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: physical AI
+id: physical-ai
+pos: n.
+also:
+  - physical artificial intelligence
+domain: robot
+domains:
+  - core
+  - gen
+labels:
+  - emerging
+level: essential
+plain: >-
+  AI built to work in the physical world rather than on a screen: the intelligence inside robots,
+  self-driving cars, drones and other machines that must sense real surroundings and move through
+  them.
+senses:
+  - definition: >-
+      AI embodied in machines that move and manipulate things in the real world — [[robot|robots]]
+      including [[humanoid-robot|humanoids]], [[autonomous-vehicle|autonomous vehicles]],
+      [[drone|drones]] and automated factories — and that must therefore make sense of physical
+      surroundings before acting on them. As promoted by industry from 2024, the term bundles a
+      technology stack — [[vision-language-action-model|vision-language-action models]] and other
+      [[robot-foundation-model|robot foundation models]]; [[world-foundation-model|world foundation
+      models]] that predict how scenes evolve; [[physics-simulator|physics simulators]] and
+      [[digital-twin|digital twins]] for generating training data and testing; and onboard inference
+      hardware — with the expectation that methods behind [[large-language-model|large language
+      models]] will carry over to embodied tasks. Proponents contrast it with 'digital' or
+      generative AI whose outputs stay on screens. Technically it is close to [[embodied-ai|embodied
+      AI]]; the newer term emphasizes deployment at scale and the hard, unsolved problems of
+      dexterity, reliability and safety in unstructured settings (see [[moravec-s-paradox|Moravec's
+      paradox]]).
+    example: >-
+      Every keynote this year had a physical AI segment, usually with a humanoid walking on stage.
+origin: >-
+  An early academic use is Aslan Miriyev and Mirko Kovač's 2020 Nature Machine Intelligence article
+  'Skills for physical artificial intelligence', about co-designing robot bodies, materials and
+  intelligence. The phrase was popularized from 2024 by Nvidia chief executive Jensen Huang, who
+  launched the Cosmos world foundation models at CES in January 2025 predicting a 'ChatGPT moment
+  for robotics', and it spread through industry and policy speech in 2025–2026.
+year: 2020
+note: >-
+  Partly a marketing term, used more or less broadly by different companies. Miriyev and Kovač's
+  original sense stressed lifelike bodies and materials evolving with intelligence; the industry
+  sense centers on foundation models and simulation. Not to be confused with physics-informed
+  machine learning, which builds physical laws into models of physical systems.
+see_also:
+  - embodied AI
+  - robot foundation model
+  - world foundation model
+  - vision-language-action model
+  - humanoid robot
+  - sim-to-real transfer
+  - digital twin
+contrast:
+  - generative AI
+sources:
+  - text: >-
+      Miriyev, A. & Kovač, M. (2020). Skills for physical artificial intelligence. Nature Machine
+      Intelligence 2, 658–660.
+  - text: >-
+      NVIDIA et al. (2025). Cosmos World Foundation Model Platform for Physical AI. arXiv:2501.03575.
+    url: https://arxiv.org/abs/2501.03575
+as_of: 2026-10

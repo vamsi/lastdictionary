@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: constitutional classifiers
+id: constitutional-classifiers
+pos: n.
+also:
+  - constitutional classifier
+domain: sec
+domains:
+  - safety
+  - llm
+level: specialist
+plain: >-
+  Safety filters that watch a chatbot's inputs and outputs for dangerous requests, trained on
+  example conversations that an AI generated from a written list of what is and is not allowed.
+senses:
+  - definition: >-
+      [[safety-classifier|Safety classifiers]] whose training examples are written by language
+      models following a plain-language 'constitution' that spells out which content is allowed and
+      which is off-limits; deployed as input and streaming-output filters, they defend a
+      [[large-language-model|large language model]] against universal [[jailbreak|jailbreaks]],
+      chiefly for chemical, biological, radiological and nuclear weapons information. Because the
+      training data is produced by models from the constitution and augmented with jailbreak-style
+      transformations, the policy can be revised and the classifiers retrained quickly. In
+      Anthropic's tests the first system cut automated jailbreak success from 86% to 4.4%, at 23.7%
+      extra compute and a 0.38% absolute rise in refusals of harmless queries. The second
+      generation, Constitutional Classifiers++ (January 2026), screens all traffic with a cheap
+      [[linear-probe|linear probe]] on the model's internal activations and escalates suspicious
+      exchanges to classifiers that judge inputs and outputs together, for about 1% extra compute.
+    example: >-
+      The constitutional classifiers cut the reply off mid-stream once it began to drift into
+      restricted chemistry.
+origin: >-
+  Introduced by Mrinank Sharma and colleagues at Anthropic in 'Constitutional Classifiers: Defending
+  against Universal Jailbreaks across Thousands of Hours of Red Teaming' (February 2025), the name
+  echoing [[constitutional-ai|Constitutional AI]]. They were deployed with Claude Opus 4 in May 2025
+  among [[ai-safety-level|ASL-3]] protections; the next generation was announced on 9 January 2026.
+year: 2025
+see_also:
+  - safety classifier
+  - Constitutional AI
+  - jailbreak
+  - CBRN risk
+  - AI Safety Level
+  - guardrails
+sources:
+  - text: >-
+      Sharma, M. et al. (2025). Constitutional Classifiers: Defending against Universal Jailbreaks
+      across Thousands of Hours of Red Teaming. arXiv:2501.18837.
+  - text: >-
+      Anthropic (2026). Next-generation Constitutional Classifiers: More efficient protection
+      against universal jailbreaks. 9 January 2026.
+    url: https://anthropic.com/research/next-generation-constitutional-classifiers
+  - text: >-
+      Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal
+      Jailbreaks. Anthropic researchers (2026). arXiv:2601.04603; ICLR 2026.
+    url: https://arxiv.org/abs/2601.04603
+as_of: 2026-10

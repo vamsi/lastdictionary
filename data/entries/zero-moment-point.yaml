@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: zero moment point
+id: zero-moment-point
+pos: n.
+also:
+  - ZMP
+domain: robot
+domains:
+  - math
+level: specialist
+plain: >-
+  The spot on the ground beneath a walking robot where the floor's push balances out; keeping it
+  inside the area under the robot's feet stops the robot from tipping over.
+senses:
+  - definition: >-
+      A point on the ground used to judge whether a walking robot will tip: the spot where the
+      moments of the ground's reaction forces on the feet, taken about horizontal axes, cancel out,
+      which is also where the combined pull of gravity and the robot's own accelerations meets the
+      floor. While the zero moment point stays strictly inside the support polygon (the convex hull
+      of the feet's contact areas), the feet do not roll over their edges and the robot does not
+      tip; as it reaches the boundary, the robot begins to topple. ZMP-based walking plans
+      center-of-mass trajectories, often with a linear inverted-pendulum model and preview control,
+      so that the ZMP follows a safe reference, then tracks it with feedback from force sensors in
+      the feet. The criterion underpinned Honda's humanoids and most bipeds from the 1990s to the
+      2010s, but it presumes feet resting flat on ground that will not let them slip, and it tends
+      to produce cautious, flat-footed gaits; learned controllers and whole-body
+      [[model-predictive-control|model predictive control]] now often replace it.
+    example: The ZMP drifted toward the toe edge, so the controller shortened the next step.
+origin: >-
+  Introduced by Miomir Vukobratović and Davor Juričić in January 1968 at the Third All-Union
+  Congress of Theoretical and Applied Mechanics in Moscow; the name 'zero moment point' was
+  established in Vukobratović's papers of 1970–1972.
+year: 1968
+note: >-
+  Often equated with the center of pressure; the two coincide while the robot is balanced, but the
+  ZMP is defined from the robot's dynamics, whereas the center of pressure is measured from contact
+  forces.
+see_also:
+  - legged robot
+  - humanoid robot
+  - locomotion
+  - model predictive control
+  - control theory
+sources:
+  - text: >-
+      Vukobratović, M. & Borovac, B. (2004). Zero-moment point — thirty five years of its life.
+      International Journal of Humanoid Robotics 1(1), 157–173.

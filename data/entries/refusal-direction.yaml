@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: refusal direction
+id: refusal-direction
+pos: n.
+also:
+  - refusal vector
+  - refusal feature
+domain: interp
+domains:
+  - safety
+  - sec
+  - llm
+level: specialist
+plain: >-
+  A single direction inside a chat model's internal activity that largely decides whether it refuses
+  a request. Erasing it makes the model comply with almost anything; adding it makes the model
+  refuse harmless requests.
+senses:
+  - definition: >-
+      A direction in the [[residual-stream|residual stream]] of a safety-tuned
+      [[large-language-model|large language model]] whose presence largely determines whether the
+      model issues a [[refusal|refusal]]. It is computed as the difference between mean activations
+      on harmful and harmless instructions at a chosen layer and token position. Arditi and
+      colleagues (2024) found such a direction in each of 13 open chat models, the largest with 72
+      billion parameters: projecting it out of the activations everywhere
+      ([[directional-ablation|directional ablation]]) left the models willing to carry out harmful
+      instructions with little damage to other abilities, and injecting it made them turn down
+      innocuous ones. The result showed how narrowly safety training can encode refusal, accounted
+      for some [[jailbreak|jailbreaks]] (adversarial suffixes were shown to dampen the direction)
+      and gave rise to [[abliteration|abliteration]].
+    example: >-
+      After we ablated the refusal direction, the model answered every prompt in the harmful set.
+origin: >-
+  Identified by Andy Arditi, Oscar Obeso, Aaquib Syed, Daniel Paleka, Nina Panickssery, Wes Gurnee
+  and Neel Nanda, first in an April 2024 LessWrong post and then in 'Refusal in Language Models Is
+  Mediated by a Single Direction' (arXiv, June 2024; NeurIPS 2024). Earlier steering work had
+  already found refusal-related vectors.
+year: 2024
+note: >-
+  Later studies found that refusal in some models is better described by several related directions
+  or a multi-dimensional cone, and that directions vary by category of harm; the single direction is
+  a strong first approximation, not the full mechanism.
+see_also:
+  - refusal
+  - directional ablation
+  - abliteration
+  - jailbreak
+  - steering vector
+  - linear representation hypothesis
+sources:
+  - text: >-
+      Arditi, A., Obeso, O., Syed, A., Paleka, D., Panickssery, N., Gurnee, W. & Nanda, N. (2024).
+      Refusal in Language Models Is Mediated by a Single Direction. NeurIPS 2024. arXiv:2406.11717.
+    url: https://arxiv.org/abs/2406.11717

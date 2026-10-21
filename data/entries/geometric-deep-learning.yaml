@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: geometric deep learning
+id: geometric-deep-learning
+pos: n.
+also:
+  - GDL
+  - equivariant deep learning
+  - symmetry-aware deep learning
+domain: dl
+domains:
+  - math
+level: specialist
+plain: >-
+  An approach to designing neural networks around the shapes and symmetries of the data, whether
+  grids, graphs, surfaces or 3-D structures, so the network respects how that data can be moved or
+  rearranged.
+senses:
+  - definition: >-
+      A research program and unifying framework that derives neural-network architectures from the
+      geometric structure of their data domain and the symmetries a model should respect. In the
+      '5G' blueprint of Michael Bronstein and colleagues (grids, groups, graphs, geodesics and
+      gauges), each domain comes with a symmetry group and a matching architecture: images on grids
+      with translations ([[convolutional-neural-network|CNNs]]), sets and graphs with permutations
+      ([[graph-neural-network|GNNs]] and [[transformer|transformers]]), spaces with rotations and
+      other group actions (group-[[equivariance|equivariant]] networks), and curved surfaces and
+      manifolds with geodesics and gauge transformations (mesh and gauge-equivariant CNNs).
+      Architectures are assembled from equivariant layers, local pooling and
+      [[invariance|invariant]] readouts, an approach its proponents compare to Felix Klein's
+      Erlangen program, which classified geometries by their symmetry groups. It underpins much of
+      AI for science, including molecular and materials modeling and protein-structure prediction.
+    example: >-
+      Geometric deep learning explains why the same design principles produce CNNs for images and
+      GNNs for molecules.
+origin: >-
+  The name took hold with Michael Bronstein, Joan Bruna, Yann LeCun, Arthur Szlam and Pierre
+  Vandergheynst's survey 'Geometric Deep Learning: Going Beyond Euclidean Data' (arXiv 2016; IEEE
+  Signal Processing Magazine, 2017). Bronstein, Bruna, Taco Cohen and Petar Veličković's proto-book
+  'Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges' (arXiv, April 2021) recast
+  it as an 'Erlangen program' for deep learning.
+year: 2016
+see_also:
+  - equivariance
+  - invariance
+  - graph neural network
+  - convolutional neural network
+  - inductive bias
+  - AlphaFold
+sources:
+  - text: >-
+      Bronstein, M. M., Bruna, J., LeCun, Y., Szlam, A. & Vandergheynst, P. (2017). Geometric Deep
+      Learning: Going Beyond Euclidean Data. IEEE Signal Processing Magazine, 34(4), 18–42.
+  - text: >-
+      Bronstein, M. M., Bruna, J., Cohen, T. & Veličković, P. (2021). Geometric Deep Learning:
+      Grids, Groups, Graphs, Geodesics, and Gauges. arXiv:2104.13478.
+    url: https://arxiv.org/abs/2104.13478

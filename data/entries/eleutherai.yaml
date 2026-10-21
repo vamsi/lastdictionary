@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: EleutherAI
+id: eleutherai
+pos: prop. n.
+also:
+  - Eleuther
+pronunciation: ee-LOO-ther AY-eye
+domain: orgs
+domains:
+  - llm
+  - data
+level: core
+plain: >-
+  An open-science research group, begun by online volunteers in 2020, that released some of the
+  first large language models anyone could download, along with the text collections used to train
+  them.
+senses:
+  - definition: >-
+      An open-science institute working on [[large-language-model|large language models]] — how to
+      train them, how they work inside ([[interpretability|interpretability]]) and how to align them
+      — that publishes its models, data and code; it began as an informal volunteer collective and
+      became a nonprofit in 2023. In 2020–2022 it assembled [[the-pile|The Pile]], an 825-gigabyte
+      English text dataset, and released GPT-Neo, GPT-J and GPT-NeoX-20B, among the first openly
+      downloadable GPT-3-style models, at a time when large models were held almost exclusively by
+      companies. Its Pythia suite (2023), a set of models trained on identical data with public
+      intermediate checkpoints, became a standard tool for studying training dynamics and
+      memorization, and its lm-evaluation-harness is one of the most widely used
+      [[evaluation-harness|evaluation harnesses]]. The inclusion in The Pile of Books3, a collection
+      of pirated books, drew it into copyright litigation; in 2025 it co-released the Common Pile, a
+      large dataset of openly licensed and public-domain text.
+origin: >-
+  Formed in July 2020 on a Discord server by Connor Leahy, Leo Gao and Sid Black, who set out to
+  replicate GPT-3; the name comes from eleutheria, Greek for 'liberty'. It incorporated as a
+  nonprofit research institute in 2023, with Stella Biderman as executive director.
+year: 2020
+see_also:
+  - The Pile
+  - open-weight model
+  - evaluation harness
+  - open-source AI
+  - Hugging Face
+  - interpretability
+sources:
+  - text: >-
+      Gao, L. et al. (2020). The Pile: An 800GB Dataset of Diverse Text for Language Modeling.
+      arXiv:2101.00027.
+  - text: >-
+      Biderman, S. et al. (2023). Pythia: A Suite for Analyzing Large Language Models Across
+      Training and Scaling. ICML 2023.
+as_of: 2026-10

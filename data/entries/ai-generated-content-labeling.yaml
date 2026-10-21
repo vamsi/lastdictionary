@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI-generated content labeling
+id: ai-generated-content-labeling
+pos: n.
+also:
+  - AIGC labeling
+  - AI content labeling
+  - synthetic content labeling
+  - labelling of AI-generated content
+  - AI disclosure label
+domain: gov
+domains:
+  - gen
+  - sec
+labels:
+  - legal
+  - emerging
+level: core
+plain: >-
+  Marking text, images, audio or video as made by AI — with a visible notice, hidden data in the
+  file, or both — so that people and platforms can tell synthetic content from real.
+senses:
+  - definition: >-
+      The practice, and increasingly the legal duty, of marking content generated or substantially
+      altered by AI so that people and software can recognize it. Labels are explicit (visible
+      captions, logos or spoken notices) or implicit (machine-readable metadata,
+      [[ai-watermarking|invisible watermarks]] or cryptographically signed provenance records such
+      as [[content-credentials|Content Credentials]]). China's Measures for Labeling AI-Generated
+      Synthetic Content and a mandatory national standard, in force since September 1, 2025, require
+      explicit labels on chatbot dialogue, synthetic voices, generated faces and immersive scenes,
+      implicit labels in the metadata of all generated files, and detection and labeling by
+      distribution platforms. The [[eu-ai-act|EU AI Act]] requires providers of generative systems
+      to mark outputs in machine-readable form and deployers to disclose [[deepfake|deepfakes]],
+      with application from August 2026 subject to [[digital-omnibus|Digital Omnibus]] adjustments;
+      California's AI Transparency Act requires large generative AI providers to embed latent
+      disclosures and offer free detection tools; and South Korea's [[ai-basic-act|AI Basic Act]]
+      requires notice of generative outputs. Weaknesses include easily stripped metadata, fragile
+      watermarks, false positives and uneven adoption.
+    example: >-
+      The platform's AI-generated content labeling relies on metadata, which disappears the moment
+      someone screenshots the image.
+origin: >-
+  Platform policies on labeling synthetic media date from about 2019–2020. China's deep-synthesis
+  rules (2022) imposed the first binding labeling duty, followed by the EU AI Act (2024) and China's
+  dedicated labeling measures, issued in March 2025 by the Cyberspace Administration of China and
+  three other agencies.
+year: 2022
+note: >-
+  A label indicates origin, not truth: AI-made content is not necessarily false, and unlabeled
+  content is not necessarily authentic. Official texts in British English spell it labelling.
+see_also:
+  - AI watermarking
+  - Content Credentials
+  - deepfake
+  - deep synthesis
+  - synthetic media
+  - transparency obligations
+  - SynthID
+sources:
+  - text: DLA Piper. Artificial Intelligence in China (regulatory tracker).
+standards: >-
+  China, Measures for Labeling AI-Generated Synthetic Content (2025) and national standard GB
+  45438-2025; EU AI Act (Reg. (EU) 2024/1689), Art. 50(2) and 50(4)
+as_of: 2026-10

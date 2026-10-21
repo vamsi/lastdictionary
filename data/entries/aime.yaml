@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AIME
+id: aime
+pos: prop. n.
+also:
+  - American Invitational Mathematics Examination
+  - AIME 2024
+  - AIME 2025
+pronunciation: AYM
+domain: eval
+domains:
+  - math
+level: core
+plain: >-
+  A hard US high-school math contest whose 15 questions each have a whole-number answer; AI labs use
+  each year's new papers to test their models' mathematical reasoning.
+senses:
+  - definition: >-
+      The invitation-only second round of the Mathematical Association of America's American
+      Mathematics Competitions, reached by scoring near the top of the AMC 10 or AMC 12, in which
+      students have three hours for 15 problems. Because each answer is a whole number from 0 to
+      999, responses can be graded automatically by [[exact-match|exact match]]. Because two new
+      papers (AIME I and II) are set each February, recent problems offer a fresh and partly
+      [[contamination-resistant-benchmark|contamination-resistant]] test of competition-level
+      reasoning, usually reported as accuracy on a year's 30 problems averaged over many samples, or
+      with majority voting. With so few problems, results are noisy: one problem is worth more than
+      three percentage points. OpenAI's September 2024 announcement of its o1
+      [[reasoning-model|reasoning model]] made AIME a headline benchmark, reporting 74% on AIME 2024
+      for o1 against 12% for GPT-4o; leading models were scoring above 90% by 2025.
+    example: >-
+      On AIME 2025 the model averages 88% over 64 samples, so we use the 2026 papers to rule out
+      contamination.
+origin: >-
+  The AIME was first held in 1983 as a qualifying step toward the USA Mathematical Olympiad. Its use
+  as an AI benchmark took off in 2024, spread by OpenAI's o1 report and by open datasets of recent
+  papers.
+year: 2024
+note: >-
+  'AIME 2025' means that year's 30 contest problems, not a separately designed benchmark. Strong
+  AIME scores show contest problem-solving with short numerical answers, not proof-writing.
+see_also:
+  - MATH
+  - FrontierMath
+  - IMO Grand Challenge
+  - reasoning model
+  - self-consistency
+  - contamination-resistant benchmark
+sources:
+  - text: OpenAI (2024). Learning to Reason with LLMs.
+    url: https://openai.com/index/learning-to-reason-with-llms/
+as_of: 2026-10

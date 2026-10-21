@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reward
+id: reward
+pos: n.
+also:
+  - reward signal
+  - scalar reward
+domain: rl
+domains:
+  - core
+  - train
+level: essential
+plain: >-
+  The score an AI system receives after an action, telling it how good the outcome was.
+  Reinforcement learning trains the system to collect as much reward as possible over time.
+senses:
+  - definition: >-
+      A number, written r or R_{t+1}, that the [[environment|environment]] hands back to an
+      [[agent|agent]] after each step as a verdict on how good the latest transition was. In
+      [[reinforcement-learning|reinforcement learning]], rewards are the whole statement of the
+      task: what the agent is trained to maximize is not any single reward but the expected total it
+      accumulates, the [[return|return]]. They may be dense (feedback at every step, such as forward
+      velocity for a walking robot) or [[sparse-reward|sparse]] (only on success, such as winning a
+      game), and they come from a hand-written [[reward-function|reward function]], a learned
+      [[reward-model|reward model]], a programmatic check such as running unit tests
+      ([[reinforcement-learning-with-verifiable-rewards|verifiable rewards]]) or direct human
+      judgment. Because an optimizer exploits any gap between the reward and what the designer
+      actually wants, poorly chosen rewards lead to [[reward-hacking|reward hacking]] and
+      [[specification-gaming|specification gaming]]. The [[reward-hypothesis|reward hypothesis]]
+      holds that any goal can nonetheless be expressed this way.
+    example: >-
+      The agent gets a reward of +1 only when the generated code passes every hidden test.
+origin: >-
+  Borrowed from behavioral psychology, where Edward Thorndike's law of effect (formulated from 1898)
+  and B. F. Skinner's operant conditioning (1938) describe behavior strengthened by its rewarding
+  consequences. Alan Turing (1948) proposed training machines with 'pleasure' and 'pain' signals;
+  the scalar reward of Markov decision processes became RL's defining interface in the 1980s.
+note: >-
+  Reward (immediate, supplied by the environment) is distinct from value (expected future reward,
+  estimated by the agent). Dopamine neurons appear to signal reward-prediction errors much like
+  [[temporal-difference-learning|temporal difference learning]], a celebrated 1997 finding of
+  Wolfram Schultz, Peter Dayan and Read Montague. In [[large-language-model|large language model]]
+  training a reward is usually given once per complete response.
+see_also:
+  - reward function
+  - return
+  - reward model
+  - sparse reward
+  - reward shaping
+  - reward hacking
+  - reward hypothesis
+contrast:
+  - value function
+sources:
+  - text: >-
+      Sutton, R. S. & Barto, A. G. (2018). Reinforcement Learning: An Introduction (2nd ed.), §3.2.
+      MIT Press.
+  - text: >-
+      Schultz, W., Dayan, P. & Montague, P. R. (1997). A neural substrate of prediction and reward.
+      Science 275, 1593–1599.

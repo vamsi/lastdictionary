@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MobileNet
+id: mobilenet
+pos: prop. n.
+also:
+  - MobileNets
+  - MobileNetV2
+  - MobileNetV3
+  - inverted residual block
+  - inverted bottleneck
+domain: dl
+domains:
+  - percep
+  - infer
+level: specialist
+plain: >-
+  A family of compact image-recognition networks from Google, designed to run quickly on phones and
+  other small devices with little loss of accuracy.
+senses:
+  - definition: >-
+      A family of compact [[convolutional-neural-network|convolutional networks]] from Google built
+      to fit the memory, power and speed limits of phones and embedded chips. The first version
+      (2017) replaced nearly every ordinary convolution with a
+      [[depthwise-separable-convolution|depthwise separable convolution]] and gave developers two
+      dials, a width multiplier that thins every layer and a resolution multiplier that shrinks the
+      input image, for deciding how much accuracy to give up for speed. MobileNetV2 (2018)
+      introduced the inverted residual block: a cheap 1 × 1 expansion to many channels, a 3 × 3
+      depthwise convolution, and a linear (activation-free) 1 × 1 projection back to a narrow
+      bottleneck, with the [[residual-connection|residual connection]] joining the narrow ends.
+      MobileNetV3 (2019) was refined by hardware-aware [[neural-architecture-search|neural
+      architecture search]] and added [[squeeze-and-excitation-network|squeeze-and-excitation]] and
+      a 'hard-swish' activation. These blocks became the basis of [[efficientnet|EfficientNet]] and
+      of many [[on-device-ai|on-device]] models for classification, detection and segmentation.
+    example: >-
+      The detector runs a MobileNetV2 backbone at 30 frames per second on the phone's CPU.
+origin: >-
+  Introduced by Andrew Howard and colleagues at Google in 'MobileNets: Efficient Convolutional
+  Neural Networks for Mobile Vision Applications' (arXiv, April 2017). Mark Sandler and colleagues
+  followed with MobileNetV2 (January 2018) and Howard and colleagues with MobileNetV3 (May 2019).
+year: 2017
+see_also:
+  - depthwise separable convolution
+  - EfficientNet
+  - edge AI
+  - on-device AI
+  - neural architecture search
+  - squeeze-and-excitation network
+sources:
+  - text: >-
+      Howard, A. G. et al. (2017). MobileNets: Efficient Convolutional Neural Networks for Mobile
+      Vision Applications. arXiv:1704.04861.
+    url: https://arxiv.org/abs/1704.04861

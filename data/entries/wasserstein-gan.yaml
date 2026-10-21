@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Wasserstein GAN
+id: wasserstein-gan
+pos: n.
+also:
+  - WGAN
+  - WGAN-GP
+  - Wasserstein generative adversarial network
+pronunciation: VAH-ser-shtine gan
+domain: gen
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A version of the forger-versus-detective image generator that measures how far its fakes are from
+  real data in a smoother way, making training steadier and easier to monitor.
+senses:
+  - definition: >-
+      A variant of the [[generative-adversarial-network|generative adversarial network]] that trains
+      the generator to minimize an estimate of the [[wasserstein-distance|Wasserstein distance]]
+      (earth mover's distance) between the data and model distributions instead of the
+      [[jensen-shannon-divergence|Jensen–Shannon-type divergence]] implicit in the original GAN. The
+      discriminator becomes a 'critic' that outputs an unbounded real-valued score; by
+      Kantorovich–Rubinstein duality, the gap between its mean scores on real and generated samples
+      estimates the distance, provided the critic is 1-Lipschitz. Because this distance stays
+      informative even when the two distributions barely overlap, the generator receives useful
+      gradients throughout training, and the critic's loss tracks sample quality. The original paper
+      enforced the Lipschitz constraint by clipping weights; WGAN-GP replaced clipping with a
+      penalty that keeps the norm of the critic's input gradient near one, and spectral
+      normalization later offered another route.
+formula_latex: \min_G \max_{\lVert f \rVert_L \le 1} \; \mathbb{E}_{x \sim p_{\text{data}}}[f(x)] -
+  \mathbb{E}_{z \sim p_z}[f(G(z))]
+origin: >-
+  Proposed by Martin Arjovsky, Soumith Chintala and Léon Bottou in a paper posted to arXiv in
+  January 2017 and published at ICML 2017. Ishaan Gulrajani and colleagues introduced the
+  gradient-penalty version (WGAN-GP) two months later.
+year: 2017
+see_also:
+  - generative adversarial network
+  - Wasserstein distance
+  - mode collapse
+  - Jensen–Shannon divergence
+  - Kullback–Leibler divergence
+sources:
+  - text: >-
+      Arjovsky, M., Chintala, S. & Bottou, L. (2017). Wasserstein GAN. arXiv:1701.07875 (ICML 2017).
+    url: https://arxiv.org/abs/1701.07875
+  - text: >-
+      Gulrajani, I., Ahmed, F., Arjovsky, M., Dumoulin, V. & Courville, A. (2017). Improved Training
+      of Wasserstein GANs. arXiv:1704.00028 (NeurIPS 2017).
+    url: https://arxiv.org/abs/1704.00028

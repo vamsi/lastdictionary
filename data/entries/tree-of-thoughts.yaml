@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tree of thoughts
+id: tree-of-thoughts
+pos: n.
+also:
+  - ToT
+  - tree-of-thought prompting
+domain: llm
+domains:
+  - sym
+  - agents
+level: specialist
+plain: >-
+  A method in which an AI explores several possible next steps of a problem, judges which look
+  promising and backs out of dead ends, like a chess player weighing moves, instead of reasoning in
+  one straight line.
+senses:
+  - definition: >-
+      A prompting framework that turns [[chain-of-thought|chain of thought]] from a single line of
+      reasoning into a search over many. A problem is split into steps; at each step the
+      [[language-model|language model]] proposes several candidate 'thoughts' (partial solutions),
+      the same or another model rates how promising each resulting state is, and a classical search
+      procedure — [[breadth-first-search|breadth-first]] or [[depth-first-search|depth-first
+      search]] with pruning and backtracking — chooses which branches to pursue. The model can thus
+      look ahead and abandon a bad start, which strictly left-to-right generation cannot do. In the
+      original experiments on the Game of 24 arithmetic puzzle, GPT-4 succeeded on 74% of problems
+      this way, against 4% with chain-of-thought prompting. The price is many more model calls; the
+      approach influenced later search-based and agentic reasoning, though trained
+      [[reasoning-model|reasoning models]] now do much of this exploration within a single trace.
+    example: >-
+      We wrapped the planner in a tree-of-thoughts search so it could abandon bad itineraries early.
+origin: >-
+  Introduced by Shunyu Yao and colleagues at Princeton University and Google DeepMind in 'Tree of
+  Thoughts: Deliberate Problem Solving with Large Language Models' (May 2023; NeurIPS 2023), drawing
+  on Allen Newell and Herbert Simon's account of problem solving as search. Jieyi Long independently
+  proposed a similar tree-of-thought system the same month.
+year: 2023
+see_also:
+  - chain of thought
+  - self-consistency
+  - test-time compute
+  - state space search
+  - Monte Carlo tree search
+  - reasoning model
+sources:
+  - text: >-
+      Yao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T. L., Cao, Y. & Narasimhan, K. (2023).
+      Tree of Thoughts: Deliberate Problem Solving with Large Language Models. NeurIPS 2023.
+    url: https://arxiv.org/abs/2305.10601

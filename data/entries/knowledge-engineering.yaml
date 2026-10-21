@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: knowledge engineering
+id: knowledge-engineering
+pos: n.
+also:
+  - knowledge engineer
+  - knowledge elicitation
+  - knowledge acquisition
+  - ontology engineering
+  - CommonKADS
+domain: sym
+domains:
+  - hist
+  - eng
+level: specialist
+plain: >-
+  The craft of collecting what human experts know — through interviews, observation and documents —
+  and turning it into rules or structured data that a computer system can use.
+senses:
+  - definition: >-
+      The discipline of building knowledge-based systems: eliciting knowledge from domain experts
+      and documents, structuring it, encoding it in a [[knowledge-representation|knowledge
+      representation]] formalism such as rules, [[frame|frames]] or [[ontology|ontologies]], and
+      validating and maintaining the resulting [[knowledge-base|knowledge base]]. A knowledge
+      engineer mediates between experts and the system, using techniques such as structured
+      interviews, think-aloud protocol analysis, card sorting and repertory grids; later
+      methodologies such as CommonKADS treated the work as building models of expertise rather than
+      transferring rules. The difficulty and cost of this process became known as the
+      [[knowledge-acquisition-bottleneck|knowledge acquisition bottleneck]]. The skills survive in
+      ontology engineering, enterprise [[knowledge-graph|knowledge graph]] construction, and the
+      writing of specifications, rubrics and evaluation criteria for
+      [[large-language-model|language-model]] systems.
+origin: >-
+  Donald Michie of Edinburgh used the phrase as the title of a 1973 paper in Kybernetes. Edward
+  Feigenbaum made it the name of a discipline in his 1977 IJCAI paper 'The Art of Artificial
+  Intelligence: Themes and Case Studies of Knowledge Engineering', drawing on Stanford's Heuristic
+  Programming Project ([[dendral|DENDRAL]], [[mycin|MYCIN]]), and his book with Pamela McCorduck,
+  The Fifth Generation (1983), carried the term to a general audience.
+year: 1973
+see_also:
+  - expert system
+  - knowledge base
+  - knowledge acquisition bottleneck
+  - knowledge representation
+  - ontology
+  - Edward Feigenbaum
+sources:
+  - text: Michie, D. (1973). Knowledge Engineering. Kybernetes 2(4), 197–200.
+    url: https://www.emerald.com/insight/content/doi/10.1108/eb005338/full/html
+  - text: >-
+      Feigenbaum, E. A. (1977). The Art of Artificial Intelligence: Themes and Case Studies of
+      Knowledge Engineering. Proceedings of IJCAI-77, 1014–1029.
+  - text: >-
+      Schreiber, G. et al. (2000). Knowledge Engineering and Management: The CommonKADS Methodology.
+      MIT Press.

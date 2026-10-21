@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: least-to-most prompting
+id: least-to-most-prompting
+pos: n.
+also:
+  - least-to-most
+  - decomposition prompting
+domain: llm
+domains:
+  - agents
+level: specialist
+plain: >-
+  A prompting method that has an AI list the smaller questions a hard problem depends on, answer the
+  easiest first, and feed each answer into the next, building up to the full solution.
+senses:
+  - definition: >-
+      A two-stage prompting technique: the [[language-model|language model]] is first prompted to
+      reduce a problem to a list of simpler subquestions, ordered from easiest to hardest, and then
+      prompted to answer them one at a time, each answer being added to the context before the next
+      subquestion is posed. Both stages are usually taught with [[few-shot-prompting|few-shot]]
+      examples. By building up from easy cases, it targets easy-to-hard generalization — solving
+      problems harder than any shown in the examples — where ordinary [[chain-of-thought|chain of
+      thought]] tends to fail. On the SCAN compositional-generalization benchmark, least-to-most
+      prompting with 14 examples reached at least 99% accuracy on every split, against 16% for
+      chain-of-thought prompting. It is an early form of the [[task-decomposition|task
+      decomposition]] now standard in agent systems.
+    example: >-
+      Least-to-most prompting let it solve the eight-step puzzle by first working out the three-step
+      version.
+origin: >-
+  Introduced by Denny Zhou and colleagues at Google in 'Least-to-Most Prompting Enables Complex
+  Reasoning in Large Language Models' (May 2022; ICLR 2023). The name is borrowed from a prompting
+  hierarchy used in educational psychology for teaching new skills.
+year: 2022
+see_also:
+  - chain of thought
+  - task decomposition
+  - prompt chaining
+  - few-shot prompting
+  - tree of thoughts
+sources:
+  - text: >-
+      Zhou, D., Schärli, N., Hou, L., Wei, J., Scales, N., Wang, X., Schuurmans, D., Cui, C.,
+      Bousquet, O., Le, Q. & Chi, E. (2023). Least-to-Most Prompting Enables Complex Reasoning in
+      Large Language Models. ICLR 2023.
+    url: https://arxiv.org/abs/2205.10625

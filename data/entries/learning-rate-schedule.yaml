@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: learning rate schedule
+id: learning-rate-schedule
+pos: n.
+also:
+  - LR schedule
+  - learning rate decay
+  - learning rate annealing
+  - step decay
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  A plan for changing how big a model's learning steps are during training — usually starting
+  cautiously, then taking big steps, then smaller and smaller ones as it settles in.
+senses:
+  - definition: >-
+      A rule that sets the [[learning-rate|learning rate]] as a function of the
+      [[training-step|training step]] or [[epoch|epoch]] instead of holding it fixed. Common forms
+      are step decay (divide by 10 at set epochs, standard for ImageNet-era convolutional networks),
+      exponential and polynomial decay, inverse-square-root decay (used by the original
+      [[transformer|transformer]]), [[cosine-annealing|cosine annealing]], and the
+      [[warmup-stable-decay-schedule|warmup-stable-decay schedule]], which holds the rate constant
+      and decays only near the end; almost all modern schedules begin with
+      [[learning-rate-warmup|learning rate warmup]]. Decay lets an optimizer progress quickly with
+      large steps early, then reduce the noise of [[stochastic-gradient-descent|stochastic gradient
+      descent]] so it can settle into a low-loss region, which is why the loss often drops sharply
+      when the rate is cut. Schedules that need the total training length in advance complicate
+      open-ended or continued training, motivating extendable schedules and
+      [[schedule-free-optimization|schedule-free optimization]]. 'Annealing' is used loosely for any
+      decay and also names a data-focused final phase of LLM pretraining (see
+      [[annealing|annealing]]).
+    example: >-
+      Switching from step decay to a cosine schedule gained half a point of top-1 accuracy.
+origin: >-
+  Decreasing step sizes are as old as stochastic approximation (Herbert Robbins and Sutton Monro,
+  1951), whose convergence proofs require them. Hand-tuned decay was routine in neural-network
+  training by the 1990s; cosine annealing (2016), warmup with inverse-square-root decay (2017) and
+  warmup-stable-decay (2024) are later landmarks.
+note: >-
+  Comparisons between optimizers are sensitive to the schedule each is given, so benchmarks such as
+  AlgoPerf tune or fix schedules explicitly.
+see_also:
+  - learning rate
+  - learning rate warmup
+  - cosine annealing
+  - warmup-stable-decay schedule
+  - schedule-free optimization
+  - annealing

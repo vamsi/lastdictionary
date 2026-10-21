@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reproducibility
+id: reproducibility
+pos: n.
+also:
+  - reproducible
+  - replicability
+  - reproducibility crisis
+  - reproducible research
+  - reproducibility checklist
+domain: eval
+domains:
+  - society
+  - eng
+level: core
+plain: >-
+  Whether other people, or the same people later, can get the same results by rerunning an AI
+  experiment. Many published AI results have proved hard to reproduce, which makes real progress
+  harder to judge.
+senses:
+  - definition: >-
+      The property that a reported result can be obtained again: narrowly, by rerunning the original
+      code on the original data; more broadly (often called replicability), by independent
+      researchers using new implementations or data. Fields and organizations define the two words
+      in opposite ways, and the ACM reversed its own definitions in 2020 to align with other bodies.
+      In machine learning, failures stem from unreleased code, data or [[checkpoint|checkpoints]];
+      unreported [[hyperparameter|hyperparameters]], preprocessing and tuning budgets; variance
+      across [[random-seed|random seeds]] that can exceed the claimed improvement; weak or untuned
+      [[baseline|baselines]]; [[data-leakage|data leakage]] and [[data-contamination|test-set
+      contamination]]; and [[nondeterminism|nondeterminism]] in parallel floating-point arithmetic.
+      Evaluations of [[large-language-model|language models]] add prompt sensitivity and proprietary
+      models that change or are retired without notice. Countermeasures include releasing code, data
+      and weights, reporting several seeds with confidence intervals, conference reproducibility
+      checklists, independent reproduction challenges, [[model-card|model cards]] and
+      [[datasheet-for-datasets|datasheets]], and deterministic or batch-invariant computation.
+    example: >-
+      We could not reproduce the reported gain: across five seeds the new method was within noise of
+      the tuned baseline.
+origin: >-
+  An ideal of experimental science since at least the 17th century; the geophysicist Jon Claerbout
+  championed 'reproducible research' for computational work around 1990. In machine learning,
+  concern peaked around 2018: Odd Erik Gundersen and Sigbjørn Kjensmo found that few AI papers
+  shared code, Peter Henderson and colleagues showed deep RL results swinging with random seeds, and
+  Joelle Pineau's reproducibility checklist was adopted for NeurIPS 2019.
+note: >-
+  Sayash Kapoor and Arvind Narayanan (2023) documented leakage-driven reproducibility failures in
+  machine-learning-based science across 17 fields. Reproducing a result does not show that it is
+  correct or general: a bug or a flawed benchmark reproduces perfectly.
+see_also:
+  - random seed
+  - nondeterminism
+  - baseline
+  - data leakage
+  - ablation
+  - model card
+  - Papers with Code
+  - benchmark
+sources:
+  - text: >-
+      Henderson, P., Islam, R., Bachman, P., Pineau, J., Precup, D. & Meger, D. (2018). Deep
+      Reinforcement Learning that Matters. Proc. AAAI 2018.
+  - text: >-
+      Pineau, J. et al. (2021). Improving Reproducibility in Machine Learning Research (A Report
+      from the NeurIPS 2019 Reproducibility Program). Journal of Machine Learning Research 22.
+  - text: >-
+      Kapoor, S. & Narayanan, A. (2023). Leakage and the Reproducibility Crisis in
+      Machine-Learning-Based Science. Patterns 4(9).

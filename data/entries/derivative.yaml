@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: derivative
+id: derivative
+pos: n.
+also:
+  - differentiation
+  - differentiate
+  - differentiable
+  - differential coefficient
+  - rate of change
+domain: math
+domains:
+  - dl
+level: core
+plain: >-
+  How fast something changes as one of its inputs changes — the steepness of a curve at a point.
+  Training an AI means repeatedly following such slopes downhill.
+senses:
+  - definition: >-
+      The limit, as a step h shrinks to zero, of the difference quotient [f(x + h) − f(x)]/h: the
+      rate at which a function's output responds to its input at one point, written f′(x) or df/dx.
+      It supplies the local linear model f(x + h) ≈ f(x) + f′(x)h, whose graph is the tangent line,
+      so the derivative is also the curve's slope there. Neural networks are built almost entirely
+      from differentiable operations so that the derivative of the [[loss-function|loss]] with
+      respect to every [[parameter|parameter]] can be computed by
+      [[automatic-differentiation|automatic differentiation]] and
+      [[backpropagation|backpropagation]] and then used by [[gradient-descent|gradient descent]].
+      Functions of many inputs have [[partial-derivative|partial derivatives]], collected in the
+      [[gradient|gradient]]; second derivatives measure curvature (see [[hessian|Hessian]]). Points
+      where the derivative is zero are stationary points: minima, maxima or [[saddle-point|saddle
+      points]].
+    example: ReLU has no derivative at exactly zero, so frameworks simply use zero there.
+formula_latex: f'(x) = \lim_{h\to 0} \frac{f(x+h) - f(x)}{h}
+origin: >-
+  Isaac Newton (with his 'fluxions', from the 1660s) and Gottfried Wilhelm Leibniz (who published
+  the differential calculus in 1684) invented calculus independently, sparking a bitter priority
+  dispute. Joseph-Louis Lagrange used the name fonction dérivée ('derived function') from 1772,
+  along with the prime notation now named after him; Augustin-Louis Cauchy grounded the derivative
+  in limits in the 1820s, and 'derivative', recorded in English from 1834 (William Rowan Hamilton),
+  gradually displaced 'differential coefficient'.
+year: 1772
+see_also:
+  - gradient
+  - partial derivative
+  - chain rule
+  - automatic differentiation
+  - backpropagation
+  - Hessian

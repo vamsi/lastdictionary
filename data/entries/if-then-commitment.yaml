@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: if-then commitment
+id: if-then-commitment
+pos: n.
+also:
+  - conditional safety commitment
+domain: gov
+domains:
+  - safety
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A promise by an AI developer of the form: if our model can do a particular dangerous thing, then
+  we will have these protections in place — or we will stop.
+senses:
+  - definition: >-
+      A pre-specified conditional pledge that links a trigger — usually a
+      [[capability-threshold|capability threshold]] detected by
+      [[dangerous-capability-evaluation|dangerous-capability evaluations]] — to required risk
+      mitigations; in the version popularized by Holden Karnofsky, the developer also undertakes to
+      delay development or deployment if the mitigations cannot be ready in time. The structure lets
+      companies and governments agree on safeguards for risks that have not yet materialized without
+      imposing costs prematurely, since nothing is required until the condition is met. If-then
+      commitments are the core logic of [[responsible-scaling-policy|responsible scaling policies]]
+      and of similar frameworks such as the [[preparedness-framework|Preparedness Framework]] and
+      the [[frontier-safety-framework|Frontier Safety Framework]], and of the
+      [[frontier-ai-safety-commitments|Frontier AI Safety Commitments]] made at the 2024 Seoul
+      summit. Their credibility depends on evaluations that are hard to game (including by
+      [[sandbagging|sandbagging]]), clearly specified safeguards, external verification and
+      willingness to honor a pause under competitive pressure.
+    example: >-
+      Their if-then commitment says no deployment past the cyber threshold without the hardened
+      weight security.
+origin: >-
+  Popularized by Holden Karnofsky's essay 'If-Then Commitments for AI Risk Reduction' (Carnegie
+  Endowment for International Peace, September 2024), which generalized the logic of Anthropic's
+  2023 responsible scaling policy and METR's (then ARC Evals') 2023 case for responsible scaling.
+year: 2024
+see_also:
+  - responsible scaling policy
+  - capability threshold
+  - Frontier AI Safety Commitments
+  - dangerous capability evaluation
+  - Preparedness Framework
+  - Frontier Safety Framework
+  - AI pause
+sources:
+  - text: >-
+      Karnofsky, H. (2024). If-Then Commitments for AI Risk Reduction. Carnegie Endowment for
+      International Peace.

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: conformity assessment
+id: conformity-assessment
+pos: n.
+also:
+  - conformity assessment procedure
+  - CE marking
+  - EU declaration of conformity
+domain: gov
+domains:
+  - eng
+labels:
+  - legal
+level: core
+plain: >-
+  The check, done by the maker or by an approved outside body, that a high-risk AI system meets the
+  EU's legal requirements before it can be sold or used.
+senses:
+  - definition: >-
+      Under the [[eu-ai-act|EU AI Act]], the procedure that establishes, before a
+      [[high-risk-ai-system|high-risk AI system]] is placed on the market or put into service,
+      whether it satisfies the Act's requirements for such systems: risk management, data
+      governance, technical documentation, record-keeping (logging), transparency,
+      [[human-oversight|human oversight]], and accuracy, robustness and cybersecurity. For most
+      Annex III uses the provider assesses itself through internal control (Annex VI). For biometric
+      systems, assessment of the quality management system and technical documentation by a
+      [[notified-body|notified body]] (Annex VII) is required unless the provider has fully applied
+      [[harmonised-standards|harmonised standards]] or common specifications. AI in products covered
+      by Annex I goes through the existing sectoral procedure, such as that for medical devices. A
+      successful assessment is followed by an EU declaration of conformity, CE marking and, for
+      Annex III systems, registration in the EU database; a [[substantial-modification|substantial
+      modification]] requires a new assessment.
+    example: >-
+      We completed conformity assessment by internal control, so no notified body was involved.
+origin: >-
+  Borrowed from the EU's New Legislative Framework for product safety (2008), which uses conformity
+  assessment modules and CE marking for goods from toys to machinery; the Commission's April 2021 AI
+  Act proposal applied this product-safety model to AI.
+year: 2021
+note: >-
+  Critics point out that self-assessment dominates: outside biometrics and regulated products, no
+  independent body checks Annex III systems before they reach the market. Not to be confused with an
+  [[ai-audit|AI audit]] or [[third-party-ai-evaluation|third-party AI evaluation]], which have no
+  fixed legal form.
+see_also:
+  - high-risk AI system
+  - notified body
+  - harmonised standards
+  - EU AI Act
+  - substantial modification
+  - post-market monitoring
+contrast:
+  - AI audit
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(20), Art. 43 and Annexes VI–VII; declaration Art. 47; CE
+  marking Art. 48; registration Art. 49

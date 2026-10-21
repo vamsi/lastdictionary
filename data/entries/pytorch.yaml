@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PyTorch
+id: pytorch
+pos: prop. n.
+also:
+  - torch
+  - PyTorch 2
+  - torch.compile
+  - TorchScript
+pronunciation: PIE-torch
+domain: eng
+domains:
+  - dl
+  - hw
+labels:
+  - trademark
+level: core
+plain: >-
+  The most widely used free software toolkit for building and training neural networks, especially
+  in research; programmers write ordinary Python and it handles the calculus and the graphics chips.
+senses:
+  - definition: >-
+      An open-source deep-learning framework for Python whose defining design choice is eager, or
+      define-by-run, execution: each tensor operation runs as soon as Python reaches it, on a CPU or
+      GPU, while the autograd system records the operations in a [[computational-graph|computational
+      graph]] rebuilt on every run and later traverses it backward for reverse-mode
+      [[automatic-differentiation|automatic differentiation]]. Models are therefore ordinary Python
+      programs that can use loops, conditionals and standard debuggers. Its torch.nn module supplies
+      layers and losses and torch.optim supplies optimizers, while companion libraries cover data
+      loading, distributed training (DistributedDataParallel and fully sharded data parallelism,
+      FSDP) and deployment, including [[executorch|ExecuTorch]] for devices. PyTorch 2.0 (2023)
+      added torch.compile, which captures Python code into graphs and generates fused kernels, often
+      in [[triton|Triton]], recovering much of the speed of static-graph frameworks. Since about
+      2019 it has dominated research papers, and most open-weight [[large-language-model|language
+      models]] and libraries such as Hugging Face [[transformers|Transformers]] and [[vllm|vLLM]]
+      are built on it.
+    example: >-
+      We wrote the training loop in PyTorch and switched on torch.compile only once the model was
+      correct.
+origin: >-
+  Released publicly in January 2017 by Facebook AI Research (now part of [[meta-ai|Meta AI]]),
+  created by Adam Paszke, Sam Gross, Soumith Chintala and Gregory Chanan as a Python successor to
+  Torch, a machine-learning library begun in 2002 whose later versions were scripted in Lua, and
+  influenced by the define-by-run design of Chainer (2015). Caffe2 was merged into it in 2018, and
+  governance passed to the independent PyTorch Foundation, part of the Linux Foundation, in 2022.
+year: 2017
+note: >-
+  'Torch' may mean the earlier Lua library or, informally, PyTorch itself, whose Python package is
+  named torch. PyTorch is usually compared with [[tensorflow|TensorFlow]], which led adoption until
+  about 2019, and with [[jax|JAX]].
+see_also:
+  - TensorFlow
+  - JAX
+  - automatic differentiation
+  - computational graph
+  - Transformers
+  - ExecuTorch
+  - Triton
+contrast:
+  - TensorFlow
+sources:
+  - text: >-
+      Paszke, A. et al. (2019). PyTorch: An Imperative Style, High-Performance Deep Learning
+      Library. Advances in Neural Information Processing Systems 32 (NeurIPS 2019).
+      arXiv:1912.01703.
+as_of: 2026-10

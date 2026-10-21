@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: training set
+id: training-set
+pos: n.
+also:
+  - training dataset
+  - train set
+  - training split
+  - training sample
+  - learning set
+domain: ml
+domains:
+  - data
+level: essential
+plain: >-
+  The examples a machine-learning model learns from, like the worked problems a student practices
+  on, kept separate from the examples later used to check how well it learned.
+senses:
+  - definition: >-
+      The share of the available examples that a learning algorithm is allowed to learn from:
+      whatever the model ends up encoding in its [[parameter|parameters]], whether a network's
+      [[weights|weights]] or a [[decision-tree|decision tree]]'s split points, is extracted from
+      these examples. Conventionally it is one of three disjoint parts of a labeled dataset,
+      alongside a [[validation-set|validation set]] for [[model-selection|model selection]] and
+      [[hyperparameter-tuning|hyperparameter tuning]] and a [[test-set|test set]] reserved for the
+      final, unbiased performance estimate; 60–80% commonly goes to training, though very large
+      datasets may reserve only a small fraction for evaluation. Performance measured on the
+      training set itself (training error) is optimistically biased, because a model with enough
+      capacity can memorize it, and a large gap between training and validation performance signals
+      [[overfitting|overfitting]]. The training set should resemble the data the model will meet in
+      use; differences between the two are called [[distribution-shift|distribution shift]]. For
+      [[large-language-model|large language models]] the corresponding notion is the pretraining
+      corpus or [[training-data|training data]], which is too vast to be split in the classical way.
+    example: >-
+      We held out 20% of the records for validation and testing and used the remaining 80% as the
+      training set.
+origin: >-
+  Fitting on one sample and checking on another is old statistical practice. 'Training set' and
+  'test set', alongside 'learning set' and 'design set', were in use in pattern-recognition research
+  by the early 1960s; W. H. Highleyman's 1962 Bell System Technical Journal paper analyzed how a
+  limited sample should be divided between training and testing.
+see_also:
+  - validation set
+  - test set
+  - cross-validation
+  - training data
+  - overfitting
+  - generalization
+  - data leakage
+sources:
+  - text: >-
+      Highleyman, W. H. (1962). The Design and Analysis of Pattern Recognition Experiments. Bell
+      System Technical Journal 41(2).

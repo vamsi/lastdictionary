@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: OpenReview
+id: openreview
+pos: prop. n.
+also:
+  - OpenReview.net
+domain: orgs
+level: specialist
+plain: >-
+  A website where conference papers are submitted and peer reviewed; for some conferences, anyone
+  can read the reviews and the authors' replies.
+senses:
+  - definition: >-
+      A web platform for submitting, reviewing and discussing scientific papers, used by most major
+      [[machine-learning|machine learning]] venues, including [[iclr|ICLR]], [[neurips|NeurIPS]],
+      [[icml|ICML]], the Conference on Language Modeling, ACL Rolling Review and the journal
+      Transactions on Machine Learning Research. Each venue configures its own workflow: whether
+      reviewing is single- or double-blind, who may read submissions, reviews and rebuttals, and
+      whether the public may comment. ICLR's fully public process made the platform synonymous with
+      open peer review, and its archives are widely used to study reviewing quality, bias and,
+      recently, AI-written reviews. In November 2025 a flaw in its programming interface briefly let
+      outsiders retrieve the hidden identities of reviewers and authors, prompting venues to change
+      procedures.
+    example: The rebuttal period opens on OpenReview next Monday.
+origin: >-
+  Created by Andrew McCallum's Information Extraction and Synthesis Laboratory at the University of
+  Massachusetts Amherst; its first major user was the inaugural [[iclr|ICLR]] in 2013. It has since
+  been run as a nonprofit project serving hundreds of venues.
+year: 2013
+see_also:
+  - ICLR
+  - NeurIPS
+  - ICML
+  - arXiv
+  - Association for Computational Linguistics
+as_of: 2026-10

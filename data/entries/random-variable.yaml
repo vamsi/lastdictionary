@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: random variable
+id: random-variable
+pos: n.
+also:
+  - random variate
+  - variate
+  - stochastic variable
+domain: math
+domains:
+  - ml
+level: core
+plain: >-
+  A quantity whose value depends on chance, such as the number rolled on a die or the next word a
+  chatbot will write.
+senses:
+  - definition: >-
+      A function that assigns a number (or vector) to each outcome of a random experiment, so that
+      probabilities of outcomes become probabilities of values; formally, a measurable function on a
+      probability space. Random variables are discrete (counts, class labels, [[token|token]]
+      indices) or continuous (heights, the weights of a network at initialization), and each has a
+      [[probability-distribution|probability distribution]] summarized by quantities such as its
+      [[expected-value|expected value]] and [[variance|variance]]. Machine learning treats data
+      points, labels, mini-batch gradients, sampled tokens and rewards — and, in
+      [[bayesian-inference|Bayesian inference]], model parameters — as random variables; by
+      convention they are written in capitals (X) and their observed values in lower case (x).
+      Independence, [[correlation|correlation]] and [[mutual-information|mutual information]]
+      describe how random variables relate to one another.
+    example: >-
+      Treat the reward as a random variable and report its mean and variance over 32 rollouts.
+origin: >-
+  The idea is implicit in early probability, but the name is 20th-century: 'random variable' is
+  recorded in Biometrika in 1914, Francesco Paolo Cantelli wrote variabile casuale in 1916, Andrey
+  Kolmogorov formalized the notion in 1933, and Harald Cramér's 1937 monograph Random Variables and
+  Probability Distributions spread the term.
+year: 1914
+see_also:
+  - probability distribution
+  - expected value
+  - variance
+  - i.i.d.
+  - stochastic
+  - probability

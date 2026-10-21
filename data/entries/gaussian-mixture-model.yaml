@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gaussian mixture model
+id: gaussian-mixture-model
+pos: n.
+also:
+  - GMM
+  - mixture of Gaussians
+  - mixture model
+  - finite mixture model
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A model that explains data as coming from several overlapping bell-shaped clouds, working out
+  where each cloud sits, how spread out it is, and how likely each point is to belong to it.
+senses:
+  - definition: >-
+      A probabilistic model in which each observation is drawn from one of K multivariate
+      [[normal-distribution|Gaussian]] components, chosen with probabilities given by mixing
+      weights; each component has its own mean vector and covariance matrix, and the overall density
+      is the weighted sum of the component densities. Parameters are usually fitted by
+      [[maximum-likelihood-estimation|maximum likelihood]] with the
+      [[expectation-maximization-algorithm|expectation–maximization algorithm]], which alternates
+      between computing each point's posterior responsibility for every component and re-estimating
+      the weights, means and covariances. A fitted model serves as a soft [[clustering|clustering]]
+      method (each point receives membership probabilities), as a [[density-estimation|density
+      estimator]] and as a building block of larger models such as [[hidden-markov-model|hidden
+      Markov models]] and classic speaker-recognition systems. Covariances may be full, diagonal,
+      tied or spherical, and the number of components is often chosen with the Bayesian information
+      criterion. Because the likelihood can diverge when a component collapses onto a single point,
+      covariances are usually regularized.
+    example: >-
+      A two-component GMM separated the sensor readings into normal and faulty regimes and gave each
+      reading a probability.
+formula_latex: p(\mathbf{x}) = \sum_{k=1}^{K} \pi_k \, \mathcal{N}(\mathbf{x} \mid
+  \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k), \qquad \sum_{k=1}^{K} \pi_k = 1
+origin: >-
+  Mixture modeling dates to Karl Pearson's 1894 analysis of shore-crab measurements gathered by
+  Walter Weldon, which fitted a mixture of two normal distributions by the method of moments.
+  Maximum-likelihood fitting became practical with computers, and the 1977 paper of Arthur Dempster,
+  Nan Laird and Donald Rubin made the expectation–maximization algorithm the standard way to fit
+  Gaussian mixtures.
+year: 1894
+note: >-
+  [[k-means-clustering|K-means]] is the limiting case of a Gaussian mixture with equal spherical
+  covariances shrinking toward zero, which turns soft responsibilities into hard assignments.
+see_also:
+  - expectation–maximization algorithm
+  - clustering
+  - k-means clustering
+  - density estimation
+  - normal distribution
+  - maximum likelihood estimation
+  - hidden Markov model
+sources:
+  - text: >-
+      Pearson, K. (1894). Contributions to the Mathematical Theory of Evolution. Philosophical
+      Transactions of the Royal Society of London A 185.
+  - text: >-
+      Dempster, A. P., Laird, N. M. & Rubin, D. B. (1977). Maximum Likelihood from Incomplete Data
+      via the EM Algorithm. Journal of the Royal Statistical Society, Series B 39(1).

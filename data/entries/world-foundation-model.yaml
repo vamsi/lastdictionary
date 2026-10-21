@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: world foundation model
+id: world-foundation-model
+pos: n.
+also:
+  - WFM
+domain: robot
+domains:
+  - gen
+  - rl
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A large AI model trained on vast amounts of video that can imagine how a scene will unfold, used
+  to create realistic practice worlds for robots and self-driving cars.
+senses:
+  - definition: >-
+      A large generative model of how the physical world unfolds, pretrained on huge video
+      collections and often on robot or driving sensor logs, that continues a scene — as future
+      frames or latent states — from a prompt of text, images, earlier frames or actions; it is
+      meant as a general starting point from which narrower [[world-model|world models]] for a given
+      robot, vehicle or setting are adapted by fine-tuning. Used as learned simulators, such models
+      generate varied, physically plausible [[synthetic-data|synthetic data]] (new weather, lighting
+      or rare traffic events), restyle simulator renderings toward photorealism, evaluate
+      [[policy|policies]] by imagining their consequences, and serve as backbones for planning or
+      for [[vision-language-action-model|vision-language-action models]]. Architectures include
+      [[diffusion-transformer|diffusion transformers]] and autoregressive models over video tokens.
+      Open questions concern physical fidelity — generated video can break object permanence or
+      conservation laws — controllability by actions, compute cost, and how to measure physical
+      understanding.
+    example: >-
+      We used a world foundation model to turn one recorded drive into a hundred rainy-night
+      variants.
+origin: >-
+  Introduced by NVIDIA with its Cosmos platform, announced at CES in Las Vegas in January 2025 and
+  described in 'Cosmos World Foundation Model Platform for Physical AI' (arXiv, 7 January 2025),
+  which defined it as 'a general-purpose world model that can be fine-tuned into customized world
+  models'; the models were released with open weights.
+year: 2025
+note: >-
+  Largely NVIDIA's term; others describe similar systems, such as Google DeepMind's interactive
+  Genie models, simply as world models. See [[world-model|world model]] for the broader concept in
+  reinforcement learning and cognitive science.
+see_also:
+  - world model
+  - physical AI
+  - physics simulator
+  - synthetic data
+  - text-to-video model
+  - robot foundation model
+  - digital twin
+sources:
+  - text: >-
+      NVIDIA et al. (2025). Cosmos World Foundation Model Platform for Physical AI. arXiv:2501.03575.
+    url: https://arxiv.org/abs/2501.03575
+  - text: >-
+      Robotics 24/7 (2025). CES 2025: NVIDIA launches Cosmos world foundation model, expands
+      Omniverse.
+    url: https://www.robotics247.com/article/ces_2025_nvidia_launches_cosmos_world_foundation_model_expands_omniverse
+as_of: 2026-10

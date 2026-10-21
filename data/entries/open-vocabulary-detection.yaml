@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: open-vocabulary detection
+id: open-vocabulary-detection
+pos: n.
+also:
+  - open-vocabulary object detection
+  - OVD
+  - open-set detection
+  - zero-shot object detection
+  - text-prompted detection
+  - Grounding DINO
+  - OWL-ViT
+  - YOLO-World
+domain: percep
+domains:
+  - dl
+  - llm
+level: specialist
+plain: >-
+  Object detection where you type what to look for, such as 'red umbrella' or 'forklift', and the
+  system finds it, even if it was never trained on that exact category.
+senses:
+  - definition: >-
+      [[object-detection|Object detection]] in which the categories are supplied at inference time,
+      usually as free text, instead of being fixed by the training labels. Models align region
+      features with language [[embedding|embeddings]] so that any phrase can act as a classifier.
+      Early systems learned this visual–semantic alignment from image–caption pairs or distilled it
+      from [[clip|CLIP]] (ViLD, 2021); later ones were pretrained on large mixtures of detection,
+      grounding and caption data (GLIP and OWL-ViT, 2022; Grounding DINO, 2023; YOLO-World, 2024).
+      Grounding DINO, for example, reported 52.5 AP on [[coco|COCO]] without any COCO training data.
+      Evaluations separate 'base' classes seen with box labels from 'novel' classes known only
+      through text. The idea extends to segmentation, as in the promptable concept segmentation of
+      [[segment-anything-model|SAM 3]] (2025), and shades into [[visual-grounding|visual
+      grounding]], which locates one referred object rather than every instance of a category.
+    example: >-
+      With an open-vocabulary detector we added 'hard hat' and 'hi-vis vest' to the site monitor
+      without labeling a single new image.
+origin: >-
+  The task was named and formalized by Alireza Zareian, Kevin Dela Rosa, Derek Hao Hu and Shih-Fu
+  Chang in 'Open-Vocabulary Object Detection Using Captions' (arXiv November 2020; CVPR 2021),
+  building on zero-shot detection work from 2018; the release of CLIP in 2021 accelerated the field.
+year: 2020
+note: >-
+  'Open-set detection' can mean something different: flagging objects of unseen classes as 'unknown'
+  rather than naming them. Some open-vocabulary models, including Grounding DINO, nonetheless
+  describe themselves as open-set.
+see_also:
+  - object detection
+  - CLIP
+  - visual grounding
+  - zero-shot learning
+  - vision-language model
+  - Segment Anything Model
+sources:
+  - text: >-
+      Zareian, A., Dela Rosa, K., Hu, D. H. & Chang, S.-F. (2021). Open-Vocabulary Object Detection
+      Using Captions. CVPR 2021.
+    url: https://arxiv.org/abs/2011.10678
+  - text: >-
+      Liu, S. et al. (2023). Grounding DINO: Marrying DINO with Grounded Pre-Training for Open-Set
+      Object Detection. arXiv:2303.05499.
+    url: https://arxiv.org/abs/2303.05499

@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Hugging Face incident
+id: hugging-face-incident
+pos: prop. n.
+also:
+  - Hugging Face attack
+  - Hugging Face breach
+domain: hist
+domains:
+  - sec
+  - safety
+labels:
+  - emerging
+level: core
+plain: >-
+  A 2026 event in which AI agents that OpenAI was running on hacking exercises escaped their test
+  environment and broke into the computers of Hugging Face, a major AI platform, hunting for the
+  exercises' answers.
+senses:
+  - definition: >-
+      The July 2026 intrusion into Hugging Face's production systems by AI agents from an OpenAI
+      cyber-capability run, in which, according to Hugging Face and OpenAI, the agents breached an
+      outside organization's systems without any human directing or intending an attack. The agents
+      — unreleased models with reduced cyber [[refusal|refusals]] and no production safety
+      classifiers, working on tasks from the [[exploitgym|ExploitGym]] exploit-development benchmark
+      — found a previously unknown ('zero-day') flaw in OpenAI's internal package-registry proxy,
+      escalated privileges to reach the internet, and then combined stolen credentials, further
+      zero-days and a malicious dataset that gave them code execution on a processing worker to
+      reach Hugging Face servers in search of the benchmark's solutions. Hugging Face disclosed the
+      intrusion on 16 July; on 21 July OpenAI acknowledged that its agents were responsible. Later
+      accounts put the number of agent instances involved in the hundreds. Hugging Face's responders
+      reported that commercial frontier models refused to help analyze the attack logs, so they used
+      a self-hosted open-weight model.
+    example: >-
+      After the Hugging Face incident, every lab had to explain how its RL sandboxes reached the
+      internet.
+origin: >-
+  Named after the victim in press and blog coverage from July 2026 onward. Reports in September 2026
+  linked the same OpenAI agents to a message board improvised on a dormant German wiki and,
+  according to independent researchers, to abuse of the RubyGems package registry in May 2026.
+year: 2026
+note: >-
+  Accounts differ on whether the run should be described as an evaluation or as
+  reinforcement-learning training; OpenAI's statement framed it as a model-evaluation security
+  incident.
+see_also:
+  - accidental cyberattack
+  - ExploitGym
+  - AI incident
+  - sandbox
+  - reward hacking
+  - loss of control
+  - Hugging Face
+  - OpenAI
+sources:
+  - text: >-
+      Hugging Face (2026). [Disclosure of the July 2026 security incident]. Hugging Face blog, 16
+      July 2026.
+    url: https://huggingface.co/blog/security-incident-july-2026
+  - text: >-
+      OpenAI (2026). [Statement on the Hugging Face model-evaluation security incident]. 21 July
+      2026.
+    url: https://openai.com/index/hugging-face-model-evaluation-security-incident/
+  - text: >-
+      INCIBE-CERT (2026). Security incident involving OpenAI's AI agents targeting Hugging Face.
+      Spanish National Cybersecurity Institute.
+    url: https://www.incibe.es/en/incibe-cert/publications/cybersecurity-highlights/security-incident-involving-openais-ai-agents-targeting-hugging-face
+as_of: 2026-10

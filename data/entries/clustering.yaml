@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: clustering
+id: clustering
+pos: n.
+also:
+  - cluster analysis
+  - cluster
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  Automatically sorting things into groups of similar items when nobody has said in advance what the
+  groups should be, like sorting a drawer of odd socks into piles by color and size.
+senses:
+  - definition: >-
+      An [[unsupervised-learning|unsupervised learning]] task in which an algorithm proposes a
+      grouping of unlabeled items, aiming for clusters whose members lie close together under some
+      chosen distance or similarity measure while different clusters stay well apart. With no labels
+      to define a right answer, the outcome hinges on how the items are represented, which measure
+      is used and what shape of group a given algorithm is built to find. The main families are
+      centroid-based ([[k-means-clustering|k-means]]), connectivity-based
+      ([[hierarchical-clustering|hierarchical clustering]]), density-based ([[dbscan|DBSCAN]]),
+      distribution-based ([[gaussian-mixture-model|Gaussian mixture models]]) and graph-based
+      (spectral clustering). Methods differ in whether the number of clusters must be fixed in
+      advance, whether each point gets one cluster (hard) or membership probabilities (soft), and
+      whether some points may be left out as noise. Quality is judged with internal indices such as
+      the [[silhouette-score|silhouette score]], by agreement with known labels, or by usefulness
+      for a downstream task.
+    example: >-
+      Clustering the support tickets' embeddings surfaced a group of billing complaints that nobody
+      had tagged.
+origin: >-
+  Grouping by similarity is as old as biological taxonomy. Quantitative methods appeared in the
+  1930s: the anthropologists Harold Driver and Alfred Kroeber measured similarities between cultures
+  in 1932, and the psychologists Joseph Zubin (1938) and Robert Tryon took the approach up; Tryon's
+  1939 monograph Cluster Analysis is an early use of the name. Numerical taxonomy in the 1950s–60s
+  and computer algorithms such as k-means spread it through statistics, pattern recognition and data
+  mining.
+year: 1932
+note: >-
+  Not to be confused with [[classification|classification]], which learns predefined labels from
+  labeled examples; clustering discovers the groups itself. Clusters are hypotheses rather than
+  facts: most algorithms will return clusters even in data with no real group structure.
+see_also:
+  - unsupervised learning
+  - k-means clustering
+  - hierarchical clustering
+  - DBSCAN
+  - Gaussian mixture model
+  - silhouette score
+  - dimensionality reduction
+  - embedding
+contrast:
+  - classification
+sources:
+  - text: "Tryon, R. C. (1939). Cluster Analysis. Ann Arbor: Edwards Brothers."
+  - text: >-
+      Jain, A. K. (2010). Data Clustering: 50 Years Beyond K-means. Pattern Recognition Letters
+      31(8).

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: system card
+id: system-card
+pos: n.
+domain: safety
+domains:
+  - gov
+  - eval
+level: core
+plain: >-
+  A public report released with an AI model that explains what it can do, how it was tested for
+  safety, what risks were found and what protections were put in place.
+senses:
+  - definition: >-
+      A document published by a developer alongside a model or AI system describing its intended
+      uses, capabilities and limitations and — the core of frontier-laboratory system cards — the
+      safety testing performed before release: [[dangerous-capability-evaluation|dangerous
+      capability evaluations]], [[red-teaming|red teaming]] findings, [[alignment-audit|alignment
+      assessments]], [[refusal|refusal]] and [[jailbreak|jailbreak]]-robustness metrics, third-party
+      evaluations, and the safeguards adopted in response, often with reference to the developer's
+      [[responsible-scaling-policy|safety framework]]. Whereas a [[model-card|model card]] documents
+      a single trained model, a system card is meant to cover the whole deployed system, including
+      classifiers, tools and usage policies. System cards are voluntary in most jurisdictions, range
+      from a few pages to well over a hundred, and are criticized when published late, after
+      release, or without independent verification.
+    example: >-
+      The system card devotes forty pages to the alignment assessment and only two to benchmarks.
+origin: >-
+  Introduced by Meta AI on 23 February 2022 with a prototype card for Instagram's feed-ranking
+  system, building on model cards (Margaret Mitchell and colleagues, 2019). OpenAI's April 2022
+  'Risks and Limitations' document for DALL·E 2 drew on the idea and was filed as a system card;
+  after its GPT-4 System Card (March 2023), the name became the usual one for frontier-model safety
+  disclosures.
+year: 2022
+note: >-
+  Usage overlaps: some developers call comparable documents model cards, safety reports or technical
+  reports. Laws such as the [[eu-ai-act|EU AI Act]] and California's [[sb-53|SB 53]] require related
+  transparency documentation, though not under this name.
+see_also:
+  - model card
+  - pre-deployment testing
+  - dangerous capability evaluation
+  - red teaming
+  - AI transparency
+  - datasheet for datasets
+contrast:
+  - model card
+sources:
+  - text: >-
+      Meta AI (2022). System Cards, a new resource for understanding how AI systems work. Meta AI
+      blog.
+    url: https://ai.meta.com/blog/system-cards-a-new-resource-for-understanding-how-ai-systems-work/
+  - text: OpenAI (2023). GPT-4 System Card. OpenAI.
+as_of: 2026-10

@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Kullback–Leibler divergence
+id: kullback-leibler-divergence
+pos: n.
+also:
+  - KL divergence
+  - KL
+  - relative entropy
+  - forward KL
+  - reverse KL
+  - discrimination information
+domain: math
+domains:
+  - train
+  - gen
+  - ml
+level: core
+plain: >-
+  A score for the cost of believing the wrong odds: on average, how much more surprised you will be
+  by real outcomes than someone who knew the true probabilities. It is zero only when your odds are
+  exactly right.
+senses:
+  - definition: >-
+      A nonnegative, asymmetric score of how far a distribution q is from a target distribution p,
+      zero only when they coincide: KL(p ‖ q) is the [[expected-value|expectation]] under p of
+      log(p(x)/q(x)). Because the two directions generally differ and the triangle inequality can
+      fail, it is called a divergence rather than a distance; in coding terms it is the overhead, in
+      bits or nats per symbol, of compressing data from p with a code built for q, so it equals
+      [[cross-entropy|cross-entropy]] minus [[entropy|entropy]]. Direction matters: 'forward' KL(p ‖
+      q), minimized by [[maximum-likelihood-estimation|maximum likelihood estimation]], makes q
+      cover all of p's mass, while 'reverse' KL(q ‖ p), minimized in
+      [[variational-inference|variational inference]], lets q lock onto a single mode. KL divergence
+      runs through AI: the [[evidence-lower-bound|evidence lower bound]] of
+      [[variational-autoencoder|VAEs]], the [[kl-penalty|KL penalty]] that keeps a policy tuned by
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]] near
+      its [[reference-model|reference model]], the implicit constraint of
+      [[direct-preference-optimization|direct preference optimization]],
+      [[knowledge-distillation|knowledge distillation]] losses, trust regions in
+      [[trust-region-policy-optimization|trust region policy optimization]], and measures of
+      [[distribution-shift|distribution shift]].
+    example: >-
+      We stopped the RL run once the KL divergence from the reference model passed 10 nats.
+formula_latex: \mathrm{KL}(p\,\Vert\,q) = \sum_{x} p(x)\,\log\frac{p(x)}{q(x)} \;\ge\; 0
+origin: >-
+  Introduced by Solomon Kullback and Richard Leibler in 'On Information and Sufficiency' (Annals of
+  Mathematical Statistics, 1951) as the information for discriminating between two hypotheses, and
+  developed in Kullback's Information Theory and Statistics (1959). Harold Jeffreys had used a
+  symmetrized form in 1946; information theory's 'relative entropy' is the same quantity.
+year: 1951
+see_also:
+  - cross-entropy
+  - entropy
+  - Jensen–Shannon divergence
+  - KL penalty
+  - variational inference
+  - evidence lower bound
+  - mutual information
+contrast:
+  - Wasserstein distance
+sources:
+  - text: >-
+      Kullback, S. & Leibler, R. A. (1951). On Information and Sufficiency. Annals of Mathematical
+      Statistics, 22(1).

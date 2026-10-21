@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: joint-embedding predictive architecture
+id: joint-embedding-predictive-architecture
+pos: n.
+also:
+  - JEPA
+  - I-JEPA
+  - V-JEPA
+  - V-JEPA 2
+domain: percep
+domains:
+  - dl
+  - robot
+level: specialist
+plain: >-
+  A way of training AI on images or video in which the model predicts an abstract summary of a
+  hidden part, rather than every pixel, so it learns what matters and ignores unpredictable detail.
+senses:
+  - definition: >-
+      A [[self-supervised-learning|self-supervised]] architecture in which a context encoder embeds
+      the visible part of an input, a target encoder embeds a hidden part (a masked image region or
+      future video frames), and a predictor network is trained to produce the target's
+      [[embedding|embedding]] from the context's, with the loss measured in representation space
+      rather than in pixels. Predicting abstract representations lets the model ignore inherently
+      unpredictable details, such as the exact texture of foliage, which generative reconstruction
+      objectives must model. Collapse to trivial constant embeddings is avoided by updating the
+      target encoder as an exponential moving average of the context encoder, or by regularizing the
+      statistics of the embeddings. Yann LeCun proposed JEPAs as the building blocks of predictive
+      [[world-model|world models]] for autonomous machine intelligence. Instances include I-JEPA
+      (images, 2023), V-JEPA (video, 2024) and V-JEPA 2 (2025), which Meta reported could be adapted
+      with a small amount of robot data to plan simple manipulation tasks.
+    example: >-
+      Unlike the masked autoencoder, the JEPA never reconstructs pixels; it predicts the embedding
+      of the masked block.
+origin: >-
+  Proposed by Yann LeCun in the position paper 'A Path Towards Autonomous Machine Intelligence'
+  (OpenReview, June 2022). The first large-scale implementation was I-JEPA, by Mahmoud Assran and
+  colleagues at Meta (arXiv January 2023; CVPR 2023).
+year: 2022
+note: >-
+  LeCun presents JEPAs as an alternative to generative, autoregressive models on the route to more
+  capable AI; that broader claim is debated, but the architecture itself is an established
+  self-supervised method.
+see_also:
+  - self-supervised learning
+  - world model
+  - masked autoencoder
+  - DINO
+  - embedding
+  - representation learning
+contrast:
+  - masked autoencoder
+  - generative model
+sources:
+  - text: >-
+      LeCun, Y. (2022). A Path Towards Autonomous Machine Intelligence. OpenReview preprint, version
+      0.9.2.
+  - text: >-
+      Assran, M. et al. (2023). Self-Supervised Learning from Images with a Joint-Embedding
+      Predictive Architecture. CVPR 2023.
+as_of: 2026-10

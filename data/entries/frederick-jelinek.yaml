@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Frederick Jelinek
+id: frederick-jelinek
+sort_as: Jelinek Frederick
+pos: prop. n.
+also:
+  - Fred Jelinek
+pronunciation: YEL-in-ek
+domain: people
+domains:
+  - llm
+  - percep
+  - hist
+level: specialist
+dates: 1932–2010
+plain: >-
+  A Czech-born American engineer who led IBM's speech-recognition research and made statistics
+  learned from data, rather than hand-written grammar rules, the basis of language technology.
+senses:
+  - definition: >-
+      Czech-born American engineer who led the shift of speech recognition and language technology
+      to statistical methods. After an MIT doctorate and a decade at Cornell University, he headed
+      IBM's continuous speech recognition group (1972–1993), which treated recognition as decoding a
+      noisy channel, combining [[hidden-markov-model|hidden Markov models]] of acoustics with
+      [[n-gram-model|n-gram]] [[language-model|language models]] estimated from large text corpora
+      and evaluated by [[perplexity|perplexity]], a measure his group introduced (1977). Its methods
+      became standard, and the same group produced the IBM models of statistical
+      [[machine-translation|machine translation]] (early 1990s). From 1993 he directed the Center
+      for Language and Speech Processing at Johns Hopkins University. A remark attributed to him in
+      several versions — that every time he fired a linguist, his recognizer's performance went up —
+      became a byword for data-driven over rule-based approaches. He received the Lifetime
+      Achievement Award of the [[association-for-computational-linguistics|Association for
+      Computational Linguistics]] (2009).
+see_also:
+  - language model
+  - n-gram model
+  - hidden Markov model
+  - perplexity
+  - speech recognition
+  - machine translation
+sources:
+  - text: Jelinek, F. (1997). Statistical Methods for Speech Recognition. MIT Press.
+  - text: >-
+      Jelinek, F., Mercer, R. L., Bahl, L. R. & Baker, J. K. (1977). Perplexity — a measure of the
+      difficulty of speech recognition tasks. Journal of the Acoustical Society of America 62(S1):
+      S63.

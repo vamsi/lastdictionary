@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rule-based system
+id: rule-based-system
+pos: n.
+also:
+  - rule-based AI
+  - rules engine
+  - rule engine
+  - business rules engine
+domain: sym
+domains:
+  - eng
+  - hist
+level: core
+plain: >-
+  A computer system that makes decisions by following a list of 'if… then…' rules written by people,
+  rather than by learning from examples.
+senses:
+  - definition: >-
+      A system whose behavior is determined by an explicit set of human-authored rules, typically of
+      the form 'if conditions, then conclusion or action', applied to facts by an
+      [[inference-engine|inference engine]] using [[forward-chaining|forward]] or
+      [[backward-chaining|backward chaining]]. The rules form a [[knowledge-base|knowledge base]]
+      that domain experts can read and audit, which is why rule-based systems remain common where
+      decisions must be explained or certified: credit and insurance underwriting, fraud screening,
+      clinical alerts, benefit eligibility, network configuration. Handling uncertainty required
+      additions such as the certainty factors of [[mycin|MYCIN]] or [[fuzzy-logic|fuzzy logic]].
+      Weaknesses are brittleness when inputs fall outside the rules, unexpected interactions among
+      thousands of rules, and the effort of eliciting and maintaining them. Many deployed AI
+      products wrap learned models in rule layers for policy enforcement and
+      [[guardrails|guardrails]].
+    example: >-
+      Compliance insisted the final approval step stay rule-based so every decision can be traced to
+      a written policy.
+origin: >-
+  Rule-based programs grew out of [[production-system|production systems]]. MYCIN (Stanford,
+  1972–1976) made production rules the standard vehicle for encoding expert knowledge, and
+  [[xcon|XCON]], written in OPS5 and used at Digital Equipment Corporation from 1980 to configure
+  computer orders, demonstrated their commercial value.
+note: >-
+  Rule-based is often contrasted with learning-based, but the two blend: [[decision-tree|decision
+  trees]] and [[association-rule-learning|association rule learning]] learn rules from data, and
+  [[inductive-logic-programming|inductive logic programming]] learns logical rules.
+see_also:
+  - expert system
+  - production system
+  - inference engine
+  - knowledge base
+  - forward chaining
+  - backward chaining
+  - fuzzy logic
+contrast:
+  - machine learning
+sources:
+  - text: >-
+      Buchanan, B. G. & Shortliffe, E. H. (eds.) (1984). Rule-Based Expert Systems: The MYCIN
+      Experiments of the Stanford Heuristic Programming Project. Addison-Wesley.

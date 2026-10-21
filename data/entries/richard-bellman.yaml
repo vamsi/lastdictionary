@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Richard Bellman
+id: richard-bellman
+sort_as: Bellman Richard
+pos: prop. n.
+also:
+  - Richard E. Bellman
+  - Richard Ernest Bellman
+domain: people
+domains:
+  - rl
+  - math
+  - hist
+level: core
+dates: 1920–1984
+plain: >-
+  An American mathematician who invented dynamic programming, a way of solving long chains of
+  decisions step by step, which became the mathematical core of reinforcement learning.
+senses:
+  - definition: >-
+      American applied mathematician whose invention of [[dynamic-programming|dynamic programming]],
+      at the RAND Corporation in the early 1950s, gave optimal control and
+      [[reinforcement-learning|reinforcement learning]] their mathematical core. His principle of
+      optimality — whatever the first decisions, the remaining decisions of an optimal policy must
+      be optimal from the state they reach — yields the recursive [[bellman-equation|Bellman
+      equation]] for the value of each state, from which [[value-iteration|value iteration]], policy
+      iteration and, later, [[temporal-difference-learning|temporal difference learning]] and
+      [[q-learning|Q-learning]] descend. He formulated sequential decision-making under uncertainty
+      as what are now called [[markov-decision-process|Markov decision processes]] (1957), coined
+      the phrase [[curse-of-dimensionality|curse of dimensionality]] for the explosive growth of
+      computation with the number of state variables, and co-discovered the Bellman–Ford
+      shortest-path algorithm (1958). He moved to the University of Southern California in 1965,
+      wrote more than 600 papers and some 40 books, and received the IEEE Medal of Honor (1979).
+see_also:
+  - dynamic programming
+  - Bellman equation
+  - Markov decision process
+  - value iteration
+  - curse of dimensionality
+  - reinforcement learning
+sources:
+  - text: Bellman, R. (1957). Dynamic Programming. Princeton University Press.
+  - text: >-
+      Bellman, R. (1957). A Markovian Decision Process. Journal of Mathematics and Mechanics 6(5):
+      679–684.

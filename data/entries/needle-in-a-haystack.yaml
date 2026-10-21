@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: needle in a haystack
+id: needle-in-a-haystack
+pos: n.
+also:
+  - NIAH
+  - needle-in-a-haystack test
+  - needle test
+  - multi-needle retrieval
+domain: eval
+domains:
+  - llm
+  - agents
+level: core
+plain: >-
+  A test for AI models that read very long documents: one unrelated sentence is hidden somewhere in
+  a mass of text, and the model is asked about it.
+senses:
+  - definition: >-
+      A [[long-context|long context]] retrieval test, named for the idiom: one out-of-place
+      statement, the needle, is buried in a long stretch of unrelated filler text, the haystack, and
+      the model is then asked a question only that statement can answer. Repeating the test while
+      varying both how long the input is and how deep in it the statement sits yields a heatmap of
+      where in its [[context-window|context window]] a model reliably recalls information. The test
+      exposed recall failures at long lengths and in the middle of documents (compare
+      [[lost-in-the-middle|lost in the middle]]) and became a standard chart in model launch
+      reports. Because leading models soon scored almost perfectly, and because a needle that
+      clashes with its surroundings can be found by surface matching, harder variants followed:
+      multiple needles, needles that must be combined or reasoned over, distractors resembling the
+      needle, and needles sharing no words with the question, as in RULER (2024) and NoLiMa (2025).
+    example: >-
+      It passes needle in a haystack at a million tokens but fails when asked to combine three facts
+      spread through the document.
+origin: >-
+  Devised by Greg Kamradt in November 2023, who hid a sentence about the best thing to do in San
+  Francisco among Paul Graham's essays to test the newly released long contexts of GPT-4 Turbo
+  (128,000 tokens) and Claude 2.1 (200,000 tokens), publishing his code on GitHub. The name is the
+  old idiom for a hopeless search.
+year: 2023
+note: >-
+  Passing shows retrieval of a salient fact, not understanding of a long document; strong scores
+  often coexist with [[context-rot|context rot]] on realistic tasks. In 2024 a model under test
+  remarked that the planted sentence seemed out of place — an early public example of
+  [[evaluation-awareness|evaluation awareness]].
+see_also:
+  - long context
+  - context window
+  - lost in the middle
+  - context rot
+  - retrieval-augmented generation
+  - evaluation awareness
+sources:
+  - text: Kamradt, G. (2023). LLMTest_NeedleInAHaystack (GitHub repository).
+    url: https://github.com/gkamradt/LLMTest_NeedleInAHaystack
+  - text: >-
+      Hsieh, C.-P. et al. (2024). RULER: What's the Real Context Size of Your Long-Context Language
+      Models? COLM 2024.

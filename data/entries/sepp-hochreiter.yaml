@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Sepp Hochreiter
+id: sepp-hochreiter
+sort_as: Hochreiter Sepp
+pos: prop. n.
+also:
+  - Josef Hochreiter
+domain: people
+domains:
+  - dl
+  - hist
+level: specialist
+dates: b. 1967
+plain: >-
+  A German computer scientist who explained why early neural networks struggled to learn long
+  sequences and, with Jürgen Schmidhuber, invented the LSTM network that solved the problem.
+senses:
+  - definition: >-
+      German computer scientist, head of the Institute for Machine Learning at Johannes Kepler
+      University Linz, Austria. His 1991 diploma thesis at the Technical University of Munich,
+      supervised by [[jurgen-schmidhuber|Jürgen Schmidhuber]], gave the first formal analysis of the
+      [[vanishing-gradient-problem|vanishing gradient problem]], explaining why
+      [[recurrent-neural-network|recurrent networks]] trained by
+      [[backpropagation-through-time|backpropagation through time]] fail to learn long-range
+      dependencies. With Schmidhuber he then introduced [[long-short-term-memory|long short-term
+      memory]] (LSTM, 1997), whose gated memory cell preserves error signals over long intervals; it
+      became the standard sequence model for nearly two decades. Later work includes flat minima,
+      self-normalizing networks (2017), the [[frechet-inception-distance|Fréchet inception
+      distance]] for evaluating generative models (2017), modern [[hopfield-network|Hopfield
+      networks]] (2020) and xLSTM (2024), an extended LSTM meant to compete with
+      [[transformer|transformers]], developed with the Linz startup NXAI. He has also applied deep
+      learning to drug discovery and bioinformatics.
+see_also:
+  - long short-term memory
+  - vanishing gradient problem
+  - Jürgen Schmidhuber
+  - recurrent neural network
+  - Hopfield network
+  - Fréchet inception distance
+sources:
+  - text: >-
+      Hochreiter, S. (1991). Untersuchungen zu dynamischen neuronalen Netzen. Diploma thesis,
+      Technische Universität München.
+  - text: >-
+      Hochreiter, S. & Schmidhuber, J. (1997). Long Short-Term Memory. Neural Computation 9(8):
+      1735–1780.
+  - text: "Beck, M. et al. (2024). xLSTM: Extended Long Short-Term Memory. NeurIPS 2024."

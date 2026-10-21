@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: program-aided language model
+id: program-aided-language-model
+pos: n.
+also:
+  - PAL
+  - program of thoughts
+  - PoT
+  - program-aided reasoning
+domain: llm
+domains:
+  - agents
+level: specialist
+plain: >-
+  A technique in which an AI solves a math or logic problem by writing a small computer program and
+  letting a computer run it, instead of doing the arithmetic in its head.
+senses:
+  - definition: >-
+      A prompting approach in which a [[language-model|language model]] translates a reasoning
+      problem into an executable program — typically Python that sets up variables and computes the
+      answer — and an interpreter runs the program to produce the final result. The split plays to
+      each side's strengths: the model reads the problem and works out the steps, the computer does
+      the exact arithmetic, and the slips that creep into purely textual [[chain-of-thought|chain of
+      thought]] are avoided. The idea extends to symbolic solvers and calculators, and it underlies
+      the code-interpreter and [[code-execution|code execution]] tools that models now call
+      routinely while reasoning; [[reasoning-model|reasoning models]] trained with tools learn for
+      themselves when to write such code.
+    example: >-
+      Switching to program-aided prompting fixed the rounding errors, because the interpreter now
+      does the sums.
+origin: >-
+  Introduced as PAL by Luyu Gao, Aman Madaan and colleagues at Carnegie Mellon University (November
+  2022), whose [[codex|Codex]]-based system beat PaLM-540B with chain-of-thought prompting on GSM8K
+  by 15 percentage points. Wenhu Chen and colleagues' concurrent 'Program of Thoughts' prompting
+  (2022) made the same move.
+year: 2022
+see_also:
+  - chain of thought
+  - code execution
+  - code generation
+  - tool use
+  - augmented language model
+  - neuro-symbolic AI
+sources:
+  - text: >-
+      Gao, L., Madaan, A., Zhou, S., Alon, U., Liu, P., Yang, Y., Callan, J. & Neubig, G. (2023).
+      PAL: Program-aided Language Models. ICML 2023.
+    url: https://arxiv.org/abs/2211.10435
+  - text: >-
+      Chen, W., Ma, X., Wang, X. & Cohen, W. W. (2023). Program of Thoughts Prompting: Disentangling
+      Computation from Reasoning for Numerical Reasoning Tasks. Transactions on Machine Learning
+      Research.

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI data center
+id: ai-data-center
+pos: n.
+also:
+  - AI datacenter
+  - AI data centre
+  - AI campus
+  - GPU data center
+domain: hw
+domains:
+  - society
+  - gov
+level: essential
+plain: >-
+  A building or campus packed with AI chips, power equipment and cooling, built to train and run AI
+  models. The biggest use as much electricity as a city.
+senses:
+  - definition: >-
+      A data center designed primarily for AI training or inference, distinguished from conventional
+      cloud facilities by much higher power density, accelerator-dense [[rack-scale-system|racks]]
+      and specialized networking. Where traditional racks draw roughly 5–15 kW, AI racks draw 40 kW
+      to well over 100 kW, which forces [[liquid-cooling|liquid cooling]], heavier floors and new
+      power distribution. The largest campuses under construction in 2025–2026 target 1 to 5
+      gigawatts — for example Meta's Hyperion in Louisiana, Amazon's Project Rainier for Anthropic,
+      OpenAI's [[stargate|Stargate]] sites and xAI's Colossus in Memphis. Grid connections,
+      transformers and turbines, more than chips, have become the main constraint on new capacity,
+      prompting on-site gas generation and nuclear power deals. The International Energy Agency
+      estimated that all data centers used about 415 TWh in 2024 (about 1.5% of world electricity)
+      and projected roughly 945 TWh by 2030, with AI the main driver of growth. Facility efficiency
+      is tracked with [[power-usage-effectiveness|power usage effectiveness]].
+    example: >-
+      The binding constraint on the new AI data center isn't GPUs; it's a 300-megawatt grid
+      connection.
+origin: >-
+  Data centers grew from the mainframe computer rooms of the 1960s and the server farms of the
+  internet era. The AI-specific category and name spread from about 2023, after ChatGPT set off a
+  surge of GPU purchases and record capital spending by cloud providers.
+note: >-
+  Environmental and local effects — electricity prices, emissions, water use and noise — are covered
+  under [[environmental-impact-of-ai|environmental impact of AI]]. Nvidia's Jensen Huang calls such
+  facilities 'AI factories'.
+see_also:
+  - AI supercomputer
+  - rack-scale system
+  - liquid cooling
+  - power usage effectiveness
+  - environmental impact of AI
+  - Stargate
+  - compute
+  - sovereign AI
+sources:
+  - text: International Energy Agency (2025). Energy and AI. IEA, Paris.
+    url: https://www.iea.org/reports/energy-and-ai/executive-summary
+as_of: 2026-10

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bartz v. Anthropic
+id: bartz-v-anthropic
+pos: prop. n.
+also:
+  - Bartz et al. v. Anthropic PBC
+  - Anthropic book settlement
+domain: gov
+domains:
+  - data
+labels:
+  - legal
+level: specialist
+plain: >-
+  A US lawsuit by book authors against the AI company Anthropic that ended in a record $1.5 billion
+  settlement, after a judge ruled that training on purchased books was legal but keeping pirated
+  copies was not.
+senses:
+  - definition: >-
+      A class action filed in 2024 in the US District Court for the Northern District of California
+      by authors Andrea Bartz, Charles Graeber and Kirk Wallace Johnson against Anthropic, developer
+      of the Claude models. On June 23, 2025, Judge William Alsup held on summary judgment that
+      training [[large-language-model|language models]] on books Anthropic had bought and scanned
+      was fair use, calling it 'exceedingly transformative', but that downloading millions of
+      pirated books from [[books3|Books3]] and the shadow libraries Library Genesis (LibGen) and
+      Pirate Library Mirror (PiLiMi) to keep in a permanent central library was not. After he
+      certified a class of rights holders in books downloaded from LibGen and PiLiMi, the parties
+      settled in September 2025 for $1.5 billion, about $3,100 per work for some 482,000 works, plus
+      destruction of the pirated files. Judge Araceli Martínez-Olguín granted final approval in July
+      2026, cutting class counsel's fee award to about $101.6 million from the $187.5 million
+      requested. The settlement released only past conduct and did not cover claims based on model
+      outputs.
+    example: >-
+      After Bartz v. Anthropic, our data team documents the provenance of every book in the corpus.
+origin: >-
+  Filed in August 2024; the June 2025 order was among the first US rulings on whether training
+  generative AI on copyrighted books is fair use, issued two days before the ruling in Kadrey v.
+  Meta.
+year: 2024
+note: >-
+  The fair-use holding binds no other court, but it shaped the field by separating the lawfulness of
+  training from the lawfulness of how training copies were obtained.
+see_also:
+  - fair use and AI training
+  - AI copyright litigation
+  - Books3
+  - New York Times v. OpenAI
+  - training data
+  - Anthropic
+sources:
+  - text: >-
+      Authors Alliance (2026). Bartz v. Anthropic Settlement Receives Final Approval. July 21, 2026.
+    url: https://www.authorsalliance.org/2026/07/21/bartz-v-anthropic-settlement-receives-final-approval/
+  - text: >-
+      ChatGPT Is Eating the World (2026). Judge Martínez-Olguín approves historic Bartz v. Anthropic
+      class action settlement but reduces attorneys' fee award to $101,561,111 instead of
+      $187,500,000 sought. July 20, 2026.
+    url: https://chatgptiseatingtheworld.com/2026/07/20/judge-martinez-olguin-approves-historic-bartz-v-anthropic-class-action-settlement-but-reduces-attorneys-fee-award-to-101561111-instead-of-187500000-sought/
+as_of: 2026-10

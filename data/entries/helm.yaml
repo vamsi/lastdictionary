@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: HELM
+id: helm
+pos: prop. n.
+also:
+  - Holistic Evaluation of Language Models
+  - HELM Lite
+  - HELM Capabilities
+  - HELM Safety
+domain: eval
+domains:
+  - llm
+level: core
+plain: >-
+  A large, open testing framework from Stanford that grades many language models on many kinds of
+  tasks and qualities — not only accuracy but also fairness, toxicity and efficiency.
+senses:
+  - definition: >-
+      A benchmark and [[evaluation-harness|evaluation harness]] from Stanford's Center for Research
+      on Foundation Models (CRFM), updated continuously, that rates language models on many
+      scenarios (task, domain, language) and many metrics simultaneously. Its first release ran 30
+      models on 42 scenarios (16 core, 26 targeted) and scored not only accuracy but also
+      [[calibration|calibration]], [[robustness|robustness]], efficiency and three social dimensions
+      — fairness, bias and toxicity — lifting the average coverage of core scenarios per model from
+      17.9% in earlier published evaluations to 96.0%. Every prompt and model output was made public
+      for inspection. HELM has since grown into a family of leaderboards, including HELM Lite, HELM
+      Capabilities and HELM Safety, and domain suites such as MedHELM for medicine and VHELM for
+      vision-language models. Its emphasis on standardized conditions and multi-metric reporting
+      shaped later evaluation practice.
+    example: HELM shows the model is accurate but poorly calibrated on legal questions.
+origin: >-
+  Introduced by Percy Liang, Rishi Bommasani, Tony Lee and some fifty colleagues at Stanford CRFM in
+  November 2022, and published in Transactions on Machine Learning Research in 2023.
+year: 2022
+note: >-
+  HELM is both a methodology and software. Its leaderboards use different scenario sets, so scores
+  from one are not interchangeable with another.
+see_also:
+  - evaluation harness
+  - benchmark
+  - calibration
+  - robustness
+  - MMLU
+  - BIG-bench
+sources:
+  - text: >-
+      Liang, P., Bommasani, R., Lee, T. et al. (2022). Holistic Evaluation of Language Models.
+      arXiv:2211.09110; Transactions on Machine Learning Research (2023).
+    url: https://arxiv.org/abs/2211.09110
+as_of: 2026-10

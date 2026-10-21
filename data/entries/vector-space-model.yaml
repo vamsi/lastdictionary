@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vector space model
+id: vector-space-model
+pos: n.
+also:
+  - VSM
+  - term vector model
+domain: eng
+domains:
+  - math
+  - hist
+level: specialist
+plain: >-
+  An early, still-influential idea for search: treat every document and query as an arrow in a space
+  with one direction per word, and rank documents by how closely their arrows point the same way as
+  the query's.
+senses:
+  - definition: >-
+      A model of [[information-retrieval|information retrieval]] that represents documents and
+      queries as vectors in a space with one dimension per index term, weighted for example by
+      [[tf-idf|TF-IDF]], and ranks documents by the similarity of their vectors to the query vector,
+      most often the [[cosine-similarity|cosine similarity]]. It replaced yes-or-no Boolean matching
+      with graded, ranked results and supported relevance feedback, in which the query vector is
+      moved toward documents a user marks as relevant. Its geometric framing — meaning as position,
+      relevance as proximity — carries over to [[latent-semantic-analysis|latent semantic
+      analysis]], [[word-embedding|word embeddings]] and modern [[dense-retrieval|dense retrieval]],
+      which replace term dimensions with learned ones.
+    example: >-
+      Embedding search is the vector space model with learned dimensions instead of words.
+origin: >-
+  Developed by Gerard Salton and colleagues for the SMART retrieval system at Harvard and Cornell
+  from the 1960s; the classic statement is Salton, A. Wong and C. S. Yang, 'A vector space model for
+  automatic indexing' (Communications of the ACM, November 1975).
+year: 1975
+note: >-
+  A frequently cited 1975 Salton paper on a 'vector space model for information retrieval' does not
+  exist, as David Dubin documented in 2004; cite the Communications of the ACM paper instead.
+see_also:
+  - information retrieval
+  - TF-IDF
+  - cosine similarity
+  - latent semantic analysis
+  - dense retrieval
+  - sparse retrieval
+sources:
+  - text: >-
+      Salton, G., Wong, A. & Yang, C. S. (1975). A vector space model for automatic indexing.
+      Communications of the ACM 18(11): 613–620.
+  - text: >-
+      Dubin, D. (2004). The Most Influential Paper Gerard Salton Never Wrote. Library Trends 52(4):
+      748–764.

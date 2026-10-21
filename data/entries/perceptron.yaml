@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: perceptron
+id: perceptron
+pos: n.
+also:
+  - single-layer perceptron
+  - perceptron learning rule
+  - Rosenblatt perceptron
+domain: dl
+domains:
+  - ml
+  - hist
+level: core
+plain: >-
+  One of the first learning machines: a single artificial neuron that sorts inputs into two groups
+  by drawing a straight dividing line, nudging its weights whenever it guesses wrong.
+senses:
+  - definition: >-
+      A [[binary-classification|binary classifier]] consisting of a single
+      [[artificial-neuron|artificial neuron]] with a threshold (step) activation: it outputs 1 if
+      w·x + b > 0 and 0 (or −1) otherwise. The perceptron learning rule changes the weights only
+      after a mistake, adding or subtracting the misclassified input scaled by a
+      [[learning-rate|learning rate]]. The perceptron convergence theorem guarantees that if the two
+      classes are [[linear-separability|linearly separable]] with margin γ and inputs have norm at
+      most R, the rule finds a separating hyperplane after at most (R/γ)² mistakes; if they are not
+      separable, as in the [[xor-problem|XOR problem]], it never settles. Variants include the
+      kernel perceptron (Aizerman and colleagues, 1964), the pocket algorithm (Gallant, 1990) and
+      the voted perceptron (Freund and Schapire, 1999). In Rosenblatt's own usage the word covered a
+      wider family of layered machines, some with fixed random hidden units.
+    example: A single perceptron cannot learn XOR, but a network with one hidden layer can.
+origin: >-
+  Introduced by psychologist Frank Rosenblatt at the Cornell Aeronautical Laboratory in a 1957
+  report and a 1958 Psychological Review paper; the learning rule was first simulated on an IBM 704.
+  The custom-built Mark I Perceptron followed, first demonstrated publicly in 1960. Albert Novikoff
+  proved the convergence bound in 1962. Marvin Minsky and Seymour Papert's book Perceptrons (1969)
+  analyzed the limits of single-layer versions.
+year: 1957
+note: >-
+  The 1969 critique concerned single-layer perceptrons; Minsky and Papert knew multilayer networks
+  could compute XOR but doubted they could be trained. The name survives in
+  [[multilayer-perceptron|multilayer perceptron]], although MLP units use differentiable or
+  piecewise-linear activations rather than step functions.
+see_also:
+  - artificial neuron
+  - multilayer perceptron
+  - Mark I Perceptron
+  - Perceptrons (book)
+  - linear separability
+  - XOR problem
+  - support vector machine
+contrast:
+  - logistic regression
+sources:
+  - text: >-
+      Rosenblatt, F. (1958). The Perceptron: A Probabilistic Model for Information Storage and
+      Organization in the Brain. Psychological Review, 65(6), 386–408.
+  - text: >-
+      Novikoff, A. B. J. (1962). On Convergence Proofs on Perceptrons. Symposium on the Mathematical
+      Theory of Automata, Polytechnic Institute of Brooklyn.

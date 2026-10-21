@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: grouped-query attention
+id: grouped-query-attention
+pos: n.
+also:
+  - GQA
+  - uptraining
+domain: llm
+domains:
+  - infer
+level: specialist
+plain: >-
+  A middle ground between full multi-head attention and its cheapest variant: attention heads are
+  split into groups, and each group shares one store of information about earlier words, saving
+  memory with little loss in quality.
+senses:
+  - definition: >-
+      A variant of [[multi-head-attention|multi-head attention]] in which the query heads are
+      divided into g groups and each group shares one key head and one value head, interpolating
+      between standard multi-head attention (g equal to the number of heads) and
+      [[multi-query-attention|multi-query attention]] (g = 1). A typical configuration pairs 32 or
+      64 query heads with 8 key–value heads, shrinking the [[kv-cache|KV cache]] four- to eightfold
+      while losing little quality relative to full multi-head attention. The original paper also
+      showed that an existing multi-head checkpoint can be converted ('uptrained') to GQA by
+      mean-pooling its key and value heads and continuing training with about 5% of the original
+      pretraining compute. GQA became the default in open models from Llama 2's larger versions
+      (2023) onward, including Llama 3, Mistral 7B, Qwen and Gemma 2.
+    example: The 70B model uses GQA with 64 query heads and 8 KV heads.
+origin: >-
+  Introduced by Joshua Ainslie, James Lee-Thorp, Michiel de Jong, Yury Zemlyanskiy, Federico Lebrón
+  and Sumit Sanghai of Google Research (arXiv, May 2023; EMNLP 2023).
+year: 2023
+see_also:
+  - multi-query attention
+  - multi-head attention
+  - KV cache
+  - multi-head latent attention
+  - attention head
+sources:
+  - text: >-
+      Ainslie, J., Lee-Thorp, J., de Jong, M., Zemlyanskiy, Y., Lebrón, F. & Sanghai, S. (2023).
+      GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints. EMNLP
+      2023.
+    url: https://arxiv.org/abs/2305.13245

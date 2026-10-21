@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: capability threshold
+id: capability-threshold
+pos: n.
+also:
+  - critical capability level
+  - CCL
+  - capability trigger
+domain: gov
+domains:
+  - safety
+  - eval
+level: core
+plain: >-
+  A level of dangerous ability — such as meaningfully helping someone make a biological weapon —
+  that, once an AI model reaches it, obliges its developer to add stronger safeguards or hold the
+  model back.
+senses:
+  - definition: >-
+      A predefined level of potentially dangerous capability in an AI model that, once reached or
+      approached, triggers specified obligations such as stronger security, deployment safeguards,
+      additional review or a halt. Thresholds are usually written per risk domain — biological and
+      chemical weapons uplift, offensive cyber operations, automation of AI research and
+      development, and loss of control — and are assessed with
+      [[dangerous-capability-evaluation|dangerous-capability evaluations]], [[uplift-study|uplift
+      studies]] and [[red-teaming|red teaming]]. Industry frameworks name them differently:
+      'capability thresholds' tied to [[ai-safety-level|AI Safety Levels]] in Anthropic's
+      [[responsible-scaling-policy|responsible scaling policy]], 'High' and 'Critical' capabilities
+      in OpenAI's [[preparedness-framework|Preparedness Framework]], and 'critical capability
+      levels' in Google DeepMind's [[frontier-safety-framework|Frontier Safety Framework]].
+      Developers usually set an earlier warning threshold so safeguards are ready before the
+      critical level is crossed. Because they track what a model can do, capability thresholds
+      complement input-based [[compute-threshold|compute thresholds]], at the cost of depending on
+      evaluations that may underestimate a model.
+    example: >-
+      The new model crossed the cyber capability threshold, so the stricter deployment safeguards
+      had to be in place before launch.
+origin: >-
+  Emerged with the first industry frontier safety frameworks: Anthropic's responsible scaling policy
+  (September 2023) and OpenAI's Preparedness Framework (December 2023). The
+  [[frontier-ai-safety-commitments|Frontier AI Safety Commitments]] of May 2024 asked signatories to
+  define thresholds at which risks would be deemed intolerable.
+year: 2023
+see_also:
+  - compute threshold
+  - if-then commitment
+  - responsible scaling policy
+  - AI Safety Level
+  - dangerous capability evaluation
+  - Frontier Safety Framework
+  - Preparedness Framework
+contrast:
+  - compute threshold

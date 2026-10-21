@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: script
+id: script
+pos: n.
+also:
+  - scripts
+  - script theory
+domain: sym
+domains:
+  - hist
+  - llm
+level: specialist
+plain: >-
+  In classic AI, a stored outline of a familiar sequence of events, such as eating at a restaurant,
+  that helps a program understand a story by filling in what normally happens.
+senses:
+  - context: Knowledge representation
+    definition: >-
+      A knowledge structure recording how a routine, culturally familiar episode normally unfolds:
+      the roles of its participants (customer, waiter), its props (menu, bill), the conditions for
+      entering it, its usual outcomes and its scenes in order. Given a story that mentions only a
+      few events — 'Mary ordered the soup. Later she paid the bill.' — a script-based program infers
+      the unstated ones, such as that she was seated and ate the soup, and can answer questions
+      about them. Scripts specialize [[frame|frames]] for events and were central to Yale
+      story-understanding programs such as SAM (Script Applier Mechanism); their brittleness on
+      novel situations motivated later work on plans, goals and [[case-based-reasoning|case-based
+      reasoning]].
+    example: >-
+      The program answered 'Did Mary eat?' correctly because the restaurant script supplied the
+      eating scene.
+  - context: Computing
+    definition: >-
+      A short program executed by an interpreter rather than compiled ahead of time, such as a
+      training or evaluation script that automates a [[machine-learning|machine learning]]
+      experiment, or a shell script that runs a data pipeline.
+origin: >-
+  Introduced by Roger Schank and Robert Abelson in a 1975 IJCAI paper and developed in their book
+  Scripts, Plans, Goals and Understanding (1977) at Yale. Richard Cullingford's SAM (1975–1978) was
+  the main implementation.
+year: 1975
+see_also:
+  - frame
+  - commonsense reasoning
+  - knowledge representation
+  - semantic network
+  - case-based reasoning
+sources:
+  - text: >-
+      Schank, R. C. & Abelson, R. P. (1977). Scripts, Plans, Goals and Understanding: An Inquiry
+      into Human Knowledge Structures. Lawrence Erlbaum.

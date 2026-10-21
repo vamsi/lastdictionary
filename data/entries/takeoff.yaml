@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: takeoff
+id: takeoff
+pos: n.
+also:
+  - AI takeoff
+  - takeoff speed
+  - take-off
+domain: asi
+domains:
+  - safety
+level: core
+plain: >-
+  The stretch of time between AI reaching roughly human level and AI becoming vastly superhuman.
+  People argue over whether it would take decades, years, months or just days.
+senses:
+  - definition: >-
+      The transition from AI systems of roughly human-level general capability to
+      [[superintelligence|superintelligence]], or more loosely from AI that modestly changes the
+      economy to AI that transforms it. Takeoff speed is the key variable: a fast takeoff leaves
+      little time for humans to notice problems, correct course or coordinate, and favors a single
+      actor gaining a [[decisive-strategic-advantage|decisive strategic advantage]]; a slow takeoff
+      provides warning shots and time to learn from intermediate systems, and tends toward a
+      [[multipolar-scenario|multipolar]] outcome. [[nick-bostrom|Nick Bostrom]] modeled the rate of
+      capability growth as optimization power divided by recalcitrance, the system's resistance to
+      improvement; later work, notably by Paul Christiano and Tom Davidson, frames takeoff in terms
+      of economic output, compute and the fraction of AI research that AI can automate. Related
+      questions include whether takeoff is continuous or has discontinuities, and whether it is
+      local (one project pulls ahead) or global.
+    example: >-
+      Our disagreement isn't about timelines; it's about how fast takeoff is once we get there.
+formula_latex: \frac{\mathrm{d}I}{\mathrm{d}t} = \frac{\text{optimization power}}{\text{recalcitrance}}
+origin: >-
+  Earliest use not established. Eliezer Yudkowsky's Creating Friendly AI (2001) contrasts a 'hard
+  takeoff' (weeks or hours to superintelligence) with a 'slow takeoff', and the question was central
+  to the 2008 Hanson–Yudkowsky [[foom|FOOM]] debate. Nick Bostrom's Superintelligence (2014)
+  systematized the kinetics of takeoff; Paul Christiano's 2018 essay 'Takeoff speeds' and Tom
+  Davidson's 2023 compute-centric model gave quantitative definitions.
+note: >-
+  Independent of [[ai-timelines|AI timelines]]: AGI could arrive soon and be followed by a gradual
+  takeoff, or arrive late and then accelerate abruptly.
+see_also:
+  - fast takeoff
+  - slow takeoff
+  - FOOM
+  - intelligence explosion
+  - AI timelines
+  - decisive strategic advantage
+  - automated AI research
+sources:
+  - text: >-
+      Bostrom, N. (2014). Superintelligence: Paths, Dangers, Strategies, ch. 4. Oxford University
+      Press.
+  - text: Christiano, P. (2018). Takeoff speeds. The sideways view (blog).
+  - text: >-
+      Davidson, T. (2023). What a Compute-Centric Framework Says About Takeoff Speeds. Open
+      Philanthropy.

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: compute
+id: compute
+pos: n.
+also:
+  - computing power
+  - compute resources
+  - computational resources
+domain: hw
+domains:
+  - train
+  - gov
+  - infer
+level: essential
+plain: >-
+  The raw computing power used to train and run AI, usually measured by how many specialized chips
+  are used and for how long. With data and algorithms, it is a main driver of AI progress.
+senses:
+  - definition: >-
+      Computational resources treated as a measurable quantity, used for [[training|training]] or
+      running [[ai-model|AI models]]. Narrowly, compute is the number of arithmetic operations
+      performed, counted in [[flop|FLOP]]; loosely, it is the hardware that supplies them —
+      [[gpu|GPUs]], [[tpu|TPUs]] and other [[ai-accelerator|accelerators]], with their memory,
+      [[interconnect|interconnects]] and power — counted in chips, [[gpu-hour|GPU-hours]] or
+      megawatts. [[training-compute|Training compute]] for frontier models has grown far faster than
+      [[moore-s-law|Moore's law]]: OpenAI estimated a doubling every 3.4 months for the largest runs
+      between 2012 and 2018. [[scaling-laws|Scaling laws]] tie model quality to compute, which makes
+      it central to forecasting, business strategy and [[compute-governance|compute governance]],
+      since it is measurable, physically concentrated and dependent on a narrow semiconductor supply
+      chain. Spending more compute at inference time ([[test-time-compute|test-time compute]]) has
+      become a second axis of scaling.
+    example: We're compute-constrained until the new cluster comes online in the spring.
+origin: >-
+  The noun 'compute' for computing resources was uncommon before the 2010s and spread through cloud
+  computing ('compute instances'). In AI it became a term of art after Dario Amodei and Danny
+  Hernandez's OpenAI post 'AI and Compute' (May 2018), which charted the training compute of
+  landmark systems; it later entered policy, as in the compute thresholds of a 2023 US executive
+  order and the EU AI Act.
+note: >-
+  A mass noun ('more compute', not 'more computes'). Distinguish the hardware sense from
+  [[training-compute|training compute]] (operations used by one run) and
+  [[effective-compute|effective compute]], which also credits algorithmic improvements.
+see_also:
+  - FLOP
+  - GPU
+  - AI accelerator
+  - training compute
+  - scaling laws
+  - compute governance
+  - GPU-hour
+  - AI data center
+contrast:
+  - effective compute
+sources:
+  - text: Amodei, D. & Hernandez, D. (2018). AI and Compute. OpenAI blog.
+    url: https://openai.com/index/ai-and-compute

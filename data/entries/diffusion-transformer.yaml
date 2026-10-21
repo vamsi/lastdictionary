@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: diffusion transformer
+id: diffusion-transformer
+pos: n.
+also:
+  - DiT
+  - MMDiT
+  - multimodal diffusion transformer
+  - spacetime patches
+domain: gen
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  A diffusion image or video generator whose core network is a transformer — the architecture behind
+  chatbots — instead of the older image-specific design, which lets it improve more predictably as
+  it grows.
+senses:
+  - definition: >-
+      A [[diffusion-model|diffusion model]] or [[flow-matching|flow matching]] model whose denoising
+      network is a [[transformer|transformer]] reading the noisy latent as a sequence of patches, as
+      a language model reads words, in place of a convolutional [[u-net|U-Net]]. The autoencoder
+      latent is cut into patches (2 × 2 in the best original DiT), linearly embedded with positional
+      information, processed by transformer blocks and projected back to a noise or velocity
+      prediction; in the original design the timestep and class label condition each block through
+      adaptive layer normalization, with every block initialized to the identity function
+      ('adaLN-Zero'). DiT quality improved steadily with forward-pass compute, from larger models or
+      smaller patches, as in language models. Text-to-image and video variants add text either
+      through [[cross-attention|cross-attention]] or by joint attention over text and image tokens,
+      as in the MMDiT of Stable Diffusion 3, which keeps separate weights for each modality; for
+      video, patches span both space and time. DiT-style backbones were used in [[sora|Sora]] and
+      underlie [[flux|FLUX]], Stable Diffusion 3 and most image and video generators of 2024–2026.
+origin: >-
+  Introduced by William Peebles (UC Berkeley) and Saining Xie (New York University) in 'Scalable
+  Diffusion Models with Transformers' (posted December 2022; ICCV 2023), whose DiT-XL/2 reached an
+  FID of 2.27 on class-conditional ImageNet at 256 × 256. Peebles went on to co-lead OpenAI's Sora.
+year: 2022
+see_also:
+  - diffusion model
+  - transformer
+  - latent diffusion model
+  - U-Net
+  - Sora
+  - vision transformer
+  - patch embedding
+sources:
+  - text: >-
+      Peebles, W. & Xie, S. (2023). Scalable Diffusion Models with Transformers. ICCV 2023.
+      arXiv:2212.09748.
+    url: https://arxiv.org/abs/2212.09748
+  - text: >-
+      Esser, P. et al. (2024). Scaling Rectified Flow Transformers for High-Resolution Image
+      Synthesis. arXiv:2403.03206 (ICML 2024).
+    url: https://arxiv.org/abs/2403.03206

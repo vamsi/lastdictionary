@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: X is all you need
+id: x-is-all-you-need-term
+pos: phr.
+also:
+  - … is all you need
+  - is all you need
+domain: culture
+domains:
+  - llm
+  - dl
+labels:
+  - informal
+level: specialist
+plain: >-
+  A joking title formula copied from a famous 2017 AI paper, used to claim that one simple
+  ingredient is enough to solve a problem; hundreds of research papers now use it.
+senses:
+  - definition: >-
+      A formulaic research-paper title claiming that a single ingredient suffices — attention,
+      scale, data, a particular trick — modeled on 'Attention Is All You Need', the 2017 paper that
+      introduced the [[transformer|transformer]]. Titles in the pattern number in the hundreds and
+      range from earnest to parodic, among them 'Hopfield Networks is All You Need' (2020) and
+      'Textbooks Are All You Need' (2023). The formula is often criticized as overclaiming, which
+      has produced its own counter-genre of '… is not all you need' titles, such as a 2021 analysis
+      showing that pure attention stacks lose expressive rank with depth.
+    example: >-
+      Reviewer 2 asked us to drop the 'is all you need' title, so we called it 'Data Is Most of What
+      You Need'.
+origin: >-
+  Ashish Vaswani and seven co-authors, most of them at Google, titled their transformer paper
+  'Attention Is All You Need' (NeurIPS 2017), echoing the Beatles' 1967 song 'All You Need Is Love';
+  the co-author Llion Jones has been credited with suggesting the title. Imitations followed almost
+  immediately and multiplied as the paper became one of the most-cited in computer science.
+year: 2017
+see_also:
+  - Attention Is All You Need
+  - transformer
+  - attention
+  - scaling hypothesis
+  - the bitter lesson
+sources:
+  - text: >-
+      Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł. &
+      Polosukhin, I. (2017). Attention Is All You Need. NeurIPS 2017.

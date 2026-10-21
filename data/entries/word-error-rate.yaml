@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: word error rate
+id: word-error-rate
+pos: n.
+also:
+  - WER
+  - character error rate
+  - CER
+  - word accuracy
+domain: percep
+domains:
+  - eval
+level: core
+plain: >-
+  The standard score for speech recognition: the share of words a system gets wrong compared with a
+  correct transcript, counting wrong, missing and extra words. Lower is better.
+senses:
+  - definition: >-
+      The standard accuracy measure for [[speech-recognition|speech recognition]] and other
+      transcription systems: the number of word substitutions (S), deletions (D) and insertions (I)
+      needed to turn the system's output into the reference transcript, divided by the number of
+      words in the reference (N). The alignment is found by minimum edit (Levenshtein) distance at
+      the word level, computed with dynamic programming. Because insertions are counted, WER can
+      exceed 100%. Results depend heavily on text normalization (casing, punctuation, numbers,
+      spelling variants), so systems should be compared on identically normalized text; for
+      languages written without spaces between words, such as Chinese and Japanese, character error
+      rate (CER) is used instead. WER weights all errors equally, so dropping 'not' counts the same
+      as misspelling a name, and it ignores whether the meaning survived; complementary measures
+      include accuracy on named entities, semantic metrics and task success. Top systems report WERs
+      below 2% on read-speech benchmarks such as [[librispeech|LibriSpeech]] test-clean, but much
+      higher figures on spontaneous, accented, noisy or overlapping speech.
+    example: >-
+      The new model cut WER on our call-center set from 14% to 9%, mostly by fixing product names.
+formula_latex: \text{WER} = \frac{S + D + I}{N}
+origin: >-
+  Word-level error rates computed by dynamic-programming alignment were in standard use in US
+  government (DARPA and NIST) speech-recognition benchmark evaluations by the late 1980s, whose
+  scoring tools fixed the modern definition; earliest use of the phrase has not been traced. The
+  underlying edit distance was defined by Vladimir Levenshtein in 1965.
+note: >-
+  Word accuracy is sometimes reported as 1 − WER. Because a single wrong word can reverse a meaning,
+  a low WER does not guarantee transcripts fit for medical or legal use.
+see_also:
+  - speech recognition
+  - LibriSpeech
+  - Whisper
+  - benchmark
+  - optical character recognition
+sources:
+  - text: >-
+      Levenshtein, V. I. (1966). Binary Codes Capable of Correcting Deletions, Insertions, and
+      Reversals. Soviet Physics Doklady 10(8), 707–710.

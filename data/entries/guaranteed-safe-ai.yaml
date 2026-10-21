@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: guaranteed safe AI
+id: guaranteed-safe-ai
+pos: n.
+also:
+  - GSAI
+  - GS AI
+  - provably safe AI
+  - provable safety
+domain: safety
+domains:
+  - sym
+  - gov
+labels:
+  - emerging
+  - contested
+level: specialist
+plain: >-
+  A proposed approach to AI safety in which systems come with mathematical proofs or checkable
+  guarantees that they will not cause certain harms, instead of relying on testing alone.
+senses:
+  - definition: >-
+      An agenda in [[ai-safety|AI safety]] for equipping AI systems with checkable, quantitative
+      safety guarantees of the strength expected in aviation or nuclear engineering, rather than
+      relying on testing alone. As its proponents set it out in 2024, it rests on three pieces: a
+      [[world-model|world model]], a mathematical account of how the system's actions play out in
+      its environment; a safety specification, saying which of those outcomes are allowed; and a
+      [[verifier|verifier]], which certifies — with a proof, or a bound on the probability of
+      violation that others can audit — that the AI's outputs keep within the specification under
+      that world model. Rather than verifying a [[neural-network|neural network]]'s internals, the
+      AI may be used to produce plans, controllers or code that are themselves checked by
+      [[formal-verification|formal verification]] before use. Proponents, including Stuart Russell,
+      Max Tegmark and Yoshua Bengio, see it as a route to safety that does not depend on trusting
+      the AI. Critics argue that adequate world models and specifications for open-ended real-world
+      settings may be impossible to build, confining the approach to narrow, well-modeled domains.
+    example: >-
+      Under a guaranteed safe AI design, the planner's grid schedule is deployed only if the
+      verifier returns a proof certificate.
+origin: >-
+  Named in 'Towards Guaranteed Safe AI' (May 2024) by David 'davidad' Dalrymple, Joar Skalse, Yoshua
+  Bengio, Stuart Russell, Max Tegmark, Sanjit Seshia, Steve Omohundro, Christian Szegedy and others.
+  It drew on Tegmark and Omohundro's 2023 case for 'provably safe' systems and on Dalrymple's Open
+  Agency Architecture, the basis of the UK research agency ARIA's Safeguarded AI programme.
+year: 2024
+see_also:
+  - formal verification
+  - safety case
+  - world model
+  - AI control
+  - Stuart Russell
+  - Yoshua Bengio
+  - verifier
+contrast:
+  - AI control
+sources:
+  - text: >-
+      Dalrymple, D. et al. (2024). Towards Guaranteed Safe AI: A Framework for Ensuring Robust and
+      Reliable AI Systems. arXiv:2405.06624.
+  - text: >-
+      Tegmark, M. & Omohundro, S. (2023). Provably Safe Systems: The Only Path to Controllable AGI.
+      arXiv.

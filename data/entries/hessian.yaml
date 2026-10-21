@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Hessian
+id: hessian
+pos: n.
+also:
+  - Hessian matrix
+  - Hessian-vector product
+  - curvature matrix
+domain: math
+domains:
+  - dl
+level: specialist
+plain: >-
+  A table of 'slopes of slopes' that describes how a surface curves: whether a point is the bottom
+  of a bowl, the top of a hill or a mountain pass.
+senses:
+  - definition: >-
+      For a real-valued function of n variables, the [[matrix|matrix]] whose (i, j) entry is the
+      second [[partial-derivative|partial derivative]] ∂²f/∂xᵢ∂xⱼ — symmetric whenever those
+      derivatives are continuous. Its eigenvalues give the bending of the function along each
+      principal direction, so at a point where the [[gradient|gradient]] vanishes they classify it:
+      all positive for a [[local-minimum|local minimum]], all negative for a maximum, mixed signs
+      for a [[saddle-point|saddle point]]. Newton's method and other
+      [[second-order-optimization|second-order optimization]] methods scale updates by the inverse
+      Hessian, and [[xgboost|XGBoost]] grows trees using second derivatives of the loss. For a
+      network with n parameters the Hessian has n² entries, far too many to store, so practitioners
+      rely on Hessian-vector products, diagonal or Kronecker-factored approximations, or the related
+      Gauss–Newton and Fisher matrices (see [[fisher-information|Fisher information]]). Its top
+      eigenvalue, called sharpness, connects to [[sharp-and-flat-minima|sharp and flat minima]], the
+      largest stable [[learning-rate|learning rate]] and the [[edge-of-stability|edge of
+      stability]].
+    example: >-
+      We tracked the top Hessian eigenvalue with power iteration on Hessian-vector products.
+formula_latex: H_{ij} = \frac{\partial^2 f}{\partial x_i\,\partial x_j}
+origin: >-
+  Named after Ludwig Otto Hesse, who used determinants of second derivatives in 1844 papers on
+  algebraic curves. James Joseph Sylvester coined 'Hessian' in an 1851 paper on elimination and
+  canonical forms, while remarking that it might better have been named after George Boole.
+year: 1851
+see_also:
+  - Jacobian
+  - gradient
+  - second-order optimization
+  - saddle point
+  - local minimum
+  - sharp and flat minima
+  - edge of stability

@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: universal adversarial perturbation
+id: universal-adversarial-perturbation
+pos: n.
+also:
+  - UAP
+  - universal perturbation
+domain: sec
+domains:
+  - dl
+  - percep
+level: specialist
+plain: >-
+  A single faint pattern that, added to almost any image, makes a neural network misclassify it —
+  one key that opens many locks.
+senses:
+  - definition: >-
+      One fixed perturbation δ, small under a chosen norm and computed once for a model rather than
+      for each input, that makes the model misclassify most of the inputs it is added to. It is
+      computed by iterating over training examples, accumulating the extra perturbation needed to
+      fool each one, and projecting the running total back onto the norm ball. Universal
+      perturbations often transfer across architectures, suggesting that models share correlated
+      vulnerable directions in input space. Because one precomputed pattern suffices, they enable
+      attacks without per-input computation; the idea foreshadowed physical
+      [[adversarial-patch|patches]] and, for language models,
+      [[universal-adversarial-suffix|universal adversarial suffixes]] that work across many prompts.
+    example: >-
+      A universal perturbation of ℓ∞ norm 10/255 fooled the classifier on 80% of validation images.
+origin: >-
+  Introduced by Seyed-Mohsen Moosavi-Dezfooli, Alhussein Fawzi, Omar Fawzi and Pascal Frossard in
+  'Universal Adversarial Perturbations' (arXiv October 2016; CVPR 2017).
+year: 2016
+see_also:
+  - adversarial example
+  - adversarial patch
+  - universal adversarial suffix
+  - evasion attack
+  - black-box attack
+sources:
+  - text: >-
+      Moosavi-Dezfooli, S.-M., Fawzi, A., Fawzi, O. & Frossard, P. (2017). Universal Adversarial
+      Perturbations. CVPR 2017. arXiv:1610.08401.

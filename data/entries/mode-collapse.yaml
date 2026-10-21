@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mode collapse
+id: mode-collapse
+pos: n.
+also:
+  - mode dropping
+  - Helvetica scenario
+  - partial mode collapse
+domain: gen
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  When a generator gets stuck producing only a few kinds of output — the same face, the same joke —
+  instead of the full variety it was meant to learn.
+senses:
+  - context: Generative adversarial networks
+    definition: >-
+      A failure of [[generative-adversarial-network|generative adversarial network]] training in
+      which the generator's output loses variety: large regions of its noise input all yield the
+      same or nearly the same sample, so only a few modes (regions of high probability) of the data
+      distribution are ever produced. It arises because the generator is rewarded for fooling the
+      current discriminator, not for diversity: it can chase whichever outputs the discriminator
+      currently misjudges, and the two networks may cycle between modes instead of converging.
+      Partial collapse — reduced variety rather than a single output — is common and is also called
+      mode dropping. Remedies include minibatch discrimination, unrolled objectives,
+      [[wasserstein-gan|Wasserstein losses]], spectral normalization and larger batches;
+      [[diffusion-model|diffusion models]] and likelihood-trained models are far less prone to it.
+    example: >-
+      After epoch 40 every sample was the same brown-haired face: classic mode collapse.
+  - context: Language models
+    definition: >-
+      By extension, the loss of output diversity in a [[large-language-model|large language model]]
+      after [[instruction-tuning|instruction tuning]] or
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]]: the
+      model concentrates probability on a few favored answers, phrasings or styles — naming the same
+      'random' number, writing near-identical stories — even when variety is wanted. It differs from
+      a low sampling [[temperature|temperature]] because the preference persists across prompts and
+      sampling settings.
+origin: >-
+  The original 2014 GAN paper noted the problem, jokingly calling the extreme case 'the Helvetica
+  scenario', without using the phrase 'mode collapse'; in June 2016 Tim Salimans and colleagues
+  described generators collapsing to a single mode. The noun phrase was common by late 2016, in
+  Unrolled GANs (Luke Metz and colleagues, November 2016) and Ian Goodfellow's NIPS 2016 tutorial.
+  The language-model sense spread after 'Mysteries of mode collapse', a LessWrong post by the
+  pseudonymous researcher janus (November 2022).
+year: 2016
+note: >-
+  Not to be confused with [[model-collapse|model collapse]], the degradation of models trained on
+  generated data, or with posterior collapse in [[variational-autoencoder|VAEs]].
+see_also:
+  - generative adversarial network
+  - Wasserstein GAN
+  - model collapse
+  - Fréchet inception distance
+  - reinforcement learning from human feedback
+  - temperature
+contrast:
+  - model collapse
+sources:
+  - text: >-
+      Metz, L., Poole, B., Pfau, D. & Sohl-Dickstein, J. (2016). Unrolled Generative Adversarial
+      Networks. arXiv:1611.02163 (ICLR 2017).
+    url: https://arxiv.org/abs/1611.02163
+  - text: janus (2022). Mysteries of mode collapse. LessWrong, 8 November 2022.
+    url: https://www.lesswrong.com/posts/t9svvNPNmFf5Qa3TA/mysteries-of-mode-collapse

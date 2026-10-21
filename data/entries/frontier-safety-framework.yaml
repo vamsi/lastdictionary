@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Frontier Safety Framework
+id: frontier-safety-framework
+pos: prop. n.
+also:
+  - FSF
+  - Google DeepMind Frontier Safety Framework
+domain: gov
+domains:
+  - safety
+level: specialist
+plain: >-
+  Google DeepMind's published plan for spotting when its AI models approach dangerous abilities and
+  applying stronger security and safeguards before that happens.
+senses:
+  - definition: >-
+      Google DeepMind's protocol for identifying and mitigating severe risks from its frontier
+      models. It defines critical capability levels (CCLs), [[capability-threshold|thresholds]]
+      beyond which an unmitigated model could meaningfully raise the chance of severe harm, in
+      misuse domains (chemical, biological, radiological and nuclear; cyber; and, from 2025, harmful
+      manipulation), in machine-learning research and development, and for misalignment risks such
+      as a model undermining human control. Models are evaluated periodically and whenever
+      capabilities change materially; crossing an alert threshold triggers a response plan, and
+      reaching a CCL requires security mitigations graded against RAND security levels plus
+      deployment mitigations, with a [[safety-case|safety case]] reviewed internally before external
+      release and, since 2025, before some large-scale internal deployments. Version 3.1 (April
+      2026) added lower 'tracked capability levels' for monitoring significant risks that fall short
+      of the critical levels, among other refinements.
+    example: >-
+      The model reached the alert threshold for cyber uplift, so the team began preparing the
+      response plan the Frontier Safety Framework requires.
+origin: >-
+  First published in May 2024, making Google DeepMind the third major developer with such a
+  framework after Anthropic and OpenAI; revised in February 2025 (adding deceptive-alignment risk),
+  September 2025 (version 3.0) and April 2026 (version 3.1).
+year: 2024
+see_also:
+  - responsible scaling policy
+  - Preparedness Framework
+  - capability threshold
+  - safety case
+  - model weight security
+  - Google DeepMind
+sources:
+  - text: >-
+      Google DeepMind (2025). Strengthening our Frontier Safety Framework. Blog post, September 22,
+      2025.
+    url: https://deepmind.google/blog/strengthening-our-frontier-safety-framework/
+as_of: 2026-10

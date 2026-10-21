@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data provenance
+id: data-provenance
+pos: n.
+also:
+  - data lineage
+  - provenance
+  - dataset provenance
+domain: data
+domains:
+  - gov
+  - eng
+level: core
+plain: >-
+  The documented history of a piece of data: where it came from, who created and changed it, under
+  what permissions, and how it was processed before reaching an AI system.
+senses:
+  - definition: >-
+      A record of the origin and custody of data — its sources, creators, collection dates and
+      methods, license terms, and the transformations, filters and merges applied along the way —
+      sufficient to trace a dataset or an individual example back to where it came from. In AI,
+      provenance underpins legal compliance (copyright, consent,
+      [[personally-identifiable-information|personal data]]), reproducibility, diagnosis of model
+      behavior and detection of [[data-contamination|data contamination]]. It is hard to maintain
+      because training corpora are assembled from datasets that were themselves built from other
+      datasets, with licenses often lost along the way: the Data Provenance Initiative's 2023 audit
+      of more than 1,800 text datasets found license miscategorization rates of 50% or more.
+      Practices include machine-readable dataset cards, lineage tracking in [[data-pipeline|data
+      pipelines]], content hashes and signed metadata. Regulation increasingly demands it: the
+      [[eu-ai-act|EU AI Act]] requires providers of [[general-purpose-ai-model|general-purpose
+      models]] to publish a summary of the content used for training.
+    example: >-
+      Without provenance records we could not tell whether the forum data was collected before or
+      after the site's opt-out.
+origin: >-
+  'Provenance' comes from art and archives (French provenir, 'to come from'). Database researchers
+  formalized data provenance and lineage from the late 1990s; Peter Buneman, Sanjeev Khanna and
+  Wang-Chiew Tan's 2001 paper on 'why' and 'where' provenance is a landmark. The Data Provenance
+  Initiative (Shayne Longpre and colleagues, 2023) brought the term to AI datasets.
+note: >-
+  Distinguish data provenance (where training and evaluation data came from) from content
+  provenance, which records the origin of individual media files, including AI-generated ones (see
+  [[content-credentials|Content Credentials]]).
+see_also:
+  - datasheet for datasets
+  - data licensing
+  - data pipeline
+  - model card
+  - opt-out
+  - data attribution
+contrast:
+  - Content Credentials
+sources:
+  - text: >-
+      Buneman, P., Khanna, S. & Tan, W.-C. (2001). Why and Where: A Characterization of Data
+      Provenance. ICDT 2001.
+  - text: >-
+      Longpre, S. et al. (2023). The Data Provenance Initiative: A Large Scale Audit of Dataset
+      Licensing & Attribution in AI. arXiv:2310.16787.
+    url: https://arxiv.org/abs/2310.16787
+as_of: 2026-10

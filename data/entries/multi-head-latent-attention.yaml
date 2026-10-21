@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multi-head latent attention
+id: multi-head-latent-attention
+pos: n.
+also:
+  - MLA
+domain: llm
+domains:
+  - infer
+labels:
+  - emerging
+level: specialist
+plain: >-
+  An attention design from the Chinese lab DeepSeek that compresses the stored information about
+  earlier words into a much smaller summary, so long conversations need far less memory.
+senses:
+  - definition: >-
+      A variant of [[attention|attention]] in which keys and values are reconstructed from a shared
+      low-dimensional latent vector per token, so only that compressed latent, plus a small
+      positional key, is stored in the [[kv-cache|KV cache]]. Each token's hidden state is projected
+      down to the latent; per-head keys and values are projected up from it, and these
+      up-projections can be folded into the query and output projections so that decoding works
+      directly on the cached latents. Because [[rotary-positional-embedding|RoPE]] would block this
+      folding, position is carried in a separate small set of rotary dimensions shared across heads.
+      DeepSeek reported that DeepSeek-V2, compared with its earlier 67-billion-parameter dense
+      model, cut the KV cache by 93.3% and raised maximum generation throughput 5.76-fold, and that
+      MLA matched or beat standard [[multi-head-attention|multi-head attention]] in its ablations.
+      It is used in DeepSeek-V2, V3 and R1 and in later models such as Moonshot AI's Kimi K2 (2025).
+    example: >-
+      With MLA the cache per token is a 512-dimensional latent instead of full keys and values for
+      every head.
+origin: >-
+  Introduced by DeepSeek-AI in the DeepSeek-V2 technical report (May 2024) and retained in
+  DeepSeek-V3 (December 2024), whose cost-efficiency drew wide attention in early 2025.
+year: 2024
+see_also:
+  - multi-head attention
+  - grouped-query attention
+  - multi-query attention
+  - KV cache
+  - low-rank approximation
+  - mixture of experts
+sources:
+  - text: >-
+      DeepSeek-AI (2024). DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts
+      Language Model. arXiv:2405.04434.
+    url: https://arxiv.org/abs/2405.04434
+as_of: 2026-10

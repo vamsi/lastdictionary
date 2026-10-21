@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: annotation
+id: annotation
+pos: n.
+also:
+  - data annotation
+  - annotate
+  - annotator
+  - annotation guidelines
+domain: data
+domains:
+  - llm
+  - percep
+level: core
+plain: >-
+  Adding information to raw data by hand or with software — marking objects in photos, tagging names
+  in sentences, transcribing speech or ranking chatbot answers — so machines can learn from it.
+senses:
+  - definition: >-
+      The process, and the resulting layer of information, by which people or programs add
+      structured descriptions to raw data so that it can be used for training or evaluation: class
+      [[label|labels]], [[bounding-box|bounding boxes]] and segmentation masks in images;
+      part-of-speech tags, [[named-entity-recognition|named entities]] and parse trees in text;
+      timestamps and transcripts in audio; and rankings or critiques of model outputs for
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]].
+      Annotation projects depend on written guidelines that define categories and edge cases, pilot
+      rounds, quality checks such as [[inter-annotator-agreement|inter-annotator agreement]], and
+      adjudication of disagreements. Increasingly, models pre-annotate data for humans to correct,
+      or serve as annotators themselves (see [[llm-as-a-judge|LLM-as-a-judge]]).
+    example: >-
+      Two annotators disagreed on 18% of the sarcasm examples, so we rewrote the guidelines.
+origin: >-
+  Annotating texts is centuries old, but the machine-readable sense comes from corpus linguistics:
+  part-of-speech tagging of the Brown Corpus in the 1970s, then the Penn Treebank (Mitchell Marcus
+  and colleagues, 1993), whose syntactic annotation of Wall Street Journal text trained a generation
+  of statistical parsers.
+note: >-
+  Often used interchangeably with [[data-labeling|data labeling]]. Where a distinction is drawn,
+  annotation is the broader term (any added structure, including spans, relations and free-text
+  rationales) and labeling is the assignment of target values, often as an outsourced industrial
+  service.
+see_also:
+  - label
+  - data labeling
+  - inter-annotator agreement
+  - crowdsourcing
+  - ground truth
+  - golden dataset
+  - Brown Corpus
+sources:
+  - text: >-
+      Marcus, M. P., Santorini, B. & Marcinkiewicz, M. A. (1993). Building a Large Annotated Corpus
+      of English: The Penn Treebank. Computational Linguistics 19(2).

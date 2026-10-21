@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: byte-pair encoding
+id: byte-pair-encoding
+pos: n.
+also:
+  - BPE
+  - byte-level BPE
+  - BBPE
+  - BPE-dropout
+domain: llm
+domains:
+  - data
+level: core
+plain: >-
+  A popular way to choose the word pieces an AI breaks text into: start from single characters and
+  repeatedly glue together the pair that occurs most often, until the list reaches the desired size.
+senses:
+  - definition: >-
+      A subword [[tokenization|tokenization]] algorithm that builds a [[vocabulary|vocabulary]] by
+      starting from individual characters (or bytes) and repeatedly merging the most frequent
+      adjacent pair of symbols in a training corpus into a new symbol, recording each merge, until a
+      target vocabulary size is reached. New text is tokenized by replaying the learned merges in
+      order. Frequent words thus become single tokens and rare words split into familiar pieces, so
+      out-of-vocabulary words become rare (and, with byte-level BPE, impossible). Byte-level BPE,
+      introduced with [[gpt-2|GPT-2]], runs on UTF-8 bytes rather than Unicode characters, so the
+      base alphabet has only 256 symbols and any string can be encoded; combined with regex
+      pre-splitting, it is used by the GPT series, Llama 3 and many other
+      [[large-language-model|LLMs]]. Standard BPE is greedy and deterministic; BPE-dropout randomly
+      skips merges during training as a regularizer.
+    example: We trained a BPE tokenizer with 64,000 merges on the multilingual mix.
+origin: >-
+  Philip Gage described byte pair encoding in 1994 as a data-compression method that replaces
+  frequent byte pairs with unused byte values. Rico Sennrich, Barry Haddow and Alexandra Birch
+  adapted it to subword segmentation for neural machine translation (arXiv 2015; ACL 2016), and
+  OpenAI's GPT-2 (2019) introduced the byte-level variant.
+year: 2015
+note: >-
+  In compression, BPE shrinks data by substituting unused byte codes; in NLP it grows a vocabulary.
+  The shared name reflects the shared merge-the-most-frequent-pair idea.
+see_also:
+  - tokenization
+  - tokenizer
+  - WordPiece
+  - SentencePiece
+  - vocabulary
+  - byte-level model
+contrast:
+  - WordPiece
+sources:
+  - text: >-
+      Gage, P. (1994). A New Algorithm for Data Compression. The C Users Journal 12(2).
+  - text: >-
+      Sennrich, R., Haddow, B. & Birch, A. (2016). Neural Machine Translation of Rare Words with
+      Subword Units. ACL 2016.
+    url: https://arxiv.org/abs/1508.07909

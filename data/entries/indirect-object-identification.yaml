@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: indirect object identification
+id: indirect-object-identification
+pos: n.
+also:
+  - IOI
+  - IOI circuit
+  - IOI task
+  - name mover head
+domain: interp
+domains:
+  - llm
+  - eval
+level: specialist
+plain: >-
+  A fill-in-the-name task — 'When Mary and John went to the store, John gave a drink to …' — whose
+  solution inside GPT-2 became the best-known fully mapped circuit in a language model.
+senses:
+  - definition: >-
+      A sentence-completion task, and the [[circuit|circuit]] that solves it in GPT-2 small, used as
+      a reference case in [[mechanistic-interpretability|mechanistic interpretability]]. Prompts
+      introduce two people and then repeat one as the subject of a giving clause; the correct
+      completion is the other name, the indirect object. Kevin Wang and colleagues
+      reverse-engineered the mechanism with [[path-patching|path patching]], identifying 26
+      [[attention-head|attention heads]] in seven classes, among them duplicate-token heads that
+      notice the repeated name, S-inhibition heads that suppress attention to it, and name-mover
+      heads that copy the remaining name to the output — plus backup name movers that take over when
+      the main ones are ablated and negative name movers that push the other way. The study proposed
+      faithfulness, completeness and minimality as criteria for circuit explanations, and the task
+      became a standard test for [[automated-circuit-discovery|automated circuit discovery]] and
+      other methods.
+    example: >-
+      We reused the IOI prompts to check whether the new attribution method finds the name movers.
+origin: >-
+  Introduced by Kevin Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris and Jacob Steinhardt
+  in 'Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small'
+  (November 2022; ICLR 2023), work begun at Redwood Research. 'Indirect object' is a term of
+  traditional grammar.
+year: 2022
+see_also:
+  - circuit
+  - path patching
+  - automated circuit discovery
+  - attention head
+  - GPT-2
+  - mechanistic interpretability
+sources:
+  - text: >-
+      Wang, K., Variengien, A., Conmy, A., Shlegeris, B. & Steinhardt, J. (2023). Interpretability
+      in the Wild: a Circuit for Indirect Object Identification in GPT-2 small. ICLR 2023.

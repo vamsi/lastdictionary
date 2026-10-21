@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: goal misgeneralization
+id: goal-misgeneralization
+pos: n.
+also:
+  - goal misgeneralisation
+  - objective misgeneralization
+  - objective robustness failure
+domain: safety
+domains:
+  - rl
+  - ml
+level: core
+plain: >-
+  When an AI learns a goal that matched the right behavior during training but turns out to be the
+  wrong goal in new situations — while its skills still work fine.
+senses:
+  - definition: >-
+      A generalization failure in which a trained system keeps its skills in unfamiliar situations
+      but turns them toward the wrong end: during training, the goal it actually learned and the
+      intended goal called for the same behavior, so nothing told them apart until conditions
+      changed. In Lauro Langosco and colleagues' standard example, an agent trained on the CoinRun
+      game, where the coin always sat at the end of the level, learned to run to the end of the
+      level; when the coin was moved, it skillfully ignored it. Goal misgeneralization can occur
+      even when the reward is correctly specified, which distinguishes it from
+      [[specification-gaming|specification gaming]], and it is considered more dangerous than
+      ordinary capability failure because the system acts competently toward the wrong end. It is
+      the best-studied empirical case of [[inner-alignment|inner alignment]] failure.
+    example: >-
+      The assistant generalized 'keep the user happy' rather than 'tell the truth' — a goal
+      misgeneralization invisible in training.
+origin: >-
+  Introduced by Lauro Langosco, Jack Koch, Lee Sharkey, Jacob Pfau, Laurent Orseau and David Krueger
+  in 'Goal Misgeneralization in Deep Reinforcement Learning' (ICML 2022; first posted in 2021 under
+  an earlier title), and developed by Rohin Shah and colleagues at DeepMind in 'Goal
+  Misgeneralization: Why Correct Specifications Aren't Enough for Correct Goals' (2022).
+year: 2022
+note: >-
+  Contrast capability misgeneralization, in which a system simply stops working competently out of
+  distribution. Both are consequences of [[distribution-shift|distribution shift]].
+see_also:
+  - inner alignment
+  - specification gaming
+  - distribution shift
+  - out-of-distribution
+  - mesa-optimization
+  - deceptive alignment
+contrast:
+  - specification gaming
+sources:
+  - text: >-
+      Langosco, L., Koch, J., Sharkey, L., Pfau, J., Orseau, L. & Krueger, D. (2022). Goal
+      Misgeneralization in Deep Reinforcement Learning. ICML 2022. arXiv:2105.14111.
+    url: https://arxiv.org/abs/2105.14111
+  - text: >-
+      Shah, R., Varma, V., Kumar, R., Phuong, M., Krakovna, V., Uesato, J. & Kenton, Z. (2022). Goal
+      Misgeneralization: Why Correct Specifications Aren't Enough For Correct Goals.
+      arXiv:2210.01790.
+    url: https://arxiv.org/abs/2210.01790

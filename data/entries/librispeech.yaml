@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LibriSpeech
+id: librispeech
+pos: prop. n.
+also:
+  - test-clean
+  - test-other
+  - LibriLight
+  - LibriTTS
+domain: percep
+domains:
+  - data
+  - eval
+level: specialist
+plain: >-
+  A free collection of about 1,000 hours of volunteers reading English audiobooks, matched with the
+  book text; it became the standard yardstick for speech-recognition systems.
+senses:
+  - definition: >-
+      A free dataset of roughly 1,000 hours of English read aloud from public-domain audiobooks
+      recorded by LibriVox volunteers, cut into utterances, matched to the book text and stored at
+      16 kHz. It is split into training sets of 100 and 360 hours of 'clean' speech and 500 hours of
+      'other', more challenging speech, plus development and test sets of about five hours each,
+      also divided into clean and other according to how hard a baseline recognizer found each
+      speaker; no speaker appears in more than one split. A large text corpus for training
+      [[language-model|language models]] is included. Released under a Creative Commons Attribution
+      4.0 license, it became the default [[benchmark|benchmark]] for English
+      [[speech-recognition|speech recognition]], with results reported as [[word-error-rate|word
+      error rate]] on test-clean and test-other. Best reported WERs fell below 2% on test-clean by
+      the early 2020s, so the benchmark is near saturation and says little about conversational,
+      noisy or accented speech. Derived resources include LibriTTS for speech synthesis and the
+      60,000-hour unlabeled LibriLight.
+    example: >-
+      Good LibriSpeech numbers tell you little about our call-center audio, so we test on our own
+      recordings too.
+origin: >-
+  Prepared by Vassil Panayotov with Daniel Povey and described by Panayotov, Guoguo Chen, Povey and
+  Sanjeev Khudanpur in 'Librispeech: An ASR Corpus Based on Public Domain Audio Books' (ICASSP
+  2015); it is distributed through the OpenSLR repository, with training recipes in the Kaldi
+  toolkit.
+year: 2015
+see_also:
+  - speech recognition
+  - word error rate
+  - benchmark saturation
+  - wav2vec
+  - Whisper
+  - dataset
+sources:
+  - text: >-
+      Panayotov, V., Chen, G., Povey, D. & Khudanpur, S. (2015). Librispeech: An ASR Corpus Based on
+      Public Domain Audio Books. ICASSP 2015.
+  - text: "OpenSLR. Resource 12: LibriSpeech ASR corpus."
+    url: https://www.openslr.org/12

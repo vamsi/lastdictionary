@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: linear discriminant analysis
+id: linear-discriminant-analysis
+pos: n.
+also:
+  - LDA
+  - Fisher's linear discriminant
+  - Fisher discriminant analysis
+  - discriminant analysis
+  - quadratic discriminant analysis
+  - QDA
+  - canonical variates analysis
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A statistical method for telling known groups apart. It finds the weighted mix of measurements on
+  which groups differ most relative to their spread, then uses it to sort new items or compress many
+  measurements into a few.
+senses:
+  - definition: >-
+      A method for [[classification|classification]] and supervised
+      [[dimensionality-reduction|dimensionality reduction]] that models each class as a multivariate
+      normal distribution with its own mean but a covariance matrix shared by all classes. Under
+      these assumptions the Bayes-optimal [[decision-boundary|decision boundaries]] are linear, and
+      a point is assigned to the class with the highest posterior probability. Equivalently, in
+      Fisher's formulation, LDA finds projections that maximize the ratio of between-class to
+      within-class variance; with K classes there are at most K − 1 such discriminant directions,
+      making LDA a supervised alternative to [[principal-component-analysis|principal component
+      analysis]] for visualizing or compressing labeled data. Allowing each class its own covariance
+      gives quadratic discriminant analysis (QDA), with curved boundaries; shrinking the covariance
+      estimate (regularized LDA) helps when features outnumber observations. LDA is a
+      [[generative-model|generative model]] and a close relative of [[logistic-regression|logistic
+      regression]].
+    example: >-
+      Projecting the spectra onto the two LDA directions separated the three grape varieties cleanly.
+formula_latex: J(\mathbf{w}) = \frac{\mathbf{w}^{\top} S_B\, \mathbf{w}}{\mathbf{w}^{\top} S_W\, \mathbf{w}}
+origin: >-
+  Ronald Fisher introduced the linear discriminant in 'The Use of Multiple Measurements in Taxonomic
+  Problems' (Annals of Eugenics, 1936), illustrated with Edgar Anderson's iris measurements; C. R.
+  Rao generalized it to more than two classes in 1948. Fisher obtained his discriminant by
+  maximizing class separation, without a Gaussian model; the shared-covariance Gaussian formulation
+  is the later probabilistic reading.
+year: 1936
+note: >-
+  The abbreviation LDA also stands for [[latent-dirichlet-allocation|latent Dirichlet allocation]],
+  an unrelated topic model.
+see_also:
+  - classification
+  - principal component analysis
+  - dimensionality reduction
+  - logistic regression
+  - naive Bayes
+  - decision boundary
+contrast:
+  - latent Dirichlet allocation
+  - principal component analysis
+sources:
+  - text: >-
+      Fisher, R. A. (1936). The Use of Multiple Measurements in Taxonomic Problems. Annals of
+      Eugenics, 7(2), 179–188.
+  - text: >-
+      Rao, C. R. (1948). The Utilization of Multiple Measurements in Problems of Biological
+      Classification. Journal of the Royal Statistical Society, Series B, 10(2), 159–203.

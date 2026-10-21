@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: associative memory
+id: associative-memory
+pos: n.
+also:
+  - content-addressable memory
+  - auto-associative memory
+  - hetero-associative memory
+  - dense associative memory
+domain: dl
+domains:
+  - hist
+  - math
+level: specialist
+plain: >-
+  A memory that is searched by content rather than by location: given part of a stored pattern, or a
+  noisy copy of it, it recalls the whole, much as a few notes can bring back an entire song.
+senses:
+  - definition: >-
+      A system that stores patterns so that a cue, either a fragment or corrupted version of a
+      stored pattern (auto-association) or an associated key (hetero-association), retrieves the
+      stored item without any address. In neural-network models, storage is typically Hebbian: a
+      correlation-matrix memory sums outer products of key and value vectors, and recall multiplies
+      the cue by that matrix; in the [[hopfield-network|Hopfield network]], stored patterns are
+      minima of an energy function and recall is descent to the nearest minimum. Classical capacity
+      is small, roughly 0.14 patterns per neuron for the Hopfield network before recall breaks down,
+      but modern Hopfield networks with sharper energy functions can store exponentially many
+      patterns, and their one-step update has the same form as transformer [[attention|attention]].
+      The idea also frames transformer feed-forward layers as key–value memories and motivates
+      memory-augmented networks and sequence models whose memory is updated at test time.
+    example: >-
+      Viewed as an associative memory, the attention layer retrieves the stored value whose key best
+      matches the query.
+origin: >-
+  Early neural models include Karl Steinbuch's Lernmatrix (1961) and the correlation-matrix memories
+  of Teuvo Kohonen and of James Anderson (both 1972); John Hopfield's 1982 network gave the
+  energy-based formulation. Dmitry Krotov and Hopfield's dense associative memories (2016) and
+  Hubert Ramsauer and colleagues' 'Hopfield Networks is All You Need' (2020) connected the idea to
+  attention.
+year: 1961
+note: >-
+  In hardware, content-addressable memory (CAM) means circuits that compare a search word with all
+  stored words in parallel, as in network routers. In psychology, associative memory refers to
+  learned links between items, the tradition from which the computational idea grew.
+see_also:
+  - Hopfield network
+  - Hebbian learning
+  - attention
+  - transformer
+  - energy-based model
+  - Boltzmann machine
+sources:
+  - text: >-
+      Kohonen, T. (1972). Correlation Matrix Memories. IEEE Transactions on Computers C-21(4),
+      353–359.
+  - text: >-
+      Hopfield, J. J. (1982). Neural Networks and Physical Systems with Emergent Collective
+      Computational Abilities. PNAS 79(8), 2554–2558.
+  - text: Ramsauer, H. et al. (2021). Hopfield Networks is All You Need. ICLR 2021.

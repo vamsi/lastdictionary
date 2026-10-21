@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: post-training quantization
+id: post-training-quantization
+pos: n.
+also:
+  - PTQ
+  - post-training quantisation
+domain: infer
+domains:
+  - dl
+level: core
+plain: >-
+  Shrinking an already-trained AI model by storing its numbers in fewer bits, without training it
+  again; a small sample of example inputs is usually enough to fine-tune the rounding.
+senses:
+  - definition: >-
+      [[quantization|Quantization]] applied to a model after training is complete, without the full
+      training pipeline or data. In its simplest, data-free form each weight tensor is rounded to
+      the nearest representable value using scales computed from its range ('round-to-nearest').
+      Calibration-based methods pass a few hundred sample inputs through the model to set activation
+      ranges and to choose quantized weights that minimize each layer's output error rather than the
+      weights' own error: [[gptq|GPTQ]] uses approximate second-order information to compensate
+      rounding errors, [[awq|AWQ]] rescales the channels that matter most to activations,
+      [[smoothquant|SmoothQuant]] shifts outlier magnitude from activations into weights, and
+      rotation-based methods spread outliers before rounding. PTQ is cheap (minutes to hours on one
+      GPU even for very large models) and is how most open-weight models are compressed for local
+      use, but accuracy falls off sharply below about 4 bits, where
+      [[quantization-aware-training|quantization-aware training]] or native low-bit training does
+      better.
+    example: >-
+      We ran post-training quantization with 512 calibration samples and lost under one point on our
+      eval.
+origin: >-
+  Standard practice for 8-bit deployment of convolutional networks by the late 2010s, when tools
+  such as TensorFlow Lite and NVIDIA TensorRT shipped calibration utilities; the label distinguished
+  it from quantization-aware training, as in Raghuraman Krishnamoorthi's 2018 Google whitepaper on
+  quantizing convolutional networks. For large language models, where retraining is prohibitively
+  expensive, PTQ methods such as LLM.int8() (2022), GPTQ (2022), SmoothQuant (2022) and AWQ (2023)
+  became the norm.
+year: 2018
+see_also:
+  - quantization
+  - quantization-aware training
+  - GPTQ
+  - AWQ
+  - SmoothQuant
+  - LLM.int8()
+contrast:
+  - quantization-aware training
+sources:
+  - text: >-
+      Frantar, E., Ashkboos, S., Hoefler, T. & Alistarh, D. (2022). GPTQ: Accurate Post-Training
+      Quantization for Generative Pre-trained Transformers. arXiv:2210.17323.
+    url: https://arxiv.org/abs/2210.17323
+  - text: >-
+      Xiao, G., Lin, J., Seznec, M., Wu, H., Demouth, J. & Han, S. (2022). SmoothQuant: Accurate and
+      Efficient Post-Training Quantization for Large Language Models. arXiv:2211.10438.
+    url: https://arxiv.org/abs/2211.10438
+  - text: >-
+      Krishnamoorthi, R. (2018). Quantizing deep convolutional networks for efficient inference: A
+      whitepaper. arXiv:1806.08342.

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: permission system
+id: permission-system
+pos: n.
+also:
+  - permissions
+  - permission mode
+  - approval mode
+  - tool permissions
+domain: agents
+domains:
+  - sec
+  - safety
+level: core
+plain: >-
+  The rules that decide what an AI agent may do on its own, what it must ask a person about first,
+  and what it may never do — like a phone's settings for which apps can use the camera.
+senses:
+  - definition: >-
+      The component of an agent [[harness|harness]] that decides, for each proposed [[tool-call|tool
+      call]], whether to allow it automatically, ask a human for approval, or deny it. Decisions
+      draw on rules (allow, ask and deny lists matched against tool names, commands, file paths or
+      web domains, with deny usually taking precedence), modes that set a session's defaults
+      (read-only planning, auto-accepting file edits, prompting for everything, or bypassing prompts
+      entirely), policies imposed by an organization's administrators, and sometimes a classifier
+      model that reviews actions in place of a human. Permission systems are enforced by the
+      harness, not the model: instructions in a prompt shape what the agent tries, but only the
+      permission layer constrains what runs. Their central tension is approval fatigue — with too
+      many prompts, users approve reflexively or switch checks off — so they are paired with
+      [[sandbox|sandboxes]], [[hook|hooks]] and narrowly scoped credentials.
+    example: >-
+      Our permission system lets the agent run tests freely, asks before any git push and blocks
+      reading the .env file.
+origin: >-
+  Adapts access-control principles — least privilege (Jerome Saltzer and Michael Schroeder, 1975)
+  and the runtime permission prompts of mobile operating systems — to [[ai-agent|AI agents]]. Coding
+  agents in 2024–2025 introduced per-tool allow and deny rules and named permission modes, and
+  'excessive agency' entered security checklists as the failure such systems guard against.
+year: 2025
+note: >-
+  Different from [[human-oversight|human oversight]] in the regulatory sense, which concerns
+  supervision of high-risk AI systems generally. A setting that skips all checks is colloquially
+  called [[yolo-mode|YOLO mode]].
+see_also:
+  - sandbox
+  - hook
+  - YOLO mode
+  - excessive agency
+  - human-in-the-loop
+  - levels of autonomy
+  - agent identity
+contrast:
+  - sandbox
+sources:
+  - text: Anthropic. Configure permissions. Claude Code documentation.
+    url: https://code.claude.com/docs/en/permissions
+  - text: >-
+      Saltzer, J. H. & Schroeder, M. D. (1975). The Protection of Information in Computer Systems.
+      Proceedings of the IEEE, 63(9).
+as_of: 2026-10

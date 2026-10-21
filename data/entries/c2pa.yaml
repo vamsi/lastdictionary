@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: C2PA
+id: c2pa
+pos: abbr.
+also:
+  - Coalition for Content Provenance and Authenticity
+  - C2PA standard
+  - C2PA specification
+pronunciation: see-two-pee-AY
+domain: sec
+domains:
+  - gov
+  - gen
+level: specialist
+plain: >-
+  An industry group, and the technical standard it publishes, for attaching tamper-evident records
+  of origin and editing history to digital photos, video, audio and documents.
+senses:
+  - definition: >-
+      The Coalition for Content Provenance and Authenticity, a standards body hosted by the Joint
+      Development Foundation (part of the Linux Foundation family), and its open technical
+      specification for content provenance. The specification defines manifests — signed bundles of
+      assertions about a file's creation, edits and ingredients — bound to the content by
+      cryptographic hashes and signed with certificates, so that tampering is detectable and the
+      signer identifiable; manifests may be embedded in a file or stored remotely. Later versions
+      added 'soft bindings', ways to link [[ai-watermarking|watermarks]] or content fingerprints to
+      a manifest so that stripped metadata can be recovered. Its user-facing form is
+      [[content-credentials|Content Credentials]]. The standard is cited in policy debates on
+      labeling AI-generated content, though it verifies provenance claims rather than truth.
+    example: >-
+      Our image generator signs every output with a C2PA manifest stating that it was created by AI.
+origin: >-
+  Founded in February 2021 by Adobe, Arm, the BBC, Intel, Microsoft and Truepic to merge the
+  standards work of two earlier efforts, Adobe's Content Authenticity Initiative and Project Origin
+  (led by Microsoft and the BBC), each of which carried on separately. Specification 1.0 appeared in
+  January 2022; Google, OpenAI, Meta and Amazon joined its steering committee in 2024.
+year: 2021
+see_also:
+  - Content Credentials
+  - AI watermarking
+  - SynthID
+  - data provenance
+  - deepfake detection
+sources:
+  - text: >-
+      Coalition for Content Provenance and Authenticity (2022). C2PA Technical Specification 1.0.

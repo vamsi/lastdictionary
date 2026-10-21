@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: knowledge graph
+id: knowledge-graph
+pos: n.
+also:
+  - KG
+  - knowledge graphs
+  - enterprise knowledge graph
+  - triple
+  - subject–predicate–object triple
+domain: sym
+domains:
+  - data
+  - llm
+level: core
+plain: >-
+  A huge web of facts stored as connections between things — 'Paris is the capital of France',
+  'Marie Curie won a Nobel Prize' — that computers can search, combine and reason over.
+senses:
+  - definition: >-
+      A [[knowledge-base|knowledge base]] that stores each fact as a labeled, directed link between
+      two entities — a subject–predicate–object triple such as (Marie Curie, award received, Nobel
+      Prize in Physics) — so that the entities (people, places, products, concepts) and their
+      relations together form one large network. Entities carry types and attributes, and an
+      [[ontology|ontology]] or schema usually constrains which relations are allowed. Knowledge
+      graphs are stored in [[resource-description-framework|RDF]] triple stores or property-graph
+      databases and queried with languages such as SPARQL or Cypher. They power search-engine answer
+      panels, recommendation, fraud detection, drug discovery and enterprise data integration.
+      Building them involves [[information-extraction|information extraction]], entity resolution
+      and linking; missing facts can be predicted with [[knowledge-graph-embedding|embeddings]] or
+      learned rules. In [[large-language-model|language-model]] systems they supply structured,
+      checkable facts to [[graphrag|GraphRAG]] and other
+      [[retrieval-augmented-generation|retrieval-augmented]] pipelines.
+    example: >-
+      We ground the chatbot's answers in the product knowledge graph, so every claim links back to a
+      node.
+origin: >-
+  The phrase appeared sporadically from the 1970s, including a Dutch research program on knowledge
+  graphs in the 1980s, but became widespread after Google announced its Knowledge Graph in May 2012
+  under the slogan 'things, not strings'. Earlier open graphs such as DBpedia and Freebase (both
+  2007) fed the trend, and [[wikidata|Wikidata]] launched later in 2012.
+year: 2012
+note: >-
+  Usage is loose: some reserve the term for graphs with a formal ontology and reasoning, while
+  industry applies it to almost any graph of entities. Compare [[semantic-network|semantic
+  network]], its older AI ancestor, and [[ontology|ontology]], which supplies the schema rather than
+  the instance data.
+see_also:
+  - knowledge base
+  - ontology
+  - semantic web
+  - Resource Description Framework
+  - knowledge graph embedding
+  - GraphRAG
+  - Wikidata
+  - semantic network
+sources:
+  - text: >-
+      Singhal, A. (2012). Introducing the Knowledge Graph: Things, Not Strings. Google Official
+      Blog, 16 May 2012.
+  - text: Hogan, A. et al. (2021). Knowledge Graphs. ACM Computing Surveys 54(4), 1–37.
+as_of: 2026-10

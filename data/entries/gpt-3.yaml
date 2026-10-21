@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPT-3
+id: gpt-3
+pos: prop. n.
+also:
+  - GPT3
+  - Generative Pre-trained Transformer 3
+  - GPT-3.5
+  - davinci
+domain: hist
+domains:
+  - llm
+labels:
+  - trademark
+level: core
+plain: >-
+  A huge 2020 OpenAI language model that could perform new tasks simply from instructions or a few
+  examples written into its prompt, without retraining. It made prompting a new way of programming.
+senses:
+  - definition: >-
+      A 175-billion-parameter [[transformer|transformer]] [[language-model|language model]]
+      described by [[openai|OpenAI]] in May 2020, more than a hundred times larger than
+      [[gpt-2|GPT-2]], trained on about 300 billion tokens drawn mostly from filtered Common Crawl
+      web text, books and Wikipedia. Its paper's central finding was
+      [[in-context-learning|in-context learning]]: with a task description and a few worked examples
+      placed in the prompt ([[few-shot-learning|few-shot]] prompting), and its weights left
+      untouched, the model could write plausible news articles, do simple arithmetic, answer
+      questions and translate, and these abilities improved smoothly with scale. Offered from June
+      2020 through a commercial API rather than as downloadable weights, it seeded a wave of
+      start-ups and the practice of [[prompt-engineering|prompt engineering]]. Instruction-tuned
+      descendants, including [[instructgpt|InstructGPT]] and the GPT-3.5 series, led directly to
+      [[chatgpt|ChatGPT]].
+    example: >-
+      With GPT-3, a three-line prompt replaced what used to need a labeled dataset and a fine-tuning
+      run.
+origin: >-
+  Introduced in 'Language Models are Few-Shot Learners' by Tom Brown, Benjamin Mann, Nick Ryder,
+  Melanie Subbiah and 27 coauthors, posted on 28 May 2020 and given a best-paper award at NeurIPS
+  2020. Microsoft obtained an exclusive license to the model in September 2020.
+year: 2020
+note: >-
+  The paper itself documented social biases and misuse risks. Critics, notably the authors of 'On
+  the Dangers of Stochastic Parrots' (2021), argued that scale was producing fluent text without
+  understanding; see [[stochastic-parrot|stochastic parrot]].
+see_also:
+  - GPT-2
+  - GPT-4
+  - in-context learning
+  - few-shot learning
+  - prompt engineering
+  - scaling laws
+  - ChatGPT
+sources:
+  - text: >-
+      Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. Advances in Neural
+      Information Processing Systems 33 (NeurIPS 2020).

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: plan-and-execute
+id: plan-and-execute
+pos: n.
+also:
+  - plan-and-execute agent
+  - plan-then-execute
+  - planner–executor pattern
+domain: agents
+domains:
+  - sym
+  - llm
+level: core
+plain: >-
+  An agent design that first writes out a complete step-by-step plan for a task, then carries out
+  the steps one by one, revising the plan only when something goes wrong.
+senses:
+  - definition: >-
+      An agent architecture that does its thinking up front: a planner model drafts an explicit list
+      of steps for the whole task, an executor — a cheaper model, a tool-using agent or ordinary
+      code — works through them, and a replanner reviews the results so far and either rewrites the
+      remaining steps or declares the task done. Against a [[react|ReAct]] loop, which picks each
+      action only after seeing the last observation, the design consults the expensive model less
+      often, gives humans a plan they can review and helps long tasks stay on course, but it can
+      cling to a plan whose early assumptions have proved wrong. Variants differ in how they
+      schedule the plan: LLMCompiler runs independent steps in parallel, and ReWOO writes out every
+      tool call, with placeholders for results not yet seen, before executing any. Coding agents
+      often expose the pattern as a 'plan mode' in which the agent may research and propose but not
+      edit until a human approves.
+    example: >-
+      Switch to plan-and-execute so the expensive model plans once and a small model runs the steps.
+origin: >-
+  Rooted in classical [[automated-planning|automated planning]] (STRIPS, 1971) and the
+  plan–execute–monitor loop of robotics. For language models, Plan-and-Solve prompting (Lei Wang et
+  al., May 2023), ReWOO (Binfeng Xu et al., May 2023) and BabyAGI-style task lists preceded
+  LangChain's 'plan-and-execute' agents (2023), which gave the pattern its common name.
+year: 2023
+note: >-
+  The name is used both for a specific architecture and loosely for any agent that writes a plan
+  before acting.
+see_also:
+  - ReAct
+  - task decomposition
+  - automated planning
+  - orchestrator–worker pattern
+  - agentic workflow
+  - long-horizon task
+contrast:
+  - ReAct
+sources:
+  - text: >-
+      Wang, L. et al. (2023). Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought
+      Reasoning by Large Language Models. arXiv:2305.04091.
+    url: https://arxiv.org/abs/2305.04091
+  - text: >-
+      Xu, B., Peng, Z., Lei, B., Mukherjee, S., Liu, Y. & Xu, D. (2023). ReWOO: Decoupling Reasoning
+      from Observations for Efficient Augmented Language Models. arXiv:2305.18323.
+    url: https://arxiv.org/abs/2305.18323

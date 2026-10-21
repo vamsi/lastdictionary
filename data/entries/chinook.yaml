@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Chinook
+id: chinook
+pos: prop. n.
+also:
+  - Chinook (checkers program)
+domain: hist
+domains:
+  - sym
+  - math
+labels:
+  - historical
+level: specialist
+plain: >-
+  A checkers program from the University of Alberta that in 1994 became the first program crowned
+  world champion in a contest against people, and in 2007 proved that perfect checkers always ends
+  in a draw.
+senses:
+  - definition: >-
+      A program for checkers (draughts on an 8 × 8 board) developed from 1989 by a team led by
+      Jonathan Schaeffer at the University of Alberta. Its play rested on deep [[minimax|alpha–beta
+      search]] guided by a hand-tuned evaluation function, an opening book, and endgame databases
+      giving the exact outcome of every position with at most eight pieces on the board. It earned
+      the right to challenge for the world title in 1990; the long-reigning champion Marion Tinsley
+      beat it in 1992 in a newly created Man-Machine World Championship, and in the 1994 rematch
+      Tinsley withdrew for health reasons, so Chinook took the title, the first time a program had
+      become world champion in competition with humans. The project culminated in 2007, when
+      Schaeffer's team announced that checkers is weakly solved: after nearly two decades of
+      computation, they proved that perfect play by both sides leads to a draw, making checkers the
+      most complex game solved to that date.
+    example: "Chinook never needed to learn: by 2007 its creators had simply solved checkers."
+origin: >-
+  Developed by Jonathan Schaeffer's team at the University of Alberta from 1989; the proof that
+  perfect play leads to a draw was published as 'Checkers Is Solved' in Science in 2007.
+year: 1994
+note: >-
+  Contrast [[samuel-s-checkers-program|Samuel's checkers program]] (1950s), which learned from
+  experience and helped name [[machine-learning|machine learning]]; Chinook relied on search and
+  exhaustive databases.
+see_also:
+  - minimax
+  - game tree
+  - Deep Blue
+  - Samuel's checkers program
+  - AlphaZero
+sources:
+  - text: Schaeffer, J. et al. (2007). Checkers Is Solved. Science 317(5844), 1518–1522.

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: demographic parity
+id: demographic-parity
+pos: n.
+also:
+  - statistical parity
+  - group parity
+  - independence (fairness criterion)
+domain: society
+domains:
+  - ml
+level: specialist
+plain: >-
+  A fairness test that asks whether a system says yes (approves the loan, shortlists the applicant)
+  at the same rate for every group, whatever other differences exist between them.
+senses:
+  - definition: >-
+      A [[group-fairness|group fairness]] criterion requiring a classifier's positive-decision rate
+      to be equal across groups defined by a [[protected-attribute|protected attribute]] A;
+      equivalently, the prediction is statistically independent of A. In practice it is relaxed to a
+      maximum difference or a minimum ratio, as in the four-fifths rule used as evidence of
+      [[disparate-impact|disparate impact]]. Demographic parity ignores the true outcome: if base
+      rates genuinely differ between groups, even a perfect classifier violates it, and it can be
+      met by a classifier that accepts qualified members of one group but arbitrary members of
+      another. Its defenders favor it where the outcome labels themselves reflect past
+      discrimination.
+    example: >-
+      Demographic parity would require the hiring screen to advance the same share of women and men.
+formula_latex: P(\hat{Y}=1 \mid A=a) = P(\hat{Y}=1 \mid A=b)
+origin: >-
+  The criterion was formalized in discrimination-aware data mining by Toon Calders, Faisal Kamiran,
+  Mykola Pechenizkiy and Sicco Verwer (2009–2010), and analyzed as 'statistical parity' by Cynthia
+  Dwork and colleagues (2011–2012), who showed its weaknesses. The name 'demographic parity' was
+  established by October 2016, when Moritz Hardt, Eric Price and Nathan Srebro called it a common
+  conception of non-discrimination, and it became the usual machine-learning label; its first use
+  has not been traced.
+year: 2009
+see_also:
+  - group fairness
+  - equalized odds
+  - equal opportunity
+  - predictive parity
+  - disparate impact
+  - fairness impossibility theorem
+contrast:
+  - individual fairness
+sources:
+  - text: >-
+      Calders, T. & Verwer, S. (2010). Three naive Bayes approaches for discrimination-free
+      classification. Data Mining and Knowledge Discovery 21(2), 277–292.
+  - text: >-
+      Dwork, C., Hardt, M., Pitassi, T., Reingold, O. & Zemel, R. (2012). Fairness Through
+      Awareness. Proc. ITCS 2012.
+    url: https://arxiv.org/abs/1104.3913
+  - text: >-
+      Hardt, M., Price, E. & Srebro, N. (2016). Equality of Opportunity in Supervised Learning.
+      Advances in Neural Information Processing Systems 29.
+    url: https://arxiv.org/abs/1610.02413

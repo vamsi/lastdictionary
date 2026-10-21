@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model
+id: model
+pos: n.
+also:
+  - models
+domain: core
+domains:
+  - ml
+  - math
+  - llm
+level: essential
+plain: >-
+  A simplified working version of something. In AI it usually means the trained program, a big set
+  of learned numbers, that takes an input and produces an answer, prediction or piece of content.
+senses:
+  - context: Machine learning
+    definition: >-
+      A parameterized function, together with the learned values of its [[parameter|parameters]],
+      that maps inputs to outputs: for example a [[decision-tree|decision tree]], a
+      [[logistic-regression|logistic regression]] or a [[neural-network|neural network]]. A model is
+      specified by its architecture or hypothesis class and fixed by [[training|training]] on data;
+      applying it to new inputs is [[inference|inference]]. Models are often classed by what they
+      represent, as in [[generative-model|generative]] versus
+      [[discriminative-model|discriminative]] models or [[language-model|language models]]. In the
+      language-model era the word frequently names a specific trained artifact ('the model', a
+      checkpoint) as opposed to the software around it; see [[ai-model|AI model]] and
+      [[harness|harness]].
+    example: The model is fine; the bug is in how the app formats its output.
+  - context: Statistics
+    definition: >-
+      A mathematical description of how data are generated, usually a family of
+      [[probability-distribution|probability distributions]] indexed by parameters, used to estimate
+      quantities, test hypotheses or predict. Statisticians distinguish
+      [[parametric-model|parametric]] from [[nonparametric-model|nonparametric]] models and stress
+      that every model is an idealization judged by its usefulness.
+  - context: Science and engineering
+    definition: >-
+      A simplified representation of a real system, whether physical, mathematical or computational,
+      used to explain or predict its behavior, as in climate models or models of cognition. In AI
+      the related idea of a [[world-model|world model]] is an agent's internal representation of how
+      its environment works.
+  - context: Logic
+    definition: >-
+      In [[first-order-logic|first-order logic]] and model theory, an interpretation (a domain of
+      objects plus meanings for the symbols) under which a given set of sentences comes out true.
+      Automated reasoning and [[boolean-satisfiability-problem|SAT solvers]] search for models of
+      formulas or prove that none exist.
+origin: >-
+  From Latin modulus ('small measure') via Italian modello and French modelle. 'Model' was a
+  standard term of statistics and the sciences by the mid-20th century; George Box's 1979 aphorism
+  'all models are wrong but some are useful' became the statistician's motto. Machine learning
+  inherited the statistical usage, and from the 2010s 'model' came to denote trained neural networks
+  and, colloquially, AI products.
+note: >-
+  The word is ambiguous: it can mean an architecture ('the transformer model'), a trained
+  checkpoint, a product family or a whole service. Distinguish a model from the
+  [[algorithm|algorithm]] that trains or runs it and from the [[ai-system|AI system]] built around
+  it.
+see_also:
+  - AI model
+  - parameter
+  - training
+  - inference
+  - world model
+  - language model
+  - foundation model
+  - algorithm
+contrast:
+  - algorithm
+  - AI system
+  - harness
+sources:
+  - text: >-
+      Box, G. E. P. (1979). Robustness in the Strategy of Scientific Model Building. In Launer, R.
+      L. & Wilkinson, G. N. (eds), Robustness in Statistics. Academic Press.

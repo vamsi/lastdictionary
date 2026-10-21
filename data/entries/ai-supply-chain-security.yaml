@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI supply chain security
+id: ai-supply-chain-security
+pos: n.
+also:
+  - ML supply chain security
+  - model supply chain
+  - AI bill of materials
+  - AIBOM
+  - model signing
+domain: sec
+domains:
+  - eng
+  - data
+level: core
+plain: >-
+  Protecting everything an AI system is built from — downloaded models, datasets, code libraries and
+  tools — against tampering, so a poisoned or fake part cannot sneak into the finished product.
+senses:
+  - definition: >-
+      The security of the components and processes from which AI systems are assembled:
+      [[training-data|training data]] and its sources, pretrained models and adapters from public
+      hubs such as [[hugging-face|Hugging Face]], machine-learning libraries and their dependencies,
+      serving infrastructure, plugins and [[mcp-server|agent tool servers]]. Characteristic risks
+      include model files in serialization formats that execute code when loaded (notably Python's
+      pickle), [[backdoor-attack|backdoored]] or tampered weights published under look-alike names,
+      [[data-poisoning|poisoned datasets]], compromised or hallucinated dependencies
+      ([[slopsquatting|slopsquatting]]), and malicious tool definitions ([[tool-poisoning|tool
+      poisoning]]). Defenses adapt software supply-chain practice: safe formats such as
+      [[safetensors|safetensors]], scanning and sandboxed loading of models, cryptographic signing
+      and provenance attestations for models and datasets, AI bills of materials listing a system's
+      components, pinned versions, and [[data-provenance|data provenance]] records.
+    example: >-
+      Our AI supply chain policy bans pickle files and accepts only signed models from approved
+      publishers.
+origin: >-
+  Tianyu Gu and colleagues' 'BadNets' (2017) framed backdoored pretrained models as a vulnerability
+  of the 'machine learning model supply chain'. Concern grew with model hubs as researchers found
+  malicious, code-executing models on Hugging Face in 2023–2024. Standards responded: CycloneDX
+  added machine-learning bills of materials in 2023, SPDX 3.0 added AI and dataset profiles in 2024,
+  and OpenSSF published a model-signing specification in 2025.
+year: 2017
+see_also:
+  - data poisoning
+  - backdoor attack
+  - safetensors
+  - slopsquatting
+  - tool poisoning
+  - data provenance
+  - OWASP Top 10 for LLM Applications
+sources:
+  - text: >-
+      Gu, T., Dolan-Gavitt, B. & Garg, S. (2017). BadNets: Identifying Vulnerabilities in the
+      Machine Learning Model Supply Chain. arXiv:1708.06733.
+as_of: 2026-10

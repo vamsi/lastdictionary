@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: normalized discounted cumulative gain
+id: normalized-discounted-cumulative-gain
+pos: n.
+also:
+  - nDCG
+  - NDCG
+  - nDCG@k
+  - discounted cumulative gain
+  - DCG
+  - cumulated gain
+domain: eng
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  A score for a ranked list of results that rewards putting the most relevant items near the top,
+  scaled so that a perfect ordering scores 1.
+senses:
+  - definition: >-
+      A ranking-quality measure that uses graded relevance judgments (for example 0 for irrelevant
+      up to 3 for perfect). Discounted cumulative gain (DCG) adds up the gain of each result in the
+      top k, dividing by a logarithm of its rank so that relevant items found lower down count for
+      less; nDCG divides this by the ideal DCG (IDCG) — the DCG of the best possible ordering of the
+      judged items — giving a value between 0 and 1 that can be averaged across queries. Two gain
+      conventions are common: the relevance grade itself, as in the original definition, or 2 raised
+      to the grade minus 1, which emphasizes highly relevant results and is standard in web search
+      and [[learning-to-rank|learning to rank]]. nDCG@10 is the headline metric of retrieval
+      benchmarks such as [[beir|BEIR]] and the retrieval tasks of [[mteb|MTEB]].
+    example: The reranker lifted nDCG@10 from 0.41 to 0.52 on our labeled queries.
+formula_latex: \mathrm{DCG@}k=\sum_{i=1}^{k}\frac{2^{rel_i}-1}{\log_2(i+1)},\qquad
+  \mathrm{nDCG@}k=\frac{\mathrm{DCG@}k}{\mathrm{IDCG@}k}
+origin: >-
+  Kalervo Järvelin and Jaana Kekäläinen of the University of Tampere introduced cumulated gain and
+  discounted cumulated gain at SIGIR 2000 and the normalized form in ACM Transactions on Information
+  Systems (October 2002). The exponential-gain variant spread through Chris Burges and colleagues'
+  learning-to-rank work (2005) and web-search practice.
+year: 2000
+note: >-
+  The originators wrote 'cumulated'; 'cumulative' is now more common. Because conventions differ,
+  nDCG values are comparable only when gain, discount and cutoff match.
+see_also:
+  - learning to rank
+  - mean reciprocal rank
+  - recall@k
+  - reranking
+  - information retrieval
+  - evaluation
+sources:
+  - text: >-
+      Järvelin, K. & Kekäläinen, J. (2000). IR evaluation methods for retrieving highly relevant
+      documents. SIGIR 2000: 41–48.
+    url: https://ir.webis.de/anthology/2000.sigirconf_conference-2000.7
+  - text: >-
+      Järvelin, K. & Kekäläinen, J. (2002). Cumulated gain-based evaluation of IR techniques. ACM
+      Transactions on Information Systems 20(4): 422–446.
+    url: https://doi.org/10.1145/582415.582418

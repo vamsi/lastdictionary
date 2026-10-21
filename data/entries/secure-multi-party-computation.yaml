@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: secure multi-party computation
+id: secure-multi-party-computation
+pos: n.
+also:
+  - SMPC
+  - MPC
+  - secure multiparty computation
+  - secure computation
+domain: sec
+domains:
+  - math
+level: specialist
+plain: >-
+  Cryptographic methods that let several parties compute a result from their combined private data —
+  say, an average salary — without any of them revealing its own data to the others.
+senses:
+  - definition: >-
+      A branch of cryptography that lets several parties obtain the result of a calculation over
+      their combined private inputs while none learns anything about the others' inputs beyond what
+      the result itself reveals, even if some parties cheat, up to a stated threshold. General
+      constructions include Yao's garbled circuits and protocols based on secret sharing, in which
+      each value is split into random shares that individually reveal nothing. In machine learning,
+      MPC supports private inference (a client's input and a provider's model both stay hidden),
+      training across organizations that cannot pool data, and [[secure-aggregation|secure
+      aggregation]] in [[federated-learning|federated learning]]. It provides strong guarantees
+      without trusted hardware, but communication and computation overheads — often orders of
+      magnitude over plaintext — make it costly for large neural networks.
+    example: >-
+      Three banks used secure multi-party computation to train a fraud model without exchanging
+      customer records.
+origin: >-
+  Andrew Chi-Chih Yao posed the 'millionaires' problem' — two people comparing wealth without
+  disclosing it — and secure two-party computation in 1982 (FOCS); his garbled-circuit technique
+  followed in 1986. Oded Goldreich, Silvio Micali and Avi Wigderson (1987) generalized it to many
+  parties.
+year: 1982
+see_also:
+  - secure aggregation
+  - homomorphic encryption
+  - trusted execution environment
+  - federated learning
+  - privacy-preserving machine learning
+contrast:
+  - confidential computing
+sources:
+  - text: >-
+      Yao, A. C. (1982). Protocols for Secure Computations. 23rd IEEE Symposium on Foundations of
+      Computer Science (FOCS).
+  - text: >-
+      Goldreich, O., Micali, S. & Wigderson, A. (1987). How to Play Any Mental Game. ACM STOC 1987.

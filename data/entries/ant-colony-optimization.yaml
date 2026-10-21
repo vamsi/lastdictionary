@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ant colony optimization
+id: ant-colony-optimization
+pos: n.
+also:
+  - ACO
+  - Ant System
+  - ant algorithm
+  - MAX–MIN Ant System
+domain: sym
+domains:
+  - math
+level: specialist
+plain: >-
+  A method for finding good routes and schedules inspired by how ants find short paths to food:
+  simulated ants leave 'scent' on good paths, which attracts other ants, so the best routes
+  gradually stand out.
+senses:
+  - definition: >-
+      A [[metaheuristic|metaheuristic]] for combinatorial optimization, especially routing and
+      sequencing, in which artificial ants construct candidate solutions step by step — for the
+      traveling salesman problem, choosing which city to visit next — with probabilities that depend
+      on pheromone values attached to the options and on a problem-specific [[heuristic|heuristic]]
+      such as inverse distance. After each iteration pheromone evaporates everywhere and is
+      reinforced on the components of good solutions, so the colony's shared memory concentrates
+      search on promising regions while evaporation prevents premature lock-in. Variants include Ant
+      Colony System and MAX–MIN Ant System, usually combined with [[local-search|local search]].
+      Applications include vehicle routing, network routing, scheduling and assembly-line balancing.
+origin: >-
+  Introduced as the Ant System by Marco Dorigo with Alberto Colorni and Vittorio Maniezzo, first at
+  a 1991 artificial-life conference and then in Dorigo's 1992 doctoral thesis at the Politecnico di
+  Milano, inspired by Jean-Louis Deneubourg and colleagues' experiments showing how Argentine ants
+  choose the shorter of two bridges. The name 'ant colony optimization' was adopted in 1999.
+year: 1992
+see_also:
+  - swarm intelligence
+  - particle swarm optimization
+  - metaheuristic
+  - local search
+  - evolutionary computation
+sources:
+  - text: >-
+      Dorigo, M., Maniezzo, V. & Colorni, A. (1996). Ant System: Optimization by a Colony of
+      Cooperating Agents. IEEE Transactions on Systems, Man, and Cybernetics B 26(1), 29–41.
+  - text: Dorigo, M. & Stützle, T. (2004). Ant Colony Optimization. MIT Press.

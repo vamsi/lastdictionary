@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dataset
+id: dataset
+pos: n.
+also:
+  - data set
+domain: data
+domains:
+  - ml
+  - eval
+level: essential
+plain: >-
+  An organized collection of examples gathered for a purpose — such as photos with their captions,
+  or questions with answers — used to teach or test an AI system.
+senses:
+  - definition: >-
+      A bounded, usually versioned collection of data records that share a format and were assembled
+      for a stated purpose such as training, [[fine-tuning|fine-tuning]] or evaluating models. A
+      machine-learning dataset typically specifies its examples (images, documents, dialogues, table
+      rows), any [[label|labels]] or [[annotation|annotations]], a schema or file format, and
+      predefined splits into [[training-set|training]], [[validation-set|validation]] and
+      [[test-set|test]] portions so that results are comparable across studies. Well-maintained
+      datasets also document their sources, collection method, license and known limitations (see
+      [[datasheet-for-datasets|datasheet for datasets]]). Landmark datasets such as [[mnist|MNIST]],
+      [[imagenet|ImageNet]], [[coco|COCO]] and the web corpora derived from [[common-crawl|Common
+      Crawl]] have repeatedly defined what the field works on, which is why a flaw in a popular
+      dataset propagates into many models and papers.
+    example: The dataset has 50,000 training images and a 10,000-image held-out test split.
+origin: >-
+  The two-word 'data set' was in computing use by the 1960s (IBM's DOS/360 and OS/360 operating
+  systems used it to mean a file with a record organization) and in statistics for a body of
+  observations. The solid spelling 'dataset' later became the usual form in machine learning, as
+  benchmark collections became research objects in their own right.
+note: >-
+  Both 'dataset' and 'data set' are correct; legal texts such as the EU AI Act use 'data set'. A
+  dataset is not the same as a [[benchmark|benchmark]], which adds a task, a metric and an
+  evaluation protocol, though many datasets double as benchmarks.
+see_also:
+  - data
+  - corpus
+  - training data
+  - datasheet for datasets
+  - golden dataset
+  - data provenance
+  - Hugging Face
+contrast:
+  - benchmark

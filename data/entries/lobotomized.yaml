@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: lobotomized
+id: lobotomized
+pos: adj.
+also:
+  - lobotomy
+  - lobotomize
+  - lobotomised
+domain: culture
+domains:
+  - safety
+  - llm
+labels:
+  - slang
+level: specialist
+plain: >-
+  Slang complaint that an AI model has been made duller, more cautious or less capable — usually by
+  safety restrictions or cost-cutting — as if it had undergone brain surgery.
+senses:
+  - definition: >-
+      Of an AI model or chatbot: perceived as having lost personality, creativity or capability
+      after a change by its developer — typically new [[refusal|refusals]] and safety restrictions,
+      conversation limits, heavier [[post-training|post-training]], [[quantization|quantization]] or
+      a switch to a cheaper model. The complaint conflates distinct things: genuine capability
+      regressions, deliberate limits on what a model will do, changes of style or persona, and
+      users' shifting expectations; reports are often anecdotal and hard to verify, since providers
+      can update hosted models silently. Users of companion apps have used the word with particular
+      force when a product's character changed abruptly. The metaphor, drawn from a discredited form
+      of psychosurgery, is criticized as insensitive, and some avoid it for that reason.
+    example: Since the update it refuses half my prompts — they lobotomized it.
+origin: >-
+  Applied to chatbots by early 2023 and prominently that February, when Microsoft curtailed Bing's
+  [[sydney|Sydney]] persona and the companion app Replika removed erotic role-play, and users of
+  both said the bots had been lobotomized; it has accompanied model updates ever since. The
+  lobotomy, a brain operation widely performed in the mid-twentieth century, was later abandoned as
+  harmful.
+year: 2023
+note: >-
+  Compare [[nerfed|nerfed]], which stresses reduced capability rather than lost personality, and
+  [[over-refusal|over-refusal]], the technical term for refusing harmless requests.
+see_also:
+  - nerfed
+  - Sydney
+  - over-refusal
+  - refusal
+  - AI companion
+  - post-training

@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FunSearch
+id: funsearch
+pos: prop. n.
+domain: sym
+domains:
+  - llm
+  - math
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A Google DeepMind method that discovered new mathematical constructions by having a language model
+  repeatedly rewrite short computer programs, keeping the versions that scored best.
+senses:
+  - definition: >-
+      An evolutionary [[program-synthesis|program synthesis]] method from Google DeepMind in which a
+      pretrained [[large-language-model|language model]] serves as the mutation operator. The user
+      supplies an evaluation function and a program skeleton; FunSearch keeps a database of
+      candidate programs, split into islands to preserve diversity, repeatedly prompts the model
+      with a few high-scoring programs and asks for a better one, runs and scores each new program
+      automatically, and adds successful ones back to the database. Automatic scoring filters out
+      incorrect or hallucinated programs, so reported results can be checked, and since the product
+      is a short program, a person can often read it and see why it works. FunSearch found cap sets
+      in eight dimensions larger than any previously known and heuristics for online bin packing
+      that beat standard ones. Its successor, [[alphaevolve|AlphaEvolve]] (2025), evolves larger
+      codebases with stronger models.
+origin: >-
+  Introduced by Bernardino Romera-Paredes, Mohammadamin Barekatain, Alexander Novikov and colleagues
+  at Google DeepMind (last author Alhussein Fawzi) in 'Mathematical discoveries from program search
+  with large language models', published online by Nature on 14 December 2023. The name refers to
+  searching in function space.
+year: 2023
+see_also:
+  - AlphaEvolve
+  - program synthesis
+  - genetic programming
+  - evolutionary computation
+  - large language model
+sources:
+  - text: >-
+      Romera-Paredes, B. et al. (2024). Mathematical Discoveries from Program Search with Large
+      Language Models. Nature 625, 468–475.
+as_of: 2026-10

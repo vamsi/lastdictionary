@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Constitutional AI
+id: constitutional-ai
+pos: n.
+also:
+  - CAI
+domain: train
+domains:
+  - safety
+  - llm
+level: core
+plain: >-
+  Anthropic's technique for making an AI less harmful by having it check and rewrite its own answers
+  against a short written set of principles, so that people need not label harmful examples by hand.
+senses:
+  - definition: >-
+      A training method that teaches harmlessness from a short written set of principles — a
+      constitution — and AI-generated judgments instead of human labels of harmful outputs (people
+      still supplied helpfulness comparisons). It has two stages. First, the model drafts answers to
+      provocative prompts, points out where each falls short of a randomly chosen principle,
+      rewrites it accordingly, and is then fine-tuned on the rewrites. Second, the fine-tuned model
+      produces two answers per prompt, a judge model decides which better honors a sampled principle
+      ([[reinforcement-learning-from-ai-feedback|reinforcement learning from AI feedback]]), and
+      these comparisons ([[preference-data|preference data]]) train a [[reward-model|reward model]]
+      for reinforcement learning. The 2022 paper reported assistants that were both less harmful and
+      less evasive than RLHF-trained ones, more often engaging with a harmful request and giving
+      reasons for declining than refusing flatly, and found that step-by-step reasoning by the judge
+      ([[chain-of-thought|chain of thought]]) improved its labels. A written objective is
+      inspectable and editable, though the wording of the principles, and the choice of who writes
+      them, remain value-laden.
+    example: >-
+      With Constitutional AI we added a principle about medical advice and regenerated the
+      harmlessness preferences overnight.
+origin: >-
+  Introduced by Anthropic in a December 2022 paper by Yuntao Bai, Saurav Kadavath, Sandipan Kundu,
+  Amanda Askell and 47 co-authors, and used to train the Claude models. Anthropic first published
+  the constitution used for Claude in May 2023 and, with the Collective Intelligence Project,
+  trained a model on a publicly sourced constitution later that year; it published a substantially
+  revised constitution for Claude in January 2026.
+year: 2022
+note: >-
+  'Constitution' here means a list of principles used in training, not a legal document; published
+  behavioral charters are covered at [[ai-constitution|AI constitution]] and
+  [[model-specification|model specification]]. Not to be confused with
+  [[constitutional-classifiers|constitutional classifiers]], Anthropic's 2025 input and output
+  safeguard classifiers trained from a constitution.
+see_also:
+  - reinforcement learning from AI feedback
+  - AI constitution
+  - model specification
+  - helpful, honest and harmless
+  - reinforcement learning from human feedback
+  - character training
+  - Claude
+contrast:
+  - constitutional classifiers
+sources:
+  - text: >-
+      Bai, Y. et al. (2022). Constitutional AI: Harmlessness from AI Feedback. arXiv:2212.08073.
+    url: https://arxiv.org/abs/2212.08073
+as_of: 2026-10

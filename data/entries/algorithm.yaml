@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: algorithm
+id: algorithm
+pos: n.
+also:
+  - algorithmic
+  - the algorithm
+domain: core
+domains:
+  - math
+  - society
+level: core
+plain: >-
+  A precise, step-by-step procedure for solving a problem or doing a task, like a recipe a computer
+  can follow. In the news, 'the algorithm' often means software that ranks what you see online.
+senses:
+  - context: Computer science
+    definition: >-
+      A procedure specified precisely enough to be carried out mechanically, step by step, that
+      takes inputs, produces outputs and halts after finitely many steps: for example a sorting
+      routine or [[gradient-descent|gradient descent]]. Algorithms are analyzed for correctness and
+      for how their time and memory costs grow with input size. In [[machine-learning|machine
+      learning]] it helps to separate the learning algorithm (the procedure that fits a model, such
+      as [[backpropagation|backpropagation]] with an optimizer) from the resulting [[model|model]]
+      (the learned function), whose behavior no programmer wrote down step by step.
+    example: >-
+      The training algorithm is twenty lines of code; the model it produces has 70 billion
+      parameters.
+  - context: Society and media
+    definition: >-
+      Loosely, an automated system that makes or shapes decisions about people, such as ranking
+      social-media feeds, setting prices or screening job applicants. This sense, often 'the
+      algorithm', usually refers to a whole deployed system including its data and business rules,
+      and is central to debates about [[algorithmic-bias|algorithmic bias]],
+      [[algorithmic-accountability|algorithmic accountability]] and
+      [[engagement-optimization|engagement optimization]].
+    labels:
+      - informal
+origin: >-
+  From the name of the 9th-century Persian scholar Muhammad ibn Musa al-Khwarizmi, whose treatise on
+  Hindu–Arabic numerals circulated in Latin as 'Algoritmi de numero Indorum'. Medieval 'algorism'
+  meant decimal arithmetic; the later spelling, influenced by Greek arithmos ('number'), acquired
+  the general sense of a mechanical procedure, which Alan Turing and Alonzo Church formalized in
+  1936.
+note: >-
+  Public debate often blames 'the algorithm' for outcomes that stem from data, design objectives or
+  human policy. Distinguish an algorithm (a procedure) from a [[model|model]] (what a learning
+  algorithm produces) and from an [[ai-system|AI system]].
+see_also:
+  - model
+  - machine learning
+  - algorithmic bias
+  - algorithmic accountability
+  - heuristic
+  - gradient descent
+  - algorithm aversion
+contrast:
+  - model
+  - heuristic
+sources:
+  - text: >-
+      Knuth, D. E. (1968). The Art of Computer Programming, Vol. 1: Fundamental Algorithms.
+      Addison-Wesley.

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: black-box attack
+id: black-box-attack
+pos: n.
+also:
+  - black-box adversary
+  - query-based attack
+  - transfer attack
+  - adversarial transferability
+domain: sec
+domains:
+  - dl
+level: specialist
+plain: >-
+  An attack on an AI model by someone who cannot see inside it and can only send it inputs and watch
+  what comes out — like picking a lock by feel.
+senses:
+  - definition: >-
+      An attack under a [[threat-model|threat model]] in which the adversary has no access to the
+      model's parameters or gradients and can only submit queries and observe outputs — scores,
+      labels or generated text. Query-based attacks estimate gradients from how outputs change
+      (zeroth-order optimization) or, when only the final decision is visible, search along the
+      decision boundary. Transfer attacks instead craft [[adversarial-example|adversarial examples]]
+      on a local surrogate model and rely on transferability, the tendency of perturbations that
+      fool one model to fool others trained for the same task. The black-box setting models attacks
+      on commercial APIs and covers [[model-extraction|model extraction]],
+      [[membership-inference-attack|membership inference]] and most [[jailbreak|jailbreaks]] of
+      closed models. Query limits, output rounding and monitoring raise an attacker's costs but
+      rarely prevent such attacks.
+    example: >-
+      Using only the API's top-1 labels, the black-box attack succeeded after a median of 2,000
+      queries.
+origin: >-
+  Christian Szegedy and colleagues noted in 2013 that adversarial examples transfer between models.
+  Nicolas Papernot and colleagues' 'Practical Black-Box Attacks against Machine Learning' (2016;
+  AsiaCCS 2017) exploited this with a substitute model trained on the target's outputs; score-based
+  (Pin-Yu Chen and colleagues' ZOO, 2017) and decision-based (Wieland Brendel and colleagues, 2018)
+  query attacks followed.
+see_also:
+  - white-box attack
+  - threat model
+  - adversarial example
+  - model extraction
+  - evasion attack
+  - jailbreak
+contrast:
+  - white-box attack
+sources:
+  - text: >-
+      Papernot, N., McDaniel, P., Goodfellow, I., Jha, S., Celik, Z. B. & Swami, A. (2017).
+      Practical Black-Box Attacks against Machine Learning. Proc. ACM AsiaCCS 2017.
+      arXiv:1602.02697.

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tool use
+id: tool-use
+pos: n.
+also:
+  - tool learning
+  - tool-augmented LLM
+  - tool-using agent
+domain: agents
+domains:
+  - llm
+  - train
+level: core
+plain: >-
+  An AI model's ability to reach beyond its own knowledge by operating outside tools — searching the
+  web, running code, using a calculator or an app — and folding the results into its work.
+senses:
+  - definition: >-
+      The capability of a [[large-language-model|large language model]] to accomplish tasks by
+      deciding when to invoke external [[tool|tools]], choosing which tool and arguments,
+      interpreting the results and continuing — the foundation of [[ai-agent|AI agents]]. Tool use
+      compensates for well-known weaknesses of models (stale [[parametric-knowledge|parametric
+      knowledge]], unreliable arithmetic, no access to private data, no ability to act) and turns
+      text generation into action. It is taught by [[supervised-fine-tuning|supervised fine-tuning]]
+      on demonstrations, by self-supervised schemes such as [[toolformer|Toolformer]], and
+      increasingly by [[reinforcement-learning|reinforcement learning]] in environments where tool
+      calls affect outcomes; at inference time it is exposed through [[function-calling|function
+      calling]] interfaces and protocols such as the [[model-context-protocol|Model Context
+      Protocol]]. Failure modes include unnecessary calls, invented tools or arguments, misread
+      outputs, and obeying malicious instructions embedded in tool results
+      ([[indirect-prompt-injection|indirect prompt injection]]).
+    example: >-
+      With tool use enabled, the model checks the exchange rate instead of guessing it.
+origin: >-
+  Tool use has long been studied as a mark of animal and human intelligence. For language models,
+  systems such as [[webgpt|WebGPT]] (2021), [[mrkl-system|MRKL]] and TALM (2022) called external
+  tools; [[toolformer|Toolformer]] (Timo Schick et al., February 2023) showed a model could learn
+  when to call APIs, and Andrew Ng listed tool use among four agentic design patterns in March 2024.
+year: 2022
+see_also:
+  - tool
+  - tool call
+  - function calling
+  - Toolformer
+  - AI agent
+  - code execution
+  - indirect prompt injection
+sources:
+  - text: >-
+      Schick, T. et al. (2023). Toolformer: Language Models Can Teach Themselves to Use Tools.
+      arXiv:2302.04761.
+    url: https://arxiv.org/abs/2302.04761v1
+  - text: "Mialon, G. et al. (2023). Augmented Language Models: a Survey. arXiv:2302.07842."
+    url: https://arxiv.org/abs/2302.07842

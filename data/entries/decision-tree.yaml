@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decision tree
+id: decision-tree
+pos: n.
+also:
+  - classification tree
+  - regression tree
+  - decision tree learning
+  - tree-based model
+  - decision stump
+domain: ml
+domains:
+  - sym
+level: core
+plain: >-
+  A model that makes a prediction by asking a series of yes-or-no questions about the input, like a
+  flowchart, with each answer leading to the next question until it reaches a final answer.
+senses:
+  - context: Machine learning
+    definition: >-
+      A predictive model that carves the input space into regions by a nested sequence of
+      single-feature tests (for example, 'age < 40?'): an input starts at the root, follows the
+      branch matching each answer, and receives the prediction stored where its path ends — a class
+      or class distribution in classification trees, a constant such as the mean in regression
+      trees. Trees are grown greedily from the top down: at each node the algorithm picks the split
+      that most reduces an impurity measure such as [[gini-impurity|Gini impurity]], entropy
+      ([[information-gain|information gain]]) or, for regression, variance, and growth is stopped
+      early or [[pruning|pruned]] afterward to limit [[overfitting|overfitting]]. Trees handle mixed
+      feature types, need no feature scaling and are readable when small, but single trees are
+      unstable and rarely the most accurate; their main modern role is as base learners in
+      [[random-forest|random forests]] and [[gradient-boosting|gradient boosting]]. Classic
+      algorithms are [[id3|ID3]], [[c4-5|C4.5]] and [[cart|CART]]; a one-split tree is called a
+      decision stump.
+    example: >-
+      A depth-3 decision tree was accurate enough, and the loan officers could read every rule.
+  - context: Decision analysis
+    definition: >-
+      A hand-built diagram of sequential choices, chance events and outcomes, annotated with
+      probabilities and payoffs, used to compare the expected value of alternative courses of
+      action. This operations-research sense predates machine learning; the tree is drawn by
+      analysts rather than learned from data.
+origin: >-
+  Learned trees began with James Morgan and John Sonquist's AID program for regression on survey
+  data (1963) and Earl Hunt, Janet Marin and Philip Stone's Concept Learning System (1966).
+  Statistics and machine learning then developed the idea largely in parallel: CART (Leo Breiman,
+  Jerome Friedman, Richard Olshen and Charles Stone, 1984) and J. Ross Quinlan's ID3 (1979–1986) and
+  C4.5 (1993).
+year: 1963
+note: >-
+  Depth is the main complexity control: deep trees overfit, stumps underfit. Finding the optimal
+  tree is NP-hard, which is why practical algorithms are greedy.
+see_also:
+  - CART
+  - ID3
+  - C4.5
+  - Gini impurity
+  - information gain
+  - random forest
+  - gradient boosting
+  - pruning
+sources:
+  - text: >-
+      Morgan, J. N. & Sonquist, J. A. (1963). Problems in the Analysis of Survey Data, and a
+      Proposal. Journal of the American Statistical Association, 58, 415–434.
+  - text: >-
+      Loh, W.-Y. (2014). Fifty Years of Classification and Regression Trees. International
+      Statistical Review, 82(3), 329–348.
+    url: https://pages.stat.wisc.edu/~loh/treeprogs/guide/LohISI14.pdf

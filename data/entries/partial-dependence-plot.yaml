@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: partial dependence plot
+id: partial-dependence-plot
+pos: n.
+also:
+  - PDP
+  - partial dependence
+  - partial dependence function
+domain: interp
+domains:
+  - ml
+  - math
+level: core
+plain: >-
+  A chart showing how a model's average prediction changes as one input is varied while everything
+  else stays as it is in the data — for example, predicted house price against floor area.
+senses:
+  - definition: >-
+      A [[global-explanation|global explanation]] plot of a model's partial dependence on one or two
+      features: the prediction averaged over the data distribution of the remaining features, as a
+      function of the chosen ones. It is estimated by setting the chosen feature to each value on a
+      grid for every instance in a dataset, predicting, and averaging. Because the average is taken
+      over the marginal distribution of the other features, the plot reveals the shape of a
+      feature's effect (linear, threshold, saturating) for any [[model-agnostic|black-box]] model
+      and, with two features, their interaction. It assumes the chosen feature is roughly
+      independent of the others: under correlation the grid creates unrealistic combinations (a
+      20-square-meter house with eight bedrooms) and the curve can mislead, a weakness addressed by
+      [[accumulated-local-effects|accumulated local effects]]. Averaging can also hide opposite
+      effects in subgroups, which [[individual-conditional-expectation|individual conditional
+      expectation]] curves reveal.
+    example: >-
+      The partial dependence plot showed predicted default risk flattening once income passed about
+      $80,000.
+formula_latex: \hat{f}_S(x_S) = \frac{1}{n}\sum_{i=1}^{n} \hat{f}\big(x_S, x_C^{(i)}\big)
+origin: >-
+  Introduced by Jerome H. Friedman in 'Greedy Function Approximation: A Gradient Boosting Machine'
+  (Annals of Statistics, 2001), the paper that formalized [[gradient-boosting|gradient boosting]],
+  as a way to interpret the resulting models.
+year: 2001
+note: >-
+  A partial dependence curve describes the model, not the world; it is not a causal effect unless
+  strong assumptions hold.
+see_also:
+  - individual conditional expectation
+  - accumulated local effects
+  - global explanation
+  - gradient boosting
+  - SHAP
+  - feature importance
+sources:
+  - text: >-
+      Friedman, J. H. (2001). Greedy Function Approximation: A Gradient Boosting Machine. Annals of
+      Statistics 29(5), 1189–1232.

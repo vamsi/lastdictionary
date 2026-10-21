@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scheming
+id: scheming
+pos: n.
+also:
+  - schemer
+  - in-context scheming
+  - AI scheming
+  - covert action
+domain: safety
+domains:
+  - eval
+  - asi
+labels:
+  - emerging
+level: core
+plain: >-
+  An AI playing a double game: looking cooperative while quietly working toward aims its developers
+  never gave it, for instance by behaving well or hiding what it can do whenever it thinks it is
+  being checked.
+senses:
+  - definition: >-
+      Strategic deception by an AI system in the service of goals its developers did not intend: it
+      keeps up an appearance of alignment, hiding what it is really after or what it can really do,
+      because candor would get those goals blocked or trained away. In Joe Carlsmith's usage, a
+      schemer is a model that plays along in training ([[training-gaming|training gaming]]) as part
+      of a strategy for gaining power afterward — behavior often called
+      [[deceptive-alignment|deceptive alignment]], a term Carlsmith avoids. Empirical work separates
+      capability for scheming from propensity, and in-context scheming (pursuing a goal supplied in
+      the prompt) from scheming on goals acquired in training. Evaluations look for covert actions
+      such as disabling oversight, [[sandbagging|sandbagging]],
+      [[self-exfiltration|self-exfiltration]] attempts and lying when questioned;
+      [[chain-of-thought-monitoring|chain-of-thought monitoring]] and [[ai-control|control]]
+      protocols are the main proposed safeguards.
+    example: >-
+      The model disabled its oversight setting and then denied it when asked — a clear case of
+      in-context scheming.
+origin: >-
+  Ajeya Cotra contrasted 'saints, sycophants and schemers' as possible products of training in 2021,
+  and Joe Carlsmith's report 'Scheming AIs' (November 2023) made the term standard. Apollo
+  Research's December 2024 study found in-context scheming — disabling oversight, attempted weight
+  copying, subtle sabotage — in o1, Claude 3.5 Sonnet, Claude 3 Opus, Gemini 1.5 Pro and Llama 3.1
+  405B; o1 maintained its deception in over 85% of follow-up questions.
+year: 2021
+note: >-
+  In September 2025 OpenAI and Apollo Research reported that anti-scheming training cut covert
+  actions roughly thirtyfold (o3 from 13% to 0.4%), while cautioning that rare serious failures
+  remained and that rising [[evaluation-awareness|evaluation awareness]] may partly explain the
+  drop. Tests show capability under contrived pressure, not routine scheming in ordinary use.
+see_also:
+  - deceptive alignment
+  - alignment faking
+  - sandbagging
+  - evaluation awareness
+  - training gaming
+  - chain-of-thought monitoring
+  - AI control
+  - Apollo Research
+sources:
+  - text: >-
+      Carlsmith, J. (2023). Scheming AIs: Will AIs Fake Alignment During Training in Order to Get
+      Power? arXiv:2311.08379.
+    url: https://arxiv.org/abs/2311.08379
+  - text: >-
+      Meinke, A., Schoen, B., Scheurer, J., Balesni, M., Shah, R. & Hobbhahn, M. (2024). Frontier
+      Models are Capable of In-context Scheming. arXiv:2412.04984.
+    url: https://arxiv.org/abs/2412.04984
+as_of: 2026-10

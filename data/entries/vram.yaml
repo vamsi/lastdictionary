@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: VRAM
+id: vram
+pos: abbr.
+also:
+  - video RAM
+  - GPU memory
+  - video memory
+  - graphics memory
+pronunciation: VEE-ram
+domain: hw
+domains:
+  - infer
+level: core
+plain: >-
+  The memory on a graphics card. For running AI at home it is the key number: the model has to fit
+  in it, so more memory means bigger models.
+senses:
+  - context: AI usage
+    definition: >-
+      The dedicated memory attached to a [[gpu|GPU]] — GDDR on consumer cards,
+      [[high-bandwidth-memory|HBM]] on data-center accelerators — and by extension its capacity,
+      usually the first constraint on which models a given GPU can train or run. Serving a model
+      needs room for its [[weights|weights]] (about 2 bytes per [[parameter|parameter]] in 16-bit
+      precision, 0.5 bytes at 4-bit), for the [[kv-cache|KV cache]], which grows with context length
+      and batch size, and for runtime overhead; training needs several times more for
+      [[gradient|gradients]], optimizer states and activations. Hobbyists running
+      [[open-weight-model|open-weight models]] locally therefore rely on
+      [[quantization|quantization]] and [[offloading|offloading]] to system memory, and consumer
+      cards with 24–32 GB are prized.
+    example: >-
+      A 70B model at 4-bit needs about 40 GB of VRAM, so it won't fit on one 24 GB card.
+    labels:
+      - informal
+  - context: Original sense
+    definition: >-
+      Video RAM in the original hardware sense: a [[dram|DRAM]] variant with two independent access
+      paths, one through which the processor updated the image and one that streamed pixels
+      continuously to the screen, used to hold the displayed frame in workstations and PCs from the
+      mid-1980s into the 1990s.
+    labels:
+      - historical
+origin: >-
+  Dual-ported video RAM was developed at IBM Research by Frederick Dill, Daniel Ling and Richard
+  Matick around 1980. As graphics cards adopted other memory types, 'VRAM' came to mean any graphics
+  memory, and from 2023 it became everyday vocabulary among people running language models on their
+  own computers.
+year: 1980
+note: >-
+  On unified-memory systems (Apple silicon, some AI PCs, Nvidia's Grace-based machines) the GPU
+  shares system memory, so 'VRAM' is less clearly defined.
+see_also:
+  - GPU
+  - high-bandwidth memory
+  - DRAM
+  - quantization
+  - offloading
+  - KV cache
+  - on-device AI

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: logical induction
+id: logical-induction
+pos: n.
+also:
+  - logical inductor
+  - Garrabrant induction
+  - logical induction criterion
+domain: math
+domains:
+  - safety
+  - mind
+level: specialist
+plain: >-
+  A mathematical method for giving sensible, steadily improving probabilities to math claims that
+  haven't been proved or disproved yet, much as a betting market prices uncertain events.
+senses:
+  - definition: >-
+      A criterion for good reasoning under [[logical-uncertainty|logical uncertainty]] — uncertainty
+      about mathematical facts that follow from known premises but have not yet been worked out —
+      together with a computable algorithm that satisfies it. A logical inductor is a process that,
+      at each step, assigns prices between 0 and 1 to every sentence of a formal language while a
+      deductive process proves ever more theorems; it meets the criterion if no trader that runs in
+      polynomial time can exploit its prices to make unbounded profit at bounded risk, by analogy
+      with a market that resists arbitrage. Scott Garrabrant and colleagues proved that such
+      inductors exist and that the criterion implies many desirable properties: prices converge to a
+      coherent probability distribution, regularities are learned well before they are proved,
+      beliefs are calibrated, and the inductor appropriately trusts its own future beliefs. The
+      construction is far too slow to run in practice.
+    example: >-
+      A logical inductor assigns probabilities near 10% to claims like 'the trillionth digit of pi
+      is 7' long before it computes the digit.
+origin: >-
+  Introduced by Scott Garrabrant, Tsvi Benson-Tilsen, Andrew Critch, Nate Soares and Jessica Taylor
+  of the Machine Intelligence Research Institute in the paper 'Logical Induction' (arXiv, September
+  2016), part of its agent-foundations research on how bounded reasoners embedded in the world
+  should handle uncertainty about mathematics and about their own computations.
+year: 2016
+note: >-
+  Not to be confused with mathematical induction, a proof technique, or with inductive learning from
+  data in general. [[solomonoff-induction|Solomonoff induction]] is the analogous idealization for
+  predicting empirical sequences.
+see_also:
+  - Solomonoff induction
+  - embedded agency
+  - updateless decision theory
+  - Machine Intelligence Research Institute
+  - Bayesian inference
+  - calibration
+sources:
+  - text: >-
+      Garrabrant, S., Benson-Tilsen, T., Critch, A., Soares, N. & Taylor, J. (2016). Logical
+      Induction. arXiv:1609.03543.

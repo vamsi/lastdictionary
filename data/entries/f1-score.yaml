@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: F1 score
+id: f1-score
+pos: n.
+also:
+  - F-score
+  - F-measure
+  - F1
+  - F-beta score
+  - Fβ score
+  - macro-F1
+  - micro-F1
+  - Dice coefficient
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  A single score that combines how many of a model's alarms are right and how many real cases it
+  catches, and stays low unless both are good.
+senses:
+  - definition: >-
+      The harmonic mean of [[precision|precision]] and [[recall|recall]], ranging from 0 to 1:
+      2PR/(P + R), equivalently 2TP/(2TP + FP + FN). The harmonic mean is dominated by the smaller
+      value, so a classifier cannot score well by excelling at one while neglecting the other. The
+      general Fβ score weights recall β times as heavily as precision (F2 favors recall, F0.5
+      precision). For multiclass and multilabel problems, macro-F1 averages per-class scores
+      equally, emphasizing rare classes, while micro-F1 pools all decisions and, for single-label
+      multiclass classification, equals [[accuracy|accuracy]]. F1 is standard in information
+      extraction, [[named-entity-recognition|named-entity recognition]],
+      [[question-answering|question answering]] (token-overlap F1, as in [[squad|SQuAD]]) and
+      imbalanced classification. Criticisms are that it ignores true negatives, depends on the
+      decision threshold and on class prevalence, and implicitly fixes the relative cost of false
+      positives and false negatives unless β is chosen deliberately. On binary masks it equals the
+      Dice coefficient used in image segmentation.
+    example: >-
+      Macro-F1 exposed what accuracy hid: the model never predicted the two rarest intent classes.
+formula_latex: F_{\beta} = (1 + \beta^2)\,\frac{\mathrm{precision} \cdot \mathrm{recall}}{\beta^2
+  \cdot \mathrm{precision} + \mathrm{recall}}
+origin: >-
+  Derived from the effectiveness measure E that Cornelis Joost (Keith) van Rijsbergen defined in his
+  1979 book Information Retrieval (F = 1 − E). The name 'F-measure' arose when the score was adopted
+  for the Fourth Message Understanding Conference (MUC-4, 1992); the letter is said to come from an
+  unrelated function labeled F in van Rijsbergen's book. From there it spread through natural
+  language processing and machine learning.
+year: 1979
+note: >-
+  Statisticians such as David Hand have argued that F1 is often misused because the effective weight
+  it gives precision versus recall varies between classifiers; the
+  [[matthews-correlation-coefficient|Matthews correlation coefficient]] and explicitly cost-weighted
+  metrics are suggested alternatives.
+see_also:
+  - precision
+  - recall
+  - precision–recall curve
+  - confusion matrix
+  - accuracy
+  - class imbalance
+  - Matthews correlation coefficient
+sources:
+  - text: >-
+      van Rijsbergen, C. J. (1979). Information Retrieval, 2nd ed. London: Butterworths.
+  - text: >-
+      Chinchor, N. (1992). MUC-4 Evaluation Metrics. Proc. Fourth Message Understanding Conference
+      (MUC-4).
+  - text: >-
+      Hand, D. & Christen, P. (2018). A Note on Using the F-measure for Evaluating Record Linkage
+      Algorithms. Statistics and Computing 28.

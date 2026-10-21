@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Paul Werbos
+id: paul-werbos
+sort_as: Werbos Paul
+pos: prop. n.
+also:
+  - Paul J. Werbos
+domain: people
+domains:
+  - dl
+  - rl
+  - hist
+level: specialist
+dates: b. 1947
+plain: >-
+  An American scientist whose 1974 doctoral thesis set out backpropagation, the method of passing
+  errors backward that now trains nearly all neural networks.
+senses:
+  - definition: >-
+      American engineer and social scientist whose 1974 Harvard doctoral thesis, 'Beyond
+      Regression', showed how to compute the gradients of a multi-stage model efficiently by working
+      backward from its output — the procedure now called [[backpropagation|backpropagation]] — and
+      proposed using it to fit models including neural networks. He applied it explicitly to
+      [[multilayer-perceptron|multilayer neural networks]] in 1982, before its popularization by
+      [[david-rumelhart|David Rumelhart]], [[geoffrey-hinton|Geoffrey Hinton]] and Ronald Williams
+      in 1986, and popularized the name and method of [[backpropagation-through-time|backpropagation
+      through time]] (1990) for recurrent systems. He also developed adaptive critic designs, which
+      combine neural networks with approximate [[dynamic-programming|dynamic programming]] for
+      control and are an early form of [[actor-critic|actor–critic]]
+      [[reinforcement-learning|reinforcement learning]]. As a long-serving program director at the
+      US National Science Foundation he funded research on neural networks and neuroengineering. He
+      received the IEEE Neural Network Pioneer Award and served as president of the International
+      Neural Network Society.
+see_also:
+  - backpropagation
+  - backpropagation through time
+  - automatic differentiation
+  - actor–critic
+  - dynamic programming
+  - David Rumelhart
+sources:
+  - text: >-
+      Werbos, P. J. (1974). Beyond Regression: New Tools for Prediction and Analysis in the
+      Behavioral Sciences. PhD thesis, Harvard University.
+  - text: >-
+      Werbos, P. J. (1990). Backpropagation Through Time: What It Does and How to Do It. Proceedings
+      of the IEEE 78(10): 1550–1560.

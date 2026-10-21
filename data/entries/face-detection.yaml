@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: face detection
+id: face-detection
+pos: n.
+also:
+  - face detector
+  - Viola–Jones detector
+  - Haar cascade
+  - facial landmark detection
+domain: percep
+domains:
+  - society
+level: core
+plain: >-
+  Finding where the faces are in a photo or video, without working out whose faces they are: the
+  step that lets a camera focus on people or blur them out.
+senses:
+  - definition: >-
+      The task of locating every human face in an image or video frame, usually as a
+      [[bounding-box|bounding box]] plus a few landmarks such as the eyes, nose tip and mouth
+      corners. It is a special case of [[object-detection|object detection]] and the first stage of
+      most face-analysis pipelines, which go on to alignment and then recognition, attribute or
+      expression analysis. The Viola–Jones detector (2001) made it practical in real time:
+      rectangle-contrast (Haar-like) features were read in constant time from a precomputed
+      'integral image', [[adaboost|AdaBoost]] combined the most useful ones into classifiers, and
+      chaining these let most windows be rejected after a few cheap tests. It was built into digital
+      cameras and the OpenCV library. Deep detectors (MTCNN, 2016; RetinaFace, 2019; small mobile
+      models) handle extreme poses, occlusion and tiny faces, and are benchmarked on datasets such
+      as WIDER FACE. Uses include camera autofocus and exposure, photo organization, privacy
+      blurring and video calls; error rates that differ by skin tone, age or lighting are a
+      recognized fairness concern.
+    example: >-
+      Run face detection first and blur every box before the street-level images leave the vehicle.
+origin: >-
+  Automatic face analysis dates to the 1960s–70s (Woody Bledsoe's work; Takeo Kanade's 1973 thesis).
+  Neural-network detectors by Henry Rowley, Shumeet Baluja and Kanade (1998) were followed by Paul
+  Viola and Michael Jones's boosted-cascade detector, presented at CVPR 2001, which made face
+  detection ubiquitous.
+note: >-
+  Detection only finds faces; [[facial-recognition|facial recognition]] determines whose face it is.
+  Most biometric regulation, including the [[eu-ai-act|EU AI Act]]'s rules on
+  [[remote-biometric-identification|remote biometric identification]], concerns recognition and
+  categorization rather than detection alone.
+see_also:
+  - object detection
+  - facial recognition
+  - keypoint detection
+  - AdaBoost
+  - biometric categorisation
+  - algorithmic bias
+contrast:
+  - facial recognition
+sources:
+  - text: >-
+      Viola, P. & Jones, M. (2001). Rapid Object Detection Using a Boosted Cascade of Simple
+      Features. CVPR 2001.
+  - text: >-
+      Viola, P. & Jones, M. J. (2004). Robust Real-Time Face Detection. International Journal of
+      Computer Vision 57(2), 137–154.

@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: assistant axis
+id: assistant-axis
+pos: n.
+also:
+  - activation capping
+domain: interp
+domains:
+  - safety
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  The main direction in a chatbot's internal activity that measures how much it is acting as its
+  usual helpful-assistant self, as opposed to some other character it has slipped into.
+senses:
+  - definition: >-
+      The leading direction of variation in a [[large-language-model|large language model]]'s
+      'persona space', measuring how closely its current internal state resembles its default
+      assistant character. It was found by prompting open models to play 275 character archetypes,
+      recording [[activation-vector|activation vectors]] for each, and applying
+      [[principal-component-analysis|principal component analysis]]: the first component ran from
+      assistant-like roles (evaluator, consultant, analyst) to fantastical or non-assistant ones
+      (ghost, hermit, leviathan) and aligned with the mean difference between the default
+      assistant's activations and the role-played personas', which is how the axis is computed in
+      practice. Steering along it made models resist or embrace role-play. Projections onto the axis
+      tracked 'persona drift' in long conversations: emotionally vulnerable or philosophical
+      exchanges about the model's nature pushed models away from the assistant end, where harmful
+      outputs were likelier. Activation capping — clamping the projection only when it leaves its
+      normal range — roughly halved harmful response rates in the authors' tests and also reduced
+      susceptibility to persona-based [[jailbreak|jailbreaks]], while preserving benchmark
+      performance.
+    example: >-
+      Persona drift showed up on the assistant axis twenty turns before the model started claiming a
+      secret identity.
+origin: >-
+  Introduced by Christina Lu, Jack Gallagher, Jonathan Michala, Kyle Fish and Jack Lindsey in 'The
+  Assistant Axis: Situating and Stabilizing the Default Persona of Language Models' (arXiv, January
+  15, 2026), work from the MATS and Anthropic Fellows programs, using Gemma 2 27B, Qwen 3 32B and
+  Llama 3.3 70B. Base models showed a similar axis, suggesting post-training anchors a character
+  that pretraining already represents.
+year: 2026
+note: >-
+  A finding about particular open models, not yet an established general property. Complements
+  [[persona-vector|persona vectors]], which target individual traits, whereas the assistant axis
+  summarizes overall assistant-likeness.
+see_also:
+  - persona vector
+  - character training
+  - activation steering
+  - jailbreak
+  - steering vector
+  - sycophancy
+sources:
+  - text: >-
+      Lu, C., Gallagher, J., Michala, J., Fish, K. & Lindsey, J. (2026). The Assistant Axis:
+      Situating and Stabilizing the Default Persona of Language Models. arXiv:2601.10387.
+    url: https://arxiv.org/abs/2601.10387
+  - text: >-
+      Anthropic (2026). The assistant axis: situating and stabilizing the character of large
+      language models. Research post, January 19, 2026.
+    url: https://www.anthropic.com/news/assistant-axis
+as_of: 2026-10

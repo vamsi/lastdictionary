@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Cynthia Dwork
+id: cynthia-dwork
+sort_as: Dwork Cynthia
+pos: prop. n.
+domain: people
+domains:
+  - sec
+  - society
+  - math
+level: specialist
+dates: b. 1958
+plain: >-
+  An American computer scientist who co-invented differential privacy, the leading mathematical
+  definition of privacy in data analysis, and helped found the study of fairness in algorithms.
+senses:
+  - definition: >-
+      American theoretical computer scientist at Harvard University, previously at IBM Research and
+      Microsoft Research, whose definitions shaped privacy and fairness in machine learning. With
+      Frank McSherry, Kobbi Nissim and Adam Smith she introduced [[differential-privacy|differential
+      privacy]] (2006), which guarantees that an analysis reveals almost nothing about any single
+      individual by adding calibrated noise; it underlies [[dp-sgd|DP-SGD]] training and the US
+      Census Bureau's 2020 data products, and won the four the 2017 Gödel Prize. Her 'Fairness
+      Through Awareness' (2012, with Moritz Hardt, Toniann Pitassi, Omer Reingold and Richard Zemel)
+      defined [[individual-fairness|individual fairness]], the principle that similar individuals
+      should be treated similarly, and exposed the weaknesses of [[demographic-parity|statistical
+      parity]], helping found the field of [[algorithmic-fairness|algorithmic fairness]]. Earlier
+      she made foundational contributions to distributed consensus and cryptography, including
+      non-malleable cryptography and, with Moni Naor, the 'pricing via processing' idea (1992) that
+      anticipated proof-of-work. Honors include the Knuth Prize (2020) and the US National Medal of
+      Science (2025).
+see_also:
+  - differential privacy
+  - DP-SGD
+  - individual fairness
+  - algorithmic fairness
+  - demographic parity
+  - membership inference attack
+sources:
+  - text: >-
+      Dwork, C., McSherry, F., Nissim, K. & Smith, A. (2006). Calibrating Noise to Sensitivity in
+      Private Data Analysis. TCC 2006.
+  - text: >-
+      Dwork, C., Hardt, M., Pitassi, T., Reingold, O. & Zemel, R. (2012). Fairness Through
+      Awareness. ITCS 2012.

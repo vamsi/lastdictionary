@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: adversarial patch
+id: adversarial-patch
+pos: n.
+also:
+  - physical adversarial example
+  - adversarial sticker
+domain: sec
+domains:
+  - percep
+  - robot
+level: core
+plain: >-
+  A printed sticker or picture designed so that, when it appears in a camera's view, an AI vision
+  system misreads the scene — seeing a toaster, say, or missing a person.
+senses:
+  - definition: >-
+      A localized pattern — a sticker, poster or printed object — optimized so that its presence in
+      a scene causes a vision model to output an attacker-chosen label or to miss a detection.
+      Unlike norm-bounded [[adversarial-example|adversarial examples]], a patch need not be
+      imperceptible, only small or inconspicuous; robustness to position, scale, rotation, lighting
+      and printing is obtained by optimizing over random transformations (expectation over
+      transformation). Patches are the main form of physical-world [[evasion-attack|evasion attack]]
+      on [[object-detection|object detectors]], face recognition and driving perception, so
+      safety-critical vision systems are tested against them. Defenses include patch-aware
+      [[adversarial-training|adversarial training]] and certified methods that bound the influence
+      of any small image region.
+    example: >-
+      The adversarial patch on the T-shirt hid its wearer from the pedestrian detector in most
+      frames.
+origin: >-
+  Named and introduced by Tom Brown, Dandelion Mané, Aurko Roy, Martín Abadi and Justin Gilmer in
+  December 2017, whose 'toaster' patch hijacked ImageNet classifiers. It built on earlier physical
+  attacks: eyeglass frames that fooled face recognition (Mahmood Sharif and colleagues, 2016) and
+  stickers that made classifiers misread stop signs (Kevin Eykholt and colleagues, 2017–2018).
+year: 2017
+see_also:
+  - adversarial example
+  - evasion attack
+  - universal adversarial perturbation
+  - object detection
+  - adversarial robustness
+sources:
+  - text: >-
+      Brown, T. B., Mané, D., Roy, A., Abadi, M. & Gilmer, J. (2017). Adversarial Patch.
+      arXiv:1712.09665.
+  - text: >-
+      Eykholt, K. et al. (2018). Robust Physical-World Attacks on Deep Learning Visual
+      Classification. CVPR 2018.

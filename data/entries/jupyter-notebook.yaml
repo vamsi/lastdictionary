@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Jupyter notebook
+id: jupyter-notebook
+pos: n.
+also:
+  - Jupyter
+  - Project Jupyter
+  - JupyterLab
+  - IPython Notebook
+  - .ipynb
+  - notebook
+  - Google Colab
+  - Colab
+pronunciation: JOO-pih-ter
+domain: eng
+domains:
+  - ml
+  - data
+labels:
+  - trademark
+level: core
+plain: >-
+  An interactive document, opened in a web browser, that mixes runnable code with its results,
+  charts and notes, so people can experiment step by step and share their work.
+senses:
+  - definition: >-
+      An interactive computing document, stored as a JSON file with the extension .ipynb, that
+      interleaves cells of executable code with their outputs — text, tables, plots, images,
+      interactive widgets — and with narrative text in Markdown and LaTeX mathematics. A notebook is
+      edited in a web application (the classic Notebook, JupyterLab, or editors such as VS Code)
+      connected to a kernel, a separate process that executes the code and keeps its state between
+      cells; kernels exist for Python, R, Julia and dozens of other languages. Notebooks are the
+      default environment for data exploration, teaching and prototyping in machine learning, and
+      hosted services such as Google Colab and Kaggle Notebooks offer them with free or paid GPUs.
+      Their weaknesses are well known: cells run out of order leave hidden state, outputs bloat
+      version control, and notebook code is hard to test and deploy, so production work usually
+      moves into modules and [[machine-learning-pipeline|pipelines]].
+    example: Share the Jupyter notebook so reviewers can rerun the analysis cell by cell.
+origin: >-
+  Grew out of IPython, an interactive Python shell created by Fernando Pérez in 2001, whose
+  browser-based notebook appeared in 2011, drawing on earlier notebook interfaces such as
+  Mathematica's (1988). In 2014 the language-independent parts were spun off as Project Jupyter,
+  named after its core languages Julia, Python and R and in homage to Galileo's notebooks recording
+  the moons of Jupiter.
+year: 2014
+note: >-
+  'Notebook' also names similar tools — Google Colab, Databricks notebooks, Observable, marimo —
+  some with different file formats. Project Jupyter received the ACM Software System Award for 2017.
+see_also:
+  - scikit-learn
+  - NumPy
+  - experiment tracking
+  - Kaggle
+  - PyTorch
+sources:
+  - text: >-
+      Pérez, F. & Granger, B. E. (2007). IPython: A System for Interactive Scientific Computing.
+      Computing in Science & Engineering 9(3).
+  - text: >-
+      Kluyver, T. et al. (2016). Jupyter Notebooks — a publishing format for reproducible
+      computational workflows. In Positioning and Power in Academic Publishing: Players, Agents and
+      Agendas. IOS Press.

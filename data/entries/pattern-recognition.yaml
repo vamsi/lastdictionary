@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pattern recognition
+id: pattern-recognition
+pos: n.
+also:
+  - pattern classification
+  - statistical pattern recognition
+domain: core
+domains:
+  - ml
+  - percep
+  - hist
+level: core
+plain: >-
+  The ability of a computer, or a brain, to spot regularities in data and sort things into
+  categories, such as recognizing handwritten letters, faces or spoken words.
+senses:
+  - context: Field
+    definition: >-
+      The branch of engineering and computer science that builds systems to sort inputs, such as
+      images, signals, speech or text, into categories or to describe their structure, using models
+      learned from examples or supplied by designers. Classical systems split the problem into
+      preprocessing, [[feature-extraction|feature extraction]] and classification, drawing on
+      statistical methods (Bayesian decision theory, discriminant analysis, nearest neighbors),
+      structural approaches based on grammars, and [[neural-network|neural networks]]. Applications
+      included [[optical-character-recognition|optical character recognition]],
+      [[speech-recognition|speech recognition]], fingerprint and face identification and medical
+      signal analysis. The field is now largely continuous with [[machine-learning|machine
+      learning]], a merger reflected in the title of Christopher Bishop's textbook Pattern
+      Recognition and Machine Learning (2006).
+    example: >-
+      Cheque-reading machines were among the first commercial successes of pattern recognition.
+  - context: Cognition
+    definition: >-
+      The cognitive ability to identify objects, faces, sounds or situations by matching sensory
+      input against learned structure. Debates about large language models often ask whether their
+      abilities amount to sophisticated pattern recognition or to genuine [[reasoning|reasoning]].
+origin: >-
+  Emerged in the 1950s with early character readers and Oliver Selfridge's 1955 paper 'Pattern
+  Recognition and Modern Computers'. Institutions followed: the journal Pattern Recognition (1968),
+  the International Association for Pattern Recognition (1978) and the IEEE Transactions on Pattern
+  Analysis and Machine Intelligence (1979). Richard Duda and Peter Hart's Pattern Classification and
+  Scene Analysis (1973) became a standard text.
+year: 1955
+note: >-
+  Calling an AI system 'just pattern recognition' is usually meant dismissively, but the phrase
+  names a broad and rigorous field, and whether reasoning reduces to pattern recognition is itself
+  contested.
+see_also:
+  - machine learning
+  - classification
+  - feature extraction
+  - computer vision
+  - optical character recognition
+  - speech recognition
+  - neural network
+contrast:
+  - reasoning
+sources:
+  - text: >-
+      Selfridge, O. G. (1955). Pattern Recognition and Modern Computers. Proceedings of the Western
+      Joint Computer Conference.
+  - text: >-
+      Duda, R. O. & Hart, P. E. (1973). Pattern Classification and Scene Analysis. Wiley.
+  - text: Bishop, C. M. (2006). Pattern Recognition and Machine Learning. Springer.

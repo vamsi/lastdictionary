@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: layer
+id: layer
+pos: n.
+also:
+  - neural network layer
+  - network layer
+  - depth
+domain: dl
+domains:
+  - core
+level: essential
+plain: >-
+  One stage in a neural network: a group of artificial neurons that all take the same input,
+  transform it, and pass the result on to the next stage.
+senses:
+  - definition: >-
+      A parameterized function that forms one stage of a [[neural-network|neural network]], mapping
+      an input [[tensor|tensor]] to an output tensor; networks are built by composing layers, and a
+      network's depth is the number of layers in sequence. Common types include
+      [[fully-connected-layer|fully connected (dense)]], [[convolution|convolutional]],
+      [[recurrent-neural-network|recurrent]], [[attention|attention]], [[pooling|pooling]],
+      [[normalization-layer|normalization]], [[embedding|embedding]] and [[dropout|dropout]] layers;
+      some, such as pooling, have no learnable [[parameter|parameters]]. In
+      [[transformer|transformers]], 'layer' usually means a whole block (attention and
+      [[feed-forward-network|feed-forward]] sublayers wrapped in [[residual-connection|residual
+      connections]] and normalization), so a '32-layer model' has 32 such blocks. Layers between
+      input and output are [[hidden-layer|hidden layers]]; early layers tend to compute simple,
+      local features and later ones more abstract features.
+    example: The probe works best on the middle layers, around layer 16 of 32.
+origin: >-
+  Layered networks go back to Frank Rosenblatt's perceptrons (1958), whose sensory, association and
+  response units formed successive stages, and to hierarchical models of visual cortex such as
+  Kunihiko Fukushima's neocognitron (1980). Deep-learning libraries such as Torch, Caffe, Keras and
+  PyTorch later made the layer the basic unit of model code.
+year: 1958
+see_also:
+  - hidden layer
+  - fully connected layer
+  - neural network
+  - deep learning
+  - residual stream
+  - multilayer perceptron
+contrast:
+  - parameter

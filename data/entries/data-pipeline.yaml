@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data pipeline
+id: data-pipeline
+pos: n.
+also:
+  - data processing pipeline
+  - data curation pipeline
+  - ingestion pipeline
+domain: data
+domains:
+  - eng
+  - train
+level: core
+plain: >-
+  The chain of automated steps that collects raw data, cleans and transforms it, and delivers it in
+  a usable form — the factory line that turns messy inputs into training material.
+senses:
+  - definition: >-
+      An automated, multi-stage process that carries data from its sources to a destination such as
+      a warehouse, model or application, transforming and validating it in transit. Enterprise
+      pipelines follow patterns such as ETL (extract, transform, load) into a data warehouse, or
+      streaming ingestion for real-time features. For [[large-language-model|large language model]]
+      pretraining, a typical pipeline crawls or acquires raw documents; extracts text from HTML or
+      PDFs; identifies languages; applies URL blocklists and [[quality-filtering|quality
+      filtering]]; removes duplicates ([[deduplication|deduplication]]); scrubs
+      [[personally-identifiable-information|personally identifiable information]] and toxic content;
+      strips benchmark material ([[data-contamination|decontamination]]); and finally tokenizes,
+      combines sources into a [[data-mixture|data mixture]] and shuffles. Because every stage
+      silently changes what a model will learn, pipelines are versioned and logged, and their
+      settings are chosen through ablations: small models are trained on the outputs of alternative
+      settings and compared.
+    example: >-
+      A bug in the language-ID stage of our pipeline dropped most of the Portuguese data.
+origin: >-
+  Borrows the computing image of a pipeline — stages joined output to input, as in Unix pipes (1973)
+  — and the ETL practice of database and data-warehouse engineering. Open-source pretraining
+  pipelines such as CCNet (2019), Hugging Face's datatrove (used to build FineWeb, 2024) and
+  NVIDIA's NeMo Curator made language-model data preparation shared tooling.
+note: >-
+  Distinct from a [[machine-learning-pipeline|machine learning pipeline]], which spans the whole
+  model lifecycle (data, training, evaluation, deployment), although the data pipeline is usually
+  its first stage.
+see_also:
+  - data cleaning
+  - quality filtering
+  - deduplication
+  - data mixture
+  - data provenance
+  - web crawler
+  - pretraining data
+contrast:
+  - machine learning pipeline

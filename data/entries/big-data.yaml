@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: big data
+id: big-data
+pos: n.
+also:
+  - three Vs
+domain: core
+domains:
+  - data
+  - hw
+  - society
+level: core
+plain: >-
+  Data that piles up too fast, in too many forms or in too great a quantity for one ordinary
+  computer to store and study, and the methods invented to cope with it.
+senses:
+  - definition: >-
+      Data whose volume, rate of arrival or diversity of form overwhelms a conventional database
+      running on a single machine, together with the distributed technologies and practices built to
+      cope with it. Doug Laney's 'three Vs' (volume, velocity and variety) are the usual
+      characterization, to which later writers added veracity (reliability) and value.
+      Characteristic tools were distributed storage and processing frameworks such as Google's
+      MapReduce (2004) and its open-source counterpart Hadoop, followed by Apache Spark and cloud
+      data warehouses. Big data supplied the web crawls, click logs and image collections that made
+      [[deep-learning|deep learning]] effective, and the term was the slogan of a 2010s wave of
+      data-driven business and science, criticized for surveillance, loss of privacy and
+      overconfidence in correlations.
+    example: >-
+      In the big data era we kept everything; now we ask which data actually improve the model.
+origin: >-
+  In use since the 1990s; John Mashey, chief scientist at Silicon Graphics, is often credited with
+  popularizing it in talks on computing infrastructure. Analyst Doug Laney's 2001 note on data
+  volume, velocity and variety supplied the 'three Vs', and the term peaked as a buzzword in the
+  early 2010s.
+note: >-
+  Largely superseded as a buzzword by 'AI' and 'data science', though the infrastructure it named
+  underpins modern AI. Bigger is not automatically better: sampling bias, poor [[data-quality|data
+  quality]] and leakage scale too.
+see_also:
+  - data science
+  - data mining
+  - training data
+  - data quality
+  - data wall
+  - AI surveillance
+  - data pipeline

@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reranking
+id: reranking
+pos: n.
+also:
+  - re-ranking
+  - rerank
+  - reranker
+  - re-ranker
+  - second-stage ranking
+domain: eng
+domains:
+  - ml
+  - agents
+level: core
+plain: >-
+  A second, more careful pass over search results: a fast method grabs a few hundred candidates,
+  then a slower, smarter model reorders them so the best come first.
+senses:
+  - definition: >-
+      The second stage of a multi-stage retrieval pipeline, in which a more expensive model
+      re-scores a short list of candidates (typically 20–1,000) produced by a fast first-stage
+      retriever such as [[bm25|BM25]], [[dense-retrieval|dense retrieval]] or [[hybrid-search|hybrid
+      search]], and reorders them. Neural rerankers are usually [[cross-encoder|cross-encoders]]
+      that read the query and each candidate together, capturing fine-grained relevance that
+      separate encodings miss; alternatives include [[late-interaction|late interaction]] models,
+      gradient-boosted [[learning-to-rank|learning to rank]] models, and
+      [[large-language-model|LLMs]] prompted to score or sort passages pointwise, pairwise or
+      listwise. In [[retrieval-augmented-generation|retrieval-augmented generation]], reranking lets
+      a system retrieve broadly for recall and then pass only the few most relevant passages to the
+      generator, cutting cost, distraction and [[lost-in-the-middle|lost in the middle]] effects.
+      Its main cost is latency, which grows with the number of candidates.
+    example: >-
+      Recall@100 was fine; the problem was ordering, so we added a reranker and kept the top five.
+origin: >-
+  Multi-stage ranking — a cheap filter followed by a costlier ranker — was standard in web search by
+  the 2000s, with learned rankers such as gradient-boosted trees. Rodrigo Nogueira and Kyunghyun
+  Cho's 'Passage Re-ranking with BERT' (January 2019), which improved the best MS MARCO MRR@10 by
+  27% relative, launched neural reranking with [[transformer|transformers]].
+see_also:
+  - cross-encoder
+  - learning to rank
+  - hybrid search
+  - dense retrieval
+  - retrieval-augmented generation
+  - ColBERT
+  - normalized discounted cumulative gain
+sources:
+  - text: Nogueira, R. & Cho, K. (2019). Passage Re-ranking with BERT. arXiv:1901.04085.
+    url: https://arxiv.org/abs/1901.04085

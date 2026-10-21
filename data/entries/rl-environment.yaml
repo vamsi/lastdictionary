@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RL environment
+id: rl-environment
+pos: n.
+also:
+  - reinforcement learning environment
+  - RL gym
+  - training environment
+  - RL env
+domain: train
+domains:
+  - rl
+  - agents
+labels:
+  - emerging
+level: core
+plain: >-
+  A practice world built for training an AI by trial and error: it hands the AI tasks and tools,
+  lets it act, and scores the results so the AI can learn what works.
+senses:
+  - context: Post-training
+    definition: >-
+      A packaged task setting used to train or evaluate language models and [[ai-agent|agents]] with
+      [[reinforcement-learning|reinforcement learning]]: a distribution of tasks (prompts, code
+      repositories, websites, spreadsheets), the interface through which the model acts
+      ([[tool|tools]], a shell or browser in a [[sandbox|sandbox]], a simulated user), rules for
+      ending an episode, and a reward computed by a [[verifier|verifier]], hidden tests, a
+      [[rubric-reward|rubric]] or a model grader. Unlike the classical [[environment|environment]]
+      of RL theory, fixed by a game or simulator, these environments are engineered artifacts whose
+      realism, difficulty and resistance to [[reward-hacking|reward hacking]] largely determine what
+      the trained model learns. Building them at scale — thousands of varied, hard-to-game
+      environments — was widely described in 2025 as a bottleneck of frontier
+      [[post-training|post-training]], and shared environment hubs and formats appeared, along with
+      companies that build environments for laboratories.
+    example: >-
+      We built an RL environment from 3,000 real GitHub issues, each graded by the repository's
+      hidden tests.
+origin: >-
+  The general idea descends from RL benchmarks such as the Arcade Learning Environment (2013) and
+  OpenAI Gym (2016). The post-training sense grew with reinforcement learning on verifiable tasks
+  and agentic coding in 2024–2025, when laboratories began treating environments as a scaling input
+  alongside data and compute; open environment hubs and commercial environment vendors appeared in
+  2025.
+year: 2025
+note: >-
+  In laboratory usage an 'environment' bundles tasks with their grader; an 'RL gym' may mean one
+  environment or a collection. Flaws such as leaked answers, exploitable tests and unrealistic tasks
+  are a common source of reward hacking.
+see_also:
+  - environment
+  - Gymnasium
+  - reinforcement learning with verifiable rewards
+  - verifier
+  - rubric reward
+  - agentic reinforcement learning
+  - sandbox
+  - reward hacking
+contrast:
+  - benchmark
+sources:
+  - text: Brockman, G. et al. (2016). OpenAI Gym. arXiv:1606.01540.
+  - text: >-
+      Zhang, G. et al. (2025). The Landscape of Agentic Reinforcement Learning for LLMs: A Survey.
+      arXiv:2509.02547.
+    url: https://arxiv.org/abs/2509.02547
+as_of: 2026-10

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GAIA
+id: gaia
+pos: prop. n.
+also:
+  - General AI Assistants benchmark
+pronunciation: GY-uh
+domain: eval
+domains:
+  - agents
+level: core
+plain: >-
+  A test of AI assistants made of real-world questions that people can answer with a browser and
+  some patience, but that require an AI to search, read files and combine facts.
+senses:
+  - definition: >-
+      A benchmark of 466 questions for general-purpose AI assistants, with the answers to 300
+      withheld to run a leaderboard. Answering one means chaining everyday skills — searching and
+      browsing the web, [[tool-use|using tools]], reading images or attached files such as
+      spreadsheets, and reasoning over what turns up — and each question has a short factual answer,
+      graded by near-[[exact-match|exact match]], and a difficulty level from 1 to 3 set by how many
+      steps and tools it takes. Unlike exam-style benchmarks that keep raising the bar for human
+      experts, its questions are easy for people but hard for AI, on the argument that matching an
+      ordinary person's reliability on such tasks says more about general usefulness than superhuman
+      exam scores. In the original tests people answered 92% correctly and GPT-4 with plugins 15%.
+      GAIA became a standard test for [[deep-research|deep research]] and general [[ai-agent|agent]]
+      systems.
+    example: >-
+      Most of our GAIA failures come from misreading the attached spreadsheet, not from search.
+origin: >-
+  Introduced in November 2023 by Grégoire Mialon, Clémentine Fourrier, Craig Swift, Thomas Wolf,
+  Yann LeCun and Thomas Scialom, of Meta, Hugging Face and AutoGPT, and presented at ICLR 2024. The
+  name abbreviates 'General AI Assistants'.
+year: 2023
+note: >-
+  Answers to the public validation questions circulate online, so only the private test split gives
+  meaningful results.
+see_also:
+  - AI agent
+  - deep research
+  - tool use
+  - BrowseComp
+  - WebArena
+  - browser agent
+sources:
+  - text: >-
+      Mialon, G., Fourrier, C., Swift, C., Wolf, T., LeCun, Y. & Scialom, T. (2023). GAIA: a
+      benchmark for General AI Assistants. arXiv:2311.12983.
+    url: https://arxiv.org/abs/2311.12983

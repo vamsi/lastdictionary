@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: text-to-image model
+id: text-to-image-model
+pos: n.
+also:
+  - text-to-image generation
+  - AI image generator
+  - image generation model
+  - image generator
+  - T2I
+domain: gen
+domains:
+  - percep
+  - society
+level: essential
+plain: >-
+  An AI system that creates a picture from a written description, such as 'a fox reading a
+  newspaper, in watercolor', usually within seconds.
+senses:
+  - definition: >-
+      A [[generative-model|generative model]] that learns from hundreds of millions to billions of
+      captioned images, increasingly recaptioned in detail by vision-language models, to produce new
+      images that match a natural-language [[prompt|prompt]]. In the usual design a text encoder (a
+      frozen language model such as T5, a [[clip|CLIP]] text encoder or a full
+      [[large-language-model|large language model]]) first turns the prompt into vectors, and an
+      image generator conditioned on them, today usually a [[latent-diffusion-model|latent
+      diffusion]] or [[flow-matching|flow matching]] [[diffusion-transformer|transformer]] steered
+      with [[classifier-free-guidance|classifier-free guidance]], builds the picture; other models
+      emit image [[token|tokens]] [[autoregressive-image-generation|autoregressively]], and natively
+      multimodal models produce images inside a chat model. Typical controls include the prompt,
+      [[negative-prompt|negative prompt]], [[random-seed|random seed]], aspect ratio, reference
+      images and structural conditions such as [[controlnet|ControlNet]]; most systems also support
+      [[inpainting|inpainting]] and [[instruction-based-image-editing|instruction-based image
+      editing]]. Quality is judged by human preference ratings and arena leaderboards and by metrics
+      such as [[frechet-inception-distance|FID]] and [[clip-score|CLIP score]]. Long-standing
+      weaknesses — counting, spatial relations, legible text, hands — narrowed sharply between 2022
+      and 2026. Training on scraped artwork and photographs is the subject of
+      [[ai-copyright-litigation|copyright lawsuits]], and outputs raise concerns about
+      [[deepfake|deepfakes]], bias and provenance.
+    example: The text-to-image model nailed the composition but misspelled the shop sign.
+origin: >-
+  Early neural text-to-image systems include alignDRAW (Elman Mansimov and colleagues, posted
+  November 2015) and GAN-based models by Scott Reed and colleagues (2016). OpenAI's DALL·E (January
+  2021) showed broad compositional ability, and in 2022 DALL·E 2, Imagen, Midjourney and Stable
+  Diffusion brought the technology to the public.
+year: 2015
+see_also:
+  - diffusion model
+  - DALL·E
+  - Stable Diffusion
+  - Midjourney
+  - Imagen
+  - text-to-video model
+  - AI art
+  - prompt
+contrast:
+  - image captioning
+sources:
+  - text: >-
+      Ramesh, A. et al. (2021). Zero-Shot Text-to-Image Generation. ICML 2021. arXiv:2102.12092.
+    url: https://arxiv.org/pdf/2102.12092v1.pdf
+  - text: >-
+      Mansimov, E., Parisotto, E., Ba, J. L. & Salakhutdinov, R. (2016). Generating Images from
+      Captions with Attention. ICLR 2016.
+  - text: >-
+      Reed, S. et al. (2016). Generative Adversarial Text to Image Synthesis. ICML 2016.

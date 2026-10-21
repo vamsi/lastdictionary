@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Jakob Uszkoreit
+id: jakob-uszkoreit
+sort_as: Uszkoreit Jakob
+pos: prop. n.
+pronunciation: YAH-kop OOSH-koh-rite
+domain: people
+domains:
+  - llm
+  - dl
+level: specialist
+plain: >-
+  A German computer scientist, one of the eight authors of the transformer paper, credited with
+  first proposing to build language models on attention alone.
+senses:
+  - definition: >-
+      German computer scientist and a co-author of '[[attention-is-all-you-need|Attention Is All You
+      Need]]' (2017), whose contribution notes credit him with proposing to replace recurrence with
+      [[self-attention|self-attention]] and with starting the effort to test the idea, which became
+      the [[transformer|transformer]]. At Google from 2008 he worked on machine translation and
+      language understanding, and with colleagues he extended attention-based models beyond the
+      original design: relative position representations (2018, see [[positional-encoding|positional
+      encoding]]), blockwise parallel decoding (2018), a precursor of
+      [[speculative-decoding|speculative decoding]] and [[multi-token-prediction|multi-token
+      prediction]], the Image Transformer (2018) and the [[vision-transformer|vision transformer]]
+      (2020). In 2021 he co-founded Inceptive, a company that uses deep learning to design RNA
+      molecules for medicines, which he leads as chief executive.
+see_also:
+  - transformer
+  - Attention Is All You Need
+  - self-attention
+  - vision transformer
+  - Ashish Vaswani
+  - Noam Shazeer
+sources:
+  - text: >-
+      Vaswani, A. et al. (2017). Attention Is All You Need. Advances in Neural Information
+      Processing Systems 30.
+  - text: >-
+      Dosovitskiy, A. et al. (2021). An Image is Worth 16x16 Words: Transformers for Image
+      Recognition at Scale. ICLR 2021.
+as_of: 2026-10

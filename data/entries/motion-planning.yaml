@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: motion planning
+id: motion-planning
+pos: n.
+also:
+  - robot motion planning
+  - kinodynamic planning
+  - piano mover's problem
+  - sampling-based planning
+  - motion planner
+domain: robot
+domains:
+  - sym
+  - math
+level: core
+plain: >-
+  Working out how a robot should move from where it is to where it needs to be, without hitting
+  anything and within the limits of what its body can do.
+senses:
+  - definition: >-
+      The task of computing a continuous robot motion, feasible and ideally optimal, that carries
+      the robot from a start configuration to a goal without collisions while honoring constraints
+      such as joint limits, dynamics and smoothness. It is usually posed in the robot's
+      [[configuration-space|configuration space]], where the robot becomes a point and obstacles
+      become forbidden regions. Exact algorithms exist but scale badly: the general problem is
+      PSPACE-hard, with cost growing exponentially in the robot's [[degrees-of-freedom|degrees of
+      freedom]]. Practical families are grid and lattice search with [[a-search|A*]] and its
+      variants; artificial potential fields, which are fast but can trap the robot in local minima;
+      sampling-based planners such as [[probabilistic-roadmap|probabilistic roadmaps]] and
+      [[rapidly-exploring-random-tree|rapidly exploring random trees]], which handle many-jointed
+      arms and are probabilistically complete; and [[trajectory-optimization|trajectory
+      optimization]]. Kinodynamic planning also respects velocity and acceleration limits. A typical
+      pipeline plans a geometric path, then smooths and time-parameterizes it for a controller.
+      Learned policies increasingly replace explicit planning in manipulation but are harder to
+      certify as collision-free.
+    example: >-
+      Motion planning for the seven-joint arm takes about 40 milliseconds with a sampling-based
+      planner.
+origin: >-
+  Formalized from the late 1970s: Tomás Lozano-Pérez and Michael Wesley's 1979 collision-free path
+  algorithm, Lozano-Pérez's configuration-space approach (1983), John Reif's 1979 proof that the
+  generalized 'mover's problem' is PSPACE-hard, Jacob Schwartz and Micha Sharir's 'piano movers'
+  papers (1983) and Oussama Khatib's potential fields (1986). Jean-Claude Latombe's textbook Robot
+  Motion Planning (1991) consolidated the field.
+year: 1979
+note: >-
+  Overlaps with [[path-planning|path planning]], which some reserve for the geometric route, often
+  of a mobile robot, while motion planning adds timing, dynamics and many-jointed bodies. Distinct
+  from [[automated-planning|automated planning]] in symbolic AI, which sequences discrete actions
+  rather than continuous motions.
+see_also:
+  - path planning
+  - configuration space
+  - trajectory optimization
+  - rapidly exploring random tree
+  - probabilistic roadmap
+  - A* search
+  - inverse kinematics
+contrast:
+  - automated planning
+sources:
+  - text: Latombe, J.-C. (1991). Robot Motion Planning. Kluwer Academic.
+  - text: LaValle, S. M. (2006). Planning Algorithms. Cambridge University Press.

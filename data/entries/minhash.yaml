@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MinHash
+id: minhash
+pos: n.
+also:
+  - min-wise hashing
+  - min-wise independent permutations
+  - MinHash LSH
+domain: data
+domains:
+  - math
+level: specialist
+plain: >-
+  A shortcut for spotting near-copies among millions of documents: each document is boiled down to a
+  short fingerprint, and similar documents end up with similar fingerprints.
+senses:
+  - definition: >-
+      A randomized technique for estimating the [[jaccard-similarity|Jaccard similarity]] between
+      sets — typically the sets of word or character n-grams ('shingles') in two documents — without
+      comparing them element by element. A hash function is applied to every member of a set and
+      only the minimum value is kept; for a random hash function, the probability that two sets
+      share the same minimum equals their Jaccard similarity. Repeating this with k independent hash
+      functions yields a compact signature of k numbers, and the fraction of positions where two
+      signatures agree estimates their similarity, with error shrinking roughly as 1/√k. Combined
+      with [[locality-sensitive-hashing|locality-sensitive hashing]], which buckets signatures in
+      bands so that only likely matches are compared, MinHash finds near-duplicates among billions
+      of documents in near-linear time. It is the workhorse of near-[[deduplication|deduplication]]
+      in language-model corpora such as [[fineweb|FineWeb]].
+    example: We used 5-gram shingles and 112 MinHash functions arranged in 14 bands of 8.
+formula_latex: \Pr\big[\min h(A) = \min h(B)\big] = \frac{|A \cap B|}{|A \cup B|} = J(A,B)
+origin: >-
+  Introduced by Andrei Broder in 'On the Resemblance and Containment of Documents' (1997), developed
+  at Digital Equipment Corporation to detect duplicate pages for the AltaVista search engine. The
+  theory of min-wise independent permutations followed in work by Broder, Moses Charikar, Alan
+  Frieze and Michael Mitzenmacher (1998).
+year: 1997
+note: >-
+  MinHash measures surface overlap, not meaning: paraphrases slip through, and pages that share long
+  boilerplate can be falsely matched. Embedding-based semantic deduplication addresses the first
+  problem.
+see_also:
+  - deduplication
+  - locality-sensitive hashing
+  - Jaccard similarity
+  - data pipeline
+  - FineWeb
+sources:
+  - text: >-
+      Broder, A. Z. (1997). On the Resemblance and Containment of Documents. Proceedings of
+      Compression and Complexity of Sequences 1997, IEEE.

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Moore's law
+id: moore-s-law
+pos: n.
+also:
+  - Moores law
+domain: hw
+domains:
+  - hist
+  - society
+level: essential
+plain: >-
+  Gordon Moore's prediction that chipmakers could pack twice as many transistors onto a chip roughly
+  every two years — a pace that for decades made computers steadily faster and cheaper, and has
+  slowed but not stopped.
+senses:
+  - definition: >-
+      The long-running doubling, about every two years, of how many transistors can be put on an
+      integrated circuit at the lowest cost per component. Originally a business forecast that the
+      semiconductor industry adopted as a planning target, it held approximately from the 1970s into
+      the 2010s, driven by lithographic shrinking ([[process-node|process nodes]]) and, until about
+      2005, accompanied by [[dennard-scaling|Dennard scaling]], which made each transistor faster
+      and more energy-efficient as well. Since then cost per transistor has fallen more slowly, and
+      leading-edge gains come increasingly from [[advanced-packaging|advanced packaging]],
+      [[chiplet|chiplets]], specialized [[ai-accelerator|accelerators]] and lower-precision
+      arithmetic rather than from shrinking alone. AI [[training-compute|training compute]] has
+      grown much faster than Moore's law — on the order of 4–5× per year for frontier runs in the
+      2010s and 2020s — through larger budgets and more chips, not just better chips.
+    example: >-
+      The cluster got bigger, not just the chips: our compute grew far faster than Moore's law.
+origin: >-
+  Gordon Moore, then at Fairchild Semiconductor, observed in 'Cramming more components onto
+  integrated circuits' (Electronics, 19 April 1965) that component counts were doubling yearly; in
+  1975 he revised the pace to about every two years. Carver Mead popularized the name 'Moore's law'
+  in the 1970s. The often-quoted 18-month figure comes from Intel's David House.
+year: 1965
+note: >-
+  Whether Moore's law is 'dead' is disputed and partly definitional: Nvidia's Jensen Huang declared
+  it so in 2022, while Intel's leaders said it continued at a slower pace. The name is also used
+  loosely for any exponential improvement in computing.
+see_also:
+  - Dennard scaling
+  - process node
+  - Huang's law
+  - law of accelerating returns
+  - chiplet
+  - training compute
+  - semiconductor foundry
+sources:
+  - text: >-
+      Moore, G. E. (1965). Cramming more components onto integrated circuits. Electronics 38(8), 19
+      April 1965.
+as_of: 2026-10

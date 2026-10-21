@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: return
+id: return
+pos: n.
+also:
+  - cumulative reward
+  - discounted return
+  - reward-to-go
+domain: rl
+domains:
+  - math
+level: core
+plain: >-
+  The total reward an AI agent collects from now until the end of a task, usually counting near-term
+  rewards more than distant ones. Agents are trained to make this total as large as possible.
+senses:
+  - definition: >-
+      The cumulative [[reward|reward]] that follows a given time step, written G_t, which
+      [[reinforcement-learning|reinforcement learning]] agents aim to maximize in expectation. In
+      tasks that end, it can be the plain sum of rewards until the [[episode|episode]] terminates;
+      in general it is the discounted sum, in which a reward k steps ahead is weighted by γ^k for a
+      [[discount-factor|discount factor]] γ between 0 and 1; values below 1 keep the total finite
+      for tasks that never end. Returns can be measured from complete [[trajectory|trajectories]]
+      (Monte Carlo estimation) or approximated by bootstrapping — adding a few observed rewards to
+      an estimate of the remaining value, as in n-step and [[temporal-difference-learning|TD]]
+      targets and [[generalized-advantage-estimation|generalized advantage estimation]]. Expected
+      returns define the [[value-function|value function]] and the [[q-function|Q-function]]; an
+      average-reward formulation is an alternative for continuing tasks.
+    example: >-
+      Clipping rewards to ±1 changed which policies achieved the highest return in some Atari games.
+formula_latex: G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots = \sum_{k=0}^{\infty}
+  \gamma^{k} R_{t+k+1}
+origin: >-
+  The word borrows the financial sense of a return on investment, and exponential discounting comes
+  from economics (Paul Samuelson's discounted-utility model, 1937). Discounted total reward was the
+  objective of the Markov decision processes of Richard Bellman and Ronald Howard. 'Return' was in
+  RL use by the late 1980s — Christopher Watkins's 1989 thesis analyzed n-step returns — and was
+  standardized by Sutton and Barto's textbook (1998).
+note: >-
+  Unrelated to the return statement of programming languages. 'Reward-to-go' usually means the
+  return from a given step to the end of the episode, often undiscounted.
+see_also:
+  - reward
+  - discount factor
+  - value function
+  - episode
+  - temporal difference learning
+  - generalized advantage estimation
+contrast:
+  - reward
+sources:
+  - text: >-
+      Sutton, R. S. & Barto, A. G. (2018). Reinforcement Learning: An Introduction (2nd ed.), §3.3.
+      MIT Press.

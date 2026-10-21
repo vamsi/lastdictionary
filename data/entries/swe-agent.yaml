@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SWE-agent
+id: swe-agent
+pos: prop. n.
+domain: agents
+domains:
+  - eval
+  - eng
+level: specialist
+plain: >-
+  An open-source research system from Princeton that turns a language model into a software-fixing
+  agent by giving it a specially designed set of commands for browsing, editing and testing code.
+senses:
+  - definition: >-
+      An open-source system that lets a [[large-language-model|large language model]] resolve real
+      software issues autonomously by working inside a repository through a custom
+      [[agent-computer-interface|agent–computer interface]]: commands to open and scroll files a
+      window at a time, search the codebase, make line-range edits checked by a linter that rejects
+      syntax errors, and run code and tests, each returning compact feedback. Run with GPT-4 Turbo,
+      it fixed 12.5% of [[swe-bench|SWE-bench]] issues and 87.7% of HumanEvalFix problems, well
+      beyond what models had achieved without interacting with the code, and ablations credited much
+      of the gain to the interface rather than the model. SWE-agent became a standard research
+      baseline; a later minimal variant, mini-SWE-agent, showed that newer models could perform well
+      with little more than a shell.
+    example: We benchmark new models under SWE-agent so the scaffold is held constant.
+origin: >-
+  Developed at Princeton by John Yang, Carlos E. Jimenez, Alexander Wettig, Kilian Lieret, Shunyu
+  Yao, Karthik Narasimhan and Ofir Press; the code was released in April 2024, the paper posted on 6
+  May 2024 and published at NeurIPS 2024.
+year: 2024
+see_also:
+  - agent–computer interface
+  - SWE-bench
+  - coding agent
+  - ReAct
+  - harness
+sources:
+  - text: >-
+      Yang, J., Jimenez, C. E., Wettig, A., Lieret, K., Yao, S., Narasimhan, K. & Press, O. (2024).
+      SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering. arXiv:2405.15793.
+    url: https://arxiv.org/abs/2405.15793
+  - text: >-
+      Yang, J. et al. (2024). SWE-agent. Advances in Neural Information Processing Systems 37
+      (NeurIPS 2024).
+    url: https://papers.neurips.cc/paper_files/paper/2024/hash/5a7c947568c1b1328ccc5230172e1e7c-Abstract-Conference.html

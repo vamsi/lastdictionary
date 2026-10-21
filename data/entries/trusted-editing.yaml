@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: trusted editing
+id: trusted-editing
+pos: n.
+also:
+  - trusted edit
+domain: safety
+domains:
+  - sec
+  - agents
+level: specialist
+plain: >-
+  A safety setup in which a weaker, trusted AI rewrites any suspicious-looking part of a stronger
+  AI's work before it is used, removing possible sabotage while keeping most of the value.
+senses:
+  - definition: >-
+      An [[ai-control|AI control]] protocol in which a trusted, less capable model reviews each
+      output of an untrusted, more capable model and, when the output looks moderately suspicious,
+      rewrites it to remove anything that might be an attack — for example, editing submitted code
+      to delete logic that resembles a hidden backdoor — while preserving the useful work. The most
+      suspicious outputs still go to human auditors; the least suspicious are used unchanged.
+      Because editing keeps more of the strong model's contribution than discarding it in favor of
+      the weak model's own answer ('defer to trusted'), it can achieve a better trade-off between
+      safety and usefulness. Related protocols resample the untrusted model several times, using the
+      least suspicious sample or treating the pattern of suspicion across samples as evidence.
+    example: >-
+      Trusted editing stripped the odd special case from the patch, and the tests still passed.
+origin: >-
+  Introduced by Ryan Greenblatt, Buck Shlegeris, Kshitij Sachan and Fabien Roger of Redwood Research
+  (2023), who found it among the best-performing protocols in their code-backdooring testbed.
+  Resampling protocols were developed in 'Ctrl-Z: Controlling AI Agents via Resampling' (2025).
+year: 2023
+see_also:
+  - AI control
+  - trusted monitoring
+  - untrusted monitoring
+  - control evaluation
+  - backdoor attack
+contrast:
+  - trusted monitoring
+sources:
+  - text: >-
+      Greenblatt, R., Shlegeris, B., Sachan, K. & Roger, F. (2023). AI Control: Improving Safety
+      Despite Intentional Subversion. arXiv:2312.06942.
+    url: https://arxiv.org/abs/2312.06942

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inter-annotator agreement
+id: inter-annotator-agreement
+pos: n.
+also:
+  - IAA
+  - inter-rater reliability
+  - inter-rater agreement
+  - inter-coder agreement
+domain: data
+domains:
+  - eval
+  - math
+level: specialist
+plain: >-
+  A measure of how often different people labeling the same data give the same answer. Low agreement
+  warns that the task is unclear or the labels are unreliable.
+senses:
+  - definition: >-
+      A measure of how consistently annotators working separately give the same items the same
+      [[label|labels]], used to judge whether an annotation scheme is well defined and whether its
+      labels can serve as [[ground-truth|ground truth]]. Raw percent agreement overstates
+      reliability because some agreement happens by chance, so chance-corrected coefficients are
+      preferred: [[cohen-s-kappa|Cohen's kappa]] for two annotators, Fleiss' kappa for a fixed
+      number of raters per item, and Krippendorff's alpha, which handles many annotators, missing
+      judgments and ordinal or interval scales. For continuous scores, correlation or intraclass
+      correlation is used. Agreement also sets a practical ceiling on evaluation: a model's score
+      against references cannot be interpreted more finely than the references' own consistency, so
+      careful dataset papers report it.
+    example: Agreement was only 0.41 kappa, so we merged the two most confusable categories.
+origin: >-
+  Reliability coefficients for human judges come from psychology and content analysis: William
+  Scott's pi (1955), Jacob Cohen's kappa (1960) and Klaus Krippendorff's alpha (c. 1970). Jean
+  Carletta's 1996 article in Computational Linguistics persuaded language researchers to report
+  kappa, and 'inter-annotator agreement' became the field's standard term.
+note: >-
+  Agreement is not accuracy: annotators can agree on a wrong answer. Conversely, some disagreement
+  reflects genuinely ambiguous or subjective items rather than error, and some researchers now keep
+  the full distribution of judgments instead of forcing a single label.
+see_also:
+  - Cohen's kappa
+  - annotation
+  - label noise
+  - ground truth
+  - data labeling
+  - human evaluation
+sources:
+  - text: >-
+      Carletta, J. (1996). Assessing Agreement on Classification Tasks: The Kappa Statistic.
+      Computational Linguistics 22(2).
+  - text: >-
+      Artstein, R. & Poesio, M. (2008). Inter-Coder Agreement for Computational Linguistics.
+      Computational Linguistics 34(4).

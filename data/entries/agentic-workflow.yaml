@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agentic workflow
+id: agentic-workflow
+pos: n.
+also:
+  - LLM workflow
+  - AI workflow
+  - agent workflow
+domain: agents
+domains:
+  - eng
+level: core
+plain: >-
+  A multi-step process in which AI models draft, check, use tools and revise their work over several
+  rounds, instead of answering in one shot; often the steps are laid out by developers in advance.
+senses:
+  - context: Iterative LLM processes
+    definition: >-
+      A process in which [[large-language-model|language models]] reach a result through a series of
+      steps, each able to call [[tool|tools]], inspect earlier output and improve on it, rather than
+      in a single pass from prompt to final answer. Andrew Ng, who popularized the phrase in 2024
+      and contrasted it with zero-shot use, grouped these workflows into four design patterns:
+      reflection (self-critique and revision), [[tool-use|tool use]], planning
+      ([[task-decomposition|task decomposition]]) and multi-agent collaboration. He illustrated
+      their value with a coding result: on [[humaneval|HumanEval]], GPT-3.5 scored 48.1% zero-shot
+      and GPT-4 67.0%, while GPT-3.5 wrapped in an iterative agent loop reached up to 95.1%.
+    example: >-
+      We kept it as an agentic workflow — classify, draft, check — because a free-roaming agent
+      wasn't worth the risk.
+  - context: Workflows versus agents
+    definition: >-
+      In the narrower usage of Anthropic's 'Building effective agents' (2024), a system in which
+      models and tools are 'orchestrated through predefined code paths', as opposed to an
+      [[ai-agent|AI agent]] that directs its own process. The named workflow patterns are
+      [[prompt-chaining|prompt chaining]], routing (classifying an input and sending it to a
+      specialized prompt or model), parallelization (splitting a task into independent sections, or
+      sampling several answers and voting), the [[orchestrator-worker-pattern|orchestrator–worker
+      pattern]] and the [[evaluator-optimizer|evaluator–optimizer]] loop. Workflows trade
+      flexibility for predictability, cost control and easier testing, and are recommended whenever
+      a task's steps can be known in advance.
+origin: >-
+  Andrew Ng promoted 'agentic workflows' in a talk at Sequoia Capital's AI Ascent and a series of
+  letters in The Batch beginning 20 March 2024. Erik Schluntz and Barry Zhang's 'Building effective
+  agents' (Anthropic, December 2024) drew the influential line between workflows and agents and
+  named the standard patterns.
+year: 2024
+note: >-
+  Overlaps with 'compound AI system' (Matei Zaharia and colleagues, 2024), a broader term for
+  applications that combine several models, retrievers and tools. Many production systems are
+  hybrids: fixed workflows with agentic steps inside.
+see_also:
+  - prompt chaining
+  - evaluator–optimizer
+  - orchestrator–worker pattern
+  - AI agent
+  - agentic AI
+  - orchestration
+  - model routing
+contrast:
+  - AI agent
+sources:
+  - text: >-
+      Ng, A. (2024). How Agents Can Improve LLM Performance. The Batch (DeepLearning.AI), 20 March
+      2024.
+    url: https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance/
+  - text: Schluntz, E. & Zhang, B. (2024). Building effective agents. Anthropic.
+    url: https://www.anthropic.com/research/building-effective-agents

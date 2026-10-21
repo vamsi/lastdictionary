@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: adversarial robustness
+id: adversarial-robustness
+pos: n.
+also:
+  - robust accuracy
+  - adversarially robust
+  - robustness to adversarial examples
+domain: sec
+domains:
+  - dl
+  - eval
+  - safety
+level: core
+plain: >-
+  How well an AI model keeps giving correct answers when someone deliberately tweaks its inputs to
+  trip it up.
+senses:
+  - definition: >-
+      The degree to which a model's outputs stay correct under the worst-case input perturbations
+      permitted by a [[threat-model|threat model]], as opposed to random noise or natural
+      [[distribution-shift|distribution shift]]. It is usually reported as robust accuracy: the
+      fraction of test inputs for which no perturbation in the allowed set (for example, an ℓ∞ ball
+      of radius 8/255 around CIFAR-10 images) changes the prediction. Empirical robustness is
+      measured with strong, adaptive attacks — attack ensembles such as AutoAttack and shared
+      leaderboards such as RobustBench — and is only an upper bound on true robustness;
+      [[certified-robustness|certified robustness]] gives a provable lower bound. The main empirical
+      defense is [[adversarial-training|adversarial training]]. Robust models tend to have lower
+      clean accuracy, need more data and compute, and learn features that align better with human
+      perception. For [[large-language-model|language models]] the term extends to resistance
+      against [[jailbreak|jailbreaks]] and [[prompt-injection|prompt injection]].
+    example: Clean accuracy is 92%, but adversarial robustness at ε = 8/255 is only 58%.
+origin: >-
+  Grew from the discovery of adversarial examples in 2013. Aleksander Madry and colleagues (2017)
+  framed robustness as robust optimization, and standards for rigorous evaluation followed: Anish
+  Athalye, Nicholas Carlini and David Wagner's 2018 critique of [[gradient-masking|gradient
+  masking]], Carlini and colleagues' 2019 evaluation guidelines, the AutoAttack ensemble (Francesco
+  Croce and Matthias Hein, 2020) and the RobustBench leaderboard (2020).
+note: >-
+  Distinct from general [[robustness|robustness]] to noise, corruptions or distribution shift; a
+  model robust in one sense is often not robust in the other. Robustness is always relative to a
+  threat model: a model resistant to small ℓ∞ perturbations may still fall to patches, rotations or
+  other perturbation types.
+see_also:
+  - adversarial example
+  - adversarial training
+  - certified robustness
+  - threat model
+  - gradient masking
+  - attack success rate
+contrast:
+  - robustness
+sources:
+  - text: >-
+      Croce, F. & Hein, M. (2020). Reliable Evaluation of Adversarial Robustness with an Ensemble of
+      Diverse Parameter-free Attacks. ICML 2020.
+  - text: >-
+      Croce, F. et al. (2021). RobustBench: a standardized adversarial robustness benchmark. NeurIPS
+      2021 Datasets and Benchmarks Track.

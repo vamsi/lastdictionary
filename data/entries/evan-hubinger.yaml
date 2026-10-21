@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Evan Hubinger
+id: evan-hubinger
+sort_as: Hubinger Evan
+pos: prop. n.
+domain: people
+domains:
+  - safety
+level: specialist
+plain: >-
+  An American AI-safety researcher who introduced the idea that a trained AI could secretly pursue
+  goals of its own, and who builds deliberately misaligned AI models to study the risk.
+senses:
+  - definition: >-
+      American AI-safety researcher at [[anthropic|Anthropic]], where he leads work on
+      stress-testing alignment techniques. As lead author of 'Risks from Learned Optimization in
+      Advanced Machine Learning Systems' (2019) he introduced
+      [[mesa-optimization|mesa-optimization]] — a trained model that is itself an optimizer,
+      possibly pursuing goals different from its training objective — together with the distinction
+      between [[outer-alignment|outer alignment]] and [[inner-alignment|inner alignment]] and the
+      concept of [[deceptive-alignment|deceptive alignment]], and he later described
+      [[gradient-hacking|gradient hacking]] (2019). At Anthropic he argued for building deliberately
+      misaligned [[model-organism-of-misalignment|model organisms of misalignment]] to study (2023)
+      and led 'Sleeper Agents' (2024), which showed that backdoored deceptive behavior in language
+      models can persist through standard safety training (see [[sleeper-agent|sleeper agent]]). He
+      was senior author of the December 2024 study of [[alignment-faking|alignment faking]] in
+      Claude, with [[redwood-research|Redwood Research]], and co-authored the 2025 study of
+      [[agentic-misalignment|agentic misalignment]].
+see_also:
+  - mesa-optimization
+  - inner alignment
+  - deceptive alignment
+  - sleeper agent
+  - alignment faking
+  - model organism of misalignment
+sources:
+  - text: >-
+      Hubinger, E., van Merwijk, C., Mikulik, V., Skalse, J. & Garrabrant, S. (2019). Risks from
+      Learned Optimization in Advanced Machine Learning Systems. arXiv preprint.
+  - text: >-
+      Hubinger, E. et al. (2024). Sleeper Agents: Training Deceptive LLMs that Persist Through
+      Safety Training. arXiv preprint.
+as_of: 2026-10

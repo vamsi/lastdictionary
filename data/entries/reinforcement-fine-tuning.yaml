@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reinforcement fine-tuning
+id: reinforcement-fine-tuning
+pos: n.
+also:
+  - RFT
+  - RL fine-tuning
+  - reinforced fine-tuning
+domain: train
+domains:
+  - rl
+  - eng
+level: core
+plain: >-
+  Improving a trained AI model by trial and error instead of examples to copy: it tries answers, a
+  grader scores them, and the model shifts toward whatever earned high scores.
+senses:
+  - definition: >-
+      Fine-tuning a pretrained model with [[reinforcement-learning|reinforcement learning]] rather
+      than supervised targets: the model samples its own outputs for training prompts, a reward
+      function, [[verifier|verifier]] or grader scores them, and a [[policy-gradient|policy
+      gradient]] method such as [[proximal-policy-optimization|proximal policy optimization]] or
+      [[group-relative-policy-optimization|group relative policy optimization]] raises the
+      probability of high-scoring outputs. Because the model learns from its own samples,
+      reinforcement fine-tuning can exceed the quality of available demonstrations and tends to
+      generalize better and forget less than [[supervised-fine-tuning|supervised fine-tuning]], but
+      it needs a reliable reward and a starting model that already succeeds some of the time.
+      [[reinforcement-learning-from-human-feedback|RLHF]] and
+      [[reinforcement-learning-with-verifiable-rewards|RLVR]] are both forms of it.
+    example: >-
+      SFT got us the format; reinforcement fine-tuning against the test-based grader got us the
+      accuracy.
+  - context: Commercial service
+    definition: >-
+      A customization service announced by OpenAI in December 2024 and offered for its o4-mini
+      reasoning model in 2025, in which customers supply tasks and programmable graders (string
+      checks, code or model-based scoring) and the provider runs RL fine-tuning for them; other
+      platforms offer similar services.
+origin: >-
+  RL fine-tuning of sequence models dates at least to Sequence Tutor (2016) and early RLHF. The
+  phrase spread with ReFT (Trung Quoc Luong and colleagues, January 2024), which applied PPO after
+  an SFT warm-up to math problems, and especially with OpenAI's Reinforcement Fine-Tuning Research
+  Program, announced during its December 2024 product event.
+year: 2024
+note: >-
+  Abbreviation clash: RFT also means [[rejection-sampling|rejection sampling]] fine-tuning, and ReFT
+  also names representation fine-tuning, a [[parameter-efficient-fine-tuning|parameter-efficient
+  fine-tuning]] method. As of October 2026, OpenAI had announced that it was winding down its
+  fine-tuning API and platform, which includes RFT.
+see_also:
+  - reinforcement learning with verifiable rewards
+  - reinforcement learning from human feedback
+  - supervised fine-tuning
+  - verifier
+  - group relative policy optimization
+  - fine-tuning
+contrast:
+  - supervised fine-tuning
+  - rejection sampling
+sources:
+  - text: >-
+      Luong, T. Q., Zhang, X., Jie, Z., Sun, P., Jin, X. & Li, H. (2024). ReFT: Reasoning with
+      Reinforced Fine-Tuning. arXiv:2401.08967.
+    url: https://arxiv.org/abs/2401.08967
+  - text: OpenAI (2025). Reinforcement fine-tuning. OpenAI API documentation.
+as_of: 2026-10

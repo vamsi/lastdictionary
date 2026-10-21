@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GDPval
+id: gdpval
+pos: prop. n.
+domain: eval
+domains:
+  - society
+  - agents
+labels:
+  - emerging
+level: core
+plain: >-
+  An OpenAI test that pits AI against seasoned professionals on genuine workplace assignments, from
+  reports and spreadsheets to slide decks, in 44 occupations important to the US economy.
+senses:
+  - definition: >-
+      A benchmark of AI performance on paid knowledge work rather than exam questions, made of 1,320
+      tasks from 44 occupations, which were chosen from the nine industries that add most to US
+      gross domestic product. Industry veterans, averaging 14 years in their fields, built each task
+      from a genuine piece of professional work, often with reference files attached; the
+      deliverables range from documents, slides and spreadsheets to diagrams and multimedia. Grading
+      is by blind pairwise comparison: experts from the same occupation judge whether the model's
+      deliverable is better than, as good as, or worse than a human professional's, and the headline
+      metric is the share of tasks the model wins or ties. A 220-task gold subset and an
+      experimental automated grader are public. In the September 2025 release, the best model
+      (Claude Opus 4.1) was rated as good as or better than the experts on just under half of the
+      tasks.
+    example: >-
+      On GDPval the model wins or ties against professionals on most spreadsheet tasks but rarely on
+      slide decks.
+origin: >-
+  Introduced by OpenAI on 25 September 2025, with a paper led by Tejal Patwardhan; the name joins
+  GDP (gross domestic product) and 'val' for evaluation.
+year: 2025
+note: >-
+  Tasks are one-shot and well specified, so GDPval omits much of real work: iteration, gathering
+  context, coordination and accountability. OpenAI's claim that models were about 100 times faster
+  and cheaper counted only inference time and API cost, not human oversight.
+see_also:
+  - task exposure
+  - technological unemployment
+  - win rate
+  - human evaluation
+  - Remote Labor Index
+  - automation
+sources:
+  - text: >-
+      Patwardhan, T. et al. (2025). GDPval: Evaluating AI Model Performance on Real-World
+      Economically Valuable Tasks. arXiv:2510.04374.
+    url: https://arxiv.org/abs/2510.04374
+  - text: OpenAI (2025). Measuring the performance of our models on real-world tasks.
+    url: https://openai.com/index/gdpval/
+as_of: 2026-10

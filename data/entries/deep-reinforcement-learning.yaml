@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deep reinforcement learning
+id: deep-reinforcement-learning
+pos: n.
+also:
+  - deep RL
+  - DRL
+domain: rl
+domains:
+  - dl
+level: core
+plain: >-
+  Reinforcement learning in which a large neural network does the learning, letting an AI learn
+  tasks such as video games or robot control directly from raw inputs like screen pixels or camera
+  images.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement learning]] that uses deep [[neural-network|neural
+      networks]] as function approximators, whether to represent a [[value-function|value
+      function]], the [[policy|policy]] itself, a learned [[world-model|world model]] or several of
+      these at once, so that agents can act directly on raw sensory input such as game screens or
+      camera images without hand-designed features. Combining nonlinear function approximation with
+      bootstrapped targets and off-policy data is prone to divergence (the [[deadly-triad|deadly
+      triad]]), so the field developed stabilizers: [[experience-replay|experience replay]] and
+      [[target-network|target networks]] in the [[deep-q-network|deep Q-network]], trust-region and
+      clipped updates in [[trust-region-policy-optimization|TRPO]] and
+      [[proximal-policy-optimization|PPO]], and entropy-regularized [[actor-critic|actor–critic]]
+      methods such as [[soft-actor-critic|SAC]]. Deep RL produced expert or superhuman play in Atari
+      games, Go ([[alphago|AlphaGo]], [[alphazero|AlphaZero]]), StarCraft II and Dota 2, dexterous
+      robot control, and the RL stage of [[large-language-model|large language model]]
+      [[post-training|post-training]]. It is notoriously sample-hungry and sensitive to
+      hyperparameters, implementation details and random seeds.
+    example: >-
+      Our deep RL agent learned to walk in simulation after 200 million environment steps.
+origin: >-
+  Neural networks were paired with RL early — Gerald Tesauro's [[td-gammon|TD-Gammon]] (1992)
+  learned backgammon with a multilayer network — but the phrase 'deep reinforcement learning' spread
+  after DeepMind's 'Playing Atari with Deep Reinforcement Learning' (Volodymyr Mnih and colleagues,
+  December 2013) and the 2015 Nature paper on the [[deep-q-network|deep Q-network]].
+year: 2013
+note: >-
+  Reproducibility is a known weakness: Peter Henderson and colleagues showed in 2018 ('Deep
+  Reinforcement Learning That Matters') that reported gains can vanish across random seeds and
+  codebases, prompting norms of reporting many seeds and confidence intervals.
+see_also:
+  - reinforcement learning
+  - deep Q-network
+  - proximal policy optimization
+  - actor–critic
+  - world model
+  - AlphaZero
+  - deep learning
+sources:
+  - text: >-
+      Mnih, V. et al. (2013). Playing Atari with Deep Reinforcement Learning. NIPS Deep Learning
+      Workshop. arXiv:1312.5602.
+    url: https://arxiv.org/abs/1312.5602
+  - text: >-
+      Mnih, V. et al. (2015). Human-level control through deep reinforcement learning. Nature 518,
+      529–533.
+  - text: >-
+      Henderson, P. et al. (2018). Deep Reinforcement Learning That Matters. AAAI 2018.

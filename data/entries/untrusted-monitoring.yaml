@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: untrusted monitoring
+id: untrusted-monitoring
+pos: n.
+also:
+  - untrusted monitor
+domain: safety
+domains:
+  - sec
+  - agents
+level: specialist
+plain: >-
+  Using a second copy of a powerful AI to watch the first for sabotage, with safeguards that stop
+  the two copies from secretly cooperating.
+senses:
+  - definition: >-
+      An [[ai-control|AI control]] protocol that uses another instance of the capable, untrusted
+      model as the monitor, exploiting its superior ability to spot subtle attacks that a weaker
+      [[trusted-monitoring|trusted monitor]] would miss. The danger is collusion: a scheming monitor
+      could simply decline to report attacks by its counterpart, perhaps recognizing them through
+      prearranged signals. Countermeasures include validating the monitor on synthetic attacks and
+      [[honeypot|honeypots]] before and during deployment, so that a monitor that misses known
+      attacks is caught lying, and paraphrasing, redacting or reformatting what it sees to strip any
+      [[steganography|steganographic]] signal the two instances could use to coordinate. Its value
+      depends on a race between the monitor's detection skill and the policy's ability to signal
+      covertly.
+    example: >-
+      Before trusting the untrusted monitor, we fed it two hundred synthetic backdoors to see
+      whether it would report them.
+origin: >-
+  Introduced alongside trusted monitoring by Ryan Greenblatt, Buck Shlegeris, Kshitij Sachan and
+  Fabien Roger of Redwood Research (2023), who found that untrusted monitoring with
+  collusion-busting measures improved substantially on simpler baselines in their code-backdooring
+  testbed.
+year: 2023
+see_also:
+  - AI control
+  - trusted monitoring
+  - control evaluation
+  - honeypot
+  - steganography
+  - scheming
+contrast:
+  - trusted monitoring
+sources:
+  - text: >-
+      Greenblatt, R., Shlegeris, B., Sachan, K. & Roger, F. (2023). AI Control: Improving Safety
+      Despite Intentional Subversion. arXiv:2312.06942.
+    url: https://arxiv.org/abs/2312.06942

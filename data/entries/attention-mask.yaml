@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: attention mask
+id: attention-mask
+pos: n.
+also:
+  - padding mask
+  - attention masking
+domain: llm
+domains:
+  - dl
+  - eng
+level: core
+plain: >-
+  A grid of yes-or-no switches telling an attention layer which words each word may look at — for
+  example, ignore blank padding, or do not peek at words that come later.
+senses:
+  - definition: >-
+      A matrix specifying, for each query position, which key positions [[attention|attention]] may
+      use, usually implemented by adding −∞ (or a large negative number) to the scores of disallowed
+      pairs before the [[softmax|softmax]] so that they receive zero weight. Common types are the
+      padding mask, which hides filler tokens added to make the sequences in a batch equal in
+      length; the [[causal-mask|causal mask]], which hides future positions; block-diagonal masks
+      that stop several documents packed into one training sequence from attending to each other;
+      and structured masks implementing [[sliding-window-attention|sliding-window]] or
+      [[sparse-attention|sparse]] patterns. Soft masks add graded biases instead of hard blocks, as
+      in [[alibi|ALiBi]]. In the Hugging Face [[transformers|Transformers]] library, the
+      attention_mask argument conventionally means the padding mask.
+    example: >-
+      We forgot the attention mask, so the model attended to padding and batched outputs differed
+      from single-example runs.
+origin: >-
+  Masking inside attention was specified in 'Attention Is All You Need' (2017), which set illegal
+  decoder connections to −∞ before the softmax; masking of padding in batched sequence models
+  predates transformers.
+year: 2017
+note: >-
+  Not to be confused with input masking in [[masked-language-model|masked language models]], which
+  replaces tokens with a [MASK] symbol rather than blocking attention.
+see_also:
+  - causal mask
+  - attention
+  - scaled dot-product attention
+  - sliding window attention
+  - sparse attention
+  - ALiBi
+contrast:
+  - masked language model
+sources:
+  - text: Vaswani, A. et al. (2017). Attention Is All You Need. NIPS 2017.
+    url: https://arxiv.org/abs/1706.03762

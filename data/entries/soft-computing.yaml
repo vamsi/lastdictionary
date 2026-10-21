@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: soft computing
+id: soft-computing
+pos: n.
+also:
+  - SC
+domain: core
+domains:
+  - sym
+  - math
+  - hist
+level: specialist
+plain: >-
+  A group of computing methods, including fuzzy logic, neural networks and evolutionary algorithms,
+  that accept imprecise, approximate answers in exchange for being practical on messy real-world
+  problems.
+senses:
+  - definition: >-
+      A family of computational methods that settle for approximate answers where exact ones would
+      be too costly or impossible to obtain, as opposed to 'hard' computing, which requires precise
+      models and precise results. Lotfi Zadeh, who promoted the term, framed its guiding principle
+      as exploiting tolerance for imprecision, uncertainty and partial truth to gain tractability,
+      robustness and low cost. Its usual constituents are [[fuzzy-logic|fuzzy logic]],
+      [[neural-network|neural networks]], [[evolutionary-computation|evolutionary computation]] and
+      probabilistic reasoning, later joined by rough sets and [[swarm-intelligence|swarm
+      intelligence]]. A defining theme is hybridization, as in neuro-fuzzy systems that learn fuzzy
+      rules by neural-network training, or [[genetic-algorithm|genetic algorithms]] that tune fuzzy
+      controllers. Soft computing was influential in control engineering, consumer electronics and
+      industrial optimization in the 1990s and 2000s; the label has since declined, while its
+      neural-network component grew into [[deep-learning|deep learning]].
+    example: >-
+      The washing machine's soft computing controller used fuzzy rules to set the cycle from load
+      weight and dirtiness.
+origin: >-
+  Usually credited to Lotfi Zadeh, who had introduced fuzzy sets in 1965 and promoted the term in
+  the early 1990s. He founded, and from 1991 directed, the Berkeley Initiative in Soft Computing
+  (BISC) at the University of California, Berkeley, and set out the idea in 'Fuzzy Logic, Neural
+  Networks, and Soft Computing' (Communications of the ACM, 1994).
+note: >-
+  Overlaps heavily with [[computational-intelligence|computational intelligence]]. 'Soft' refers to
+  tolerance of imprecision, not to software and not to a lack of rigor.
+see_also:
+  - fuzzy logic
+  - computational intelligence
+  - neural network
+  - evolutionary computation
+  - genetic algorithm
+  - swarm intelligence
+contrast:
+  - symbolic AI
+sources:
+  - text: >-
+      Zadeh, L. A. (1994). Fuzzy Logic, Neural Networks, and Soft Computing. Communications of the
+      ACM, 37(3), 77–84.

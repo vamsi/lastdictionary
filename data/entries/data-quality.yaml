@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data quality
+id: data-quality
+pos: n.
+also:
+  - quality of data
+  - high-quality data
+domain: data
+domains:
+  - ml
+  - gov
+level: core
+plain: >-
+  How well a set of data does its job: whether it is accurate, complete, up to date, consistent and
+  representative — and, for AI training, informative enough to teach useful skills.
+senses:
+  - definition: >-
+      A judgment of how well a body of data serves the purpose it is used for; the same records can
+      be adequate for one task and inadequate for another. Information-systems research and
+      standards divide it into dimensions such as accuracy, completeness, consistency, timeliness,
+      validity, uniqueness and accessibility; machine learning adds representativeness of the
+      deployment population, correctness of labels ([[label-noise|label noise]]), balance across
+      classes and groups, and freedom from [[data-leakage|data leakage]] and
+      [[data-contamination|data contamination]]. For [[pretraining-data|pretraining data]] the term
+      has a narrower, operational meaning: text that improves a model's downstream performance per
+      token, approximated by heuristics and classifiers that favor edited, informative, educational
+      or reasoning-rich writing (see [[quality-filtering|quality filtering]]). Evidence that better
+      data can beat bigger models — from deduplicated and filtered web corpora to small curated
+      instruction sets — made data quality a central research topic from the late 2010s (see
+      [[data-centric-ai|data-centric AI]]). Law imposes data-quality duties too, notably on
+      high-risk systems under the [[eu-ai-act|EU AI Act]].
+    example: >-
+      Swapping in the filtered web data improved every benchmark at the same compute, a pure
+      data-quality win.
+origin: >-
+  Data quality became a research field in database and information-systems work of the 1980s–1990s;
+  Richard Wang and Diane Strong's 1996 study of what data consumers value set out the
+  multidimensional view. Standards followed, including ISO/IEC 25012 (2008) and the ISO/IEC 5259
+  series on data quality for analytics and machine learning (published from 2024).
+note: >-
+  'Quality' in language-model data is contested: classifiers trained to prefer text resembling
+  Wikipedia or textbooks can encode cultural and class preferences, and filters described as quality
+  filters have been shown to remove dialects and minority voices disproportionately.
+see_also:
+  - data cleaning
+  - quality filtering
+  - label noise
+  - data-centric AI
+  - sampling bias
+  - data provenance
+  - deduplication
+sources:
+  - text: >-
+      Wang, R. Y. & Strong, D. M. (1996). Beyond Accuracy: What Data Quality Means to Data
+      Consumers. Journal of Management Information Systems 12(4).

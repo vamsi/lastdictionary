@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Kunihiko Fukushima
+id: kunihiko-fukushima
+sort_as: Fukushima Kunihiko
+pos: prop. n.
+domain: people
+domains:
+  - dl
+  - percep
+  - hist
+level: specialist
+dates: b. 1936
+plain: >-
+  A Japanese engineer who in 1979 invented the neocognitron, a brain-inspired image-recognition
+  network that was the direct ancestor of today's convolutional neural networks.
+senses:
+  - definition: >-
+      Japanese computer scientist who spent much of his career at the NHK Science and Technical
+      Research Laboratories, the research arm of Japan's public broadcaster, and later taught at
+      Osaka University and other universities. Inspired by David Hubel and Torsten Wiesel's
+      discovery of simple and complex cells in the visual cortex, he proposed the
+      [[neocognitron|neocognitron]] (1979; in English 1980), a multilayer network that alternates
+      feature-detecting layers, whose units share weights across positions, with layers that pool
+      their outputs to tolerate shifts and distortions. Trained by unsupervised self-organization,
+      it recognized handwritten characters and is the direct precursor of the
+      [[convolutional-neural-network|convolutional neural network]], which [[yann-lecun|Yann LeCun]]
+      and colleagues later trained with [[backpropagation|backpropagation]]. His 1969 work on visual
+      feature extraction used the rectifying activation now called [[relu|ReLU]]. His honors include
+      the Franklin Institute's Bower Award and Prize for Achievement in Science (2021).
+see_also:
+  - neocognitron
+  - convolutional neural network
+  - pooling
+  - receptive field
+  - ReLU
+  - Yann LeCun
+sources:
+  - text: >-
+      Fukushima, K. (1980). Neocognitron: A self-organizing neural network model for a mechanism of
+      pattern recognition unaffected by shift in position. Biological Cybernetics 36(4): 193–202.

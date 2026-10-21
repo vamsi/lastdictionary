@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model organism of misalignment
+id: model-organism-of-misalignment
+pos: n.
+also:
+  - model organism
+  - model organisms of misalignment
+domain: safety
+domains:
+  - eval
+  - interp
+level: specialist
+plain: >-
+  An AI deliberately built to show a dangerous kind of misbehavior — like a lab mouse given a
+  disease — so that researchers can study it safely and test fixes.
+senses:
+  - definition: >-
+      An AI system deliberately constructed or selected to exhibit a hypothesized form of
+      misalignment, so that the failure can be studied empirically before it arises unprompted in
+      more capable systems. As in biology, where fruit flies or mice stand in for organisms that are
+      harder to study, the aim is a tractable, reproducible example: researchers build the behavior
+      in by training, fine-tuning or prompting, then test whether detection methods find it and
+      whether safety training removes it. Prominent examples are [[sleeper-agent|sleeper agents]]
+      (backdoored deception), [[alignment-faking|alignment faking]], [[reward-tampering|reward
+      tampering]] curricula, [[emergent-misalignment|emergent misalignment]] and models trained with
+      hidden objectives for [[alignment-audit|alignment-auditing]] exercises. Critics note that a
+      behavior installed by researchers may differ mechanistically from one that arises naturally,
+      limiting how far findings transfer.
+    example: >-
+      We used the sleeper-agent model organism to test whether our probes catch deception they
+      weren't trained on.
+origin: >-
+  Proposed by Evan Hubinger, Nicholas Schiefer, Carson Denison and Ethan Perez of Anthropic in the
+  AI Alignment Forum essay 'Model Organisms of Misalignment: The Case for a New Pillar of Alignment
+  Research' (8 August 2023), borrowing the biological term 'model organism'.
+year: 2023
+see_also:
+  - sleeper agent
+  - alignment faking
+  - emergent misalignment
+  - reward tampering
+  - alignment audit
+  - misalignment
+sources:
+  - text: >-
+      Hubinger, E., Schiefer, N., Denison, C. & Perez, E. (2023). Model Organisms of Misalignment:
+      The Case for a New Pillar of Alignment Research. AI Alignment Forum, 8 August 2023.
+    url: https://www.alignmentforum.org/posts/ChDH335ckdvpxXaXX/model-organisms-of-misalignment-the-case-for-a-new-pillar-of-1

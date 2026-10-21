@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: activation vector
+id: activation-vector
+pos: n.
+also:
+  - hidden-state vector
+  - activation pattern
+domain: interp
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  The list of numbers a neural network produces at one layer for one input — a snapshot of its
+  internal state. In steering, also a direction added to that state to shift behavior.
+senses:
+  - context: Neural networks
+    definition: >-
+      The vector of [[activation|activation]] values output by a layer, or by a component such as an
+      [[attention-head|attention head]] or [[multilayer-perceptron|MLP]] block, for a given input.
+      In a [[transformer|transformer]] one such vector exists in the [[residual-stream|residual
+      stream]] for every token position at every layer, with as many dimensions as the model width.
+      Activation vectors are the raw material of interpretability: [[probing|probes]] read them,
+      [[sparse-autoencoder|sparse autoencoders]] decompose them into
+      [[feature-interpretability|features]], and [[activation-patching|activation patching]] swaps
+      them between runs to locate where information is computed.
+    example: >-
+      We cached the activation vectors at every layer for all 2,000 prompts and trained a probe on
+      each.
+  - context: Steering
+    definition: >-
+      A direction in [[activation-space|activation space]] that is added to, or used to modify, a
+      model's activations in order to change its behavior; in this sense interchangeable with
+      [[steering-vector|steering vector]]. The usage spread from a 2023 demonstration that adding
+      the activation difference between two short prompts could redirect GPT-2-XL's completions.
+origin: >-
+  A descriptive compound long used in neural-network writing for the vector of a layer's unit
+  outputs; its first use has not been established. The steering sense spread from Alexander Matt
+  Turner and colleagues' May 2023 LessWrong post 'Steering GPT-2-XL by adding an activation vector',
+  which preceded their [[activation-addition|activation addition]] paper.
+note: >-
+  Activations are not weights: weights are the fixed, learned parameters of a model, while
+  activations are computed afresh for every input and change from token to token.
+see_also:
+  - activation
+  - activation space
+  - residual stream
+  - steering vector
+  - activation steering
+  - embedding
+contrast:
+  - steering vector

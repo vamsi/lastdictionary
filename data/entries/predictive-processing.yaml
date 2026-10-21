@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: predictive processing
+id: predictive-processing
+pos: n.
+also:
+  - predictive coding
+  - prediction error minimization
+  - Bayesian brain
+  - Bayesian brain hypothesis
+  - predictive brain
+  - PP
+domain: mind
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  The idea that the brain is a prediction machine: it constantly guesses what its senses will report
+  next and learns mainly from its mistakes, so what we perceive is largely its best guess.
+senses:
+  - definition: >-
+      A framework in [[cognitive-science|cognitive science]] on which the brain continually
+      generates top-down predictions of its sensory input from a hierarchical generative model of
+      the world and the body, and passes upward mainly prediction errors — mismatches between
+      prediction and input — which are used to revise the model or, through action, to change the
+      input. Perception becomes inference to the best hypothesis about the causes of sensation, with
+      signals weighted by their expected precision (reliability) and attention treated as the
+      optimization of precision. Predictive coding is the narrower neural and algorithmic scheme for
+      exchanging predictions and errors between levels; the Bayesian brain hypothesis is the broader
+      claim that the brain approximates [[bayesian-inference|Bayesian inference]]. The framework
+      parallels [[self-supervised-learning|self-supervised learning]] and
+      [[next-token-prediction|next-token prediction]] in AI, and Anil Seth and others use it to
+      describe perception as 'controlled hallucination'.
+origin: >-
+  Rooted in Hermann von Helmholtz's account of perception as unconscious inference (1867). Rajesh
+  Rao and Dana Ballard's predictive-coding model of visual cortex (1999) and Karl Friston's work
+  from 2005 made it a theory of cortical function. Andy Clark's 'Whatever Next?' (Behavioral and
+  Brain Sciences, 2013), Jakob Hohwy's The Predictive Mind (2013) and Clark's Surfing Uncertainty
+  (2016) carried the framework into philosophy and cognitive science, where 'predictive processing'
+  became the usual umbrella term; its earliest use is not established.
+year: 2013
+note: >-
+  Not to be confused with predictive analytics or with predictive coding in signal compression, its
+  1950s engineering ancestor. Whether the framework is a testable theory or a flexible modeling
+  language is debated.
+see_also:
+  - free energy principle
+  - active inference
+  - Bayesian inference
+  - world model
+  - self-supervised learning
+  - embodied cognition
+  - consciousness
+sources:
+  - text: >-
+      Rao, R. P. N. & Ballard, D. H. (1999). Predictive Coding in the Visual Cortex: A Functional
+      Interpretation of Some Extra-Classical Receptive-Field Effects. Nature Neuroscience 2(1),
+      79–87.
+  - text: >-
+      Clark, A. (2013). Whatever Next? Predictive Brains, Situated Agents, and the Future of
+      Cognitive Science. Behavioral and Brain Sciences 36(3), 181–204.

@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: advanced packaging
+id: advanced-packaging
+pos: n.
+also:
+  - 2.5D packaging
+  - 3D packaging
+  - CoWoS
+  - heterogeneous integration
+  - hybrid bonding
+  - through-silicon via
+  - TSV
+  - co-packaged optics
+domain: hw
+domains:
+  - gov
+level: specialist
+plain: >-
+  Ways of joining several chips very closely inside one package — side by side on a silicon base or
+  stacked on top of each other — so they act almost like one bigger chip.
+senses:
+  - definition: >-
+      Techniques that integrate multiple dies — logic [[chiplet|chiplets]],
+      [[high-bandwidth-memory|HBM]] stacks, input/output dies — within one package using
+      wafer-fab-like processes, with far denser and shorter connections than a circuit board allows.
+      The main forms are 2.5D integration, in which dies sit side by side on a silicon interposer or
+      embedded bridge (TSMC's CoWoS, Intel's EMIB); 3D stacking, in which dies are bonded face to
+      face or connected through through-silicon vias (TSVs), as in HBM, AMD's 3D V-Cache and TSMC's
+      SoIC; and fan-out wafer-level packaging. Every leading AI accelerator depends on 2.5D
+      packaging to place HBM next to compute, and TSMC's CoWoS capacity was a principal bottleneck
+      on AI chip supply in 2023–2025. Co-packaged optics, which places optical transceivers inside
+      switch or processor packages, extends the approach to [[interconnect|interconnects]].
+origin: >-
+  Multi-chip modules date to mainframes of the 1980s; silicon-interposer integration reached volume
+  with TSMC's CoWoS, first used for Xilinx's Virtex-7 FPGAs (c. 2011–2012), and with AMD's
+  HBM-equipped Fiji GPU (2015). 'Advanced packaging' gained policy prominence in the 2020s,
+  including a dedicated program under the CHIPS and Science Act.
+see_also:
+  - chiplet
+  - high-bandwidth memory
+  - semiconductor foundry
+  - photonic computing
+  - interconnect
+  - Moore's law
+as_of: 2026-10

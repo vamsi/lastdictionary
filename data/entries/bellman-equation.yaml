@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bellman equation
+id: bellman-equation
+pos: n.
+also:
+  - Bellman optimality equation
+  - Bellman expectation equation
+  - Bellman backup
+  - dynamic programming equation
+domain: rl
+domains:
+  - math
+level: core
+plain: >-
+  A rule saying that how good a situation is equals the reward you get now plus how good the next
+  situation is, slightly discounted — so long-term planning can be solved one step at a time.
+senses:
+  - definition: >-
+      A recursive equation expressing the value of a [[state|state]] (or state–action pair) as the
+      expected immediate [[reward|reward]] plus the [[discount-factor|discounted]] value of the
+      successor state. The expectation form, for a fixed [[policy|policy]], defines that policy's
+      [[value-function|value function]] as the unique solution of a linear system; the optimality
+      form replaces the average over actions with a maximum and characterizes the optimal value
+      function v* and [[q-function|Q-function]] Q*, from which an optimal policy follows by acting
+      greedily. Because the Bellman operator is a contraction when γ < 1, applying it repeatedly
+      converges to the solution — the basis of [[value-iteration|value iteration]] and
+      [[policy-iteration|policy iteration]]. Sampled versions of the same backup give
+      [[temporal-difference-learning|temporal difference learning]] and [[q-learning|Q-learning]],
+      whose updates move estimates toward a 'Bellman target'. It is the discrete-time counterpart of
+      the Hamilton–Jacobi–Bellman equation of optimal control.
+    example: >-
+      The critic's loss is the squared Bellman error between Q(s, a) and r + γ max Q(s′, a′).
+formula_latex: v_*(s) = \max_{a} \sum_{s',\, r} p(s', r \mid s, a)\left[ r + \gamma\, v_*(s') \right]
+origin: >-
+  Named after Richard Bellman, who developed dynamic programming at the RAND Corporation from the
+  early 1950s and set out its 'principle of optimality' in papers from 1952 and in the book Dynamic
+  Programming (1957). Related functional equations appear in Lloyd Shapley's stochastic games
+  (1953). The eponym came later, through control theory and operations research.
+year: 1957
+note: >-
+  RL papers loosely call any one-step value update a 'Bellman backup'. Bellman also coined
+  [[curse-of-dimensionality|curse of dimensionality]] for the exponential growth in the cost of
+  solving these equations as state variables are added.
+see_also:
+  - dynamic programming
+  - value function
+  - Q-function
+  - value iteration
+  - temporal difference learning
+  - Markov decision process
+sources:
+  - text: Bellman, R. (1957). Dynamic Programming. Princeton University Press.
+  - text: >-
+      Bellman, R. (1952). On the Theory of Dynamic Programming. Proceedings of the National Academy
+      of Sciences 38(8), 716–719.

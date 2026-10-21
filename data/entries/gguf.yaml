@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GGUF
+id: gguf
+pos: abbr.
+also:
+  - GGUF file
+  - k-quants
+domain: infer
+domains:
+  - eng
+level: specialist
+plain: >-
+  A file format that packs an AI language model, often in a shrunken low-precision version, into one
+  file that ordinary computers can load and run quickly; used by llama.cpp and Ollama.
+senses:
+  - definition: >-
+      The single-file model format of the ggml ecosystem, read by [[llama-cpp|llama.cpp]],
+      [[ollama|Ollama]] and other local inference programs. Everything needed to run the model
+      travels in one binary file: a header beginning with the magic bytes 'GGUF' and a version
+      number; typed key–value metadata describing the architecture, hyperparameters,
+      [[tokenizer|tokenizer]] vocabulary and [[chat-template|chat template]]; a table of tensor
+      descriptors; and aligned tensor data laid out so that it can be memory-mapped and loaded
+      almost instantly. Tensors can be stored at many precisions, from 32-bit floats to block-wise
+      [[quantization|quantized]] types of roughly 1.5 to 8 bits per weight, named for example Q8_0,
+      Q4_K_M or IQ2_XXS. Converting a model from PyTorch or [[safetensors|safetensors]] weights to
+      GGUF and choosing a quantization type is the usual first step in running it locally.
+    example: >-
+      For the 7B model, the Q4_K_M GGUF is about 4 GB; the Q8_0 file is nearly twice that.
+origin: >-
+  Introduced by Georgi Gerganov and contributors to llama.cpp in August 2023, replacing the earlier
+  GGML, GGMF and GGJT formats, which could not record a model's architecture and broke whenever
+  hyperparameters were added. The specification gives no official expansion of the letters; glosses
+  such as 'GPT-Generated Unified Format' are unofficial.
+year: 2023
+see_also:
+  - llama.cpp
+  - Ollama
+  - quantization
+  - safetensors
+  - on-device AI
+  - ONNX
+contrast:
+  - safetensors
+sources:
+  - text: ggml project. GGUF specification (docs/gguf.md).
+    url: https://github.com/ggml-org/ggml/blob/master/docs/gguf.md
+  - text: "Gerganov, G. et al. (2023). gguf: llama.cpp pull request #2398."
+    url: https://github.com/ggml-org/llama.cpp/pull/2398

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: A/B testing
+id: a-b-testing
+pos: n.
+also:
+  - A/B test
+  - split testing
+  - online controlled experiment
+  - champion–challenger testing
+  - interleaving
+domain: eng
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  Comparing two versions of something — two models, two prompts, two designs — by randomly showing
+  each to different groups of real users and measuring which works better.
+senses:
+  - definition: >-
+      A randomized controlled experiment in which users, sessions or requests are randomly assigned
+      to a control (A) and one or more variants (B, C …) and predefined metrics are compared with
+      statistical tests to estimate the causal effect of a change. In AI products it is the standard
+      final check of a new model, prompt, retrieval setup or ranking algorithm after offline
+      [[evaluation|evaluation]], because offline metrics often fail to predict user behavior. Sound
+      practice fixes the primary metric, minimum detectable effect and sample size in advance;
+      watches guardrail metrics such as [[latency|latency]], cost and complaint rates; avoids
+      repeatedly peeking at results unless sequential methods are used; and checks for sample-ratio
+      mismatch and novelty effects. Related designs include interleaving, which mixes two rankers'
+      results in one list, [[multi-armed-bandit|multi-armed bandits]] that shift traffic toward the
+      better variant during the test, and champion–challenger setups in credit and risk modeling.
+    example: >-
+      The new reranker won offline but lost the A/B test on click-through, so we kept the old one.
+origin: >-
+  Randomized comparison descends from R. A. Fisher's agricultural experiments of the 1920s and from
+  split-run tests in direct-mail advertising. Web companies made it routine around 2000 — Google ran
+  its first such test that year — and Ron Kohavi and colleagues codified online controlled
+  experiments in papers from 2007 onward and a 2020 textbook.
+note: >-
+  An A/B test measures what users do, not whether outputs are correct or safe, so it complements
+  offline evaluation rather than replacing it. Small effects need large samples, and many wins from
+  underpowered tests fail to replicate.
+see_also:
+  - shadow deployment
+  - canary deployment
+  - evaluation
+  - multi-armed bandit
+  - hypothesis testing
+  - model deployment
+sources:
+  - text: >-
+      Kohavi, R., Tang, D. & Xu, Y. (2020). Trustworthy Online Controlled Experiments: A Practical
+      Guide to A/B Testing. Cambridge University Press.

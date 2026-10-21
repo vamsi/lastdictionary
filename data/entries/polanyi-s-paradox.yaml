@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Polanyi's paradox
+id: polanyi-s-paradox
+pos: n.
+also:
+  - Polanyi paradox
+  - tacit knowledge
+  - tacit dimension
+domain: mind
+domains:
+  - society
+  - sym
+level: core
+plain: >-
+  The observation that we know how to do many things — recognize a face, ride a bike — that we
+  cannot explain in words. That made such skills hard to program until machines learned them from
+  examples.
+senses:
+  - definition: >-
+      The observation that much human knowledge is tacit: people perform tasks such as recognizing a
+      face, judging a situation or riding a bicycle without being able to state the rules they
+      follow. Applied to automation, it explains why tasks people do effortlessly long resisted
+      computerization: programmers cannot write down procedures that no one can articulate, so early
+      automation concentrated on explicit, routine tasks. The paradox was a mainstay of criticism of
+      [[symbolic-ai|symbolic AI]] and [[expert-system|expert systems]], whose knowledge engineers
+      struggled to elicit experts' know-how. [[machine-learning|Machine learning]] partly
+      circumvents it by inferring tacit regularities from examples rather than from stated rules,
+      which is why perception, translation and other once-intractable tasks became automatable in
+      the 2010s; the knowledge so acquired is often just as tacit inside the model, a problem for
+      [[interpretability|interpretability]].
+    example: >-
+      Nobody could write the rules for spotting a tumor, which is Polanyi's paradox; the network
+      learned them from labeled scans.
+origin: >-
+  Named by the economist David Autor in 'Polanyi's Paradox and the Shape of Employment Growth'
+  (2014), after the chemist and philosopher Michael Polanyi, whose The Tacit Dimension (1966) stated
+  that 'we can know more than we can tell'.
+year: 2014
+note: >-
+  Related to but distinct from [[moravec-s-paradox|Moravec's paradox]], which concerns the
+  computational difficulty of sensorimotor skills rather than the inexpressibility of knowledge.
+see_also:
+  - Moravec's paradox
+  - expert system
+  - Dreyfus's critique of AI
+  - automation
+  - machine learning
+  - interpretability
+contrast:
+  - Moravec's paradox
+sources:
+  - text: Polanyi, M. (1966). The Tacit Dimension. Doubleday.
+  - text: >-
+      Autor, D. H. (2014). Polanyi's Paradox and the Shape of Employment Growth. NBER Working Paper;
+      Federal Reserve Bank of Kansas City Economic Policy Symposium, Jackson Hole.

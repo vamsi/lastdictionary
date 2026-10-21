@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: speculative decoding
+id: speculative-decoding
+pos: n.
+also:
+  - speculative sampling
+  - draft model
+  - draft-and-verify decoding
+  - assisted generation
+  - SpecDec
+domain: infer
+domains:
+  - llm
+level: core
+plain: >-
+  A speed-up trick in which a small, fast model guesses the next few words and the big model checks
+  all the guesses at once, keeping the right ones: faster answers, same quality.
+senses:
+  - definition: >-
+      A family of methods that accelerate [[autoregressive-model|autoregressive]] generation by
+      drafting several future [[token|tokens]] cheaply and verifying them with the full (target)
+      model in a single [[forward-pass|forward pass]]. A small draft model, extra prediction heads,
+      an n-gram lookup in the prompt or the target's own early layers proposes k tokens; the target
+      scores all k positions in parallel; the longest acceptable prefix is kept and the target
+      supplies one corrected or extra token, so each iteration yields at least one token. With the
+      acceptance rule shown (p the target's distribution, q the draft's), the output distribution is
+      exactly the target model's, and outputs are identical under [[greedy-decoding|greedy
+      decoding]]. Because the [[decode-phase|decode phase]] is [[memory-bound|memory-bound]],
+      checking k tokens costs little more than generating one, giving typical speedups of two to
+      three times; gains depend on the acceptance rate and shrink at large batch sizes, where spare
+      compute is scarce. Variants include Medusa, EAGLE and lookahead decoding.
+    example: >-
+      With a 1B draft model accepting about 70 percent of its guesses, speculative decoding doubled
+      our output speed.
+formula_latex: P(\text{accept } \tilde{x}) = \min\left(1, \frac{p(\tilde{x})}{q(\tilde{x})}\right),
+  \quad \text{else resample } x \sim \frac{\max(0,\, p(x) - q(x))}{\sum_{x'} \max(0,\, p(x') -
+  q(x'))}
+origin: >-
+  Blockwise parallel decoding (Mitchell Stern, Noam Shazeer and Jakob Uszkoreit, 2018) anticipated
+  draft-then-verify. The name, borrowed from speculative execution in processors, was used by Heming
+  Xia and colleagues for translation in March 2022. Yaniv Leviathan, Matan Kalman and Yossi Matias
+  at Google (November 2022) gave the general, distribution-preserving algorithm, and Charlie Chen
+  and colleagues at DeepMind independently published 'speculative sampling' (February 2023).
+year: 2022
+note: >-
+  Speeds up generation without changing what the model would output, unlike
+  [[quantization|quantization]] or [[knowledge-distillation|knowledge distillation]], which change
+  the model. Not the same as [[multi-token-prediction|multi-token prediction]], a training
+  objective, though models trained with it can supply their own drafts.
+see_also:
+  - decode phase
+  - memory-bound
+  - tokens per second
+  - multi-token prediction
+  - early exit
+  - model cascade
+contrast:
+  - quantization
+  - knowledge distillation
+sources:
+  - text: >-
+      Leviathan, Y., Kalman, M. & Matias, Y. (2022). Fast Inference from Transformers via
+      Speculative Decoding. arXiv:2211.17192 (ICML 2023).
+    url: https://arxiv.org/abs/2211.17192
+  - text: >-
+      Chen, C., Borgeaud, S., Irving, G., Lespiau, J.-B., Sifre, L. & Jumper, J. (2023).
+      Accelerating Large Language Model Decoding with Speculative Sampling. arXiv:2302.01318.
+    url: https://arxiv.org/abs/2302.01318
+  - text: >-
+      Xia, H., Ge, T., Wang, P., Chen, S.-Q., Wei, F. & Sui, Z. (2022). Speculative Decoding:
+      Exploiting Speculative Execution for Accelerating Seq2seq Generation. arXiv:2203.16487
+      (Findings of EMNLP 2023).
+    url: https://arxiv.org/abs/2203.16487

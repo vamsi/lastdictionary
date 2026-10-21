@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: survival analysis
+id: survival-analysis
+pos: n.
+also:
+  - time-to-event analysis
+  - time-to-event model
+  - censoring
+  - hazard function
+  - Cox proportional hazards model
+  - Kaplan–Meier estimator
+  - concordance index
+  - C-index
+  - failure-time analysis
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  Methods for predicting how long until something happens — a patient's relapse, a machine's
+  failure, a customer's cancellation — that properly use the cases where it has not happened yet.
+senses:
+  - definition: >-
+      A family of statistical and machine-learning methods for modeling the time until an event
+      occurs, set apart by how they handle censoring: for many subjects the event has not been
+      observed by the end of follow-up (right censoring), so only a lower bound on their time is
+      known, and discarding or mislabeling those cases biases results. Its central quantities are
+      the survival function, the probability of lasting beyond time t, and the hazard function, the
+      instantaneous event rate at t among those still at risk. Classic tools are the nonparametric
+      Kaplan–Meier estimator of the survival curve; the Cox proportional hazards model, which
+      relates covariates to the hazard through a partial likelihood without specifying the baseline
+      hazard's shape; and parametric models such as Weibull regression. Machine-learning extensions
+      include random survival forests, boosting with survival losses and neural models such as
+      DeepSurv, evaluated with the concordance index (C-index) and time-dependent
+      [[brier-score|Brier scores]]. Uses span medicine, reliability engineering, customer churn and
+      credit default.
+    example: >-
+      A third of the patients were still relapse-free at the study's end, so we used survival
+      analysis instead of a plain classifier.
+formula_latex: h(t \mid \mathbf{x}) = h_0(t)\, \exp\big(\mathbf{x}^{\top}\boldsymbol\beta\big)
+origin: >-
+  Life tables go back to John Graunt's 1662 analysis of London's bills of mortality. Edward Kaplan
+  and Paul Meier's product-limit estimator (Journal of the American Statistical Association, 1958)
+  and David Cox's 'Regression Models and Life-Tables' (Journal of the Royal Statistical Society,
+  Series B, 1972) founded the modern field; Hemant Ishwaran and colleagues introduced random
+  survival forests in 2008.
+year: 1958
+note: >-
+  Treating censored cases as non-events, or dropping them, is a common error when general-purpose
+  classifiers are applied to time-to-event data. 'Survival' is literal in medicine but figurative
+  elsewhere: the event may be a purchase or a repair.
+see_also:
+  - regression
+  - generalized linear model
+  - random forest
+  - Brier score
+  - quantile regression
+  - gradient boosting
+sources:
+  - text: >-
+      Kaplan, E. L. & Meier, P. (1958). Nonparametric Estimation from Incomplete Observations.
+      Journal of the American Statistical Association, 53(282), 457–481.
+  - text: >-
+      Cox, D. R. (1972). Regression Models and Life-Tables. Journal of the Royal Statistical
+      Society, Series B, 34(2), 187–220.

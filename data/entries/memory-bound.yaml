@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: memory-bound
+id: memory-bound
+pos: adj.
+also:
+  - memory-bandwidth-bound
+  - bandwidth-bound
+  - compute-bound
+domain: infer
+domains:
+  - hw
+level: specialist
+plain: >-
+  Describes a computer task slowed by how fast data can be fetched from memory rather than by how
+  fast the chip can calculate — like a fast cook kept waiting for deliveries.
+senses:
+  - definition: >-
+      Describing a workload whose speed is limited by [[memory-bandwidth|memory bandwidth]], the
+      rate at which data moves between memory (such as a GPU's
+      [[high-bandwidth-memory|high-bandwidth memory]]) and the processor, rather than by peak
+      arithmetic rate. In the [[roofline-model|roofline model]], a kernel is memory-bound when its
+      [[arithmetic-intensity|arithmetic intensity]] (operations per byte moved) falls below the
+      hardware's ratio of peak [[flops|FLOPS]] to bandwidth, a few hundred operations per byte on
+      current AI accelerators; above that ratio it is compute-bound. In [[large-language-model|large
+      language model]] inference the [[decode-phase|decode phase]] at small batch sizes is the
+      classic memory-bound case, because every weight is read to produce a single token per
+      sequence, whereas [[prefill|prefill]] and training are usually compute-bound. Remedies include
+      batching, [[quantization|quantization]], [[kernel-fusion|kernel fusion]] and IO-aware
+      algorithms such as [[flashattention|FlashAttention]] that cut memory traffic.
+    example: >-
+      Decode at batch size one is memory-bound, so the 4-bit model runs nearly three times faster.
+origin: >-
+  A long-standing term in high-performance computing, given a quantitative frame by the roofline
+  model of Samuel Williams, Andrew Waterman and David Patterson (2009). It entered everyday
+  LLM-engineering vocabulary around 2022–2023, when practitioners explained why token generation
+  leaves GPUs underused.
+note: >-
+  Memory-bound concerns bandwidth, not capacity: a model can fit easily in memory and still be
+  memory-bound. Running out of memory capacity is a separate constraint, addressed by
+  [[offloading|offloading]], sharding or compression.
+see_also:
+  - arithmetic intensity
+  - roofline model
+  - memory bandwidth
+  - memory wall
+  - decode phase
+  - prefill
+sources:
+  - text: >-
+      Williams, S., Waterman, A. & Patterson, D. (2009). Roofline: An Insightful Visual Performance
+      Model for Multicore Architectures. Communications of the ACM 52(4).
+  - text: >-
+      Agarwal, M. et al. (2023). LLM Inference Performance Engineering: Best Practices. Databricks
+      blog.
+    url: https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: stochastic
+id: stochastic
+pos: adj.
+also:
+  - stochasticity
+  - stochastic process
+  - random
+  - randomness
+domain: math
+domains:
+  - ml
+  - llm
+level: core
+plain: >-
+  Involving chance, so the same starting point can lead to different outcomes. AI chatbots are
+  stochastic: ask the same question twice and you may get two different answers.
+senses:
+  - definition: >-
+      Governed by probability rather than determined exactly; describing quantities, processes or
+      algorithms that involve randomness. A stochastic process is a collection of
+      [[random-variable|random variables]] indexed by time or space — [[markov-chain|Markov
+      chains]], random walks, Brownian motion and the stochastic differential equations behind
+      [[diffusion-model|diffusion models]] are examples. In machine learning the word marks
+      randomness that is deliberate or unavoidable: [[stochastic-gradient-descent|stochastic
+      gradient descent]] estimates gradients from random [[mini-batch|mini-batches]];
+      [[dropout|dropout]] and [[data-augmentation|data augmentation]] inject noise;
+      [[reinforcement-learning|reinforcement learning]] policies may choose actions at random; and
+      [[large-language-model|language models]] generate text by [[sampling|sampling]], so outputs
+      vary between runs unless decoding is deterministic. Random initialization, data order and
+      parallel floating-point arithmetic add further variation (see
+      [[nondeterminism|nondeterminism]]). Stochastic does not mean arbitrary: the variation follows
+      distributions that can be measured and controlled.
+    example: >-
+      Because the grader is stochastic, we score every answer three times and take the majority.
+origin: >-
+  From Greek stokhastikos, 'skilled in aiming or guessing'; Jacob Bernoulli's Ars Conjectandi (1713)
+  equated 'the art of conjecturing' with stochastice. Ladislaus Bortkiewicz used Stochastik for
+  probability theory in 1917; Aleksandr Khinchin, Andrey Kolmogorov and Joseph Doob established
+  'stochastic process' from the 1930s to the 1950s, and Herbert Robbins and Sutton Monro's 1951
+  'stochastic approximation' is the ancestor of stochastic gradient descent.
+note: >-
+  In the critique [[stochastic-parrot|stochastic parrot]], the word stresses that text is produced
+  by sampling learned statistics. 'Random' and 'stochastic' are usually interchangeable, though
+  'stochastic' tends to imply an explicit probability model.
+see_also:
+  - sampling
+  - stochastic gradient descent
+  - random variable
+  - Markov chain
+  - nondeterminism
+  - stochastic parrot

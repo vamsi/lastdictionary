@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: analog in-memory computing
+id: analog-in-memory-computing
+pos: n.
+also:
+  - analog AI
+  - in-memory computing
+  - compute-in-memory
+  - CIM
+  - processing-in-memory
+  - PIM
+  - memristor crossbar
+domain: hw
+domains:
+  - infer
+level: specialist
+plain: >-
+  Doing AI math inside the memory itself, using electrical currents through stored values, instead
+  of shuttling numbers back and forth to a separate processor. It could save lots of energy but is
+  imprecise.
+senses:
+  - definition: >-
+      A computing approach in which matrix–vector multiplications are performed physically inside
+      arrays of memory devices that store the [[weights|weights]], rather than moving the weights to
+      a separate processor. Each weight is encoded as a device conductance (in phase-change memory,
+      resistive RAM, flash or [[sram|SRAM]] cells) at a crossing point of a grid; applying input
+      voltages to the rows produces currents that multiply by Ohm's law and sum along each column by
+      Kirchhoff's current law, so a multiply–accumulate over thousands of weights happens in one
+      step, with analog-to-digital converters reading the results. This attacks the
+      [[von-neumann-bottleneck|von Neumann bottleneck]] and the energy cost of data movement, but
+      analog noise, device variability and conductance drift limit precision to a few bits and
+      converters add overhead, so models need noise-aware training and digital correction. IBM's
+      2023 phase-change chip ran speech recognition at near-software accuracy, but commercial use
+      remains limited.
+origin: >-
+  'Logic-in-memory' proposals date to the late 1960s (William Kautz, Harold Stone). Resistive
+  crossbars for neural networks were explored from the 2010s, after HP Labs linked Leon Chua's 1971
+  'memristor' concept to a physical device (2008). Stefano Ambrogio and colleagues at IBM reported a
+  14 nm analog AI chip with 34 phase-change arrays in Nature (2023).
+see_also:
+  - von Neumann bottleneck
+  - memory wall
+  - neuromorphic computing
+  - photonic computing
+  - AI accelerator
+  - quantization
+contrast:
+  - GPU
+sources:
+  - text: >-
+      Ambrogio, S. et al. (2023). An analog-AI chip for energy-efficient speech recognition and
+      transcription. Nature 620, 768–775.
+    url: https://www.nature.com/articles/s41586-023-06337-5
+as_of: 2026-10

@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: depth-first search
+id: depth-first-search
+pos: n.
+also:
+  - DFS
+  - depth-first
+  - backtracking search
+  - backtracking
+domain: sym
+domains:
+  - math
+level: core
+plain: >-
+  A way of exploring a maze or network by following one path as far as it goes, then backing up to
+  the most recent fork and trying the next branch.
+senses:
+  - definition: >-
+      An uninformed [[state-space-search|search]] algorithm that pushes along a single line of
+      successors as far as it can, keeping its frontier in a last-in, first-out stack (or the call
+      stack of a recursion), and backtracks to the most recent node with unexplored successors when
+      it reaches a dead end. Its memory use grows only linearly with search depth — on the order of
+      b·m nodes for branching factor b and maximum depth m — which makes it practical where
+      [[breadth-first-search|breadth-first search]] is not; but it can descend forever in infinite
+      or cyclic spaces and does not guarantee a shortest solution. Backtracking search for
+      [[constraint-satisfaction-problem|constraint satisfaction]], [[prolog|Prolog]]'s execution
+      strategy and [[minimax|minimax]] game-tree search are all depth-first. In graph theory it
+      underlies linear-time algorithms for cycle detection, topological sorting and strongly
+      connected components.
+    example: >-
+      Depth-first search found a solution quickly, but it was 40 moves longer than the optimum.
+origin: >-
+  Its roots lie in maze-solving: Charles Pierre Trémaux's 19th-century rule for exploring a
+  labyrinth by marking passages is an early form. Robert Tarjan's 1972 paper 'Depth-First Search and
+  Linear Graph Algorithms' and his work with John Hopcroft made it a cornerstone of algorithm
+  design, recognized in their 1986 Turing Award.
+see_also:
+  - breadth-first search
+  - iterative deepening search
+  - state space search
+  - constraint satisfaction problem
+  - minimax
+contrast:
+  - breadth-first search
+sources:
+  - text: >-
+      Tarjan, R. (1972). Depth-First Search and Linear Graph Algorithms. SIAM Journal on Computing
+      1(2), 146–160.

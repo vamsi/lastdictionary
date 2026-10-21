@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: baseline
+id: baseline
+pos: n.
+also:
+  - baseline model
+  - naive baseline
+  - strong baseline
+  - majority-class baseline
+  - reference input
+domain: ml
+domains:
+  - eval
+  - rl
+  - interp
+level: core
+plain: >-
+  A simple reference method that a new model must beat to show it is worth anything, such as always
+  guessing the most common answer or reusing yesterday's value.
+senses:
+  - context: Evaluation
+    definition: >-
+      A reference method, usually simple or well established, against which a new model's
+      performance is compared to judge whether it adds value. Trivial baselines set the floor:
+      predicting the majority class or the mean, random guessing, or, in forecasting, the last value
+      or the same period last season. Standard baselines are established methods, properly tuned:
+      [[logistic-regression|logistic regression]], [[gradient-boosting|gradient boosting]],
+      [[bm25|BM25]] for retrieval, or the previous [[state-of-the-art|state of the art]]. A fair
+      comparison gives baselines the same data, features and tuning budget as the proposed method.
+      Weak or under-tuned baselines are a recurring source of inflated claims: careful
+      re-evaluations in recommender systems, metric learning and other areas have found that tuned
+      older methods match many reported advances. For [[large-language-model|language models]],
+      baselines also include human performance, earlier model versions and simple prompting
+      strategies. Reporting improvements with [[confidence-interval|confidence intervals]] over
+      several runs guards against noise.
+    example: >-
+      Our transformer beat a tuned gradient-boosting baseline by only 0.3 points, so we shipped the
+      trees.
+  - context: Reinforcement learning
+    definition: >-
+      A quantity, typically an estimate of a state's value, subtracted from the return in
+      [[policy-gradient|policy gradient]] methods to reduce the variance of the gradient estimate
+      without biasing it; the difference estimates the [[advantage-function|advantage]].
+      [[reinforce|REINFORCE]] with a learned baseline and actor–critic methods depend on it, and
+      [[group-relative-policy-optimization|group relative policy optimization]] uses the mean reward
+      of a group of sampled answers as its baseline.
+  - context: Interpretability
+    definition: >-
+      In [[feature-attribution|feature attribution]] methods such as
+      [[integrated-gradients|integrated gradients]] and [[shap|SHAP]], the reference input, such as
+      a black image or an average input, against which a prediction is compared; attributions
+      explain the difference from the baseline and can change substantially with its choice.
+origin: >-
+  From surveying, where a baseline is a measured reference line, the word long ago came to mean a
+  reference level for comparison in science and medicine. Ronald Williams's 1992 REINFORCE paper
+  introduced the reinforcement-learning sense. A 2019 study by Maurizio Ferrari Dacrema, Paolo
+  Cremonesi and Dietmar Jannach found that most recent neural recommenders they could reproduce were
+  beaten by simple, well-tuned baselines.
+see_also:
+  - benchmark
+  - state of the art
+  - evaluation
+  - ablation
+  - advantage function
+  - feature attribution
+  - hyperparameter tuning
+sources:
+  - text: >-
+      Ferrari Dacrema, M., Cremonesi, P. & Jannach, D. (2019). Are We Really Making Much Progress? A
+      Worrying Analysis of Recent Neural Recommendation Approaches. Proc. RecSys 2019.
+  - text: >-
+      Williams, R. J. (1992). Simple Statistical Gradient-Following Algorithms for Connectionist
+      Reinforcement Learning. Machine Learning 8.
+  - text: >-
+      Musgrave, K., Belongie, S. & Lim, S.-N. (2020). A Metric Learning Reality Check. Proc. ECCV
+      2020.

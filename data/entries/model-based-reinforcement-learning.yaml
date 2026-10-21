@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model-based reinforcement learning
+id: model-based-reinforcement-learning
+pos: n.
+also:
+  - model-based RL
+  - MBRL
+  - planning with a learned model
+domain: rl
+domains:
+  - robot
+level: core
+plain: >-
+  Learning in which an AI agent builds, or is given, an inner simulation of how its world responds,
+  and uses it to plan or practice in imagination before acting.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement learning]] in which the agent uses a model of the
+      [[environment|environment]] — a function predicting next [[state|states]] or observations and
+      [[reward|rewards]] from current states and [[action|actions]] — either given in advance, like
+      the rules of a board game, or learned from experience as a [[world-model|world model]]. The
+      model is used to plan, as in [[monte-carlo-tree-search|Monte Carlo tree search]] or
+      [[model-predictive-control|model predictive control]]; to generate imagined experience for
+      training a policy, as in [[dyna|Dyna]] and Dreamer; or to compute gradients through predicted
+      [[trajectory|trajectories]]. Model-based methods are typically far more sample-efficient than
+      [[model-free-reinforcement-learning|model-free]] ones and adapt quickly when goals change, but
+      errors in a learned model compound over long horizons and can be exploited by the planner, so
+      practical systems use short rollouts, ensembles that estimate uncertainty, or latent models
+      that predict only what matters for decisions, as [[muzero|MuZero]] does.
+    example: >-
+      The model-based agent learned to grasp from one hour of real robot data by planning with its
+      learned dynamics.
+origin: >-
+  Planning with a known model is the older tradition, from Bellman's dynamic programming and the
+  search-based game programs of the 1950s. Learning a model for RL was proposed in Richard Sutton's
+  Dyna architecture (1990) and in Jürgen Schmidhuber's recurrent world models (1990); PILCO (2011),
+  which modeled dynamics with Gaussian processes, and deep variants such as World Models (2018),
+  Dreamer (2019) and MuZero (2019) revived the approach.
+year: 1990
+see_also:
+  - world model
+  - Dyna
+  - MuZero
+  - Monte Carlo tree search
+  - model predictive control
+  - sample efficiency
+contrast:
+  - model-free reinforcement learning
+sources:
+  - text: >-
+      Sutton, R. S. (1990). Integrated Architectures for Learning, Planning, and Reacting Based on
+      Approximating Dynamic Programming. Proceedings of ICML 1990.
+  - text: >-
+      Moerland, T. M., Broekens, J., Plaat, A. & Jonker, C. M. (2023). Model-based Reinforcement
+      Learning: A Survey. Foundations and Trends in Machine Learning 16(1), 1–118.

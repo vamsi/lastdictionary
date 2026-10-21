@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: query, key and value
+id: query-key-and-value
+pos: n.
+also:
+  - QKV
+  - query
+  - key
+  - value
+  - Q, K, V
+  - query/key/value vectors
+domain: llm
+domains:
+  - dl
+level: core
+plain: >-
+  The three roles each word plays inside attention: the query is what it is looking for, the key is
+  what it can be found by, and the value is the information it hands over when chosen.
+senses:
+  - definition: >-
+      The three vectors computed from each input position by separate learned linear projections in
+      an [[attention|attention]] layer. A query represents what a position is seeking; keys are
+      compared with the query (by [[scaled-dot-product-attention|dot product]] in transformers) to
+      produce attention weights; values are the content actually mixed into the output according to
+      those weights. Separating keys from values lets the features used for matching differ from the
+      information transmitted. In [[self-attention|self-attention]] all three come from the same
+      sequence; in [[cross-attention|cross-attention]] the query comes from one sequence and keys
+      and values from another. During generation, the keys and values of earlier tokens are stored
+      in the [[kv-cache|KV cache]] and only one new query is computed per step. Interpretability
+      work analyzes the query–key and value–output products separately as [[qk-and-ov-circuits|QK
+      and OV circuits]].
+    example: >-
+      The key and value projections are shared across groups of heads, but each head keeps its own
+      query projection.
+origin: >-
+  The vocabulary comes from information retrieval and associative memory, where a query is matched
+  against keys to retrieve stored values. Key–value memory networks (Alexander Miller and
+  colleagues, 2016) used the split before the transformer; 'Attention Is All You Need' (2017) fixed
+  the query–key–value formulation now standard.
+year: 2017
+note: >-
+  The database analogy is loose: attention returns a soft, weighted blend of all values rather than
+  one exact match. Q, K and V usually denote matrices stacking the vectors for all positions.
+see_also:
+  - attention
+  - scaled dot-product attention
+  - self-attention
+  - KV cache
+  - QK and OV circuits
+  - attention head
+sources:
+  - text: Vaswani, A. et al. (2017). Attention Is All You Need. NIPS 2017.
+    url: https://arxiv.org/abs/1706.03762

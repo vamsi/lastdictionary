@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TPU
+id: tpu
+pos: abbr.
+also:
+  - Tensor Processing Unit
+  - Cloud TPU
+  - TPU pod
+domain: hw
+domains:
+  - dl
+  - train
+labels:
+  - trademark
+level: core
+plain: >-
+  Google's own family of chips built specifically for AI, used to train and run its Gemini models
+  and rented to other companies through its cloud.
+senses:
+  - definition: >-
+      Google's family of [[asic|application-specific]] [[ai-accelerator|AI accelerators]], built
+      around large [[systolic-array|systolic]] matrix units. The first TPU, in Google's data centers
+      from 2015, was an inference chip whose 256 × 256 array of 65,536 8-bit multiply–accumulate
+      units delivered 92 trillion operations per second. TPU v2 (2017) added training and introduced
+      the [[bfloat16|bfloat16]] format; later generations pair
+      [[high-bandwidth-memory|high-bandwidth memory]] with a dedicated inter-chip interconnect and,
+      from TPU v4 (2021), optical circuit switches that link thousands of chips into reconfigurable
+      'pods'. The seventh generation, Ironwood (2025), offers about 4.6 FP8 petaFLOPS and 192 GB of
+      HBM per chip in pods of up to 9,216 chips, and two eighth-generation chips, TPU 8t and TPU 8i,
+      were announced in April 2026. TPUs are programmed through [[xla|XLA]] from [[jax|JAX]],
+      [[tensorflow|TensorFlow]] or [[pytorch|PyTorch]]. Besides training Google's Gemini models,
+      they are rented through Google Cloud; in October 2025 Anthropic agreed to use up to one
+      million of them.
+origin: >-
+  Designed from 2013, when Google projected that neural-network speech recognition could double its
+  data-center needs; deployed in 2015 and announced at Google I/O in May 2016. Norman Jouppi and 74
+  co-authors described the first chip at ISCA 2017. The name nods to [[tensorflow|TensorFlow]].
+year: 2016
+note: >-
+  'TPU' names only Google's line, though it is sometimes misused for AI chips generally. The Edge
+  TPU is a separate small inference chip for devices.
+see_also:
+  - AI accelerator
+  - systolic array
+  - ASIC
+  - XLA
+  - bfloat16
+  - GPU
+  - AI supercomputer
+contrast:
+  - GPU
+sources:
+  - text: >-
+      Jouppi, N. P. et al. (2017). In-Datacenter Performance Analysis of a Tensor Processing Unit.
+      Proceedings of ISCA 2017.
+    url: https://arxiv.org/abs/1704.04760
+  - text: >-
+      Jouppi, N. P. et al. (2023). TPU v4: An Optically Reconfigurable Supercomputer for Machine
+      Learning with Hardware Support for Embeddings. Proceedings of ISCA 2023.
+as_of: 2026-10

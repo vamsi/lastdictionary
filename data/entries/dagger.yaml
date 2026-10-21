@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DAgger
+id: dagger
+pos: n.
+also:
+  - Dataset Aggregation
+  - HG-DAgger
+pronunciation: DAG-er
+domain: robot
+domains:
+  - rl
+  - ml
+level: specialist
+plain: >-
+  A way of teaching a robot by imitation in which an expert keeps labeling what it should have done
+  in the situations it actually gets into, so it learns to recover from its own mistakes.
+senses:
+  - definition: >-
+      An [[imitation-learning|imitation learning]] algorithm (Dataset Aggregation) that addresses
+      the compounding-error problem of [[behavioral-cloning|behavioral cloning]]. A policy trained
+      only on expert demonstrations sees the states the expert visited; once its own small errors
+      carry it elsewhere, it meets unfamiliar situations, errs further, and the mismatch, a form of
+      [[covariate-shift|covariate shift]], grows over the episode. DAgger iterates: run the current
+      learned [[policy|policy]] (or a mixture with the expert), record the states it actually
+      visits, ask the expert which action it would take in each, add these labeled states to the
+      dataset, and retrain on the aggregate. Under its assumptions, error grows linearly with the
+      task horizon instead of quadratically as in plain behavioral cloning, with guarantees derived
+      from no-regret online learning. Its practical cost is an expert who can label on demand, which
+      is awkward for human teleoperators; variants such as human-gated DAgger let the expert take
+      over only when needed, and the same idea underlies [[on-policy-distillation|on-policy
+      distillation]] from teacher models.
+    example: >-
+      After two DAgger rounds the drone stopped drifting into trees that never appeared in the
+      expert flights.
+origin: >-
+  Introduced by Stéphane Ross, Geoffrey Gordon and J. Andrew Bagnell of Carnegie Mellon University
+  in 'A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning'
+  (AISTATS 2011), following Ross and Bagnell's 2010 analysis of compounding errors; a 2013 follow-up
+  used it to fly a small quadrotor through a forest.
+year: 2011
+see_also:
+  - imitation learning
+  - behavioral cloning
+  - covariate shift
+  - on-policy distillation
+  - teleoperation
+  - robot learning
+sources:
+  - text: >-
+      Ross, S., Gordon, G. & Bagnell, J. A. (2011). A reduction of imitation learning and structured
+      prediction to no-regret online learning. Proc. AISTATS 2011, PMLR 15, 627–635.

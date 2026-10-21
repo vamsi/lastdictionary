@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cold start problem
+id: cold-start-problem
+pos: n.
+also:
+  - cold start
+  - new-user problem
+  - new-item problem
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  The trouble a recommendation system has with brand-new users or items: with no history to learn
+  from, it has little basis for good suggestions.
+senses:
+  - definition: >-
+      The difficulty of making good predictions for users, items or whole systems that have little
+      or no interaction history. It is most acute for [[collaborative-filtering|collaborative
+      filtering]], which relies entirely on past behavior, and takes three forms: new users, with no
+      history from which to infer preferences; new items, which nobody has interacted with and which
+      therefore are never recommended and never gather data; and new systems, with too few
+      interactions overall. Remedies include onboarding questions, popularity or demographic
+      defaults, [[content-based-filtering|content-based]] and hybrid models that use item attributes
+      and pretrained [[embedding|embeddings]], side information such as context or social links,
+      [[transfer-learning|transfer learning]] from other domains, [[meta-learning|meta-learning]]
+      for fast per-user adaptation, and deliberate exploration with [[multi-armed-bandit|bandit]]
+      algorithms that show uncertain items to gather evidence. The term is also used loosely for any
+      model that must perform before data accumulate.
+    example: >-
+      To beat the cold start problem, new sellers' listings get a guaranteed exploration slot during
+      their first week.
+origin: >-
+  The phrase borrows the image of starting an engine from cold. It was in use in recommender
+  research by the early 2000s, and the SIGIR 2002 paper 'Methods and Metrics for Cold-Start
+  Recommendations' by Andrew Schein and colleagues helped standardize it.
+year: 2002
+see_also:
+  - recommender system
+  - collaborative filtering
+  - content-based filtering
+  - multi-armed bandit
+  - meta-learning
+  - implicit feedback
+sources:
+  - text: >-
+      Schein, A. I., Popescul, A., Ungar, L. H. & Pennock, D. M. (2002). Methods and Metrics for
+      Cold-Start Recommendations. Proc. ACM SIGIR 2002.

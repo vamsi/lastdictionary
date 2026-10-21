@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reference model
+id: reference-model
+pos: n.
+also:
+  - reference policy
+  - π_ref
+  - ref model
+domain: train
+domains:
+  - rl
+  - llm
+level: specialist
+plain: >-
+  A frozen copy of an AI model, saved before further training, that the new version is compared
+  against so it does not stray too far from where it started.
+senses:
+  - definition: >-
+      In preference optimization and reinforcement-learning fine-tuning, a fixed copy of the
+      starting policy, usually the [[supervised-fine-tuning|SFT]] model, whose token probabilities
+      serve as an anchor. The [[kl-penalty|KL penalty]] in
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]]
+      measures divergence from it, and in [[direct-preference-optimization|direct preference
+      optimization]] the implicit reward of a response is β times the log-ratio of the policy's
+      probability to the reference model's. Keeping a reference model costs memory and an extra
+      [[forward-pass|forward pass]] per sample, which motivated reference-free methods such as ORPO
+      and SimPO; some long reasoning-RL runs periodically reset the anchor to a recent policy
+      [[checkpoint|checkpoint]]. The choice matters: a weak or mismatched reference distorts
+      implicit rewards and shifts the balance between reward and drift.
+    example: >-
+      We reset the reference model to the latest checkpoint every 500 steps so the policy could keep
+      improving.
+origin: >-
+  A fixed prior policy appears in KL-regularized RL fine-tuning such as Sequence Tutor (Natasha
+  Jaques and colleagues, 2016) and in OpenAI's RLHF papers (2019–2022), which measured drift from
+  the initial model. 'Reference policy' had earlier uses in RL; the name 'reference model' and the
+  notation π_ref were popularized by the direct preference optimization paper of Rafael Rafailov and
+  colleagues (2023).
+note: >-
+  Not to be confused with the teacher in [[knowledge-distillation|knowledge distillation]], which
+  the student imitates rather than merely stays near. In [[group-relative-policy-optimization|group
+  relative policy optimization]] the reference model enters only through the KL term, and some
+  recipes drop it altogether.
+see_also:
+  - KL penalty
+  - direct preference optimization
+  - supervised fine-tuning
+  - reinforcement learning from human feedback
+  - policy
+  - checkpoint
+contrast:
+  - knowledge distillation
+sources:
+  - text: >-
+      Rafailov, R. et al. (2023). Direct Preference Optimization: Your Language Model is Secretly a
+      Reward Model. NeurIPS 2023. arXiv:2305.18290.
+    url: https://arxiv.org/abs/2305.18290v1

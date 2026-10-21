@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: label noise
+id: label-noise
+pos: n.
+also:
+  - noisy labels
+  - label errors
+  - mislabeled data
+domain: data
+domains:
+  - ml
+  - dl
+level: specialist
+plain: >-
+  Mistakes in the answers attached to training or test examples — a dog photo marked 'cat' — which
+  can mislead what a model learns and distort how good it seems.
+senses:
+  - definition: >-
+      Errors in the [[label|labels]] of a dataset: examples whose recorded label differs from the
+      correct one. Models of label noise distinguish random noise that flips labels uniformly,
+      class-conditional noise that depends on the true class (confusing similar dog breeds, say) and
+      instance-dependent noise concentrated on hard or ambiguous examples. Sources include annotator
+      mistakes, vague guidelines, automated or [[weak-supervision|weakly supervised]] labeling and
+      deliberate tampering ([[data-poisoning|data poisoning]]). Large networks can fit noisy labels
+      perfectly, which harms [[generalization|generalization]]; remedies include noise-robust
+      losses, sample reweighting, training schemes in which two networks filter each other's data,
+      'confident learning' to flag likely errors, and relabeling. Noise in test sets is especially
+      damaging: a 2021 audit estimated an average label error rate of at least 3.3% across ten
+      common benchmarks and at least 6% in ImageNet's validation set, enough to change model
+      rankings.
+    example: >-
+      After relabeling the 2% of examples flagged by confident learning, validation accuracy rose
+      three points.
+origin: >-
+  Studied in learning theory since Dana Angluin and Philip Laird's 'Learning from Noisy Examples'
+  (1988), which introduced the random classification noise model. It became a major deep-learning
+  topic after Chiyuan Zhang and colleagues showed in 2016 that neural networks can memorize even
+  randomly assigned labels.
+year: 1988
+note: >-
+  Not all disagreement is noise: for subjective tasks such as toxicity or sentiment, variation among
+  annotators can carry real information about ambiguity.
+see_also:
+  - label
+  - inter-annotator agreement
+  - data cleaning
+  - data poisoning
+  - ground truth
+  - data quality
+sources:
+  - text: >-
+      Angluin, D. & Laird, P. (1988). Learning from Noisy Examples. Machine Learning 2(4).
+  - text: >-
+      Northcutt, C. G., Athalye, A. & Mueller, J. (2021). Pervasive Label Errors in Test Sets
+      Destabilize Machine Learning Benchmarks. NeurIPS 2021 Datasets and Benchmarks Track.
+      arXiv:2103.14749.
+    url: https://arxiv.org/abs/2103.14749

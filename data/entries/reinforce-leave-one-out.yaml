@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: REINFORCE leave-one-out
+id: reinforce-leave-one-out
+pos: n.
+also:
+  - RLOO
+  - leave-one-out baseline
+domain: train
+domains:
+  - rl
+  - llm
+level: specialist
+plain: >-
+  A simple reinforcement-learning method that has a model answer each question several times and
+  judges each answer against the average score of the other answers.
+senses:
+  - definition: >-
+      A variant of the [[reinforce|REINFORCE]] [[policy-gradient|policy gradient]] estimator that
+      draws k samples per input and uses, as the baseline for each sample, the mean reward of the
+      other k − 1 samples. The leave-one-out baseline keeps the gradient estimate unbiased, because
+      it does not depend on the sample it corrects, and reduces variance without a learned value
+      function (critic). In language-model post-training each whole response is treated as a single
+      action, rewarded by a [[reward-model|reward model]] or [[verifier|verifier]], which suits RLHF
+      and RLVR, where reward arrives only at the end of a sequence. RLOO is cheaper and simpler than
+      [[proximal-policy-optimization|proximal policy optimization]] and was reported to match or
+      beat it, and offline methods such as [[direct-preference-optimization|direct preference
+      optimization]], in RLHF experiments. It is closely related to
+      [[group-relative-policy-optimization|group relative policy optimization]], which normalizes by
+      the group mean (including the sample itself) and standard deviation.
+    example: We replaced PPO with RLOO at k = 4 and dropped the value model entirely.
+formula_latex: \nabla_\theta J \approx \frac{1}{k} \sum_{i=1}^{k} \Big( r(y_i) - \frac{1}{k-1}
+  \sum_{j \ne i} r(y_j) \Big) \nabla_\theta \log \pi_\theta(y_i \mid x)
+origin: >-
+  The leave-one-out baseline for multi-sample REINFORCE was proposed by Wouter Kool, Herke van Hoof
+  and Max Welling in 2019. Arash Ahmadian and colleagues at Cohere revived it for language models in
+  February 2024, arguing that many components of PPO are unnecessary in RLHF. REINFORCE itself is
+  due to Ronald Williams (1987, fully described 1992).
+year: 2019
+see_also:
+  - REINFORCE
+  - policy gradient
+  - group relative policy optimization
+  - proximal policy optimization
+  - reinforcement learning from human feedback
+  - advantage function
+contrast:
+  - proximal policy optimization
+sources:
+  - text: >-
+      Ahmadian, A. et al. (2024). Back to Basics: Revisiting REINFORCE Style Optimization for
+      Learning from Human Feedback in LLMs. arXiv:2402.14740.
+    url: https://arxiv.org/abs/2402.14740
+  - text: >-
+      Kool, W., van Hoof, H. & Welling, M. (2019). Buy 4 REINFORCE Samples, Get a Baseline for Free!
+      ICLR 2019 workshop on Deep RL Meets Structured Prediction.

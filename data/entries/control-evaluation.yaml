@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: control evaluation
+id: control-evaluation
+pos: n.
+also:
+  - control eval
+  - AI control evaluation
+domain: safety
+domains:
+  - eval
+  - sec
+level: specialist
+plain: >-
+  A test of whether an AI's safety measures would hold if the AI were secretly trying to cause harm:
+  experts play the scheming AI and try to beat the safeguards.
+senses:
+  - definition: >-
+      A red-team/blue-team exercise that estimates how well an [[ai-control|AI control]] protocol
+      prevents catastrophe under the conservative assumption that the untrusted model is actively
+      trying to subvert it. The blue team designs the protocol — monitors, audit budget, resampling,
+      permissions. The red team builds an attack policy, usually the untrusted model prompted or
+      fine-tuned to slip in harmful actions such as inserting a backdoor, exfiltrating data or
+      downloading malware without being caught. Simulating many deployments yields two scores:
+      safety, the probability that no attack succeeds, and usefulness, task performance relative to
+      the unrestricted model. Because the red team gets more knowledge and freedom than the real
+      model is believed to have, a good result can support a control-based [[safety-case|safety
+      case]]. Testbeds range from code backdooring to multi-step agentic tasks in a command-line
+      shell.
+    example: >-
+      The control evaluation showed the new monitor caught most attacks, but only by flagging far
+      too many benign actions.
+origin: >-
+  Introduced by Ryan Greenblatt and colleagues at Redwood Research (2023). Aryan Bhatt and
+  colleagues' 'Ctrl-Z: Controlling AI Agents via Resampling' (April 2025) ran the first agentic
+  control evaluation, on 257 system-administration tasks (BashBench), where resampling protocols cut
+  attack success from 58% to 7% at about a 5% usefulness cost. Proposals for control-based safety
+  cases (2025) build on the method.
+year: 2023
+note: >-
+  Differs from a [[dangerous-capability-evaluation|dangerous capability evaluation]], which asks
+  what a model can do when trying its best at a task; a control evaluation asks what it could get
+  away with against specific defenses.
+see_also:
+  - AI control
+  - red teaming
+  - safety case
+  - trusted monitoring
+  - untrusted monitoring
+  - sabotage evaluation
+contrast:
+  - dangerous capability evaluation
+sources:
+  - text: >-
+      Greenblatt, R., Shlegeris, B., Sachan, K. & Roger, F. (2023). AI Control: Improving Safety
+      Despite Intentional Subversion. arXiv:2312.06942.
+    url: https://arxiv.org/abs/2312.06942
+  - text: >-
+      Bhatt, A., Rushing, C., Kaufman, A., Tracy, T., Georgiev, V., Matolcsi, D., Khan, A. &
+      Shlegeris, B. (2025). Ctrl-Z: Controlling AI Agents via Resampling. arXiv:2504.10374.
+    url: https://arxiv.org/abs/2504.10374

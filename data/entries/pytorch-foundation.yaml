@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PyTorch Foundation
+id: pytorch-foundation
+pos: prop. n.
+domain: orgs
+domains:
+  - eng
+level: specialist
+plain: >-
+  A nonprofit group, part of the Linux Foundation, that owns and steers the free PyTorch software
+  for building AI so that no single company controls it. It now also looks after related projects.
+senses:
+  - definition: >-
+      A vendor-neutral foundation within the Linux Foundation that governs [[pytorch|PyTorch]] and,
+      since 2025, a growing set of related open-source projects. It holds the projects' trademarks
+      and other assets, raises money from member companies, runs the annual PyTorch Conference and
+      community programs, and pays for shared infrastructure such as continuous-integration
+      computing. Business governance and technical governance are separate: a governing board drawn
+      from paying premier members oversees budget and strategy, while maintainers and contributors
+      make technical decisions. Its founding premier members in 2022 were AMD, Amazon Web Services,
+      Google Cloud, Meta, Microsoft Azure and NVIDIA. In 2025 it became an umbrella foundation,
+      adding the inference engine [[vllm|vLLM]] and the training-optimization library
+      [[deepspeed|DeepSpeed]] in May and the distributed-computing framework [[ray|Ray]] in October,
+      with the stated aim of hosting an open software stack for training, serving and deploying
+      models.
+    example: >-
+      Once PyTorch moved to the PyTorch Foundation, Meta became one board member among several.
+origin: >-
+  Announced by Meta and the Linux Foundation on 12 September 2022, when Meta transferred PyTorch,
+  created at its Facebook AI Research laboratory and released in 2017, to independent governance,
+  following the pattern of other Linux Foundation bodies such as the Cloud Native Computing
+  Foundation.
+year: 2022
+note: >-
+  Governs PyTorch but does not itself develop it; engineering continues in the open community, where
+  [[meta-ai|Meta]] engineers remain prominent. Other open AI projects sit in sibling Linux
+  Foundation bodies such as LF AI & Data.
+see_also:
+  - PyTorch
+  - vLLM
+  - DeepSpeed
+  - Ray
+  - open-source AI
+  - Meta AI
+sources:
+  - text: >-
+      PyTorch Foundation (2025). PyTorch Foundation Welcomes Ray to Deliver a Unified Open Source AI
+      Compute Stack. PyTorch blog, 22 October 2025.
+    url: https://pytorch.org/blog/pytorch-foundation-welcomes-ray-to-deliver-a-unified-open-source-ai-compute-stack/
+  - text: >-
+      PyTorch Foundation (2026). PyTorch Foundation in 2025: A Year in Review and the Road Ahead.
+      PyTorch blog, 15 January 2026.
+    url: https://pytorch.org/blog/pytorch-foundation-in-2025-a-year-in-review/
+as_of: 2026-10

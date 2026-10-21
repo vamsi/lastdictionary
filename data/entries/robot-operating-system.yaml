@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Robot Operating System
+id: robot-operating-system
+pos: prop. n.
+also:
+  - ROS
+  - ROS 2
+  - ROS 1
+domain: robot
+domains:
+  - eng
+level: core
+plain: >-
+  Free, widely used software that serves as the plumbing of many robots, letting separate programs
+  for sensors, planning and motors pass messages to each other, with a large library of ready-made
+  tools.
+senses:
+  - definition: >-
+      A framework for writing robot software as a graph of independent processes (nodes) that
+      exchange typed messages over named publish–subscribe channels (topics), request–response
+      services and long-running actions; whatever its name suggests, it is open-source middleware
+      with a large ecosystem rather than an operating system. It supplies standard message formats,
+      build and packaging tools, 3D visualization, recording and replay of sensor data, simulator
+      integration and thousands of community packages for device drivers, navigation,
+      [[simultaneous-localization-and-mapping|SLAM]], [[motion-planning|motion planning]] and
+      [[manipulation|manipulation]]. ROS 2, a redesign announced in 2014, communicates through the
+      Data Distribution Service (DDS) standard and supports real-time, multi-robot, embedded and
+      security-sensitive deployments; the last ROS 1 release reached end of life in May 2025. ROS is
+      the de facto standard in academic robotics and widely used in industry, and robot-learning
+      systems commonly use it to connect learned [[policy|policies]] to hardware.
+    example: >-
+      The policy publishes joint targets on a ROS topic at 50 Hz, and the arm driver subscribes.
+origin: >-
+  Begun around 2007 by Eric Berger and Keenan Wyrobek, then Stanford PhD students, and developed at
+  the robotics company Willow Garage, whose first ROS paper (Morgan Quigley and colleagues) appeared
+  in 2009; ROS 1.0 followed in January 2010. Stewardship passed to the Open Source Robotics
+  Foundation (founded 2012, renamed Open Robotics in 2017), and the first ROS 2 distribution
+  appeared in December 2017.
+year: 2007
+note: >-
+  Usually pronounced 'ross'. Its value lies mainly in adoption: shared message types let components
+  from different groups and companies interoperate.
+see_also:
+  - robotics
+  - mobile robot
+  - motion planning
+  - simultaneous localization and mapping
+  - physics simulator
+sources:
+  - text: >-
+      Quigley, M. et al. (2009). ROS: an open-source Robot Operating System. ICRA Workshop on Open
+      Source Software.
+  - text: >-
+      Macenski, S., Foote, T., Gerkey, B., Lalancette, C. & Woodall, W. (2022). Robot Operating
+      System 2: Design, architecture, and uses in the wild. Science Robotics 7(66).
+as_of: 2026-10

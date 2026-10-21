@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: schedule-free optimization
+id: schedule-free-optimization
+pos: n.
+also:
+  - Schedule-Free AdamW
+  - Schedule-Free SGD
+  - schedule-free learning
+domain: dl
+domains:
+  - train
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A way of training that needs no plan for slowing learning down over time, so training can be
+  stopped or extended at any point and still produce a well-settled model.
+senses:
+  - definition: >-
+      A family of optimizers that matches or beats tuned [[learning-rate-schedule|learning-rate
+      schedules]] such as [[cosine-annealing|cosine annealing]] without decaying the
+      [[learning-rate|learning rate]] and without knowing the training length in advance.
+      Schedule-Free SGD and Schedule-Free AdamW maintain two sequences — a fast base iterate updated
+      by ordinary gradient steps and a running average of iterates, which is the model actually
+      evaluated — and compute gradients at an interpolation between them. The averaging does the
+      work that decay does in a schedule, yielding an 'anytime' model that is good whenever training
+      stops; apart from the usual momentum settings no new hyperparameters are needed
+      ([[learning-rate-warmup|warmup]] is still used). The method grew out of a theory connecting
+      learning-rate schedules with averaging over iterates, a line that goes back to Polyak–Ruppert
+      averaging (see [[exponential-moving-average-of-weights|exponential moving average of
+      weights]]). In the 2024 AlgoPerf algorithmic-efficiency competition, the winning entry in the
+      self-tuning track was built on Schedule-Free AdamW.
+origin: >-
+  Introduced by Aaron Defazio, Xingyu Alice Yang, Harsh Mehta, Konstantin Mishchenko, Ahmed Khaled
+  and Ashok Cutkosky in 'The Road Less Scheduled' (arXiv May 2024), with an open-source
+  implementation from Meta. Its success in AlgoPerf's self-tuning track brought the term into wide
+  use.
+year: 2024
+note: >-
+  Not the same as a constant learning rate: the averaging is essential. The
+  [[warmup-stable-decay-schedule|warmup-stable-decay schedule]] is a different answer to the same
+  problem, keeping a constant rate and decaying only at the end.
+see_also:
+  - learning rate schedule
+  - cosine annealing
+  - warmup-stable-decay schedule
+  - exponential moving average of weights
+  - AdamW
+  - optimizer
+sources:
+  - text: Defazio, A. et al. (2024). The Road Less Scheduled. NeurIPS 2024.
+    url: https://arxiv.org/abs/2405.15682
+  - text: >-
+      Kasimbeg, P. et al. (2025). Accelerating Neural Network Training: An Analysis of the AlgoPerf
+      Competition. ICLR 2025.
+    url: https://arxiv.org/abs/2502.15015v1

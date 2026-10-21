@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mid-training
+id: mid-training
+pos: n.
+also:
+  - midtraining
+  - mid-train
+domain: train
+domains:
+  - llm
+  - data
+labels:
+  - emerging
+level: core
+plain: >-
+  A middle stage in building a language model, between its broad initial training and its tuning
+  into an assistant: it keeps learning the same way, but from a smaller, carefully chosen diet of
+  math, code, reasoning or long documents.
+senses:
+  - definition: >-
+      A training stage between [[pretraining|pretraining]] and [[post-training|post-training]] in
+      which a pretrained model keeps the same self-supervised objective, usually
+      [[next-token-prediction|next-token prediction]], but trains on a smaller, deliberately
+      reweighted [[data-mixture|data mixture]] to build particular capabilities without losing
+      general ones: upweighted mathematics, code and science; synthetic and reasoning-style data;
+      instruction- or [[chat-template|chat-formatted]] text that prepares for
+      [[supervised-fine-tuning|supervised fine-tuning]]; and long documents for
+      [[context-extension|context extension]]. It usually coincides with the learning-rate decay
+      ([[annealing|annealing]]), typically uses a few percent to about a tenth of training compute,
+      and still yields a [[base-model|base model]]. It differs from post-training, which shapes
+      behavior with curated demonstrations, preferences or rewards, and from
+      [[continued-pretraining|continued pretraining]], which adapts an already finished model to a
+      new domain, language or period, often outside the original developer's recipe. Boundaries are
+      fuzzy: one lab's mid-training is another's late pretraining, and some pipelines use it mainly
+      to teach chat and tool-use formats. Studies in 2025 linked mid-training on reasoning data to
+      more effective later [[reinforcement-learning-with-verifiable-rewards|reinforcement
+      learning]].
+    example: >-
+      Mid-training on 300 billion tokens of math and code lifted the base model's GSM8K score by
+      twelve points.
+origin: >-
+  Lab jargon whose first use is undocumented. It appears in published model reports by December
+  2024: Microsoft's Phi-4 report describes a 'midtraining' stage that extended the context window
+  from 4K to 16K tokens, and AI2's OLMo 2 report a 'mid-training' stage on its high-quality Dolmino
+  mix, taking 5–10% of training compute. Andrej Karpathy's nanochat (October 2025) made midtraining
+  a named step before fine-tuning, and two surveys of the stage appeared that month.
+year: 2024
+note: >-
+  A stage, not a technique: because labs draw its boundaries differently, compare the data and
+  schedules in model reports rather than the labels.
+see_also:
+  - pretraining
+  - annealing
+  - data mixture
+  - context extension
+  - base model
+  - supervised fine-tuning
+  - warmup-stable-decay schedule
+contrast:
+  - continued pretraining
+  - post-training
+  - fine-tuning
+sources:
+  - text: >-
+      Tu, C., Zhang, X., Weng, R. et al. (2025). A Survey on LLM Mid-Training. arXiv:2510.23081.
+    url: https://arxiv.org/abs/2510.23081v1
+  - text: >-
+      Mo, K., Shi, Y., Weng, W. et al. (2025). Mid-Training of Large Language Models: A Survey.
+      arXiv:2510.06826.
+    url: https://arxiv.org/abs/2510.06826v1
+  - text: Team OLMo et al. (2024). 2 OLMo 2 Furious. arXiv:2501.00656.
+    url: https://arxiv.org/abs/2501.00656v1
+as_of: 2026-10

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: partially observable Markov decision process
+id: partially-observable-markov-decision-process
+pos: n.
+also:
+  - POMDP
+  - partially observable MDP
+pronunciation: POM-dee-pee
+domain: rl
+domains:
+  - robot
+  - math
+level: specialist
+plain: >-
+  A version of the standard decision-making model in which the decision-maker cannot see the whole
+  situation — like a poker player who cannot see other hands — and must act on clues and memory.
+senses:
+  - definition: >-
+      An extension of the [[markov-decision-process|Markov decision process]] in which the
+      [[agent|agent]] does not observe the [[state|state]] directly but receives observations drawn
+      from an observation function O(o | s′, a), so the same observation can arise from different
+      underlying states. Optimal behavior then depends on the whole history, which can be summarized
+      by a belief state — a probability distribution over states updated by Bayes' rule after each
+      action and observation — turning the problem into a continuous-state 'belief MDP'. Exact
+      solution is intractable in general (finite-horizon planning is PSPACE-complete), so practice
+      relies on approximate point-based solvers, online search or, in
+      [[deep-reinforcement-learning|deep reinforcement learning]],
+      [[recurrent-neural-network|recurrent]] or [[transformer|transformer]] policies that compress
+      history into memory. Robot navigation with noisy sensors, dialogue and card games are typical
+      examples.
+    example: >-
+      Because the camera cannot see behind the box, we treat the task as a POMDP and give the policy
+      an LSTM memory.
+origin: >-
+  Karl Johan Åström formulated optimal control of Markov processes with incomplete state information
+  in 1965, and Richard Smallwood and Edward Sondik gave an exact finite-horizon solution method in
+  1973. Leslie Kaelbling, Michael Littman and Anthony Cassandra's 'Planning and Acting in Partially
+  Observable Stochastic Domains' (1998) brought POMDPs into mainstream AI.
+year: 1965
+see_also:
+  - Markov decision process
+  - Markov property
+  - state
+  - hidden Markov model
+  - Bayesian inference
+  - recurrent neural network
+contrast:
+  - Markov decision process
+sources:
+  - text: >-
+      Åström, K. J. (1965). Optimal control of Markov processes with incomplete state information.
+      Journal of Mathematical Analysis and Applications 10, 174–205.
+  - text: >-
+      Kaelbling, L. P., Littman, M. L. & Cassandra, A. R. (1998). Planning and acting in partially
+      observable stochastic domains. Artificial Intelligence 101(1–2), 99–134.

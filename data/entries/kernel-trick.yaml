@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: kernel trick
+id: kernel-trick
+pos: n.
+also:
+  - kernel method
+  - kernel methods
+  - kernel machine
+  - kernel function
+  - Mercer kernel
+  - radial basis function kernel
+  - RBF kernel
+  - Gaussian kernel
+  - polynomial kernel
+  - reproducing kernel Hilbert space
+  - RKHS
+  - Gram matrix
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A mathematical shortcut that lets simple straight-line methods find curved patterns, by computing
+  similarities between examples as if the data had been mapped into a far richer space — without
+  ever building that space.
+senses:
+  - definition: >-
+      The technique of replacing every inner product between inputs in an algorithm with a kernel
+      function k(x, x′) that equals an inner product of feature maps φ(x)·φ(x′), so that a linear
+      method operates implicitly in that feature space — which may be very high- or even
+      infinite-dimensional — without computing φ. Any symmetric positive semidefinite function
+      qualifies (Mercer's condition), such as the polynomial kernel and the radial basis function
+      (Gaussian) kernel. By the representer theorem, solutions of many regularized problems are
+      weighted sums of kernels centered on the training points. The trick turns
+      [[support-vector-machine|support vector machines]], [[ridge-regression|ridge regression]],
+      [[principal-component-analysis|principal component analysis]] and k-means into nonlinear
+      kernel methods, and kernels serve as covariance functions of [[gaussian-process|Gaussian
+      processes]]. Its cost is the n × n kernel (Gram) matrix, which scales poorly with dataset
+      size; random Fourier features and Nyström approximations address this.
+    example: >-
+      Swapping the linear kernel for an RBF kernel let the SVM separate the concentric rings.
+formula_latex: k(\mathbf{x}, \mathbf{x}') = \langle \varphi(\mathbf{x}), \varphi(\mathbf{x}')
+  \rangle, \qquad k_{\mathrm{RBF}}(\mathbf{x}, \mathbf{x}') = \exp\!\big(-\gamma \lVert \mathbf{x} -
+  \mathbf{x}' \rVert^2\big)
+origin: >-
+  Positive-definite kernels trace back to James Mercer's 1909 theorem. Mark Aizerman, Emmanuel
+  Braverman and Lev Rozonoer interpreted kernels as inner products in a feature space for their
+  potential-function method of pattern recognition (1964), and Bernhard Boser, Isabelle Guyon and
+  Vladimir Vapnik combined the idea with maximum-margin classifiers in 1992, launching the
+  kernel-methods era. The phrase 'kernel trick' was established by 2000, when Bernhard Schölkopf
+  used it in a paper title ('The Kernel Trick for Distances').
+year: 1964
+note: >-
+  'Kernel' has several unrelated AI meanings — a GPU program, a convolution [[filter|filter]], the
+  [[neural-tangent-kernel|neural tangent kernel]]; see the hub entry [[kernel|kernel]].
+see_also:
+  - support vector machine
+  - Gaussian process
+  - kernel
+  - ridge regression
+  - neural tangent kernel
+  - linear separability
+sources:
+  - text: >-
+      Aizerman, M. A., Braverman, E. M. & Rozonoer, L. I. (1964). Theoretical Foundations of the
+      Potential Function Method in Pattern Recognition Learning. Automation and Remote Control, 25,
+      821–837.
+  - text: >-
+      Boser, B. E., Guyon, I. M. & Vapnik, V. N. (1992). A Training Algorithm for Optimal Margin
+      Classifiers. Proceedings of COLT '92.

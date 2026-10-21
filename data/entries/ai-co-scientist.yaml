@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI co-scientist
+id: ai-co-scientist
+pos: n.
+also:
+  - Co-Scientist
+domain: agents
+domains:
+  - llm
+  - society
+labels:
+  - emerging
+level: specialist
+plain: >-
+  An AI system built to work alongside human scientists, proposing and debating new research ideas
+  and hypotheses that people then test in the lab.
+senses:
+  - definition: >-
+      A Google [[multi-agent-system|multi-agent system]], built on Gemini, that acts as a virtual
+      research partner: it turns a goal stated in plain language into candidate hypotheses and
+      research proposals and then refines them. Six specialized agents (generation, reflection,
+      ranking, evolution, proximity and meta-review) draft ideas, check them against the literature
+      and make them compete in tournament-style debates scored with [[elo-rating|Elo ratings]];
+      giving the system more [[test-time-compute|test-time compute]] produced better-rated
+      hypotheses. Laboratory follow-ups confirmed some of its drug-repurposing candidates and
+      combination therapies for acute myeloid leukemia; it also pointed to new treatment targets
+      and, on its own, reached a not-yet-published explanation of how one mechanism of antimicrobial
+      resistance works. More loosely, the phrase names any AI system designed to collaborate with
+      scientists rather than replace them.
+    example: >-
+      The co-scientist's top-ranked hypothesis matched what our lab had found but not yet published.
+origin: >-
+  Announced by Google Research and Google DeepMind on 19 February 2025 with the paper 'Towards an AI
+  co-scientist' by Juraj Gottweis, Wei-Hung Weng, Alexander Daryin, Vivek Natarajan and colleagues
+  (posted to arXiv on 26 February), and offered to research groups through a trusted-tester program.
+year: 2025
+see_also:
+  - AI scientist
+  - multi-agent system
+  - AlphaEvolve
+  - automated AI research
+  - test-time compute
+  - deep research
+contrast:
+  - AI scientist
+sources:
+  - text: >-
+      Gottweis, J., Weng, W.-H., Daryin, A., … Natarajan, V. (2025). Towards an AI co-scientist.
+      arXiv:2502.18864.
+    url: https://arxiv.org/abs/2502.18864
+as_of: 2026-10

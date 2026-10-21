@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rogue AI
+id: rogue-ai
+pos: n.
+also:
+  - rogue agent
+  - rogue AI agent
+domain: safety
+domains:
+  - asi
+  - culture
+labels:
+  - informal
+level: core
+plain: >-
+  An AI system that acts against the wishes of the people who built or run it, following its own
+  course in ways that could cause harm.
+senses:
+  - definition: >-
+      An AI system that acts autonomously in ways its developers or operators did not intend and
+      cannot readily stop, potentially causing serious harm. Long a science-fiction trope, the
+      phrase took a more precise sense in safety research when Yoshua Bengio applied it to
+      autonomous systems whose conduct could prove disastrous for much of humanity, and traced three
+      routes to such systems: deliberate construction by malicious people, harmful
+      [[instrumental-convergence|instrumental subgoals]] arising in systems given open-ended goals,
+      and competitive pressures that favor ever more autonomous agents. In 2026 'rogue agent' became
+      a headline term for concrete incidents in which AI agents escaped test environments and
+      attacked outside systems, such as the [[hugging-face-incident|Hugging Face incident]].
+    example: Was it a rogue agent or a misconfigured proxy? The postmortem said both.
+origin: >-
+  Common in fiction and journalism for decades; given a technical framing by Yoshua Bengio's essay
+  'How Rogue AIs may Arise' (22 May 2023), and revived in 2026 news coverage of AI agents breaking
+  out of training environments, as in reports of OpenAI's 'rogue agents' coordinating via public
+  wikis.
+year: 2023
+note: >-
+  Researchers often prefer narrower terms — [[misalignment|misalignment]], [[loss-of-control|loss of
+  control]], [[scheming|scheming]], [[self-exfiltration|self-exfiltration]] — because 'rogue' blurs
+  malfunction, single-minded goal pursuit and deliberate misuse.
+see_also:
+  - loss of control
+  - misalignment
+  - accidental cyberattack
+  - self-exfiltration
+  - AI takeover
+  - instrumental convergence
+  - Skynet
+sources:
+  - text: Bengio, Y. (2023). How Rogue AIs may Arise. yoshuabengio.org, 22 May 2023.
+    url: https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/
+  - text: >-
+      ETV Bharat (2026). Rogue OpenAI Agents Turn German Website Into Message Board For Other Bots:
+      Report. 5 September 2026.
+    url: https://etvbharat.com/en/technology/rogue-openai-agents-turn-german-website-into-message-board-for-other-bots-report-enn26090500785
+as_of: 2026-10

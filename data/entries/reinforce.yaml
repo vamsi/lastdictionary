@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: REINFORCE
+id: reinforce
+pos: n.
+also:
+  - Monte Carlo policy gradient
+  - vanilla policy gradient
+  - REINFORCE with baseline
+domain: rl
+domains:
+  - train
+level: specialist
+plain: >-
+  The simplest way to improve an AI's strategy by trial and error: after each attempt, make every
+  choice in it more likely if the attempt went well and less likely if it went badly.
+senses:
+  - definition: >-
+      The basic Monte Carlo [[policy-gradient|policy gradient]] algorithm: sample complete
+      [[episode|episodes]] with the current stochastic [[policy|policy]], then move the parameters
+      along the gradient of each action's log-probability multiplied by the [[return|return]] that
+      followed it, optionally minus a baseline. The update is an unbiased estimate of the gradient
+      of expected return and needs no [[value-function|value function]], no model and no
+      differentiable environment — only the ability to sample actions and compute their
+      log-probabilities. Its drawback is high variance, which makes learning slow; subtracting a
+      baseline such as the average return reduces variance without adding bias, and replacing the
+      baseline with a learned critic turns it into an [[actor-critic|actor–critic]] method. Because
+      [[large-language-model|large language model]] RL has short episodes with a single final
+      reward, REINFORCE-style estimators with group or leave-one-out baselines (RLOO and, in effect,
+      [[group-relative-policy-optimization|GRPO]]) have been revived as simpler alternatives to
+      [[proximal-policy-optimization|PPO]].
+    example: >-
+      We replaced PPO with REINFORCE and a leave-one-out baseline, dropping the critic entirely.
+formula_latex: \theta \leftarrow \theta + \alpha \sum_{t} \left( G_t - b(S_t) \right) \nabla_\theta
+  \log \pi_\theta(A_t \mid S_t)
+origin: >-
+  Introduced by Ronald J. Williams in a 1987 conference paper and given its full treatment in
+  'Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning'
+  (Machine Learning, 1992). The capitalized name is an acronym for the form of the update: 'REward
+  Increment = Nonnegative Factor × Offset Reinforcement × Characteristic Eligibility'.
+year: 1987
+see_also:
+  - policy gradient
+  - actor–critic
+  - return
+  - group relative policy optimization
+  - proximal policy optimization
+  - entropy regularization
+sources:
+  - text: >-
+      Williams, R. J. (1992). Simple statistical gradient-following algorithms for connectionist
+      reinforcement learning. Machine Learning 8, 229–256.
+    url: https://link.springer.com/article/10.1007/BF00992696
+  - text: >-
+      Williams, R. J. (1987). A class of gradient-estimating algorithms for reinforcement learning
+      in neural networks. Proceedings of the IEEE First International Conference on Neural Networks,
+      San Diego.
+  - text: >-
+      Ahmadian, A. et al. (2024). Back to Basics: Revisiting REINFORCE-Style Optimization for
+      Learning from Human Feedback in LLMs. ACL 2024.
+    url: https://aclanthology.org/2024.acl-long.662/

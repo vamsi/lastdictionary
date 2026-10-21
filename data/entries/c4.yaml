@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: C4
+id: c4
+pos: prop. n.
+also:
+  - Colossal Clean Crawled Corpus
+  - c4/en
+pronunciation: see-FOR
+domain: data
+domains:
+  - llm
+level: specialist
+plain: >-
+  A large collection of English web text, cleaned up from a 2019 web archive snapshot by Google
+  researchers, that became a standard ingredient for training language models.
+senses:
+  - definition: >-
+      The Colossal Clean Crawled Corpus, an English text dataset of about 750 GB derived from the
+      April 2019 [[common-crawl|Common Crawl]] snapshot and released to train [[t5|T5]]. Its
+      cleaning rules discarded pages a language detector was less than 99% sure were English, pages
+      containing any word from a list of obscene and offensive terms, pages with curly braces (a
+      sign of code) or placeholder text, and pages of fewer than three sentences; within pages it
+      kept only lines of at least five words ending in terminal punctuation, and across the corpus
+      it removed repeated three-sentence spans. A documented version holds about 365 million
+      documents and 156 billion tokens. C4 trained many models of the early 2020s, a multilingual
+      variant (mC4) covers about 100 languages, and its rules became a template for later
+      [[quality-filtering|quality filtering]].
+    example: Our ablation baseline is a 1B-parameter model trained on 100B tokens of C4.
+origin: >-
+  Introduced by Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee and colleagues at Google in
+  'Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer' (arXiv,
+  October 2019; JMLR 2020). Jesse Dodge and colleagues' 2021 audit documented its contents in
+  detail.
+year: 2019
+note: >-
+  The 2021 audit found patents, US military websites, machine-translated text and benchmark examples
+  in C4, and showed that its word blocklist disproportionately removed text by and about minority
+  groups, such as LGBTQ+ people and speakers of African American English. The name's four Cs give
+  the '4'.
+see_also:
+  - Common Crawl
+  - T5
+  - quality filtering
+  - pretraining data
+  - corpus
+  - FineWeb
+sources:
+  - text: >-
+      Raffel, C. et al. (2020). Exploring the Limits of Transfer Learning with a Unified
+      Text-to-Text Transformer. JMLR 21. arXiv:1910.10683.
+    url: https://arxiv.org/abs/1910.10683
+  - text: >-
+      Dodge, J. et al. (2021). Documenting Large Webtext Corpora: A Case Study on the Colossal Clean
+      Crawled Corpus. EMNLP 2021. arXiv:2104.08758.
+    url: https://arxiv.org/abs/2104.08758

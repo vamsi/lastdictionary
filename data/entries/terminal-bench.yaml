@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Terminal-Bench
+id: terminal-bench
+pos: prop. n.
+also:
+  - TBench
+  - Terminal-Bench 2.0
+  - Harbor
+domain: eval
+domains:
+  - agents
+  - eng
+labels:
+  - emerging
+level: core
+plain: >-
+  A test of AI agents working in a computer's command line — building software, analyzing data,
+  securing or repairing systems — with each task checked automatically inside a sealed-off
+  container.
+senses:
+  - definition: >-
+      A benchmark and evaluation framework for AI agents that work through a command-line terminal.
+      Each task packages a natural-language instruction, a Docker environment, a human-verified
+      reference solution and test scripts that check the container's final state, so agents are
+      judged on outcomes rather than on the commands they type. Tasks range from scientific
+      workflows, network configuration and data analysis to games and cybersecurity. The reference
+      agent, Terminus, acts only by sending keystrokes to a tmux session, giving a neutral baseline
+      across models. Results are reported as the task resolution rate of an agent–model pair, so
+      [[harness|harness]] design matters as much as the model. Successive versions — 2.0 (November
+      2025), 3.0 (July 2026) and 4.0 (August 2026) — added harder tasks, repaired faulty ones and
+      removed saturated ones; 2.0 also introduced Harbor, a framework for running containerized
+      agent evaluations and training rollouts at scale. At 3.0's launch, one leading agent fell from
+      83.8% on version 2.1, a corrected 2.0, to 33.8% on 3.0's 74 tasks.
+    example: >-
+      Swapping our agent's scaffold for a plain tmux loop cost eight points on Terminal-Bench.
+origin: >-
+  Released on 19 May 2025 by a team from Stanford University and the Laude Institute — Mike Merrill,
+  Alex Shaw, Chris Rytting, Ludwig Schmidt and Andy Konwinski — with 80 tasks in its first version,
+  Terminal-Bench-Core v0.
+year: 2025
+note: >-
+  Leaderboard entries pair a harness with a model, so rankings conflate the two; the same model can
+  place very differently in different harnesses.
+see_also:
+  - coding agent
+  - SWE-bench
+  - harness
+  - sandbox
+  - AI agent
+  - evaluation harness
+  - OSWorld
+sources:
+  - text: >-
+      Merrill, M., Shaw, A., Rytting, C., Schmidt, L. & Konwinski, A. (2025). Terminal-Bench
+      (announcement).
+    url: https://www.tbench.ai/news/announcement
+  - text: Merrill, M. & Shaw, A. (2025). Terminal-Bench 2.0 and Harbor (announcement).
+    url: https://www.tbench.ai/news/announcement-2-0
+  - text: Marten, R., Shaw, A. & Konwinski, A. (2026). Terminal-Bench 3.0 (announcement).
+    url: https://www.tbench.ai/news/terminal-bench-3-0
+as_of: 2026-10

@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multi-armed bandit
+id: multi-armed-bandit
+pos: n.
+also:
+  - bandit problem
+  - k-armed bandit
+  - MAB
+  - contextual bandit
+  - two-armed bandit
+domain: rl
+domains:
+  - math
+  - eng
+level: core
+plain: >-
+  A puzzle named after a gambler choosing between slot machines: you must keep picking among options
+  whose payoffs are unknown, learning which is best while wasting as few tries as possible on the
+  others.
+senses:
+  - definition: >-
+      A sequential decision problem of allocating a series of trials among K options ('arms') whose
+      [[reward|reward]] distributions are unknown, so as to maximize the total reward collected or,
+      equivalently, to minimize [[regret|regret]] relative to always choosing the best arm. It is
+      the simplest setting that exhibits the
+      [[exploration-exploitation-trade-off|exploration–exploitation trade-off]]: a
+      [[reinforcement-learning|reinforcement learning]] problem with a single [[state|state]], whose
+      actions have no lasting consequences. Standard algorithms include [[epsilon-greedy|ε-greedy]],
+      [[upper-confidence-bound|UCB]] and [[thompson-sampling|Thompson sampling]]; the Gittins index
+      solves the discounted Bayesian version exactly. Variants include contextual bandits, in which
+      the best arm depends on observed features such as a user or query, and adversarial, dueling
+      and combinatorial bandits. Bandits drive adaptive clinical trials, ad and news selection,
+      [[recommender-system|recommendations]], adaptive [[a-b-testing|A/B testing]],
+      [[hyperparameter-tuning|hyperparameter tuning]] and the selection step of
+      [[monte-carlo-tree-search|Monte Carlo tree search]].
+    example: >-
+      Instead of a fixed A/B test, we ran a contextual bandit that shifted traffic to the better
+      headline within hours.
+origin: >-
+  Herbert Robbins posed the modern formulation in 'Some Aspects of the Sequential Design of
+  Experiments' (1952), after William Thompson's 1933 work on comparing two unknown probabilities.
+  The name alludes to slot machines, nicknamed one-armed bandits; 'two-armed bandit' appears in
+  1950s learning-theory research. John Gittins's index theorem (1979) and Tze Leung Lai and
+  Robbins's regret bound (1985) founded the theory.
+year: 1952
+note: >-
+  The problem's reputation for difficulty is old: Peter Whittle recalled that Allied analysts in the
+  Second World War found it so draining that someone suggested dropping it over Germany as a form of
+  intellectual sabotage.
+see_also:
+  - exploration–exploitation trade-off
+  - regret
+  - Thompson sampling
+  - upper confidence bound
+  - epsilon-greedy
+  - A/B testing
+  - recommender system
+sources:
+  - text: >-
+      Robbins, H. (1952). Some aspects of the sequential design of experiments. Bulletin of the
+      American Mathematical Society 58(5), 527–535.
+  - text: >-
+      Lai, T. L. & Robbins, H. (1985). Asymptotically efficient adaptive allocation rules. Advances
+      in Applied Mathematics 6(1), 4–22.
+  - text: >-
+      Lattimore, T. & Szepesvári, C. (2020). Bandit Algorithms. Cambridge University Press.

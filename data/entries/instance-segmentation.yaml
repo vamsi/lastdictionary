@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: instance segmentation
+id: instance-segmentation
+pos: n.
+also:
+  - instance mask
+  - object segmentation
+domain: percep
+domains:
+  - dl
+level: core
+plain: >-
+  Finding each separate object in an image and tracing its exact outline, so that two people
+  standing together get two distinct shapes rather than one blob.
+senses:
+  - definition: >-
+      The task of detecting each individual object of a set of categories and producing a pixel mask
+      for it, combining [[object-detection|object detection]] (separate instances) with
+      [[semantic-segmentation|semantic segmentation]] (pixel accuracy). Unlike semantic
+      segmentation, touching objects of the same class receive distinct masks and identities; unlike
+      [[panoptic-segmentation|panoptic segmentation]], it usually ignores amorphous background
+      'stuff' and may allow masks to overlap. Top-down methods detect a box and then segment inside
+      it: Mask R-CNN (2017) added a small mask-predicting branch to Faster [[r-cnn|R-CNN]] and
+      became the standard baseline. Single-stage and bottom-up alternatives predict masks directly
+      or group pixels by learned embeddings (YOLACT, 2019, for real time; SOLO, 2020), and
+      query-based transformers such as Mask2Former (2022) predict a set of masks much as
+      [[detr|DETR]] predicts boxes. Evaluation uses mask [[mean-average-precision|AP]] computed over
+      mask IoU thresholds, typically on [[coco|COCO]] or the long-tailed LVIS dataset. Applications
+      include robotic picking, cell counting in microscopy, image editing and autonomous driving.
+    example: >-
+      Instance segmentation gives each apple its own mask, so the picker can plan a grasp for every
+      fruit.
+origin: >-
+  Bharath Hariharan, Pablo Arbeláez, Ross Girshick and Jitendra Malik's 'Simultaneous Detection and
+  Segmentation' (ECCV 2014) framed the modern task; the phrase was already in titles that year, as
+  in Nathan Silberman, David Sontag and Rob Fergus's 'Instance Segmentation of Indoor Scenes Using a
+  Coverage Loss' (ECCV 2014). It became standard around 2015–2016 with the COCO segmentation
+  challenge, and Mask R-CNN (2017) fixed the dominant approach.
+year: 2014
+note: >-
+  Some papers say 'object segmentation' for the same task; in video, 'video object segmentation'
+  means following given objects' masks through the frames.
+see_also:
+  - image segmentation
+  - semantic segmentation
+  - panoptic segmentation
+  - R-CNN
+  - object detection
+  - Segment Anything Model
+contrast:
+  - semantic segmentation
+sources:
+  - text: >-
+      Hariharan, B., Arbeláez, P., Girshick, R. & Malik, J. (2014). Simultaneous Detection and
+      Segmentation. ECCV 2014.
+  - text: He, K., Gkioxari, G., Dollár, P. & Girshick, R. (2017). Mask R-CNN. ICCV 2017.
+    url: https://arxiv.org/abs/1703.06870

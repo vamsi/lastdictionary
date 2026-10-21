@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tabu search
+id: tabu-search
+pos: n.
+also:
+  - taboo search
+  - tabu list
+domain: sym
+domains:
+  - math
+level: specialist
+plain: >-
+  A search method that improves an answer by small changes while keeping a short memory of recent
+  moves and forbidding their reversal for a while, so it does not circle back to the same dead ends.
+senses:
+  - definition: >-
+      A [[metaheuristic|metaheuristic]] that equips [[local-search|local search]] with a memory of
+      its recent history, steering it away from moves and solutions it has just tried. At each step
+      it moves to the best admissible neighbor of the current solution, even if that neighbor is
+      worse, which lets it climb out of local optima; to prevent cycling, recently made moves or
+      recently visited solution attributes are declared tabu (forbidden) for a number of iterations,
+      recorded in a short-term tabu list. Aspiration criteria lift the ban when a tabu move would
+      yield the best solution found so far, and longer-term memory supports intensification
+      (searching near good solutions) and diversification (pushing the search into unexplored
+      regions). Tabu search has been especially successful on scheduling, vehicle routing, graph
+      coloring and other problems in operations research.
+origin: >-
+  Introduced by Fred Glover in a 1986 paper in Computers and Operations Research, the same paper in
+  which he coined the word 'metaheuristic'. Pierre Hansen independently proposed a similar 'steepest
+  ascent, mildest descent' method around the same time.
+year: 1986
+see_also:
+  - local search
+  - metaheuristic
+  - hill climbing
+  - simulated annealing
+  - constraint satisfaction problem
+sources:
+  - text: >-
+      Glover, F. (1986). Future Paths for Integer Programming and Links to Artificial Intelligence.
+      Computers & Operations Research 13(5), 533–549.

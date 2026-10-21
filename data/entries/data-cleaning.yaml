@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data cleaning
+id: data-cleaning
+pos: n.
+also:
+  - data cleansing
+  - data scrubbing
+  - cleaning
+domain: data
+domains:
+  - ml
+  - eng
+level: core
+plain: >-
+  Finding and fixing errors in a dataset — typos, duplicates, missing values, impossible numbers,
+  wrong labels — before using it, because flawed data produces flawed results.
+senses:
+  - definition: >-
+      Quality-control work that brings a dataset's records back into line with the reality they are
+      supposed to describe, by correcting what is wrong, making what is inconsistent uniform,
+      filling or flagging what is missing, and removing what cannot be repaired. Typical operations
+      include standardizing formats and units, resolving duplicate or conflicting records, handling
+      missing values (by deletion or [[imputation|imputation]]), flagging outliers and impossible
+      values with validation rules, repairing character encodings and correcting
+      [[label-noise|mislabeled examples]]. In text corpora for language models, cleaning also means
+      stripping boilerplate, navigation menus and markup, fixing garbled characters and normalizing
+      whitespace; it shades into [[quality-filtering|quality filtering]], which removes whole
+      documents judged unsuitable. Cleaning requires judgment: an apparent outlier may be exactly
+      the rare case a model most needs, and aggressive rules can erase dialects or minority content,
+      so decisions should be documented and their effects measured.
+    example: >-
+      Half the project was data cleaning: three date formats, two currencies and a lot of empty
+      fields.
+origin: >-
+  Cleaning survey and statistical records is as old as data processing; 'data cleansing' became a
+  named step in 1990s data warehousing. Erhard Rahm and Hong Hai Do's survey 'Data Cleaning:
+  Problems and Current Approaches' (2000) is a standard reference.
+note: >-
+  Overlaps with [[data-quality|data quality]] (the property being pursued), [[data-pipeline|data
+  pipeline]] (where cleaning is automated) and [[feature-engineering|feature engineering]] (which
+  transforms clean data into model inputs).
+see_also:
+  - data quality
+  - data pipeline
+  - imputation
+  - deduplication
+  - label noise
+  - quality filtering
+  - anomaly detection
+sources:
+  - text: >-
+      Rahm, E. & Do, H. H. (2000). Data Cleaning: Problems and Current Approaches. IEEE Data
+      Engineering Bulletin 23(4).

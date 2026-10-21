@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: low-rank adaptation
+id: low-rank-adaptation
+pos: n.
+also:
+  - LoRA
+  - LoRA adapter
+  - low-rank adapters
+pronunciation: LOR-uh
+domain: train
+domains:
+  - llm
+  - eng
+level: core
+plain: >-
+  A cheap way to customize a big AI model: instead of changing all its billions of numbers, you
+  train a small add-on of a few million numbers that slightly adjusts how it behaves.
+senses:
+  - definition: >-
+      A [[parameter-efficient-fine-tuning|parameter-efficient fine-tuning]] method that leaves a
+      pretrained model's [[weights|weights]] untouched and instead learns a correction to selected
+      weight matrices W (typically the attention and feed-forward projections of a
+      [[transformer|transformer]]) in factored form: the product of two thin matrices B and A of
+      rank r, far smaller than the matrix dimensions, scaled by α/r. B starts at zero, so training
+      begins from the unmodified model. After training, the product BA can be added into W, so the
+      adapted model runs exactly as fast as the original; alternatively the small LoRA files are
+      kept separate and swapped per task or user. With r between about 4 and 64, trainable
+      parameters fall by orders of magnitude: the original paper reports 10,000 times fewer than
+      full fine-tuning of GPT-3 175B, and a third of the GPU memory. LoRA often approaches
+      [[full-fine-tuning|full fine-tuning]] on narrow tasks but learns less, and forgets less, on
+      large knowledge-heavy ones. Variants include [[qlora|QLoRA]], DoRA and LoRA+; LoRA is
+      ubiquitous for customizing image generators and open-weight language models.
+    example: We serve one base model with 200 customer LoRAs swapped in per request.
+formula_latex: W' = W_0 + \frac{\alpha}{r}\, B A, \qquad B \in \mathbb{R}^{d \times r},\; A \in
+  \mathbb{R}^{r \times k},\; r \ll \min(d, k)
+origin: >-
+  Introduced by Edward Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu
+  Wang and Weizhu Chen of Microsoft in June 2021 (ICLR 2022), motivated by evidence that fine-tuning
+  updates have a low intrinsic dimension. It spread rapidly in 2023 with Hugging Face's PEFT
+  library, Stable Diffusion LoRAs and QLoRA.
+year: 2021
+note: >-
+  Not to be confused with LoRa, a long-range radio protocol. Rank, the scaling factor α, learning
+  rate and the choice of layers that receive adapters strongly affect results.
+see_also:
+  - parameter-efficient fine-tuning
+  - QLoRA
+  - adapter
+  - low-rank approximation
+  - full fine-tuning
+  - fine-tuning
+  - model merging
+contrast:
+  - full fine-tuning
+sources:
+  - text: >-
+      Hu, E. J. et al. (2021). LoRA: Low-Rank Adaptation of Large Language Models. ICLR 2022.
+      arXiv:2106.09685.
+    url: https://arxiv.org/abs/2106.09685
+  - text: >-
+      Biderman, D. et al. (2024). LoRA Learns Less and Forgets Less. Transactions on Machine
+      Learning Research.

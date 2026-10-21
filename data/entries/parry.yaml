@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PARRY
+id: parry
+pos: prop. n.
+domain: hist
+domains:
+  - llm
+  - mind
+labels:
+  - historical
+level: specialist
+plain: >-
+  An early-1970s chatbot built to talk like a psychiatric patient with paranoid schizophrenia. In
+  tests, psychiatrists reading its conversations did little better than chance at telling it from
+  real patients — an early Turing-test-style result.
+senses:
+  - definition: >-
+      A program, written in the early 1970s by the Stanford University psychiatrist Kenneth Colby,
+      that conversed in the role of a patient with paranoid schizophrenia. Where [[eliza|ELIZA]]
+      only reflected its input, PARRY tracked levels of fear, anger and mistrust that rose or fell
+      with what it was told, and it kept pulling conversations back to fixed delusions about bookies
+      and the Mafia, drawing on a much larger stock of language patterns. When psychiatrists were
+      given interview transcripts from PARRY and from real patients, without being told which was
+      which, they picked out the program at about chance level — an early, narrow variant of the
+      [[turing-test|Turing test]] — though critics noted that evasive or incoherent answers are
+      expected of the patients being imitated. In 1972 PARRY and ELIZA's DOCTOR script were
+      connected over the ARPANET for a much-reproduced machine-to-machine 'therapy session'.
+    example: >-
+      PARRY passed a narrow Turing test partly because paranoid evasiveness hid its limitations.
+origin: >-
+  Developed by Colby with collaborators including Sylvia Weber and Franklin Hilf as a working model
+  for testing theories of paranoia, and described in their paper 'Artificial Paranoia' (Artificial
+  Intelligence, 1971) and in later reports on what they called Turing-like indistinguishability
+  tests.
+year: 1971
+see_also:
+  - ELIZA
+  - Turing test
+  - chatbot
+  - ELIZA effect
+  - Loebner Prize
+sources:
+  - text: >-
+      Colby, K. M., Weber, S. & Hilf, F. D. (1971). Artificial Paranoia. Artificial Intelligence
+      2(1), 1–25.

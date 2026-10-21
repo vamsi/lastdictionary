@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: usage policy
+id: usage-policy
+pos: n.
+also:
+  - acceptable use policy
+  - AUP
+  - usage policies
+  - use policy
+domain: safety
+domains:
+  - gov
+  - sec
+level: core
+plain: >-
+  A company's published rules on what people may and may not use its AI for — for example, no help
+  building weapons, no scams and no sexual content involving children.
+senses:
+  - definition: >-
+      A provider's published rules governing what customers and end users may do with its AI models
+      and services. Typical policies prohibit using the service for weapons development (above all
+      [[cbrn-risk|weapons capable of mass casualties]]), malware, child sexual abuse material,
+      fraud, harassment, election interference and some forms of surveillance; restrict higher-risk
+      uses, such as medical, legal or financial advice or automated decisions about people, unless
+      safeguards are in place; and impose duties on businesses building on the service, such as
+      disclosing that users are talking to an AI. Policies are enforced through
+      [[safety-classifier|classifiers]], account-level monitoring, warnings, suspensions and
+      contract terms — and, for [[open-weight-model|open-weight models]], only through license
+      conditions. A usage policy constrains people; a [[model-specification|model specification]]
+      describes how the model itself should behave, though the two are usually kept consistent.
+    example: >-
+      The account was suspended for violating the usage policy on automated political messaging.
+origin: >-
+  Adapted from the acceptable use policies of 1990s internet service providers. OpenAI's GPT-3 API
+  launched in 2020 with stated prohibitions on harmful uses, and other commercial model APIs
+  followed. Open-weight releases attached use restrictions through Responsible AI Licenses, as for
+  BLOOM and Stable Diffusion in 2022, and through acceptable use policies such as the one attached
+  to Meta's Llama 2 license (July 2023).
+year: 2020
+note: >-
+  Policies change often and differ between providers: a use prohibited by one may be allowed with
+  safeguards by another. Not to be confused with a [[model-license|model license]], which may
+  incorporate a usage policy but also governs copying and redistribution.
+see_also:
+  - model specification
+  - misuse
+  - safety classifier
+  - structured access
+  - model license
+  - refusal
+contrast:
+  - model specification

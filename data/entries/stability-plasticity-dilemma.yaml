@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: stability–plasticity dilemma
+id: stability-plasticity-dilemma
+pos: n.
+also:
+  - stability–plasticity trade-off
+  - stability-plasticity tradeoff
+domain: train
+domains:
+  - dl
+  - mind
+level: specialist
+plain: >-
+  The basic tension any learning system faces: it must change enough to learn new things, yet stay
+  stable enough not to lose what it already knows.
+senses:
+  - definition: >-
+      The trade-off, in any adaptive system that learns from a changing stream of experience,
+      between plasticity — the capacity to acquire new knowledge quickly — and stability — the
+      retention of existing knowledge against interference. In neural networks with shared
+      [[weights|weights]] the two pull against each other: high learning rates and unconstrained
+      updates favor plasticity but cause [[catastrophic-forgetting|catastrophic forgetting]], while
+      strong constraints favor stability but can freeze learning ([[loss-of-plasticity|loss of
+      plasticity]]). [[continual-learning|continual learning]] methods are commonly classified by
+      how they strike the balance: replay, importance-weighted regularization such as
+      [[elastic-weight-consolidation|elastic weight consolidation]], parameter isolation, or
+      architectures with fast- and slow-learning components inspired by the complementary roles of
+      hippocampus and neocortex. The dilemma also frames [[fine-tuning|fine-tuning]] choices for
+      large models, such as using [[low-rank-adaptation|low-rank adaptation]] or a [[kl-penalty|KL
+      penalty]] to limit drift.
+    example: >-
+      Freezing the lower layers bought stability but left too little plasticity to learn the new
+      dialect.
+origin: >-
+  Associated with Stephen Grossberg, who developed adaptive resonance theory from the 1970s partly
+  to explain how brains learn new patterns without erasing old ones. The dilemma is commonly cited
+  to his 1980 paper 'How Does a Brain Build a Cognitive Code?' and is stated prominently in Gail
+  Carpenter and Grossberg's 1987 adaptive-resonance papers; the first use of the exact phrase is not
+  established. It is now standard vocabulary in continual-learning research.
+year: 1980
+note: >-
+  Also discussed in neuroscience, where synaptic consolidation and replay during sleep are thought
+  to help resolve it.
+see_also:
+  - continual learning
+  - catastrophic forgetting
+  - loss of plasticity
+  - elastic weight consolidation
+  - experience replay
+  - connectionism
+sources:
+  - text: >-
+      Grossberg, S. (1980). How does a brain build a cognitive code? Psychological Review 87(1),
+      1–51.
+  - text: >-
+      Carpenter, G. A. & Grossberg, S. (1987). A massively parallel architecture for a
+      self-organizing neural pattern recognition machine. Computer Vision, Graphics, and Image
+      Processing 37(1), 54–115.

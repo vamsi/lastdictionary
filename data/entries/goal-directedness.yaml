@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: goal-directedness
+id: goal-directedness
+pos: n.
+also:
+  - goal-directed
+  - goal-directed behavior
+  - goal-directed AI
+domain: safety
+domains:
+  - agents
+  - mind
+labels:
+  - contested
+level: specialist
+plain: >-
+  How much a system behaves as if it is pursuing a goal — steering toward particular outcomes and
+  finding new ways around obstacles put in its path.
+senses:
+  - definition: >-
+      The degree to which a system's behavior is best explained and predicted as the pursuit of an
+      objective: it steers diverse situations toward a narrow set of outcomes, adapts its means when
+      circumstances change, and keeps doing so when obstacles are introduced. Goal-directedness
+      matters to safety because arguments about [[power-seeking|power-seeking]] and
+      [[instrumental-convergence|instrumental convergence]] apply to goal-directed systems, while a
+      system that merely executes habits may be easier to oversee. There is no agreed definition;
+      proposals include Daniel Dennett's intentional stance (ascribing goals when that best predicts
+      behavior), behavioral tests of coherence and generalization, and formal measures such as
+      maximum-entropy goal-directedness (2024). Researchers debate whether training
+      [[large-language-model|language models]] as [[ai-agent|agents]] on long tasks makes them more
+      goal-directed.
+    example: >-
+      Before worrying about power-seeking, measure how goal-directed the policy actually is.
+origin: >-
+  The idea comes from cybernetics — Arturo Rosenblueth, Norbert Wiener and Julian Bigelow's 1943
+  analysis of purposeful behavior — and philosophy of mind, notably Dennett's 'The Intentional
+  Stance' (1987). In AI safety, Rohin Shah's 2018 essays questioned whether advanced AI must be
+  goal-directed, and later work proposed quantitative measures.
+year: 2018
+note: >-
+  Distinct from [[agent|agent]] in the software sense: an [[ai-agent|AI agent]] may be only weakly
+  goal-directed, and a non-agentic system can behave goal-directedly. Strongly goal-directed systems
+  are sometimes called consequentialist or coherent.
+see_also:
+  - power-seeking
+  - instrumental convergence
+  - mesa-optimization
+  - agent
+  - AI agent
+  - shard theory
+sources:
+  - text: Dennett, D. C. (1987). The Intentional Stance. MIT Press.
+  - text: >-
+      MacDermott, M., Fox, J., Belardinelli, F. & Everitt, T. (2024). Measuring Goal-Directedness.
+      arXiv:2412.04758.
+    url: https://arxiv.org/abs/2412.04758

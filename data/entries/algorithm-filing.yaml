@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: algorithm filing
+id: algorithm-filing
+pos: n.
+also:
+  - algorithm registry
+  - algorithm registration
+  - 算法备案
+  - large-model filing
+  - generative AI filing
+domain: gov
+domains:
+  - society
+labels:
+  - legal
+level: specialist
+plain: >-
+  China's requirement that companies register certain algorithms — such as recommendation feeds and
+  chatbots — with the internet regulator, describing what they do and how their risks are
+  controlled.
+senses:
+  - definition: >-
+      In Chinese law, the mandatory registration of algorithms with the
+      [[cyberspace-administration-of-china|Cyberspace Administration of China]] (CAC) through its
+      online Internet Information Service Algorithm Filing System. It was introduced by the
+      Provisions on the Management of Algorithmic Recommendations in Internet Information Services,
+      in force since March 1, 2022, under which providers whose [[recommender-system|recommendation
+      algorithms]] can sway public opinion or mobilize people must register within ten working days
+      of launch, describing the provider and the algorithm (its type and where it is used),
+      assessing its risks themselves and supplying a description for public display. The duty was
+      extended to [[deep-synthesis|deep synthesis]] services in 2023 and to
+      [[generative-ai|generative AI]] under the
+      [[interim-measures-for-the-management-of-generative-ai-services|Interim Measures for the
+      Management of Generative AI Services]], where a security assessment and filing of the
+      underlying model, often called large-model filing, precede public launch; applications built
+      on an already filed model register with provincial CAC offices. The CAC publishes lists of
+      filed algorithms with brief descriptions, giving outsiders a partial map of deployed systems
+      while technical details stay confidential.
+    example: >-
+      The app calls a model that has completed algorithm filing, so it only needed a provincial
+      registration.
+origin: >-
+  Created by the algorithm-recommendation provisions issued by the CAC and three other agencies on
+  December 31, 2021; the CAC published its first list of 30 filed algorithms, from companies
+  including Alibaba, ByteDance and Tencent, in August 2022.
+year: 2022
+note: >-
+  Often called China's algorithm registry in English. It serves state oversight and information
+  control rather than public transparency: filings are disclosed only in summary.
+see_also:
+  - Interim Measures for the Management of Generative AI Services
+  - deep synthesis
+  - Cyberspace Administration of China
+  - recommender system
+  - algorithmic accountability
+standards: >-
+  Provisions on the Management of Algorithmic Recommendations in Internet Information Services
+  (2021), Art. 24
+as_of: 2026-10

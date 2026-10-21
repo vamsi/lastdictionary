@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bayes error rate
+id: bayes-error-rate
+pos: n.
+also:
+  - Bayes error
+  - Bayes risk
+  - Bayes optimal classifier
+  - Bayes classifier
+  - optimal Bayes error
+domain: ml
+domains:
+  - math
+  - eval
+level: specialist
+plain: >-
+  The lowest error any classifier could ever achieve on a task, because some cases are genuinely
+  ambiguous: even a perfect model that knew the true odds would still sometimes guess wrong.
+senses:
+  - definition: >-
+      The lowest achievable error rate for a given [[classification|classification]] problem: the
+      expected error of the Bayes (optimal) classifier, which assigns each input to the class with
+      the highest true [[posterior|posterior]] probability. It is positive whenever classes overlap
+      — when the same input can genuinely carry different labels because of noise, missing
+      information or inherent ambiguity — and it depends on which features are observed, so better
+      features can lower it while better algorithms cannot beat it. The amount by which a
+      classifier's error exceeds the Bayes error is its excess risk, which learning theory tries to
+      drive to zero; a method is consistent if its excess risk vanishes as data grow. The Bayes
+      error cannot be computed for real problems, because the true distribution is unknown, but it
+      can be bounded or estimated — for example from nearest-neighbor error rates or from
+      disagreement among expert annotators — and it explains why some [[benchmark|benchmarks]]
+      cannot be solved to 100%.
+    example: >-
+      Two radiologists disagree on 6% of these scans, so the Bayes error rate is probably well above
+      zero.
+formula_latex: R^{*} = \mathbb{E}_{\mathbf{x}}\Big[\, 1 - \max_{y} P(y \mid \mathbf{x}) \Big]
+origin: >-
+  Grew out of statistical decision theory, notably Abraham Wald's work of the 1940s, and of
+  likelihood-based classification rules in mid-century statistics. 'Bayes error' and 'Bayes risk'
+  were standard in pattern recognition by the early 1970s, as in Keinosuke Fukunaga's 'Introduction
+  to Statistical Pattern Recognition' (1972); Thomas Cover and Peter Hart (1967) bounded
+  nearest-neighbor error by twice the Bayes error.
+note: >-
+  In regression the analogous floor is the noise variance; in language-model [[scaling-laws|scaling
+  laws]], the [[irreducible-loss|irreducible loss]] plays a similar role. Human error rates are
+  sometimes used as a rough proxy for the Bayes error.
+see_also:
+  - classification
+  - k-nearest neighbors
+  - posterior
+  - bias–variance tradeoff
+  - irreducible loss
+  - label noise
+sources:
+  - text: >-
+      Cover, T. M. & Hart, P. E. (1967). Nearest Neighbor Pattern Classification. IEEE Transactions
+      on Information Theory, 13(1), 21–27.
+  - text: >-
+      Fukunaga, K. (1972; 2nd ed. 1990). Introduction to Statistical Pattern Recognition. Academic
+      Press.

@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: stop condition
+id: stop-condition
+pos: n.
+also:
+  - stopping condition
+  - termination condition
+  - stopping criterion
+  - max turns
+  - iteration limit
+domain: agents
+domains:
+  - eng
+level: specialist
+plain: >-
+  The rule that tells an AI agent when to stop working — because the task is done, a time or cost
+  limit has been reached, or something has gone wrong.
+senses:
+  - definition: >-
+      A rule that ends an [[agent-loop|agent loop]]. The natural stop is the model returning a final
+      answer without requesting more [[tool-call|tool calls]]; harnesses add hard limits — maximum
+      turns or iterations, token, cost or time budgets — and external checks such as a passing test
+      suite, a [[verifier|verifier]]'s approval, a human interrupt, a [[hook|hook]] that refuses to
+      let the agent finish, or detection of loops and repeated failures. Well-chosen stop conditions
+      guard against two opposite failures: premature stopping, where an agent declares success on
+      unfinished work, and runaway loops that burn budget or take harmful actions. Anthropic's 2024
+      guidance on building agents recommends that autonomous agents carry limits such as a maximum
+      number of iterations.
+    example: Set the stop condition to all tests passing or 40 turns, whichever comes first.
+origin: >-
+  Termination criteria are standard in iterative algorithms and search, and terminal states in
+  [[reinforcement-learning|reinforcement learning]]. Early language-model agents such as
+  [[autogpt|AutoGPT]] (2023) became notorious for looping without finishing, which made explicit
+  stop conditions a basic element of agent design.
+year: 2023
+note: >-
+  Do not confuse with a [[stop-sequence|stop sequence]], a string that halts token generation within
+  a single model call.
+see_also:
+  - agent loop
+  - harness
+  - hook
+  - verifier
+  - long-horizon task
+  - AutoGPT
+contrast:
+  - stop sequence
+sources:
+  - text: Schluntz, E. & Zhang, B. (2024). Building effective agents. Anthropic.
+    url: https://www.anthropic.com/research/building-effective-agents

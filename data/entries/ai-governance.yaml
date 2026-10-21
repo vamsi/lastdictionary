@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI governance
+id: ai-governance
+pos: n.
+also:
+  - governance of AI
+  - artificial intelligence governance
+  - AI policy
+domain: gov
+domains:
+  - society
+  - safety
+level: essential
+plain: >-
+  The rules, institutions and habits that shape how AI is built and used — from laws and treaties to
+  technical standards and a company's own review processes.
+senses:
+  - context: Public policy
+    definition: >-
+      The norms, institutions and processes through which states, international bodies, companies
+      and civil society steer the development and use of [[artificial-intelligence|artificial
+      intelligence]] and assign responsibility for its effects. It operates in layers: binding law
+      ([[ai-regulation|AI regulation]] such as the [[eu-ai-act|EU AI Act]]); international
+      instruments ([[oecd-ai-principles|OECD AI Principles]], the
+      [[framework-convention-on-artificial-intelligence|Framework Convention on Artificial
+      Intelligence]]); technical standards ([[iso-iec-42001|ISO/IEC 42001]]); voluntary commitments
+      and industry frameworks ([[responsible-scaling-policy|responsible scaling policies]], the
+      [[frontier-ai-safety-commitments|Frontier AI Safety Commitments]]); and scientific assessment
+      bodies such as the [[independent-international-scientific-panel-on-ai|Independent
+      International Scientific Panel on AI]]. Analysts distinguish hard law from soft law and
+      national from global governance; [[compute-governance|compute governance]] targets the chips
+      and data centers needed to train [[frontier-model|frontier models]].
+    example: >-
+      Most of the AI governance debate at the summit was about who should evaluate frontier models
+      before release.
+  - context: Organizations
+    definition: >-
+      The internal policies, roles and controls by which an organization manages the AI systems it
+      builds, buys or deploys: an inventory of systems, risk tiers, approval gates before
+      deployment, documentation, monitoring, incident handling and board-level accountability. Such
+      programs are commonly structured around the [[nist-ai-risk-management-framework|NIST AI Risk
+      Management Framework]] or certified against [[iso-iec-42001|ISO/IEC 42001]].
+    example: >-
+      Our AI governance program assigns every deployed model an owner, a risk tier and a review date.
+origin: >-
+  Built on the older vocabularies of corporate and internet governance. Early academic uses include
+  Urs Gasser and Virgilio Almeida's 'A Layered Model for AI Governance' (2017) and Allan Dafoe's 'AI
+  Governance: A Research Agenda' (Future of Humanity Institute, Oxford, 2018). The phrase became
+  standard policy vocabulary after the 2019 OECD Principles and the 2023 wave of summits and
+  legislation.
+year: 2017
+note: >-
+  Broader than [[ai-regulation|AI regulation]], which covers only binding public rules. Overlaps
+  with [[ai-ethics|AI ethics]], which supplies values, and [[ai-safety|AI safety]], which supplies
+  technical methods.
+see_also:
+  - AI regulation
+  - AI ethics
+  - AI safety
+  - compute governance
+  - risk-based approach
+  - AI Safety Summit
+  - algorithmic accountability
+  - Collingridge dilemma
+contrast:
+  - AI ethics
+sources:
+  - text: >-
+      Gasser, U. & Almeida, V. A. F. (2017). A Layered Model for AI Governance. IEEE Internet
+      Computing, 21(6), 58–62.
+  - text: >-
+      Dafoe, A. (2018). AI Governance: A Research Agenda. Centre for the Governance of AI, Future of
+      Humanity Institute, University of Oxford.

@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI supercomputer
+id: ai-supercomputer
+pos: n.
+also:
+  - AI cluster
+  - GPU cluster
+  - training cluster
+  - supercluster
+domain: hw
+domains:
+  - train
+  - gov
+level: core
+plain: >-
+  A huge network of AI chips — often tens or hundreds of thousands — wired together in a data center
+  to train the largest AI models.
+senses:
+  - definition: >-
+      A tightly networked cluster of [[ai-accelerator|AI accelerators]], usually housed in one
+      [[ai-data-center|data center]] or campus, built and scheduled as a single machine for large
+      [[training-run|training runs]] or [[inference|inference]] at scale. Its capability depends not
+      only on chip count and peak [[flops|FLOPS]] but on [[interconnect|interconnect]] topology and
+      bandwidth, storage, power, cooling and reliability, since one failure can stall a synchronous
+      job (hence the attention to [[goodput|goodput]]). Unlike classic supercomputers, ranked on the
+      TOP500 by 64-bit LINPACK performance, AI supercomputers are rated in low-precision FLOPS and
+      compared with benchmarks such as [[mlperf|MLPerf]]. Examples include Microsoft's 2020 system
+      for OpenAI (10,000 GPUs), Meta's AI Research SuperCluster (2022) and xAI's Colossus, which
+      reached 100,000 [[h100|H100s]] in 2024; by 2025–2026, clusters of several hundred thousand
+      accelerators drawing a gigawatt or more were under construction.
+origin: >-
+  'Supercomputer' dates to the 1960s and 1970s (CDC and Cray machines). Nvidia marketed its DGX-1
+  (2016) as a deep-learning supercomputer, Google built TPU pods from 2017, and 'AI supercomputer'
+  became common as frontier training clusters grew from thousands of GPUs (2020) to hundreds of
+  thousands (2024–2026).
+note: >-
+  Many AI supercomputers would rank modestly, or not at all, on the TOP500, which measures 64-bit
+  arithmetic; their headline AI FLOPS assume 8- or 4-bit precision.
+see_also:
+  - AI data center
+  - rack-scale system
+  - interconnect
+  - distributed training
+  - FLOPS
+  - goodput
+  - Stargate
+  - compute
+as_of: 2026-10

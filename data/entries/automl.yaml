@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AutoML
+id: automl
+pos: n.
+also:
+  - automated machine learning
+  - Auto-WEKA
+  - auto-sklearn
+  - CASH problem
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  Software that automates the trial-and-error parts of building a machine-learning model, such as
+  choosing the algorithm, its settings and the data-preparation steps, so less expert effort is
+  needed.
+senses:
+  - definition: >-
+      The automation of the design decisions involved in building a machine-learning model: data
+      preprocessing and [[feature-engineering|feature engineering]], choice of algorithm,
+      [[hyperparameter-tuning|hyperparameter tuning]], and often ensembling and deployment. A
+      central formulation is the combined algorithm selection and hyperparameter optimization (CASH)
+      problem: search jointly over model families and their settings to maximize validation
+      performance. Systems combine search strategies such as [[bayesian-optimization|Bayesian
+      optimization]], evolutionary algorithms and multi-fidelity methods like
+      [[hyperband|Hyperband]] with [[meta-learning|meta-learning]] from results on earlier datasets,
+      which warm-starts the search, and frequently finish by [[stacking|stacking]] or ensembling the
+      best models. For deep learning, AutoML includes [[neural-architecture-search|neural
+      architecture search]]. Open-source tools (Auto-WEKA, auto-sklearn, TPOT, AutoGluon, H2O
+      AutoML) and cloud services provide it for [[tabular-data|tabular data]], images and text.
+      Since the 2020s, pretrained [[foundation-model|foundation models]] and [[coding-agent|coding
+      agents]] that write and run modeling code have offered further routes to automated model
+      building.
+    example: >-
+      AutoML produced a stacked ensemble in an hour that our hand-tuned model only matched after a
+      week.
+origin: >-
+  Automated algorithm choice traces to John Rice's 1976 formulation of the 'algorithm selection
+  problem'. Chris Thornton, Frank Hutter, Holger Hoos and Kevin Leyton-Brown's Auto-WEKA (KDD 2013)
+  framed the CASH problem. The name 'AutoML' spread through ICML workshops from 2014, the ChaLearn
+  AutoML challenges and auto-sklearn (2015), and Google's neural-architecture-search work and Cloud
+  AutoML service (2017–2018).
+year: 2014
+note: >-
+  AutoML automates search over modeling choices, not problem framing: defining the target,
+  collecting representative data and avoiding [[data-leakage|data leakage]] remain human
+  responsibilities.
+see_also:
+  - hyperparameter tuning
+  - neural architecture search
+  - Bayesian optimization
+  - meta-learning
+  - model selection
+  - Hyperband
+  - stacking
+sources:
+  - text: >-
+      Thornton, C., Hutter, F., Hoos, H. H. & Leyton-Brown, K. (2013). Auto-WEKA: Combined Selection
+      and Hyperparameter Optimization of Classification Algorithms. Proc. KDD 2013.
+  - text: >-
+      Feurer, M., Klein, A., Eggensperger, K., Springenberg, J., Blum, M. & Hutter, F. (2015).
+      Efficient and Robust Automated Machine Learning. Advances in Neural Information Processing
+      Systems 28.
+  - text: >-
+      Hutter, F., Kotthoff, L. & Vanschoren, J. (eds.) (2019). Automated Machine Learning: Methods,
+      Systems, Challenges. Springer.

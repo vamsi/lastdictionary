@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gini impurity
+id: gini-impurity
+pos: n.
+also:
+  - Gini index
+  - Gini's diversity index
+  - Gini–Simpson index
+  - Gini criterion
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A score for how mixed a group is: zero when every item belongs to the same category, higher when
+  categories are jumbled together. Decision trees choose splits that make groups purer.
+senses:
+  - definition: >-
+      A measure of the class heterogeneity of a set of examples: the probability that two items
+      drawn at random with replacement belong to different classes — equivalently, the expected
+      error rate of guessing each item's class at random in proportion to the class frequencies. It
+      is 0 for a pure node and reaches its maximum, 1 − 1/K, when K classes are equally represented.
+      [[cart|CART]] and most modern [[decision-tree|decision tree]] software choose the split that
+      most reduces the size-weighted Gini impurity of the child nodes, and the summed reductions
+      across a tree or forest give the impurity-based ('mean decrease in impurity')
+      [[feature-importance|feature importance]]. It ranks splits much as entropy-based
+      [[information-gain|information gain]] does but needs no logarithms.
+    example: The split on contract type cut the weighted Gini impurity from 0.48 to 0.31.
+formula_latex: G = 1 - \sum_{k=1}^{K} p_k^{2}
+origin: >-
+  The quantity is the Gini–Simpson diversity index, associated with the Italian statistician Corrado
+  Gini's work on variability (1912) and introduced as a concentration measure by Edward Simpson
+  (1949). Richard Light and Barry Margolin used it to analyze categorical data (1971), and Breiman,
+  Friedman, Olshen and Stone made it CART's default splitting criterion (1984).
+year: 1984
+note: >-
+  Not the same as the Gini coefficient of income inequality, also named for Gini; and in credit
+  scoring 'Gini' usually means 2 × [[auc|AUC]] − 1, a ranking metric.
+see_also:
+  - decision tree
+  - CART
+  - information gain
+  - entropy
+  - feature importance
+  - random forest
+contrast:
+  - information gain

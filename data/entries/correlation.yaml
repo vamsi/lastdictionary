@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: correlation
+id: correlation
+pos: n.
+also:
+  - correlation coefficient
+  - Pearson correlation
+  - Pearson's r
+  - Spearman's rank correlation
+  - correlated
+  - correlation does not imply causation
+domain: math
+domains:
+  - eval
+  - society
+level: essential
+plain: >-
+  A measure of how closely two quantities move together, from −1 (one rises as the other falls)
+  through 0 (no straight-line link) to +1 (they rise together). It does not show that one causes the
+  other.
+senses:
+  - definition: >-
+      A measure of the strength and direction of association between two variables. Pearson's
+      correlation coefficient r is the [[covariance|covariance]] divided by the product of the
+      standard deviations; it ranges from −1 to +1 and captures only linear relationships.
+      Spearman's and Kendall's rank correlations measure monotonic association and resist outliers.
+      Correlation is symmetric and unit-free, and zero correlation does not imply independence: a
+      perfect U-shaped relation can have r = 0. Models trained on observational data learn
+      statistical associations, which is why they can absorb [[spurious-correlation|spurious
+      correlations]] and fail under [[distribution-shift|distribution shift]]. Correlations are also
+      used to check automatic metrics and [[llm-as-a-judge|LLM-as-a-judge]] scores against human
+      judgments, to find redundant features and to ask whether different [[benchmark|benchmarks]]
+      measure the same thing. Moving from correlation to causation requires
+      [[causal-inference|causal inference]]: randomized experiments or explicit causal assumptions.
+    example: >-
+      The automatic metric's correlation with human ratings was only 0.41, so we kept human
+      evaluation.
+formula_latex: r_{XY} = \frac{\operatorname{Cov}(X,Y)}{\sigma_X\,\sigma_Y}
+origin: >-
+  Francis Galton introduced 'co-relation' and a way to measure it in 1888, building on his work on
+  regression; Karl Pearson gave the product-moment formula its modern form in 1895–1896, after
+  Auguste Bravais's 1846 work. Charles Spearman introduced rank correlation in 1904. The warning
+  that correlation is not causation was a statistical commonplace by the early 20th century.
+year: 1888
+see_also:
+  - covariance
+  - spurious correlation
+  - causal inference
+  - confounding variable
+  - mutual information
+  - Simpson's paradox
+contrast:
+  - causal inference

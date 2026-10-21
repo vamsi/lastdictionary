@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sparse reward
+id: sparse-reward
+pos: n.
+also:
+  - sparse rewards
+  - delayed reward
+  - sparse-reward environment
+  - hard-exploration problem
+domain: rl
+level: core
+plain: >-
+  A situation in which an AI agent gets feedback only rarely — say, only when it finally wins — so
+  it has almost nothing to learn from until it stumbles on success.
+senses:
+  - definition: >-
+      A [[reward-function|reward function]] that is zero, or constant, for almost all transitions
+      and informative only at rare events such as reaching a goal, winning a game or passing a test.
+      Sparse rewards are often the most faithful way to specify a task — they state what is wanted
+      without dictating how — but they make learning hard: a randomly exploring agent may never
+      observe a nonzero reward, leaving nothing to learn from, and when success does occur the
+      [[credit-assignment-problem|credit assignment problem]] of which earlier actions caused it is
+      severe. Remedies include [[reward-shaping|reward shaping]], [[intrinsic-motivation|curiosity]]
+      and count-based exploration, demonstrations and [[imitation-learning|imitation learning]],
+      [[curriculum-learning|curricula]], goal relabeling (hindsight experience replay) and
+      [[hierarchical-reinforcement-learning|hierarchical reinforcement learning]]. In
+      [[large-language-model|large language model]] training, pass/fail rewards from unit tests or
+      answer checkers are sparse but workable, because a pretrained model already succeeds on some
+      fraction of attempts.
+    example: >-
+      The reward is sparse — +1 only when the block reaches the shelf — so we seeded training with
+      demonstrations.
+origin: >-
+  A descriptive term rather than a coinage, it became common in deep RL in the mid-2010s, when Atari
+  games such as Montezuma's Revenge, in which a randomly acting agent almost never scores, became
+  the canonical hard-exploration benchmarks. The underlying difficulty of delayed reward had been
+  central to RL since Marvin Minsky's 1961 discussion of credit assignment.
+see_also:
+  - reward
+  - credit assignment problem
+  - intrinsic motivation
+  - exploration–exploitation trade-off
+  - reinforcement learning with verifiable rewards
+  - hierarchical reinforcement learning
+contrast:
+  - reward shaping

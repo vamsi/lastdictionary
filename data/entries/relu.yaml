@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ReLU
+id: relu
+pos: abbr.
+also:
+  - rectified linear unit
+  - rectifier
+  - ramp function
+pronunciation: RAY-loo
+domain: dl
+level: core
+plain: >-
+  The most common rule a neuron uses to produce its output: keep the number if it is positive,
+  replace it with zero if it is negative. Simple, fast and surprisingly effective.
+senses:
+  - definition: >-
+      The [[activation-function|activation function]] f(x) = max(0, x), which passes positive inputs
+      unchanged and maps negative inputs to zero. Its gradient is exactly 1 for positive inputs, so
+      it does not saturate there and eases the [[vanishing-gradient-problem|vanishing gradient
+      problem]] that hampered deep networks built on [[sigmoid-function|sigmoid]] or [[tanh|tanh]]
+      units; it is also cheap to compute and yields sparse activations, since many units output
+      exactly zero. It is not differentiable at 0, where implementations use a subgradient, usually
+      0. Its main failure mode is [[dying-relu|dying units]] that output zero for every input and
+      stop learning; [[leaky-relu|leaky ReLU]], PReLU, ELU and smooth relatives such as softplus,
+      [[gelu|GELU]] and [[silu|SiLU]] address this. Networks of ReLUs compute continuous
+      piecewise-linear functions, a property used in their theoretical analysis and formal
+      verification.
+    example: Swap the sigmoids for ReLUs and the deeper layers finally start to learn.
+formula_latex: \operatorname{ReLU}(x) = \max(0, x)
+origin: >-
+  Alston Householder used the rectifier as an abstraction of biological neurons in 1941, and
+  Kunihiko Fukushima applied it to visual feature extraction in 1969. Its deep-learning revival
+  began with Vinod Nair and Geoffrey Hinton's 'rectified linear units' (ICML 2010); Xavier Glorot,
+  Antoine Bordes and Yoshua Bengio (2011) showed its advantages for deep networks, and AlexNet
+  (2012) made it standard.
+year: 2010
+note: >-
+  'Rectifier' borrows from electronics, where a rectifier lets current flow in only one direction.
+  Softplus, ln(1 + eˣ), is its smooth approximation.
+see_also:
+  - activation function
+  - leaky ReLU
+  - dying ReLU
+  - GELU
+  - SiLU
+  - vanishing gradient problem
+  - AlexNet
+contrast:
+  - sigmoid function
+sources:
+  - text: >-
+      Nair, V. & Hinton, G. E. (2010). Rectified Linear Units Improve Restricted Boltzmann Machines.
+      Proceedings of ICML 2010, 807–814.
+    url: https://mlanthology.org/icml/2010/nair2010icml-rectified/
+  - text: >-
+      Glorot, X., Bordes, A. & Bengio, Y. (2011). Deep Sparse Rectifier Neural Networks. Proceedings
+      of AISTATS 2011.

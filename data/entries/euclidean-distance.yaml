@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Euclidean distance
+id: euclidean-distance
+pos: n.
+also:
+  - L2 distance
+  - Euclidean metric
+  - straight-line distance
+domain: math
+domains:
+  - ml
+level: core
+plain: >-
+  How far apart two points are in a straight line, as a ruler would measure it, extended from two or
+  three dimensions to lists of numbers of any length.
+senses:
+  - definition: >-
+      The distance between two points in n-dimensional space computed as the square root of the sum
+      of squared differences of their coordinates — the L2 [[norm|norm]] of their difference,
+      generalizing the Pythagorean theorem. It is the default distance in
+      [[k-means-clustering|k-means clustering]], [[k-nearest-neighbors|k-nearest neighbors]] and
+      many [[approximate-nearest-neighbor-search|nearest-neighbor indexes]], and its square is what
+      [[mean-squared-error|mean squared error]] averages. Because it depends on the units of each
+      coordinate, features are usually standardized first (see [[feature-scaling|feature scaling]]).
+      In high dimensions the distances between random points crowd around a common value, one face
+      of the [[curse-of-dimensionality|curse of dimensionality]], so neighbor rankings can become
+      fragile; for embeddings, practitioners often use [[cosine-similarity|cosine similarity]],
+      which gives the same ranking for unit-length vectors.
+    example: We normalize the vectors so that Euclidean distance and cosine similarity agree.
+formula_latex: d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}
+origin: >-
+  Named for Euclid of Alexandria (c. 300 BCE), whose Elements contains the plane geometry from which
+  the formula follows by the Pythagorean theorem. Arthur Cayley (1843) and Hermann Grassmann (1844)
+  extended such geometry beyond three dimensions, and Maurice Fréchet (1906) and Felix Hausdorff
+  (1914) abstracted distance itself into the metric space.
+see_also:
+  - norm
+  - cosine similarity
+  - k-nearest neighbors
+  - k-means clustering
+  - curse of dimensionality
+  - mean squared error
+contrast:
+  - cosine similarity

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multi-head attention
+id: multi-head-attention
+pos: n.
+also:
+  - MHA
+  - multi-headed attention
+domain: llm
+domains:
+  - dl
+level: core
+plain: >-
+  Running several attention processes side by side, each free to track a different kind of
+  relationship between words — grammar, topic, who did what — and then combining their results.
+senses:
+  - definition: >-
+      An [[attention|attention]] layer that divides its work among h smaller attention operations
+      ([[attention-head|heads]]) running side by side, so that a single layer can follow several
+      kinds of relationship between positions at once. Each head views the input through its own
+      learned query, key and value matrices, which shrink the model width d_model to a head
+      dimension of typically d_model/h; the heads' results are joined end to end and mixed by one
+      more learned matrix. Because each head is narrow, the whole layer costs about as much as one
+      attention operation at full width. The 2017 [[transformer|transformer]] used 8 heads of
+      dimension 64 in a 512-dimensional model; large language models use dozens of heads per layer.
+      Because every head keeps its own keys and values, the [[kv-cache|KV cache]] grows with the
+      number of heads, which motivated [[multi-query-attention|multi-query attention]],
+      [[grouped-query-attention|grouped-query attention]] and
+      [[multi-head-latent-attention|multi-head latent attention]].
+    example: >-
+      Each layer's multi-head attention uses 32 heads of dimension 128, matching the 4,096-wide
+      model.
+formula_latex: \mathrm{MultiHead}(X) = \mathrm{Concat}(\mathrm{head}_1, \dots,
+  \mathrm{head}_h)\,W^{O}, \quad \mathrm{head}_i = \mathrm{Attention}(XW_i^{Q},\, XW_i^{K},\,
+  XW_i^{V})
+origin: >-
+  Introduced in 'Attention Is All You Need' (Vaswani et al., 2017), whose ablations on
+  English–German translation found single-head attention about 0.9 BLEU worse than the best
+  multi-head setting, with quality also falling when heads became too many.
+year: 2017
+note: >-
+  As an abbreviation, MHA usually denotes the original design in which every head has its own keys
+  and values, as opposed to MQA, GQA and MLA.
+see_also:
+  - attention head
+  - self-attention
+  - scaled dot-product attention
+  - grouped-query attention
+  - multi-query attention
+  - multi-head latent attention
+  - transformer
+sources:
+  - text: Vaswani, A. et al. (2017). Attention Is All You Need. NIPS 2017.
+    url: https://arxiv.org/abs/1706.03762

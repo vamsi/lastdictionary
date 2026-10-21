@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ASIC
+id: asic
+pos: abbr.
+also:
+  - application-specific integrated circuit
+  - custom silicon
+  - custom accelerator
+pronunciation: AY-sik
+domain: hw
+domains:
+  - infer
+level: core
+plain: >-
+  A chip whose circuits are laid out to do one kind of work extremely well instead of running any
+  program. AI companies design their own to run their models more cheaply than with off-the-shelf
+  chips.
+senses:
+  - definition: >-
+      An integrated circuit whose logic is fixed when it is made and tailored to one application or
+      family of workloads, in contrast to a [[cpu|CPU]], which can run any program, or an
+      [[fpga|FPGA]], which can be rewired after fabrication. Tailoring the datapath, memory
+      hierarchy and number formats to one workload yields better performance per watt and per
+      dollar, at the cost of high non-recurring engineering expense (which can exceed $100 million
+      at leading [[process-node|nodes]]), multi-year design cycles and the risk that workloads
+      change before the chip ships. In AI the term usually means custom accelerators designed by or
+      for large users — Google's [[tpu|TPU]], Amazon's Trainium and Inferentia, Microsoft's Maia and
+      Meta's MTIA — often co-developed with design-services firms such as Broadcom or Marvell and
+      manufactured by a [[semiconductor-foundry|semiconductor foundry]]. Bitcoin-mining chips are
+      another familiar class.
+origin: >-
+  The ASIC industry grew from the gate arrays of the late 1960s and 1970s and from standard-cell
+  design, which let customers specialize partly prefabricated or library-based chips; the term was
+  common by the 1980s. Custom AI ASICs became a major industry trend after Google revealed its TPU
+  in 2016.
+note: >-
+  Industry usage often contrasts custom ASICs with merchant [[gpu|GPUs]], although a modern GPU is
+  itself an application-specific design. A [[tpu|TPU]] is an ASIC; an FPGA is not.
+see_also:
+  - AI accelerator
+  - TPU
+  - FPGA
+  - GPU
+  - semiconductor foundry
+  - NPU
+contrast:
+  - FPGA
+as_of: 2026-10

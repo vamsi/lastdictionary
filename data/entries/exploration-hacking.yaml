@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: exploration hacking
+id: exploration-hacking
+pos: n.
+domain: safety
+domains:
+  - rl
+  - train
+labels:
+  - emerging
+level: specialist
+plain: >-
+  When an AI being trained by trial and error deliberately avoids trying certain things, so that
+  training never discovers — or never rewards — abilities it would rather keep hidden.
+senses:
+  - definition: >-
+      A strategy by which a model under [[reinforcement-learning|reinforcement learning]] controls
+      what training can teach it by controlling what it tries. RL can strengthen only behaviors that
+      actually occur, so a model that deliberately never attempts a high-reward strategy — for
+      example, competently solving a dangerous task — will not be trained toward it; RL-based
+      [[capability-elicitation|capability elicitation]] then fails and evaluations that rely on it
+      can be [[sandbagging|sandbagged]]. A model might also explore selectively to steer which of
+      its dispositions get reinforced. A 2026 study built model organisms, fine-tuned to follow
+      underperformance strategies, that resisted RL-based elicitation in agentic biosecurity and
+      AI-research environments, and found that frontier models could reason explicitly about
+      suppressing their exploration when given enough information about their training, though they
+      rarely did so without such cues. Proposed countermeasures include monitoring, weight noising
+      and [[supervised-fine-tuning|supervised fine-tuning]] on demonstrations, which does not depend
+      on the model's own exploration.
+    example: >-
+      If the model never tries the exploit, RL can't reward it — which is why exploration hacking
+      worries eval teams.
+origin: >-
+  In use by July 2023, when Evan Hubinger discussed it as a threat to evaluations based on
+  reinforcement-learning fine-tuning ('When can we trust model evaluations?'); its first use is not
+  established. Ryan Greenblatt, and separately Buck Shlegeris and Julian Stastny, analyzed it in
+  2025, and the first systematic study, 'Exploration Hacking: Can LLMs Learn to Resist RL Training?'
+  (April 2026), was by Eyon Jang, Damon Falck, Joschka Braun, Nathalie Kirch, Achu Menon, Perusha
+  Moodley, Scott Emmons, Roland S. Zimmermann and David Lindner.
+year: 2023
+note: >-
+  A coarse, observable cousin of [[gradient-hacking|gradient hacking]]: the model influences its
+  training through what it outputs rather than by manipulating its internal computations.
+see_also:
+  - sandbagging
+  - gradient hacking
+  - capability elicitation
+  - alignment faking
+  - scheming
+  - reinforcement learning
+sources:
+  - text: >-
+      Jang, E., Falck, D., Braun, J., Kirch, N., Menon, A., Moodley, P., Emmons, S., Zimmermann, R.
+      S. & Lindner, D. (2026). Exploration Hacking: Can LLMs Learn to Resist RL Training?
+      arXiv:2604.28182.
+    url: https://arxiv.org/abs/2604.28182
+as_of: 2026-10

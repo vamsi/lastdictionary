@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bias–variance tradeoff
+id: bias-variance-tradeoff
+pos: n.
+also:
+  - bias–variance trade-off
+  - bias–variance decomposition
+  - bias–variance dilemma
+domain: ml
+domains:
+  - math
+  - dl
+level: core
+plain: >-
+  The balancing act between models too simple to capture a pattern and models so flexible that they
+  also learn the noise. The best predictions usually come from somewhere in between.
+senses:
+  - definition: >-
+      The decomposition of a model's expected prediction error on new data into squared bias (how
+      far the average fitted model, over many possible training sets, sits from the truth), variance
+      (how much the fitted model changes from one training set to another) and irreducible noise,
+      together with the observation that, for a fixed amount of data, increasing model flexibility
+      typically lowers bias but raises variance. Classically, test error plotted against model
+      complexity is U-shaped, with [[underfitting|underfitting]] on one side and
+      [[overfitting|overfitting]] on the other; [[regularization|regularization]],
+      [[bagging|bagging]] (mainly reducing variance) and [[boosting|boosting]] (mainly reducing
+      bias) move along or around this curve. The squared-error decomposition is exact; for 0–1
+      classification loss several competing decompositions exist. Heavily overparameterized neural
+      networks complicate the picture: test error can fall again as capacity grows past the point of
+      fitting the training data exactly ([[double-descent|double descent]]), so the U-curve is now
+      seen as one regime rather than a universal law.
+    example: >-
+      Adding polynomial terms cut bias but the variance blew up, so we settled on degree three.
+formula_latex: \mathbb{E}\big[(y - \hat{f}(\mathbf{x}))^2\big] =
+  \operatorname{Bias}\big[\hat{f}(\mathbf{x})\big]^2 +
+  \operatorname{Var}\big[\hat{f}(\mathbf{x})\big] + \sigma^2
+origin: >-
+  The split of mean squared error into bias and variance is long-standing statistics; Stuart Geman,
+  Elie Bienenstock and René Doursat's 'Neural Networks and the Bias/Variance Dilemma' (Neural
+  Computation, 1992) made it central to machine learning. Ron Kohavi and David Wolpert (1996) and
+  Pedro Domingos (2000) extended it to classification, and Mikhail Belkin and colleagues described
+  double descent in 2019.
+year: 1992
+note: >-
+  'Bias' here is the statistical bias of an estimator, not [[algorithmic-bias|algorithmic bias]].
+  Brady Neal and others have argued that textbooks overstate the tradeoff for neural networks, where
+  wider models often show lower variance.
+see_also:
+  - overfitting
+  - underfitting
+  - regularization
+  - double descent
+  - generalization
+  - model selection
+  - variance
+sources:
+  - text: >-
+      Geman, S., Bienenstock, E. & Doursat, R. (1992). Neural Networks and the Bias/Variance
+      Dilemma. Neural Computation, 4(1), 1–58.
+  - text: >-
+      Belkin, M., Hsu, D., Ma, S. & Mandal, S. (2019). Reconciling Modern Machine-Learning Practice
+      and the Classical Bias–Variance Trade-off. Proceedings of the National Academy of Sciences,
+      116(32), 15849–15854.

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: precision–recall curve
+id: precision-recall-curve
+pos: n.
+also:
+  - PR curve
+  - average precision
+  - AP
+  - AUPRC
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  A graph showing how a model's share of correct alarms and its share of cases caught trade off as
+  it is made more or less cautious; especially useful when positive cases are rare.
+senses:
+  - definition: >-
+      A plot of [[precision|precision]] (y-axis) against [[recall|recall]] (x-axis) for a classifier
+      or ranking system as its decision threshold varies. Lowering the threshold moves the curve
+      rightward, catching more positives, usually at some cost in precision; the curve is jagged
+      rather than monotone, because precision can rise or fall as each new item is admitted. A
+      random classifier gives a horizontal line at a precision equal to the prevalence of positives,
+      so the baseline depends on the data, unlike the fixed diagonal of the [[roc-curve|ROC curve]].
+      Because precision registers false positives among many negatives, PR curves expose weaknesses
+      under [[class-imbalance|class imbalance]] that ROC curves can hide, which makes them standard
+      for rare-event detection, information retrieval and [[object-detection|object detection]]. The
+      area under the curve is usually estimated as average precision (AP), the mean of the precision
+      values at the ranks where relevant items occur. [[mean-average-precision|Mean average
+      precision]] (mAP), the mean of AP over queries or classes, and in detection over
+      [[intersection-over-union|IoU]] thresholds, is the headline metric of benchmarks such as
+      [[coco|COCO]].
+    example: >-
+      With positives at 0.2% prevalence the ROC curve looked superb, but average precision was only
+      0.31.
+origin: >-
+  Information-retrieval researchers plotted precision against recall from the Cranfield experiments
+  of the 1960s onward, and average precision became a core measure of the Text REtrieval Conference
+  (TREC) from 1992. In machine learning, Jesse Davis and Mark Goadrich's 2006 analysis of how PR and
+  ROC curves relate popularized PR curves for imbalanced classification.
+note: >-
+  Linear interpolation between PR points overestimates the area. Object-detection 'AP' has several
+  incompatible definitions (11-point interpolated, all-point, COCO-style), so compare numbers only
+  within one protocol.
+see_also:
+  - precision
+  - recall
+  - ROC curve
+  - AUC
+  - class imbalance
+  - F1 score
+  - object detection
+contrast:
+  - ROC curve
+sources:
+  - text: >-
+      Davis, J. & Goadrich, M. (2006). The Relationship Between Precision-Recall and ROC Curves.
+      Proc. ICML 2006.
+  - text: >-
+      Saito, T. & Rehmsmeier, M. (2015). The Precision-Recall Plot Is More Informative than the ROC
+      Plot When Evaluating Binary Classifiers on Imbalanced Datasets. PLOS ONE 10(3).

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: METR
+id: metr
+pos: prop. n.
+also:
+  - Model Evaluation and Threat Research
+  - ARC Evals
+pronunciation: MEE-ter
+domain: orgs
+domains:
+  - eval
+  - safety
+level: core
+plain: >-
+  A nonprofit research group that checks new AI systems for dangerous skills, best known for
+  tracking how long the tasks are that AI agents can now finish on their own.
+senses:
+  - definition: >-
+      A Berkeley, California, nonprofit that designs and runs tests of frontier AI systems for the
+      abilities its researchers consider most relevant to catastrophe: acting on their own over long
+      stretches and doing the work of AI researchers. It has carried out
+      [[pre-deployment-testing|pre-deployment testing]] of models from OpenAI and Anthropic,
+      contributing to their [[system-card|system cards]], and builds task suites such as
+      [[re-bench|RE-Bench]] for research-engineering ability. Its best-known measure, the
+      [[metr-time-horizon|task-completion time horizon]] (March 2025), estimates the length of task,
+      in skilled-human working time, that an AI agent completes with 50 percent reliability; that
+      length had doubled roughly every seven months since 2019, and METR's later measurements
+      pointed to faster doubling, about every four months, from 2024. Its widely cited 2025
+      randomized trial found experienced open-source developers about 19 percent slower when allowed
+      early-2025 AI tools. Its staff also helped formulate the idea of the
+      [[responsible-scaling-policy|responsible scaling policy]] (2023).
+    example: The new model's METR time horizon came in at several hours.
+origin: >-
+  Began in 2022 as ARC Evals, the evaluation team that Beth Barnes, formerly of OpenAI, set up
+  inside Paul Christiano's [[alignment-research-center|Alignment Research Center]]; its tests of
+  GPT-4 before release drew wide attention in 2023. In December 2023 it became an independent
+  nonprofit in Berkeley, California, renamed METR, with Barnes as chief executive.
+year: 2022
+see_also:
+  - METR time horizon
+  - dangerous capability evaluation
+  - pre-deployment testing
+  - RE-Bench
+  - Alignment Research Center
+  - third-party AI evaluation
+sources:
+  - text: >-
+      Kwa, T. et al. (2025). Measuring AI Ability to Complete Long Tasks. METR / arXiv.
+as_of: 2026-10

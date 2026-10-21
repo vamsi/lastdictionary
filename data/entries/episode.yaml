@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: episode
+id: episode
+pos: n.
+also:
+  - episodic task
+  - trial
+domain: rl
+level: core
+plain: >-
+  One complete run of a task from start to finish — a single game of chess, one attempt at a maze —
+  after which everything resets and the agent tries again.
+senses:
+  - definition: >-
+      A finite sequence of agent–environment interactions that begins in an initial [[state|state]]
+      and ends in a terminal state or at a time limit, after which the [[environment|environment]]
+      is reset. Tasks with natural endings — games, puzzles, a robot's grasp attempt, a single model
+      response — are called episodic, as opposed to continuing tasks, such as process control, that
+      run indefinitely. Episodes are the unit over which [[return|returns]] are summed, Monte Carlo
+      estimates are formed and learning curves are usually reported. Modern interfaces such as
+      [[gymnasium|Gymnasium]] distinguish termination (the task's own end, after which future value
+      is zero) from truncation (an artificial time limit, after which value should still be
+      estimated); conflating the two biases value estimates. In [[large-language-model|large
+      language model]] RL an episode is typically one prompt and the full response or multi-turn
+      interaction it produces.
+    example: Each episode ends after 1,000 steps or when the robot falls over.
+origin: >-
+  Psychology's 'trial' was the older word for one run of a repeated learning task, and early RL
+  papers used it too. 'Episode' became the usual RL word during the 1990s, and the
+  episodic/continuing distinction was formalized in Sutton and Barto's textbook (1998).
+note: >-
+  Not to be confused with episodic memory in cognitive science, or with the 'episodes' of
+  [[meta-learning|meta-learning]], where an episode is a small sampled training task.
+see_also:
+  - trajectory
+  - rollout
+  - return
+  - environment
+  - Gymnasium
+  - sparse reward
+contrast:
+  - trajectory

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: outcome reward model
+id: outcome-reward-model
+pos: n.
+also:
+  - ORM
+  - outcome-supervised reward model
+  - outcome verifier
+domain: train
+domains:
+  - llm
+level: specialist
+plain: >-
+  A model that judges only whether an AI's final answer is right, ignoring how it got there — like a
+  teacher who checks just the answer box.
+senses:
+  - definition: >-
+      A [[reward-model|reward model]] trained only on whether complete solutions reach a correct
+      final result, which it learns to predict from the full text of a solution (often at every
+      token, so it can also estimate the chance of success partway through). ORMs need only
+      answer-level labels, which are cheap whenever a reference answer exists, and are used to
+      rerank samples in [[best-of-n-sampling|best-of-n sampling]], to filter self-generated training
+      data, and as rewards in reinforcement learning. Their weakness is that a solution can reach
+      the right answer through flawed reasoning, or the wrong answer after mostly sound steps, and
+      the ORM cannot say where things went wrong; the step-level alternative is a
+      [[process-reward-model|process reward model]]. When answers can be checked by rule, a learned
+      ORM is often replaced by an exact [[verifier|verifier]], as in
+      [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable
+      rewards]].
+    example: >-
+      Reranking 100 samples with the ORM lifted accuracy by nine points, yet some top-ranked
+      solutions had broken reasoning.
+origin: >-
+  Karl Cobbe and colleagues at OpenAI (2021) trained such models, which they called verifiers, to
+  judge solutions to GSM8K math problems. Jonathan Uesato and colleagues at DeepMind (2022)
+  introduced the contrast between outcome-supervised and process-supervised reward models and the
+  abbreviations ORM and PRM, which Hunter Lightman and colleagues (2023) adopted.
+year: 2022
+note: >-
+  Rewards from a rule-based checker, such as exact answer match, are not ORMs in the strict sense,
+  since nothing is learned, though some writers use the term loosely for any outcome-level reward.
+see_also:
+  - process reward model
+  - verifier
+  - reward model
+  - best-of-n sampling
+  - reinforcement learning with verifiable rewards
+  - GSM8K
+contrast:
+  - process reward model
+sources:
+  - text: >-
+      Cobbe, K. et al. (2021). Training Verifiers to Solve Math Word Problems. arXiv:2110.14168.
+    url: https://arxiv.org/abs/2110.14168
+  - text: >-
+      Uesato, J. et al. (2022). Solving math word problems with process- and outcome-based feedback.
+      arXiv:2211.14275.
+    url: https://arxiv.org/abs/2211.14275

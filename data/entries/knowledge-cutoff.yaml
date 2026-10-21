@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: knowledge cutoff
+id: knowledge-cutoff
+pos: n.
+also:
+  - training cutoff
+  - training data cutoff
+  - knowledge cutoff date
+  - cutoff date
+  - effective cutoff
+domain: llm
+domains:
+  - data
+  - society
+level: essential
+plain: >-
+  The date after which an AI model knows nothing from its training, because its training data stops
+  there. Without a web search tool, it cannot know about later events.
+senses:
+  - definition: >-
+      The latest date represented in a model's [[pretraining-data|training data]], after which it
+      has no [[parametric-knowledge|parametric knowledge]] of events, publications, prices or
+      software versions. Developers usually state a cutoff in model documentation, but the effective
+      cutoff varies by source and topic: the final months before the cutoff are thinly covered at
+      training time, web crawls contain much older material, and models are often unsure of their
+      own cutoff. Models without tools may present outdated facts as current or assume the present
+      date is close to their cutoff; deployments mitigate this by putting the current date in the
+      [[system-prompt|system prompt]] and by adding web search and
+      [[retrieval-augmented-generation|retrieval-augmented generation]]. Because data collection,
+      training and testing take time, cutoffs typically precede public release by several months to
+      a year; [[continued-pretraining|continued pretraining]] can move a cutoff forward without
+      training from scratch.
+    example: >-
+      Its knowledge cutoff is early 2025, so give it the new API documentation in the prompt.
+origin: >-
+  The phrase became common after ChatGPT's release in November 2022, when users met its stock
+  disclaimers about not knowing events after its training cutoff in 2021. Jeffrey Cheng and
+  colleagues' 'Dated Data' (2024) showed that effective cutoffs often differ from those developers
+  report, partly because of old material in web crawls and imperfect deduplication.
+year: 2022
+note: >-
+  Not the same as the model's release date or its [[context-window|context window]] limit. A model
+  does not reliably know its own cutoff unless told; asking it is not a good test.
+see_also:
+  - parametric knowledge
+  - pretraining data
+  - retrieval-augmented generation
+  - grounding
+  - continued pretraining
+  - hallucination
+sources:
+  - text: >-
+      Cheng, J., Marone, M., Weller, O., Lawrie, D., Khashabi, D. & Van Durme, B. (2024). Dated
+      Data: Tracing Knowledge Cutoffs in Large Language Models. arXiv:2403.12958.
+    url: https://arxiv.org/abs/2403.12958
+as_of: 2026-10

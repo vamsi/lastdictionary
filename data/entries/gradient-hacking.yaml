@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gradient hacking
+id: gradient-hacking
+pos: n.
+also:
+  - gradient hacker
+domain: safety
+domains:
+  - train
+  - dl
+level: specialist
+plain: >-
+  A hypothetical tactic, not yet seen in practice, in which an AI under training picks its answers
+  to steer how training reshapes it, usually to keep its present goals intact.
+senses:
+  - definition: >-
+      A hypothesized behavior, named by Evan Hubinger in 2019, in which a model that understands its
+      own training chooses outputs partly for the updates they will cause, so that
+      [[gradient-descent|gradient descent]] changes its parameters as the model wants — usually
+      leaving its current goals intact. Suggested mechanisms include doing deliberately worse or
+      better on chosen inputs, or arranging its computation so that performance collapses whenever
+      its goals are altered, which makes any such change look costly to the training objective.
+      Gradient hacking would require [[situational-awareness|situational awareness]] and fine
+      control over its own internals, and would undermine the assumption that training reliably
+      reshapes a model toward the training objective. No natural instance has been demonstrated;
+      researchers have built toy constructions and debated whether gradient descent would quickly
+      erode any mechanism that tried to resist it. Coarser ways in which models influence their own
+      training through their outputs, as in [[alignment-faking|alignment faking]] and
+      [[exploration-hacking|exploration hacking]], have been observed or demonstrated.
+    example: >-
+      Could a model shield its goals from fine-tuning by gradient hacking, or would SGD simply route
+      around it?
+origin: >-
+  Introduced by Evan Hubinger in the AI Alignment Forum post 'Gradient hacking' (16 October 2019),
+  where he calls it a term he had recently been using. It followed 'Risks from Learned Optimization
+  in Advanced Machine Learning Systems' (2019), which raised the possibility that a deceptive
+  [[mesa-optimization|mesa-optimizer]] might influence its own training.
+year: 2019
+see_also:
+  - deceptive alignment
+  - mesa-optimization
+  - exploration hacking
+  - alignment faking
+  - inner alignment
+  - situational awareness
+sources:
+  - text: Hubinger, E. (2019). Gradient hacking. AI Alignment Forum.

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Fisher information
+id: fisher-information
+pos: n.
+also:
+  - Fisher information matrix
+  - FIM
+  - natural gradient
+  - empirical Fisher
+  - Cramér–Rao bound
+domain: math
+domains:
+  - dl
+  - train
+level: specialist
+plain: >-
+  A number, or table of numbers, saying how sharply the probability of the data reacts when a
+  model's settings are nudged; the sharper the reaction, the more precisely the data can pin those
+  settings down.
+senses:
+  - definition: >-
+      The [[expected-value|expected value]] of the squared [[gradient|gradient]] of the
+      [[log-likelihood|log-likelihood]] with respect to a model's [[parameter|parameters]] (the
+      'score'), or equivalently, under regularity conditions, the negative expected
+      [[hessian|Hessian]] of the log-likelihood; with many parameters it is a positive semidefinite
+      matrix. It measures how sensitive the data distribution is to each parameter: the Cramér–Rao
+      bound says no unbiased estimator can have variance below its inverse, and
+      [[maximum-likelihood-estimation|maximum likelihood estimation]] attains this asymptotically.
+      Geometrically it is the local curvature of the [[kullback-leibler-divergence|Kullback–Leibler
+      divergence]] between nearby models, the metric of information geometry. In deep learning it
+      appears in the natural gradient (preconditioning updates by the inverse Fisher, approximated
+      by K-FAC and related [[second-order-optimization|second-order optimizers]]), in elastic weight
+      consolidation against [[catastrophic-forgetting|catastrophic forgetting]], in Laplace
+      approximations of the [[posterior|posterior]], and in parameter-importance scores for
+      [[pruning|pruning]] and [[model-merging|model merging]].
+    example: >-
+      We weighted the merge by each parameter's diagonal Fisher information on its source task.
+formula_latex: \mathcal{I}(\theta) = \mathbb{E}_{x\sim p(x\mid\theta)}\Big[\nabla_\theta \log
+  p(x\mid\theta)\,\nabla_\theta \log p(x\mid\theta)^{\top}\Big]
+origin: >-
+  Ronald Fisher introduced the 'amount of information' in estimation between 1920 and 1925, giving
+  its formula in 'Theory of Statistical Estimation' (1925). C. R. Rao (1945) and Harald Cramér
+  (1946) derived the variance bound named after them; Shun-ichi Amari's information geometry yielded
+  the natural gradient for neural networks (1998), and James Kirkpatrick and colleagues used Fisher
+  weights in elastic weight consolidation (2017).
+year: 1925
+see_also:
+  - log-likelihood
+  - maximum likelihood estimation
+  - Kullback–Leibler divergence
+  - Hessian
+  - second-order optimization
+  - catastrophic forgetting
+sources:
+  - text: >-
+      Fisher, R. A. (1925). Theory of Statistical Estimation. Proceedings of the Cambridge
+      Philosophical Society, 22.
+  - text: >-
+      Amari, S. (1998). Natural Gradient Works Efficiently in Learning. Neural Computation, 10(2).

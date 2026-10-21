@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Grad-CAM
+id: grad-cam
+pos: abbr.
+also:
+  - gradient-weighted class activation mapping
+  - Guided Grad-CAM
+  - class activation mapping
+  - CAM
+pronunciation: GRAD-kam
+domain: interp
+domains:
+  - percep
+  - dl
+level: core
+plain: >-
+  A technique that shows, as a coarse heat map, which regions of an image a vision network relied on
+  when choosing a particular label.
+senses:
+  - definition: >-
+      Gradient-weighted Class Activation Mapping: a [[saliency-map|saliency]] method for
+      [[convolutional-neural-network|convolutional networks]] that highlights, at the resolution of
+      the last convolutional layer, the image regions that support a chosen class. For a target
+      class c, the gradient of its score with respect to each [[feature-map|feature map]] A^k is
+      averaged over spatial positions to give an importance weight; the map is the [[relu|ReLU]] of
+      the weighted sum of the feature maps, upsampled to image size, so that only regions with
+      positive influence on the class appear. Earlier class activation mapping (CAM) worked only for
+      networks ending in global average pooling and had to retrain them; weighting feature maps by
+      gradients removes both limits, so the method applies unchanged to most CNNs, including those
+      inside image-captioning and visual question-answering systems. Combining the map elementwise
+      with guided backpropagation (Guided Grad-CAM) adds pixel-level detail. Resolution is limited
+      by the final feature grid, often 7 × 7 or 14 × 14.
+    example: >-
+      Grad-CAM showed the 'doctor' prediction resting on the stethoscope, not the person's face.
+formula_latex: L^{c}_{\text{Grad-CAM}} = \operatorname{ReLU}\Big(\sum_k \alpha^{c}_{k} A^{k}\Big),
+  \qquad \alpha^{c}_{k} = \frac{1}{Z}\sum_{i}\sum_{j} \frac{\partial y^{c}}{\partial A^{k}_{ij}}
+origin: >-
+  Introduced by Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, Devi
+  Parikh and Dhruv Batra in 'Grad-CAM: Visual Explanations from Deep Networks via Gradient-based
+  Localization' (arXiv, October 2016; ICCV 2017). It extended class activation mapping by Bolei
+  Zhou, Aditya Khosla, Agata Lapedriza, Aude Oliva and Antonio Torralba (CVPR 2016).
+year: 2016
+note: >-
+  A Grad-CAM map shows where evidence for a class lies, not what the network detected there.
+  Variants such as Grad-CAM++ and Score-CAM change how feature maps are weighted; vision
+  transformers need adaptations.
+see_also:
+  - saliency map
+  - feature attribution
+  - convolutional neural network
+  - feature map
+  - integrated gradients
+  - image classification
+sources:
+  - text: >-
+      Selvaraju, R. R. et al. (2017). Grad-CAM: Visual Explanations from Deep Networks via
+      Gradient-based Localization. Proceedings of ICCV 2017.
+  - text: >-
+      Zhou, B., Khosla, A., Lapedriza, A., Oliva, A. & Torralba, A. (2016). Learning Deep Features
+      for Discriminative Localization. Proceedings of CVPR 2016.

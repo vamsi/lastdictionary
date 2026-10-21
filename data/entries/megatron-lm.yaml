@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Megatron-LM
+id: megatron-lm
+pos: prop. n.
+also:
+  - Megatron
+  - Megatron-Core
+  - Megatron-Turing NLG
+  - MT-NLG
+domain: train
+domains:
+  - eng
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  NVIDIA's open-source software, first described in a 2019 research paper, for training very large
+  language models across thousands of graphics chips by splitting each model in several ways at
+  once.
+senses:
+  - definition: >-
+      A research framework and code base from NVIDIA for training large [[transformer|transformer]]
+      language models with combined parallelism, and the title of the 2019 paper that introduced its
+      [[tensor-parallelism|tensor parallelism]] scheme: splitting the feed-forward and attention
+      blocks across GPUs so that each transformer layer needs only a few [[all-reduce|all-reduce]]
+      operations — a scheme simple enough to write directly in PyTorch. Later versions added
+      [[pipeline-parallelism|pipeline parallelism]] with an interleaved schedule,
+      [[sequence-parallelism|sequence parallelism]], selective activation recomputation,
+      [[context-parallelism|context]] and [[expert-parallelism|expert parallelism]], distributed
+      optimizers and FP8 training; its reusable core was split out as the Megatron-Core library.
+      Megatron-LM and its forks have trained many open and commercial models, including the
+      530-billion-parameter Megatron-Turing NLG built with Microsoft (2021), and its papers supplied
+      much of the field's vocabulary of parallelism.
+    example: >-
+      We forked Megatron-LM for the pretraining run and used Hugging Face tools only for evaluation.
+origin: >-
+  Introduced by Mohammad Shoeybi, Mostofa Patwary, Raul Puri, Patrick LeGresley, Jared Casper and
+  Bryan Catanzaro at NVIDIA (arXiv, September 2019), who trained an 8.3-billion-parameter model on
+  512 GPUs at 15.1 petaFLOP/s; extended by Deepak Narayanan and colleagues (2021) and Vijay
+  Korthikanti and colleagues (2022).
+year: 2019
+see_also:
+  - tensor parallelism
+  - pipeline parallelism
+  - 3D parallelism
+  - DeepSpeed
+  - sequence parallelism
+  - distributed training
+sources:
+  - text: >-
+      Shoeybi, M. et al. (2019). Megatron-LM: Training Multi-Billion Parameter Language Models Using
+      Model Parallelism. arXiv:1909.08053.
+    url: https://arxiv.org/abs/1909.08053
+  - text: >-
+      Narayanan, D. et al. (2021). Efficient Large-Scale Language Model Training on GPU Clusters
+      Using Megatron-LM. arXiv:2104.04473.
+    url: https://arxiv.org/abs/2104.04473
+as_of: 2026-10

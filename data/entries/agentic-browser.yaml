@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agentic browser
+id: agentic-browser
+pos: n.
+also:
+  - AI browser
+  - AI-native browser
+  - agentic web browser
+  - AI-powered browser
+domain: agents
+domains:
+  - sec
+  - society
+labels:
+  - emerging
+level: core
+plain: >-
+  A web browser with an AI assistant built in that can do things for you online — reading pages,
+  clicking, filling in forms, shopping or booking — instead of just showing you websites.
+senses:
+  - definition: >-
+      A web browser that integrates a [[large-language-model|large language model]] assistant with
+      access to the user's tabs, page content and logged-in sessions, and that can act as a
+      [[browser-agent|browser agent]] — navigating, clicking, typing and completing multi-step tasks
+      such as comparing products, filling forms or triaging email — on the user's instruction.
+      Typical features are a sidebar chat that sees the current page, an agent mode that drives the
+      browser while the user watches or works elsewhere, and memory of past browsing. The category
+      took shape in 2025 with Perplexity's Comet (July), The Browser Company's Dia, Opera Neon,
+      Copilot Mode in Microsoft Edge, Gemini in Google Chrome and OpenAI's ChatGPT Atlas (October).
+      Because the agent reads untrusted web content while holding the user's credentials,
+      [[indirect-prompt-injection|indirect prompt injection]] — instructions hidden in a page that
+      hijack the agent — is the defining security risk, demonstrated against several products in
+      2025. Defenses include asking for confirmation before sensitive actions, logged-out modes,
+      limiting the agent to approved sites and injection classifiers.
+    example: >-
+      I asked the agentic browser to find a cheaper flight, and it stopped at the payment page for
+      my approval.
+origin: >-
+  The label spread in 2025, when several companies, among them Opera (Neon, announced May 2025) and
+  the startup Fellou, marketed products as the first 'agentic browser'. AI features in browsers had
+  previously meant chat and summaries; agent modes followed research on [[browser-agent|browser
+  agents]] and cloud products such as OpenAI's Operator. Comet and ChatGPT Atlas brought the
+  category to a mass audience.
+year: 2025
+note: >-
+  An agentic browser is a product category; a [[browser-agent|browser agent]] is the agent itself,
+  which can also run in a remote cloud browser or as an extension to an ordinary browser. In July
+  2026 OpenAI said Atlas would close on 9 August 2026, less than a year after launch, moving its
+  browsing features into a new ChatGPT desktop app; Google and Microsoft kept adding agent features
+  to Chrome and Edge.
+see_also:
+  - browser agent
+  - computer use
+  - indirect prompt injection
+  - AI agent
+  - Perplexity AI
+  - prompt injection
+sources:
+  - text: OpenAI (2025). Introducing ChatGPT Atlas. OpenAI blog, 21 October 2025.
+  - text: >-
+      TechRadar (2026). OpenAI shuts down its Atlas browser after not even a year. 13 July 2026.
+    url: https://www.techradar.com/pro/openai-shuts-down-its-atlas-browser-after-not-even-a-year
+as_of: 2026-10

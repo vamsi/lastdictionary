@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reinforcement learning from AI feedback
+id: reinforcement-learning-from-ai-feedback
+pos: n.
+also:
+  - RLAIF
+  - AI feedback
+domain: train
+domains:
+  - safety
+  - llm
+level: core
+plain: >-
+  Training an AI with preference judgments made by another AI instead of by people, which is cheaper
+  and faster but only as good as the AI doing the judging.
+senses:
+  - definition: >-
+      A variant of [[reinforcement-learning-from-human-feedback|reinforcement learning from human
+      feedback]] in which the [[preference-data|preference data]], or the reward itself, comes from
+      a language model rather than human annotators. Typically a prompted judge model compares two
+      responses against written criteria, such as the principles of an [[ai-constitution|AI
+      constitution]], and its judgments train a [[reward-model|reward model]] that drives
+      reinforcement learning; in direct RLAIF the judge scores outputs during RL with no separate
+      reward model. AI feedback scales to millions of labels at a small fraction of human cost and
+      makes the criteria explicit and editable, but it imports the judge's biases (for example
+      toward longer or stylistically familiar answers) and risks circularity when a model grades its
+      own family. It is a component of [[constitutional-ai|Constitutional AI]] and of most modern
+      [[post-training|post-training]] pipelines, alongside [[llm-as-a-judge|LLM-as-a-judge]]
+      evaluation.
+    example: >-
+      For harmlessness we used RLAIF, with a judge model applying the constitution to 400,000
+      response pairs.
+origin: >-
+  Named in Anthropic's Constitutional AI paper (Yuntao Bai and colleagues, December 2022), which
+  called its reinforcement-learning phase 'RL from AI Feedback (RLAIF)'. Harrison Lee and colleagues
+  at Google (2023) found RLAIF on a par with RLHF for summarization and dialogue and introduced
+  direct RLAIF.
+year: 2022
+note: >-
+  RLAIF does not remove people: they still write the principles, choose the judge and audit results.
+  Related ideas include [[scalable-oversight|scalable oversight]] and
+  [[self-improvement|self-improvement]].
+see_also:
+  - Constitutional AI
+  - reinforcement learning from human feedback
+  - LLM-as-a-judge
+  - reward model
+  - AI constitution
+  - scalable oversight
+  - self-improvement
+contrast:
+  - reinforcement learning from human feedback
+sources:
+  - text: >-
+      Bai, Y. et al. (2022). Constitutional AI: Harmlessness from AI Feedback. arXiv:2212.08073.
+    url: https://arxiv.org/abs/2212.08073
+  - text: >-
+      Lee, H. et al. (2023). RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with
+      AI Feedback. arXiv:2309.00267.
+    url: https://arxiv.org/abs/2309.00267

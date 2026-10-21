@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: autonomous vehicle
+id: autonomous-vehicle
+pos: n.
+also:
+  - self-driving car
+  - driverless car
+  - automated vehicle
+  - AV
+  - autonomous car
+  - robocar
+  - automated driving system
+  - ADS
+domain: robot
+domains:
+  - gov
+  - society
+  - percep
+level: essential
+plain: >-
+  A vehicle, usually a car, truck or shuttle, that can drive itself, sensing the road, deciding what
+  to do and steering, braking and accelerating with no human driving.
+senses:
+  - definition: >-
+      A road vehicle whose automated driving system can carry out the whole driving task — sensing
+      its surroundings, anticipating other road users, planning a route and trajectory, and working
+      the steering, accelerator and brakes — with no human driving it, at least within a defined
+      [[operational-design-domain|operational design domain]]. In the
+      [[levels-of-driving-automation|SAE levels]] this means Level 3 and above; Levels 1 and 2 are
+      [[advanced-driver-assistance-system|driver assistance]]. A typical system fuses cameras, radar
+      and often [[lidar|lidar]] ([[sensor-fusion|sensor fusion]]), localizes against detailed maps,
+      detects and tracks objects, forecasts their motion, and plans with optimization-based or
+      learned planners; since about 2022 developers have moved toward end-to-end neural networks
+      trained on fleet driving data, supplemented by simulation and
+      [[world-foundation-model|generative world models]]. As of October 2026, fully driverless
+      ride-hailing ([[robotaxi|robotaxis]]) was offered by Waymo in about ten US metropolitan areas,
+      with roughly 500,000 paid rides per week reported in early 2026, and by Baidu's Apollo Go,
+      Pony.ai and WeRide in Chinese cities; autonomous trucks and shuttles were in earlier
+      deployment. Validating safety, handling rare 'long-tail' situations, liability and regulation
+      remain the central issues.
+    example: >-
+      The autonomous vehicle yielded to the cyclist, then waited for the double-parked van to move.
+origin: >-
+  Radio-controlled 'phantom autos' were demonstrated in the 1920s; computer-driven vehicles appeared
+  with Japan's Tsukuba Mechanical Engineering Laboratory (1977), Carnegie Mellon's Navlab (from
+  1984) and Ernst Dickmanns's camera-guided vehicles in Germany (1980s–1990s). The DARPA Grand
+  Challenges (2004–2007) launched the modern industry; Google's project (2009), renamed Waymo in
+  2016, began fully driverless public service in Phoenix in 2020.
+year: 1977
+note: >-
+  Terminology is contested: SAE and many regulators prefer 'automated', since vehicles depend on
+  maps, infrastructure and remote support, while 'autonomous' and 'self-driving' dominate everyday
+  use and marketing. Cars sold with 'self-driving' features that require constant supervision are
+  Level 2, not autonomous vehicles in this sense.
+see_also:
+  - levels of driving automation
+  - robotaxi
+  - operational design domain
+  - advanced driver-assistance system
+  - lidar
+  - sensor fusion
+  - DARPA Grand Challenge
+contrast:
+  - advanced driver-assistance system
+sources:
+  - text: >-
+      Thrun, S. et al. (2006). Stanley: The robot that won the DARPA Grand Challenge. Journal of
+      Field Robotics 23(9), 661–692.
+  - text: >-
+      SAE International (2021). J3016: Taxonomy and Definitions for Terms Related to Driving
+      Automation Systems for On-Road Motor Vehicles.
+as_of: 2026-10

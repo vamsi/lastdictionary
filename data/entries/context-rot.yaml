@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: context rot
+id: context-rot
+pos: n.
+also:
+  - context degradation
+domain: agents
+domains:
+  - llm
+  - eval
+labels:
+  - emerging
+  - figurative
+level: core
+plain: >-
+  The way an AI model becomes less reliable as you give it more and more text to read, even when the
+  answer is in there somewhere.
+senses:
+  - definition: >-
+      The gradual loss of accuracy and instruction-following that [[large-language-model|language
+      models]] show as more material is packed into their [[context-window|context window]], even
+      when the extra text leaves the task itself no harder. Unlike a hard context limit, it sets in
+      unevenly: Chroma's 2025 measurements found it worse when the relevant passage was only loosely
+      related in meaning to the question or when similar-looking distractors were present, and
+      practitioners report it in long agent sessions full of tool output and dead ends. Proposed
+      causes include attention being spread across ever more [[token|tokens]] (Anthropic speaks of a
+      finite 'attention budget'), training data dominated by shorter sequences, and positional
+      effects such as [[lost-in-the-middle|lost in the middle]]. Practical responses are
+      [[context-engineering|context engineering]] techniques: retrieving less but better,
+      [[compaction|compaction]], clearing old tool results, and handing subtasks to
+      [[subagent|subagents]] with fresh contexts.
+    example: >-
+      Past about 100k tokens the session showed classic context rot, so we compacted and restarted
+      from a summary.
+origin: >-
+  Earliest known use: a Hacker News comment of June 2025 by the user Workaccount2, describing output
+  quality decaying as a conversation fills with distractions and dead ends, noticeable around
+  100,000 tokens with Gemini 2.5; Simon Willison quoted it on 18 June 2025. Chroma's technical
+  report 'Context Rot' (Kelly Hong, Anton Troynikov and Jeff Huber, 14 July 2025), which measured
+  the effect in 18 models, made it a standard term.
+year: 2025
+note: >-
+  Different from [[lost-in-the-middle|lost in the middle]] (sensitivity to where information sits)
+  and from truncation once the window is full. Tests such as [[needle-in-a-haystack|needle in a
+  haystack]] can understate context rot because they check literal lookup rather than reasoning over
+  long inputs.
+see_also:
+  - context window
+  - long context
+  - lost in the middle
+  - context engineering
+  - compaction
+  - needle in a haystack
+  - context poisoning
+sources:
+  - text: >-
+      Hong, K., Troynikov, A. & Huber, J. (2025). Context Rot: How Increasing Input Tokens Impacts
+      LLM Performance. Chroma Technical Report, 14 July 2025.
+    url: https://www.trychroma.com/research/context-rot
+  - text: >-
+      Willison, S. (2025). Context rot (quoting Hacker News user Workaccount2). Simon Willison's
+      Weblog, 18 June 2025.
+    url: https://simonwillison.net/2025/Jun/18/context-rot/
+as_of: 2026-10

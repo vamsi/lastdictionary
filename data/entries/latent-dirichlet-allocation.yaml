@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: latent Dirichlet allocation
+id: latent-dirichlet-allocation
+pos: n.
+also:
+  - LDA
+domain: ml
+domains:
+  - llm
+  - math
+level: core
+plain: >-
+  A popular topic-finding method that assumes every document is a blend of a few themes and every
+  theme favors certain words, then works backward from the words to find both.
+senses:
+  - definition: >-
+      A Bayesian [[topic-model|topic model]] for text and other count data, built on a simple story
+      of how documents could be generated at random from a small set of shared topics. It assumes K
+      topics, each a distribution over the vocabulary drawn from a Dirichlet prior; each document
+      draws its own topic proportions from a second Dirichlet prior, and each word is produced by
+      first picking a topic from those proportions and then a word from that topic. Given only the
+      words, inference recovers the topics, each document's topic mixture and each word's topic
+      assignment. Exact [[posterior|posterior]] inference is intractable, so LDA is fitted by
+      variational Bayes (as in the original paper), by collapsed Gibbs sampling, a form of
+      [[markov-chain-monte-carlo|Markov chain Monte Carlo]], or by online stochastic variational
+      methods for streaming corpora. The Dirichlet priors, which favor sparse mixtures when their
+      concentration parameters are small, give LDA a proper generative model for unseen documents,
+      which probabilistic latent semantic analysis lacked. LDA treats each document as a bag of
+      words, ignoring word order, and needs the number of topics in advance.
+    example: >-
+      We fit LDA with 50 topics to the support forum and used each post's topic proportions as
+      features.
+origin: >-
+  Introduced by David Blei, Andrew Ng and Michael Jordan in a paper presented at the NIPS conference
+  in December 2001 (proceedings 2002) and in the 2003 Journal of Machine Learning Research article
+  'Latent Dirichlet Allocation'. Jonathan Pritchard, Matthew Stephens and Peter Donnelly had
+  published an essentially identical model for inferring population structure from genotype data in
+  2000. The collapsed Gibbs sampler of Thomas Griffiths and Mark Steyvers (2004) made LDA easy to
+  implement.
+year: 2001
+note: >-
+  Not to be confused with [[linear-discriminant-analysis|linear discriminant analysis]], a
+  supervised method also abbreviated LDA.
+see_also:
+  - topic model
+  - latent semantic analysis
+  - Bayesian inference
+  - Markov chain Monte Carlo
+  - natural language processing
+  - clustering
+contrast:
+  - linear discriminant analysis
+sources:
+  - text: >-
+      Blei, D. M., Ng, A. Y. & Jordan, M. I. (2003). Latent Dirichlet Allocation. Journal of Machine
+      Learning Research 3: 993–1022.
+    url: https://www.jmlr.org/papers/v3/blei03a.html
+  - text: >-
+      Pritchard, J. K., Stephens, M. & Donnelly, P. (2000). Inference of Population Structure Using
+      Multilocus Genotype Data. Genetics 155: 945–959.
+  - text: >-
+      Griffiths, T. L. & Steyvers, M. (2004). Finding Scientific Topics. Proceedings of the National
+      Academy of Sciences 101 (suppl. 1).

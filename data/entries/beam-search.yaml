@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: beam search
+id: beam-search
+pos: n.
+also:
+  - beam width
+  - beam size
+  - local beam search
+  - beam decoding
+  - length penalty
+  - beam search curse
+domain: llm
+domains:
+  - sym
+  - infer
+level: core
+plain: >-
+  A search method that keeps several of the best partial answers at each step, rather than only the
+  single best, to find a better overall result without trying every possibility.
+senses:
+  - context: Decoding
+    definition: >-
+      A heuristic [[decoding|decoding]] algorithm that keeps the B highest-scoring partial sequences
+      (beams; B is the beam width) at each step: every beam is extended by every possible next
+      [[token|token]], candidates are scored by cumulative [[log-probability|log probability]], and
+      only the top B survive, while hypotheses that emit an end token are set aside as finished. It
+      finds higher-likelihood outputs than [[greedy-decoding|greedy decoding]] at roughly B times
+      the cost and was the standard for machine translation, speech recognition and summarization,
+      usually with a length penalty because raw log probability favors short outputs. In open-ended
+      generation it tends to produce bland, repetitive text, and very wide beams can even lower
+      quality, so chat models generally sample instead. Variants include diverse beam search and
+      grid beam search for [[constrained-decoding|constrained decoding]].
+    example: We decode translations with a beam width of 5 and a length penalty of 0.6.
+  - context: Search algorithms
+    definition: >-
+      A [[heuristic|heuristic]] method for [[state-space-search|state space search]] that bounds
+      memory by pruning: like [[breadth-first-search|breadth-first search]] it advances one depth at
+      a time, but after generating each new layer of successors it ranks them with a heuristic
+      evaluation and discards all but a fixed number. Because a discarded branch is never revisited,
+      the search can miss the goal or return a worse path than the best one. Local beam search
+      applies the same pruning to hill climbing, keeping the k best states drawn from the successors
+      of all current states.
+origin: >-
+  Introduced in Bruce Lowerre's Harpy speech-recognition system at Carnegie Mellon University (1976
+  PhD thesis), developed within Raj Reddy's DARPA-funded speech-understanding research; first
+  described as a 'locus model of search', it was being called beam search by 1977. It became the
+  default decoder in statistical and then neural machine translation.
+year: 1976
+note: >-
+  Philipp Koehn and Rebecca Knowles (2017) reported that very wide beams lowered neural translation
+  quality, a problem later dubbed the 'beam search curse'.
+see_also:
+  - decoding
+  - greedy decoding
+  - breadth-first search
+  - heuristic
+  - constrained decoding
+  - log probability
+  - Monte Carlo tree search
+contrast:
+  - greedy decoding
+  - top-p sampling
+sources:
+  - text: >-
+      Lowerre, B. T. (1976). The Harpy Speech Recognition System. PhD thesis, Carnegie Mellon
+      University.
+  - text: >-
+      Koehn, P. & Knowles, R. (2017). Six Challenges for Neural Machine Translation. Proceedings of
+      the First Workshop on Neural Machine Translation.

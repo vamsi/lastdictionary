@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: backpropagation
+id: backpropagation
+pos: n.
+also:
+  - backprop
+  - back-propagation
+  - backward propagation of errors
+  - BP
+domain: dl
+domains:
+  - math
+  - hist
+level: essential
+plain: >-
+  The method neural networks use to learn from mistakes: it works backward from the error to figure
+  out how much each internal connection contributed, so every connection can be adjusted in the
+  right direction.
+senses:
+  - definition: >-
+      An algorithm that works out how sensitive a network's [[loss-function|loss]] is to each of its
+      weights, the gradient that training needs, by running the [[chain-rule|chain rule]] in
+      reverse: it starts from the error at the output and moves back through the layers toward the
+      input, reusing each layer's result for the one before it. A [[forward-pass|forward pass]]
+      computes and stores each layer's outputs; a [[backward-pass|backward pass]] then propagates
+      the derivative of the loss backward, at each layer multiplying the incoming gradient by the
+      layer's local derivative (a vector–Jacobian product) to obtain both the gradients for that
+      layer's weights and the gradient to pass further back. The total cost is a small constant
+      multiple of the forward computation, however many weights there are, which is what makes
+      training networks with billions of parameters feasible; the price is the memory needed to
+      store intermediate values. Backpropagation is reverse-mode
+      [[automatic-differentiation|automatic differentiation]] applied to neural networks, and it
+      only computes gradients — an [[optimizer|optimizer]] such as
+      [[stochastic-gradient-descent|stochastic gradient descent]] performs the update. Applied to
+      unrolled recurrent networks it becomes [[backpropagation-through-time|backpropagation through
+      time]]. Doubts about its biological plausibility motivate alternatives (feedback alignment,
+      target propagation, forward-forward learning), none yet competitive at scale.
+    example: >-
+      Backprop through the frozen encoder wastes memory; detach it so gradients stop at the adapter.
+origin: >-
+  Credit is disputed. Its mathematical core, reverse-mode differentiation, appeared in Seppo
+  Linnainmaa's 1970 master's thesis; related gradient methods arose in optimal control (Henry
+  Kelley, 1960; Arthur Bryson, 1961; Stuart Dreyfus, 1962). Paul Werbos discussed applying it to
+  neural networks in his 1974 thesis and did so explicitly in 1982; David Parker and Yann LeCun
+  independently described it around 1985. The 1986 Nature paper of David Rumelhart, Geoffrey Hinton
+  and Ronald Williams showed that it learns useful internal representations and popularized it under
+  the name back-propagation.
+year: 1986
+note: >-
+  Often used loosely for the whole training procedure; strictly it is only the gradient computation.
+  The 1986 date marks popularization, not invention.
+see_also:
+  - automatic differentiation
+  - chain rule
+  - forward pass
+  - backward pass
+  - computational graph
+  - gradient descent
+  - vanishing gradient problem
+sources:
+  - text: >-
+      Rumelhart, D. E., Hinton, G. E. & Williams, R. J. (1986). Learning representations by
+      back-propagating errors. Nature 323, 533–536.
+    url: https://doi.org/10.1038/323533a0
+  - text: >-
+      Linnainmaa, S. (1976). Taylor expansion of the accumulated rounding error. BIT Numerical
+      Mathematics 16, 146–160.
+  - text: Schmidhuber, J. (n.d.). Who Invented Backpropagation? Web page, IDSIA.
+    url: https://people.idsia.ch/~juergen/who-invented-backpropagation.html

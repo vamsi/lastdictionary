@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlphaStar
+id: alphastar
+pos: prop. n.
+domain: rl
+domains:
+  - hist
+  - agents
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A DeepMind AI that learned to play the real-time strategy game StarCraft II well enough to reach
+  its highest public rank, Grandmaster, in 2019.
+senses:
+  - definition: >-
+      A [[deep-reinforcement-learning|deep reinforcement learning]] system for the real-time
+      strategy game StarCraft II, a long-standing AI challenge because of its combinatorially huge
+      [[action-space|action space]], simultaneous real-time play, games lasting thousands of
+      decisions and imperfect information (the 'fog of war'). Its policy, a deep network combining a
+      [[transformer|transformer]] over game units, a [[long-short-term-memory|recurrent LSTM]] core
+      and pointer-network action heads, was first trained by imitating human replays and then
+      improved by [[multi-agent-reinforcement-learning|multi-agent reinforcement learning]] in a
+      'league': a growing population of agents, including dedicated exploiters trained to find
+      weaknesses in the main agents, with matchmaking that preserved the diversity that naive
+      [[self-play|self-play]] loses. Restricted to a camera view and action rates comparable to
+      human players, the final agent was rated Grandmaster, the top league, with each of the game's
+      three races on the public Battle.net ladder, placing it above 99.8 percent of ranked players.
+    example: >-
+      Like AlphaStar's league, our training keeps exploiter agents whose only job is to beat the
+      current champion.
+origin: >-
+  Developed at DeepMind by a team led by Oriol Vinyals. An early version beat the professional
+  players Dario 'TLO' Wünsch and Grzegorz 'MaNa' Komincz in matches revealed in January 2019; the
+  final system was described in 'Grandmaster Level in StarCraft II Using Multi-Agent Reinforcement
+  Learning' (Nature, October 2019).
+year: 2019
+note: >-
+  The January 2019 games drew criticism that superhuman speed and click precision, rather than
+  strategy, explained the wins, which led DeepMind to impose stricter human-like limits on the final
+  agent.
+see_also:
+  - multi-agent reinforcement learning
+  - self-play
+  - deep reinforcement learning
+  - imitation learning
+  - OpenAI Five
+  - AlphaZero
+sources:
+  - text: >-
+      Vinyals, O. et al. (2019). Grandmaster level in StarCraft II using multi-agent reinforcement
+      learning. Nature 575, 350–354.

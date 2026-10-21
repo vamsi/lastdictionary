@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: entropy collapse
+id: entropy-collapse
+pos: n.
+also:
+  - policy entropy collapse
+domain: train
+domains:
+  - rl
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A failure in reinforcement-learning training where an AI quickly becomes overconfident and stops
+  trying different answers, so it explores less and its improvement stalls.
+senses:
+  - definition: >-
+      A rapid fall in the [[entropy|entropy]] of a policy's output distribution during
+      reinforcement-learning training, so that the model becomes nearly deterministic, produces
+      near-identical samples and stops exploring. In RL fine-tuning of language models, especially
+      [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable
+      rewards]], entropy often drops sharply in the first steps while accuracy plateaus; when every
+      sample in a group is the same, methods such as [[group-relative-policy-optimization|group
+      relative policy optimization]] receive little learning signal. A 2025 analysis found
+      performance following an approximate exponential law in entropy, implying a ceiling once
+      entropy is spent, and traced the decline to the covariance between a token's probability and
+      its [[advantage-function|advantage]] under policy-gradient updates. Remedies include an
+      [[entropy-regularization|entropy regularization]] bonus, raising the upper clipping bound of
+      the importance ratio (as in DAPO), restricting updates on high-covariance tokens, higher
+      sampling [[temperature|temperature]], and filtering out prompts the model always solves or
+      always fails.
+    example: >-
+      Entropy collapsed within 200 steps, and after that every rollout in a group was the same
+      answer.
+formula_latex: R \approx -a\, e^{H} + b
+origin: >-
+  Premature convergence and entropy loss are long-standing concerns in policy-gradient RL, which is
+  why entropy bonuses were added to methods such as A3C (2016). The phrase became prominent in 2025
+  work on reasoning RL, notably DAPO (March 2025) and Ganqu Cui and colleagues' May 2025 study of
+  the entropy mechanism of RL for reasoning language models.
+year: 2025
+note: >-
+  Not to be confused with [[mode-collapse|mode collapse]] in generative adversarial networks or
+  [[model-collapse|model collapse]] from training on synthetic data, though all three describe a
+  loss of output diversity.
+see_also:
+  - entropy regularization
+  - exploration–exploitation trade-off
+  - group relative policy optimization
+  - reinforcement learning with verifiable rewards
+  - entropy
+  - temperature
+contrast:
+  - mode collapse
+  - model collapse
+sources:
+  - text: >-
+      Cui, G. et al. (2025). The Entropy Mechanism of Reinforcement Learning for Reasoning Language
+      Models. arXiv:2505.22617.
+    url: https://arxiv.org/abs/2505.22617
+  - text: >-
+      Yu, Q. et al. (2025). DAPO: An Open-Source LLM Reinforcement Learning System at Scale.
+      arXiv:2503.14476.
+    url: https://arxiv.org/abs/2503.14476
+as_of: 2026-10

@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RL scaling
+id: rl-scaling
+pos: n.
+also:
+  - reinforcement learning scaling
+  - RL compute scaling
+  - scaling RL
+  - RL scaling laws
+domain: train
+domains:
+  - rl
+  - llm
+  - asi
+labels:
+  - emerging
+  - contested
+level: core
+plain: >-
+  The practice, and the finding behind it, of giving AI models far more trial-and-error practice
+  after their initial training, especially on problems with checkable answers, which has so far
+  improved their reasoning fairly predictably.
+senses:
+  - definition: >-
+      Increasing the compute spent on [[reinforcement-learning|reinforcement learning]] in the
+      [[post-training|post-training]] of [[large-language-model|language models]], and the empirical
+      regularities linking that compute to capability. In the typical setup, a model writes long
+      [[chain-of-thought|chains of thought]] for problems whose outcomes can be checked
+      automatically (math answers, unit tests, other verifiers) and is updated with policy-gradient
+      methods such as [[proximal-policy-optimization|PPO]] or
+      [[group-relative-policy-optimization|GRPO]] under
+      [[reinforcement-learning-with-verifiable-rewards|verifiable rewards]]; performance rises with
+      RL training compute, and the resulting [[reasoning-model|reasoning models]] also improve with
+      [[test-time-compute|test-time compute]]. Laboratories have reported steep increases: OpenAI
+      said in April 2025 that it had pushed RL training compute a further order of magnitude for o3,
+      and xAI said that the RL for Grok 4 (July 2025) ran at [[pretraining|pretraining]] scale.
+      Systematic studies fit sigmoid-shaped curves of performance against RL compute and find that
+      most recipe choices change efficiency while a few change the ceiling. Open questions include
+      how far gains transfer beyond verifiable domains, whether RL teaches new abilities or mainly
+      sharpens latent ones, and how [[reward-hacking|reward hacking]] grows with scale.
+    example: >-
+      Most of the jump from the previous release came from RL scaling, not from a bigger base model.
+origin: >-
+  OpenAI's [[openai-o1|o1]] announcement (September 2024) showed accuracy rising smoothly with both
+  RL training compute and thinking time, and DeepSeek-R1 (January 2025) published an open recipe.
+  The phrase spread through 2025 as laboratories described RL as a new scaling axis; Devvrit Khatri
+  and colleagues' October 2025 study, using more than 400,000 GPU-hours, fitted predictive RL
+  compute curves.
+year: 2024
+note: >-
+  Contested in two ways. Some studies find RL-trained models solve fewer distinct problems than
+  their base models when many attempts are allowed (high-k [[pass-k|pass@k]]), suggesting
+  elicitation rather than new capability, while others report that prolonged RL widens the solvable
+  set. And a scalar reward per long episode carries far less training signal than pretraining text,
+  raising doubts about efficiency at scale. Curves depend on recipe and task.
+see_also:
+  - scaling laws
+  - reinforcement learning with verifiable rewards
+  - reasoning model
+  - test-time compute
+  - post-training
+  - group relative policy optimization
+  - DeepSeek-R1
+  - capability elicitation
+contrast:
+  - pretraining
+sources:
+  - text: OpenAI (2024). Learning to Reason with LLMs. OpenAI blog, 12 September 2024.
+  - text: >-
+      Khatri, D. et al. (2025). The Art of Scaling Reinforcement Learning Compute for LLMs.
+      arXiv:2510.13786.
+    url: https://arxiv.org/abs/2510.13786v1
+  - text: >-
+      Yue, Y. et al. (2025). Does Reinforcement Learning Really Incentivize Reasoning Capacity in
+      LLMs Beyond the Base Model? arXiv preprint.
+as_of: 2026-10

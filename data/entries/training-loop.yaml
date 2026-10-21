@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: training loop
+id: training-loop
+pos: n.
+also:
+  - train loop
+domain: dl
+domains:
+  - eng
+level: core
+plain: >-
+  The repeating cycle at the heart of training software: grab some examples, let the model guess,
+  measure the error, adjust the model, and do it again — often millions of times.
+senses:
+  - definition: >-
+      The control structure that drives iterative training: until a step or token budget is reached,
+      it draws a [[mini-batch|mini-batch]], runs the [[forward-pass|forward pass]], computes the
+      [[loss-function|loss]], runs the [[backward-pass|backward pass]], applies the
+      [[optimizer|optimizer]] step (with any [[gradient-clipping|gradient clipping]],
+      [[gradient-accumulation|gradient accumulation]] or [[learning-rate-schedule|schedule]] update)
+      and clears gradients for the next iteration. Around this core sit periodic evaluation on a
+      [[validation-set|validation set]], logging, [[checkpoint|checkpointing]],
+      [[early-stopping|early stopping]] and, in distributed training, gradient synchronization
+      across devices. High-level APIs such as Keras's fit method, PyTorch Lightning and the Hugging
+      Face Trainer package the loop, while research code often writes it out for full control. In
+      [[reinforcement-learning|reinforcement learning]] and RL-based post-training, the loop
+      alternates generating data ([[rollout|rollouts]] from the current [[policy|policy]]) with
+      updates, and keeping the two in step is a central engineering problem.
+    example: "The bug was in the training loop: we stepped the scheduler before the optimizer."
+origin: >-
+  A programming idiom rather than a coinage. The explicit loop became the canonical teaching example
+  with define-by-run frameworks such as Chainer (2015) and PyTorch (2017), while higher-level
+  libraries hid it behind a single fit or train call.
+see_also:
+  - training step
+  - epoch
+  - forward pass
+  - backward pass
+  - optimizer
+  - PyTorch
+contrast:
+  - agent loop

@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Anchors
+id: anchors
+pos: prop. n.
+also:
+  - anchor explanation
+  - anchor rule
+domain: interp
+domains:
+  - ml
+level: specialist
+plain: >-
+  A method that explains a prediction with a simple if-then rule that locks in the result — for
+  example, if an email contains both 'invoice' and 'urgent', the filter almost always flags it.
+senses:
+  - definition: >-
+      A [[model-agnostic|model-agnostic]] [[local-explanation|local explanation]] method that
+      summarizes why a model made one prediction as an if-then rule, the anchor: as long as the
+      rule's conditions hold, changing the rest of the input almost never alters the output.
+      Candidate rules are built from interpretable features (words, superpixels, feature ranges) and
+      assessed by precision (how often the prediction holds among perturbed inputs satisfying the
+      rule) and coverage (how much of the input space the rule applies to), with a multi-armed
+      bandit procedure deciding which candidates to sample; the method returns a high-coverage rule
+      whose precision exceeds a target such as 95%. Because an anchor says explicitly which inputs
+      it covers, which the weights of [[lime|LIME]] do not, people in the authors' user study
+      forecast the model's behavior on new inputs more accurately and with less effort.
+    example: >-
+      The anchor for this loan denial was simply: no savings account and fewer than two years
+      employed.
+origin: >-
+  Introduced by Marco Tulio Ribeiro, Sameer Singh and Carlos Guestrin in 'Anchors: High-Precision
+  Model-Agnostic Explanations' (AAAI 2018), as a successor to their [[lime|LIME]] method.
+year: 2018
+note: >-
+  An anchor's sufficiency holds only relative to the perturbation distribution used, and anchors for
+  inputs near the decision boundary can be so specific that they cover almost nothing else. Not to
+  be confused with [[anchor-box|anchor boxes]] in object detection.
+see_also:
+  - LIME
+  - local explanation
+  - model-agnostic
+  - counterfactual explanation
+  - feature attribution
+sources:
+  - text: >-
+      Ribeiro, M. T., Singh, S. & Guestrin, C. (2018). Anchors: High-Precision Model-Agnostic
+      Explanations. Proceedings of AAAI 2018.

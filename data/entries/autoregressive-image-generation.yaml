@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: autoregressive image generation
+id: autoregressive-image-generation
+pos: n.
+also:
+  - autoregressive image model
+  - AR image generation
+  - PixelRNN
+  - PixelCNN
+  - native image generation
+  - visual autoregressive modeling
+domain: gen
+domains:
+  - llm
+  - dl
+level: specialist
+plain: >-
+  Making a picture one piece at a time, each piece predicted from those already made — the way
+  chatbots write text word by word.
+senses:
+  - definition: >-
+      Image synthesis that factors the joint distribution of an image into a sequence of conditional
+      predictions, generating one element at a time given those already produced, as an
+      [[autoregressive-model|autoregressive model]] does for text. Early models predicted raw pixel
+      values in raster order with recurrent or masked convolutional networks (PixelRNN and PixelCNN,
+      2016), which gave exact likelihoods but were slow. Later systems first convert images into
+      sequences of discrete codes with an [[image-tokenizer|image tokenizer]] such as a
+      [[vq-vae|VQ-VAE]] or [[vqgan|VQGAN]], then train a [[transformer|transformer]] by
+      [[next-token-prediction|next-token prediction]] — the approach of the first [[dall-e|DALL·E]],
+      Google's Parti (2022) and Meta's Chameleon (2024). Variants predict many tokens in parallel by
+      masking (MaskGIT, Muse), go coarse-to-fine across scales (visual autoregressive modeling,
+      2024) or use continuous tokens. Because images become ordinary tokens, one multimodal
+      [[large-language-model|large language model]] can read and write both text and images; such
+      'native' image generation, popularized by GPT-4o in March 2025, may pair an autoregressive
+      backbone with a diffusion decoder.
+origin: >-
+  Aäron van den Oord, Nal Kalchbrenner and Koray Kavukcuoglu's PixelRNN (ICML 2016) and the
+  conditional PixelCNN (NeurIPS 2016) established the approach; OpenAI's Image GPT (2020) and DALL·E
+  (2021) moved it to transformers over pixels and learned tokens.
+year: 2016
+see_also:
+  - autoregressive model
+  - image tokenizer
+  - VQ-VAE
+  - VQGAN
+  - diffusion model
+  - multimodal large language model
+  - next-token prediction
+contrast:
+  - diffusion model
+sources:
+  - text: >-
+      van den Oord, A., Kalchbrenner, N. & Kavukcuoglu, K. (2016). Pixel Recurrent Neural Networks.
+      ICML 2016.
+  - text: >-
+      Ramesh, A. et al. (2021). Zero-Shot Text-to-Image Generation. ICML 2021. arXiv:2102.12092.
+    url: https://arxiv.org/pdf/2102.12092v1.pdf

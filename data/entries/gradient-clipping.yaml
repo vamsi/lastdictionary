@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gradient clipping
+id: gradient-clipping
+pos: n.
+also:
+  - gradient norm clipping
+  - clip_grad_norm
+  - value clipping
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  A safety limit on how big a single training update can be. If the computed adjustment is unusually
+  large, it is scaled down so that one bad batch cannot wreck the model.
+senses:
+  - definition: >-
+      A safeguard that limits the size of gradients before the [[optimizer|optimizer]] step. In norm
+      clipping, the usual form, the gradient vector across all parameters is rescaled to have norm c
+      whenever its norm exceeds that threshold (1.0 is common for language models), preserving its
+      direction; value clipping instead caps each component separately, which can change the
+      direction. Clipping keeps outlier batches and sharp cliffs in the [[loss-landscape|loss
+      landscape]] from producing huge updates — the [[exploding-gradient-problem|exploding gradient
+      problem]] that first plagued [[recurrent-neural-network|recurrent networks]] — and is standard
+      in [[transformer|transformer]] pretraining, where the fraction of clipped steps is watched as
+      an early warning of [[training-instability|training instability]]. Clipping each example's
+      gradient separately is the core of [[dp-sgd|DP-SGD]], where it bounds any one example's
+      influence for [[differential-privacy|differential privacy]]. Related safeguards act elsewhere:
+      [[adafactor|Adafactor]] clips its updates, and the QK-clip used with [[muon|Muon]] in Kimi K2
+      rescales query and key weights.
+    example: Clip the global gradient norm at 1.0 and log how often clipping fires.
+formula_latex: g \leftarrow g \cdot \min\!\left(1, \frac{c}{\lVert g \rVert}\right)
+origin: >-
+  Tomas Mikolov clipped gradient values when training recurrent language models (PhD thesis, Brno
+  University of Technology, 2012). Razvan Pascanu, Mikolov and Yoshua Bengio analyzed exploding
+  gradients and proposed rescaling by the gradient norm in 'On the difficulty of training recurrent
+  neural networks' (arXiv 2012; ICML 2013), the form now standard.
+year: 2012
+see_also:
+  - exploding gradient problem
+  - training instability
+  - loss spike
+  - DP-SGD
+  - optimizer
+  - recurrent neural network
+sources:
+  - text: >-
+      Pascanu, R., Mikolov, T. & Bengio, Y. (2013). On the difficulty of training recurrent neural
+      networks. ICML 2013.
+    url: https://arxiv.org/abs/1211.5063

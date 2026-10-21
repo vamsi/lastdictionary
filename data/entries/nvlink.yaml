@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: NVLink
+id: nvlink
+pos: prop. n.
+also:
+  - NVSwitch
+  - NVLink Switch
+  - NVLink Fusion
+  - NVLink-C2C
+pronunciation: EN-vee-link
+domain: hw
+domains:
+  - train
+  - infer
+labels:
+  - trademark
+level: specialist
+plain: >-
+  Nvidia's private high-speed connection between its AI chips, much faster than ordinary computer
+  connections, letting dozens of chips share memory and act almost like one giant chip.
+senses:
+  - definition: >-
+      Nvidia's proprietary [[interconnect|interconnect]] for linking [[gpu|GPUs]] to one another and
+      to Nvidia CPUs, with far higher bandwidth than PCI Express and support for direct reads and
+      writes into another GPU's memory. Per-GPU bandwidth has roughly doubled each generation: 160
+      GB/s (NVLink 1, Pascal, 2016), 300 GB/s (Volta), 600 GB/s (Ampere), 900 GB/s
+      ([[h100|Hopper]]), 1.8 TB/s (Blackwell) and 3.6 TB/s (Rubin). NVSwitch chips let every GPU in
+      a domain communicate with every other at full speed; in [[rack-scale-system|rack-scale
+      systems]] such as the GB200 NVL72, 72 GPUs share one NVLink domain with 130 TB/s of aggregate
+      bandwidth. This [[scale-up-and-scale-out|scale-up]] domain carries the bandwidth-hungry
+      traffic of [[tensor-parallelism|tensor parallelism]] and [[expert-parallelism|expert
+      parallelism]] in large models. NVLink Fusion (2025) licenses the technology to other chip
+      designers.
+origin: >-
+  Announced by Nvidia in March 2014 and first shipped with the Pascal-generation Tesla P100 (2016),
+  to overcome the PCI Express bottleneck between GPUs and to CPUs such as IBM's POWER processors.
+year: 2014
+note: >-
+  Open alternatives include UALink, backed by AMD, Intel, Google and others. The NVLink-C2C variant
+  joins CPU and GPU dies inside Nvidia's 'superchips'.
+see_also:
+  - interconnect
+  - scale-up and scale-out
+  - rack-scale system
+  - InfiniBand
+  - tensor parallelism
+  - GPU
+contrast:
+  - InfiniBand
+as_of: 2026-10

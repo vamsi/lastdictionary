@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PID controller
+id: pid-controller
+pos: n.
+also:
+  - PID control
+  - proportional–integral–derivative controller
+  - PI controller
+  - three-term controller
+  - PID loop
+domain: robot
+domains:
+  - math
+level: core
+plain: >-
+  The most common automatic controller in industry. It corrects a machine using three ingredients:
+  how far off it is now, how long it has been off, and how fast the error is changing.
+senses:
+  - definition: >-
+      A feedback controller that computes its output from the error e(t) between a desired setpoint
+      and a measured value as the sum of three terms: a proportional term, which reacts in
+      proportion to the present error; an integral term, which accumulates past error to remove
+      steady offsets; and a derivative term, which reacts to the error's rate of change to
+      anticipate and damp oscillation. The three gains are tuned by hand, by rules such as the
+      Ziegler–Nichols method, or automatically. Practical implementations guard against integral
+      windup (the integral growing while the actuator is saturated) and derivative kick (spikes when
+      the setpoint jumps), and filter the derivative against sensor noise. PID controllers need no
+      model of the process and work well on many roughly linear systems; they regulate most
+      industrial process loops as well as motor joints, drone attitude, cruise control and
+      thermostats. In robots, PID loops usually run at the lowest level, tracking joint positions or
+      velocities commanded by planners or learned [[policy|policies]].
+    example: >-
+      The arm oscillates at the end of each move; lower the proportional gain and add a little
+      derivative.
+formula_latex: u(t) = K_p\, e(t) + K_i \int_0^t e(\tau)\, d\tau + K_d \frac{de(t)}{dt}
+origin: >-
+  Elmer Sperry built PID-like ship autopilots around 1911. Nicolas Minorsky gave the first
+  theoretical analysis in 'Directional Stability of Automatically Steered Bodies' (Journal of the
+  American Society of Naval Engineers, 1922), modeling how helmsmen respond to present error,
+  accumulated error and rate of change. John Ziegler and Nathaniel Nichols published their tuning
+  rules in 1942.
+year: 1922
+note: >-
+  Industrial surveys commonly report that more than nine in ten regulatory control loops are PID or
+  PI, which makes PID the default baseline against which learned controllers are judged.
+see_also:
+  - control theory
+  - model predictive control
+  - actuator
+  - optimal control
+  - impedance control
+contrast:
+  - model predictive control
+sources:
+  - text: >-
+      Minorsky, N. (1922). Directional stability of automatically steered bodies. Journal of the
+      American Society of Naval Engineers 34(2), 280–309.
+  - text: Åström, K. J. & Hägglund, T. (2006). Advanced PID Control. ISA.

@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mesa-optimization
+id: mesa-optimization
+pos: n.
+also:
+  - mesa-optimizer
+  - mesa-objective
+  - learned optimization
+  - inner optimizer
+  - base optimizer
+  - base objective
+  - optimization daemon
+pronunciation: MAY-suh op-tih-mih-ZAY-shun
+domain: safety
+domains:
+  - ml
+  - interp
+level: specialist
+plain: >-
+  When training an AI produces a model that is itself a goal-seeking planner, with goals of its own
+  that may differ from the ones it was trained for.
+senses:
+  - definition: >-
+      The situation, analyzed by Evan Hubinger and colleagues (2019), in which a trained model is
+      itself an optimizer — something that, inside its own computation, weighs candidate outputs or
+      plans against an objective it represents and picks those that do best. The training procedure
+      (for example [[stochastic-gradient-descent|stochastic gradient descent]]) is the base
+      optimizer pursuing a base objective; the learned optimizer is the mesa-optimizer and its
+      objective the mesa-objective. Because many mesa-objectives fit the training data, the two
+      objectives can differ — the [[inner-alignment|inner alignment]] problem. A mesa-optimizer that
+      behaves well in training for reasons that fail to generalize is called pseudo-aligned, and
+      [[deceptive-alignment|deceptive alignment]] is its most dangerous case. Whether current
+      [[neural-network|neural networks]] perform such explicit internal search is an open empirical
+      question.
+    example: >-
+      Is the policy a mesa-optimizer, or just a bundle of heuristics that looks goal-directed?
+origin: >-
+  Introduced by Evan Hubinger, Chris van Merwijk, Vladimir Mikulik, Joar Skalse and Scott Garrabrant
+  in 'Risks from Learned Optimization in Advanced Machine Learning Systems' (2019). 'Mesa' was
+  adopted as the opposite of 'meta': the paper glosses meta as Greek for 'above' and mesa as 'below'
+  (modern Greek mésa means 'inside'), since a meta-optimizer optimizes an optimizer while a
+  mesa-optimizer is produced by one. The authors hoped to replace earlier informal talk of
+  'optimization daemons'.
+year: 2019
+note: >-
+  A mesa-optimizer need not be misaligned, and a misaligned model need not be a mesa-optimizer:
+  [[goal-misgeneralization|goal misgeneralization]] occurs in systems with no explicit search. The
+  standard analogy is evolution (base optimizer) producing humans (mesa-optimizers) who pursue goals
+  other than reproductive fitness.
+see_also:
+  - inner alignment
+  - deceptive alignment
+  - gradient hacking
+  - goal-directedness
+  - goal misgeneralization
+  - outer alignment
+contrast:
+  - meta-learning
+sources:
+  - text: >-
+      Hubinger, E., van Merwijk, C., Mikulik, V., Skalse, J. & Garrabrant, S. (2019). Risks from
+      Learned Optimization in Advanced Machine Learning Systems. arXiv:1906.01820.
+    url: https://arxiv.org/abs/1906.01820

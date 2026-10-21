@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TensorFlow
+id: tensorflow
+pos: prop. n.
+also:
+  - TF
+  - TensorFlow 2
+  - tf.keras
+  - TensorBoard
+  - TensorFlow Serving
+  - TensorFlow.js
+domain: eng
+domains:
+  - dl
+  - hw
+labels:
+  - trademark
+level: core
+plain: >-
+  Google's free software toolkit for building, training and running machine-learning models; it led
+  the field after 2015 and still runs many models inside phones, browsers and company systems.
+senses:
+  - definition: >-
+      Google's open-source platform for building, training and deploying machine-learning models. At
+      its core, TensorFlow compiles a computation into a graph of operations on tensors
+      (multidimensional arrays), which lets the whole computation be optimized before it runs and
+      its pieces be placed on CPUs, GPUs or [[tpu|TPUs]], on one machine or many. TensorFlow 1.x
+      required users to build a static graph and then run it in a session; TensorFlow 2.0 (2019)
+      made eager execution the default, adopted [[keras|Keras]] as its high-level API, and kept
+      graph compilation available through tf.function and the [[xla|XLA]] compiler. Around the core
+      grew a large production ecosystem: TensorBoard for visualizing training, TensorFlow Serving
+      for [[model-serving|model serving]], TFX for production pipelines, TensorFlow Lite (now
+      [[litert|LiteRT]]) for phones and embedded devices, and TensorFlow.js for browsers. TensorFlow
+      led framework adoption in its first years, but research moved largely to [[pytorch|PyTorch]]
+      and, within Google, much new work moved to [[jax|JAX]].
+    example: >-
+      The recommender still runs on TensorFlow Serving, though new models are prototyped in PyTorch.
+origin: >-
+  Developed by the [[google-brain|Google Brain]] team as the successor to its internal DistBelief
+  system and released as open source on 9 November 2015; a white paper and a 2016 OSDI paper by
+  Martín Abadi and colleagues described its design. The name refers to tensors flowing along the
+  edges of a dataflow graph.
+year: 2015
+note: >-
+  Its name helped popularize 'tensor' for any multidimensional array in machine learning, a looser
+  usage than in mathematics and physics.
+see_also:
+  - PyTorch
+  - JAX
+  - Keras
+  - computational graph
+  - LiteRT
+  - TPU
+  - XLA
+contrast:
+  - PyTorch
+sources:
+  - text: >-
+      Abadi, M. et al. (2016). TensorFlow: A System for Large-Scale Machine Learning. 12th USENIX
+      Symposium on Operating Systems Design and Implementation (OSDI 16).
+  - text: >-
+      Abadi, M. et al. (2016). TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed
+      Systems. arXiv:1603.04467.
+as_of: 2026-10

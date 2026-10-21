@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: notified body
+id: notified-body
+pos: n.
+also:
+  - conformity assessment body
+  - third-party conformity assessment
+domain: gov
+domains:
+  - eng
+labels:
+  - legal
+level: specialist
+plain: >-
+  An independent testing and certification organization, approved by an EU government, that checks
+  whether certain risky products — including some AI systems — meet the law before they can be sold.
+senses:
+  - definition: >-
+      A conformity assessment body that a member state's notifying authority has designated, and
+      notified to the Commission and the other member states, to carry out third-party
+      [[conformity-assessment|conformity assessment]] under EU product legislation. Under the
+      [[eu-ai-act|EU AI Act]], notified bodies examine providers' quality management systems and
+      technical documentation for [[high-risk-ai-system|high-risk systems]] where third-party
+      assessment is required — chiefly biometric systems not fully covered by
+      [[harmonised-standards|harmonised standards]] — and issue time-limited certificates that they
+      can suspend or withdraw. They must be independent of the providers they assess, competent,
+      impartial and insured. For AI in products such as medical devices or lifts, the body already
+      notified under that sector's law assesses the AI requirements as well.
+    example: >-
+      Because we did not fully apply the harmonised standards, our face-matching system needs a
+      notified body.
+origin: >-
+  A long-standing institution of EU product-safety law under the New Approach (1985) and the New
+  Legislative Framework (2008), used for medical devices, machinery and toys; the AI Act (2024)
+  created a notification route for AI. The 2026 [[digital-omnibus|Digital Omnibus]] introduced a
+  single application and joint assessment for bodies designated under both the AI Act and sectoral
+  law.
+note: >-
+  Notified bodies are usually private testing and certification firms paid by the providers they
+  assess, a model critics see as a potential conflict of interest.
+see_also:
+  - conformity assessment
+  - harmonised standards
+  - high-risk AI system
+  - EU AI Act
+  - AI audit
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(21)–(22); Arts. 28–39 and Art. 44; Art. 28 as amended by
+  Reg. (EU) 2026/1744
+as_of: 2026-10

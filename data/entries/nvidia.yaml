@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Nvidia
+id: nvidia
+pos: prop. n.
+also:
+  - Nvidia Corporation
+pronunciation: en-VID-ee-uh
+domain: orgs
+domains:
+  - hw
+level: essential
+plain: >-
+  An American chip company whose graphics processors became the main hardware for training and
+  running AI, making it one of the most valuable companies in the world.
+senses:
+  - definition: >-
+      An American semiconductor company whose [[gpu|graphics processing units]] and software became
+      the principal hardware platform of the [[deep-learning|deep learning]] era. Its [[cuda|CUDA]]
+      platform (2006–2007) let programmers use GPUs for general computation; [[alexnet|AlexNet]] was
+      trained on two Nvidia gaming cards in 2012, and the company went on to build data-center
+      accelerators — P100, V100 (which introduced [[tensor-core|tensor cores]]), A100,
+      [[h100|H100]], and the Blackwell (2024) and Rubin (2026) generations — together with
+      [[nvlink|NVLink]] and [[infiniband|InfiniBand]] networking, DGX systems and libraries such as
+      cuDNN. Its software ecosystem, not only chip performance, is widely seen as its competitive
+      moat. It designs chips but has them manufactured, chiefly by [[tsmc|TSMC]]. Analysts estimated
+      its share of the AI accelerator market in 2025 at more than 80 percent, and in June 2024 it
+      became, for the first time, the world's most valuable listed company. US
+      [[export-controls-on-ai-chips|export controls on AI chips]] have repeatedly restricted its
+      sales to China. In September 2026 it agreed to acquire [[hugging-face|Hugging Face]] for about
+      US$12.9 billion, announced on 3 September 2026.
+    example: The whole roadmap depends on how many Nvidia GPUs we can get next quarter.
+origin: >-
+  Founded on 5 April 1993 by Jensen Huang, Chris Malachowsky and Curtis Priem, who planned the
+  company at a Denny's restaurant in San Jose, California, to make graphics chips for games and
+  multimedia; its GeForce 256 (1999) was marketed as the first 'GPU'. Huang has been chief executive
+  since the founding. It acquired the networking firm Mellanox in 2020.
+year: 1993
+note: >-
+  Officially styled NVIDIA. Its main competitors in AI accelerators are AMD's GPUs and custom chips
+  such as Google's [[tpu|TPU]].
+see_also:
+  - GPU
+  - CUDA
+  - H100
+  - Jensen Huang
+  - TSMC
+  - export controls on AI chips
+  - AI accelerator
+  - tensor core
+as_of: 2026-10

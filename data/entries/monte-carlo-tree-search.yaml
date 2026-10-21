@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Monte Carlo tree search
+id: monte-carlo-tree-search
+pos: n.
+also:
+  - MCTS
+  - UCT
+  - PUCT
+domain: rl
+domains:
+  - sym
+level: core
+plain: >-
+  A way for a game-playing program to choose a move by simulating many possible continuations,
+  focusing on the most promising lines, and picking the move that worked out best on average.
+senses:
+  - definition: >-
+      A [[heuristic|heuristic]] search method for sequential decisions that grows a tree of possible
+      continuations from the current [[state|state]], steered by the outcomes of simulated play;
+      each iteration runs through four phases: selection (descend the tree with a rule balancing
+      promising and under-explored moves, typically [[upper-confidence-bound|UCB]] applied to trees,
+      UCT); expansion (add a new node); simulation or evaluation (estimate the new position's value
+      by a random [[rollout|rollout]] to the end of the game or, in modern systems, by a learned
+      [[value-function|value network]]); and backpropagation (update visit counts and value
+      estimates along the path). The most-visited move is played. MCTS needs no hand-crafted
+      evaluation function, can stop at any time and concentrates effort on relevant lines, which
+      made it the breakthrough method in computer Go. [[alphago|AlphaGo]], [[alphazero|AlphaZero]]
+      and [[muzero|MuZero]] guide it with policy and value networks (the PUCT rule); it is also used
+      in planning, scheduling, theorem proving and language-model reasoning.
+    example: >-
+      Each self-play move ran 800 MCTS simulations guided by the policy network's priors.
+origin: >-
+  Evaluating game positions by random playouts was explored by Bruce Abramson (1987) and applied to
+  Go by Bernd Brügmann (1993). Rémi Coulom coined 'Monte-Carlo tree search' in a 2006 paper
+  describing his Go program Crazy Stone, and Levente Kocsis and Csaba Szepesvári's UCT algorithm
+  (2006) supplied a bandit-based selection rule; MoGo and later AlphaGo (2016) built on both.
+year: 2006
+note: >-
+  Despite the name, AlphaZero-style MCTS often performs no random simulations; the Monte Carlo
+  element survives only in sampling paths through the tree. Unlike [[minimax|minimax]] search with
+  [[alpha-beta-pruning|alpha–beta pruning]], it does not search to a fixed depth or require a
+  hand-written evaluation function.
+see_also:
+  - upper confidence bound
+  - rollout
+  - AlphaGo
+  - AlphaZero
+  - MuZero
+  - game tree
+  - self-play
+contrast:
+  - minimax
+  - alpha–beta pruning
+sources:
+  - text: >-
+      Coulom, R. (2007). Efficient Selectivity and Backup Operators in Monte-Carlo Tree Search.
+      Computers and Games (CG 2006), Lecture Notes in Computer Science 4630.
+  - text: >-
+      Kocsis, L. & Szepesvári, C. (2006). Bandit Based Monte-Carlo Planning. ECML 2006.
+  - text: >-
+      Browne, C. B. et al. (2012). A Survey of Monte Carlo Tree Search Methods. IEEE Transactions on
+      Computational Intelligence and AI in Games 4(1), 1–43.

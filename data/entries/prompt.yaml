@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt
+id: prompt
+pos: n.
+also:
+  - prompts
+  - prompting
+  - user prompt
+  - input prompt
+domain: llm
+domains:
+  - gen
+  - core
+level: essential
+plain: >-
+  The message or instructions you give an AI system — a question, a request, some examples or a
+  document — that it responds to. Clearer prompts generally get better results.
+senses:
+  - context: Language models
+    definition: >-
+      The input text (and, for multimodal models, images, audio or files) given to a generative
+      [[language-model|language model]], which the model conditions on to produce its output. A
+      prompt may combine instructions, background context, retrieved documents, examples of the
+      desired behavior, the user's question and constraints on format; in chat systems it is
+      assembled from a [[system-prompt|system prompt]], earlier conversation turns and [[tool|tool]]
+      results, serialized by a [[chat-template|chat template]]. Because a model's behavior is
+      determined by its [[weights|weights]] together with its input, the prompt is the main way
+      users and developers steer it without training, and the basis of [[prompt-engineering|prompt
+      engineering]] and [[in-context-learning|in-context learning]]. Its length is limited by the
+      [[context-window|context window]].
+    example: Put the style guide in the prompt and the model will follow it.
+  - context: Generative media
+    definition: >-
+      The text description given to a [[text-to-image-model|text-to-image model]],
+      [[text-to-video-model|text-to-video model]] or music generator to specify the desired output,
+      often listing subject, style, composition and lighting, and sometimes paired with a
+      [[negative-prompt|negative prompt]] naming what to avoid.
+  - context: Computing
+    definition: >-
+      A symbol or message, such as a shell's '$' or 'C:\>', by which an interactive program signals
+      that it is waiting for input from the user. This is the older computing sense, from
+      command-line interfaces.
+origin: >-
+  From the theater, where a prompter supplies actors' forgotten lines; command-line interfaces later
+  used 'prompt' for the cue awaiting input. Text-generation research was conditioning models on
+  prompts by 2018 — Angela Fan and colleagues' story generator worked from Reddit writing prompts —
+  and [[gpt-2|GPT-2]] (2019) and [[gpt-3|GPT-3]] (2020) made prompting the main way of specifying
+  tasks to language models.
+year: 2018
+note: >-
+  The prompt is everything the model receives, not only what the user types; in deployed products
+  most of it is hidden. A prompt does not reprogram a model: its effects are probabilistic and can
+  be overridden by training or by adversarial input (see [[prompt-injection|prompt injection]]).
+see_also:
+  - prompt engineering
+  - system prompt
+  - context window
+  - in-context learning
+  - prompt template
+  - few-shot prompting
+  - context engineering
+  - prompt injection
+contrast:
+  - completion
+sources:
+  - text: Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. NeurIPS 2020.
+    url: https://arxiv.org/abs/2005.14165v2
+  - text: >-
+      Fan, A., Lewis, M. & Dauphin, Y. (2018). Hierarchical Neural Story Generation. ACL 2018.

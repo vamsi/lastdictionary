@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Netflix Prize
+id: netflix-prize
+pos: prop. n.
+domain: hist
+domains:
+  - ml
+  - data
+level: specialist
+plain: >-
+  A 2006–2009 contest in which Netflix offered a million dollars to anyone who could predict
+  customers' movie ratings 10 percent better than its own system. It popularized machine-learning
+  competitions and model blending.
+senses:
+  - definition: >-
+      An open competition run by Netflix from October 2006 to September 2009, offering US$1 million
+      to the first team to improve the root-mean-square error of its Cinematch
+      [[recommender-system|recommendation algorithm]] by 10 percent on held-out ratings. Contestants
+      received about 100 million ratings given by some 480,000 anonymized customers to 17,770 films.
+      The contest demonstrated the strength of latent-factor [[matrix-factorization|matrix
+      factorization]] for [[collaborative-filtering|collaborative filtering]], the value of modeling
+      how tastes change over time, and above all the gains from blending hundreds of diverse models
+      into an [[ensemble-learning|ensemble]]. The prize went to BellKor's Pragmatic Chaos, a merger
+      of teams from AT&T Labs, Austria and Canada, which tied the rival team The Ensemble on the
+      test score but had submitted 20 minutes earlier. Netflix never deployed the winning blend in
+      full, judging the engineering cost too high.
+    example: >-
+      The Netflix Prize taught a generation of data scientists that the winning model is usually a
+      blend.
+origin: >-
+  Announced by Netflix on 2 October 2006 and awarded on 21 September 2009. Its public-leaderboard
+  format foreshadowed competition platforms such as Kaggle, founded in 2010.
+year: 2006
+note: >-
+  A planned sequel was cancelled in 2010 after Arvind Narayanan and Vitaly Shmatikov showed that the
+  anonymized ratings could be linked back to individuals, prompting a privacy lawsuit and a US
+  Federal Trade Commission inquiry — an early landmark for data privacy in machine learning.
+see_also:
+  - collaborative filtering
+  - matrix factorization
+  - recommender system
+  - ensemble learning
+  - benchmark
+sources:
+  - text: >-
+      Bennett, J. & Lanning, S. (2007). The Netflix Prize. Proceedings of KDD Cup and Workshop 2007.
+  - text: >-
+      Narayanan, A. & Shmatikov, V. (2008). Robust De-anonymization of Large Sparse Datasets. IEEE
+      Symposium on Security and Privacy 2008.

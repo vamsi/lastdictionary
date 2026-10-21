@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: influence operation
+id: influence-operation
+pos: n.
+also:
+  - AI-enabled influence operation
+  - covert influence operation
+  - information operation
+domain: sec
+domains:
+  - society
+  - gov
+level: core
+plain: >-
+  An organized, often secret campaign to sway public opinion — fake accounts posting propaganda, for
+  instance — which AI can make cheaper by writing posts, translating them and inventing fake
+  personas.
+senses:
+  - definition: >-
+      An organized campaign, usually run by a state, political group or hired contractor, to steer
+      what a chosen population believes or does, frequently in secret through fake accounts, front
+      organizations and fabricated content. Generative AI can cut costs at each stage: writing and
+      translating posts and comments, generating profile images and personas, producing
+      [[synthetic-media|synthetic media]] and [[deepfake|deepfakes]], summarizing audience reactions
+      and automating account management. AI providers' threat reports since 2024 have described
+      state-linked operations using chatbots this way while finding that most drew little authentic
+      engagement; the larger concern is future scaling and personalization of persuasion.
+      Countermeasures include provider detection and account bans, platform enforcement against
+      coordinated inauthentic behavior, provenance and labeling of AI content, and public
+      attribution.
+    example: >-
+      The influence operation had a chatbot write hundreds of comments a day in four languages, but
+      few real users engaged.
+origin: >-
+  A long-established military and intelligence term. Josh Goldstein and colleagues analyzed how
+  language models could change influence operations in a January 2023 report from Georgetown's CSET,
+  OpenAI and the Stanford Internet Observatory; in May 2024 OpenAI reported disrupting five covert
+  operations, linked to Russia, China, Iran and an Israeli firm, that had used its models.
+see_also:
+  - disinformation
+  - misinformation
+  - misuse
+  - synthetic media
+  - deepfake detection
+  - AI watermarking
+sources:
+  - text: >-
+      Goldstein, J. A., Sastry, G., Musser, M., DiResta, R., Gentzel, M. & Sedova, K. (2023).
+      Generative Language Models and Automated Influence Operations: Emerging Threats and Potential
+      Mitigations. arXiv:2301.04246.
+as_of: 2026-10

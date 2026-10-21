@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deep Q-network
+id: deep-q-network
+pos: n.
+also:
+  - DQN
+  - deep Q-learning
+  - Double DQN
+  - Rainbow
+domain: rl
+domains:
+  - dl
+  - hist
+level: core
+plain: >-
+  A method, made famous by DeepMind in 2013–2015, in which a neural network learned to play dozens
+  of Atari video games from screen pixels and the score alone, many at human level.
+senses:
+  - definition: >-
+      A [[deep-reinforcement-learning|deep reinforcement learning]] algorithm and architecture that
+      approximates the optimal [[q-function|action-value function]] with a deep
+      [[convolutional-neural-network|convolutional neural network]] trained by
+      [[q-learning|Q-learning]]. The network takes a stack of the last four preprocessed game frames
+      and outputs one Q-value per joystick [[action|action]], so a single forward pass ranks every
+      action. Two devices made training stable: [[experience-replay|experience replay]], which
+      samples past transitions at random to break correlations, and a [[target-network|target
+      network]], a periodically refreshed copy used to compute the bootstrapped targets. Using one
+      architecture and set of hyperparameters across 49 Atari 2600 games, with rewards clipped to
+      ±1, the 2015 version beat earlier methods on 43 games and scored more than 75 percent of a
+      professional human tester's score on 29. Successors fixed specific flaws — Double DQN
+      (overestimation), prioritized replay, dueling, distributional and noisy networks, combined in
+      Rainbow (2017) — and Agent57 (2020) exceeded the human benchmark on all 57 games.
+    example: >-
+      Our DQN baseline uses the Nature hyperparameters: a one-million-transition replay buffer and
+      target updates every 10,000 steps.
+origin: >-
+  Introduced by Volodymyr Mnih and colleagues at DeepMind in 'Playing Atari with Deep Reinforcement
+  Learning' (NIPS Deep Learning Workshop, December 2013), which tested seven games; the expanded
+  'Human-level Control through Deep Reinforcement Learning' (Nature, February 2015) added the target
+  network and 49 games. Its success, soon after AlexNet, launched the deep RL boom.
+year: 2013
+see_also:
+  - Q-learning
+  - experience replay
+  - target network
+  - Arcade Learning Environment
+  - deep reinforcement learning
+  - deadly triad
+sources:
+  - text: >-
+      Mnih, V. et al. (2015). Human-level control through deep reinforcement learning. Nature 518,
+      529–533.
+  - text: >-
+      Mnih, V. et al. (2013). Playing Atari with Deep Reinforcement Learning. NIPS Deep Learning
+      Workshop. arXiv:1312.5602.
+    url: https://arxiv.org/abs/1312.5602
+  - text: >-
+      Badia, A. P. et al. (2020). Agent57: Outperforming the Atari Human Benchmark. arXiv:2003.13350.
+    url: https://arxiv.org/abs/2003.13350

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: context window
+id: context-window
+pos: n.
+also:
+  - context length
+  - context size
+  - context limit
+  - maximum sequence length
+domain: llm
+domains:
+  - agents
+  - infer
+level: essential
+plain: >-
+  How much an AI model can read and keep in view at once: the instructions, the conversation so far
+  and any attached documents. Text that does not fit has to be cut, summarized or left out.
+senses:
+  - definition: >-
+      The maximum number of [[token|tokens]] a [[language-model|language model]] can process in one
+      pass, counting the input — system prompt, conversation history, documents, tool results — and,
+      for most APIs, the generated output. Tokens outside the window cannot influence the output
+      unless re-inserted, so applications truncate, summarize ([[compaction|compaction]]) or
+      retrieve ([[retrieval-augmented-generation|retrieval-augmented generation]]) to manage it. The
+      window is set by training and architecture: [[positional-encoding|position encodings]], memory
+      for the [[kv-cache|KV cache]], and the quadratic cost of [[self-attention|self-attention]].
+      Windows grew from 512 tokens ([[bert|BERT]], 2018) and 2,048 ([[gpt-3|GPT-3]], 2020) to
+      128,000–200,000 in many 2024 models, and to a million or more in some Gemini, GPT-4.1, Llama 4
+      and Claude models by 2025; as of October 2026, one-million-token windows are standard in
+      several frontier model families. A large nominal window does not guarantee effective use:
+      accuracy often falls for information buried in the middle or far back
+      ([[lost-in-the-middle|lost in the middle]], [[context-rot|context rot]]).
+    example: >-
+      The whole repository will not fit in the context window, so we retrieve the relevant files.
+origin: >-
+  'Context' for the text a model conditions on is long-standing NLP usage. 'Context window' and
+  'context length' became everyday terms with GPT-3 (2020) and ChatGPT (2022), when the limit on
+  prompt length became users' central practical constraint.
+note: >-
+  Advertised windows are upper limits, not measures of how well a model uses distant information;
+  [[needle-in-a-haystack|needle in a haystack]] and harder long-context benchmarks test effective
+  length. Under per-token pricing, long contexts also cost more.
+see_also:
+  - long context
+  - context extension
+  - token
+  - KV cache
+  - context engineering
+  - context rot
+  - lost in the middle
+  - compaction
+as_of: 2026-10

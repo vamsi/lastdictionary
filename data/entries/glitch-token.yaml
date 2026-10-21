@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: glitch token
+id: glitch-token
+pos: n.
+also:
+  - anomalous token
+  - under-trained token
+  - SolidGoldMagikarp
+domain: llm
+domains:
+  - sec
+  - culture
+level: specialist
+plain: >-
+  A word fragment in an AI model's vocabulary that the model almost never saw during training, so
+  asking about it can produce bizarre, evasive or garbled answers.
+senses:
+  - definition: >-
+      A [[token|token]] in a model's [[vocabulary|vocabulary]] that is under-trained because it was
+      frequent in the text used to build the [[tokenizer|tokenizer]] but rare or absent in the
+      model's own training data, leaving its [[embedding|embedding]] close to its initial random
+      value. Prompts containing such tokens can make a model fail to repeat them, substitute other
+      words, turn evasive or produce unrelated text. Typical sources are usernames, strings from
+      scraped forums or logs, and fragments of long repeated sequences. The best-known example is '
+      SolidGoldMagikarp', a Reddit username that GPT-3-era models could not reproduce. Glitch tokens
+      can be found systematically by inspecting embedding norms or [[unembedding|unembedding]]
+      statistics and avoided by training tokenizers on data representative of model training; they
+      also concern security researchers because they trigger unpredictable behavior.
+    example: >-
+      The scan flagged 40 glitch tokens, mostly usernames scraped from a counting forum.
+origin: >-
+  Reported in February 2023 by Jessica Rumbelow and Matthew Watkins in a LessWrong post on
+  'anomalous' or 'weird' tokens such as ' SolidGoldMagikarp' in the GPT-2 and GPT-3 tokenizer;
+  'glitch tokens' soon became the usual name in follow-up discussion. Sander Land and Max Bartolo
+  (2024) automated their detection across many open models.
+year: 2023
+see_also:
+  - token
+  - vocabulary
+  - tokenizer
+  - embedding
+  - unembedding
+  - adversarial example
+sources:
+  - text: >-
+      Land, S. & Bartolo, M. (2024). Fishing for Magikarp: Automatically Detecting Under-trained
+      Tokens in Large Language Models. EMNLP 2024.
+    url: https://arxiv.org/abs/2405.05417

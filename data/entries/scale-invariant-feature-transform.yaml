@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scale-invariant feature transform
+id: scale-invariant-feature-transform
+pos: n.
+also:
+  - SIFT
+  - SIFT descriptor
+  - SIFT keypoint
+  - SURF
+  - ORB
+domain: percep
+domains:
+  - hist
+level: specialist
+plain: >-
+  A classic method for finding distinctive spots in a photo, such as corners and blobs, and
+  describing them so the same spots can be matched in other photos taken from different distances or
+  angles.
+senses:
+  - definition: >-
+      An algorithm that detects distinctive local keypoints in an image and describes each with a
+      vector robust to changes of scale and rotation and, partly, of illumination and viewpoint.
+      Detection finds extrema of a difference-of-Gaussians filter across positions and scales (a
+      scale space), discards low-contrast and edge-like candidates, and assigns each keypoint a
+      dominant gradient orientation. The descriptor divides the keypoint's neighborhood, rotated to
+      that orientation, into a 4 × 4 grid of cells and records an 8-bin histogram of gradient
+      orientations in each, giving 128 numbers. Descriptors are matched between images by
+      nearest-neighbor distance, with a ratio test that rejects ambiguous matches. SIFT was a
+      workhorse of pre-deep-learning vision: panorama stitching, object recognition, 'bag of visual
+      words' image retrieval, robot localization and [[structure-from-motion|structure from
+      motion]]. Faster alternatives (SURF, 2006; ORB, 2011) and learned detectors and matchers
+      (SuperPoint, 2018; LightGlue, 2023) followed, but SIFT remains a common default in 3D
+      reconstruction software.
+    example: >-
+      COLMAP still uses SIFT features by default, so try that before swapping in a learned matcher.
+origin: >-
+  Introduced by David Lowe of the University of British Columbia at ICCV 1999 and refined in
+  'Distinctive Image Features from Scale-Invariant Keypoints' (International Journal of Computer
+  Vision, 2004). The university's patent on the method expired in 2020, after which SIFT moved into
+  the main distribution of the OpenCV library.
+year: 1999
+see_also:
+  - keypoint detection
+  - feature extraction
+  - structure from motion
+  - 3D reconstruction
+  - computer vision
+sources:
+  - text: >-
+      Lowe, D. G. (1999). Object Recognition from Local Scale-Invariant Features. Proceedings of
+      ICCV 1999.
+  - text: >-
+      Lowe, D. G. (2004). Distinctive Image Features from Scale-Invariant Keypoints. International
+      Journal of Computer Vision 60(2), 91–110.

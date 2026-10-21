@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LLMOps
+id: llmops
+pos: n.
+also:
+  - large language model operations
+  - LLM ops
+  - GenAIOps
+  - FMOps
+  - AgentOps
+pronunciation: EL-el-em-ops
+domain: eng
+domains:
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  The everyday work of running chatbots and other products built on large language models: tracking
+  prompts, testing answers, watching cost and quality, and updating safely when models change.
+senses:
+  - definition: >-
+      The adaptation of [[mlops|MLOps]] to applications built on [[large-language-model|large
+      language models]], which are usually accessed through a [[model-api|model API]] or served from
+      [[open-weight-model|open weights]] rather than trained in-house. The managed artifacts shift
+      from datasets and weights toward prompts, [[retrieval-augmented-generation|retrieval]]
+      indexes, [[tool|tool]] definitions and model versions, so LLMOps emphasizes
+      [[prompt-management|prompt management]], [[evaluation|evaluation]] suites and
+      [[golden-dataset|golden sets]], [[llm-observability|tracing]] of multi-step calls, per-token
+      cost and [[latency|latency]] tracking, [[guardrails|guardrails]], [[ai-gateway|gateways]] that
+      route among providers, and [[fine-tuning|fine-tuning]] pipelines where used. Because outputs
+      are open-ended and providers update or retire models, quality must be checked continuously
+      with automated graders and human review rather than a single accuracy metric. Variants such as
+      GenAIOps and AgentOps extend the label to generative media and to [[ai-agent|agents]].
+    example: >-
+      Once the chatbot hit production, LLMOps meant versioning every prompt and replaying the eval
+      suite before each model upgrade.
+origin: >-
+  In use in vendor blogs, courses and conference talks by early 2023, a few months after
+  [[chatgpt|ChatGPT]], as tooling companies extended MLOps products to prompt-based applications; no
+  single coiner or first use has been traced. Cloud providers used parallel labels such as FMOps
+  (foundation-model operations) and GenAIOps. By 2025 much of the same ground was described as
+  [[ai-engineering|AI engineering]].
+year: 2023
+note: >-
+  Boundaries are fuzzy: some treat LLMOps as a subset of MLOps, others as part of AI engineering.
+  The term is used mostly by tool vendors and in job titles.
+see_also:
+  - MLOps
+  - AI engineering
+  - LLM observability
+  - prompt management
+  - evals-driven development
+  - AI gateway

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: A* search
+id: a-search
+pos: n.
+also:
+  - A*
+  - A-star
+  - A star algorithm
+  - A* algorithm
+pronunciation: AY-star
+domain: sym
+domains:
+  - robot
+level: core
+plain: >-
+  A method for finding the shortest route on a map or network that weighs both how far you have
+  already come and a smart guess of how far is left, so it tries the most promising paths first.
+senses:
+  - definition: >-
+      A [[best-first-search|best-first search]] algorithm that ranks each frontier node n by f(n) =
+      g(n) + h(n) — the cost already paid to reach n along the best route found so far, plus a
+      [[heuristic|heuristic]] guess h(n) of the cost still to go — and always expands the node with
+      the lowest f. If h is [[admissible-heuristic|admissible]], A* returns an optimal path; if h is
+      also consistent, no node is expanded twice, and no other optimal algorithm using the same
+      heuristic expands fewer nodes, up to tie-breaking. With h = 0 it reduces to Dijkstra's
+      algorithm. Its main limitation is memory, since it keeps every generated node; variants such
+      as IDA*, SMA*, weighted A* (trading optimality for speed) and anytime A* address this. It is
+      the standard pathfinding algorithm in video games, robot [[path-planning|path planning]] and
+      route guidance.
+    example: >-
+      With straight-line distance as the heuristic, A* expanded a tenth as many nodes as Dijkstra's
+      algorithm.
+formula_latex: f(n) = g(n) + h(n)
+origin: >-
+  Developed by Peter Hart, Nils Nilsson and Bertram Raphael at the Stanford Research Institute for
+  navigation by the mobile robot [[shakey-the-robot|Shakey]], and published in 1968. The asterisk is
+  usually explained as marking the optimal member of a family of 'A' algorithms, in keeping with the
+  authors' use of starred symbols for optimal quantities.
+year: 1968
+see_also:
+  - heuristic
+  - admissible heuristic
+  - best-first search
+  - breadth-first search
+  - path planning
+  - state space search
+  - Shakey the robot
+sources:
+  - text: >-
+      Hart, P. E., Nilsson, N. J. & Raphael, B. (1968). A Formal Basis for the Heuristic
+      Determination of Minimum Cost Paths. IEEE Transactions on Systems Science and Cybernetics
+      4(2), 100–107.

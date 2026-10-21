@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: guided backpropagation
+id: guided-backpropagation
+pos: n.
+also:
+  - guided backprop
+  - deconvnet visualization
+domain: interp
+domains:
+  - dl
+  - percep
+level: specialist
+plain: >-
+  A way of producing sharp, detailed pictures of which parts of an image a vision network responded
+  to, by passing only positive signals backward through the network.
+senses:
+  - definition: >-
+      A visualization method for [[convolutional-neural-network|convolutional networks]] that
+      computes a modified gradient of a unit's or class score's activation with respect to the input
+      image, zeroing negative values at every [[relu|ReLU]] during the backward pass — both where
+      the forward activation was negative, as in ordinary [[backpropagation|backpropagation]], and
+      where the backward signal itself is negative, as in the earlier deconvnet method. Keeping only
+      positive contributions yields crisp, high-resolution images of the edges and textures that
+      excite a unit. The maps are not class-discriminative — different classes give nearly identical
+      images — which is why [[grad-cam|Grad-CAM]] multiplies them with coarse class maps to form
+      Guided Grad-CAM. Later analyses showed that guided backpropagation largely reconstructs the
+      input image rather than revealing the model's decision: its maps barely change when the
+      network's upper-layer weights are randomized.
+    example: >-
+      Guided backpropagation produced a beautiful outline of the cat, which should have made us
+      suspicious.
+origin: >-
+  Introduced by Jost Tobias Springenberg, Alexey Dosovitskiy, Thomas Brox and Martin Riedmiller in
+  'Striving for Simplicity: The All Convolutional Net' (arXiv, December 2014; ICLR 2015 workshop),
+  refining the deconvnet visualizations of Matthew Zeiler and Rob Fergus (2014).
+year: 2014
+note: >-
+  A cautionary example in explainability: visually compelling maps can be nearly insensitive to what
+  the model has learned, as the 'sanity checks' of Julius Adebayo and colleagues (2018) showed.
+see_also:
+  - saliency map
+  - Grad-CAM
+  - feature attribution
+  - faithfulness
+  - feature visualization
+sources:
+  - text: >-
+      Springenberg, J. T., Dosovitskiy, A., Brox, T. & Riedmiller, M. (2015). Striving for
+      Simplicity: The All Convolutional Net. ICLR 2015 Workshop.
+  - text: Adebayo, J. et al. (2018). Sanity Checks for Saliency Maps. NeurIPS 2018.

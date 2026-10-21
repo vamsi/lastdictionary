@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: recall
+id: recall
+pos: n.
+also:
+  - sensitivity
+  - true positive rate
+  - TPR
+  - hit rate
+  - detection rate
+  - factual recall
+domain: ml
+domains:
+  - eval
+  - llm
+level: core
+plain: >-
+  Of all the items that really were positive, the share the model managed to find; a cancer screen
+  with high recall misses very few people who actually have cancer.
+senses:
+  - context: Classification and retrieval
+    definition: >-
+      The fraction of actual positives that a model correctly identifies: TP/(TP + FN), where FN
+      counts [[false-negative|false negatives]]. In retrieval it is the fraction of all relevant
+      documents that are returned ([[recall-k|recall@k]] for the top k results); in medicine and
+      signal detection it is called sensitivity or the true positive rate, the y-axis of the
+      [[roc-curve|ROC curve]]. Recall answers 'of everything we should have caught, how much did we
+      catch?' and matters most when misses are costly: disease screening, fraud detection, safety
+      filtering, legal discovery. It trades off against [[precision|precision]]: lowering the
+      decision threshold catches more positives but admits more [[false-positive|false positives]],
+      so recall alone can be trivially maximized by flagging everything. Unlike precision, recall
+      does not depend on how common positives are, which keeps it stable across populations with
+      different prevalence.
+    example: >-
+      We tuned the triage model for 99% recall, accepting that nurses would review many false alarms.
+  - context: Language models
+    definition: >-
+      The retrieval of stored information by a model: factual recall of knowledge acquired in
+      pretraining (whose internal mechanisms interpretability research studies), verbatim recall of
+      memorized training text ([[memorization|memorization]]), and recall of details from a long
+      [[context-window|context window]], as tested by [[needle-in-a-haystack|needle in a haystack]]
+      evaluations.
+formula_latex: \mathrm{Recall} = \frac{TP}{TP + FN}
+origin: >-
+  The metric comes from information-retrieval research of the 1950s and 1960s, where work by Allen
+  Kent and colleagues (1955) and Cyril Cleverdon's Cranfield tests established recall alongside
+  precision. The synonym 'sensitivity' comes from medical diagnostic testing, where Jacob Yerushalmy
+  defined sensitivity and specificity in 1947.
+see_also:
+  - precision
+  - F1 score
+  - precision–recall curve
+  - ROC curve
+  - false negative
+  - specificity
+  - recall@k
+  - confusion matrix
+contrast:
+  - precision
+sources:
+  - text: >-
+      Kent, A., Berry, M. M., Luehrs, F. U. & Perry, J. W. (1955). Machine Literature Searching
+      VIII. Operational Criteria for Designing Information Retrieval Systems. American Documentation
+      6(2).
+  - text: >-
+      Yerushalmy, J. (1947). Statistical Problems in Assessing Methods of Medical Diagnosis, with
+      Special Reference to X-Ray Techniques. Public Health Reports 62(40).

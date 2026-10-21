@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: grounding
+id: grounding
+pos: n.
+also:
+  - grounded
+  - grounded generation
+  - groundedness
+  - ground
+domain: llm
+domains:
+  - mind
+  - percep
+  - robot
+level: core
+plain: >-
+  Connecting an AI's words to something real — trusted documents, a live search, images or the
+  physical world — so that its answers rest on evidence rather than only on what it absorbed in
+  training.
+senses:
+  - context: Language models
+    definition: >-
+      Conditioning a model's output on specified, verifiable sources — retrieved documents, search
+      results, databases, tool outputs or user files — and constraining it to make only claims those
+      sources support, ideally with [[citation|citations]].
+      [[retrieval-augmented-generation|Retrieval-augmented generation]] is the standard technique.
+      Groundedness (also called attribution or faithfulness) is evaluated by checking each claim
+      against the supplied sources, often with [[llm-as-a-judge|model-based judges]]. Grounding
+      reduces but does not eliminate [[hallucination|hallucination]], since models can misread or
+      over-extend sources. Several providers market 'grounding' as a product feature connecting
+      models to web search or enterprise data.
+    example: >-
+      Answers must be grounded in the policy documents; if they are silent, the bot says so.
+  - context: Philosophy and cognitive science
+    definition: >-
+      The connection between symbols or words and what they stand for in the world, rather than only
+      to other symbols — the [[symbol-grounding-problem|symbol grounding problem]] posed by Stevan
+      Harnad in 1990. Critics argue that models trained only on text lack such grounding; others
+      hold that multimodal training, interaction or the structure of text itself can supply some of
+      it.
+  - context: Perception and robotics
+    definition: >-
+      Linking language to perceptual or physical referents: [[visual-grounding|visual grounding]]
+      locates the image region a phrase describes, and grounded language learning in
+      [[embodied-ai|embodied AI]] maps instructions onto objects and actions that a robot can
+      perceive and carry out in its environment.
+  - context: Dialogue
+    definition: >-
+      In linguistics and psychology, the collaborative process by which conversation partners
+      establish mutual understanding, or common ground, through acknowledgments, clarification
+      questions and repairs — a concept from Herbert Clark and Susan Brennan (1991) that informs the
+      design of conversational agents.
+origin: >-
+  Stevan Harnad's 1990 paper 'The Symbol Grounding Problem' framed the philosophical sense, and
+  Herbert Clark and Susan Brennan's 'Grounding in Communication' (1991) the conversational one. The
+  language-model sense — answers tied to supplied sources — spread with retrieval-augmented
+  generation from 2020 and became a product term in 2023–2024.
+year: 1990
+note: >-
+  The senses are related but not interchangeable: a model can be grounded in documents (first sense)
+  while remaining, on some philosophical accounts, ungrounded (second sense).
+see_also:
+  - retrieval-augmented generation
+  - citation
+  - hallucination
+  - factuality
+  - symbol grounding problem
+  - visual grounding
+  - embodied AI
+  - parametric knowledge
+contrast:
+  - parametric knowledge
+  - hallucination
+sources:
+  - text: Harnad, S. (1990). The Symbol Grounding Problem. Physica D 42, 335–346.
+  - text: >-
+      Clark, H. H. & Brennan, S. E. (1991). Grounding in Communication. In Resnick, L. B. et al.
+      (eds.), Perspectives on Socially Shared Cognition. American Psychological Association.

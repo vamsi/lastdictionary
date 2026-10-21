@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deep deterministic policy gradient
+id: deep-deterministic-policy-gradient
+pos: n.
+also:
+  - DDPG
+  - deterministic policy gradient
+  - DPG
+  - TD3
+  - twin delayed DDPG
+domain: rl
+domains:
+  - robot
+level: specialist
+plain: >-
+  A method for teaching AI agents smooth, precise movements, such as controlling a robot arm, by
+  learning a scoring network for actions and steering a decision network toward higher scores.
+senses:
+  - definition: >-
+      An [[off-policy|off-policy]] [[actor-critic|actor–critic]] algorithm for continuous
+      [[action-space|action spaces]] that learns a deterministic [[policy|policy]] (the actor)
+      together with a [[q-function|Q-function]] (the critic). The actor is updated by the
+      deterministic policy gradient: the gradient of the critic's Q-value with respect to the
+      action, chained through the actor's parameters, moves the actor toward actions the critic
+      rates more highly, avoiding the maximization over actions that [[q-learning|Q-learning]] would
+      require. From the [[deep-q-network|deep Q-network]] it borrows [[experience-replay|experience
+      replay]] and [[target-network|target networks]], updated softly by averaging, and it explores
+      by adding noise to its actions. DDPG solved a range of simulated physics tasks from
+      low-dimensional states or pixels but proved brittle and prone to overestimating Q-values; TD3
+      (2018) fixed much of this with twin critics, delayed actor updates and target-policy
+      smoothing, and the stochastic [[soft-actor-critic|soft actor–critic]] became the more common
+      choice.
+    example: >-
+      We started with DDPG for the arm, but TD3's twin critics stopped the Q-values from exploding.
+origin: >-
+  David Silver and colleagues derived the deterministic policy gradient theorem in 'Deterministic
+  Policy Gradient Algorithms' (ICML 2014). Timothy Lillicrap and colleagues at DeepMind combined it
+  with deep networks in 'Continuous Control with Deep Reinforcement Learning' (arXiv, September
+  2015; ICLR 2016). Scott Fujimoto, Herke van Hoof and David Meger introduced TD3 at ICML 2018.
+year: 2015
+see_also:
+  - actor–critic
+  - soft actor–critic
+  - Q-function
+  - off-policy
+  - target network
+  - experience replay
+sources:
+  - text: >-
+      Lillicrap, T. P. et al. (2016). Continuous control with deep reinforcement learning. ICLR 2016.
+  - text: Silver, D. et al. (2014). Deterministic Policy Gradient Algorithms. ICML 2014.
+  - text: >-
+      Fujimoto, S., van Hoof, H. & Meger, D. (2018). Addressing Function Approximation Error in
+      Actor-Critic Methods. ICML 2018.

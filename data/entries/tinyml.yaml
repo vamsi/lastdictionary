@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TinyML
+id: tinyml
+pos: n.
+also:
+  - tiny machine learning
+  - embedded machine learning
+  - microcontroller machine learning
+domain: infer
+domains:
+  - hw
+  - robot
+level: specialist
+plain: >-
+  Machine learning shrunk to run on tiny, cheap, battery-powered chips inside sensors, wearables or
+  appliances, using so little power that a coin-sized battery can last for months or years.
+senses:
+  - definition: >-
+      Machine-learning inference on microcontrollers and similar embedded processors, which
+      typically have tens to hundreds of kilobytes of RAM and often no operating system, within a
+      power budget that the tinyML community puts at around a milliwatt or less. Typical
+      applications are always-on wake-word and keyword spotting, gesture and activity recognition
+      from accelerometers, anomaly detection on vibration sensors, and simple vision such as person
+      detection. Models are small [[convolutional-neural-network|convolutional]] or recurrent
+      networks of thousands to a few million parameters, compressed with 8-bit or lower
+      [[quantization|quantization]] and [[pruning|pruning]], often designed by hardware-aware
+      [[neural-architecture-search|neural architecture search]], and run by interpreters or
+      compilers such as TensorFlow Lite for Microcontrollers that avoid dynamic memory allocation.
+      TinyML is the extreme end of [[edge-ai|edge AI]], trading capability for cost, privacy and
+      battery life.
+    example: The keyword spotter uses 20 KB of RAM and runs for a year on a coin cell.
+origin: >-
+  Popularized from 2018–2019 by Pete Warden of Google's TensorFlow Lite team, whose 2018 blog post
+  argued that the future of machine learning is tiny; by the tinyML Summit, first held in 2019; and
+  by Warden and Daniel Situnayake's O'Reilly book TinyML (2019). The community's foundation renamed
+  itself the Edge AI Foundation in 2024.
+year: 2019
+see_also:
+  - edge AI
+  - on-device AI
+  - quantization
+  - model compression
+  - neural architecture search
+as_of: 2026-10

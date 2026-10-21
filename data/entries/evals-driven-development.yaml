@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: evals-driven development
+id: evals-driven-development
+pos: n.
+also:
+  - eval-driven development
+  - evaluation-driven development
+  - EDD
+domain: eng
+domains:
+  - eval
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Building an AI product by first writing tests that show what good answers look like, then
+  accepting changes to prompts, models or code only when the test scores improve.
+senses:
+  - definition: >-
+      A development methodology for AI applications, modeled on test-driven development, in which a
+      suite of [[evaluation|evals]] defines success before or alongside the system and every change
+      — to prompts, models, retrieval, tools or [[harness|harness]] — is accepted only if the
+      suite's scores improve without regressions. The suite typically combines a curated
+      [[golden-dataset|golden dataset]] of representative and adversarial cases; code-based checks
+      such as format validation, exact match and unit tests on generated code; rubric scoring by
+      [[llm-as-a-judge|model graders]] calibrated against human labels; and cases drawn from
+      production traces through [[llm-observability|LLM observability]]. Error analysis of failures
+      drives both fixes and new test cases. Because model outputs are stochastic, scores are
+      compared over repeated samples with attention to variance. The approach replaces informal spot
+      checks ('vibe checks') with measurable progress and makes model upgrades and vendor switches
+      safer.
+    example: >-
+      We practice evals-driven development: no prompt change merges unless the 400-case suite holds
+      steady or improves.
+origin: >-
+  The idea circulated among practitioners in 2023–2024, promoted by OpenAI's open-source Evals
+  framework (March 2023) and widely read essays such as Hamel Husain's 'Your AI Product Needs Evals'
+  (2024). The phrase, also as 'eval-driven development', spread through AI-engineering talks,
+  courses and vendor documentation in 2024–2025.
+year: 2024
+note: >-
+  Evals are only as good as their coverage and graders; a suite that is too small or too easy can
+  lock in false confidence (see [[goodhart-s-law|Goodhart's law]]).
+see_also:
+  - evaluation
+  - golden dataset
+  - LLM-as-a-judge
+  - LLM observability
+  - AI engineering
+  - prompt optimization
+  - vibe check

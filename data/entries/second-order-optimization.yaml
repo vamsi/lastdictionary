@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: second-order optimization
+id: second-order-optimization
+pos: n.
+also:
+  - second-order method
+  - Newton's method
+  - quasi-Newton method
+  - L-BFGS
+  - natural gradient
+  - K-FAC
+  - Hessian-free optimization
+domain: dl
+domains:
+  - math
+level: specialist
+plain: >-
+  Training methods that use not only the slope of the error but also how that slope is changing —
+  its curvature — to choose better-sized steps. They can need far fewer steps, but each costs more.
+senses:
+  - definition: >-
+      A family of optimization methods that use second-derivative (curvature) information — the
+      [[hessian|Hessian]] or an approximation to it — to choose both the direction and the scale of
+      each update. Newton's method multiplies the gradient by the inverse Hessian, taking long steps
+      along flat directions and short ones along steep ones, and converges quadratically near a
+      minimum; but for n parameters the Hessian has n² entries, impossible to store or invert at
+      modern scales, and it can be indefinite near [[saddle-point|saddle points]]. Practical
+      approximations include quasi-Newton methods such as L-BFGS (common for small full-batch
+      problems), Hessian-free optimization using conjugate gradients and Hessian–vector products,
+      Gauss–Newton and natural-gradient methods based on the Fisher information matrix,
+      Kronecker-factored approximations (K-FAC), diagonal curvature estimates (AdaHessian, Sophia)
+      and structured preconditioners such as [[shampoo|Shampoo]]. Adaptive methods such as
+      [[adam|Adam]] are sometimes called crude diagonal second-order methods, though their
+      statistics come from gradients alone.
+origin: >-
+  Newton's method for root-finding (Isaac Newton, 1669; Joseph Raphson, 1690) minimizes a function
+  by seeking a zero of its gradient. Quasi-Newton methods date from William Davidon's 1959 report
+  and the 1970 BFGS update; Shun-ichi Amari's natural gradient (1998), James Martens's Hessian-free
+  deep learning (2010) and Martens and Roger Grosse's K-FAC (2015) adapted the ideas to neural
+  networks.
+note: >-
+  The boundary is blurry: [[shampoo|Shampoo]] and [[muon|Muon]] use only gradients yet act as
+  structured preconditioners, and are variously described as first-order, 'second-order-like' or
+  non-diagonal methods.
+see_also:
+  - Hessian
+  - Shampoo
+  - Adam
+  - gradient descent
+  - optimizer
+  - loss landscape
+contrast:
+  - gradient descent
+sources:
+  - text: >-
+      Amari, S. (1998). Natural Gradient Works Efficiently in Learning. Neural Computation 10(2),
+      251–276.
+  - text: >-
+      Martens, J. & Grosse, R. (2015). Optimizing Neural Networks with Kronecker-factored
+      Approximate Curvature. ICML 2015.

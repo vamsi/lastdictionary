@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: lost in the middle
+id: lost-in-the-middle
+pos: phr.
+also:
+  - lost-in-the-middle effect
+  - middle-of-context problem
+domain: agents
+domains:
+  - llm
+  - eval
+level: core
+plain: >-
+  AI models reading a long input behave a little like a skimmer: they reliably catch facts placed
+  near its start or end but are much likelier to miss the same fact buried halfway through.
+senses:
+  - definition: >-
+      A positional bias in [[long-context|long-context]] [[large-language-model|language models]]:
+      plotted against where the needed information sits in the input, accuracy traces a U, high at
+      the two ends and often much lower in between. In the original multi-document
+      [[question-answering|question answering]] experiments, GPT-3.5-Turbo given 20 documents scored
+      about 76% with the answer-bearing document first but about 54% with it in the middle — below
+      its 56% with no documents at all. The pattern resembles the serial-position effect in human
+      recall (primacy and recency). It matters for
+      [[retrieval-augmented-generation|retrieval-augmented generation]] and agents; common responses
+      are retrieving fewer, better passages, placing the most relevant ones at the edges of the
+      prompt, restating key instructions at the end, and training on data in which useful
+      information occurs at varied positions.
+    example: >-
+      Because of lost in the middle, we put the top-ranked passage first and restate the question
+      after the documents.
+origin: >-
+  Named by Nelson F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio
+  Petroni and Percy Liang in 'Lost in the Middle: How Language Models Use Long Contexts' (arXiv,
+  July 2023; Transactions of the ACL, 2024), which tested multi-document question answering and
+  key-value retrieval.
+year: 2023
+note: >-
+  A position effect, distinct from [[context-rot|context rot]], the general decline as inputs
+  lengthen. How strong it is varies considerably across models and tasks, so it should be measured
+  for the model in use rather than assumed.
+see_also:
+  - context rot
+  - long context
+  - needle in a haystack
+  - retrieval-augmented generation
+  - reranking
+  - context engineering
+  - attention sink
+sources:
+  - text: >-
+      Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F. & Liang, P.
+      (2024). Lost in the Middle: How Language Models Use Long Contexts. Transactions of the
+      Association for Computational Linguistics 12: 157–173.
+    url: https://aclanthology.org/2024.tacl-1.9/

@@ -1,0 +1,83 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: speech-to-speech model
+id: speech-to-speech-model
+pos: n.
+also:
+  - speech-to-speech
+  - S2S
+  - speech-to-speech translation
+  - S2ST
+  - voice-to-voice model
+  - native audio model
+  - full-duplex speech model
+  - Translatotron
+  - Moshi
+domain: percep
+domains:
+  - llm
+  - agents
+labels:
+  - emerging
+level: core
+plain: >-
+  An AI model that listens to speech and replies or translates directly in speech, without first
+  writing everything down as text, so conversations feel faster and keep the tone of voice.
+senses:
+  - context: Conversational models
+    definition: >-
+      A model that takes spoken audio as input and produces spoken audio as output within a single
+      network, instead of chaining [[speech-recognition|speech recognition]], a text
+      [[large-language-model|large language model]] and [[text-to-speech|text-to-speech]] in a
+      'cascaded' pipeline. Audio is represented as continuous features or as discrete tokens from a
+      [[neural-audio-codec|neural audio codec]], and the model is usually built on a pretrained
+      language model extended to read and write audio tokens, often also predicting time-aligned
+      text tokens as an internal 'inner monologue' that preserves reasoning and content quality.
+      Compared with cascades it offers lower [[latency|latency]] (replies within a few hundred
+      milliseconds), keeps paralinguistic information such as emotion, emphasis, laughter and
+      accent, and supports natural turn-taking. Full-duplex models listen and speak at the same
+      time, so they can handle interruptions and back-channel sounds such as 'mm-hm'; Kyutai's Moshi
+      (2024) reported about 200 milliseconds of latency in practice. Commercial examples include the
+      voice mode of OpenAI's GPT-4o (2024) and the real-time APIs that later powered voice agents.
+      Drawbacks include weaker tool use and instruction following than text models, harder
+      evaluation and moderation of audio, and new risks such as voice impersonation.
+    example: >-
+      Moving from the cascade to a speech-to-speech model cut our response latency from 1.8 seconds
+      to about 400 milliseconds.
+  - context: Translation
+    definition: >-
+      A model that translates speech in one language directly into speech in another, without an
+      intermediate text transcript, as introduced by Google's Translatotron (2019), which could also
+      carry the original speaker's voice into the translation. Later systems such as Meta's
+      SeamlessM4T (2023) combine speech and text translation across about a hundred languages, and
+      streaming variants interpret while the speaker is still talking.
+origin: >-
+  Direct speech-to-speech translation was introduced by Ye Jia, Ron Weiss and colleagues at Google
+  in Translatotron (arXiv April 2019). Conversational speech-to-speech models spread in 2024, when
+  OpenAI demonstrated GPT-4o's voice mode (May) and Kyutai released Moshi (September), and
+  underpinned many voice agents in 2025–2026.
+year: 2019
+note: >-
+  In voice-AI products 'speech-to-speech' can also mean voice conversion, re-speaking a recording in
+  a different voice while keeping its words and delivery (see [[voice-cloning|voice cloning]]). Many
+  deployed voice agents still use cascades because they are easier to control and audit.
+see_also:
+  - audio language model
+  - speech recognition
+  - text-to-speech
+  - neural audio codec
+  - voice activity detection
+  - latency
+  - voice cloning
+contrast:
+  - text-to-speech
+sources:
+  - text: >-
+      Jia, Y., Weiss, R. J., Biadsy, F., Macherey, W., Johnson, M., Chen, Z. & Wu, Y. (2019). Direct
+      Speech-to-Speech Translation with a Sequence-to-Sequence Model. Interspeech 2019.
+    url: https://arxiv.org/abs/1904.06037
+  - text: >-
+      Défossez, A. et al. (2024). Moshi: A Speech-Text Foundation Model for Real-Time Dialogue.
+      arXiv:2410.00037.
+    url: https://arxiv.org/abs/2410.00037
+as_of: 2026-10

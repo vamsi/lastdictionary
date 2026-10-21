@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: receptive field
+id: receptive-field
+pos: n.
+also:
+  - effective receptive field
+  - theoretical receptive field
+domain: dl
+domains:
+  - percep
+level: core
+plain: >-
+  The patch of the original input, such as a region of an image, that a particular neuron inside a
+  network can see and respond to.
+senses:
+  - definition: >-
+      For a unit in a [[convolutional-neural-network|convolutional neural network]] or other locally
+      connected network, the region of the input that can influence its value. A unit in a first
+      convolutional layer with a 3 × 3 [[filter|filter]] has a 3 × 3 receptive field; stacking
+      layers, [[pooling|pooling]], [[stride|striding]] and [[dilated-convolution|dilation]] enlarge
+      it, so deep units can respond to whole objects. The theoretical receptive field grows linearly
+      with depth for stride-1 convolutions and much faster with downsampling or exponentially
+      increasing dilation. The effective receptive field, the part that actually matters, is
+      smaller: Wenjie Luo and colleagues (2016) found its influence roughly Gaussian and confined to
+      a fraction of the theoretical field. Matching receptive-field size to the scale of the
+      relevant patterns is a design concern in segmentation, detection and audio models.
+    example: >-
+      Our units' receptive field is only 100 pixels, too small to see the whole lesion.
+origin: >-
+  Coined by physiologist Charles Sherrington in 1906 for the patch of skin from which a dog's
+  scratch reflex could be triggered. Haldan Keffer Hartline applied it to single retinal neurons in
+  1938, and David Hubel and Torsten Wiesel's studies of cat visual cortex (1959–1962) inspired the
+  local connectivity of Kunihiko Fukushima's neocognitron (1980) and later CNNs.
+year: 1906
+see_also:
+  - convolutional neural network
+  - pooling
+  - dilated convolution
+  - feature map
+  - stride
+  - filter
+sources:
+  - text: >-
+      Luo, W., Li, Y., Urtasun, R. & Zemel, R. (2016). Understanding the Effective Receptive Field
+      in Deep Convolutional Neural Networks. NIPS 2016; arXiv:1701.04128.
+    url: https://arxiv.org/abs/1701.04128

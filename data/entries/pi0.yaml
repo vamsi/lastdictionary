@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: π0
+id: pi0
+pos: prop. n.
+also:
+  - pi-zero
+  - pi 0
+  - π0-FAST
+  - π0.5
+  - openpi
+pronunciation: pie ZEER-oh
+domain: robot
+domains:
+  - dl
+  - percep
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A general-purpose AI model for controlling robots, released in 2024 by the start-up Physical
+  Intelligence, that sees through cameras, follows typed or spoken instructions and moves robot arms
+  deftly enough to fold laundry.
+senses:
+  - definition: >-
+      A [[vision-language-action-model|vision-language-action model]] and
+      [[robot-foundation-model|robot foundation model]] from the company Physical Intelligence,
+      intended as a single generalist policy for many robot bodies and tasks. It couples a
+      pretrained [[vision-language-model|vision-language model]] (the 3-billion-parameter PaliGemma)
+      with a separate, roughly 300-million-parameter 'action expert' that produces continuous motor
+      commands by [[flow-matching|flow matching]] rather than as discrete tokens, emitting chunks of
+      50 future actions at once so that dexterous tasks can be controlled at up to 50 Hz
+      ([[action-chunking|action chunking]]). Pretraining combined more than 10,000 hours of the
+      company's own teleoperated data, covering 7 robot configurations and 68 tasks, with the
+      [[open-x-embodiment|Open X-Embodiment]] collection; post-training on curated data taught long
+      multi-stage tasks such as putting together cardboard boxes, clearing dishes from a table and
+      unloading a dryer to fold the clothes. Its weights and code were released openly in early 2025
+      (openpi), making it a common baseline in robot-learning research.
+    example: >-
+      We fine-tuned π0 on twenty hours of our own teleoperation data and it learned to pack the
+      parts trays.
+origin: >-
+  Announced on 31 October 2024 by Physical Intelligence, a San Francisco robotics start-up founded
+  in 2024 by a group including Karol Hausman, Sergey Levine and Chelsea Finn, in the paper 'π0: A
+  Vision-Language-Action Flow Model for General Robot Control' (Kevin Black and colleagues).
+  Successors include π0-FAST and π0.5 (2025), the reinforcement-learning-refined π*0.6 (late 2025)
+  and π0.7 (16 April 2026).
+year: 2024
+note: >-
+  Usually written π0 or pi0. Its demonstrations featured unusually long, dexterous task sequences,
+  but generalization to unseen homes, objects and robot bodies remained limited and became the
+  explicit target of later versions.
+see_also:
+  - vision-language-action model
+  - robot foundation model
+  - flow matching
+  - action chunking
+  - generalist robot policy
+  - Open X-Embodiment
+  - Gemini Robotics
+  - teleoperation
+contrast:
+  - Gemini Robotics
+sources:
+  - text: >-
+      Black, K., Brown, N., Driess, D., Esmail, A., Equi, M. et al. (2024). π0: A
+      Vision-Language-Action Flow Model for General Robot Control. arXiv:2410.24164.
+    url: https://arxiv.org/abs/2410.24164
+as_of: 2026-10

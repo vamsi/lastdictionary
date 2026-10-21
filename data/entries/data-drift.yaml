@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data drift
+id: data-drift
+pos: n.
+also:
+  - feature drift
+  - input drift
+  - covariate drift
+  - population drift
+  - population stability index
+  - PSI
+domain: eng
+domains:
+  - data
+  - ml
+level: core
+plain: >-
+  When the information flowing into an AI model in real use gradually stops resembling the data it
+  was trained on — new customers, new slang, new cameras — making its predictions less reliable.
+senses:
+  - definition: >-
+      A change over time in the statistical distribution of a deployed model's input data relative
+      to its training or reference data; the production-monitoring counterpart of
+      [[covariate-shift|covariate shift]]. Causes include changes in the user population,
+      seasonality, new products or markets, upstream pipeline or sensor changes, and adversaries
+      adapting to the model. Drift is detected by comparing recent windows with a reference:
+      per-feature tests and distances (population stability index, Kolmogorov–Smirnov, chi-squared,
+      Jensen–Shannon or Wasserstein distance), multivariate detectors, classifiers trained to tell
+      old data from new, or, for text and images, distances between [[embedding|embeddings]].
+      Because a change in inputs need not change the input–output relationship, drift may or may not
+      reduce accuracy; it is a warning that prompts evaluation on fresh labels, retraining or
+      recalibration. Upstream bugs, such as a field silently switching units, often surface first as
+      apparent drift.
+    example: >-
+      The data drift alert fired after the app update started sending transaction amounts in cents.
+origin: >-
+  The label spread with MLOps tooling in the late 2010s, by analogy with [[concept-drift|concept
+  drift]] (1986). The phenomenon had long been studied under other names, including population drift
+  in credit scoring, where the population stability index is a long-standing check, and covariate
+  shift in statistics (Hidetoshi Shimodaira, 2000).
+note: >-
+  Usage is inconsistent: some authors call any distribution change data drift, including concept
+  drift. Strictly, data drift concerns P(x) and concept drift concerns P(y | x).
+  [[distribution-shift|distribution shift]] is the umbrella term in research.
+see_also:
+  - concept drift
+  - covariate shift
+  - distribution shift
+  - model monitoring
+  - training–serving skew
+  - out-of-distribution
+contrast:
+  - concept drift

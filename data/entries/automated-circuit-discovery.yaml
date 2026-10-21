@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: automated circuit discovery
+id: automated-circuit-discovery
+pos: n.
+also:
+  - ACDC
+  - automatic circuit discovery
+  - edge attribution patching
+  - EAP
+domain: interp
+domains:
+  - dl
+level: specialist
+plain: >-
+  Software methods that search a neural network automatically for the small set of internal
+  connections responsible for a chosen behavior, instead of a researcher hunting for them by hand.
+senses:
+  - definition: >-
+      Algorithms that identify, with little human input, the [[circuit|circuit]] in a network
+      responsible for a specified behavior. The usual formulation treats the model as a
+      computational graph of components — attention heads, MLPs or sparse features — and searches
+      for a minimal subgraph whose behavior on a task dataset matches the full model's, measured by
+      a metric such as [[kullback-leibler-divergence|KL divergence]] or logit difference when edges
+      outside the subgraph are fed corrupted activations. ACDC (Automatic Circuit DisCovery) works
+      backward from the output, pruning each edge whose removal changes the metric by less than a
+      threshold; it recovered hand-found circuits such as [[indirect-object-identification|indirect
+      object identification]] and greater-than comparison in GPT-2 small. Gradient-based
+      approximations — edge [[attribution-patching|attribution patching]] (EAP) and its
+      integrated-gradients variant — score all edges at once and scale to larger models; learned
+      masks and sparse-feature methods are alternatives.
+    example: >-
+      On the greater-than task, ACDC kept 68 of 32,000 edges, all of which manual analysis had
+      already found.
+origin: >-
+  Arthur Conmy, Augustine Mavor-Parker, Aengus Lynch, Stefan Heimersheim and Adrià Garriga-Alonso
+  introduced ACDC in 'Towards Automated Circuit Discovery for Mechanistic Interpretability' (2023;
+  NeurIPS 2023), automating the workflow of the IOI study. Aaquib Syed, Can Rager and Arthur Conmy
+  proposed edge attribution patching later in 2023.
+year: 2023
+see_also:
+  - circuit
+  - activation patching
+  - attribution patching
+  - path patching
+  - indirect object identification
+  - circuit tracing
+sources:
+  - text: >-
+      Conmy, A., Mavor-Parker, A. N., Lynch, A., Heimersheim, S. & Garriga-Alonso, A. (2023).
+      Towards Automated Circuit Discovery for Mechanistic Interpretability. NeurIPS 2023.
+      arXiv:2304.14997.
+    url: https://arxiv.org/abs/2304.14997
+  - text: >-
+      Syed, A., Rager, C. & Conmy, A. (2023). Attribution Patching Outperforms Automated Circuit
+      Discovery. arXiv preprint.

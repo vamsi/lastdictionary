@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: control problem
+id: control-problem
+pos: n.
+also:
+  - AI control problem
+  - problem of control
+  - superintelligence control problem
+domain: asi
+domains:
+  - safety
+level: core
+plain: >-
+  The challenge of making sure that an AI much smarter than its makers still does what they intend,
+  and can be corrected or stopped if needed.
+senses:
+  - definition: >-
+      The problem of ensuring that a [[superintelligence|superintelligence]] or other highly capable
+      AI system acts as its developers intend and remains correctable, framed as a principal–agent
+      problem in which the agent may be far more capable than the principal. Nick Bostrom divided
+      proposed solutions into [[capability-control|capability control]], which limits what the
+      system can do, and [[motivation-selection|motivation selection]], which shapes what it wants
+      to do. He argued that capability control can only be temporary, so the problem must ultimately
+      be solved through motivation, and solved before the first system is capable enough to resist
+      correction. Stuart Russell restated it as retaining control over machines more capable than
+      ourselves and proposed systems that remain uncertain about human preferences and therefore
+      defer to people. Most researchers now discuss these questions under the heading of the
+      [[alignment-problem|alignment problem]].
+    example: >-
+      Bostrom's point was that the control problem has to be solved before the first
+      superintelligence, not after.
+origin: >-
+  Popularized by Nick Bostrom's Superintelligence (2014), chapter 9; Stuart Russell's Human
+  Compatible: Artificial Intelligence and the Problem of Control (2019) brought it to a wider
+  audience. The concern goes back to I. J. Good's 1965 proviso that an ultraintelligent machine be
+  docile enough to tell us how to keep it under control.
+year: 2014
+note: >-
+  Distinct from [[ai-control|AI control]], a research program begun in 2023 on safety measures that
+  work even if a model is deliberately trying to subvert them.
+see_also:
+  - alignment problem
+  - capability control
+  - motivation selection
+  - corrigibility
+  - AI alignment
+  - superintelligence
+  - loss of control
+contrast:
+  - AI control
+sources:
+  - text: >-
+      Russell, S. (2019). Human Compatible: Artificial Intelligence and the Problem of Control.
+      Viking.

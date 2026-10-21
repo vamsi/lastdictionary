@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: proper scoring rule
+id: proper-scoring-rule
+pos: n.
+also:
+  - strictly proper scoring rule
+  - scoring rule
+  - logarithmic score
+  - spherical score
+  - continuous ranked probability score
+  - CRPS
+domain: ml
+domains:
+  - math
+  - eval
+level: specialist
+plain: >-
+  A way of grading probability forecasts that gives the best expected score only to a forecaster who
+  reports what they really believe, so there is nothing to gain by exaggerating or hedging.
+senses:
+  - definition: >-
+      A rule for grading a probabilistic forecast once the outcome is known, designed so that a
+      forecaster who expects to be graded by it can do no better on average than to state their
+      actual beliefs; it is strictly proper when every misreport does strictly worse in expectation.
+      Proper scoring rules make honest, calibrated probabilities the best policy, so they are the
+      principled way to train and evaluate probabilistic models. The main examples are the
+      logarithmic score ([[log-loss|log loss]]), the quadratic or [[brier-score|Brier score]] and
+      the spherical score, and, for continuous predictions, the continuous ranked probability score
+      (CRPS) and the pinball loss for quantiles. Every strictly proper rule decomposes into
+      calibration and resolution components, but the rules weight errors differently: the
+      logarithmic score heavily penalizes near-zero probability on events that happen, while the
+      Brier score is bounded. Thresholded [[accuracy|accuracy]], [[auc|AUC]] and the
+      [[expected-calibration-error|expected calibration error]] are not proper: a model can improve
+      on them while reporting less truthful probabilities. Forecasting tournaments and evaluations
+      of language-model uncertainty rely on proper scores for this reason.
+    example: >-
+      Because the contest used a proper scoring rule, shading our 70% forecasts up to 90% would only
+      have lowered our expected score.
+origin: >-
+  Glenn Brier's quadratic score (1950) and I. J. Good's logarithmic score (1952) were early
+  examples; the computer scientist [[john-mccarthy|John McCarthy]] (1956) and Leonard Savage (1971)
+  characterized proper scoring rules in general. Tilmann Gneiting and Adrian Raftery's 2007 review
+  'Strictly Proper Scoring Rules, Prediction, and Estimation' became the standard modern reference.
+see_also:
+  - log loss
+  - Brier score
+  - calibration
+  - expected calibration error
+  - cross-entropy
+  - quantile regression
+sources:
+  - text: >-
+      Gneiting, T. & Raftery, A. E. (2007). Strictly Proper Scoring Rules, Prediction, and
+      Estimation. Journal of the American Statistical Association 102(477).
+  - text: >-
+      Savage, L. J. (1971). Elicitation of Personal Probabilities and Expectations. Journal of the
+      American Statistical Association 66(336).
+  - text: >-
+      McCarthy, J. (1956). Measures of the Value of Information. Proceedings of the National Academy
+      of Sciences 42(9).

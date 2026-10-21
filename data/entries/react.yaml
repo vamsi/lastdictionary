@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ReAct
+id: react
+pos: prop. n.
+also:
+  - Reason + Act
+  - ReAct prompting
+  - ReAct agent
+  - reason-and-act
+pronunciation: ree-AKT
+domain: agents
+domains:
+  - llm
+  - hist
+level: core
+plain: >-
+  A method in which an AI alternates between thinking out loud about what to do next and taking an
+  action, such as a web search, then uses what it observed to plan its next step.
+senses:
+  - definition: >-
+      A prompting and agent paradigm ('Reason + Act') in which a [[large-language-model|large
+      language model]] alternates between writing a brief free-text thought about its situation and
+      emitting an action — a search query, a click, an API call — whose result returns as an
+      observation, repeating until it can answer. Each half covers the other's weakness: thinking
+      keeps a plan in view and lets the model change course when something unexpected happens, while
+      acting fetches facts the model lacks, so its reasoning rests on evidence rather than recall.
+      With just one or two worked examples in the prompt, the 2022 paper's agent outscored
+      imitation- and reinforcement-learning baselines on ALFWorld and WebShop (by 34 and 10 points
+      of absolute success rate), and its lookups through a simple Wikipedia API curbed the
+      hallucinations of [[chain-of-thought|chain of thought]] on HotpotQA and FEVER. The
+      thought–action–observation cycle became the template for LLM agents and their
+      [[agent-loop|agent loops]].
+    example: "Our first agent was plain ReAct: think, call a tool, read the result, repeat."
+origin: >-
+  Introduced by Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan and
+  Yuan Cao (Princeton University and Google Research) in a paper posted on 6 October 2022 and
+  presented at ICLR 2023; LangChain's early agents (late 2022) were built on it.
+year: 2022
+note: >-
+  With native [[function-calling|function calling]] and [[reasoning-model|reasoning models]] that
+  think before answering, explicit 'Thought:' text is often unnecessary, but the reason–act–observe
+  structure persists. Unrelated to the React JavaScript library.
+see_also:
+  - agent loop
+  - chain of thought
+  - Reflexion
+  - tool use
+  - MRKL system
+  - plan-and-execute
+contrast:
+  - chain of thought
+sources:
+  - text: >-
+      Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K. & Cao, Y. (2022). ReAct:
+      Synergizing Reasoning and Acting in Language Models. arXiv:2210.03629 (ICLR 2023).
+    url: https://arxiv.org/abs/2210.03629

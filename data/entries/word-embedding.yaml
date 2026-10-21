@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: word embedding
+id: word-embedding
+pos: n.
+also:
+  - word vector
+  - word vectors
+  - word embeddings
+  - distributed word representation
+  - static word embedding
+domain: llm
+domains:
+  - dl
+  - hist
+level: core
+plain: >-
+  A list of numbers standing for a word, learned so that words used in similar ways get similar
+  lists. It lets a computer measure that 'cat' is closer to 'dog' than to 'car'.
+senses:
+  - definition: >-
+      A dense real-valued vector, typically 50–1,000 dimensions, representing a word so that
+      geometric relations among vectors mirror relations among words: words used in similar contexts
+      receive nearby vectors (measured by [[cosine-similarity|cosine similarity]]), and some
+      relations appear as roughly constant offsets, as in the well-known king − man + woman ≈ queen
+      analogy. Word embeddings rest on the distributional hypothesis that meaning shows in usage and
+      are learned either by prediction ([[word2vec|word2vec]], fastText) or by factorizing
+      co-occurrence statistics ([[glove|GloVe]], [[latent-semantic-analysis|latent semantic
+      analysis]]). Classic word embeddings are static — one vector per word form whatever the
+      context — so they conflate senses such as 'bank'; contextual representations from
+      [[elmo|ELMo]] (2018) and [[bert|BERT]] superseded them for most tasks. They also absorb social
+      biases present in their training text.
+    example: We initialized the classifier with 300-dimensional pretrained word embeddings.
+origin: >-
+  The distributional idea is usually traced to Zellig Harris (1954) and to J. R. Firth's 1957 line
+  'You shall know a word by the company it keeps'. Yoshua Bengio and colleagues learned word vectors
+  jointly with a neural language model (NIPS 2000; JMLR 2003); Ronan Collobert and Jason Weston
+  (2008) and [[word2vec|word2vec]] (2013) made pretrained embeddings standard inputs to NLP systems.
+year: 2000
+note: >-
+  Analogy arithmetic works less reliably than often claimed, partly because standard evaluations
+  exclude the input words from the candidate answers.
+see_also:
+  - embedding
+  - word2vec
+  - GloVe
+  - cosine similarity
+  - latent semantic analysis
+  - representation learning
+  - text embedding
+contrast:
+  - text embedding
+sources:
+  - text: >-
+      Bengio, Y., Ducharme, R., Vincent, P. & Jauvin, C. (2003). A Neural Probabilistic Language
+      Model. Journal of Machine Learning Research 3.
+  - text: >-
+      Peters, M. E. et al. (2018). Deep contextualized word representations. NAACL 2018.
+    url: https://arxiv.org/abs/1802.05365

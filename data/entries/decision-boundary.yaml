@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decision boundary
+id: decision-boundary
+pos: n.
+also:
+  - decision surface
+  - separating hyperplane
+  - decision region
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  The dividing line, or surface, where a classifier switches from predicting one category to
+  another. Simple models draw straight lines; flexible ones draw curves.
+senses:
+  - definition: >-
+      The set of points in input space at which a [[classifier|classifier]] is indifferent between
+      two or more classes — where their scores or posterior probabilities are equal — dividing the
+      space into decision regions, each assigned to one class. For [[logistic-regression|logistic
+      regression]], linear [[support-vector-machine|SVMs]] and [[linear-discriminant-analysis|linear
+      discriminant analysis]] the boundary is a hyperplane; quadratic discriminant analysis gives
+      curved quadric surfaces; [[decision-tree|decision trees]] give axis-aligned, piecewise
+      boundaries; and [[k-nearest-neighbors|k-nearest neighbors]], kernel methods and neural
+      networks can produce arbitrarily complex ones. Flexibility reflects capacity: a boundary that
+      wraps around individual training points signals [[overfitting|overfitting]], one too rigid for
+      the data signals [[underfitting|underfitting]]. Plotting boundaries on two-dimensional toy
+      data is a standard way to compare classifiers, and [[adversarial-example|adversarial
+      examples]] exploit inputs lying close to a boundary.
+    example: The tree's decision boundary is a staircase, while the SVM's is a smooth curve.
+origin: >-
+  The geometric view of classification as partitioning a feature space with discriminant functions
+  developed in 1950s–1960s pattern recognition, from Frank Rosenblatt's perceptron to Nils Nilsson's
+  'Learning Machines' (1965), and was standardized in Richard Duda and Peter Hart's 'Pattern
+  Classification and Scene Analysis' (1973).
+note: >-
+  The boundary depends on the decision rule as well as the model: changing a probabilistic
+  classifier's threshold moves it without retraining.
+see_also:
+  - classifier
+  - linear separability
+  - support vector machine
+  - margin
+  - logistic regression
+  - overfitting
+sources:
+  - text: >-
+      Duda, R. O. & Hart, P. E. (1973). Pattern Classification and Scene Analysis. Wiley.

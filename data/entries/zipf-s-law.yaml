@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Zipf's law
+id: zipf-s-law
+pos: n.
+also:
+  - Zipf law
+  - Zipf distribution
+  - Zipfian distribution
+  - Zipfian
+  - rank–frequency law
+domain: math
+domains:
+  - llm
+  - data
+level: specialist
+plain: >-
+  The pattern that word use is lopsided: in a big text the top word is roughly twice as common as
+  the runner-up and ten times as common as the tenth, so a few words dominate and most are rare.
+senses:
+  - definition: >-
+      The empirical regularity that word frequencies in a large body of text fall off roughly as the
+      reciprocal of their rank — the r-th most common word occurs about 1/r as often as the most
+      common one — so that frequency times rank stays roughly constant; more generally, a
+      rank–frequency [[power-law|power law]] with exponent near 1. Similar Zipfian distributions
+      describe city sizes, website traffic and citations. For AI the law has practical consequences:
+      most word types, and many [[token|tokens]] in a large [[vocabulary|vocabulary]], are rare,
+      which motivates subword [[tokenization|tokenization]] such as [[byte-pair-encoding|byte-pair
+      encoding]]; rare facts occur in training data too seldom to be learned reliably, contributing
+      to failures on the [[long-tail|long tail]]; frequency imbalance skews [[embedding|embeddings]]
+      and calibration; and the heavy-tailed structure of language data has been proposed as one
+      explanation for smooth [[scaling-laws|scaling laws]] and for [[in-context-learning|in-context
+      learning]]. Heaps' law, relating vocabulary size to corpus length, is a companion regularity.
+    example: >-
+      Because token frequencies are Zipfian, many vocabulary entries are seen only rarely during
+      training.
+formula_latex: f(r) \propto \frac{1}{r^{s}}, \qquad s \approx 1
+origin: >-
+  Named after the American linguist George Kingsley Zipf, who documented and popularized the pattern
+  in The Psycho-Biology of Language (1935) and Human Behavior and the Principle of Least Effort
+  (1949). It had been noted earlier, for example by the French stenographer Jean-Baptiste Estoup
+  (1916) and the physicist Edward Condon (1928).
+year: 1935
+see_also:
+  - power law
+  - long tail
+  - tokenization
+  - byte-pair encoding
+  - scaling laws
+  - vocabulary

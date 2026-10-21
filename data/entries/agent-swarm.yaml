@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agent swarm
+id: agent-swarm
+pos: n.
+also:
+  - swarm of agents
+  - agent swarms
+domain: agents
+domains:
+  - culture
+labels:
+  - informal
+  - emerging
+level: specialist
+plain: >-
+  A large group of AI agents working at the same time on parts of a problem, usually with little
+  central control — a name loosely borrowed from swarms of insects.
+senses:
+  - definition: >-
+      A [[multi-agent-system|multi-agent system]] in which many agent instances — often dozens or
+      more, frequently copies of one model given different instructions — work concurrently on a
+      problem, coordinating through shared state, message passing or a light coordinator rather than
+      a strict hierarchy. Usage is loose: in marketing and informal speech it can mean any large
+      multi-agent deployment, such as tens of parallel [[background-agent|background agents]] each
+      fixing a different issue in a codebase; in OpenAI's experimental Swarm library (2024) it named
+      a minimalist framework built around [[handoff|handoffs]] between agents. Claimed advantages
+      are throughput and diversity of approaches; documented problems are cost, duplicated effort,
+      conflicting edits and the burden of verifying many outputs.
+    example: >-
+      We let an agent swarm attack the migration overnight, then spent the morning reviewing two
+      hundred pull requests.
+origin: >-
+  Echoes [[swarm-intelligence|swarm intelligence]] (Gerardo Beni and Jing Wang, 1989) and
+  [[swarm-robotics|swarm robotics]]. The label was applied to language-model agents by mid-2023,
+  when Kye Gomez's open-source Swarms framework appeared; OpenAI released its explicitly educational
+  'Swarm' library in October 2024, and from 2025 'agent swarm' became common in product launches and
+  social media for massively parallel agents.
+year: 2023
+note: >-
+  Unlike classical [[swarm-intelligence|swarm intelligence]], where simple agents following local
+  rules produce emergent collective behavior, LLM agent swarms are usually launched and coordinated
+  centrally, and their collective behavior is engineered. The word is often used for effect rather
+  than to name a precise architecture.
+see_also:
+  - multi-agent system
+  - orchestrator–worker pattern
+  - swarm intelligence
+  - swarm robotics
+  - background agent
+contrast:
+  - swarm intelligence
+sources:
+  - text: >-
+      OpenAI (2024). Swarm: an educational framework exploring ergonomic, lightweight multi-agent
+      orchestration. GitHub repository openai/swarm.
+as_of: 2026-10

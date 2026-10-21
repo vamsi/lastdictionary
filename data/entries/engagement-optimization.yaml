@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: engagement optimization
+id: engagement-optimization
+pos: n.
+also:
+  - engagement maximization
+  - optimizing for engagement
+  - engagement-based ranking
+  - attention economy
+domain: society
+domains:
+  - ml
+  - safety
+level: core
+plain: >-
+  Designing apps and AI to keep people clicking, watching or chatting for as long as possible
+  because that earns money, even when it is not what is good for them.
+senses:
+  - definition: >-
+      The practice of training or tuning a system, such as a feed, a
+      [[recommender-system|recommender system]], a game or a chatbot, to maximize measures of user
+      engagement: clicks, watch time, session length, return visits or messages sent. Engagement is
+      cheap to measure and tracks revenue, but it is only a proxy for user benefit and can diverge
+      from it: optimizing it tends to favor sensational, outrage-provoking or compulsive content and
+      to exploit psychological biases, a product-level instance of [[goodhart-s-law|Goodhart's
+      law]]. With conversational AI, the worry is that models tuned on user approval or retention
+      become flattering ([[sycophancy|sycophancy]]), emotionally manipulative or reluctant to let
+      conversations end; a widely used chatbot update was rolled back in April 2025 after its
+      developer concluded that weighting short-term user feedback had made it excessively
+      sycophantic. Alternatives include optimizing for stated preferences, long-term satisfaction
+      surveys or explicit wellbeing measures.
+    example: >-
+      Engagement optimization cut churn on the companion app, but fewer users said it left them
+      feeling better.
+origin: >-
+  Herbert Simon observed in 1971 that a wealth of information creates a poverty of attention, and
+  the 'attention economy' was named in the 1990s. Engagement-ranked feeds spread from the late 2000s
+  (YouTube moved from rewarding clicks to watch time in 2012), and critiques by former insiders,
+  notably Tristan Harris and the Center for Humane Technology (from 2018), popularized the problem.
+note: >-
+  Related to [[reward-hacking|reward hacking]] in reinforcement learning: the system finds ways to
+  raise the measured signal that do not deliver what the designers actually wanted.
+see_also:
+  - recommender system
+  - filter bubble
+  - sycophancy
+  - Goodhart's law
+  - AI companion
+  - reward hacking
+sources:
+  - text: >-
+      Simon, H. A. (1971). Designing Organizations for an Information-Rich World. In M. Greenberger
+      (ed.), Computers, Communications, and the Public Interest. Johns Hopkins Press.

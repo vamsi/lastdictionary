@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: CBRN risk
+id: cbrn-risk
+pos: n.
+also:
+  - CBRN
+  - chemical, biological, radiological and nuclear risk
+  - CBRN uplift
+  - WMD risk
+domain: sec
+domains:
+  - safety
+  - gov
+level: core
+plain: >-
+  The danger that AI could help someone make or use chemical, biological, radiological or nuclear
+  weapons — for example, by explaining hard technical steps an attacker could not work out alone.
+senses:
+  - definition: >-
+      The risk that AI systems contribute to developing or using chemical, biological, radiological
+      or nuclear weapons, usually assessed as 'uplift': how far a model increases a malicious
+      actor's ability to cause mass casualties beyond what existing resources, such as internet
+      search, already allow. Concerns include models giving expert-level troubleshooting for
+      acquiring, producing or disseminating agents, especially pathogens; agents that plan or
+      automate laboratory work; and specialized biological design tools. Developers measure it with
+      knowledge benchmarks, expert red-teaming and [[uplift-study|uplift studies]], and have tied
+      safeguards to thresholds in frameworks such as Anthropic's [[ai-safety-level|AI Safety
+      Levels]] and OpenAI's [[preparedness-framework|Preparedness Framework]]; in 2025 both
+      companies said new models might cross early biological thresholds and applied stronger
+      protections. Mitigations include refusal training, [[constitutional-classifiers|input and
+      output classifiers]], [[machine-unlearning|unlearning]] of hazardous knowledge,
+      [[structured-access|structured access]] and customer screening.
+    example: >-
+      The evaluation found meaningful uplift on virology troubleshooting, so the model shipped
+      behind ASL-3 safeguards.
+origin: >-
+  'CBRN' is a defense and emergency-planning acronym that had largely replaced the older 'NBC'
+  (nuclear, biological, chemical) by the 2000s. It entered AI policy around 2023, notably in US
+  Executive Order 14110 (October 2023) and frontier developers' safety frameworks, where 'uplift'
+  became the standard measure.
+year: 2023
+see_also:
+  - biosecurity
+  - uplift study
+  - dangerous capability evaluation
+  - WMDP
+  - AI Safety Level
+  - dual-use
+  - misuse
+sources:
+  - text: Anthropic (2025). Activating AI Safety Level 3 Protections. May 2025.
+  - text: OpenAI (2025). Preparedness Framework, version 2. April 2025.
+as_of: 2026-10

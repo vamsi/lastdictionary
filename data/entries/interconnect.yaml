@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: interconnect
+id: interconnect
+pos: n.
+also:
+  - fabric
+  - network fabric
+  - chip-to-chip link
+  - back-end network
+domain: hw
+domains:
+  - train
+level: core
+plain: >-
+  The wiring and networking that connect chips to each other — inside a server, across a data
+  center, or within a single chip — so they can share data and work as one.
+senses:
+  - context: AI systems
+    definition: >-
+      The communication links and switches that join processors and memory into a larger machine,
+      characterized by bandwidth, latency, topology and scale. AI systems use a hierarchy:
+      die-to-die links inside a package (such as the 10 TB/s link between the two dies of an Nvidia
+      Blackwell GPU, or [[chiplet|chiplet]] standards such as UCIe); a
+      [[scale-up-and-scale-out|scale-up]] domain joining tens to thousands of accelerators with
+      memory-like semantics ([[nvlink|NVLink]], AMD's Infinity Fabric, Google's TPU inter-chip
+      interconnect, the open UALink standard); and a scale-out network linking many servers
+      ([[infiniband|InfiniBand]], or Ethernet with [[rdma|RDMA]], including the Ultra Ethernet
+      specification). Because [[distributed-training|distributed training]] depends on frequent
+      [[collective-communication|collective operations]] such as [[all-reduce|all-reduce]],
+      interconnect bandwidth often determines how efficiently a cluster is used, and it has grown
+      more slowly than compute (see [[memory-wall|memory wall]]).
+  - context: Chip design
+    definition: >-
+      The metal wiring layers that connect transistors and functional blocks within an integrated
+      circuit. As features shrink, wire resistance and capacitance increasingly limit speed and
+      power, making interconnect a central concern of [[process-node|process node]] design.
+origin: >-
+  A general electronics term for wiring between components, extended to the networks of
+  multiprocessor supercomputers by the 1980s. In AI it gained prominence as clusters grew from a few
+  GPUs to hundreds of thousands, with Nvidia's NVLink (2014) and its acquisition of Mellanox
+  (completed 2020) marking interconnect as a competitive battleground.
+note: >-
+  The Ultra Ethernet Consortium (2023) and UALink Consortium (2024) were formed largely to offer
+  open alternatives to Nvidia's NVLink and InfiniBand.
+see_also:
+  - NVLink
+  - InfiniBand
+  - RDMA
+  - scale-up and scale-out
+  - all-reduce
+  - collective communication
+  - advanced packaging
+  - photonic computing
+as_of: 2026-10

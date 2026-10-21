@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hybrid reasoning model
+id: hybrid-reasoning-model
+pos: n.
+also:
+  - hybrid thinking model
+  - hybrid reasoning
+domain: llm
+domains:
+  - infer
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A single AI model that can either answer right away or first think at length, with the user or
+  developer choosing how much thinking to allow.
+senses:
+  - definition: >-
+      A [[reasoning-model|reasoning model]] that can also run as an ordinary fast-answering
+      [[chat-model|chat model]], so that one set of [[weights|weights]] serves both modes. Thinking
+      is switched on or off, or scaled, per request through a [[thinking-budget|thinking budget]] or
+      effort setting; in later designs the model itself judges whether a query merits deliberation.
+      The approach is an alternative to separate 'thinking' and 'non-thinking' model lines, lets
+      applications trade [[latency|latency]] and [[inference-cost|inference cost]] against accuracy
+      call by call, and avoids [[model-routing|routing]] between two models. Training typically
+      mixes reasoning and non-reasoning data, sometimes with explicit control tokens, so that short
+      answers do not degrade as long reasoning is learned.
+    example: >-
+      Because it's a hybrid reasoning model, we disable thinking for autocomplete and allow 16k
+      thinking tokens for code review.
+origin: >-
+  Anthropic presented Claude 3.7 Sonnet (24 February 2025) as a hybrid reasoning model with an
+  optional [[extended-thinking|extended thinking]] mode, and Google called Gemini 2.5 Flash (17
+  April 2025) its 'first fully hybrid reasoning model', with an adjustable thinking budget.
+  Alibaba's Qwen3 family (April 2025) offered switchable thinking and non-thinking modes.
+year: 2025
+note: >-
+  Not every developer kept the design: in July 2025 Alibaba's Qwen team returned to separate
+  instruct and thinking models to maximize quality. Unrelated to [[hybrid-architecture|hybrid
+  architecture]], which mixes attention with state-space or other layer types inside one network.
+see_also:
+  - reasoning model
+  - extended thinking
+  - thinking budget
+  - test-time compute
+  - model routing
+contrast:
+  - hybrid architecture
+sources:
+  - text: >-
+      Google (2025). Start building with Gemini 2.5 Flash. Google Developers Blog, 17 April 2025.
+    url: https://developers.googleblog.com/start-building-with-gemini-25-flash/
+as_of: 2026-10

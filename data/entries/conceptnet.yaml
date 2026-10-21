@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ConceptNet
+id: conceptnet
+pos: prop. n.
+also:
+  - Open Mind Common Sense
+  - OMCS
+  - ConceptNet Numberbatch
+domain: sym
+domains:
+  - data
+  - llm
+level: specialist
+plain: >-
+  A free, crowd-built network of everyday facts — 'a knife is used for cutting', 'rain makes things
+  wet' — in many languages, which AI systems use to make sense of ordinary situations.
+senses:
+  - definition: >-
+      An open, multilingual [[knowledge-graph|knowledge graph]] of everyday knowledge in which the
+      nodes are ordinary words and phrases rather than logical symbols, linked by labeled relations
+      such as IsA, PartOf, UsedFor, CapableOf, Causes, HasPrerequisite and AtLocation — for example,
+      (knife, UsedFor, cutting). It merges volunteer contributions, above all from the Open Mind
+      Common Sense project, with assertions gathered through online games and imported from
+      resources such as [[wordnet|WordNet]], Wiktionary and DBpedia, weighting each by confidence.
+      Unlike [[cyc|Cyc]], it uses informal natural-language nodes rather than a logical language,
+      trading precision for coverage. ConceptNet has been used to build word embeddings that combine
+      graph and text (ConceptNet Numberbatch), to construct [[commonsense-reasoning|commonsense
+      reasoning]] benchmarks such as CommonsenseQA, and to supply background knowledge to
+      question-answering and dialogue systems.
+origin: >-
+  Grew out of the Open Mind Common Sense project, launched at the MIT Media Lab in 1999 by Push
+  Singh and colleagues. Hugo Liu and Singh described ConceptNet in 2004; later versions by Catherine
+  Havasi, Robyn Speer and collaborators extended it across languages (ConceptNet 3, 2007) and merged
+  in other open resources (ConceptNet 5, from 2012).
+year: 2004
+see_also:
+  - commonsense reasoning
+  - knowledge graph
+  - Cyc
+  - WordNet
+  - Wikidata
+  - knowledge graph embedding
+sources:
+  - text: >-
+      Liu, H. & Singh, P. (2004). ConceptNet — A Practical Commonsense Reasoning Tool-Kit. BT
+      Technology Journal 22(4), 211–226.
+  - text: >-
+      Speer, R., Chin, J. & Havasi, C. (2017). ConceptNet 5.5: An Open Multilingual Graph of General
+      Knowledge. Proceedings of AAAI-17.

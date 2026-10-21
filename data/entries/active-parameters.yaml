@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: active parameters
+id: active-parameters
+pos: n.
+also:
+  - activated parameters
+  - active parameter count
+  - active params
+domain: infer
+domains:
+  - llm
+level: core
+plain: >-
+  The part of a model's internal numbers actually used to process each word. Some big models use
+  only a small slice of themselves at a time, making them cheaper to run than their size suggests.
+senses:
+  - definition: >-
+      The number of a model's [[parameter|parameters]] that take part in computing each
+      [[token|token]], as opposed to its total [[parameter-count|parameter count]]. In a dense
+      [[transformer|transformer]] the two are equal; in a [[mixture-of-experts|mixture of experts]]
+      model a [[router|router]] sends each token through only a few expert sub-networks per layer,
+      so the active count can be a small fraction of the total: Mixtral 8x7B uses about 12.9 billion
+      of its 46.7 billion parameters per token, and DeepSeek-V3 about 37 billion of 671 billion.
+      Compute per token, and with it [[prefill|prefill]] speed and much of
+      [[inference-cost|inference cost]], scales with active parameters (roughly two floating-point
+      operations per active parameter per token). Memory capacity, however, depends on the total,
+      since every expert must be stored, and at large batch sizes most experts are read at every
+      decoding step. Releases therefore quote both, sometimes in the name, as in 'A3B' for three
+      billion active.
+    example: >-
+      It is a 30-billion-parameter model with only 3 billion active, so it decodes about as fast as
+      a small dense model.
+origin: >-
+  The distinction dates to sparsely gated mixture-of-experts layers (Noam Shazeer and colleagues,
+  2017) and the Switch Transformer (2021), which decoupled parameter count from compute. 'Active
+  parameters' became everyday vocabulary with Mistral AI's Mixtral 8x7B (December 2023) and the open
+  mixture-of-experts models that followed, such as DeepSeek-V3 (December 2024).
+note: >-
+  Memory-limited users care about total parameters, because the whole model must fit;
+  compute-limited services care about active ones. Comparing a mixture-of-experts model with a dense
+  model by either number alone misleads.
+see_also:
+  - mixture of experts
+  - parameter count
+  - router
+  - expert parallelism
+  - inference cost
+  - sparsity
+contrast:
+  - parameter count

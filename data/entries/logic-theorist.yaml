@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Logic Theorist
+id: logic-theorist
+pos: prop. n.
+also:
+  - Logic Theory Machine
+  - LT
+domain: hist
+domains:
+  - sym
+labels:
+  - historical
+level: core
+plain: >-
+  A 1956 computer program that proved theorems from a classic logic textbook by searching cleverly
+  rather than trying every possibility. Many historians count it as the first AI program.
+senses:
+  - definition: >-
+      A theorem-proving program that [[allen-newell|Allen Newell]], [[herbert-a-simon|Herbert A.
+      Simon]] and Cliff Shaw built in 1955–1956 to find proofs for the propositional-logic theorems
+      in chapter 2 of Whitehead and Russell's Principia Mathematica. Working backward from the
+      theorem to be proved, it applied substitution, replacement and detachment, and used
+      [[heuristic|heuristics]] — such as matching the goal against already-proved theorems and
+      pursuing subproblems that looked similar — to prune an otherwise explosive search. Of the
+      chapter's first 52 theorems it eventually proved 38, and for one of them it found a proof more
+      elegant than the book's. The program established ideas central to [[symbolic-ai|symbolic AI]]:
+      reasoning as heuristic search over symbol structures, and list processing, implemented in the
+      purpose-built Information Processing Language (IPL).
+    example: >-
+      The Logic Theorist was the only working program presented at the Dartmouth workshop.
+origin: >-
+  Developed at the RAND Corporation and the Carnegie Institute of Technology. Newell and Simon first
+  simulated it by hand, with family members and students acting as subroutines, before it ran on
+  RAND's JOHNNIAC computer in 1956. It was described in their 1956 paper 'The Logic Theory Machine'
+  and shown at the [[dartmouth-workshop|Dartmouth workshop]].
+year: 1956
+note: >-
+  Simon later recalled telling a class in January 1956 that over Christmas he and Newell had
+  invented a thinking machine. A paper listing the program as a coauthor was reportedly rejected by
+  the Journal of Symbolic Logic.
+see_also:
+  - General Problem Solver
+  - symbolic AI
+  - heuristic
+  - automated theorem proving
+  - Dartmouth workshop
+  - physical symbol system hypothesis
+sources:
+  - text: >-
+      Newell, A. & Simon, H. A. (1956). The Logic Theory Machine: A Complex Information Processing
+      System. IRE Transactions on Information Theory IT-2(3), 61–79.

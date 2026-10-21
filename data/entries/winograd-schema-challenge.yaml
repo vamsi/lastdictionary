@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Winograd schema challenge
+id: winograd-schema-challenge
+pos: prop. n.
+also:
+  - Winograd schema
+  - WSC
+  - WSC273
+  - WinoGrande
+domain: hist
+domains:
+  - eval
+  - sym
+level: specialist
+plain: >-
+  A test of machine common sense built from pairs of sentences in which changing one word changes
+  what a pronoun refers to — something people resolve instantly using everyday knowledge.
+senses:
+  - definition: >-
+      A test of [[commonsense-reasoning|commonsense reasoning]] put forward in 2011–2012 as a
+      substitute for the [[turing-test|Turing test]]. Its items are twin sentences, identical except
+      for a word or two, in which the swap flips what an ambiguous pronoun refers to, so picking the
+      right referent takes everyday knowledge of the world: in the classic example, city councilmen
+      refused demonstrators a permit because they feared violence (they = the councilmen) or because
+      they advocated it (they = the demonstrators). Schemas were written so that simple word
+      statistics or a web search would not reveal the answer. A standard set of 273 problems
+      (WSC273) resisted computer systems for years; in the only formal competition, in 2016, the
+      best system answered about 58 percent of the preliminary round's pronoun problems correctly.
+      From 2019, [[transformer|transformer]] [[language-model|language models]] fine-tuned on
+      related data exceeded 90 percent on WSC273, and a larger, adversarially filtered successor,
+      WinoGrande (2019), was built to resist such shortcuts. In 2023 two of the challenge's
+      originators and their colleagues declared it defeated.
+    example: >-
+      Once language models aced the Winograd schema challenge, the argument shifted to whether they
+      had learned common sense or dataset artifacts.
+origin: >-
+  Proposed by Hector Levesque at a 2011 AAAI Spring Symposium and developed with Ernest Davis and
+  Leora Morgenstern in 'The Winograd Schema Challenge' (KR 2012). Named after Terry Winograd, whose
+  1972 councilmen example inspired it.
+year: 2011
+note: >-
+  Its fall illustrates [[benchmark-saturation|benchmark saturation]] and the difficulty of designing
+  tests that cannot be passed through statistical shortcuts.
+see_also:
+  - commonsense reasoning
+  - Turing test
+  - SHRDLU
+  - benchmark saturation
+  - benchmark
+contrast:
+  - Turing test
+sources:
+  - text: >-
+      Levesque, H. J., Davis, E. & Morgenstern, L. (2012). The Winograd Schema Challenge.
+      Proceedings of the 13th International Conference on Principles of Knowledge Representation and
+      Reasoning (KR 2012).
+  - text: >-
+      Kocijan, V., Davis, E., Lukasiewicz, T., Marcus, G. & Morgenstern, L. (2023). The Defeat of
+      the Winograd Schema Challenge. Artificial Intelligence.

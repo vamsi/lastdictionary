@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: classification
+id: classification
+pos: n.
+also:
+  - statistical classification
+  - supervised classification
+  - classify
+domain: ml
+domains:
+  - core
+level: essential
+plain: >-
+  Sorting things into categories — spam or not spam, which animal is in a photo, which language a
+  text is written in — by learning from examples that are already labeled.
+senses:
+  - context: Machine learning
+    definition: >-
+      A [[supervised-learning|supervised learning]] task in which a model assigns each input to one
+      of a finite set of discrete categories (classes). A classification model, or
+      [[classifier|classifier]], is trained on labeled examples and outputs either a hard label or a
+      score or probability for each class, which a decision rule — usually a threshold or an arg max
+      — turns into a label. Problems are distinguished by label structure:
+      [[binary-classification|binary classification]] (two classes),
+      [[multiclass-classification|multiclass classification]] (exactly one of many) and
+      [[multilabel-classification|multilabel classification]] (any subset of labels). Common methods
+      include [[logistic-regression|logistic regression]], [[decision-tree|decision trees]] and
+      their ensembles, [[support-vector-machine|support vector machines]],
+      [[k-nearest-neighbors|k-nearest neighbors]], [[naive-bayes|naive Bayes]] and neural networks
+      ending in a [[softmax|softmax]] layer. Results are evaluated with [[accuracy|accuracy]],
+      [[precision|precision]], [[recall|recall]], [[f1-score|F1 score]], [[roc-curve|ROC]] analysis
+      and [[calibration|calibration]].
+    example: >-
+      We framed fraud detection as classification, but with 0.1% positives, accuracy alone is
+      meaningless.
+  - context: Older and general usage
+    definition: >-
+      The construction of a system of categories itself, as in biological taxonomy or 'numerical
+      classification'. In this sense, still found in older statistics and some sciences, it overlaps
+      with what machine learning calls [[clustering|clustering]]; the machine-learning sense
+      presupposes that the categories are already given.
+origin: >-
+  Statistical classification descends from Ronald Fisher's 1936 discriminant analysis of iris
+  measurements and from 1950s–1960s pattern recognition, where perceptrons and nearest-neighbor
+  rules were studied as trainable classifiers. Richard Duda and Peter Hart's textbook 'Pattern
+  Classification and Scene Analysis' (1973) helped fix the vocabulary of supervised classification.
+year: 1936
+note: >-
+  Many AI tasks in the news — content moderation, [[sentiment-analysis|sentiment analysis]],
+  [[image-classification|image classification]], [[safety-classifier|safety classifiers]] — are
+  classification. Not to be confused with [[clustering|clustering]], where no labels are given and
+  the groups are discovered.
+see_also:
+  - classifier
+  - binary classification
+  - multiclass classification
+  - multilabel classification
+  - decision boundary
+  - supervised learning
+  - regression
+contrast:
+  - regression
+  - clustering
+sources:
+  - text: >-
+      Fisher, R. A. (1936). The Use of Multiple Measurements in Taxonomic Problems. Annals of
+      Eugenics, 7(2), 179–188.
+  - text: >-
+      Duda, R. O. & Hart, P. E. (1973). Pattern Classification and Scene Analysis. Wiley.

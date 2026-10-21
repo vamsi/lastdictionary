@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature (interpretability)
+id: feature-interpretability
+pos: n.
+also:
+  - interpretable feature
+  - SAE feature
+  - latent
+  - SAE latent
+domain: interp
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  A concept or property that a neural network represents internally — such as 'is French', 'mentions
+  a bridge' or 'this code has a bug' — usually corresponding to a direction in its internal
+  activity.
+senses:
+  - definition: >-
+      A property of the input that a network represents in its [[activation|activations]], typically
+      modeled as a direction in [[activation-space|activation space]] whose projection indicates how
+      strongly the property is present. Chris Olah and colleagues proposed that features are the
+      fundamental units of neural networks, connected by [[circuit|circuits]]; early examples were
+      neurons in vision models responding to curves, dog heads or car wheels. Because neurons are
+      often [[polysemanticity|polysemantic]], modern work extracts features as learned directions —
+      dictionary elements found by a [[sparse-autoencoder|sparse autoencoder]],
+      [[transcoder|transcoder]] or [[crosscoder|crosscoder]] — and labels them with
+      [[automated-interpretability|automated interpretability]]. Features found this way range from
+      concrete (DNA sequences, the Golden Gate Bridge) to abstract (flattery, security
+      vulnerabilities in code, deception). There is no settled formal definition: proposals include
+      any function of the input, any human-interpretable property, and a property that a
+      sufficiently large network would dedicate a whole neuron to (Elhage et al., 2022).
+    example: >-
+      One feature fires on mentions of the Golden Gate Bridge in English, in Japanese and in
+      photographs.
+origin: >-
+  The general machine-learning word 'feature' (an input variable) was reused for internally learned
+  representations in the deep-learning era. Olah, Nick Cammarata, Ludwig Schubert, Gabriel Goh,
+  Michael Petrov and Shan Carter's 'Zoom In: An Introduction to Circuits' (Distill, 2020) made
+  features the first of three foundational claims of mechanistic interpretability, alongside
+  circuits and universality.
+year: 2020
+note: >-
+  Distinct from the classical [[feature|feature]], an input column or engineered variable fed to a
+  model. Many researchers now say 'latent' for a sparse-autoencoder unit, reserving 'feature' for
+  the underlying concept, which a latent may capture only approximately.
+see_also:
+  - sparse autoencoder
+  - superposition
+  - linear representation hypothesis
+  - circuit
+  - polysemanticity
+  - feature steering
+  - universality hypothesis
+contrast:
+  - feature
+  - artificial neuron
+sources:
+  - text: >-
+      Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M. & Carter, S. (2020). Zoom In: An
+      Introduction to Circuits. Distill.
+    url: https://distill.pub/2020/circuits/zoom-in/
+  - text: >-
+      Elhage, N. et al. (2022). Toy Models of Superposition. Transformer Circuits Thread.
+    url: https://transformer-circuits.pub/2022/toy_model/index.html

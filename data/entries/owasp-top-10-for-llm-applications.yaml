@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: OWASP Top 10 for LLM Applications
+id: owasp-top-10-for-llm-applications
+pos: prop. n.
+also:
+  - OWASP LLM Top 10
+  - OWASP GenAI LLM Top 10
+  - OWASP Top 10 for Large Language Model Applications
+  - OWASP GenAI Security Project
+domain: sec
+domains:
+  - eng
+  - gov
+level: core
+plain: >-
+  A widely used checklist, written by volunteer security experts, of the ten most serious security
+  risks in software built on AI language models, with advice on preventing each one.
+senses:
+  - definition: >-
+      A ranked list of the most critical security risks in applications built on
+      [[large-language-model|large language models]], with descriptions, example attack scenarios
+      and mitigations, published by OWASP (the Open Worldwide Application Security Project), a
+      nonprofit known for its web-application Top 10. As of October 2026 the current edition (August
+      2026, titled OWASP GenAI LLM Top 10 2026) lists, in order: Prompt Injection; Sensitive
+      Information Disclosure; Excessive Agency; Supply Chain; Data and Model Poisoning; Unbounded
+      Consumption; Misinformation; Hidden Context Exposure, which replaced System Prompt Leakage;
+      Vector and Embedding Weaknesses; and Improper Output Handling. Entries are cited as LLM01 to
+      LLM10 with the edition year. The list is not a formal standard, but it is widely used in
+      security reviews, procurement checklists and tooling. Its parent project, now the OWASP GenAI
+      Security Project, also publishes a companion Top 10 for Agentic Applications (December 2025).
+    example: >-
+      The penetration-test report maps every finding to the OWASP Top 10 for LLM Applications,
+      mostly LLM01 and LLM03.
+origin: >-
+  Begun in May 2023 by a volunteer group led by Steve Wilson; version 1.0 appeared in August 2023.
+  The 2025 edition (November 2024) added System Prompt Leakage and Vector and Embedding Weaknesses,
+  and broadened Overreliance into Misinformation and Model Denial of Service into Unbounded
+  Consumption. The 2026 edition reordered the list, moving [[excessive-agency|excessive agency]]
+  from sixth to third.
+year: 2023
+see_also:
+  - prompt injection
+  - excessive agency
+  - data poisoning
+  - AI supply chain security
+  - MITRE ATLAS
+  - AI security
+  - sponge example
+sources:
+  - text: OWASP GenAI Security Project (2026). OWASP GenAI LLM Top 10 2026.
+    url: https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/
+  - text: >-
+      OWASP GenAI Security Project (2025). OWASP Top 10 for Agentic Applications for 2026.
+    url: https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+as_of: 2026-10

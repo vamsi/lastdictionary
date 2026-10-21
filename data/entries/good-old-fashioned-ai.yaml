@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: good old-fashioned AI
+id: good-old-fashioned-ai
+pos: n.
+also:
+  - GOFAI
+  - good old-fashioned artificial intelligence
+domain: sym
+domains:
+  - hist
+  - mind
+labels:
+  - informal
+level: core
+plain: >-
+  A nickname for the classic style of AI, dominant from the 1950s to the 1980s, that tried to make
+  computers intelligent by writing knowledge and rules down by hand.
+senses:
+  - definition: >-
+      [[symbolic-ai|Symbolic AI]] in its classical form: systems whose intelligence is meant to
+      reside in explicit, hand-crafted representations — logical axioms, rules, [[frame|frames]] —
+      manipulated by search and inference, as in [[general-problem-solver|GPS]], [[shrdlu|SHRDLU]]
+      and [[expert-system|expert systems]]. On John Haugeland's account, the approach rests on two
+      bets: that intelligent behavior stems from reasoning about the world, and that reasoning is,
+      at bottom, automatic processing of symbols held inside the system. Philosophers, historians
+      and critics use the label to set this program apart from [[connectionism|connectionism]],
+      statistical [[machine-learning|machine learning]] and embodied, behavior-based robotics, often
+      with a note of irony.
+    example: His critique targets GOFAI, not logic-based planning in general.
+origin: >-
+  Coined by the philosopher John Haugeland in Artificial Intelligence: The Very Idea (MIT Press,
+  1985) to name the classical symbol-manipulation program. It spread through philosophy of mind and
+  cognitive science and became standard shorthand in histories of AI.
+year: 1985
+note: >-
+  The abbreviation GOFAI is usually pronounced GO-fy. The category is loose: modern
+  [[automated-planning|planners]], [[boolean-satisfiability-problem|SAT solvers]] and
+  [[bayesian-network|Bayesian networks]] are symbolic but rarely called GOFAI, and some researchers
+  regard the label as a caricature of a still-productive field.
+see_also:
+  - symbolic AI
+  - physical symbol system hypothesis
+  - expert system
+  - neats and scruffies
+  - AI winter
+  - neuro-symbolic AI
+contrast:
+  - connectionism
+sources:
+  - text: "Haugeland, J. (1985). Artificial Intelligence: The Very Idea. MIT Press."

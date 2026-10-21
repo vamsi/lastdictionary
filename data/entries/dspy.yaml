@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DSPy
+id: dspy
+pos: prop. n.
+also:
+  - Declarative Self-improving Python
+  - Demonstrate–Search–Predict
+  - DSPy signature
+  - DSPy optimizer
+  - teleprompter
+  - MIPROv2
+pronunciation: DEE-ess-pie
+domain: eng
+domains:
+  - llm
+  - agents
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free software framework in which programmers describe what each step of an AI pipeline should
+  do, and the framework automatically works out good prompts and examples instead of hand-writing
+  them.
+senses:
+  - definition: >-
+      An open-source Python framework for 'programming, not prompting' language models. Developers
+      declare each step of a [[compound-ai-system|compound AI system]] as a module with a signature
+      — a typed specification of inputs and outputs such as 'question, context -> answer' — and
+      compose modules (Predict, ChainOfThought, ReAct and custom ones) in ordinary Python; DSPy
+      turns signatures into prompts for whichever model is configured. Optimizers, originally called
+      teleprompters, then compile the program against a small training set and a metric: they
+      bootstrap demonstrations from successful runs, search over instructions and example sets
+      (MIPROv2), evolve prompts by reflecting on execution traces (GEPA), or fine-tune model
+      weights. Separating program logic from prompt wording makes pipelines portable across models
+      and turns [[prompt-optimization|prompt optimization]] into a repeatable, measurable step,
+      although results depend on the quality of the metric and data.
+    example: >-
+      We rewrote the extractor as a DSPy module and let the optimizer choose the few-shot examples.
+origin: >-
+  Developed by Omar Khattab and colleagues in the Stanford NLP group, with Christopher Potts and
+  Matei Zaharia, as the successor to the Demonstrate–Search–Predict framework (December 2022); the
+  DSPy paper appeared in October 2023 and was published at ICLR 2024. The project glosses its name
+  as 'Declarative Self-improving Python'.
+year: 2023
+see_also:
+  - prompt optimization
+  - compound AI system
+  - LangChain
+  - few-shot learning
+  - prompt engineering
+  - evals-driven development
+sources:
+  - text: >-
+      Khattab, O. et al. (2023). DSPy: Compiling Declarative Language Model Calls into
+      Self-Improving Pipelines. arXiv:2310.03714 (ICLR 2024).
+  - text: >-
+      Khattab, O. et al. (2022). Demonstrate-Search-Predict: Composing Retrieval and Language Models
+      for Knowledge-Intensive NLP. arXiv:2212.14024.
+    url: https://arxiv.org/abs/2212.14024

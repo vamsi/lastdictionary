@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: CLIP score
+id: clip-score
+pos: n.
+also:
+  - CLIPScore
+  - CLIP-S
+  - CLIP similarity
+domain: gen
+domains:
+  - eval
+  - percep
+level: specialist
+plain: >-
+  A score for how well a picture matches a text description, computed by an AI model that was
+  trained to pair images with their captions.
+senses:
+  - definition: >-
+      A reference-free measure of image–text compatibility computed as the
+      [[cosine-similarity|cosine similarity]] between the image embedding and the text embedding
+      produced by a [[clip|CLIP]] model, usually rescaled (in the original CLIPScore, multiplied by
+      2.5 with negative values clipped to zero). First proposed for judging [[image-captioning|image
+      captions]] without reference captions, it became a standard automatic measure of prompt
+      adherence for [[text-to-image-model|text-to-image]] and [[text-to-video-model|video]]
+      generation, typically averaged over a benchmark set of prompts and reported alongside
+      [[frechet-inception-distance|FID]] to show the fidelity–alignment trade-off of
+      [[classifier-free-guidance|classifier-free guidance]]. It inherits CLIP's weaknesses — poor
+      sensitivity to counting, spatial relations, negation and attribute binding, and susceptibility
+      to images that simply contain the prompt's words as text — so modern evaluations add
+      question-answering-based metrics, learned human-preference models and
+      [[llm-as-a-judge|vision-language-model judges]].
+origin: >-
+  CLIPScore was introduced by Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras and Yejin
+  Choi in 'CLIPScore: A Reference-free Evaluation Metric for Image Captioning' (EMNLP 2021), shortly
+  after OpenAI released CLIP in January 2021.
+year: 2021
+see_also:
+  - CLIP
+  - Fréchet inception distance
+  - text-to-image model
+  - image captioning
+  - LLM-as-a-judge
+  - cosine similarity
+sources:
+  - text: >-
+      Hessel, J., Holtzman, A., Forbes, M., Le Bras, R. & Choi, Y. (2021). CLIPScore: A
+      Reference-free Evaluation Metric for Image Captioning. EMNLP 2021. arXiv:2104.08718.
+    url: https://arxiv.org/abs/2104.08718

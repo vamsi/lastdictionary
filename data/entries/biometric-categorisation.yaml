@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: biometric categorisation
+id: biometric-categorisation
+pos: n.
+also:
+  - biometric categorisation system
+  - biometric categorization
+  - biometric categorization system
+domain: gov
+domains:
+  - percep
+  - society
+labels:
+  - legal
+level: specialist
+plain: >-
+  Using AI to sort people into groups — by age, sex, ethnicity and the like — from their faces,
+  voices or other body features. The EU bans using it to guess sensitive traits such as religion or
+  sexuality.
+senses:
+  - definition: >-
+      The sorting of people into groups by their biometric data. Under the [[eu-ai-act|EU AI Act]] a
+      system that does this counts as a 'biometric categorisation system' unless the sorting is a
+      minor feature of some other commercial service and technically unavoidable, as with an online
+      shop's virtual try-on filter, the recitals' example. The groups may relate to anything from
+      sex, age, hair or eye color and tattoos to personality, language, religion, ethnicity, or
+      sexual or political orientation. Using biometrics to deduce a person's race, political
+      opinions, trade-union membership, religious or philosophical beliefs, sex life or sexual
+      orientation is [[prohibited-ai-practices|prohibited]], though labeling or filtering lawfully
+      obtained biometric datasets remains allowed, law enforcement included. Categorization by other
+      sensitive or protected attributes is [[high-risk-ai-system|high-risk]], and deployers must
+      inform the people exposed.
+    example: >-
+      An advertising screen that estimates passers-by's age and sex is a biometric categorisation
+      system.
+origin: >-
+  Introduced as a defined term in the Commission's 2021 AI Act proposal, which treated it mainly as
+  a transparency matter; the European Parliament's 2023 amendments pressed for a ban on
+  sensitive-attribute categorization, a narrowed version of which entered the final text.
+year: 2021
+note: >-
+  Distinct from biometric identification, which establishes who someone is, and biometric
+  verification, which confirms a claimed identity. The official English text spells it
+  'categorisation'; American usage is 'categorization'.
+see_also:
+  - remote biometric identification
+  - emotion recognition system
+  - prohibited AI practices
+  - facial recognition
+  - protected attribute
+  - transparency obligations
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(40) and Recital 16; prohibition Art. 5(1)(g); high-risk
+  Annex III point 1(b); transparency Art. 50(3)
+as_of: 2026-10

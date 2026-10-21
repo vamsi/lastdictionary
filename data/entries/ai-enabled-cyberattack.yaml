@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI-enabled cyberattack
+id: ai-enabled-cyberattack
+pos: n.
+also:
+  - AI-powered cyberattack
+  - AI-orchestrated cyberattack
+  - offensive AI
+domain: sec
+domains:
+  - agents
+  - gov
+  - society
+level: core
+plain: >-
+  A computer attack in which criminals or spies use AI to help — writing convincing scam messages,
+  finding weak spots, producing malicious code, or even running much of the hacking by itself.
+senses:
+  - definition: >-
+      A cyber operation in which artificial intelligence materially assists or carries out stages of
+      an attack: reconnaissance, social engineering (personalized phishing, cloned voices in fraud
+      calls), finding and exploiting vulnerabilities, writing or adapting malware, moving through
+      networks, and sorting or exfiltrating stolen data. Through 2024, observed misuse mostly gave
+      existing actors incremental gains such as faster phishing and coding help. In 2025
+      [[ai-agent|agentic]] tools began executing multi-step intrusions with limited human direction:
+      in November 2025 Anthropic reported that a group it attributed to the Chinese state had used
+      its Claude Code agent, connected to penetration-testing tools, against about 30 organizations,
+      with AI doing an estimated 80–90% of the work, though it often overstated or fabricated
+      findings. The main concerns are lower skill barriers and greater speed and scale. Responses
+      include provider monitoring and account bans,
+      [[dangerous-capability-evaluation|cyber-capability evaluations]] and defensive AI.
+    example: >-
+      The incident report classed it as an AI-enabled cyberattack: an agent ran reconnaissance and
+      exploitation across dozens of hosts overnight.
+origin: >-
+  Anticipated in 'The Malicious Use of Artificial Intelligence' (Miles Brundage, Shahar Avin and
+  colleagues, 2018) and tracked in AI providers' threat-intelligence reports from 2024. Anthropic's
+  'Disrupting the first reported AI-orchestrated cyber espionage campaign' (November 2025), about
+  activity detected in mid-September, was the first public account of a largely AI-executed
+  intrusion campaign.
+note: >-
+  Accounts of autonomy in such incidents come largely from AI providers' own reports, and some
+  security researchers have questioned how novel or effective the operations were. The informal term
+  [[vibe-hacking|vibe hacking]], modeled on [[vibe-coding|vibe coding]], names the practice of
+  directing AI agents through attacks in plain language.
+see_also:
+  - AI-assisted vulnerability discovery
+  - misuse
+  - dual-use
+  - AI agent
+  - coding agent
+  - vibe hacking
+  - Cybench
+  - dangerous capability evaluation
+sources:
+  - text: >-
+      Brundage, M., Avin, S. et al. (2018). The Malicious Use of Artificial Intelligence:
+      Forecasting, Prevention, and Mitigation. Future of Humanity Institute et al.
+  - text: >-
+      Anthropic (2025). Disrupting the first reported AI-orchestrated cyber espionage campaign.
+      November 2025.
+    url: https://assets.anthropic.com/m/ec212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf
+as_of: 2026-10

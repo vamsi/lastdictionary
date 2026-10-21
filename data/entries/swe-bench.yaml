@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SWE-bench
+id: swe-bench
+pos: prop. n.
+also:
+  - SWE-bench Verified
+  - SWE-bench Lite
+  - SWE-bench Multimodal
+  - SWE-bench Multilingual
+  - SWE-bench Pro
+domain: eval
+domains:
+  - agents
+  - eng
+level: essential
+plain: >-
+  A test that asks AI to fix real bugs and add features in real open-source Python projects, checked
+  by running each project's own tests; the best-known yardstick for AI coding agents.
+senses:
+  - definition: >-
+      A benchmark that turns resolved issues on GitHub — bug reports and feature requests whose
+      fixes were merged — into tests of automated software engineering. Each of its 2,294 task
+      instances pairs an issue from one of 12 widely used Python repositories (Django, scikit-learn
+      and SymPy among them) with the codebase as it stood before the fix, and the system under test
+      must write a patch that resolves the issue. The patch is judged by the project's own tests:
+      the tests that the human fix made pass must now pass, and previously passing tests must still
+      pass. The score is the percentage of issues resolved. SWE-bench Verified (August 2024), a
+      500-task subset screened by 93 professional developers to remove underspecified issues and
+      faulty tests, became the industry's headline measure of [[coding-agent|coding agents]], with
+      scores rising from 33% for GPT-4o to about 81% by early 2026. In February 2026 OpenAI stopped
+      reporting Verified, finding that every frontier model it tested could reproduce gold patches
+      or problem details for some tasks, and that most of the frequently failed tasks it audited had
+      flawed tests or problem descriptions, and recommended the harder, partly private SWE-bench Pro
+      (1,865 tasks from 41 repositories). Other variants cover Lite (300 tasks), multimodal issues
+      and nine further programming languages.
+    example: The harness change alone moved our SWE-bench Verified score from 62% to 71%.
+origin: >-
+  Introduced by Carlos E. Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press
+  and Karthik Narasimhan, mainly at Princeton University, in October 2023 and published at ICLR
+  2024; the best model then, Claude 2, resolved 1.96% of issues. Verified was built with OpenAI in
+  2024, and Scale AI researchers released SWE-bench Pro in September 2025.
+year: 2023
+note: >-
+  Scores depend heavily on the agent [[harness|harness]] or [[scaffolding|scaffolding]], so one
+  model can differ by many points across submissions. 'Resolved' means passing tests, a weaker
+  standard than writing a patch a maintainer would merge; popular public repositories also invite
+  [[data-contamination|data contamination]].
+see_also:
+  - coding agent
+  - SWE-agent
+  - HumanEval
+  - Terminal-Bench
+  - data contamination
+  - benchmark saturation
+  - harness
+sources:
+  - text: >-
+      Jimenez, C. E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O. & Narasimhan, K. (2024).
+      SWE-bench: Can Language Models Resolve Real-World GitHub Issues? ICLR 2024.
+    url: https://arxiv.org/abs/2310.06770
+  - text: OpenAI (2026). Why we no longer evaluate SWE-bench Verified.
+    url: https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/
+  - text: >-
+      Deng, X. et al. (2025). SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering
+      Tasks? arXiv:2509.16941.
+    url: https://arxiv.org/abs/2509.16941
+as_of: 2026-10

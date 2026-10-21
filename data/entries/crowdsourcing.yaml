@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: crowdsourcing
+id: crowdsourcing
+pos: n.
+also:
+  - crowdsource
+  - crowd work
+  - crowdworker
+  - microtask
+domain: data
+domains:
+  - society
+level: core
+plain: >-
+  Getting many people over the internet to each do a small piece of a big job, such as labeling
+  pictures for a few cents apiece, with anyone free to join in.
+senses:
+  - definition: >-
+      The practice of getting work done by posting it online for anyone to take up, usually split
+      into small, independent microtasks that a large, mostly anonymous pool of contributors
+      completes for per-task pay or as volunteers. In AI it became the standard way to build labeled
+      datasets cheaply in the late 2000s: platforms such as [[amazon-mechanical-turk|Amazon
+      Mechanical Turk]] paid workers per task to classify images, transcribe audio, judge search
+      relevance or write short texts, and [[imagenet|ImageNet]]'s millions of images were labeled
+      this way. Because individual crowdworkers are unvetted and paid by the piece, projects add
+      redundancy (several workers per item), hidden gold-standard checks, qualification tests and
+      statistical aggregation of answers. Studies found that pooled non-expert labels can match
+      expert quality on many language tasks, but crowdsourcing copes poorly with specialized
+      judgment, which has moved much AI data work to vetted experts.
+    example: We crowdsourced five judgments per sentence and kept the majority label.
+origin: >-
+  Coined in 2006 by Wired editors Jeff Howe and Mark Robinson, blending 'crowd' and 'outsourcing';
+  Howe's article 'The Rise of Crowdsourcing' (Wired, June 2006) popularized it. Rion Snow and
+  colleagues' 2008 study 'Cheap and Fast — But is it Good?' helped make crowdsourced annotation
+  routine in natural language processing.
+year: 2006
+note: >-
+  Low pay, often a few dollars an hour, and the absence of employment protections are long-standing
+  criticisms; see [[ghost-work|ghost work]]. Freely given contributions, as in Wikipedia or citizen
+  science, are also called crowdsourcing but rarely supply paid AI labels.
+see_also:
+  - Amazon Mechanical Turk
+  - data labeling
+  - annotation
+  - ghost work
+  - inter-annotator agreement
+  - ImageNet
+sources:
+  - text: Howe, J. (2006). The Rise of Crowdsourcing. Wired 14(6).
+  - text: >-
+      Snow, R., O'Connor, B., Jurafsky, D. & Ng, A. Y. (2008). Cheap and Fast — But is it Good?
+      Evaluating Non-Expert Annotations for Natural Language Tasks. EMNLP 2008.

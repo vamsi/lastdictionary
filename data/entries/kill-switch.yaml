@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: kill switch
+id: kill-switch
+pos: n.
+also:
+  - killswitch
+  - off switch
+  - big red button
+  - emergency stop
+  - shutdown mechanism
+domain: safety
+domains:
+  - gov
+  - asi
+level: core
+plain: >-
+  A way to quickly shut down an AI system, or halt its development, if it starts behaving
+  dangerously — anything from an off button to a company's promise to stop.
+senses:
+  - context: Engineering
+    definition: >-
+      A mechanism for rapidly halting an AI system's operation — revoking its access to tools and
+      networks, stopping inference on its servers or cutting power — that works regardless of what
+      the system itself outputs. In deployed products it includes the ability to roll back or
+      withdraw a model and to terminate an agent's running tasks; hardware-level proposals appear
+      under [[on-chip-governance-mechanisms|on-chip governance mechanisms]]. The
+      [[shutdown-problem|shutdown problem]] is the worry that a capable goal-directed agent would
+      have an incentive to resist shutdown by avoiding, disabling or deceiving its overseers, so a
+      kill switch is only as reliable as the system's [[corrigibility|corrigibility]] or its
+      isolation from the switch. Research on [[safe-interruptibility|safe interruptibility]] designs
+      learning agents that do not learn to resist interruption.
+    example: >-
+      The agent's kill switch revoked its credentials and terminated every running job within
+      seconds.
+  - context: Policy
+    definition: >-
+      A commitment to stop developing or deploying a model if its risks cannot be kept below an
+      agreed threshold, as in the voluntary [[frontier-ai-safety-commitments|Frontier AI Safety
+      Commitments]] made by sixteen companies at the AI Seoul Summit in May 2024, widely reported as
+      a kill-switch pledge. California's vetoed [[sb-1047|SB 1047]] (2024) would have required
+      covered developers to be able to carry out a 'full shutdown'.
+    labels:
+      - figurative
+origin: >-
+  A general engineering term for emergency cut-offs in machinery and electronics. In AI, Laurent
+  Orseau and Stuart Armstrong's 'Safely Interruptible Agents' (2016) framed the problem as a 'big
+  red button' that agents should not learn to avoid; the policy sense spread with press coverage of
+  the Seoul commitments in 2024.
+year: 2016
+note: >-
+  Stopping a model is easy when it runs on one laboratory's servers but much harder for
+  [[open-weight-model|open-weight models]] copied worldwide or for a system that has copied itself
+  ([[self-exfiltration|self-exfiltration]]). Whether any kill switch would work against a highly
+  capable system is debated.
+see_also:
+  - shutdown problem
+  - corrigibility
+  - safe interruptibility
+  - off-switch game
+  - self-exfiltration
+  - Frontier AI Safety Commitments
+  - on-chip governance mechanisms
+sources:
+  - text: >-
+      Orseau, L. & Armstrong, S. (2016). Safely Interruptible Agents. Proceedings of UAI 2016.

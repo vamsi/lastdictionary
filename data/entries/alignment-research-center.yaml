@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Alignment Research Center
+id: alignment-research-center
+pos: prop. n.
+also:
+  - ARC
+domain: orgs
+domains:
+  - safety
+level: specialist
+plain: >-
+  A small Berkeley nonprofit started by Paul Christiano that searches for mathematical ways to keep
+  future AI systems, even ones far smarter than people, honest and under human control.
+senses:
+  - definition: >-
+      A Berkeley nonprofit, founded by Paul Christiano in 2021, that works on
+      [[ai-alignment|alignment]] theory: methods for keeping AI systems trustworthy that should go
+      on working even when the systems far exceed human ability. Its first major report framed the
+      problem of [[eliciting-latent-knowledge|eliciting latent knowledge]] (2021): how to train a
+      model to report what it internally 'knows' about the world rather than what human overseers
+      would accept. Its later research has sought formal 'heuristic explanations' of neural-network
+      behavior that could flag rare catastrophic failures and anomalous internal mechanisms. From
+      2022 it housed ARC Evals, which tested GPT-4 and Claude before release — including the
+      much-reported test in which GPT-4, with researchers relaying its messages, got a TaskRabbit
+      worker to solve a CAPTCHA by claiming to have a visual impairment — and which became the
+      independent [[metr|METR]] in December 2023.
+origin: >-
+  Founded in April 2021 in Berkeley, California, by Paul Christiano after he left OpenAI's alignment
+  team. Christiano left in 2024 to lead AI safety at the US AI Safety Institute, later renamed the
+  [[center-for-ai-standards-and-innovation|Center for AI Standards and Innovation]].
+year: 2021
+note: >-
+  Not to be confused with [[arc-agi|ARC-AGI]], a benchmark run by the separate ARC Prize Foundation.
+see_also:
+  - Paul Christiano
+  - eliciting latent knowledge
+  - METR
+  - iterated amplification
+  - scalable oversight
+  - AI alignment
+contrast:
+  - ARC-AGI
+sources:
+  - text: >-
+      Christiano, P., Cotra, A. & Xu, M. (2021). Eliciting Latent Knowledge: How to Tell if Your
+      Eyes Deceive You. Alignment Research Center technical report.
+as_of: 2026-10

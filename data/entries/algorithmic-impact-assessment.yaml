@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: algorithmic impact assessment
+id: algorithmic-impact-assessment
+pos: n.
+also:
+  - AIA
+  - AI impact assessment
+domain: gov
+domains:
+  - society
+labels:
+  - legal
+level: core
+plain: >-
+  A structured review, done before and during the use of an automated system, of whom it could
+  affect and how — such as unfair treatment or privacy harms — and what will be done about it.
+senses:
+  - definition: >-
+      A structured process, often mandated for public agencies or high-risk uses, in which an
+      organization documents an automated system's purpose, data, logic and affected populations;
+      identifies foreseeable harms such as discrimination, privacy intrusion, errors and effects on
+      rights; and records mitigations, monitoring and avenues of redress, usually before deployment
+      and at regular intervals afterward. Modeled on environmental and privacy impact assessments,
+      AIAs range from self-administered questionnaires to externally reviewed reports with public
+      consultation. Canada's Directive on Automated Decision-Making (2019) requires federal
+      institutions to complete an AIA questionnaire that assigns an impact level from I to IV, with
+      safeguards scaled to the level; the original 2024 [[colorado-ai-act|Colorado AI Act]] would
+      have required deployers of high-risk systems to complete annual impact assessments, a duty
+      dropped when the law was rewritten in 2026 before taking effect; and the [[eu-ai-act|EU AI
+      Act]] requires a [[fundamental-rights-impact-assessment|fundamental rights impact assessment]]
+      from certain deployers. Critics warn that assessments become box-ticking unless they are
+      published and independently checked.
+    example: >-
+      The city published its algorithmic impact assessment before switching on the
+      benefits-eligibility model.
+origin: >-
+  Proposed as an accountability framework for government use by the AI Now Institute (Dillon
+  Reisman, Jason Schultz, Kate Crawford and Meredith Whittaker) in April 2018, drawing on the data
+  protection impact assessment of the EU's General Data Protection Regulation (2016) and on
+  environmental impact statements under the US National Environmental Policy Act (1970).
+year: 2018
+see_also:
+  - algorithmic accountability
+  - fundamental rights impact assessment
+  - AI audit
+  - automated decision-making
+  - Colorado AI Act
+  - NIST AI Risk Management Framework
+sources:
+  - text: >-
+      Reisman, D., Schultz, J., Crawford, K. & Whittaker, M. (2018). Algorithmic Impact Assessments:
+      A Practical Framework for Public Agency Accountability. AI Now Institute.
+standards: Government of Canada, Directive on Automated Decision-Making (2019), s. 6.1
+as_of: 2026-10

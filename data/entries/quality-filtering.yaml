@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: quality filtering
+id: quality-filtering
+pos: n.
+also:
+  - quality filter
+  - data filtering
+  - perplexity filtering
+  - classifier-based filtering
+domain: data
+domains:
+  - train
+  - llm
+level: specialist
+plain: >-
+  Automatically sorting through huge piles of collected text and keeping only the parts judged
+  useful for training, such as well-written articles, while discarding spam, gibberish and junk.
+senses:
+  - definition: >-
+      The removal from a raw corpus of documents judged unlikely to help a model, a central step in
+      building [[pretraining-data|pretraining data]] from web crawls, where most pages are
+      boilerplate, spam, machine-generated or otherwise low in value. Methods fall into three
+      families. Heuristic rules discard documents by length, symbol-to-word ratio, repeated lines,
+      missing punctuation or blocklisted words, as in [[c4|C4]] and DeepMind's Gopher rules.
+      Perplexity filtering keeps text that a small reference language model, often trained on
+      Wikipedia, finds probable. Classifier filtering scores documents with a model trained to
+      recognize a target kind of text: [[gpt-3|GPT-3]] kept web pages resembling curated reference
+      corpora, and FineWeb-Edu used a classifier trained on a large model's ratings of educational
+      value, keeping about 8% of [[fineweb|FineWeb]]. Aggressive filtering raises benchmark scores
+      per token but narrows diversity, so thresholds are tuned by training small models on the
+      filtered output.
+    example: >-
+      Raising the classifier threshold from 2 to 3 halved the data but improved MMLU at the 1B scale.
+origin: >-
+  Rule-based filtering of web text became standard with C4 (2019); CCNet (Guillaume Wenzek and
+  colleagues, 2019) ranked web text by its perplexity under a language model trained on Wikipedia;
+  GPT-3 (2020) popularized classifier filtering; and FineWeb-Edu and DataComp-LM (both 2024) showed
+  that model-based quality classifiers sharply improve results per token.
+year: 2019
+note: >-
+  'Quality' means resemblance to whatever reference a filter imitates. A 2022 study of US school
+  newspapers found that a GPT-3-style filter favored writing from wealthier, more educated and more
+  urban areas.
+see_also:
+  - pretraining data
+  - data quality
+  - deduplication
+  - data pipeline
+  - FineWeb
+  - C4
+  - data mixture
+sources:
+  - text: >-
+      Wenzek, G. et al. (2020). CCNet: Extracting High Quality Monolingual Datasets from Web Crawl
+      Data. LREC 2020.
+  - text: >-
+      Gururangan, S. et al. (2022). Whose Language Counts as High Quality? Measuring Language
+      Ideologies in Text Data Selection. EMNLP 2022.

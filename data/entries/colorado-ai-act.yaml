@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Colorado AI Act
+id: colorado-ai-act
+pos: prop. n.
+also:
+  - Colorado Artificial Intelligence Act
+  - SB 24-205
+  - SB 26-189
+  - Consumer Protections for Artificial Intelligence
+domain: gov
+domains:
+  - society
+labels:
+  - legal
+level: core
+plain: >-
+  A Colorado law, first passed in 2024, governing AI used to make important decisions about people,
+  such as hiring, lending and housing. In 2026 it was rewritten as a narrower law that starts in
+  2027.
+senses:
+  - definition: >-
+      Colorado's statute on AI used in 'consequential decisions' about consumers: those that
+      materially affect a person's access to, or the terms of, jobs, housing, lending and other
+      financial services, insurance, health care, schooling, legal services or essential government
+      services. As enacted in 2024 (SB 24-205), it was the first comprehensive US state law on
+      [[high-risk-ai-system|high-risk AI]]: developers and deployers owed consumers a duty of
+      reasonable care against [[algorithmic-bias|algorithmic discrimination]]; deployers needed
+      risk-management programs and annual [[algorithmic-impact-assessment|impact assessments]], had
+      to tell people when AI was used and offer correction and appeal; and discovered discrimination
+      had to be reported to the Attorney General. Its start was postponed to June 30, 2026, but it
+      never took effect. In May 2026 it was repealed and re-enacted by SB 26-189, effective January
+      1, 2027, which regulates [[automated-decision-making|automated decision-making technology]] in
+      consequential decisions through developer documentation, notice to consumers, a plain-language
+      explanation within 30 days of an adverse outcome, rights to correction and human review, and
+      fault-based allocation of liability, enforced only by the Attorney General after a 60-day cure
+      period. It drops the duty of care and impact assessments.
+    example: >-
+      Under the rewritten Colorado AI Act, the lender must explain the model's role within 30 days
+      of a denial.
+origin: >-
+  Sponsored by Senate Majority Leader Robert Rodriguez and Representatives Brianna Titone and Manny
+  Rutinel and signed with reservations by Governor Jared Polis on May 17, 2024. Business objections
+  led to a delay in an August 2025 special session. xAI sued to block the law in federal court on
+  April 9, 2026, the US Justice Department filed a companion complaint on April 24, enforcement was
+  paused by a stipulated order on April 27, 2026, and Polis signed the replacement on May 14, 2026.
+year: 2024
+note: >-
+  A focal point of the [[ai-preemption|AI preemption]] fight: the federal government argued that its
+  anti-discrimination and disclosure rules compelled speech and imposed race- and sex-conscious
+  obligations. Many US compliance programs had been built for the 2024 version, which, as of October
+  2026, no longer exists in that form.
+see_also:
+  - automated decision-making
+  - algorithmic impact assessment
+  - high-risk AI system
+  - AI preemption
+  - Texas Responsible Artificial Intelligence Governance Act
+  - algorithmic bias
+contrast:
+  - EU AI Act
+sources:
+  - text: >-
+      Colorado General Assembly (2024). SB24-205: Consumer Protections for Artificial Intelligence.
+  - text: >-
+      McDermott Will & Schulte (2026). Colorado AI law in flux: Comprehensive replacement bill
+      signed after federal court blocks predecessor's enforcement.
+    url: https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/
+standards: >-
+  Colorado SB 24-205 (2024), C.R.S. § 6-1-1701 et seq.; repealed and re-enacted by SB 26-189 (signed
+  May 14, 2026; effective January 1, 2027)
+as_of: 2026-10

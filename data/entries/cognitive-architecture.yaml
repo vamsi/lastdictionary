@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cognitive architecture
+id: cognitive-architecture
+pos: n.
+also:
+  - Soar
+  - ACT-R
+  - unified theory of cognition
+  - CLARION
+  - LIDA
+  - CoALA
+domain: sym
+domains:
+  - mind
+  - agents
+level: specialist
+plain: >-
+  A blueprint for a complete thinking system — how memory, attention, learning and decision-making
+  fit together — used both to build general AI agents and to model how the human mind works.
+senses:
+  - definition: >-
+      A specification of the fixed structures and processes of a general intelligent system — its
+      memories, representations, learning mechanisms and the cycle by which perception, deliberation
+      and action interact — intended to support a wide range of tasks once task knowledge is added.
+      Cognitive architectures serve two goals, often together: modeling human cognition so that
+      simulations match experimental data such as reaction times and errors, and engineering
+      general-purpose agents. Prominent examples are Soar, built around
+      [[production-system|production rules]], a goal hierarchy, subgoals created at impasses and
+      chunking (learning new rules from problem solving); ACT-R, which combines symbolic productions
+      with subsymbolic activation equations and maps its modules to brain regions; and hybrids such
+      as CLARION and LIDA. Since 2023, frameworks such as CoALA have used cognitive-architecture
+      concepts — working, episodic and procedural memory, decision cycles — to describe and design
+      [[large-language-model|language-model]] [[ai-agent|agents]].
+origin: >-
+  Soar was created by John Laird, Allen Newell and Paul Rosenbloom from 1983, and John Anderson's
+  ACT theories, from ACT* (1983) to ACT-R (1993), developed in parallel at Carnegie Mellon. Newell's
+  1987 William James Lectures, published as Unified Theories of Cognition (1990), made the case for
+  such architectures.
+year: 1983
+note: >-
+  Unlike a neural-network architecture, which specifies a learnable function, a cognitive
+  architecture specifies the organization of a whole mind or agent.
+see_also:
+  - production system
+  - physical symbol system hypothesis
+  - Allen Newell
+  - AI agent
+  - blackboard system
+  - symbolic AI
+sources:
+  - text: >-
+      Laird, J. E., Newell, A. & Rosenbloom, P. S. (1987). SOAR: An Architecture for General
+      Intelligence. Artificial Intelligence 33(1), 1–64.
+  - text: Newell, A. (1990). Unified Theories of Cognition. Harvard University Press.
+  - text: >-
+      Sumers, T. R., Yao, S., Narasimhan, K. & Griffiths, T. L. (2023). Cognitive Architectures for
+      Language Agents. arXiv preprint (published in TMLR, 2024).

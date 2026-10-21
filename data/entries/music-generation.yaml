@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: music generation
+id: music-generation
+pos: n.
+also:
+  - AI music
+  - AI music generation
+  - text-to-music
+  - algorithmic composition
+  - Udio
+domain: gen
+domains:
+  - percep
+  - society
+level: core
+plain: >-
+  Using AI to compose or produce music — from melodies written as notes to complete songs with
+  vocals — often from a short text description like 'upbeat jazz with saxophone'.
+senses:
+  - definition: >-
+      The automatic creation of music by computer, either symbolically, as notes or MIDI events, or
+      directly as audio. Symbolic systems, from rule-based and Markov-chain composers to recurrent
+      and transformer models such as Music Transformer (2018), produce scores that must still be
+      performed or rendered. Audio systems generate sound itself: OpenAI's Jukebox (2020) modeled
+      raw audio with a multiscale [[vq-vae|VQ-VAE]] and transformers; Google's MusicLM and Meta's
+      MusicGen (2023) generated music from text with language models over
+      [[neural-audio-codec|neural audio codec]] tokens; and diffusion and [[flow-matching|flow
+      matching]] models generate spectrograms or latents. Commercial services such as [[suno|Suno]]
+      and Udio (2023–2024) produce complete songs with lyrics and vocals in seconds. Evaluation
+      relies on listening tests and metrics such as Fréchet Audio Distance. Training on copyrighted
+      recordings led major record labels to sue Suno and Udio in June 2024; licensing settlements
+      from late 2025 began moving the field toward licensed training data and controls over artists'
+      likenesses.
+    example: >-
+      The music generation tool gave us a passable jingle, but the vocalist slurred the brand name.
+origin: >-
+  Algorithmic composition is old: Lejaren Hiller and Leonard Isaacson's computer-generated Illiac
+  Suite dates from 1957, and David Cope's Experiments in Musical Intelligence from the 1980s. Neural
+  music generation followed deep learning in the 2010s; Jukebox (April 2020) made raw-audio song
+  generation credible, and text-to-music became mainstream in 2023–2024.
+year: 1957
+see_also:
+  - Suno
+  - neural audio codec
+  - text-to-speech
+  - voice cloning
+  - AI art
+  - AI copyright litigation
+  - diffusion model
+sources:
+  - text: >-
+      Dhariwal, P. et al. (2020). Jukebox: A Generative Model for Music. arXiv:2005.00341.
+    url: https://arxiv.org/abs/2005.00341
+  - text: >-
+      Agostinelli, A. et al. (2023). MusicLM: Generating Music From Text. arXiv:2301.11325.
+    url: https://arxiv.org/abs/2301.11325
+  - text: >-
+      Copet, J. et al. (2023). Simple and Controllable Music Generation (MusicGen). arXiv:2306.05284.
+    url: https://arxiv.org/abs/2306.05284
+as_of: 2026-10

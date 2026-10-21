@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: exact match
+id: exact-match
+pos: n.
+also:
+  - EM
+  - exact-match accuracy
+  - exact match score
+domain: eval
+domains:
+  - llm
+level: core
+plain: >-
+  The simplest way to grade an AI's answer: it counts as right only if it is identical to the
+  reference answer, after minor tidying such as ignoring capital letters.
+senses:
+  - definition: >-
+      A scoring rule under which an answer earns credit only if, after light normalization, it is
+      identical character for character to a reference string — or to any one of several acceptable
+      references — with the score reported as the share of items that earn credit. Normalization
+      typically ignores case and strips articles such as 'the', punctuation and redundant spaces.
+      Exact match suits short, closed-form answers such as numbers, names or multiple-choice
+      letters, and is used in extractive [[question-answering|question answering]], math benchmarks
+      such as [[gsm8k|GSM8K]], and the short-answer items of [[humanity-s-last-exam|Humanity's Last
+      Exam]]. It is strict and brittle: a correct answer phrased differently ('4' versus 'four', or
+      a full sentence) scores zero. It is therefore often paired with token-overlap [[f1-score|F1]],
+      rules that extract the final answer, or equivalence checks by a computer algebra system or an
+      [[llm-as-a-judge|LLM-as-a-judge]].
+    example: >-
+      Exact match dropped eleven points when the model started answering in full sentences.
+origin: >-
+  String-match scoring is as old as automatic evaluation; Pranav Rajpurkar and colleagues'
+  [[squad|SQuAD]] (2016) popularized 'Exact Match (EM)', reported alongside F1, as a named headline
+  metric for machine reading comprehension.
+year: 2016
+note: >-
+  A low exact-match score can reflect formatting rather than knowledge; reports should state the
+  normalization and answer-extraction rules used.
+see_also:
+  - SQuAD
+  - F1 score
+  - accuracy
+  - question answering
+  - pass@k
+  - LLM-as-a-judge
+sources:
+  - text: >-
+      Rajpurkar, P., Zhang, J., Lopyrev, K. & Liang, P. (2016). SQuAD: 100,000+ Questions for
+      Machine Comprehension of Text. EMNLP 2016.
+    url: https://arxiv.org/abs/1606.05250

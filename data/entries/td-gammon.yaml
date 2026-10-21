@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TD-Gammon
+id: td-gammon
+pos: prop. n.
+pronunciation: tee-dee-GAM-un
+domain: rl
+domains:
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  A backgammon program built at IBM in the early 1990s that taught itself to play at near
+  world-champion level by playing more than a million games against itself.
+senses:
+  - definition: >-
+      A backgammon program that learned its own evaluation function by
+      [[temporal-difference-learning|TD(λ)]] from games against itself, built by Gerald Tesauro at
+      IBM's Thomas J. Watson Research Center. A multilayer [[neural-network|neural network]] took an
+      encoding of the board (later versions added hand-designed features) and estimated the
+      probabilities of the possible outcomes; after each move its weights were nudged toward its own
+      next prediction, with the actual result as the final target. Without expert games, versions
+      trained on roughly 300,000 to 1.5 million self-play games reached strong master level, close
+      to the best human players, and its unconventional opening choices changed how experts played.
+      TD-Gammon was the first widely publicized success of [[reinforcement-learning|reinforcement
+      learning]] with neural function approximation, two decades before the [[deep-q-network|deep
+      Q-network]], and a direct inspiration for later [[self-play|self-play]] systems; early
+      attempts to repeat it in chess and Go failed, which some attribute to backgammon's dice
+      providing natural exploration.
+    example: >-
+      Like TD-Gammon, the agent learned purely from games against itself, starting from random
+      weights.
+origin: >-
+  Described by Gerald Tesauro in 'Practical Issues in Temporal Difference Learning' (Machine
+  Learning, 1992) and 'TD-Gammon, a Self-Teaching Backgammon Program, Achieves Master-Level Play'
+  (Neural Computation, 1994), with a retrospective in Communications of the ACM (1995). The name
+  joins 'TD' (temporal difference) with the '-gammon' of backgammon, echoing Tesauro's earlier
+  supervised-learning program Neurogammon, winner of the 1989 Computer Olympiad.
+year: 1992
+see_also:
+  - temporal difference learning
+  - self-play
+  - deep reinforcement learning
+  - rollout
+  - AlphaZero
+sources:
+  - text: >-
+      Tesauro, G. (1995). Temporal Difference Learning and TD-Gammon. Communications of the ACM
+      38(3), 58–68.
+  - text: >-
+      Tesauro, G. (1994). TD-Gammon, a Self-Teaching Backgammon Program, Achieves Master-Level Play.
+      Neural Computation 6(2), 215–219.

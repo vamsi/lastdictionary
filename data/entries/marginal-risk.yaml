@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: marginal risk
+id: marginal-risk
+pos: n.
+also:
+  - marginal risk assessment
+  - marginal uplift
+  - counterfactual risk
+domain: gov
+domains:
+  - safety
+  - sec
+level: specialist
+plain: >-
+  How much extra danger an AI model adds compared with what people could already do without it — for
+  instance with search engines, textbooks or models that are already freely available.
+senses:
+  - definition: >-
+      The additional risk that releasing or deploying an AI system creates relative to a
+      counterfactual baseline — the harm already possible with internet search, textbooks or
+      existing models — rather than the absolute risk of the activity it might assist. The idea is
+      central to [[open-weight-model|open-weight]] policy: a framework by Sayash Kapoor, Rishi
+      Bommasani and colleagues (2024) argued that open [[foundation-model|foundation models]] should
+      be judged by the risk they add over closed models and pre-existing technology, and the US
+      Commerce Department's 2024 report on widely available model weights took a similar approach.
+      Frontier safety practice uses it too: [[uplift-study|uplift studies]] measure how much a model
+      helps compared with an internet-only control group, and Anthropic's 2026
+      [[responsible-scaling-policy|responsible scaling policy]] requires its Risk Reports to assess
+      marginal as well as overall risk, and lets a decision to proceed rest partly on a
+      marginal-risk assessment only with approval from its board and Long-Term Benefit Trust.
+      Critics warn that baselines drift as each release lowers the bar for the next, so that a
+      series of individually marginal releases can add up to large cumulative risk.
+    example: >-
+      Since equivalent open-weight models already exist, the marginal risk of releasing ours is
+      small.
+origin: >-
+  Long used in risk analysis and economics; brought into AI policy by the debate over open
+  foundation models, notably 'On the Societal Impact of Open Foundation Models' (Kapoor, Bommasani
+  et al., February 2024) and the US National Telecommunications and Information Administration's
+  report of July 2024.
+year: 2024
+note: >-
+  Distinguish the marginal risk added by one model from the absolute or total risk of a technology.
+  Arguments that a dangerous capability is acceptable because rivals already offer it are criticized
+  as a race-to-the-bottom rationale.
+see_also:
+  - open-weight model
+  - open-source AI
+  - uplift study
+  - dual-use foundation model
+  - responsible scaling policy
+  - CBRN risk
+sources:
+  - text: >-
+      Kapoor, S., Bommasani, R. et al. (2024). On the Societal Impact of Open Foundation Models.
+      arXiv:2403.07918.
+as_of: 2026-10

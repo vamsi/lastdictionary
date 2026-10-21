@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: few-shot prompting
+id: few-shot-prompting
+pos: n.
+also:
+  - few-shot
+  - k-shot prompting
+  - one-shot prompting
+  - many-shot prompting
+  - in-context examples
+  - demonstrations
+  - exemplars
+domain: llm
+domains:
+  - eng
+level: core
+plain: >-
+  Showing an AI a handful of examples of a task — inputs with the answers you want — inside the
+  prompt, so it can copy the pattern for a new case.
+senses:
+  - definition: >-
+      Specifying a task by including a small number k of input–output demonstrations in the
+      [[prompt|prompt]], followed by a new input for the model to complete; one-shot prompting uses
+      a single example, and many-shot prompting uses hundreds or thousands where the
+      [[context-window|context window]] allows. The model's [[weights|weights]] do not change:
+      adaptation happens through [[in-context-learning|in-context learning]]. Demonstrations convey
+      output format, label set and style more precisely than instructions alone, but results are
+      sensitive to which examples are chosen, their order and the balance of labels
+      ([[prompt-sensitivity|prompt sensitivity]]), and outputs can copy the examples' surface
+      features. With strong [[instruction-tuned-model|instruction-tuned]] and
+      [[reasoning-model|reasoning]] models, carefully written zero-shot instructions often match
+      few-shot prompts, but examples remain valuable for unusual formats and for [[base-model|base
+      models]].
+    example: >-
+      Two few-shot examples fixed the date format that the instructions alone never did.
+origin: >-
+  The setting was defined in the GPT-3 paper by Tom Brown and colleagues at OpenAI (May 2020), which
+  distinguished zero-, one- and few-shot settings, the last typically with 10 to 100 demonstrations;
+  the term adapts 'few-shot learning' from meta-learning. Rishabh Agarwal and colleagues at Google
+  DeepMind studied many-shot in-context learning with long-context models in 2024.
+year: 2020
+note: >-
+  Distinguish from classical [[few-shot-learning|few-shot learning]], which adapts a model's
+  parameters (or a learned metric) from a few labeled examples.
+see_also:
+  - in-context learning
+  - zero-shot learning
+  - prompt engineering
+  - few-shot learning
+  - prompt sensitivity
+  - chain of thought
+contrast:
+  - zero-shot learning
+  - fine-tuning
+sources:
+  - text: Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. NeurIPS 2020.
+    url: https://arxiv.org/abs/2005.14165v2

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: liquid neural network
+id: liquid-neural-network
+pos: n.
+also:
+  - liquid time-constant network
+  - LTC network
+  - closed-form continuous-time network
+  - CfC
+  - neural circuit policy
+domain: dl
+domains:
+  - robot
+level: specialist
+plain: >-
+  A small, brain-inspired network for time-varying data whose neurons change how quickly they react
+  depending on their input, letting a few neurons handle tasks such as steering a car.
+senses:
+  - definition: >-
+      A continuous-time [[recurrent-neural-network|recurrent neural network]], described by Ramin
+      Hasani and colleagues, whose neurons each follow a simple first-order differential equation
+      with a time constant that is not fixed: a learned nonlinear function of the current input and
+      state speeds each unit up or slows it down, so its responsiveness shifts with the data, hence
+      'liquid'. Running the network means integrating these equations numerically, as with a
+      [[neural-ordinary-differential-equation|neural ordinary differential equation]]; the authors
+      proved that the states stay bounded and reported better time-series predictions than earlier
+      recurrent models. A closed-form approximation (CfC, 2022) avoids the solver and runs much
+      faster. Compact 'neural circuit policies' built from such neurons, with only a few dozen
+      units, were demonstrated steering vehicles and drones with inspectable dynamics. The name is
+      also associated with Liquid AI, a company co-founded in 2023 by several of the method's
+      authors, whose foundation models use related but different hybrid architectures.
+    example: >-
+      A liquid neural network with 19 control neurons kept the car in its lane from camera input.
+origin: >-
+  Grew out of 'neuronal circuit policies' modeled on the nervous system of the nematode C. elegans,
+  by Mathias Lechner, Ramin Hasani and Radu Grosu of TU Wien (arXiv, March 2018; developed further
+  in Nature Machine Intelligence, 2020). Hasani, Lechner, Alexander Amini, Daniela Rus and Grosu of
+  TU Wien and MIT described liquid time-constant recurrent networks in a November 2018 preprint and
+  in 'Liquid Time-constant Networks' (arXiv, June 2020; AAAI 2021).
+year: 2018
+see_also:
+  - recurrent neural network
+  - neural ordinary differential equation
+  - spiking neural network
+  - edge AI
+  - state space model
+sources:
+  - text: >-
+      Hasani, R., Lechner, M., Amini, A., Rus, D. & Grosu, R. (2020). Liquid Time-constant Networks.
+      arXiv:2006.04439; AAAI 2021.
+    url: https://arxiv.org/abs/2006.04439
+  - text: >-
+      Hasani, R. M., Lechner, M., Amini, A., Rus, D. & Grosu, R. (2018). Liquid Time-constant
+      Recurrent Neural Networks as Universal Approximators. arXiv:1811.00321.
+    url: https://arxiv.org/abs/1811.00321
+as_of: 2026-10

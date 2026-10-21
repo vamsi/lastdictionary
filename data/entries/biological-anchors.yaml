@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: biological anchors
+id: biological-anchors
+pos: n.
+also:
+  - bio anchors
+  - biological anchors framework
+domain: asi
+domains:
+  - train
+  - hw
+level: specialist
+plain: >-
+  A way of forecasting when AI could transform the world, by estimating how much computing it would
+  take to match the human brain and when that much computing would be affordable.
+senses:
+  - definition: >-
+      A forecasting framework that estimates when [[transformative-ai|transformative AI]] becomes
+      feasible by anchoring the [[training-compute|training compute]] it would require to quantities
+      from biology, then projecting when that compute will be affordable given trends in hardware
+      price-performance, algorithmic efficiency and spending. The main anchors start from the
+      brain's estimated computation (on the order of 10^15 operations per second), size a model
+      accordingly and ask how much training it would need, with variants depending on how long each
+      training episode must be (short, medium or long horizon); other anchors use the computation of
+      a human lifetime of learning, the information in the genome, or all the computation performed
+      by evolution in producing brains. A weighted mixture of these anchors yields a probability
+      distribution over arrival dates. Supporters value it as an explicit, checkable model; critics,
+      including Eliezer Yudkowsky, argue that biology says little about the compute needed by
+      algorithms very different from the brain's.
+    example: >-
+      Bio anchors put most of its weight on the neural-network anchors, not on recapitulating
+      evolution.
+origin: >-
+  Developed by Ajeya Cotra at Open Philanthropy in the draft report 'Forecasting TAI with biological
+  anchors' (2020), which gave a median of around 2050 for transformative AI; in 2022 she moved her
+  personal median to about 2040. Precursors include Hans Moravec's 1998 extrapolation of when
+  hardware would match the brain.
+year: 2020
+see_also:
+  - AI timelines
+  - transformative AI
+  - training compute
+  - scaling laws
+  - effective compute
+  - Hans Moravec
+sources:
+  - text: >-
+      Cotra, A. (2020). Forecasting TAI with biological anchors (draft report). Open Philanthropy.
+  - text: >-
+      Moravec, H. (1998). When will computer hardware match the human brain? Journal of Evolution
+      and Technology 1.

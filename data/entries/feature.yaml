@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature
+id: feature
+pos: n.
+also:
+  - features
+  - feature vector
+  - attribute
+  - predictor
+  - input variable
+  - covariate
+domain: core
+domains:
+  - ml
+  - dl
+  - interp
+level: core
+plain: >-
+  One piece of information about each example that a model uses, like a house's size or a pixel's
+  color, or a pattern a model has learned to detect inside itself.
+senses:
+  - context: Machine learning
+    definition: >-
+      One of the input variables a model reads for each example: a column in a table (age, income,
+      number of purchases) or a quantity derived from raw data (word counts, the ratio of debt to
+      income); together, an example's features form its feature vector. Statisticians call features
+      predictors, covariates or independent variables. Constructing and transforming them by hand is
+      [[feature-engineering|feature engineering]], choosing a subset is [[feature-selection|feature
+      selection]], putting them on comparable scales is [[feature-scaling|feature scaling]], and
+      measuring how much each affects predictions is [[feature-importance|feature importance]].
+    example: >-
+      Adding 'days since last login' as a feature did more for churn prediction than any change of
+      model.
+  - context: Deep learning
+    definition: >-
+      A learned internal representation: a pattern to which units or layers of a network respond,
+      such as edges and textures in early layers of a [[convolutional-neural-network|convolutional
+      neural network]] and object parts in later ones. A layer's activations form a
+      [[feature-map|feature map]] or [[embedding|embedding]], and using a pretrained network to
+      produce inputs for another model is [[feature-extraction|feature extraction]]. Deep learning's
+      central claim is that useful features can be learned rather than designed
+      ([[representation-learning|representation learning]]).
+  - context: Interpretability
+    definition: >-
+      A human-interpretable property that a model represents internally, often modeled as a
+      direction in [[activation-space|activation space]] and recovered with
+      [[sparse-autoencoder|sparse autoencoders]]; see [[feature-interpretability|feature
+      (interpretability)]]. Because of [[superposition|superposition]], a network can represent many
+      more such features than it has neurons.
+  - context: Classical computer vision
+    definition: >-
+      A distinctive local image structure, such as a corner, edge or blob, located and described by
+      hand-designed algorithms such as SIFT or HOG for matching, tracking and recognition, the
+      dominant approach before deep learning.
+origin: >-
+  Pattern-recognition research of the 1950s and 1960s framed recognition as detecting features and
+  combining them, as in Oliver Selfridge's Pandemonium model (1959). 'Feature extraction' and
+  'feature selection' were standard by the 1970s; deep learning shifted the emphasis to learned
+  features, and interpretability research from about 2020 to features represented inside models.
+note: >-
+  In product talk a 'feature' is a capability of software, unrelated to these senses. Input features
+  (the columns a model reads) are often confused with learned features (its internal
+  representations).
+see_also:
+  - feature engineering
+  - feature (interpretability)
+  - feature extraction
+  - feature map
+  - representation learning
+  - feature selection
+  - feature importance
+  - embedding
+contrast:
+  - label
+  - example

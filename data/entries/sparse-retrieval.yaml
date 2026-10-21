@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sparse retrieval
+id: sparse-retrieval
+pos: n.
+also:
+  - lexical retrieval
+  - lexical search
+  - keyword search
+  - learned sparse retrieval
+domain: eng
+domains:
+  - ml
+level: core
+plain: >-
+  Finding documents by the words they contain, giving more weight to rare, telling words — the
+  classic way search engines work.
+senses:
+  - definition: >-
+      Retrieval in which queries and documents are represented as sparse vectors over a vocabulary —
+      one dimension per term, almost all zero — and scored by weighted term overlap, typically
+      through an [[inverted-index|inverted index]] that lists the documents containing each term.
+      Classic weighting schemes such as [[tf-idf|TF-IDF]] and [[bm25|BM25]] are unsupervised and
+      need no training data. Learned sparse retrievers (for example DeepCT, doc2query and SPLADE)
+      use a neural network to assign term weights and to add related terms a document does not
+      literally contain, keeping inverted-index efficiency while narrowing the vocabulary-mismatch
+      gap. Sparse retrieval excels at exact matches — names, codes, rare terms — and is cheap,
+      interpretable and robust across domains, but misses paraphrases that share no words with the
+      query.
+    example: >-
+      Sparse retrieval nailed the error code ERR_4012 that the embedding search kept missing.
+origin: >-
+  Term-weighted keyword retrieval dates from the 1950s–70s (Hans Peter Luhn, Karen Spärck Jones,
+  Gerard Salton). The retronym 'sparse retrieval' became common from about 2019–2020 to contrast
+  such methods with neural [[dense-retrieval|dense retrieval]]; SPLADE (Thibault Formal, Benjamin
+  Piwowarski and Stéphane Clinchant, SIGIR 2021) popularized learned sparse retrieval.
+year: 2020
+see_also:
+  - BM25
+  - TF-IDF
+  - inverted index
+  - dense retrieval
+  - hybrid search
+  - information retrieval
+contrast:
+  - dense retrieval
+sources:
+  - text: >-
+      Formal, T., Piwowarski, B. & Clinchant, S. (2021). SPLADE: Sparse Lexical and Expansion Model
+      for First Stage Ranking. SIGIR 2021. arXiv:2107.05720.
+    url: https://arxiv.org/abs/2107.05720

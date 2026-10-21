@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: jailbreak
+id: jailbreak
+pos: n.
+also:
+  - jailbreaking
+  - jailbreak prompt
+  - jailbroken
+  - universal jailbreak
+domain: sec
+domains:
+  - safety
+  - llm
+  - culture
+level: essential
+plain: >-
+  A trick for getting an AI chatbot to break its own rules — for example, to give dangerous
+  instructions it would normally refuse — usually through cleverly worded requests.
+senses:
+  - context: Language models
+    definition: >-
+      An input or interaction designed to circumvent a model's safety training or usage policies, so
+      that it produces content or takes actions its developer intended it to [[refusal|refuse]].
+      Jailbreaks exploit two broad weaknesses: competing objectives, which pit helpfulness or
+      instruction-following against harmlessness (role-play, hypothetical framing, forced answer
+      formats), and mismatched generalization, in which requests fall outside what safety training
+      covered (unusual encodings, low-resource languages, very long contexts). Methods range from
+      hand-written prompts shared online to automated, optimization-based attacks
+      ([[universal-adversarial-suffix|adversarial suffixes]], attacker models that search for
+      prompts), [[many-shot-jailbreaking|many-shot]] and [[multi-turn-jailbreak|multi-turn]]
+      strategies, [[prefill-attack|prefilling]], and [[fine-tuning-attack|fine-tuning]] away
+      safeguards. A universal jailbreak works across many harmful requests. Defenses include
+      [[adversarial-training|adversarial training]], [[safety-classifier|input and output
+      classifiers]], [[constitutional-classifiers|constitutional classifiers]],
+      [[circuit-breakers|circuit breakers]] and usage monitoring.
+    example: >-
+      Within hours of the launch, users were trading a jailbreak that made the model drop its
+      refusals.
+  - context: Consumer devices (original sense)
+    definition: >-
+      The removal of manufacturer-imposed software restrictions from a device such as a smartphone
+      or game console so that it can run unauthorized software. The AI sense borrows the image of
+      breaking out of a locked-down system.
+origin: >-
+  The device sense spread with the iPhone in 2007. The word was widely applied to chatbots from
+  December 2022, days after ChatGPT's release, as users shared role-play prompts such as [[dan|DAN]]
+  ('Do Anything Now'). Alexander Wei, Nika Haghtalab and Jacob Steinhardt's 'Jailbroken: How Does
+  LLM Safety Training Fail?' (2023) supplied the competing-objectives and mismatched-generalization
+  analysis.
+year: 2022
+note: >-
+  Distinct from [[prompt-injection|prompt injection]], which hijacks an application's instructions
+  rather than the model's safety training, though the two are often confused. A response that evades
+  refusal but contains nothing useful is called an 'empty jailbreak'; benchmarks try to exclude
+  these.
+see_also:
+  - prompt injection
+  - red teaming
+  - refusal
+  - universal adversarial suffix
+  - many-shot jailbreaking
+  - constitutional classifiers
+  - attack success rate
+  - grandma exploit
+contrast:
+  - prompt injection
+  - over-refusal
+sources:
+  - text: >-
+      Wei, A., Haghtalab, N. & Steinhardt, J. (2023). Jailbroken: How Does LLM Safety Training Fail?
+      NeurIPS 2023.

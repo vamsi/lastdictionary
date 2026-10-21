@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: staged deployment
+id: staged-deployment
+pos: n.
+also:
+  - staged release
+  - staggered release
+  - gradual release
+  - phased rollout
+  - incremental deployment
+domain: safety
+domains:
+  - gov
+  - eng
+level: core
+plain: >-
+  Releasing a new AI system step by step — first to testers, then to limited groups, then widely —
+  so that problems can be spotted and fixed before everyone has it.
+senses:
+  - definition: >-
+      A release strategy in which an AI system is made available in successive stages of widening
+      access — internal use, trusted testers or researchers, limited or rate-limited
+      [[model-api|API]] access, then general availability — with monitoring and evaluation between
+      stages so that risks can be detected and mitigated, or the rollout halted, before full
+      exposure. Stages may also widen capability rather than audience, for example by releasing
+      progressively larger versions of a model or enabling fine-tuning, tool use or weight downloads
+      only after review. Staged deployment trades speed for information about real-world use that
+      [[pre-deployment-testing|pre-deployment testing]] cannot provide. It is weakened by
+      competitive pressure and does not apply to [[open-weight-model|open weights]], which cannot be
+      recalled once published.
+    example: >-
+      Under staged deployment, the voice feature reached a thousand trusted testers a month before
+      general release.
+origin: >-
+  Adapts the gradual rollouts long used in software engineering. OpenAI's staged release of GPT-2 in
+  2019 — four model sizes published between February and November, accompanied by a report by Irene
+  Solaiman and colleagues — made the practice widely discussed. Solaiman's 'The Gradient of
+  Generative AI Release' (2023) mapped the options from fully closed to fully open.
+year: 2019
+note: >-
+  Overlaps with [[structured-access|structured access]], which concerns how access is given rather
+  than when. In software engineering, staged (canary) rollouts aim mainly at reliability; in AI
+  safety they also aim at learning about misuse and unforeseen capabilities.
+see_also:
+  - structured access
+  - pre-deployment testing
+  - open-weight model
+  - shadow deployment
+  - A/B testing
+  - system card
+contrast:
+  - shadow deployment
+sources:
+  - text: >-
+      Solaiman, I. et al. (2019). Release Strategies and the Social Impacts of Language Models.
+      OpenAI report, arXiv preprint.
+  - text: >-
+      Solaiman, I. (2023). The Gradient of Generative AI Release: Methods and Considerations. FAccT
+      2023.

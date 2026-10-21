@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SuperGLUE
+id: superglue
+pos: prop. n.
+domain: eval
+domains:
+  - llm
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  A harder follow-up to the GLUE language-understanding test, released in 2019 after AI systems had
+  already beaten the human baseline on the original.
+senses:
+  - definition: >-
+      A benchmark and leaderboard for English [[natural-language-understanding|natural language
+      understanding]] launched as a 'stickier' replacement for [[glue|GLUE]], whose non-expert human
+      baseline systems had already overtaken. It retains the single-score, multi-task design but
+      swaps in eight more demanding tasks emphasizing reasoning,
+      [[commonsense-reasoning|commonsense]] and coreference: BoolQ (yes/no questions), CB
+      (CommitmentBank inference), COPA (causal reasoning), MultiRC (multi-sentence reading
+      comprehension), ReCoRD (cloze-style reading requiring commonsense), RTE (textual entailment),
+      WiC (word sense in context) and WSC (the [[winograd-schema-challenge|Winograd schema
+      challenge]]), plus diagnostic sets for linguistic phenomena and gender bias. Its human
+      baseline was 89.8; in January 2021 Microsoft's DeBERTa and a Google system combining T5 and
+      Meena both exceeded it. SuperGLUE's saturation closed the era of single-score NLU
+      leaderboards, as attention shifted to benchmarks for large language models such as
+      [[mmlu|MMLU]] (2020).
+    example: >-
+      SuperGLUE scores above the human baseline did not translate into robust reading comprehension
+      in deployment.
+origin: >-
+  Introduced by Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix
+  Hill, Omer Levy and Samuel R. Bowman in May 2019, and published at NeurIPS 2019.
+year: 2019
+note: >-
+  Exceeding the human baseline here means beating crowdworkers' average under the benchmark's
+  conditions, not human-level language understanding — a caution the creators themselves voiced.
+see_also:
+  - GLUE
+  - benchmark saturation
+  - Winograd schema challenge
+  - natural language understanding
+  - BERT
+  - T5
+sources:
+  - text: >-
+      Wang, A., Pruksachatkun, Y., Nangia, N. et al. (2019). SuperGLUE: A Stickier Benchmark for
+      General-Purpose Language Understanding Systems. NeurIPS 2019.
+    url: https://arxiv.org/abs/1905.00537

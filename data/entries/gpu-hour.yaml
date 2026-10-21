@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPU-hour
+id: gpu-hour
+pos: n.
+also:
+  - GPU hours
+  - GPU-hours
+  - accelerator-hour
+  - chip-hour
+  - TPU-hour
+domain: hw
+domains:
+  - train
+  - infer
+level: core
+plain: >-
+  One graphics chip working for one hour — the everyday unit for how much computing a job used and
+  for renting AI chips by the hour.
+senses:
+  - definition: >-
+      A unit of accelerator time: one [[gpu|GPU]] (or other accelerator) used for one hour,
+      regardless of how fully its arithmetic units were busy. It is the common currency for
+      reporting and pricing compute. Model reports give training in GPU-hours — Meta's Llama 2 70B
+      used about 1.7 million A100 GPU-hours, and DeepSeek reported 2.788 million H800 GPU-hours for
+      DeepSeek-V3, which at an assumed $2 per GPU-hour implied a training cost of about $5.6 million
+      — and cloud providers rent accelerators by the GPU-hour. Comparisons across generations need
+      care, since an [[h100|H100]] hour delivers roughly three times the 16-bit arithmetic of an
+      A100 hour; converting to [[flop|FLOP]] requires the chip's peak [[flops|FLOPS]] and the
+      achieved [[model-flops-utilization|utilization]].
+    example: >-
+      The ablation sweep burned 40,000 GPU-hours before we found the bug in the data loader.
+origin: >-
+  Modeled on CPU-hours and core-hours, long used to allocate supercomputer time; 'GPU-hours' became
+  standard in machine-learning papers in the late 2010s and entered public debate about training
+  costs with reports such as DeepSeek-V3's (December 2024).
+note: >-
+  Headline GPU-hour costs usually cover only the final training run, excluding experiments, failed
+  runs, data, staff and hardware ownership.
+see_also:
+  - compute
+  - GPU
+  - training compute
+  - inference cost
+  - petaflop/s-day
+  - H100
+sources:
+  - text: >-
+      Touvron, H. et al. (2023). Llama 2: Open Foundation and Fine-Tuned Chat Models.
+      arXiv:2307.09288.
+  - text: DeepSeek-AI (2024). DeepSeek-V3 Technical Report. arXiv:2412.19437.

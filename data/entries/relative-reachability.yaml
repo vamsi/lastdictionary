@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: relative reachability
+id: relative-reachability
+pos: n.
+also:
+  - stepwise relative reachability
+  - reachability penalty
+domain: safety
+domains:
+  - rl
+level: specialist
+plain: >-
+  A way to stop an AI causing irreversible harm by penalizing actions that make other possible
+  situations harder, or impossible, to get back to.
+senses:
+  - definition: >-
+      An [[impact-measure|impact measure]] that penalizes an agent for reducing its ability to reach
+      other states of the environment, relative to a baseline. For each possible state, it compares
+      how reachable that state is from the agent's current state with how reachable it would be from
+      the baseline state — in the standard version, the state that would have resulted from doing
+      nothing at the previous step (a stepwise inaction baseline) — and counts only the reductions.
+      Irreversible changes, such as breaking a vase, make many states permanently unreachable and
+      are penalized heavily, while reversible ones cost little. An inaction baseline, unlike
+      comparison with the starting state, does not penalize changes that would have happened anyway,
+      so the agent has no incentive to interfere with them; making it stepwise also removes the
+      incentive to undo the intended effects of its own actions (offsetting). Exact reachability
+      over all states is intractable in large environments, so practical versions approximate it.
+    example: >-
+      Relative reachability scores pushing the box into the corner as costly, because it can never
+      be pulled back out.
+formula_latex: d_{RR}(s_t;\, s'_t) = \frac{1}{|\mathcal{S}|} \sum_{x \in \mathcal{S}}
+  \max\big(R(s'_t; x) - R(s_t; x),\; 0\big)
+origin: >-
+  Introduced by Victoria Krakovna, Laurent Orseau, Ramana Kumar, Miljan Martic and Shane Legg of
+  DeepMind in 'Penalizing side effects using stepwise relative reachability' (posted June 2018;
+  revised 2019), with experiments in the AI Safety Gridworlds environments.
+year: 2018
+note: >-
+  In the formula, s′ₜ is the baseline state, sₜ the actual state, and R(s; x) the (discounted)
+  reachability of state x from s. Compare [[attainable-utility-preservation|attainable utility
+  preservation]], which measures change in the ability to achieve goals rather than to reach states.
+see_also:
+  - impact measure
+  - attainable utility preservation
+  - negative side effects
+  - corrigibility
+  - power-seeking
+contrast:
+  - attainable utility preservation
+sources:
+  - text: >-
+      Krakovna, V., Orseau, L., Kumar, R., Martic, M. & Legg, S. (2019). Penalizing side effects
+      using stepwise relative reachability. arXiv:1806.01186.
+    url: https://arxiv.org/abs/1806.01186

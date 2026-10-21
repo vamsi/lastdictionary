@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: belief propagation
+id: belief-propagation
+pos: n.
+also:
+  - BP
+  - sum-product algorithm
+  - max-product algorithm
+  - message passing
+  - loopy belief propagation
+  - junction tree algorithm
+domain: sym
+domains:
+  - math
+  - ml
+level: specialist
+plain: >-
+  A way for a network of uncertain quantities to reach conclusions by having each node pass short
+  messages to its neighbors about what it currently believes, until the beliefs settle down.
+senses:
+  - definition: >-
+      An algorithm that computes marginal probabilities, or the most probable joint assignment, in a
+      [[probabilistic-graphical-model|probabilistic graphical model]] by passing local messages
+      between neighboring nodes. Each node (or factor) repeatedly sends each neighbor a message
+      summarizing the evidence it has received from the rest of the graph, and a variable's belief —
+      its estimated marginal distribution — is the normalized product of its incoming messages. The
+      sum-product form computes marginals; the max-product (or min-sum) form computes the most
+      probable joint assignment, with the [[viterbi-algorithm|Viterbi algorithm]] as a special case.
+      On graphs without cycles belief propagation is exact after two sweeps, and the junction-tree
+      algorithm extends exactness to any graph by clustering variables, at a cost exponential in
+      cluster size. On graphs with cycles, 'loopy' belief propagation is approximate and may not
+      converge, yet it often works well: it decodes the turbo and low-density parity-check codes of
+      modern telecommunications and is used in stereo vision and error-correcting inference.
+origin: >-
+  Introduced by Judea Pearl in 1982 for tree-structured [[bayesian-network|Bayesian networks]] and
+  extended to polytrees (singly connected networks) with Jin Kim in 1983. In 1998 Robert McEliece,
+  David MacKay and Jung-Fu Cheng showed that turbo decoding is loopy belief propagation, and Robert
+  Gallager's 1963 decoder for low-density parity-check codes was recognized as an earlier instance.
+year: 1982
+see_also:
+  - probabilistic graphical model
+  - Bayesian network
+  - Markov random field
+  - Viterbi algorithm
+  - variational inference
+  - Judea Pearl
+sources:
+  - text: >-
+      Pearl, J. (1982). Reverend Bayes on Inference Engines: A Distributed Hierarchical Approach.
+      Proceedings of AAAI-82, 133–136.
+  - text: >-
+      Kschischang, F. R., Frey, B. J. & Loeliger, H.-A. (2001). Factor Graphs and the Sum-Product
+      Algorithm. IEEE Transactions on Information Theory 47(2), 498–519.

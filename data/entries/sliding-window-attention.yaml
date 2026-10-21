@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sliding window attention
+id: sliding-window-attention
+pos: n.
+also:
+  - SWA
+  - local attention
+  - windowed attention
+  - local–global attention
+  - Longformer
+domain: llm
+domains:
+  - infer
+level: specialist
+plain: >-
+  Attention in which each word looks only at a fixed number of nearby earlier words rather than the
+  whole text, keeping the cost of very long inputs under control.
+senses:
+  - definition: >-
+      A form of [[sparse-attention|sparse attention]] in which each position attends only to the
+      previous w positions (a band-shaped [[attention-mask|attention mask]]), so cost per token is
+      constant, total cost grows linearly with sequence length, and that layer's [[kv-cache|KV
+      cache]] never exceeds w entries. Information can still travel farther than w through stacking:
+      after k layers a position can be influenced by tokens roughly k × w back. Pure sliding windows
+      struggle with precise retrieval from far away, so models usually interleave local layers with
+      global full-attention layers — GPT-3 alternated dense and banded layers, Gemma 2 alternates
+      local and global layers, and Gemma 3 uses five local layers per global one — or add a few
+      global tokens, as in Longformer. Evicting the first tokens from a window can destabilize
+      models, which led to retaining [[attention-sink|attention sinks]].
+    example: >-
+      Five of every six layers use a 1,024-token sliding window, which keeps the cache small at long
+      context.
+origin: >-
+  Local attention windows appear in the Image Transformer (2018) and the Sparse Transformer (2019).
+  Longformer (Iz Beltagy, Matthew E. Peters and Arman Cohan, April 2020) combined sliding windows
+  with task-specific global attention, and Mistral 7B (2023) popularized SWA in open LLMs.
+year: 2020
+see_also:
+  - sparse attention
+  - attention mask
+  - long context
+  - KV cache
+  - attention sink
+  - linear attention
+sources:
+  - text: >-
+      Beltagy, I., Peters, M. E. & Cohan, A. (2020). Longformer: The Long-Document Transformer.
+      arXiv:2004.05150.
+    url: https://arxiv.org/abs/2004.05150

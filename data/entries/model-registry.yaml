@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model registry
+id: model-registry
+pos: n.
+also:
+  - model versioning
+  - ML model registry
+domain: eng
+domains:
+  - ml
+level: core
+plain: >-
+  A central catalog where a team stores every version of its trained models, with records of how
+  each was made and which version is approved for use.
+senses:
+  - definition: >-
+      A versioned, access-controlled store for trained model artifacts and their metadata that
+      serves as the system of record between training and deployment. Each registered version links
+      the [[weights|weights]] or serialized model to its lineage — training-code commit, data
+      snapshot, [[hyperparameter|hyperparameters]], [[experiment-tracking|tracked]] metrics — and to
+      its signature (expected inputs and outputs) and software dependencies. Versions move through
+      lifecycle stages or aliases such as candidate, staging, production and archived, often behind
+      approval gates, so that deployment systems can fetch 'the current production model' by name
+      and roll back by pointing to an earlier version. Registries support audit and governance by
+      recording who approved what and when. Examples include the registries in [[mlflow|MLflow]],
+      Amazon SageMaker, Azure Machine Learning, Vertex AI and [[weights-biases|Weights & Biases]];
+      for [[large-language-model|LLM]] applications, prompts and provider model versions are
+      increasingly registered alongside weights.
+    example: >-
+      Promote version 14 in the model registry and the serving cluster will pick it up within five
+      minutes.
+origin: >-
+  Grew out of in-house machine-learning platforms of the mid-2010s and became a standard product
+  feature in the late 2010s; [[mlflow|MLflow]] added a Model Registry component in 2019, and the
+  major cloud ML platforms offer equivalents.
+note: >-
+  Not the same as a public model hub such as [[hugging-face|Hugging Face]]'s, which distributes
+  models to outsiders; a registry governs an organization's own release process. A higher version
+  number identifies a newer artifact, not necessarily a better one.
+see_also:
+  - MLOps
+  - experiment tracking
+  - model deployment
+  - MLflow
+  - model card
+  - machine learning pipeline

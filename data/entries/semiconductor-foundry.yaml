@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semiconductor foundry
+id: semiconductor-foundry
+pos: n.
+also:
+  - foundry
+  - fab
+  - pure-play foundry
+  - chip foundry
+  - fabless
+domain: hw
+domains:
+  - gov
+  - society
+level: core
+plain: >-
+  A factory company that manufactures chips designed by other companies. Taiwan's TSMC, the largest,
+  makes nearly all of the world's most advanced AI chips.
+senses:
+  - definition: >-
+      A company that manufactures integrated circuits designed by others, in fabrication plants
+      ('fabs') that cost tens of billions of dollars at the leading edge. The foundry model
+      separates chip design from manufacturing: fabless companies such as Nvidia, AMD, Apple and
+      Broadcom design chips that foundries make, while integrated device manufacturers (IDMs) such
+      as Intel and Samsung do both and also offer foundry services. TSMC is dominant, with about 70%
+      of global foundry revenue as of 2025 and a near-monopoly on the [[process-node|leading-edge
+      nodes]] and [[advanced-packaging|advanced packaging]] used for AI accelerators; Samsung, Intel
+      Foundry, GlobalFoundries, UMC and China's SMIC follow. The concentration of advanced
+      manufacturing in Taiwan is a central concern of semiconductor industrial policy, such as the
+      [[chips-and-science-act|CHIPS and Science Act]], and of [[export-controls-on-ai-chips|export
+      controls on AI chips]].
+origin: >-
+  Morris Chang founded TSMC in Hsinchu, Taiwan, on 21 February 1987 as the first dedicated foundry,
+  a model anticipated by Carver Mead and Lynn Conway's separation of chip design from fabrication in
+  the late 1970s and by early merchant fabrication services such as MOSIS (1981).
+year: 1987
+note: >-
+  'Fab' is the factory; 'foundry' the business. TSMC's first Arizona fab began volume production in
+  2024–2025, but its newest nodes debut in Taiwan.
+see_also:
+  - process node
+  - advanced packaging
+  - chiplet
+  - extreme ultraviolet lithography
+  - ASIC
+  - CHIPS and Science Act
+  - export controls on AI chips
+as_of: 2026-10

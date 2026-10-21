@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: instruction hierarchy
+id: instruction-hierarchy
+pos: n.
+also:
+  - chain of command
+  - instruction privilege
+  - privilege levels
+domain: llm
+domains:
+  - sec
+  - safety
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A rule built into AI assistants about whose instructions win when they conflict: the developer's
+  beat the user's, and the user's beat any instructions hidden in a web page or document.
+senses:
+  - definition: >-
+      An ordering of trust among the sources of text in a model's context — typically the model
+      provider's policy ([[model-specification|model specification]]), then [[system-prompt|system
+      or developer]] messages, then user messages, then [[tool|tool]] outputs and retrieved content
+      — together with training that teaches the model to follow higher-privileged instructions and
+      to ignore or refuse conflicting lower-privileged ones. Lower-level instructions consistent
+      with higher ones (a user asking for a different format) are followed; conflicting ones (a web
+      page telling an agent to send out the user's files) are not. It is a primary defense against
+      [[prompt-injection|prompt injection]], [[indirect-prompt-injection|indirect prompt injection]]
+      and system-prompt extraction, though not a complete one, and it governs how deployed
+      assistants arbitrate between operators and users.
+    example: >-
+      Thanks to the instruction hierarchy, the agent ignored the commands hidden in the PDF it was
+      summarizing.
+origin: >-
+  Formalized by Eric Wallace and colleagues at OpenAI in 'The Instruction Hierarchy: Training LLMs
+  to Prioritize Privileged Instructions' (April 2024), which argued that treating system prompts and
+  untrusted text as equals underlies many attacks. OpenAI's Model Spec (first published May 2024)
+  describes a related 'chain of command'.
+year: 2024
+see_also:
+  - system prompt
+  - prompt injection
+  - indirect prompt injection
+  - model specification
+  - instruction following
+  - guardrails
+sources:
+  - text: >-
+      Wallace, E., Xiao, K., Leike, R., Weng, L., Heidecke, J. & Beutel, A. (2024). The Instruction
+      Hierarchy: Training LLMs to Prioritize Privileged Instructions. arXiv:2404.13208.
+    url: https://arxiv.org/abs/2404.13208

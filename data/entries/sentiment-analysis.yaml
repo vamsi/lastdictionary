@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sentiment analysis
+id: sentiment-analysis
+pos: n.
+also:
+  - opinion mining
+  - sentiment classification
+  - polarity detection
+  - aspect-based sentiment analysis
+  - ABSA
+domain: llm
+domains:
+  - ml
+  - society
+level: core
+plain: >-
+  Using software to judge the feelings or opinions expressed in text — whether a review, post or
+  comment is positive, negative or neutral, and about what.
+senses:
+  - definition: >-
+      The computational identification of opinions, evaluations and emotions expressed in text, most
+      often as polarity classification (positive, negative, neutral) or a rating, at the level of
+      documents, sentences or aspects — battery life negative, screen positive — in aspect-based
+      analysis. Related tasks detect emotion categories, stance toward a target, subjectivity and
+      sarcasm. Methods evolved from sentiment lexicons and hand-built rules through supervised
+      classifiers trained on labeled reviews to fine-tuned transformers and prompted LLMs. It is
+      used for brand and market monitoring, customer feedback, social-media analysis and finance.
+      Difficulties include negation, irony, domain shift (a long battery life is good, a long wait
+      is not) and variation across cultures and dialects, which can produce biased results.
+    example: >-
+      Sentiment analysis flagged a spike in negative mentions after the update shipped.
+origin: >-
+  Early work on classifying review polarity includes Peter Turney's unsupervised method and Bo Pang,
+  Lillian Lee and Shivakumar Vaithyanathan's machine-learning study 'Thumbs up?' (both 2002). The
+  name 'sentiment analysis' appears in Tetsuya Nasukawa and Jeonghee Yi's 2003 paper, and 'opinion
+  mining' in Kushal Dave and colleagues' work of the same year.
+year: 2003
+see_also:
+  - text classification
+  - natural language processing
+  - classification
+  - emotion recognition system
+  - algorithmic bias
+sources:
+  - text: >-
+      Pang, B., Lee, L. & Vaithyanathan, S. (2002). Thumbs up? Sentiment Classification using
+      Machine Learning Techniques. EMNLP 2002.
+    url: https://aclanthology.org/W02-1011/
+  - text: >-
+      Pang, B. & Lee, L. (2008). Opinion Mining and Sentiment Analysis. Foundations and Trends in
+      Information Retrieval 2(1–2), 1–135.

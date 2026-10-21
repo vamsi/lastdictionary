@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI engineering
+id: ai-engineering
+pos: n.
+also:
+  - LLM engineering
+  - AI application engineering
+domain: eng
+domains:
+  - llm
+  - agents
+level: core
+plain: >-
+  The craft of building useful, reliable products on top of AI models — choosing models, writing
+  prompts, connecting data and tools, testing quality and running it all safely at scale.
+senses:
+  - context: Foundation-model applications
+    definition: >-
+      The discipline of turning pretrained [[foundation-model|foundation models]], reached through a
+      [[model-api|model API]] or served from [[open-weight-model|open weights]], into working
+      applications, as opposed to training models from scratch. Its core activities are model
+      selection; [[prompt-engineering|prompt engineering]] and [[context-engineering|context
+      engineering]]; [[retrieval-augmented-generation|retrieval]] and data integration;
+      [[tool-use|tool use]], agent and [[harness|harness]] design; [[structured-outputs|structured
+      outputs]]; [[evaluation|evaluation]] with [[golden-dataset|golden sets]] and model graders
+      ([[evals-driven-development|evals-driven development]]); [[fine-tuning|fine-tuning]] where
+      prompting falls short; and operating concerns such as [[latency|latency]], cost,
+      [[guardrails|guardrails]], [[llm-observability|observability]] and safe rollout. Compared with
+      classical machine-learning engineering, the work shifts from feature engineering and training
+      toward adapting general models through their context, and from measuring accuracy on fixed
+      test sets toward evaluating open-ended outputs.
+    example: >-
+      Most of our AI engineering effort goes into evals and retrieval, not into choosing the model.
+    labels:
+      - emerging
+  - context: Engineering discipline
+    definition: >-
+      More broadly, the discipline of carrying systems- and software-engineering rigor through the
+      whole life of an AI-enabled system of any kind, from requirements and testing to assurance and
+      maintenance, with stress on robustness, security and human-centered design. In this sense,
+      used especially in government and defense research programs, the term encompasses
+      [[mlops|MLOps]].
+origin: >-
+  The broad sense was promoted around 2019–2020 by Carnegie Mellon University's Software Engineering
+  Institute through a national AI-engineering initiative. The application sense was popularized by
+  Shawn 'swyx' Wang's essay 'The Rise of the AI Engineer' (June 2023) and the AI Engineer
+  conferences he co-founded, and consolidated by Chip Huyen's book AI Engineering (O'Reilly, 2025).
+year: 2023
+note: >-
+  Overlaps heavily with [[llmops|LLMOps]] and with machine-learning engineering; the boundary lies
+  roughly where model training ends and application building begins, and many practitioners cross
+  it.
+see_also:
+  - AI engineer
+  - LLMOps
+  - MLOps
+  - evals-driven development
+  - context engineering
+  - compound AI system
+  - AI stack
+contrast:
+  - machine learning engineer
+sources:
+  - text: Wang, S. (2023). The Rise of the AI Engineer. Latent Space, 30 June 2023.
+    url: https://www.latent.space/p/ai-engineer
+  - text: >-
+      Huyen, C. (2025). AI Engineering: Building Applications with Foundation Models. O'Reilly Media.

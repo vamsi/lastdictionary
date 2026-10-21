@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semantic web
+id: semantic-web
+pos: n.
+also:
+  - web of data
+  - Linked Data
+  - linked open data
+  - LOD
+domain: sym
+domains:
+  - data
+level: core
+plain: >-
+  An effort to label data on the web in a standard, precise way so that programs, not only human
+  readers, can tell what it means and connect facts drawn from many different sites.
+senses:
+  - definition: >-
+      A vision, and a family of web standards, for publishing data on the World Wide Web with
+      machine-interpretable meaning, so that software can find, combine and reason over information
+      from many sources. Its standards, developed by the World Wide Web Consortium (W3C), form a
+      layered stack: IRIs (web identifiers) to name things globally,
+      [[resource-description-framework|RDF]] to state facts as triples, RDF Schema and the
+      [[web-ontology-language|Web Ontology Language]] (OWL) to define vocabularies and
+      [[ontology|ontologies]] with [[description-logic|description logic]] semantics, SPARQL to
+      query and SHACL to validate data. The original vision of software agents arranging
+      appointments across a fully semantic web was not realized at web scale, but the technologies
+      succeeded in particular niches: Linked Open Data such as DBpedia and [[wikidata|Wikidata]],
+      biomedical ontologies, enterprise [[knowledge-graph|knowledge graphs]], and schema.org markup
+      that search engines read from billions of web pages.
+origin: >-
+  Tim Berners-Lee, inventor of the web, set out the 'Semantic Web' in the late 1990s, in W3C design
+  notes such as his 'Semantic Web Road Map' (September 1998) and in his 1999 book Weaving the Web.
+  The May 2001 Scientific American article by Berners-Lee, James Hendler and Ora Lassila popularized
+  it, and the W3C issued RDF (1999), OWL (2004) and SPARQL (2008) as standards.
+year: 1998
+note: >-
+  Not to be confused with 'Web3', a later term for blockchain-based applications ('Web 3.0' has been
+  used for both), or with [[semantic-search|semantic search]], retrieval by meaning using
+  embeddings.
+see_also:
+  - Resource Description Framework
+  - Web Ontology Language
+  - ontology
+  - knowledge graph
+  - description logic
+  - Wikidata
+contrast:
+  - semantic search
+sources:
+  - text: >-
+      Berners-Lee, T., Hendler, J. & Lassila, O. (2001). The Semantic Web. Scientific American
+      284(5), 34–43.

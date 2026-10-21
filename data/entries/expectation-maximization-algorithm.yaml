@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: expectation–maximization algorithm
+id: expectation-maximization-algorithm
+pos: n.
+also:
+  - EM algorithm
+  - EM
+  - expectation maximization
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A method for fitting a model when some information is hidden: guess the hidden parts using the
+  current model, refit the model as if those guesses were right, and repeat until nothing changes.
+senses:
+  - definition: >-
+      An iterative scheme for estimating model parameters from incomplete data, where the missing
+      part may be hidden (latent) variables, such as each point's mixture component, or values that
+      were never recorded. Instead of maximizing the observed-data likelihood directly, it
+      alternates two easier steps: the E-step uses the current parameters to compute the
+      [[posterior|posterior]] distribution of the hidden variables and, from it, the expected
+      log-likelihood of the completed data; the M-step maximizes this expectation over the
+      parameters, yielding a [[maximum-likelihood-estimation|maximum-likelihood]] fit (or a
+      [[maximum-a-posteriori-estimation|maximum a posteriori]] fit if a log-prior is added). No
+      iteration can decrease the observed-data likelihood, and under mild regularity conditions EM
+      converges to a stationary point, usually a local maximum, which makes initialization
+      important; progress is typically fast at first and slow near convergence. Classic instances
+      are fitting [[gaussian-mixture-model|Gaussian mixture models]], the Baum–Welch algorithm for
+      [[hidden-markov-model|hidden Markov models]] and estimation with missing values. EM can be
+      read as coordinate ascent on the [[evidence-lower-bound|evidence lower bound]], which connects
+      it to variational inference.
+    example: >-
+      EM stalled in a poor local optimum, so we restarted it from ten k-means initializations and
+      kept the best likelihood.
+formula_latex: \theta^{(t+1)} = \arg\max_{\theta} \; \mathbb{E}_{\mathbf{z} \sim p(\mathbf{z} \mid
+  \mathbf{x}, \theta^{(t)})}\big[\log p(\mathbf{x}, \mathbf{z} \mid \theta)\big]
+origin: >-
+  Special cases were proposed many times, including by H. O. Hartley (1958) and in Rolf Sundberg's
+  work on exponential families (1971–1976). Arthur Dempster, Nan Laird and Donald Rubin unified them
+  and named the method in a 1977 paper in the Journal of the Royal Statistical Society. Their
+  convergence argument contained a flaw, which C. F. Jeff Wu corrected in 1983.
+year: 1977
+note: >-
+  A recipe rather than a single algorithm: each model needs its own E- and M-steps. When the M-step
+  cannot be solved exactly, generalized EM merely improves the objective; when the E-step is
+  intractable, variational or Monte Carlo approximations replace it.
+see_also:
+  - Gaussian mixture model
+  - maximum likelihood estimation
+  - hidden Markov model
+  - evidence lower bound
+  - imputation
+  - k-means clustering
+sources:
+  - text: >-
+      Dempster, A. P., Laird, N. M. & Rubin, D. B. (1977). Maximum Likelihood from Incomplete Data
+      via the EM Algorithm. Journal of the Royal Statistical Society, Series B 39(1).
+  - text: >-
+      Wu, C. F. J. (1983). On the Convergence Properties of the EM Algorithm. Annals of Statistics
+      11(1).

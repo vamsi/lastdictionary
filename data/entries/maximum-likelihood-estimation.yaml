@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: maximum likelihood estimation
+id: maximum-likelihood-estimation
+pos: n.
+also:
+  - MLE
+  - maximum likelihood
+  - maximum-likelihood estimator
+  - ML estimation
+domain: math
+domains:
+  - ml
+  - train
+level: core
+plain: >-
+  Tuning a model's settings until the real data it learns from looks as likely, and so as
+  unsurprising, to the model as possible. Most AI training, including the pretraining of chatbots,
+  is a version of this.
+senses:
+  - definition: >-
+      A rule for fitting a model's [[parameter|parameters]] to data: score every candidate setting θ
+      by the [[likelihood|likelihood]] p(data | θ) it assigns to the observations and keep the
+      highest-scoring one, in practice by minimizing the negative [[log-likelihood|log-likelihood]]
+      analytically or with gradient methods. Under broad regularity conditions the estimate is
+      consistent and asymptotically efficient, attaining the variance bound set by the
+      [[fisher-information|Fisher information]]. Many familiar losses are maximum likelihood in
+      disguise: [[mean-squared-error|mean squared error]] corresponds to Gaussian noise,
+      [[log-loss|log loss]] to a Bernoulli model, and the [[cross-entropy|cross-entropy]] used to
+      pretrain [[large-language-model|language models]] to maximizing the probability of the
+      training text under an [[autoregressive-model|autoregressive model]]. Minimizing cross-entropy
+      on data is the same as minimizing the [[kullback-leibler-divergence|Kullback–Leibler
+      divergence]] KL(p_data ‖ p_θ) between the data distribution and the model. MLE can
+      [[overfitting|overfit]] small datasets and yields point estimates without uncertainty;
+      [[maximum-a-posteriori-estimation|maximum a posteriori estimation]] and
+      [[bayesian-inference|Bayesian inference]] bring in a [[prior|prior]].
+    example: Pretraining is maximum likelihood estimation on trillions of tokens.
+formula_latex: \hat{\theta}_{\text{MLE}} = \arg\max_{\theta} \sum_{i=1}^{N} \log p(x_i \mid \theta)
+origin: >-
+  Daniel Bernoulli (1778) and Carl Friedrich Gauss (1809) reasoned by choosing the most probable
+  value. Ronald Fisher proposed an 'absolute criterion' in 1912 and introduced the term 'maximum
+  likelihood', with its theory, in 'On the Mathematical Foundations of Theoretical Statistics'
+  (1922).
+year: 1922
+see_also:
+  - likelihood
+  - log-likelihood
+  - cross-entropy
+  - maximum a posteriori estimation
+  - Kullback–Leibler divergence
+  - Fisher information
+sources:
+  - text: >-
+      Fisher, R. A. (1922). On the Mathematical Foundations of Theoretical Statistics. Philosophical
+      Transactions of the Royal Society A, 222.

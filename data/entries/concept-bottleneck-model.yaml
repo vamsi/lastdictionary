@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: concept bottleneck model
+id: concept-bottleneck-model
+pos: n.
+also:
+  - CBM
+  - concept bottleneck
+domain: interp
+domains:
+  - percep
+  - ml
+level: specialist
+plain: >-
+  A model made to first predict human-understandable concepts — such as 'bone spur present' on an
+  X-ray — and then decide only from those concepts, so people can inspect and correct them.
+senses:
+  - definition: >-
+      A model that predicts a set of human-specified concepts from the input and then predicts the
+      target label only from those concept predictions, so that the concepts form an interpretable
+      bottleneck. In the original work, networks graded knee osteoarthritis from X-rays via concepts
+      such as joint-space narrowing and bone spurs, and identified bird species via attributes such
+      as wing color. The two stages can be trained independently, sequentially or jointly. Beyond
+      explaining predictions in terms of concepts, CBMs allow test-time intervention: an expert
+      corrects a mispredicted concept and the label prediction updates accordingly. Limitations
+      include the need for concept annotations, lost accuracy when the concept set is incomplete,
+      and concept leakage, in which soft concept scores carry extra information that the label
+      predictor exploits. Variants derive concepts automatically with vision–language models
+      (label-free and post hoc CBMs) or replace scalar concepts with embeddings.
+    example: >-
+      When the radiologist corrected the 'bone spurs' concept, the CBM's severity grade dropped from
+      3 to 2.
+origin: >-
+  Named by Pang Wei Koh, Thao Nguyen, Yew Siang Tang, Stephen Mussmann, Emma Pierson, Been Kim and
+  Percy Liang in 'Concept Bottleneck Models' (ICML 2020), revisiting earlier attribute-based
+  classifiers in computer vision, such as Christoph Lampert and colleagues' (2009).
+year: 2020
+note: >-
+  A concept bottleneck makes reasoning legible only insofar as the concept predictions are accurate
+  and the label predictor depends on them as labeled.
+see_also:
+  - interpretable model
+  - testing with concept activation vectors
+  - explainable AI
+  - human-in-the-loop
+  - post hoc explanation
+contrast:
+  - post hoc explanation
+sources:
+  - text: >-
+      Koh, P. W., Nguyen, T., Tang, Y. S., Mussmann, S., Pierson, E., Kim, B. & Liang, P. (2020).
+      Concept Bottleneck Models. Proceedings of ICML 2020.

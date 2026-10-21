@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Q*
+id: q-term
+pos: prop. n.
+also:
+  - Q-star
+  - Q star
+pronunciation: KYOO-star
+domain: hist
+domains:
+  - llm
+  - culture
+  - rl
+labels:
+  - contested
+level: specialist
+plain: >-
+  The code name of an internal OpenAI research project, reported in late 2023, said to let AI solve
+  math problems it had never seen. Later reports linked it to OpenAI's first reasoning model, o1.
+senses:
+  - context: OpenAI project
+    definition: >-
+      The reported code name of an internal [[openai|OpenAI]] research effort that became public in
+      November 2023, days after the board's brief removal of chief executive [[sam-altman|Sam
+      Altman]]. Reuters reported that some staff had written to the board warning of a powerful
+      discovery, citing a model called Q* that could solve grade-school mathematics problems it had
+      not seen before, and that the letter was one of several factors behind the firing; The Verge,
+      citing a person familiar with the matter, reported that the board never received such a
+      letter. The Information described Q* as building on work by [[ilya-sutskever|Ilya Sutskever]]
+      and developed by Jakub Pachocki and Szymon Sidor, using computer-generated data and extra
+      computation to improve reasoning. According to Reuters, OpenAI acknowledged the project in an
+      internal message to staff, but it has never published a technical account; Altman called the
+      reports an 'unfortunate leak'. In July 2024 Reuters reported that the work continued under the
+      code name Strawberry, which was widely identified with [[openai-o1|OpenAI o1]] on its release
+      in September 2024.
+    example: >-
+      In hindsight, the Q* leak was the first public hint that OpenAI was betting on reasoning at
+      inference time.
+  - context: Reinforcement learning
+    definition: >-
+      Standard notation for the optimal action-value function: the expected discounted return from
+      taking action a in state s and acting optimally afterward. It satisfies the
+      [[bellman-equation|Bellman optimality equation]], and [[q-learning|Q-learning]] estimates it
+      from experience; an agent that knows Q* acts optimally by always choosing the action with the
+      highest value.
+origin: >-
+  The project name was first reported on 22–23 November 2023 by Reuters and The Information, amid
+  the turmoil over Altman's dismissal and reinstatement; Reuters connected it to Strawberry in July
+  2024. Commentators speculated that the name combines Q*, the reinforcement-learning symbol, with
+  [[a-search|A* search]], a reading OpenAI never confirmed. The notation Q* is far older, standard
+  since Christopher Watkins's work on Q-learning (1989).
+year: 2023
+note: >-
+  Much public discussion of Q* was speculation, including claims that it signaled imminent
+  [[artificial-general-intelligence|artificial general intelligence]]; details beyond the reporting
+  summarized here are unconfirmed. The episode is often cited as an example of hype around
+  unpublished breakthroughs.
+see_also:
+  - OpenAI o1
+  - OpenAI
+  - reasoning model
+  - test-time compute
+  - Q-learning
+  - Sam Altman
+  - Ilya Sutskever
+sources:
+  - text: >-
+      Tong, A., Dastin, J. & Hu, K. (2023). OpenAI researchers warned board of AI breakthrough ahead
+      of CEO ouster, sources say. Reuters, 22 November 2023.
+  - text: >-
+      Tong, A. & Paul, K. (2024). Exclusive: OpenAI working on new reasoning technology under code
+      name 'Strawberry'. Reuters, July 2024.
+as_of: 2026-10

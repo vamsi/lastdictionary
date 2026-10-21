@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: strawberry problem
+id: strawberry-problem
+pos: n.
+also:
+  - how many r's in strawberry
+  - strawberry test
+  - r's in strawberry
+domain: culture
+domains:
+  - llm
+  - eval
+labels:
+  - informal
+level: core
+plain: >-
+  The once-famous failure of AI chatbots to count the r's in 'strawberry' correctly — a simple
+  question that exposed how these models see words in chunks rather than letters.
+senses:
+  - definition: >-
+      The tendency of [[large-language-model|large language models]] to miscount the letters in a
+      word — canonically answering that 'strawberry' contains two r's rather than three — and, by
+      extension, a shorthand for simple character-level tasks that models fail despite strong
+      performance elsewhere. The main cause is [[tokenization|tokenization]]: models receive text as
+      subword [[token|tokens]] — 'strawberry' typically arrives as two or three multi-letter chunks
+      — so individual letters are not directly visible and must be inferred from memorized knowledge
+      of spellings. The question became the archetypal illustration of [[jagged-intelligence|jagged
+      intelligence]] and a quick test users ran on every new model; [[reasoning-model|reasoning
+      models]] that spell a word out step by step, or that call a code tool, largely solved it.
+    example: Before we argue about AGI, it should at least pass the strawberry problem.
+origin: >-
+  Character-counting failures were noticed in early ChatGPT versions, but the 'strawberry' question
+  went viral in mid-2024. The joke deepened when Reuters reported in July 2024 that OpenAI's
+  reasoning project was code-named 'Strawberry'; the resulting model, released as o1 in September
+  2024, was widely shown counting the letters correctly.
+year: 2024
+note: >-
+  Related viral failures include judging 9.11 larger than 9.9 and the [[seahorse-emoji|seahorse
+  emoji]] question. Such errors say more about how input is represented than about reasoning
+  ability, though they expose the limits of models' knowledge about themselves.
+see_also:
+  - tokenization
+  - jagged intelligence
+  - byte-pair encoding
+  - reasoning model
+  - seahorse emoji
+  - Potemkin understanding

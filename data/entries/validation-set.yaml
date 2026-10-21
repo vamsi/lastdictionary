@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: validation set
+id: validation-set
+pos: n.
+also:
+  - development set
+  - dev set
+  - holdout set
+  - validation split
+  - tuning set
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  A set of examples kept out of training and used during development to compare model versions and
+  settings, like a practice exam taken before the real one.
+senses:
+  - definition: >-
+      A portion of labeled data held out from training and used during development to estimate
+      performance, compare candidate models and choose [[hyperparameter|hyperparameters]], decision
+      thresholds or the point at which to stop training ([[early-stopping|early stopping]]). Because
+      these choices are made by looking at validation results, the validation set gradually becomes
+      part of the fitting process and its score becomes optimistically biased, especially after many
+      comparisons; an untouched [[test-set|test set]] is therefore kept for the final estimate. When
+      data are scarce, a single validation split is replaced by
+      [[cross-validation|cross-validation]], which rotates the held-out portion. The validation data
+      should come from the distribution the model will face; when production data differ from
+      training data, practitioners often build the validation set to resemble production.
+      Terminology varies: some fields and competitions swap the names 'validation' and 'test', and
+      deep-learning practice often calls this the development or dev set.
+    example: Validation loss stopped improving after epoch 12, so we kept that checkpoint.
+origin: >-
+  The three-way division into training, validation and test data was standard in pattern recognition
+  and neural-network practice by the 1990s; Brian Ripley's Pattern Recognition and Neural Networks
+  (1996) gave widely quoted definitions of the three sets. 'Development set', long usual in speech
+  and language processing, spread further as 'dev set' in deep-learning practice, helped by Andrew
+  Ng's courses and writing.
+note: >-
+  Trying hundreds of variants against one validation set and keeping the best overfits it; the same
+  'adaptive overfitting' threatens public [[leaderboard|leaderboards]] and [[benchmark|benchmarks]].
+see_also:
+  - training set
+  - test set
+  - cross-validation
+  - hyperparameter tuning
+  - early stopping
+  - model selection
+  - overfitting
+sources:
+  - text: >-
+      Ripley, B. D. (1996). Pattern Recognition and Neural Networks. Cambridge University Press.

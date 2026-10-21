@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: benchmark saturation
+id: benchmark-saturation
+pos: n.
+also:
+  - saturated benchmark
+  - saturation
+  - saturate
+domain: eval
+level: core
+plain: >-
+  When the best AI systems score so close to the maximum on a test that it can no longer tell them
+  apart or show further progress.
+senses:
+  - definition: >-
+      The state in which leading systems approach a [[benchmark|benchmark]]'s ceiling, so that
+      remaining differences fall within noise and the benchmark no longer discriminates between
+      models or tracks progress. The effective ceiling is often below 100%, set by mislabeled or
+      ambiguous items — about 6.5% of [[mmlu|MMLU]] questions are estimated to contain errors — and
+      by genuine disagreement among experts. Saturation has accelerated: [[glue|GLUE]] was overtaken
+      by systems scoring above its human baseline within about a year of release, prompting
+      [[superglue|SuperGLUE]]; MMLU, [[gsm8k|GSM8K]] and [[humaneval|HumanEval]] were near their
+      ceilings by 2024; and in February 2026 OpenAI stopped reporting [[swe-bench|SWE-bench]]
+      Verified, citing contamination and flawed tests. Responses include harder successors, pruning
+      of solved items, private test sets and
+      [[contamination-resistant-benchmark|contamination-resistant]] designs.
+    example: >-
+      GSM8K is saturated — every frontier model is within two points of the noise ceiling — so we
+      dropped it from the report.
+origin: >-
+  The word was applied to benchmarks by the late 2010s, as GLUE was overtaken within about a year of
+  its 2018 release. Douwe Kiela and colleagues' Dynabench paper (2021) charted how quickly
+  successive benchmarks reached human-level scores, and by 2024 'saturated' was routine in model
+  reports, benchmark papers and policy documents.
+note: >-
+  Distinct from, but entangled with, [[data-contamination|data contamination]]: a benchmark can be
+  saturated legitimately, or only appear so because its items leaked into training data. A high
+  score on a saturated benchmark need not show the capability its name suggests.
+see_also:
+  - benchmark
+  - data contamination
+  - contamination-resistant benchmark
+  - Humanity's Last Exam
+  - construct validity
+  - Goodhart's law
+  - benchmaxxing
+sources:
+  - text: "Kiela, D. et al. (2021). Dynabench: Rethinking Benchmarking in NLP. NAACL 2021."
+  - text: OpenAI (2026). Why we no longer evaluate SWE-bench Verified.
+    url: https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/
+as_of: 2026-10

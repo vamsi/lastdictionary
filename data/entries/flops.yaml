@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FLOPS
+id: flops
+pos: abbr.
+also:
+  - FLOP/s
+  - floating-point operations per second
+  - teraFLOPS
+  - petaFLOPS
+  - exaFLOPS
+domain: hw
+domains:
+  - train
+  - infer
+level: core
+plain: >-
+  Floating-point operations per second: how many arithmetic steps a computer can do each second. It
+  is the standard speed rating for supercomputers and AI chips.
+senses:
+  - definition: >-
+      A rate of computation: the number of [[flop|floating-point operations]] performed per second,
+      usually with SI prefixes — tera (10^12), peta (10^15), exa (10^18). Vendors quote peak FLOPS
+      for each number format, and the figure rises as precision falls: an [[h100|H100]] offers about
+      67 teraFLOPS in 64-bit tensor arithmetic, about 990 in [[bfloat16|bfloat16]] and about 1,980
+      in [[fp8|FP8]] (dense figures; 'sparse' figures double them by assuming structured
+      [[sparsity|sparsity]]). Sustained performance is lower, which is why practitioners track
+      [[model-flops-utilization|model FLOPs utilization]] and [[roofline-model|rooflines]].
+      Supercomputers are ranked on the TOP500 by 64-bit LINPACK FLOPS — as of June 2026 China's
+      LineShine led at about 2.2 exaFLOPS, one of five systems at or above one exaFLOPS — whereas
+      'AI exaFLOPS' claims for [[rack-scale-system|rack-scale systems]] count 4- or 8-bit
+      operations.
+origin: >-
+  'Flops' and 'megaflops' were in use in supercomputing by the mid-1970s; some sources credit David
+  Kuck with coining them in 1974. Milestones on 64-bit LINPACK are the first teraFLOPS machine (ASCI
+  Red, 1997), petaFLOPS (Roadrunner, 2008) and exaFLOPS (Frontier, 2022).
+year: 1974
+note: >-
+  Not the plural of [[flop|FLOP]]: 'FLOPS' is a rate, 'FLOPs' a count. Peak figures are comparable
+  only at the same precision and sparsity assumptions.
+see_also:
+  - FLOP
+  - model FLOPs utilization
+  - roofline model
+  - TOPS
+  - AI supercomputer
+  - floating-point format
+contrast:
+  - FLOP
+  - TOPS
+as_of: 2026-10

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model API
+id: model-api
+pos: n.
+also:
+  - AI API
+  - LLM API
+  - inference API
+  - API access
+  - API key
+domain: eng
+domains:
+  - infer
+  - llm
+level: essential
+plain: >-
+  A web service through which programs send requests to an AI model run by a company and receive its
+  answers, usually paying per use instead of running the model themselves.
+senses:
+  - definition: >-
+      An application programming interface through which client software submits inputs to a hosted
+      AI model over the network — usually HTTPS requests with JSON bodies, authenticated by an API
+      key — and receives outputs, either complete or [[streaming|streamed]]. For
+      [[large-language-model|language models]], a request carries a list of messages, a
+      [[system-prompt|system prompt]], optional [[tool|tool]] definitions, a schema for
+      [[structured-outputs|structured outputs]], and sampling settings such as
+      [[temperature|temperature]] and maximum output length; the response returns generated content,
+      [[tool-call|tool calls]] and usage counts. Pricing is typically per million input and output
+      [[token|tokens]], with discounts for [[prompt-caching|cached]] prompts and
+      [[batch-inference|batch]] jobs, and access is governed by [[rate-limit|rate limits]], usage
+      tiers and terms of service. Model APIs let developers use [[frontier-model|frontier models]]
+      without owning hardware, and let providers keep [[weights|weights]] private, update models and
+      enforce usage policies; in exchange, customers accept vendor dependence, data leaving their
+      systems and model versions that can be retired.
+    example: >-
+      We prototyped on a model API and only considered self-hosting once monthly spend passed five
+      figures.
+origin: >-
+  Hosted prediction APIs date from the early 2010s, notably the Google Prediction API (2010) and
+  cloud vision and speech services. [[openai|OpenAI]]'s [[gpt-3|GPT-3]] API (June 2020) set the
+  pattern of selling access to a large model whose weights stay private, and its Chat Completions
+  API (March 2023) became an interface many others copied.
+year: 2010
+note: >-
+  Also called closed or API-only access, in contrast with releasing [[open-weight-model|open
+  weights]]. Many providers also expose an [[openai-compatible-api|OpenAI-compatible API]], so
+  client code can switch vendors by changing a URL and key.
+see_also:
+  - OpenAI-compatible API
+  - rate limit
+  - AI gateway
+  - proprietary model
+  - inference provider
+  - structured outputs
+  - prompt caching
+contrast:
+  - open-weight model
+as_of: 2026-10

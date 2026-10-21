@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dual-use
+id: dual-use
+pos: adj.
+also:
+  - dual-use technology
+  - dual-use research of concern
+  - DURC
+domain: sec
+domains:
+  - gov
+  - society
+level: core
+plain: >-
+  Describes technology or knowledge that can be used both to help and to harm: the same AI that
+  finds software bugs for defenders can find them for attackers.
+senses:
+  - definition: >-
+      Of a technology, capability or body of knowledge: usable for both beneficial and harmful ends,
+      classically civilian and military, and in AI also protective and malicious. Most capabilities
+      of general-purpose AI are dual-use — code generation and
+      [[ai-assisted-vulnerability-discovery|vulnerability discovery]] serve defenders and attackers,
+      biological knowledge serves vaccine developers and would-be weapons makers, persuasive writing
+      serves educators and propagandists — so governance rarely bans capabilities outright and
+      instead weighs access, intent and marginal uplift. Export controls, oversight policies for
+      'dual-use research of concern' in the life sciences, and AI-specific rules build on the
+      concept; US Executive Order 14110 (2023, revoked in January 2025) defined the
+      [[dual-use-foundation-model|dual-use foundation model]].
+    example: >-
+      Because the capability is dual-use, the team published the evaluation results but withheld the
+      exploit-generation scaffold.
+origin: >-
+  A long-standing term in export control and arms control for goods with civilian and military
+  applications, extended to life-sciences research in the 2000s as 'dual-use research of concern'.
+  The 2018 report 'The Malicious Use of Artificial Intelligence' helped carry it into mainstream AI
+  policy.
+see_also:
+  - dual-use foundation model
+  - misuse
+  - CBRN risk
+  - AI-assisted vulnerability discovery
+  - export controls on AI chips
+  - structured access
+sources:
+  - text: >-
+      Brundage, M., Avin, S. et al. (2018). The Malicious Use of Artificial Intelligence:
+      Forecasting, Prevention, and Mitigation.

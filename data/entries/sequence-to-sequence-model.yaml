@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sequence-to-sequence model
+id: sequence-to-sequence-model
+pos: n.
+also:
+  - seq2seq
+  - sequence to sequence
+  - sequence transduction model
+domain: dl
+domains:
+  - llm
+level: core
+plain: >-
+  A model that turns one sequence into another, such as a French sentence into English or speech
+  into text, by first reading the whole input and then writing the output step by step.
+senses:
+  - definition: >-
+      A model that maps an input sequence to an output sequence of possibly different length,
+      typically with an [[encoder-decoder-architecture|encoder–decoder architecture]]: an encoder
+      reads the input into a representation, and an [[autoregressive-model|autoregressive]] decoder
+      generates the output one [[token|token]] at a time, conditioned on that representation and its
+      own previous outputs. The first neural versions used [[long-short-term-memory|LSTMs]] or
+      [[gated-recurrent-unit|GRUs]] that compressed the input into a single fixed-length vector;
+      [[attention|attention]] (Dzmitry Bahdanau and colleagues, 2014) removed this bottleneck by
+      letting the decoder consult all encoder states, and the [[transformer|transformer]] (2017)
+      replaced recurrence altogether. Applications include [[machine-translation|machine
+      translation]], [[text-summarization|text summarization]] and [[speech-recognition|speech
+      recognition]]. Training usually uses [[teacher-forcing|teacher forcing]]; outputs are produced
+      with [[greedy-decoding|greedy decoding]] or [[beam-search|beam search]].
+    example: "We framed SQL generation as a seq2seq problem: question in, query out."
+origin: >-
+  Popularized by Ilya Sutskever, Oriol Vinyals and Quoc Le's 'Sequence to Sequence Learning with
+  Neural Networks' (arXiv, September 2014; NIPS 2014), whose deep LSTMs reached 34.8 BLEU on WMT'14
+  English–French. Kyunghyun Cho and colleagues' RNN encoder–decoder (June 2014) and Nal Kalchbrenner
+  and Phil Blunsom's 2013 translation models were close predecessors; Google Translate switched to
+  neural sequence-to-sequence translation in 2016.
+year: 2014
+note: >-
+  Tomáš Mikolov has said he proposed a similar approach earlier without credit. Today 'seq2seq'
+  often denotes encoder–decoder transformers such as [[t5|T5]], in contrast to decoder-only models.
+see_also:
+  - encoder–decoder architecture
+  - long short-term memory
+  - attention
+  - machine translation
+  - teacher forcing
+  - beam search
+  - T5
+sources:
+  - text: >-
+      Sutskever, I., Vinyals, O. & Le, Q. V. (2014). Sequence to Sequence Learning with Neural
+      Networks. NIPS 2014; arXiv:1409.3215.
+    url: https://arxiv.org/abs/1409.3215
+  - text: >-
+      Bahdanau, D., Cho, K. & Bengio, Y. (2014). Neural Machine Translation by Jointly Learning to
+      Align and Translate. arXiv:1409.0473; ICLR 2015.
+    url: https://arxiv.org/abs/1409.0473

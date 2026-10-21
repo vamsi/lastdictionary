@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: STRIPS
+id: strips
+pos: prop. n.
+also:
+  - Stanford Research Institute Problem Solver
+  - STRIPS representation
+  - STRIPS assumption
+  - add list
+  - delete list
+domain: sym
+domains:
+  - hist
+  - robot
+level: specialist
+plain: >-
+  An early AI planning program, and the simple action language it introduced, in which each action
+  lists what must be true beforehand, what becomes true and what stops being true.
+senses:
+  - context: Representation
+    definition: >-
+      A formalism for planning problems in which a state is a set of ground atomic facts, such as
+      On(A, B), and each action schema specifies a precondition (facts that must hold), an add list
+      (facts it makes true) and a delete list (facts it makes false). Everything not mentioned is
+      assumed to stay the same — the STRIPS assumption, a pragmatic answer to the
+      [[frame-problem|frame problem]]. This simplicity turns planning into pure
+      [[state-space-search|state space search]] and lets planners derive [[heuristic|heuristics]]
+      automatically by relaxation, for example by ignoring delete lists. STRIPS-style action models
+      remain the core of [[planning-domain-definition-language|PDDL]] and of most classical
+      [[automated-planning|automated planning]].
+  - context: Planner
+    definition: >-
+      The original program, the Stanford Research Institute Problem Solver, which combined
+      [[means-ends-analysis|means–ends analysis]] with theorem proving to find plans for the mobile
+      robot [[shakey-the-robot|Shakey]], such as pushing boxes between rooms. A 1972 extension
+      generalized successful plans into reusable macro-operators and monitored their execution.
+origin: >-
+  Developed by Richard Fikes and Nils Nilsson at the Stanford Research Institute (now SRI
+  International) and published in the journal Artificial Intelligence in 1971.
+year: 1971
+see_also:
+  - automated planning
+  - Planning Domain Definition Language
+  - Shakey the robot
+  - frame problem
+  - means–ends analysis
+  - situation calculus
+sources:
+  - text: >-
+      Fikes, R. E. & Nilsson, N. J. (1971). STRIPS: A New Approach to the Application of Theorem
+      Proving to Problem Solving. Artificial Intelligence 2(3–4), 189–208.

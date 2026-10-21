@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: WaveNet
+id: wavenet
+pos: prop. n.
+also:
+  - Parallel WaveNet
+  - dilated causal convolution
+domain: percep
+domains:
+  - gen
+  - dl
+level: core
+plain: >-
+  A DeepMind model that generates speech and other sounds one tiny audio sample at a time, producing
+  voices far more natural than earlier computer speech.
+senses:
+  - definition: >-
+      An [[autoregressive-model|autoregressive model]] of raw audio: a neural network that builds a
+      waveform one sample at a time, drawing each value from a distribution that depends on all the
+      values before it. Audio at 16,000 samples per second was compressed to 256 levels with μ-law
+      companding, so each step is a 256-way [[softmax|softmax]] classification. To see far back,
+      WaveNet stacks dilated causal [[convolution|convolutions]], whose gaps double from layer to
+      layer so that the [[receptive-field|receptive field]] grows exponentially with depth, together
+      with gated activations and [[residual-connection|residual]] and skip connections. Trained on
+      piano recordings it made music, and given a speaker-identity input it spoke in many voices;
+      its headline result, though, was [[text-to-speech|text-to-speech]] that listeners rated more
+      natural than the leading concatenative and parametric synthesizers in English and Mandarin.
+      Generating one sample at a time was far too slow for products until Parallel WaveNet (2017)
+      distilled it into a feed-forward model deployed in Google Assistant. WaveNet also served as
+      the [[vocoder|vocoder]] of Tacotron 2 and influenced autoregressive models of other signals.
+    example: >-
+      WaveNet showed that modeling the raw waveform, one sample at a time, could beat decades of
+      hand-built synthesis.
+formula_latex: p(\mathbf{x}) = \prod_{t=1}^{T} p(x_t \mid x_1, \ldots, x_{t-1})
+origin: >-
+  Introduced by Aäron van den Oord, Sander Dieleman, Heiga Zen, Karen Simonyan, Oriol Vinyals, Alex
+  Graves, Nal Kalchbrenner, Andrew Senior and Koray Kavukcuoglu of DeepMind in a September 2016 blog
+  post and arXiv paper, building on the same group's PixelCNN image models.
+year: 2016
+see_also:
+  - text-to-speech
+  - vocoder
+  - autoregressive model
+  - convolution
+  - receptive field
+  - generative model
+sources:
+  - text: >-
+      van den Oord, A. et al. (2016). WaveNet: A Generative Model for Raw Audio. arXiv:1609.03499.
+    url: https://arxiv.org/abs/1609.03499
+  - text: >-
+      van den Oord, A. et al. (2018). Parallel WaveNet: Fast High-Fidelity Speech Synthesis. ICML
+      2018.

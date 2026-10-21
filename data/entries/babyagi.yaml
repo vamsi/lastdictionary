@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BabyAGI
+id: babyagi
+pos: prop. n.
+domain: agents
+domains:
+  - hist
+  - culture
+labels:
+  - historical
+level: specialist
+plain: >-
+  A tiny 2023 program that kept an AI working through an ever-changing to-do list — doing a task,
+  adding new ones, reprioritizing — and helped start the craze for autonomous AI agents.
+senses:
+  - definition: >-
+      A minimal open-source 'task-driven autonomous agent', initially a single short Python script,
+      that ran a [[large-language-model|large language model]] in a loop over a task list: an
+      execution step completed the top task toward a stated objective, a task-creation step
+      generated new tasks from the result, and a prioritization step reordered the queue, with
+      results stored in a vector database (initially Pinecone) as memory. Its simplicity made the
+      core of an [[agent-loop|agent loop]] easy to read and copy, and with [[autogpt|AutoGPT]] it
+      became an emblem of the spring 2023 agent boom; like AutoGPT, it tended to drift, loop and
+      spawn endless subtasks. The name plays on [[artificial-general-intelligence|AGI]]; later
+      versions experimented with agents that write and store their own functions.
+    example: >-
+      BabyAGI's three-prompt loop is still the clearest teaching example of a task-driven agent.
+origin: >-
+  Created by venture capitalist Yohei Nakajima, who described the design as a 'task-driven
+  autonomous agent' on social media in late March 2023 and open-sourced it as BabyAGI in early April
+  2023, days after AutoGPT.
+year: 2023
+see_also:
+  - AutoGPT
+  - AI agent
+  - agent loop
+  - task decomposition
+  - agent memory
+sources:
+  - text: Nakajima, Y. (2023). BabyAGI. GitHub repository yoheinakajima/babyagi.
+  - text: Nakajima, Y. (2023). Birth of BabyAGI. Blog post, 1 April 2023.
+    url: https://yoheinakajima.com/birth-of-babyagi/

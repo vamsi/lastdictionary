@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: indirect prompt injection
+id: indirect-prompt-injection
+pos: n.
+also:
+  - IPI
+  - cross-prompt injection attack
+  - XPIA
+  - agent hijacking
+  - indirect injection
+domain: sec
+domains:
+  - agents
+  - llm
+level: core
+plain: >-
+  A prompt-injection attack in which the trick instructions are hidden in content the AI reads on
+  its own — a web page, an email, a file — rather than typed by the person using it.
+senses:
+  - definition: >-
+      A form of [[prompt-injection|prompt injection]] in which malicious instructions are planted in
+      data that an LLM-integrated application or [[ai-agent|AI agent]] retrieves or receives during
+      a task — web pages, emails, shared documents, code repositories, calendar invitations, images
+      or [[tool-call|tool]] outputs — rather than entered by the user. The attacker never interacts
+      with the system directly; they need only place content where it will be read, sometimes hidden
+      from humans in white text, metadata or invisible characters. Because agents browse, read
+      inboxes and call tools on their own, indirect injection is the principal security threat to
+      them, enabling data exfiltration, unauthorized actions and self-propagating [[ai-worm|worms]].
+      Benchmarks such as AgentDojo measure agents' exposure. Defenses include marking or isolating
+      untrusted content ('spotlighting'), [[instruction-hierarchy|instruction hierarchy]] training,
+      detection classifiers, least-privilege tool access and designs in which untrusted data cannot
+      influence which actions are taken.
+    example: >-
+      The agent summarized the web page and, obeying an indirect prompt injection in its footer,
+      emailed the user's files to a stranger.
+origin: >-
+  Introduced and named by Kai Greshake, Sahar Abdelnabi and colleagues in 'Not what you've signed up
+  for' (arXiv February 2023; AISec 2023), which demonstrated attacks on Bing Chat and
+  code-completion tools. Microsoft's term is cross-prompt injection attack (XPIA), and the US AI
+  Safety Institute at NIST used 'agent hijacking' in early 2025.
+year: 2023
+see_also:
+  - prompt injection
+  - lethal trifecta
+  - tool poisoning
+  - AI worm
+  - confused deputy
+  - AI agent
+  - instruction hierarchy
+sources:
+  - text: >-
+      Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T. & Fritz, M. (2023). Not what
+      you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt
+      Injection. AISec 2023. arXiv:2302.12173.
+  - text: >-
+      Debenedetti, E. et al. (2024). AgentDojo: A Dynamic Environment to Evaluate Prompt Injection
+      Attacks and Defenses for LLM Agents. NeurIPS 2024 Datasets and Benchmarks Track.

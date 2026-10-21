@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: attention
+id: attention
+pos: n.
+also:
+  - attention mechanism
+  - neural attention
+  - soft attention
+domain: llm
+domains:
+  - dl
+  - mind
+level: essential
+plain: >-
+  A way for an AI model to choose what to focus on. For each word it processes, the model scores how
+  relevant every other word is and draws information mostly from the relevant ones.
+senses:
+  - context: Neural networks
+    definition: >-
+      A mechanism that lets a neural network compute each output as a weighted average of a set of
+      value vectors, with weights computed from the data itself: a [[query-key-and-value|query]] is
+      scored against every key, the scores are normalized (usually with [[softmax|softmax]]) and the
+      resulting weights mix the corresponding values. Because the weights are recomputed for every
+      input, the network can route information from whichever positions are relevant, however far
+      away. Variants differ in the scoring function (additive or
+      [[scaled-dot-product-attention|dot-product]]), in what attends to what
+      ([[self-attention|self-attention]], [[cross-attention|cross-attention]]), in which positions
+      are visible ([[causal-mask|causal]], [[sliding-window-attention|windowed]],
+      [[sparse-attention|sparse]]) and in how keys and values are shared across heads
+      ([[multi-query-attention|MQA]], [[grouped-query-attention|GQA]],
+      [[multi-head-latent-attention|MLA]]). It is the core operation of the
+      [[transformer|transformer]].
+    example: >-
+      Attention lets the decoder look straight at the relevant source words instead of squeezing the
+      sentence into one vector.
+  - context: Psychology
+    definition: >-
+      The mind's prioritizing of some sensations, places or thoughts for fuller processing while
+      others are filtered out or neglected, a necessity because perception and thought have limited
+      capacity; it has been studied experimentally since the late nineteenth century. Neural-network
+      attention borrowed the word and the intuition of focusing on what matters, but it is a learned
+      weighting operation, not a model of human attention; how far the two correspond is an open
+      question in [[cognitive-science|cognitive science]].
+formula_latex: \mathrm{out}_i = \sum_j \alpha_{ij}\, v_j, \qquad \alpha_{ij} = \frac{\exp s(q_i,
+  k_j)}{\sum_{j'} \exp s(q_i, k_{j'})}
+origin: >-
+  The neural-network sense took its modern form in Dzmitry Bahdanau, Kyunghyun Cho and Yoshua
+  Bengio's 2014 machine-translation paper (ICLR 2015), whose decoder learned soft alignments to
+  source words, 'a mechanism of attention' in their words. Neural models of visual attention go back
+  to the 1980s; Minh-Thang Luong and colleagues (2015) simplified the scoring, and the 2017
+  [[transformer|transformer]] made attention the network's central operation.
+year: 2014
+note: >-
+  In transformer writing, 'attention' usually means [[self-attention|self-attention]] unless stated
+  otherwise. Attention weights show where information flows but are not by themselves a faithful
+  explanation of a decision; see [[attention-based-explanation|attention-based explanation]] and
+  [[attention-pattern|attention pattern]].
+see_also:
+  - self-attention
+  - cross-attention
+  - scaled dot-product attention
+  - query, key and value
+  - multi-head attention
+  - attention head
+  - transformer
+  - attention schema theory
+contrast:
+  - recurrent neural network
+sources:
+  - text: >-
+      Bahdanau, D., Cho, K. & Bengio, Y. (2014). Neural Machine Translation by Jointly Learning to
+      Align and Translate. arXiv:1409.0473; ICLR 2015.
+    url: https://arxiv.org/abs/1409.0473
+  - text: >-
+      Luong, M.-T., Pham, H. & Manning, C. D. (2015). Effective Approaches to Attention-based Neural
+      Machine Translation. EMNLP 2015.
+    url: https://arxiv.org/abs/1508.04025

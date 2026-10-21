@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: remote biometric identification
+id: remote-biometric-identification
+pos: n.
+also:
+  - RBI
+  - remote biometric identification system
+  - real-time remote biometric identification
+  - post-remote biometric identification
+  - live facial recognition
+domain: gov
+domains:
+  - percep
+  - society
+labels:
+  - legal
+level: core
+plain: >-
+  Using AI to recognize people at a distance — usually by matching faces in camera footage against a
+  database — without their taking part. The EU strictly limits live police use of it in public
+  places.
+senses:
+  - definition: >-
+      Under the [[eu-ai-act|EU AI Act]], picking out who people are from afar and without their
+      cooperation, by matching biometric data, most often faces captured on camera, against a stored
+      reference database. In 'real-time' systems the capture, matching and identification happen
+      with no significant delay; 'post' systems work on footage after the event. Live use in
+      publicly accessible spaces for law enforcement is a [[prohibited-ai-practices|prohibited
+      practice]] except where strictly necessary for one of three purposes: looking for particular
+      victims of kidnapping, human trafficking or sexual exploitation, or for missing people;
+      averting a concrete, serious and imminent threat to life or a real threat of terrorist attack;
+      or tracking down people suspected of listed serious crimes. Even then national law must permit
+      it, each use needs prior authorization from a judicial or independent administrative
+      authority, and the police must first complete a
+      [[fundamental-rights-impact-assessment|fundamental rights impact assessment]] and register the
+      system. Other remote biometric identification is [[high-risk-ai-system|high-risk]], and
+      post-remote use by police requires authorization.
+    example: >-
+      Matching shoppers' faces against a watch list is remote biometric identification even when the
+      store, not the police, runs it.
+origin: >-
+  Defined in the Commission's April 2021 AI Act proposal. The scope of police exceptions was the
+  most contested issue in the December 2023 political agreement, with the European Parliament
+  seeking a near-total ban on real-time use.
+year: 2021
+note: >-
+  Excludes biometric verification, the one-to-one matching used to unlock a phone or pass a gate.
+  The serious crimes are those listed in Annex II and punishable by at least four years'
+  imprisonment. Non-police uses, as by retailers, are not banned but are high-risk and constrained
+  by the [[general-data-protection-regulation|General Data Protection Regulation]].
+see_also:
+  - facial recognition
+  - biometric categorisation
+  - prohibited AI practices
+  - AI surveillance
+  - high-risk AI system
+  - human oversight
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(41)–(43) and Recital 17; prohibition and safeguards Art.
+  5(1)(h) and 5(2)–(7); high-risk Annex III point 1(a); post-remote use Art. 26(10)

@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scalar
+id: scalar
+pos: n.
+also:
+  - scalar quantity
+  - scalar value
+domain: math
+domains:
+  - dl
+level: core
+plain: >-
+  A single number, such as 3.7 or −2, as opposed to a list or grid of numbers. A model's error score
+  and its learning rate are both scalars.
+senses:
+  - definition: >-
+      A single element of the number field over which vectors are defined — in machine learning
+      almost always a real number stored in floating point. Multiplying [[vector|vectors]] and
+      [[matrix|matrices]] by a scalar scales every entry, and scalars can be treated as zero-axis
+      [[tensor|tensors]]. Training funnels everything through scalars at key points: the
+      [[loss-function|loss]] that [[backpropagation|backpropagation]] differentiates must be a
+      single scalar, and the [[learning-rate|learning rate]], [[temperature|temperature]] and
+      regularization strength are scalar [[hyperparameter|hyperparameters]]. In array libraries a
+      scalar may be a zero-dimensional array, a distinction that matters for broadcasting rules and
+      for when values are copied between [[gpu|GPU]] and CPU memory.
+    example: Call backward() only on a scalar loss, so average the per-token losses first.
+origin: >-
+  Introduced, with 'vector', by William Rowan Hamilton in his quaternion papers of 1844–1846, where
+  the scalar was the real part of a quaternion; the word comes from Latin scala, 'ladder', evoking
+  values placed along one scale. A posthumous 1646 edition of François Viète's works had used
+  'magnitudines scalares' in an unrelated sense that found no followers.
+year: 1844
+see_also:
+  - vector
+  - matrix
+  - tensor
+  - linear algebra
+  - dot product
+contrast:
+  - vector
+sources:
+  - text: >-
+      Hamilton, W. R. (1846). On Quaternions; or on a New System of Imaginaries in Algebra.
+      Philosophical Magazine, 3rd series, 29.

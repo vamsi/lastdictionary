@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Deep Blue
+id: deep-blue
+pos: prop. n.
+also:
+  - Deeper Blue
+domain: hist
+domains:
+  - sym
+  - hw
+labels:
+  - trademark
+level: core
+plain: >-
+  IBM's chess computer that beat world champion Garry Kasparov in 1997, the first time a machine
+  defeated a reigning world champion in a match under standard tournament conditions.
+senses:
+  - definition: >-
+      A chess-playing supercomputer built by IBM that defeated the world champion Garry Kasparov
+      3½–2½ in a six-game match in New York in May 1997. Deep Blue relied on search, not learning: a
+      30-node IBM RS/6000 SP computer with 480 custom chess chips examined about 200 million
+      positions per second using [[minimax|minimax]] search with alpha–beta pruning and selective
+      extensions, guided by a hand-tuned evaluation function with thousands of parameters, an
+      opening book prepared with grandmasters and endgame databases. In their first match, in
+      Philadelphia in February 1996, Kasparov won 4–2, though Deep Blue took the opening game — no
+      computer had previously beaten a sitting world champion in a game played at classical time
+      controls. The 1997 victory became a cultural landmark for AI even though its methods had
+      little to do with general intelligence.
+    example: Deep Blue played world-class chess without learning anything from its games.
+origin: >-
+  Grew out of ChipTest (1985) and Deep Thought (1988), chess machines built by Feng-hsiung Hsu,
+  Murray Campbell and others at Carnegie Mellon University; the team joined IBM Research in 1989.
+  The name joins Deep Thought, the computer in Douglas Adams's The Hitchhiker's Guide to the Galaxy,
+  with IBM's nickname, Big Blue.
+year: 1997
+note: >-
+  Kasparov suggested that humans had intervened during the 1997 match; IBM denied it, declined a
+  rematch and retired the machine. Within a decade, chess programs running on ordinary PCs could
+  beat world champions.
+see_also:
+  - game tree
+  - minimax
+  - AlphaZero
+  - IBM Watson
+  - AlphaGo
+  - AI effect
+  - Deep Blue (malaise)
+sources:
+  - text: >-
+      Campbell, M., Hoane, A. J. & Hsu, F.-h. (2002). Deep Blue. Artificial Intelligence 134(1–2),
+      57–83.

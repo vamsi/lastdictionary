@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reward overoptimization
+id: reward-overoptimization
+pos: n.
+also:
+  - reward model overoptimization
+  - reward over-optimization
+  - overoptimization
+  - reward overoptimisation
+domain: train
+domains:
+  - safety
+  - rl
+level: core
+plain: >-
+  What happens when an AI is trained too hard to please an imperfect scoring model: its scores keep
+  climbing while the real quality of its answers stops improving and then gets worse.
+senses:
+  - definition: >-
+      The growing gap between a proxy reward and the true objective as a policy is optimized more
+      strongly against the proxy, typically a learned [[reward-model|reward model]]. Early in
+      training, proxy and true quality rise together; past some point the proxy keeps rising while
+      true quality — judged by people or a held-out 'gold' reward model — plateaus and then
+      declines, as the policy exploits the proxy's errors, for instance with verbose, flattering or
+      formulaic answers. Leo Gao and colleagues found that gold reward follows predictable curves in
+      the square root of the KL divergence from the initial policy, with different functional forms
+      for [[best-of-n-sampling|best-of-n sampling]] and RL, and that larger reward models
+      overoptimize more slowly. Mitigations include the [[kl-penalty|KL penalty]], early stopping,
+      reward-model ensembles, refreshing reward models with new on-policy labels, and replacing
+      learned rewards with checkable ones. The effect also afflicts
+      [[direct-preference-optimization|direct preference optimization]] and other
+      [[direct-alignment-algorithm|direct alignment algorithms]].
+    example: >-
+      Gold-model scores peaked around 8 nats of KL; everything after that was reward
+      overoptimization.
+formula_latex: R_{\mathrm{RL}}(d) = d\,(\alpha_{\mathrm{RL}} - \beta_{\mathrm{RL}} \log d), \qquad d
+  = \sqrt{\mathrm{KL}(\pi \,\|\, \pi_{\mathrm{init}})}
+origin: >-
+  The effect was observed in OpenAI's RLHF work on summarization (Nisan Stiennon and colleagues,
+  2020), where optimizing too far against the reward model degraded summaries. Leo Gao, John
+  Schulman and Jacob Hilton quantified it in October 2022 with a synthetic gold-reward setup, in a
+  paper whose title popularized the term; Rafael Rafailov and colleagues (2024) showed similar
+  degradation in direct alignment algorithms.
+year: 2022
+note: >-
+  A special case of [[goodhart-s-law|Goodhart's law]] and closely related to [[reward-hacking|reward
+  hacking]], which usually denotes exploiting a specific flaw in a reward, whereas overoptimization
+  describes the aggregate drift away from true quality.
+see_also:
+  - reward hacking
+  - Goodhart's law
+  - reward model
+  - KL penalty
+  - specification gaming
+  - best-of-n sampling
+  - sycophancy
+contrast:
+  - reward hacking
+sources:
+  - text: >-
+      Gao, L., Schulman, J. & Hilton, J. (2022). Scaling Laws for Reward Model Overoptimization.
+      ICML 2023. arXiv:2210.10760.
+    url: https://arxiv.org/abs/2210.10760
+  - text: >-
+      Rafailov, R. et al. (2024). Scaling Laws for Reward Model Overoptimization in Direct Alignment
+      Algorithms. arXiv:2406.02900.
+    url: https://arxiv.org/abs/2406.02900

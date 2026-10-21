@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MLflow
+id: mlflow
+pos: prop. n.
+also:
+  - MLflow Tracking
+  - MLflow Model Registry
+  - MLflow Models
+pronunciation: EM-el-flow
+domain: eng
+domains:
+  - ml
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free software platform that records machine-learning experiments, packages the resulting models
+  and keeps track of which versions are ready to be used.
+senses:
+  - definition: >-
+      An open-source platform that organizes the work surrounding model code — recording
+      experiments, packaging models and controlling their release — whatever training library is
+      used. Its main components are Tracking, which records each run's parameters, metrics and
+      output artifacts through an API and a web interface ([[experiment-tracking|experiment
+      tracking]]); Models, a packaging convention with 'flavors' that lets one saved model be loaded
+      by different tools or served as a REST endpoint; the Model Registry, for versioning models and
+      managing their promotion to production ([[model-registry|model registry]]); and Projects, a
+      format for packaging reproducible code. Later releases added evaluation utilities, a gateway
+      for routing calls to language-model providers, prompt management, and OpenTelemetry-compatible
+      tracing of generative-AI applications, extending it toward [[llmops|LLMOps]]. MLflow runs
+      locally or on a self-hosted server and is offered as a managed service by Databricks and
+      several cloud providers.
+    example: >-
+      Log the run to MLflow and register the model if validation AUC beats the current champion.
+origin: >-
+  Announced by Databricks in June 2018 at its Spark + AI Summit, where Matei Zaharia, the creator of
+  Apache Spark, presented it as an open alternative to the proprietary in-house ML platforms of
+  large technology companies. Databricks contributed it to the Linux Foundation in 2020.
+year: 2018
+see_also:
+  - experiment tracking
+  - model registry
+  - MLOps
+  - Weights & Biases
+  - LLM observability
+  - machine learning pipeline
+sources:
+  - text: >-
+      Zaharia, M. et al. (2018). Accelerating the Machine Learning Lifecycle with MLflow. IEEE Data
+      Engineering Bulletin 41(4).

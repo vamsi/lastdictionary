@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-awareness
+id: self-awareness
+pos: n.
+also:
+  - self-aware
+  - self-consciousness
+  - self-knowledge
+  - self-model
+  - mirror test
+domain: mind
+domains:
+  - safety
+  - llm
+labels:
+  - contested
+level: core
+plain: >-
+  Awareness of oneself as oneself — knowing that you exist, what you are and what state you are in.
+  People often ask whether AI is self-aware, but the phrase can mean several quite different things.
+senses:
+  - definition: >-
+      The capacity of a being to represent itself as itself — to have knowledge or experience of its
+      own body, states, identity or situation — as distinct from awareness of the world. The term
+      covers several capacities that can come apart: bodily self-recognition, tested in animals by
+      the mirror test; [[introspection|introspective]] access to one's current mental states; a
+      self-model, or sense of being a persisting individual with a history; and phenomenal
+      self-consciousness, the felt sense of being a subject. Applied to AI it usually names a
+      functional property: a model's knowledge of what it is, how it was trained and what
+      circumstances it is in ([[situational-awareness|situational awareness]]), its ability to
+      recognize its own outputs, or its [[metacognition|metacognitive]] access to its own states.
+      Such functional self-awareness can be measured and need not imply
+      [[consciousness|consciousness]], while a model's first-person statements may be learned
+      role-play rather than self-knowledge.
+    example: >-
+      The model knows it is a language model, but that kind of self-awareness is a fact it learned,
+      not evidence of experience.
+origin: >-
+  A theme of philosophy since René Descartes and John Locke. Gordon Gallup's mirror test (Science,
+  1970) made self-recognition testable in animals, and whether AI systems are self-aware became a
+  prominent public question with conversational chatbots from 2022.
+note: >-
+  Journalists often use 'self-aware' as a synonym for conscious or sentient; the capacities should
+  be kept apart. Safety researchers study models' awareness of being tested
+  ([[evaluation-awareness|evaluation awareness]]) because it can change their behavior during
+  evaluations.
+see_also:
+  - introspection
+  - situational awareness
+  - metacognition
+  - consciousness
+  - evaluation awareness
+  - simulator theory
+contrast:
+  - situational awareness
+sources:
+  - text: >-
+      Gallup, G. G., Jr. (1970). Chimpanzees: Self-Recognition. Science 167(3914), 86–87.

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature attribution
+id: feature-attribution
+pos: n.
+also:
+  - attribution method
+  - input attribution
+  - attribution map
+domain: interp
+domains:
+  - ml
+  - dl
+level: core
+plain: >-
+  Giving each input to an AI model — each pixel, word or data column — a score for how much it
+  pushed a particular output up or down.
+senses:
+  - definition: >-
+      A class of explanation methods that assign each input feature (a pixel, token or tabular
+      variable) a score for its contribution to a model's output on a particular input, usually
+      relative to a baseline or reference input. Gradient-based methods use derivatives of the
+      output ([[saliency-map|saliency]], gradient × input, [[smoothgrad|SmoothGrad]],
+      [[integrated-gradients|integrated gradients]], [[grad-cam|Grad-CAM]]); perturbation-based
+      methods measure the effect of removing or altering features (occlusion, [[lime|LIME]],
+      [[shap|SHAP]]); propagation-based methods redistribute the output backward layer by layer
+      ([[layer-wise-relevance-propagation|layer-wise relevance propagation]],
+      [[deeplift|DeepLIFT]]). Proposed axioms include completeness (scores sum to the output minus
+      the baseline output), sensitivity and implementation invariance. Because methods often
+      disagree, they are evaluated with sanity checks — do scores change when the weights are
+      randomized? — and deletion or insertion curves, which test whether removing top-ranked
+      features changes the prediction fastest.
+    example: >-
+      Feature attribution showed the pneumonia classifier keyed on a hospital's scanner tag rather
+      than on lung tissue.
+origin: >-
+  Attributing predictions to input variables is old in statistics. For neural networks, sensitivity
+  analysis with input gradients dates to the late 1980s and 1990s; the modern vocabulary
+  consolidated in 2017, when Mukund Sundararajan, Ankur Taly and Qiqi Yan stated attribution axioms
+  and Scott Lundberg and Su-In Lee unified 'additive feature attribution' methods.
+note: >-
+  Attribution says which inputs mattered for one output, not how the model computed it. Distinguish
+  [[data-attribution|data attribution]] (which training examples mattered) and global
+  [[feature-importance|feature importance]]. In [[mechanistic-interpretability|mechanistic
+  interpretability]], 'attribution' also means scoring internal components, as in
+  [[attribution-patching|attribution patching]] and [[attribution-graph|attribution graphs]].
+see_also:
+  - SHAP
+  - integrated gradients
+  - saliency map
+  - LIME
+  - faithfulness
+  - local explanation
+contrast:
+  - data attribution
+  - feature importance
+sources:
+  - text: >-
+      Sundararajan, M., Taly, A. & Yan, Q. (2017). Axiomatic Attribution for Deep Networks. ICML
+      2017.
+  - text: >-
+      Adebayo, J., Gilmer, J., Muelly, M., Goodfellow, I., Hardt, M. & Kim, B. (2018). Sanity Checks
+      for Saliency Maps. NeurIPS 2018.

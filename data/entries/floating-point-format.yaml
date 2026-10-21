@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: floating-point format
+id: floating-point-format
+pos: n.
+also:
+  - floating point
+  - floating-point number
+  - number format
+  - IEEE 754
+  - FP64
+  - double precision
+domain: hw
+domains:
+  - math
+  - dl
+level: core
+plain: >-
+  A way of storing numbers in a computer like scientific notation — a few digits plus a power of two
+  — trading accuracy for range. AI uses ever-smaller formats to compute faster.
+senses:
+  - definition: >-
+      A binary encoding of real numbers as a sign, an exponent and a significand (mantissa),
+      representing (−1)^s × 1.m × 2^(e − bias), so that a fixed number of bits covers a wide dynamic
+      range with roughly constant relative precision. Exponent bits set the range and significand
+      bits the precision; low-precision formats are often written ExMy (x exponent bits, y
+      significand bits). The IEEE 754 standard defines FP64 (double), [[fp32|FP32]] (single) and
+      [[fp16|FP16]] (half), with rules for rounding, infinities, NaN ('not a number') and subnormal
+      numbers. Because deep learning tolerates low precision, AI hardware added non-IEEE formats —
+      [[bfloat16|bfloat16]], TF32, [[fp8|FP8]] (E4M3, E5M2), FP6 and [[fp4|FP4]] — and block-scaled
+      [[microscaling-formats|microscaling formats]], usually with higher-precision accumulators.
+      Each halving of bit width roughly doubles arithmetic throughput per chip area and halves
+      memory and bandwidth needs, making format choice a central lever in
+      [[mixed-precision-training|mixed-precision training]] and [[quantization|quantization]].
+formula_latex: x = (-1)^{s} \times 1.m \times 2^{\,e - \text{bias}}
+origin: >-
+  Binary floating point appears in Konrad Zuse's Z3 (1941) and many early computers; incompatible
+  vendor formats were unified by IEEE 754-1985, whose key designer was William Kahan, revised in
+  2008 and 2019. ML-specific formats arrived from 2017 (bfloat16), and an IEEE working group (P3109)
+  has been standardizing 8-bit and narrower formats for machine learning.
+see_also:
+  - FP32
+  - FP16
+  - bfloat16
+  - FP8
+  - FP4
+  - microscaling formats
+  - INT8
+  - numerical stability
+contrast:
+  - INT8
+sources:
+  - text: IEEE (2019). IEEE Standard for Floating-Point Arithmetic (IEEE Std 754-2019).
+as_of: 2026-10

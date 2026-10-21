@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: counterfactual fairness
+id: counterfactual-fairness
+pos: n.
+also:
+  - causal fairness
+domain: society
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  A fairness test that asks: had this person been of another race or sex, with everything that would
+  have followed from that, would the system have decided the same way?
+senses:
+  - definition: >-
+      A causal fairness criterion requiring that a prediction about an individual would not change
+      if, in an assumed structural causal model, their [[protected-attribute|protected attribute]]
+      were counterfactually set to another value while the background (exogenous) factors U inferred
+      for that individual stayed fixed. Because the counterfactual change propagates to every causal
+      descendant of the attribute, a counterfactually fair predictor may use only features not
+      influenced by it, or adjusted versions of them. The criterion makes fairness assumptions
+      explicit, but it depends on a causal graph that is rarely known with confidence, and some
+      scholars argue that counterfactuals about race or sex are ill-defined.
+    example: >-
+      Under counterfactual fairness, the admissions score cannot rely on test results that are
+      themselves shaped by the applicant's race.
+formula_latex: P\big(\hat{Y}_{A \leftarrow a}(U) = y \mid X = x, A = a\big) = P\big(\hat{Y}_{A
+  \leftarrow a'}(U) = y \mid X = x, A = a\big)
+origin: >-
+  Introduced by Matt Kusner, Joshua Loftus, Chris Russell and Ricardo Silva in 'Counterfactual
+  Fairness' (NeurIPS 2017), building on Judea Pearl's structural causal models. Related causal
+  criteria appeared the same year, including path-specific approaches by Razieh Nabi and Ilya
+  Shpitser and by Niki Kilbertus and colleagues.
+year: 2017
+see_also:
+  - individual fairness
+  - algorithmic fairness
+  - causal inference
+  - protected attribute
+  - Judea Pearl
+contrast:
+  - demographic parity
+sources:
+  - text: >-
+      Kusner, M. J., Loftus, J., Russell, C. & Silva, R. (2017). Counterfactual Fairness. Advances
+      in Neural Information Processing Systems 30.

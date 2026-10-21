@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: perception
+id: perception
+pos: n.
+also:
+  - machine perception
+  - perceive
+  - perception stack
+  - perception module
+domain: percep
+domains:
+  - robot
+  - mind
+level: core
+plain: >-
+  How an AI system or robot turns raw sensor signals, such as camera pixels, microphone sound or
+  laser scans, into an understanding of what is around it: objects, people, words and distances.
+senses:
+  - context: AI and robotics
+    definition: >-
+      The process, or the subsystem, by which an [[intelligent-agent|agent]] maps raw sensor data to
+      representations it can reason and act on: detected objects and their positions, free space,
+      speech transcripts, the poses of nearby people. In textbook terms, perception supplies the
+      agent's estimate of the world [[state|state]]; in robotics and [[autonomous-vehicle|autonomous
+      vehicles]] it is the first stage of the classic perception–prediction–planning–control stack,
+      usually combining cameras, [[lidar|lidar]], radar and microphones through
+      [[sensor-fusion|sensor fusion]]. Machine perception spans [[computer-vision|computer vision]],
+      [[speech-recognition|speech recognition]] and audio analysis, touch ([[tactile-sensing|tactile
+      sensing]]) and [[proprioception|proprioception]]. Since the late 2010s, separate hand-built
+      perception modules have increasingly given way to large pretrained encoders and
+      [[multimodal-ai|multimodal]] [[foundation-model|foundation models]].
+    example: >-
+      The planner was fine; the crash traced back to perception classifying the overturned truck as
+      background.
+  - context: Cognitive science
+    definition: >-
+      The faculty by which humans and animals turn the signals reaching their senses into an
+      experience of objects, events and surroundings. Theories of human perception, as unconscious
+      inference from ambiguous signals (Hermann von Helmholtz), as direct pickup of information
+      (James J. Gibson) or as [[predictive-processing|prediction]], have repeatedly shaped machine
+      approaches, and comparisons of model and human perception (illusions, shape versus texture
+      bias, [[adversarial-example|adversarial images]]) remain an active research area.
+origin: >-
+  From Latin percipere, 'to seize, understand'. Machine perception was a goal from the start of AI:
+  Frank Rosenblatt's 1957 Cornell report presented the perceptron as a 'perceiving and recognizing
+  automaton', and Lawrence Roberts's 1963 MIT thesis was titled Machine Perception of
+  Three-Dimensional Solids.
+year: 1957
+note: >-
+  Not to be confused with the [[perceptron|perceptron]], the early neural network named after it. In
+  discussions of multimodal models, 'perception' often means reading images, audio or video, as
+  distinct from reasoning about them; some benchmarks test the two separately.
+see_also:
+  - computer vision
+  - speech recognition
+  - sensor fusion
+  - embodied AI
+  - multimodal AI
+  - world model
+contrast:
+  - perceptron
+sources:
+  - text: >-
+      Rosenblatt, F. (1957). The Perceptron: A Perceiving and Recognizing Automaton. Report
+      85-460-1, Cornell Aeronautical Laboratory.

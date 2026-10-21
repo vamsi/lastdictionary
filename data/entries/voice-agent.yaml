@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: voice agent
+id: voice-agent
+pos: n.
+also:
+  - AI voice agent
+  - voice AI agent
+  - voicebot
+  - AI phone agent
+  - conversational voice agent
+domain: agents
+domains:
+  - percep
+  - llm
+labels:
+  - emerging
+level: core
+plain: >-
+  An AI system you talk to out loud, for example on a phone call, that listens, answers in a
+  natural-sounding voice and can carry out tasks such as booking appointments or checking an order.
+senses:
+  - definition: >-
+      An [[ai-agent|AI agent]] that converses with people in real time through speech, typically
+      over telephone or app audio, and can take actions through [[tool-use|tools]] such as
+      calendars, databases or payment systems. Two architectures dominate. A cascaded pipeline
+      chains [[voice-activity-detection|voice activity detection]], streaming
+      [[speech-recognition|speech recognition]], a [[large-language-model|large language model]] and
+      [[text-to-speech|text-to-speech]], which keeps each component replaceable and the conversation
+      inspectable as text; end-to-end [[speech-to-speech-model|speech-to-speech models]] work on
+      audio directly, preserving tone and cutting delay. The hardest engineering problems are
+      conversational rather than linguistic: keeping response delay near the few hundred
+      milliseconds of human turn-taking, deciding when the caller has finished speaking
+      (endpointing), handling interruptions ('barge-in') and overlapping speech, recovering from
+      recognition errors, and integrating with telephony systems. Deployments include customer
+      service, scheduling, sales, interviewing and accessibility services, and raise issues of
+      disclosure, consent, [[voice-cloning|voice cloning]] and fraud.
+    example: >-
+      Our voice agent answers after-hours calls, checks the order system and hands off to a human if
+      the caller asks.
+origin: >-
+  In call-center jargon a 'voice agent' was a human who handles phone calls. The AI sense spread in
+  2024 with low-latency speech models such as OpenAI's [[gpt-4o|GPT-4o]] voice mode and Realtime API
+  and Kyutai's full-duplex Moshi, and with a wave of start-ups building phone agents. Precursors
+  include interactive voice response systems and Google Duplex (2018), which booked restaurant
+  tables by phone.
+year: 2024
+note: >-
+  Broader than a [[virtual-assistant|virtual assistant]] such as Siri or Alexa, which historically
+  mapped requests to fixed intents. Regulation is spreading: in February 2024 the US Federal
+  Communications Commission ruled that AI-generated voices in robocalls count as 'artificial' under
+  the Telephone Consumer Protection Act, and Article 50 of the EU AI Act requires that people be
+  told when they are interacting with an AI system, unless this is obvious.
+see_also:
+  - AI agent
+  - speech-to-speech model
+  - speech recognition
+  - text-to-speech
+  - voice activity detection
+  - voice cloning
+  - virtual assistant
+  - time to first token
+contrast:
+  - virtual assistant
+  - chatbot
+sources:
+  - text: >-
+      Stivers, T. et al. (2009). Universals and Cultural Variation in Turn-Taking in Conversation.
+      PNAS 106(26), 10587–10592.
+as_of: 2026-10

@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Buck Shlegeris
+id: buck-shlegeris
+sort_as: Shlegeris Buck
+pos: prop. n.
+domain: people
+domains:
+  - safety
+  - interp
+level: specialist
+plain: >-
+  An AI-safety researcher who runs Redwood Research and helped found 'AI control', the study of
+  keeping powerful AI safe even if it is secretly trying to cause harm.
+senses:
+  - definition: >-
+      AI-safety researcher, chief executive of [[redwood-research|Redwood Research]], which he
+      co-founded with Nate Thomas in 2021. With Ryan Greenblatt, Kshitij Sachan and Fabien Roger he
+      set out the agenda of [[ai-control|AI control]] (2023): rather than relying only on making
+      models aligned, developers should design deployment protocols — such as
+      [[trusted-monitoring|trusted monitoring]] by weaker models, [[untrusted-monitoring|untrusted
+      monitoring]] and [[trusted-editing|trusted editing]] of suspicious outputs — that keep
+      powerful models from causing harm even if they are deliberately trying to subvert oversight,
+      and should test those protocols with [[control-evaluation|control evaluations]] in which a red
+      team plays the misaligned model. Earlier, Redwood researchers developed
+      [[causal-scrubbing|causal scrubbing]] for testing interpretability hypotheses and the
+      [[indirect-object-identification|indirect object identification]] circuit analysis (2022), and
+      he co-authored the 2018 paper formalizing [[iterated-amplification|iterated amplification]].
+      Redwood co-authored the 2024 study of [[alignment-faking|alignment faking]] with Anthropic.
+see_also:
+  - AI control
+  - Redwood Research
+  - trusted monitoring
+  - control evaluation
+  - alignment faking
+  - causal scrubbing
+sources:
+  - text: >-
+      Greenblatt, R., Shlegeris, B., Sachan, K. & Roger, F. (2023). AI Control: Improving Safety
+      Despite Intentional Subversion. arXiv preprint (ICML 2024).
+as_of: 2026-10

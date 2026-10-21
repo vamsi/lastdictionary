@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Hebbian learning
+id: hebbian-learning
+pos: n.
+also:
+  - Hebb's rule
+  - Hebb rule
+  - Hebbian theory
+  - Hebb's postulate
+  - cells that fire together wire together
+domain: hist
+domains:
+  - dl
+  - ml
+level: core
+plain: >-
+  The idea that a connection between two brain cells grows stronger when they are active at the same
+  time — the principle behind the slogan 'cells that fire together wire together'.
+senses:
+  - definition: >-
+      A learning principle that strengthens the connection from one unit to another each time
+      activity in the first helps drive activity in the second, so that units which are often active
+      together become more tightly coupled. In its simplest artificial form the weight change is
+      proportional to the product of input and output activity. Pure Hebbian updates are local and
+      unsupervised but unstable, because weights can grow without bound; variants add decay or
+      normalization, as in Oja's rule (1982), which makes a single linear neuron extract the first
+      [[principal-component-analysis|principal component]] of its inputs, or allow weakening when
+      activity is anti-correlated. Hebbian storage underlies the [[hopfield-network|Hopfield
+      network]] and other associative memories, and spike-timing-dependent plasticity, in which the
+      order of firing matters, is a biological refinement of the idea.
+    example: >-
+      The Hopfield network stores its patterns with a one-shot Hebbian rule rather than gradient
+      descent.
+formula_latex: \Delta w_{ij} = \eta \, x_i \, y_j
+origin: >-
+  Proposed by the Canadian psychologist Donald O. Hebb in The Organization of Behavior (1949) as the
+  mechanism by which 'cell assemblies' form. The slogan about cells that fire together wiring
+  together came much later and is usually credited to the neuroscientist Carla Shatz (1992); Siegrid
+  Löwel and Wolf Singer used a similar phrase the same year.
+year: 1949
+note: >-
+  Unlike [[backpropagation|backpropagation]], Hebbian rules use only locally available activity and
+  no error signal, which is why they remain of interest for biologically plausible learning and
+  [[neuromorphic-computing|neuromorphic computing]].
+see_also:
+  - Hopfield network
+  - Boltzmann machine
+  - connectionism
+  - unsupervised learning
+  - neural network
+  - McCulloch–Pitts neuron
+contrast:
+  - backpropagation
+sources:
+  - text: >-
+      Hebb, D. O. (1949). The Organization of Behavior: A Neuropsychological Theory. New York: Wiley.

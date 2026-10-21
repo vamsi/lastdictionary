@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scaling hypothesis
+id: scaling-hypothesis
+pos: n.
+also:
+  - strong scaling hypothesis
+  - weak scaling hypothesis
+  - scaling maximalism
+  - scale is all you need
+domain: train
+domains:
+  - asi
+  - hist
+labels:
+  - contested
+level: core
+plain: >-
+  The bet that today's AI methods, simply made bigger with more computing power and data, will keep
+  getting smarter — possibly all the way to human-level intelligence and beyond — without needing
+  fundamentally new ideas.
+senses:
+  - definition: >-
+      The conjecture that scale is the main ingredient still missing from AI: adding parameters,
+      data and [[training-compute|training compute]] to an existing general-purpose architecture
+      such as the [[transformer|transformer]], with only incremental engineering changes, will keep
+      yielding more general capabilities, up to and beyond human level. In Gwern Branwen's
+      formulation, the strong version holds that scale alone makes sophisticated intelligence
+      emerge, because that is the easiest way for a model to reduce prediction error across diverse
+      data; a weak version, which he attributed to DeepMind, holds that scale is necessary but new
+      algorithms must still be found. Supporters cite smooth [[scaling-laws|scaling laws]] and the
+      jumps from [[gpt-2|GPT-2]] to [[gpt-3|GPT-3]] and [[gpt-4|GPT-4]]. Critics such as Gary Marcus
+      and Yann LeCun argue that next-token prediction cannot by itself supply reliable reasoning or
+      [[world-model|world models]]. Since 2024 the debate has shifted toward whether progress now
+      comes mainly from scaling [[reinforcement-learning|reinforcement learning]] and
+      [[test-time-compute|test-time compute]] rather than [[pretraining|pretraining]].
+    example: >-
+      If the scaling hypothesis is right, the next order of magnitude of compute matters more than
+      any new architecture.
+origin: >-
+  Popularized by the pseudonymous writer Gwern Branwen in 'The Scaling Hypothesis' (2020), an essay
+  prompted by GPT-3 that drew on Hans Moravec's compute forecasts, Richard Sutton's 'The Bitter
+  Lesson' (2019) and the views of connectionist researchers such as Ilya Sutskever and Dario Amodei.
+year: 2020
+note: >-
+  Distinct from [[scaling-laws|scaling laws]], which are measured regularities in loss; the
+  hypothesis is a claim about capabilities and generality. Related to, but stronger than,
+  [[the-bitter-lesson|the bitter lesson]]. Positions range from 'scale is nearly all you need' to
+  'scaling is reaching diminishing returns'.
+see_also:
+  - scaling laws
+  - the bitter lesson
+  - artificial general intelligence
+  - compute overhang
+  - emergent abilities
+  - AI timelines
+contrast:
+  - scaling laws
+sources:
+  - text: Branwen, G. (2020). The Scaling Hypothesis. gwern.net.
+    url: https://gwern.net/scaling-hypothesis
+  - text: Sutton, R. S. (2019). The Bitter Lesson. Personal blog (incompleteideas.net).
+as_of: 2026-10

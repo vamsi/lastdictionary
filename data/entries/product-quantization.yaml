@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: product quantization
+id: product-quantization
+pos: n.
+also:
+  - PQ
+  - IVFPQ
+  - optimized product quantization
+  - OPQ
+domain: eng
+domains:
+  - math
+  - infer
+level: specialist
+plain: >-
+  A compression trick for embeddings: chop each long list of numbers into short pieces and replace
+  each piece with the ID of its closest typical piece, shrinking storage many times over while
+  keeping search workable.
+senses:
+  - definition: >-
+      A vector-compression method for [[approximate-nearest-neighbor-search|approximate nearest
+      neighbor search]] that splits each D-dimensional vector into m subvectors, learns a separate
+      small codebook for each subspace by [[k-means-clustering|k-means clustering]] (commonly 256
+      centroids, so each subvector is stored in one byte), and represents the vector by its m
+      centroid indices; a 768-dimensional float32 embedding of 3,072 bytes can thus shrink to 64 or
+      96 bytes. Distances between a query and compressed vectors are estimated quickly from
+      per-subspace lookup tables (asymmetric distance computation) without decompressing them. PQ is
+      usually combined with an inverted-file coarse partition (IVFPQ) and followed by re-scoring
+      with exact vectors; variants rotate the space first (optimized PQ) or learn additive
+      codebooks. It differs from [[quantization|quantization]] of model weights, though both trade
+      numeric precision for memory.
+    example: Product quantization let the billion-vector index fit in 64 GB of RAM.
+origin: >-
+  Introduced by Hervé Jégou, Matthijs Douze and Cordelia Schmid of INRIA in 'Product quantization
+  for nearest neighbor search' (IEEE Transactions on Pattern Analysis and Machine Intelligence,
+  2011). 'Product' refers to the Cartesian product of the subspace codebooks. It became a core
+  component of [[faiss|FAISS]].
+year: 2011
+see_also:
+  - approximate nearest neighbor search
+  - FAISS
+  - vector database
+  - quantization
+  - k-means clustering
+  - HNSW
+contrast:
+  - quantization
+sources:
+  - text: >-
+      Jégou, H., Douze, M. & Schmid, C. (2011). Product quantization for nearest neighbor search.
+      IEEE Transactions on Pattern Analysis and Machine Intelligence 33(1): 117–128.

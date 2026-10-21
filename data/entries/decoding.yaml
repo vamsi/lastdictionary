@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decoding
+id: decoding
+pos: n.
+also:
+  - decoding strategy
+  - decoding algorithm
+  - generation strategy
+  - sampling strategy
+  - contrastive decoding
+  - neural decoding
+domain: llm
+domains:
+  - infer
+level: core
+plain: >-
+  The method a language model uses to turn its predictions into actual text — for example, always
+  picking the most likely next word, or choosing somewhat at random among the likely ones.
+senses:
+  - context: Language models
+    definition: >-
+      The procedure for producing an output sequence from a model's predicted next-token
+      distributions. At each step the model yields [[logit|logits]] over the
+      [[vocabulary|vocabulary]]; a decoding strategy transforms them — applying
+      [[temperature|temperature]], [[repetition-penalty|penalties]], [[logit-bias|logit bias]] or
+      grammar masks ([[constrained-decoding|constrained decoding]]) — and selects a [[token|token]],
+      which is appended and fed back, until an end-of-sequence token, a [[stop-sequence|stop
+      sequence]] or a length limit is reached. Strategies divide into deterministic searches for
+      high-probability outputs ([[greedy-decoding|greedy decoding]], [[beam-search|beam search]])
+      and stochastic sampling, usually truncated to plausible candidates ([[top-k-sampling|top-k]],
+      [[top-p-sampling|top-p]], [[min-p-sampling|min-p]]). The choice strongly affects quality:
+      maximizing likelihood tends to give bland, repetitive text in open-ended generation, while
+      untruncated sampling drifts into incoherence. Other methods spend extra computation at
+      decoding time, such as [[speculative-decoding|speculative decoding]] for speed and
+      [[best-of-n-sampling|best-of-n sampling]] or contrastive decoding for quality.
+    example: >-
+      Same model, same prompt — switching the decoding from greedy to nucleus sampling fixed the
+      looping.
+  - context: Inference systems
+    definition: >-
+      In LLM serving, the token-by-token generation stage that follows processing of the prompt,
+      typically limited by memory bandwidth rather than arithmetic; see [[decode-phase|decode
+      phase]] and [[prefill|prefill]].
+  - context: Other fields
+    definition: >-
+      In coding theory, recovering a transmitted message from a noisy received signal, as the
+      Viterbi algorithm does for convolutional codes; in neuroscience, inferring stimuli, intentions
+      or speech from recorded brain activity ('neural decoding'), increasingly with AI models. The
+      language-model sense descends from the encoder–decoder vocabulary of machine translation.
+origin: >-
+  From information theory, via statistical speech recognition, which treated finding the most
+  probable word sequence as decoding a noisy channel (for example Lalit Bahl and Frederick Jelinek,
+  1975), and statistical machine translation, whose search programs were called decoders.
+  Encoder–decoder neural translation (2014), with its 'decoder' network, carried the word into
+  neural generation; Ari Holtzman and colleagues' 2019 study of 'neural text degeneration' made
+  decoding strategy a research topic in its own right.
+see_also:
+  - greedy decoding
+  - beam search
+  - temperature
+  - top-p sampling
+  - constrained decoding
+  - speculative decoding
+  - stop sequence
+  - decode phase
+sources:
+  - text: >-
+      Holtzman, A., Buys, J., Du, L., Forbes, M. & Choi, Y. (2020). The Curious Case of Neural Text
+      Degeneration. ICLR 2020.
+    url: https://arxiv.org/abs/1904.09751

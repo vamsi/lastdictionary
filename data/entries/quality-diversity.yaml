@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: quality diversity
+id: quality-diversity
+pos: n.
+also:
+  - QD
+  - MAP-Elites
+  - novelty search
+  - illumination algorithm
+domain: sym
+domains:
+  - rl
+  - robot
+level: specialist
+plain: >-
+  A family of evolution-inspired search methods that aim to collect many different good solutions —
+  for example, many distinct ways for a robot to walk — rather than a single best one.
+senses:
+  - definition: >-
+      A class of optimization algorithms whose goal is a large, diverse collection of
+      high-performing solutions, each the best found for a different combination of user-defined
+      behavioral characteristics, rather than a single optimum. MAP-Elites, the canonical example,
+      divides a behavior space — for a walking robot, how often each leg touches the ground — into
+      cells, keeps the fittest solution found in each cell, and generates new candidates by mutating
+      elites drawn from this archive. Novelty search, a precursor, rewards behavioral novelty alone
+      and showed that ignoring the objective can avoid deceptive dead ends. Quality-diversity
+      archives provide repertoires of alternatives that support rapid adaptation, such as robots
+      that recover from damage by switching gaits, and stepping stones for open-ended search. Since
+      2022 they have been combined with [[large-language-model|language models]], for example to
+      generate diverse candidate programs or diverse adversarial prompts for [[red-teaming|red
+      teaming]].
+origin: >-
+  Joel Lehman and Kenneth Stanley introduced novelty search in 2008. Jean-Baptiste Mouret and Jeff
+  Clune introduced MAP-Elites in 2015, the year Antoine Cully, Clune, Danesh Tarapore and Mouret
+  published damage-recovering robots in Nature. Justin Pugh, Lisa Soros, Stanley and colleagues used
+  the name 'quality diversity' in a 2015 GECCO paper and set out the framework in 2016.
+year: 2015
+see_also:
+  - evolutionary computation
+  - neuroevolution
+  - genetic algorithm
+  - red teaming
+  - AlphaEvolve
+  - reinforcement learning
+sources:
+  - text: >-
+      Mouret, J.-B. & Clune, J. (2015). Illuminating Search Spaces by Mapping Elites. arXiv preprint.
+  - text: >-
+      Cully, A., Clune, J., Tarapore, D. & Mouret, J.-B. (2015). Robots That Can Adapt Like Animals.
+      Nature 521, 503–507.
+  - text: >-
+      Pugh, J. K., Soros, L. B. & Stanley, K. O. (2016). Quality Diversity: A New Frontier for
+      Evolutionary Computation. Frontiers in Robotics and AI 3:40.
+as_of: 2026-10

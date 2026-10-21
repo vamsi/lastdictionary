@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cosine annealing
+id: cosine-annealing
+pos: n.
+also:
+  - cosine schedule
+  - cosine decay
+  - cosine learning rate schedule
+  - SGDR
+  - warm restarts
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  A popular plan for shrinking a model's step size during training: steps start large, shrink
+  slowly, then faster, then level off near zero, following the shape of half a wave.
+senses:
+  - definition: >-
+      A [[learning-rate-schedule|learning rate schedule]] that lowers the [[learning-rate|learning
+      rate]] from a maximum η_max to a minimum η_min along half a cosine period over T steps. The
+      rate stays near its peak early, falls fastest mid-training and flattens near the end. In the
+      original form, SGDR ('stochastic gradient descent with warm restarts'), the schedule jumps
+      back to η_max periodically, often with lengthening periods, and the snapshot at the end of
+      each cycle can be ensembled; most practice now uses a single cycle preceded by
+      [[learning-rate-warmup|learning rate warmup]]. Single-cycle cosine decay to about 10% of the
+      peak was the default for [[large-language-model|large language model]] pretraining from about
+      2020 to 2023. Because T must be fixed in advance, a finished run cannot simply be extended,
+      and stopping early leaves the rate too high — drawbacks that motivated the
+      [[warmup-stable-decay-schedule|warmup-stable-decay schedule]] and
+      [[schedule-free-optimization|schedule-free optimization]].
+    example: >-
+      We use linear warmup for 2,000 steps, then cosine decay to 10% of the peak learning rate.
+formula_latex: \eta_t = \eta_{\min} + \tfrac{1}{2}\left(\eta_{\max} - \eta_{\min}\right)\left(1 +
+  \cos\frac{\pi t}{T}\right)
+origin: >-
+  Introduced by Ilya Loshchilov and Frank Hutter in 'SGDR: Stochastic Gradient Descent with Warm
+  Restarts' (arXiv 2016; ICLR 2017). 'Annealing' borrows the metallurgical metaphor by way of
+  simulated annealing. Single-cycle cosine decay was used for GPT-3 (2020), Chinchilla (2022) and
+  LLaMA (2023).
+year: 2016
+note: >-
+  The Chinchilla authors reported that a cosine cycle much longer than the actual run degrades final
+  loss, so T should match the true training length.
+see_also:
+  - learning rate schedule
+  - learning rate warmup
+  - warmup-stable-decay schedule
+  - schedule-free optimization
+  - simulated annealing
+  - Chinchilla scaling laws
+sources:
+  - text: >-
+      Loshchilov, I. & Hutter, F. (2017). SGDR: Stochastic Gradient Descent with Warm Restarts. ICLR
+      2017.
+    url: https://arxiv.org/abs/1608.03983

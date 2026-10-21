@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: intersection over union
+id: intersection-over-union
+pos: n.
+also:
+  - IoU
+  - Jaccard index
+  - Jaccard similarity coefficient
+  - mean IoU
+  - mIoU
+  - generalized IoU
+  - GIoU
+domain: percep
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  A score from 0 to 1 for how well two shapes overlap, such as a predicted box and the true box
+  around an object: the shared area divided by the combined area.
+senses:
+  - definition: >-
+      A measure of overlap between two regions A and B: the area of their intersection divided by
+      the area of their union, equal to 1 for identical regions and 0 for disjoint ones. In
+      [[object-detection|object detection]] a predicted [[bounding-box|bounding box]] counts as a
+      true positive only if its IoU with a not-yet-matched ground-truth box exceeds a threshold: 0.5
+      in the PASCAL VOC benchmark, while [[coco|COCO]] averages results over thresholds from 0.50 to
+      0.95. In [[semantic-segmentation|semantic segmentation]], IoU is computed per class over
+      pixels and averaged as mean IoU (mIoU). IoU also drives [[non-maximum-suppression|non-maximum
+      suppression]] and the matching of detections across frames in [[object-tracking|object
+      tracking]]. Because 1 − IoU gives no useful gradient when boxes do not overlap, training
+      losses use refinements such as generalized IoU (GIoU, 2019), which subtracts a penalty based
+      on the smallest box enclosing both.
+    example: >-
+      A box at 0.48 IoU counts as a miss at the 0.5 threshold, even though it looks fine to a person.
+formula_latex: \operatorname{IoU}(A,B) = \frac{|A \cap B|}{|A \cup B|}
+origin: >-
+  The ratio was first proposed by the American geologist Grove Karl Gilbert in 1884, as a 'ratio of
+  verification' for tornado forecasts, and again, independently, by the Swiss botanist Paul Jaccard
+  in 1901 to compare the plant species found in different Alpine districts; hence 'Jaccard index'.
+  Under the name 'intersection over union' it became the standard localization criterion in vision
+  through the PASCAL VOC challenge (from 2005).
+year: 1884
+note: >-
+  Monotonically related to the Dice coefficient (pixel-level F1) common in medical segmentation:
+  Dice = 2·IoU / (1 + IoU). A model ranked higher by one is ranked higher by the other on a single
+  pair, but averages over images can differ.
+see_also:
+  - bounding box
+  - mean average precision
+  - non-maximum suppression
+  - semantic segmentation
+  - object detection
+  - F1 score
+sources:
+  - text: >-
+      Jaccard, P. (1901). Étude comparative de la distribution florale dans une portion des Alpes et
+      des Jura. Bulletin de la Société vaudoise des sciences naturelles 37, 547–579.
+  - text: >-
+      Rezatofighi, H., Tsoi, N., Gwak, J., Sadeghian, A., Reid, I. & Savarese, S. (2019).
+      Generalized Intersection over Union: A Metric and a Loss for Bounding Box Regression. CVPR
+      2019.

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI constitution
+id: ai-constitution
+pos: n.
+also:
+  - constitution (AI)
+  - Claude's constitution
+domain: safety
+domains:
+  - train
+  - society
+level: core
+plain: >-
+  A written set of principles that an AI company uses to shape an AI's values and behavior, both
+  during training and as a public statement of what the AI should be like.
+senses:
+  - definition: >-
+      A natural-language document of principles, values and priorities intended to govern an AI
+      model's behavior, used as a training input and published as a statement of intent. In
+      [[constitutional-ai|Constitutional AI]], the constitution's principles guide AI-generated
+      critiques, revisions and preference judgments that replace much human feedback. Constitutions
+      range from short lists of rules ('choose the less harmful response') to long documents that
+      explain the reasons behind values so that a model can apply them to situations no rule
+      anticipated. Anthropic's January 2026 constitution for Claude, for example, ranks four
+      priorities — being broadly safe, broadly ethical, compliant with the company's guidelines and
+      genuinely helpful — keeps a small set of absolute 'hard constraints', and discusses the
+      model's nature and possible moral status. Experiments with collective constitutions have
+      drafted principles from public input.
+    example: >-
+      The new AI constitution explains why each value matters instead of just listing rules.
+origin: >-
+  Introduced in Anthropic's 'Constitutional AI: Harmlessness from AI Feedback' (Yuntao Bai and
+  colleagues, December 2022). The company published Claude's principles in May 2023 and, with the
+  Collective Intelligence Project, a publicly sourced constitution in October 2023; its rewritten
+  constitution of 22 January 2026 was released under a CC0 public-domain dedication.
+year: 2022
+note: >-
+  Not a constitution in the legal sense: nothing enforces it beyond training and the developer's own
+  commitments. Critics ask who should write such documents and whether training reliably instills
+  them. Compare [[model-specification|model specification]], which emphasizes behavioral rules over
+  values.
+see_also:
+  - Constitutional AI
+  - model specification
+  - character training
+  - AI alignment
+  - Anthropic
+  - deliberative alignment
+sources:
+  - text: >-
+      Bai, Y. et al. (2022). Constitutional AI: Harmlessness from AI Feedback. arXiv:2212.08073.
+  - text: Anthropic (2026). Claude's new constitution. Anthropic.
+    url: https://www.anthropic.com/news/claude-new-constitution
+as_of: 2026-10

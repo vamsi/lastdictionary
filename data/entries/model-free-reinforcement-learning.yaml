@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model-free reinforcement learning
+id: model-free-reinforcement-learning
+pos: n.
+also:
+  - model-free RL
+  - model-free
+domain: rl
+level: core
+plain: >-
+  Learning to act well purely from trial and error, without ever building an internal picture of how
+  the world works — like learning a game by habit rather than by thinking moves ahead.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement learning]] that learns a [[value-function|value
+      function]], a [[policy|policy]] or both directly from sampled experience, without learning or
+      using an explicit model of the [[environment|environment]]'s transition and reward dynamics.
+      [[q-learning|Q-learning]], [[sarsa|SARSA]], [[policy-gradient|policy gradient]] methods,
+      [[proximal-policy-optimization|PPO]] and [[soft-actor-critic|SAC]] are model-free. Their
+      appeal is simplicity and strong final performance: they make no assumptions that a flawed
+      model could violate and scale to environments too complex to model, which is why most deep RL
+      successes in games and most [[large-language-model|large language model]] post-training use
+      them. The price is sample inefficiency — millions to billions of interactions are common — and
+      inflexibility, since learned values must be relearned when rewards or dynamics change.
+      Psychology and neuroscience use the same contrast to separate habitual (model-free) from
+      goal-directed (model-based) behavior.
+    example: >-
+      Model-free methods are simple to tune but need far more environment steps than our model-based
+      baseline.
+origin: >-
+  The model-free/model-based terminology became established in RL during the 1990s — it structures
+  Leslie Kaelbling, Michael Littman and Andrew Moore's 1996 survey — after Richard Sutton's Dyna
+  architecture (1990) combined both approaches; animal-learning research had long distinguished
+  habits from Edward Tolman's 'cognitive maps' (1948). Nathaniel Daw, Yael Niv and Peter Dayan
+  (2005) carried the terms into neuroscience.
+see_also:
+  - Q-learning
+  - policy gradient
+  - proximal policy optimization
+  - temporal difference learning
+  - sample efficiency
+  - deep reinforcement learning
+contrast:
+  - model-based reinforcement learning
+sources:
+  - text: >-
+      Kaelbling, L. P., Littman, M. L. & Moore, A. W. (1996). Reinforcement Learning: A Survey.
+      Journal of Artificial Intelligence Research 4, 237–285.
+  - text: >-
+      Daw, N. D., Niv, Y. & Dayan, P. (2005). Uncertainty-based competition between prefrontal and
+      dorsolateral striatal systems for behavioral control. Nature Neuroscience 8, 1704–1711.

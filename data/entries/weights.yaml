@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: weights
+id: weights
+pos: n.
+also:
+  - weight
+  - model weights
+  - connection weight
+  - synaptic weight
+domain: core
+domains:
+  - dl
+  - gov
+  - sec
+level: core
+plain: >-
+  The learned numbers inside a neural network that set how strongly each part influences the next.
+  The finished set of weights is, in effect, the trained model itself.
+senses:
+  - context: Neural networks
+    definition: >-
+      The learnable coefficients that scale the signals passing between units of a
+      [[neural-network|neural network]]: each [[artificial-neuron|artificial neuron]] multiplies its
+      inputs by weights, sums them and adds a [[bias|bias]]. In matrix form a layer's weights are a
+      matrix applied to its input vector. Weights are set by [[weight-initialization|weight
+      initialization]], updated during [[training|training]] by gradient-based optimization, and
+      make up most of a model's [[parameter|parameters]]; interpretability research studies how
+      knowledge and computations are encoded in them.
+    example: After the update step, the weights of the first layer had barely moved.
+  - context: Models as artifacts
+    definition: >-
+      By extension, the complete set of trained parameter values of a model, stored as files
+      ([[checkpoint|checkpoints]], for example in the [[safetensors|safetensors]] format). Because
+      whoever holds the weights can run, copy and modify the model, release decisions are framed
+      around them: [[open-weight-model|open-weight]] releases publish them, while closed developers
+      guard them as core assets ([[model-weight-security|model weight security]],
+      [[weight-exfiltration|weight exfiltration]]). US Executive Order 14110 (2023, revoked 2025)
+      defined a model weight, for legal purposes, as any numerical value inside an AI model that
+      helps shape its outputs for given inputs.
+    example: They released the weights under a permissive license but not the training data.
+origin: >-
+  Weighted connections between threshold units date to the neural-network models of the 1940s–1960s;
+  Frank Rosenblatt's perceptron (1958) and Bernard Widrow and Ted Hoff's ADALINE (1960) learned by
+  adjusting them. Downloadable 'pretrained weights' were routine in deep learning by the mid-2010s;
+  'weights' became a policy word in 2023, when Meta's LLaMA weights leaked online (March) and US
+  Executive Order 14110 singled out the weights of the most capable models (October).
+note: >-
+  Often used interchangeably with parameters, though strictly biases and normalization scales are
+  parameters but not weights. Not to be confused with sample or class weights, which change how much
+  individual training examples count in the loss.
+see_also:
+  - parameter
+  - neural network
+  - open-weight model
+  - checkpoint
+  - weight initialization
+  - model weight security
+  - weight decay
+contrast:
+  - hyperparameter
+  - activation
+standards: US Executive Order 14110 (2023; revoked January 2025), §3(u) ('model weight')

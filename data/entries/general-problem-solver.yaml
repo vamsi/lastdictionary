@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: General Problem Solver
+id: general-problem-solver
+pos: prop. n.
+also:
+  - GPS
+domain: hist
+domains:
+  - sym
+labels:
+  - historical
+level: core
+plain: >-
+  A 1950s program meant to solve any well-defined puzzle by repeatedly comparing where it was with
+  where it wanted to be and choosing steps that closed the gap.
+senses:
+  - definition: >-
+      A program developed by [[allen-newell|Allen Newell]], Cliff Shaw and [[herbert-a-simon|Herbert
+      A. Simon]] from 1957 as an attempt at a domain-independent problem solver. Problems were posed
+      as objects, goals and operators that transform objects, and GPS attacked them by means–ends
+      analysis: find the most important difference between the current state and the goal, select an
+      operator relevant to reducing it, and, if that operator cannot yet be applied, set up a
+      subgoal of making it applicable. The key design choice was to keep that strategy fixed and
+      feed in each task's knowledge as data — tables of differences and of the operators that reduce
+      them — so one program could take on logic proofs, the Tower of Hanoi and river-crossing
+      puzzles. It shaped later [[automated-planning|automated planning]], including the
+      [[strips|STRIPS]] planner, and cognitive architectures such as Soar; its limits were the labor
+      of formalizing real problems by hand and the [[combinatorial-explosion|combinatorial
+      explosion]] of search on larger ones.
+    example: >-
+      GPS showed that one search strategy could work across many puzzles, provided someone first
+      described each puzzle for it.
+origin: >-
+  Introduced in Newell, Shaw and Simon's 'Report on a General Problem-Solving Program', presented at
+  the International Conference on Information Processing in Paris in 1959. It grew out of the
+  [[logic-theorist|Logic Theorist]] and from the authors' think-aloud studies of how people solve
+  problems.
+year: 1957
+note: >-
+  Its generality covered only formalized, well-defined problems; the distance between that and
+  everyday problem solving became a lasting theme in critiques of [[symbolic-ai|symbolic AI]].
+see_also:
+  - Logic Theorist
+  - automated planning
+  - STRIPS
+  - symbolic AI
+  - heuristic
+  - physical symbol system hypothesis
+sources:
+  - text: >-
+      Newell, A., Shaw, J. C. & Simon, H. A. (1959). Report on a General Problem-Solving Program.
+      Proceedings of the International Conference on Information Processing, Paris: UNESCO.

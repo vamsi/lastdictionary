@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MMMU
+id: mmmu
+pos: prop. n.
+also:
+  - Massive Multi-discipline Multimodal Understanding
+  - MMMU-Pro
+domain: eval
+domains:
+  - percep
+  - llm
+level: core
+plain: >-
+  A test for AI models that understand pictures as well as text: 11,500 college-level questions
+  across 30 subjects, each built around one or more images such as a diagram, a musical score or a
+  chemical structure.
+senses:
+  - definition: >-
+      A multimodal benchmark of about 11,500 questions drawn from college textbooks, quizzes and
+      exams and organized into 30 subjects and 183 subfields under six broad disciplines: art and
+      design; business; health and medicine; humanities and social science; science; and technology
+      and engineering. Every question combines text with at least one image — 30 image types in all,
+      from sheet music and chemical structures to maps, tables and diagrams — so a model must both
+      read the picture correctly and apply expert subject knowledge; most items are multiple choice.
+      At release GPT-4V scored 56%, and Google's Gemini Ultra reported 59% weeks later, both well
+      below expert human performance; MMMU became the headline benchmark for
+      [[multimodal-large-language-model|multimodal models]] in launch reports. MMMU-Pro (2024)
+      hardened it by filtering out questions answerable from text alone, adding answer options and
+      embedding questions inside images.
+    example: The model gains five points on MMMU, mostly from better chart reading.
+origin: >-
+  Introduced by Xiang Yue, Yuansheng Ni and colleagues, led from Ohio State University and the
+  University of Waterloo, in November 2023, and presented at CVPR 2024. Its title frames it as a
+  benchmark for 'expert AGI'.
+year: 2023
+note: >-
+  Some questions can be answered from the text without looking at the image, which inflates scores
+  for language-only reasoning; MMMU-Pro was built to address this.
+see_also:
+  - multimodal large language model
+  - vision-language model
+  - visual question answering
+  - MMLU
+  - benchmark
+sources:
+  - text: >-
+      Yue, X., Ni, Y. et al. (2024). MMMU: A Massive Multi-discipline Multimodal Understanding and
+      Reasoning Benchmark for Expert AGI. CVPR 2024.
+    url: https://arxiv.org/abs/2311.16502

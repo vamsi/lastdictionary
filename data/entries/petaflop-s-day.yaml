@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: petaflop/s-day
+id: petaflop-s-day
+pos: n.
+also:
+  - pfs-day
+  - PF-day
+  - petaflop/s-days
+  - petaflop-day
+domain: hw
+domains:
+  - train
+level: specialist
+plain: >-
+  A unit of computing work: what a computer doing a thousand trillion calculations per second gets
+  done in one day. It is used to compare the cost of training AI models.
+senses:
+  - definition: >-
+      A unit of total computation equal to sustaining 10^15 operations per second for one day: 10^15
+      × 86,400 ≈ 8.64 × 10^19, conventionally rounded to about 10^20 [[flop|FLOP]]. It expressed
+      [[training-compute|training compute]] in manageable numbers before raw FLOP counts in
+      scientific notation became standard. The GPT-3 paper (2020), for example, reported about 3,640
+      petaflop/s-days for its 175-billion-parameter model (≈3.14 × 10^23 FLOP). OpenAI's convention
+      counted the operations performed by the neural network itself, not the hardware's peak
+      capacity over the period.
+origin: >-
+  Used as the headline unit of Dario Amodei and Danny Hernandez's OpenAI post 'AI and Compute' (May
+  2018), which charted landmark systems in petaflop/s-days, and adopted in OpenAI papers such as the
+  GPT-3 report (2020).
+year: 2018
+note: >-
+  Largely superseded by plain FLOP counts (e.g., 3 × 10^23 FLOP), which regulators also use.
+see_also:
+  - FLOP
+  - training compute
+  - compute
+  - GPU-hour
+sources:
+  - text: Amodei, D. & Hernandez, D. (2018). AI and Compute. OpenAI blog.
+    url: https://openai.com/index/ai-and-compute
+  - text: >-
+      Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. arXiv:2005.14165.

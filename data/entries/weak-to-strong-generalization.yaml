@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: weak-to-strong generalization
+id: weak-to-strong-generalization
+pos: n.
+also:
+  - W2SG
+  - weak-to-strong
+  - weak-to-strong learning
+domain: safety
+domains:
+  - train
+  - ml
+level: specialist
+plain: >-
+  The finding that a strong AI trained only on answers from a weaker, error-prone teacher can end up
+  outperforming that teacher — studied as a stand-in for humans supervising smarter-than-human AI.
+senses:
+  - definition: >-
+      The tendency of a capable model to surpass its teacher when its only training signal is the
+      imperfect labels of a weaker model, and the experimental paradigm built to measure that
+      effect. It is offered as an analogy for [[superalignment|superalignment]] — humans (weak)
+      overseeing superhuman models (strong). A [[pretraining|pretrained]] GPT-4-class model is, for
+      example, fine-tuned on labels from a GPT-2-class model, and the result is scored by
+      performance gap recovered (PGR): the fraction of the gap between the weak supervisor and a
+      strong 'ceiling' model trained on ground truth that the student closes. Naive fine-tuning
+      recovered part of the gap on language classification tasks, less on chess puzzles and little
+      on reward modeling; adding a loss term that let the student trust its own confident
+      predictions over the supervisor's labels brought the GPT-4-class student close to GPT-3.5
+      level on the language tasks, and bootstrapping through intermediate-sized models helped on
+      chess. Critics note that a weak model's errors are an imperfect proxy for human errors, and
+      that students can learn to imitate their supervisor's mistakes.
+    example: >-
+      With the confidence loss, PGR on the classification tasks rose sharply, but reward modeling
+      barely moved.
+origin: >-
+  Introduced by Collin Burns, Pavel Izmailov, Jan Hendrik Kirchner, Jan Leike, Ilya Sutskever and
+  colleagues on OpenAI's Superalignment team in December 2023, alongside a grants program for
+  follow-up research.
+year: 2023
+note: >-
+  Related to, but distinct from, [[weak-supervision|weak supervision]] in classical machine
+  learning, where cheap noisy labeling heuristics stand in for hand labels; here the point is the
+  capability gap between supervisor and student. The reverse direction is
+  [[knowledge-distillation|knowledge distillation]].
+see_also:
+  - scalable oversight
+  - superalignment
+  - eliciting latent knowledge
+  - sandwiching
+  - weak supervision
+  - knowledge distillation
+contrast:
+  - knowledge distillation
+sources:
+  - text: >-
+      Burns, C., Izmailov, P., Kirchner, J. H. et al. (2023). Weak-to-Strong Generalization:
+      Eliciting Strong Capabilities With Weak Supervision. arXiv:2312.09390.
+    url: https://arxiv.org/abs/2312.09390

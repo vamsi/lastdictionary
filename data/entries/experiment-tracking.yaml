@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: experiment tracking
+id: experiment-tracking
+pos: n.
+also:
+  - ML experiment tracking
+  - experiment management
+  - run tracking
+domain: eng
+domains:
+  - ml
+  - train
+level: core
+plain: >-
+  Keeping an automatic logbook of every model-training attempt — settings, data, code and results —
+  so a team can compare attempts, repeat the good ones and see what changed.
+senses:
+  - definition: >-
+      The systematic recording of each [[training-run|training run]] or evaluation run in
+      machine-learning development, together with everything needed to compare and reproduce it:
+      [[hyperparameter|hyperparameters]], code version, data and environment details, metrics over
+      time such as [[loss-function|loss]] curves and validation scores, hardware usage, and output
+      artifacts such as [[checkpoint|checkpoints]], plots and sample predictions. Tracking tools
+      capture this through a few lines of instrumentation, store it centrally and provide dashboards
+      to filter, chart and compare runs, often integrated with
+      [[hyperparameter-tuning|hyperparameter sweeps]] and a [[model-registry|model registry]].
+      Because results depend on many interacting settings, tracking replaces spreadsheets and file
+      names such as 'final_v3_really_final' as the team's memory, and supports audit by showing how
+      a deployed model was produced. Widely used tools include [[mlflow|MLflow]],
+      [[weights-biases|Weights & Biases]], TensorBoard, Comet and Neptune.
+    example: >-
+      Check the experiment tracking dashboard before rerunning; someone already tried that learning
+      rate last week.
+origin: >-
+  Researchers long kept paper or spreadsheet lab notebooks. Dedicated software arrived in the
+  mid-2010s: TensorBoard (2015) visualized training curves, the open-source Sacred tool logged
+  experiment configurations, and trackers such as Comet, [[weights-biases|Weights & Biases]] and
+  [[mlflow|MLflow]] Tracking (the last two launched in 2018) made the practice standard.
+see_also:
+  - MLflow
+  - Weights & Biases
+  - model registry
+  - hyperparameter tuning
+  - MLOps
+  - training run

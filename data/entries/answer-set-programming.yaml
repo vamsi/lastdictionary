@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: answer set programming
+id: answer-set-programming
+pos: n.
+also:
+  - ASP
+  - stable model semantics
+  - answer set
+  - stable model
+  - clingo
+domain: sym
+level: specialist
+plain: >-
+  A way to solve hard puzzles and scheduling problems by describing in logical rules what a valid
+  solution looks like; a solver then finds the arrangements that fit those rules.
+senses:
+  - definition: >-
+      A form of [[logic-programming|logic programming]] for combinatorial search in which the
+      programmer describes what counts as a solution and a solver computes the program's stable
+      models, also called answer sets, each of which encodes one solution. A program consists of
+      rules with default negation ('not'), and often disjunction, integrity constraints that rule
+      out unwanted solutions, choice rules and aggregates; each stable model is a self-supporting
+      set of beliefs justified by the rules. Unlike [[prolog|Prolog]], ASP is not executed by proof
+      search: a grounder replaces variables with constants, and a solver closely related to
+      conflict-driven [[boolean-satisfiability-problem|SAT]] solvers computes the answer sets, as in
+      the Potsdam system clingo. Its [[non-monotonic-reasoning|non-monotonic reasoning]] handles
+      defaults and exceptions naturally, and it is used for scheduling, product configuration,
+      planning, robotics and bioinformatics.
+origin: >-
+  Michael Gelfond and Vladimir Lifschitz defined the stable model semantics in 1988. Using stable
+  models as a general problem-solving paradigm was proposed in 1999 by Victor Marek and Mirosław
+  Truszczyński and by Ilkka Niemelä. The name 'answer set programming' came into use around the same
+  time, and Lifschitz's papers did much to spread it.
+year: 1999
+see_also:
+  - logic programming
+  - non-monotonic reasoning
+  - Boolean satisfiability problem
+  - constraint satisfaction problem
+  - closed-world assumption
+  - Prolog
+sources:
+  - text: >-
+      Gelfond, M. & Lifschitz, V. (1988). The Stable Model Semantics for Logic Programming.
+      Proceedings of the 5th International Conference and Symposium on Logic Programming.
+  - text: Lifschitz, V. (2019). Answer Set Programming. Springer.

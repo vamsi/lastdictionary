@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: convergence
+id: convergence
+pos: n.
+also:
+  - converge
+  - convergence rate
+  - trained to convergence
+domain: dl
+domains:
+  - math
+  - ml
+level: core
+plain: >-
+  The point at which training settles down and further steps no longer meaningfully improve the
+  model — and, in theory, a guarantee that a method will reach a solution, and how fast.
+senses:
+  - context: Optimization theory
+    definition: >-
+      The property that the iterates of an optimization algorithm approach a solution — a minimizer,
+      a stationary point where the gradient vanishes, or a target loss value — as the number of
+      steps grows, together with the rate at which they do so. For [[gradient-descent|gradient
+      descent]] on smooth convex functions the error falls as O(1/t), with Nesterov
+      [[momentum|momentum]] O(1/t²), and geometrically under strong convexity;
+      [[stochastic-gradient-descent|stochastic gradient descent]] on convex problems achieves
+      O(1/√t) with decaying step sizes. For the non-convex losses of neural networks, guarantees
+      usually cover only reaching an approximately stationary point (for SGD, gradient norm below ε
+      within on the order of ε⁻⁴ steps), not a global minimum, although sufficiently wide networks
+      provably reach zero training loss in some regimes (see [[neural-tangent-kernel|neural tangent
+      kernel]]).
+  - context: Practice
+    definition: >-
+      The informal state in which a [[training-run|training run]]'s [[loss-curve|loss curve]] has
+      flattened, so further steps yield negligible improvement in training or validation loss;
+      'trained to convergence' contrasts with runs stopped early for budget reasons. Apparent
+      convergence can mislead: plateaus may precede sudden drops, [[grokking|grokking]] can arrive
+      long after training accuracy saturates, and a [[learning-rate-schedule|learning rate
+      schedule]] that decays to zero flattens the curve whether or not more learning was possible.
+    example: The 7B model had not converged after 2 trillion tokens; loss was still falling.
+origin: >-
+  Convergence of iterative numerical methods has been analyzed since the nineteenth century; for
+  stochastic methods, Herbert Robbins and Sutton Monro (1951) proved convergence under decaying step
+  sizes. Complexity bounds for first-order methods were systematized by Arkadi Nemirovski, David
+  Yudin and Yurii Nesterov from the late 1970s.
+note: >-
+  [[scaling-laws|Scaling laws]] changed practice: compute-efficient language-model training
+  deliberately stops well short of convergence for a given model size, or
+  [[overtraining|overtrains]] small models to make inference cheaper.
+see_also:
+  - gradient descent
+  - stochastic gradient descent
+  - loss curve
+  - learning curve
+  - early stopping
+  - overtraining
+  - local minimum
+sources:
+  - text: >-
+      Bottou, L., Curtis, F. E. & Nocedal, J. (2018). Optimization Methods for Large-Scale Machine
+      Learning. SIAM Review 60(2), 223–311.

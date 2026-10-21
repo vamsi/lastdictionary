@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: activation patching
+id: activation-patching
+pos: n.
+also:
+  - interchange intervention
+  - causal patching
+  - denoising (patching)
+  - noising (patching)
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  An experiment that copies part of a model's internal state from its run on one input into its run
+  on another, to see which internal parts actually cause a change in the answer.
+senses:
+  - definition: >-
+      A causal intervention in which the [[activation|activations]] of a chosen component — a layer,
+      [[attention-head|attention head]], token position or feature — recorded on one input are
+      substituted into the model's forward pass on a different input, and the change in output is
+      measured. Typically a clean prompt and a corrupted prompt differing in one key detail are
+      used. Patching clean activations into the corrupted run (denoising) tests which components
+      suffice to restore the behavior; patching corrupted activations into the clean run (noising)
+      tests which are necessary. Effects are measured by metrics such as logit difference or the
+      probability of the correct answer, and sweeping over layers and positions localizes where
+      information is processed. Results depend on the choice of corruption (substituted prompts
+      versus added noise) and of metric, and patching learned subspaces rather than whole components
+      can produce [[interpretability-illusion|illusory]] effects. [[attribution-patching|attribution
+      patching]] approximates it cheaply with gradients.
+    example: >-
+      Patching the subject position at layers 10 to 15 restores most of the correct answer's
+      probability.
+origin: >-
+  Grew out of causal mediation analysis of language models by Jesse Vig and colleagues (2020),
+  interchange interventions in Atticus Geiger and colleagues' causal-abstraction work (2021) and the
+  causal tracing of Kevin Meng and colleagues (2022). The name, whose first user is not established,
+  was popularized from 2022 by Neel Nanda and others in mechanistic interpretability; Fred Zhang and
+  Nanda (ICLR 2024) and Stefan Heimersheim and Nanda (2024) codified best practices.
+year: 2022
+see_also:
+  - causal tracing
+  - path patching
+  - attribution patching
+  - ablation
+  - causal mediation analysis
+  - causal abstraction
+  - circuit
+sources:
+  - text: >-
+      Zhang, F. & Nanda, N. (2024). Towards Best Practices of Activation Patching in Language
+      Models: Metrics and Methods. ICLR 2024.
+  - text: >-
+      Heimersheim, S. & Nanda, N. (2024). How to use and interpret activation patching. arXiv
+      preprint.

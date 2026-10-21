@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Transformer Circuits Thread
+id: transformer-circuits-thread
+pos: prop. n.
+also:
+  - Transformer Circuits
+  - transformer-circuits.pub
+domain: orgs
+domains:
+  - interp
+  - llm
+level: specialist
+plain: >-
+  Anthropic's online publication for research on how language models work inside, presented as long
+  interactive web articles rather than conventional papers.
+senses:
+  - definition: >-
+      A web publication, hosted at transformer-circuits.pub, in which Anthropic's interpretability
+      team publishes its research on the [[mechanistic-interpretability|mechanistic
+      interpretability]] of [[transformer|transformer]] language models, usually as long interactive
+      articles released outside conventional peer review, together with shorter periodic 'Circuits
+      Updates'. Its papers introduced much of the field's working vocabulary: the
+      [[residual-stream|residual stream]] framing, [[qk-and-ov-circuits|QK and OV circuits]] and
+      [[induction-head|induction heads]] (2021–2022); [[superposition|superposition]] in toy models
+      (2022); [[sparse-autoencoder|sparse autoencoder]] [[dictionary-learning|dictionary learning]]
+      and [[monosemanticity|monosemanticity]] (2023), scaled to a production model in 2024;
+      [[crosscoder|crosscoders]] and [[model-diffing|model diffing]] (2024); and
+      [[circuit-tracing|circuit tracing]] with [[attribution-graph|attribution graphs]] (2025). Its
+      format and research program continue the Circuits thread begun in [[distill|Distill]].
+    example: >-
+      The new attribution-graph paper went up on the Transformer Circuits Thread before it reached
+      arXiv.
+origin: >-
+  Launched in December 2021 with 'A Mathematical Framework for Transformer Circuits' by Nelson
+  Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Chris Olah and colleagues at
+  [[anthropic|Anthropic]]; the name and format extend the 'threads' of linked articles pioneered by
+  Distill.
+year: 2021
+see_also:
+  - mechanistic interpretability
+  - Distill
+  - Anthropic
+  - induction head
+  - superposition
+  - sparse autoencoder
+  - circuit tracing
+sources:
+  - text: >-
+      Elhage, N. et al. (2021). A Mathematical Framework for Transformer Circuits. Transformer
+      Circuits Thread.
+  - text: >-
+      Ameisen, E. et al. (2025). Circuit Tracing: Revealing Computational Graphs in Language Models.
+      Transformer Circuits Thread.
+as_of: 2026-10

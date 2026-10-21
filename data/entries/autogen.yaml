@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AutoGen
+id: autogen
+pos: prop. n.
+also:
+  - AG2
+  - AutoGen Studio
+  - Microsoft Agent Framework
+  - Semantic Kernel
+domain: eng
+domains:
+  - agents
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free Microsoft software framework for building teams of AI agents that solve problems by
+  messaging one another, writing and running code, and asking people for help when needed.
+senses:
+  - definition: >-
+      An open-source [[microsoft-research|Microsoft Research]] framework that organizes a
+      [[multi-agent-system|multi-agent application]] as a conversation:
+      [[large-language-model|language-model]] agents, tool-running agents and people pass messages
+      to one another until the task is done. In the original design, 'conversable agents' — for
+      example an assistant agent that proposes solutions and a user-proxy agent that executes the
+      code it writes and reports the results, optionally consulting a human — converse in two-agent
+      chats or in group chats steered by a manager that picks the next speaker, a pattern that made
+      code-writing and code-executing loops easy to set up. Version 0.4 (January 2025) rebuilt the
+      framework on an asynchronous, event-driven actor model with layered APIs (Core, AgentChat and
+      Extensions) and a no-code AutoGen Studio. In October 2025 Microsoft announced Microsoft Agent
+      Framework, building on AutoGen and its Semantic Kernel SDK, as the successor for new
+      development, and AutoGen moved to community-managed maintenance mode.
+    example: >-
+      In AutoGen we paired a coding agent with an executor agent that ran each script in a Docker
+      sandbox.
+origin: >-
+  Developed by Chi Wang, Qingyun Wu and colleagues, initially inside Microsoft's FLAML automated
+  machine-learning library, and described in an August 2023 paper; it quickly became one of the most
+  popular multi-agent frameworks. In late 2024 some of its original developers continued the earlier
+  design in a fork named AG2.
+year: 2023
+note: >-
+  An example of an [[agent-framework|agent framework]]; compare [[langgraph|LangGraph]] (explicit
+  graphs) and [[crewai|CrewAI]] (role-based crews). AutoGen versions 0.2 and 0.4 differ
+  substantially.
+see_also:
+  - agent framework
+  - multi-agent system
+  - LangGraph
+  - CrewAI
+  - orchestration
+  - AI agent
+sources:
+  - text: >-
+      Wu, Q. et al. (2023). AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent
+      Conversation. arXiv:2308.08155.
+as_of: 2026-10

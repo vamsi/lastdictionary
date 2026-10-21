@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: secure aggregation
+id: secure-aggregation
+pos: n.
+also:
+  - SecAgg
+  - secure aggregation protocol
+domain: sec
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  A cryptographic trick that lets a server add up updates from many devices while learning only the
+  total, never any single device's contribution.
+senses:
+  - definition: >-
+      A cryptographic protocol, a special case of [[secure-multi-party-computation|secure
+      multi-party computation]], by which many clients jointly reveal the sum of their private
+      vectors to a server while each vector on its own stays hidden. In the standard construction,
+      each pair of clients agrees on random masks that one adds and the other subtracts, so the
+      masks cancel in the total; secret-sharing of mask seeds lets the server finish the sum even
+      when some clients drop out mid-round. In [[federated-learning|federated learning]] it hides
+      each device's model update from the server, and combined with
+      [[differential-privacy|differential privacy]] noise it limits what the aggregate itself can
+      reveal. It does not stop malicious clients from submitting poisoned updates; indeed, it makes
+      them harder to inspect.
+    example: >-
+      With secure aggregation enabled, the server saw only the summed update from the 500 phones in
+      each round.
+origin: >-
+  Keith Bonawitz and colleagues at Google introduced the practical protocol in 'Practical Secure
+  Aggregation for Privacy-Preserving Machine Learning' (ACM CCS 2017), designed for mobile federated
+  learning; later work cut its per-client overhead to grow only polylogarithmically with the number
+  of clients.
+year: 2017
+see_also:
+  - federated learning
+  - secure multi-party computation
+  - differential privacy
+  - local differential privacy
+  - gradient inversion attack
+sources:
+  - text: >-
+      Bonawitz, K. et al. (2017). Practical Secure Aggregation for Privacy-Preserving Machine
+      Learning. ACM CCS 2017.

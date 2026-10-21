@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sigmoid function
+id: sigmoid-function
+pos: n.
+also:
+  - logistic function
+  - logistic sigmoid
+  - sigmoid
+  - squashing function
+  - expit
+domain: dl
+domains:
+  - math
+  - ml
+level: core
+plain: >-
+  An S-shaped curve that squeezes any number into a value between 0 and 1, so the result can be read
+  as a probability or as how far a switch is turned on.
+senses:
+  - definition: >-
+      In machine learning, usually the logistic function σ(x) = 1/(1 + e^(−x)), which maps any real
+      number into the open interval (0, 1), is symmetric about the point (0, ½) and has derivative
+      σ(x)(1 − σ(x)), at most ¼. It is the inverse of the [[logit|logit]], so it converts log-odds
+      into probabilities: it is the link function of [[logistic-regression|logistic regression]],
+      the output activation of [[binary-classification|binary]] and
+      [[multilabel-classification|multilabel]] classifiers, and the gate nonlinearity in
+      [[long-short-term-memory|LSTMs]], [[gated-recurrent-unit|GRUs]] and
+      [[gated-linear-unit|GLUs]]. As a hidden-layer [[activation-function|activation function]],
+      standard from the 1980s to the 2000s, it fell out of favor because it saturates, so gradients
+      vanish for large |x|, and its outputs are not zero-centered. More broadly, 'sigmoid' names any
+      S-shaped function, including [[tanh|tanh]], the arctangent and the normal cumulative
+      distribution function.
+    example: >-
+      Apply a sigmoid to each output separately, since an image can carry several labels at once.
+formula_latex: \sigma(x) = \frac{1}{1 + e^{-x}}
+origin: >-
+  Pierre-François Verhulst introduced the logistic function in 1838 to model population growth and
+  named it 'logistique' in the mid-1840s. Raymond Pearl and Lowell Reed revived it for population
+  studies in 1920, Joseph Berkson's bioassay work (1944) made it central to statistics, and
+  backpropagation in the 1980s made it the standard neural-network activation.
+year: 1838
+note: >-
+  Not to be confused with [[softmax|softmax]], its multiclass generalization: a two-class softmax
+  equals a sigmoid of the difference of the two logits.
+see_also:
+  - logit
+  - logistic regression
+  - tanh
+  - softmax
+  - activation function
+  - vanishing gradient problem
+contrast:
+  - softmax
+  - ReLU

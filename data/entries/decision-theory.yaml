@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decision theory
+id: decision-theory
+pos: n.
+also:
+  - decision-theoretic
+  - statistical decision theory
+  - rational choice theory
+  - causal decision theory
+  - evidential decision theory
+  - functional decision theory
+  - CDT
+  - EDT
+  - FDT
+  - Newcomb's problem
+domain: math
+domains:
+  - safety
+  - rl
+  - mind
+level: specialist
+plain: >-
+  The study of how to make the best choice when outcomes are uncertain, by weighing how likely each
+  result is against how much it matters.
+senses:
+  - definition: >-
+      The study of choice under uncertainty, combining [[probability|probability]] (what is likely)
+      with [[utility-function|utility]] (what is wanted). Normative decision theory prescribes the
+      act with the highest expected utility; its foundations, the axioms of von Neumann and
+      Morgenstern and of Leonard Savage, also imply that a coherent decision-maker's beliefs behave
+      like probabilities. Statistical decision theory, due to Abraham Wald, treats estimation and
+      testing as choices that minimize expected loss, giving the vocabulary of loss, risk and
+      Bayes-optimal decisions used throughout machine learning — for example, setting a
+      classification threshold to minimize expected cost. In AI, decision theory underlies
+      rational-agent design, [[markov-decision-process|Markov decision processes]] and
+      [[reinforcement-learning|reinforcement learning]], [[bayesian-optimization|Bayesian
+      optimization]] and value-of-information calculations in [[active-learning|active learning]];
+      descriptive decision theory studies how people actually choose, including systematic
+      deviations such as loss aversion.
+    example: >-
+      Decision theory says flag the transaction when the expected cost of fraud exceeds the cost of
+      a review.
+  - context: AI alignment
+    definition: >-
+      A debate over which decision rule an idealized agent should follow when its choices are
+      correlated with predictions of them, as in Newcomb's problem. Causal decision theory (CDT)
+      evaluates acts by their causal consequences, evidential decision theory (EDT) by what they
+      indicate, and functional decision theory (FDT), proposed by Eliezer Yudkowsky and Nate Soares
+      in 2017, by the output of the decision procedure itself. How far this matters for real AI
+      systems is disputed.
+    labels:
+      - contested
+origin: >-
+  Rooted in Blaise Pascal's wager and Daniel Bernoulli's expected utility (1738), the field took
+  modern form with Frank Ramsey's 'Truth and Probability' (1926), von Neumann and Morgenstern
+  (1944–1947), Abraham Wald's Statistical Decision Functions (1950) and Leonard Savage's The
+  Foundations of Statistics (1954). Robert Nozick's 1969 analysis of Newcomb's problem launched the
+  causal–evidential debate.
+see_also:
+  - utility function
+  - expected value
+  - Bayesian inference
+  - Markov decision process
+  - game theory
+  - probability
+sources:
+  - text: Savage, L. J. (1954). The Foundations of Statistics. Wiley.
+  - text: >-
+      Yudkowsky, E. & Soares, N. (2017). Functional Decision Theory: A New Theory of Instrumental
+      Rationality. arXiv preprint.

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlphaFold
+id: alphafold
+pos: prop. n.
+also:
+  - AlphaFold 2
+  - AlphaFold2
+  - AlphaFold 3
+  - AlphaFold Protein Structure Database
+domain: hist
+domains:
+  - dl
+labels:
+  - trademark
+level: core
+plain: >-
+  A DeepMind AI system that predicts the 3D shape of proteins from their chemical sequence, often
+  about as accurately as laboratory experiments. It cracked a problem biologists had worked on for
+  50 years and won a Nobel Prize.
+senses:
+  - definition: >-
+      A series of [[deep-learning|deep learning]] systems from [[deepmind|DeepMind]] (now
+      [[google-deepmind|Google DeepMind]]) for predicting the three-dimensional structure of
+      proteins. AlphaFold 2, which dominated the CASP14 assessment in November 2020 with a median
+      accuracy score (GDT) of about 92 out of 100, comparable to experimental methods for many
+      targets, takes an amino-acid sequence plus aligned sequences of related proteins, refines
+      representations of residue pairs with an attention-based trunk called the Evoformer, and
+      outputs atomic coordinates with per-residue confidence estimates, trained end to end on
+      structures from the Protein Data Bank. In 2021 DeepMind released the code and, with EMBL's
+      European Bioinformatics Institute, launched a database that by 2022 held predicted structures
+      for over 200 million proteins, nearly every catalogued protein. AlphaFold 3 (May 2024, with
+      Isomorphic Labs) adds a [[diffusion-model|diffusion]]-based module to predict complexes of
+      proteins with DNA, RNA, small molecules and ions.
+    example: >-
+      We used the AlphaFold prediction as a starting model before turning to the cryo-EM data.
+origin: >-
+  The first AlphaFold won the CASP13 assessment in December 2018. AlphaFold 2 was described by John
+  Jumper and colleagues in Nature in July 2021. [[demis-hassabis|Demis Hassabis]] and Jumper shared
+  half of the 2024 Nobel Prize in Chemistry for the work.
+year: 2020
+note: >-
+  AlphaFold predicts static structures and is less reliable for disordered regions, conformational
+  changes and some complexes; it does not simulate the physical folding process. See
+  [[nobel-prizes-for-ai|Nobel Prizes for AI]].
+see_also:
+  - Nobel Prizes for AI
+  - Google DeepMind
+  - Demis Hassabis
+  - deep learning
+  - diffusion model
+  - AlphaGo
+sources:
+  - text: >-
+      Jumper, J. et al. (2021). Highly Accurate Protein Structure Prediction with AlphaFold. Nature
+      596, 583–589.
+  - text: >-
+      Abramson, J. et al. (2024). Accurate Structure Prediction of Biomolecular Interactions with
+      AlphaFold 3. Nature 630, 493–500.
+as_of: 2026-10

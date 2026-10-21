@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: automated planning
+id: automated-planning
+pos: n.
+also:
+  - AI planning
+  - classical planning
+  - planner
+  - planning as satisfiability
+  - Graphplan
+  - partial-order planning
+  - International Planning Competition
+domain: sym
+domains:
+  - agents
+  - robot
+level: core
+plain: >-
+  The branch of AI that works out a sequence of actions to reach a goal, such as the steps a robot
+  must take to assemble a part, from descriptions of what each action needs and what it changes.
+senses:
+  - definition: >-
+      The subfield of AI concerned with computing plans — sequences, partial orders or policies of
+      actions — that transform an initial state into one satisfying a goal, given a model of the
+      available actions. In classical planning, states are sets of logical facts and each action has
+      preconditions and effects, written in formalisms such as [[strips|STRIPS]] or
+      [[planning-domain-definition-language|PDDL]]; deciding whether a plan exists is
+      PSPACE-complete. Domain-independent planners search forward with automatically derived
+      [[heuristic|heuristics]] (as in the FF and Fast Downward planners), compile planning into
+      [[boolean-satisfiability-problem|SAT]], build planning graphs or refine partial-order plans,
+      while [[hierarchical-task-network|hierarchical task network]] planners decompose tasks using
+      expert recipes. Extensions handle time, resources, numbers, uncertainty (via
+      [[markov-decision-process|Markov decision processes]]) and multiple agents. Planning runs
+      spacecraft operations, logistics and robots; [[large-language-model|language-model]] agents
+      often pair an LLM with a symbolic planner or plan validator because LLMs alone produce
+      unreliable long plans.
+    example: >-
+      We gave the planner the PDDL domain and it returned a 37-step plan that the validator accepted.
+origin: >-
+  Grew from Newell, Shaw and Simon's [[general-problem-solver|General Problem Solver]] (1959), John
+  McCarthy's [[situation-calculus|situation calculus]] (1963) and [[strips|STRIPS]] (1971).
+  Partial-order planning (Earl Sacerdoti's NOAH, 1975), SAT-based planning (Henry Kautz and Bart
+  Selman, 1992) and Graphplan (Avrim Blum and Merrick Furst, 1995) followed; the International
+  Planning Competition began in 1998 and the ICAPS conference in 2003.
+note: >-
+  Distinct from [[motion-planning|motion planning]] and [[path-planning|path planning]] in robotics,
+  which compute geometric trajectories, though task-and-motion planning combines them. In agent
+  engineering, 'planning' often means a language model drafting steps in prose
+  ([[plan-and-execute|plan-and-execute]]), without the correctness guarantees of a formal planner.
+see_also:
+  - STRIPS
+  - Planning Domain Definition Language
+  - hierarchical task network
+  - state space search
+  - situation calculus
+  - Markov decision process
+  - plan-and-execute
+contrast:
+  - motion planning
+sources:
+  - text: >-
+      Ghallab, M., Nau, D. & Traverso, P. (2004). Automated Planning: Theory and Practice. Morgan
+      Kaufmann.
+  - text: >-
+      Bylander, T. (1994). The Computational Complexity of Propositional STRIPS Planning. Artificial
+      Intelligence 69(1–2), 165–204.

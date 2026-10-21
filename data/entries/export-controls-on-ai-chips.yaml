@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: export controls on AI chips
+id: export-controls-on-ai-chips
+pos: n.
+also:
+  - AI chip export controls
+  - chip export controls
+  - advanced computing export controls
+  - semiconductor export controls
+domain: gov
+domains:
+  - hw
+  - sec
+labels:
+  - legal
+  - contested
+level: essential
+plain: >-
+  Government rules that limit which countries and companies may buy the most advanced AI chips and
+  the machines used to make them. The United States uses them mainly to slow China's progress in AI.
+senses:
+  - definition: >-
+      Restrictions on exporting advanced AI [[ai-accelerator|accelerators]], the semiconductor
+      manufacturing equipment needed to make them and related technology, used chiefly by the United
+      States, with allied cooperation from the Netherlands and Japan, to slow China's military and
+      frontier-AI development. US rules, administered by the Commerce Department's Bureau of
+      Industry and Security (BIS), began on October 7, 2022 with controls on chips above performance
+      and interconnect-bandwidth thresholds; an October 2023 update switched to a 'total processing
+      performance' metric, closing gaps exploited by China-specific chips such as Nvidia's A800 and
+      H800, and later rules added [[high-bandwidth-memory|high-bandwidth memory]] (December 2024)
+      and more equipment. The [[ai-diffusion-rule|AI Diffusion Rule]] of January 2025 tried to
+      extend controls worldwide but was rescinded in May 2025. Policy then turned transactional:
+      after requiring licenses for Nvidia's H20 in April 2025, the administration let sales resume
+      in August in exchange for 15% of the revenue, and from mid-January 2026 Commerce reviewed
+      licenses for exports of H200- and MI325X-class chips to China case by case, subject to
+      conditions including volume caps and testing in the United States, with 25% of the value going
+      to the US government. The debate pits national security against market share and the risk of
+      accelerating China's domestic chip industry.
+    example: >-
+      Export controls on AI chips mean the lab must train on older accelerators or rent compute
+      abroad.
+origin: >-
+  Rooted in Cold War export-control regimes (COCOM, later the Wassenaar Arrangement) and US measures
+  against Huawei from 2019; the BIS rules of October 7, 2022 were the first controls aimed squarely
+  at AI computing.
+year: 2022
+note: >-
+  Enforcement contends with smuggling, shell companies and remote cloud access, for which chip
+  location verification and [[know-your-customer-for-compute|compute KYC]] are proposed fixes. China
+  has answered with its own controls on critical minerals and a push for domestic accelerators such
+  as Huawei's Ascend. Export-control powers also reach models: see [[export-control-directive|export
+  control directive]].
+see_also:
+  - AI Diffusion Rule
+  - compute governance
+  - on-chip governance mechanisms
+  - know-your-customer for compute
+  - export control directive
+  - CHIPS and Science Act
+  - Nvidia
+  - AI arms race
+sources:
+  - text: >-
+      Bureau of Industry and Security (2022). Commerce Implements New Export Controls on Advanced
+      Computing and Semiconductor Manufacturing Items to the People's Republic of China (PRC). Press
+      release, October 7, 2022.
+  - text: >-
+      Covington & Burling (2026). U.S. Commerce Department Revises License Review Policy for Exports
+      of Certain Advanced Computing Commodities to China and Macau. January 2026.
+    url: https://www.cov.com/en/news-and-insights/insights/2026/01/us-commerce-department-revises-license-review-policy-for-exports-of-certain-advanced-computing-commodities-to-china-and-macau
+standards: >-
+  US Export Administration Regulations (15 C.F.R. Parts 730–774), ECCNs 3A090 and 4A090 (advanced
+  computing items)
+as_of: 2026-10

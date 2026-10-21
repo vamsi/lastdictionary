@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Datalog
+id: datalog
+pos: prop. n.
+also:
+  - deductive database
+domain: sym
+domains:
+  - data
+level: specialist
+plain: >-
+  A small logic language for asking questions of a database with rules, including rules that refer
+  to themselves, such as 'X is an ancestor of Y if X is a parent of an ancestor of Y'.
+senses:
+  - definition: >-
+      A rule language for querying databases obtained by restricting [[prolog|Prolog]] to
+      function-free [[horn-clause|Horn clauses]]: with no function symbols to build new terms, every
+      program has a finite least model, computable bottom-up by [[forward-chaining|forward
+      chaining]], and every query terminates. Its main advantage over the original core of SQL is
+      natural support for recursion, such as transitive closure (reachability, ancestry). Efficient
+      engines use semi-naive evaluation, which joins only newly derived facts in each round, and
+      'magic sets' rewriting to focus computation on a query. Extensions add stratified negation,
+      aggregation and constraints. Datalog is used in deductive databases, static program analysis
+      (Soufflé; GitHub's CodeQL derives from it), access-control and network-policy languages, and
+      [[knowledge-graph|knowledge graph]] reasoning, and it is a common target language for
+      [[neuro-symbolic-ai|neuro-symbolic]] systems.
+    example: Writing the points-to analysis in Datalog took 200 lines instead of 20,000.
+origin: >-
+  The name, a blend of 'data' and 'logic', is generally credited to the database theorist David
+  Maier and was current by the mid-1980s. The underlying deductive-database research dates from the
+  1977 Toulouse workshop on logic and databases organized by Hervé Gallaire, Jack Minker and
+  Jean-Marie Nicolas.
+see_also:
+  - logic programming
+  - Horn clause
+  - Prolog
+  - forward chaining
+  - knowledge graph
+  - closed-world assumption
+sources:
+  - text: Gallaire, H. & Minker, J. (eds.) (1978). Logic and Data Bases. Plenum Press.
+  - text: >-
+      Ceri, S., Gottlob, G. & Tanca, L. (1989). What You Always Wanted to Know About Datalog (and
+      Never Dared to Ask). IEEE Transactions on Knowledge and Data Engineering 1(1), 146–166.

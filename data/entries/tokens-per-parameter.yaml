@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tokens per parameter
+id: tokens-per-parameter
+pos: n.
+also:
+  - token-to-parameter ratio
+  - tokens-per-parameter ratio
+  - data-to-model ratio
+  - D/N ratio
+domain: train
+domains:
+  - llm
+level: core
+plain: >-
+  How many pieces of text a language model reads during training for each adjustable number inside
+  it — a quick way to tell whether a model was trained on a little or a lot of data for its size.
+senses:
+  - definition: >-
+      The ratio D/N of training [[token|tokens]] to model parameters, a compact descriptor of where
+      a [[training-run|training run]] sits relative to compute-optimality. The
+      [[chinchilla-scaling-laws|Chinchilla scaling laws]] put the training-compute optimum for dense
+      transformers near 20. [[gpt-3|GPT-3]] (175 billion parameters, 300 billion tokens) sat below
+      2, while models built for cheap inference sit far above it: Meta's Llama 3 8B, trained on over
+      15 trillion tokens, is near 1,900. The ratio counts tokens seen, including repeats, so it says
+      nothing about data diversity; it depends on the [[tokenizer|tokenizer]], since a more
+      efficient one yields fewer tokens for the same text; and for
+      [[mixture-of-experts|mixture-of-experts]] models it is usually computed with active rather
+      than total parameters, a convention that varies.
+    example: >-
+      At roughly 300 tokens per parameter, the 7B model is heavily overtrained by Chinchilla
+      standards.
+formula_latex: r = \frac{D}{N}, \qquad r_{\text{Chinchilla}} \approx 20
+origin: >-
+  The ratio became standard shorthand after DeepMind's Chinchilla paper (Jordan Hoffmann et al.,
+  2022) implied about 20 tokens per parameter; the '20 tokens per parameter' rule of thumb spread in
+  2022–2023 as open models were deliberately trained far beyond it.
+year: 2022
+note: >-
+  A high ratio is not a defect: it usually signals [[overtraining|overtraining]] chosen to cut
+  inference cost. Ratios computed with different tokenizers, or for sparse models, are not directly
+  comparable.
+see_also:
+  - Chinchilla scaling laws
+  - compute-optimal training
+  - overtraining
+  - parameter count
+  - token
+  - data-constrained scaling

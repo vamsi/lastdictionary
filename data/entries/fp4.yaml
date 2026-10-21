@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FP4
+id: fp4
+pos: abbr.
+also:
+  - 4-bit floating point
+  - E2M1
+  - MXFP4
+  - NVFP4
+domain: hw
+domains:
+  - infer
+  - train
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A tiny 4-bit number format that can represent only sixteen different values. With clever scaling
+  tricks it lets the newest AI chips run, and even train, models faster and with less memory.
+senses:
+  - definition: >-
+      A 4-bit [[floating-point-format|floating-point format]], normally E2M1 (1 sign, 2 exponent and
+      1 significand bit), whose sixteen codes represent 0, ±0.5, ±1, ±1.5, ±2, ±3, ±4 and ±6 (with a
+      signed zero). Because so few values are available, FP4 is used only with block scaling, in
+      which small groups of values share a higher-precision scale factor: MXFP4 uses 32-element
+      blocks with a power-of-two scale (from the [[microscaling-formats|microscaling formats]]
+      specification), and Nvidia's NVFP4 uses 16-element blocks with an [[fp8|FP8]] scale plus a
+      per-tensor scale. Hardware support arrived with Nvidia's Blackwell GPUs (2024) and AMD's MI350
+      series (2025), roughly doubling throughput over FP8. FP4 is used mainly for
+      [[inference|inference]] — OpenAI released its gpt-oss open-weight models (August 2025) with
+      mixture-of-experts weights in MXFP4 — and research has demonstrated large-scale pretraining in
+      NVFP4.
+origin: >-
+  Four-bit integer and floating-point [[quantization|quantization]] of weights was studied from the
+  late 2010s; FP4 became a standard hardware format with the OCP microscaling specification
+  (September 2023) and Nvidia's Blackwell architecture (announced March 2024). Nvidia detailed its
+  NVFP4 variant in a technical blog post in June 2025.
+year: 2023
+note: >-
+  Not the same as INT4, an integer format with evenly spaced values; FP4's values cluster near zero,
+  which better matches the bell-shaped distribution of neural-network weights.
+see_also:
+  - FP8
+  - microscaling formats
+  - quantization
+  - floating-point format
+  - INT8
+  - post-training quantization
+sources:
+  - text: >-
+      NVIDIA (2025). Introducing NVFP4 for Efficient and Accurate Low-Precision Inference. NVIDIA
+      Technical Blog.
+    url: https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/
+as_of: 2026-10

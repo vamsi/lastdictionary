@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: John Schulman
+id: john-schulman
+sort_as: Schulman John
+pos: prop. n.
+domain: people
+domains:
+  - rl
+  - train
+  - llm
+level: core
+plain: >-
+  An American AI researcher who invented widely used reinforcement-learning algorithms such as PPO,
+  co-founded OpenAI, and led the post-training work behind ChatGPT.
+senses:
+  - definition: >-
+      American AI researcher, a co-founder of [[openai|OpenAI]] and of
+      [[thinking-machines-lab|Thinking Machines Lab]]. As a doctoral student of
+      [[pieter-abbeel|Pieter Abbeel]] at the University of California, Berkeley, he introduced
+      [[trust-region-policy-optimization|trust region policy optimization]] (2015) and
+      [[generalized-advantage-estimation|generalized advantage estimation]] (2015); at OpenAI he
+      created [[proximal-policy-optimization|proximal policy optimization]] (PPO, 2017), a simpler
+      [[policy-gradient|policy gradient]] method that became the default for
+      [[deep-reinforcement-learning|deep reinforcement learning]] and for the
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]] used
+      to train InstructGPT and [[chatgpt|ChatGPT]]. He led OpenAI's reinforcement-learning team and
+      later its post-training work, and is often described as an architect of ChatGPT. He
+      co-authored 'Concrete Problems in AI Safety' (2016). In August 2024 he left OpenAI for
+      [[anthropic|Anthropic]], saying he wanted to concentrate on alignment research, and in
+      February 2025 he joined Mira Murati in founding Thinking Machines Lab as its chief scientist.
+see_also:
+  - proximal policy optimization
+  - trust region policy optimization
+  - generalized advantage estimation
+  - reinforcement learning from human feedback
+  - ChatGPT
+  - Thinking Machines Lab
+sources:
+  - text: >-
+      Schulman, J., Levine, S., Moritz, P., Jordan, M. & Abbeel, P. (2015). Trust Region Policy
+      Optimization. ICML 2015.
+  - text: >-
+      Schulman, J., Wolski, F., Dhariwal, P., Radford, A. & Klimov, O. (2017). Proximal Policy
+      Optimization Algorithms. arXiv preprint.
+as_of: 2026-10

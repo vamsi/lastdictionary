@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dilated convolution
+id: dilated-convolution
+pos: n.
+also:
+  - atrous convolution
+  - convolution with holes
+  - dilation rate
+domain: dl
+domains:
+  - percep
+level: specialist
+plain: >-
+  A version of the scanning-window operation that spreads its weights apart with gaps, so it can
+  take in a wider area of an image or sound at no extra cost.
+senses:
+  - definition: >-
+      A [[convolution|convolution]] whose [[filter|filter]] taps are spaced d positions apart (the
+      dilation rate), so a kernel of size k spans d(k − 1) + 1 input positions without additional
+      parameters or computation; d = 1 is ordinary convolution. As Fisher Yu and Vladlen Koltun
+      emphasized, stacking layers whose dilation doubles (1, 2, 4, 8, …) widens the
+      [[receptive-field|receptive field]] exponentially with depth without any downsampling, which
+      suits dense prediction such as [[semantic-segmentation|semantic segmentation]] (the DeepLab
+      family) and long-range audio modeling ([[wavenet|WaveNet]]'s dilated causal convolutions). A
+      known artifact is 'gridding', in which sparse sampling misses neighboring inputs; mixing
+      dilation rates mitigates it.
+    example: >-
+      Ten layers of dilated convolutions give each output a receptive field of over a thousand
+      samples.
+origin: >-
+  From the 'algorithme à trous' (algorithm with holes) of wavelet signal processing, described by
+  Matthias Holschneider and colleagues in 1989. Liang-Chieh Chen and colleagues' DeepLab (December
+  2014) used the 'atrous' name for segmentation; Fisher Yu and Vladlen Koltun popularized 'dilated
+  convolutions' for multi-scale context (November 2015), and WaveNet (2016) applied them to audio.
+year: 2014
+see_also:
+  - convolution
+  - receptive field
+  - semantic segmentation
+  - WaveNet
+  - stride

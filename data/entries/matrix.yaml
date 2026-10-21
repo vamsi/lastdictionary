@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: matrix
+id: matrix
+pos: n.
+also:
+  - matrices
+domain: math
+domains:
+  - dl
+  - hw
+level: core
+plain: >-
+  A rectangular grid of numbers arranged in rows and columns. Most of what a neural network has
+  learned is stored in large grids like this.
+senses:
+  - definition: >-
+      A rectangular array of numbers with m rows and n columns (an m × n matrix), which represents a
+      [[linear-transformation|linear transformation]] from n-dimensional to m-dimensional space once
+      bases are chosen. Matrices can be added, scaled, transposed and multiplied; a square matrix
+      has a determinant and [[eigenvector|eigenvalues and eigenvectors]] and may have an inverse,
+      and any matrix's [[rank|rank]] says how many independent directions it preserves. In neural
+      networks the [[weights|weights]] of each fully connected [[layer|layer]] form a matrix, and
+      computation is dominated by [[matrix-multiplication|matrix multiplications]] between weight
+      matrices and batches of [[activation|activations]], which is why [[gpu|GPUs]] and [[tpu|TPUs]]
+      are built around fast matrix arithmetic. Special structures — diagonal, symmetric, orthogonal,
+      positive-definite, sparse or [[low-rank-approximation|low-rank]] — allow cheaper or more
+      stable computation.
+    example: >-
+      The query projection is a 4,096 × 4,096 matrix, about 16.8 million parameters on its own.
+origin: >-
+  James Joseph Sylvester coined 'matrix' (Latin for 'womb') in 1850 for a rectangular array from
+  which determinants could be formed. Arthur Cayley treated matrices as algebraic objects in their
+  own right, defining their product and inverse, in 'A Memoir on the Theory of Matrices' (1858).
+  Arrays of coefficients for solving linear equations are far older, appearing in China's Nine
+  Chapters on the Mathematical Art.
+year: 1850
+see_also:
+  - matrix multiplication
+  - linear transformation
+  - tensor
+  - vector
+  - eigenvector
+  - singular value decomposition
+  - rank
+  - linear algebra
+sources:
+  - text: >-
+      Cayley, A. (1858). A Memoir on the Theory of Matrices. Philosophical Transactions of the Royal
+      Society of London, 148.

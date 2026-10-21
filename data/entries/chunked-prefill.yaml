@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chunked prefill
+id: chunked-prefill
+pos: n.
+also:
+  - chunked prefills
+  - split prefill
+  - prefill chunking
+domain: infer
+domains:
+  - eng
+level: specialist
+plain: >-
+  A serving trick that splits the reading of a long prompt into smaller pieces and slots them
+  between other users' replies, so nobody's answer freezes while a huge document is read.
+senses:
+  - definition: >-
+      A scheduling technique that spreads the [[prefill|prefill]] of a long prompt over several
+      iterations, one slice of tokens at a time, and fills the rest of each iteration's batch with
+      [[decode-phase|decode]] steps of other running requests. A batch of prefill alone saturates
+      arithmetic while a batch of decodes alone is [[memory-bound|memory-bound]]; combining a
+      prefill slice with many decodes keeps both resources busy, so the decodes ride along at little
+      extra cost, the effect the SARATHI authors called piggybacking. Above all it caps how long any
+      single iteration can take, so a 100,000-token prompt no longer stalls every other user's token
+      stream, cutting tail [[time-per-output-token|time per output token]] at a modest cost in
+      [[time-to-first-token|time to first token]] for the chunked request; chunk size sets the
+      trade-off. It is a standard option in [[vllm|vLLM]], [[sglang|SGLang]] and TensorRT-LLM, and
+      the main alternative to separating the two phases through
+      [[disaggregated-serving|disaggregated serving]].
+    example: >-
+      Turning on chunked prefill with 2,048-token chunks removed the stutters users saw during long
+      uploads.
+origin: >-
+  Introduced by Amey Agrawal (Georgia Tech) and colleagues at Microsoft Research India in SARATHI
+  (arXiv, August 2023), which paired 'chunked prefills' with 'decode-maximal batching'; the
+  follow-up Sarathi-Serve appeared at OSDI 2024. DeepSpeed-FastGen announced a similar scheme,
+  'Dynamic SplitFuse', in late 2023.
+year: 2023
+see_also:
+  - prefill
+  - continuous batching
+  - disaggregated serving
+  - time per output token
+  - vLLM
+sources:
+  - text: >-
+      Agrawal, A., Panwar, A., Mohan, J., Kwatra, N., Gulavani, B. S. & Ramjee, R. (2023). SARATHI:
+      Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills. arXiv:2308.16369.
+    url: https://arxiv.org/abs/2308.16369

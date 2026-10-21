@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: arithmetic intensity
+id: arithmetic-intensity
+pos: n.
+also:
+  - operational intensity
+  - FLOP per byte
+  - compute intensity
+domain: hw
+domains:
+  - infer
+  - math
+level: specialist
+plain: >-
+  How much calculating a task does for each piece of data it fetches from memory. Tasks with little
+  calculation per fetch are slowed by memory, not by the chip's math speed.
+senses:
+  - definition: >-
+      The ratio of arithmetic operations performed to bytes moved between a processor and a given
+      level of memory, measured in [[flop|FLOP]] per byte. Comparing a kernel's arithmetic intensity
+      with a chip's machine balance — peak [[flops|FLOPS]] divided by [[memory-bandwidth|memory
+      bandwidth]] — shows whether it is compute-bound or memory-bound, as visualized by the
+      [[roofline-model|roofline model]]. An [[h100|H100]], with about 990 dense BF16 teraFLOPS and
+      3.35 TB/s, needs roughly 300 FLOP per byte to keep its [[tensor-core|tensor cores]] busy.
+      Large [[matrix-multiplication|matrix multiplications]] in training easily exceed that, but
+      [[decode-phase|decoding]] at batch size 1 performs about one multiply–add per 16-bit weight
+      read (≈1 FLOP per byte) and is therefore memory-bound. Batching, [[kernel-fusion|kernel
+      fusion]], tiling and [[flashattention|FlashAttention]] raise arithmetic intensity by reusing
+      each fetched value more times.
+    example: >-
+      At batch size one, decode has an arithmetic intensity near one FLOP per byte, so the tensor
+      cores mostly sit idle.
+formula_latex: I = \frac{\text{FLOP performed}}{\text{bytes moved}}
+origin: >-
+  A long-standing concept in numerical and stream computing; Samuel Williams, Andrew Waterman and
+  David Patterson formalized it as 'operational intensity' in the [[roofline-model|roofline model]]
+  (2009), and 'arithmetic intensity' is the more common name in GPU and AI practice.
+see_also:
+  - roofline model
+  - memory bandwidth
+  - memory wall
+  - FLOPS
+  - FlashAttention
+  - kernel fusion

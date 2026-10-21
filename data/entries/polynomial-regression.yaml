@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: polynomial regression
+id: polynomial-regression
+pos: n.
+also:
+  - polynomial fit
+  - curve fitting
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  Fitting a curve instead of a straight line by also using the square, cube and higher powers of an
+  input. Higher powers let the curve bend more but easily start chasing noise.
+senses:
+  - definition: >-
+      [[regression|Regression]] that fits the response with a degree-d polynomial of the input, y ≈
+      β₀ + β₁x + β₂x² + … + β_d x^d, or with several inputs as a sum of monomials including
+      interaction terms. Because the model is linear in its coefficients, it is a special case of
+      multiple [[linear-regression|linear regression]] on expanded features and can be fit by
+      [[ordinary-least-squares|ordinary least squares]]. The degree controls flexibility and is the
+      textbook illustration of the [[bias-variance-tradeoff|bias–variance tradeoff]]: low degrees
+      [[underfitting|underfit]], while high degrees [[overfitting|overfit]], oscillate between data
+      points (Runge's phenomenon) and extrapolate badly. Raw powers are strongly correlated, so
+      orthogonal polynomials or [[regularization|regularization]] are used in practice; splines,
+      which join low-degree pieces smoothly, usually behave better.
+    example: >-
+      A degree-9 polynomial regression passes through all ten training points and is useless on new
+      ones.
+origin: >-
+  Joseph Diez Gergonne's 1815 paper on choosing observations for fitting polynomials by least
+  squares is cited as the first design of experiments for polynomial regression; Kirstine Smith's
+  1918 Biometrika paper on the precision of fitted polynomials is a founding work of optimal design.
+  The fitting method itself rests on Legendre's (1805) and Gauss's (1809) least squares.
+year: 1815
+see_also:
+  - linear regression
+  - overfitting
+  - underfitting
+  - bias–variance tradeoff
+  - regularization
+  - ordinary least squares
+sources:
+  - text: >-
+      Gergonne, J. D. (1815). Application de la méthode des moindres quarrés à l'interpolation des
+      suites. Annales de Mathématiques Pures et Appliquées, 6, 242–252. English translation in
+      Historia Mathematica, 1 (1974).

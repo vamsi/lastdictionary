@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: super-resolution
+id: super-resolution
+pos: n.
+also:
+  - SR
+  - image super-resolution
+  - single-image super-resolution
+  - upscaling
+  - AI upscaling
+  - SRGAN
+domain: gen
+domains:
+  - percep
+level: core
+plain: >-
+  Making a small or blurry image larger and sharper by having AI fill in plausible fine detail,
+  rather than just stretching the pixels.
+senses:
+  - context: Machine learning
+    definition: >-
+      The task of producing a high-resolution image, video or audio signal from a lower-resolution
+      input. Single-image super-resolution is ill-posed — many sharp images share the same
+      low-resolution version — so learned models supply plausible detail from the statistics of
+      their training data. Early networks such as SRCNN (2014) minimized pixel error and produced
+      over-smooth results; SRGAN (2016) added adversarial and [[perceptual-loss|perceptual losses]]
+      for realistic texture; and diffusion upscalers such as SR3 (2021) iteratively refine noise
+      conditioned on the low-resolution input. Super-resolution stages form the cascades of models
+      such as [[imagen|Imagen]], power 'upscale' features in image tools, and run in real time in
+      video games. Because the added detail is invented, outputs can contain
+      [[hallucination|hallucinated]] features, so learned upscaling is unsuitable as evidence or for
+      medical diagnosis without great care.
+    example: Run the 4× super-resolution pass last, after the face fixes.
+  - context: Imaging
+    definition: >-
+      In optics, microscopy and remote sensing, techniques that recover detail beyond a system's
+      nominal resolution limit — for example by fusing several frames shifted by fractions of a
+      pixel, or, in super-resolution fluorescence microscopy, by localizing individual fluorescent
+      molecules more precisely than the diffraction limit would otherwise allow.
+origin: >-
+  The term is older than deep learning: multi-frame image super-resolution was studied in signal
+  processing from the 1980s, and super-resolved fluorescence microscopy earned the 2014 Nobel Prize
+  in Chemistry. Chao Dong and colleagues' SRCNN (ECCV 2014) opened the deep-learning era of the
+  task.
+see_also:
+  - image-to-image translation
+  - perceptual loss
+  - diffusion model
+  - generative adversarial network
+  - hallucination
+  - Imagen
+sources:
+  - text: >-
+      Dong, C., Loy, C. C., He, K. & Tang, X. (2016). Image Super-Resolution Using Deep
+      Convolutional Networks. IEEE TPAMI. arXiv:1501.00092.
+    url: https://arxiv.org/abs/1501.00092
+  - text: >-
+      Ledig, C. et al. (2017). Photo-Realistic Single Image Super-Resolution Using a Generative
+      Adversarial Network. CVPR 2017. arXiv:1609.04802.
+    url: https://arxiv.org/abs/1609.04802
+  - text: >-
+      Saharia, C. et al. (2021). Image Super-Resolution via Iterative Refinement. arXiv:2104.07636.
+    url: https://arxiv.org/abs/2104.07636

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gymnasium
+id: gymnasium
+pos: prop. n.
+also:
+  - OpenAI Gym
+  - Gym
+  - gym.Env
+domain: rl
+domains:
+  - eng
+  - eval
+level: core
+plain: >-
+  A free software library that gives reinforcement learning programs one standard way to plug into
+  practice tasks, from simple games to simulated robots, so methods can be tried on identical
+  problems. It succeeded OpenAI's Gym.
+senses:
+  - definition: >-
+      The Farama Foundation's open-source Python library for plugging
+      [[reinforcement-learning|reinforcement learning]] code into the [[environment|environments]]
+      it trains in: it fixes the programming interface every environment must present and bundles
+      example environments of its own. An environment declares an observation space and an
+      [[action-space|action space]] and provides reset(), which starts an [[episode|episode]] and
+      returns the first observation, and step(action), which returns the next observation, the
+      [[reward|reward]], separate terminated and truncated flags (distinguishing a true end of the
+      task from a time limit) and diagnostic information. Bundled suites include classic control
+      (CartPole, Pendulum), Box2D, toy-text and [[mujoco|MuJoCo]] physics tasks, and the
+      [[arcade-learning-environment|Arcade Learning Environment]] is available as a plugin; wrappers
+      add preprocessing, recording and vectorized parallel execution. Because most RL libraries and
+      many third-party environments implement this API, it serves as the field's common language, as
+      OpenAI Gym did before it. Version 1.0 was released in October 2024.
+    example: >-
+      Any environment that follows the Gymnasium API can be dropped into our PPO trainer unchanged.
+origin: >-
+  OpenAI released Gym in April 2016, described in a June 2016 paper by Greg Brockman and colleagues.
+  After OpenAI stopped active development, volunteers led by Jordan Terry took over maintenance in
+  2021 and in October 2022 continued the project as Gymnasium under the nonprofit Farama Foundation;
+  Mark Towers and colleagues described it in a 2024 paper.
+year: 2022
+note: >-
+  Tutorials written for OpenAI Gym mostly work after replacing import gym with import gymnasium as
+  gym, but older code expecting step() to return four values rather than five breaks.
+see_also:
+  - environment
+  - Arcade Learning Environment
+  - MuJoCo
+  - RL environment
+  - benchmark
+  - action space
+sources:
+  - text: >-
+      Towers, M. et al. (2024). Gymnasium: A Standard Interface for Reinforcement Learning
+      Environments. arXiv:2407.17032.
+    url: https://arxiv.org/abs/2407.17032
+  - text: Brockman, G. et al. (2016). OpenAI Gym. arXiv:1606.01540.
+    url: https://arxiv.org/abs/1606.01540
+  - text: Farama Foundation. Gymnasium (source repository and releases).
+    url: https://github.com/Farama-Foundation/Gymnasium
+as_of: 2026-10

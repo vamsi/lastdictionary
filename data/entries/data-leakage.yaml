@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data leakage
+id: data-leakage
+pos: n.
+also:
+  - leakage
+  - target leakage
+  - train–test leakage
+  - leak
+  - look-ahead bias
+domain: ml
+domains:
+  - data
+  - eval
+level: core
+plain: >-
+  A mistake in building a model that lets it peek at clues it will not have in real use, such as
+  hints about the very answer it must predict, so it shines in testing and then disappoints.
+senses:
+  - definition: >-
+      A defect in how a model is built or evaluated: some signal reaches training, feature
+      construction or model selection that no deployed system could have at decision time, so test
+      results flatter the model. In target leakage an input effectively encodes the answer, often
+      because it is recorded only after the outcome, such as a 'treatment given' field in a model
+      meant to predict diagnosis. The other main route is a [[test-set|test set]] that is not truly
+      separate: the same patient, user or session on both sides of a split, duplicate or
+      near-duplicate records, random splits of a time series that let the model see the future
+      (look-ahead bias), or preprocessing, [[feature-selection|feature selection]] and
+      [[hyperparameter-tuning|hyperparameter tuning]] carried out before the data were split.
+      Prevention relies on splitting first and fitting every preprocessing step inside the training
+      data, on grouped and time-ordered [[cross-validation|cross-validation]], on deduplication, and
+      on asking of every feature whether it would be known at prediction time. In
+      [[large-language-model|large language model]] evaluation, the analogous problem of test items
+      appearing in training data is called [[data-contamination|data contamination]].
+    example: >-
+      The 0.99 AUC was data leakage: the cancellation-reason field is only filled in after a
+      customer has churned.
+origin: >-
+  Practitioners had long met the problem in data-mining competitions such as the KDD Cup. Shachar
+  Kaufman, Saharon Rosset and Claudia Perlich formalized it in 'Leakage in Data Mining: Formulation,
+  Detection, and Avoidance' (KDD 2011). In 2023 Sayash Kapoor and Arvind Narayanan documented
+  leakage-driven errors across hundreds of published studies that used machine learning in many
+  scientific fields.
+year: 2011
+note: >-
+  Not to be confused with data leakage in information security (unauthorized disclosure of sensitive
+  data) or with [[training-data-extraction|training data extraction]] attacks on models.
+see_also:
+  - test set
+  - cross-validation
+  - data contamination
+  - overfitting
+  - feature engineering
+  - training–serving skew
+  - generalization
+sources:
+  - text: >-
+      Kaufman, S., Rosset, S. & Perlich, C. (2011). Leakage in Data Mining: Formulation, Detection,
+      and Avoidance. Proc. KDD 2011.
+  - text: >-
+      Kapoor, S. & Narayanan, A. (2023). Leakage and the Reproducibility Crisis in
+      Machine-Learning-Based Science. Patterns 4(9).

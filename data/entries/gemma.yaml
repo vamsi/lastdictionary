@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gemma
+id: gemma
+pos: prop. n.
+also:
+  - Gemma 2
+  - Gemma 3
+  - Gemma 3n
+  - Gemma 4
+  - CodeGemma
+  - PaliGemma
+  - ShieldGemma
+  - MedGemma
+  - EmbeddingGemma
+  - Gemmaverse
+pronunciation: JEM-uh
+domain: llm
+domains:
+  - eng
+  - infer
+labels:
+  - trademark
+level: core
+plain: >-
+  Google's family of free-to-download AI language models: smaller relatives of its Gemini systems,
+  compact enough to run on a single computer and, in some versions, on a phone.
+senses:
+  - definition: >-
+      A family of [[open-weight-model|open-weight]] [[large-language-model|language models]] that
+      Google, chiefly through [[google-deepmind|Google DeepMind]], has released since February 2024
+      as smaller siblings of its proprietary [[gemini|Gemini]] models, sharing their research
+      lineage but sized to run on a single accelerator, a workstation or a phone. Gemma 1 (February
+      2024) offered decoder-only [[transformer|transformers]] of 2 and 7 billion parameters; Gemma 2
+      (mid-2024) came in 2B, 9B and 27B sizes, training the two smaller models by
+      [[knowledge-distillation|knowledge distillation]] from a larger teacher and alternating local
+      and global attention layers; Gemma 3 (March 2025), from 1B to 27B parameters, added image
+      input, context windows of up to 128,000 tokens and support for over 140 languages; Gemma 3n
+      (mid-2025) targeted phones; and Gemma 4 (April 2026) — two small on-device models (E2B and
+      E4B), a 26B mixture-of-experts model and a 31B dense model — moved the family to the
+      permissive Apache 2.0 license. Specialized variants include CodeGemma for code, PaliGemma for
+      vision and language, ShieldGemma safety classifiers, MedGemma for medicine, EmbeddingGemma for
+      [[text-embedding|text embeddings]] and the [[gemma-scope|Gemma Scope]] interpretability tools.
+    example: >-
+      We fine-tuned the 4B Gemma model on our support tickets and serve it from a single GPU.
+origin: >-
+  Announced by Google on 21 February 2024 as 'open models' built from the research behind Gemini;
+  the name comes from the Latin gemma, 'precious stone'. Google promotes the tens of thousands of
+  community fine-tunes and derivatives published on Hugging Face as the 'Gemmaverse'.
+year: 2024
+note: >-
+  Gemma 1 to 3 shipped under custom Gemma Terms of Use with a prohibited-use policy, which critics
+  said fell short of [[open-source-ai|open source]]; the switch to Apache 2.0 with Gemma 4 removed
+  those use restrictions, though training data remain unpublished. Not to be confused with
+  [[gemini|Gemini]], Google's proprietary family.
+see_also:
+  - Gemini
+  - open-weight model
+  - Gemma Scope
+  - Google DeepMind
+  - small language model
+  - on-device AI
+  - knowledge distillation
+  - Llama
+contrast:
+  - Gemini
+sources:
+  - text: >-
+      Gemma Team, Google DeepMind (2024). Gemma: Open Models Based on Gemini Research and
+      Technology. arXiv.
+  - text: Gemma Team, Google DeepMind (2025). Gemma 3 Technical Report. arXiv.
+  - text: >-
+      Banks, J. & Warkentin, T. (2024). Gemma: Introducing new state-of-the-art open models. Google
+      blog, 21 February 2024.
+    url: https://blog.google/technology/developers/gemma-open-models/
+as_of: 2026-10

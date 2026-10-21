@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ELMo
+id: elmo
+pos: prop. n.
+also:
+  - Embeddings from Language Models
+  - contextual embedding
+  - contextualized word representation
+pronunciation: EL-moh
+domain: llm
+domains:
+  - hist
+  - dl
+labels:
+  - historical
+level: specialist
+plain: >-
+  A 2018 model whose word representations changed with context, so 'bank' got different numbers in
+  'river bank' and 'bank loan'. It was a stepping stone between fixed word vectors and BERT.
+senses:
+  - definition: >-
+      A method (Embeddings from Language Models) that produced contextual word representations from
+      a pretrained bidirectional language model: two stacked [[long-short-term-memory|LSTM]]
+      networks, one reading left to right and one right to left over character-based word inputs,
+      trained to predict the next and the previous word on about a billion words of text. For a
+      downstream task, the outputs of all the model's layers are mixed with weights learned for that
+      task and supplied as additional input features to an otherwise unchanged task model. Because
+      each vector depends on the whole sentence, ELMo separated senses that static
+      [[word-embedding|word embeddings]] conflate, and adding it set new best results on six
+      benchmarks covering sentiment, named entities, coreference, semantic roles, entailment and
+      question answering. Fine-tuned transformers such as [[bert|BERT]] and [[gpt|GPT]] soon
+      superseded it, but it showed that pretrained language-model representations transfer broadly.
+    example: Adding ELMo vectors to our tagger raised F1 by two points in 2018.
+origin: >-
+  Introduced by Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark,
+  Kenton Lee and Luke Zettlemoyer of the Allen Institute for AI and the University of Washington
+  (arXiv, February 2018; NAACL 2018). Its Sesame Street name began a fashion continued by BERT and
+  others.
+year: 2018
+see_also:
+  - word embedding
+  - BERT
+  - long short-term memory
+  - transfer learning
+  - language model
+  - representation learning
+sources:
+  - text: >-
+      Peters, M. E., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K. & Zettlemoyer, L.
+      (2018). Deep contextualized word representations. NAACL 2018.
+    url: https://arxiv.org/abs/1802.05365

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: spiking neural network
+id: spiking-neural-network
+pos: n.
+also:
+  - SNN
+  - spiking neuron
+  - leaky integrate-and-fire
+  - LIF neuron
+  - third-generation neural network
+domain: dl
+domains:
+  - hw
+level: specialist
+plain: >-
+  A neural network that, like the brain, communicates with brief pulses, or spikes, sent only when a
+  neuron's charge crosses a threshold. On special chips this can save a great deal of energy.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] whose units communicate through discrete events in time
+      (spikes) rather than continuous values. Each neuron integrates incoming spikes into a membrane
+      potential that decays over time; when the potential crosses a threshold the neuron emits a
+      spike and resets, as in the widely used leaky integrate-and-fire model. Information can be
+      carried by spike rates, precise timing or both. Because computation happens only when spikes
+      occur, SNNs on event-driven [[neuromorphic-computing|neuromorphic hardware]], such as Intel's
+      Loihi, IBM's TrueNorth or the University of Manchester's SpiNNaker, can be far more
+      energy-efficient for sparse, temporal signals like those from event cameras. Training is
+      difficult because spikes are not differentiable; approaches include surrogate gradients,
+      conversion of trained conventional networks and local, biologically inspired rules such as
+      spike-timing-dependent plasticity. SNNs generally still trail conventional deep networks in
+      accuracy on standard benchmarks.
+    example: >-
+      Converted to a spiking neural network, the keyword spotter ran on the neuromorphic chip at a
+      few milliwatts.
+origin: >-
+  Spiking neuron models go back to Louis Lapicque's integrate-and-fire model (1907) and Alan Hodgkin
+  and Andrew Huxley's 1952 model of the action potential. Wolfgang Maass's 'Networks of Spiking
+  Neurons: The Third Generation of Neural Network Models' (Neural Networks, 1997) framed SNNs as a
+  computational model distinct from threshold and sigmoidal networks.
+year: 1997
+see_also:
+  - artificial neuron
+  - neuromorphic computing
+  - reservoir computing
+  - Hebbian learning
+  - edge AI
+contrast:
+  - artificial neuron
+sources:
+  - text: >-
+      Maass, W. (1997). Networks of Spiking Neurons: The Third Generation of Neural Network Models.
+      Neural Networks, 10(9), 1659–1671.

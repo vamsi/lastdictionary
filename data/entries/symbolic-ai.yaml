@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: symbolic AI
+id: symbolic-ai
+pos: n.
+also:
+  - symbolic artificial intelligence
+  - classical AI
+  - symbolism
+  - logicist AI
+domain: sym
+domains:
+  - hist
+  - core
+level: essential
+plain: >-
+  An approach to AI that writes knowledge down as human-readable symbols and rules, such as 'every
+  bird has wings', and reasons by manipulating them step by step instead of learning patterns from
+  data.
+senses:
+  - definition: >-
+      The tradition in [[artificial-intelligence|artificial intelligence]] that builds intelligent
+      behavior from explicit representations a person can inspect: symbols naming objects,
+      properties and relations, assembled into larger structures — [[frame|frames]],
+      [[semantic-network|semantic networks]], if–then rules, logical formulas — and transformed by
+      programs that derive new structures from old ones through deduction,
+      [[state-space-search|search]] and [[automated-planning|planning]]. Its working hypothesis,
+      made explicit in the [[physical-symbol-system-hypothesis|physical symbol system hypothesis]],
+      is that such manipulation suffices for general intelligence. Strengths include transparency,
+      exact multi-step reasoning, compositional generalization and the ability to encode expert
+      knowledge directly; weaknesses include brittleness outside anticipated cases, difficulty with
+      noisy perception and uncertainty, and the cost of hand-building knowledge (the
+      [[knowledge-acquisition-bottleneck|knowledge acquisition bottleneck]]). It dominated AI
+      research from the 1956 [[dartmouth-workshop|Dartmouth workshop]] until the late 1980s and
+      survives in [[boolean-satisfiability-problem|SAT solvers]], planners, theorem provers,
+      [[knowledge-graph|knowledge graphs]] and [[neuro-symbolic-ai|neuro-symbolic AI]].
+    example: >-
+      Symbolic AI never disappeared; it runs inside chip verifiers, airline crew schedulers and tax
+      software.
+origin: >-
+  The program began with Allen Newell, Cliff Shaw and Herbert Simon's [[logic-theorist|Logic
+  Theorist]] (1956) and John McCarthy's proposal (1958, published 1959) for programs that reason in
+  formal logic. The label 'symbolic AI' has no identified coiner; it became widespread in the 1980s,
+  chiefly as a contrast with [[connectionism|connectionism]], whose revival with
+  [[backpropagation|backpropagation]] made the distinction salient.
+year: 1956
+note: >-
+  Symbolic and statistical methods overlap: [[bayesian-network|Bayesian networks]] combine explicit
+  symbols with probabilities. The term is sometimes used as a synonym for
+  [[good-old-fashioned-ai|good old-fashioned AI]], which carries a more dismissive tone.
+see_also:
+  - good old-fashioned AI
+  - physical symbol system hypothesis
+  - knowledge representation
+  - expert system
+  - neuro-symbolic AI
+  - neats and scruffies
+contrast:
+  - connectionism
+  - deep learning
+sources:
+  - text: >-
+      Newell, A. & Simon, H. A. (1976). Computer Science as Empirical Inquiry: Symbols and Search.
+      Communications of the ACM 19(3), 113–126.
+  - text: >-
+      McCarthy, J. (1959). Programs with Common Sense. In Mechanisation of Thought Processes. HMSO,
+      London.

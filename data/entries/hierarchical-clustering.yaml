@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hierarchical clustering
+id: hierarchical-clustering
+pos: n.
+also:
+  - agglomerative clustering
+  - divisive clustering
+  - dendrogram
+  - linkage
+  - Ward's method
+  - UPGMA
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  A way of grouping data that builds a family tree of clusters, joining the most similar items step
+  by step, so you can cut the tree at whatever level of detail you need.
+senses:
+  - definition: >-
+      A family of [[clustering|clustering]] methods that produce a nested hierarchy of clusters
+      rather than a single partition, usually drawn as a dendrogram: a tree in which the height of
+      each merge records the dissimilarity at which two groups join. Most implementations are
+      agglomerative, building the tree upward from single points by repeatedly fusing the two
+      nearest groups; the less common divisive approach works downward, recursively splitting one
+      all-inclusive group. A linkage criterion defines the distance between clusters: single linkage
+      (closest pair of members, prone to chaining into long, thin clusters), complete linkage
+      (farthest pair), average linkage (UPGMA, the mean pairwise distance) and Ward's method (the
+      merge that least increases within-cluster variance). Cutting the dendrogram at a chosen height
+      yields a flat clustering, so the number of clusters need not be fixed beforehand. Cost is the
+      practical limit: keeping every pairwise distance takes O(n²) memory, and although single
+      linkage can be computed in O(n²) time (SLINK), the naive general procedure needs O(n³).
+    example: Cut the dendrogram at a distance of 0.7 and you get five product families.
+origin: >-
+  Hierarchical grouping grew out of numerical taxonomy. Single linkage appeared in work by Kazimierz
+  Florek and colleagues (1951) and by Peter Sneath (1957); Robert Sokal and Charles Michener
+  introduced average linkage (UPGMA) in 1958; and Joe Ward published his minimum-variance method in
+  1963. Efficient algorithms such as Robin Sibson's SLINK (1973) made the approach practical on
+  larger datasets.
+year: 1951
+note: >-
+  Results depend strongly on the linkage and distance measure, and merges are greedy: a poor early
+  merge is never undone. Widely used in biology (gene-expression heatmaps, phylogeny-like trees) and
+  for building taxonomies of documents or products.
+see_also:
+  - clustering
+  - k-means clustering
+  - DBSCAN
+  - Euclidean distance
+  - silhouette score
+  - dimensionality reduction
+sources:
+  - text: >-
+      Sokal, R. R. & Michener, C. D. (1958). A Statistical Method for Evaluating Systematic
+      Relationships. University of Kansas Science Bulletin 38.
+  - text: >-
+      Ward, J. H. (1963). Hierarchical Grouping to Optimize an Objective Function. Journal of the
+      American Statistical Association 58(301).
+  - text: >-
+      Sibson, R. (1973). SLINK: An Optimally Efficient Algorithm for the Single-Link Cluster Method.
+      The Computer Journal 16(1).

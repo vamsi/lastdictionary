@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: one-hot encoding
+id: one-hot-encoding
+pos: n.
+also:
+  - one-hot vector
+  - one-hot
+  - dummy variable
+  - dummy coding
+  - one-of-K encoding
+  - target encoding
+  - label encoding
+domain: ml
+domains:
+  - data
+  - dl
+level: core
+plain: >-
+  Turning a category such as 'red', 'green' or 'blue' into a row of zeros with a single one marking
+  which category it is, so that a model can use it as numbers.
+senses:
+  - definition: >-
+      A representation of a categorical variable with K possible values as a binary vector of length
+      K in which exactly one element is 1 (the 'hot' position marking the category) and all others
+      are 0. It lets algorithms that require numeric inputs use categories without implying a false
+      order or spacing, as integer codes (label encoding) would. In linear models with an intercept,
+      one category is usually dropped (dummy coding) to avoid perfect collinearity. One-hot vectors
+      are sparse and grow with the number of categories, so high-cardinality variables such as
+      postcodes or product identifiers are often handled instead by target encoding (replacing each
+      category with a smoothed statistic of the outcome, computed out-of-fold to avoid
+      [[data-leakage|data leakage]]), feature hashing or learned [[embedding|embeddings]]. In deep
+      learning, one-hot vectors select rows of an embedding matrix and represent classification
+      targets: a [[language-model|language model]]'s training target is a one-hot vector over its
+      [[vocabulary|vocabulary]], compared with the predicted distribution by
+      [[cross-entropy|cross-entropy]].
+    example: >-
+      We one-hot encoded the twelve store formats but used a learned embedding for the 40,000
+      product IDs.
+origin: >-
+  Borrowed from digital electronics, where a one-hot code has exactly one line 'hot' (high), as in
+  the state encoding of finite-state machines. Statisticians long used the equivalent dummy or
+  indicator variables in regression, discussed by Daniel Suits in 1957; the electronics name spread
+  through neural-network and machine-learning practice.
+note: >-
+  Statistics usually keeps K − 1 columns (dummy coding); machine-learning libraries often keep all
+  K, which is harmless for regularized models and trees.
+see_also:
+  - feature engineering
+  - embedding
+  - categorical distribution
+  - cross-entropy
+  - vocabulary
+  - tabular data
+sources:
+  - text: >-
+      Suits, D. B. (1957). Use of Dummy Variables in Regression Equations. Journal of the American
+      Statistical Association 52(280).

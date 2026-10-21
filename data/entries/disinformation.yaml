@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: disinformation
+id: disinformation
+pos: n.
+also:
+  - disinfo
+  - information operation
+  - computational propaganda
+  - coordinated inauthentic behavior
+domain: society
+domains:
+  - sec
+  - gen
+level: core
+plain: >-
+  Deliberate falsehoods or distortions dressed up as fact, for example from a government or campaign
+  trying to sway an election or sow distrust.
+senses:
+  - definition: >-
+      Falsehood or distortion that is manufactured or spread knowingly in order to mislead,
+      typically on behalf of a state, party, company or cause. Organized efforts are called
+      [[influence-operation|influence operations]] or information operations; when they use fake
+      accounts and automation to simulate grassroots support, platforms speak of coordinated
+      inauthentic behavior and researchers of computational propaganda. Generative AI changes the
+      economics of disinformation: [[large-language-model|language models]] write fluent, varied
+      text in many languages and personas at almost no cost, image, voice and video generators
+      produce [[deepfake|deepfakes]], and [[ai-agent|agents]] can operate networks of accounts.
+      Threat reports published by AI developers since 2024 describe state-linked operations using
+      models to generate and translate content, so far with limited measured reach. Defenses include
+      provenance and [[ai-watermarking|watermarking]], detection of coordinated behavior, platform
+      enforcement and media literacy.
+    example: >-
+      The network used a language model to post the same disinformation in six languages under
+      hundreds of personas.
+origin: >-
+  From Russian dezinformatsiya, the name for Soviet-era deception operations; the English word
+  spread during the Cold War and was in wide use by the 1980s. 'Computational propaganda' was
+  popularized by Samuel Woolley and Philip Howard's Oxford research project from about 2015.
+note: >-
+  Intent is the defining difference from [[misinformation|misinformation]], though it is often hard
+  to prove, and content moves between the two categories as it is reshared by people who believe it.
+see_also:
+  - misinformation
+  - deepfake
+  - synthetic media
+  - liar's dividend
+  - AI watermarking
+  - content moderation
+  - AI surveillance
+contrast:
+  - misinformation
+sources:
+  - text: >-
+      Woolley, S. C. & Howard, P. N. (eds.) (2018). Computational Propaganda: Political Parties,
+      Politicians, and Political Manipulation on Social Media. Oxford University Press.
+  - text: >-
+      Goldstein, J. A., Sastry, G., Musser, M., DiResta, R., Gentzel, M. & Sedova, K. (2023).
+      Generative Language Models and Automated Influence Operations: Emerging Threats and Potential
+      Mitigations. Georgetown CSET, OpenAI and Stanford Internet Observatory.

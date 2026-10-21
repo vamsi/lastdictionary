@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI accelerator
+id: ai-accelerator
+pos: n.
+also:
+  - AI chip
+  - deep learning accelerator
+  - ML accelerator
+  - accelerator
+domain: hw
+domains:
+  - dl
+  - infer
+  - gov
+level: essential
+plain: >-
+  Any chip built or tuned to speed up AI — graphics chips, Google's TPUs, phone 'neural engines' and
+  many startup designs. Such chips do the heavy math of training and running models.
+senses:
+  - definition: >-
+      A processor specialized for the arithmetic of [[neural-network|neural networks]] — chiefly
+      dense [[matrix-multiplication|matrix multiplication]] at low precision — as opposed to a
+      general-purpose [[cpu|CPU]]. Accelerators trade flexibility for throughput and energy
+      efficiency through massively parallel multiply–accumulate arrays ([[tensor-core|tensor
+      cores]], [[systolic-array|systolic arrays]]), reduced-precision formats
+      ([[bfloat16|bfloat16]], [[fp8|FP8]], [[int8|INT8]]), large on-chip [[sram|SRAM]] or stacked
+      [[high-bandwidth-memory|high-bandwidth memory]], and fast chip-to-chip
+      [[interconnect|interconnects]]. The category spans data-center [[gpu|GPUs]] (Nvidia, AMD),
+      custom [[asic|ASICs]] (Google's [[tpu|TPU]], AWS Trainium, Huawei Ascend),
+      [[wafer-scale-engine|wafer-scale]] and SRAM-centric designs (Cerebras, Groq), and low-power
+      [[npu|NPUs]] in phones and laptops. Accelerators now perform nearly all AI training and most
+      large-scale inference, which is why their supply is a focus of industrial policy and
+      [[export-controls-on-ai-chips|export controls on AI chips]].
+    example: >-
+      The startup's accelerator beats GPUs on latency but only runs models that fit in its on-chip
+      memory.
+origin: >-
+  Dedicated neural-network chips date to the late 1980s (Intel's analog ETANN of 1989, for example)
+  but were overtaken by general-purpose processors. The current wave began when GPUs proved
+  effective for deep learning (2009–2012) and Google deployed its TPU (2015); a surge of startup and
+  hyperscaler designs followed from 2016.
+note: >-
+  'Accelerator' implies a host CPU that feeds the chip work. Vendor peak figures differ in precision
+  and sparsity assumptions, so compare like with like.
+see_also:
+  - GPU
+  - TPU
+  - NPU
+  - ASIC
+  - FPGA
+  - wafer-scale engine
+  - neuromorphic computing
+  - compute
+contrast:
+  - CPU
+as_of: 2026-10

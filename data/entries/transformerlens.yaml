@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TransformerLens
+id: transformerlens
+pos: prop. n.
+also:
+  - EasyTransformer
+  - transformer_lens
+domain: interp
+domains:
+  - eng
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free software library that lets researchers open up language models and record, inspect or alter
+  what happens inside them at every step while the model runs.
+senses:
+  - definition: >-
+      An open-source Python library, built on [[pytorch|PyTorch]], for
+      [[mechanistic-interpretability|mechanistic interpretability]] of GPT-style language models. It
+      reimplements many open-weight [[transformer|transformer]] architectures in a consistent form
+      whose internals are exposed through named hook points, so that users can cache any
+      [[activation|activation]] and attach functions that read, edit, ablate or replace activations
+      during the forward pass — the basic operations of [[activation-patching|activation patching]],
+      [[ablation|ablation]] and [[direct-logit-attribution|direct logit attribution]]. It loads
+      pretrained weights from public model hubs, standardizes details such as folding
+      layer-normalization weights into adjacent layers, and includes utilities for visualizing
+      attention and analyzing [[qk-and-ov-circuits|QK and OV circuits]]. Widely used in research and
+      teaching since 2022, it inspired companion libraries such as SAELens for sparse autoencoders;
+      alternatives for larger models include nnsight.
+    example: >-
+      Load GPT-2 small in TransformerLens, run with the cache, and plot the layer-9 attention
+      patterns.
+origin: >-
+  Created in 2022 by Neel Nanda after he left Anthropic's interpretability team, originally under
+  the name EasyTransformer; it was published on PyPI as TransformerLens from December 2022. Later
+  maintained by a community team under the TransformerLensOrg organization on GitHub (as of October
+  2026, Bryce Meyer and Jonah Larson).
+year: 2022
+see_also:
+  - mechanistic interpretability
+  - activation patching
+  - residual stream
+  - PyTorch
+  - Neuronpedia
+  - sparse autoencoder
+sources:
+  - text: >-
+      Nanda, N. et al. (2022). TransformerLens: A library for mechanistic interpretability of
+      generative language models. GitHub repository.
+    url: https://github.com/TransformerLensOrg/TransformerLens
+as_of: 2026-10

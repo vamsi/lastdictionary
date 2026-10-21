@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: WordNet
+id: wordnet
+pos: prop. n.
+also:
+  - Princeton WordNet
+  - PWN
+domain: data
+domains:
+  - sym
+  - hist
+level: core
+plain: >-
+  A hand-made map of English vocabulary in which words sharing a meaning are bundled together and
+  the bundles are linked — recording, say, that a dog is a kind of animal and a wheel is part of a
+  car.
+senses:
+  - definition: >-
+      A manually compiled resource of English word meanings in which each sense is represented by a
+      synset — the set of words and phrases that can express it — together with a brief gloss. The
+      synsets form separate networks for each of four parts of speech: noun senses are tied together
+      by is-a links (hypernymy and hyponymy) and part-of links (meronymy), verb senses by relations
+      such as entailment, and adjectives largely through antonym pairs. The nouns form a deep
+      taxonomy rooted in 'entity'. Version 3.0 (2006) holds about 155,000 words in roughly 117,000
+      synsets. Freely licensed and bundled with toolkits such as NLTK, it became the default sense
+      inventory for [[word-sense-disambiguation|word sense disambiguation]], a source of path-based
+      word-similarity measures and features for pre-neural NLP, and the scaffold of
+      [[imagenet|ImageNet]], whose categories are WordNet noun synsets. Wordnets built on the same
+      design now exist for dozens of languages.
+    example: >-
+      We mapped every label to a WordNet synset so that 'puppy' and 'dog' roll up to the same parent
+      class.
+origin: >-
+  Begun in 1985 at Princeton University's Cognitive Science Laboratory by the psychologist George A.
+  Miller, originally to test theories of how people organize word meanings in memory; Christiane
+  Fellbaum later co-directed it. It was described in a 1990 special issue of the International
+  Journal of Lexicography and in Fellbaum's 1998 MIT Press volume. Princeton's most recent release
+  is version 3.1 (2011); Open English WordNet, a community-maintained fork, has continued to revise
+  the database.
+year: 1985
+note: >-
+  Often used as an [[ontology|ontology]], though it encodes word-sense relations rather than formal
+  logic. Critics note that its sense distinctions are finer than annotators can reliably apply, and
+  the person categories that ImageNet inherited from it included slurs and offensive labels, many of
+  which the ImageNet team removed in 2019 amid public criticism.
+see_also:
+  - ImageNet
+  - word sense disambiguation
+  - ontology
+  - knowledge graph
+  - word embedding
+  - Penn Treebank
+sources:
+  - text: >-
+      Miller, G. A. (1995). WordNet: A Lexical Database for English. Communications of the ACM
+      38(11), 39–41.
+  - text: "Fellbaum, C. (Ed.) (1998). WordNet: An Electronic Lexical Database. MIT Press."

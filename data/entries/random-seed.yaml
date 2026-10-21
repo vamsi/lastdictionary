@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: random seed
+id: random-seed
+pos: n.
+also:
+  - seed
+  - seed value
+  - RNG seed
+domain: gen
+domains:
+  - eng
+  - core
+level: core
+plain: >-
+  A number that fixes the 'random' choices a computer makes; reuse the same seed and settings, and
+  an image generator produces the same picture again.
+senses:
+  - definition: >-
+      A starting value, usually an integer, fed to a pseudorandom number generator; because the
+      generator is a deterministic algorithm, the same seed always yields the same sequence of
+      'random' numbers, which makes a computation reproducible. In machine learning, seeds control
+      [[weight-initialization|weight initialization]], data shuffling, [[dropout|dropout]] masks and
+      sampling, and reporting results over several seeds is standard practice for showing that a
+      finding is not a fluke. In image and video generation, the seed determines the initial noise
+      from which a [[diffusion-model|diffusion model]] or [[flow-matching|flow matching]] model
+      starts: with the same model, prompt, [[diffusion-sampler|sampler]], step count and settings,
+      the same seed reproduces the same image, while a new seed gives a different composition. Users
+      therefore lock a seed to vary one setting at a time, and share seeds so that others can
+      recreate results. Exact reproduction can still fail across hardware, software versions or
+      batch sizes, because parallel floating-point arithmetic is not always deterministic.
+    example: Same prompt, seed 1234, and the castle comes back — only now in snow.
+origin: >-
+  Seeding goes back to the earliest pseudorandom number generators, such as John von Neumann's
+  middle-square method of the late 1940s. In generative AI, exposing the seed as a user setting
+  became standard with the open-source Stable Diffusion tools of 2022, and seeds are now routinely
+  shared alongside prompts.
+note: >-
+  Language-model APIs sometimes offer a seed parameter, but providers generally promise only
+  best-effort reproducibility; see [[nondeterminism|nondeterminism]].
+see_also:
+  - nondeterminism
+  - diffusion sampler
+  - sampling
+  - stochastic
+  - temperature
+  - weight initialization

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MuZero
+id: muzero
+pos: prop. n.
+pronunciation: MYOO-zeer-oh
+domain: rl
+domains:
+  - hist
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A DeepMind game-playing program from 2019 that mastered Go, chess, shogi and Atari games without
+  being told the rules, by learning its own simplified model of each game to plan with.
+senses:
+  - definition: >-
+      A [[model-based-reinforcement-learning|model-based reinforcement learning]] algorithm that
+      runs [[monte-carlo-tree-search|Monte Carlo tree search]] inside a latent model it has learned
+      for itself, rather than in a simulator supplied with the rules. Instead of predicting future
+      observations, it learns three networks — a representation function mapping observations to a
+      hidden state, a dynamics function predicting the next hidden state and immediate
+      [[reward|reward]] from a hidden state and an action, and a prediction function outputting a
+      [[policy|policy]] and a [[value-function|value]] — trained end to end so that rollouts in
+      hidden space reproduce the rewards, values and search policies actually observed. The model
+      thus needs to capture only what matters for choosing moves and never reconstructs the board or
+      screen. Without being told the rules, it equaled the superhuman Go, chess and shogi play of
+      [[alphazero|AlphaZero]], which had been given them, and set a new aggregate record on the
+      57-game Atari benchmark. Descendants include Sampled MuZero for large action spaces and
+      EfficientZero for sample efficiency; DeepMind also applied it to rate control in video
+      compression.
+    example: >-
+      Like MuZero, our planner never reconstructs pixels; it searches over learned latent states.
+origin: >-
+  Introduced by Julian Schrittwieser and colleagues at DeepMind in 'Mastering Atari, Go, Chess and
+  Shogi by Planning with a Learned Model' (arXiv, November 2019; Nature, December 2020), as the
+  successor to AlphaGo Zero and AlphaZero.
+year: 2019
+see_also:
+  - model-based reinforcement learning
+  - Monte Carlo tree search
+  - AlphaZero
+  - world model
+  - self-play
+  - Arcade Learning Environment
+sources:
+  - text: >-
+      Schrittwieser, J. et al. (2020). Mastering Atari, Go, chess and shogi by planning with a
+      learned model. Nature 588, 604–609. arXiv:1911.08265.
+    url: https://arxiv.org/abs/1911.08265

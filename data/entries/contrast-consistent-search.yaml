@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: contrast-consistent search
+id: contrast-consistent-search
+pos: n.
+also:
+  - CCS
+domain: interp
+domains:
+  - safety
+  - llm
+level: specialist
+plain: >-
+  A method for finding where a language model internally tracks whether statements are true, using
+  only the logical rule that a statement and its opposite cannot both be true.
+senses:
+  - definition: >-
+      An unsupervised method for discovering a truth-like direction in a language model's
+      [[activation|activations]] without labeled data. For each yes/no question, the model processes
+      two contrasting statements — one answering 'yes', one 'no' — and a [[linear-probe|linear
+      probe]] is trained on their normalized hidden states so that its two probabilities are
+      consistent (summing to about one) and confident (not both near one-half). The original study
+      found such probes recovered correct answers more accurately than the model's own outputs and
+      stayed accurate when the model was prompted to answer wrongly, suggesting latent knowledge
+      separable from what the model says. Later analysis showed that the consistency objective can
+      also be satisfied by other salient features, such as a fictional character's opinion stated in
+      the prompt, so CCS does not reliably isolate a model's own beliefs.
+    example: >-
+      The CCS probe kept answering correctly even when the prompt nudged the model toward a wrong
+      answer.
+origin: >-
+  Introduced by Collin Burns, Haotian Ye, Dan Klein and Jacob Steinhardt in 'Discovering Latent
+  Knowledge in Language Models Without Supervision' (December 2022; ICLR 2023). Sebastian Farquhar
+  and colleagues at Google DeepMind published the main critique in 2023.
+year: 2022
+note: >-
+  Motivated by [[eliciting-latent-knowledge|eliciting latent knowledge]]; it is one approach to
+  [[ai-lie-detection|AI lie detection]], not a solution to it.
+see_also:
+  - eliciting latent knowledge
+  - AI lie detection
+  - linear probe
+  - probing
+  - representation engineering
+  - linear representation hypothesis
+sources:
+  - text: >-
+      Burns, C., Ye, H., Klein, D. & Steinhardt, J. (2023). Discovering Latent Knowledge in Language
+      Models Without Supervision. ICLR 2023.
+  - text: >-
+      Farquhar, S. et al. (2023). Challenges with unsupervised LLM knowledge discovery. Google
+      DeepMind, arXiv preprint.

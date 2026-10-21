@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: language model
+id: language-model
+pos: n.
+also:
+  - LM
+  - language modeling
+  - language modelling
+  - statistical language model
+  - neural language model
+domain: llm
+domains:
+  - core
+  - math
+level: essential
+plain: >-
+  A system that has learned how likely different sequences of words are, so it can predict the next
+  word in a text and, by doing that repeatedly, write text of its own.
+senses:
+  - definition: >-
+      A model that estimates how likely any piece of text is, usually by learning, at every
+      position, the probability of each possible next [[token|token]] (word, subword, character or
+      byte) given the tokens before it; multiplying these conditional probabilities by the chain
+      rule gives the probability of a whole sequence. Such a model can therefore score text
+      (summarized by [[perplexity|perplexity]]) and generate it by [[decoding|decoding]]. Language
+      models have been built from [[n-gram-model|n-gram counts]],
+      [[recurrent-neural-network|recurrent networks]] and, since 2018, [[transformer|transformers]].
+      The term also covers models trained with other text objectives, such as
+      [[masked-language-model|masked language models]] that fill in blanks rather than continue
+      text, and [[diffusion-language-model|diffusion language models]]. Trained on very large
+      corpora, language models absorb much of the knowledge and skill expressed in text, which is
+      what makes [[large-language-model|large language models]] useful as general-purpose systems.
+    example: >-
+      We use a small language model to filter low-quality web pages before pretraining.
+formula_latex: p(x_1, \dots, x_T) = \prod_{t=1}^{T} p(x_t \mid x_1, \dots, x_{t-1})
+origin: >-
+  Statistical modeling of text began with Andrey Markov's 1913 letter-sequence study and Claude
+  Shannon's 1948 and 1951 work on predicting English. The phrase 'language model' became established
+  in statistical speech recognition, notably in Frederick Jelinek's group at IBM from the 1970s. The
+  neural probabilistic language model of Yoshua Bengio and colleagues (2000–2003) began the shift to
+  neural networks.
+year: 1948
+note: >-
+  In everyday speech 'language model' often means a [[large-language-model|large language model]] or
+  a chatbot built on one; technically, any model assigning probabilities to text qualifies, however
+  small.
+see_also:
+  - large language model
+  - n-gram model
+  - next-token prediction
+  - autoregressive model
+  - masked language model
+  - perplexity
+  - transformer
+sources:
+  - text: >-
+      Shannon, C. E. (1951). Prediction and Entropy of Printed English. Bell System Technical
+      Journal 30.
+  - text: >-
+      Bengio, Y., Ducharme, R., Vincent, P. & Jauvin, C. (2003). A Neural Probabilistic Language
+      Model. Journal of Machine Learning Research 3.

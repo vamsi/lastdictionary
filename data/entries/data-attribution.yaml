@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data attribution
+id: data-attribution
+pos: n.
+also:
+  - training data attribution
+  - TDA
+  - influence estimation
+domain: data
+domains:
+  - interp
+  - gov
+level: specialist
+plain: >-
+  Working out which training examples were responsible for a particular behavior or answer of an AI
+  model — useful for explaining, debugging and crediting the data behind it.
+senses:
+  - context: Machine learning
+    definition: >-
+      The estimation of how individual training examples, or groups of them, influenced a trained
+      model's parameters, predictions or behaviors. The ideal is counterfactual — how would an
+      output change if an example had been left out or upweighted? — but retraining for every
+      example is infeasible, so methods approximate it. Influence functions, from robust statistics,
+      use gradients and an approximation of the inverse [[hessian|Hessian]]; TracIn sums gradient
+      similarities along the training trajectory; datamodels and TRAK fit simple predictors of
+      outputs from training-subset membership; Data Shapley assigns credit with the
+      [[shapley-value|Shapley value]]. Uses include explaining outputs, finding mislabeled or
+      harmful data, detecting [[data-poisoning|data poisoning]] and [[memorization|memorization]],
+      selecting training data, and studying how [[large-language-model|large models]] generalize.
+      The approximations become fragile for large non-convex models, and different methods often
+      disagree.
+    example: >-
+      Data attribution traced the odd answer to a handful of near-duplicate forum posts.
+  - context: Data rights
+    definition: >-
+      The assignment of credit, and potentially payment, to the people or organizations whose data
+      contributed to a model or to a particular output, as demanded by some licenses, creators'
+      groups and proposed compensation schemes; technical attribution methods are sometimes proposed
+      as its basis, though they cannot yet bear that weight at scale.
+origin: >-
+  Influence functions come from Frank Hampel's robust statistics (1974) and Dennis Cook's regression
+  diagnostics (1977). Pang Wei Koh and Percy Liang's 'Understanding Black-box Predictions via
+  Influence Functions' (ICML 2017 best paper) brought them to deep learning, and Anthropic
+  researchers scaled them to large language models in 2023.
+note: >-
+  Distinct from [[feature-attribution|feature attribution]], which explains an output in terms of
+  parts of the input (pixels, words) rather than training examples. Attribution scores estimate
+  statistical influence, not legal or moral responsibility.
+see_also:
+  - Shapley value
+  - interpretability
+  - data provenance
+  - memorization
+  - data poisoning
+  - machine unlearning
+contrast:
+  - feature attribution
+sources:
+  - text: >-
+      Koh, P. W. & Liang, P. (2017). Understanding Black-box Predictions via Influence Functions.
+      ICML 2017.
+  - text: >-
+      Grosse, R. et al. (2023). Studying Large Language Model Generalization with Influence
+      Functions. arXiv preprint.
+  - text: "Park, S. M. et al. (2023). TRAK: Attributing Model Behavior at Scale. ICML 2023."

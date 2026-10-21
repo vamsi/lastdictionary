@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gumbel-softmax
+id: gumbel-softmax
+pos: n.
+also:
+  - Gumbel-softmax trick
+  - Concrete distribution
+  - Gumbel-softmax estimator
+  - straight-through Gumbel-softmax
+  - Gumbel-max trick
+domain: dl
+domains:
+  - math
+level: specialist
+plain: >-
+  A mathematical trick that lets a neural network make a choice among separate options, such as
+  picking one word or one category, while still learning through small, smooth adjustments.
+senses:
+  - definition: >-
+      A continuous relaxation of sampling from a [[categorical-distribution|categorical
+      distribution]] that makes discrete choices differentiable, so that networks with discrete
+      latent variables can be trained by backpropagation through the
+      [[reparameterization-trick|reparameterization trick]]. It builds on the Gumbel-max trick:
+      adding independent Gumbel(0, 1) noise to the log-probabilities and taking the arg max yields
+      an exact categorical sample. Gumbel-softmax replaces the arg max with a [[softmax|softmax]] at
+      [[temperature|temperature]] τ, giving a point on the probability simplex that approaches a
+      one-hot vector as τ falls toward zero; low temperatures give nearly discrete samples but
+      high-variance gradients, high ones smooth samples but biased gradients, so τ is often
+      annealed. In the straight-through variant, the forward pass uses the hard one-hot sample and
+      the backward pass the relaxed gradient. Uses include discrete
+      [[variational-autoencoder|variational autoencoders]] (such as the image tokenizer of the
+      original [[dall-e|DALL·E]]), [[neural-architecture-search|neural architecture search]], hard
+      attention and learned routing.
+    example: >-
+      We pick the codebook index with straight-through Gumbel-softmax and anneal the temperature
+      from 1.0 to 0.1.
+formula_latex: y_i = \frac{\exp\big((\log \pi_i + g_i)/\tau\big)}{\sum_{j=1}^{k} \exp\big((\log
+  \pi_j + g_j)/\tau\big)}, \qquad g_i \sim \mathrm{Gumbel}(0, 1)
+origin: >-
+  Introduced simultaneously in November 2016 by Eric Jang, Shixiang Gu and Ben Poole, who named it
+  Gumbel-softmax, and by Chris Maddison, Andriy Mnih and Yee Whye Teh, who called it the Concrete
+  (continuous relaxation of discrete) distribution; both papers appeared at ICLR 2017. The
+  underlying Gumbel-max trick is much older: the machine-learning literature credits it to the
+  statistician Emil Julius Gumbel's 1954 lectures on extreme values, and the same fact underlies the
+  logit models of discrete choice in 1970s econometrics.
+year: 2016
+note: >-
+  The gradient is biased with respect to the true discrete objective; unbiased alternatives such as
+  [[reinforce|REINFORCE]]-style score-function estimators have higher variance. Compare the plain
+  [[straight-through-estimator|straight-through estimator]], which passes gradients through a hard
+  decision as if it were the identity.
+see_also:
+  - reparameterization trick
+  - categorical distribution
+  - straight-through estimator
+  - softmax
+  - temperature
+  - variational autoencoder
+  - VQ-VAE
+contrast:
+  - REINFORCE
+sources:
+  - text: >-
+      Jang, E., Gu, S. & Poole, B. (2017). Categorical Reparameterization with Gumbel-Softmax. ICLR
+      2017.
+  - text: >-
+      Maddison, C. J., Mnih, A. & Teh, Y. W. (2017). The Concrete Distribution: A Continuous
+      Relaxation of Discrete Random Variables. ICLR 2017.

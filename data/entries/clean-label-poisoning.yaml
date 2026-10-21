@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: clean-label poisoning
+id: clean-label-poisoning
+pos: n.
+also:
+  - clean-label attack
+  - clean-label backdoor
+domain: sec
+domains:
+  - data
+  - dl
+level: specialist
+plain: >-
+  A sneaky form of data poisoning in which every planted training example is labeled correctly, so
+  reviewers see nothing wrong, yet the examples are crafted to make the model fail.
+senses:
+  - definition: >-
+      A [[data-poisoning|data poisoning]] attack in which the poisoned training examples carry
+      correct labels, so label auditing cannot catch them. Each poison is perturbed, often
+      imperceptibly, so that its internal representation collides with a chosen target input
+      (feature collision), or so that training on it pushes the model's [[weights|weights]] toward
+      misclassifying the target (gradient matching). A clean-label [[backdoor-attack|backdoor]]
+      instead makes trigger-bearing examples hard to classify from their content, forcing the model
+      to rely on the trigger. Clean-label attacks matter wherever data is scraped and labeled
+      automatically or by trusted pipelines, because a plausibly labeled image or document passes
+      inspection.
+    example: >-
+      Fifty clean-label poisons, each an ordinary-looking dog photo, made the model call the target
+      fish image a dog.
+origin: >-
+  Introduced by Ali Shafahi and colleagues at the University of Maryland in 'Poison Frogs! Targeted
+  Clean-Label Poisoning Attacks on Neural Networks' (NeurIPS 2018). Alexander Turner, Dimitris
+  Tsipras and Aleksander Madry extended the idea to backdoors, and gradient-matching attacks such as
+  Witches' Brew (Jonas Geiping and colleagues, 2020) scaled it to ImageNet.
+year: 2018
+see_also:
+  - data poisoning
+  - backdoor attack
+  - Nightshade
+  - adversarial example
+sources:
+  - text: >-
+      Shafahi, A., Huang, W. R., Najibi, M., Suciu, O., Studer, C., Dumitras, T. & Goldstein, T.
+      (2018). Poison Frogs! Targeted Clean-Label Poisoning Attacks on Neural Networks. NeurIPS 2018.

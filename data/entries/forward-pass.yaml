@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: forward pass
+id: forward-pass
+pos: n.
+also:
+  - forward propagation
+  - forward computation
+  - fprop
+domain: dl
+domains:
+  - infer
+level: core
+plain: >-
+  The step where a neural network takes an input and runs it through its layers, one after another,
+  to produce an output — its answer or prediction.
+senses:
+  - definition: >-
+      The computation of a neural network's outputs from its inputs by evaluating each
+      [[layer|layer]] in order, each consuming the previous layer's [[activation|activations]].
+      During training the forward pass also computes the [[loss-function|loss]] and stores, or
+      arranges to recompute, the intermediate values the [[backward-pass|backward pass]] will need,
+      so it determines activation memory, which grows with [[batch-size|batch size]], sequence
+      length and depth. At [[inference|inference]] time a forward pass is all that runs; for an
+      autoregressive [[large-language-model|large language model]], each new token requires one,
+      split in practice into [[prefill|prefill]] of the prompt and token-by-token
+      [[decode-phase|decoding]] that reuses a [[kv-cache|KV cache]]. Forward-pass cost underlies
+      common compute estimates: a dense transformer needs about 2N floating-point operations per
+      token for N parameters, and training (forward plus backward) about 6N per token.
+    example: >-
+      The forward pass fits in memory, but storing activations for the backward pass does not.
+origin: >-
+  A descriptive term from the backpropagation literature of the 1980s, contrasting the forward flow
+  of activity from input to output with the backward flow of error signals. Deep-learning libraries
+  made 'forward' the name of the method that implements a layer's computation.
+see_also:
+  - backward pass
+  - backpropagation
+  - computational graph
+  - activation
+  - prefill
+  - training step
+contrast:
+  - backward pass

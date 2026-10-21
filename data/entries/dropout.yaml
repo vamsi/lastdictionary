@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dropout
+id: dropout
+pos: n.
+also:
+  - dropout rate
+  - inverted dropout
+  - DropConnect
+  - Monte Carlo dropout
+  - MC dropout
+  - drop out
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  A training trick that randomly switches off a fraction of a network's neurons at each step, so the
+  network cannot lean too heavily on any one of them and learns sturdier patterns.
+senses:
+  - definition: >-
+      A [[regularization|regularization]] technique in which, at each training step, each unit's
+      output (or each input feature) is set to zero independently with probability p, the dropout
+      rate, typically 0.1–0.5. Its inventors gave two explanations: units can no longer count on
+      particular partners being present, which prevents co-adaptation, where units work only in
+      particular combinations; and each step trains a different random subnetwork sharing weights
+      with all the others, so the final network behaves like an average over an exponentially large
+      [[ensemble-learning|ensemble]]. All units are kept at test time; in the usual 'inverted'
+      implementation, surviving activations are scaled by 1/(1 − p) during training so that
+      inference needs no rescaling. Dropout was essential to [[alexnet|AlexNet]] and widely used
+      thereafter, though [[batch-normalization|batch normalization]], [[data-augmentation|data
+      augmentation]] and very large datasets have reduced its role, and large language models are
+      often pretrained with little or none. Keeping it active at inference and averaging several
+      passes (Monte Carlo dropout) gives a rough estimate of predictive uncertainty.
+    example: >-
+      Raising dropout from 0.1 to 0.3 closed most of the gap between training and validation
+      accuracy.
+origin: >-
+  Introduced by Geoffrey Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever and Ruslan
+  Salakhutdinov in 'Improving Neural Networks by Preventing Co-adaptation of Feature Detectors'
+  (arXiv, July 2012) and developed in Srivastava and colleagues' 2014 JMLR paper. Randomly
+  'diluting' connections had earlier been studied in statistical-physics models of neural networks.
+  Google was granted a US patent on the method in 2016; Yarin Gal and Zoubin Ghahramani gave the
+  Monte Carlo interpretation the same year.
+year: 2012
+see_also:
+  - regularization
+  - overfitting
+  - ensemble learning
+  - batch normalization
+  - weight decay
+  - data augmentation
+sources:
+  - text: >-
+      Hinton, G. E. et al. (2012). Improving Neural Networks by Preventing Co-adaptation of Feature
+      Detectors. arXiv:1207.0580.
+    url: https://arxiv.org/abs/1207.0580
+  - text: >-
+      Srivastava, N. et al. (2014). Dropout: A Simple Way to Prevent Neural Networks from
+      Overfitting. Journal of Machine Learning Research, 15, 1929–1958.
+    url: https://jmlr.org/papers/v15/srivastava14a.html

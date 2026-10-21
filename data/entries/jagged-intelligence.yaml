@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: jagged intelligence
+id: jagged-intelligence
+pos: n.
+also:
+  - jaggedness
+  - artificial jagged intelligence
+  - AJI
+domain: culture
+domains:
+  - eval
+  - asi
+labels:
+  - informal
+  - emerging
+level: core
+plain: >-
+  The uneven pattern of AI abilities: today's systems can solve very hard problems yet fail at some
+  a child could manage, so their skills form a spiky profile rather than a smooth one.
+senses:
+  - definition: >-
+      A capability profile, characteristic of current AI systems, in which skill at one task says
+      unusually little about skill at a seemingly easier neighbor: a model that reaches expert level
+      in olympiad mathematics or complex programming may still misjudge whether 9.11 is larger than
+      9.9, miscount letters (see [[strawberry-problem|strawberry problem]]) or lose track of objects
+      in a short story. Because human abilities are strongly correlated, people infer general
+      competence from a few impressive answers; with AI that inference often fails. The idea
+      complicates single-number measures of progress toward
+      [[artificial-general-intelligence|artificial general intelligence]], motivates broad
+      evaluation suites, and underlies the practical advice to verify AI output even in areas where
+      it usually excels.
+    example: >-
+      Jagged intelligence means the model that proves the lemma may still botch the unit conversion
+      in step three.
+origin: >-
+  Introduced by Andrej Karpathy, who called it a term he had come up with, in a July 2024 post on X
+  titled 'Jagged Intelligence' about the strange coexistence of impressive feats and elementary
+  failures in frontier models. It parallels the 'jagged technological frontier' described by
+  Fabrizio Dell'Acqua, Ethan Mollick and colleagues (2023); in June 2025, on Lex Fridman's podcast,
+  Google's chief executive Sundar Pichai applied the label 'artificial jagged intelligence' (AJI) to
+  the present stage of AI, adding that Karpathy may have used the term first.
+year: 2024
+note: >-
+  Compare [[jagged-frontier|jagged frontier]], which describes the same unevenness in terms of which
+  work tasks AI helps or hinders, and [[moravec-s-paradox|Moravec's paradox]], the older observation
+  that what is easy for people is often hard for machines and vice versa.
+see_also:
+  - jagged frontier
+  - strawberry problem
+  - Moravec's paradox
+  - Potemkin understanding
+  - Andrej Karpathy
+  - artificial general intelligence
+  - benchmark

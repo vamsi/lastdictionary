@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Wikidata
+id: wikidata
+pos: prop. n.
+also:
+  - Wikidata Query Service
+  - QID
+domain: sym
+domains:
+  - data
+labels:
+  - trademark
+level: core
+plain: >-
+  A free, shared collection of facts about millions of things — people, places, books, chemicals —
+  kept by volunteers in the Wikipedia family and laid out so programs can use it as easily as
+  people.
+senses:
+  - definition: >-
+      A volunteer-edited [[knowledge-graph|knowledge graph]], hosted by the Wikimedia Foundation,
+      whose basic unit is the item: an entity with a language-independent identifier (Q2 is the
+      planet Earth), labels in many languages, and statements pairing properties (P-identifiers)
+      with values, refined by qualifiers and supported by references. Its content is dedicated to
+      the public domain (CC0), queryable through a public SPARQL service and exportable as
+      [[resource-description-framework|RDF]]. Wikidata supplies data to Wikipedia infoboxes,
+      libraries, research databases, search engines and voice assistants, and it is widely used to
+      build entity-linking systems, question-answering benchmarks,
+      [[knowledge-graph-embedding|knowledge-graph embeddings]] and factual [[grounding|grounding]]
+      for [[large-language-model|language models]]. As of early 2025 it held about 1.65 billion
+      statements.
+origin: >-
+  Launched on 29 October 2012 as the Wikimedia Foundation's first new project since 2006, developed
+  by Wikimedia Deutschland with initial funding from the Allen Institute for AI, the Gordon and
+  Betty Moore Foundation and Google. Google announced in December 2014 that it would close Freebase
+  in Wikidata's favor, and an embedding-based search service supporting the Model Context Protocol
+  launched in October 2025.
+year: 2012
+see_also:
+  - knowledge graph
+  - semantic web
+  - Resource Description Framework
+  - knowledge base
+  - knowledge graph embedding
+  - grounding
+sources:
+  - text: >-
+      Vrandečić, D. & Krötzsch, M. (2014). Wikidata: A Free Collaborative Knowledgebase.
+      Communications of the ACM 57(10), 78–85.
+as_of: 2026-10

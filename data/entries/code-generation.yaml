@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: code generation
+id: code-generation
+pos: n.
+also:
+  - codegen
+  - AI code generation
+  - code synthesis
+  - text-to-code
+  - code completion
+domain: llm
+domains:
+  - agents
+  - eng
+level: core
+plain: >-
+  Having an AI write computer code from a description in plain language, from finishing a single
+  line as you type to building whole programs.
+senses:
+  - context: AI
+    definition: >-
+      The automatic production of source code by a model from a natural-language specification,
+      surrounding code, tests or examples. Modes range from inline completion and
+      [[fill-in-the-middle|fill-in-the-middle]] (predicting code between a given prefix and suffix)
+      through function-level synthesis from docstrings to repository-wide edits and
+      [[agentic-coding|agentic coding]], in which a [[coding-agent|coding agent]] writes, runs and
+      debugs code with tools. Code models are trained on large public code corpora, then
+      post-trained with execution feedback and
+      [[reinforcement-learning-with-verifiable-rewards|verifiable rewards]], since tests make
+      correctness checkable. Benchmarks progressed from [[humaneval|HumanEval]] (function
+      completion, scored by [[pass-k|pass@k]]) to real-repository tasks such as
+      [[swe-bench|SWE-bench]]. Risks include subtly insecure or license-encumbered code, invented
+      package names ([[slopsquatting|slopsquatting]]) and erosion of developers' skills.
+    example: >-
+      Code generation covers our boilerplate; humans still review anything touching payments.
+  - context: Compilers
+    definition: >-
+      The compiler phase that translates a program's intermediate representation into target machine
+      code or bytecode, including instruction selection, register allocation and scheduling. This
+      older sense is unrelated to machine learning, except where [[ai-compiler|AI compilers]]
+      generate kernels for accelerators.
+origin: >-
+  The compiler sense dates from the first optimizing compilers of the 1950s. Neural code generation
+  from natural language was studied from about 2016; OpenAI's [[codex|Codex]] paper (Mark Chen and
+  colleagues, July 2021), which introduced HumanEval, and [[github-copilot|GitHub Copilot]]'s
+  preview the same summer made LLM code generation mainstream, followed by DeepMind's AlphaCode
+  (2022).
+year: 2021
+see_also:
+  - coding agent
+  - agentic coding
+  - program synthesis
+  - HumanEval
+  - SWE-bench
+  - GitHub Copilot
+  - vibe coding
+  - Codex
+sources:
+  - text: >-
+      Chen, M. et al. (2021). Evaluating Large Language Models Trained on Code. arXiv:2107.03374.
+as_of: 2026-10

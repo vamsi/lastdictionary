@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: best-first search
+id: best-first-search
+pos: n.
+also:
+  - greedy best-first search
+  - informed search
+domain: sym
+level: specialist
+plain: >-
+  A family of search methods that rank every option waiting to be explored by a score, such as an
+  estimate of the distance still to go, and always take the top-ranked one next.
+senses:
+  - definition: >-
+      A general [[state-space-search|state space search]] strategy that keeps the frontier in a
+      priority queue and always expands the node with the best (usually lowest) value of an
+      evaluation function f(n). The choice of f defines the algorithm: f(n) = g(n), the path cost so
+      far, gives uniform-cost search (Dijkstra's algorithm); f(n) = h(n), a [[heuristic|heuristic]]
+      estimate of the remaining cost, gives greedy best-first search, which is often fast but
+      neither optimal nor, in infinite spaces, complete; and f(n) = g(n) + h(n) gives [[a-search|A*
+      search]]. [[beam-search|Beam search]] is a memory-bounded relative that keeps only the k best
+      nodes at each step, the form used to decode sequences from [[large-language-model|language
+      models]].
+origin: >-
+  Selecting the node judged best by a heuristic appeared in James Doran and Donald Michie's Graph
+  Traverser (1966) and in A* (1968). Judea Pearl's book Heuristics (1984) systematized best-first
+  search as a general framework.
+year: 1966
+see_also:
+  - A* search
+  - heuristic
+  - beam search
+  - breadth-first search
+  - hill climbing
+  - state space search
+sources:
+  - text: >-
+      Doran, J. E. & Michie, D. (1966). Experiments with the Graph Traverser Program. Proceedings of
+      the Royal Society A 294, 235–259.
+  - text: >-
+      Pearl, J. (1984). Heuristics: Intelligent Search Strategies for Computer Problem Solving.
+      Addison-Wesley.

@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vector quantization
+id: vector-quantization
+pos: n.
+also:
+  - VQ
+  - codebook
+  - residual vector quantization
+  - RVQ
+  - Linde–Buzo–Gray algorithm
+domain: ml
+domains:
+  - infer
+  - gen
+level: specialist
+plain: >-
+  Compressing data by replacing each item with the nearest entry from a small catalog of
+  representative examples, so that only the catalog number needs to be stored or sent.
+senses:
+  - definition: >-
+      A technique that maps each vector in a continuous space to the nearest of a finite set of
+      representative vectors, the codewords of a codebook, so that the vector can be stored or
+      transmitted as a short codeword index. Designing a codebook that minimizes average distortion
+      (squared error) is a [[clustering|clustering]] problem, solved classically by the Lloyd or
+      Linde–Buzo–Gray algorithm, which is essentially [[k-means-clustering|k-means clustering]]. A
+      single codebook fine enough for high-dimensional data would be impractically large, so
+      structured variants split or stack the problem: [[product-quantization|product quantization]]
+      encodes subvectors with separate codebooks, giving compact indexes and fast distance estimates
+      for [[approximate-nearest-neighbor-search|approximate nearest neighbor search]], and residual
+      vector quantization quantizes successive errors with a series of codebooks. In deep learning,
+      learned vector quantization turns continuous representations into discrete tokens, as in
+      [[vq-vae|VQ-VAE]] image tokenizers, [[neural-audio-codec|neural audio codecs]] and the
+      Semantic IDs of [[generative-recommendation|generative recommendation]], so that
+      [[autoregressive-model|autoregressive models]] can generate images, sound or items as token
+      sequences.
+    example: >-
+      Product quantization shrank each 768-dimensional embedding to 64 bytes with little loss in
+      recall.
+origin: >-
+  Grew out of signal compression: Stuart Lloyd's 1957 quantizer design at Bell Labs was generalized
+  to vectors by Yoseph Linde, Andrés Buzo and Robert Gray in 1980, and Gray's 1984 survey 'Vector
+  Quantization' consolidated the field. Hervé Jégou, Matthijs Douze and Cordelia Schmid's product
+  quantization (2011) and Aäron van den Oord and colleagues' VQ-VAE (2017) carried it into
+  large-scale search and generative modeling.
+year: 1980
+note: >-
+  Not to be confused with [[quantization|quantization]] of model weights and activations to
+  low-precision numbers, which is usually scalar (each number rounded separately).
+see_also:
+  - k-means clustering
+  - approximate nearest neighbor search
+  - VQ-VAE
+  - quantization
+  - neural audio codec
+  - image tokenizer
+  - generative recommendation
+contrast:
+  - quantization
+sources:
+  - text: >-
+      Linde, Y., Buzo, A. & Gray, R. M. (1980). An Algorithm for Vector Quantizer Design. IEEE
+      Transactions on Communications 28(1).
+  - text: Gray, R. M. (1984). Vector Quantization. IEEE ASSP Magazine 1(2).
+  - text: >-
+      Jégou, H., Douze, M. & Schmid, C. (2011). Product Quantization for Nearest Neighbor Search.
+      IEEE Transactions on Pattern Analysis and Machine Intelligence 33(1).

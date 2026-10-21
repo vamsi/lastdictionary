@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: General Data Protection Regulation
+id: general-data-protection-regulation
+pos: prop. n.
+also:
+  - GDPR
+  - Regulation (EU) 2016/679
+domain: gov
+domains:
+  - data
+  - society
+labels:
+  - legal
+level: core
+plain: >-
+  The European Union's main privacy law, in force since 2018, which controls how personal
+  information is collected and used — including to train and run AI systems.
+senses:
+  - definition: >-
+      Regulation (EU) 2016/679, the EU's general law on processing personal data, applying since 25
+      May 2018 to organizations established in the EU and to others that offer goods or services to,
+      or monitor, people in the EU. It requires a lawful basis for processing, such as consent or
+      legitimate interests; imposes principles including purpose limitation, data minimization,
+      accuracy and storage limitation; gives people rights of access, rectification, erasure and
+      objection; and in Article 22 limits decisions with legal or comparably serious consequences
+      that are made by [[automated-decision-making|automated processing]] alone. For AI it governs
+      personal data in training sets, including scraped web data, the handling of personal data that
+      models may memorize, and data protection impact assessments for high-risk processing. Fines
+      reach €20 million or 4% of worldwide annual turnover.
+    example: >-
+      The regulator questioned whether legitimate interests under the GDPR could justify training on
+      scraped social-media posts.
+origin: >-
+  Proposed by the European Commission in January 2012 to replace the 1995 Data Protection Directive,
+  adopted on 27 April 2016 and applicable from 25 May 2018. Data protection authorities became early
+  enforcers against generative AI, as when Italy's regulator temporarily restricted ChatGPT in March
+  2023.
+year: 2016
+note: >-
+  Often cited as the clearest example of the [[brussels-effect|Brussels effect]]. Scholars still
+  debate whether it grants a [[right-to-explanation|right to explanation]] of automated decisions.
+  The 2025 [[digital-omnibus|Digital Omnibus]] package proposed amendments — notably recognizing AI
+  development as a legitimate interest, with a right to object — that, as of mid-October 2026, had
+  not yet reached trilogue negotiations.
+see_also:
+  - Brussels effect
+  - automated decision-making
+  - right to explanation
+  - EU AI Act
+  - differential privacy
+  - fundamental rights impact assessment
+standards: >-
+  Regulation (EU) 2016/679, Art. 4 (definitions), Art. 22 (automated individual decision-making),
+  Art. 35 (data protection impact assessment)
+as_of: 2026-10

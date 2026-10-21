@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Qwen
+id: qwen
+pos: prop. n.
+also:
+  - Tongyi Qianwen
+  - Qwen2.5
+  - Qwen3
+  - Qwen3.5
+  - QwQ
+domain: hist
+domains:
+  - llm
+  - eng
+labels:
+  - trademark
+level: core
+plain: >-
+  A family of AI language models from the Chinese company Alibaba, many free to download, which by
+  2025 had become the most popular starting point for other people's open AI models.
+senses:
+  - definition: >-
+      Alibaba Cloud's series of [[large-language-model|large language models]], issued since 2023 in
+      a wide range of sizes; many are released as [[open-weight-model|open-weight]] models under the
+      permissive Apache 2.0 license, while larger proprietary 'Max' models are offered only as a
+      service on Alibaba's cloud. The family spans text, coding (Qwen-Coder), vision–language
+      (Qwen-VL), audio and 'omni' multimodal models, and the reasoning model QwQ (November 2024).
+      Qwen3 (April 2025) introduced hybrid models that can switch between quick answers and
+      step-by-step [[extended-thinking|thinking]], in dense and
+      [[mixture-of-experts|mixture-of-experts]] versions of up to 235 billion parameters; Qwen3.5
+      followed in February 2026. Strong results at small and medium sizes and a rapid release
+      cadence made Qwen, by 2025, the most common base for derivative models on Hugging Face, ahead
+      of [[llama|Llama]], and in 2026 Alibaba said Qwen models had been downloaded more than 3
+      billion times.
+    example: Half the open models on the leaderboard turned out to be Qwen fine-tunes.
+origin: >-
+  Alibaba launched the Tongyi Qianwen chatbot in beta in April 2023 and released its first open
+  weights, Qwen-7B, on 3 August 2023. 'Qwen' is short for Qianwen, roughly 'a thousand questions',
+  from the Chinese name.
+year: 2023
+note: >-
+  Like other Chinese models, Qwen is trained to comply with Chinese content rules, which shapes its
+  answers on politically sensitive topics. Its open releases, with [[deepseek-r1|DeepSeek-R1]], made
+  Chinese laboratories leaders in open-weight AI by 2025.
+see_also:
+  - open-weight model
+  - Llama
+  - DeepSeek-R1
+  - large language model
+  - mixture of experts
+  - DeepSeek moment
+sources:
+  - text: Qwen Team (2025). Qwen3 Technical Report. arXiv:2505.09388.
+as_of: 2026-10

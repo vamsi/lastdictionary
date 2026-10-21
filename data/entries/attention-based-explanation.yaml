@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: attention-based explanation
+id: attention-based-explanation
+pos: n.
+also:
+  - attention as explanation
+  - attention visualization
+  - attention rollout
+  - attention flow
+domain: interp
+domains:
+  - llm
+  - dl
+labels:
+  - contested
+level: specialist
+plain: >-
+  Explaining an AI model's output by showing which words or image patches its attention mechanism
+  weighted most — an intuitive but disputed guide to what actually drove the output.
+senses:
+  - definition: >-
+      The use of [[attention|attention]] weights — the [[softmax|softmax]]-normalized scores that
+      set how much each position draws on others — as evidence of which inputs a model relied on,
+      typically shown as heat maps over tokens or image patches. Because a
+      [[transformer|transformer]] has many heads and layers whose effects mix through the
+      [[residual-stream|residual stream]], raw weights from one layer can mislead; attention rollout
+      and attention flow combine weights across layers to estimate how information travels from
+      inputs to outputs. Whether attention counts as explanation is disputed: Jain and Wallace
+      (2019) found attention weights often out of step with gradient-based importance and showed
+      that quite different attention patterns could leave a prediction unchanged, while Wiegreffe
+      and Pinter (2019) replied that attention built adversarially says little about whether a
+      normally trained model's attention is informative. Most researchers now treat attention maps
+      as hypotheses to test with [[ablation|ablation]] or [[activation-patching|activation
+      patching]], not as faithful explanations.
+    example: >-
+      The attention heat map looked convincing, but ablating the highlighted tokens barely changed
+      the prediction.
+origin: >-
+  Attention heat maps accompanied the first neural attention models: Dzmitry Bahdanau, Kyunghyun Cho
+  and Yoshua Bengio's translation alignments (2014) and Kelvin Xu and colleagues' 'Show, Attend and
+  Tell' (2015). The debate was framed by Sarthak Jain and Byron C. Wallace's 'Attention is not
+  Explanation' (NAACL 2019) and Sarah Wiegreffe and Yuval Pinter's reply 'Attention is not not
+  Explanation' (EMNLP 2019); Samira Abnar and Willem Zuidema proposed rollout and flow (ACL 2020).
+year: 2014
+note: >-
+  An [[attention-pattern|attention pattern]] shows where information was read from, not what was
+  done with it: value vectors and later layers can transform or cancel whatever a head attends to.
+see_also:
+  - attention
+  - attention pattern
+  - attention head
+  - feature attribution
+  - faithfulness
+  - saliency map
+sources:
+  - text: >-
+      Jain, S. & Wallace, B. C. (2019). Attention is not Explanation. Proceedings of NAACL 2019.
+  - text: >-
+      Wiegreffe, S. & Pinter, Y. (2019). Attention is not not Explanation. Proceedings of EMNLP 2019.
+  - text: >-
+      Abnar, S. & Zuidema, W. (2020). Quantifying Attention Flow in Transformers. Proceedings of ACL
+      2020.

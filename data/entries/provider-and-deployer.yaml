@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: provider and deployer
+id: provider-and-deployer
+pos: phr.
+also:
+  - provider
+  - deployer
+  - AI provider
+  - AI deployer
+  - operator
+  - downstream provider
+domain: gov
+domains:
+  - eng
+labels:
+  - legal
+level: core
+plain: >-
+  The two main roles in EU AI law: the provider is whoever makes an AI system and puts it out under
+  its own name; the deployer is whoever uses it for work or official purposes.
+senses:
+  - definition: >-
+      The two principal roles, or 'operators', to which the [[eu-ai-act|EU AI Act]] assigns
+      obligations. The provider is the party behind an [[ai-system|AI system]] or
+      [[general-purpose-ai-model|general-purpose AI model]]: whoever builds it, or has it built, and
+      releases it under its own name or brand, placing it on the EU market or putting it into
+      service, whether it charges for it or not; it carries most duties, including
+      [[conformity-assessment|conformity assessment]] and [[post-market-monitoring|post-market
+      monitoring]]. The deployer is any person, company or public body that uses an AI system under
+      its own control, unless the use is private and non-professional. Deployers of
+      [[high-risk-ai-system|high-risk systems]] must follow the instructions for use, assign
+      [[human-oversight|human oversight]], monitor operation, keep logs for at least six months,
+      inform affected workers and, in some cases, carry out a
+      [[fundamental-rights-impact-assessment|fundamental rights impact assessment]]. Roles are
+      functional, not fixed: a deployer, importer or distributor that rebrands a high-risk system,
+      makes a [[substantial-modification|substantial modification]] to it or repurposes a system for
+      a high-risk use becomes its provider.
+    example: >-
+      The bank is the deployer of the credit model; the vendor that sold it is the provider.
+origin: >-
+  'Provider' follows EU product-safety law, where it parallels 'manufacturer'. The Commission's 2021
+  proposal called the using organization the 'user'; the Parliament's 2023 amendments renamed it
+  'deployer' to avoid confusion with end users, and the final text kept that term.
+year: 2021
+note: >-
+  The other operators are the authorised representative, importer, distributor and product
+  manufacturer. A 'downstream provider' integrates someone else's general-purpose model into its own
+  AI system. These roles apply alongside, and do not map neatly onto, the controller and processor
+  roles of the [[general-data-protection-regulation|General Data Protection Regulation]].
+see_also:
+  - EU AI Act
+  - high-risk AI system
+  - general-purpose AI model
+  - conformity assessment
+  - fundamental rights impact assessment
+  - substantial modification
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(3) ('provider'), Art. 3(4) ('deployer'), Art. 3(8)
+  ('operator'), Art. 3(68) ('downstream provider'); duties Arts. 16, 25 and 26

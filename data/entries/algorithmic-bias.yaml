@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: algorithmic bias
+id: algorithmic-bias
+pos: n.
+also:
+  - AI bias
+  - machine bias
+  - algorithmic discrimination
+  - biased algorithm
+domain: society
+domains:
+  - ml
+  - data
+level: essential
+plain: >-
+  Unfairness in software that judges or serves people: it consistently produces worse results for
+  some groups, such as women, older people or ethnic minorities, often because it learned from
+  skewed or incomplete records.
+senses:
+  - definition: >-
+      Systematic and unjustified differences in how an automated system treats, or performs for,
+      different individuals or groups, especially along the lines of a
+      [[protected-attribute|protected attribute]]. In the taxonomy of Harini Suresh and John Guttag,
+      it can enter at each stage of building and using a model: historical bias (data that record
+      past discrimination), representation bias (groups under-sampled in training data), measurement
+      bias (a stand-in target such as arrests for crime, or health spending for medical need),
+      aggregation and evaluation bias (one model or benchmark for heterogeneous populations) and
+      deployment bias (use in settings the system was not built for). Bias can arise without intent
+      and even when protected attributes are excluded, through [[proxy-discrimination|proxy
+      discrimination]]. It is measured with [[algorithmic-fairness|fairness]] metrics and reduced
+      through better data, constrained training, post-processing and [[ai-audit|audits]].
+    example: >-
+      The audit found algorithmic bias: at equal risk scores, Black patients were sicker than white
+      patients.
+origin: >-
+  Batya Friedman and Helen Nissenbaum's 'Bias in Computer Systems' (1996) distinguished preexisting,
+  technical and emergent bias. An early documented case was an admissions-screening program at St
+  George's Hospital Medical School, London, found in 1988 to discriminate against women and
+  applicants with non-European names. The term became widespread after ProPublica's 'Machine Bias'
+  investigation of [[compas|COMPAS]] (2016).
+year: 1996
+note: >-
+  Distinct from the statistical sense of [[bias|bias]] (systematic estimation error) and from the
+  bias parameter of a neural network. Because common fairness metrics conflict
+  ([[fairness-impossibility-theorem|fairness impossibility theorem]]), deciding which disparities
+  count as bias is partly a value judgment.
+see_also:
+  - algorithmic fairness
+  - disparate impact
+  - proxy discrimination
+  - COMPAS
+  - Gender Shades
+  - protected attribute
+  - fairness impossibility theorem
+contrast:
+  - bias–variance tradeoff
+sources:
+  - text: >-
+      Friedman, B. & Nissenbaum, H. (1996). Bias in Computer Systems. ACM Transactions on
+      Information Systems 14(3), 330–347.
+  - text: >-
+      Obermeyer, Z., Powers, B., Vogeli, C. & Mullainathan, S. (2019). Dissecting racial bias in an
+      algorithm used to manage the health of populations. Science 366(6464), 447–453.
+  - text: >-
+      Suresh, H. & Guttag, J. (2021). A Framework for Understanding Sources of Harm throughout the
+      Machine Learning Life Cycle. Proc. EAAMO 2021.

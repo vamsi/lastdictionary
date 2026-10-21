@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: general-purpose AI
+id: general-purpose-ai
+pos: n.
+also:
+  - GPAI
+  - general-purpose AI system
+domain: core
+domains:
+  - gov
+  - llm
+  - asi
+level: core
+plain: >-
+  AI that can do a wide range of different tasks, like writing, coding, translating and analyzing
+  images, rather than the one job it was built for. Today's chatbots are the main example.
+senses:
+  - definition: >-
+      AI that handles many different kinds of task across domains, including many it was never
+      specifically built for, usually because it rests on a [[foundation-model|foundation model]]
+      pretrained on wide-ranging data and adapted through prompting or fine-tuning. Policy writing
+      uses the phrase as a present-tense, capability-based alternative both to 'foundation model',
+      which describes how a model is built, and to [[artificial-general-intelligence|artificial
+      general intelligence]], which implies human-level breadth. The International AI Safety Report,
+      chaired by Yoshua Bengio (first full edition January 2025), takes general-purpose AI as its
+      object of study, covering language models, multimodal models and agents built on them.
+    example: >-
+      Because it is general-purpose AI, the vendor cannot list every use in advance, so the risk
+      assessment covers misuse too.
+  - context: EU law
+    definition: >-
+      Under the [[eu-ai-act|EU AI Act]], a [[general-purpose-ai-model|general-purpose AI model]] is
+      one that shows significant generality, is 'capable of competently performing a wide range of
+      distinct tasks' and can be built into many downstream systems or applications (Art. 3(63)); a
+      general-purpose AI system is an AI system built on such a model and usable for many purposes,
+      whether on its own or as a component of other AI systems (Art. 3(66)). Model providers have
+      had transparency and copyright duties since 2 August 2025; models with high-impact
+      capabilities, presumed above 10²⁵ floating-point operations of training compute, are
+      [[general-purpose-ai-model-with-systemic-risk|models with systemic risk]] and carry further
+      duties.
+    labels:
+      - legal
+origin: >-
+  Long used informally for broadly capable systems. The phrase entered EU legislative drafting in
+  November 2021, when a Slovenian Presidency compromise text in the Council of the EU added an
+  article on 'general purpose AI systems' to the proposed AI Act, initially to keep them largely out
+  of scope; later Council and Parliament texts imposed duties instead, and the final Act (Regulation
+  (EU) 2024/1689) regulates general-purpose AI models and systems. The International AI Safety
+  Report process, begun in 2024, spread the term internationally.
+year: 2021
+note: >-
+  Not a synonym of [[artificial-general-intelligence|artificial general intelligence]]: a system can
+  be general-purpose while remaining far below human level on many tasks. In EU law, general-purpose
+  AI obligations fall on model providers, separately from the risk tiers that apply to AI systems.
+see_also:
+  - general-purpose AI model
+  - general-purpose AI model with systemic risk
+  - foundation model
+  - artificial general intelligence
+  - General-Purpose AI Code of Practice
+  - International AI Safety Report
+  - narrow AI
+contrast:
+  - narrow AI
+  - artificial general intelligence
+sources:
+  - text: Regulation (EU) 2024/1689 (Artificial Intelligence Act), Article 3(63)–(66).
+    url: https://artificialintelligenceact.eu/article/3/
+  - text: >-
+      Bengio, Y. et al. (2025). International AI Safety Report. UK Department for Science,
+      Innovation and Technology.
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(63) ('general-purpose AI model'), Art. 3(64) ('high-impact
+  capabilities'), Art. 3(66) ('general-purpose AI system'); Art. 51(2) (10^25 FLOP presumption)
+as_of: 2026-10

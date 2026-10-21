@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: encoder-only transformer
+id: encoder-only-transformer
+pos: n.
+also:
+  - encoder-only model
+  - encoder model
+  - bidirectional encoder
+  - BERT-style model
+domain: llm
+domains:
+  - dl
+level: core
+plain: >-
+  A transformer that reads a whole text at once, in both directions, to understand it rather than to
+  write new text. Such models power search, sorting documents by topic and spotting names in text.
+senses:
+  - definition: >-
+      A [[transformer|transformer]] consisting of one stack of blocks with bidirectional (unmasked)
+      [[self-attention|self-attention]], so every token's representation is computed from the entire
+      input. It outputs one contextual vector per token rather than generating text; small
+      task-specific heads on those vectors, or on a pooled summary such as BERT's [CLS] token,
+      perform classification, entity tagging or extractive question answering, or produce
+      [[text-embedding|text embeddings]] for retrieval. Encoder-only models are usually pretrained
+      as [[masked-language-model|masked language models]] and then [[fine-tuning|fine-tuned]].
+      [[bert|BERT]] and its descendants (RoBERTa, ALBERT, DeBERTa, ModernBERT) are the main
+      examples. They remain common in production because they are small, fast and accurate on
+      understanding tasks, and most [[embedding-model|embedding models]] and
+      [[cross-encoder|cross-encoders]] are encoder-only.
+    example: >-
+      For the spam filter, a fine-tuned encoder-only model beat a prompted LLM at a fraction of the
+      cost.
+origin: >-
+  BERT (Jacob Devlin and colleagues, Google, October 2018) established the design by pretraining
+  only the encoder stack of the original transformer. The label 'encoder-only' spread as researchers
+  contrasted the three transformer families, around 2019–2020.
+year: 2018
+see_also:
+  - BERT
+  - masked language model
+  - transformer
+  - decoder-only transformer
+  - embedding model
+  - cross-encoder
+contrast:
+  - decoder-only transformer

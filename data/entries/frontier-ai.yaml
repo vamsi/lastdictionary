@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: frontier AI
+id: frontier-ai
+pos: n.
+also:
+  - frontier artificial intelligence
+  - frontier AI system
+domain: gov
+domains:
+  - safety
+  - llm
+level: essential
+plain: >-
+  The most capable general-purpose AI systems of the moment — those at or beyond the leading edge —
+  which governments single out for extra safety attention.
+senses:
+  - definition: >-
+      AI at the leading edge of capability. In the working definition the UK government adopted for
+      the 2023 [[ai-safety-summit|AI Safety Summit]], it means highly capable general-purpose
+      models, usually [[foundation-model|foundation models]], that can handle a wide range of tasks
+      at or beyond the level of the most advanced models of the day; such systems may have dangerous
+      capabilities that have not yet been observed. The category is relative and moves with the
+      state of the art, which is both its purpose — aiming new rules at new risks without burdening
+      ordinary AI — and its main difficulty for lawmakers. In practice it is operationalized through
+      proxies: [[compute-threshold|training-compute thresholds]] (such as the EU AI Act's
+      presumption at 10²⁵ [[flop|FLOP]] for
+      [[general-purpose-ai-model-with-systemic-risk|systemic-risk models]]),
+      [[capability-threshold|capability thresholds]] identified by
+      [[dangerous-capability-evaluation|dangerous capability evaluations]], or lists of named
+      developers.
+    example: >-
+      The institute tests frontier AI before release under voluntary agreements with the labs.
+origin: >-
+  Popularized in July 2023 by the paper 'Frontier AI Regulation: Managing Emerging Risks to Public
+  Safety' (Markus Anderljung, Joslyn Barnhart and co-authors), by the industry Frontier Model Forum
+  founded the same month, and by the UK government, which renamed its Foundation Model Taskforce the
+  Frontier AI Taskforce in September 2023 and made frontier AI the focus of the Bletchley summit.
+year: 2023
+note: >-
+  [[frontier-model|frontier model]] names the systems and [[frontier-lab|frontier lab]] their
+  developers. Critics argue that the framing, promoted largely by industry and safety researchers,
+  shifts attention from present harms to speculative ones; the [[eu-ai-act|EU AI Act]] avoids the
+  term, using 'general-purpose AI model with systemic risk' instead.
+see_also:
+  - frontier model
+  - frontier lab
+  - general-purpose AI model with systemic risk
+  - compute threshold
+  - AI Safety Summit
+  - Frontier AI Safety Commitments
+  - dangerous capability evaluation
+sources:
+  - text: >-
+      Anderljung, M., Barnhart, J. et al. (2023). Frontier AI Regulation: Managing Emerging Risks to
+      Public Safety. arXiv:2307.03718.
+as_of: 2026-10

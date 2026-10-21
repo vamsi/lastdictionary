@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: emergent abilities
+id: emergent-abilities
+pos: n.
+also:
+  - emergent ability
+  - emergent capabilities
+  - emergent capability
+domain: llm
+domains:
+  - eval
+  - asi
+labels:
+  - contested
+level: core
+plain: >-
+  Skills that seem to switch on suddenly as AI models grow: small versions fail at them, then larger
+  ones past a certain size succeed. Some researchers argue the suddenness is partly an artifact of
+  how skills are measured.
+senses:
+  - definition: >-
+      Capabilities of [[large-language-model|language models]] that stay at or near chance across
+      the smaller members of a model family and then appear once models pass some scale, so that a
+      trend fitted to the smaller models would not have forecast them. Reported examples include
+      multi-step arithmetic, a number of [[big-bench|BIG-bench]] tasks and the benefit of
+      [[chain-of-thought|chain of thought]] prompting, which in 2022-era models appeared only at
+      around 100 billion parameters. Emergence in this sense is defined by scale — of parameters,
+      training compute or data — and its significance for safety is that dangerous capabilities
+      might likewise arrive without warning. Critics showed that many apparent jumps are produced by
+      all-or-nothing scoring such as exact-match accuracy; measured with a graded score such as
+      per-token likelihood, the same models often improve gradually and predictably. Others reply
+      that the capabilities that matter in practice are often all-or-nothing, so threshold effects
+      are real for users even if underlying competence grows smoothly.
+    example: >-
+      The press release called the coding skill emergent, but per-token loss on the task had been
+      falling steadily for three model generations.
+origin: >-
+  Popularized by Jason Wei and 15 co-authors in 'Emergent Abilities of Large Language Models' (TMLR,
+  2022), who called an ability emergent if smaller models lack it and larger ones have it, and cited
+  Philip Anderson's 1972 essay 'More Is Different'. Rylan Schaeffer, Brando Miranda and Sanmi
+  Koyejo's 'Are Emergent Abilities of Large Language Models a Mirage?' (2023; NeurIPS 2023) set out
+  the main critique.
+year: 2022
+note: >-
+  Distinct from the philosophical sense of [[emergence|emergence]] — wholes with properties their
+  parts lack — and from 'emergent' as loose praise for any surprising behavior. See also
+  [[inverse-scaling|inverse scaling]], where larger models do worse.
+see_also:
+  - scaling laws
+  - emergence
+  - inverse scaling
+  - grokking
+  - BIG-bench
+  - chain of thought
+  - dangerous capability evaluation
+contrast:
+  - inverse scaling
+sources:
+  - text: >-
+      Wei, J. et al. (2022). Emergent Abilities of Large Language Models. Transactions on Machine
+      Learning Research.
+    url: https://arxiv.org/abs/2206.07682
+  - text: >-
+      Schaeffer, R., Miranda, B. & Koyejo, S. (2023). Are Emergent Abilities of Large Language
+      Models a Mirage? NeurIPS 2023.
+    url: https://arxiv.org/abs/2304.15004v1

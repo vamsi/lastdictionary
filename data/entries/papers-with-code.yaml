@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Papers with Code
+id: papers-with-code
+pos: prop. n.
+also:
+  - paperswithcode.com
+  - PwC
+domain: orgs
+domains:
+  - eval
+labels:
+  - historical
+level: specialist
+plain: >-
+  A free website, run by Meta from 2019 until it closed in 2025, that linked AI research papers to
+  their computer code and kept leaderboards of the best results.
+senses:
+  - definition: >-
+      A free website (2018–2025) that linked machine learning papers, mostly from [[arxiv|arXiv]],
+      to open-source implementations and organized them by task, dataset and method, with
+      community-maintained '[[state-of-the-art|state of the art]]' [[leaderboard|leaderboards]]
+      recording the best reported result on thousands of [[benchmark|benchmarks]]. For several years
+      it was the default place to check which method led on a benchmark and to find code, and its
+      taxonomy and data were widely used in studies of scientific progress. Critics argued that its
+      leaderboards encouraged chasing small benchmark gains, and many entries were unverified or out
+      of date. Meta retired it in July 2025, pointing users toward [[hugging-face|Hugging Face]]'s
+      paper pages.
+origin: >-
+  Launched in 2018 by Robert Stojnic and Ross Taylor and acquired in late 2019 by Facebook AI
+  Research (later [[meta-ai|Meta AI]]), which ran it until its retirement in July 2025.
+year: 2018
+see_also:
+  - arXiv
+  - leaderboard
+  - benchmark
+  - state of the art
+  - Hugging Face
+  - Meta AI
+as_of: 2026-10

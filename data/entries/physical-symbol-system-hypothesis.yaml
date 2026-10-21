@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: physical symbol system hypothesis
+id: physical-symbol-system-hypothesis
+pos: n.
+also:
+  - PSSH
+  - physical symbol system
+domain: sym
+domains:
+  - mind
+  - hist
+labels:
+  - contested
+level: core
+plain: >-
+  The 1976 claim by two AI pioneers that a machine which stores and rearranges symbols according to
+  rules has everything needed for general intelligence, and that anything generally intelligent must
+  be such a machine.
+senses:
+  - definition: >-
+      The thesis of [[allen-newell|Allen Newell]] and [[herbert-a-simon|Herbert A. Simon]] that 'a
+      physical symbol system has the necessary and sufficient means for general intelligent action.'
+      A physical symbol system is a machine that holds symbol structures — expressions built from
+      tokens that designate objects or processes — and runs processes that create, copy, modify and
+      destroy them; a digital computer running a program is the paradigm case. Sufficiency means a
+      suitably organized symbol system can be made generally intelligent; necessity means any
+      generally intelligent system, including the human mind, is one. Newell and Simon presented it
+      as an empirical hypothesis, to be judged by evidence rather than proof, and it served as the
+      theoretical charter of [[symbolic-ai|symbolic AI]] and of [[cognitive-architecture|cognitive
+      architectures]] such as Soar.
+origin: >-
+  Stated by Allen Newell and Herbert A. Simon in their 1975 ACM Turing Award lecture, published as
+  'Computer Science as Empirical Inquiry: Symbols and Search' (Communications of the ACM, March
+  1976), where it was paired with a companion heuristic search hypothesis.
+year: 1976
+note: >-
+  Critics include Hubert Dreyfus, who argued that intelligence rests on embodied know-how
+  ([[dreyfus-s-critique-of-ai|Dreyfus's critique of AI]]), John Searle's [[chinese-room|Chinese
+  room]] argument, connectionists, and those pressing the [[symbol-grounding-problem|symbol
+  grounding problem]]. Some defenders argue that neural networks running on digital computers are
+  themselves symbol systems at the implementation level; critics reply that this empties the
+  hypothesis of content.
+see_also:
+  - symbolic AI
+  - good old-fashioned AI
+  - Allen Newell
+  - Herbert A. Simon
+  - symbol grounding problem
+  - Chinese room
+  - heuristic
+contrast:
+  - connectionism
+sources:
+  - text: >-
+      Newell, A. & Simon, H. A. (1976). Computer Science as Empirical Inquiry: Symbols and Search.
+      Communications of the ACM 19(3), 113–126.

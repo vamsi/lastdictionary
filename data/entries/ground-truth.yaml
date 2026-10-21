@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ground truth
+id: ground-truth
+pos: n.
+also:
+  - ground-truth data
+  - ground truthing
+domain: data
+domains:
+  - eval
+  - ml
+level: core
+plain: >-
+  The reference answers treated as correct when checking or training an AI system — for example, the
+  confirmed diagnoses that a medical-imaging model's guesses are compared against.
+senses:
+  - definition: >-
+      The values accepted as correct for a set of examples, against which a model is trained or its
+      outputs are scored: verified diagnoses, measured distances, transcribed speech, human-assigned
+      [[label|labels]]. In some settings ground truth is a physical measurement independent of human
+      judgment, such as lidar depth used to evaluate a stereo-vision system; in most AI datasets it
+      is the best available human or procedural judgment, adopted as correct by convention. The gap
+      matters. Ambiguous items, annotator disagreement and systematic labeling errors mean that
+      measured accuracy can reward agreement with flawed references, and for open-ended generation
+      there is often no single ground truth at all, which is why evaluation turns to rubrics,
+      multiple references, [[human-evaluation|human evaluation]] or [[llm-as-a-judge|model judges]].
+    example: Our ground truth is the biopsy result, not the radiologist's original read.
+origin: >-
+  A remote-sensing and mapping term: by 1972 NASA described ground truth as observations made on the
+  earth's surface to calibrate measurements from aircraft and satellites. Statistics and machine
+  learning borrowed it for any trusted reference data. An older literary sense, 'fundamental truth',
+  is recorded from 1833.
+year: 1972
+note: >-
+  Critics argue the term overstates certainty, since many labels are contestable judgments;
+  'reference labels' or 'gold labels' are sometimes preferred. A [[golden-dataset|golden dataset]]
+  is a curated set of ground-truth examples kept for evaluation.
+see_also:
+  - label
+  - golden dataset
+  - label noise
+  - annotation
+  - evaluation
+  - benchmark
+contrast:
+  - prediction

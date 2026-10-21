@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model extraction
+id: model-extraction
+pos: n.
+also:
+  - model stealing
+  - model stealing attack
+  - extraction attack
+  - distillation attack
+domain: sec
+domains:
+  - llm
+  - gov
+level: core
+plain: >-
+  Copying an AI model without permission by asking it huge numbers of questions and using the
+  answers to build a look-alike, or to work out hidden details of how it was made.
+senses:
+  - definition: >-
+      An attack in which an adversary with query access to a deployed model reconstructs it, or
+      something functionally close, without access to its [[weights|weights]]. Goals range from
+      exact recovery of parameters — feasible for small or partly linear models, and for the final
+      projection layer of some production [[large-language-model|language models]] when
+      [[logit|logit]]-derived outputs were exposed — to functional copying, in which the attacker
+      trains a substitute on the target's input–output pairs, in effect unauthorized
+      [[knowledge-distillation|knowledge distillation]]. Extracted models enable theft of
+      intellectual property, cheaper [[white-box-attack|white-box]] attacks on the original, and
+      copies stripped of its safeguards. Defenses include rate limits, withholding probabilities,
+      detecting suspicious query patterns, account verification, terms of service, and
+      [[model-fingerprinting|fingerprinting]] or watermarking to prove copying.
+    example: >-
+      The provider suspected model extraction when a cluster of new accounts sent millions of
+      systematically varied prompts in a week.
+origin: >-
+  Florian Tramèr and colleagues' 'Stealing Machine Learning Models via Prediction APIs' (USENIX
+  Security 2016) introduced practical extraction attacks on commercial prediction APIs. Nicholas
+  Carlini and colleagues' 'Stealing Part of a Production Language Model' (ICML 2024 best paper)
+  recovered, through OpenAI's public API, the final projection matrix of two older models and the
+  hidden width of gpt-3.5-turbo. In February 2026 Anthropic accused three Chinese laboratories
+  (DeepSeek, Moonshot AI and MiniMax) of 'distillation attacks' using about 24,000 fraudulent
+  accounts and over 16 million exchanges with its Claude models.
+year: 2016
+note: >-
+  Training on another model's outputs is common and often legitimate; it becomes extraction when it
+  breaches terms of service, access controls or intellectual-property rights. The legal status of
+  such copying varies by jurisdiction and is largely untested.
+see_also:
+  - knowledge distillation
+  - black-box attack
+  - model fingerprinting
+  - weight exfiltration
+  - model weight security
+  - rate limit
+sources:
+  - text: >-
+      Tramèr, F., Zhang, F., Juels, A., Reiter, M. K. & Ristenpart, T. (2016). Stealing Machine
+      Learning Models via Prediction APIs. USENIX Security 2016.
+  - text: >-
+      Carlini, N. et al. (2024). Stealing Part of a Production Language Model. ICML 2024.
+  - text: >-
+      Anthropic (2026). Detecting and preventing distillation attacks. Anthropic News, February 2026.
+    url: https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks
+as_of: 2026-10

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: transfer learning
+id: transfer-learning
+pos: n.
+also:
+  - knowledge transfer
+  - negative transfer
+  - linear probing
+  - pretrain-then-fine-tune
+domain: dl
+domains:
+  - ml
+  - train
+level: essential
+plain: >-
+  Reusing what a model learned on one task to get a head start on another — like a pianist picking
+  up the organ faster than a beginner. It lets models learn new jobs from little data.
+senses:
+  - definition: >-
+      The practice of starting a new learning problem (the target task or domain, usually with
+      little data) from what a model has already learned on another (the source), instead of from
+      scratch. In deep learning the dominant form is to [[pretraining|pretrain]] a network on a
+      large, general dataset and then adapt it, either by using its internal representations as
+      fixed features for a small new model (linear probing) or by continuing to train some or all of
+      its weights on target data ([[fine-tuning|fine-tuning]], including
+      [[parameter-efficient-fine-tuning|parameter-efficient fine-tuning]]). It works because early
+      and intermediate layers learn broadly useful features — edges and textures in vision, syntax
+      and world knowledge in language — so the target task has far less to learn from scratch.
+      ImageNet-pretrained convolutional networks made transfer standard in computer vision from
+      about 2014, and language-model pretraining (ULMFiT, ELMo, [[bert|BERT]] and [[gpt|GPT]], all
+      2018) did the same for language; [[foundation-model|foundation models]] are the culmination of
+      the paradigm, and [[in-context-learning|in-context learning]] can be seen as transfer without
+      any weight updates. Related settings include domain adaptation (same task, shifted inputs),
+      [[multi-task-learning|multi-task learning]] and [[sim-to-real-transfer|sim-to-real transfer]].
+      Transfer can hurt ('negative transfer') when source and target are too dissimilar.
+    example: >-
+      With transfer learning from an ImageNet backbone, 500 labeled X-rays were enough to beat the
+      model trained from scratch.
+origin: >-
+  The idea echoes psychology's studies of 'transfer of training' (Edward Thorndike and Robert
+  Woodworth, 1901). The earliest known machine-learning treatment is a 1976 paper by Stevo
+  Bozinovski and Ante Fulgosi on how pattern similarity affects transfer in perceptron training.
+  Lorien Pratt's discriminability-based transfer (1992) and the collection 'Learning to Learn'
+  (Sebastian Thrun and Pratt, eds., 1998) built the field; Sinno Jialin Pan and Qiang Yang's 2010
+  survey standardized its vocabulary, and deep learning made pretrain-then-fine-tune the norm.
+year: 1976
+see_also:
+  - fine-tuning
+  - pretraining
+  - foundation model
+  - parameter-efficient fine-tuning
+  - multi-task learning
+  - few-shot learning
+  - sim-to-real transfer
+sources:
+  - text: >-
+      Pan, S. J. & Yang, Q. (2010). A Survey on Transfer Learning. IEEE Transactions on Knowledge
+      and Data Engineering 22(10), 1345–1359.
+  - text: >-
+      Yosinski, J., Clune, J., Bengio, Y. & Lipson, H. (2014). How transferable are features in deep
+      neural networks? NeurIPS 2014.

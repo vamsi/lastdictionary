@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DINO
+id: dino
+pos: prop. n.
+also:
+  - DINOv2
+  - DINOv3
+  - self-distillation with no labels
+pronunciation: DEE-noh
+domain: percep
+domains:
+  - dl
+  - train
+level: specialist
+plain: >-
+  A family of Meta vision models that learn to understand images from millions of unlabeled photos,
+  by training one network to agree with a slowly updated copy of itself.
+senses:
+  - definition: >-
+      A [[self-supervised-learning|self-supervised]] method, and the family of image encoders
+      trained with it, based on self-distillation without labels. A student and a teacher network of
+      the same architecture (usually a [[vision-transformer|vision transformer]]) see different
+      random crops of the same image: the teacher only large 'global' views, the student also small
+      'local' ones. The student is trained with [[cross-entropy|cross-entropy]] to match the
+      teacher's [[softmax|softmax]] output over a large number of dimensions (65,536 in the
+      original), while the teacher receives no gradient and is updated as an
+      [[exponential-moving-average-of-weights|exponential moving average]] of the student; centering
+      and sharpening the teacher's outputs prevent collapse to a trivial constant answer. The 2021
+      paper reported 'emerging properties': attention maps of DINO-trained transformers outlined
+      objects without supervision, and the features worked well for nearest-neighbor retrieval.
+      DINOv2 (2023) added a curated dataset of 142 million images, a masked-patch objective and
+      distillation from a 1-billion-parameter model; DINOv3 (August 2025) scaled to a
+      7-billion-parameter model trained on 1.7 billion images, with 'Gram anchoring' to keep dense
+      per-patch features sharp. DINO models are widely used as frozen [[backbone|backbones]] for
+      segmentation, [[depth-estimation|depth estimation]], retrieval and robotics.
+    example: >-
+      Frozen DINOv2 patch features plus a linear layer gave us usable segmentation masks for the
+      drone imagery.
+origin: >-
+  Introduced by Mathilde Caron, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr
+  Bojanowski and Armand Joulin (Facebook AI Research and Inria) in 'Emerging Properties in
+  Self-Supervised Vision Transformers' (arXiv April 2021; ICCV 2021); the name abbreviates
+  'self-distillation with no labels'. DINOv2 (Maxime Oquab et al.) followed in April 2023 and DINOv3
+  (Oriane Siméoni et al.) in August 2025.
+year: 2021
+note: >-
+  Not to be confused with the DINO object detector (2022), a [[detr|DETR]] variant named for 'DETR
+  with Improved deNoising anchOr boxes', on which Grounding DINO is built.
+see_also:
+  - self-supervised learning
+  - knowledge distillation
+  - vision transformer
+  - masked autoencoder
+  - joint-embedding predictive architecture
+  - backbone
+  - contrastive learning
+sources:
+  - text: >-
+      Caron, M. et al. (2021). Emerging Properties in Self-Supervised Vision Transformers. ICCV 2021.
+    url: https://arxiv.org/abs/2104.14294
+  - text: >-
+      Oquab, M. et al. (2023). DINOv2: Learning Robust Visual Features without Supervision.
+      arXiv:2304.07193.
+    url: https://arxiv.org/abs/2304.07193
+  - text: Siméoni, O. et al. (2025). DINOv3. arXiv:2508.10104.
+    url: https://arxiv.org/abs/2508.10104
+as_of: 2026-10

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: margin
+id: margin
+pos: n.
+also:
+  - geometric margin
+  - functional margin
+  - hard margin
+  - large-margin classifier
+  - margin maximization
+  - margin loss
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  How far, and on which side, an example lies from a classifier's dividing line. A wide gap between
+  the line and the nearest examples suggests the classifier will handle new data well.
+senses:
+  - context: Classification
+    definition: >-
+      The distance between a classifier's [[decision-boundary|decision boundary]] and the training
+      examples closest to it. For a linear classifier with weights w and offset b, the geometric
+      margin of a dataset is the minimum over examples of yᵢ(w·xᵢ + b)/‖w‖. Maximizing it is the
+      principle of [[support-vector-machine|support vector machines]]: a hard margin requires every
+      example to lie outside it, while a soft margin tolerates violations at a cost. Learning theory
+      links large margins to better [[generalization|generalization]], because margin-based error
+      bounds depend on the margin relative to the spread of the data rather than on the number of
+      features.
+    example: >-
+      Rescaling the features changed the margin, so we standardized everything before training the
+      SVM.
+  - context: Per-example and in loss functions
+    definition: >-
+      The signed score y·f(x) of a single example, with labels ±1: positive when the example is
+      classified correctly and larger the more confidently so. Margin-based losses such as the
+      [[hinge-loss|hinge loss]], logistic loss and AdaBoost's exponential loss are functions of it,
+      and the distribution of margins helps explain why [[boosting|boosting]] keeps improving test
+      error after training error reaches zero. In ranking and metric learning, a margin is also a
+      fixed gap, set as a hyperparameter, by which a matching pair's score must exceed a
+      non-matching pair's in triplet or contrastive losses.
+formula_latex: \gamma = \min_{i} \frac{y_i(\mathbf{w}^{\top}\mathbf{x}_i + b)}{\lVert \mathbf{w} \rVert}
+origin: >-
+  The maximum-margin principle comes from Vladimir Vapnik's work with Alexander Lerner and Alexey
+  Chervonenkis in the 1960s and was popularized by support vector machines in the 1990s ('optimal
+  margin classifiers', Boser, Guyon and Vapnik, 1992). Robert Schapire, Yoav Freund, Peter Bartlett
+  and Wee Sun Lee used margins to explain boosting's resistance to overfitting in 1998.
+see_also:
+  - support vector machine
+  - hinge loss
+  - decision boundary
+  - AdaBoost
+  - linear separability
+  - contrastive learning
+sources:
+  - text: >-
+      Schapire, R. E., Freund, Y., Bartlett, P. & Lee, W. S. (1998). Boosting the Margin: A New
+      Explanation for the Effectiveness of Voting Methods. The Annals of Statistics, 26(5),
+      1651–1686.

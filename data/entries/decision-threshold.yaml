@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decision threshold
+id: decision-threshold
+pos: n.
+also:
+  - classification threshold
+  - operating point
+  - cutoff
+  - threshold tuning
+  - threshold moving
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  The cut-off score above which a model's prediction counts as 'yes'; moving it trades missed cases
+  against false alarms, like setting how sensitive a smoke alarm should be.
+senses:
+  - definition: >-
+      The value of a classifier's score or predicted probability above which an example is assigned
+      to the positive class. Many models output a continuous score, and the default threshold of 0.5
+      on a probability is optimal only if the probabilities are calibrated and both kinds of error
+      cost the same. Raising the threshold generally increases [[precision|precision]] and
+      [[specificity|specificity]] and lowers [[recall|recall]]; lowering it does the reverse. Each
+      threshold yields one [[confusion-matrix|confusion matrix]], and sweeping it traces the
+      [[roc-curve|ROC curve]] and the [[precision-recall-curve|precision–recall curve]]. Choosing
+      the operating point is a decision rather than a learning problem: with calibrated
+      probabilities, the threshold that minimizes expected cost is the cost of a false positive
+      divided by the sum of the costs of a false positive and a false negative. In practice
+      thresholds are tuned on a [[validation-set|validation set]] to meet a constraint, such as 95%
+      recall or at most 1% of transactions flagged, to maximize a metric such as the [[f1-score|F1
+      score]], or separately per group to satisfy fairness criteria. They should be re-checked when
+      class prevalence or score distributions drift.
+    example: >-
+      We lowered the decision threshold from 0.5 to 0.2 because a missed tumor costs far more than
+      an extra biopsy.
+formula_latex: t^{*} = \frac{C_{\mathrm{FP}}}{C_{\mathrm{FP}} + C_{\mathrm{FN}}}
+origin: >-
+  Threshold choice comes from statistical decision theory and the signal detection theory of the
+  1950s, in which an observer's criterion trades hits against false alarms. Charles Elkan's 'The
+  Foundations of Cost-Sensitive Learning' (IJCAI 2001) gave the standard machine-learning treatment
+  of cost-based thresholds.
+see_also:
+  - ROC curve
+  - precision–recall curve
+  - calibration
+  - confusion matrix
+  - precision
+  - recall
+  - class imbalance
+sources:
+  - text: >-
+      Elkan, C. (2001). The Foundations of Cost-Sensitive Learning. Proc. 17th International Joint
+      Conference on Artificial Intelligence (IJCAI).

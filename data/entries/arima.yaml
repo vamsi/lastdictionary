@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ARIMA
+id: arima
+pos: n.
+also:
+  - autoregressive integrated moving average
+  - ARMA
+  - SARIMA
+  - ARIMAX
+  - Box–Jenkins method
+pronunciation: uh-REE-muh
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A classic statistical recipe for forecasting a series of numbers over time: remove any steady
+  trend, then predict the next value from recent values and recent prediction errors.
+senses:
+  - definition: >-
+      A class of linear statistical models for [[time-series-forecasting|time series forecasting]]
+      ('autoregressive integrated moving average'), written ARIMA(p, d, q). The series is first
+      differenced d times to remove trends and make it stationary, meaning its statistical
+      properties no longer drift over time; the differenced series is then modeled as a linear
+      combination of its own p previous values (the autoregressive part) and of the q previous
+      random shocks, or forecast errors (the moving-average part). Seasonal ARIMA (SARIMA) adds the
+      same terms at seasonal lags, and ARIMAX adds external regressors. The Box–Jenkins methodology
+      fits models in three repeated stages: identification (choosing p, d and q from autocorrelation
+      plots and unit-root tests), estimation (usually by maximum likelihood) and diagnostic checking
+      of the residuals; automatic order selection with information criteria is now common. ARIMA
+      models are interpretable and yield prediction intervals, but they assume linear dynamics and
+      model one series at a time.
+    example: >-
+      A seasonal ARIMA(1,1,1)(0,1,1)₁₂ is still our baseline for monthly passenger numbers.
+formula_latex: \Big(1 - \sum_{i=1}^{p} \phi_i L^i\Big)(1 - L)^d \, y_t = c + \Big(1 + \sum_{j=1}^{q}
+  \theta_j L^j\Big)\varepsilon_t
+origin: >-
+  Builds on George Udny Yule's autoregressive model (1927), Eugen Slutsky's moving-average processes
+  (1927) and Peter Whittle's theory of ARMA models (1951). George Box and Gwilym Jenkins assembled
+  the integrated and seasonal model class, with its identify–estimate–check methodology, in their
+  1970 book Time Series Analysis: Forecasting and Control, making ARIMA a standard tool in
+  economics, operations and engineering.
+year: 1970
+note: >-
+  In machine learning, ARIMA and seasonal naive forecasts serve as standard [[baseline|baselines]];
+  a complex model that cannot beat them adds no value. In the formula, L is the lag operator (L yₜ =
+  yₜ₋₁).
+see_also:
+  - time series forecasting
+  - exponential smoothing
+  - autoregressive model
+  - Akaike information criterion
+  - baseline
+  - regression
+sources:
+  - text: >-
+      Box, G. E. P. & Jenkins, G. M. (1970). Time Series Analysis: Forecasting and Control. San
+      Francisco: Holden-Day.
+  - text: >-
+      Whittle, P. (1951). Hypothesis Testing in Time Series Analysis. Uppsala: Almqvist & Wiksells.
+  - text: >-
+      Hyndman, R. J. & Khandakar, Y. (2008). Automatic Time Series Forecasting: The forecast Package
+      for R. Journal of Statistical Software 27(3).

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Core ML
+id: core-ml
+pos: prop. n.
+also:
+  - CoreML
+  - Core ML Tools
+  - coremltools
+  - .mlmodel
+  - .mlpackage
+  - Foundation Models framework
+domain: eng
+domains:
+  - infer
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  Apple's software framework that lets apps on iPhones, iPads and Macs run AI models directly on the
+  device, using its own chips instead of sending data to the cloud.
+senses:
+  - definition: >-
+      Apple's framework for integrating trained machine-learning models into apps on iOS, iPadOS,
+      macOS, watchOS, tvOS and visionOS and running them on the device. Models trained in other
+      frameworks such as [[pytorch|PyTorch]] are converted with the open-source coremltools package
+      into Core ML's format (.mlmodel, or the newer .mlpackage bundle), which supports
+      [[quantization|quantization]], palettization and [[pruning|pruning]] to shrink models. At run
+      time Core ML decides which parts of a model run on the CPU, the GPU or the Apple Neural Engine
+      (Apple's [[npu|neural processing unit]]), trading speed against power draw and memory use, and
+      Apple's higher-level frameworks for vision, natural language and sound build on it. Core ML
+      serves app developers deploying fixed models rather than researchers training them. Since 2025
+      Apple has also offered a Foundation Models framework that gives apps direct access to the
+      on-device language model behind Apple Intelligence.
+    example: >-
+      We converted the segmentation model to Core ML so the app works in airplane mode.
+origin: >-
+  Announced at Apple's Worldwide Developers Conference in June 2017 and shipped with iOS 11 that
+  year, alongside the first iPhone chip with a Neural Engine, the A11 Bionic. Later versions added
+  on-device personalization of models and support for transformer-based generative models.
+year: 2017
+note: >-
+  Contrast [[mlx|MLX]], Apple's open-source array framework for research and local model running on
+  Macs. Comparable roles on other platforms are played by [[litert|LiteRT]] and
+  [[executorch|ExecuTorch]].
+see_also:
+  - on-device AI
+  - MLX
+  - LiteRT
+  - ExecuTorch
+  - NPU
+  - ONNX
+  - edge AI
+as_of: 2026-10

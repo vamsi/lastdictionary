@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlexNet
+id: alexnet
+pos: prop. n.
+also:
+  - SuperVision
+domain: hist
+domains:
+  - dl
+  - percep
+level: core
+plain: >-
+  The neural network that won a major image-recognition contest by a huge margin in 2012, convincing
+  researchers and companies that deep learning trained on graphics chips was the way forward.
+senses:
+  - definition: >-
+      A deep [[convolutional-neural-network|convolutional neural network]] built by
+      [[alex-krizhevsky|Alex Krizhevsky]], [[ilya-sutskever|Ilya Sutskever]] and
+      [[geoffrey-hinton|Geoffrey Hinton]] at the University of Toronto that won the 2012
+      [[imagenet|ImageNet]] Large Scale Visual Recognition Challenge with a top-5 error of 15.3
+      percent, against 26.2 percent for the next-best entry. It had five convolutional and three
+      fully connected layers, about 60 million parameters and 650,000 neurons, and was trained for
+      five to six days on two NVIDIA GTX 580 [[gpu|GPUs]] using Krizhevsky's cuda-convnet code. Its
+      ingredients — [[relu|ReLU]] activations, [[dropout|dropout]], extensive
+      [[data-augmentation|data augmentation]], overlapping pooling and GPU training — were
+      individually known, but their combination at scale proved decisive. The result converted
+      computer vision to deep learning almost overnight and is the conventional starting point of
+      the [[deep-learning-revolution|deep learning revolution]].
+    example: >-
+      AlexNet's margin over hand-engineered features ended the argument in computer vision.
+origin: >-
+  Entered in the 2012 challenge under the team name SuperVision and described in the NIPS 2012 paper
+  'ImageNet Classification with Deep Convolutional Neural Networks'; the name AlexNet, after
+  Krizhevsky, was applied afterwards. In 2013 Google acquired the authors' three-person startup,
+  DNNresearch.
+year: 2012
+note: >-
+  The Computer History Museum, working with Google, released AlexNet's original source code in 2025.
+see_also:
+  - ImageNet
+  - deep learning revolution
+  - convolutional neural network
+  - GPU
+  - LeNet
+  - dropout
+  - ReLU
+sources:
+  - text: >-
+      Krizhevsky, A., Sutskever, I. & Hinton, G. E. (2012). ImageNet Classification with Deep
+      Convolutional Neural Networks. Advances in Neural Information Processing Systems 25 (NIPS
+      2012).

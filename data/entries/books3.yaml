@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Books3
+id: books3
+pos: prop. n.
+domain: data
+domains:
+  - gov
+  - llm
+level: specialist
+plain: >-
+  A collection of nearly 200,000 pirated e-books, assembled in 2020 and used to train several AI
+  language models, which became central to lawsuits by authors over AI training.
+senses:
+  - definition: >-
+      A dataset of about 197,000 books in plain text, most of them in copyright, taken from the
+      private piracy tracker Bibliotik. It was released openly in 2020 so that independent
+      researchers would have book-length text comparable to the undisclosed book corpora of large AI
+      laboratories, and it became a component of about 101 GiB (108 GB) in [[the-pile|The Pile]].
+      Through The Pile and directly, it was used to train prominent models of 2020–2023, including
+      Meta's first [[llama|Llama]] models and BloombergGPT. From 2023 it figured in authors'
+      copyright suits against AI developers, among them Kadrey v. Meta (filed July 2023);
+      journalists published searchable lists of its authors and titles that year, and its open
+      distribution was largely shut down following takedown demands from the Danish anti-piracy
+      group Rights Alliance.
+    example: >-
+      Authors searched the published Books3 title list to see whether their novels were in it.
+origin: >-
+  Assembled and released in 2020 by the independent developer Shawn Presser, and spread through The
+  Pile (December 2020). Alex Reisner's reporting in The Atlantic in August and September 2023
+  identified its contents and made it notorious.
+year: 2020
+note: >-
+  [[bartz-v-anthropic|Bartz v. Anthropic]] (June 2025) held that training on books was fair use but
+  keeping pirated copies from Books3, LibGen and PiLiMi in a central library was not; Books3 titles
+  were left out of the certified class for lack of metadata, so the USD 1.5 billion settlement
+  (approved July 2026) covers LibGen and PiLiMi works. Kadrey v. Meta found fair use because the
+  authors had not shown market harm.
+see_also:
+  - The Pile
+  - Bartz v. Anthropic
+  - AI copyright litigation
+  - fair use and AI training
+  - data licensing
+  - data provenance
+  - pretraining data
+as_of: 2026-10

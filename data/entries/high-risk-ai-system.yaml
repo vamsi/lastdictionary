@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: high-risk AI system
+id: high-risk-ai-system
+pos: n.
+also:
+  - high-risk AI
+  - high-risk system
+  - Annex III system
+domain: gov
+domains:
+  - society
+  - safety
+labels:
+  - legal
+level: essential
+plain: >-
+  Under EU law, an AI system used where mistakes could seriously hurt people's safety or rights — in
+  hiring, schooling, loans, policing, borders or products like medical devices — and which must
+  therefore pass strict checks.
+senses:
+  - definition: >-
+      Under the [[eu-ai-act|EU AI Act]], an [[ai-system|AI system]] in one of two groups. The first
+      is AI in products already regulated by the EU safety laws listed in Annex I — toys, lifts,
+      medical devices, vehicles and the like — where the AI is the product itself or performs a
+      safety function in it, and the product must be checked by an independent body under those
+      laws. The second is AI meant for one of the sensitive uses in Annex III: biometrics; critical
+      infrastructure; education and vocational training; employment and worker management; access to
+      essential private and public services such as credit, insurance and benefits; law enforcement;
+      migration, asylum and border control; and the administration of justice and democratic
+      processes. An Annex III system escapes the label if it poses no significant risk, for instance
+      because it only carries out a narrow procedural or preparatory task, but never if it profiles
+      people. Providers must run a risk management system and meet requirements on data governance,
+      technical documentation, logging, transparency to deployers, [[human-oversight|human
+      oversight]], and accuracy, robustness and cybersecurity, then complete
+      [[conformity-assessment|conformity assessment]], affix CE marking and register Annex III
+      systems in an EU database.
+    example: >-
+      Because it ranks job applicants, the tool is a high-risk AI system under Annex III.
+origin: >-
+  Foreshadowed in the European Commission's 2020 White Paper on AI and defined in its April 2021 AI
+  Act proposal. Obligations were originally due from 2 August 2026; the 2026
+  [[digital-omnibus|Digital Omnibus]] postponed them to 2 December 2027 for Annex III uses and 2
+  August 2028 for Annex I products, narrowed the definition of 'safety component' and left AI in
+  machinery largely to the Machinery Regulation.
+year: 2021
+note: >-
+  'High-risk' is a legal category, not a measured property: a mediocre hiring tool is high-risk
+  while a highly capable chatbot generally is not. The Commission can amend Annex III by delegated
+  act. Its guidelines on classification under Article 6, due by February 2026, appeared in draft
+  only on 19 May 2026 and were still a draft in late July 2026.
+see_also:
+  - EU AI Act
+  - conformity assessment
+  - provider and deployer
+  - human oversight
+  - fundamental rights impact assessment
+  - post-market monitoring
+  - harmonised standards
+  - risk-based approach
+sources:
+  - text: >-
+      European Commission (2026). Draft Commission guidelines on the classification of high-risk AI
+      systems. 19 May 2026.
+    url: https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 6 and Annexes I and III; requirements Arts. 8–15;
+  application dates as amended by Reg. (EU) 2026/1744
+as_of: 2026-10

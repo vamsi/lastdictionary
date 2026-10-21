@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: attention pattern
+id: attention-pattern
+pos: n.
+also:
+  - attention map
+  - attention matrix
+  - attention weights
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A grid showing, for each word a language model processes, how much it is looking back at each
+  earlier word at that moment — often drawn as a heat map.
+senses:
+  - definition: >-
+      The matrix of attention weights produced by one [[attention-head|attention head]] on one
+      input: entry (i, j) is the [[softmax|softmax]]-normalized score with which the query at
+      position i attends to the key at position j, so each row sums to one and, in models with a
+      [[causal-mask|causal mask]], entries above the diagonal are zero. Attention patterns show
+      where each head gathers information from and are drawn as heat maps or arc diagrams.
+      Recognizable patterns identify head types: previous-token heads (a stripe just below the
+      diagonal), [[induction-head|induction heads]] (an offset stripe on repeated text), heads that
+      park attention on the first token as a default [[attention-sink|attention sink]], and heads
+      tracking syntactic relations. In circuit analysis the pattern, governed by the
+      [[qk-and-ov-circuits|QK circuit]], is studied separately from what the head writes, governed
+      by the OV circuit. A pattern shows where a head looks, not what it moves or how much that
+      matters to the output.
+    example: >-
+      Layer 5 head 1 has a clean induction stripe in its attention pattern on the repeated half.
+origin: >-
+  Plots of attention weights date to neural machine translation, where Dzmitry Bahdanau, Kyunghyun
+  Cho and Yoshua Bengio (2014) displayed them as soft alignments. Kevin Clark and colleagues' 'What
+  Does BERT Look At?' and Jesse Vig's BertViz tool (both 2019) made head-by-head analysis routine;
+  'attention pattern' is the standard mechanistic-interpretability term since Elhage et al. (2021).
+year: 2014
+note: >-
+  Whether attention weights explain predictions was debated in 'Attention is not Explanation'
+  (Sarthak Jain and Byron Wallace, 2019) and the reply 'Attention is not not Explanation' (Sarah
+  Wiegreffe and Yuval Pinter, 2019); see [[attention-based-explanation|attention-based
+  explanation]].
+see_also:
+  - attention
+  - attention head
+  - QK and OV circuits
+  - induction head
+  - attention sink
+  - attention-based explanation
+sources:
+  - text: >-
+      Clark, K., Khandelwal, U., Levy, O. & Manning, C. D. (2019). What Does BERT Look At? An
+      Analysis of BERT's Attention. BlackboxNLP 2019.
+  - text: >-
+      Vig, J. (2019). A Multiscale Visualization of Attention in the Transformer Model. ACL 2019
+      System Demonstrations.

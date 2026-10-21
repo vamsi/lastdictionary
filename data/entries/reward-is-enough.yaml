@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reward is enough
+id: reward-is-enough
+pos: phr.
+also:
+  - reward-is-enough hypothesis
+domain: rl
+domains:
+  - asi
+  - mind
+labels:
+  - contested
+level: specialist
+plain: >-
+  The claim, made by DeepMind researchers in 2021, that maximizing a single reward in a rich enough
+  world could by itself produce all the abilities we associate with intelligence.
+senses:
+  - definition: >-
+      The hypothesis, advanced by David Silver and colleagues at DeepMind (2021), that the single
+      drive to maximize [[reward|reward]] in a sufficiently rich [[environment|environment]] could
+      by itself give rise to perception, knowledge, language, social skill, generalization,
+      imitation and the other abilities associated with intelligence, so that a capable
+      [[reinforcement-learning|reinforcement learning]] [[agent|agent]] could acquire them without
+      each being designed or specified separately. Its authors argue that one generic objective in a
+      rich world implicitly demands all these skills, much as survival does for animals, and present
+      reinforcement learning as a route to [[artificial-general-intelligence|artificial general
+      intelligence]]. Critics reply that the claim is close to unfalsifiable, since almost any
+      behavior is optimal for some reward; that sample efficiency, environment choice and reward
+      design carry the real burden; and that a single scalar reward may not capture multiple or
+      changing human values. It is a strong form of Sutton's [[reward-hypothesis|reward hypothesis]]
+      and a precursor of the [[era-of-experience|era of experience]] argument.
+    example: >-
+      Reward-is-enough skeptics point out that the hypothesis says nothing about how much experience
+      an agent would need.
+origin: >-
+  Proposed by David Silver, Satinder Singh, Doina Precup and Richard Sutton of DeepMind in 'Reward
+  is Enough' (Artificial Intelligence, vol. 299, October 2021; online earlier that year), extending
+  Sutton's reward hypothesis.
+year: 2021
+note: >-
+  The hypothesis concerns what reward maximization could achieve in principle; it does not claim
+  that current algorithms suffice. Whether it is a substantive empirical claim or a near-tautology
+  remains debated.
+see_also:
+  - reward hypothesis
+  - era of experience
+  - reinforcement learning
+  - artificial general intelligence
+  - the bitter lesson
+  - reward
+sources:
+  - text: >-
+      Silver, D., Singh, S., Precup, D. & Sutton, R. S. (2021). Reward is enough. Artificial
+      Intelligence 299, 103535.
+  - text: >-
+      Vamplew, P. et al. (2022). Scalar reward is not enough: a response to Silver, Singh, Precup
+      and Sutton (2021). Autonomous Agents and Multi-Agent Systems 36, 41.
+    url: https://arxiv.org/abs/2112.15422

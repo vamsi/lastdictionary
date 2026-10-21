@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PutnamBench
+id: putnambench
+pos: prop. n.
+also:
+  - Putnam benchmark
+domain: eval
+domains:
+  - sym
+  - math
+level: specialist
+plain: >-
+  A test built from hundreds of problems from the Putnam, North America's top university math
+  contest, written in a form a computer can check, used to measure how well AI systems prove harder
+  mathematics.
+senses:
+  - definition: >-
+      A [[benchmark|benchmark]] for formal [[automated-theorem-proving|theorem proving]] whose
+      problems come from the William Lowell Putnam Mathematical Competition, the most prestigious
+      mathematics contest for university students in the United States and Canada. The 2024 release
+      covered 640 Putnam problems from 1962 to 2023 with roughly 1,700 hand-written formal
+      statements: every problem in [[lean|Lean]] 4 and Isabelle, and a large share also in Coq (now
+      [[rocq|Rocq]]); problems from later competitions have since been added. The problems span
+      analysis, linear and abstract algebra, number theory, combinatorics, probability and geometry,
+      and many require undergraduate theory, drawn in Lean from [[mathlib|Mathlib]], rather than the
+      mostly high-school material of [[minif2f|miniF2F]]. A problem counts as solved only when the
+      proof checker accepts the output. At release the best systems proved only a handful of
+      problems; during 2025, provers combining large reasoning models with proof-checker feedback,
+      search and decomposition into lemmas raised the share to a majority, making PutnamBench a main
+      yardstick for formal provers once miniF2F saturated.
+    example: >-
+      The new prover clears most of miniF2F, so we report PutnamBench, where it solves about a third.
+origin: >-
+  Introduced in July 2024 by George Tsoukalas and colleagues in Swarat Chaudhuri's group at the
+  University of Texas at Austin, and presented in the NeurIPS 2024 Datasets and Benchmarks track.
+  The maintainers keep a public leaderboard and correct statements found to be misformalized.
+year: 2024
+note: >-
+  Scores refer to particular versions and proof languages of the benchmark and are often obtained
+  with very different compute budgets, so leaderboard numbers are not always directly comparable.
+see_also:
+  - miniF2F
+  - Lean
+  - Mathlib
+  - automated theorem proving
+  - International Mathematical Olympiad
+  - benchmark saturation
+sources:
+  - text: >-
+      Tsoukalas, G. et al. (2024). PutnamBench: Evaluating Neural Theorem-Provers on the Putnam
+      Mathematical Competition. NeurIPS 2024 Datasets and Benchmarks Track. arXiv:2407.11214.
+    url: https://arxiv.org/abs/2407.11214
+as_of: 2026-10

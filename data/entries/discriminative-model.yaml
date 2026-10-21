@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: discriminative model
+id: discriminative-model
+pos: n.
+also:
+  - discriminative classifier
+  - conditional model
+domain: ml
+domains:
+  - gen
+level: core
+plain: >-
+  A model that learns only to tell things apart — spam or not spam, cat or dog — without learning
+  how to produce new examples of those things.
+senses:
+  - definition: >-
+      A model that maps inputs directly to predictions, learning either p(y | x) or a decision rule
+      with no probabilities at all, while leaving the distribution of the inputs themselves
+      unmodeled. Most neural [[classifier|classifiers]] trained with [[cross-entropy|cross-entropy]]
+      are discriminative, as are [[logistic-regression|logistic regression]],
+      [[support-vector-machine|support vector machines]] and conditional random fields. Because they
+      spend no capacity on modeling the inputs, discriminative models usually reach lower error when
+      labeled data are plentiful, whereas generative classifiers such as [[naive-bayes|naive Bayes]]
+      can approach their (higher) asymptotic error with fewer examples and handle missing inputs
+      more naturally. In a [[generative-adversarial-network|generative adversarial network]], the
+      discriminator is a discriminative model trained to separate real data from generated samples.
+    example: >-
+      For the fraud flag a discriminative model is enough; nobody needs to generate fake
+      transactions.
+origin: >-
+  The distinction is long-standing in statistical pattern recognition and speech recognition, where
+  discriminative training of acoustic models was studied from the 1980s. Andrew Ng and Michael
+  Jordan's NeurIPS 2001 paper, showing that either naive Bayes or logistic regression can win
+  depending on training-set size, made the generative–discriminative pairing standard vocabulary.
+see_also:
+  - generative model
+  - classifier
+  - logistic regression
+  - naive Bayes
+  - decision boundary
+  - generative adversarial network
+contrast:
+  - generative model
+sources:
+  - text: >-
+      Ng, A. Y. & Jordan, M. I. (2002). On Discriminative vs. Generative Classifiers: A comparison
+      of logistic regression and naive Bayes. Advances in Neural Information Processing Systems 14
+      (NIPS 2001).

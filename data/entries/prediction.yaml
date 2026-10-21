@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prediction
+id: prediction
+pos: n.
+also:
+  - predict
+  - predictions
+  - predicted value
+  - model prediction
+domain: core
+domains:
+  - ml
+  - math
+level: core
+plain: >-
+  A model's output for a given input: its best guess at an unknown answer. In AI it need not be
+  about the future; labeling a photo 'cat' counts as a prediction.
+senses:
+  - definition: >-
+      The output a trained model produces for an input: a class label, a probability, a number, a
+      ranking or, for [[generative-model|generative models]], the next [[token|token]] or a denoised
+      image. In [[machine-learning|machine learning]] 'prediction' covers any estimate of an
+      unobserved quantity, not only a future one; predicting whether a scan shows a tumor concerns
+      the present. Predictions may be point estimates or full probability distributions, and their
+      quality is judged by metrics such as [[accuracy|accuracy]] or [[mean-squared-error|mean
+      squared error]] and by [[calibration|calibration]] (whether stated probabilities match
+      observed frequencies). Statisticians distinguish prediction (accurate outputs for new cases)
+      from explanation and [[causal-inference|causal inference]] (understanding why): a model can
+      predict well by exploiting spurious correlations, so good predictions do not by themselves
+      justify interventions.
+    example: >-
+      The model's prediction was 'benign' at 0.62 confidence, low enough to trigger a second read.
+origin: >-
+  From Latin praedicere, 'to say beforehand'. Statistics long used 'prediction' for estimating
+  unobserved values, and machine learning adopted it for model outputs generally. Leo Breiman's 2001
+  essay 'Statistical Modeling: The Two Cultures' contrasted the prediction-focused culture of
+  machine learning with traditional statistical data modeling.
+note: >-
+  A prediction becomes a decision only when a threshold or policy acts on it. Calling
+  [[large-language-model|language models]] 'next-token predictors' names their training objective;
+  what that implies about their abilities is debated.
+see_also:
+  - inference
+  - classification
+  - regression
+  - calibration
+  - predictive AI
+  - next-token prediction
+  - time series forecasting
+contrast:
+  - causal inference
+sources:
+  - text: >-
+      Breiman, L. (2001). Statistical Modeling: The Two Cultures. Statistical Science, 16(3),
+      199–231.

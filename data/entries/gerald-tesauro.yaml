@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gerald Tesauro
+id: gerald-tesauro
+sort_as: Tesauro Gerald
+pos: prop. n.
+domain: people
+domains:
+  - rl
+  - hist
+level: specialist
+plain: >-
+  An American IBM researcher whose program TD-Gammon learned backgammon purely by playing against
+  itself and by the early 1990s rivaled the best human players, a landmark for machines that learn
+  by trial and error.
+senses:
+  - definition: >-
+      American computer scientist whose backgammon program [[td-gammon|TD-Gammon]] (1992), developed
+      at IBM's Thomas J. Watson Research Center, gave [[reinforcement-learning|reinforcement
+      learning]] with neural networks its first major success. Trained as a physicist, he first
+      built Neurogammon, a network trained on expert moves that won the 1989 Computer Olympiad, then
+      trained TD-Gammon by [[self-play|self-play]] alone, updating a
+      [[multilayer-perceptron|multilayer perceptron]]'s evaluations of positions with
+      [[temporal-difference-learning|temporal difference learning]]. Starting from random play,
+      later versions trained on some 1.5 million games played close to the level of the best human
+      players and changed expert opinion about how to play certain opening positions. Its success,
+      in a game with dice and an enormous number of positions, inspired later
+      [[deep-reinforcement-learning|deep reinforcement learning]] and self-play systems such as
+      [[alphago|AlphaGo]]. He later devised the wagering strategy of [[ibm-watson|IBM Watson]] for
+      its 2011 Jeopardy! matches.
+see_also:
+  - TD-Gammon
+  - temporal difference learning
+  - self-play
+  - reinforcement learning
+  - IBM Watson
+sources:
+  - text: >-
+      Tesauro, G. (1995). Temporal Difference Learning and TD-Gammon. Communications of the ACM
+      38(3): 58–68.

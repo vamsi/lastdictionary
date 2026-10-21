@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt leaking
+id: prompt-leaking
+pos: n.
+also:
+  - prompt leakage
+  - prompt extraction
+  - system prompt extraction
+  - system prompt leakage
+domain: sec
+domains:
+  - llm
+level: specialist
+plain: >-
+  Getting an AI application to reveal the hidden instructions its makers gave it, such as its secret
+  setup text or rules.
+senses:
+  - definition: >-
+      An attack, usually a form of [[prompt-injection|prompt injection]], that makes an LLM-based
+      application disclose its hidden [[system-prompt|system prompt]] or other confidential context:
+      instructions, examples, tool definitions, or secrets mistakenly placed there. Developers
+      sometimes treat system prompts as intellectual property, and a leaked prompt can reveal
+      business logic, show attackers the exact guardrail wording to work around, and occasionally
+      expose credentials. Because a model must read its instructions to follow them, it can usually
+      be induced to repeat or paraphrase them; refusal instructions and output filters reduce
+      leakage but do not prevent it. Security guidance therefore treats system prompts as
+      discoverable: they should hold no secrets, and access control must be enforced outside the
+      model.
+    example: >-
+      Within a day of launch, prompt leaking had put the assistant's full system prompt on social
+      media.
+origin: >-
+  Named by Fábio Perez and Ian Ribeiro, alongside 'goal hijacking', in 'Ignore Previous Prompt:
+  Attack Techniques For Language Models' (NeurIPS ML Safety Workshop, November 2022). A widely
+  reported case followed in February 2023, when users extracted the hidden instructions and internal
+  codename ('Sydney') of Microsoft's Bing Chat. OWASP added 'System Prompt Leakage' to its LLM top
+  ten in 2025 and replaced it with the broader 'Hidden Context Exposure' in 2026.
+year: 2022
+see_also:
+  - prompt injection
+  - system prompt
+  - training data extraction
+  - OWASP Top 10 for LLM Applications
+  - jailbreak
+contrast:
+  - training data extraction
+sources:
+  - text: >-
+      Perez, F. & Ribeiro, I. (2022). Ignore Previous Prompt: Attack Techniques For Language Models.
+      NeurIPS ML Safety Workshop. arXiv:2211.09527.
+as_of: 2026-10

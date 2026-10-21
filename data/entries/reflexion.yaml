@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Reflexion
+id: reflexion
+pos: prop. n.
+also:
+  - Reflexion agent
+  - verbal reinforcement learning
+domain: agents
+domains:
+  - llm
+  - rl
+level: specialist
+plain: >-
+  A technique in which an AI agent that fails at a task writes itself a short note on what went
+  wrong, then reads that note before trying again — learning from mistakes without retraining.
+senses:
+  - definition: >-
+      A method by which a [[ai-agent|language agent]] gets better across repeated attempts at a task
+      through written self-critique instead of weight updates. When a trial ends, the agent receives
+      some signal of how it went — success or failure, a score, failing unit tests or free-form
+      comments, from the environment or from its own evaluation — and writes a short note diagnosing
+      what went wrong and what to try instead; the notes accumulate in a memory that is placed in
+      the prompt of later attempts, standing in for the parameter change a [[policy-gradient|policy
+      gradient]] method would make. Noah Shinn and colleagues (2023) reported improvements in a
+      household-task simulator (ALFWorld), multi-hop question answering (HotpotQA) and programming,
+      including 91% pass@1 on [[humaneval|HumanEval]], above the 80% they cite for GPT-4. Reflexion
+      depends on informative feedback; without a reliable external signal, self-generated critique
+      can entrench errors (see [[self-correction|self-correction]]).
+    example: >-
+      On its third attempt the Reflexion agent began by rereading its own note: check the file
+      exists before editing.
+origin: >-
+  Introduced by Noah Shinn, Federico Cassano, Edward Berman, Ashwin Gopinath, Karthik Narasimhan and
+  Shunyu Yao in a paper first posted on 20 March 2023 and published at NeurIPS 2023. Andrew Ng's
+  2024 'reflection' design pattern generalized the idea of agents critiquing their own output.
+year: 2023
+see_also:
+  - self-correction
+  - evaluator–optimizer
+  - ReAct
+  - agent memory
+  - in-context learning
+  - verifier
+contrast:
+  - fine-tuning
+sources:
+  - text: >-
+      Shinn, N., Cassano, F., Berman, E., Gopinath, A., Narasimhan, K. & Yao, S. (2023). Reflexion:
+      Language Agents with Verbal Reinforcement Learning. arXiv:2303.11366 (NeurIPS 2023).
+    url: https://arxiv.org/abs/2303.11366

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: unsupervised learning
+id: unsupervised-learning
+pos: n.
+also:
+  - unsupervised machine learning
+  - learning without a teacher
+domain: core
+domains:
+  - ml
+level: core
+plain: >-
+  Machine learning without answer keys: the computer looks at unlabeled data and finds structure on
+  its own, such as groups of similar customers or the main ways in which data vary.
+senses:
+  - definition: >-
+      The [[machine-learning|machine learning]] setting in which a model learns from inputs without
+      target labels, discovering structure in the data itself. Classic tasks are
+      [[clustering|clustering]] (grouping similar examples, as in [[k-means-clustering|k-means
+      clustering]]), [[dimensionality-reduction|dimensionality reduction]] (as in
+      [[principal-component-analysis|principal component analysis]]), [[density-estimation|density
+      estimation]] (modeling the probability distribution of the data) and
+      [[anomaly-detection|anomaly detection]]. Many [[generative-model|generative models]], such as
+      [[autoencoder|autoencoders]] and [[variational-autoencoder|variational autoencoders]], are
+      trained this way. With no targets there is no single correct answer, so evaluation relies on
+      internal criteria, usefulness for downstream tasks or human judgment. The boundary with
+      [[self-supervised-learning|self-supervised learning]] is fuzzy: predicting masked or next
+      [[token|tokens]] uses no human labels and was long called unsupervised, but it does train on
+      targets derived from the data.
+    example: >-
+      Unsupervised learning split our customers into five clusters, and marketing named them
+      afterwards.
+origin: >-
+  Contrasted with learning 'with a teacher' in 1960s pattern-recognition research; Richard Duda and
+  Peter Hart's textbook Pattern Classification and Scene Analysis (1973) treated unsupervised
+  learning together with clustering. Neural-network work of the 1980s (competitive learning,
+  self-organizing maps) and Geoffrey Hinton and Terrence Sejnowski's edited volume Unsupervised
+  Learning (1999) consolidated the term.
+note: >-
+  Early papers on language-model pretraining, such as GPT-2's 'Language Models are Unsupervised
+  Multitask Learners' (2019), called it unsupervised; since about 2019 the more precise term
+  self-supervised has prevailed.
+see_also:
+  - clustering
+  - dimensionality reduction
+  - density estimation
+  - self-supervised learning
+  - autoencoder
+  - anomaly detection
+  - generative model
+contrast:
+  - supervised learning

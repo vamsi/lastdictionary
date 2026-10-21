@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: top-k sampling
+id: top-k-sampling
+pos: n.
+also:
+  - top-k
+  - top-k truncation
+domain: llm
+domains:
+  - infer
+level: core
+plain: >-
+  A way of making AI-written text varied but sensible: at each step the model picks at random, but
+  only among its k most likely next words, such as the top 40.
+senses:
+  - definition: >-
+      A stochastic [[decoding|decoding]] method that at each step keeps only the k [[token|tokens]]
+      with the highest probability, sets the rest to zero, renormalizes, and samples from the
+      result. Truncation removes the long tail of individually unlikely tokens whose combined
+      probability would otherwise cause frequent incoherent choices. Its weakness is that k is
+      fixed: when the model is confident, k may admit poor candidates, and when many continuations
+      are plausible, it may exclude good ones; [[top-p-sampling|top-p sampling]] and
+      [[min-p-sampling|min-p sampling]] adapt the cut-off to the shape of the distribution. Top-k is
+      often combined with [[temperature|temperature]] and other truncations, and k = 1 is equivalent
+      to [[greedy-decoding|greedy decoding]]. The widely shared GPT-2 samples of 2019 were generated
+      with k = 40.
+    example: We sample with top-k 50 and temperature 0.8 for the story generator.
+origin: >-
+  Popularized by Angela Fan, Mike Lewis and Yann Dauphin's 'Hierarchical Neural Story Generation'
+  (2018), which sampled from the 10 most likely candidates, and by OpenAI's GPT-2 release (2019).
+year: 2018
+see_also:
+  - top-p sampling
+  - min-p sampling
+  - temperature
+  - decoding
+  - greedy decoding
+contrast:
+  - top-p sampling
+sources:
+  - text: >-
+      Fan, A., Lewis, M. & Dauphin, Y. (2018). Hierarchical Neural Story Generation. ACL 2018.
+    url: https://arxiv.org/abs/1805.04833

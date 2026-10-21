@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: local SGD
+id: local-sgd
+pos: n.
+also:
+  - local stochastic gradient descent
+  - periodic averaging
+  - model averaging
+  - federated averaging
+  - FedAvg
+domain: train
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A way to train on many machines that talk to each other only occasionally: each trains its own
+  copy for a while, then they average their copies and continue, cutting the amount of communication
+  needed.
+senses:
+  - definition: >-
+      A distributed optimization method in which each of K workers runs H steps of
+      [[stochastic-gradient-descent|stochastic gradient descent]] (or another optimizer) on its own
+      data, starting from a shared model, after which the workers' parameters are averaged and the
+      process repeats. Compared with synchronous [[data-parallelism|data parallelism]], which
+      communicates every step, it cuts communication by a factor of about H, at the cost of some
+      divergence between workers that can slow convergence, especially with heterogeneous data or
+      large H. Theory shows that with suitable step sizes it can match mini-batch SGD's convergence
+      rate while communicating far less. Federated averaging applies the same idea to data held on
+      user devices, and [[diloco|DiLoCo]] adds an outer optimizer that treats the averaged change as
+      a pseudo-gradient, which made the approach work for language-model pretraining across poorly
+      connected clusters.
+formula_latex: \theta^{(r+1)} = \frac{1}{K}\sum_{k=1}^{K} \theta_k^{(r,\,H)}
+origin: >-
+  Parameter averaging for parallel SGD was studied by Martin Zinkevich and colleagues (2010) and
+  used in speech recognition by Daniel Povey and colleagues (2014). H. Brendan McMahan and
+  colleagues' federated averaging (2017) applied it to data held on user devices, and Sebastian
+  Stich's 'Local SGD Converges Fast and Communicates Little' (2018) helped fix the name and its
+  convergence theory; the first use of the name is not established.
+year: 2018
+note: >-
+  In the formula, θ_k^(r,H) are worker k's parameters after H local steps in round r.
+see_also:
+  - DiLoCo
+  - data parallelism
+  - federated learning
+  - decentralized training
+  - stochastic gradient descent
+  - all-reduce
+contrast:
+  - data parallelism
+sources:
+  - text: >-
+      Stich, S. U. (2019). Local SGD Converges Fast and Communicates Little. ICLR 2019.
+  - text: >-
+      McMahan, H. B., Moore, E., Ramage, D., Hampson, S. & Agüera y Arcas, B. (2017).
+      Communication-Efficient Learning of Deep Networks from Decentralized Data. AISTATS 2017.

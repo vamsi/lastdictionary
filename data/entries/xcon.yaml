@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: XCON
+id: xcon
+pos: prop. n.
+also:
+  - R1
+  - eXpert CONfigurer
+domain: hist
+domains:
+  - sym
+  - eng
+labels:
+  - historical
+level: specialist
+plain: >-
+  A rule-based program used from 1980 by the computer maker Digital Equipment Corporation to work
+  out which parts each customer's computer order needed. It was the first big commercial success of
+  expert systems.
+senses:
+  - definition: >-
+      A production-rule [[expert-system|expert system]] that configured orders for Digital Equipment
+      Corporation's VAX computers: it checked that requested components were compatible, added
+      missing parts such as cables and power supplies, and specified how cabinets and modules should
+      be laid out. Written in the OPS5 [[production-system|production system]] language, it worked
+      forward from the order through a fixed sequence of subtasks, firing whichever rule matched the
+      current state rather than searching among alternatives. Put into routine use at DEC in 1980,
+      it grew from several hundred rules to many thousands and handled tens of thousands of orders a
+      year with high accuracy, and DEC credited it with savings in the tens of millions of dollars
+      annually. Its mounting maintenance burden also illustrated the upkeep costs that later
+      undermined the expert-system boom.
+    example: >-
+      XCON became the standard evidence for the claim that expert systems could pay their way.
+origin: >-
+  Developed by John McDermott at Carnegie Mellon University from 1978 under the name R1, which he
+  explained with a joke about having recently become a knowledge engineer. Renamed XCON (eXpert
+  CONfigurer) when DEC took over its development.
+year: 1980
+see_also:
+  - expert system
+  - production system
+  - forward chaining
+  - MYCIN
+  - AI winter
+  - rule-based system
+sources:
+  - text: >-
+      McDermott, J. (1982). R1: A Rule-Based Configurer of Computer Systems. Artificial Intelligence
+      19(1), 39–88.

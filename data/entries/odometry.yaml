@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: odometry
+id: odometry
+pos: n.
+also:
+  - wheel odometry
+  - visual odometry
+  - VO
+  - visual-inertial odometry
+  - VIO
+  - inertial odometry
+  - dead reckoning
+pronunciation: oh-DOM-uh-tree
+domain: robot
+domains:
+  - percep
+level: specialist
+plain: >-
+  Estimating how far and in which direction a robot or vehicle has moved by adding up its own
+  motion, such as wheel turns or how camera images shift, like counting your steps.
+senses:
+  - definition: >-
+      Estimation of how far, and in what direction, a robot or vehicle has moved and turned,
+      obtained by accumulating measurements of its own motion. Wheel odometry counts wheel rotations
+      with encoders; visual odometry tracks how features or pixels move between successive camera
+      frames; lidar odometry aligns consecutive scans; inertial odometry integrates accelerometer
+      and gyroscope readings from an inertial measurement unit; and visual-inertial odometry fuses
+      camera and inertial data, as in phones, drones and VR headsets. Because each step's small
+      error carries into the next, odometry drifts without bound — wheel slip, uneven floors and
+      sensor bias make the estimate wander over long distances — so it is usually combined through
+      [[sensor-fusion|sensor fusion]] with absolute references such as GPS, known landmarks or the
+      loop closures of [[simultaneous-localization-and-mapping|simultaneous localization and
+      mapping]]. It is nonetheless the backbone of short-term motion estimation in nearly every
+      [[mobile-robot|mobile robot]].
+    example: >-
+      Visual odometry kept the drone's position within a few centimeters until GPS came back.
+origin: >-
+  From Greek hodos, 'way' or 'route', and metron, 'measure'; wheel-counting odometers date to
+  antiquity. 'Visual odometry' was introduced by David Nistér, Oleg Naroditsky and James Bergen in a
+  2004 CVPR paper, building on camera-based motion estimation for robots by Larry Matthies and
+  others since the 1980s; NASA's Mars Exploration Rovers used visual odometry from 2004.
+see_also:
+  - simultaneous localization and mapping
+  - sensor fusion
+  - Kalman filter
+  - mobile robot
+  - optical flow
+  - proprioception
+sources:
+  - text: >-
+      Nistér, D., Naroditsky, O. & Bergen, J. (2004). Visual odometry. Proc. IEEE CVPR 2004.
+  - text: >-
+      Scaramuzza, D. & Fraundorfer, F. (2011). Visual odometry: Part I. IEEE Robotics & Automation
+      Magazine 18(4), 80–92.

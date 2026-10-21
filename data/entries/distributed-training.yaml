@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: distributed training
+id: distributed-training
+pos: n.
+also:
+  - parallel training
+  - multi-GPU training
+  - multi-node training
+  - large-scale training
+domain: train
+domains:
+  - hw
+  - eng
+level: core
+plain: >-
+  Training one AI model on many computer chips at once, splitting up the data or the model itself
+  among them and keeping them in sync, so that jobs that would take a single chip thousands of years
+  finish in weeks.
+senses:
+  - definition: >-
+      Training a single model across multiple accelerators and machines, coordinating computation
+      and communication so that they act as one large optimizer. The work can be divided by data
+      ([[data-parallelism|data parallelism]], including sharded variants such as [[zero|ZeRO]] and
+      [[fully-sharded-data-parallel|FSDP]]) or by model ([[model-parallelism|model parallelism]]:
+      [[tensor-parallelism|tensor]], [[pipeline-parallelism|pipeline]],
+      [[expert-parallelism|expert]] and [[context-parallelism|sequence or context]] parallelism).
+      These are usually combined in [[3d-parallelism|multi-dimensional]] layouts mapped onto the
+      network, with the most communication-hungry splits inside a node over [[nvlink|NVLink]] and
+      the least across nodes over [[infiniband|InfiniBand]] or Ethernet. Workers exchange gradients,
+      parameters and activations through [[collective-communication|collective communication]] such
+      as [[all-reduce|all-reduce]]. Most large-model training is synchronous;
+      [[parameter-server|parameter server]], [[local-sgd|local SGD]] and [[diloco|DiLoCo]] schemes
+      relax synchronization to tolerate slow links. Engineering concerns include memory,
+      [[critical-batch-size|critical batch size]], stragglers, hardware failures,
+      [[checkpoint|checkpointing]] and [[goodput|goodput]].
+    example: >-
+      Distributed training across 2,048 GPUs cut the wall-clock time from a year to under a month.
+origin: >-
+  Parallel training of neural networks was explored on parallel computers from the late 1980s. An
+  early landmark of large-scale distributed deep learning was Google's DistBelief system (Jeffrey
+  Dean and colleagues, NeurIPS 2012), which trained networks on clusters of thousands of machines
+  using both data and model parallelism.
+see_also:
+  - data parallelism
+  - model parallelism
+  - 3D parallelism
+  - collective communication
+  - ZeRO
+  - goodput
+  - decentralized training
+  - AI supercomputer
+contrast:
+  - federated learning
+sources:
+  - text: >-
+      Dean, J., Corrado, G., Monga, R. et al. (2012). Large Scale Distributed Deep Networks. NeurIPS
+      2012.

@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model capacity
+id: model-capacity
+pos: n.
+also:
+  - capacity
+  - representational capacity
+  - effective capacity
+domain: ml
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  How much a model is able to learn: the variety and complexity of patterns it can represent or
+  memorize. Too little and it misses real patterns; very large models can even memorize pure noise.
+senses:
+  - definition: >-
+      The range and complexity of functions that a model class can represent or fit, and hence how
+      much information it can absorb from data. Formal measures from learning theory include the
+      [[vc-dimension|VC dimension]], Rademacher complexity and description length;
+      [[parameter-count|parameter count]] is a crude proxy. Ian Goodfellow, Yoshua Bengio and Aaron
+      Courville distinguish representational capacity, what an architecture could express, from
+      effective capacity, what a given optimizer and [[regularization|regularization]] actually
+      reach. Classical theory ties capacity to the [[bias-variance-tradeoff|bias–variance
+      tradeoff]]: too little causes [[underfitting|underfitting]], too much
+      [[overfitting|overfitting]]. Deep networks complicate the picture: they can fit randomly
+      labeled data yet generalize on real data, and test error can fall again beyond the point where
+      the model interpolates its training set ([[double-descent|double descent]]). For
+      [[large-language-model|language models]], capacity is also measured as storable information:
+      Zeyuan Allen-Zhu and Yuanzhi Li (2024) estimated about 2 bits of factual knowledge per
+      parameter, and John Morris and colleagues (2025) about 3.6 bits of memorized data per
+      parameter for GPT-style models.
+    example: >-
+      Training and validation loss plateaued together at a high value, so we judged the model
+      capacity-limited and doubled its width.
+origin: >-
+  The word was applied to the storage ability of simple networks well before deep learning: Thomas
+  Cover showed in 1965 that a linear threshold unit with n inputs can separate about 2n random
+  patterns, and Vladimir Vapnik and Alexey Chervonenkis's 1971 theory of uniform convergence made
+  capacity central to statistical learning. Chiyuan Zhang and colleagues' 2017 random-label
+  experiments prompted its rethinking for deep networks.
+year: 1965
+note: >-
+  Not to be confused with expert capacity (the capacity factor) in [[mixture-of-experts|mixture of
+  experts]] routing, a per-expert limit on tokens per batch. What a model can actually do is better
+  called [[capability|capability]].
+see_also:
+  - VC dimension
+  - overfitting
+  - underfitting
+  - double descent
+  - bias–variance tradeoff
+  - parameter count
+  - memorization
+  - overparameterization
+contrast:
+  - capability
+sources:
+  - text: >-
+      Cover, T. M. (1965). Geometrical and Statistical Properties of Systems of Linear Inequalities
+      with Applications in Pattern Recognition. IEEE Transactions on Electronic Computers EC-14(3),
+      326–334.
+  - text: >-
+      Zhang, C., Bengio, S., Hardt, M., Recht, B. & Vinyals, O. (2017). Understanding Deep Learning
+      Requires Rethinking Generalization. ICLR 2017.
+  - text: >-
+      Allen-Zhu, Z. & Li, Y. (2024). Physics of Language Models: Part 3.3, Knowledge Capacity
+      Scaling Laws. arXiv preprint.

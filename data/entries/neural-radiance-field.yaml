@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neural radiance field
+id: neural-radiance-field
+pos: n.
+also:
+  - NeRF
+  - radiance field
+  - Instant-NGP
+  - novel view synthesis
+pronunciation: nurf
+domain: percep
+domains:
+  - gen
+  - dl
+level: core
+plain: >-
+  A way of capturing a real scene from a set of photos as a small neural network that can then show
+  the scene from any new viewpoint, as if moving a camera through it.
+senses:
+  - definition: >-
+      A scene representation in which a function, usually a small neural network, assigns every 3D
+      point a volume density and, depending on the direction of view, an emitted color; its main use
+      is novel view synthesis, producing realistic images from viewpoints absent from the input
+      photos. To form an image, each pixel's ray is sampled at many points whose colors are blended
+      front to back, each weighted by its density and by the share of light surviving to it. Since
+      that blending is differentiable, the network is trained simply by making its renderings match
+      a few dozen to a few hundred photos whose camera poses are known (usually from
+      [[structure-from-motion|structure from motion]]); a Fourier-feature
+      [[positional-encoding|positional encoding]] of the inputs lets a small
+      [[multilayer-perceptron|multilayer perceptron]] represent fine detail. The original method
+      took hours to days per scene; multiresolution hash grids (Instant-NGP, 2022) cut training to
+      minutes, and anti-aliased, unbounded variants (Mip-NeRF 360, Zip-NeRF) raised quality. From
+      2023, [[gaussian-splatting|Gaussian splatting]] displaced NeRFs in many applications because
+      it renders in real time.
+    example: >-
+      We captured the lobby with a phone and trained a NeRF overnight for the virtual walkthrough.
+formula_latex: C(\mathbf{r}) = \int_{t_n}^{t_f}
+  T(t)\,\sigma(\mathbf{r}(t))\,\mathbf{c}(\mathbf{r}(t),\mathbf{d})\,dt, \quad T(t) =
+  \exp\!\left(-\int_{t_n}^{t}\sigma(\mathbf{r}(s))\,ds\right)
+origin: >-
+  Introduced by Ben Mildenhall, Pratul Srinivasan, Matthew Tancik, Jonathan Barron, Ravi Ramamoorthi
+  and Ren Ng (UC Berkeley, Google Research, UC San Diego) in 'NeRF: Representing Scenes as Neural
+  Radiance Fields for View Synthesis' (arXiv March 2020; ECCV 2020), which set off a large wave of
+  follow-up research.
+year: 2020
+note: >-
+  In the formula, C(r) is the color of camera ray r, σ the density, c the color seen from direction
+  d and T the transmittance. A NeRF is fitted to one scene; it is a representation and rendering
+  method rather than a generative model, though generative systems can output NeRFs.
+see_also:
+  - Gaussian splatting
+  - 3D reconstruction
+  - structure from motion
+  - positional encoding
+  - multilayer perceptron
+  - depth estimation
+contrast:
+  - Gaussian splatting
+sources:
+  - text: >-
+      Mildenhall, B., Srinivasan, P. P., Tancik, M., Barron, J. T., Ramamoorthi, R. & Ng, R. (2020).
+      NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis. ECCV 2020.
+    url: https://arxiv.org/abs/2003.08934
+  - text: >-
+      Müller, T., Evans, A., Schied, C. & Keller, A. (2022). Instant Neural Graphics Primitives with
+      a Multiresolution Hash Encoding. ACM Transactions on Graphics 41(4).

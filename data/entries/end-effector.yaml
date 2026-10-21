@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: end effector
+id: end-effector
+pos: n.
+also:
+  - end-of-arm tooling
+  - EOAT
+  - gripper
+  - robot hand
+  - tool center point
+domain: robot
+level: core
+plain: >-
+  The tool at the end of a robot arm that actually touches the world, such as a gripper, suction
+  cup, welding torch, paint sprayer or robotic hand.
+senses:
+  - definition: >-
+      The tool or hand mounted on the last link of a robot manipulator, the part that actually
+      touches and acts on the world: a parallel-jaw or multi-fingered gripper, a vacuum suction cup,
+      a magnetic or soft gripper, or a process tool such as a welding torch, spray gun, screwdriver
+      or surgical instrument. In kinematics, the end effector's pose — its position and orientation,
+      usually expressed as a coordinate frame at the tool center point — is what
+      [[forward-kinematics|forward kinematics]] computes from joint angles and what
+      [[inverse-kinematics|inverse kinematics]] and Cartesian controllers command. Industrial cells
+      often use automatic tool changers so one arm can switch end effectors between tasks. The
+      choice of end effector largely determines what a robot can do, and much recent progress in
+      [[grasping|grasping]] and [[dexterous-manipulation|dexterous manipulation]] comes from
+      cheaper, better grippers and hands with built-in [[tactile-sensing|tactile sensing]]. In
+      [[vision-language-action-model|vision-language-action models]], actions are often expressed as
+      end-effector displacements, which eases transfer between arms of different designs.
+    example: Swap the end effector to the vacuum cup before the cardboard batch.
+origin: >-
+  Standard in robotics and teleoperation literature by at least the 1970s; 'end-of-arm tooling' is
+  the corresponding term in industrial automation.
+see_also:
+  - manipulation
+  - grasping
+  - forward kinematics
+  - inverse kinematics
+  - actuator
+  - degrees of freedom
+  - tactile sensing
+sources:
+  - text: >-
+      Lynch, K. M. & Park, F. C. (2017). Modern Robotics: Mechanics, Planning, and Control.
+      Cambridge University Press.

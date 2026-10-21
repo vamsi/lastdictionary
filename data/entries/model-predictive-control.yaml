@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model predictive control
+id: model-predictive-control
+pos: n.
+also:
+  - MPC
+  - receding horizon control
+  - moving horizon control
+  - nonlinear model predictive control
+  - NMPC
+domain: robot
+domains:
+  - math
+  - rl
+level: core
+plain: >-
+  A control method that repeatedly plans the best moves a few seconds ahead using a model of the
+  machine, carries out only the first move, then plans again with fresh measurements.
+senses:
+  - definition: >-
+      A control strategy that, at every time step, uses a dynamics model to predict a system's
+      behavior over a finite future horizon, solves an optimization problem for the sequence of
+      inputs that minimizes a cost (tracking error, effort, energy) subject to constraints on states
+      and inputs, applies only the first input, and then repeats from the newly measured state. This
+      receding-horizon loop turns open-loop [[trajectory-optimization|trajectory optimization]] into
+      feedback control and handles multiple inputs and outputs and hard constraints — speed limits,
+      actuator saturation, collision avoidance — explicitly, which a [[pid-controller|PID
+      controller]] cannot. Its price is computation: the optimization must finish within each
+      control period, which convex quadratic formulations, warm starts and specialized solvers make
+      feasible at hundreds or thousands of hertz. Refineries and chemical plants have relied on MPC
+      since the 1980s, and it now also runs in vehicles, power converters, drones,
+      [[legged-robot|legged]] and [[humanoid-robot|humanoid]] [[locomotion|locomotion]], and
+      [[autonomous-vehicle|autonomous vehicle]] motion planning. In
+      [[model-based-reinforcement-learning|model-based reinforcement learning]], planning with a
+      learned [[world-model|world model]] in the same receding-horizon fashion is also called MPC.
+    example: >-
+      The quadruped's MPC replans foot forces every 20 milliseconds over a half-second horizon.
+origin: >-
+  Developed in the process industries in the 1970s: Jacques Richalet and colleagues' 'model
+  predictive heuristic control' (published 1978) and Charles Cutler and Brian Ramaker's dynamic
+  matrix control at Shell (1979–1980). The umbrella name 'model predictive control' was in general
+  use by the late 1980s, alongside theory on the stability of receding-horizon control.
+year: 1978
+note: >-
+  'MPC' also abbreviates [[secure-multi-party-computation|secure multi-party computation]] in
+  cryptography; context disambiguates.
+see_also:
+  - optimal control
+  - trajectory optimization
+  - control theory
+  - PID controller
+  - model-based reinforcement learning
+  - world model
+  - locomotion
+contrast:
+  - PID controller
+sources:
+  - text: >-
+      Richalet, J., Rault, A., Testud, J. L. & Papon, J. (1978). Model predictive heuristic control:
+      Applications to industrial processes. Automatica 14(5), 413–428.
+  - text: >-
+      Rawlings, J. B., Mayne, D. Q. & Diehl, M. (2017). Model Predictive Control: Theory,
+      Computation, and Design, 2nd ed. Nob Hill Publishing.

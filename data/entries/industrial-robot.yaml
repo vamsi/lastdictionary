@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: industrial robot
+id: industrial-robot
+pos: n.
+also:
+  - industrial manipulator
+  - robot arm
+  - articulated robot
+  - SCARA robot
+  - delta robot
+  - Unimate
+domain: robot
+domains:
+  - society
+level: core
+plain: >-
+  A programmable robot arm used in factories for jobs such as welding, painting, assembling and
+  moving parts, traditionally working inside a safety cage.
+senses:
+  - definition: >-
+      A robot arm, bolted down or carried on a mobile base, that automates industrial work and can
+      be reprogrammed for different jobs; the international robotics vocabulary, ISO 8373, defines
+      it as an 'automatically controlled, reprogrammable, multipurpose manipulator' with at least
+      three programmable axes. Common forms are six-axis articulated arms; SCARA robots for fast
+      planar assembly; parallel 'delta' robots for high-speed picking; and Cartesian gantries.
+      Typical applications are welding, painting, machine tending, assembly, packaging and
+      palletizing, led by the automotive and electronics industries. Traditional industrial robots
+      are programmed with a handheld teach pendant or in offline simulation to repeat precise
+      trajectories in fenced cells, relying on fixtures rather than perception; newer systems add
+      machine vision, force sensing and learned [[grasping|grasping]], and
+      [[collaborative-robot|collaborative robots]] share space with workers. According to the
+      International Federation of Robotics' World Robotics 2026 report, more than 600,000 industrial
+      robots were installed worldwide in 2025, 59% of them in China, and the operational stock
+      reached a record of about five million.
+    example: >-
+      The plant has 300 industrial robots for welding but still assembles wiring harnesses by hand.
+origin: >-
+  George Devol filed a patent for 'programmed article transfer' in 1954 (granted 1961) and founded
+  Unimation with Joseph Engelberger; the first Unimate went to work in 1961 at a General Motors
+  plant in Ewing Township, New Jersey, moving and welding die castings. Victor Scheinman's Stanford
+  Arm (1969) pioneered the electrically driven, computer-controlled six-axis design.
+year: 1961
+see_also:
+  - robot
+  - collaborative robot
+  - end effector
+  - degrees of freedom
+  - automation
+  - manipulation
+contrast:
+  - mobile robot
+  - collaborative robot
+sources:
+  - text: Devol, G. C. (1961). Programmed Article Transfer. US Patent 2,988,237.
+  - text: ISO 8373:2021. Robotics — Vocabulary.
+    url: https://www.iso.org/standard/75539.html
+standards: ISO 8373:2021, Robotics — Vocabulary (entry 'industrial robot')
+as_of: 2026-10

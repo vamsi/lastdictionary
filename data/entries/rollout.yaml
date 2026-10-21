@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rollout
+id: rollout
+pos: n.
+also:
+  - roll-out
+  - playout
+  - roll out
+domain: rl
+domains:
+  - train
+level: core
+plain: >-
+  Letting an AI play out a task with its current strategy, from some starting point to the end, to
+  see how things turn out and gather data for learning or planning.
+senses:
+  - context: Reinforcement learning
+    definition: >-
+      The process, or the resulting [[trajectory|trajectory]], of executing a [[policy|policy]] in
+      an [[environment|environment]] or simulator from some starting [[state|state]] for a fixed
+      number of steps or until the [[episode|episode]] ends, in order to collect experience or
+      estimate [[return|returns]]. In [[proximal-policy-optimization|PPO]]-style training a rollout
+      phase gathers a batch of interaction with the current policy and an update phase learns from
+      it. In [[large-language-model|large language model]] RL the rollouts are the sampled responses
+      to training prompts; generating them often dominates the compute budget, so systems separate
+      fast inference 'rollout workers' from the trainer.
+    example: >-
+      Rollouts took 70 percent of each training step, so we moved generation to a separate inference
+      cluster.
+  - context: Planning
+    definition: >-
+      A simulated continuation of play from a position using a fast default policy, repeated many
+      times to estimate the position's value by averaging outcomes — as in the simulation phase of
+      [[monte-carlo-tree-search|Monte Carlo tree search]], where it is also called a playout, and in
+      the rollout algorithms of approximate dynamic programming, which improve a base policy by
+      lookahead.
+origin: >-
+  From backgammon, where 'rolling out' a position means playing it to the end many times with fresh
+  dice to estimate its value. Gerald Tesauro and Gregory Galperin used computer rollouts for on-line
+  policy improvement (NIPS 1996), and Dimitri Bertsekas and colleagues developed 'rollout
+  algorithms' in the late 1990s. Deep RL and language-model training broadened the word to any
+  policy-generated experience.
+year: 1996
+note: >-
+  Usage is loose: a rollout can be a single trajectory, a batch of them or the act of generating
+  them. In software deployment the same word means a staged release — an unrelated sense.
+see_also:
+  - trajectory
+  - episode
+  - Monte Carlo tree search
+  - on-policy
+  - proximal policy optimization
+  - TD-Gammon
+sources:
+  - text: >-
+      Tesauro, G. & Galperin, G. R. (1997). On-line Policy Improvement using Monte-Carlo Search.
+      Advances in Neural Information Processing Systems 9 (NIPS 1996).
+  - text: >-
+      Bertsekas, D. P., Tsitsiklis, J. N. & Wu, C. (1997). Rollout Algorithms for Combinatorial
+      Optimization. Journal of Heuristics 3, 245–262.

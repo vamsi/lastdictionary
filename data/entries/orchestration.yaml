@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: orchestration
+id: orchestration
+pos: n.
+also:
+  - agent orchestration
+  - LLM orchestration
+  - orchestrate
+  - orchestrator
+domain: agents
+domains:
+  - eng
+level: core
+plain: >-
+  Coordinating several AI calls, tools or agents so each does its part in the right order and their
+  results are combined into one finished piece of work, as a conductor directs an orchestra.
+senses:
+  - context: Agents
+    definition: >-
+      The coordination of multiple model calls, [[tool|tools]] or [[ai-agent|agents]] toward one
+      task: deciding what work to do, in what order or in parallel, routing each piece to the right
+      component, passing state between steps, handling failures and retries, and merging the
+      results. Orchestration may be fixed in code, as in [[agentic-workflow|workflows]] and
+      [[prompt-chaining|prompt chaining]], or performed at run time by a model acting as
+      orchestrator, as in the [[orchestrator-worker-pattern|orchestrator–worker pattern]] and other
+      [[multi-agent-system|multi-agent systems]]. The component that does it is the orchestrator;
+      libraries for it ([[agent-framework|agent frameworks]]) are often marketed as orchestration
+      frameworks. Good orchestration limits duplicated work and unnecessary context passing, since
+      each extra agent multiplies token cost.
+    example: >-
+      The orchestration layer fans the query out to four research agents and waits for all of them.
+  - context: Computing (earlier sense)
+    definition: >-
+      Automated coordination of software services or infrastructure — for example container
+      orchestration with Kubernetes or workflow orchestration with Apache Airflow — from which the
+      agent sense was borrowed; machine-learning pipelines are still orchestrated in this sense.
+origin: >-
+  Borrowed from service-oriented computing (service orchestration, 2000s) and container
+  orchestration (2010s). 'LLM orchestration' described frameworks such as LangChain and LlamaIndex
+  from 2023; multi-agent orchestration became standard vocabulary with OpenAI's experimental Swarm
+  library (October 2024) and Agents SDK (March 2025) and Anthropic's engineering posts on
+  orchestrator–worker systems (2024–2025).
+year: 2023
+see_also:
+  - orchestrator–worker pattern
+  - multi-agent system
+  - subagent
+  - agentic workflow
+  - agent framework
+  - handoff
+  - harness
+contrast:
+  - agent loop
+sources:
+  - text: Schluntz, E. & Zhang, B. (2024). Building effective agents. Anthropic.
+    url: https://www.anthropic.com/research/building-effective-agents
+  - text: OpenAI (2025). New tools for building agents. 11 March 2025.
+    url: https://openai.com/index/new-tools-for-building-agents/

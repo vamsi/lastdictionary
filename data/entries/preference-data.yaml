@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: preference data
+id: preference-data
+pos: n.
+also:
+  - preference dataset
+  - comparison data
+  - human preference data
+  - pairwise preferences
+  - chosen and rejected responses
+domain: train
+domains:
+  - data
+  - llm
+level: core
+plain: >-
+  Records of which of two or more AI answers people (or other AIs) liked better, collected so that a
+  model can learn what good answers look like.
+senses:
+  - definition: >-
+      Training data recording relative judgments about model outputs, most often triples of a
+      prompt, a preferred ('chosen') response and a dispreferred ('rejected') one; richer formats
+      include full rankings of several responses, per-attribute ratings, and unpaired binary labels
+      of desirable or undesirable outputs. Preference data trains [[reward-model|reward models]] for
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]] and
+      is consumed directly by [[direct-preference-optimization|direct preference optimization]] and
+      related methods. It may come from paid annotators, from users (thumbs-up buttons, side-by-side
+      comparisons) or from AI judges ([[reinforcement-learning-from-ai-feedback|reinforcement
+      learning from AI feedback]]). Important properties are whether responses were sampled from the
+      current policy (on-policy) or from other models; [[inter-annotator-agreement|inter-annotator
+      agreement]], which is often only around 60–75 percent on open-ended prompts; and the
+      guidelines defining 'better', which encode contestable value choices. Public examples include
+      Anthropic's HH-RLHF, Stanford's SHP and UltraFeedback.
+    example: >-
+      We regenerated the preference data on-policy every week so the reward model kept up with the
+      policy.
+origin: >-
+  Paired comparison is an old method in psychometrics (Louis Thurstone's law of comparative
+  judgment, 1927) and in sports rating. As a training resource for AI it dates from preference-based
+  reinforcement learning (around 2011) and the 2017 work of Paul Christiano and colleagues; OpenAI's
+  summarization comparisons (2020) and Anthropic's helpful-and-harmless dataset (2022) established
+  today's chosen/rejected format.
+year: 2017
+note: >-
+  Preferences are relative, not absolute: a 'chosen' answer may still be bad. Because annotator
+  pools, instructions and cultural backgrounds shape the labels, preference datasets are one channel
+  through which particular values enter models.
+see_also:
+  - reward model
+  - Bradley–Terry model
+  - reinforcement learning from human feedback
+  - direct preference optimization
+  - data labeling
+  - inter-annotator agreement
+  - LMArena
+contrast:
+  - instruction dataset
+sources:
+  - text: >-
+      Bai, Y. et al. (2022). Training a Helpful and Harmless Assistant with Reinforcement Learning
+      from Human Feedback. arXiv:2204.05862.
+    url: https://arxiv.org/abs/2204.05862
+  - text: >-
+      Stiennon, N. et al. (2020). Learning to summarize from human feedback. NeurIPS 2020.
+      arXiv:2009.01325.
+    url: https://arxiv.org/abs/2009.01325

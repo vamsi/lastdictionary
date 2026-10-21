@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ISO/IEC 42001
+id: iso-iec-42001
+pos: prop. n.
+also:
+  - ISO/IEC 42001:2023
+  - ISO 42001
+  - AI management system
+  - AIMS
+domain: gov
+domains:
+  - eng
+level: core
+plain: >-
+  An international standard for how an organization should run its AI work responsibly — policies,
+  risk checks, roles and records — which outside auditors can certify, much as ISO 9001 does for
+  quality.
+senses:
+  - definition: >-
+      The international management-system standard 'Information technology — Artificial intelligence
+      — Management system', which lays down auditable requirements for an AI management system
+      (AIMS): the policies, roles, processes and records through which an organization that
+      develops, provides or uses AI governs that work and improves it over time. It follows the
+      harmonized structure shared with ISO 9001 and ISO/IEC 27001, so it slots into existing quality
+      and security programs, and requires an AI policy, assigned roles, AI risk assessment and
+      treatment, AI system impact assessment, life-cycle and data controls, and oversight of
+      suppliers; Annex A lists reference controls. Because it states requirements, accredited
+      certification bodies can audit and certify organizations against it, which is how it is mostly
+      used: as evidence of [[ai-governance|AI governance]] maturity for customers, investors and
+      regulators.
+    example: Two of the vendors on our shortlist are already certified to ISO/IEC 42001.
+origin: >-
+  Developed by [[iso-iec-jtc-1-sc-42|ISO/IEC JTC 1/SC 42]] and published in December 2023 as the
+  first certifiable AI management-system standard; accredited certifications began in 2024.
+  Companion standards include ISO/IEC 23894 (guidance on AI risk management, 2023), ISO/IEC 42005
+  (AI system impact assessment, 2025) and ISO/IEC 42006 (requirements for certification bodies,
+  2025).
+year: 2023
+note: >-
+  Certification shows that an organization runs a functioning management process, not that any
+  particular AI system is safe or lawful. Under the [[eu-ai-act|EU AI Act]], presumption of
+  conformity comes from European [[harmonised-standards|harmonised standards]], not from ISO/IEC
+  42001 as such.
+see_also:
+  - ISO/IEC 22989
+  - ISO/IEC JTC 1/SC 42
+  - NIST AI Risk Management Framework
+  - AI governance
+  - AI audit
+  - harmonised standards
+contrast:
+  - NIST AI Risk Management Framework
+sources:
+  - text: >-
+      ISO/IEC 42001:2023. Information technology — Artificial intelligence — Management system.
+      Geneva: ISO.
+as_of: 2026-10

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LLM grooming
+id: llm-grooming
+pos: n.
+also:
+  - large language model grooming
+domain: sec
+domains:
+  - society
+  - data
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Flooding the internet with propaganda written mainly for machines rather than people, hoping AI
+  chatbots will soak it up and repeat it to their users.
+senses:
+  - definition: >-
+      The deliberate mass publication of web content aimed less at human readers than at the
+      [[web-crawler|crawlers]], search indexes and retrieval systems that feed
+      [[large-language-model|language models]], so that models absorb and repeat the publisher's
+      narratives. It works at the scale of the open web rather than a particular dataset, and can
+      act through [[pretraining-data|pretraining data]] or at answer time, when a chatbot searches
+      the web and cites whatever it finds ([[retrieval-augmented-generation|retrieval-augmented
+      generation]]). The best-documented case is the pro-Kremlin 'Pravda' network (also tracked as
+      Portal Kombat), whose sites republish at least 3.6 million articles a year, largely
+      machine-translated, with little human readership. Countermeasures include source-reputation
+      filtering, provenance signals and auditing chatbot answers against catalogs of known false
+      claims.
+    example: >-
+      Several of the chatbot's citations were Pravda mirror sites, a textbook sign of LLM grooming.
+origin: >-
+  Coined by the American Sunlight Project, a US non-profit, in a report on the Pravda network
+  published in February 2025; popularized in March 2025 when the monitoring firm NewsGuard reported
+  that ten leading chatbots repeated the network's false narratives in about a third (33%) of tested
+  responses.
+year: 2025
+note: >-
+  A form of [[data-poisoning|data poisoning]] at web scale. Some researchers argue the observed
+  effect stems mainly from 'data voids' — topics where few reliable sources exist — rather than from
+  successful manipulation of training, and that the network's influence has been overstated.
+see_also:
+  - data poisoning
+  - disinformation
+  - retrieval-augmented generation
+  - generative engine optimization
+  - web crawler
+  - misinformation
+sources:
+  - text: >-
+      American Sunlight Project (2025). A Pro-Russia Content Network Foreshadows the Automated
+      Future of Info Ops. February 2025.
+  - text: Wikipedia contributors. Pravda network. Wikipedia (accessed October 2026).
+    url: https://en.wikipedia.org/wiki/Pravda_network
+as_of: 2026-10

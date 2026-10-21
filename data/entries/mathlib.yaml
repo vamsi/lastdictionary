@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Mathlib
+id: mathlib
+pos: prop. n.
+also:
+  - mathlib4
+  - Lean mathematical library
+domain: sym
+domains:
+  - math
+  - data
+level: specialist
+plain: >-
+  A huge shared library of mathematics written in the Lean language, in which every definition and
+  proof has been checked by computer. Mathematicians keep extending it, and AI proof systems are
+  trained on it.
+senses:
+  - definition: >-
+      The community-maintained library of formalized mathematics for the [[lean|Lean]] proof
+      assistant, spanning algebra, analysis, topology, number theory, combinatorics, geometry,
+      measure and probability theory, category theory and more, with every proof certified by Lean's
+      kernel. It is a single, continuously integrated code base rather than a collection of separate
+      projects: hundreds of contributors submit changes through peer review, and maintainers
+      refactor constantly so that new results reuse shared, highly general abstractions, such as
+      typeclasses for algebraic structures and filters for limits. As of October 2026 it held about
+      140,000 definitions and 290,000 theorems. For AI, Mathlib is the main corpus for training
+      [[automated-theorem-proving|neural theorem provers]] and the store of lemmas ('premises') they
+      must search, and formal benchmarks such as [[minif2f|miniF2F]], ProofNet and
+      [[putnambench|PutnamBench]] state their problems on top of it. Large human formalization
+      efforts build on it too, including Kevin Buzzard's project, begun in 2024, to formalize the
+      proof of Fermat's Last Theorem.
+    example: >-
+      The prover kept failing because the lemma it needed had been renamed in the latest Mathlib.
+origin: >-
+  Created in 2017, when the mathematics in Lean 3's standard library was split into a separate
+  community repository, mathlib, with Johannes Hölzl and Mario Carneiro among its first maintainers.
+  Recruitment of mathematicians, notably by Kevin Buzzard at Imperial College London, drove rapid
+  growth. It was ported to Lean 4 as Mathlib (repository mathlib4), a migration completed in 2023.
+year: 2017
+note: >-
+  Lowercase 'mathlib' usually refers to the Lean 3 library. Because formalizing even well-known
+  results remains slow and laborious, Mathlib's coverage of research mathematics is uneven, one
+  motivation for [[autoformalization|autoformalization]] and AI proof assistants.
+see_also:
+  - Lean
+  - interactive theorem proving
+  - automated theorem proving
+  - autoformalization
+  - miniF2F
+  - AlphaProof
+sources:
+  - text: >-
+      The mathlib Community (2020). The Lean Mathematical Library. Proceedings of the 9th ACM
+      SIGPLAN International Conference on Certified Programs and Proofs (CPP 2020).
+as_of: 2026-10

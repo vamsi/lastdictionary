@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: confounding variable
+id: confounding-variable
+pos: n.
+also:
+  - confounder
+  - confounding
+  - confound
+  - lurking variable
+  - common cause
+domain: math
+domains:
+  - ml
+  - eval
+level: core
+plain: >-
+  A hidden third factor that influences two things at once and makes them look linked. Ice-cream
+  sales and drownings both rise in hot weather; neither causes the other.
+senses:
+  - definition: >-
+      A common cause of a treatment (or exposure) and an outcome which, left unaccounted for,
+      distorts their apparent relationship — manufacturing an association where the treatment has no
+      effect, or hiding or exaggerating one that exists. Observational data are full of them: sicker
+      patients receive more treatment and also fare worse; power users both adopt new features and
+      stay longer. Randomization removes confounding by breaking any link between confounders and
+      treatment assignment. In observational studies one must measure and adjust for a sufficient
+      set of confounders — identified from a causal graph by the back-door criterion of the
+      [[do-calculus|do-calculus]] — while avoiding adjustment for mediators or colliders, which can
+      create bias. Unmeasured confounding cannot be ruled out from data alone. In machine learning,
+      confounders produce [[spurious-correlation|spurious correlations]] that models exploit and
+      bias offline evaluation of [[recommender-system|recommender systems]] and policies from logged
+      data.
+    example: >-
+      Prompt length seemed to hurt accuracy, but task difficulty was a confounding variable driving
+      both.
+origin: >-
+  From Latin confundere, 'to pour together, mix up'. Ronald Fisher's The Design of Experiments
+  (1935) used 'confounding' for effects that a design cannot separate, and epidemiology developed
+  the modern causal sense in the mid-20th century; Judea Pearl's back-door criterion (1993) gave a
+  graphical test for adequate adjustment.
+see_also:
+  - causal inference
+  - spurious correlation
+  - Simpson's paradox
+  - do-calculus
+  - structural causal model
+  - correlation

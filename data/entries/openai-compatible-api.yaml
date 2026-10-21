@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: OpenAI-compatible API
+id: openai-compatible-api
+pos: n.
+also:
+  - OpenAI API compatibility
+  - OpenAI-compatible endpoint
+  - Chat Completions API
+  - chat completions format
+domain: eng
+domains:
+  - infer
+  - llm
+level: core
+plain: >-
+  An AI service that accepts the same request format as OpenAI's, so software written for OpenAI's
+  models can use other companies' or self-hosted models by changing an address and key.
+senses:
+  - definition: >-
+      A web API — offered by a model provider, inference server or [[ai-gateway|AI gateway]] — that
+      implements the request and response formats of [[openai|OpenAI]]'s API, chiefly the Chat
+      Completions endpoint (/v1/chat/completions), so that OpenAI's client libraries and the many
+      tools built on them work unchanged when pointed at a different base URL. A Chat Completions
+      request is a list of role-tagged messages plus parameters such as model,
+      [[temperature|temperature]], tools and response format; streamed responses arrive as
+      server-sent events. Open-source servers such as [[vllm|vLLM]], [[llama-cpp|llama.cpp]],
+      [[ollama|Ollama]] and [[sglang|SGLang]], routers such as OpenRouter and LiteLLM, and many
+      commercial providers offer this compatibility, making it a de facto interface standard that
+      lowers switching costs. Compatibility is often partial: [[structured-outputs|structured
+      outputs]], [[log-probability|logprobs]], reasoning content, caching controls and newer
+      endpoints such as OpenAI's Responses API vary between implementations, so behavior must be
+      tested rather than assumed.
+    example: >-
+      Because the server is OpenAI-compatible, we only changed the base URL to move the app onto our
+      own GPUs.
+origin: >-
+  Followed OpenAI's March 2023 launch of the Chat Completions API with the gpt-3.5-turbo model,
+  which quickly became the most widely used language-model interface. Open-source projects began
+  imitating it during 2023, and by 2024 most inference providers and local runtimes offered
+  OpenAI-compatible endpoints alongside their native APIs.
+year: 2023
+note: >-
+  An informal convention, not a specification from a standards body; OpenAI can change its API at
+  will. Anthropic, Google and others keep distinct native APIs while also offering compatibility
+  layers. The [[model-context-protocol|Model Context Protocol]] standardizes connections to tools,
+  not model calls.
+see_also:
+  - model API
+  - AI gateway
+  - inference provider
+  - vLLM
+  - Ollama
+  - structured outputs
+as_of: 2026-10

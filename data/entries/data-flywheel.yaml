@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data flywheel
+id: data-flywheel
+pos: n.
+also:
+  - data network effect
+  - virtuous cycle of data
+  - data engine
+domain: data
+domains:
+  - eng
+  - society
+labels:
+  - figurative
+level: specialist
+plain: >-
+  A cycle in which a product's users generate data that improves its AI, the better AI attracts more
+  users, and those users generate still more data.
+senses:
+  - definition: >-
+      A self-reinforcing loop in which a deployed AI system produces data — user interactions,
+      corrections, ratings, failure cases, sensor logs — that is collected, labeled or filtered and
+      used to retrain the system, whose improvement attracts more use and therefore more data.
+      Engineering versions of the loop mine production traffic for errors and hard cases, route them
+      to [[data-labeling|labelers]] or automated graders, retrain and redeploy, as in the
+      fleet-learning 'data engine' described for driver-assistance systems. In language-model
+      products, feedback buttons, edited responses and agent trajectories feed
+      [[post-training|post-training]]. The business claim that such loops create durable advantages
+      is disputed: the value of additional data often diminishes, data from one product may not
+      transfer to another, and competitors can turn to public data, [[synthetic-data|synthetic
+      data]] or [[knowledge-distillation|distillation]] instead.
+    example: >-
+      Every correction a radiologist makes goes back into our data flywheel for the next model
+      release.
+origin: >-
+  Applies the flywheel image of management writing — Jim Collins's Good to Great (2001) and Amazon's
+  'virtuous cycle' — to machine learning, where it became common in the 2010s; Andrej Karpathy's
+  descriptions of Tesla's 'data engine' from 2019 are a well-known engineering example.
+note: >-
+  Skeptics, notably a 2019 Andreessen Horowitz essay on 'the empty promise of data moats', argue
+  that data advantages erode faster than flywheel stories assume. Loops can also amplify errors and
+  bias when a system's outputs shape the data it later learns from.
+see_also:
+  - data-centric AI
+  - human-in-the-loop
+  - active learning
+  - moat
+  - post-training
+  - model monitoring

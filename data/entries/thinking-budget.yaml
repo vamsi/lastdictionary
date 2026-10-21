@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: thinking budget
+id: thinking-budget
+pos: n.
+also:
+  - reasoning budget
+  - budget_tokens
+  - reasoning effort
+  - effort level
+  - budget forcing
+domain: llm
+domains:
+  - infer
+  - eng
+labels:
+  - emerging
+level: core
+plain: >-
+  A limit, set by whoever uses an AI model, on how much private step-by-step reasoning it may do
+  before answering: more thinking usually means better answers but higher cost and slower replies.
+senses:
+  - definition: >-
+      A per-request control on how many [[token|tokens]] a [[reasoning-model|reasoning model]] may
+      spend on its [[reasoning-trace|reasoning trace]] before answering, used to trade accuracy
+      against [[latency|latency]] and [[inference-cost|inference cost]]. Implementations differ:
+      Anthropic's API took an explicit token count (budget_tokens, minimum 1,024); Google's Gemini
+      2.5 Flash accepted 0–24,576 tokens, with 0 turning thinking off; OpenAI exposes discrete
+      reasoning-effort levels such as low, medium and high. Budgets are usually soft — the model is
+      trained to approximate them and may stop early — while the maximum output length remains a
+      hard cap. As of October 2026 the trend is toward coarse effort levels and adaptive allocation,
+      in which the model judges how much thinking each request needs. Research methods such as
+      budget forcing impose budgets at decoding time instead.
+    example: >-
+      Raising the thinking budget from 4k to 32k tokens lifted the pass rate by nine points but
+      tripled latency.
+origin: >-
+  Explicit budgets arrived with hybrid reasoning models in 2025: Anthropic's budget_tokens parameter
+  with Claude 3.7 Sonnet (February) and Google's thinking budget for Gemini 2.5 Flash (April).
+  OpenAI had introduced a coarser reasoning_effort setting with its o1 API in December 2024. In
+  January 2025, Niklas Muennighoff and colleagues' s1 paper introduced budget forcing, which ends
+  thinking early or appends 'Wait' to extend it.
+year: 2025
+note: >-
+  A thinking budget limits deliberation, not the final answer; output caps limit both. Larger
+  budgets show diminishing and sometimes negative returns (see [[overthinking|overthinking]]).
+see_also:
+  - test-time compute
+  - reasoning model
+  - extended thinking
+  - hybrid reasoning model
+  - overthinking
+  - inference cost
+sources:
+  - text: >-
+      Google (2025). Start building with Gemini 2.5 Flash. Google Developers Blog, 17 April 2025.
+    url: https://developers.googleblog.com/start-building-with-gemini-25-flash/
+  - text: "Muennighoff, N. et al. (2025). s1: Simple test-time scaling. arXiv:2501.19393."
+    url: https://arxiv.org/abs/2501.19393
+as_of: 2026-10

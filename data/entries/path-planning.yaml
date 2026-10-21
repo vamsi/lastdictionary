@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: path planning
+id: path-planning
+pos: n.
+also:
+  - route planning
+  - pathfinding
+  - global planner
+  - local planner
+domain: robot
+domains:
+  - sym
+level: core
+plain: >-
+  Finding a route for a robot or vehicle from a start to a goal that avoids obstacles, usually the
+  shortest or safest one, much as a navigation app finds a route on a map.
+senses:
+  - definition: >-
+      The task of computing a collision-free geometric route between a start and a goal, usually for
+      a [[mobile-robot|mobile robot]], vehicle or [[drone|drone]], optimizing length, time, energy,
+      clearance or risk. Unlike [[motion-planning|motion planning]] in the broad sense, path
+      planning often ignores timing and detailed dynamics, which a later trajectory-generation step
+      adds. Common methods are graph search over a grid, [[occupancy-grid|occupancy grid]] or road
+      network with Dijkstra's algorithm or [[a-search|A*]]; incremental replanners such as D* Lite,
+      which update routes efficiently as new obstacles are sensed; sampling-based planners; and
+      lattice planners or hybrid A*, which respect a car's turning radius. Navigation software
+      usually splits the work between a global planner, which finds a route across the whole map,
+      and a local planner, which follows that route while dodging moving obstacles over the next few
+      seconds. In video games the same problem is called pathfinding.
+    example: >-
+      The global path planner sends the robot down the east corridor; the local planner handles the
+      people.
+origin: >-
+  Its foundations are Edsger Dijkstra's shortest-path algorithm (1959) and A* search, developed by
+  Peter Hart, Nils Nilsson and Bertram Raphael for SRI's [[shakey-the-robot|Shakey]] (1968). Anthony
+  Stentz's D* (1994) introduced efficient replanning for robots in partly unknown terrain, and
+  hybrid A* guided Stanford's car in the 2007 DARPA Urban Challenge.
+year: 1968
+see_also:
+  - motion planning
+  - A* search
+  - occupancy grid
+  - mobile robot
+  - simultaneous localization and mapping
+  - trajectory optimization
+contrast:
+  - motion planning
+sources:
+  - text: >-
+      Hart, P. E., Nilsson, N. J. & Raphael, B. (1968). A formal basis for the heuristic
+      determination of minimum cost paths. IEEE Transactions on Systems Science and Cybernetics
+      4(2), 100–107.
+  - text: >-
+      Stentz, A. (1994). Optimal and efficient path planning for partially-known environments. Proc.
+      IEEE ICRA 1994.

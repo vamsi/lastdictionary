@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sparse upcycling
+id: sparse-upcycling
+pos: n.
+also:
+  - upcycling
+  - MoE upcycling
+  - upcycled MoE
+  - drop-upcycling
+domain: train
+domains:
+  - dl
+  - llm
+level: specialist
+plain: >-
+  Recycling an already-trained AI model into a larger 'team of specialists' model by copying parts
+  of it, so the new model starts from what the old one learned instead of from scratch.
+senses:
+  - definition: >-
+      A way to build a sparse [[mixture-of-experts|mixture of experts]] (MoE) model by converting a
+      trained dense model, so that it starts from that [[checkpoint|checkpoint]]'s weights rather
+      than random ones. Selected feed-forward (MLP) layers of the dense network are replicated to
+      form the experts, a newly initialized [[router|router]] is inserted to send each token to a
+      few of them, and all other weights (attention, embeddings, normalization) are copied
+      unchanged; training then continues with the MoE architecture. Because the copied experts start
+      identical, they must diverge during further training, and variants such as partially
+      re-initializing the copies ('drop-upcycling') encourage specialization. This avoids wasting an
+      expensive dense run: in the original T5 and Vision Transformer experiments, extra training
+      worth a fraction of the original compute put upcycled models ahead of dense models given the
+      same budget and of MoE models trained from scratch on comparable or larger budgets. It has
+      been used to build released MoE language models, for example Qwen1.5-MoE, upcycled from a
+      1.8-billion-parameter dense model.
+    example: >-
+      Rather than pretrain a new MoE, we upcycled our 7B checkpoint into eight experts and trained
+      for another 300 billion tokens.
+origin: >-
+  Introduced by Aran Komatsuzaki, Joan Puigcerver, James Lee-Thorp, Carlos Riquelme, Basil Mustafa,
+  Joshua Ainslie, Yi Tay, Mostafa Dehghani and Neil Houlsby of Google Research in a December 2022
+  preprint, published at ICLR 2023, with experiments on T5 language models and Vision Transformers.
+year: 2022
+note: >-
+  Differs from MoEfication, which partitions an existing feed-forward layer into experts without
+  duplicating it, and from model-growth methods that widen or deepen a dense model. The advantage
+  over training an MoE from scratch narrows as the additional training budget grows.
+see_also:
+  - mixture of experts
+  - router
+  - checkpoint
+  - continued pretraining
+  - expert parallelism
+  - knowledge distillation
+contrast:
+  - knowledge distillation
+sources:
+  - text: >-
+      Komatsuzaki, A., Puigcerver, J., Lee-Thorp, J., Riquelme Ruiz, C., Mustafa, B., Ainslie, J.,
+      Tay, Y., Dehghani, M. & Houlsby, N. (2023). Sparse Upcycling: Training Mixture-of-Experts from
+      Dense Checkpoints. ICLR 2023.

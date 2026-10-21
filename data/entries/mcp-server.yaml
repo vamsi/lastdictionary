@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MCP server
+id: mcp-server
+pos: n.
+also:
+  - MCP servers
+  - MCP connector
+  - connector
+domain: agents
+domains:
+  - eng
+  - sec
+level: core
+plain: >-
+  A small program that makes some service — say a database, a calendar or a company's internal tools
+  — available to any AI assistant that speaks the Model Context Protocol.
+senses:
+  - definition: >-
+      A program that implements the server side of the [[model-context-protocol|Model Context
+      Protocol]], exposing [[tool|tools]], resources and prompts from some system — a database, file
+      store, business application, browser or device — to MCP-compatible AI applications. Local
+      servers usually run as a subprocess on the user's machine and communicate over standard
+      input/output; remote servers run as web services reached over HTTP, usually with OAuth
+      authorization, and are often branded 'connectors' in consumer apps. A server lists its
+      capabilities on request, and the host decides which tools to show the model and whether calls
+      need the user's approval. Because a server's tool descriptions and outputs enter the model's
+      context, a malicious or compromised server can inject instructions ([[tool-poisoning|tool
+      poisoning]]), and a local server runs with the user's privileges; vetted registries, signing,
+      [[sandbox|sandboxing]] and least-privilege scopes are the main defenses.
+    example: >-
+      Install the Postgres MCP server in read-only mode and the agent can inspect the schema itself.
+origin: >-
+  Defined with the protocol at its launch by Anthropic on 25 November 2024, which shipped reference
+  servers for Google Drive, Slack, GitHub, Git, Postgres and Puppeteer. Community and vendor servers
+  multiplied through 2025; when the Linux Foundation formed the [[agentic-ai-foundation|Agentic AI
+  Foundation]] in December 2025, it counted more than 10,000 published servers.
+year: 2024
+note: >-
+  A critical flaw in mcp-remote, a widely used client-side proxy (CVE-2025-6514, July 2025), let a
+  malicious server run commands on the user's computer — a reminder to treat servers as untrusted
+  code. Not to be confused with a model server, which hosts the model itself (see
+  [[model-serving|model serving]]).
+see_also:
+  - Model Context Protocol
+  - tool
+  - tool poisoning
+  - sandbox
+  - permission system
+  - AI supply chain security
+contrast:
+  - model serving
+sources:
+  - text: Anthropic (2024). Introducing the Model Context Protocol.
+    url: https://www.anthropic.com/news/model-context-protocol
+  - text: >-
+      Linux Foundation (2025). Linux Foundation Announces the Formation of the Agentic AI
+      Foundation. Press release, 9 December 2025.
+    url: https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation
+as_of: 2026-10

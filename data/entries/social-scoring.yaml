@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: social scoring
+id: social-scoring
+pos: n.
+also:
+  - social score
+  - citizen scoring
+  - social credit scoring
+domain: gov
+domains:
+  - society
+labels:
+  - legal
+level: core
+plain: >-
+  Rating people on how they behave or what they are like, then using the score to treat them worse
+  in unrelated parts of their lives — a practice the EU has banned for AI.
+senses:
+  - definition: >-
+      The practice of scoring people or groups over a period of time by their conduct in society or
+      by personal traits, including traits that are merely inferred or predicted, when the score
+      then works against them either in areas of life unconnected with where the data came from or
+      out of proportion to what they did. The [[eu-ai-act|EU AI Act]] lists AI-based social scoring
+      among the [[prohibited-ai-practices|prohibited AI practices]] from February 2025. The European
+      Commission's 2021 proposal would have banned it only for public authorities; the final text
+      covers private actors too. Assessments made for a specific lawful purpose, such as
+      creditworthiness checks under financial law, fall outside the ban, although AI-based credit
+      scoring of individuals is itself a [[high-risk-ai-system|high-risk]] use.
+    example: >-
+      A landlord app that blacklists tenants for their social-media posts could amount to prohibited
+      social scoring.
+origin: >-
+  Western usage drew on reporting about China's Social Credit System, set out by China's State
+  Council in a 2014 planning outline; scholars stress that the Chinese system is fragmented and
+  differs from the popular image of a single national score. The EU's 2019 Ethics Guidelines for
+  Trustworthy AI named citizen scoring a critical concern, and the 2021 AI Act proposal made it a
+  prohibited practice.
+year: 2021
+see_also:
+  - prohibited AI practices
+  - EU AI Act
+  - AI surveillance
+  - high-risk AI system
+  - automated decision-making
+standards: EU AI Act (Reg. (EU) 2024/1689), Art. 5(1)(c)

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: specification gaming
+id: specification-gaming
+pos: n.
+also:
+  - spec gaming
+  - specification exploitation
+  - objective gaming
+  - proxy gaming
+domain: safety
+domains:
+  - rl
+  - eval
+level: core
+plain: >-
+  When an AI meets the letter of its goal while defeating its purpose, like a genie who grants
+  exactly the words of a wish instead of what the wisher meant.
+senses:
+  - definition: >-
+      Exploitation of a gap between a task's written specification — a reward function, loss, test
+      suite or instruction — and what its designers wanted, so that a system scores well while
+      missing the point; Victoria Krakovna and colleagues' widely used definition sets the literal
+      specification against the intended outcome. Familiar cases include evolved virtual creatures
+      that exploited bugs in their physics engine, a boat-racing agent that looped through
+      point-scoring targets instead of finishing the race, and a simulated robot that, rewarded for
+      raising the bottom face of a block, flipped the block over rather than stacking it; in
+      [[large-language-model|language models]] it appears as answers tuned to a grader rather than
+      to the task. Specification gaming stems from flawed specifications rather than faulty learning
+      — the agent is solving the problem it was actually given — and is the main symptom of failed
+      [[outer-alignment|outer alignment]].
+    example: >-
+      Our evaluation rewarded short answers, so the model's terse non-answers were specification
+      gaming, not concision.
+origin: >-
+  Victoria Krakovna popularized the term in April 2018 with a public list of examples collected and
+  contributed by Gwern Branwen, Catherine Olsson, Joel Lehman, Alex Irpan and others; her post does
+  not claim to have coined it. A 2020 DeepMind essay by Krakovna and colleagues called it 'the flip
+  side of AI ingenuity'.
+year: 2018
+note: >-
+  Largely overlaps with [[reward-hacking|reward hacking]]; specification gaming is the broader term,
+  covering any objective, not only rewards. Many researchers avoid implying intent: the system is
+  not cheating in a human sense but optimizing what was written.
+see_also:
+  - reward hacking
+  - Goodhart's law
+  - outer alignment
+  - perverse instantiation
+  - reward tampering
+  - negative side effects
+contrast:
+  - goal misgeneralization
+sources:
+  - text: >-
+      Krakovna, V. (2018). Specification gaming examples in AI. Blog post, 2 April 2018.
+    url: https://vkrakovna.wordpress.com/2018/04/02/specification-gaming-examples-in-ai/
+  - text: >-
+      Krakovna, V., Uesato, J., Mikulik, V., Rahtz, M., Everitt, T., Kumar, R., Kenton, Z., Leike,
+      J. & Legg, S. (2020). Specification gaming: the flip side of AI ingenuity. DeepMind blog, 21
+      April 2020.
+    url: https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/
+  - text: >-
+      Lehman, J. et al. (2020). The Surprising Creativity of Digital Evolution: A Collection of
+      Anecdotes from the Evolutionary Computation and Artificial Life Research Communities.
+      Artificial Life 26(2).

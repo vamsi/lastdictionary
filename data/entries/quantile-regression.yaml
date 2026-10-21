@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: quantile regression
+id: quantile-regression
+pos: n.
+also:
+  - median regression
+  - least absolute deviations
+  - LAD regression
+  - pinball loss
+  - quantile loss
+  - check loss
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  Predicting not just a typical value but a range — say, the delivery time that 90% of orders beat —
+  by fitting models for chosen percentiles of the outcome instead of its average.
+senses:
+  - definition: >-
+      [[regression|Regression]] that estimates a chosen conditional quantile τ of the response — the
+      median for τ = 0.5, the 90th percentile for τ = 0.9 — instead of its conditional mean. It
+      minimizes the pinball (check) loss, which weights under-predictions by τ and over-predictions
+      by 1 − τ; for linear models this is a linear program, and the same loss is supported by
+      [[gradient-boosting|gradient boosting]] libraries and neural networks. Fitting several
+      quantiles describes the whole conditional distribution, revealing effects that differ between
+      low and high outcomes, and a pair of 5th- and 95th-percentile models gives a 90% prediction
+      interval. Median regression (least absolute deviations) is robust to outliers in the response.
+      Separately fitted quantiles can cross, and their nominal coverage is not guaranteed in finite
+      samples; conformalized quantile regression adjusts the intervals to restore coverage (see
+      [[conformal-prediction|conformal prediction]]).
+    example: >-
+      We stock to the 95th-percentile forecast from a quantile regression, not to the mean demand.
+formula_latex: \rho_{\tau}(u) = u\,\big(\tau - \mathbf{1}[u < 0]\big), \qquad
+  \hat{\boldsymbol\beta}_{\tau} = \arg\min_{\boldsymbol\beta} \sum_{i} \rho_{\tau}\big(y_i -
+  \mathbf{x}_i^{\top}\boldsymbol\beta\big)
+origin: >-
+  Median regression by least absolute deviations goes back to Ruđer Bošković (1760), about half a
+  century before least squares, and was developed by Pierre-Simon Laplace and Francis Edgeworth.
+  Roger Koenker and Gilbert Bassett generalized it to any quantile in 'Regression Quantiles'
+  (Econometrica, 1978), founding the modern method.
+year: 1978
+see_also:
+  - regression
+  - linear regression
+  - gradient boosting
+  - conformal prediction
+  - loss function
+  - time series forecasting
+contrast:
+  - linear regression
+sources:
+  - text: >-
+      Koenker, R. & Bassett, G. (1978). Regression Quantiles. Econometrica, 46(1), 33–50.

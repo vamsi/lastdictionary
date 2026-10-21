@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ZeRO
+id: zero
+pos: prop. n.
+also:
+  - Zero Redundancy Optimizer
+  - ZeRO-1
+  - ZeRO-2
+  - ZeRO-3
+  - ZeRO-Offload
+  - ZeRO-Infinity
+pronunciation: ZEE-roh
+domain: train
+domains:
+  - hw
+  - eng
+level: specialist
+plain: >-
+  A memory-saving technique for training big models on many chips: instead of every chip keeping its
+  own complete copy of all the training bookkeeping, the chips divide it among themselves and share
+  pieces only when needed.
+senses:
+  - definition: >-
+      A family of memory optimizations for [[data-parallelism|data parallelism]] ('Zero Redundancy
+      Optimizer') that removes the redundancy of every worker storing a full copy of the model
+      state. In mixed-precision Adam training each parameter costs about 16 bytes — 16-bit weights
+      and gradients plus 32-bit master weights and two optimizer moments — most of it optimizer
+      state. ZeRO partitions this state across the data-parallel workers in three stages: stage 1
+      shards optimizer states (about 4× memory reduction), stage 2 also shards gradients (about 8×),
+      and stage 3 also shards the parameters (a reduction that grows linearly with the number of
+      workers), gathering each layer's parameters just in time for computation and discarding them
+      afterwards. Stages 1 and 2 keep data parallelism's communication volume; stage 3 adds about
+      50%. Extensions offload state to CPU memory or NVMe storage (ZeRO-Offload, ZeRO-Infinity) or
+      compress communication (ZeRO++). PyTorch's [[fully-sharded-data-parallel|FSDP]] is a closely
+      related implementation.
+    example: ZeRO stage 2 let us fit the 13B model on 32 GPUs without tensor parallelism.
+origin: >-
+  Introduced by Samyam Rajbhandari, Jeff Rasley, Olatunji Ruwase and Yuxiong He at Microsoft (arXiv,
+  October 2019; SC20) and released in February 2020 in the DeepSpeed library, where it helped train
+  Microsoft's 17-billion-parameter Turing-NLG.
+year: 2019
+note: >-
+  Despite the name, not an optimizer algorithm like [[adam|Adam]]: ZeRO changes where optimizer and
+  model state are stored, not how updates are computed. Written with capital Z, R and O and a
+  lowercase e.
+see_also:
+  - fully sharded data parallel
+  - data parallelism
+  - DeepSpeed
+  - mixed-precision training
+  - Adam
+  - offloading
+  - distributed training
+contrast:
+  - model parallelism
+sources:
+  - text: >-
+      Rajbhandari, S., Rasley, J., Ruwase, O. & He, Y. (2020). ZeRO: Memory Optimizations Toward
+      Training Trillion Parameter Models. SC20. arXiv:1910.02054.
+    url: https://arxiv.org/abs/1910.02054
+  - text: >-
+      Microsoft Research (2020). ZeRO & DeepSpeed: New system optimizations enable training models
+      with over 100 billion parameters. Microsoft Research Blog.
+    url: https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/

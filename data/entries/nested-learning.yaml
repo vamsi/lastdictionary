@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: nested learning
+id: nested-learning
+pos: n.
+also:
+  - continuum memory system
+  - Hope (architecture)
+domain: dl
+domains:
+  - train
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A Google research idea that treats an AI model as layers of learning processes updating at
+  different speeds, with the aim of letting models keep learning without forgetting old skills.
+senses:
+  - definition: >-
+      A framework from Google Research that describes a model as a stack of learning problems
+      running inside or alongside one another, each optimizing over its own stream of information at
+      its own update rate, which puts network architecture and training algorithm on the same
+      footing as optimization at different levels. Under this lens
+      [[backpropagation|backpropagation]] and [[attention|attention]] both work as associative
+      memories, and architectures differ chiefly in how they compress the information streaming
+      through them. Arranging components by how fast they update gives a 'continuum memory system',
+      a spectrum of modules from fast-changing to slow-changing, meant to let a model keep learning
+      ([[continual-learning|continual learning]]) with less [[catastrophic-forgetting|catastrophic
+      forgetting]]. A proof-of-concept self-modifying recurrent architecture, Hope — a variant of
+      Google's earlier Titans memory model — reported better language-modeling, reasoning and
+      long-context retrieval results than comparable transformers and recurrent models.
+    example: >-
+      Nested learning recasts the optimizer itself as just another memory with a slower clock.
+origin: >-
+  Introduced by Ali Behrouz, Meisam Razaviyayn, Peilin Zhong and Vahab Mirrokni of Google Research
+  in 'Nested Learning: The Illusion of Deep Learning Architectures' (NeurIPS 2025), announced on
+  Google's research blog on 7 November 2025.
+year: 2025
+see_also:
+  - continual learning
+  - catastrophic forgetting
+  - test-time training
+  - meta-learning
+  - state space model
+  - agent memory
+sources:
+  - text: >-
+      Behrouz, A., Razaviyayn, M., Zhong, P. & Mirrokni, V. (2025). Nested Learning: The Illusion of
+      Deep Learning Architectures. NeurIPS 2025.
+  - text: >-
+      Google Research (2025). Introducing Nested Learning: A new ML paradigm for continual learning.
+      7 November 2025.
+    url: https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/
+as_of: 2026-10

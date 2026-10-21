@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reward model
+id: reward-model
+pos: n.
+also:
+  - RM
+  - preference model
+  - PM
+  - reward modeling
+  - learned reward model
+domain: train
+domains:
+  - rl
+  - llm
+level: core
+plain: >-
+  A separate AI model trained to score responses the way people would, so it can stand in for human
+  judges while another model is trained on millions of examples.
+senses:
+  - context: Post-training
+    definition: >-
+      A learned function that maps an input and a candidate output to a scalar score approximating
+      human (or AI) preference, used as the [[reward|reward]] signal when
+      [[reinforcement-learning|reinforcement learning]] cannot query people directly. For
+      [[large-language-model|language models]] it is usually a copy of a pretrained or fine-tuned
+      model whose [[unembedding|unembedding]] is replaced by a scalar head, trained on
+      [[preference-data|preference data]] with a [[bradley-terry-model|Bradley–Terry]] objective:
+      the loss is the negative log-sigmoid of the score gap between preferred and rejected
+      responses. Reward models drive [[reinforcement-learning-from-human-feedback|RLHF]], rank
+      samples in [[best-of-n-sampling|best-of-n sampling]] and [[rejection-sampling|rejection
+      sampling]], and filter training data. Variants include [[outcome-reward-model|outcome]] and
+      [[process-reward-model|process]] reward models for reasoning, and generative reward models
+      that write a critique or verdict before scoring. Because any reward model is an imperfect
+      proxy, optimizing hard against it produces [[reward-overoptimization|reward
+      overoptimization]].
+    example: >-
+      The reward model preferred longer answers, so the policy learned to pad its responses.
+  - context: Model-based reinforcement learning
+    definition: >-
+      The component of a learned environment model (a [[world-model|world model]]) that predicts the
+      immediate reward for a given state and action, used with a learned transition model for
+      planning or for training on imagined [[rollout|rollouts]].
+formula_latex: \mathcal{L}_{\mathrm{RM}}(\phi) = -\,\mathbb{E}_{(x,\,y_w,\,y_l)}\left[\log
+  \sigma\big(r_\phi(x, y_w) - r_\phi(x, y_l)\big)\right]
+origin: >-
+  Learning a reward function from people has roots in inverse reinforcement learning and in the 2017
+  preference-learning work of Paul Christiano and colleagues. Jan Leike and colleagues at DeepMind
+  (2018) proposed 'reward modeling' as a research program for agent alignment, and Daniel Ziegler
+  and colleagues at OpenAI (2019) trained reward models on human comparisons of language-model text.
+  Anthropic's papers call the same object a preference model.
+year: 2018
+note: >-
+  A reward model scores outputs; it is not the hand-written [[reward-function|reward function]] of a
+  classical RL environment, though it plays that role. Documented biases include favoring longer,
+  more confident or more flattering answers, which can feed [[sycophancy|sycophancy]].
+see_also:
+  - reinforcement learning from human feedback
+  - preference data
+  - Bradley–Terry model
+  - process reward model
+  - outcome reward model
+  - verifier
+  - reward overoptimization
+  - LLM-as-a-judge
+contrast:
+  - reward function
+  - verifier
+sources:
+  - text: >-
+      Leike, J., Krueger, D., Everitt, T., Martic, M., Maini, V. & Legg, S. (2018). Scalable agent
+      alignment via reward modeling: a research direction. arXiv:1811.07871.
+    url: https://arxiv.org/abs/1811.07871
+  - text: >-
+      Ziegler, D. M. et al. (2019). Fine-Tuning Language Models from Human Preferences.
+      arXiv:1909.08593.
+    url: https://arxiv.org/abs/1909.08593

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: power law
+id: power-law
+pos: n.
+also:
+  - power-law relationship
+  - power-law distribution
+  - scale-free distribution
+domain: train
+domains:
+  - math
+level: core
+plain: >-
+  A rule linking two quantities in which scaling one up by a given factor always changes the other
+  by the same multiple, wherever you start. Plotted on logarithmic axes, it is a straight line.
+senses:
+  - context: Scaling
+    definition: >-
+      A relationship of the form y = a·xᵏ, whose signature is scale invariance: scaling x by a
+      factor c always scales y by cᵏ, so log y is a linear function of log x with slope k. In AI the
+      canonical case is loss falling as a power of parameters, data or compute (k < 0), usually plus
+      a constant for the [[irreducible-loss|irreducible loss]]; the exponent says what a tenfold
+      increase buys — with k = −0.05, each tenfold increase in compute cuts the reducible loss by
+      about 11%. Power laws are scale-free, with no characteristic size, which is why trends fitted
+      on small [[training-run|runs]] can be extrapolated, and why small errors in a fitted exponent
+      grow into large differences many orders of magnitude out.
+    example: Validation loss follows a power law in compute with an exponent near −0.05.
+  - context: Probability
+    definition: >-
+      A heavy-tailed probability distribution whose density or frequency falls off as x^−α, as in
+      Zipf's law for word frequencies and Pareto distributions of income. Such distributions shape
+      language data and [[token|token]] statistics, and produce the [[long-tail|long tail]] of rare
+      facts and phrases that models learn slowly.
+formula_latex: y = a\,x^{k} \quad\Longleftrightarrow\quad \log y = \log a + k\,\log x
+origin: >-
+  Power-law relations are old in science (Kepler's third law, 1619). Vilfredo Pareto described
+  power-law income distributions in the 1890s and George Kingsley Zipf word-frequency laws in the
+  1930s–1940s. In machine learning, power-law learning curves were studied from the early 1990s and
+  became central with neural [[scaling-laws|scaling laws]] (2017–2020).
+note: >-
+  A straight line over one or two decades on a log–log plot is weak evidence of a power law, and
+  real curves can bend or break. Do not confuse with exponential growth, which is straight on a plot
+  with only the vertical axis logarithmic.
+see_also:
+  - scaling laws
+  - irreducible loss
+  - long tail
+  - Chinchilla scaling laws
+  - training compute

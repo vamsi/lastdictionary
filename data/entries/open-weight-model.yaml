@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: open-weight model
+id: open-weight-model
+pos: n.
+also:
+  - open-weights model
+  - open weights
+  - open model
+  - weights-available model
+  - downloadable model
+domain: eng
+domains:
+  - gov
+  - llm
+labels:
+  - contested
+level: essential
+plain: >-
+  An AI model whose trained internal numbers are published for anyone to download and run on their
+  own computers, even if the data and code used to make it stay private.
+senses:
+  - definition: >-
+      A trained model whose [[weights|parameters]] are released for public download, so that anyone
+      can run it on their own hardware, inspect its internals, [[fine-tuning|fine-tune]] or
+      [[quantization|quantize]] it, and build products on it, subject to its
+      [[model-license|license]]. Releases range from weights under permissive licenses such as
+      Apache 2.0 or MIT (Mistral 7B, [[deepseek-r1|DeepSeek-R1]], OpenAI's gpt-oss) to weights under
+      custom licenses with use restrictions (Meta's [[llama|Llama]] models). 'Open-weight' is
+      narrower than [[open-source-ai|open-source AI]]: training data, data-processing code and
+      training recipes are often withheld, so the model can be used and adapted but not fully
+      reproduced or audited. Supporters cite research access, privacy through local deployment,
+      competition, independent scrutiny and technological self-reliance; critics cite that a release
+      cannot be recalled, that safety training can be removed by fine-tuning, and possible misuse
+      for cyber or biological harm. Policy analyses therefore weigh the marginal risk a release adds
+      beyond closed models and existing tools.
+    example: >-
+      Because it is an open-weight model, the hospital runs it entirely on its own servers.
+origin: >-
+  Researchers have long published trained weights, and OpenAI's staged release of [[gpt-2|GPT-2]] in
+  2019 made release itself a policy question. The distinct label 'open-weight' spread in 2023–2024,
+  as debates over models such as Llama 2 separated publishing weights from open-source software; the
+  US NTIA's July 2024 report on models with 'widely available model weights' framed the policy
+  debate.
+year: 2023
+note: >-
+  Often called 'open-source models', a usage the Open Source Initiative and others dispute when
+  licenses restrict use or training data is withheld. Under the [[eu-ai-act|EU AI Act]],
+  [[general-purpose-ai-model|general-purpose models]] released under free and open-source licenses
+  with public weights are exempt from some documentation duties unless they pose systemic risk.
+see_also:
+  - open-source AI
+  - proprietary model
+  - model license
+  - Hugging Face
+  - dual-use foundation model
+  - Llama
+  - fine-tuning
+contrast:
+  - proprietary model
+sources:
+  - text: >-
+      National Telecommunications and Information Administration (2024). Dual-Use Foundation Models
+      with Widely Available Model Weights. US Department of Commerce, July 2024.
+as_of: 2026-10

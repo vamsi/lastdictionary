@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mixture of experts
+id: mixture-of-experts
+pos: n.
+also:
+  - MoE
+  - sparse mixture of experts
+  - sparsely gated mixture of experts
+  - expert
+  - shared expert
+  - Switch Transformer
+  - Mixtral
+domain: llm
+domains:
+  - dl
+  - infer
+level: core
+plain: >-
+  A way to build very large AI models cheaply: the model contains many specialist sub-networks, and
+  for each word only a few are switched on, picked by a small dispatcher network.
+senses:
+  - definition: >-
+      An architecture in which a layer contains many parallel sub-networks ('experts') and a learned
+      [[router|router]] sends each input — in [[large-language-model|LLMs]], each [[token|token]] at
+      each MoE layer — to only a few of them, combining their outputs with the router's weights. In
+      transformers, experts usually replace the [[feed-forward-network|feed-forward network]] in
+      some or all blocks. Because only k of E experts run per token, total parameters can grow far
+      faster than compute per token ([[active-parameters|active parameters]]): Mixtral 8x7B has
+      about 47 billion parameters but uses about 13 billion per token, and DeepSeek-V3 has 671
+      billion with 37 billion active. Engineering challenges include balancing load across experts,
+      overflow when an expert receives too many tokens, the communication cost of
+      [[expert-parallelism|expert parallelism]], and memory to hold every expert. Fine-grained
+      designs use many small experts plus always-active shared experts. Most leading open-weight
+      LLMs released in 2025 were MoEs, as are some documented proprietary models such as Gemini 1.5.
+    example: The MoE has 128 experts per layer and routes each token to eight of them.
+formula_latex: y = \sum_{i \in \mathrm{TopK}(g(x))} g_i(x)\, E_i(x)
+origin: >-
+  Robert Jacobs, Michael Jordan, Steven Nowlan and Geoffrey Hinton introduced adaptive mixtures of
+  local experts in 1991. Noam Shazeer and colleagues at Google revived the idea at scale with the
+  sparsely-gated MoE layer (January 2017); GShard (2020) and Switch Transformer (2021) brought it to
+  transformers, and Mixtral (December 2023) and DeepSeek (2024–2025) made it standard in open
+  models.
+year: 1991
+note: >-
+  Experts rarely specialize in human-recognizable topics; routing mostly reflects token-level and
+  syntactic patterns. 'Sparse' refers to sparse activation, not sparse weights. Unlike an ensemble,
+  an MoE runs only a few members per input.
+see_also:
+  - router
+  - active parameters
+  - feed-forward network
+  - expert parallelism
+  - transformer
+  - parameter count
+  - sparse attention
+contrast:
+  - ensemble learning
+sources:
+  - text: >-
+      Jacobs, R. A., Jordan, M. I., Nowlan, S. J. & Hinton, G. E. (1991). Adaptive Mixtures of Local
+      Experts. Neural Computation 3(1).
+  - text: >-
+      Shazeer, N., Mirhoseini, A., Maziarz, K., Davis, A., Le, Q., Hinton, G. & Dean, J. (2017).
+      Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer. ICLR 2017.
+    url: https://arxiv.org/abs/1701.06538
+  - text: >-
+      Fedus, W., Zoph, B. & Shazeer, N. (2021). Switch Transformers: Scaling to Trillion Parameter
+      Models with Simple and Efficient Sparsity. JMLR 23 (2022).
+    url: https://arxiv.org/abs/2101.03961
+as_of: 2026-10

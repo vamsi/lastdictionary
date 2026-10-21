@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BM25
+id: bm25
+pos: prop. n.
+also:
+  - Okapi BM25
+  - Best Matching 25
+  - BM25F
+domain: eng
+domains:
+  - math
+  - ml
+level: core
+plain: >-
+  A decades-old formula that search engines use to score how well a document matches a query,
+  rewarding rare query words and repeated matches — with diminishing returns — and correcting for
+  long documents.
+senses:
+  - definition: >-
+      A formula for scoring documents against a keyword query, derived within the probabilistic
+      relevance framework: a document's score sums, over the query terms it contains, an inverse
+      document frequency weight multiplied by a saturating function of the term's frequency in the
+      document, normalized for document length. The parameter k₁ sets how quickly repeated
+      occurrences stop adding score (commonly 1.2–2), and b sets the strength of length
+      normalization (commonly about 0.75). Needing no training, fast with an
+      [[inverted-index|inverted index]], and hard to beat on unfamiliar domains, BM25 is the default
+      scorer in engines such as Lucene, Elasticsearch and OpenSearch, the standard baseline in
+      [[information-retrieval|information retrieval]] research, and the usual
+      [[sparse-retrieval|sparse]] half of [[hybrid-search|hybrid search]]. BM25F extends it to
+      documents with separately weighted fields such as title and body.
+    example: >-
+      Before you ship that embedding model, check that it actually beats BM25 on our queries.
+formula_latex: \operatorname{score}(D,Q)=\sum_{t\in
+  Q}\operatorname{IDF}(t)\,\frac{f(t,D)\,(k_1+1)}{f(t,D)+k_1\left(1-b+b\,\frac{|D|}{\mathrm{avgdl}}\right)}
+origin: >-
+  Developed by Stephen Robertson, Steve Walker and colleagues at City University, London, for the
+  Okapi retrieval system, building on Robertson and Karen Spärck Jones's probabilistic relevance
+  weighting (1976) and Stephen Harter's 2-Poisson model of term frequency (1975). BM25 emerged in
+  1994, in Robertson and Walker's SIGIR paper approximating the 2-Poisson model and in Okapi's runs
+  at TREC-3. 'BM' stands for best matching; the number distinguishes it from sibling formulas such
+  as BM11 and BM15.
+year: 1994
+note: >-
+  In the formula, f(t,D) is the count of term t in document D, |D| the document's length and avgdl
+  the average length in the collection. Implementations use slightly different IDF variants, so BM25
+  scores differ between engines.
+see_also:
+  - TF-IDF
+  - sparse retrieval
+  - inverted index
+  - information retrieval
+  - hybrid search
+  - dense retrieval
+sources:
+  - text: >-
+      Robertson, S. E., Walker, S., Jones, S., Hancock-Beaulieu, M. & Gatford, M. (1994). Okapi at
+      TREC-3. Proceedings of the Third Text REtrieval Conference (TREC-3), NIST.
+    url: https://ir.webis.de/anthology/1994.trec_conference-1994.11
+  - text: >-
+      Robertson, S. & Zaragoza, H. (2009). The Probabilistic Relevance Framework: BM25 and Beyond.
+      Foundations and Trends in Information Retrieval 3(4).
+    url: https://staff.city.ac.uk/~sbrp622/papers/foundations_bm25_review.pdf

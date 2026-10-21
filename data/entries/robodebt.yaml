@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Robodebt
+id: robodebt
+pos: prop. n.
+also:
+  - Robodebt scheme
+  - robo-debt
+  - Online Compliance Intervention
+  - Royal Commission into the Robodebt Scheme
+domain: gov
+domains:
+  - society
+  - hist
+level: core
+plain: >-
+  An Australian government program that used an automated calculation to accuse hundreds of
+  thousands of welfare recipients of owing money, often wrongly. An official inquiry later found it
+  unfair and illegal.
+senses:
+  - definition: >-
+      The popular name for an automated debt-recovery program that Australia's social-security
+      agency Centrelink launched in July 2016 as the Online Compliance Intervention, after a 2015
+      pilot, and ran in successive forms until 2019, and a standard cautionary example in debates on
+      [[automated-decision-making|automated decision-making]] by governments. The system compared
+      annual income reported to the Australian Taxation Office with the fortnightly income that
+      people had declared while receiving benefits; where these differed, it spread the annual
+      figure evenly across the year's fortnights, treated the gap as a likely overpayment and raised
+      a debt unless the recipient could produce years-old payslips to disprove it. Because many
+      recipients had irregular earnings, this income averaging produced large numbers of false or
+      inflated debts, and the process reversed the usual burden of proof. It relied on simple data
+      matching rather than [[machine-learning|machine learning]], but it shows how automation at
+      scale, weak human review and a presumption that the system is right can turn a flawed rule
+      into mass harm.
+    example: >-
+      Anyone designing automated eligibility checks should read the Robodebt royal commission report
+      first.
+origin: >-
+  'Robodebt' was a media and activist nickname current from late 2016, as complaints mounted. The
+  Federal Court declared a debt based on income averaging unlawful in Amato v Commonwealth (November
+  2019), and in 2021 approved a class-action settlement worth about A$1.8 billion. The Royal
+  Commission led by Catherine Holmes reported in July 2023, calling the scheme 'a crude and cruel
+  mechanism, neither fair nor legal'.
+year: 2016
+note: >-
+  Debts based on income averaging alone stopped in November 2019; in 2020 the government agreed to
+  refund or cancel some 470,000 debts. The Royal Commission referred individuals for possible civil
+  or criminal action in a sealed chapter and recommended a legal framework for automated
+  decision-making by Commonwealth agencies. In June 2026 the Federal Court approved a further
+  A$548.5 million settlement, including A$475 million in compensation.
+see_also:
+  - automated decision-making
+  - algorithmic accountability
+  - algorithmic bias
+  - AI incident
+  - right to explanation
+  - COMPAS
+sources:
+  - text: >-
+      Royal Commission into the Robodebt Scheme (2023). Report. Commonwealth of Australia.
+  - text: >-
+      Prygodicz v Commonwealth of Australia (No 2) [2021] FCA 634. Federal Court of Australia.
+  - text: >-
+      AAP (2026). Australia's biggest class action settlement approved. AAP News, June 2026.
+    url: https://aapnews.aap.com.au/news/australia-s-biggest-class-action-settlement-approved
+as_of: 2026-10

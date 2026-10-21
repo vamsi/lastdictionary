@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: masked autoencoder
+id: masked-autoencoder
+pos: n.
+also:
+  - MAE
+  - masked image modeling
+  - MIM
+  - VideoMAE
+  - BEiT
+  - SimMIM
+domain: percep
+domains:
+  - dl
+  - train
+level: specialist
+plain: >-
+  A way to teach a vision model without labels: hide most of an image's tiles and train the model to
+  fill in the missing parts, so that it learns what images are made of.
+senses:
+  - definition: >-
+      A [[self-supervised-learning|self-supervised]] pretraining method for
+      [[vision-transformer|vision transformers]] built on a fill-in-the-blanks task: most of an
+      image's patches (75% in the original), chosen at random, are hidden, and the network must
+      restore their pixel values. The work is split unevenly. A large encoder sees only the patches
+      that remain, never placeholders for the hidden ones, which makes each training step several
+      times cheaper; a small decoder then takes the encoded patches together with learned mask
+      tokens and predicts the hidden patches' normalized pixels, scored by [[mean-squared-error|mean
+      squared error]] on those patches alone. After pretraining the decoder is discarded and the
+      encoder is [[fine-tuning|fine-tuned]] or used as a [[backbone|backbone]]. The high masking
+      ratio stops the model from solving the task by interpolating between neighbors, forcing more
+      holistic representations. MAE belongs to the wider family of masked image modeling, alongside
+      BEiT (2021), which predicts discrete visual tokens, and SimMIM; variants exist for video
+      (VideoMAE, masking about 90%), audio spectrograms and 3D point clouds.
+    example: >-
+      We pretrained the encoder as a masked autoencoder on two million unlabeled microscope tiles
+      before fine-tuning.
+formula_latex: \mathcal{L} = \frac{1}{|M|}\sum_{i \in M} \lVert \mathbf{x}_i - \hat{\mathbf{x}}_i \rVert_2^2
+origin: >-
+  Introduced by Kaiming He, Xinlei Chen, Saining Xie, Yanghao Li, Piotr Dollár and Ross Girshick of
+  Facebook AI Research in 'Masked Autoencoders Are Scalable Vision Learners' (arXiv November 2021;
+  CVPR 2022), adapting [[bert|BERT]]'s masked-token objective to images; denoising autoencoders
+  (2008) and context encoders (2016) were precursors.
+year: 2021
+note: >-
+  Not to be confused with MADE, the 'Masked Autoencoder for Distribution Estimation' (Germain et
+  al., 2015), in which masking a network's connections enforces an autoregressive density model. In
+  the formula, M is the set of masked patches.
+see_also:
+  - self-supervised learning
+  - autoencoder
+  - vision transformer
+  - masked language model
+  - DINO
+  - representation learning
+contrast:
+  - contrastive learning
+sources:
+  - text: >-
+      He, K., Chen, X., Xie, S., Li, Y., Dollár, P. & Girshick, R. (2022). Masked Autoencoders Are
+      Scalable Vision Learners. CVPR 2022.
+    url: https://arxiv.org/abs/2111.06377
+  - text: >-
+      Bao, H., Dong, L., Piao, S. & Wei, F. (2022). BEiT: BERT Pre-Training of Image Transformers.
+      ICLR 2022.

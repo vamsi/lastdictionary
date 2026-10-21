@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: explainable AI
+id: explainable-ai
+pos: n.
+also:
+  - explainable artificial intelligence
+  - explainable machine learning
+domain: interp
+domains:
+  - gov
+  - society
+  - ml
+level: essential
+plain: >-
+  The field and set of methods that let people understand why an AI system produced a particular
+  output — for example, which factors led it to reject a loan application.
+senses:
+  - definition: >-
+      The research field and body of techniques that aim to make the behavior of AI systems
+      understandable to people, so that outputs can be justified, debugged, appropriately trusted
+      and contested. Approaches divide into [[interpretable-model|interpretable models]] (sparse
+      linear models, short decision trees, [[generalized-additive-model|generalized additive
+      models]]) and [[post-hoc-explanation|post hoc explanation]] of opaque ones. Explanations may
+      be [[local-explanation|local]] (one prediction) or [[global-explanation|global]] (overall
+      behavior), and [[model-agnostic|model-agnostic]] or specific to one model class. Standard
+      tools include [[feature-attribution|feature attribution]] ([[shap|SHAP]], [[lime|LIME]],
+      [[integrated-gradients|integrated gradients]], [[saliency-map|saliency maps]]),
+      [[counterfactual-explanation|counterfactual explanations]], [[surrogate-model|surrogate
+      models]] and concept-based tests such as [[testing-with-concept-activation-vectors|TCAV]]. XAI
+      grew up around classifiers for tabular and image data; for large language models, explanation
+      increasingly draws on [[mechanistic-interpretability|mechanistic interpretability]] and
+      [[representation-engineering|representation engineering]], since a model's own account of its
+      reasoning may not be faithful.
+    example: >-
+      The bank's XAI dashboard showed that debt-to-income ratio drove most of the declined
+      applications.
+origin: >-
+  Explanation facilities date to 1970s [[expert-system|expert systems]] such as [[mycin|MYCIN]], and
+  the Explainable Expert Systems project (Robert Neches, William Swartout and Johanna Moore, 1985).
+  The earliest known use of the phrase 'explainable artificial intelligence' is in a 2004 paper by
+  Michael van Lent, William Fisher and Michael Mancuso on a US Army training simulation; 'XAI'
+  spread through the US DARPA Explainable AI program, announced in 2016 and managed by David
+  Gunning.
+year: 2004
+note: >-
+  Terminology is unsettled: many writers treat 'explainable' and 'interpretable' as synonyms, while
+  others reserve 'interpretable' for models understandable by design. Cynthia Rudin argues that for
+  high-stakes decisions an interpretable model beats an explained black box. Legal duties of
+  transparency and explanation appear in the EU AI Act and the GDPR; see
+  [[right-to-explanation|right to explanation]]. Not to be confused with [[xai|xAI]], the company.
+see_also:
+  - explainability
+  - interpretability
+  - post hoc explanation
+  - feature attribution
+  - interpretable model
+  - right to explanation
+  - mechanistic interpretability
+contrast:
+  - black box
+sources:
+  - text: >-
+      van Lent, M., Fisher, W. & Mancuso, M. (2004). An Explainable Artificial Intelligence System
+      for Small-unit Tactical Behavior. Proceedings of IAAI 2004.
+    url: https://cdn.aaai.org/IAAI/2004/IAAI04-019.pdf
+  - text: >-
+      Gunning, D. & Aha, D. W. (2019). DARPA's Explainable Artificial Intelligence (XAI) Program. AI
+      Magazine 40(2).
+as_of: 2026-10

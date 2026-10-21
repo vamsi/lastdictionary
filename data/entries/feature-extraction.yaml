@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature extraction
+id: feature-extraction
+pos: n.
+also:
+  - feature extractor
+  - frozen features
+  - off-the-shelf features
+  - descriptor
+domain: percep
+domains:
+  - ml
+  - dl
+level: core
+plain: >-
+  Turning raw data such as pixels or sound into a short list of telling numbers — computed by
+  hand-designed rules or by an AI system trained earlier — that a new model can learn from or
+  compare.
+senses:
+  - context: Deep learning
+    definition: >-
+      Using a pretrained network with frozen weights to compute representations (its intermediate or
+      penultimate-layer [[activation|activations]]) that serve as input features for a new task,
+      usually with only a small classifier or regressor trained on top. This contrasts with
+      [[fine-tuning|fine-tuning]], which updates the pretrained weights. Feature extraction is
+      cheap, needs little labeled data and lets one encoder serve many tasks; the quality of the
+      features is often measured with a [[linear-probe|linear probe]] or a k-nearest-neighbor
+      evaluation. The approach became standard after studies in 2013–2014 showed that features from
+      an [[imagenet|ImageNet]]-trained [[convolutional-neural-network|convolutional neural network]]
+      transferred well to other recognition problems; today self-supervised and image–text encoders
+      ([[dino|DINO]], [[clip|CLIP]]) and audio encoders are the usual [[backbone|backbones]].
+    example: >-
+      We use the frozen encoder as a feature extractor and train a small head for each inspection
+      task.
+  - context: Classical pattern recognition
+    definition: >-
+      The computation of descriptive measurements from raw signals before classification: edges,
+      corners, texture statistics, color histograms, histograms of oriented gradients or
+      [[scale-invariant-feature-transform|SIFT]] descriptors for images; [[mfcc|MFCCs]] and other
+      spectral features for audio. In a related sense it means building new variables as
+      combinations of the original ones, as [[principal-component-analysis|principal component
+      analysis]] does, whereas [[feature-selection|feature selection]] only decides which original
+      variables to keep.
+origin: >-
+  A standard term of [[pattern-recognition|pattern recognition]] by the 1960s, where feature
+  extraction followed preprocessing and preceded classification in character and speech recognizers.
+  The deep-learning sense spread after DeCAF (Jeff Donahue and colleagues, 2013) and Ali Sharif
+  Razavian and colleagues' 'CNN Features off-the-shelf' (2014).
+note: >-
+  In deep learning, learned representations have largely replaced hand-designed
+  [[feature-engineering|feature engineering]]. For the word 'feature' itself, which also names an
+  interpretable direction inside a network, see [[feature|feature]] and
+  [[feature-interpretability|feature (interpretability)]].
+see_also:
+  - feature
+  - backbone
+  - transfer learning
+  - linear probe
+  - feature engineering
+  - representation learning
+  - embedding
+contrast:
+  - fine-tuning
+  - feature selection
+sources:
+  - text: >-
+      Donahue, J. et al. (2014). DeCAF: A Deep Convolutional Activation Feature for Generic Visual
+      Recognition. ICML 2014.
+  - text: >-
+      Sharif Razavian, A., Azizpour, H., Sullivan, J. & Carlsson, S. (2014). CNN Features
+      off-the-shelf: An Astounding Baseline for Recognition. CVPR Workshops 2014.

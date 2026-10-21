@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: minimax
+id: minimax
+pos: n.
+also:
+  - minimax search
+  - minimax algorithm
+  - minimax principle
+  - negamax
+  - expectiminimax
+domain: sym
+domains:
+  - rl
+  - math
+level: core
+plain: >-
+  A way for a game-playing program to choose moves by assuming the opponent will always make their
+  best reply, and picking the move whose worst-case outcome is best.
+senses:
+  - definition: >-
+      A decision rule and search algorithm for two-player, zero-sum games of perfect information.
+      The program expands a [[game-tree|game tree]] to some depth, scores leaf positions with an
+      [[evaluation-function|evaluation function]] (or the exact result at the end of the game), and
+      backs values up the tree: at nodes where it moves it takes the maximum of its children's
+      values and at opponent nodes the minimum, so the root's value is the best outcome achievable
+      against a perfect opponent. Full-width search to depth d costs on the order of b^d positions
+      for branching factor b, so practical programs add [[alpha-beta-pruning|alpha–beta pruning]],
+      [[iterative-deepening-search|iterative deepening]] and move ordering; games with dice use
+      expectiminimax, which averages over chance nodes. In decision theory, minimax more generally
+      means choosing the option that minimizes the maximum possible loss.
+    example: >-
+      A four-ply minimax search is enough to stop the program from blundering its queen.
+origin: >-
+  John von Neumann proved the minimax theorem for two-person zero-sum games in 1928. Claude
+  Shannon's 1950 paper 'Programming a Computer for Playing Chess' proposed depth-limited minimax
+  with an evaluation function, the blueprint for chess programs up to [[deep-blue|Deep Blue]].
+year: 1928
+see_also:
+  - alpha–beta pruning
+  - game tree
+  - evaluation function
+  - Monte Carlo tree search
+  - Deep Blue
+  - self-play
+contrast:
+  - Monte Carlo tree search
+sources:
+  - text: >-
+      von Neumann, J. (1928). Zur Theorie der Gesellschaftsspiele. Mathematische Annalen 100,
+      295–320.
+  - text: >-
+      Shannon, C. E. (1950). Programming a Computer for Playing Chess. Philosophical Magazine
+      41(314), 256–275.

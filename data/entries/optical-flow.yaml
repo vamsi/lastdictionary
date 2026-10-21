@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: optical flow
+id: optical-flow
+pos: n.
+also:
+  - optic flow
+  - flow field
+  - motion estimation
+  - dense correspondence
+  - Lucas–Kanade method
+  - RAFT
+domain: percep
+domains:
+  - robot
+level: specialist
+plain: >-
+  How each part of a video picture seems to shift from one frame to the next, recorded as a tiny
+  arrow per pixel giving the direction and distance moved.
+senses:
+  - definition: >-
+      The per-pixel motion field between two consecutive images: a displacement vector (u, v) for
+      every pixel saying where the local brightness pattern appears to move, which may differ from
+      the true motion of surfaces. Most methods assume brightness constancy, that a moving point
+      keeps its intensity, which yields one linear equation per pixel in two unknowns (see formula,
+      where I_x, I_y and I_t are image derivatives); the missing constraint, known as the aperture
+      problem, is supplied by smoothness assumptions. Berthold Horn and Brian Schunck imposed
+      smoothness across the whole image, while the Lucas–Kanade method assumes constant motion
+      within small windows and solves by least squares; both appeared in 1981. Deep networks took
+      over from FlowNet (2015) onward; RAFT (2020) compares all pairs of pixels in a correlation
+      volume and refines the flow iteratively. Flow is evaluated by end-point error on benchmarks
+      such as MPI Sintel and KITTI. It is used for video stabilization and compression, frame
+      interpolation and slow motion, [[action-recognition|action recognition]],
+      [[object-tracking|object tracking]], visual [[odometry|odometry]] and robot navigation.
+    example: >-
+      We warp the previous frame with the optical flow to stop the stylized video from flickering.
+formula_latex: I_x u + I_y v + I_t = 0
+origin: >-
+  The psychologist James J. Gibson introduced the concept in the 1940s, for the flowing pattern of
+  the visual field during movement. Motion estimation from image sequences was studied in computer
+  vision in the 1970s, and Berthold Horn and Brian Schunck's 'Determining Optical Flow' and Bruce
+  Lucas and Takeo Kanade's image-registration method, both published in 1981, founded its standard
+  computation.
+year: 1981
+note: >-
+  Optical flow is the motion of image brightness, which can differ from true scene motion: a uniform
+  sphere spinning in place produces no flow, and a moving light source produces flow without any
+  moving object.
+see_also:
+  - object tracking
+  - action recognition
+  - depth estimation
+  - odometry
+  - computer vision
+sources:
+  - text: >-
+      Horn, B. K. P. & Schunck, B. G. (1981). Determining Optical Flow. Artificial Intelligence 17,
+      185–203.
+  - text: >-
+      Lucas, B. D. & Kanade, T. (1981). An Iterative Image Registration Technique with an
+      Application to Stereo Vision. Proceedings of IJCAI 1981.
+  - text: >-
+      Teed, Z. & Deng, J. (2020). RAFT: Recurrent All-Pairs Field Transforms for Optical Flow. ECCV
+      2020.

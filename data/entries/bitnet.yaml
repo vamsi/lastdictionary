@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BitNet
+id: bitnet
+pos: prop. n.
+also:
+  - BitNet b1.58
+  - 1-bit LLM
+  - 1.58-bit LLM
+  - ternary LLM
+  - BitLinear
+  - bitnet.cpp
+domain: infer
+domains:
+  - train
+  - hw
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A family of AI language models from Microsoft in which most of the learned numbers are limited to
+  minus one, zero or one, so they need far less memory and energy to run.
+senses:
+  - definition: >-
+      A family of [[transformer|transformer]] [[large-language-model|language models]] and the
+      architecture behind them, from Microsoft Research, in which the weights of the linear layers
+      are constrained to extremely low precision during training itself rather than quantized
+      afterwards. The original BitNet (2023) replaced standard linear layers with BitLinear layers
+      holding binary (±1) weights and 8-bit activations, trained with full-precision latent weights
+      and straight-through gradients. BitNet b1.58 (2024) made every weight ternary, one of {−1, 0,
+      +1}, which carries log₂3 ≈ 1.58 bits; its authors reported matching full-precision models of
+      the same size and training data, while matrix multiplication reduces mostly to additions.
+      BitNet b1.58 2B4T (April 2025), with about two billion parameters trained on four trillion
+      tokens, was released as open weights with GPU and CPU inference code. Realizing the gains
+      requires kernels or hardware designed for ternary arithmetic.
+    example: >-
+      The BitNet model's weights take about 0.4 GB, so it runs on a laptop CPU at reading speed.
+origin: >-
+  Introduced by Hongyu Wang, Shuming Ma, Furu Wei and colleagues at Microsoft Research and partner
+  universities in October 2023. 'The Era of 1-bit LLMs' (February 2024) presented the ternary b1.58
+  variant and popularized the phrase '1-bit LLM', though its weights are strictly 1.58-bit.
+year: 2023
+note: >-
+  Native low-bit training differs from [[post-training-quantization|post-training quantization]]:
+  the model learns under the constraint from the start, avoiding the accuracy collapse PTQ suffers
+  at very low bit widths. Whether such models stay competitive at frontier scale is unresolved as of
+  October 2026.
+see_also:
+  - quantization
+  - quantization-aware training
+  - post-training quantization
+  - on-device AI
+  - model compression
+sources:
+  - text: >-
+      Wang, H. et al. (2023). BitNet: Scaling 1-bit Transformers for Large Language Models.
+      arXiv:2310.11453.
+    url: https://arxiv.org/abs/2310.11453
+  - text: >-
+      Ma, S. et al. (2024). The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits.
+      arXiv:2402.17764.
+    url: https://arxiv.org/abs/2402.17764
+  - text: Ma, S. et al. (2025). BitNet b1.58 2B4T Technical Report. arXiv:2504.12285.
+    url: https://arxiv.org/abs/2504.12285
+as_of: 2026-10

@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: probability
+id: probability
+pos: n.
+also:
+  - probability theory
+  - probabilities
+  - probabilistic
+  - chance
+domain: math
+domains:
+  - core
+  - ml
+level: essential
+plain: >-
+  How likely something is, on a scale from 0 for the impossible to 1 for the certain; rolling a six
+  with a fair die scores one-sixth. AI systems state their predictions, even each next word, as
+  probabilities.
+senses:
+  - definition: >-
+      A measure of uncertainty that assigns each event a number between 0 and 1, giving certain
+      events 1 and making the probabilities of mutually exclusive events add. Andrey Kolmogorov's
+      axioms (1933) define probability as a normalized measure on a space of outcomes, and the
+      resulting theory — [[random-variable|random variables]],
+      [[probability-distribution|distributions]], [[expected-value|expectations]],
+      [[conditional-probability|conditioning]] and limit theorems — holds whatever probability is
+      taken to mean. Interpretations differ: frequentists read it as long-run relative frequency in
+      repeated trials, Bayesians as a rational degree of belief updated by [[bayes-theorem|Bayes'
+      theorem]]. Machine learning uses both readings and rests on probability throughout:
+      classifiers output class probabilities, [[large-language-model|language models]] define
+      probabilities over sequences of [[token|tokens]], training often maximizes
+      [[likelihood|likelihood]], and uncertainty, [[calibration|calibration]] and
+      [[sampling|sampling]] are probabilistic notions.
+    example: >-
+      The model gives 'Paris' a probability of 0.92, but that number means little unless the model
+      is calibrated.
+origin: >-
+  Mathematical probability began in the 1654 correspondence between Blaise Pascal and Pierre de
+  Fermat on games of chance, followed by Christiaan Huygens's 1657 treatise, Jacob Bernoulli's Ars
+  Conjectandi (1713) and Pierre-Simon Laplace's Théorie analytique des probabilités (1812). Andrey
+  Kolmogorov's Grundbegriffe der Wahrscheinlichkeitsrechnung (1933) supplied the axioms used today.
+note: >-
+  A model's output probabilities are not automatically reliable estimates of how often it is right;
+  that is the question of [[calibration|calibration]]. Everyday 'likelihood' and statistical
+  [[likelihood|likelihood]] differ.
+see_also:
+  - probability distribution
+  - random variable
+  - conditional probability
+  - Bayes' theorem
+  - expected value
+  - Bayesian inference
+  - calibration
+sources:
+  - text: >-
+      Kolmogorov, A. N. (1933). Grundbegriffe der Wahrscheinlichkeitsrechnung. Springer. (English
+      trans. Foundations of the Theory of Probability, 1950.)

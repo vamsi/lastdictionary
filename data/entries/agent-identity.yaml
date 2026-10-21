@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agent identity
+id: agent-identity
+pos: n.
+also:
+  - agentic identity
+  - agent authentication
+  - agent authorization
+  - know your agent
+domain: agents
+domains:
+  - sec
+  - gov
+labels:
+  - emerging
+level: specialist
+plain: >-
+  The ways of proving which AI agent is acting, for whom and with what permissions — so websites,
+  companies and other agents can tell trustworthy agents from impostors and hold someone
+  responsible.
+senses:
+  - definition: >-
+      The mechanisms for identifying, authenticating and authorizing [[ai-agent|AI agents]] as
+      actors distinct from both their users and ordinary software: who built and operates an agent,
+      which person or organization it acts for, what it is permitted to do, and how its actions can
+      be audited or revoked. Approaches include delegated authorization with scoped, short-lived
+      OAuth tokens instead of shared passwords; cryptographically signed agent descriptions, such as
+      the signed Agent Cards of the [[agent2agent-protocol|Agent2Agent protocol]]; verifiable
+      credentials and signed mandates recording a user's approval in [[agentic-commerce|agentic
+      commerce]]; signing of agents' web requests so that sites can tell declared agents from
+      anonymous scrapers; and registries of agents. Governance proposals add agent identifiers to
+      support incident tracing and liability. Open problems include chains of delegation across
+      several agents, revoking authority in the middle of a task, and preventing impersonation.
+    example: >-
+      Our API rejects anonymous automation: every call must carry a signed token naming the agent
+      and the user it acts for.
+origin: >-
+  Builds on identity and access management for services ('workload' or non-human identities) and on
+  OAuth (2007–2012). Alan Chan and colleagues' 'Visibility into AI Agents' (2024) proposed agent
+  identifiers, real-time monitoring and activity logs; as agents began acting on the open web and
+  inside enterprises in 2025, identity vendors, standards bodies and AI developers proposed
+  agent-specific schemes.
+year: 2024
+note: >-
+  Identity is a precondition for, not a substitute for, the [[permission-system|permission system]]
+  that limits what an authenticated agent may do. Standards for signing agents' web traffic were
+  still being developed as of October 2026, notably in the IETF's Web Bot Auth working group.
+see_also:
+  - agentic commerce
+  - Agent2Agent protocol
+  - permission system
+  - AI agent
+  - excessive agency
+  - AI security
+sources:
+  - text: >-
+      Chan, A., Ezell, C., Kaufmann, M. et al. (2024). Visibility into AI Agents. arXiv:2401.13138
+      (FAccT 2024).
+    url: https://arxiv.org/abs/2401.13138
+  - text: >-
+      Agentic AI Foundation (2026). A2A joins AAIF's open agentic stack. AAIF blog, 17 August 2026.
+    url: https://aaif.io/blog/a2a-joins-aaif
+  - text: IETF. Web Bot Authentication (webbotauth) working group.
+    url: https://datatracker.ietf.org/wg/webbotauth/about/
+as_of: 2026-10

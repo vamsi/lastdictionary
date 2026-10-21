@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model weight security
+id: model-weight-security
+pos: n.
+also:
+  - weight security
+  - securing model weights
+  - security level (SL1–SL5)
+domain: sec
+domains:
+  - gov
+  - hw
+  - safety
+level: core
+plain: >-
+  Protecting the files that make up a trained AI model — its learned numbers — from being stolen or
+  leaked, because whoever holds them can run, copy or alter the model.
+senses:
+  - definition: >-
+      The protection of a model's trained [[weights|weights]] — the parameters that embody most of
+      the cost and capability of training — against theft, leakage and unauthorized use. A stolen
+      frontier model can be run without its developer's safeguards, fine-tuned to remove them, or
+      used to advance a rival program, so weight security is treated as a safety and
+      national-security matter as well as a commercial one. Measures span conventional security
+      (strict access control, multi-party authorization for weight access, insider-threat programs,
+      hardened networks with limited egress, monitoring), specialized controls (encrypting weights
+      at rest and in use, [[confidential-computing|confidential computing]], capping output
+      bandwidth from servers that hold weights) and physical security of data centers. A 2024 RAND
+      report defined five security levels, SL1 to SL5, from stopping amateur attackers to resisting
+      top-priority operations by the most capable nation-states, and frontier safety frameworks tie
+      required levels to model capabilities.
+    example: >-
+      Model weight security for the new checkpoint now requires two-person access and strict egress
+      limits on every cluster.
+origin: >-
+  Emphasized from 2023 in frontier developers' safety policies, such as Anthropic's
+  [[responsible-scaling-policy|responsible scaling policy]], and in the White House voluntary AI
+  commitments of July 2023. Sella Nevo and colleagues' RAND report 'Securing AI Model Weights:
+  Preventing Theft and Misuse of Frontier Models' (May 2024) catalogued 38 attack vectors and
+  proposed the SL1–SL5 security levels.
+year: 2023
+see_also:
+  - weight exfiltration
+  - confidential computing
+  - responsible scaling policy
+  - AI Safety Level
+  - self-exfiltration
+  - model extraction
+  - structured access
+sources:
+  - text: >-
+      Nevo, S., Lahav, D., Karpur, A., Bar-On, Y., Bradley, H. A. & Alstott, J. (2024). Securing AI
+      Model Weights: Preventing Theft and Misuse of Frontier Models. RAND Corporation, RR-A2849-1.
+as_of: 2026-10

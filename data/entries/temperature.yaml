@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: temperature
+id: temperature
+pos: n.
+also:
+  - sampling temperature
+  - softmax temperature
+  - temperature scaling
+  - temp
+domain: llm
+domains:
+  - math
+  - train
+level: essential
+plain: >-
+  A setting that controls how adventurous an AI model's word choices are. Low temperature makes it
+  pick the safest, most likely words; high temperature makes it more varied and surprising, but more
+  error-prone.
+senses:
+  - context: Sampling
+    definition: >-
+      A positive number T by which [[logit|logits]] are divided before the [[softmax|softmax]] when
+      sampling from a model, controlling how spread out the output distribution is: T < 1 sharpens
+      it toward the most likely [[token|tokens]], T > 1 flattens it toward uniform, T = 1 leaves the
+      model's distribution unchanged, and T approaching 0 approaches [[greedy-decoding|greedy
+      decoding]]. Offered in nearly all LLM APIs, commonly within 0–1 or 0–2, it is the main dial
+      between consistency and diversity and is often combined with truncation such as
+      [[top-p-sampling|top-p sampling]]. Higher values increase variety for brainstorming or
+      [[best-of-n-sampling|best-of-n sampling]] but raise error and incoherence rates; temperature 0
+      is common for extraction and evaluation, though it does not guarantee identical outputs
+      ([[nondeterminism|nondeterminism]]).
+    example: Set temperature to 0.2 for the data extraction and 0.9 for the slogan ideas.
+  - context: Training and calibration
+    definition: >-
+      The same logit-scaling parameter used for other purposes: in
+      [[knowledge-distillation|knowledge distillation]], a high T softens teacher and student
+      distributions so that small probabilities carry information; in [[calibration|calibration]],
+      temperature scaling fits a single T on held-out data so a classifier's confidence matches its
+      accuracy; in contrastive learning, a temperature hyperparameter sharpens similarity scores.
+  - context: Physics and optimization
+    definition: >-
+      The parameter of the Boltzmann distribution from statistical mechanics, from which the
+      machine-learning usage is borrowed; in [[simulated-annealing|simulated annealing]] and
+      [[boltzmann-machine|Boltzmann machines]], the temperature is gradually lowered so that a
+      stochastic search settles into low-energy states.
+formula_latex: p_i = \frac{\exp(z_i / T)}{\sum_j \exp(z_j / T)}
+origin: >-
+  Borrowed from statistical mechanics via the Boltzmann distribution. Simulated annealing (Scott
+  Kirkpatrick, C. Daniel Gelatt and Mario Vecchi, 1983) and Boltzmann machines (David Ackley,
+  Geoffrey Hinton and Terrence Sejnowski, 1985) carried it into computing; Hinton, Oriol Vinyals and
+  Jeff Dean's distillation paper (2015) and text-generation APIs from 2020 made it everyday
+  vocabulary.
+year: 1983
+note: >-
+  Temperature does not make a model more creative in any deep sense; it only reshapes probabilities
+  the model already assigns. Some reasoning models fix or restrict the temperature setting.
+see_also:
+  - softmax
+  - top-p sampling
+  - top-k sampling
+  - greedy decoding
+  - decoding
+  - knowledge distillation
+  - simulated annealing
+sources:
+  - text: >-
+      Hinton, G., Vinyals, O. & Dean, J. (2015). Distilling the Knowledge in a Neural Network. NIPS
+      2014 Deep Learning Workshop; arXiv 2015.
+  - text: >-
+      Ackley, D. H., Hinton, G. E. & Sejnowski, T. J. (1985). A Learning Algorithm for Boltzmann
+      Machines. Cognitive Science 9(1).
+as_of: 2026-10

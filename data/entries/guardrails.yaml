@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: guardrails
+id: guardrails
+pos: n.
+also:
+  - guardrail
+  - AI guardrails
+  - LLM guardrails
+  - safety guardrails
+domain: sec
+domains:
+  - safety
+  - eng
+  - gov
+level: essential
+plain: >-
+  Safety checks built around an AI system — filters on what goes in and comes out, and limits on
+  what it may do — to keep it from producing harmful or off-topic content or leaking data.
+senses:
+  - context: AI engineering
+    definition: >-
+      Programmable controls placed around a model, outside its [[weights|weights]], that check and
+      constrain its inputs, outputs and actions at run time. Input guardrails screen user prompts
+      and retrieved content for [[jailbreak|jailbreak]] attempts, [[prompt-injection|injections]],
+      off-topic requests or [[personally-identifiable-information|personal data]]; output guardrails
+      block or rewrite harmful, ungrounded, non-compliant or malformed responses, for example
+      checking that output fits a required schema; action guardrails restrict which [[tool-call|tool
+      calls]] an [[ai-agent|agent]] may make and require confirmation for risky ones. They are built
+      from rules and pattern matching, [[safety-classifier|safety classifiers]], smaller models
+      acting as judges, or the main model itself, and are offered by open-source frameworks and
+      cloud platforms. Guardrails complement, rather than replace, safety behavior trained into the
+      model, and every layer adds latency and false positives.
+    example: >-
+      The output guardrail caught the customer's card number before the reply went out.
+  - context: Policy (general sense)
+    definition: >-
+      Any rule, law, standard or institutional constraint meant to keep AI development and use
+      within acceptable bounds, as in calls for 'guardrails on AI' in legislation and corporate
+      governance.
+    labels:
+      - figurative
+origin: >-
+  A long-standing metaphor in policy and management. The engineering sense took hold in 2023 with
+  open-source frameworks such as NVIDIA's NeMo Guardrails (April 2023) and Guardrails AI, and with
+  model-based input–output classifiers such as Meta's Llama Guard (December 2023).
+year: 2023
+see_also:
+  - safety classifier
+  - constitutional classifiers
+  - content moderation
+  - prompt injection
+  - refusal
+  - defense in depth
+contrast:
+  - Constitutional AI
+sources:
+  - text: >-
+      Rebedea, T., Dinu, R., Sreedhar, M., Parisien, C. & Cohen, J. (2023). NeMo Guardrails: A
+      Toolkit for Controllable and Safe LLM Applications with Programmable Rails. EMNLP 2023 (System
+      Demonstrations).
+  - text: >-
+      Inan, H. et al. (2023). Llama Guard: LLM-based Input-Output Safeguard for Human-AI
+      Conversations. arXiv preprint.

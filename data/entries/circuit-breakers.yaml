@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: circuit breakers
+id: circuit-breakers
+pos: n.
+also:
+  - circuit breaker (LLM safety)
+  - representation rerouting
+  - short-circuiting
+domain: sec
+domains:
+  - safety
+  - interp
+level: specialist
+plain: >-
+  A defense that changes an AI model's inner workings so that, whenever it starts heading toward a
+  harmful answer, its internal activity is knocked off course and it cannot produce coherent harmful
+  content.
+senses:
+  - definition: >-
+      A defense that trains a [[large-language-model|language model]] so that the internal
+      [[activation|representations]] associated with harmful outputs are remapped ('rerouted')
+      toward incoherent or refusal-like directions, interrupting harmful generation however the
+      request was phrased. Training uses two datasets: on harmful completions, a loss pushes
+      intermediate-layer representations away from their original values; on benign data, a retain
+      loss keeps representations unchanged so that capabilities are preserved. Because it acts on
+      representations rather than on particular inputs, it aims at attack-agnostic robustness, and
+      its authors reported large reductions in [[jailbreak|jailbreak]] success, including against
+      attacks unseen in training, with little loss of capability. Later work showed it can still be
+      bypassed by some adaptive, multi-turn or embedding-space attacks.
+    example: >-
+      With circuit breakers in place, the jailbreak prompts produced gibberish instead of
+      instructions.
+origin: >-
+  Introduced by Andy Zou and colleagues from Gray Swan AI, Carnegie Mellon University and the Center
+  for AI Safety in 'Improving Alignment and Robustness with Circuit Breakers' (June 2024; NeurIPS
+  2024), building on [[representation-engineering|representation engineering]]. The name borrows
+  from electrical circuit breakers, not from interpretability's neural 'circuits'.
+year: 2024
+see_also:
+  - representation engineering
+  - adversarial training
+  - jailbreak
+  - refusal direction
+  - safety classifier
+  - fine-tuning attack
+sources:
+  - text: >-
+      Zou, A. et al. (2024). Improving Alignment and Robustness with Circuit Breakers. NeurIPS 2024.
+      arXiv:2406.04313.

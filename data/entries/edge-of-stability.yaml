@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: edge of stability
+id: edge-of-stability
+pos: n.
+also:
+  - EoS
+  - progressive sharpening
+  - self-stabilization
+domain: dl
+domains:
+  - math
+level: specialist
+plain: >-
+  A surprising pattern in how neural networks train: the error landscape keeps getting steeper until
+  it is just steep enough to make training wobble, then stays balanced at that edge while the error
+  still falls.
+senses:
+  - definition: >-
+      A regime of neural-network training by [[gradient-descent|gradient descent]] in which
+      curvature and step size lock together. Sharpness, the top eigenvalue of the
+      [[hessian|Hessian]] of the training loss, climbs during training ('progressive sharpening')
+      until it hits 2/η, the point at which classical analysis predicts that gradient descent with
+      [[learning-rate|learning rate]] η blows up; rather than diverging, training then remains
+      pinned at or slightly above that value. The loss stops decreasing monotonically and zigzags
+      along the sharpest direction from step to step, yet trends downward over longer stretches,
+      which the textbook requirement that the step size stay below 2/sharpness says should not
+      happen. The dynamics stabilize themselves, because moving along the unstable direction reduces
+      sharpness. Adaptive optimizers show an analogous 'adaptive edge of stability' in which
+      preconditioned sharpness hovers at a threshold set by the learning rate and momentum. The
+      phenomenon ties the learning rate to the curvature of the solutions found, and so to
+      [[sharp-and-flat-minima|sharp and flat minima]], [[learning-rate-warmup|warmup]] and
+      [[implicit-regularization|implicit regularization]].
+formula_latex: \lambda_{\max}\!\left(\nabla^2 L(\theta_t)\right) \approx \frac{2}{\eta}
+origin: >-
+  Named by Jeremy Cohen, Simran Kaur, Yuanzhi Li, J. Zico Kolter and Ameet Talwalkar in 'Gradient
+  Descent on Neural Networks Typically Occurs at the Edge of Stability' (arXiv February 2021; ICLR
+  2021). Related 'catapult' dynamics at large learning rates were described by Aitor Lewkowycz and
+  colleagues (2020), and Alex Damian and colleagues explained the self-stabilization mechanism in
+  2022.
+year: 2021
+see_also:
+  - gradient descent
+  - learning rate
+  - Hessian
+  - sharp and flat minima
+  - loss landscape
+  - implicit regularization
+sources:
+  - text: >-
+      Cohen, J. M., Kaur, S., Li, Y., Kolter, J. Z. & Talwalkar, A. (2021). Gradient Descent on
+      Neural Networks Typically Occurs at the Edge of Stability. ICLR 2021.
+    url: https://arxiv.org/abs/2103.00065

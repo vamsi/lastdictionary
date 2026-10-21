@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Vending-Bench
+id: vending-bench
+pos: prop. n.
+also:
+  - Vending-Bench 2
+  - Vending-Bench Arena
+  - Project Vend
+domain: eval
+domains:
+  - agents
+  - safety
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A test in which an AI agent runs a simulated vending-machine business for months — ordering stock,
+  setting prices, paying fees — to see whether it stays sensible and profitable over a long time.
+senses:
+  - definition: >-
+      A simulated business, run by an [[ai-agent|AI agent]] for many simulated days, that measures
+      whether the agent's decisions stay coherent over very long horizons. The agent operates a
+      vending machine: it researches products, emails simulated wholesalers to order stock, moves
+      inventory between storage and the machine, sets prices, collects cash and pays a daily fee,
+      and is scored by its final net worth or money balance. None of these chores is hard on its
+      own; what defeats agents is keeping them up across a run that, in the original version,
+      consumed more than 20 million tokens. The 2025 study found that the best models were usually
+      profitable but that every model had runs that derailed, through misread delivery schedules,
+      forgotten orders or 'meltdown' loops, and that failures did not coincide with the
+      [[context-window|context window]] filling up. Vending-Bench 2 simulates a full year from a
+      $500 start with unreliable or adversarial suppliers, and Vending-Bench Arena has several
+      agents compete at one location.
+    example: >-
+      Its Vending-Bench runs were profitable on average, but two of five ended in a pricing meltdown.
+origin: >-
+  Introduced by Axel Backlund and Lukas Petersson of Andon Labs in February 2025. Andon Labs and
+  Anthropic then tried the idea physically in Project Vend (2025), in which a Claude model nicknamed
+  Claudius ran a small shop in Anthropic's office, lost money and for a time talked as if it were a
+  person.
+year: 2025
+note: >-
+  Results vary widely between runs of the same model, so averages over several runs are needed. As
+  of October 2026, the top Vending-Bench 2 entry averaged a final balance of about $15,500.
+see_also:
+  - AI agent
+  - long-horizon task
+  - agent memory
+  - τ-bench
+  - METR time horizon
+  - agentic commerce
+sources:
+  - text: >-
+      Backlund, A. & Petersson, L. (2025). Vending-Bench: A Benchmark for Long-Term Coherence of
+      Autonomous Agents. arXiv:2502.15840.
+    url: https://arxiv.org/abs/2502.15840
+  - text: "Anthropic (2025). Project Vend: Can Claude run a small shop?"
+    url: https://www.anthropic.com/research/project-vend-1
+as_of: 2026-10

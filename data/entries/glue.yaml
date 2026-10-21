@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GLUE
+id: glue
+pos: prop. n.
+also:
+  - General Language Understanding Evaluation
+domain: eval
+domains:
+  - llm
+  - hist
+labels:
+  - historical
+level: core
+plain: >-
+  A 2018 bundle of nine English language-understanding tests combined into one score, which became
+  the yardstick for the first wave of pretrained language models such as BERT.
+senses:
+  - definition: >-
+      A [[natural-language-understanding|natural language understanding]] benchmark that scores one
+      system on nine English classification and regression tasks reused from earlier datasets —
+      grammatical acceptability (CoLA), sentiment (SST-2), paraphrase and semantic similarity (MRPC,
+      STS-B, QQP) and natural-language inference (MNLI, QNLI, RTE, WNLI) — and posts the average to
+      a public leaderboard. Any architecture may enter, but several tasks have little training data,
+      so systems that transfer what they learn between tasks do best; a separate expert-built
+      diagnostic set probes specific linguistic phenomena. GLUE became the yardstick for pretrained
+      [[transfer-learning|transfer learning]] models: [[bert|BERT]] (October 2018) raised the state
+      of the art by several points, and by mid-2019 systems exceeded the estimated non-expert human
+      baseline of 87.1, prompting the harder [[superglue|SuperGLUE]]. Its rapid exhaustion is a
+      textbook case of [[benchmark-saturation|benchmark saturation]].
+    example: Fine-tuning BERT-base on each GLUE task takes under an hour on a single GPU.
+origin: >-
+  Introduced by Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy and Samuel R.
+  Bowman (New York University, the University of Washington and DeepMind) in April 2018, and
+  published at ICLR 2019.
+year: 2018
+note: >-
+  The small WNLI task was adversarial for that era's models, which often scored below the
+  majority-class baseline; the BERT paper excluded it from its reported results.
+see_also:
+  - SuperGLUE
+  - benchmark saturation
+  - BERT
+  - natural language understanding
+  - transfer learning
+  - leaderboard
+sources:
+  - text: >-
+      Wang, A., Singh, A., Michael, J., Hill, F., Levy, O. & Bowman, S. R. (2019). GLUE: A
+      Multi-Task Benchmark and Analysis Platform for Natural Language Understanding. ICLR 2019.
+    url: https://arxiv.org/abs/1804.07461

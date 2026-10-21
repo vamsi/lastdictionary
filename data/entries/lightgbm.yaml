@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LightGBM
+id: lightgbm
+pos: prop. n.
+also:
+  - Light Gradient Boosting Machine
+  - gradient-based one-side sampling
+  - GOSS
+  - exclusive feature bundling
+  - EFB
+pronunciation: LITE-jee-bee-EM
+domain: ml
+domains:
+  - eng
+labels:
+  - trademark
+level: core
+plain: >-
+  A widely used tool for making predictions from very large tables of data, quickly and in little
+  memory, by combining many small decision trees. Microsoft released it as free software in 2016.
+senses:
+  - definition: >-
+      A [[gradient-boosting|gradient boosting]] library for [[decision-tree|decision trees]] ('Light
+      Gradient Boosting Machine') built around shortcuts in how trees are grown, so that ensembles
+      can be trained on millions of rows with modest time and memory. It buckets continuous features
+      into histograms to find splits quickly; grows trees leaf-wise, always splitting the leaf with
+      the largest loss reduction (with depth and leaf-count limits to curb
+      [[overfitting|overfitting]]) rather than level by level; and splits categorical features
+      natively by dividing categories into two groups ordered by gradient statistics. Two techniques
+      from its 2017 paper cut work further: gradient-based one-side sampling (GOSS) keeps examples
+      with large gradients and subsamples those with small ones, and exclusive feature bundling
+      (EFB) merges sparse features that are rarely nonzero together. It supports
+      [[learning-to-rank|learning to rank]] objectives and distributed and GPU training, and is a
+      mainstay of [[kaggle|Kaggle]] solutions alongside [[xgboost|XGBoost]] and
+      [[catboost|CatBoost]].
+    example: >-
+      LightGBM trained on the 40-million-row click log in minutes where our old pipeline took hours.
+origin: >-
+  Released as open source by Microsoft in 2016 under the MIT License, with Guolin Ke of Microsoft
+  Research as original author. It was described in 'LightGBM: A Highly Efficient Gradient Boosting
+  Decision Tree' by Guolin Ke, Qi Meng, Thomas Finley, Taifeng Wang, Wei Chen, Weidong Ma, Qiwei Ye
+  and Tie-Yan Liu at NeurIPS 2017.
+year: 2016
+note: >-
+  Leaf-wise growth reaches lower training loss for a given number of leaves but can overfit small
+  datasets unless num_leaves, max_depth or min_data_in_leaf are constrained.
+see_also:
+  - gradient boosting
+  - XGBoost
+  - CatBoost
+  - decision tree
+  - tabular data
+  - learning to rank
+  - Kaggle
+sources:
+  - text: >-
+      Ke, G., Meng, Q., Finley, T., Wang, T., Chen, W., Ma, W., Ye, Q. & Liu, T.-Y. (2017).
+      LightGBM: A Highly Efficient Gradient Boosting Decision Tree. Advances in Neural Information
+      Processing Systems 30.
+    url: https://papers.nips.cc/paper/6907-lightgbm-a-highly-efficient-gradient-boosting-decision-tree.pdf

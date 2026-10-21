@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mode connectivity
+id: mode-connectivity
+pos: n.
+also:
+  - linear mode connectivity
+  - low-loss path
+  - Git Re-Basin
+domain: dl
+domains:
+  - math
+  - train
+level: specialist
+plain: >-
+  The discovery that two separately trained versions of a network, though their settings look very
+  different, can usually be joined by a path along which the model keeps working well.
+senses:
+  - definition: >-
+      The empirical finding that solutions found by training the same architecture several times
+      (for example, from different random seeds) are usually not isolated basins walled off by high
+      loss: low-loss paths link them, often as simple as a quadratic Bézier curve or a two-segment
+      polygonal line, and training and test performance barely change along the way. Linear mode
+      connectivity is the stronger property that the straight line between two solutions has no loss
+      barrier; it generally fails between independently trained networks but holds between runs that
+      share an early segment of training, and can be recovered for independent runs by permuting one
+      network's hidden units to align with the other's, exploiting permutation symmetry (as in Git
+      Re-Basin). Mode connectivity helps explain why weight averaging works (see
+      [[exponential-moving-average-of-weights|exponential moving average of weights]]), underlies
+      [[model-merging|model merging]] and [[task-arithmetic|task arithmetic]] for fine-tuned models
+      that share a pretrained starting point, and informs the [[lottery-ticket-hypothesis|lottery
+      ticket hypothesis]], whose tickets emerge once training becomes stable in this linear sense.
+origin: >-
+  Discovered independently in 2018 by Timur Garipov, Pavel Izmailov and colleagues (NeurIPS 2018)
+  and by Felix Draxler and colleagues (ICML 2018). Jonathan Frankle and colleagues defined linear
+  mode connectivity (2020), and Samuel Ainsworth, Jonathan Hayase and Siddhartha Srinivasa's Git
+  Re-Basin (2022) used permutation alignment to connect independently trained networks.
+year: 2018
+see_also:
+  - loss landscape
+  - model merging
+  - task arithmetic
+  - lottery ticket hypothesis
+  - exponential moving average of weights
+  - ensemble learning
+sources:
+  - text: >-
+      Garipov, T., Izmailov, P., Podoprikhin, D., Vetrov, D. & Wilson, A. G. (2018). Loss Surfaces,
+      Mode Connectivity, and Fast Ensembling of DNNs. NeurIPS 2018.
+  - text: >-
+      Draxler, F., Veschgini, K., Salmhofer, M. & Hamprecht, F. A. (2018). Essentially No Barriers
+      in Neural Network Energy Landscape. ICML 2018.
+  - text: >-
+      Frankle, J., Dziugaite, G. K., Roy, D. M. & Carbin, M. (2020). Linear Mode Connectivity and
+      the Lottery Ticket Hypothesis. ICML 2020.

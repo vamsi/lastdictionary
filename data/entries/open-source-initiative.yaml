@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Open Source Initiative
+id: open-source-initiative
+pos: prop. n.
+also:
+  - OSI
+  - Open Source Definition
+  - OSD
+  - OSI-approved license
+domain: orgs
+domains:
+  - gov
+  - eng
+level: specialist
+plain: >-
+  A nonprofit group that decides what counts as 'open source' software and, in 2024, published a
+  definition of what makes an AI system genuinely open source.
+senses:
+  - definition: >-
+      A US nonprofit that maintains the Open Source Definition — ten criteria including free
+      redistribution, availability of source code, permission to make derived works, and no
+      discrimination against persons, groups or fields of endeavor — and approves software licenses
+      that meet it, such as MIT, Apache 2.0 and the GNU General Public License. In AI it is best
+      known for the Open Source AI Definition (OSAID) 1.0, released on 28 October 2024 after a
+      two-year public consultation. The OSAID asks that anyone be free to use, study, modify and
+      share the system, and that they receive what is needed to modify it in practice: the
+      [[weights|model parameters]], all the code for training and running it, and a description of
+      the training data ('data information') full enough that an expert could recreate a comparable
+      system — though not necessarily the data itself. The OSI has argued that [[llama|Llama]] and
+      other models released with use restrictions are not open source, and its definition is the
+      main reference point in disputes over [[open-source-ai|open-source AI]] and
+      [[open-weight-model|open weights]].
+    example: >-
+      Because the license restricts certain users and uses, the OSI does not count the model as open
+      source.
+origin: >-
+  Founded in February 1998 by Bruce Perens and Eric S. Raymond, weeks after Netscape announced it
+  would publish its browser's source code and after Christine Peterson proposed 'open source' as an
+  alternative to 'free software'. The Open Source Definition was adapted from Perens's Debian Free
+  Software Guidelines (1997). The OSI began work on an AI definition in 2022.
+year: 1998
+note: >-
+  The OSAID drew criticism from two sides: some open-source advocates said that not requiring
+  training data lets opaque models qualify, while Meta, whose Llama models do not qualify, said no
+  single definition could capture today's AI. Few prominent models meet it; those cited as
+  conforming include [[eleutherai|EleutherAI]]'s Pythia and [[allen-institute-for-ai|Ai2]]'s OLMo.
+see_also:
+  - open-source AI
+  - open-weight model
+  - model license
+  - Llama
+  - data licensing
+  - Hugging Face
+sources:
+  - text: >-
+      Open Source Initiative (2024). The Open Source AI Definition 1.0. opensource.org, 28 October
+      2024.
+  - text: >-
+      Open Source Initiative. The Open Source Definition (version 1.9). opensource.org.
+as_of: 2026-10

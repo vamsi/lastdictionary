@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: state space search
+id: state-space-search
+pos: n.
+also:
+  - state space
+  - problem space
+  - search space
+  - search problem
+  - graph search
+  - tree search
+domain: sym
+domains:
+  - core
+level: core
+plain: >-
+  Solving a problem by treating every situation it could be in as a point on a map, with each
+  possible move as a road between points, and searching for a route from the start to a goal.
+senses:
+  - definition: >-
+      The formulation of problem solving as finding a path through a graph whose nodes are states
+      and whose edges are actions, from an initial state to any state that passes a goal test, often
+      minimizing total path cost. A search algorithm maintains a frontier of generated but
+      unexpanded states, repeatedly selects one and expands it by applying every applicable action;
+      graph search also records visited states to avoid repeating work. Algorithms differ chiefly in
+      the order of expansion: uninformed methods such as [[breadth-first-search|breadth-first]],
+      [[depth-first-search|depth-first]] and [[iterative-deepening-search|iterative deepening]] use
+      only the problem definition, while informed methods such as [[best-first-search|best-first]]
+      and [[a-search|A* search]] use a [[heuristic|heuristic]]. The central obstacle is
+      [[combinatorial-explosion|combinatorial explosion]]: the state spaces of puzzles, games and
+      plans grow exponentially with depth.
+    example: >-
+      Once the puzzle is framed as state space search, any off-the-shelf A* implementation can solve
+      it.
+origin: >-
+  Newell, Shaw and Simon's programs of the late 1950s treated problem solving as search through a
+  space of possibilities. Saul Amarel (1968) showed how the choice of representation shapes the
+  space, Nils Nilsson's Problem-Solving Methods in Artificial Intelligence (1971) systematized the
+  algorithms, and Newell and Simon's Human Problem Solving (1972) made the 'problem space' a
+  psychological theory.
+note: >-
+  Search remains central in modern AI in new forms: [[monte-carlo-tree-search|Monte Carlo tree
+  search]] in game playing, [[beam-search|beam search]] in text generation, and search over
+  reasoning steps in [[tree-of-thoughts|tree of thoughts]] and other test-time methods.
+see_also:
+  - breadth-first search
+  - depth-first search
+  - A* search
+  - heuristic
+  - best-first search
+  - combinatorial explosion
+  - automated planning
+  - game tree
+sources:
+  - text: >-
+      Nilsson, N. J. (1971). Problem-Solving Methods in Artificial Intelligence. McGraw-Hill.
+  - text: >-
+      Russell, S. & Norvig, P. (2020). Artificial Intelligence: A Modern Approach, 4th ed. Pearson.

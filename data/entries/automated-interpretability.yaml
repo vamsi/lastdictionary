@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: automated interpretability
+id: automated-interpretability
+pos: n.
+also:
+  - auto-interp
+  - autointerp
+  - automatic interpretability
+  - interpretability agent
+domain: interp
+domains:
+  - llm
+  - agents
+level: specialist
+plain: >-
+  Using AI models to help explain other AI models — for instance, having a language model read
+  examples that excite an internal unit and write a description of what it detects.
+senses:
+  - definition: >-
+      The use of machine-learning systems, usually language models, to carry out interpretability
+      work at scale. The basic pipeline explains a unit — a neuron or [[sparse-autoencoder|sparse
+      autoencoder]] feature — by showing an explainer model the text excerpts that most strongly
+      activate it and asking for a short natural-language description. The description is then
+      scored by having a simulator model predict the unit's activations on new text from the
+      description alone and correlating the predictions with the real activations; other scores test
+      whether the description lets a model pick out activating examples or steer the feature. This
+      made it practical to label millions of features. More recent work builds interpretability
+      agents that design and run their own experiments — querying, ablating and steering units — and
+      uses them to audit models for hidden objectives. Explanations often describe only a unit's
+      strongest activations and can be confidently wrong.
+    example: >-
+      Auto-interp labeled the latent 'legal citations', but its simulation score was only 0.3.
+origin: >-
+  Pioneered by Steven Bills, Nick Cammarata, Dan Mossing, Henk Tillman, Leo Gao, Gabriel Goh, Ilya
+  Sutskever, Jan Leike, Jeff Wu and William Saunders at OpenAI in 'Language models can explain
+  neurons in language models' (May 2023), which used GPT-4 to explain all 307,200 neurons of GPT-2
+  XL. Earlier, MILAN (Evan Hernandez and colleagues, 2022) described vision neurons in words;
+  interpretability agents that run their own experiments followed in Sarah Schwettmann and
+  colleagues' FIND benchmark (2023) and MAIA (2024).
+year: 2023
+see_also:
+  - sparse autoencoder
+  - feature (interpretability)
+  - Neuronpedia
+  - monosemanticity
+  - AI agent
+  - LLM-as-a-judge
+sources:
+  - text: >-
+      Bills, S., Cammarata, N., Mossing, D., Tillman, H., Gao, L., Goh, G., Sutskever, I., Leike,
+      J., Wu, J. & Saunders, W. (2023). Language models can explain neurons in language models.
+      OpenAI.
+  - text: >-
+      Hernandez, E., Schwettmann, S., Bau, D., Bagashvili, T., Torralba, A. & Andreas, J. (2022).
+      Natural Language Descriptions of Deep Visual Features. ICLR 2022.
+  - text: >-
+      Schwettmann, S., Rott Shaham, T., Materzynska, J., Chowdhury, N., Li, S., Andreas, J., Bau, D.
+      & Torralba, A. (2023). FIND: A Function Description Benchmark for Evaluating Interpretability
+      Methods. arXiv:2309.03886.
+    url: https://arxiv.org/abs/2309.03886

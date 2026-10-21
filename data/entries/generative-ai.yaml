@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generative AI
+id: generative-ai
+pos: n.
+also:
+  - GenAI
+  - gen AI
+  - generative artificial intelligence
+domain: core
+domains:
+  - gen
+  - llm
+  - society
+level: essential
+plain: >-
+  AI that produces something new on request, such as an essay, a picture, a song or a piece of code,
+  having absorbed from enormous numbers of existing examples what such things typically look like.
+senses:
+  - definition: >-
+      [[artificial-intelligence|AI]] systems whose output is newly synthesized material (a
+      paragraph, a program, a picture, a voice recording, a candidate drug molecule) rather than a
+      label or score attached to existing data. Underneath are [[generative-model|generative
+      models]], which estimate how their training data are distributed and then draw fresh samples
+      from that estimate, usually steered by a [[prompt|prompt]]: [[large-language-model|large
+      language models]] generate text token by token, while [[diffusion-model|diffusion models]] and
+      [[generative-adversarial-network|generative adversarial networks]] generate images and other
+      media. Most current systems are [[foundation-model|foundation models]] adapted for chat,
+      coding or media generation. The category is contrasted with [[predictive-ai|predictive AI]]
+      and [[discriminative-model|discriminative]] systems, though the boundary is blurry: a language
+      model's output is itself a chain of predictions. Concerns specific to generative AI include
+      [[hallucination|hallucination]], copyright in training data, [[deepfake|deepfakes]] and
+      [[synthetic-media|synthetic media]], and displacement of creative work.
+    example: >-
+      The newsroom allows generative AI for drafting headlines but not for writing stories.
+origin: >-
+  Generative models are decades old in statistics and machine learning, and the phrase 'generative
+  AI' was in occasional use before 2022, for instance for image systems built on GANs (introduced
+  2014); its first use has not been established. It became a household term in 2022 with
+  text-to-image tools (DALL·E 2, Midjourney, Stable Diffusion), Sequoia Capital's September 2022
+  essay 'Generative AI: A Creative New World' by Sonya Huang and Pat Grady, and the release of
+  [[chatgpt|ChatGPT]] that November.
+note: >-
+  Not to be confused with [[artificial-general-intelligence|artificial general intelligence]]:
+  'generative' describes what a system outputs, not how broadly capable it is. The abbreviation
+  GenAI is common in business writing.
+see_also:
+  - generative model
+  - large language model
+  - diffusion model
+  - foundation model
+  - ChatGPT
+  - text-to-image model
+  - synthetic media
+  - AI slop
+contrast:
+  - predictive AI
+  - discriminative model
+  - artificial general intelligence
+sources:
+  - text: >-
+      Huang, S. & Grady, P. (2022). Generative AI: A Creative New World. Sequoia Capital, 19
+      September 2022.
+    url: https://www.sequoiacap.com/article/generative-ai-a-creative-new-world/
+standards: US Executive Order 14110 (2023; revoked January 2025), §3(p)

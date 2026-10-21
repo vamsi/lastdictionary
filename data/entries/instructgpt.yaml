@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: InstructGPT
+id: instructgpt
+pos: prop. n.
+domain: train
+domains:
+  - hist
+  - llm
+labels:
+  - trademark
+  - historical
+level: core
+plain: >-
+  A 2022 OpenAI language model trained with human feedback to follow instructions; people preferred
+  its answers to those of a model 100 times larger, and its recipe led directly to ChatGPT.
+senses:
+  - definition: >-
+      A family of [[gpt-3|GPT-3]]-based models fine-tuned by OpenAI to follow user instructions, and
+      the paper describing them, which established the three-stage
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]]
+      recipe for language models: [[supervised-fine-tuning|supervised fine-tuning]] on
+      labeler-written demonstrations; a [[reward-model|reward model]] trained on rankings of several
+      outputs per prompt; and [[proximal-policy-optimization|proximal policy optimization]] against
+      that reward with a per-token [[kl-penalty|KL penalty]] (plus, in the PPO-ptx variant, mixed-in
+      pretraining updates to reduce regressions). About 40 contractors wrote demonstrations and
+      comparisons for prompts drawn largely from the OpenAI API. Labelers' rankings showed a
+      striking size effect: answers from the 1.3-billion-parameter InstructGPT beat those of the
+      175-billion-parameter GPT-3, a model more than 100 times larger. The tuned models also scored
+      as more truthful and produced less toxic text, though they lost some ground on certain
+      academic benchmarks, a cost the authors called an [[alignment-tax|alignment tax]].
+    example: >-
+      Most open RLHF pipelines still follow the InstructGPT recipe of SFT, reward model, then PPO.
+origin: >-
+  Described by Long Ouyang, Jeff Wu, Xu Jiang and 17 co-authors at OpenAI in a paper posted in March
+  2022 and published at NeurIPS 2022. OpenAI had made InstructGPT-style models the default in its
+  API in January 2022; ChatGPT (November 2022) was trained with the same methods on dialogue data.
+year: 2022
+note: >-
+  The name refers to a research model line rather than a consumer product, and the deployed API
+  models changed over time; not all were trained with PPO. Its labeler pool and API-derived prompts
+  were later criticized as a narrow basis for 'human preferences'.
+see_also:
+  - reinforcement learning from human feedback
+  - ChatGPT
+  - GPT-3
+  - supervised fine-tuning
+  - reward model
+  - alignment tax
+  - instruction tuning
+sources:
+  - text: >-
+      Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback.
+      NeurIPS 2022. arXiv:2203.02155.
+    url: https://arxiv.org/abs/2203.02155

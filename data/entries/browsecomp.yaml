@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BrowseComp
+id: browsecomp
+pos: prop. n.
+also:
+  - BrowseComp-Plus
+  - BrowseComp-ZH
+domain: eval
+domains:
+  - agents
+level: core
+plain: >-
+  A test of AI web-research agents: 1,266 puzzle-like questions whose answers take a long,
+  persistent online hunt to uncover, though each answer is short and simple to confirm.
+senses:
+  - definition: >-
+      A benchmark of 1,266 questions for [[browser-agent|browsing agents]], each answerable with a
+      short, unambiguous fact that can be reached only by persistent searching, because its clues
+      are obscure and interlock across many web pages. Questions were written 'inverted': trainers
+      started from a known fact and combined several obscure attributes into a question, making the
+      search space huge while verification stays trivial. Each question was checked to be unsolved
+      by contemporary models, not answerable within five simple searches, and not solved by another
+      person within ten minutes. Scoring is accuracy against the reference answer, with
+      [[calibration|calibration]] also reported. At release, GPT-4o scored 0.6% (1.9% with
+      browsing), OpenAI's o1 9.9% and OpenAI's Deep Research agent 51.5%, demonstrating the gains
+      from persistent, reasoning-driven search. It became the standard benchmark for
+      [[deep-research|deep research]] agents, with variants such as BrowseComp-Plus, which fixes the
+      document collection for reproducibility.
+    example: >-
+      The agent's BrowseComp accuracy rises steadily with the number of searches it is allowed.
+origin: >-
+  Introduced by Jason Wei, Zhiqing Sun, Spencer Papay and colleagues at OpenAI on 10 April 2025; the
+  name is short for 'browsing competition'.
+year: 2025
+note: >-
+  It measures the ability to locate a single hard fact, not to synthesize balanced reports, and says
+  little about source quality or citation accuracy. Its authors liken it to programming contests: an
+  incomplete but useful proxy.
+see_also:
+  - deep research
+  - browser agent
+  - GAIA
+  - SimpleQA
+  - tool use
+  - test-time compute
+sources:
+  - text: >-
+      Wei, J., Sun, Z., Papay, S. et al. (2025). BrowseComp: A Simple Yet Challenging Benchmark for
+      Browsing Agents. arXiv:2504.12516.
+    url: https://arxiv.org/abs/2504.12516
+  - text: "OpenAI (2025). BrowseComp: a benchmark for browsing agents."
+    url: https://openai.com/index/browsecomp/

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-organizing map
+id: self-organizing-map
+pos: n.
+also:
+  - SOM
+  - Kohonen map
+  - Kohonen network
+  - self-organizing feature map
+  - self-organising map
+domain: dl
+domains:
+  - ml
+  - hist
+level: specialist
+plain: >-
+  A neural network that arranges data on a flat grid so that similar items end up in neighboring
+  cells, producing a map of how the data is organized.
+senses:
+  - definition: >-
+      An [[unsupervised-learning|unsupervised]] neural network whose units occupy fixed places on a
+      grid, usually two-dimensional, and are trained until neighbors on the grid stand for similar
+      inputs, so that the grid becomes a flat chart of high-dimensional data that keeps similar
+      items together. Each unit holds a prototype vector; for each training input the best-matching
+      unit is found, and it and its grid neighbors are moved towards the input, with the
+      neighborhood radius and learning rate shrinking over time. The result is a discrete, ordered
+      map useful for visualizing [[clustering|clusters]], exploring high-dimensional data and vector
+      quantization. It is a form of competitive learning, akin to [[k-means-clustering|k-means
+      clustering]] with a neighborhood constraint, and was inspired by topographic maps in the
+      cerebral cortex. Largely superseded for visualization by [[t-sne|t-SNE]] and [[umap|UMAP]], it
+      remains in use in some scientific and engineering fields.
+    example: >-
+      On the self-organizing map, the faulty sensor readings cluster in the top-right corner.
+origin: >-
+  Introduced by Finnish engineer Teuvo Kohonen in 'Self-Organized Formation of Topologically Correct
+  Feature Maps' (Biological Cybernetics, 1982), building on earlier models of cortical
+  self-organization such as Christoph von der Malsburg's (1973).
+year: 1982
+see_also:
+  - unsupervised learning
+  - clustering
+  - k-means clustering
+  - dimensionality reduction
+  - t-SNE
+  - UMAP
+sources:
+  - text: >-
+      Kohonen, T. (1982). Self-Organized Formation of Topologically Correct Feature Maps. Biological
+      Cybernetics, 43, 59–69.

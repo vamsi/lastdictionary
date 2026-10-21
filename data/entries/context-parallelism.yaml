@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: context parallelism
+id: context-parallelism
+pos: n.
+also:
+  - CP
+  - ring attention
+  - DeepSpeed Ulysses
+  - Ulysses
+domain: train
+domains:
+  - llm
+  - hw
+level: specialist
+plain: >-
+  A way of training or running a model on extremely long inputs — whole books or codebases — by
+  splitting the text across many chips and having them swap the information each part needs to 'see'
+  the others.
+senses:
+  - definition: >-
+      A form of [[model-parallelism|model parallelism]] that splits each input sequence along its
+      length across devices for every layer, so that activation memory per device falls in
+      proportion to the number of devices and contexts of hundreds of thousands to millions of
+      tokens become trainable. Most of a [[transformer|transformer]] processes tokens independently,
+      but [[self-attention|self-attention]] needs every query to see the relevant keys and values,
+      so devices must exchange them. Ring attention (Hao Liu, Matei Zaharia and Pieter Abbeel, 2023)
+      passes key–value blocks around a ring of devices while computing attention on the blocks
+      already held, hiding communication behind computation; DeepSpeed Ulysses (2023) instead uses
+      all-to-all collectives to re-partition by attention head during attention; other designs
+      all-gather keys and values. Causal masking creates load imbalance, handled by reordering
+      chunks. Meta's Llama 3 used context parallelism as the fourth dimension of its '4D' layout for
+      long-context training, and it also speeds long prefills at inference.
+    example: >-
+      To train at 1M tokens we added context parallelism of 16 on top of tensor parallelism.
+origin: >-
+  Grew out of the long-sequence sense of [[sequence-parallelism|sequence parallelism]] (Shenggui Li
+  and colleagues, 2021). The name 'context parallelism' was adopted in NVIDIA's Megatron-Core around
+  2023–2024, whose documentation contrasts it with Megatron's own sequence parallelism, and spread
+  through Meta's Llama 3 report (2024) and PyTorch's context-parallel APIs.
+year: 2023
+see_also:
+  - sequence parallelism
+  - long context
+  - self-attention
+  - 3D parallelism
+  - collective communication
+  - context extension
+sources:
+  - text: >-
+      Liu, H., Zaharia, M. & Abbeel, P. (2023). Ring Attention with Blockwise Transformers for
+      Near-Infinite Context. arXiv:2310.01889.
+    url: https://arxiv.org/abs/2310.01889
+  - text: >-
+      Jacobs, S. A., Tanaka, M., Zhang, C., Zhang, M., Song, S. L., Rajbhandari, S. & He, Y. (2023).
+      DeepSpeed Ulysses: System Optimizations for Enabling Training of Extreme Long Sequence
+      Transformer Models. arXiv:2309.14509.
+    url: https://arxiv.org/abs/2309.14509

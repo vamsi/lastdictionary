@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: matrix factorization
+id: matrix-factorization
+pos: n.
+also:
+  - matrix decomposition
+  - latent factor model
+  - Funk SVD
+  - alternating least squares
+  - ALS
+  - non-negative matrix factorization
+  - NMF
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  Breaking a big table of numbers, such as which users liked which films, into two smaller tables of
+  hidden traits, so missing entries can be filled in by multiplying them back together.
+senses:
+  - definition: >-
+      The approximation of a matrix by a product of lower-rank factor matrices. In
+      [[recommender-system|recommender systems]], the sparse user–item rating or interaction matrix
+      is approximated by the product of a user-factor matrix and an item-factor matrix, giving every
+      user and item a vector of k latent factors (often 10–200); a predicted preference is the
+      [[dot-product|dot product]] of the two vectors, usually plus user and item bias terms. Unlike
+      the classical [[singular-value-decomposition|singular value decomposition]], which needs a
+      complete matrix, recommender factorization is fitted only to observed entries, with
+      [[regularization|regularization]], by [[stochastic-gradient-descent|stochastic gradient
+      descent]] or alternating least squares; weighted variants handle [[implicit-feedback|implicit
+      feedback]]. The learned factors often line up with recognizable traits such as genre or
+      audience. More broadly the term covers decompositions used throughout machine learning: SVD,
+      [[principal-component-analysis|principal component analysis]], non-negative matrix
+      factorization (whose nonnegative factors yield additive, parts-based representations used in
+      topic modeling and audio separation) and the [[low-rank-approximation|low-rank approximation]]
+      behind [[low-rank-adaptation|low-rank adaptation]].
+    example: >-
+      Matrix factorization with 64 latent factors beat the neighborhood model on held-out ratings.
+formula_latex: \min_{P,\,Q} \sum_{(u,i) \in \Omega} \big(r_{ui} - \mathbf{p}_u^{\top}
+  \mathbf{q}_i\big)^2 + \lambda \big(\lVert \mathbf{p}_u \rVert^2 + \lVert \mathbf{q}_i
+  \rVert^2\big)
+origin: >-
+  Matrix decompositions are classical linear algebra. Their use for rating prediction took off
+  during the Netflix Prize after Simon Funk (pseudonym of Brandyn Webb) described a simple
+  incremental SVD-style method in a December 2006 blog post; Yehuda Koren, Robert Bell and Chris
+  Volinsky, members of the winning team, summarized the approach in IEEE Computer in 2009. Daniel
+  Lee and Sebastian Seung popularized non-negative matrix factorization in Nature in 1999.
+year: 2006
+note: >-
+  In recommender jargon 'SVD' often means Funk-style factorization of the observed entries only,
+  which is not a true singular value decomposition.
+see_also:
+  - collaborative filtering
+  - recommender system
+  - singular value decomposition
+  - low-rank approximation
+  - embedding
+  - two-tower model
+  - Netflix Prize
+sources:
+  - text: >-
+      Koren, Y., Bell, R. & Volinsky, C. (2009). Matrix Factorization Techniques for Recommender
+      Systems. Computer 42(8).
+  - text: >-
+      Lee, D. D. & Seung, H. S. (1999). Learning the Parts of Objects by Non-negative Matrix
+      Factorization. Nature 401.
+  - text: >-
+      Hu, Y., Koren, Y. & Volinsky, C. (2008). Collaborative Filtering for Implicit Feedback
+      Datasets. Proc. 8th IEEE International Conference on Data Mining (ICDM).

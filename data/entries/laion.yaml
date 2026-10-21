@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LAION
+id: laion
+pos: prop. n.
+also:
+  - Large-scale Artificial Intelligence Open Network
+  - LAION e.V.
+domain: orgs
+domains:
+  - data
+  - gen
+level: core
+plain: >-
+  A mostly volunteer group, registered as a German nonprofit, that compiled free lists of billions
+  of online pictures and their captions. Stable Diffusion and other image generators were trained on
+  them.
+senses:
+  - definition: >-
+      The Large-scale Artificial Intelligence Open Network, a volunteer-run association registered
+      in Germany that aims to make the raw materials of machine learning, datasets and trained
+      models, freely available. Its best-known products, LAION-400M (2021) and [[laion-5b|LAION-5B]]
+      (2022), hold hundreds of millions to billions of links to web images, each paired with its
+      alt-text caption, harvested from [[common-crawl|Common Crawl]] and kept only when
+      [[clip|CLIP]] judged image and text to match. They became the standard open training data for
+      text-to-image models such as [[stable-diffusion|Stable Diffusion]] and for OpenCLIP, an open
+      reproduction of CLIP. Because the datasets list links to web images collected without consent,
+      they raised copyright, privacy and safety concerns: in December 2023 a Stanford Internet
+      Observatory report found links to suspected child sexual abuse material, prompting a takedown
+      and the cleaned Re-LAION-5B (2024). In September 2024 the Hamburg Regional Court dismissed a
+      photographer's copyright suit, holding that building the dataset fell under Germany's
+      scientific-research [[text-and-data-mining-exception|text and data mining exception]]; the
+      Hanseatic Higher Regional Court upheld the dismissal on appeal in December 2025.
+origin: >-
+  Founded in 2021 by researchers and volunteers including Christoph Schuhmann, a Hamburg
+  secondary-school teacher, and Jenia Jitsev, who coordinated through a Discord server; it is
+  registered in Germany as a nonprofit association (eingetragener Verein).
+year: 2021
+see_also:
+  - LAION-5B
+  - Common Crawl
+  - Stable Diffusion
+  - CLIP
+  - text and data mining exception
+  - Stability AI
+as_of: 2026-10

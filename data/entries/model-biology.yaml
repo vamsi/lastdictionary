@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model biology
+id: model-biology
+pos: n.
+also:
+  - biology of language models
+  - AI biology
+  - LLM biology
+domain: interp
+domains:
+  - llm
+  - safety
+labels:
+  - emerging
+  - figurative
+level: specialist
+plain: >-
+  The study of what AI models actually do inside — the strategies and hidden steps they use —
+  approached the way biologists study living things, by observation and experiment rather than from
+  a blueprint.
+senses:
+  - definition: >-
+      Research that characterizes the internal mechanisms by which trained models carry out
+      particular behaviors, treating models as natural objects to be investigated empirically, as a
+      biologist studies organisms, rather than as engineered artifacts whose workings follow from
+      their design. Where [[mechanistic-interpretability|mechanistic interpretability]] develops
+      methods, model biology applies them and catalogues phenomena: multi-step reasoning within a
+      single forward pass, planning ahead when writing rhyming verse, concept features shared across
+      languages, the circuitry behind refusals and [[hallucination|hallucinations]], mismatches
+      between a model's actual computation and the reasoning it reports in its
+      [[chain-of-thought|chain of thought]], and hidden goals instilled during training. The
+      metaphor stresses that models' mechanisms are grown by training rather than designed, are
+      often messy and redundant, and must be discovered case by case. Critics note that findings
+      from one model or prompt may not generalize.
+    example: >-
+      The model-biology results suggest it computes the answer first and writes the explanation
+      afterwards.
+origin: >-
+  Interpretability researchers, notably Chris Olah, had long compared neural networks to organisms
+  that are grown rather than built. The biological framing was popularized by Jack Lindsey, Wes
+  Gurnee, Emmanuel Ameisen and colleagues' 'On the Biology of a Large Language Model' (Transformer
+  Circuits Thread, March 2025), which applied attribution graphs to Claude 3.5 Haiku; the phrase
+  'model biology' spread as a label for such work from 2025, though its first use is not
+  established.
+year: 2025
+see_also:
+  - mechanistic interpretability
+  - attribution graph
+  - circuit tracing
+  - model organism of misalignment
+  - chain-of-thought faithfulness
+  - introspection
+sources:
+  - text: >-
+      Lindsey, J., Gurnee, W., Ameisen, E. et al. (2025). On the Biology of a Large Language Model.
+      Transformer Circuits Thread.
+    url: https://transformer-circuits.pub/2025/attribution-graphs/biology.html

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: activation function
+id: activation-function
+pos: n.
+also:
+  - nonlinearity
+  - transfer function
+  - non-linearity
+domain: dl
+level: core
+plain: >-
+  The simple rule each artificial neuron applies to its total input to decide its output, such as
+  'keep positive values, turn negatives into zero'. Without it, a deep network would be no smarter
+  than a single layer.
+senses:
+  - definition: >-
+      A fixed, usually nonlinear function φ applied elementwise to a neuron's or layer's
+      pre-activation (the weighted sum of its inputs plus bias). Nonlinearity is essential: a
+      composition of linear layers is itself linear, so without it a deep network collapses to a
+      single [[linear-transformation|linear transformation]]. Historically important choices are the
+      step function of the [[perceptron|perceptron]], the [[sigmoid-function|sigmoid function]] and
+      [[tanh|tanh]]; these saturate, so their gradients vanish for large inputs
+      ([[vanishing-gradient-problem|vanishing gradient problem]]). Since the early 2010s the default
+      for hidden layers has been the [[relu|ReLU]] family ([[leaky-relu|leaky ReLU]], PReLU, ELU)
+      and smooth relatives such as [[gelu|GELU]] and [[silu|SiLU]]; gated forms such as
+      [[swiglu|SwiGLU]] multiply two projections. Output layers use task-specific functions:
+      [[softmax|softmax]] for multiclass probabilities, sigmoid for binary or multilabel ones,
+      identity for regression.
+    example: >-
+      Switching the activation function from tanh to ReLU let the twenty-layer network train at all.
+origin: >-
+  Threshold (step) activations come from the McCulloch–Pitts neuron of 1943. Smooth sigmoids became
+  standard with backpropagation in the 1980s because they are differentiable. Rectifiers, used by
+  Kunihiko Fukushima in 1969, became the default after work by Vinod Nair and Geoffrey Hinton (2010)
+  and Xavier Glorot, Antoine Bordes and Yoshua Bengio (2011). Older literature often says 'transfer
+  function'.
+year: 1943
+note: >-
+  Distinguish the function from its outputs, the [[activation|activations]]. The choice interacts
+  with [[weight-initialization|weight initialization]]: He initialization was derived for ReLUs,
+  Glorot (Xavier) initialization for symmetric functions such as tanh.
+see_also:
+  - ReLU
+  - GELU
+  - SiLU
+  - sigmoid function
+  - tanh
+  - softmax
+  - SwiGLU
+  - vanishing gradient problem
+contrast:
+  - activation
+sources:
+  - text: >-
+      Glorot, X., Bordes, A. & Bengio, Y. (2011). Deep Sparse Rectifier Neural Networks. Proceedings
+      of AISTATS 2011.

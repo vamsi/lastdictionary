@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: learning rate warmup
+id: learning-rate-warmup
+pos: n.
+also:
+  - warmup
+  - warm-up
+  - LR warmup
+  - linear warmup
+  - gradual warmup
+domain: dl
+domains:
+  - train
+  - llm
+level: core
+plain: >-
+  Starting training with tiny learning steps and gradually increasing them over the first stretch of
+  training, so the model does not lurch wildly before it has found its footing.
+senses:
+  - definition: >-
+      The practice of raising the [[learning-rate|learning rate]] from zero or a small value to its
+      target, usually linearly over the first hundreds to thousands of [[training-step|steps]]
+      (often a few percent of training), before the main [[learning-rate-schedule|learning rate
+      schedule]] takes over. Early in training gradients are large and change direction quickly, and
+      adaptive optimizers such as [[adam|Adam]] have unreliable second-moment estimates, so a
+      full-size step can throw the network into a high-curvature region or numerical overflow from
+      which it may not recover. Warmup is near-universal for [[transformer|transformers]],
+      especially those with post-[[layer-normalization|layer normalization]], and for
+      large-[[batch-size|batch]] training. Proposed explanations include reducing the variance of
+      adaptive learning rates early on (the motivation for the RAdam optimizer) and giving the
+      network time to move into flatter regions that tolerate larger steps, consistent with
+      [[edge-of-stability|edge of stability]] dynamics.
+    example: >-
+      Without warmup the run diverged in the first 200 steps; 2,000 warmup steps fixed it.
+origin: >-
+  Kaiming He and colleagues 'warmed up' a 110-layer ResNet with a reduced learning rate in their
+  2015 residual-network paper. Priya Goyal and colleagues' 'gradual warmup' (2017) made it standard
+  for large-batch training, and the original transformer (Ashish Vaswani et al., 2017) warmed up
+  linearly over 4,000 steps before inverse-square-root decay.
+year: 2015
+note: >-
+  Warmup length is usually set by rule of thumb; too short a warmup is a common cause of early
+  [[loss-spike|loss spikes]] and divergence.
+see_also:
+  - learning rate schedule
+  - learning rate
+  - Adam
+  - layer normalization
+  - training instability
+  - batch size
+sources:
+  - text: >-
+      Goyal, P. et al. (2017). Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour.
+      arXiv:1706.02677.
+    url: https://arxiv.org/abs/1706.02677
+  - text: >-
+      Liu, L. et al. (2020). On the Variance of the Adaptive Learning Rate and Beyond. ICLR 2020.

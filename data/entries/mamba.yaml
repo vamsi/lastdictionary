@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Mamba
+id: mamba
+pos: prop. n.
+also:
+  - Mamba-2
+  - selective state space model
+  - selective SSM
+  - S6
+  - state space duality
+domain: llm
+domains:
+  - dl
+level: specialist
+plain: >-
+  A 2023 alternative to the transformer design that processes text with a continually updated
+  summary which decides what to keep or forget, letting it handle long sequences quickly.
+senses:
+  - definition: >-
+      A neural sequence architecture whose blocks contain no attention and no separate MLP, only a
+      selective [[state-space-model|state space model]] combined with gating and a short
+      convolution. 'Selective' means that the step size and the input and output projections are
+      computed from the current token, so the layer chooses, token by token, what to write into its
+      fixed-size state and what to let fade. Input-dependent parameters forfeit the trick by which
+      earlier SSMs were trained as one long convolution; Mamba instead evaluates the recurrence with
+      a parallel scan engineered to keep the large expanded state in fast on-chip GPU memory. Its
+      authors reported generation throughput five times that of transformers, cost linear in
+      sequence length, and a 3-billion-parameter model on a level with transformers twice as large.
+      Mamba-2 (2024) restricted the state matrix to a scaled identity, revealing a 'state space
+      duality' with [[linear-attention|linear attention]] that permits faster
+      matrix-multiplication-based training. Mamba layers now appear mostly in
+      [[hybrid-architecture|hybrid]] models.
+    example: >-
+      We replaced three of every four attention layers with Mamba-2 layers and kept quality flat.
+origin: >-
+  Introduced by Albert Gu (Carnegie Mellon University) and Tri Dao (Princeton University) in 'Mamba:
+  Linear-Time Sequence Modeling with Selective State Spaces' (arXiv, December 2023; COLM 2024); Tri
+  Dao and Albert Gu followed with Mamba-2 in May 2024.
+year: 2023
+see_also:
+  - state space model
+  - hybrid architecture
+  - linear attention
+  - RWKV
+  - transformer
+  - recurrent neural network
+contrast:
+  - transformer
+sources:
+  - text: >-
+      Gu, A. & Dao, T. (2023). Mamba: Linear-Time Sequence Modeling with Selective State Spaces.
+      arXiv:2312.00752.
+    url: https://arxiv.org/abs/2312.00752
+  - text: >-
+      Dao, T. & Gu, A. (2024). Transformers are SSMs: Generalized Models and Efficient Algorithms
+      Through Structured State Space Duality. ICML 2024.

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: swarm intelligence
+id: swarm-intelligence
+pos: n.
+also:
+  - SI
+  - stigmergy
+  - collective intelligence (swarms)
+domain: sym
+domains:
+  - robot
+  - agents
+level: core
+plain: >-
+  The teamwork that appears when crowds of simple creatures or machines, such as ants, bees or small
+  robots, each respond only to what is nearby, with nobody in charge, yet together solve problems.
+senses:
+  - definition: >-
+      Adaptive behavior shown by a decentralized collective as a whole rather than by any member —
+      an ant colony converging on the shortest route to food, a flock turning in unison — together
+      with the algorithms and robot-control methods modeled on it. Each agent senses only its
+      surroundings and follows a few fixed rules, and nothing holds a global plan; colony-level
+      results such as foraging trails, nest construction and division of labor are produced by
+      positive and negative feedback, randomness and stigmergy, indirect coordination through traces
+      left in the environment such as pheromones. Algorithmic examples include
+      [[ant-colony-optimization|ant colony optimization]], [[particle-swarm-optimization|particle
+      swarm optimization]] and artificial bee colony algorithms; physical applications include
+      [[swarm-robotics|swarm robotics]] (drone light shows, by contrast, are usually choreographed
+      centrally rather than self-organized). Such systems are valued for robustness, scalability and
+      flexibility, but their emergent behavior can be hard to predict or verify.
+origin: >-
+  Coined by Gerardo Beni and Jing Wang in 1989 in work on cellular robotic systems presented at a
+  NATO workshop in Italy. Craig Reynolds's 'boids' flocking simulation (1987) and studies of social
+  insects were key influences, and Eric Bonabeau, Marco Dorigo and Guy Theraulaz's 1999 book defined
+  the field.
+year: 1989
+note: >-
+  Distinct from [[agent-swarm|agent swarms]] of language-model agents, which borrow the word but
+  typically use a few highly capable agents with explicit coordination, and from the 'wisdom of
+  crowds' in human judgment.
+see_also:
+  - ant colony optimization
+  - particle swarm optimization
+  - swarm robotics
+  - evolutionary computation
+  - agent swarm
+  - metaheuristic
+sources:
+  - text: >-
+      Beni, G. & Wang, J. (1993). Swarm Intelligence in Cellular Robotic Systems. In Robots and
+      Biological Systems: Towards a New Bionics? NATO ASI Series F 102. Springer. (Workshop held
+      1989.)
+  - text: >-
+      Bonabeau, E., Dorigo, M. & Theraulaz, G. (1999). Swarm Intelligence: From Natural to
+      Artificial Systems. Oxford University Press.

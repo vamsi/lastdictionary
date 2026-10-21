@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AMD
+id: amd
+pos: prop. n.
+also:
+  - Advanced Micro Devices
+  - AMD Instinct
+domain: orgs
+domains:
+  - hw
+level: core
+plain: >-
+  An American chip company that makes computer processors and graphics chips, and Nvidia's main
+  rival in the chips used for artificial intelligence.
+senses:
+  - definition: >-
+      An American semiconductor company and the principal merchant competitor to [[nvidia|Nvidia]]
+      in data-center [[ai-accelerator|AI accelerators]]; besides [[gpu|graphics processors]] it
+      designs central processors and adaptive (programmable) chips. Its Instinct line, which became
+      competitive with the MI300X (2023), offered more [[high-bandwidth-memory|high-bandwidth
+      memory]] per chip than contemporary Nvidia parts, an advantage for [[inference|inference]] on
+      large models; later generations moved toward rack-scale systems. Its open-source [[rocm|ROCm]]
+      software stack has historically trailed [[cuda|CUDA]] in maturity, which analysts cite as the
+      main barrier to wider adoption. In October 2025 OpenAI agreed to deploy six gigawatts of AMD
+      GPUs, receiving warrants for up to about 10 percent of AMD's shares. Like Nvidia, AMD designs
+      its chips and has them manufactured by [[tsmc|TSMC]].
+origin: >-
+  Founded in 1969 in Sunnyvale, California, by Jerry Sanders and seven colleagues from Fairchild
+  Semiconductor. It entered graphics by acquiring ATI Technologies in 2006 and adaptive computing by
+  acquiring Xilinx in 2022; Lisa Su has been chief executive since 2014.
+year: 1969
+see_also:
+  - Nvidia
+  - GPU
+  - AI accelerator
+  - ROCm
+  - high-bandwidth memory
+  - TSMC
+as_of: 2026-10

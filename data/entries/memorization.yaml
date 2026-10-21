@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: memorization
+id: memorization
+pos: n.
+also:
+  - memorisation
+  - verbatim memorization
+  - regurgitation
+  - memorize
+domain: sec
+domains:
+  - llm
+  - ml
+  - data
+level: core
+plain: >-
+  When an AI model stores specific pieces of its training data — a paragraph, a phone number, an
+  image — closely enough to reproduce them, instead of only learning general patterns.
+senses:
+  - definition: >-
+      The retention by a trained model of information specific to individual training examples,
+      beyond what generalization requires. Definitions vary: verbatim (extractable) memorization
+      holds when some prompt makes the model emit a training sequence exactly, for example a
+      50-token continuation given its prefix; counterfactual memorization measures how much the
+      model's behavior on an example depends on that example having been trained on; and exposure
+      measures how easily randomly generated 'canary' strings inserted into the data can be
+      recovered. In [[large-language-model|language models]], memorization rises with model size,
+      with the number of times a sequence is duplicated in the data and with prompt length. It
+      underlies privacy risks ([[training-data-extraction|training data extraction]],
+      [[membership-inference-attack|membership inference]]), copyright disputes and
+      [[data-contamination|benchmark contamination]], yet some memorization of rare examples may be
+      necessary to learn long-tailed data well.
+    example: >-
+      Deduplicating the corpus cut verbatim memorization of 50-token sequences by an order of
+      magnitude.
+origin: >-
+  Concern grew after Chiyuan Zhang and colleagues showed (2016) that deep networks can fit randomly
+  labeled data. Nicholas Carlini and colleagues' 'The Secret Sharer' (2018; USENIX Security 2019)
+  introduced canary exposure, Vitaly Feldman (2019) argued that memorization is needed for long-tail
+  learning, and Carlini and colleagues quantified how memorization scales in language models (2022).
+note: >-
+  Distinct from [[overfitting|overfitting]]: a model can memorize individual examples while
+  generalizing well overall. In copyright debates, 'regurgitation' means reproducing memorized
+  protected text in outputs.
+see_also:
+  - training data extraction
+  - membership inference attack
+  - differential privacy
+  - overfitting
+  - data contamination
+  - machine unlearning
+contrast:
+  - generalization
+sources:
+  - text: >-
+      Carlini, N., Liu, C., Erlingsson, Ú., Kos, J. & Song, D. (2019). The Secret Sharer: Evaluating
+      and Testing Unintended Memorization in Neural Networks. USENIX Security 2019.
+  - text: >-
+      Carlini, N., Ippolito, D., Jagielski, M., Lee, K., Tramèr, F. & Zhang, C. (2023). Quantifying
+      Memorization Across Neural Language Models. ICLR 2023.

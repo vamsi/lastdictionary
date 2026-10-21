@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neural ordinary differential equation
+id: neural-ordinary-differential-equation
+pos: n.
+also:
+  - neural ODE
+  - NODE
+  - ODE-Net
+  - continuous-depth network
+  - neural differential equation
+domain: dl
+domains:
+  - math
+  - gen
+level: specialist
+plain: >-
+  A neural network that, instead of passing data through a fixed stack of layers, describes how the
+  data changes continuously over 'time' and uses an equation solver to follow that change.
+senses:
+  - definition: >-
+      A model obtained by taking a [[residual-connection|residual network]] to the limit of
+      infinitely many, infinitesimally thin layers. A residual update h_{t+1} = h_t + f(h_t) is one
+      step of Euler's method for the differential equation dh/dt = f(h, t); a neural ODE keeps the
+      equation, with a [[neural-network|neural network]] f_θ as its right-hand side, and computes
+      its output by handing the equation and an initial state to a numerical solver. Training can
+      backpropagate through the solver or use the adjoint sensitivity method, which integrates a
+      second equation backward in time with memory independent of the number of solver steps, and
+      adaptive solvers spend more steps where the dynamics are harder, trading accuracy against
+      speed. Neural ODEs suit irregularly sampled time series and continuous-time dynamics and
+      underlie continuous [[normalizing-flow|normalizing flows]]; the framework extends to
+      stochastic and controlled differential equations and informs [[flow-matching|flow matching]]
+      and [[diffusion-model|diffusion]] samplers. Drawbacks include slow, solver-dependent training
+      and stiff dynamics.
+    example: >-
+      Because the patient records are irregularly timed, a neural ODE models the latent trajectory
+      between visits.
+formula_latex: \frac{d\mathbf{h}(t)}{dt} = f_\theta\big(\mathbf{h}(t), t\big), \qquad \mathbf{h}(T)
+  = \mathbf{h}(0) + \int_0^T f_\theta\big(\mathbf{h}(t), t\big)\,dt
+origin: >-
+  Introduced by Ricky T. Q. Chen, Yulia Rubanova, Jesse Bettencourt and David Duvenaud of the
+  University of Toronto in 'Neural Ordinary Differential Equations' (arXiv, June 2018; NeurIPS 2018,
+  best-paper award). Weinan E (2017) and Eldad Haber and Lars Ruthotto (2017), among others, had
+  interpreted residual networks as discretized dynamical systems.
+year: 2018
+see_also:
+  - residual connection
+  - normalizing flow
+  - flow matching
+  - diffusion model
+  - time series forecasting
+sources:
+  - text: >-
+      Chen, R. T. Q., Rubanova, Y., Bettencourt, J. & Duvenaud, D. (2018). Neural Ordinary
+      Differential Equations. arXiv:1806.07366; NeurIPS 2018.
+    url: https://arxiv.org/abs/1806.07366

@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FlashAttention
+id: flashattention
+pos: prop. n.
+also:
+  - Flash Attention
+  - FlashAttention-2
+  - FlashAttention-3
+  - flash attention
+domain: infer
+domains:
+  - dl
+  - hw
+  - llm
+level: core
+plain: >-
+  A faster way for AI chips to compute attention, the step in which a language model relates every
+  word to every other. It gets exactly the same answer while moving far less data around the chip.
+senses:
+  - definition: >-
+      A family of GPU kernels that compute exact [[scaled-dot-product-attention|scaled dot-product
+      attention]] without ever writing the full n × n matrix of attention scores to the GPU's large
+      but slow [[high-bandwidth-memory|high-bandwidth memory]]; its authors called the design
+      'IO-aware' because it is organized around minimizing memory traffic rather than arithmetic. It
+      splits queries, keys and values into tiles that fit in fast on-chip [[sram|SRAM]], computes
+      each tile's scores, [[softmax|softmax]] and weighted values in one fused kernel
+      ([[kernel-fusion|kernel fusion]]), and combines tiles with an online softmax that keeps
+      running maxima and sums; the backward pass recomputes scores instead of storing them. Memory
+      use becomes linear rather than quadratic in sequence length, and wall-clock speed improves
+      several-fold because attention is otherwise dominated by memory traffic. FlashAttention-2
+      (2023) improved parallelism and work partitioning, reaching 50–73% of an A100's peak;
+      FlashAttention-3 (2024) exploited asynchrony and [[fp8|FP8]] on [[h100|H100]] GPUs, reaching
+      up to 740 TFLOP/s in FP16. The approach underlies attention in most training and inference
+      stacks and was a key enabler of [[long-context|long context]].
+    example: >-
+      Swapping in FlashAttention let us train at 32k context without running out of memory.
+origin: >-
+  Introduced by Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra and Christopher Ré of Stanford
+  University and the University at Buffalo (arXiv, May 2022; NeurIPS 2022), building on the
+  online-softmax trick (Maxim Milakov and Natalia Gimelshein, 2018) and memory-efficient attention
+  (Markus Rabe and Charles Staats, 2021). Dao published FlashAttention-2 alone in July 2023;
+  FlashAttention-3 followed in July 2024 with collaborators from Colfax, Meta and NVIDIA.
+year: 2022
+note: >-
+  Computes the same result as standard attention, up to floating-point rounding; it is not an
+  approximation like [[sparse-attention|sparse attention]] or [[linear-attention|linear attention]].
+  Later versions target newer GPU generations.
+see_also:
+  - scaled dot-product attention
+  - kernel fusion
+  - memory-bound
+  - SRAM
+  - high-bandwidth memory
+  - long context
+contrast:
+  - sparse attention
+  - linear attention
+sources:
+  - text: >-
+      Dao, T., Fu, D. Y., Ermon, S., Rudra, A. & Ré, C. (2022). FlashAttention: Fast and
+      Memory-Efficient Exact Attention with IO-Awareness. NeurIPS 2022. arXiv:2205.14135.
+    url: https://arxiv.org/abs/2205.14135
+  - text: >-
+      Dao, T. (2023). FlashAttention-2: Faster Attention with Better Parallelism and Work
+      Partitioning. arXiv:2307.08691.
+    url: https://arxiv.org/abs/2307.08691
+  - text: >-
+      Shah, J., Bikshandi, G., Zhang, Y., Thakkar, V., Ramani, P. & Dao, T. (2024).
+      FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision.
+      arXiv:2407.08608.
+    url: https://arxiv.org/abs/2407.08608

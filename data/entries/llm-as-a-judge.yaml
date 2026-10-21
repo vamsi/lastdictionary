@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LLM-as-a-judge
+id: llm-as-a-judge
+pos: n.
+also:
+  - LLM-as-judge
+  - LLM judge
+  - model-graded evaluation
+  - autograder
+  - AI judge
+domain: eval
+domains:
+  - llm
+  - train
+level: core
+plain: >-
+  Using one AI language model to grade or compare the answers of another, as a cheaper and faster
+  stand-in for human reviewers.
+senses:
+  - definition: >-
+      An evaluation method in which a [[large-language-model|large language model]] scores outputs —
+      on a rating scale, against a reference answer or rubric, or by choosing the better of two
+      responses — instead of or alongside [[human-evaluation|human raters]]. Judges make open-ended
+      outputs gradable at scale and underpin benchmarks such as [[mt-bench|MT-Bench]] and
+      AlpacaEval; the same idea supplies training signal in
+      [[reinforcement-learning-from-ai-feedback|reinforcement learning from AI feedback]] and
+      [[rubric-reward|rubric-based rewards]]. Documented biases include position bias (favoring the
+      answer shown first or second), verbosity bias (favoring longer answers), self-preference
+      (favoring outputs from the judge's own model family) and susceptibility to confident tone and
+      formatting. Mitigations include swapping answer order, controlling for length, expert-written
+      rubrics, panels of judges, and periodic calibration against human labels.
+    example: >-
+      We used an LLM-as-a-judge with a twelve-point rubric and spot-checked 200 verdicts against
+      physicians' ratings.
+origin: >-
+  Language models were used to score generated text in early 2023 (GPTScore, G-Eval), and the Vicuna
+  team graded chatbots with GPT-4 that spring. The phrase was popularized by Lianmin Zheng and
+  colleagues' June 2023 paper 'Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena', which found
+  GPT-4's verdicts agreed with human preferences over 80% of the time, about as often as humans
+  agree with each other.
+year: 2023
+note: >-
+  Good average agreement with humans does not guarantee reliability on hard or adversarial items,
+  and outputs optimized against a fixed judge can exploit it — a form of [[reward-hacking|reward
+  hacking]].
+see_also:
+  - human evaluation
+  - MT-Bench
+  - win rate
+  - reinforcement learning from AI feedback
+  - rubric reward
+  - reward model
+  - verifier
+contrast:
+  - exact match
+sources:
+  - text: >-
+      Zheng, L., Chiang, W.-L., Sheng, Y. et al. (2023). Judging LLM-as-a-Judge with MT-Bench and
+      Chatbot Arena. NeurIPS 2023 Datasets and Benchmarks Track.
+    url: https://arxiv.org/abs/2306.05685

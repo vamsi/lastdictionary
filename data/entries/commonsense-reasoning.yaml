@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: commonsense reasoning
+id: commonsense-reasoning
+pos: n.
+also:
+  - common-sense reasoning
+  - commonsense knowledge
+  - naive physics
+  - machine common sense
+domain: sym
+domains:
+  - llm
+  - mind
+level: core
+plain: >-
+  The everyday background knowledge and reasoning people take for granted — dropped glasses break,
+  hungry people eat, nobody is in two places at once — which machines long struggled to match.
+senses:
+  - definition: >-
+      The ability to make the everyday inferences about the physical and social world that people
+      make effortlessly, and the AI research area that tries to give machines this ability. It
+      covers naive physics (objects fall, liquids spill), intuitive psychology (people act on
+      beliefs and goals), typical events and object properties, and reasoning about time, space and
+      causation, usually through defaults with exceptions. Symbolic approaches hand-encoded such
+      knowledge in logic ([[cyc|Cyc]], the [[situation-calculus|situation calculus]]) or collected
+      it as plain assertions (ConceptNet, ATOMIC), confronting the [[frame-problem|frame problem]],
+      [[non-monotonic-reasoning|non-monotonicity]] and sheer scale. [[large-language-model|Large
+      language models]] absorbed much commonsense knowledge from text and now score highly on
+      benchmarks such as the [[winograd-schema-challenge|Winograd schema challenge]], HellaSwag and
+      PIQA, but how robust that reasoning is — in unfamiliar situations, physical interaction and
+      multi-step problems — remains debated.
+    example: >-
+      The robot failed a basic commonsense test: it tried to store the soup in the cutlery drawer.
+origin: >-
+  John McCarthy's 'Programs with Common Sense' (presented 1958, published 1959) launched the program
+  of formalizing everyday knowledge. Patrick Hayes's 'Naive Physics Manifesto' (1978), Douglas
+  Lenat's Cyc project (from 1984) and Ernest Davis's Representations of Commonsense Knowledge (1990)
+  shaped the field; benchmarks and text-trained models later shifted its focus.
+year: 1959
+note: >-
+  Whether language models possess common sense or only its statistical traces is contested: models
+  that ace benchmarks can fail simple rephrasings, and some researchers argue that embodied
+  experience is needed.
+see_also:
+  - Cyc
+  - frame problem
+  - Winograd schema challenge
+  - non-monotonic reasoning
+  - knowledge representation
+  - world model
+  - Moravec's paradox
+sources:
+  - text: >-
+      McCarthy, J. (1959). Programs with Common Sense. In Mechanisation of Thought Processes. HMSO,
+      London.
+  - text: >-
+      Davis, E. & Marcus, G. (2015). Commonsense Reasoning and Commonsense Knowledge in Artificial
+      Intelligence. Communications of the ACM 58(9), 92–103.
+as_of: 2026-10

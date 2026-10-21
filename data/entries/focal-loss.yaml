@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: focal loss
+id: focal-loss
+pos: n.
+also:
+  - FL
+  - focal loss function
+domain: dl
+domains:
+  - percep
+level: core
+plain: >-
+  A way of scoring a model's mistakes during training that pays less attention to examples it
+  already gets right easily, so that learning concentrates on the hard and rare cases.
+senses:
+  - definition: >-
+      A modification of [[cross-entropy|cross-entropy]] loss for classification that multiplies each
+      example's loss by a modulating factor (1 − p_t)^γ, where p_t is the probability the model
+      assigns to the true class and γ ≥ 0 is a focusing parameter. The factor shrinks toward zero as
+      p_t approaches one — with γ = 2, an example classified with p_t = 0.99 keeps only a
+      ten-thousandth of its cross-entropy loss — so in a heavily imbalanced problem the gradient
+      comes mainly from the few hard or rare examples, not the mass of easy background cases; γ = 0
+      recovers ordinary cross-entropy, and an optional class weight α_t adds conventional
+      rebalancing. It was designed for dense, one-stage [[object-detection|object detection]], where
+      a detector scores on the order of 100,000 candidate locations per image but only a handful
+      contain objects; its authors found γ = 2 with α = 0.25 worked best. It has since been adopted
+      for segmentation, medical imaging and other problems with [[class-imbalance|class imbalance]],
+      and studied as a way to improve [[calibration|calibration]].
+    example: >-
+      Switching to focal loss let the defect detector learn from the rare scratches instead of the
+      endless clean background.
+formula_latex: \mathrm{FL}(p_t) = -\alpha_t\,(1 - p_t)^{\gamma} \log(p_t)
+origin: >-
+  Introduced by Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He and Piotr Dollár of Facebook AI
+  Research in 'Focal Loss for Dense Object Detection' (ICCV 2017), together with the RetinaNet
+  detector, which matched or exceeded the accuracy of two-stage detectors while running at one-stage
+  speed. The paper received the conference's best student paper award.
+year: 2017
+note: >-
+  Focal loss reweights examples by difficulty, not by class frequency, so it complements rather than
+  replaces resampling. Because it discourages confident predictions, its output probabilities can
+  become underconfident and may need recalibration before being used as probabilities.
+see_also:
+  - cross-entropy
+  - class imbalance
+  - object detection
+  - loss function
+  - label smoothing
+  - calibration
+contrast:
+  - cross-entropy
+sources:
+  - text: >-
+      Lin, T.-Y., Goyal, P., Girshick, R., He, K. & Dollár, P. (2017). Focal Loss for Dense Object
+      Detection. Proc. ICCV 2017.

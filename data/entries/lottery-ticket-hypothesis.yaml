@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: lottery ticket hypothesis
+id: lottery-ticket-hypothesis
+pos: n.
+also:
+  - winning ticket
+  - lottery tickets
+  - LTH
+domain: dl
+domains:
+  - infer
+level: specialist
+plain: >-
+  The idea that a large, randomly started neural network contains a much smaller network inside it
+  that, trained alone from the same starting values, would learn just as well — a winning lottery
+  ticket.
+senses:
+  - definition: >-
+      The conjecture, put forward by Jonathan Frankle and Michael Carbin, that a large randomly
+      initialized network already contains a much sparser subnetwork, a 'winning ticket' often
+      comprising 10–20% of the weights or fewer, which, if every other weight is deleted and it is
+      trained alone from the very same starting values, reaches the full network's accuracy in about
+      as many steps. Tickets are found by iterative magnitude [[pruning|pruning]]: train the
+      network, remove the smallest-magnitude weights, reset the survivors to their initial values,
+      and repeat. Re-initializing a ticket randomly destroys its advantage, so the particular
+      initial values matter. For larger networks such as ResNets on ImageNet and transformers,
+      tickets appear reliably only when weights are 'rewound' to an early point in training rather
+      than to initialization, a finding linked to the network becoming stable to SGD noise
+      ([[mode-connectivity|linear mode connectivity]]). The hypothesis recast
+      [[overparameterization|overparameterization]] as buying many lottery draws and spurred work on
+      pruning at initialization, but has not made large-model training cheaper, because finding a
+      ticket requires training the dense network first.
+origin: >-
+  Proposed by Jonathan Frankle and Michael Carbin of MIT in 'The Lottery Ticket Hypothesis: Finding
+  Sparse, Trainable Neural Networks' (arXiv March 2018), which received a best paper award at ICLR
+  2019; Frankle and colleagues introduced weight rewinding for larger networks in 2019–2020.
+year: 2018
+see_also:
+  - pruning
+  - overparameterization
+  - weight initialization
+  - sparsity
+  - mode connectivity
+  - model compression
+sources:
+  - text: >-
+      Frankle, J. & Carbin, M. (2019). The Lottery Ticket Hypothesis: Finding Sparse, Trainable
+      Neural Networks. ICLR 2019.
+    url: https://arxiv.org/abs/1803.03635
+  - text: >-
+      Frankle, J., Dziugaite, G. K., Roy, D. M. & Carbin, M. (2020). Linear Mode Connectivity and
+      the Lottery Ticket Hypothesis. ICML 2020.

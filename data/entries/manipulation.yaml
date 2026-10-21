@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: manipulation
+id: manipulation
+pos: n.
+also:
+  - robotic manipulation
+  - robot manipulation
+  - manipulator
+  - mobile manipulation
+  - bimanual manipulation
+domain: robot
+domains:
+  - rl
+  - percep
+level: core
+plain: >-
+  A robot's use of arms, hands or grippers to change the world around it: picking things up, moving,
+  pushing, opening, assembling or using tools.
+senses:
+  - context: Robotics
+    definition: >-
+      The branch of [[robotics|robotics]] concerned with how robots physically interact with objects
+      to change their position, orientation or state — picking and placing, pushing, inserting,
+      opening doors and drawers, folding cloth, assembling parts and using tools — usually with an
+      arm-type manipulator ending in an [[end-effector|end effector]]. Classical manipulation splits
+      the problem into [[perception|perception]] (estimating object pose), [[grasping|grasp]]
+      selection, [[motion-planning|motion planning]] and [[inverse-kinematics|inverse kinematics]],
+      and control, with force or [[impedance-control|impedance control]] for contact-rich phases
+      such as insertion. Contact is what makes manipulation hard: friction, slip, deformable and
+      articulated objects, and occlusion by the robot's own hand make outcomes difficult to model
+      and predict. Learned approaches — [[imitation-learning|imitation learning]] from
+      [[teleoperation|teleoperated]] demonstrations, [[reinforcement-learning|reinforcement
+      learning]], [[diffusion-policy|diffusion policies]] and
+      [[vision-language-action-model|vision-language-action models]] — have widened what robots can
+      handle, but reliability in unstructured homes remains a central open problem. Variants include
+      mobile manipulation (an arm on a moving base), bimanual manipulation and
+      [[dexterous-manipulation|dexterous manipulation]] with multi-fingered hands.
+    example: >-
+      Navigation is mostly solved in our warehouse; manipulation of floppy polybags is the
+      bottleneck.
+origin: >-
+  From Latin manipulus, 'handful'. In robotics the word first described remotely operated arms for
+  handling radioactive material in the 1940s and 1950s ('master–slave manipulators'), then
+  programmable arms such as the Unimate (1961); robotic manipulation became a research field with
+  computer-controlled arms and hands at MIT and Stanford in the 1960s.
+note: >-
+  Unrelated to the social or AI-safety sense of manipulation, meaning influencing people
+  deceptively. 'Manipulator' in robotics simply means the arm mechanism.
+see_also:
+  - grasping
+  - dexterous manipulation
+  - end effector
+  - inverse kinematics
+  - motion planning
+  - tactile sensing
+  - impedance control
+contrast:
+  - locomotion
+sources:
+  - text: Mason, M. T. (2001). Mechanics of Robotic Manipulation. MIT Press.
+  - text: >-
+      Billard, A. & Kragic, D. (2019). Trends and challenges in robot manipulation. Science
+      364(6446).

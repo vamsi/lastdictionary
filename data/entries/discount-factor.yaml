@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: discount factor
+id: discount-factor
+pos: n.
+also:
+  - gamma
+  - γ
+  - discount rate
+  - discounting
+domain: rl
+domains:
+  - math
+level: core
+plain: >-
+  A number between 0 and 1 that makes an AI agent value future rewards less than immediate ones —
+  like preferring a dollar today to a dollar next year.
+senses:
+  - definition: >-
+      The parameter γ ∈ [0, 1] by which a [[reward|reward]] received k steps in the future is
+      multiplied (as γ^k) when computing the [[return|return]]. It plays three roles: it keeps
+      returns finite in tasks that never terminate; it encodes a preference for sooner rewards, with
+      1/(1 − γ) acting as a rough effective horizon (γ = 0.99 looks about 100 steps ahead); and it
+      reduces the variance of value estimates at the cost of bias, which is why it is often tuned as
+      a hyperparameter rather than treated as part of the task. With γ = 0 the agent is myopic and
+      cares only about the next reward; as γ approaches 1, distant consequences count almost fully
+      and learning becomes slower and noisier. Convergence guarantees for the
+      [[bellman-equation|Bellman equation]] in infinite-horizon problems rely on γ < 1.
+    example: >-
+      Raising the discount factor from 0.9 to 0.995 let the agent learn to save fuel for the final
+      climb.
+origin: >-
+  Exponential discounting comes from economics — Paul Samuelson's discounted-utility model (1937) —
+  and was built into the infinite-horizon sequential decision models of Richard Bellman (1950s),
+  Ronald Howard (1960) and David Blackwell, whose 1965 paper 'Discounted Dynamic Programming' gave
+  the theory its standard form.
+note: >-
+  In [[large-language-model|large language model]] RL, γ is often set to 1 because each response is
+  a short episode with a single final reward. People and animals tend to discount hyperbolically
+  rather than exponentially, a difference studied in behavioral economics.
+see_also:
+  - return
+  - reward
+  - value function
+  - Bellman equation
+  - Markov decision process
+  - generalized advantage estimation
+sources:
+  - text: >-
+      Blackwell, D. (1965). Discounted Dynamic Programming. Annals of Mathematical Statistics 36(1),
+      226–235.

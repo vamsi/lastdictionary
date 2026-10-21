@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sandbox
+id: sandbox
+pos: n.
+also:
+  - sandboxing
+  - sandboxed
+  - agent sandbox
+  - execution sandbox
+domain: agents
+domains:
+  - sec
+  - eng
+level: core
+plain: >-
+  A sealed-off computer space where an AI agent can run programs and change files without being able
+  to harm the real system, reach private data or contact the outside world unless allowed.
+senses:
+  - context: Agents and security
+    definition: >-
+      An isolated execution environment that limits what code run by or for an [[ai-agent|AI agent]]
+      can affect: which files it can read and write, which network hosts it can reach, which
+      processes and system calls it may use, and how much processor time, memory and wall-clock time
+      it gets. Sandboxes range from operating-system mechanisms applied to individual commands
+      (Linux namespaces via tools such as bubblewrap, seccomp filters, macOS Seatbelt) through
+      containers and user-space kernels to micro-virtual machines and full virtual machines; cloud
+      [[background-agent|background agents]] usually run in disposable containers or VMs. Sandboxing
+      is the main defense against damage from mistaken commands and against
+      [[prompt-injection|prompt injection]] attacks that try to exfiltrate data, because it bounds
+      what any action can do whatever the model intends. It also reduces approval fatigue, since a
+      harness can let sandboxed commands run without asking. Control of outbound network traffic,
+      often through an allowlisting proxy, matters as much as file isolation: an agent that can read
+      secrets and reach the internet can leak them.
+    example: >-
+      Run the agent in a sandbox with no network except the package registry, then let it do
+      whatever it likes.
+  - context: Other senses
+    definition: >-
+      In policy, a supervised scheme in which firms test AI systems under a regulator's oversight
+      with some rules relaxed (see [[ai-regulatory-sandbox|AI regulatory sandbox]]); in research, a
+      simulated world in which agents act, such as the town inhabited by
+      [[generative-agent|generative agents]].
+origin: >-
+  The security sense dates from the early 1990s: 'sandboxing' in Robert Wahbe and colleagues'
+  software-based fault isolation (1993), Java's applet sandbox (1995) and the Janus system for
+  confining untrusted helper applications (Ian Goldberg, David Wagner et al., 1996). Agent
+  developers adopted it from 2023; computer-use guidance (2024) and OS-level sandboxing in coding
+  agents (2025) made it standard practice.
+year: 1993
+note: >-
+  A sandbox constrains effects, not intentions: a sandboxed agent can still write wrong code or a
+  misleading report. The [[permission-system|permission system]] decides which actions are
+  attempted; the [[lethal-trifecta|lethal trifecta]] describes when data exfiltration becomes
+  possible.
+see_also:
+  - permission system
+  - code execution
+  - prompt injection
+  - lethal trifecta
+  - background agent
+  - AI regulatory sandbox
+  - defense in depth
+contrast:
+  - permission system
+sources:
+  - text: Anthropic. Configure the sandboxed Bash tool. Claude Code documentation.
+    url: https://code.claude.com/docs/en/sandboxing
+  - text: >-
+      Goldberg, I., Wagner, D., Thomas, R. & Brewer, E. A. (1996). A Secure Environment for
+      Untrusted Helper Applications: Confining the Wily Hacker. Proceedings of the 6th USENIX
+      Security Symposium.

@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: liquid cooling
+id: liquid-cooling
+pos: n.
+also:
+  - direct-to-chip cooling
+  - direct liquid cooling
+  - cold plate
+  - immersion cooling
+  - water cooling
+domain: hw
+domains:
+  - society
+level: core
+plain: >-
+  Cooling computer chips by running liquid past them instead of blowing air. AI chips now run so hot
+  and are packed so tightly that air alone can no longer keep them cool.
+senses:
+  - definition: >-
+      Removal of heat from computing hardware by a circulating liquid, which carries heat far more
+      effectively than air. In direct-to-chip (cold-plate) cooling, the dominant form for AI,
+      coolant flows through metal plates mounted on processors and memory and returns to a coolant
+      distribution unit, which passes the heat to facility water and then to cooling towers or dry
+      coolers; rear-door heat exchangers instead cool a rack's exhaust air, and immersion cooling
+      submerges whole servers in a dielectric fluid, either single-phase or two-phase (boiling).
+      With accelerators drawing from about 700 W to well over 1,000 W each and racks exceeding 100
+      kW, systems such as Nvidia's GB200 NVL72 are designed for liquid cooling only. Benefits
+      include higher density, less fan power and better [[power-usage-effectiveness|power usage
+      effectiveness]]; costs include plumbing, leak risk and the expense of retrofitting older
+      facilities. Depending on design, liquid cooling can raise or lower a site's water consumption.
+    example: >-
+      The old hall tops out at 15 kW a rack on air, so the Blackwell racks are going into the new
+      liquid-cooled building.
+origin: >-
+  Water-cooled mainframes such as IBM's 3081 (1980) and the Cray-2 supercomputer (1985), whose
+  circuits were immersed in Fluorinert, preceded decades of air-cooled data centers. AI rack
+  densities brought liquid back from about 2023, and Nvidia's GB200 NVL72 (2024) made it standard
+  for frontier AI hardware.
+see_also:
+  - AI data center
+  - rack-scale system
+  - power usage effectiveness
+  - environmental impact of AI
+  - GPU
+as_of: 2026-10

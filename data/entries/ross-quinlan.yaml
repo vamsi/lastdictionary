@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Ross Quinlan
+id: ross-quinlan
+sort_as: Quinlan Ross
+pos: prop. n.
+also:
+  - J. Ross Quinlan
+  - John Ross Quinlan
+domain: people
+domains:
+  - ml
+  - hist
+level: specialist
+plain: >-
+  An Australian computer scientist who created ID3 and C4.5, influential programs that learn
+  decision trees, flowchart-like rules for classifying examples.
+senses:
+  - definition: >-
+      Australian computer scientist who created the ID3 and C4.5 algorithms for learning
+      [[decision-tree|decision trees]]. Building on Earl Hunt's concept-learning systems and a
+      chess-endgame problem posed by [[donald-michie|Donald Michie]], he developed [[id3|ID3]] in
+      the late 1970s; it builds a tree from the top down, choosing at each node the attribute with
+      the greatest [[information-gain|information gain]]. Its successor [[c4-5|C4.5]], described in
+      his book 'C4.5: Programs for Machine Learning' (1993), added handling of numeric attributes
+      and missing values, pruning to reduce [[overfitting|overfitting]] and conversion of trees into
+      rule sets, and was for years among the most widely used machine-learning programs; a 2008
+      survey placed it first among the top ten algorithms in data mining. He also developed FOIL
+      (1990), an early [[inductive-logic-programming|inductive logic programming]] system for
+      learning first-order rules, and commercialized the successor C5.0 through his company
+      RuleQuest Research.
+see_also:
+  - ID3
+  - C4.5
+  - decision tree
+  - information gain
+  - CART
+  - inductive logic programming
+sources:
+  - text: >-
+      Quinlan, J. R. (1986). Induction of Decision Trees. Machine Learning 1(1): 81–106.
+  - text: "Quinlan, J. R. (1993). C4.5: Programs for Machine Learning. Morgan Kaufmann."

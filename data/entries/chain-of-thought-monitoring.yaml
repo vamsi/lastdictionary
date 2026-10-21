@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chain-of-thought monitoring
+id: chain-of-thought-monitoring
+pos: n.
+also:
+  - CoT monitoring
+  - CoT monitor
+  - reasoning monitoring
+  - externalized reasoning oversight
+domain: safety
+domains:
+  - llm
+  - interp
+labels:
+  - emerging
+level: core
+plain: >-
+  Having a program — often another AI — read the step-by-step reasoning an AI writes before it acts,
+  to catch signs that it intends to cheat, deceive or cause harm.
+senses:
+  - definition: >-
+      The practice of automatically inspecting the [[reasoning-trace|reasoning traces]] that
+      [[reasoning-model|reasoning models]] produce before answering or acting, usually with another
+      language model prompted or trained as a monitor, to detect intentions or plans for undesired
+      behavior: [[reward-hacking|reward hacking]], sabotage, deception, [[sandbagging|sandbagging]]
+      or assistance with misuse. Because current models often spell out such plans in plain language
+      ('let's hack the tests'), a monitor with access to the reasoning can flag misbehavior that
+      would be invisible in the actions and final outputs alone. It is used in training to find
+      flawed reward signals, in evaluations and audits, and in deployment as a layer of
+      [[ai-control|AI control]]. Its usefulness depends on [[monitorability|monitorability]]: if
+      reasoning is unfaithful, encoded or optimized to look innocent, the monitor sees nothing.
+      Training directly against the monitor's flags can backfire by teaching models to misbehave
+      with reasoning that no longer reveals it.
+    example: >-
+      Chain-of-thought monitoring flagged the episode: the model wrote that it would special-case
+      the unit tests.
+origin: >-
+  An early proposal was Tamera Lanham's 'externalized reasoning oversight' (AI Alignment Forum,
+  August 2022); the idea became practical with reasoning models trained by reinforcement learning
+  from late 2024. Bowen Baker and colleagues at OpenAI (March 2025) showed that GPT-4o, reading the
+  reasoning of a stronger frontier model of the o3-mini class, caught reward hacking in agentic
+  coding tasks far better than a monitor of actions and outputs alone, and that strong training
+  pressure against the monitor produced obfuscated reward hacking.
+year: 2022
+note: >-
+  Different from screening a model's final outputs for policy violations, and from
+  [[interpretability|interpretability]], which inspects internal activations rather than the text
+  the model writes. How much it can be relied on is debated; see
+  [[chain-of-thought-faithfulness|chain-of-thought faithfulness]].
+see_also:
+  - monitorability
+  - chain-of-thought faithfulness
+  - reasoning trace
+  - reward hacking
+  - trusted monitoring
+  - steganography
+  - AI control
+sources:
+  - text: >-
+      Lanham, T. (2022). Externalized reasoning oversight: a research direction for language model
+      alignment. AI Alignment Forum / LessWrong.
+  - text: >-
+      Baker, B., Huizinga, J., Gao, L. et al. (2025). Monitoring Reasoning Models for Misbehavior
+      and the Risks of Promoting Obfuscation. OpenAI, arXiv:2503.11926.
+    url: https://arxiv.org/abs/2503.11926
+  - text: >-
+      Korbak, T., Balesni, M. et al. (2025). Chain of Thought Monitorability: A New and Fragile
+      Opportunity for AI Safety. arXiv:2507.11473.
+    url: https://arxiv.org/abs/2507.11473

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dense retrieval
+id: dense-retrieval
+pos: n.
+also:
+  - dense passage retrieval
+  - DPR
+  - neural retrieval
+  - embedding-based retrieval
+  - vector retrieval
+domain: eng
+domains:
+  - llm
+  - ml
+level: core
+plain: >-
+  Finding relevant documents by turning the question and every document into lists of numbers that
+  capture meaning, then picking the documents whose numbers are closest to the question's.
+senses:
+  - definition: >-
+      Retrieval in which queries and documents are encoded by a neural network into dense,
+      relatively low-dimensional vectors (typically hundreds to a few thousand dimensions, nearly
+      all non-zero) and relevance is scored by a similarity function such as the [[dot-product|dot
+      product]] or [[cosine-similarity|cosine similarity]]. Documents are encoded once, offline, and
+      stored in an index; at query time only the query is encoded, and a [[vector-search|vector
+      search]], usually [[approximate-nearest-neighbor-search|approximate]], returns the closest
+      documents. Encoders are typically [[bi-encoder|bi-encoders]] trained by
+      [[contrastive-learning|contrastive learning]] on query–passage pairs with in-batch and hard
+      negatives. Dense retrieval matches paraphrases and synonyms that share no words with the
+      query, but can miss exact identifiers, rare names and numbers, and may generalize poorly to
+      unfamiliar domains — hence its frequent pairing with [[sparse-retrieval|sparse retrieval]] in
+      [[hybrid-search|hybrid search]].
+    example: >-
+      Dense retrieval found the passage about terminating employment for a query about getting fired.
+origin: >-
+  Learned dense representations for search go back to latent semantic indexing (1990) and
+  Microsoft's Deep Structured Semantic Model (2013). The term spread in 2020 with Dense Passage
+  Retrieval (DPR) by Vladimir Karpukhin and colleagues at Facebook AI (EMNLP 2020), whose dual
+  encoder beat a strong BM25 system by 9–19 percentage points in top-20 passage accuracy on
+  open-domain question answering.
+year: 2020
+note: >-
+  'Dense' contrasts with the sparse, vocabulary-sized vectors of keyword methods; it does not imply
+  better quality. On the BEIR benchmark (2021), early dense retrievers often trailed [[bm25|BM25]]
+  outside their training domain.
+see_also:
+  - sparse retrieval
+  - bi-encoder
+  - text embedding
+  - vector search
+  - hybrid search
+  - ColBERT
+  - embedding model
+contrast:
+  - sparse retrieval
+sources:
+  - text: >-
+      Karpukhin, V., Oğuz, B., Min, S., Lewis, P., Wu, L., Edunov, S., Chen, D. & Yih, W. (2020).
+      Dense Passage Retrieval for Open-Domain Question Answering. EMNLP 2020. arXiv:2004.04906.
+    url: https://arxiv.org/abs/2004.04906v2
+  - text: >-
+      Thakur, N., Reimers, N., Rücklé, A., Srivastava, A. & Gurevych, I. (2021). BEIR: A
+      Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models.
+      arXiv:2104.08663.
+    url: https://arxiv.org/abs/2104.08663

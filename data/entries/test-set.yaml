@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: test set
+id: test-set
+pos: n.
+also:
+  - test data
+  - holdout test set
+  - test split
+  - held-out data
+  - hold-out set
+domain: ml
+domains:
+  - eval
+level: essential
+plain: >-
+  A set of examples kept completely apart from training and used at the end to measure how well a
+  model works on data it has never seen, like a sealed final exam.
+senses:
+  - definition: >-
+      The data reserved for the final verdict on a model: labeled examples that played no part in
+      training or in any development decision, consulted once the model is frozen to gauge how it
+      will fare on fresh data from the same distribution. Its value depends on remaining untouched:
+      whenever test results influence the choice of model, feature or
+      [[hyperparameter|hyperparameter]], the test set leaks into development and its estimate
+      becomes optimistically biased. Good practice therefore evaluates on it once, or rarely, after
+      all choices have been fixed using the [[training-set|training set]] and
+      [[validation-set|validation set]] or [[cross-validation|cross-validation]]. The test set
+      should mirror deployment conditions, which may require splitting by time, user or location
+      rather than at random to avoid [[data-leakage|data leakage]]; its size limits the statistical
+      precision of the estimate, which should come with a [[confidence-interval|confidence
+      interval]] when differences are small. Public [[benchmark|benchmarks]] act as shared test
+      sets; heavy reuse and the appearance of benchmark items in web-scale training corpora
+      ([[data-contamination|data contamination]]) erode their reliability, motivating hidden test
+      sets and [[contamination-resistant-benchmark|contamination-resistant benchmarks]].
+    example: >-
+      We touched the test set exactly once, after freezing the model, and reported 87.3% accuracy ±
+      0.8.
+origin: >-
+  Holding back data to check a fitted model has deep roots in statistics. In pattern recognition, W.
+  H. Highleyman analyzed in 1962 how a limited sample should be divided between training and test
+  sets, and the train–test split became the standard protocol of machine-learning experiments.
+note: >-
+  Many papers and competitions use 'test set' and 'validation set' interchangeably; the question to
+  ask is whether the data informed any decision.
+see_also:
+  - training set
+  - validation set
+  - cross-validation
+  - data leakage
+  - data contamination
+  - benchmark
+  - generalization
+sources:
+  - text: >-
+      Highleyman, W. H. (1962). The Design and Analysis of Pattern Recognition Experiments. Bell
+      System Technical Journal 41(2).

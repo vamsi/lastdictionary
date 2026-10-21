@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: numerical stability
+id: numerical-stability
+pos: n.
+also:
+  - numerically stable
+  - numerical instability
+  - condition number
+  - ill-conditioned
+  - log-sum-exp trick
+  - overflow
+  - underflow
+domain: math
+domains:
+  - dl
+  - hw
+level: core
+plain: >-
+  Whether a computer calculation stays accurate despite the tiny rounding errors in every step,
+  instead of blowing up into nonsense such as infinities.
+senses:
+  - definition: >-
+      The property of an algorithm whose output is not unduly corrupted by the rounding errors of
+      finite-precision arithmetic; an unstable algorithm can amplify small errors into large ones
+      even when the underlying problem is well-posed. It interacts with the problem's conditioning:
+      the condition number measures how sensitive the exact answer is to small input changes,
+      whereas stability concerns the method. Deep learning is exposed because it runs billions of
+      operations in low-precision [[floating-point-format|floating-point formats]] such as
+      [[fp16|FP16]], [[bfloat16|bfloat16]] and [[fp8|FP8]]. Standard remedies include the
+      log-sum-exp trick (subtracting the maximum before exponentiating in [[softmax|softmax]] and
+      [[cross-entropy|cross-entropy]]), computing losses from [[logit|logits]] and log-probabilities
+      rather than probabilities, small epsilons in divisions and normalizations, loss scaling in
+      [[mixed-precision-training|mixed-precision training]], [[gradient-clipping|gradient clipping]]
+      and careful [[weight-initialization|weight initialization]]. Instability shows up as NaN or
+      infinite values, [[loss-spike|loss spikes]] or divergence.
+    example: >-
+      Compute the loss from logits with log_softmax; taking the log of softmax outputs is not
+      numerically stable.
+formula_latex: \log\sum_{i} e^{x_i} = m + \log\sum_{i} e^{x_i - m}, \qquad m = \max_i x_i
+origin: >-
+  Rounding-error analysis began with John von Neumann and Herman Goldstine's 1947 study of inverting
+  large matrices and Alan Turing's 1948 paper on rounding-off errors, which introduced the condition
+  number. James Wilkinson's backward error analysis of the 1960s made stability a central concept of
+  numerical analysis.
+year: 1947
+see_also:
+  - floating-point format
+  - mixed-precision training
+  - softmax
+  - loss spike
+  - gradient clipping
+  - training instability
+  - bfloat16
+sources:
+  - text: >-
+      von Neumann, J. & Goldstine, H. H. (1947). Numerical inverting of matrices of high order.
+      Bulletin of the American Mathematical Society, 53(11).
+  - text: >-
+      Turing, A. M. (1948). Rounding-off errors in matrix processes. Quarterly Journal of Mechanics
+      and Applied Mathematics, 1.

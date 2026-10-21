@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: in-context vector
+id: in-context-vector
+pos: n.
+also:
+  - ICV
+  - in-context vectors
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A steering signal distilled from a few worked examples shown to a language model, so the model can
+  follow the examples' pattern without having them repeated in every prompt.
+senses:
+  - definition: >-
+      A [[steering-vector|steering vector]] that summarizes the demonstrations of an
+      [[in-context-learning|in-context learning]] prompt so that their effect can be applied without
+      placing them in the context. In the method of Liu and colleagues, the input and target output
+      of each demonstration are passed separately through the model, the differences between their
+      latent states are collected at every layer, and their leading principal direction becomes the
+      in-context vector; at inference it is added, with a scaling factor, to the latent states at
+      all layers and token positions of a new query. Its authors reported results at or above those
+      of [[few-shot-prompting|few-shot prompting]] and [[fine-tuning|fine-tuning]] on tasks ranging
+      from formatting and role-play to style transfer and safety, with no prompt space spent on
+      demonstrations, an adjustable strength, and the option of combining vectors for different
+      tasks by adding or subtracting them.
+    example: >-
+      One in-context vector built from ten polite rewrites replaced the whole demonstration block in
+      our prompts.
+origin: >-
+  Introduced by Sheng Liu, Haotian Ye, Lei Xing and James Zou of Stanford University in 'In-context
+  Vectors: Making In Context Learning More Effective and Controllable Through Latent Space Steering'
+  (arXiv, November 2023; ICML 2024).
+year: 2023
+note: >-
+  Several near-synonyms appeared in 2023 — 'task vector' (Hendel et al.), [[function-vector|function
+  vector]] (Todd et al.) and in-context vector — each extracted differently, all treating what
+  demonstrations teach as a direction in activation space.
+see_also:
+  - function vector
+  - in-context learning
+  - steering vector
+  - few-shot prompting
+  - activation steering
+sources:
+  - text: >-
+      Liu, S., Ye, H., Xing, L. & Zou, J. (2024). In-context Vectors: Making In Context Learning
+      More Effective and Controllable Through Latent Space Steering. ICML 2024. arXiv:2311.06668.
+    url: https://arxiv.org/abs/2311.06668

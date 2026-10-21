@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cross-attention
+id: cross-attention
+pos: n.
+also:
+  - encoder–decoder attention
+domain: llm
+domains:
+  - dl
+  - gen
+level: core
+plain: >-
+  Attention between two different inputs: one sequence consults another, as when a translation model
+  writing French looks back at the English sentence, or an image generator consults the text prompt.
+senses:
+  - definition: >-
+      [[attention|Attention]] in which the queries come from one sequence and the keys and values
+      from another, so one stream of representations reads information from a second. In the
+      original [[encoder-decoder-architecture|encoder–decoder]] [[transformer|transformer]], every
+      decoder layer cross-attends to the encoder's outputs, letting each target token consult the
+      whole source sentence. The same pattern conditions [[text-to-image-model|text-to-image]]
+      [[diffusion-model|diffusion models]] on prompt embeddings, connects image features to a
+      language model in some [[vision-language-model|vision-language models]] (such as Flamingo),
+      and lets retrieval-enhanced models such as RETRO read retrieved passages. Unlike
+      [[self-attention|self-attention]], its score matrix is m × n for sequences of lengths m and n,
+      and the keys and values of the conditioning sequence can be computed once and reused at every
+      step.
+    example: >-
+      The diffusion U-Net injects the prompt through cross-attention at every resolution level.
+origin: >-
+  The attention of Bahdanau, Cho and Bengio (2014), from a decoder to an encoder, was already
+  cross-attention. 'Attention Is All You Need' (2017) called it 'encoder-decoder attention' to
+  distinguish it from self-attention; 'cross-attention' later became the usual name.
+year: 2014
+see_also:
+  - attention
+  - self-attention
+  - encoder–decoder architecture
+  - transformer
+  - T5
+  - latent diffusion model
+contrast:
+  - self-attention
+sources:
+  - text: Vaswani, A. et al. (2017). Attention Is All You Need. NIPS 2017.
+    url: https://arxiv.org/abs/1706.03762

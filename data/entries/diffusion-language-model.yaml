@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: diffusion language model
+id: diffusion-language-model
+pos: n.
+also:
+  - DLM
+  - dLLM
+  - diffusion LLM
+  - masked diffusion language model
+  - text diffusion
+domain: llm
+domains:
+  - gen
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A language model that writes by starting from a fully blanked-out answer and filling it in over
+  several rounds, settling many words at once instead of writing strictly left to right.
+senses:
+  - definition: >-
+      A [[language-model|language model]] that generates text by iteratively denoising a whole
+      sequence rather than producing it one token at a time. Most current designs use masked
+      (absorbing-state) discrete diffusion: in training, a random fraction of tokens is replaced by
+      a mask symbol and a bidirectional [[transformer|transformer]] learns to predict them, which
+      yields a bound on likelihood; at inference, generation starts from an all-mask sequence of
+      chosen length and unmasks tokens over a number of steps, typically committing the most
+      confident predictions first. Because many tokens are decided in parallel, the number of steps
+      trades quality for speed, and infilling, editing and use of context on both sides come
+      naturally. Weaknesses include fixed output lengths, no straightforward [[kv-cache|KV
+      caching]], and quality that has generally trailed comparable
+      [[autoregressive-model|autoregressive models]], although LLaDA 8B (2025) was reported
+      competitive with LLaMA 3 8B. Inception Labs' commercial Mercury models (from February 2025;
+      Mercury 2, with reasoning, February 2026) are marketed chiefly on speed; Google's Gemini
+      Diffusion, announced in May 2025, remained an experimental demo as of October 2026.
+    example: The diffusion language model fills a 256-token answer in 32 denoising steps.
+origin: >-
+  Discrete diffusion for text builds on D3PM (Jacob Austin and colleagues, 2021); Diffusion-LM
+  (Xiang Lisa Li and colleagues, 2022) diffused continuous word embeddings. Simplified
+  masked-diffusion objectives followed in 2024, and LLaDA (Shen Nie and colleagues, February 2025)
+  scaled the approach to 8 billion parameters trained from scratch.
+year: 2021
+see_also:
+  - diffusion model
+  - masked language model
+  - autoregressive model
+  - next-token prediction
+  - decoding
+  - multi-token prediction
+contrast:
+  - autoregressive model
+sources:
+  - text: >-
+      Austin, J., Johnson, D. D., Ho, J., Tarlow, D. & van den Berg, R. (2021). Structured Denoising
+      Diffusion Models in Discrete State-Spaces. NeurIPS 2021.
+  - text: >-
+      Nie, S., Zhu, F., You, Z. et al. (2025). Large Language Diffusion Models. arXiv:2502.09992.
+    url: https://arxiv.org/abs/2502.09992
+as_of: 2026-10

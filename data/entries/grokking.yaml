@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: grokking
+id: grokking
+pos: n.
+also:
+  - delayed generalization
+domain: dl
+domains:
+  - interp
+labels:
+  - figurative
+level: specialist
+plain: >-
+  When a model that has merely memorized its training examples suddenly, long afterward, figures out
+  the underlying rule and starts getting new examples right.
+senses:
+  - definition: >-
+      A training phenomenon in which a neural network first fits its training data perfectly while
+      performing at chance on held-out data — apparent memorization — and then, after many more
+      optimization steps (often orders of magnitude more), abruptly generalizes to near-perfect test
+      accuracy. It was first reported on small algorithmic tasks such as modular arithmetic and
+      permutation-group operations and has since been induced on other tasks under suitable
+      conditions. [[weight-decay|Weight decay]] strongly promotes it, and the smaller the training
+      set, the longer the delay before it occurs. [[mechanistic-interpretability|Mechanistic]]
+      analysis of transformers trained on modular addition showed the network gradually building a
+      generalizing circuit, based on discrete Fourier transforms and trigonometric identities, while
+      memorizing, then removing the memorized solution, so the sudden jump in test accuracy hides
+      continuous internal progress. Explanations stress competition between memorizing and
+      generalizing solutions that differ in weight norm and efficiency. Grokking undermines naive
+      [[early-stopping|early stopping]] and serves as a model of sudden capability gains.
+    example: >-
+      Train accuracy hit 100% by step 1,000, but the model only grokked modular division after
+      100,000 steps.
+origin: >-
+  Named by Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin and Vedant Misra of OpenAI in
+  'Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets', presented at an ICLR
+  2021 workshop (May 2021) and posted to arXiv in January 2022. 'Grok', meaning to understand
+  intuitively and completely, was coined by Robert A. Heinlein in the novel Stranger in a Strange
+  Land (1961). Neel Nanda and colleagues reverse-engineered the mechanism in 2023.
+year: 2021
+note: >-
+  Often invoked by analogy for sudden capability jumps in large models, but whether those share its
+  mechanism is unclear; see [[emergent-abilities|emergent abilities]].
+see_also:
+  - memorization
+  - weight decay
+  - mechanistic interpretability
+  - double descent
+  - emergent abilities
+  - early stopping
+  - developmental interpretability
+sources:
+  - text: >-
+      Power, A., Burda, Y., Edwards, H., Babuschkin, I. & Misra, V. (2022). Grokking: Generalization
+      Beyond Overfitting on Small Algorithmic Datasets. arXiv:2201.02177 (first presented at the 1st
+      Mathematical Reasoning in General Artificial Intelligence Workshop, ICLR 2021).
+    url: https://arxiv.org/abs/2201.02177
+  - text: >-
+      Nanda, N., Chan, L., Lieberum, T., Smith, J. & Steinhardt, J. (2023). Progress measures for
+      grokking via mechanistic interpretability. ICLR 2023.
+    url: https://arxiv.org/abs/2301.05217

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: text-to-video model
+id: text-to-video-model
+pos: n.
+also:
+  - text-to-video generation
+  - AI video generator
+  - video generation model
+  - image-to-video
+  - T2V
+domain: gen
+domains:
+  - percep
+  - society
+level: essential
+plain: >-
+  An AI that creates a short video clip — increasingly with matching sound — from a written
+  description, such as 'a paper boat sailing down a rainy street'.
+senses:
+  - definition: >-
+      A [[generative-model|generative model]] that produces video conditioned on a text prompt and,
+      usually, on images (image-to-video) or other video. Most current systems are
+      [[latent-diffusion-model|latent diffusion]] or [[flow-matching|flow matching]] models: a video
+      autoencoder compresses frames in space and time, and a [[diffusion-transformer|diffusion
+      transformer]] denoises 'spacetime patches' of the latent, attending across frames so that
+      objects, lighting and motion stay consistent; some models instead generate frames or tokens
+      autoregressively. Training uses very large collections of captioned video, often recaptioned
+      by vision-language models, together with images. Since 2025 leading models also generate
+      synchronized audio — speech, sound effects and music. Clips typically last 5–30 seconds at up
+      to 1080p or 4K, with tools for extension, camera control and character consistency; physics
+      errors, lapses in object permanence and drift over long durations remain common. Prominent
+      systems as of October 2026 include Google's [[veo|Veo]] and Gemini Omni, ByteDance's Seedance,
+      Kuaishou's Kling, Runway's Gen series and Alibaba's Wan, several versions of which have open
+      weights; OpenAI discontinued [[sora|Sora]] in 2026. Some researchers see such models as
+      nascent [[world-model|world models]]; others doubt that they learn physics. Their realism
+      sharpens concerns about [[deepfake|deepfakes]] and [[ai-slop|AI slop]].
+    example: >-
+      The text-to-video model kept the cat consistent for eight seconds, then gave it a second tail.
+origin: >-
+  Research prototypes generated tiny clips from about 2017. In 2022 CogVideo, Meta's Make-A-Video
+  and Google's Imagen Video and Phenaki produced short clips from text; Runway's Gen-2 (2023)
+  brought text-to-video to the public, OpenAI's Sora preview (February 2024) showed minute-long,
+  largely coherent video, and Google's Veo 3 (May 2025) popularized synchronized audio.
+year: 2017
+see_also:
+  - Sora
+  - Veo
+  - diffusion transformer
+  - latent diffusion model
+  - world model
+  - deepfake
+  - text-to-image model
+  - AI slop
+sources:
+  - text: >-
+      Brooks, T., Peebles, B. et al. (2024). Video generation models as world simulators. OpenAI
+      technical report.
+    url: https://openai.com/index/video-generation-models-as-world-simulators/
+as_of: 2026-10

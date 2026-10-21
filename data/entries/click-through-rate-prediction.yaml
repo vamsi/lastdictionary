@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: click-through rate prediction
+id: click-through-rate-prediction
+pos: n.
+also:
+  - CTR prediction
+  - pCTR
+  - predicted click-through rate
+  - click prediction
+  - click-through rate
+  - CTR
+domain: ml
+domains:
+  - data
+  - eng
+level: core
+plain: >-
+  Estimating how likely a particular person is to click on a particular ad, search result or
+  recommended item: a prediction made billions of times a day to decide what each user is shown.
+senses:
+  - definition: >-
+      The task of estimating the probability that a user will click an item (an advertisement,
+      search result, product or post) if it is shown in a given context, from features of the user,
+      the item, the query and the situation. In online advertising sold per click, ads are typically
+      ranked by bid times predicted click-through rate (pCTR), an estimate of expected revenue per
+      impression, so predictions must be [[calibration|calibrated]] as well as correctly ordered;
+      similar scores drive [[recommender-system|recommender]] ranking. The data are vast, very
+      sparse and imbalanced, with clicks often around one percent of impressions or fewer, and
+      dominated by high-cardinality categorical features whose interactions matter. Model families
+      evolved from [[logistic-regression|logistic regression]] on hashed feature crosses trained by
+      [[online-learning|online learning]], through boosted trees feeding linear models and
+      factorization machines, to deep models that combine learned [[embedding|embeddings]] with
+      explicit feature-interaction layers, attention over user histories and transformer-based
+      [[generative-recommendation|generative recommendation]]. Typical metrics are [[auc|AUC]],
+      [[log-loss|log loss]] and calibration.
+    example: >-
+      A 0.1 percent gain in offline AUC for the CTR prediction model moved revenue measurably in the
+      A/B test.
+origin: >-
+  Click-through rate became an advertising metric with mid-1990s web banners; predicting it became
+  central once search ads were priced per click and ranked partly by expected clicks, as in Google's
+  AdWords from 2002. Matthew Richardson, Ewa Dominowska and Robert Ragno's 2007 paper on predicting
+  clicks for new ads is an early academic treatment; papers from Google (2013) and Facebook (2014)
+  described production systems.
+year: 2002
+note: >-
+  Optimizing for clicks can reward sensational or misleading content (clickbait), so platforms blend
+  click prediction with objectives such as dwell time, conversions and quality signals. Logged
+  clicks reflect what was shown rather than what users would have chosen, a source of position and
+  selection bias.
+see_also:
+  - recommender system
+  - learning to rank
+  - logistic regression
+  - online learning
+  - two-tower model
+  - generative recommendation
+  - calibration
+  - uplift modeling
+sources:
+  - text: >-
+      Richardson, M., Dominowska, E. & Ragno, R. (2007). Predicting Clicks: Estimating the
+      Click-Through Rate for New Ads. Proc. WWW 2007.
+  - text: >-
+      McMahan, H. B. et al. (2013). Ad Click Prediction: a View from the Trenches. Proc. KDD 2013.
+  - text: >-
+      He, X. et al. (2014). Practical Lessons from Predicting Clicks on Ads at Facebook. Proc. ADKDD
+      2014.

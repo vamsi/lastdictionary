@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: source separation
+id: source-separation
+pos: n.
+also:
+  - audio source separation
+  - speech separation
+  - blind source separation
+  - music source separation
+  - stem separation
+  - cocktail party problem
+  - speech enhancement
+domain: percep
+domains:
+  - math
+  - gen
+level: specialist
+plain: >-
+  Pulling apart a mixture of sounds into its separate parts, such as isolating one voice in a noisy
+  party or the vocals, drums and bass in a finished song.
+senses:
+  - definition: >-
+      The recovery of individual source signals from recordings in which they are mixed, most
+      commonly in audio: separating overlapping talkers (speech separation), isolating speech from
+      noise (speech enhancement) or splitting music into stems such as vocals, drums and bass.
+      'Blind' separation assumes little about the sources or how they were mixed: independent
+      component analysis (1990s) separates statistically independent sources when there are at least
+      as many microphones as sources, and non-negative matrix factorization of
+      [[spectrogram|spectrograms]] (2000s) splits single-channel mixtures into recurring spectral
+      patterns. Deep learning made single-microphone separation practical: networks predict a
+      time–frequency mask for each source or, as in Conv-TasNet (2019), separate directly in the
+      waveform domain, while permutation-invariant training resolves which output should correspond
+      to which speaker. Music tools such as Spleeter and Demucs (from 2019) made stem separation a
+      consumer feature. Quality is measured with signal-to-distortion ratios such as SI-SDR.
+      Applications include hearing aids, meeting transcription, karaoke, remixing and the
+      restoration of archival recordings.
+    example: >-
+      Run source separation before transcription; the vocals are buried under the crowd noise.
+origin: >-
+  The 'cocktail party problem' of attending to one voice among many was named by the cognitive
+  scientist Colin Cherry in 1953. Blind source separation emerged in signal processing in the 1980s
+  with work by Jeanny Hérault and Christian Jutten, and developed into independent component
+  analysis in the 1990s.
+note: >-
+  Machine-learning separation has been used in audio restoration, notably to isolate John Lennon's
+  voice from a 1970s home demo for the Beatles' 2023 single 'Now and Then'.
+see_also:
+  - spectrogram
+  - speaker diarization
+  - speech recognition
+  - voice activity detection
+  - principal component analysis
+  - music generation
+sources:
+  - text: >-
+      Cherry, E. C. (1953). Some Experiments on the Recognition of Speech, with One and with Two
+      Ears. Journal of the Acoustical Society of America 25(5), 975–979.
+  - text: >-
+      Luo, Y. & Mesgarani, N. (2019). Conv-TasNet: Surpassing Ideal Time–Frequency Magnitude Masking
+      for Speech Separation. IEEE/ACM Transactions on Audio, Speech, and Language Processing 27(8),
+      1256–1266.

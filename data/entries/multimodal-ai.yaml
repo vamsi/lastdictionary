@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multimodal AI
+id: multimodal-ai
+pos: n.
+also:
+  - multimodal model
+  - multimodal learning
+  - multimodality
+  - multimodal
+domain: core
+domains:
+  - llm
+  - percep
+  - gen
+level: core
+plain: >-
+  AI that can take in or produce more than one kind of information, such as text, images, sound and
+  video, so you can show it a photo and ask questions about it.
+senses:
+  - definition: >-
+      AI systems that work across more than one kind of data, taking in, linking or producing
+      combinations of text, images, audio, video, sensor readings or robot actions. Designs differ
+      in where modalities meet: separate encoders aligned in a shared [[embedding|embedding]] space,
+      as in [[clip|CLIP]]; adapters that project image or audio features into a
+      [[large-language-model|language model's]] input; and natively multimodal models trained from
+      the start on interleaved [[token|tokens]] from several modalities, some of which can also
+      output images or speech. Typical capabilities include document and chart understanding,
+      [[image-captioning|image captioning]], [[visual-question-answering|visual question
+      answering]], spoken conversation and [[text-to-image-model|text-to-image]] or video
+      generation; in robotics, [[vision-language-action-model|vision-language-action models]] add
+      motor actions. Key difficulties are aligning modalities, collecting paired data and
+      [[hallucination|hallucination]] about visual details.
+    example: >-
+      The multimodal model read the scanned invoice, checked the totals and flagged a missing
+      signature.
+origin: >-
+  'Multimodal' came from psychology and human–computer interaction, for interfaces combining speech,
+  gesture and vision (Richard Bolt's 'Put-That-There', 1980). Multimodal deep learning took shape
+  around 2011 (Jiquan Ngiam and colleagues) and accelerated with CLIP (2021). GPT-4 (March 2023) was
+  announced with image input; Google presented Gemini (December 2023) as natively multimodal, and
+  GPT-4o (May 2024) handled text, audio and images in one model.
+note: >-
+  'Multimodal' describes inputs and outputs, not general intelligence. Some products called
+  multimodal are pipelines that convert speech or images to text before a text-only model sees them,
+  losing information such as tone of voice.
+see_also:
+  - multimodal large language model
+  - vision-language model
+  - CLIP
+  - speech-to-speech model
+  - vision-language-action model
+  - text-to-image model
+  - embedding
+sources:
+  - text: >-
+      Ngiam, J., Khosla, A., Kim, M., Nam, J., Lee, H. & Ng, A. Y. (2011). Multimodal Deep Learning.
+      Proceedings of ICML 2011.
+  - text: >-
+      Radford, A. et al. (2021). Learning Transferable Visual Models From Natural Language
+      Supervision. Proceedings of ICML 2021.

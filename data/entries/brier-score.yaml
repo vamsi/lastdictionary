@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Brier score
+id: brier-score
+pos: n.
+also:
+  - Brier skill score
+  - quadratic score
+  - probability score
+domain: ml
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  A score for probability forecasts: the average squared gap between each forecast probability and
+  what actually happened (1 if it did, 0 if not). Zero is perfect; lower is better.
+senses:
+  - definition: >-
+      A [[proper-scoring-rule|proper scoring rule]] that grades probability forecasts by their
+      squared distance from what happened: with each outcome coded 1 if it occurred and 0 if not, it
+      is the [[mean-squared-error|mean squared error]] of the forecast probabilities, summed over
+      classes in the multiclass form. For yes/no events it ranges from 0, for forecasts always
+      certain and right, to 1, for forecasts always certain and wrong. Being strictly proper, it is
+      optimized in expectation by honest probabilities. Allan Murphy's 1973 decomposition splits it
+      into reliability (a [[calibration|calibration]] term), resolution (how much forecasts depart
+      from the base rate when outcomes differ) and uncertainty (the inherent variability of the
+      outcome). Compared with [[log-loss|log loss]], the Brier score is bounded and penalizes
+      confident errors far less harshly, making it more forgiving but less sensitive to rare events.
+      The Brier skill score expresses improvement over a reference forecast, such as climatology in
+      weather forecasting or the base rate in classification.
+    example: Our rain model's Brier score of 0.11 beat the climatology baseline's 0.19.
+formula_latex: \mathrm{BS} = \frac{1}{N} \sum_{i=1}^{N} \left(p_i - o_i\right)^2
+origin: >-
+  Proposed by Glenn W. Brier of the U.S. Weather Bureau in 'Verification of Forecasts Expressed in
+  Terms of Probability' (Monthly Weather Review, 1950) to evaluate probabilistic weather forecasts.
+  Allan Murphy's 1973 decomposition made it a diagnostic tool, and it is now used in medicine,
+  forecasting tournaments and studies of machine-learning calibration.
+year: 1950
+see_also:
+  - log loss
+  - proper scoring rule
+  - calibration
+  - mean squared error
+  - expected calibration error
+  - baseline
+sources:
+  - text: >-
+      Brier, G. W. (1950). Verification of Forecasts Expressed in Terms of Probability. Monthly
+      Weather Review 78(1).
+  - text: >-
+      Murphy, A. H. (1973). A New Vector Partition of the Probability Score. Journal of Applied
+      Meteorology 12(4).

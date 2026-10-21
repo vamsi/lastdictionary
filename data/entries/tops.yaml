@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TOPS
+id: tops
+pos: abbr.
+also:
+  - tera operations per second
+  - trillion operations per second
+  - TOPS/W
+pronunciation: tops
+domain: hw
+domains:
+  - infer
+level: specialist
+plain: >-
+  Trillions of operations per second: the speed rating usually given for AI chips in phones and
+  laptops, often counting simple whole-number math rather than precise fractions.
+senses:
+  - definition: >-
+      A throughput rating of 10^12 operations per second, used mainly for [[npu|NPUs]] and inference
+      accelerators whose arithmetic is integer rather than floating-point. By convention a
+      multiply–accumulate counts as two operations, and unless stated otherwise TOPS figures assume
+      [[int8|INT8]] arithmetic at peak clock, sometimes doubled by assuming structured
+      [[sparsity|sparsity]]. Energy efficiency is reported in TOPS per watt. Because the rating
+      ignores memory bandwidth, utilization and precision, two chips with equal TOPS can differ
+      widely in real model speed. Microsoft's 2024 requirement of at least 40 NPU TOPS for Copilot+
+      PCs turned the figure into a consumer marketing number.
+origin: >-
+  Used for digital signal processors and early neural-network chips before the deep-learning era;
+  Google's first [[tpu|TPU]] paper (2017) reported 92 TOPS of 8-bit throughput, and phone and PC
+  makers adopted TOPS ratings for NPUs from 2017 onward.
+see_also:
+  - FLOPS
+  - NPU
+  - INT8
+  - on-device AI
+  - AI accelerator
+contrast:
+  - FLOPS
+as_of: 2026-10

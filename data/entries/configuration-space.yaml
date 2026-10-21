@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: configuration space
+id: configuration-space
+pos: n.
+also:
+  - C-space
+  - C-space obstacle
+  - free space
+  - joint space
+domain: robot
+domains:
+  - math
+level: specialist
+plain: >-
+  An imaginary space in which a robot's whole body position is a single point, which turns 'move
+  this many-jointed robot without hitting things' into 'find a path for a dot'.
+senses:
+  - definition: >-
+      The space of all possible configurations of a robot, each a complete specification of where
+      every point of its body is, with dimension equal to the robot's [[degrees-of-freedom|degrees
+      of freedom]]. For an arm with n revolute joints it is the n-dimensional space of joint angles
+      (topologically a torus, since angles wrap around); for a car moving on a plane it is position
+      plus heading. Obstacles in the physical workspace map to configuration-space obstacles, the
+      sets of configurations in which the robot would collide; their complement is the free space.
+      [[motion-planning|Motion planning]] then reduces to finding a continuous path for a point
+      through free space, which treats robots of very different shapes in one framework.
+      Configuration-space obstacles are impractical to compute explicitly in high dimensions, which
+      is why sampling-based planners such as [[probabilistic-roadmap|probabilistic roadmaps]] and
+      [[rapidly-exploring-random-tree|rapidly exploring random trees]] probe free space with a
+      collision checker instead.
+    example: >-
+      In configuration space the arm's whole motion is one curve threading between two obstacle
+      regions.
+origin: >-
+  The term comes from analytical mechanics, where it denotes the space of a system's generalized
+  coordinates. Tomás Lozano-Pérez brought it into robotics in work with Michael Wesley (1979) and in
+  'Spatial Planning: A Configuration Space Approach' (IEEE Transactions on Computers, 1983); Shriram
+  Udupa's 1977 Caltech thesis anticipated the idea of 'growing' obstacles.
+year: 1979
+note: >-
+  Distinct from the workspace (or task space), the region physically reachable by the end effector,
+  and from a dynamical system's state space, which adds velocities.
+see_also:
+  - motion planning
+  - degrees of freedom
+  - probabilistic roadmap
+  - rapidly exploring random tree
+  - forward kinematics
+  - path planning
+sources:
+  - text: >-
+      Lozano-Pérez, T. (1983). Spatial planning: A configuration space approach. IEEE Transactions
+      on Computers C-32(2), 108–120.
+  - text: LaValle, S. M. (2006). Planning Algorithms. Cambridge University Press.

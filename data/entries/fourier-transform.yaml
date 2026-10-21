@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Fourier transform
+id: fourier-transform
+pos: n.
+also:
+  - Fourier analysis
+  - Fourier series
+  - fast Fourier transform
+  - FFT
+  - discrete Fourier transform
+  - DFT
+  - frequency domain
+domain: math
+domains:
+  - percep
+  - dl
+level: specialist
+plain: >-
+  A way of breaking a signal — a sound, an image, any pattern over time or space — into the simple
+  waves of different frequencies that add up to it, much as a prism splits white light into colors.
+senses:
+  - definition: >-
+      The operation that rewrites a function of time or space as a continuous weighted sum of
+      sinusoids of every frequency, giving its frequency-domain representation: each weight is a
+      complex number whose magnitude and angle are that component's amplitude and phase. Its
+      discrete version (DFT), computed in O(n log n) time by the fast Fourier transform (FFT), is
+      among the most used algorithms in computing. The convolution theorem — convolution in one
+      domain is multiplication in the other — lets large [[convolution|convolutions]] be computed
+      quickly and links [[convolutional-neural-network|CNNs]] to signal processing. In AI, Fourier
+      ideas appear in audio front ends ([[spectrogram|spectrograms]] and [[mel-spectrogram|mel
+      spectrograms]] via the short-time Fourier transform), sinusoidal
+      [[positional-encoding|positional encodings]] and [[rotary-positional-embedding|rotary
+      embeddings]], random Fourier features for kernel methods and neural fields, FFT-based token
+      mixing (FNet), Fourier neural operators for solving equations, and the 'spectral bias' by
+      which networks learn low-frequency functions first.
+    example: >-
+      Replacing self-attention with a 2-D Fourier transform kept most of the accuracy at a fraction
+      of the cost.
+formula_latex: \hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)\, e^{-2\pi i x \xi}\, dx
+origin: >-
+  Joseph Fourier claimed that arbitrary functions can be expanded in trigonometric series in his
+  1807 memoir on heat conduction, published in Théorie analytique de la chaleur (1822). 'Fourier
+  transform' was in English use by the 1920s. James Cooley and John Tukey's 1965 fast Fourier
+  transform, anticipated in unpublished work by Gauss around 1805, made digital spectral analysis
+  practical.
+year: 1822
+see_also:
+  - convolution
+  - spectrogram
+  - positional encoding
+  - rotary positional embedding
+  - Taylor series
+  - sampling
+sources:
+  - text: >-
+      Cooley, J. W. & Tukey, J. W. (1965). An Algorithm for the Machine Calculation of Complex
+      Fourier Series. Mathematics of Computation, 19(90).

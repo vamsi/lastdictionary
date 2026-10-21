@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: levels of autonomy
+id: levels-of-autonomy
+pos: n.
+also:
+  - autonomy levels
+  - levels of agency
+  - levels of automation
+  - autonomy level
+domain: agents
+domains:
+  - safety
+  - gov
+  - robot
+level: core
+plain: >-
+  Ladders that grade how independently an AI system acts — from a tool a person fully controls,
+  through suggesting and asking for approval, up to acting on its own while people merely watch.
+senses:
+  - definition: >-
+      Graded scales that classify AI systems by how much they act without human involvement, used to
+      set expectations, design oversight and scope rules. The template comes from human-factors
+      engineering: Thomas Sheridan and William Verplank's ten-level scale of computer autonomy
+      (1978), refined by Raja Parasuraman, Sheridan and Christopher Wickens (2000), and SAE
+      International's six [[levels-of-driving-automation|levels of driving automation]]. For
+      [[ai-agent|AI agents]] several schemes compete: some key the levels to the human's role, such
+      as K. J. Kevin Feng, David McDonald and Amy Zhang's five levels (user as operator,
+      collaborator, consultant, approver or observer; 2025); some to how much control flow the model
+      decides, from fixed code through routers and state machines to fully autonomous agents; and
+      Google DeepMind's [[levels-of-agi|levels of AGI]] pair capability levels with separate
+      autonomy levels. A recurring point is that autonomy is a deployment choice distinct from
+      capability: a highly capable model can be run at low autonomy.
+    example: >-
+      We ship the agent at the approver level: it drafts every change, but a human signs off before
+      anything is merged.
+origin: >-
+  Graded automation dates from Sheridan and Verplank's 1978 MIT report on human and computer control
+  of undersea teleoperators. SAE J3016 (2014) made numbered 'levels' familiar for self-driving cars.
+  Agent-specific schemes multiplied from 2023: Meredith Ringel Morris and colleagues' 'Levels of
+  AGI' (Google DeepMind, 2023), LangChain's 'how agentic' spectrum (2024) and Feng, McDonald and
+  Zhang's 'Levels of Autonomy for AI Agents' (2025).
+year: 1978
+note: >-
+  Levels describe a system's configured behavior, not its competence, and one agent can run at
+  different levels for different actions — reading files freely but needing approval to send email.
+  Numbering differs between schemes, so 'level 3' means different things in different frameworks.
+see_also:
+  - levels of driving automation
+  - levels of AGI
+  - human oversight
+  - human-in-the-loop
+  - permission system
+  - agentic AI
+  - AI agent
+contrast:
+  - capability
+sources:
+  - text: >-
+      Feng, K. J. K., McDonald, D. W. & Zhang, A. X. (2025). Levels of Autonomy for AI Agents.
+      arXiv:2506.12469.
+    url: https://arxiv.org/abs/2506.12469v1
+  - text: >-
+      Parasuraman, R., Sheridan, T. B. & Wickens, C. D. (2000). A Model for Types and Levels of
+      Human Interaction with Automation. IEEE Transactions on Systems, Man, and Cybernetics, Part A,
+      30(3).
+  - text: >-
+      Sheridan, T. B. & Verplank, W. L. (1978). Human and Computer Control of Undersea
+      Teleoperators. MIT Man-Machine Systems Laboratory technical report.

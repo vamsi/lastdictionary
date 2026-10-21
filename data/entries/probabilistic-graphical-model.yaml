@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: probabilistic graphical model
+id: probabilistic-graphical-model
+pos: n.
+also:
+  - PGM
+  - graphical model
+  - factor graph
+  - d-separation
+  - plate notation
+domain: sym
+domains:
+  - math
+  - ml
+level: core
+plain: >-
+  A way of describing how many uncertain quantities depend on one another by drawing them as a
+  network, which makes it practical for a computer to reason about all of them together.
+senses:
+  - definition: >-
+      A representation of a joint probability distribution over many random variables by means of a
+      graph: nodes stand for the variables, and missing edges encode conditional independence
+      assumptions, so the distribution factorizes into local terms over small groups of variables.
+      The main families are directed models ([[bayesian-network|Bayesian networks]]), whose factors
+      are conditional probabilities; undirected models ([[markov-random-field|Markov random
+      fields]]), whose factors are non-negative potentials over cliques; and factor graphs, which
+      make the factors explicit nodes. The framework separates representation, inference — computing
+      marginals or the most probable assignment by variable elimination, [[belief-propagation|belief
+      propagation]], junction trees, [[markov-chain-monte-carlo|Markov chain Monte Carlo]] or
+      [[variational-inference|variational inference]] — and learning of parameters (often with the
+      [[expectation-maximization-algorithm|expectation–maximization algorithm]]) and structure.
+      [[hidden-markov-model|Hidden Markov models]], [[conditional-random-field|conditional random
+      fields]], [[kalman-filter|Kalman filters]], mixture models and topic models are special cases.
+origin: >-
+  Graphical representation of dependence goes back to Sewall Wright's path analysis (1921) and to
+  statistical work on log-linear and Markov-field models in the 1970s. AI adopted the approach
+  through Judea Pearl's Bayesian networks (1985–1988); Steffen Lauritzen and David Spiegelhalter's
+  1988 junction-tree method and Daphne Koller and Nir Friedman's 2009 textbook consolidated the
+  unified field.
+note: >-
+  Graphical models were a dominant paradigm of machine learning in the 1990s and 2000s. Deep
+  generative models absorbed many of their ideas, and [[variational-autoencoder|variational
+  autoencoders]] and [[diffusion-model|diffusion models]] are still drawn in graphical-model
+  notation.
+see_also:
+  - Bayesian network
+  - Markov random field
+  - hidden Markov model
+  - conditional random field
+  - belief propagation
+  - probabilistic programming
+  - variational inference
+sources:
+  - text: >-
+      Koller, D. & Friedman, N. (2009). Probabilistic Graphical Models: Principles and Techniques.
+      MIT Press.
+  - text: >-
+      Lauritzen, S. L. & Spiegelhalter, D. J. (1988). Local Computations with Probabilities on
+      Graphical Structures and Their Application to Expert Systems. Journal of the Royal Statistical
+      Society B 50(2), 157–224.

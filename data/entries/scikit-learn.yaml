@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scikit-learn
+id: scikit-learn
+pos: prop. n.
+also:
+  - sklearn
+  - scikits.learn
+pronunciation: SY-kit LURN
+domain: eng
+domains:
+  - ml
+labels:
+  - trademark
+level: core
+plain: >-
+  A free, widely taught Python library of classic machine-learning methods — such as decision trees,
+  regression and clustering — that all work in the same simple way.
+senses:
+  - definition: >-
+      An open-source Python library, built on [[numpy|NumPy]] and SciPy, that gathers the standard
+      toolkit of classical [[machine-learning|machine learning]]: preprocessing and dimensionality
+      reduction; nearest neighbors, [[linear-regression|linear]] and
+      [[logistic-regression|logistic]] models, [[decision-tree|decision trees]],
+      [[random-forest|random forests]], [[gradient-boosting|gradient boosting]] and
+      [[support-vector-machine|support vector machines]]; [[k-means-clustering|k-means]] and other
+      clustering methods; and tools for [[cross-validation|cross-validation]], hyperparameter search
+      and evaluation. Its lasting influence is a uniform estimator interface: every model is an
+      object configured by constructor arguments, trained with fit and applied with predict or
+      transform, so models can be swapped, chained into Pipeline objects and tuned with the same
+      code. It deliberately concentrates on in-memory tabular data and leaves out deep learning and
+      GPU computation. Its conventions became a template for other libraries, including
+      [[xgboost|XGBoost]]'s and LightGBM's Python interfaces, and it remains a standard tool for
+      teaching and baselines.
+    example: >-
+      Start with a scikit-learn pipeline — scaler plus logistic regression — before reaching for
+      anything deep.
+origin: >-
+  Begun by David Cournapeau as a Google Summer of Code project in 2007 under the name scikits.learn,
+  a 'SciPy toolkit'. Researchers at the French institute INRIA, including Fabian Pedregosa, Gaël
+  Varoquaux, Alexandre Gramfort and Vincent Michel, took over development and made the first public
+  release in 2010; a 2011 paper in the Journal of Machine Learning Research described it.
+year: 2007
+see_also:
+  - machine learning
+  - XGBoost
+  - NumPy
+  - cross-validation
+  - machine learning pipeline
+  - Jupyter notebook
+contrast:
+  - PyTorch
+sources:
+  - text: >-
+      Pedregosa, F. et al. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine
+      Learning Research 12, 2825–2830.

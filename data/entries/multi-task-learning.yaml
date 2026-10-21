@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multi-task learning
+id: multi-task-learning
+pos: n.
+also:
+  - MTL
+  - multitask learning
+  - joint training
+  - hard parameter sharing
+  - soft parameter sharing
+  - auxiliary task
+domain: ml
+domains:
+  - dl
+level: core
+plain: >-
+  Training one model to do several related jobs at once, such as spotting objects and judging
+  distance in the same photo, so that practice on each job can sharpen the others.
+senses:
+  - definition: >-
+      A training approach in which one model learns several related tasks at once through partly
+      shared internals, so that each task's training signal shapes the shared representations,
+      acting as an [[inductive-bias|inductive bias]] for the others. With hard parameter sharing,
+      all tasks read from one common stack of layers and only the output heads are task-specific;
+      with soft parameter sharing, each task keeps its own weights and a penalty on their distance
+      holds the task models close. Benefits include better [[generalization|generalization]] and
+      data efficiency, since auxiliary tasks act as a regularizer; lower inference cost than running
+      separate models; and representations that transfer to new tasks. Difficulties include negative
+      transfer, when tasks interfere; balancing losses of different scales and learning speeds,
+      addressed by uncertainty-based weighting, gradient normalization and projection of conflicting
+      gradients; and deciding which tasks to group. Instruction-tuned [[large-language-model|large
+      language models]], trained on mixtures of many tasks expressed as text, can be seen as
+      massively multi-task learners, a framing made explicit by text-to-text models such as
+      [[t5|T5]].
+    example: >-
+      Adding depth estimation as an auxiliary task improved our segmentation model on rare classes.
+origin: >-
+  Introduced by Rich Caruana in a 1993 conference paper and set out in his 1997 Machine Learning
+  article 'Multitask Learning', which showed that tasks trained in parallel with a shared
+  representation help one another. Ronan Collobert and Jason Weston's unified network for language
+  processing (2008) and Sebastian Ruder's 2017 overview carried the idea into deep learning.
+year: 1993
+see_also:
+  - transfer learning
+  - inductive bias
+  - meta-learning
+  - instruction tuning
+  - catastrophic forgetting
+  - generalization
+sources:
+  - text: Caruana, R. (1997). Multitask Learning. Machine Learning 28(1).
+  - text: >-
+      Collobert, R. & Weston, J. (2008). A Unified Architecture for Natural Language Processing:
+      Deep Neural Networks with Multitask Learning. Proc. ICML 2008.
+  - text: >-
+      Ruder, S. (2017). An Overview of Multi-Task Learning in Deep Neural Networks. arXiv:1706.05098.

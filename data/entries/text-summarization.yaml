@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: text summarization
+id: text-summarization
+pos: n.
+also:
+  - summarization
+  - summarisation
+  - automatic summarization
+  - extractive summarization
+  - abstractive summarization
+domain: llm
+domains:
+  - gen
+  - eval
+level: core
+plain: >-
+  Using a computer to shorten a document, meeting or set of articles into a brief version that keeps
+  the main points.
+senses:
+  - definition: >-
+      The task of condensing one or more source texts into a much shorter one that keeps what
+      matters most for the reader's purpose. Systems are either extractive, copying out the
+      sentences judged most central and stitching them together, or abstractive, composing new
+      sentences that compress, rephrase and merge material from different parts of the source.
+      Variants include single- and multi-document, query-focused, update, and dialogue or meeting
+      summarization. Early systems scored sentences by word frequency, position and cue phrases;
+      neural [[sequence-to-sequence-model|sequence-to-sequence]] models made abstractive
+      summarization practical from 2015, and [[large-language-model|LLMs]] now dominate. Evaluation
+      uses [[rouge|ROUGE]] overlap with reference summaries, human judgment and model-based judges;
+      the central risk is unfaithfulness — summaries that add or distort facts not in the source
+      ([[hallucination|hallucination]]).
+    example: >-
+      Abstractive summarization reads better, but check that the figures match the report.
+origin: >-
+  Hans Peter Luhn of IBM, building on his 1957 statistical work on text, built 'auto-abstracts' from
+  statistically significant sentences in 'The Automatic Creation of Literature Abstracts' (1958).
+  Harold Edmundson (1969) added position and cue-word features; Chin-Yew Lin's ROUGE (2004) became
+  the standard metric, and Alexander Rush, Sumit Chopra and Jason Weston's 2015 neural attention
+  model launched modern abstractive summarization.
+year: 1958
+see_also:
+  - natural language generation
+  - ROUGE
+  - hallucination
+  - factuality
+  - sequence-to-sequence model
+  - large language model
+sources:
+  - text: >-
+      Luhn, H. P. (1958). The Automatic Creation of Literature Abstracts. IBM Journal of Research
+      and Development 2(2), 159–165.
+  - text: >-
+      Lin, C.-Y. (2004). ROUGE: A Package for Automatic Evaluation of Summaries. Text Summarization
+      Branches Out, ACL Workshop.
+    url: https://aclanthology.org/W04-1013/

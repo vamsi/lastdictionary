@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: satisficing
+id: satisficing
+pos: n.
+also:
+  - satisfice
+  - satisficer
+  - satisficing agent
+domain: core
+domains:
+  - safety
+  - math
+level: core
+plain: >-
+  Choosing the first option that is good enough instead of searching for the very best one — a
+  sensible strategy when time, information or brainpower are limited.
+senses:
+  - definition: >-
+      A decision procedure in which an agent fixes an aspiration level — the least it will accept —
+      and takes the first option that reaches it, instead of [[optimization|optimizing]] by
+      comparing every option to find the best. Herbert Simon proposed it as a realistic model of
+      [[bounded-rationality|bounded rationality]]: real agents lack the information and computation
+      to maximize expected [[utility-function|utility]], so they satisfice, raising or lowering
+      their aspiration levels with experience. In AI the idea appears in resource-bounded reasoning,
+      anytime algorithms and search that stops at the first solution of acceptable cost. In
+      [[ai-safety|AI safety]] satisficing is studied as a way to avoid the extreme strategies of
+      maximizing agents, but a satisficer may still pick a dangerous option that clears its
+      threshold, or judge that building a maximizer is a good-enough plan — problems that motivated
+      [[quantilizer|quantilizers]] and other forms of [[mild-optimization|mild optimization]].
+    example: >-
+      The scheduler satisfices: it accepts the first timetable that is under budget and has no
+      clashes.
+origin: >-
+  Coined by Herbert A. Simon, blending 'satisfy' and 'suffice', in 'Rational Choice and the
+  Structure of the Environment' (Psychological Review, 1956); the word had earlier existed as a
+  dialect form of 'satisfy'. Stuart Armstrong's 2011 essay 'Satisficers want to become maximisers'
+  carried the concept into AI-safety discussion.
+year: 1956
+note: >-
+  Satisficing is not the same as settling for poor quality: the aspiration level can be high.
+  Simon's broader theory of limited rational agents is [[bounded-rationality|bounded rationality]].
+see_also:
+  - bounded rationality
+  - Herbert A. Simon
+  - mild optimization
+  - quantilizer
+  - utility function
+  - decision theory
+contrast:
+  - optimization
+sources:
+  - text: >-
+      Simon, H. A. (1956). Rational Choice and the Structure of the Environment. Psychological
+      Review 63(2).

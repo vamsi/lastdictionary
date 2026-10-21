@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: forward kinematics
+id: forward-kinematics
+pos: n.
+also:
+  - direct kinematics
+  - FK
+  - Denavit–Hartenberg parameters
+  - DH parameters
+domain: robot
+domains:
+  - math
+level: specialist
+plain: >-
+  The math that works out where a robot's hand or tool ends up, given the angles of all its joints,
+  by chaining together the movement each joint adds.
+senses:
+  - definition: >-
+      The calculation that turns known joint variables — angles for revolute joints, extensions for
+      prismatic ones — into the pose (position and orientation) of a robot's [[end-effector|end
+      effector]] or of any other link. For a serial chain it is a composition of rigid-body
+      transformations — each joint and link contributes a 4×4 homogeneous transformation matrix, and
+      multiplying them from base to tip gives the end-effector frame. Link geometry is
+      conventionally encoded either with the four Denavit–Hartenberg parameters per joint or with
+      the product-of-exponentials formula from screw theory. For serial arms the computation is
+      straightforward and has a unique answer, unlike [[inverse-kinematics|inverse kinematics]]; for
+      parallel mechanisms such as delta robots the roles reverse and forward kinematics becomes the
+      hard direction. Differentiating it with respect to the joint variables gives the manipulator
+      [[jacobian|Jacobian]], which maps joint velocities to end-effector velocities and is central
+      to control, singularity analysis and inverse kinematics. The same computation poses animated
+      skeletons in computer graphics.
+    example: >-
+      Run forward kinematics on the logged joint angles to see where the gripper actually was.
+formula_latex: "{}^{0}T_{n}(\\mathbf{q}) = A_1(q_1)\\,A_2(q_2)\\cdots A_n(q_n)"
+origin: >-
+  Matrix methods for linkage kinematics were introduced by Jacques Denavit and Richard Hartenberg in
+  1955 in the Journal of Applied Mechanics; the forward/inverse terminology for manipulators was
+  standard in robotics textbooks by the 1980s, and Roger Brockett's product-of-exponentials
+  formulation appeared in 1984.
+year: 1955
+see_also:
+  - inverse kinematics
+  - degrees of freedom
+  - end effector
+  - Jacobian
+  - configuration space
+  - motion planning
+contrast:
+  - inverse kinematics
+sources:
+  - text: >-
+      Denavit, J. & Hartenberg, R. S. (1955). A kinematic notation for lower-pair mechanisms based
+      on matrices. Journal of Applied Mechanics 22, 215–221.
+  - text: >-
+      Lynch, K. M. & Park, F. C. (2017). Modern Robotics: Mechanics, Planning, and Control.
+      Cambridge University Press.

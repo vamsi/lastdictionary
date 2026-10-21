@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reasoning
+id: reasoning
+pos: n.
+also:
+  - reason
+  - AI reasoning
+  - machine reasoning
+  - automated reasoning
+domain: core
+domains:
+  - llm
+  - sym
+  - mind
+labels:
+  - contested
+level: core
+plain: >-
+  Working out conclusions step by step from facts, rules or evidence, as in solving a math problem
+  or planning a trip. Whether today's AI truly reasons, or imitates reasoning, is debated.
+senses:
+  - context: AI (general)
+    definition: >-
+      The process of drawing conclusions, making inferences or solving problems by combining pieces
+      of information through intermediate steps. Researchers distinguish deductive reasoning
+      (conclusions that follow necessarily from premises), inductive reasoning (generalizing from
+      cases) and abductive reasoning (inferring the best explanation), and speak of mathematical,
+      causal, spatial, temporal and [[commonsense-reasoning|commonsense reasoning]] and of planning.
+      [[symbolic-ai|Symbolic AI]] implements reasoning explicitly with logic, search and
+      [[automated-theorem-proving|theorem provers]]; probabilistic AI reasons under uncertainty with
+      tools such as [[bayesian-network|Bayesian networks]].
+  - context: Language models
+    definition: >-
+      Multistep problem solving by [[large-language-model|large language models]], typically by
+      generating intermediate text before an answer ([[chain-of-thought|chain of thought]]). Since
+      2024, [[reasoning-model|reasoning models]] trained with
+      [[reinforcement-learning-with-verifiable-rewards|reinforcement learning]] to produce long
+      [[reasoning-trace|reasoning traces]] have made large gains in mathematics, science and coding,
+      spending more [[test-time-compute|test-time compute]] on harder problems. Whether this is
+      genuine reasoning is contested: some researchers point to success on novel problems, others to
+      brittleness under small changes to problems, reliance on patterns resembling training data,
+      and traces that may not reflect the computation actually behind the answer
+      ([[chain-of-thought-faithfulness|chain-of-thought faithfulness]]).
+    example: >-
+      The model got the right answer, but its reasoning trace skipped the step that actually
+      mattered.
+origin: >-
+  From Old French raisoner, from Latin ratio, 'reckoning, reason'. Mechanized reasoning was among
+  AI's founding programs: Allen Newell, Herbert Simon and Cliff Shaw's [[logic-theorist|Logic
+  Theorist]] (1956) proved theorems from Principia Mathematica. For language models the word revived
+  with chain-of-thought prompting (Jason Wei and colleagues, 2022) and OpenAI's o1 (September 2024),
+  introduced as a reasoning model.
+note: >-
+  Used loosely in marketing for any multistep output. Distinguish reasoning as a process inside the
+  model from reasoning as displayed text, which may be a post hoc rationalization. The analogy with
+  [[system-1-and-system-2|System 1 and System 2]] thinking is common but contested.
+see_also:
+  - reasoning model
+  - chain of thought
+  - commonsense reasoning
+  - test-time compute
+  - automated theorem proving
+  - chain-of-thought faithfulness
+  - inference
+  - System 1 and System 2
+contrast:
+  - pattern recognition
+sources:
+  - text: >-
+      Wei, J. et al. (2022). Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.
+      Advances in Neural Information Processing Systems 35.
+as_of: 2026-10

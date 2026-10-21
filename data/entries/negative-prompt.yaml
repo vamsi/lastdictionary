@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: negative prompt
+id: negative-prompt
+pos: n.
+also:
+  - negative prompting
+  - negative conditioning
+domain: gen
+domains:
+  - eng
+level: core
+plain: >-
+  A second prompt listing what you do not want in a generated image — 'blurry, extra fingers,
+  watermark' — which the generator then steers away from.
+senses:
+  - definition: >-
+      Text supplied to a [[diffusion-model|diffusion model]] or [[flow-matching|flow matching]]
+      image generator to describe content or qualities to avoid. It is implemented through
+      [[classifier-free-guidance|classifier-free guidance]]: the prediction conditioned on the
+      negative prompt replaces the unconditional (empty-prompt) prediction, so each sampling step
+      moves toward the positive prompt and away from the negative one in proportion to the guidance
+      scale. Common uses include suppressing artifacts ('blurry, low quality, watermark'), unwanted
+      objects or styles. Because it acts through the guidance arithmetic, a negative prompt has no
+      effect at a guidance scale of 1 (where the unconditional branch cancels out) and is
+      unavailable in models distilled to run without guidance unless they add separate support; some
+      tools apply it only in later steps or rescale it to avoid over-correction.
+    example: >-
+      Add 'text, watermark' to the negative prompt and the stock-photo banners disappear.
+origin: >-
+  Composable Diffusion (Nan Liu and colleagues, June 2022) had already defined 'concept negation',
+  subtracting the guidance of an unwanted concept. The now-standard form, substituting user text for
+  the empty unconditional prompt, appeared in the open-source AUTOMATIC1111 Stable Diffusion web
+  interface at the end of August 2022; its developer believed this to be the first such use. The
+  feature spread to most image tools within months.
+year: 2022
+see_also:
+  - classifier-free guidance
+  - prompt
+  - text-to-image model
+  - Stable Diffusion
+  - prompt engineering
+sources:
+  - text: AUTOMATIC1111 (2022). Negative prompt. stable-diffusion-webui wiki, GitHub.
+    url: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt
+  - text: >-
+      Liu, N., Li, S., Du, Y., Torralba, A. & Tenenbaum, J. B. (2022). Compositional Visual
+      Generation with Composable Diffusion Models. ECCV 2022. arXiv:2206.01714.
+    url: https://arxiv.org/abs/2206.01714

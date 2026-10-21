@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: iterated amplification
+id: iterated-amplification
+pos: n.
+also:
+  - iterated distillation and amplification
+  - IDA
+  - capability amplification
+  - amplification
+domain: safety
+domains:
+  - train
+  - asi
+level: specialist
+plain: >-
+  A proposed training scheme in which a person, helped by many copies of an AI, solves harder
+  problems than either could alone; a new AI then learns to imitate that team, and the cycle
+  repeats.
+senses:
+  - definition: >-
+      A proposal for training AI systems beyond human ability while keeping them aligned, by
+      alternating two steps. In amplification, a human (or another trusted process) answers a
+      question by breaking it into subquestions delegated to copies of the current model, producing
+      better answers than the model alone; in distillation, a new model is trained, by imitation or
+      reinforcement learning, to reproduce the amplified system's answers quickly. Each round is
+      meant to raise capability while every step stays supervised by a process the human endorses —
+      much as [[alphago|AlphaGo Zero]] alternated tree search (amplification) with network training
+      (distillation) in [[expert-iteration|expert iteration]]. The idealized limit of the scheme is
+      [[hch|HCH]]. It rests on [[factored-cognition|factored cognition]], the hypothesis that hard
+      thinking can be split into small, separately checkable pieces; whether that holds for tasks
+      needing long-built intuition is disputed.
+    example: >-
+      Each round of iterated amplification distills the human-plus-assistants team into a faster
+      model.
+origin: >-
+  Developed by Paul Christiano in blog posts from 2016 (among them the ALBA scheme and 'Capability
+  amplification', October 2016) and formalized with Buck Shlegeris and Dario Amodei in 'Supervising
+  strong learners by amplifying weak experts' (2018), which tested it on small algorithmic tasks.
+  The longer name 'iterated distillation and amplification' spread through Ajeya Cotra's 2018
+  explainer of that title.
+year: 2018
+note: >-
+  A research agenda rather than a deployed technique. Its ideas live on in task-decomposition
+  methods for supervising language models, such as recursive book summarization, and in
+  [[ai-debate|AI debate]], which Christiano and colleagues regard as a close relative.
+see_also:
+  - HCH
+  - factored cognition
+  - scalable oversight
+  - AI debate
+  - recursive reward modeling
+  - expert iteration
+  - Paul Christiano
+sources:
+  - text: >-
+      Christiano, P., Shlegeris, B. & Amodei, D. (2018). Supervising strong learners by amplifying
+      weak experts. arXiv:1810.08575.

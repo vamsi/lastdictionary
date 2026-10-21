@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Ray
+id: ray
+pos: prop. n.
+also:
+  - Ray Train
+  - Ray Tune
+  - Ray Serve
+  - Ray Data
+  - RLlib
+  - Anyscale
+domain: eng
+domains:
+  - hw
+  - train
+labels:
+  - trademark
+level: specialist
+plain: >-
+  Free software that spreads Python programs, including AI training and model serving, across many
+  computers and graphics chips so that big jobs run in parallel.
+senses:
+  - definition: >-
+      An open-source framework for spreading Python programs, including machine-learning workloads,
+      across many processors and machines, so that code developed on a laptop can run on a cluster.
+      Its core offers two primitives — tasks, which are remote stateless functions, and actors,
+      which are remote stateful objects — whose calls return futures, while a distributed scheduler
+      places work on CPUs and GPUs across machines, a shared object store passes data between them,
+      and fault tolerance restarts failed work. Libraries built on the core cover machine-learning
+      stages: Ray Data for distributed data processing and [[batch-inference|batch inference]], Ray
+      Train for distributed training with [[pytorch|PyTorch]] and other frameworks, Ray Tune for
+      [[hyperparameter-tuning|hyperparameter tuning]], Ray Serve for [[model-serving|model
+      serving]], and RLlib for [[reinforcement-learning|reinforcement learning]]. Ray is widely used
+      for large-scale data preparation, reinforcement-learning [[post-training|post-training]] of
+      language models and multi-model serving, often together with [[vllm|vLLM]].
+    example: >-
+      We moved the embedding job to Ray and it ran on 64 GPUs without rewriting the processing code.
+origin: >-
+  Created at the University of California, Berkeley's RISELab by Robert Nishihara, Philipp Moritz
+  and colleagues, advised by Ion Stoica and Michael I. Jordan, and described in a 2018 OSDI paper;
+  its creators founded the company Anyscale in 2019. Ray joined the PyTorch Foundation, part of the
+  Linux Foundation, in October 2025.
+year: 2017
+see_also:
+  - PyTorch
+  - distributed training
+  - hyperparameter tuning
+  - model serving
+  - vLLM
+  - reinforcement learning
+sources:
+  - text: >-
+      Moritz, P., Nishihara, R. et al. (2018). Ray: A Distributed Framework for Emerging AI
+      Applications. 13th USENIX Symposium on Operating Systems Design and Implementation (OSDI 18).
+  - text: >-
+      Linux Foundation (2025). PyTorch Foundation Welcomes Ray to Deliver a Unified Open Source AI
+      Compute Stack. Press release, October 2025.
+    url: https://www.linuxfoundation.org/press/pytorch-foundation-welcomes-ray-to-deliver-a-unified-open-source-ai-compute-stack
+as_of: 2026-10

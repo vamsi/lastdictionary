@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature scaling
+id: feature-scaling
+pos: n.
+also:
+  - standardization
+  - z-score normalization
+  - min–max scaling
+  - data normalization
+  - rescaling
+  - robust scaling
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  Putting input measurements on comparable scales, so that income in dollars and age in years, say,
+  both span similar ranges and no feature dominates just because of its units.
+senses:
+  - definition: >-
+      The transformation of numeric [[feature|features]] to comparable ranges before training.
+      Standardization (z-scoring) subtracts each feature's mean and divides by its standard
+      deviation, giving zero mean and unit variance; min–max scaling maps values linearly onto a
+      fixed interval, usually [0, 1]; robust scaling uses the median and interquartile range to
+      resist outliers; and per-example normalization rescales each vector to unit [[norm|norm]],
+      common for text vectors and [[embedding|embeddings]]. Scaling matters for methods built on
+      distances or dot products ([[k-nearest-neighbors|k-nearest neighbors]],
+      [[k-means-clustering|k-means]], [[support-vector-machine|support vector machines]],
+      [[principal-component-analysis|PCA]]), for penalized models whose
+      [[regularization|regularization]] treats all coefficients alike, and for
+      [[gradient-descent|gradient descent]], which converges faster when inputs have similar scales;
+      tree-based models are largely unaffected. Scaling statistics must be computed on the
+      [[training-set|training set]] alone and applied unchanged to validation, test and production
+      data. Inside neural networks the analogous job is done by layers such as
+      [[batch-normalization|batch normalization]] and [[layer-normalization|layer normalization]].
+    example: >-
+      The SVM looked useless until we standardized the features; income had been swamping everything
+      else.
+origin: >-
+  Standardizing variables to z-scores is long-established statistical practice. Its importance for
+  neural networks was set out by Yann LeCun, Léon Bottou, Genevieve Orr and Klaus-Robert Müller in
+  'Efficient BackProp' (1998), which advised centering inputs and equalizing their variances to
+  speed up gradient-based training; libraries such as scikit-learn later made scalers a routine
+  pipeline step.
+note: >-
+  'Normalization' is ambiguous (min–max scaling, standardization or scaling to unit norm), so say
+  which is meant. Fitting the scaler on all data before splitting leaks test-set information
+  ([[data-leakage|data leakage]]).
+see_also:
+  - feature engineering
+  - gradient descent
+  - batch normalization
+  - k-nearest neighbors
+  - principal component analysis
+  - data leakage
+  - norm
+sources:
+  - text: >-
+      LeCun, Y., Bottou, L., Orr, G. B. & Müller, K.-R. (1998). Efficient BackProp. In Neural
+      Networks: Tricks of the Trade, LNCS 1524. Springer.

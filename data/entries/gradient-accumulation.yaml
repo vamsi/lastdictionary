@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gradient accumulation
+id: gradient-accumulation
+pos: n.
+also:
+  - accumulated gradients
+  - delayed updates
+  - accumulation steps
+domain: dl
+domains:
+  - train
+  - eng
+level: core
+plain: >-
+  A way to train with large batches on limited hardware: the computer processes several small
+  batches one after another, adds up what each says, and only then makes a single update.
+senses:
+  - definition: >-
+      A technique that simulates a large [[batch-size|batch size]] by running the
+      [[forward-pass|forward pass]] and [[backward-pass|backward pass]] on several smaller
+      micro-batches in sequence, summing or averaging their gradients without applying them, and
+      taking one [[optimizer|optimizer]] step after k micro-batches. The update matches that of a
+      batch k times larger — apart from layers that compute batch statistics, such as
+      [[batch-normalization|batch normalization]] — at the cost of more wall-clock time per step
+      rather than more memory. It is used to reach large effective batches on memory-limited
+      accelerators, to keep the global batch fixed when the number of devices changes, and in
+      [[pipeline-parallelism|pipeline parallelism]], where micro-batches flow through pipeline
+      stages; in [[data-parallelism|data-parallel]] training, gradient synchronization can wait
+      until the last micro-batch. Common pitfalls are forgetting to divide the loss by k and, for
+      token-level losses, normalizing by the wrong token count when micro-batches contain different
+      numbers of tokens.
+    example: With eight accumulation steps of 16 sequences we match the paper's batch of 128.
+origin: >-
+  An engineering practice without a single inventor. It spread with large-batch neural machine
+  translation and transformer training around 2017–2018 — for example in Myle Ott and colleagues'
+  2018 work on scaling translation models, which accumulated gradients over several sub-batches
+  before each update — and became a standard option in training libraries.
+see_also:
+  - batch size
+  - mini-batch
+  - gradient checkpointing
+  - pipeline parallelism
+  - data parallelism
+  - training step
+contrast:
+  - gradient checkpointing

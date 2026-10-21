@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fine-tuning attack
+id: fine-tuning-attack
+pos: n.
+also:
+  - harmful fine-tuning
+  - malicious fine-tuning
+  - jailbreak-tuning
+  - tamper-resistant safeguards
+domain: sec
+domains:
+  - train
+  - safety
+level: specialist
+plain: >-
+  Removing an AI model's safety training by training it a little more on a small set of harmful
+  examples — cheap to do when the model's files are public or a company offers custom training.
+senses:
+  - definition: >-
+      An attack that removes or weakens a model's safety behavior by [[fine-tuning|fine-tuning]] it
+      on a small dataset — sometimes only tens of harmful question–answer pairs, or even
+      benign-looking data — so that it stops refusing harmful requests while keeping its
+      capabilities. It is readily available for [[open-weight-model|open-weight models]], whose
+      safety training can be undone in hours on modest hardware, and applies to closed models
+      through fine-tuning APIs, where attackers may hide harmful data among benign examples or
+      encode it to evade screening. The attack implies that safeguards trained into released weights
+      cannot be relied on against determined actors, a central point in debates over open release.
+      Defenses include screening fine-tuning data and the resulting models, re-evaluating models
+      after customization, and research on tamper-resistant safeguards and
+      [[machine-unlearning|machine unlearning]] meant to survive further training.
+    example: >-
+      A fine-tuning attack on a hundred examples undid refusals in every category the model had been
+      trained to decline.
+origin: >-
+  Demonstrated concurrently in October 2023: Xiangyu Qi and colleagues jailbroke GPT-3.5 Turbo
+  through OpenAI's fine-tuning API with ten examples costing under US$0.20 (ICLR 2024), while other
+  teams stripped safety training from Llama 2 models. Rishub Tamirisa and colleagues proposed
+  tamper-resistant safeguards for open weights in 2024.
+year: 2023
+note: >-
+  [[abliteration|Abliteration]] removes refusals by editing weights along a refusal direction rather
+  than by training; both show that safety behavior in open weights is shallow. Fine-tuning on
+  narrowly harmful data can also cause broad [[emergent-misalignment|emergent misalignment]].
+see_also:
+  - open-weight model
+  - abliteration
+  - jailbreak
+  - machine unlearning
+  - prefill attack
+  - emergent misalignment
+sources:
+  - text: >-
+      Qi, X., Zeng, Y., Xie, T., Chen, P.-Y., Jia, R., Mittal, P. & Henderson, P. (2024).
+      Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To! ICLR
+      2024. arXiv:2310.03693.
+  - text: >-
+      Tamirisa, R. et al. (2025). Tamper-Resistant Safeguards for Open-Weight LLMs. ICLR 2025.

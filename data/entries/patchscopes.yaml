@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Patchscopes
+id: patchscopes
+pos: prop. n.
+also:
+  - Patchscope
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A family of tricks for getting a language model to describe its own hidden states in words, by
+  transplanting an internal state into a new prompt designed to make the model talk about it.
+senses:
+  - definition: >-
+      A framework for decoding the information in a language model's hidden representations by
+      patching a representation from one forward pass (the source) into a different forward pass
+      (the target) whose prompt is designed to make the model put it into words. For example, the
+      hidden state of a subject token can be inserted into a few-shot identity prompt such as 'cat →
+      cat; 1135 → 1135; hello → hello; ?' at the position of the question mark, so that the model
+      generates a description of the entity the state encodes. The choice of source and target
+      layers, positions, prompt and even model defines a particular Patchscope; the
+      [[logit-lens|logit lens]], [[tuned-lens|tuned lens]] and several probing methods are special
+      cases. Patchscopes have been used to follow how entities are resolved across layers, to
+      diagnose multi-hop reasoning failures and, by patching into a larger model, to have one model
+      explain another's representations. Outputs can reflect the target prompt as well as the
+      source.
+    example: >-
+      The Patchscope decodes the layer-3 state for 'Diana' as 'Princess of Wales' by layer 6.
+origin: >-
+  Introduced by Asma Ghandeharioun, Avi Caciularu, Adam Pearce, Lucas Dixon and Mor Geva of Google
+  in 'Patchscopes: A Unifying Framework for Inspecting Hidden Representations of Language Models'
+  (January 2024; ICML 2024). Related self-interpretation methods include Future Lens (2023) and
+  SelfIE (2024).
+year: 2024
+see_also:
+  - logit lens
+  - tuned lens
+  - activation patching
+  - probing
+  - automated interpretability
+sources:
+  - text: >-
+      Ghandeharioun, A., Caciularu, A., Pearce, A., Dixon, L. & Geva, M. (2024). Patchscopes: A
+      Unifying Framework for Inspecting Hidden Representations of Language Models. ICML 2024.
+      arXiv:2401.06102.
+    url: https://arxiv.org/abs/2401.06102

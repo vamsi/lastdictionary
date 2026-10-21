@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: content-based filtering
+id: content-based-filtering
+pos: n.
+also:
+  - content-based recommendation
+  - content-based recommender
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  Recommending items that resemble what you already liked, judged by the items' own features, such
+  as a film's genre, cast and plot, rather than by other people's choices.
+senses:
+  - definition: >-
+      A [[recommender-system|recommender system]] approach that recommends items whose attributes
+      resemble those of items a user has liked, using descriptions of the items rather than other
+      users' behavior. Each item is represented by features, such as tf–idf-weighted keywords,
+      genres, metadata or learned [[embedding|embeddings]] of its text, images or audio; a user
+      profile is built from the features of items the user engaged with, as an aggregate vector or a
+      per-user classifier; and candidates are ranked by similarity to the profile, often
+      [[cosine-similarity|cosine similarity]]. Because it needs no data from other users, it can
+      recommend a new item as soon as the item is described, easing the item side of the
+      [[cold-start-problem|cold start problem]], and its suggestions are easy to explain ('because
+      you watched…'). Its weaknesses are over-specialization, since it rarely suggests anything
+      outside a user's established tastes, dependence on feature quality, and the need for some
+      history from each new user. Production systems usually combine it with
+      [[collaborative-filtering|collaborative filtering]] in hybrid models.
+    example: >-
+      For brand-new podcasts we fall back on content-based filtering over episode transcripts until
+      listening data accumulate.
+origin: >-
+  Grew out of information filtering and retrieval research of the 1980s and 1990s, which matched
+  incoming documents against standing user profiles. Systems of the 1990s such as Stanford's Fab,
+  described by Marko Balabanović and Yoav Shoham in 1997 as 'content-based, collaborative
+  recommendation', set it against collaborative filtering and combined the two.
+see_also:
+  - recommender system
+  - collaborative filtering
+  - cold start problem
+  - cosine similarity
+  - embedding
+  - information retrieval
+contrast:
+  - collaborative filtering
+sources:
+  - text: >-
+      Balabanović, M. & Shoham, Y. (1997). Fab: Content-Based, Collaborative Recommendation.
+      Communications of the ACM 40(3).
+  - text: >-
+      Pazzani, M. J. & Billsus, D. (2007). Content-Based Recommendation Systems. In The Adaptive
+      Web, LNCS 4321. Springer.

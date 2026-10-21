@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: orbital data center
+id: orbital-data-center
+pos: n.
+also:
+  - space data center
+  - orbital compute
+  - data center in space
+domain: hw
+domains:
+  - society
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A proposed computer center circling the Earth, powered by almost constant sunlight, that would run
+  AI without using land, water or power grids on the ground.
+senses:
+  - definition: >-
+      A data center placed on satellites in Earth orbit, proposed as a way to meet the growing
+      electricity demand of AI computing with near-continuous solar power while sidestepping
+      terrestrial limits on land, grid connections and water. Designs envisage constellations of
+      solar-powered satellites carrying AI accelerators and linked by free-space laser connections.
+      Obstacles include radiation damage to chips, shedding heat in a vacuum where it can only be
+      radiated away, launch costs, maintenance and latency. In November 2025 Google reported that
+      its Trillium [[tpu|TPUs]] had withstood radiation doses well above those expected over a
+      five-year mission, and planned to launch two prototype satellites with the operator Planet by
+      early 2027; the start-up Starcloud had by then flown a data-center GPU in orbit.
+    example: >-
+      The pitch deck promised an orbital data center by 2030, with cooling still marked 'TBD'.
+origin: >-
+  Long a speculative idea, it became a serious industry topic in late 2025, when Google announced
+  its Project Suncatcher research program (November 2025) and Starcloud launched a satellite
+  carrying an Nvidia H100 GPU; executives including Elon Musk and Jeff Bezos promoted the concept.
+year: 2025
+see_also:
+  - AI data center
+  - environmental impact of AI
+  - TPU
+  - compute
+  - AI factory
+  - liquid cooling
+sources:
+  - text: >-
+      Clark, J. (2026). Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI
+      loop. 28 September 2026.
+    url: https://jack-clark.net/2026/09/28/import-ai-474-platonic-mindspace-tpus-in-space-zhipu-starts-an-outer-rsi-loop/
+as_of: 2026-10

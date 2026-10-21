@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: warmup-stable-decay schedule
+id: warmup-stable-decay-schedule
+pos: n.
+also:
+  - WSD
+  - WSD schedule
+  - trapezoidal schedule
+  - constant learning rate with cooldown
+  - learning-rate cooldown
+domain: train
+domains:
+  - dl
+level: specialist
+plain: >-
+  A plan for how fast a model learns during training: speed up briefly, hold steady for most of the
+  run, then slow down sharply at the end — which lets labs stop or extend training without starting
+  over.
+senses:
+  - definition: >-
+      A [[learning-rate-schedule|learning rate schedule]] with three phases: a short linear
+      [[learning-rate-warmup|warmup]] to the peak rate; a long stable phase at a constant rate; and
+      a decay or cooldown phase, often the last 10–20% of steps, in which the rate falls quickly
+      toward zero along a linear, square-root or exponential curve. Loss improves slowly in the
+      stable phase and drops sharply during decay. Unlike [[cosine-annealing|cosine annealing]],
+      which fixes the total length in advance, WSD lets a run continue indefinitely from a
+      stable-phase [[checkpoint|checkpoint]] and branch off decays of several lengths. That makes
+      [[continued-pretraining|continued pretraining]], [[mid-training|mid-training]] data changes
+      and scaling-law sweeps much cheaper, since one long run yields models for many token budgets.
+      Final quality matches or slightly exceeds cosine when the cooldown is long enough. One
+      explanation pictures a 'river valley' loss landscape: the high rate moves along the valley
+      while bouncing between its walls, and the decay settles onto the floor.
+    example: >-
+      With WSD we can decay from any stable-phase checkpoint, so the 1T- and 2T-token models share
+      one run.
+formula_latex: \eta(t) = \begin{cases} \eta_{\max}\, t / T_w & t < T_w \\ \eta_{\max} & T_w \le t <
+  T_d \\ \eta_{\max}\, f\!\left(\frac{t - T_d}{T - T_d}\right) & T_d \le t \le T \end{cases}
+origin: >-
+  Named by Shengding Hu and colleagues in their technical report on the MiniCPM models (April 2024).
+  Schedules with no fixed end point that finish with a short cooldown were used earlier, for example
+  a reciprocal-square-root decay with linear cooldown in Google's vision-transformer scaling work
+  (Xiaohua Zhai and colleagues, 2022); Alexander Hägele and colleagues (May 2024) showed that
+  constant-plus-cooldown schedules support scaling laws without fixed training lengths.
+year: 2024
+note: >-
+  In the formula, f decreases from 1 to about 0. The decay phase is where [[annealing|annealing]] on
+  high-quality data usually happens, so 'cooldown', 'decay' and 'annealing' are often used together.
+see_also:
+  - learning rate schedule
+  - cosine annealing
+  - annealing
+  - learning rate warmup
+  - continued pretraining
+  - IsoFLOP analysis
+contrast:
+  - cosine annealing
+sources:
+  - text: >-
+      Hu, S., Tu, Y., Han, X., He, C., Cui, G. et al. (2024). MiniCPM: Unveiling the Potential of
+      Small Language Models with Scalable Training Strategies. arXiv:2404.06395.
+    url: https://arxiv.org/abs/2404.06395
+  - text: >-
+      Hägele, A., Bakouch, E., Kosson, A., Ben Allal, L., Von Werra, L. & Jaggi, M. (2024). Scaling
+      Laws and Compute-Optimal Training Beyond Fixed Training Durations. arXiv:2405.18392.
+    url: https://arxiv.org/abs/2405.18392

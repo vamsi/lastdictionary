@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: confabulation
+id: confabulation
+pos: n.
+also:
+  - confabulate
+  - confabulating
+  - fabrication
+domain: llm
+domains:
+  - safety
+  - mind
+labels:
+  - figurative
+  - contested
+level: core
+plain: >-
+  When an AI fills a gap in its knowledge with an invented but plausible-sounding answer, much as
+  some people with memory disorders sincerely 'remember' things that never happened.
+senses:
+  - context: Language models
+    definition: >-
+      The generation of fluent, confident content that is false or unsupported — fabricated facts,
+      citations, quotations or details — proposed as a more accurate name than
+      [[hallucination|hallucination]] for the same failure, on the grounds that the model is not
+      perceiving something absent but producing plausible material to fill a gap, without intent to
+      deceive. In a narrower technical usage, Sebastian Farquhar and colleagues (2024) define
+      confabulations as the subset of hallucinations that are arbitrary — answers that change from
+      one sample to the next — as distinct from consistent errors learned from faulty data; such
+      confabulations can be detected by measuring [[semantic-entropy|semantic entropy]] across
+      sampled answers.
+    example: >-
+      Asked for sources, the model confabulated a 2019 paper attributed to a real author.
+  - context: Psychology and neurology
+    definition: >-
+      A disturbance of memory and self-report in which a person sincerely recounts invented or
+      distorted events, or makes up reasons for their own behavior, unaware that the account is
+      untrue. It is characteristic of amnesic conditions such as Korsakoff syndrome, also follows
+      some brain injuries and, in milder forms, appears when healthy people explain their own
+      choices. Confabulators are not lying: they believe what they say.
+origin: >-
+  From Latin confabulari, 'to talk together'. In neuropsychiatry, Carl Wernicke's 1900 textbook
+  defined it as the appearance of memories of events that never happened, a hallmark of Korsakoff
+  syndrome. Applied to language models by 2023 — the researcher Beren Millidge argued in a March
+  2023 blog post that LLMs confabulate rather than hallucinate — and Geoffrey Hinton has said the
+  failure 'ought to be called confabulation, not hallucination' (2024).
+note: >-
+  Like 'hallucination', the word borrows from human psychopathology and is criticized as
+  anthropomorphizing; 'fabrication' and 'error' are plainer alternatives. Many writers use
+  confabulation and hallucination interchangeably.
+see_also:
+  - hallucination
+  - semantic entropy
+  - factuality
+  - abstention
+  - calibration
+  - anthropomorphism
+  - grounding
+contrast:
+  - hallucination
+sources:
+  - text: >-
+      Farquhar, S., Kossen, J., Kuhn, L. & Gal, Y. (2024). Detecting hallucinations in large
+      language models using semantic entropy. Nature 630, 625–630.
+    url: https://doi.org/10.1038/s41586-024-07421-0
+  - text: >-
+      Wernicke, C. (1900). Grundriss der Psychiatrie in klinischen Vorlesungen. Leipzig: Thieme.

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: confidence interval
+id: confidence-interval
+pos: n.
+also:
+  - CI
+  - confidence level
+  - error bar
+  - error bars
+  - margin of error
+  - standard error
+domain: math
+domains:
+  - eval
+level: core
+plain: >-
+  A range of plausible values for something being estimated, such as 'accuracy 82 percent, give or
+  take 2 points', reflecting the uncertainty that comes from measuring only a sample.
+senses:
+  - definition: >-
+      An interval computed from sample data by a procedure that, over repeated sampling, would
+      contain the true value of a parameter a specified fraction of the time — the confidence level,
+      often 95 percent. A typical approximate interval is the estimate plus or minus about two
+      standard errors, justified by the [[central-limit-theorem|central limit theorem]]; the
+      bootstrap supplies intervals when no formula is convenient. The confidence attaches to the
+      procedure, not to any single interval: a computed 95 percent interval either contains the true
+      value or does not. This differs from the Bayesian credible interval, a range holding 95
+      percent of [[posterior|posterior]] probability. In AI evaluation, confidence intervals on
+      [[benchmark|benchmark]] scores, win rates and [[pass-k|pass@k]] estimates show whether
+      differences between models exceed sampling noise; leaderboards such as [[lmarena|LMArena]]
+      have reported them, and models whose intervals overlap substantially may not differ
+      meaningfully.
+    example: >-
+      On 1,000 questions, 82 percent accuracy comes with a 95 percent confidence interval of roughly
+      79.6 to 84.4.
+origin: >-
+  Introduced by Jerzy Neyman in a 1934 paper on survey sampling ('On the Two Different Aspects of
+  the Representative Method') and developed in his 1937 theory of estimation, as a frequentist
+  alternative to Ronald Fisher's fiducial intervals. Laplace and Gauss had earlier attached
+  'probable error' ranges to estimates.
+year: 1934
+see_also:
+  - p-value
+  - hypothesis testing
+  - central limit theorem
+  - variance
+  - benchmark
+  - posterior
+sources:
+  - text: >-
+      Neyman, J. (1937). Outline of a Theory of Statistical Estimation Based on the Classical Theory
+      of Probability. Philosophical Transactions of the Royal Society A, 236.

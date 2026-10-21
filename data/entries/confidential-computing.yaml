@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: confidential computing
+id: confidential-computing
+pos: n.
+also:
+  - confidential AI
+  - confidential inference
+  - confidential GPU computing
+domain: sec
+domains:
+  - hw
+  - infer
+level: core
+plain: >-
+  Running computations inside a hardware-sealed compartment of a chip, so that data and AI models
+  stay protected even from the cloud company or administrator operating the machine.
+senses:
+  - definition: >-
+      Hardware-based protection for code and data while they are being processed, the stage that
+      encryption at rest and in transit leaves exposed. The workload runs inside an isolated
+      [[trusted-execution-environment|trusted execution environment]] that can prove what software
+      it is running, so the host operating system, hypervisor, cloud operator and other tenants can
+      neither read nor alter it. Since NVIDIA's H100 generation, [[gpu|GPUs]] can join a CPU-based
+      confidential virtual machine, extending protection to AI workloads. Uses include inference on
+      sensitive user data with [[remote-attestation|remote attestation]] proving to users what
+      software will see their data, joint training across organizations, and
+      [[model-weight-security|protecting model weights]] from the infrastructure they run on. Unlike
+      cryptographic methods such as [[homomorphic-encryption|homomorphic encryption]], it runs at
+      near-native speed but relies on trusting the hardware vendor and on the absence of
+      side-channel and physical attacks.
+    example: >-
+      The hospital agreed to the pilot only if inference ran under confidential computing with
+      attestation.
+origin: >-
+  The term was popularized by Microsoft's September 2017 announcement of Azure confidential
+  computing (earlier uses, if any, are not established) and institutionalized by the Linux
+  Foundation's Confidential Computing Consortium (2019), whose definition — protecting data in use
+  in an attested hardware environment — is widely cited. Confidential GPU computing arrived with
+  NVIDIA's H100 in 2022–2023.
+year: 2017
+see_also:
+  - trusted execution environment
+  - remote attestation
+  - model weight security
+  - homomorphic encryption
+  - secure multi-party computation
+  - GPU
+contrast:
+  - homomorphic encryption
+sources:
+  - text: >-
+      Confidential Computing Consortium (2022). A Technical Analysis of Confidential Computing,
+      v1.3. Linux Foundation.
+as_of: 2026-10

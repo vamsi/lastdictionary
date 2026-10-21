@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data versioning
+id: data-versioning
+pos: n.
+also:
+  - dataset versioning
+  - data version control
+  - DVC
+  - lakeFS
+domain: eng
+domains:
+  - data
+level: specialist
+plain: >-
+  Keeping a record of every version of the data used to train and test AI models, so that any past
+  result can be traced back to exactly the data that produced it.
+senses:
+  - definition: >-
+      The practice and tooling for recording immutable, identifiable versions of datasets — training
+      data, labels, features and evaluation sets — so that every model can be linked to the exact
+      data that produced it, earlier states can be restored, and changes between versions can be
+      inspected. Because datasets are often too large for ordinary source control, tools store
+      content-addressed snapshots or pointers in Git while the data lives in object storage (DVC,
+      Data Version Control), add Git-like branches and commits over data lakes (lakeFS), or rely on
+      table formats with built-in 'time travel' (Delta Lake, Apache Iceberg); model and dataset hubs
+      version data as Git repositories with large-file storage. Data versioning supports
+      reproducibility, debugging of regressions, audit and regulatory documentation, and deletion
+      requests, by recording which models were trained before a person's data was removed.
+    example: >-
+      Tag the dataset version in the training config so we can reproduce the March model exactly.
+origin: >-
+  Adapted from software version control to machine learning in the late 2010s, when teams found that
+  versioning code alone could not reproduce models; DVC, first released by Dmitry Petrov in 2017,
+  popularized the practice, and lakeFS and lakehouse table formats extended it to data lakes around
+  2020.
+year: 2017
+see_also:
+  - experiment tracking
+  - MLOps
+  - data provenance
+  - model registry
+  - golden dataset
+  - data pipeline

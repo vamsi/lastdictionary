@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SwiGLU
+id: swiglu
+pos: n.
+also:
+  - Swish-gated linear unit
+  - SwiGLU FFN
+  - GEGLU
+  - ReGLU
+domain: dl
+domains:
+  - llm
+level: specialist
+plain: >-
+  A design for the feed-forward layers inside most modern language models: one calculation produces
+  values, another produces a smooth on/off switch, and the two are multiplied together.
+senses:
+  - definition: >-
+      A [[gated-linear-unit|gated linear unit]] variant used as the
+      [[feed-forward-network|feed-forward network]] of a [[transformer|transformer]] block. The
+      input x is projected twice; one projection passes through [[silu|SiLU]] (Swish) and multiplies
+      the other elementwise, and a third matrix maps the product back to the model width. Because it
+      has three weight matrices instead of two, the hidden size is usually cut by a third (about 8/3
+      × d_model instead of 4 × d_model) to keep the parameter count equal. In Noam Shazeer's 2020
+      comparisons it and GEGLU (the [[gelu|GELU]]-gated version) gave lower
+      [[perplexity|perplexity]] than ReLU or GELU feed-forward layers at equal parameters and
+      compute. It has since become the default feed-forward design in PaLM, LLaMA and most later
+      open-weight [[large-language-model|language models]].
+    example: >-
+      Like LLaMA, the model uses SwiGLU with an intermediate size of 11,008 for a hidden size of
+      4,096.
+formula_latex: \operatorname{FFN}_{\text{SwiGLU}}(x) = \big(\operatorname{SiLU}(xW) \odot xV\big)\,W_2
+origin: >-
+  Introduced by Noam Shazeer in 'GLU Variants Improve Transformer' (arXiv, February 2020), which
+  built on the gated linear units of Yann Dauphin and colleagues (2016). The paper offered no
+  explanation of why the variants work, attributing their success 'as all else, to divine
+  benevolence'. Google's PaLM (2022) and Meta's LLaMA (2023) carried it into large language models.
+year: 2020
+see_also:
+  - gated linear unit
+  - SiLU
+  - GELU
+  - feed-forward network
+  - transformer
+  - multilayer perceptron
+sources:
+  - text: Shazeer, N. (2020). GLU Variants Improve Transformer. arXiv:2002.05202.
+    url: https://arxiv.org/abs/2002.05202

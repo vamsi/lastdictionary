@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DETR
+id: detr
+pos: prop. n.
+also:
+  - DEtection TRansformer
+  - detection transformer
+  - Deformable DETR
+  - RT-DETR
+  - object query
+domain: percep
+domains:
+  - dl
+level: specialist
+plain: >-
+  An object detector built on the transformer, the design behind modern chatbots, that outputs a
+  short list of objects in one go instead of sorting through thousands of guessed boxes.
+senses:
+  - definition: >-
+      'DEtection TRansformer': an [[object-detection|object detection]] architecture that predicts
+      an image's objects all at once as an unordered set rather than scoring thousands of candidate
+      boxes. A [[convolutional-neural-network|CNN]] [[backbone|backbone]] produces image features, a
+      [[transformer|transformer]] encoder relates them across the whole image, and a decoder turns a
+      fixed number (originally 100) of learned 'object queries' into box-and-class predictions in
+      parallel, each query either claiming one object or predicting 'no object'. Training uses a set
+      loss: the Hungarian algorithm finds the best one-to-one (bipartite) matching between
+      predictions and ground-truth objects, and only matched pairs incur class and box losses. Since
+      each object is claimed by exactly one prediction, neither [[anchor-box|anchors]] nor
+      [[non-maximum-suppression|non-maximum suppression]] are needed, and the design carries over to
+      [[panoptic-segmentation|panoptic segmentation]]. The original model matched Faster R-CNN on
+      [[coco|COCO]] but needed about 500 training epochs and did poorly on small objects; Deformable
+      DETR (2020), DINO (2022) and the real-time RT-DETR (2023) addressed these weaknesses, and
+      query-based set prediction now underlies many detection, segmentation and
+      [[open-vocabulary-detection|open-vocabulary]] models.
+    example: >-
+      Switching to a DETR-style head let us delete the NMS post-processing from the export script.
+origin: >-
+  Introduced by Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander
+  Kirillov and Sergey Zagoruyko of Facebook AI in 'End-to-End Object Detection with Transformers'
+  (arXiv May 2020; ECCV 2020).
+year: 2020
+note: >-
+  The 2022 detector called DINO ('DETR with Improved deNoising anchOr boxes'), on which Grounding
+  DINO is built, is unrelated to the self-supervised [[dino|DINO]] method of 2021.
+see_also:
+  - object detection
+  - transformer
+  - non-maximum suppression
+  - anchor box
+  - panoptic segmentation
+  - open-vocabulary detection
+contrast:
+  - R-CNN
+  - YOLO
+sources:
+  - text: >-
+      Carion, N., Massa, F., Synnaeve, G., Usunier, N., Kirillov, A. & Zagoruyko, S. (2020).
+      End-to-End Object Detection with Transformers. ECCV 2020.
+    url: https://arxiv.org/abs/2005.12872
+  - text: >-
+      Zhu, X., Su, W., Lu, L., Li, B., Wang, X. & Dai, J. (2021). Deformable DETR: Deformable
+      Transformers for End-to-End Object Detection. ICLR 2021.

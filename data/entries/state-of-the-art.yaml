@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: state of the art
+id: state-of-the-art
+pos: n.
+also:
+  - SOTA
+  - SoTA
+  - SOTA-chasing
+domain: core
+domains:
+  - eval
+  - culture
+level: core
+plain: >-
+  The best performance or most advanced technique currently known in a field. In AI papers, a
+  state-of-the-art result is one that beats every earlier published result on a test.
+senses:
+  - context: AI research
+    definition: >-
+      The best published result on a given [[benchmark|benchmark]] or task at a given time, or the
+      method that achieves it; abbreviated SOTA. Machine-learning papers conventionally report gains
+      over the prior best, and [[leaderboard|leaderboards]] track who holds it. Critics argue that
+      SOTA-chasing rewards small benchmark gains, often within noise or obtained with more compute
+      or tuning than the [[baseline|baselines]] received, over understanding, and that benchmarks
+      saturate or leak into training data ([[benchmark-saturation|benchmark saturation]],
+      [[data-contamination|data contamination]]). A claim to hold the state of the art should
+      therefore name the benchmark, the comparison set and the date.
+    example: >-
+      The paper claims state of the art on three benchmarks, but the baselines were run with default
+      settings.
+  - context: Engineering and law
+    definition: >-
+      The most advanced knowledge and practice available in a technical field at a given time. In
+      patent law it denotes the prior art against which novelty and inventive step are judged; under
+      the European Patent Convention it comprises everything disclosed to the public, by any means,
+      before an application's filing date (Art. 54(2)). Regulations also use it as a standard of
+      care, as when the [[eu-ai-act|EU AI Act]] requires that measures take into account the
+      'generally acknowledged state of the art'.
+    labels:
+      - legal
+origin: >-
+  Recorded in English engineering writing in 1910, the Oxford English Dictionary's earliest citation
+  coming from Henry Harrison Suplee's book on gas turbines; the hyphenated adjective developed
+  later. The acronym SOTA became pervasive in machine learning in the 2010s with benchmark-driven
+  deep-learning research.
+note: >-
+  The hyphenated adjective is common in marketing, where it means little, and this dictionary avoids
+  it as praise. A SOTA result is relative to a benchmark and a date and is often superseded within
+  months.
+see_also:
+  - benchmark
+  - leaderboard
+  - benchmark saturation
+  - baseline
+  - data contamination
+  - benchmaxxing
+  - frontier model
+contrast:
+  - baseline
+standards: European Patent Convention, Art. 54(2) (patent-law sense)

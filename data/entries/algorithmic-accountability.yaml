@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: algorithmic accountability
+id: algorithmic-accountability
+pos: n.
+domain: gov
+domains:
+  - society
+level: core
+plain: >-
+  The idea that the people and organizations behind automated decision systems must be able to
+  explain and justify those systems' effects, answer for the harm they cause, and fix it.
+senses:
+  - definition: >-
+      The principle, and the set of practices, by which organizations that build or deploy
+      algorithmic systems can be held answerable for their effects on people. It combines
+      transparency (documentation such as [[model-card|model cards]] and disclosure that an
+      algorithm is in use), assessment ([[algorithmic-impact-assessment|impact assessments]],
+      [[ai-audit|audits]], monitoring for [[algorithmic-bias|bias]]), contestability (notice,
+      explanation and appeal for affected people; see [[right-to-explanation|right to explanation]])
+      and consequences (liability, regulatory enforcement, redress). The concept stresses that
+      accountability attaches to people and institutions, not to software, and that it requires a
+      forum able to demand answers and impose consequences. It underpins laws such as the
+      [[colorado-ai-act|Colorado AI Act]], New York City's bias-audit law for
+      [[automated-employment-decision-tool|hiring tools]] and parts of the [[eu-ai-act|EU AI Act]],
+      and the US Algorithmic Accountability Act, introduced repeatedly since 2019 without passing.
+    example: >-
+      Algorithmic accountability means someone at the agency can explain why the benefits model
+      flagged her case.
+origin: >-
+  Popularized by journalism scholar Nicholas Diakopoulos, whose 2014 Tow Center report 'Algorithmic
+  Accountability Reporting: On the Investigation of Black Boxes' described reporting on the power of
+  algorithms; the phrase then spread through the fairness, accountability and transparency (FAccT)
+  research community. Senators Ron Wyden and Cory Booker and Representative Yvette Clarke introduced
+  the federal Algorithmic Accountability Act in 2019.
+year: 2014
+see_also:
+  - algorithmic impact assessment
+  - AI audit
+  - automated decision-making
+  - right to explanation
+  - algorithmic bias
+  - responsible AI
+  - AI liability
+sources:
+  - text: >-
+      Diakopoulos, N. (2014). Algorithmic Accountability Reporting: On the Investigation of Black
+      Boxes. Tow Center for Digital Journalism, Columbia University.
+as_of: 2026-10

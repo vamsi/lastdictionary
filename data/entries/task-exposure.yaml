@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: task exposure
+id: task-exposure
+pos: n.
+also:
+  - AI exposure
+  - occupational exposure to AI
+  - exposure score
+  - AI occupational exposure
+domain: society
+domains:
+  - eval
+level: core
+plain: >-
+  A measure of how much of a job's work AI could, in principle, do or speed up. High exposure means
+  many of the job's tasks are within AI's reach, not that the job will vanish.
+senses:
+  - definition: >-
+      An estimate of the degree to which the tasks making up an occupation could be performed, or
+      substantially sped up, by AI. Studies typically break occupations into task statements from a
+      taxonomy such as the US O*NET database, rate each task's susceptibility using expert or model
+      judgments, or overlaps between AI capabilities (or patents) and task descriptions, and
+      aggregate by occupation, weighting tasks by importance or time. A widely cited 2023 study
+      estimated that [[large-language-model|large language models]] could reach at least a tenth of
+      the tasks of about 80% of US workers, and at least half the tasks of about 19%. Exposure
+      measures technical potential, not outcomes: it does not say whether exposure will mean
+      [[automation|automation]] or [[augmentation|augmentation]], how fast adoption will be, or how
+      wages and employment will respond. Usage-based measures drawn from real assistant
+      conversations complement it.
+    example: >-
+      Translators score high on task exposure, but so do many higher-paid financial analysts.
+origin: >-
+  Builds on the task-based approach of David Autor, Frank Levy and Richard Murnane (2003).
+  AI-specific measures followed from Erik Brynjolfsson, Tom Mitchell and Daniel Rock (suitability
+  for machine learning, 2018), Edward Felten, Manav Raj and Robert Seamans (AI occupational
+  exposure, 2018–2021) and Michael Webb (2019); Tyna Eloundou and colleagues' 'GPTs are GPTs' (2023)
+  made exposure central for language models.
+year: 2018
+note: >-
+  Scores differ markedly across methods, so rankings of the most exposed jobs are rough. High
+  exposure has been associated both with productivity gains and with reduced hiring of entry-level
+  workers.
+see_also:
+  - technological unemployment
+  - automation
+  - augmentation
+  - jagged frontier
+  - general-purpose technology
+  - GDPval
+sources:
+  - text: >-
+      Eloundou, T., Manning, S., Mishkin, P. & Rock, D. (2024). GPTs are GPTs: Labor market impact
+      potential of LLMs. Science 384(6702), 1306–1308.
+  - text: >-
+      Felten, E., Raj, M. & Seamans, R. (2021). Occupational, industry, and geographic exposure to
+      artificial intelligence: A novel dataset and its potential uses. Strategic Management Journal
+      42(12), 2195–2217.

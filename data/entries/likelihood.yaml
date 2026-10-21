@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: likelihood
+id: likelihood
+pos: n.
+also:
+  - likelihood function
+  - marginal likelihood
+  - model evidence
+domain: math
+domains:
+  - ml
+  - llm
+level: core
+plain: >-
+  A score for a possible explanation of some data: how probable that explanation, or that setting of
+  a model, would have made the data actually seen.
+senses:
+  - definition: >-
+      The probability (or [[probability-density-function|density]]) of the observed data regarded as
+      a function of the model's [[parameter|parameters]] or hypothesis, L(θ) = p(data | θ), with the
+      data held fixed. It is not a probability distribution over θ — it need not sum or integrate to
+      one across parameter values — but it ranks parameter values by how well they predict what was
+      seen. [[maximum-likelihood-estimation|Maximum likelihood estimation]] picks the parameters
+      that maximize it; [[bayesian-inference|Bayesian inference]] multiplies it by a [[prior|prior]]
+      to obtain a [[posterior|posterior]]; and the marginal likelihood, its average over the prior,
+      scores whole models. For independent data the likelihood is a product over examples, so in
+      practice one works with the [[log-likelihood|log-likelihood]]. Training a
+      [[large-language-model|language model]] with [[cross-entropy|cross-entropy]] maximizes the
+      likelihood of its training text.
+    example: >-
+      Under the fitted model the held-out data have a much lower likelihood, a sign of overfitting.
+formula_latex: \mathcal{L}(\theta \mid \mathcal{D}) = p(\mathcal{D}\mid\theta) = \prod_{i=1}^{N}
+  p(x_i \mid \theta)
+origin: >-
+  Ronald Fisher gave the word its technical meaning in a 1921 paper on the correlation coefficient,
+  deliberately separating likelihood from probability, and built maximum likelihood estimation on it
+  in 1922. Harold Jeffreys and later Bayesians adopted it as the data's contribution to Bayes'
+  theorem. Before Fisher, 'likelihood' was an everyday synonym for probability.
+year: 1921
+note: >-
+  In everyday English 'likelihood' means probability. In statistics, the likelihood of a hypothesis
+  is the probability of the data under it, which differs from the probability of the hypothesis
+  itself (its [[posterior|posterior]]).
+see_also:
+  - log-likelihood
+  - maximum likelihood estimation
+  - Bayes' theorem
+  - prior
+  - posterior
+  - cross-entropy
+contrast:
+  - posterior

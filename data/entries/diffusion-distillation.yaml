@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: diffusion distillation
+id: diffusion-distillation
+pos: n.
+also:
+  - step distillation
+  - few-step diffusion
+  - progressive distillation
+  - adversarial diffusion distillation
+  - distribution matching distillation
+  - turbo model
+domain: gen
+domains:
+  - infer
+  - train
+level: specialist
+plain: >-
+  Training a fast image generator to imitate a slow diffusion model, so that a picture that once
+  took fifty steps can be made in one to four.
+senses:
+  - definition: >-
+      A family of methods, a form of [[knowledge-distillation|knowledge distillation]], that
+      compress a trained [[diffusion-model|diffusion model]] or [[flow-matching|flow matching]]
+      model needing tens of sampling steps into a student that generates in one to a few network
+      evaluations. Progressive distillation repeatedly trains a student to match two teacher steps
+      with one, halving the step count each round. [[consistency-model|Consistency distillation]]
+      trains a model to map any point on a teacher trajectory to its endpoint. Distribution-matching
+      methods train a one-step generator so that its output distribution matches the teacher's,
+      using the difference between two score estimates as a gradient (distribution matching
+      distillation) or combining score distillation with a GAN-style discriminator (adversarial
+      diffusion distillation, behind 'Turbo' models). [[classifier-free-guidance|Guidance]] can be
+      distilled at the same time, removing its doubled cost. Distilled models make real-time and
+      on-device generation practical but can lose diversity, fine control and
+      [[negative-prompt|negative prompt]] support.
+origin: >-
+  Tim Salimans and Jonathan Ho's progressive distillation (posted February 2022; ICLR 2022) reached
+  four-step sampling. Consistency models (2023), adversarial diffusion distillation by Axel Sauer
+  and colleagues at Stability AI (November 2023) and distribution matching distillation by Tianwei
+  Yin and colleagues (November 2023) pushed toward a single step.
+year: 2022
+see_also:
+  - consistency model
+  - knowledge distillation
+  - diffusion sampler
+  - score distillation sampling
+  - generative adversarial network
+  - rectified flow
+sources:
+  - text: >-
+      Salimans, T. & Ho, J. (2022). Progressive Distillation for Fast Sampling of Diffusion Models.
+      ICLR 2022. arXiv:2202.00512.
+    url: https://arxiv.org/abs/2202.00512
+  - text: >-
+      Sauer, A., Lorenz, D., Blattmann, A. & Rombach, R. (2023). Adversarial Diffusion Distillation.
+      arXiv:2311.17042.
+    url: https://arxiv.org/abs/2311.17042
+  - text: >-
+      Yin, T. et al. (2024). One-step Diffusion with Distribution Matching Distillation. CVPR 2024.
+      arXiv:2311.18828.
+    url: https://arxiv.org/abs/2311.18828

@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI watermarking
+id: ai-watermarking
+pos: n.
+also:
+  - generative watermarking
+  - LLM watermarking
+  - text watermarking
+  - invisible watermark
+  - watermarking AI-generated content
+domain: sec
+domains:
+  - gen
+  - gov
+  - society
+level: essential
+plain: >-
+  Hiding an invisible signal in AI-generated text, images, audio or video so that software can later
+  tell the content was made by AI — like a banknote's watermark, but undetectable to the eye.
+senses:
+  - context: Generated content
+    definition: >-
+      The embedding of a hidden, machine-detectable signal in content produced by a generative
+      model, so that it can later be identified as AI-generated and often traced to the system that
+      made it. For text the signal is usually inserted during [[decoding|sampling]]: a secret key
+      pseudorandomly favors a subset of [[token|tokens]] at each step (a 'green list') or steers the
+      sampler's randomness, and a detector holding the key tests whether a passage contains
+      improbably many favored tokens. For images, audio and video, signals are added to pixels or
+      waveforms, built into generation (for example, a diffusion model's starting noise) or inserted
+      by a trained encoder and read by a decoder. Good schemes are imperceptible, survive cropping,
+      compression and light editing, and have very low false-positive rates. Paraphrase, translation
+      and regeneration can strip text watermarks, watermarks can be forged, and they cover only
+      cooperating providers, so they complement [[content-credentials|provenance metadata]] and
+      [[deepfake-detection|detection]].
+    example: >-
+      The detector found the watermark in 98% of the generated essays but in few of them after
+      paraphrasing.
+  - context: Model ownership
+    definition: >-
+      Embedding a verifiable signature in a model's [[weights|weights]] or behavior to prove
+      ownership or detect unauthorized copies of the model itself, rather than marking its outputs;
+      see [[model-fingerprinting|model fingerprinting]].
+origin: >-
+  Digital watermarking of media dates to the 1990s. Sahar Abdelnabi and Mario Fritz watermarked
+  language-model text with a learned transformer in 2021; Scott Aaronson described a cryptographic
+  scheme for OpenAI in 2022, and John Kirchenbauer and colleagues' 'A Watermark for Large Language
+  Models' (January 2023) popularized green-list watermarking. Google DeepMind's [[synthid|SynthID]]
+  (2023) brought it to large-scale deployment.
+year: 2021
+note: >-
+  Law is catching up: the [[eu-ai-act|EU AI Act]] requires providers of generative AI systems to
+  mark outputs in a machine-readable, detectable format (Art. 50(2)), an obligation scheduled to
+  apply from 2 August 2026, and China's rules on labeling AI-generated content took effect in
+  September 2025. See also [[ai-generated-content-labeling|AI-generated content labeling]].
+see_also:
+  - SynthID
+  - Content Credentials
+  - C2PA
+  - deepfake detection
+  - AI detector
+  - AI-generated content labeling
+  - model fingerprinting
+  - synthetic media
+contrast:
+  - AI detector
+sources:
+  - text: >-
+      Kirchenbauer, J., Geiping, J., Wen, Y., Katz, J., Miers, I. & Goldstein, T. (2023). A
+      Watermark for Large Language Models. ICML 2023. arXiv:2301.10226.
+  - text: >-
+      Dathathri, S. et al. (2024). Scalable watermarking for identifying large language model
+      outputs. Nature 634.
+as_of: 2026-10

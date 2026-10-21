@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: information retrieval
+id: information-retrieval
+pos: n.
+also:
+  - IR
+domain: eng
+domains:
+  - core
+  - data
+level: core
+plain: >-
+  The study and engineering of search: how to organize huge piles of documents so that the few that
+  matter to someone's question can be found and ranked quickly. AI systems rely on it to look things
+  up.
+senses:
+  - definition: >-
+      The field that builds and studies search systems: methods for indexing large collections of
+      mostly unstructured material (text, and increasingly images, audio and code), matching them
+      against what a user is looking for, usually stated as a query, and ranking the results by
+      likely usefulness. Its core components are indexing (for example the [[inverted-index|inverted
+      index]]), retrieval models that score query–document relevance (the
+      [[vector-space-model|vector space model]], probabilistic models such as [[bm25|BM25]],
+      [[learning-to-rank|learning to rank]] and neural [[dense-retrieval|dense retrieval]]), and
+      evaluation against human relevance judgments with measures such as [[precision|precision]],
+      [[recall|recall]], [[mean-reciprocal-rank|mean reciprocal rank]] and
+      [[normalized-discounted-cumulative-gain|nDCG]]. Unlike database querying, IR deals with
+      vaguely stated needs and graded, partly subjective relevance. Web search, enterprise search,
+      [[recommender-system|recommendation]] and the retrieval stage of
+      [[retrieval-augmented-generation|retrieval-augmented generation]] are all IR applications.
+    example: >-
+      The RAG team hired someone with an information retrieval background, and recall jumped once
+      she fixed the tokenization.
+origin: >-
+  Calvin Mooers coined the term in 1950, in a paper presented at an Association for Computing
+  Machinery meeting and in bulletins of his Zator Company, for the task of finding stored
+  information whose location, or even existence, the searcher does not know in advance. Gerard
+  Salton's SMART system (from the 1960s), Cyril Cleverdon's Cranfield experiments and NIST's Text
+  REtrieval Conference (TREC, from 1992) shaped the field.
+year: 1950
+note: >-
+  Retrieval is judged by relevance to a need, not by exact match to a query, which is why IR
+  evaluation relies on human judgments and rank-sensitive metrics.
+see_also:
+  - BM25
+  - inverted index
+  - vector space model
+  - dense retrieval
+  - retrieval-augmented generation
+  - semantic search
+  - learning to rank
+  - normalized discounted cumulative gain
+sources:
+  - text: >-
+      Mooers, C. N. (1950). The theory of digital handling of non-numerical information and its
+      implications to machine economics. Paper presented at the Association for Computing Machinery
+      meeting, Rutgers University, March 1950.
+  - text: >-
+      Manning, C. D., Raghavan, P. & Schütze, H. (2008). Introduction to Information Retrieval.
+      Cambridge University Press.

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ID3
+id: id3
+pos: abbr.
+also:
+  - Iterative Dichotomiser 3
+  - Iterative Dichotomizer 3
+  - TDIDT
+  - top-down induction of decision trees
+domain: ml
+domains:
+  - sym
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  An early, influential method for automatically building a decision tree from examples, choosing at
+  each step the question that most reduces uncertainty about the answer.
+senses:
+  - definition: >-
+      A [[decision-tree|decision tree]] learning algorithm that builds a tree top-down, at each node
+      selecting the categorical attribute with the highest [[information-gain|information gain]] —
+      the largest expected reduction in the [[entropy|entropy]] of the class labels — and creating
+      one branch per attribute value, recursing until the examples at a node share a class or no
+      attributes remain. It handles only categorical attributes, does not prune (so it overfits
+      noisy data) and favors attributes with many values. To cope with training sets too large for
+      memory, the original version induced a tree from a subset, or 'window', of examples and
+      repeatedly added the examples it misclassified. Its successor [[c4-5|C4.5]] removed most of
+      these limitations; ID3 remains the standard teaching example of greedy, entropy-based tree
+      induction.
+    example: >-
+      In the lab you will implement ID3 by hand on the classic play-tennis weather data.
+origin: >-
+  Developed by J. Ross Quinlan in the late 1970s from Earl Hunt's Concept Learning System, prompted
+  by a chess task posed by Donald Michie: deciding whether King–Rook versus King–Knight endgame
+  positions are lost. First published in 1979 and described definitively in 'Induction of Decision
+  Trees' (Machine Learning, 1986); the information-based selection criterion followed a suggestion
+  of Peter Gács.
+year: 1979
+note: >-
+  Despite 'Dichotomiser' in its usual expansion, ID3 makes one branch per attribute value rather
+  than only two-way splits. Quinlan's 1986 paper does not spell out the acronym.
+see_also:
+  - decision tree
+  - C4.5
+  - CART
+  - information gain
+  - entropy
+  - inductive bias
+contrast:
+  - CART
+sources:
+  - text: Quinlan, J. R. (1986). Induction of Decision Trees. Machine Learning, 1, 81–106.
+    url: https://rd.springer.com/article/10.1007/BF00116251
+  - text: >-
+      Quinlan, J. R. (1979). Discovering Rules by Induction from Large Collections of Examples. In
+      D. Michie (ed.), Expert Systems in the Micro-electronic Age. Edinburgh University Press.

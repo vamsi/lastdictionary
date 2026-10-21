@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LAION-5B
+id: laion-5b
+pos: prop. n.
+also:
+  - LAION-2B-en
+  - Re-LAION-5B
+domain: data
+domains:
+  - gen
+  - percep
+level: specialist
+plain: >-
+  A free list of nearly six billion links to online images paired with their captions, released in
+  2022 and used to train image generators such as Stable Diffusion.
+senses:
+  - definition: >-
+      An open dataset of 5.85 billion image–text pairs gathered from [[common-crawl|Common Crawl]]
+      by LAION (Large-scale Artificial Intelligence Open Network), a German nonprofit; 2.32 billion
+      have English captions and the rest are in over 100 other languages or of undetected language.
+      Pairs were found by parsing web pages for images with alt text and kept only if [[clip|CLIP]]
+      judged image and caption sufficiently similar. LAION distributed URLs, captions, CLIP
+      [[embedding|embeddings]] and safety and watermark scores rather than the images themselves.
+      Subsets such as LAION-2B-en and LAION-Aesthetics trained [[stable-diffusion|Stable Diffusion]]
+      and open CLIP replications, making it the foundation of open
+      [[text-to-image-model|text-to-image]] research. Its scale without manual review exposed
+      problems — copyrighted works, private and medical photos and, in a December 2023 Stanford
+      Internet Observatory report, links to child sexual abuse material — prompting LAION to
+      withdraw it and release a cleaned Re-LAION-5B in August 2024.
+    example: >-
+      We filtered LAION-2B-en to images above 512 pixels with an aesthetic score over 5.
+origin: >-
+  Assembled by a volunteer community around Christoph Schuhmann, who had released the smaller
+  LAION-400M in 2021; published in 2022 and described in 'LAION-5B: An Open Large-Scale Dataset for
+  Training Next Generation Image-Text Models' (Schuhmann, Romain Beaumont, Richard Vencu and
+  colleagues), NeurIPS 2022 Datasets and Benchmarks Track.
+year: 2022
+note: >-
+  Re-LAION-5B removed 2,236 links matched against hash lists from child-protection organizations,
+  leaving about 5.5 billion pairs. In Kneschke v. LAION the Hamburg Regional Court held in September
+  2024 that downloading images to build the dataset fell under Germany's text-and-data-mining
+  exception for scientific research; the Hanseatic Higher Regional Court dismissed the
+  photographer's appeal in December 2025.
+see_also:
+  - CLIP
+  - Stable Diffusion
+  - text-to-image model
+  - Common Crawl
+  - web scraping
+  - data provenance
+sources:
+  - text: >-
+      Schuhmann, C. et al. (2022). LAION-5B: An Open Large-Scale Dataset for Training Next
+      Generation Image-Text Models. NeurIPS 2022 Datasets and Benchmarks Track. arXiv:2210.08402.
+    url: https://arxiv.org/abs/2210.08402
+  - text: LAION (2024). Re-LAION-5B release announcement. LAION blog, 30 August 2024.
+    url: https://laion.ai/blog/relaion-5b/
+as_of: 2026-10

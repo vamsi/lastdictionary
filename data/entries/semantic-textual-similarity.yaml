@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semantic textual similarity
+id: semantic-textual-similarity
+pos: n.
+also:
+  - STS
+  - STS Benchmark
+  - STS-B
+  - STSb
+  - sentence similarity
+domain: llm
+domains:
+  - eval
+level: specialist
+plain: >-
+  How close two sentences are in meaning, scored from 'about different things' to 'say exactly the
+  same thing' — and the tests that check whether a computer's scores match people's judgments.
+senses:
+  - definition: >-
+      The task of predicting a graded score for how alike in meaning two short texts are, and the
+      family of [[benchmark|benchmarks]] built on it. In the SemEval shared tasks of 2012–2017,
+      annotators rated sentence pairs from sources such as news headlines, image captions, forum
+      posts and machine-translation output on a scale from 0 (different topics) to 5 (completely
+      equivalent), and systems were scored by the Pearson or Spearman [[correlation|correlation]]
+      between their predictions and the averaged human ratings. Unlike
+      [[natural-language-inference|natural language inference]], which asks whether one sentence
+      entails another, similarity is symmetric and graded. The STS Benchmark (STS-B), about 8,600
+      English pairs selected from those tasks, became part of [[glue|GLUE]], and STS tasks form one
+      category of the [[mteb|Massive Text Embedding Benchmark]]. Since
+      [[sentence-bert|Sentence-BERT]] (2019), STS has been a standard check on
+      [[text-embedding|sentence embeddings]], which are compared by [[cosine-similarity|cosine
+      similarity]]; a [[cross-encoder|cross-encoder]] that reads both sentences together is usually
+      more accurate but much slower.
+    example: >-
+      The new embedding model gains two points of Spearman correlation on STS-B but does no better
+      at retrieval.
+origin: >-
+  Introduced as a pilot shared task at SemEval-2012 by Eneko Agirre, Daniel Cer, Mona Diab and Aitor
+  Gonzalez-Agirre, building on earlier work on paraphrase identification. Annual tasks followed
+  until 2017, when Cer and colleagues assembled the STS Benchmark; GLUE (2018) and MTEB (2022)
+  carried it into general evaluation suites.
+year: 2012
+note: >-
+  Graded similarity is not agreement: a sentence and its negation share most of their content and
+  may be rated fairly similar. High STS scores do not reliably predict how well embeddings perform
+  in retrieval or clustering, one reason broader suites such as MTEB were built.
+see_also:
+  - text embedding
+  - Sentence-BERT
+  - cosine similarity
+  - MTEB
+  - GLUE
+  - semantic search
+  - cross-encoder
+contrast:
+  - natural language inference
+sources:
+  - text: >-
+      Agirre, E., Cer, D., Diab, M. & Gonzalez-Agirre, A. (2012). SemEval-2012 Task 6: A Pilot on
+      Semantic Textual Similarity. Proceedings of *SEM 2012.
+  - text: >-
+      Cer, D., Diab, M., Agirre, E., Lopez-Gazpio, I. & Specia, L. (2017). SemEval-2017 Task 1:
+      Semantic Textual Similarity Multilingual and Cross-lingual Focused Evaluation. Proceedings of
+      SemEval-2017.

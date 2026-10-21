@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: white-box attack
+id: white-box-attack
+pos: n.
+also:
+  - white-box adversary
+  - white-box setting
+domain: sec
+domains:
+  - dl
+level: specialist
+plain: >-
+  An attack in which the attacker can see everything about an AI model, including its internal
+  settings, and uses that knowledge to find its weak spots.
+senses:
+  - definition: >-
+      An attack under a [[threat-model|threat model]] in which the adversary knows the model's
+      architecture and [[weights|parameters]] — and usually its training procedure and any defense —
+      and can therefore compute [[gradient|gradients]] of the loss with respect to the input or
+      inspect internal [[activation|activations]]. White-box access permits the strongest
+      optimization-based attacks, such as [[fast-gradient-sign-method|FGSM]],
+      [[projected-gradient-descent-attack|PGD]], [[carlini-wagner-attack|Carlini–Wagner]] and
+      gradient-guided [[universal-adversarial-suffix|suffix searches]] against language models. It
+      is the standard setting for evaluating defenses, in the spirit of Kerckhoffs's principle that
+      security should not depend on the attacker's ignorance of the design, and it is the realistic
+      setting for [[open-weight-model|open-weight models]], which anyone can download.
+    example: >-
+      Because the weights are public, we evaluate the defense under a full white-box attack.
+origin: >-
+  Borrowed from software testing and security, where 'white-box' and 'black-box' describe analysis
+  with and without access to internals. The distinction became standard in adversarial machine
+  learning around 2016–2017, as papers separated gradient-based attacks from query-only ones.
+see_also:
+  - black-box attack
+  - threat model
+  - adversarial example
+  - gradient masking
+  - open-weight model
+contrast:
+  - black-box attack

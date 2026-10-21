@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: resolution
+id: resolution
+pos: n.
+also:
+  - resolution principle
+  - resolution refutation
+  - binary resolution
+  - SLD resolution
+  - resolvent
+domain: sym
+domains:
+  - math
+level: specialist
+plain: >-
+  A mechanical step of logical reasoning: from 'A or B' and 'not A or C', conclude 'B or C'.
+  Repeating it can demonstrate any conclusion that genuinely follows from what is known.
+senses:
+  - context: Logic
+    definition: >-
+      A rule of inference on clauses (disjunctions of literals): when one clause contains a literal
+      and another contains its negation, the two combine into a resolvent that drops the clashing
+      pair and keeps every other literal from both; in [[first-order-logic|first-order logic]] the
+      clashing literals must first be made identical by [[unification|unification]]. Resolution
+      refutation proves that a set of sentences entails a goal by converting the sentences and the
+      negated goal to clause form and deriving the empty clause, a contradiction. The method is
+      refutation-complete: whenever a clause set is unsatisfiable, the empty clause can be derived.
+      Strategies such as set-of-support, literal ordering and subsumption tame the otherwise
+      explosive search. SLD resolution, restricted to [[horn-clause|Horn clauses]], is the execution
+      mechanism of [[prolog|Prolog]], and modern [[boolean-satisfiability-problem|SAT]] solvers'
+      clause learning is a form of propositional resolution.
+    example: >-
+      Negate the goal, add it to the clauses, and keep resolving until the empty clause appears.
+formula_latex: \frac{A \lor B \qquad \neg A \lor C}{B \lor C}
+origin: >-
+  Introduced by J. Alan Robinson in 'A Machine-Oriented Logic Based on the Resolution Principle'
+  (Journal of the ACM, 1965), building on Herbrand's theorem and on the propositional procedure of
+  Martin Davis and Hilary Putnam (1960). Robert Kowalski's procedural reading of resolution in the
+  early 1970s led to [[logic-programming|logic programming]].
+year: 1965
+note: >-
+  Unrelated to image or display resolution (pixel count) and to coreference resolution in natural
+  language processing.
+see_also:
+  - automated theorem proving
+  - unification
+  - first-order logic
+  - Horn clause
+  - logic programming
+  - Boolean satisfiability problem
+sources:
+  - text: >-
+      Robinson, J. A. (1965). A Machine-Oriented Logic Based on the Resolution Principle. Journal of
+      the ACM 12(1), 23–41.

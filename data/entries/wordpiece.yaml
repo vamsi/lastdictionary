@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: WordPiece
+id: wordpiece
+pos: n.
+also:
+  - wordpieces
+  - word piece
+domain: llm
+domains:
+  - data
+level: specialist
+plain: >-
+  Google's method for splitting words into smaller known pieces, used by BERT. An unfamiliar word
+  such as 'unhappiness' might be broken into parts like 'un', '##happi' and '##ness'.
+senses:
+  - definition: >-
+      A subword [[tokenization|tokenization]] method created at Google, first for voice search and
+      now best known as the tokenizer of [[bert|BERT]]. Its vocabulary is built bottom-up from
+      single characters, as in [[byte-pair-encoding|byte-pair encoding]], but each merge is chosen
+      by how much it improves a unigram language model of the training text rather than by raw pair
+      frequency; in effect it favors pairs whose parts seldom occur apart. At inference, BERT's
+      implementation segments each word by greedy longest-match-first lookup, marks word-internal
+      continuation pieces with a '##' prefix, and maps anything it cannot segment to an
+      unknown-token symbol. BERT's English vocabulary had about 30,000 WordPieces. Open-source
+      trainers are reconstructions, since Google's own training code was never published.
+    example: The WordPiece vocabulary splits most chemical names into a dozen fragments.
+origin: >-
+  Introduced by Mike Schuster and Kaisuke Nakajima for Japanese and Korean voice search (ICASSP
+  2012), then used as 'wordpieces' in Google's neural machine translation system (2016) and in BERT
+  (2018).
+year: 2012
+see_also:
+  - tokenization
+  - byte-pair encoding
+  - SentencePiece
+  - BERT
+  - tokenizer
+  - vocabulary
+contrast:
+  - byte-pair encoding
+sources:
+  - text: >-
+      Schuster, M. & Nakajima, K. (2012). Japanese and Korean Voice Search. ICASSP 2012.
+  - text: >-
+      Wu, Y., Schuster, M., Chen, Z., Le, Q. V. et al. (2016). Google's Neural Machine Translation
+      System: Bridging the Gap between Human and Machine Translation. arXiv:1609.08144.
+    url: https://arxiv.org/abs/1609.08144

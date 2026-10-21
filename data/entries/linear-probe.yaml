@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: linear probe
+id: linear-probe
+pos: n.
+also:
+  - linear classifier probe
+  - linear probing
+  - difference-of-means probe
+domain: interp
+domains:
+  - llm
+  - safety
+level: core
+plain: >-
+  The simplest kind of probe: a straight-line classifier trained on an AI model's internal activity
+  to test whether some piece of information can be read off directly.
+senses:
+  - context: Interpretability
+    definition: >-
+      A [[probing|probing]] model consisting of a single linear (affine) map, usually followed by a
+      [[softmax|softmax]] or [[sigmoid-function|sigmoid]], trained on a network's frozen
+      [[activation|activations]] to predict a property. Its simplicity is the point: if a linear map
+      suffices, the information is not merely present but explicitly represented along a direction,
+      consistent with the [[linear-representation-hypothesis|linear representation hypothesis]], and
+      the probe's weight vector can serve as that direction for [[steering|steering]] or
+      [[concept-erasure|concept erasure]]. Variants include difference-of-means probes, which use
+      the direction between class averages, and unsupervised methods such as contrast-consistent
+      search. Linear probes are a low-cost way to monitor models for deception, harmful intent or
+      [[evaluation-awareness|evaluation awareness]], and have matched or beaten
+      [[sparse-autoencoder|sparse autoencoder]] features on some such detection tasks.
+    example: >-
+      A linear probe on layer 16 separates the model's true and false statements almost perfectly.
+  - context: Representation learning
+    definition: >-
+      An evaluation protocol for pretrained representations, common in self-supervised vision, in
+      which a linear classifier is trained on frozen features and its accuracy is reported as a
+      measure of representation quality, in contrast to full [[fine-tuning|fine-tuning]] of the
+      network.
+origin: >-
+  Named in Guillaume Alain and Yoshua Bengio's 'Understanding intermediate layers using linear
+  classifier probes' (October 2016). Linear evaluation of frozen features became a standard
+  benchmark in self-supervised vision in the late 2010s.
+year: 2016
+see_also:
+  - probing
+  - linear representation hypothesis
+  - concept erasure
+  - activation space
+  - steering vector
+  - eliciting latent knowledge
+sources:
+  - text: >-
+      Alain, G. & Bengio, Y. (2016). Understanding intermediate layers using linear classifier
+      probes. arXiv:1610.01644.
+    url: https://arxiv.org/abs/1610.01644
+  - text: >-
+      Burns, C., Ye, H., Klein, D. & Steinhardt, J. (2023). Discovering Latent Knowledge in Language
+      Models Without Supervision. ICLR 2023.

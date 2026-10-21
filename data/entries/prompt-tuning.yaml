@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt tuning
+id: prompt-tuning
+pos: n.
+also:
+  - soft prompt
+  - soft prompting
+  - soft prompt tuning
+  - continuous prompt
+domain: train
+domains:
+  - llm
+level: specialist
+plain: >-
+  Teaching a frozen language model a new task by learning a few made-up 'words' — lists of numbers
+  rather than real text — that are placed before the input to steer the model.
+senses:
+  - definition: >-
+      A [[parameter-efficient-fine-tuning|parameter-efficient fine-tuning]] method that learns a
+      small number of continuous [[embedding|embedding vectors]] — a soft prompt, typically 5 to 100
+      positions long — prepended to the embedded input of a frozen language model and trained by
+      [[backpropagation|backpropagation]] on labeled examples. Its vectors need not correspond to
+      any real word, and training can pack into them what a whole labeled dataset teaches; compared
+      with [[prefix-tuning|prefix tuning]], it touches only the input layer, which makes it simpler
+      and cheaper. Results depend strongly on size: on T5 models with billions of parameters it
+      reached the accuracy of tuning every weight and far exceeded GPT-3's few-shot prompting, while
+      one frozen model can serve many tasks by switching prompts. With small models it underperforms
+      other methods and can be unstable to train.
+    example: >-
+      A 20-token soft prompt got the frozen 11B model within a point of full fine-tuning on our
+      classification task.
+origin: >-
+  Introduced by Brian Lester, Rami Al-Rfou and Noah Constant of Google in April 2021 (EMNLP 2021) as
+  a simplification of prefix tuning; P-tuning (Xiao Liu and colleagues, March 2021) explored similar
+  continuous prompts at about the same time.
+year: 2021
+note: >-
+  Not the same as [[prompt-engineering|prompt engineering]] or automatic prompt optimization, which
+  search over readable text; the phrase is sometimes misused for manual prompt iteration. Distinct
+  from [[instruction-tuning|instruction tuning]], which updates the model's weights.
+see_also:
+  - prefix tuning
+  - parameter-efficient fine-tuning
+  - prompt engineering
+  - embedding
+  - instruction tuning
+  - few-shot prompting
+contrast:
+  - prompt engineering
+  - instruction tuning
+sources:
+  - text: >-
+      Lester, B., Al-Rfou, R. & Constant, N. (2021). The Power of Scale for Parameter-Efficient
+      Prompt Tuning. EMNLP 2021. arXiv:2104.08691.
+    url: https://arxiv.org/abs/2104.08691

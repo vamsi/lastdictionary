@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: universal adversarial suffix
+id: universal-adversarial-suffix
+pos: n.
+also:
+  - adversarial suffix
+  - GCG
+  - Greedy Coordinate Gradient
+  - GCG attack
+domain: sec
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  A string of odd-looking characters, found by computer search, that makes many different chatbots
+  answer forbidden requests when it is tacked onto the end of them.
+senses:
+  - definition: >-
+      A sequence of [[token|tokens]], usually unreadable to humans, optimized so that appending it
+      to many different harmful requests makes an aligned [[large-language-model|language model]]
+      comply. The standard method, Greedy Coordinate Gradient (GCG), uses
+      [[white-box-attack|white-box]] gradients to propose promising single-token substitutions and
+      keeps those that most increase the probability of an affirmative opening to the response;
+      optimizing across many prompts and several open models yields suffixes that are universal
+      across requests and often transfer to closed commercial models. The attack showed that
+      [[adversarial-example|adversarial examples]] carry over to discrete text. Because such
+      suffixes have high perplexity, simple filters catch many of them, but later variants optimize
+      for fluency, and the work spurred research on [[adversarial-training|adversarial training]]
+      and [[circuit-breakers|circuit breakers]] for language models.
+    example: >-
+      A suffix optimized against two open models also raised the closed model's compliance rate.
+origin: >-
+  Introduced by Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter and Matt
+  Fredrikson in 'Universal and Transferable Adversarial Attacks on Aligned Language Models' (arXiv
+  July 2023), from Carnegie Mellon University, the Center for AI Safety and Google DeepMind.
+  Providers blocked the published suffixes, but the method could generate new ones.
+year: 2023
+see_also:
+  - jailbreak
+  - adversarial example
+  - universal adversarial perturbation
+  - white-box attack
+  - HarmBench
+  - circuit breakers
+sources:
+  - text: >-
+      Zou, A., Wang, Z., Carlini, N., Nasr, M., Kolter, J. Z. & Fredrikson, M. (2023). Universal and
+      Transferable Adversarial Attacks on Aligned Language Models. arXiv:2307.15043.

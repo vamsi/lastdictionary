@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pelican on a bicycle
+id: pelican-on-a-bicycle
+pos: n.
+also:
+  - pelican riding a bicycle
+  - pelican benchmark
+  - pelican test
+domain: culture
+domains:
+  - eval
+  - llm
+labels:
+  - informal
+level: specialist
+plain: >-
+  A joke test in which an AI model is asked to draw, by writing code, a pelican riding a bicycle;
+  comparing the results became a popular, lighthearted way to judge each new model.
+senses:
+  - definition: >-
+      An informal benchmark in which a language model is asked to produce an SVG (Scalable Vector
+      Graphics) image of a pelican riding a bicycle — a text-only task requiring the model to write
+      drawing code for a scene it cannot see. The test probes spatial reasoning, composition and
+      code generation at once, and its absurd subject was chosen so that ready-made examples were
+      unlikely to exist in [[training-data|training data]]. The results, often comic (detached
+      wheels, pelicans hovering beside the frame), became a fixture of commentary on model launches.
+      Its creator presents it as a joke that nonetheless tracks overall model quality surprisingly
+      well, and has warned that its fame invites [[benchmaxxing|targeted optimization]], suggesting
+      other animal-and-vehicle pairings as checks.
+    example: Forget the leaderboard — how's its pelican on a bicycle?
+origin: >-
+  Created by the British programmer Simon Willison, who rolled it out in a blog post of 25 October
+  2024 comparing the output of 16 models given the prompt 'Generate an SVG of a pelican riding a
+  bicycle'. He has since run it on most major model releases, and it became one of the best-known
+  informal AI tests.
+year: 2024
+see_also:
+  - vibe check
+  - benchmark
+  - Will Smith eating spaghetti
+  - benchmaxxing
+  - jagged intelligence
+  - data contamination
+sources:
+  - text: >-
+      Willison, S. (2024). Pelicans on a bicycle. Simon Willison's Weblog, 25 October 2024.
+    url: https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/

@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: training step
+id: training-step
+pos: n.
+also:
+  - step
+  - iteration
+  - update step
+  - optimizer step
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  One round of learning: the model makes predictions on a small batch of examples, measures its
+  error and adjusts its settings once. Training runs consist of thousands to millions of steps.
+senses:
+  - definition: >-
+      A single parameter update in iterative training: a [[forward-pass|forward pass]] on one
+      [[mini-batch|mini-batch]], computation of the [[loss-function|loss]], a
+      [[backward-pass|backward pass]] to obtain gradients, and one application of the
+      [[optimizer|optimizer]]'s update rule, after which gradients are reset. Steps are the basic
+      clock of a [[training-run|training run]]: [[learning-rate-schedule|learning-rate schedules]],
+      [[learning-rate-warmup|warmup]], logging, evaluation and [[checkpoint|checkpointing]] are
+      specified in steps, and total training compute is roughly steps × batch size × cost per
+      example. With [[gradient-accumulation|gradient accumulation]], one optimizer step spans
+      several micro-batch forward and backward passes, so frameworks distinguish micro-steps from
+      optimizer steps and reports should say which they count. In
+      [[reinforcement-learning|reinforcement learning]], a 'step' more often means one interaction
+      with the [[environment|environment]], a different unit.
+    example: The loss spike at step 41,000 coincided with a corrupted data shard.
+origin: >-
+  Inherited from numerical optimization, where each iteration of a method such as gradient descent
+  takes a 'step' of some size — hence 'step size' for the learning rate. The step displaced the
+  epoch as the standard unit of training progress once datasets became too large to traverse many
+  times.
+see_also:
+  - training loop
+  - epoch
+  - mini-batch
+  - gradient accumulation
+  - learning rate
+  - optimizer
+contrast:
+  - epoch

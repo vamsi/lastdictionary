@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: structured access
+id: structured-access
+pos: n.
+domain: safety
+domains:
+  - gov
+  - sec
+level: specialist
+plain: >-
+  Letting people use an AI system through a controlled channel, such as a website or programming
+  interface, instead of handing over the model itself, so that the developer can limit misuse.
+senses:
+  - definition: >-
+      An approach to releasing AI systems in which the developer offers mediated access — through a
+      web interface or [[model-api|API]] — instead of distributing the model's [[weights|weights]],
+      keeping control over how, by whom and for what the system is used. Controls can include usage
+      policies, rate limits, identity verification and tiered access for vetted users, abuse
+      monitoring, input and output [[safety-classifier|classifiers]], and the ability to update or
+      withdraw the model. For researchers, structured access can be extended to deeper interfaces —
+      fine-tuning, activations or gradients — without releasing weights. It occupies the middle of a
+      spectrum between closed and [[open-weight-model|open-weight]] release; supporters see it as a
+      way to share benefits while keeping safeguards enforceable, while critics argue it
+      concentrates power and limits independent scrutiny.
+    example: >-
+      Researchers got structured access to activations through a hosted interface, never the weights
+      themselves.
+origin: >-
+  Introduced by Toby Shevlane in 'Structured access: an emerging paradigm for safe AI deployment'
+  (2022), a chapter for The Oxford Handbook of AI Governance, which took OpenAI's API-only release
+  of GPT-3 in 2020 as a paradigm case.
+year: 2022
+note: >-
+  Structured access concerns the channel; [[staged-deployment|staged deployment]] concerns the
+  timing. It depends on [[model-weight-security|model weight security]]: once weights leak, access
+  can no longer be structured.
+see_also:
+  - staged deployment
+  - open-weight model
+  - model API
+  - model weight security
+  - misuse
+  - know-your-customer for compute
+contrast:
+  - open-weight model
+sources:
+  - text: >-
+      Shevlane, T. (2022). Structured access: an emerging paradigm for safe AI deployment. In The
+      Oxford Handbook of AI Governance. Oxford University Press.

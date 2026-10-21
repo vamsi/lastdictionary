@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: OpenAI Five
+id: openai-five
+pos: prop. n.
+domain: rl
+domains:
+  - hist
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A team of five AI players built by OpenAI that learned the team video game Dota 2 by playing
+  against itself, and in April 2019 beat the reigning world-champion human team.
+senses:
+  - definition: >-
+      A system of five neural-network agents, one per hero, that played the multiplayer battle-arena
+      game Dota 2, trained with [[proximal-policy-optimization|proximal policy optimization]]
+      entirely by [[self-play|self-play]] at very large scale. Each agent's policy was a recurrent
+      [[long-short-term-memory|LSTM]] network that read the game state through the game's
+      programmatic interface and acted every few frames across games lasting tens of thousands of
+      steps. A 'team spirit' parameter blended individual and shared rewards, and training ran
+      almost continuously for about ten months on a large cluster of GPUs and CPUs, using 'surgery'
+      techniques to continue training as the network and the game itself changed. The system beat
+      the world-champion team OG 2–0 in April 2019 and then won more than 99 percent of several
+      thousand games against the public. It played a restricted pool of heroes and items, but showed
+      that existing algorithms, scaled up, could cope with long horizons, partial observability and
+      team coordination.
+    example: >-
+      Our agents share a 'team spirit' coefficient, as in OpenAI Five, so they learn to sacrifice
+      for teammates.
+origin: >-
+  Developed by OpenAI from 2017, after a one-on-one bot beat professional players at The
+  International 2017. The five-player system lost two exhibition games to professional teams at The
+  International 2018 before beating OG at the OpenAI Five Finals in April 2019; Christopher Berner
+  and colleagues described it in 'Dota 2 with Large Scale Deep Reinforcement Learning' (December
+  2019).
+year: 2018
+see_also:
+  - self-play
+  - proximal policy optimization
+  - multi-agent reinforcement learning
+  - deep reinforcement learning
+  - AlphaStar
+sources:
+  - text: >-
+      Berner, C. et al. (2019). Dota 2 with Large Scale Deep Reinforcement Learning.
+      arXiv:1912.06680.

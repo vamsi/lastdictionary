@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: function calling
+id: function-calling
+pos: n.
+also:
+  - tool calling
+  - native function calling
+  - parallel function calling
+domain: agents
+domains:
+  - llm
+  - eng
+level: core
+plain: >-
+  A feature of AI model services that lets the model reply with a neatly formatted request to run
+  one of a program's functions, rather than with ordinary text; the program, not the model, then
+  runs it.
+senses:
+  - definition: >-
+      An API feature that lets a [[large-language-model|large language model]] answer with a
+      machine-readable request to run code instead of, or alongside, prose: the developer lists the
+      available functions, each with a name, a statement of purpose and a [[json-schema|JSON
+      Schema]] for its parameters, and the model may return the name of one plus arguments that fit
+      its schema. Running the function is left to the application, which checks the arguments,
+      executes the call and passes the result back in a follow-up message so the model can continue.
+      Function calling is the mechanism beneath most [[tool-use|tool use]] and [[ai-agent|agents]];
+      refinements include forcing or forbidding calls, several calls in one turn (parallel function
+      calling) and guaranteed schema adherence through [[constrained-decoding|constrained
+      decoding]]. Models are fine-tuned on call formats, so reliability varies between models and
+      falls as the number of functions grows or their descriptions get vaguer.
+    example: >-
+      We use function calling to turn a booking request into a call to reserve_table with party size
+      and time filled in.
+origin: >-
+  Introduced under this name by OpenAI on 13 June 2023 for its gpt-4-0613 and gpt-3.5-turbo-0613
+  models, which accepted functions described in JSON Schema and returned a JSON object of arguments.
+  Anthropic, Google and open-weight model families shipped equivalent 'tool use' features in
+  2023–2024, and 'function calling' and 'tool calling' became interchangeable.
+year: 2023
+note: >-
+  Not the same as [[structured-outputs|structured outputs]] or [[json-mode|JSON mode]], which
+  constrain the format of a whole response; with function calling the model chooses whether and
+  which function to call. The [[model-context-protocol|Model Context Protocol]] standardizes how
+  tools are served; function calling is how a model requests them.
+see_also:
+  - tool call
+  - tool use
+  - tool
+  - structured outputs
+  - JSON Schema
+  - Model Context Protocol
+  - constrained decoding
+contrast:
+  - structured outputs
+  - JSON mode
+sources:
+  - text: >-
+      OpenAI (2023). Function calling and other API updates. OpenAI blog, 13 June 2023.
+    url: https://openai.com/index/function-calling-and-other-api-updates

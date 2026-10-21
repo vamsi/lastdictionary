@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: kernel
+id: kernel
+pos: n.
+also:
+  - kernels
+  - kernel function
+  - GPU kernel
+  - convolution kernel
+  - compute kernel
+domain: core
+domains:
+  - ml
+  - hw
+  - math
+level: core
+plain: >-
+  A word with several AI meanings: a similarity measure used by some learning methods; a small grid
+  of numbers that scans an image inside a neural network; or a small program that runs on a GPU.
+senses:
+  - context: Kernel methods
+    definition: >-
+      A function k(x, x′) that measures the similarity of two inputs as an inner product in some,
+      possibly infinite-dimensional, feature space without computing that space explicitly; by
+      Mercer's theorem, any symmetric positive semidefinite function qualifies. Substituting a
+      kernel for dot products, the [[kernel-trick|kernel trick]], lets linear methods such as
+      [[support-vector-machine|support vector machines]], kernel ridge regression and kernel PCA
+      learn nonlinear patterns. Common choices are polynomial and Gaussian (radial basis function)
+      kernels. [[gaussian-process|Gaussian processes]] use kernels as covariance functions, and the
+      [[neural-tangent-kernel|neural tangent kernel]] describes the training of very wide neural
+      networks.
+  - context: Convolutional networks
+    definition: >-
+      The small array of learnable weights, for example 3 × 3 per input channel, that a
+      [[convolution|convolution]] slides across an input to compute a [[feature-map|feature map]];
+      also called a [[filter|filter]]. The kernel size sets the local [[receptive-field|receptive
+      field]] of each output unit.
+  - context: GPU computing
+    definition: >-
+      A small program that an accelerator such as a [[gpu|GPU]] runs as thousands of parallel
+      threads, each handling a slice of the data: for example a matrix multiplication or an
+      attention computation. Hand-optimized kernels, written in [[cuda|CUDA]] or [[triton|Triton]],
+      largely determine the speed of training and inference; [[flashattention|FlashAttention]] and
+      [[kernel-fusion|kernel fusion]], which merges several operations into one kernel to save
+      memory traffic, are examples.
+    example: >-
+      Rewriting the attention kernel cut inference latency by a third without touching the model.
+  - context: Other senses
+    definition: >-
+      In statistics, a weighting function used in kernel density estimation and smoothing. In
+      operating systems, the core program that manages hardware and processes; in Jupyter notebooks,
+      the process that executes code; in linear algebra, the null space of a matrix, meaning the
+      vectors it maps to zero.
+formula_latex: k(\mathbf{x}, \mathbf{x}') = \langle \varphi(\mathbf{x}), \varphi(\mathbf{x}')
+  \rangle, \qquad k_{\mathrm{RBF}}(\mathbf{x}, \mathbf{x}') = \exp\left(-\frac{\lVert \mathbf{x} -
+  \mathbf{x}' \rVert^2}{2\sigma^2}\right)
+origin: >-
+  From Old English cyrnel, 'seed, core'. The mathematical sense comes from integral equations: Ivar
+  Fredholm (1903, French noyau) and David Hilbert (1904, German Kern) named the function inside an
+  integral operator its kernel. James Mercer's 1909 theorem underlies kernel methods; Mark Aizerman
+  and colleagues used kernels as feature-space inner products in pattern recognition in 1964, and
+  Bernhard Boser, Isabelle Guyon and Vladimir Vapnik's 1992 support-vector paper made them central
+  to machine learning. The GPU sense comes from stream processing and spread with NVIDIA's CUDA
+  (2007).
+note: >-
+  The senses are unrelated except through the root idea of a small core: 'kernel' in a
+  convolutional-network paper and in an inference-engineering post mean entirely different things.
+see_also:
+  - kernel trick
+  - support vector machine
+  - convolution
+  - filter
+  - CUDA
+  - kernel fusion
+  - Gaussian process
+  - neural tangent kernel
+sources:
+  - text: >-
+      Boser, B. E., Guyon, I. M. & Vapnik, V. N. (1992). A Training Algorithm for Optimal Margin
+      Classifiers. Proceedings of COLT 1992.
+  - text: Schölkopf, B. & Smola, A. J. (2002). Learning with Kernels. MIT Press.

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: stochastic parrot
+id: stochastic-parrot
+pos: n.
+also:
+  - stochastic parrots
+domain: culture
+domains:
+  - llm
+  - society
+  - mind
+labels:
+  - figurative
+  - contested
+level: essential
+plain: >-
+  A critical label for AI language systems, likening them to parrots that echo patterns in the text
+  they were trained on, fluently but with no grasp of what the words mean.
+senses:
+  - definition: >-
+      A characterization of [[large-language-model|large language models]] that denies them
+      understanding. Its coiners pictured such a model as 'haphazardly stitching together sequences
+      of linguistic forms' from its training data according to how they tend to co-occur, with no
+      access to meaning or to anyone's intentions, so that whatever coherence a reader finds in the
+      output is the reader's own contribution; they paired the image with warnings about the
+      environmental and financial cost of ever-larger models, undocumented training data and encoded
+      [[bias|bias]]. The phrase became the standard shorthand for the skeptical side of the debate
+      over whether LLMs understand language. Opponents point to evidence that models build internal
+      [[world-model|world models]] and generalize in ways simple parroting cannot explain; defenders
+      reply that such evidence is contested and that fluency is easily mistaken for comprehension.
+    example: >-
+      Calling it a stochastic parrot does not explain how it solved a problem that appears nowhere
+      online.
+origin: >-
+  Coined by Emily M. Bender, Timnit Gebru, Angelina McMillan-Major and Margaret Mitchell (credited
+  as 'Shmargaret Shmitchell') in 'On the Dangers of Stochastic Parrots: Can Language Models Be Too
+  Big?', presented at the ACM FAccT conference in March 2021. Google's objections to the paper
+  preceded the departures of Gebru (December 2020) and Mitchell (February 2021), which made the
+  phrase widely known; ChatGPT's release in 2022 made it ubiquitous.
+year: 2021
+note: >-
+  Sometimes adopted ironically: in December 2022 OpenAI's Sam Altman posted that he, and everyone,
+  was a stochastic parrot. Related dismissive terms include [[fancy-autocomplete|fancy
+  autocomplete]].
+see_also:
+  - fancy autocomplete
+  - Emily M. Bender
+  - Timnit Gebru
+  - Chinese room
+  - world model
+  - ELIZA effect
+  - Potemkin understanding
+sources:
+  - text: >-
+      Bender, E. M., Gebru, T., McMillan-Major, A. & Shmitchell, S. (2021). On the Dangers of
+      Stochastic Parrots: Can Language Models Be Too Big? Proceedings of FAccT 2021, ACM.

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Transformers
+id: transformers
+pos: prop. n.
+also:
+  - Hugging Face Transformers
+  - transformers library
+  - pytorch-transformers
+  - pytorch-pretrained-bert
+domain: eng
+domains:
+  - llm
+  - dl
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free software library from Hugging Face that lets programmers download and use thousands of
+  ready-trained AI models for text, images and sound with a few lines of code.
+senses:
+  - definition: >-
+      [[hugging-face|Hugging Face]]'s open-source Python library of model implementations, chiefly
+      [[transformer|transformer]] architectures, together with the code to fetch pretrained weights
+      from the Hugging Face Hub and to run [[inference|inference]] with them or
+      [[fine-tuning|fine-tune]] them. Auto classes such as AutoModel and AutoTokenizer load the
+      right architecture and [[tokenizer|tokenizer]] from a model identifier with from_pretrained;
+      the high-level pipeline function wraps preprocessing, model call and postprocessing for common
+      tasks; and a Trainer class handles training loops. It covers language, vision, speech and
+      multimodal models — more than 400 architectures by late 2025 — and its model definitions serve
+      as reference implementations on which serving engines such as [[vllm|vLLM]] and
+      [[sglang|SGLang]], training libraries and conversion tools rely. The library favors readable,
+      self-contained model files over shared abstractions, a choice that eases experimentation at
+      the cost of duplicated code. Version 5 (December 2025) made PyTorch its sole backend, dropping
+      TensorFlow and Flax.
+    example: >-
+      Load the checkpoint with Transformers, check a few generations, then hand it to vLLM for
+      serving.
+origin: >-
+  Began in November 2018 as pytorch-pretrained-bert, Thomas Wolf's PyTorch port of Google's
+  [[bert|BERT]]; it was renamed pytorch-transformers in July 2019 and Transformers in September
+  2019, when TensorFlow support was added. Wolf and colleagues described the system in an EMNLP 2020
+  demonstration paper.
+year: 2018
+note: >-
+  Capitalized and plural, it names the library; lowercase 'transformer' names the neural-network
+  architecture. Models that ship their own code load only with the option trust_remote_code, which
+  runs that code locally and should be reserved for trusted sources.
+see_also:
+  - Hugging Face
+  - transformer
+  - PyTorch
+  - safetensors
+  - tokenizer
+  - fine-tuning
+contrast:
+  - transformer
+sources:
+  - text: >-
+      Wolf, T. et al. (2020). Transformers: State-of-the-Art Natural Language Processing.
+      Proceedings of EMNLP 2020: System Demonstrations.
+  - text: >-
+      Hugging Face (2025). Transformers v5: Simple model definitions powering the AI ecosystem.
+      Hugging Face blog, 1 December 2025.
+    url: https://huggingface.co/blog/transformers-v5
+as_of: 2026-10

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neural Turing machine
+id: neural-turing-machine
+pos: n.
+also:
+  - NTM
+  - differentiable neural computer
+  - DNC
+  - memory-augmented neural network
+  - MANN
+domain: dl
+domains:
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  A neural network attached to an external memory bank that it learns to read from and write to, an
+  early attempt to give networks something like a computer's working memory.
+senses:
+  - definition: >-
+      A [[recurrent-neural-network|recurrent]] controller coupled to a separate memory matrix that
+      it learns to read and write. Every memory access is soft, a weighted blend over rows rather
+      than a hard choice, so the whole system is differentiable and the controller can learn by
+      [[gradient-descent|gradient descent]] where to look and what to store. Its read and write
+      'heads' locate rows by content (a softmax-normalized similarity between a key emitted by the
+      controller and each row) and by location (shifting focus from the previous position), and
+      write through erase and add vectors. In its first tests the machine learned to duplicate an
+      input sequence, to sort items by priority and to retrieve the item paired with a cue, and its
+      solutions carried over to longer sequences than an [[long-short-term-memory|LSTM]]'s did. Its
+      successor, the differentiable neural computer (2016), added dynamic memory allocation and
+      temporal links and solved graph-traversal tasks. Such memory-augmented networks developed
+      alongside the content-based [[attention|attention]] later central to
+      [[transformer|transformers]] and foreshadowed retrieval-augmented models, but are now rarely
+      used.
+    example: >-
+      The neural Turing machine learned to copy sequences twice as long as any it saw in training.
+origin: >-
+  Introduced by Alex Graves, Greg Wayne and Ivo Danihelka of DeepMind in 'Neural Turing Machines'
+  (arXiv, October 2014), named by analogy with Alan Turing's abstract machine and its unbounded
+  tape. The differentiable neural computer followed in Nature in October 2016 (Graves and
+  colleagues).
+year: 2014
+see_also:
+  - attention
+  - recurrent neural network
+  - long short-term memory
+  - agent memory
+  - retrieval-augmented generation
+sources:
+  - text: >-
+      Graves, A., Wayne, G. & Danihelka, I. (2014). Neural Turing Machines. arXiv:1410.5401.
+  - text: >-
+      Graves, A. et al. (2016). Hybrid Computing Using a Neural Network with Dynamic External
+      Memory. Nature, 538, 471–476.

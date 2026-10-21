@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: knowledge graph embedding
+id: knowledge-graph-embedding
+pos: n.
+also:
+  - KGE
+  - TransE
+  - knowledge graph completion
+  - knowledge base completion
+  - link prediction
+domain: sym
+domains:
+  - ml
+  - dl
+level: specialist
+plain: >-
+  A way of turning the things and relations in a knowledge graph into lists of numbers, so a
+  computer can guess missing facts from patterns, such as predicting where someone was born.
+senses:
+  - definition: >-
+      A method that maps each entity and relation of a [[knowledge-graph|knowledge graph]] to a
+      low-dimensional vector (or matrix), trained so that a scoring function gives high scores to
+      true triples and low scores to corrupted ones. In TransE, a relation acts as a translation:
+      for a true triple (h, r, t), the head's [[embedding|embedding]] plus the relation's should lie
+      close to the tail's. Other models use rotations in complex space (RotatE), bilinear products
+      (RESCAL, DistMult, ComplEx), or convolutional and [[graph-neural-network|graph neural
+      network]] encoders. Learned embeddings support link prediction (knowledge-graph completion),
+      entity resolution, recommendation and question answering, and inject relational structure into
+      neural models. Evaluation usually ranks the true answer among all candidates, reporting mean
+      reciprocal rank and Hits@10 on benchmarks such as FB15k-237 and WN18RR.
+formula_latex: f(h, r, t) = -\lVert \mathbf{h} + \mathbf{r} - \mathbf{t} \rVert
+origin: >-
+  Antoine Bordes and colleagues introduced TransE in 2013, following tensor-factorization approaches
+  such as Maximilian Nickel, Volker Tresp and Hans-Peter Kriegel's RESCAL (2011). Kristina Toutanova
+  and Danqi Chen (2015) and Tim Dettmers and colleagues (2018) built the harder FB15k-237 and WN18RR
+  benchmarks after finding test leakage in earlier ones.
+year: 2013
+see_also:
+  - knowledge graph
+  - embedding
+  - graph neural network
+  - neuro-symbolic AI
+  - Wikidata
+sources:
+  - text: >-
+      Bordes, A., Usunier, N., García-Durán, A., Weston, J. & Yakhnenko, O. (2013). Translating
+      Embeddings for Modeling Multi-relational Data. Advances in Neural Information Processing
+      Systems 26.
+  - text: >-
+      Nickel, M., Tresp, V. & Kriegel, H.-P. (2011). A Three-Way Model for Collective Learning on
+      Multi-Relational Data. Proceedings of ICML 2011.

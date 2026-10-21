@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MYCIN
+id: mycin
+pos: prop. n.
+also:
+  - EMYCIN
+pronunciation: MY-sin
+domain: hist
+domains:
+  - sym
+labels:
+  - historical
+level: core
+plain: >-
+  A 1970s Stanford program that advised doctors on blood infections and antibiotics by applying
+  hundreds of if–then rules from specialists. It performed about as well as experts but was never
+  used on patients.
+senses:
+  - definition: >-
+      A [[rule-based-system|rule-based]] [[expert-system|expert system]] built at Stanford
+      University in the 1970s to advise physicians treating serious bacterial infections, such as
+      bacteremia and meningitis, on the likely organism and on which antibiotics to give at what
+      doses. It held several hundred if–then rules gathered from infectious-disease specialists and
+      applied them by [[backward-chaining|backward chaining]]: its [[inference-engine|inference
+      engine]] started from candidate diagnoses and questioned the physician whenever it needed a
+      fact. Uncertain evidence was handled by attaching a certainty factor to each rule and
+      combining these with an ad hoc calculus rather than probability theory, and the system could
+      justify itself by answering why-and-how questions about the rules it had used. In a blinded
+      comparison published in 1979, evaluators found its treatment recommendations acceptable at
+      least as often as those of Stanford infectious-disease faculty. It never entered clinical use,
+      held back by problems of integration, liability and ethics.
+    example: >-
+      MYCIN's certainty factors were an early, informal answer to the problem of reasoning under
+      uncertainty.
+origin: >-
+  Created by Edward Shortliffe for his doctoral work, with Bruce Buchanan, Stanley Cohen and others,
+  and described in his book Computer-Based Medical Consultations: MYCIN (1976). The name comes from
+  the suffix -mycin of many antibiotic names. Its domain-independent shell, EMYCIN ('Essential
+  MYCIN'), became a template for later expert systems.
+year: 1974
+see_also:
+  - expert system
+  - DENDRAL
+  - backward chaining
+  - inference engine
+  - knowledge base
+  - rule-based system
+sources:
+  - text: >-
+      Shortliffe, E. H. (1976). Computer-Based Medical Consultations: MYCIN. New York: Elsevier.
+  - text: >-
+      Buchanan, B. G. & Shortliffe, E. H. (eds.) (1984). Rule-Based Expert Systems: The MYCIN
+      Experiments of the Stanford Heuristic Programming Project. Reading, MA: Addison-Wesley.

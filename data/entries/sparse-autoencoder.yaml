@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sparse autoencoder
+id: sparse-autoencoder
+pos: n.
+also:
+  - SAE
+  - SAEs
+  - TopK SAE
+  - JumpReLU SAE
+  - dead latent
+domain: interp
+domains:
+  - dl
+  - safety
+level: core
+plain: >-
+  A small add-on network trained to break an AI model's tangled internal signals into a much larger
+  set of simpler pieces, most of which can be labeled with an understandable concept.
+senses:
+  - context: Interpretability
+    definition: >-
+      An [[autoencoder|autoencoder]] with a single hidden layer much wider than its input, trained
+      to reconstruct a model's [[activation|activations]] while keeping that hidden layer sparse, so
+      that each activation is approximated by a few learned directions (features or latents) drawn
+      from a large dictionary. The encoder is usually a linear map followed by a ReLU, JumpReLU or
+      TopK nonlinearity; the decoder is linear, and its columns are the feature directions. Training
+      minimizes reconstruction error plus a sparsity penalty (an L1 norm, an approximation to the L0
+      count, or a hard limit of k active latents). SAEs are the main practical tool of
+      [[dictionary-learning|dictionary learning]] for undoing [[superposition|superposition]], with
+      dictionaries of thousands to tens of millions of latents trained on production models. Known
+      problems include dead latents that never fire, [[feature-splitting|feature splitting]],
+      [[feature-absorption|feature absorption]], unexplained reconstruction error ('dark matter')
+      and uneven usefulness on downstream tasks: in 2025 Google DeepMind's interpretability team
+      reported that simple [[linear-probe|linear probes]] beat SAE-based probes at detecting harmful
+      intent in user prompts and deprioritized SAE research.
+    example: >-
+      We trained a 65,000-latent SAE on layer 20, and most of the top features were cleanly
+      interpretable.
+  - context: Deep learning (general)
+    definition: >-
+      Any autoencoder whose hidden code is encouraged to be sparse, used from the mid-2000s for
+      unsupervised feature learning and as a building block for pretraining early deep networks,
+      before interpretability adopted the name.
+origin: >-
+  Sparse autoencoders for feature learning date to the mid-2000s (e.g., Marc'Aurelio Ranzato, Yann
+  LeCun and colleagues, 2006–2007) and Andrew Ng's widely used 2011 lecture notes. Their use against
+  superposition was proposed by Lee Sharkey, Dan Braun and Beren Millidge (December 2022) and
+  demonstrated on language models by Hoagy Cunningham and colleagues and by Anthropic's 'Towards
+  Monosemanticity' (both 2023).
+year: 2022
+note: >-
+  Variants include gated, JumpReLU, TopK, BatchTopK and Matryoshka SAEs, the last using nested
+  dictionaries to reduce absorption. [[transcoder|Transcoders]] and [[crosscoder|crosscoders]] are
+  close relatives that predict a later layer or span several layers. Open SAE suites include Google
+  DeepMind's Gemma Scope (2024).
+see_also:
+  - dictionary learning
+  - superposition
+  - feature (interpretability)
+  - transcoder
+  - crosscoder
+  - feature splitting
+  - feature absorption
+  - Neuronpedia
+contrast:
+  - linear probe
+sources:
+  - text: >-
+      Cunningham, H., Ewart, A., Riggs, L., Huben, R. & Sharkey, L. (2023). Sparse Autoencoders Find
+      Highly Interpretable Features in Language Models. ICLR 2024.
+  - text: >-
+      Bricken, T., Templeton, A., Batson, J. et al. (2023). Towards Monosemanticity: Decomposing
+      Language Models With Dictionary Learning. Transformer Circuits Thread.
+  - text: >-
+      Gao, L., Dupré la Tour, T., Tillman, H. et al. (2024). Scaling and Evaluating Sparse
+      Autoencoders. arXiv preprint (OpenAI).
+as_of: 2026-10

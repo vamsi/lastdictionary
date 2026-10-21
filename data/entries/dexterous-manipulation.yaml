@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dexterous manipulation
+id: dexterous-manipulation
+pos: n.
+also:
+  - dexterity
+  - in-hand manipulation
+  - dexterous hand
+  - multi-fingered manipulation
+domain: robot
+domains:
+  - rl
+level: specialist
+plain: >-
+  Skilled handling of objects with robot fingers, such as spinning a pen, turning a key or rotating
+  a cube in one hand: the fine finger work people do without thinking.
+senses:
+  - definition: >-
+      [[manipulation|Manipulation]] that controls an object's position and orientation through
+      coordinated, often changing contacts, typically with multi-fingered hands, rather than by
+      clamping it rigidly: in-hand reorientation, finger gaiting, rolling or sliding an object
+      between fingers, and using tools such as scissors or keys. It is among the hardest problems in
+      [[robotics|robotics]]. A human hand has more than 20 [[degrees-of-freedom|degrees of
+      freedom]]; intermittent contacts, friction and occlusion make planning and state estimation
+      difficult; and hardware is fragile and costly. Model-based approaches plan contact sequences
+      with [[trajectory-optimization|trajectory optimization]]. Learning approaches train policies
+      with [[reinforcement-learning|reinforcement learning]] in simulation and transfer them using
+      [[domain-randomization|domain randomization]] — as in OpenAI's Dactyl, which reoriented a
+      block (2018) and solved a Rubik's Cube one-handed (2019) — or learn from human demonstrations
+      captured by [[teleoperation|teleoperation]] and data gloves. [[tactile-sensing|Tactile
+      sensing]] is widely seen as essential. By 2025–2026
+      [[vision-language-action-model|vision-language-action models]] were also being used to drive
+      multi-fingered hands on [[humanoid-robot|humanoids]], though reliability on harder tasks
+      remained far below human levels.
+    example: >-
+      Dexterous manipulation is where our sim-to-real pipeline still breaks: the fingers slip on
+      real plastic.
+origin: >-
+  Studied from the early 1980s with research hands such as the Stanford/JPL hand (Kenneth Salisbury)
+  and the Utah/MIT hand; the phrase was established in robotics by the late 1980s. Interest surged
+  after OpenAI's 'Learning Dexterous In-Hand Manipulation' (2018) showed reinforcement learning in
+  simulation transferring to a Shadow robotic hand.
+note: >-
+  In product marketing 'dexterity' often means skilled two-armed work with simple grippers;
+  researchers reserve 'dexterous manipulation' mainly for multi-contact, in-hand control.
+see_also:
+  - manipulation
+  - grasping
+  - tactile sensing
+  - domain randomization
+  - sim-to-real transfer
+  - humanoid robot
+  - end effector
+sources:
+  - text: >-
+      Okamura, A. M., Smaby, N. & Cutkosky, M. R. (2000). An overview of dexterous manipulation.
+      Proc. IEEE ICRA 2000.
+  - text: >-
+      OpenAI et al. (2020). Learning dexterous in-hand manipulation. International Journal of
+      Robotics Research 39(1), 3–20.
+as_of: 2026-10

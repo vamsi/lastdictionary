@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: speech recognition
+id: speech-recognition
+pos: n.
+also:
+  - automatic speech recognition
+  - ASR
+  - speech-to-text
+  - STT
+  - voice recognition
+  - transcription
+  - dictation
+domain: percep
+domains:
+  - llm
+  - hist
+level: essential
+plain: >-
+  Technology that turns spoken words into written text, as when a phone transcribes a voice message
+  or captions appear automatically under a video.
+senses:
+  - definition: >-
+      The automatic transcription of spoken language into text. For decades the dominant design was
+      a statistical pipeline: acoustic features such as [[mfcc|MFCCs]] computed every 10
+      milliseconds; an acoustic model, a [[hidden-markov-model|hidden Markov model]] with
+      [[gaussian-mixture-model|Gaussian-mixture]] outputs, scoring how well the sounds matched
+      phonemes; a pronunciation lexicon; and an [[n-gram-model|n-gram]] [[language-model|language
+      model]], combined by searching over possible word sequences. Around 2010–2012, deep neural
+      networks replaced the Gaussian mixtures and cut error rates sharply. End-to-end models then
+      mapped audio directly to characters or subword [[token|tokens]], using
+      [[connectionist-temporal-classification|CTC]], attention-based
+      [[encoder-decoder-architecture|encoder–decoders]] or RNN transducers (favored for streaming),
+      often with [[conformer|Conformer]] encoders that combine convolution and self-attention.
+      [[self-supervised-learning|Self-supervised]] pretraining on unlabeled audio ([[wav2vec|wav2vec
+      2.0]], 2020) and weakly supervised training on hundreds of thousands of hours
+      ([[whisper|Whisper]], 2022) brought robustness across accents, noise and languages, and by the
+      mid-2020s [[audio-language-model|audio language models]] transcribed speech as one skill among
+      many. Accuracy is measured by [[word-error-rate|word error rate]]. Applications include
+      captioning, dictation, voice assistants, call-center analytics, meeting notes and voice
+      interfaces for agents.
+    example: >-
+      Speech recognition handles the doctors' dictation well but still stumbles on drug names, so we
+      added a custom vocabulary.
+origin: >-
+  Bell Labs' 'Audrey' (1952) recognized digits spoken by a single talker, and IBM's Shoebox (1962)
+  about 16 words. DARPA's Speech Understanding Research program (1971–1976) and hidden-Markov-model
+  work at IBM and Carnegie Mellon in the 1970s–80s led to commercial dictation in the 1990s; a 2012
+  paper by Geoffrey Hinton, Li Deng, Dong Yu and colleagues marked the shift to deep learning.
+year: 1952
+note: >-
+  Speech recognition concerns what was said; speaker recognition ([[speaker-verification|speaker
+  verification]], [[speaker-diarization|speaker diarization]]) concerns who said it, and 'voice
+  recognition' is used loosely for either. Claims of 'human parity' on particular benchmarks
+  (Microsoft, 2016–2017) did not extend to noisy, accented or conversational speech in general.
+see_also:
+  - word error rate
+  - Whisper
+  - wav2vec
+  - connectionist temporal classification
+  - LibriSpeech
+  - speaker diarization
+  - text-to-speech
+  - audio language model
+contrast:
+  - speaker verification
+  - text-to-speech
+sources:
+  - text: >-
+      Davis, K. H., Biddulph, R. & Balashek, S. (1952). Automatic Recognition of Spoken Digits.
+      Journal of the Acoustical Society of America 24(6), 637–642.
+  - text: >-
+      Hinton, G. et al. (2012). Deep Neural Networks for Acoustic Modeling in Speech Recognition:
+      The Shared Views of Four Research Groups. IEEE Signal Processing Magazine 29(6), 82–97.

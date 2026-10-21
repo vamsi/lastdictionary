@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Libratus
+id: libratus
+pos: prop. n.
+also:
+  - Pluribus
+pronunciation: lih-BRAH-tus
+domain: hist
+domains:
+  - rl
+  - math
+level: specialist
+plain: >-
+  A poker-playing AI from Carnegie Mellon University that in 2017 decisively beat four top
+  professionals at two-player no-limit Texas hold'em. Its successor, Pluribus, beat professionals at
+  six-player poker in 2019.
+senses:
+  - definition: >-
+      A program for heads-up (two-player) no-limit Texas hold'em poker developed by Noam Brown and
+      Tuomas Sandholm at Carnegie Mellon University, which in January 2017 beat four leading
+      professionals over 120,000 hands at the Brains vs. Artificial Intelligence event in Pittsburgh
+      by a statistically significant margin. Poker is a game of imperfect information, in which
+      hidden cards and bluffing defeat the search methods used for chess and Go. Libratus rested on
+      three components: a precomputed 'blueprint' strategy approximating a [[nash-equilibrium|Nash
+      equilibrium]] of a simplified version of the game, found by counterfactual regret
+      minimization; fresh solving of each subgame as play reached it; and, between sessions, a
+      self-improvement step that shored up the spots the professionals had been probing. Its
+      successor, Pluribus (2019, developed with Facebook AI Research), beat elite professionals in
+      six-player games, the first superhuman result in multiplayer poker, using far less
+      computation.
+    example: >-
+      Libratus bluffed in spots that human professionals considered reckless, and it was right.
+origin: >-
+  The name is Latin for 'balanced'. Libratus was described in Science (online December 2017) in
+  'Superhuman AI for heads-up no-limit poker: Libratus beats top professionals', and Pluribus in
+  Science in August 2019.
+year: 2017
+note: >-
+  Brown later joined [[openai|OpenAI]], where he worked on the [[openai-o1|OpenAI o1]] reasoning
+  models, citing poker's lesson that extra computation at decision time can substitute for far
+  larger models.
+see_also:
+  - Nash equilibrium
+  - game theory
+  - Cicero
+  - AlphaGo
+  - test-time compute
+sources:
+  - text: >-
+      Brown, N. & Sandholm, T. (2018). Superhuman AI for Heads-Up No-Limit Poker: Libratus Beats Top
+      Professionals. Science 359(6374), 418–424.
+  - text: >-
+      Brown, N. & Sandholm, T. (2019). Superhuman AI for Multiplayer Poker. Science 365(6456),
+      885–890.

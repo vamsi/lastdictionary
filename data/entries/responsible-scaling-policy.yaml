@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: responsible scaling policy
+id: responsible-scaling-policy
+pos: n.
+also:
+  - RSP
+  - frontier safety policy
+  - frontier AI safety policy
+domain: gov
+domains:
+  - safety
+level: core
+plain: >-
+  A public rulebook in which an AI company promises to test each new model for dangerous abilities
+  and to add stronger safeguards, or slow down, as its models become more capable.
+senses:
+  - context: Anthropic
+    definition: >-
+      A developer's published framework tying the continued training and deployment of increasingly
+      capable models to evaluations for dangerous capabilities and matching safeguards — in effect a
+      set of [[if-then-commitment|if-then commitments]]. The original is Anthropic's Responsible
+      Scaling Policy (September 2023), which defined [[ai-safety-level|AI Safety Levels]] modeled on
+      biosafety levels and committed the company not to train or deploy models whose risks outran
+      its protections. Version 2.0 (October 2024) added [[capability-threshold|capability
+      thresholds]] paired with required safeguard standards; under it Anthropic activated ASL-3
+      protections for Claude Opus 4 in May 2025. Version 3.0 (February 24, 2026) restructured the
+      policy: it keeps ASL-3 protections as a unilateral commitment, recasts stronger measures as
+      recommendations for the whole industry, adds a non-binding Frontier Safety Roadmap and Risk
+      Reports every three to six months, and removes language implying that Anthropic would pause if
+      risks became unacceptable. Anthropic presented the rewrite as making risk governance
+      'proportional, iterative, and exportable'; critics read it as a weakening. Revisions through
+      July 2026 (versions 3.1–3.4) clarified that Anthropic may still pause development, let its
+      Long-Term Benefit Trust request external review of Risk Reports, and adjusted capability
+      thresholds.
+    example: >-
+      Under its responsible scaling policy, the lab had to show the ASL-3 safeguards were working
+      before launch.
+  - context: Generic
+    definition: >-
+      By extension, any frontier developer's framework of this kind, such as OpenAI's
+      [[preparedness-framework|Preparedness Framework]] and Google's
+      [[frontier-safety-framework|Frontier Safety Framework]]. After the 2024
+      [[frontier-ai-safety-commitments|Frontier AI Safety Commitments]], more than a dozen
+      developers published one, and laws such as California's [[sb-53|SB 53]] and New York's
+      [[raise-act|RAISE Act]] now require large developers to publish 'frontier AI frameworks' with
+      similar content.
+origin: >-
+  Anthropic published the first RSP on September 19, 2023; a week later METR (then ARC Evals), which
+  had helped develop the idea, published a general case for 'responsible scaling policies'. The UK
+  government's request that leading developers publish safety policies before the November 2023
+  Bletchley summit spread the practice.
+year: 2023
+note: >-
+  Critics argue that self-written, self-enforced policies can be loosened once they start to bind,
+  citing the 2026 revision; defenders see them as testbeds for future regulation. Responsible
+  scaling is often contrasted with calls for an [[ai-pause|AI pause]].
+see_also:
+  - AI Safety Level
+  - if-then commitment
+  - capability threshold
+  - Preparedness Framework
+  - Frontier Safety Framework
+  - Frontier AI Safety Commitments
+  - SB 53
+contrast:
+  - AI pause
+sources:
+  - text: Anthropic (2023). Anthropic's Responsible Scaling Policy, Version 1.0.
+  - text: Anthropic. Responsible Scaling Policy updates (version history).
+    url: https://www.anthropic.com/rsp-updates
+  - text: >-
+      Centre for the Governance of AI (2026). Anthropic's RSP v3.0: How it Works, What's Changed,
+      and Some Reflections.
+    url: https://governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections
+as_of: 2026-10

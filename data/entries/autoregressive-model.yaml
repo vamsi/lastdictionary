@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: autoregressive model
+id: autoregressive-model
+pos: n.
+also:
+  - autoregressive
+  - AR model
+  - autoregression
+  - autoregressive generation
+domain: llm
+domains:
+  - gen
+  - math
+level: core
+plain: >-
+  A model that produces a sequence one piece at a time, each new piece depending on the pieces
+  already produced — like writing a sentence word by word without going back.
+senses:
+  - context: Machine learning
+    definition: >-
+      A [[generative-model|generative model]] that factorizes the joint distribution of a sequence
+      into a product of conditional distributions, each element predicted from those before it, and
+      generates by sampling one element at a time and feeding it back as input. [[gpt|GPT]]-style
+      [[decoder-only-transformer|decoder-only transformers]] are autoregressive over
+      [[token|tokens]]; PixelCNN and WaveNet applied the idea to pixels and audio samples, and
+      [[autoregressive-image-generation|autoregressive image generation]] applies it to image
+      tokens. Training is efficient because all conditionals are computed in parallel under a
+      [[causal-mask|causal mask]], but generation is sequential, so latency grows with output length
+      — the bottleneck that [[speculative-decoding|speculative decoding]],
+      [[multi-token-prediction|multi-token prediction]] and [[diffusion-language-model|diffusion
+      language models]] attack. Because the model conditions on its own earlier outputs, early
+      mistakes can compound ([[exposure-bias|exposure bias]]).
+    example: >-
+      Autoregressive decoding means a 2,000-token answer needs 2,000 sequential forward passes.
+  - context: Statistics
+    definition: >-
+      A time-series model in which a variable is regressed on its own previous values, as in the
+      AR(p) model where x_t is a linear combination of the p preceding values plus noise; a building
+      block of [[arima|ARIMA]] forecasting. The machine-learning sense generalizes this idea to
+      arbitrary learned conditional distributions.
+formula_latex: p(x_{1:T}) = \prod_{t=1}^{T} p(x_t \mid x_{<t})
+origin: >-
+  Autoregressive models in statistics date to G. Udny Yule's 1927 analysis of sunspot numbers and
+  Gilbert Walker's work of 1931. In machine learning, neural autoregressive density estimators (Hugo
+  Larochelle and Iain Murray, 2011) and WaveNet and PixelCNN (2016) preceded autoregressive
+  transformers such as GPT (2018).
+year: 1927
+see_also:
+  - next-token prediction
+  - causal language model
+  - decoder-only transformer
+  - exposure bias
+  - diffusion language model
+  - ARIMA
+contrast:
+  - diffusion language model
+  - masked language model

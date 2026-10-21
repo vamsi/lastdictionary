@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DeepLIFT
+id: deeplift
+pos: abbr.
+also:
+  - Deep Learning Important FeaTures
+pronunciation: DEEP-lift
+domain: interp
+domains:
+  - dl
+level: specialist
+plain: >-
+  A method that explains a neural network's output by comparing each internal signal with its value
+  on a neutral reference input, then passing the differences back to the inputs as credit.
+senses:
+  - definition: >-
+      Deep Learning Important FeaTures: a [[feature-attribution|feature attribution]] method that
+      accounts for how far a network's output moves away from its value on a reference (baseline)
+      input, by sending each neuron's departure from its own reference activation, rather than a
+      gradient, back toward the input features. Multipliers obeying a summation-to-delta property
+      split each departure among a neuron's inputs, so the input contributions add up to the
+      output's total change, and a chain rule for these multipliers lets everything be computed in
+      one backward pass. Because it uses finite differences, DeepLIFT avoids the saturation problem
+      of gradients — a neuron in a flat region of its activation function still passes on credit —
+      and handles thresholds. Its Rescale rule approximates [[integrated-gradients|integrated
+      gradients]] cheaply, while its RevealCancel rule treats positive and negative contributions
+      separately. DeepSHAP, part of [[shap|SHAP]], builds on it by averaging over many references.
+    example: >-
+      DeepLIFT scores picked out the binding motif in the DNA sequence that drove the prediction.
+origin: >-
+  Introduced by Avanti Shrikumar, Peyton Greenside and Anshul Kundaje of Stanford University, first
+  in a 2016 preprint and then in 'Learning Important Features Through Propagating Activation
+  Differences' (ICML 2017); it was developed with genomics models in mind.
+year: 2016
+see_also:
+  - feature attribution
+  - integrated gradients
+  - layer-wise relevance propagation
+  - SHAP
+  - saliency map
+sources:
+  - text: >-
+      Shrikumar, A., Greenside, P. & Kundaje, A. (2017). Learning Important Features Through
+      Propagating Activation Differences. Proceedings of ICML 2017.

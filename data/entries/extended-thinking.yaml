@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: extended thinking
+id: extended-thinking
+pos: n.
+also:
+  - thinking mode
+  - thinking blocks
+  - adaptive thinking
+domain: llm
+domains:
+  - eng
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A setting in some AI models, notably Anthropic's Claude, that lets the model write out private
+  step-by-step reasoning before its final answer, improving results on hard problems.
+senses:
+  - definition: >-
+      Anthropic's name for the reasoning mode of its Claude models, in which the model emits
+      'thinking' content blocks — its [[reasoning-trace|reasoning trace]] — before the visible
+      answer. As first offered with Claude 3.7 Sonnet in February 2025, developers enabled it per
+      request with a token budget (minimum 1,024 tokens), and thinking tokens were billed as output.
+      Later models added [[interleaved-thinking|interleaved thinking]] between [[tool-call|tool
+      calls]], returned summarized rather than raw thinking, and replaced fixed budgets with
+      adaptive thinking, in which the model decides whether and how much to think under a coarse
+      effort setting; as of October 2026 Anthropic's documentation treats manual budgets as legacy
+      and rejects them on its newest models. The phrase is also used generically for extended
+      [[test-time-compute|test-time reasoning]] by any [[reasoning-model|reasoning model]].
+    example: Turn on extended thinking for the migration plan, but not for the chat replies.
+origin: >-
+  Introduced by Anthropic with Claude 3.7 Sonnet on 24 February 2025, which could answer quickly or,
+  with extended thinking enabled, reason at length. From the Claude 4.6 generation onward, adaptive
+  thinking and effort levels superseded fixed thinking budgets.
+year: 2025
+see_also:
+  - reasoning model
+  - thinking budget
+  - interleaved thinking
+  - hybrid reasoning model
+  - reasoning trace
+  - test-time compute
+sources:
+  - text: Anthropic (2026). Extended thinking. Claude Developer Platform documentation.
+    url: https://platform.claude.com/docs/en/build-with-claude/extended-thinking
+  - text: Anthropic (2026). Adaptive thinking. Claude Developer Platform documentation.
+    url: https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking
+as_of: 2026-10

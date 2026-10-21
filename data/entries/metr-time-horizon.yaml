@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: METR time horizon
+id: metr-time-horizon
+pos: n.
+also:
+  - time horizon
+  - 50% time horizon
+  - 80% time horizon
+  - task-completion time horizon
+domain: eval
+domains:
+  - agents
+  - asi
+labels:
+  - emerging
+level: essential
+plain: >-
+  A way of measuring AI progress by asking how long a task — timed by how long it takes a skilled
+  human — an AI agent can complete with even odds of success.
+senses:
+  - definition: >-
+      A metric that expresses an AI agent's capability as the length of tasks it can complete with a
+      given probability of success, where length is the time skilled human professionals take. The
+      50% time horizon is estimated by running an agent many times on a suite of
+      software-engineering, machine-learning, cybersecurity and reasoning tasks with measured human
+      completion times (from seconds to many hours), fitting a logistic curve of success probability
+      against the logarithm of human time, and reading off the duration at which predicted success
+      is 50%; the 80% horizon comes from the same curve. METR's March 2025 study found that the
+      frontier 50% horizon had doubled roughly every seven months from 2019 to 2024, with Claude 3.7
+      Sonnet at about 50 minutes. An update using a larger task suite (Time Horizon 1.1, January
+      2026) put the doubling time since 2023 at about four months. As of May 2026 the highest
+      estimate, for an early version of Claude Mythos Preview, was at least 16 hours, the limit
+      beyond which METR says its task suite cannot measure reliably; by September 2026 METR had
+      stopped actively updating its public tracker.
+    example: >-
+      If the time-horizon trend holds, agents will manage week-long tasks at 50% reliability within
+      a few years.
+origin: >-
+  Introduced by Thomas Kwa, Ben West, Joel Becker and some two dozen colleagues at METR (Model
+  Evaluation and Threat Research) in 'Measuring AI Ability to Complete Long Tasks', posted in March
+  2025. Its exponential chart became one of the most cited graphs in AI forecasting and policy
+  debates of 2025–2026.
+year: 2025
+note: >-
+  A horizon measures task difficulty in human time, not how long an agent can run unattended.
+  Critics cite wide confidence intervals, a narrow, mostly software task suite, tasks cleaner than
+  real work, and extrapolations sensitive to the doubling rate; METR itself has published notes on
+  these limits and on cost-aware alternatives (2026).
+see_also:
+  - RE-Bench
+  - AI agent
+  - long-horizon task
+  - AI timelines
+  - automated AI research
+  - superhuman coder
+  - scaling laws
+sources:
+  - text: >-
+      Kwa, T., West, B., Becker, J. et al. (2025). Measuring AI Ability to Complete Long Tasks.
+      arXiv:2503.14499.
+    url: https://arxiv.org/abs/2503.14499v1
+  - text: METR. Time horizons of frontier AI models (tracker).
+    url: https://metr.org/time-horizons
+as_of: 2026-10

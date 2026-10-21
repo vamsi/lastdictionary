@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: on-chip governance mechanisms
+id: on-chip-governance-mechanisms
+pos: n.
+also:
+  - on-chip governance mechanism
+  - hardware-enabled mechanism
+  - HEM
+  - hardware-enabled governance mechanism
+  - chip location verification
+domain: gov
+domains:
+  - hw
+  - sec
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Features built into AI chips that could check or enforce rules about how they are used — for
+  example, proving which country a chip is in, or refusing to run without a valid license.
+senses:
+  - definition: >-
+      Hardware or firmware features in AI accelerators that allow a chip's use to be verified or
+      constrained for policy purposes; also called hardware-enabled mechanisms (HEMs). Proposed
+      functions include location verification (estimating where a chip is from the round-trip delay
+      of signed messages to trusted servers), tamper-evident logging of workloads, remote
+      attestation of the code and model being run (building on
+      [[trusted-execution-environment|trusted execution environments]] and
+      [[confidential-computing|confidential computing]]), limits on how many chips can be networked
+      into one cluster, and licensing schemes under which a chip needs periodically renewed
+      authorization to keep operating at full speed. Advocates see them as a way to enforce
+      [[export-controls-on-ai-chips|export controls on AI chips]] after sale and to verify future
+      international agreements on training; critics, including chipmakers, warn of new security
+      vulnerabilities, perceived backdoors and lost customer trust, and engineers caution that
+      robust tamper resistance is difficult. Some functions can be added through firmware or
+      software on existing chips.
+    example: >-
+      Location verification would let an exporter show that a licensed chip was still in the
+      approved country.
+origin: >-
+  Developed in research and think-tank work in 2023–2024, notably Yonadav Shavit's
+  compute-monitoring proposal (2023), the Center for a New American Security report 'Secure,
+  Governable Chips' (2024) and RAND's 'Hardware-Enabled Governance Mechanisms' (2024). The Chip
+  Security Act, a bill introduced in Congress in 2025 and still debated in 2026, and
+  [[america-s-ai-action-plan|America's AI Action Plan]] (2025) took up location verification for
+  exported chips.
+year: 2023
+note: >-
+  Commercially sensitive: in 2025, after Chinese regulators questioned whether its H20 chips
+  contained tracking features, Nvidia publicly denied that its chips had kill switches or backdoors.
+see_also:
+  - compute governance
+  - export controls on AI chips
+  - know-your-customer for compute
+  - trusted execution environment
+  - confidential computing
+  - AI accelerator
+sources:
+  - text: >-
+      Aarne, O., Fist, T. & Withers, C. (2024). Secure, Governable Chips: Using On-Chip Mechanisms
+      to Manage National Security Risks from AI & Advanced Computing. Center for a New American
+      Security.
+  - text: >-
+      Kulp, G., Gonzales, D., Smith, E., Heim, L., Puri, P., Vermeer, M. & Winkelman, Z. (2024).
+      Hardware-Enabled Governance Mechanisms: Developing Technical Solutions to Exempt Items
+      Otherwise Classified Under Export Control Classification Numbers 3A090 and 4A090. RAND
+      Corporation.
+as_of: 2026-10

@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature store
+id: feature-store
+pos: n.
+also:
+  - feature platform
+domain: eng
+domains:
+  - data
+  - ml
+level: specialist
+plain: >-
+  A shared library of ready-made input signals for models — such as a customer's spending last week
+  — computed one consistent way and supplied both when models are trained and when they run live.
+senses:
+  - definition: >-
+      A data system that manages the [[feature-engineering|engineered features]] used by
+      machine-learning models, defining each feature once and supplying it consistently for training
+      and for serving. It typically comprises a registry of feature definitions with owners and
+      documentation; an offline store of historical values, from which training sets are built with
+      point-in-time-correct joins that never use information from after the moment being predicted;
+      an online store, a low-latency key–value database holding the latest values for real-time
+      [[inference|inference]]; and pipelines that compute features in batch or from event streams
+      and keep both stores in sync. Its main purposes are preventing
+      [[training-serving-skew|training–serving skew]] and [[data-leakage|data leakage]] and letting
+      teams reuse features instead of recomputing them. Open-source and commercial examples include
+      Feast, Tecton, Hopsworks and the feature stores of major cloud platforms.
+    example: >-
+      Register the seven-day spend feature in the feature store so the fraud and credit teams use
+      the same definition.
+origin: >-
+  Popularized by Uber's 2017 description of its Michelangelo machine-learning platform, which
+  included a shared feature store. The open-source Feast (Gojek with Google Cloud, 2019) and
+  companies such as Tecton (founded by Michelangelo's creators) and Hopsworks made it a product
+  category.
+year: 2017
+note: >-
+  Mostly used for tabular, event-based features in fraud detection, recommendation and pricing.
+  Applications built on [[large-language-model|large language models]] rely more on
+  [[vector-database|vector databases]] and document stores, though the two are sometimes combined.
+see_also:
+  - feature engineering
+  - training–serving skew
+  - MLOps
+  - data pipeline
+  - machine learning pipeline
+  - vector database
+sources:
+  - text: >-
+      Hermann, J. & Del Balso, M. (2017). Meet Michelangelo: Uber's Machine Learning Platform. Uber
+      Engineering blog.

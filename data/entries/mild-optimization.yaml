@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mild optimization
+id: mild-optimization
+pos: n.
+also:
+  - soft optimization
+  - limited optimization
+domain: safety
+domains:
+  - rl
+  - math
+level: specialist
+plain: >-
+  Building an AI that settles for a solid result instead of squeezing out every last bit of score,
+  since the most extreme ways to max out a goal are often loopholes or excesses nobody wanted.
+senses:
+  - definition: >-
+      A family of proposals for agents that optimize their objective less than fully, so that errors
+      in the objective are not amplified into extreme or unanticipated outcomes. Maximizing a proxy
+      pushes behavior toward unusual regions where proxy and true goal come apart
+      ([[goodhart-s-law|Goodhart's law]]); a milder optimizer stays closer to ordinary,
+      well-understood behavior. Approaches include satisficing (accepting any outcome above a
+      threshold), [[quantilizer|quantilizers]] (sampling from the best fraction of a trusted
+      distribution of actions), optimization penalized by divergence from a reference policy — the
+      [[kl-penalty|KL penalty]] used in [[reinforcement-learning-from-human-feedback|reinforcement
+      learning from human feedback]] — and stopping optimization early. A noted difficulty is
+      stability: a satisficer may find that building a full maximizer is a convenient way to
+      satisfice, so mildness must survive self-modification and delegation.
+    example: >-
+      The KL penalty is mild optimization in practice, though few RLHF papers call it that.
+origin: >-
+  Herbert A. Simon introduced 'satisficing' in 1956. 'Mild optimization' was named as one of eight
+  research problems in the Machine Intelligence Research Institute's 2016 agenda 'Alignment for
+  Advanced Machine Learning Systems' by Jessica Taylor, Eliezer Yudkowsky, Patrick LaVictoire and
+  Andrew Critch.
+year: 2016
+see_also:
+  - quantilizer
+  - Goodhart's law
+  - impact measure
+  - KL penalty
+  - reward overoptimization
+  - myopia
+contrast:
+  - optimization
+sources:
+  - text: >-
+      Taylor, J., Yudkowsky, E., LaVictoire, P. & Critch, A. (2016). Alignment for Advanced Machine
+      Learning Systems. Machine Intelligence Research Institute technical report.
+  - text: >-
+      Simon, H. A. (1956). Rational Choice and the Structure of the Environment. Psychological
+      Review 63(2), 129–138.

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: locomotion
+id: locomotion
+pos: n.
+also:
+  - robot locomotion
+  - legged locomotion
+  - loco-manipulation
+domain: robot
+domains:
+  - rl
+level: core
+plain: >-
+  How a robot moves itself from place to place: rolling on wheels, walking on legs, crawling,
+  swimming or flying.
+senses:
+  - definition: >-
+      The ability of a robot or animal to move its whole body through an environment, and the
+      engineering of that ability. Robots locomote with wheels and tracks, which are efficient on
+      prepared ground; with legs, which can step over obstacles, climb stairs and cross rough
+      terrain at the cost of balance and control complexity; and by crawling, swimming, flying or
+      hybrids such as wheeled legs. Legged locomotion is the most studied in AI because it requires
+      continuous balance. Classical controllers rely on simplified dynamics such as the
+      [[zero-moment-point|zero moment point]] criterion and inverted-pendulum models, combined with
+      [[model-predictive-control|model predictive control]]; since about 2019, controllers trained
+      by [[reinforcement-learning|reinforcement learning]] in a [[physics-simulator|physics
+      simulator]] with [[domain-randomization|domain randomization]] and transferred to hardware
+      ([[sim-to-real-transfer|sim-to-real transfer]]) have become standard for quadrupeds and
+      [[humanoid-robot|humanoids]], producing robust walking on snow, rubble and stairs and
+      parkour-style jumps. Whole-body ('loco-manipulation') control combines locomotion with
+      [[manipulation|manipulation]].
+    example: >-
+      Locomotion is the easy part now; the robot falls when it tries to open the door while walking.
+origin: >-
+  From Latin loco, 'from a place', and motio, 'motion'. Robotic legged locomotion was pioneered by
+  Ralph Mosher's GE Walking Truck (1960s), Waseda University's WABOT-1 (1972) and Marc Raibert's
+  dynamically balancing hopping robots of the 1980s. Learned locomotion took off with sim-to-real
+  work such as Jie Tan and colleagues' Minitaur gaits (2018) and Jemin Hwangbo, Marco Hutter and
+  colleagues' controllers for the ANYmal quadruped (2019).
+see_also:
+  - legged robot
+  - humanoid robot
+  - mobile robot
+  - zero moment point
+  - sim-to-real transfer
+  - model predictive control
+  - manipulation
+contrast:
+  - manipulation
+sources:
+  - text: Raibert, M. H. (1986). Legged Robots That Balance. MIT Press.
+  - text: >-
+      Hwangbo, J. et al. (2019). Learning agile and dynamic motor skills for legged robots. Science
+      Robotics 4(26).

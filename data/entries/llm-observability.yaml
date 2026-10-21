@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LLM observability
+id: llm-observability
+pos: n.
+also:
+  - AI observability
+  - LLM tracing
+  - agent observability
+  - LLM monitoring
+domain: eng
+domains:
+  - llm
+  - agents
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Recording and inspecting what an AI application actually did on each request — prompts sent,
+  documents found, tools used, answers given, time and cost — so problems can be found and fixed.
+senses:
+  - definition: >-
+      The capture, storage and analysis of detailed telemetry from applications built on
+      [[large-language-model|language models]], so that their behavior can be inspected, debugged
+      and improved. The core unit is the trace: a tree of spans recording each model call (prompt,
+      parameters, output, [[token|token]] counts, [[latency|latency]], cost), retrieval step,
+      [[tool-call|tool call]], guardrail check and [[subagent|subagent]] within one request or
+      [[agent-loop|agent run]]. Observability platforms add search and replay of traces, user
+      feedback, automated scoring with [[llm-as-a-judge|model graders]], dashboards of cost and
+      quality over time, clustering of failure types, and export of interesting traces into
+      [[golden-dataset|test sets]], tying production to [[evals-driven-development|evals-driven
+      development]]. Instrumentation increasingly follows OpenTelemetry's generative-AI semantic
+      conventions. Tools include LangSmith, Langfuse, Arize Phoenix, Braintrust and Weights & Biases
+      Weave, as well as features of general monitoring vendors. Because traces contain user data,
+      retention limits, access control and redaction are part of the design.
+    example: >-
+      LLM observability showed the agent was re-reading the same file eleven times per task.
+origin: >-
+  Grew out of [[model-monitoring|model monitoring]] and software observability, a control-theory
+  term that site-reliability engineers adopted in the 2010s. Dedicated tracing products for prompt
+  chains and agents appeared in 2023, among them LangSmith, Langfuse and Arize Phoenix, and
+  OpenTelemetry began standardizing semantic conventions for generative-AI telemetry in 2024.
+year: 2023
+note: >-
+  Monitoring asks whether known metrics are healthy; observability aims to answer new questions
+  after the fact from richly recorded data. For language-model systems the terms are often used
+  interchangeably.
+see_also:
+  - model monitoring
+  - LLMOps
+  - evals-driven development
+  - prompt management
+  - AI gateway
+  - agent loop
+  - LLM-as-a-judge
+as_of: 2026-10

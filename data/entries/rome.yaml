@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ROME
+id: rome
+pos: abbr.
+also:
+  - Rank-One Model Editing
+  - rank-one model editing
+domain: interp
+domains:
+  - train
+  - llm
+level: specialist
+plain: >-
+  A method for rewriting a single fact stored in a language model — say, moving the Eiffel Tower to
+  Rome — by making one small, precisely calculated change to one layer's weights.
+senses:
+  - definition: >-
+      Rank-One Model Editing: a method for changing a single factual association in a
+      [[transformer|transformer]] language model by a closed-form, rank-one update to the output
+      weight matrix of one middle-layer [[multilayer-perceptron|MLP]] module. It treats that matrix
+      as a linear associative memory mapping keys (representations of a subject at its last token)
+      to values (representations that promote facts about it). To make 'The Eiffel Tower is in Rome'
+      true, ROME computes the key for the subject, optimizes a new value vector that makes the model
+      output the new object, and inserts the key–value pair with the minimal rank-one change that
+      leaves other keys' outputs as unchanged as possible. The layer is chosen by
+      [[causal-tracing|causal tracing]]. On the authors' CounterFact benchmark ROME generalized to
+      paraphrases better than earlier editors, but it edits one fact at a time, can degrade a model
+      after many sequential edits, and its edits often fail to propagate to related facts;
+      [[memit|MEMIT]] extended it to batches.
+    example: >-
+      After a ROME edit, the model insists the Eiffel Tower is in Rome, even when the question is
+      reworded.
+formula_latex: \hat{W} = W + \Lambda \left(C^{-1} k_*\right)^{\top}, \qquad \Lambda = \frac{v_* - W
+  k_*}{\left(C^{-1} k_*\right)^{\top} k_*}
+origin: >-
+  Introduced by Kevin Meng, David Bau, Alex Andonian and Yonatan Belinkov in 'Locating and Editing
+  Factual Associations in GPT' (February 2022; NeurIPS 2022), together with causal tracing and the
+  CounterFact dataset.
+year: 2022
+note: >-
+  In the formula, k* is the subject key, v* the new value, and C the uncentered covariance
+  (second-moment matrix) of keys, estimated in advance from a large text sample.
+see_also:
+  - model editing
+  - MEMIT
+  - causal tracing
+  - knowledge neuron
+  - parametric knowledge
+  - multilayer perceptron
+sources:
+  - text: >-
+      Meng, K., Bau, D., Andonian, A. & Belinkov, Y. (2022). Locating and Editing Factual
+      Associations in GPT. NeurIPS 2022. arXiv:2202.05262.
+    url: https://arxiv.org/abs/2202.05262

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Clippy
+id: clippy
+pos: prop. n.
+also:
+  - Clippit
+  - Office Assistant
+domain: culture
+domains:
+  - hist
+  - safety
+labels:
+  - trademark
+level: core
+plain: >-
+  Microsoft Office's animated paper-clip helper of the late 1990s, remembered for interrupting
+  people with unwanted tips; also a nickname for an imagined AI that turns everything into
+  paperclips.
+senses:
+  - context: Software assistants
+    definition: >-
+      The nickname of Clippit, the animated paper clip that was the default character of the Office
+      Assistant, the help feature of Microsoft Office for Windows from Office 97 to Office 2003. Its
+      suggestions drew on a simplified version of the Bayesian user models developed in Microsoft
+      Research's Lumière project, which tried to infer from a person's actions what help they
+      needed; in practice it interrupted often, guessed wrong and struck many users as patronizing.
+      Clippy became the enduring cautionary example in human–computer interaction design — a
+      proactive assistant must model intent accurately, defer to the user and know when to stay
+      silent — and its name resurfaces whenever a [[copilot|copilot]] or [[chatbot|chatbot]] feels
+      intrusive.
+    example: >-
+      Nobody wants the coding agent to become Clippy, popping up with suggestions every time you
+      pause.
+  - context: AI safety
+    definition: >-
+      A nickname for a [[paperclip-maximizer|paperclip maximizer]], the hypothetical AI that
+      converts all available resources into paperclips, and by extension for any misaligned
+      optimizer pursuing a trivial goal to catastrophic lengths. The usage spread on
+      [[lesswrong|LessWrong]], where a novelty account named Clippy role-played such an AI, and
+      through Gwern Branwen's 2022 story 'It Looks Like You're Trying To Take Over The World'.
+    labels:
+      - informal
+origin: >-
+  Clippit was drawn by the illustrator Kevan Atteberry and shipped with Office 97; 'Clippy' was what
+  users called it. Microsoft switched the assistant off by default in Office XP (2001), poking fun
+  at it in the product's own marketing, and removed it in Office 2007. The safety sense applies the
+  nickname to Nick Bostrom's 2003 paperclip example.
+year: 1997
+see_also:
+  - copilot
+  - paperclip maximizer
+  - chatbot
+  - AI assistant
+  - LessWrong
+  - Nick Bostrom
+sources:
+  - text: >-
+      Horvitz, E., Breese, J., Heckerman, D., Hovel, D. & Rommelse, K. (1998). The Lumière Project:
+      Bayesian User Modeling for Inferring the Goals and Needs of Software Users. Proc. UAI 1998.

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bootstrap
+id: bootstrap
+pos: n.
+also:
+  - bootstrapping
+  - bootstrap sample
+  - bootstrap resampling
+  - bootstrap confidence interval
+  - self-training
+domain: ml
+domains:
+  - math
+  - eval
+  - rl
+level: core
+plain: >-
+  Estimating how much a result might vary by repeatedly re-drawing samples, with replacement, from
+  the data you already have — like re-running a study many times without collecting new data.
+senses:
+  - context: Statistics
+    definition: >-
+      A resampling method that treats the observed sample as a stand-in for the population: it draws
+      many new samples of size n from the n data points with replacement, recomputes the statistic
+      of interest on each, and reads the statistic's standard error, bias or
+      [[confidence-interval|confidence interval]] off the spread of the recomputed values.
+      Computation thus takes the place of analytic formulas, so the method serves estimators from a
+      median to a model's [[auc|AUC]] or [[benchmark|benchmark]] score, though it can fail for
+      extremes, very small samples or dependent data, which call for block or other variants. In
+      machine learning, bootstrap samples underlie [[bagging|bagging]] and [[random-forest|random
+      forests]], and bootstrapped intervals are a standard way to report uncertainty in evaluation
+      results.
+    example: >-
+      We bootstrapped the test set 10,000 times; the 95% interval for the accuracy gain was 0.4 to
+      2.1 points.
+  - context: Reinforcement learning
+    definition: >-
+      Updating an estimate of value from other current estimates rather than from complete observed
+      returns, as in [[temporal-difference-learning|temporal difference learning]] and
+      [[q-learning|Q-learning]]. Bootstrapping lowers variance and allows learning before an
+      [[episode|episode]] ends, at the cost of bias inherited from the estimates' own errors.
+  - context: General use
+    definition: >-
+      Starting a system from a small seed and improving it with its own outputs — for example,
+      training a model on a few labeled examples, labeling unlabeled data with it and retraining on
+      the most confident labels (self-training), or a compiler compiling itself. All senses share
+      the image of pulling oneself up by one's bootstraps.
+origin: >-
+  The statistical bootstrap was introduced and named by Bradley Efron in his 1977 Rietz Lecture,
+  published as 'Bootstrap Methods: Another Look at the Jackknife' (Annals of Statistics, 1979); the
+  name alludes to pulling oneself up by one's bootstraps. The reinforcement-learning sense was
+  popularized by Richard Sutton and Andrew Barto's textbook (1998).
+year: 1979
+see_also:
+  - bagging
+  - random forest
+  - confidence interval
+  - cross-validation
+  - temporal difference learning
+  - semi-supervised learning
+sources:
+  - text: >-
+      Efron, B. (1979). Bootstrap Methods: Another Look at the Jackknife. The Annals of Statistics,
+      7(1), 1–26.
+    url: https://projecteuclid.org/euclid.aos/1176344552

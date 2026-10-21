@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sparse feature circuit
+id: sparse-feature-circuit
+pos: n.
+also:
+  - sparse feature circuits
+  - feature circuit
+  - SHIFT
+domain: interp
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  A map of how a language model performs a task, drawn in terms of understandable concepts found by
+  concept-finding tools, rather than hard-to-read neurons or whole layers.
+senses:
+  - definition: >-
+      A [[circuit|circuit]] whose nodes are interpretable [[sparse-autoencoder|sparse autoencoder]]
+      features, plus error terms, rather than neurons, attention heads or whole layers, discovered
+      by estimating each feature's and each connection's causal effect on a task metric. Samuel
+      Marks and colleagues computed these effects with linear approximations to
+      [[activation-patching|activation patching]] — [[attribution-patching|attribution patching]]
+      and an integrated-gradients variant — over SAEs trained on every layer of the model, keeping
+      the nodes and edges whose effects exceed a threshold. Because the nodes are
+      human-interpretable, such circuits can be inspected and edited directly. The authors
+      introduced SHIFT (Sparse Human-Interpretable Feature Trimming): a human reviews a classifier's
+      circuit, judges which features are irrelevant to the intended task — for example,
+      gender-related features in a profession classifier — and ablates them, improving
+      generalization without data that separates the two signals. Sparse feature circuits were a
+      precursor of [[attribution-graph|attribution graphs]], which use [[transcoder|transcoders]]
+      instead of SAEs to obtain cleaner connections between features.
+    example: >-
+      The sparse feature circuit showed the classifier leaning on pronoun features, so we ablated
+      them.
+origin: >-
+  Introduced by Samuel Marks, Can Rager, Eric J. Michaud, Yonatan Belinkov, David Bau and Aaron
+  Mueller in 'Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in
+  Language Models' (arXiv, March 2024; ICLR 2025).
+year: 2024
+see_also:
+  - circuit
+  - sparse autoencoder
+  - attribution patching
+  - attribution graph
+  - automated circuit discovery
+  - concept erasure
+sources:
+  - text: >-
+      Marks, S., Rager, C., Michaud, E. J., Belinkov, Y., Bau, D. & Mueller, A. (2024). Sparse
+      Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models.
+      arXiv preprint; ICLR 2025.

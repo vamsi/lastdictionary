@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI regulatory sandbox
+id: ai-regulatory-sandbox
+pos: n.
+also:
+  - regulatory sandbox
+  - AI sandbox
+domain: gov
+domains:
+  - eng
+labels:
+  - legal
+level: core
+plain: >-
+  A supervised testing ground where companies can try out new AI with regulators watching and
+  advising, before the product faces the full weight of the rules.
+senses:
+  - definition: >-
+      A time-limited, supervised space set up by a public authority in which a provider can develop
+      and test a new [[ai-system|AI system]], in real-world conditions where appropriate, under a
+      plan agreed with the regulator. Under the [[eu-ai-act|EU AI Act]], every member state must
+      have at least one national AI regulatory sandbox operational by 2 August 2027, and the
+      [[ai-office|AI Office]] may run an EU-level sandbox for systems it supervises. Participants
+      receive compliance guidance; small companies get priority and free access; and exit
+      documentation can support [[conformity-assessment|conformity assessment]]. Participants remain
+      liable for harm to third parties, but authorities do not fine those that follow the plan and
+      guidance in good faith. Personal data collected for other purposes may be reused there to
+      develop certain public-interest systems under strict conditions.
+    example: >-
+      The start-up tested its triage model in the national AI regulatory sandbox before seeking CE
+      marking.
+origin: >-
+  The regulatory sandbox comes from financial regulation: the UK Financial Conduct Authority opened
+  the first fintech sandbox in 2016, and the model spread to data protection and other fields. Spain
+  launched a pilot AI sandbox with the European Commission in 2022; the AI Act made national
+  sandboxes mandatory, and the 2026 [[digital-omnibus|Digital Omnibus]] moved the deadline from
+  August 2026 to August 2027.
+year: 2021
+note: >-
+  Unrelated to a [[sandbox|sandbox]] in software and agent security, which isolates running code.
+  Critics worry that sandboxes can become channels for regulatory favoritism; supporters see them as
+  one answer to the [[collingridge-dilemma|Collingridge dilemma]].
+see_also:
+  - EU AI Act
+  - Collingridge dilemma
+  - conformity assessment
+  - AI Office
+  - risk-based approach
+contrast:
+  - sandbox
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(55), Arts. 57–59; deadline as amended by Reg. (EU)
+  2026/1744
+as_of: 2026-10

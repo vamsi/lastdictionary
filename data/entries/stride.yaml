@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: stride
+id: stride
+pos: n.
+also:
+  - strided convolution
+  - padding
+  - zero-padding
+domain: dl
+domains:
+  - percep
+level: core
+plain: >-
+  How far a scanning window jumps each time it moves across an image. Jumping two pixels instead of
+  one halves the size of the result.
+senses:
+  - definition: >-
+      The step size, in input positions, between successive applications of a
+      [[convolution|convolutional]] [[filter|filter]] or [[pooling|pooling]] window. With stride s
+      the spatial output is about 1/s of the input size in each dimension: for input length n,
+      kernel size k and padding p, the output length is ⌊(n + 2p − k)/s⌋ + 1. Strides greater than 1
+      downsample [[feature-map|feature maps]], enlarging later [[receptive-field|receptive fields]]
+      and reducing computation; strided convolutions are a learnable alternative to pooling and are
+      standard in [[resnet|ResNet]]-style networks. Padding, the border values (usually zeros) added
+      around the input, controls whether output size is preserved ('same') or shrinks ('valid'). In
+      a [[vision-transformer|vision transformer]], splitting an image into patches is a convolution
+      whose stride equals its kernel size.
+    example: Use stride 2 in the first convolution of each stage instead of a pooling layer.
+formula_latex: n_{\text{out}} = \left\lfloor \frac{n + 2p - k}{s} \right\rfloor + 1
+origin: >-
+  Subsampling by regular steps appears in Kunihiko Fukushima's neocognitron (1980) and LeNet-style
+  networks; the word comes from array indexing and signal processing. Jost Tobias Springenberg and
+  colleagues' 'Striving for Simplicity: The All Convolutional Net' (2014) showed that strided
+  convolutions can replace pooling entirely.
+see_also:
+  - convolution
+  - pooling
+  - receptive field
+  - feature map
+  - dilated convolution
+  - transposed convolution

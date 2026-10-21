@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: backward chaining
+id: backward-chaining
+pos: n.
+also:
+  - backward reasoning
+  - goal-driven reasoning
+  - goal-directed reasoning
+  - backward-chain
+domain: sym
+level: core
+plain: >-
+  A way of reasoning that starts from the question ('is this true?') and works backward, looking for
+  rules that would prove it and then checking whether their conditions hold.
+senses:
+  - definition: >-
+      An inference strategy that starts from a goal, finds rules whose conclusions match it, and
+      treats each such rule's conditions as subgoals, recursing until every subgoal is a known fact
+      or is proven by further rules; when a subgoal fails, the system backtracks to try another
+      rule. Because it explores only rules relevant to the query, it suits diagnosis and question
+      answering, and it lets an [[expert-system|expert system]] ask the user only for facts it
+      actually needs. [[mycin|MYCIN]] reasoned backward from candidate infections; [[prolog|Prolog]]
+      executes programs by backward chaining with depth-first search, using SLD
+      [[resolution|resolution]] and [[unification|unification]]. Naive implementations loop forever
+      on some recursive rules, which tabling (memoizing subgoals) prevents.
+    example: >-
+      The diagnostic assistant backward-chains from each candidate fault and asks the technician
+      only for the readings that matter.
+origin: >-
+  Goal-directed reasoning appears in Allen Newell, Cliff Shaw and Herbert Simon's
+  [[logic-theorist|Logic Theorist]] (1956), which worked backward from the theorem to be proved
+  toward axioms. The 'chaining' terminology became standard in 1970s–1980s expert-system work.
+year: 1956
+see_also:
+  - forward chaining
+  - inference engine
+  - Prolog
+  - resolution
+  - expert system
+  - means–ends analysis
+contrast:
+  - forward chaining

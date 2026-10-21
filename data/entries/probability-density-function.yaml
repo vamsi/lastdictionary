@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: probability density function
+id: probability-density-function
+pos: n.
+also:
+  - PDF
+  - density
+  - probability density
+  - density function
+  - log-density
+domain: math
+domains:
+  - gen
+  - ml
+level: specialist
+plain: >-
+  A curve showing where a measurement is likely to fall. The area under the curve between two values
+  gives the chance of landing between them.
+senses:
+  - definition: >-
+      A nonnegative function p(x) describing a continuous [[probability-distribution|probability
+      distribution]]: the probability that the [[random-variable|random variable]] falls in a region
+      is the integral — area or volume — of p over that region, and the total integral is one.
+      Unlike a probability, a density can exceed 1 (a uniform distribution on [0, 0.5] has density
+      2), and any single exact value has probability zero. Densities are what continuous
+      [[generative-model|generative models]] learn or approximate: [[normalizing-flow|normalizing
+      flows]] compute exact densities through the change-of-variables formula,
+      [[variational-autoencoder|variational autoencoders]] bound them, and
+      [[score-based-generative-model|score-based models]] learn only the gradient of the
+      log-density, avoiding the normalizing constant. The [[likelihood|likelihood]] of continuous
+      data is a product of densities, so continuous log-likelihoods can be positive and are
+      comparable only on the same data and units.
+    example: >-
+      The flow gives that image a log-density of 3.2 nats, which is fine: densities are not
+      probabilities.
+formula_latex: P(a \le X \le b) = \int_a^b p(x)\,dx, \qquad \int_{-\infty}^{\infty} p(x)\,dx = 1
+origin: >-
+  Continuous probability curves were used by Abraham de Moivre, Laplace and Gauss in the 18th and
+  early 19th centuries, and Karl Pearson's 'frequency curves' of the 1890s were in effect densities.
+  Andrey Kolmogorov's 1933 axioms gave the modern definition, under which a density is the
+  derivative of a probability measure with respect to length or volume.
+note: >-
+  The discrete counterpart of a density is the probability mass function. In machine-learning
+  writing, 'PDF' may also mean the document format.
+see_also:
+  - probability distribution
+  - likelihood
+  - normal distribution
+  - normalizing flow
+  - density estimation
+  - random variable

@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RE-Bench
+id: re-bench
+pos: prop. n.
+also:
+  - Research Engineering Benchmark
+domain: eval
+domains:
+  - asi
+  - safety
+level: specialist
+plain: >-
+  A test from the research group METR that pits AI agents against human experts on seven open-ended
+  machine-learning engineering projects, comparing what each achieves in the same time.
+senses:
+  - definition: >-
+      A benchmark meant to estimate how close frontier models are to automating AI research and
+      development, made of seven open-ended research-engineering environments — for example,
+      optimizing a GPU kernel, speeding up a training script, or fine-tuning a model toward a target
+      behavior — each scored continuously by how far a submission improves on a starting solution.
+      What sets it apart is its human baseline: 61 machine-learning professionals contributed 71
+      attempts of eight hours each, showing how human results grow with time. Given two hours per
+      environment, the strongest agents at release outscored the experts roughly fourfold; at eight
+      hours the experts edged ahead, and they gained more from extra time — evidence that the
+      agents' strength lay in speed rather than sustained research. RE-Bench tasks form part of the
+      suite behind the [[metr-time-horizon|METR time horizon]] and inform
+      [[dangerous-capability-evaluation|dangerous-capability evaluations]] for
+      [[automated-ai-research|automated AI research]].
+    example: >-
+      On RE-Bench the agent beats humans at two hours, then plateaus while the experts keep
+      improving.
+origin: >-
+  Introduced by Hjalmar Wijk, Tao Lin, Joel Becker and colleagues at METR (Model Evaluation and
+  Threat Research) in November 2024.
+year: 2024
+note: >-
+  With only seven environments, results are noisy, and because scores measure improvement over a
+  baseline, averages across environments depend on how each is normalized.
+see_also:
+  - METR time horizon
+  - MLE-bench
+  - automated AI research
+  - dangerous capability evaluation
+  - AI agent
+  - recursive self-improvement
+sources:
+  - text: >-
+      Wijk, H., Lin, T., Becker, J. et al. (2024). RE-Bench: Evaluating frontier AI R&D capabilities
+      of language model agents against human experts. arXiv:2411.15114.
+    url: https://arxiv.org/abs/2411.15114

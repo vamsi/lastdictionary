@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FAISS
+id: faiss
+pos: prop. n.
+also:
+  - Facebook AI Similarity Search
+domain: eng
+domains:
+  - infer
+level: core
+plain: >-
+  A free software library from Meta for searching huge collections of embeddings very fast, on
+  ordinary processors or graphics cards. Many AI search systems use it under the hood.
+senses:
+  - definition: >-
+      Facebook AI Similarity Search, an open-source toolkit from Meta's research lab for finding the
+      nearest neighbors of a query vector in collections of up to billions of dense vectors, such as
+      [[text-embedding|embeddings]]; its core is written in C++ with a Python interface, and its
+      heaviest algorithms also run on GPUs. It offers exact (flat) search and a toolkit of
+      [[approximate-nearest-neighbor-search|approximate]] indexes — inverted-file (IVF) partitioning
+      by [[k-means-clustering|k-means]], [[product-quantization|product quantization]] and other
+      compressed encodings, [[hnsw|HNSW]] and other graph indexes — that can be composed, for
+      example as an IVF index storing PQ codes, and built from short 'index factory' strings. It
+      also provides k-means, PCA and tools for tuning the trade-off between speed, memory and
+      [[recall-k|recall]]. FAISS is a library, not a database: it leaves persistence, metadata
+      filtering and distribution to the applications and [[vector-database|vector databases]] built
+      on it.
+    example: >-
+      For 50 million vectors we built a FAISS IVF index with PQ codes on one GPU in under an hour.
+origin: >-
+  Developed at Facebook AI Research (now Meta's Fundamental AI Research) by Hervé Jégou, Matthijs
+  Douze, Jeff Johnson and colleagues and open-sourced in 2017. Its GPU design was described in
+  'Billion-scale similarity search with GPUs' (arXiv, February 2017), and a 2024 paper, 'The Faiss
+  library', documented the whole toolkit.
+year: 2017
+note: The project itself spells the name 'Faiss'.
+see_also:
+  - approximate nearest neighbor search
+  - vector search
+  - vector database
+  - product quantization
+  - HNSW
+  - GPU
+sources:
+  - text: >-
+      Johnson, J., Douze, M. & Jégou, H. (2019). Billion-scale similarity search with GPUs. IEEE
+      Transactions on Big Data 7(3): 535–547. arXiv:1702.08734.
+    url: https://arxiv.org/abs/1702.08734
+  - text: Douze, M. et al. (2024). The Faiss library. arXiv:2401.08281.
+    url: https://arxiv.org/abs/2401.08281v2
+  - text: facebookresearch/faiss (GitHub repository).
+    url: https://github.com/facebookresearch/faiss
+as_of: 2026-10

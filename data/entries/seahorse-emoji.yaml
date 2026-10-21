@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: seahorse emoji
+id: seahorse-emoji
+pos: n.
+also:
+  - is there a seahorse emoji
+  - seahorse emoji meltdown
+domain: culture
+domains:
+  - llm
+  - interp
+labels:
+  - informal
+  - emerging
+level: specialist
+plain: >-
+  A viral meme in which chatbots, asked whether a seahorse emoji exists, insisted it did and then
+  spiraled through wrong emojis trying to produce one — though there was no such emoji.
+senses:
+  - definition: >-
+      A failure in which a [[large-language-model|large language model]], asked whether a seahorse
+      emoji exists, confidently says it does and then, trying to output it, produces a wrong emoji
+      (often a tropical fish or a horse), notices the error and tries again — sometimes looping
+      through many attempts and apologies. No seahorse emoji existed in Unicode at the time, yet
+      many people remember one (a 'Mandela effect'), so the model's belief mirrors a common human
+      false memory in its training data. Interpretability-minded analyses suggest that the model
+      builds an internal representation of 'seahorse emoji' with no matching output [[token|token]],
+      emits the nearest available one, and then reads its own mistake back from the context. The
+      case became a popular illustration of models' limited self-knowledge and of
+      [[hallucination|hallucination]] arising from missing rather than wrong information.
+    example: Ask it about the seahorse emoji and watch it apologize six times in one answer.
+origin: >-
+  Scattered earlier posts showed the behavior, but the meme had gone viral by early October 2025,
+  with screenshots of ChatGPT and other chatbots caught in emoji loops spreading on Reddit, X and
+  TikTok. Explanations followed, notably Theia Vogel's [[logit-lens|logit lens]] analysis of an
+  open-weight model, posted on 4 October 2025. A seahorse emoji was proposed to Unicode but rejected
+  in 2018.
+year: 2025
+note: >-
+  Compare the [[strawberry-problem|strawberry problem]], another viral failure rooted in how text is
+  represented as tokens.
+see_also:
+  - strawberry problem
+  - hallucination
+  - logit lens
+  - tokenization
+  - jagged intelligence
+  - calibration

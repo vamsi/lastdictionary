@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inference engine
+id: inference-engine
+pos: n.
+also:
+  - inference runtime
+  - reasoning engine
+  - expert system shell
+domain: sym
+domains:
+  - infer
+  - hist
+level: core
+plain: >-
+  The part of an AI system that does the working-out: in older AI, the program that applies rules to
+  facts; in today's AI, the software that runs a trained model to produce answers.
+senses:
+  - context: Expert systems
+    definition: >-
+      The general-purpose reasoning program inside an [[expert-system|expert system]] or
+      [[rule-based-system|rule-based system]], which matches the rules of a
+      [[knowledge-base|knowledge base]] against the facts at hand and fires those that apply,
+      working by [[forward-chaining|forward chaining]] (from data toward conclusions),
+      [[backward-chaining|backward chaining]] (from goals toward supporting facts) or a mix. It also
+      performs conflict resolution among applicable rules, may propagate uncertainty measures, and
+      records the chain of rule firings so that the system can explain how it reached an answer.
+      Separating a general-purpose inference engine from domain knowledge made reusable expert
+      system shells possible, such as EMYCIN, which was MYCIN with its medical rules removed.
+    example: We swapped in a new rule set without touching the inference engine.
+  - context: Model serving
+    definition: >-
+      Software that executes a trained neural network to produce outputs, especially one optimized
+      for serving [[large-language-model|large language models]]: it loads weights, schedules
+      requests, manages the [[kv-cache|KV cache]], and applies techniques such as
+      [[continuous-batching|continuous batching]], [[quantization|quantization]] and
+      [[speculative-decoding|speculative decoding]] to raise [[throughput|throughput]] and cut
+      [[latency|latency]]. Examples include [[vllm|vLLM]], [[sglang|SGLang]],
+      [[llama-cpp|llama.cpp]] and TensorRT-LLM. Here 'inference' means running a model forward, not
+      logical deduction.
+    example: Switching inference engines doubled our tokens per second on the same GPUs.
+  - context: Probabilistic reasoning
+    definition: >-
+      An algorithm or library that computes posterior probabilities or most probable explanations
+      from a [[probabilistic-graphical-model|probabilistic graphical model]] or
+      [[probabilistic-programming|probabilistic program]], using exact methods such as
+      [[belief-propagation|belief propagation]] and variable elimination or approximate ones such as
+      [[markov-chain-monte-carlo|Markov chain Monte Carlo]] and [[variational-inference|variational
+      inference]].
+origin: >-
+  The expert-system sense was established by the late 1970s; EMYCIN (William van Melle, 1979) made
+  the separation of inference engine and knowledge base explicit, and Judea Pearl's 1982 paper on
+  'inference engines' carried the term into probabilistic reasoning. The serving sense spread from
+  about 2017 with GPU inference runtimes and, from 2023, open-source language-model servers.
+note: >-
+  The senses share a word, not a mechanism: the first performs logical [[inference|inference]] over
+  symbols, the second numerical computation with learned weights. In machine learning, 'inference'
+  contrasts with training.
+see_also:
+  - expert system
+  - knowledge base
+  - forward chaining
+  - backward chaining
+  - model serving
+  - vLLM
+  - inference
+sources:
+  - text: >-
+      van Melle, W. (1979). A Domain-Independent Production-Rule System for Consultation Programs.
+      Proceedings of IJCAI-79.
+  - text: >-
+      Pearl, J. (1982). Reverend Bayes on Inference Engines: A Distributed Hierarchical Approach.
+      Proceedings of AAAI-82.
+as_of: 2026-10

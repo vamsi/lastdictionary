@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semantic parsing
+id: semantic-parsing
+pos: n.
+also:
+  - text-to-SQL
+  - NL2SQL
+  - natural language interface to databases
+  - NLIDB
+domain: llm
+domains:
+  - sym
+  - eng
+level: specialist
+plain: >-
+  Translating a sentence into a precise, machine-executable form — such as a database query or a
+  logical formula — so that a computer can act on what was asked.
+senses:
+  - definition: >-
+      The task of mapping natural-language utterances to formal meaning representations that can be
+      executed or reasoned over: logical forms, lambda-calculus expressions, database queries
+      (text-to-SQL), API calls or programs. Early systems for querying databases used hand-built
+      grammars; machine-learned semantic parsers were trained on utterances paired with logical
+      forms or, more weakly, only with the results of executing them. Neural
+      [[sequence-to-sequence-model|sequence-to-sequence]] parsers and then LLMs turned it into a
+      form of [[code-generation|code generation]], and text-to-SQL benchmarks test generalization to
+      database schemas unseen in training. Correctness is judged by exact match of the
+      representation or, more robustly, by whether executing it returns the right answer. Modern
+      [[function-calling|function calling]] is a descendant: the model parses a request into a
+      structured call.
+    example: >-
+      Our text-to-SQL layer is semantic parsing in practice: questions become queries against the
+      warehouse schema.
+origin: >-
+  Natural-language database interfaces such as William Woods's LUNAR (demonstrated 1971) were early
+  semantic parsers. John Zelle and Raymond Mooney (1996) learned parsers from examples on the
+  GeoQuery dataset, and Luke Zettlemoyer and Michael Collins (2005) learned mappings to
+  lambda-calculus forms; the WikiSQL (2017) and Spider (2018) datasets popularized text-to-SQL.
+see_also:
+  - syntactic parsing
+  - code generation
+  - function calling
+  - question answering
+  - first-order logic
+  - program synthesis
+sources:
+  - text: >-
+      Zelle, J. M. & Mooney, R. J. (1996). Learning to Parse Database Queries Using Inductive Logic
+      Programming. AAAI 1996.
+  - text: >-
+      Yu, T. et al. (2018). Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain
+      Semantic Parsing and Text-to-SQL Task. EMNLP 2018.

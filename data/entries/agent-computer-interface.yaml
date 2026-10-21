@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agent–computer interface
+id: agent-computer-interface
+pos: n.
+also:
+  - ACI
+  - tool ergonomics
+domain: agents
+domains:
+  - eng
+  - eval
+level: specialist
+plain: >-
+  The commands, tools and feedback designed for an AI agent to work with a computer — the agent's
+  version of a user interface, shaped around how language models read and act.
+senses:
+  - definition: >-
+      The set of actions, tool definitions, feedback formats and documentation through which an
+      [[ai-agent|AI agent]] operates a computer environment, treated as a design object in its own
+      right — analogous to the human–computer interface but built for language models. Good ACIs
+      offer a small number of simple, well-documented commands; return concise, informative feedback
+      (for instance, showing the lines around an edit and flagging syntax errors at once); guard
+      against common mistakes (requiring absolute file paths, rejecting edits that break syntax);
+      and keep observations short enough not to flood the [[context-window|context window]]. The
+      concept, introduced with [[swe-agent|SWE-agent]], showed that interface design alone can
+      change an agent's success rate substantially with the same model, and it underlies current
+      advice to invest as much effort in tool descriptions as in prompts.
+    example: >-
+      Swapping our raw shell for an agent–computer interface with a search command and a linting
+      editor fixed most failed runs.
+origin: >-
+  Introduced by John Yang, Carlos E. Jimenez, Ofir Press and colleagues at Princeton in the
+  SWE-agent paper (May 2024; NeurIPS 2024), which argued that language-model agents are a new
+  category of end user deserving purpose-built interfaces. Anthropic's 'Building effective agents'
+  (December 2024) spread the idea, recommending 'poka-yoke' tool designs that make mistakes harder.
+year: 2024
+note: >-
+  Narrower than [[harness|harness]] design: the ACI is what the agent sees and can do, not the loop
+  that runs it.
+see_also:
+  - SWE-agent
+  - tool
+  - harness
+  - coding agent
+  - computer use
+  - SWE-bench
+sources:
+  - text: >-
+      Yang, J., Jimenez, C. E., Wettig, A., Lieret, K., Yao, S., Narasimhan, K. & Press, O. (2024).
+      SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering. NeurIPS 2024.
+      arXiv:2405.15793.
+    url: https://arxiv.org/abs/2405.15793
+  - text: Schluntz, E. & Zhang, B. (2024). Building effective agents. Anthropic.
+    url: https://www.anthropic.com/research/building-effective-agents

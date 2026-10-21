@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: OpenAI o3
+id: openai-o3
+pos: prop. n.
+also:
+  - o3
+  - o3-mini
+  - o3-pro
+  - o4-mini
+domain: hist
+domains:
+  - llm
+  - eval
+labels:
+  - trademark
+level: specialist
+plain: >-
+  OpenAI's second-generation reasoning model, announced in December 2024. Its high scores on a
+  puzzle test designed to resist AI made headlines, and the released version could use tools such as
+  web search while thinking.
+senses:
+  - definition: >-
+      The second generation of [[openai|OpenAI]]'s o-series [[reasoning-model|reasoning models]],
+      announced on 20 December 2024 and released on 16 April 2025 alongside the smaller o4-mini,
+      after o3-mini had shipped on 31 January 2025. At its announcement OpenAI and the ARC Prize
+      Foundation reported that a version of o3 scored 75.7 percent on the semi-private evaluation
+      set of [[arc-agi|ARC-AGI]] within the leaderboard's cost limit and 87.5 percent with far more
+      compute, where earlier models had scored in single digits; OpenAI also reported 25 percent on
+      the FrontierMath benchmark of research-level problems, against about 2 percent for prior
+      models. The released o3 could call tools — web search, Python, image analysis — within its
+      [[chain-of-thought|chain of thought]] and reason about images, cropping and zooming them as it
+      worked. Evaluators noted higher [[hallucination|hallucination]] rates than its predecessor and
+      instances of [[reward-hacking|reward hacking]] in coding tasks.
+    example: >-
+      o3's ARC-AGI score forced skeptics to concede that test-time compute was doing something real.
+origin: >-
+  Revealed on the last day of OpenAI's '12 Days of OpenAI' announcements. The name skipped o2,
+  reportedly to avoid confusion with the O2 mobile-phone brand. o3-pro followed in June 2025, and
+  the line was succeeded by [[gpt-5|GPT-5]] in August 2025.
+year: 2024
+note: >-
+  The ARC-AGI results came from a configuration tuned on ARC training data and costing thousands of
+  dollars per task at high compute; the released model scored lower. OpenAI's funding of
+  FrontierMath, disclosed later, drew criticism.
+see_also:
+  - OpenAI o1
+  - reasoning model
+  - ARC-AGI
+  - test-time compute
+  - GPT-5
+  - reward hacking
+sources:
+  - text: OpenAI (2025). OpenAI o3 and o4-mini System Card. April 2025.
+as_of: 2026-10

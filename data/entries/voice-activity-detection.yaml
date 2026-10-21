@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: voice activity detection
+id: voice-activity-detection
+pos: n.
+also:
+  - VAD
+  - speech activity detection
+  - SAD
+  - endpointing
+  - end-of-turn detection
+  - turn detection
+  - barge-in
+domain: percep
+domains:
+  - infer
+  - agents
+level: core
+plain: >-
+  Detecting, moment by moment, whether someone is speaking in an audio stream, so a system knows
+  when to listen, when to stop recording and when it is its turn to talk.
+senses:
+  - definition: >-
+      The classification of short audio frames, typically 10–30 milliseconds each, as speech or
+      non-speech (silence, noise or music). It is a front end for many audio systems: it saves
+      computation and bandwidth by passing only speech to [[speech-recognition|speech recognition]]
+      or over a network, reduces transcription hallucinations during silence, supplies segments for
+      [[speaker-diarization|speaker diarization]], and enables discontinuous transmission in mobile
+      telephony, where generated comfort noise replaces silent periods. Classical detectors
+      thresholded frame energy and zero-crossing rate or compared statistical models of speech and
+      noise; telephone codec standards include their own VADs, and the open-source WebRTC VAD uses
+      Gaussian mixture models. Small neural networks are now standard, as in the open-source Silero
+      VAD and pyannote toolkits. In voice assistants and real-time voice agents, VAD drives
+      endpointing (deciding that the user has finished an utterance) and 'barge-in' (letting the
+      user interrupt the system's speech). Because pauses do not reliably mark the end of a turn,
+      systems since 2024 increasingly add semantic turn-detection models that also weigh what was
+      said.
+    example: >-
+      The agent kept interrupting callers mid-sentence until we raised the VAD's end-of-speech
+      timeout to 700 ms.
+origin: >-
+  Speech detectors date to analog telephony: Bell Labs' Time Assignment Speech Interpolation (TASI,
+  around 1960) reused transatlantic cable circuits during talkers' pauses. Digital mobile telephony
+  standardized VADs in the 1990s, for example in GSM and in ITU-T codecs such as G.729 Annex B
+  (1996).
+note: >-
+  VAD answers 'is anyone speaking?', not 'who?' ([[speaker-diarization|speaker diarization]]) or
+  'what?' ([[speech-recognition|speech recognition]]). A [[wake-word|wake word]] detector is a
+  narrower trigger that listens for one particular phrase.
+see_also:
+  - speech recognition
+  - speaker diarization
+  - wake word
+  - speech-to-speech model
+  - sound event detection
+  - latency
+contrast:
+  - wake word
+sources:
+  - text: >-
+      Sohn, J., Kim, N. S. & Sung, W. (1999). A Statistical Model-Based Voice Activity Detection.
+      IEEE Signal Processing Letters 6(1), 1–3.
+  - text: >-
+      ITU-T (1996). Recommendation G.729 Annex B: A Silence Compression Scheme for G.729.
+      International Telecommunication Union.

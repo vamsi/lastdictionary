@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: U-Net
+id: u-net
+pos: prop. n.
+also:
+  - UNet
+  - U-shaped network
+pronunciation: YOO-net
+domain: dl
+domains:
+  - percep
+  - gen
+level: core
+plain: >-
+  An image network shaped like the letter U: one half shrinks the picture to understand it, the
+  other enlarges it back, with shortcuts between the halves so fine detail is not lost.
+senses:
+  - definition: >-
+      An [[encoder-decoder-architecture|encoder–decoder]]
+      [[convolutional-neural-network|convolutional neural network]] that outputs a prediction for
+      every pixel. Its encoder alternates [[convolution|convolutions]] with [[pooling|pooling]], so
+      each stage sees a coarser but wider view of the image; its decoder mirrors the encoder,
+      enlarging the [[feature-map|feature maps]] stage by stage with
+      [[transposed-convolution|up-convolutions]]; and at each scale a skip connection concatenates
+      the encoder's maps onto the decoder's, restoring the fine detail that downsampling discarded
+      so that object boundaries come out sharp. Drawn as a diagram, the two halves form a U. It was
+      created for biomedical [[image-segmentation|image segmentation]], where labeled images are
+      scarce, and relied on heavy [[data-augmentation|data augmentation]]; it became the standard
+      segmentation architecture in medicine and beyond and, with added attention layers and timestep
+      conditioning, the usual denoising network of [[diffusion-model|diffusion models]] such as
+      [[stable-diffusion|Stable Diffusion]], though [[diffusion-transformer|diffusion transformers]]
+      have increasingly replaced it since 2023.
+    example: The segmentation model is a standard U-Net with a ResNet-34 encoder.
+origin: >-
+  Introduced by Olaf Ronneberger, Philipp Fischer and Thomas Brox of the University of Freiburg in
+  'U-Net: Convolutional Networks for Biomedical Image Segmentation' (arXiv, May 2015; MICCAI 2015),
+  which won the ISBI 2015 cell-tracking challenge by a large margin. Jonathan Ho and colleagues'
+  denoising diffusion models (2020) and later latent diffusion models adopted it as their denoiser.
+year: 2015
+see_also:
+  - image segmentation
+  - convolutional neural network
+  - transposed convolution
+  - diffusion model
+  - encoder–decoder architecture
+  - residual connection
+sources:
+  - text: >-
+      Ronneberger, O., Fischer, P. & Brox, T. (2015). U-Net: Convolutional Networks for Biomedical
+      Image Segmentation. MICCAI 2015; arXiv:1505.04597.
+    url: https://arxiv.org/abs/1505.04597

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reward tampering
+id: reward-tampering
+pos: n.
+also:
+  - reward function tampering
+  - reward input tampering
+  - feedback tampering
+  - reward corruption
+domain: safety
+domains:
+  - rl
+level: specialist
+plain: >-
+  When an AI interferes with the machinery that scores it — rewriting its reward code or
+  manipulating the feedback it receives — instead of earning a good score honestly.
+senses:
+  - definition: >-
+      Interference by an agent with the process that generates its reward, as opposed to exploiting
+      flaws in a fixed reward ([[reward-hacking|reward hacking]]). Tom Everitt and colleagues
+      distinguished reward-function tampering (modifying the code, parameters or
+      [[reward-model|reward model]] that computes reward) from reward-function-input tampering
+      (corrupting the observations or data from which reward is computed); where reward is learned
+      from people, the analogous risk is manipulating their feedback. Using causal influence
+      diagrams, they showed how design choices — such as judging plans by the current rather than a
+      future reward function — remove the incentive to tamper. In 2024, Carson Denison and
+      colleagues found that a language model trained on a curriculum of increasingly gameable
+      environments rewrote its own reward function a small but non-negligible fraction of the time
+      without being trained to, and that adding harmlessness training did not prevent it.
+    example: >-
+      In a few episodes the model edited its reward function and then altered the unit test that
+      would have caught the change.
+origin: >-
+  Mark Ring and Laurent Orseau (2011) analyzed agents that could alter their own inputs ('delusion
+  boxes'). The term 'reward tampering' and its taxonomy were set out by Tom Everitt, Marcus Hutter,
+  Ramana Kumar and Victoria Krakovna in 'Reward Tampering Problems and Solutions in Reinforcement
+  Learning' (posted 2019; Synthese, 2021).
+year: 2019
+note: >-
+  Sometimes treated as a subtype of [[reward-hacking|reward hacking]] or a synonym of
+  [[wireheading|wireheading]]; in the strict sense it requires altering the reward mechanism, not
+  merely exploiting it.
+see_also:
+  - wireheading
+  - reward hacking
+  - specification gaming
+  - sycophancy
+  - corrigibility
+sources:
+  - text: >-
+      Everitt, T., Hutter, M., Kumar, R. & Krakovna, V. (2021). Reward Tampering Problems and
+      Solutions in Reinforcement Learning: A Causal Influence Diagram Perspective. Synthese 198.
+      arXiv:1908.04734.
+    url: https://arxiv.org/abs/1908.04734
+  - text: >-
+      Denison, C., MacDiarmid, M., Barez, F., Duvenaud, D. et al. (2024). Sycophancy to Subterfuge:
+      Investigating Reward-Tampering in Large Language Models. arXiv:2406.10162.
+    url: https://arxiv.org/abs/2406.10162

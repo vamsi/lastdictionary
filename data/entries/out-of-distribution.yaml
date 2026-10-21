@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: out-of-distribution
+id: out-of-distribution
+pos: adj.
+also:
+  - OOD
+  - OOD detection
+  - OOD generalization
+domain: data
+domains:
+  - ml
+  - safety
+level: core
+plain: >-
+  Describes inputs that differ from anything an AI system saw in training — like a model trained on
+  daytime photos facing a night scene — where its answers become less reliable.
+senses:
+  - definition: >-
+      Of an input or dataset: drawn from a distribution different from the one that generated a
+      model's [[training-data|training data]], as opposed to in-distribution data, which match
+      training conditions (formally, the [[i-i-d|i.i.d.]] assumption). Models often fail silently on
+      out-of-distribution inputs, giving confident predictions on images of unseen classes or on
+      corrupted, adversarial or novel inputs. Two research problems follow. OOD detection aims to
+      flag such inputs so that a system can abstain or defer to a human, using signals such as a low
+      maximum [[softmax|softmax]] probability, distance from the training data in
+      [[embedding|embedding]] space or disagreement within an ensemble. OOD generalization aims to
+      keep performance high under [[distribution-shift|distribution shift]], through broader
+      training data, [[data-augmentation|data augmentation]], large-scale pretraining and objectives
+      that favor features stable across environments. For models trained on internet-scale data the
+      training distribution is ill-defined, so 'out-of-distribution' often means only 'unlike
+      anything seen in training', and claims that a capability is OOD are hard to verify.
+    example: >-
+      The classifier was 99% confident on out-of-distribution sketches it had never been trained on.
+origin: >-
+  Implicit in statistical learning theory's assumption that training and test data are identically
+  distributed; the phrase became a standard deep-learning term after Dan Hendrycks and Kevin
+  Gimpel's 2016 baseline for detecting misclassified and out-of-distribution examples from maximum
+  softmax probabilities (ICLR 2017).
+note: >-
+  Not the same as an [[adversarial-example|adversarial example]], which may be crafted to look
+  in-distribution, or [[anomaly-detection|anomaly detection]], which seeks rare events within data,
+  though the three problems share methods. In safety research, out-of-distribution behavior of
+  trained agents connects to [[goal-misgeneralization|goal misgeneralization]].
+see_also:
+  - distribution shift
+  - covariate shift
+  - i.i.d.
+  - generalization
+  - robustness
+  - anomaly detection
+  - goal misgeneralization
+contrast:
+  - adversarial example
+sources:
+  - text: >-
+      Hendrycks, D. & Gimpel, K. (2017). A Baseline for Detecting Misclassified and
+      Out-of-Distribution Examples in Neural Networks. ICLR 2017. arXiv:1610.02136.
+    url: https://arxiv.org/abs/1610.02136

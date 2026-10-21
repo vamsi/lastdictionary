@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Siamese network
+id: siamese-network
+pos: n.
+also:
+  - Siamese neural network
+  - twin network
+  - twin neural network
+domain: dl
+domains:
+  - percep
+  - ml
+level: specialist
+plain: >-
+  A matching machine built from twin copies of one neural network: each copy turns one of two
+  inputs, say two signatures or two face photos, into a summary, and the two summaries are compared.
+senses:
+  - definition: >-
+      An architecture in which two or more identical subnetworks with shared weights
+      ([[weight-sharing|weight sharing]]) map different inputs into a common [[embedding|embedding]]
+      space, where a distance or similarity between the outputs decides whether the inputs match.
+      Because the same function encodes both inputs, the comparison is symmetric and the network can
+      verify pairs from classes never seen in training, suiting one-shot and
+      [[few-shot-learning|few-shot]] recognition, signature and face verification, duplicate
+      detection and object tracking. Siamese networks are trained with pairwise
+      [[contrastive-learning|contrastive]] losses or, with three branches (anchor, positive,
+      negative), with the triplet loss of [[metric-learning|metric learning]]. The same twin-encoder
+      structure, with an asymmetric predictor added, underlies self-supervised methods such as BYOL
+      and SimSiam, and the [[bi-encoder|bi-encoder]] models used for retrieval.
+    example: >-
+      The Siamese network embeds both signatures and accepts the pair if their distance is below 0.4.
+origin: >-
+  Introduced by Jane Bromley, Isabelle Guyon, Yann LeCun, Eduard Säckinger and Roopak Shah of Bell
+  Labs in 'Signature Verification Using a Siamese Time Delay Neural Network' (NIPS 1993). Sumit
+  Chopra, Raia Hadsell and LeCun applied the idea to face verification in 2005.
+year: 1993
+note: >-
+  The name alludes to Chang and Eng Bunker, the 19th-century conjoined twins born in Siam; some
+  writers now prefer 'twin network'.
+see_also:
+  - contrastive learning
+  - metric learning
+  - weight sharing
+  - bi-encoder
+  - few-shot learning
+  - facial recognition
+sources:
+  - text: >-
+      Bromley, J., Guyon, I., LeCun, Y., Säckinger, E. & Shah, R. (1993). Signature Verification
+      Using a 'Siamese' Time Delay Neural Network. Advances in Neural Information Processing Systems
+      6.

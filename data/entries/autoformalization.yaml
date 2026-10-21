@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: autoformalization
+id: autoformalization
+pos: n.
+also:
+  - auto-formalization
+  - automatic formalization
+  - autoformalize
+domain: sym
+domains:
+  - llm
+  - math
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Using AI to translate ordinary mathematics written for people — definitions, theorem statements,
+  proofs — into a strict formal language that a proof-checking program can verify.
+senses:
+  - definition: >-
+      The automatic translation of informal mathematical text, natural language mixed with notation,
+      into a formal language such as [[lean|Lean]], Isabelle/HOL or [[rocq|Rocq]], producing
+      statements and proofs that a proof assistant can check. Statement autoformalization supplies
+      training data for AI provers — [[alphaproof|AlphaProof]] was trained on about 80 million
+      formal statements produced by autoformalizing informal problems (Nature, 2025) — and formal
+      statements let [[reinforcement-learning-with-verifiable-rewards|reinforcement learning]] use
+      proof checking as a reward. Proof autoformalization turns human or model-written arguments
+      into machine-checked ones. The central difficulty is faithfulness: a formal statement can
+      type-check yet mean something other than the original, so outputs are validated by
+      back-translation, agreement across samples or human review. The technique is also applied to
+      software specifications, regulations and scientific claims.
+    example: >-
+      Autoformalization turned 9,000 textbook exercises into Lean statements, of which reviewers
+      judged about 70 percent faithful.
+origin: >-
+  Pursued from the mid-2010s by Cezary Kaliszyk, Josef Urban and colleagues, who trained statistical
+  and later neural translators on aligned informal and formal corpora, and advocated by Christian
+  Szegedy in 2020 as a path toward general AI. Yuhuai Wu and colleagues' 2022 paper showed that
+  large language models could correctly formalize a substantial fraction of competition problems.
+note: >-
+  Misformalization — a correct proof of the wrong statement — is the characteristic failure.
+  Autoformalization is the translation step; once a statement is formal, checking a proof of it is
+  mechanical.
+see_also:
+  - Lean
+  - interactive theorem proving
+  - automated theorem proving
+  - AlphaProof
+  - semantic parsing
+  - formal verification
+sources:
+  - text: >-
+      Szegedy, C. (2020). A Promising Path Towards Autoformalization and General Artificial
+      Intelligence. Intelligent Computer Mathematics (CICM 2020), LNCS 12236.
+  - text: >-
+      Wu, Y., Jiang, A. Q., Li, W., Rabe, M. N., Staats, C., Jamnik, M. & Szegedy, C. (2022).
+      Autoformalization with Large Language Models. NeurIPS 2022.
+as_of: 2026-10

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: COMPAS
+id: compas
+pos: prop. n.
+also:
+  - Correctional Offender Management Profiling for Alternative Sanctions
+  - COMPAS controversy
+  - Machine Bias (ProPublica)
+domain: society
+domains:
+  - hist
+  - gov
+labels:
+  - trademark
+level: core
+plain: >-
+  Commercial software used in parts of the US justice system to rate how likely someone is to commit
+  another crime; a 2016 news investigation asking whether it was unfair to Black defendants made it
+  famous.
+senses:
+  - definition: >-
+      A proprietary risk-and-needs assessment instrument, developed by Northpointe (now Equivant),
+      that scores defendants and offenders from 1 to 10 on risks such as general and violent
+      recidivism, using questionnaire answers and criminal history; race is not an input.
+      ProPublica's May 2016 analysis of the scores given to about 7,000 arrestees in Broward County,
+      Florida, found unequal error rates, in breach of [[equalized-odds|equalized odds]]: among
+      defendants who did not reoffend within two years, 45% of Black and 23% of white defendants had
+      been rated medium or high risk, while among those who did reoffend, white defendants were more
+      often rated low risk. Northpointe replied that scores meant the same reoffense probability for
+      both groups ([[predictive-parity|predictive parity]]). Proofs that both conditions cannot hold
+      together when base rates differ made the case the founding example of the
+      [[fairness-impossibility-theorem|fairness impossibility theorem]].
+    example: Nearly every fairness course still opens with the COMPAS dataset.
+origin: >-
+  Developed in 1998 by Tim Brennan and colleagues at Northpointe and adopted by many US
+  jurisdictions. Its notoriety dates from 'Machine Bias' by Julia Angwin, Jeff Larson, Surya Mattu
+  and Lauren Kirchner (ProPublica, 23 May 2016), published weeks before the Wisconsin Supreme Court
+  allowed its use at sentencing, with cautions, in State v. Loomis (July 2016).
+year: 1998
+note: >-
+  A later study found COMPAS no more accurate than pooled predictions by untrained online
+  volunteers, or than a simple model using only age and number of prior convictions (Dressel and
+  Farid, 2018), widening the debate over whether such tools improve on human judgment.
+see_also:
+  - fairness impossibility theorem
+  - equalized odds
+  - predictive parity
+  - algorithmic bias
+  - predictive policing
+  - algorithmic accountability
+sources:
+  - text: >-
+      Angwin, J., Larson, J., Mattu, S. & Kirchner, L. (2016). Machine Bias. ProPublica, 23 May 2016.
+  - text: >-
+      Dressel, J. & Farid, H. (2018). The accuracy, fairness, and limits of predicting recidivism.
+      Science Advances 4(1), eaao5580.

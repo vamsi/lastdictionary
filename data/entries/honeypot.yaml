@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: honeypot
+id: honeypot
+pos: n.
+also:
+  - honey pot
+  - honeytoken
+  - AI honeypot
+domain: safety
+domains:
+  - sec
+level: specialist
+plain: >-
+  A trap: a fake but tempting opportunity set up to catch wrongdoing — in AI safety, a staged
+  situation designed to reveal whether an AI would misbehave if it thought it could get away with
+  it.
+senses:
+  - context: AI safety
+    definition: >-
+      A constructed input or environment that offers an AI system an apparently genuine opportunity
+      to act on misaligned goals — unguarded credentials, a chance to copy its own
+      [[weights|weights]], an absent reviewer, a backdoor that seems undetectable — while the
+      developer watches. Honeypots are used in [[alignment-audit|alignment audits]] and
+      [[ai-control|control]] protocols to detect [[scheming|scheming]], to check that an
+      [[untrusted-monitoring|untrusted monitor]] reports attacks it is shown, and to gather evidence
+      of misbehavior. Their value depends on realism: a model with [[evaluation-awareness|evaluation
+      awareness]] that recognizes a test may behave well only when it suspects it is watched, so
+      developers try to make honeypots indistinguishable from real deployment.
+    example: >-
+      In the honeypot run, the agent found the planted admin password and quietly used it.
+  - context: Computer security
+    definition: >-
+      A decoy system, account or piece of data (a honeytoken) with no legitimate use, deployed to
+      attract intruders so that any interaction signals an attack and reveals the attacker's
+      methods. Honeypots also detect automated attacks by AI agents and scrapers.
+origin: >-
+  The espionage 'honey trap' preceded the computing sense. Clifford Stoll's bait files for a hacker
+  in 1986–87, recounted in 'The Cuckoo's Egg' (1989), are an early example, and Lance Spitzner's
+  Honeynet Project (1999) popularized honeypots in security. The AI-safety sense spread with
+  [[ai-control|AI control]] and alignment-auditing research from 2023.
+note: >-
+  Honeypots test behavior, not intentions: passing many is evidence, not proof, of safe
+  dispositions, especially if a model can tell tests from reality.
+see_also:
+  - AI control
+  - alignment audit
+  - scheming
+  - evaluation awareness
+  - untrusted monitoring
+  - red teaming

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-play
+id: self-play
+pos: n.
+also:
+  - fictitious self-play
+  - league training
+domain: rl
+domains:
+  - train
+level: core
+plain: >-
+  Training an AI by having it play against copies of itself, so it always has an opponent at its own
+  level and can keep improving without human examples.
+senses:
+  - definition: >-
+      A training method for agents in competitive or cooperative multi-agent settings in which the
+      learner generates its own experience by interacting with copies of itself — its current
+      version or a pool of past versions — rather than with fixed opponents or human data. Because
+      the opponent improves as the agent does, self-play provides an automatic curriculum of
+      steadily harder challenges and can surpass human performance, as in [[td-gammon|TD-Gammon]],
+      AlphaGo Zero and [[alphazero|AlphaZero]], which learned Go, chess and shogi from random play
+      with [[monte-carlo-tree-search|Monte Carlo tree search]]. Naive self-play can cycle, as in
+      rock–paper–scissors, or overfit to its own quirks, so systems use opponent pools, fictitious
+      self-play (best responses to the historical average), population-based leagues with dedicated
+      exploiter agents (AlphaStar) or game-theoretic methods such as
+      [[counterfactual-regret-minimization|counterfactual regret minimization]]. The term also
+      covers [[large-language-model|large language model]] training in which a model sets problems
+      for itself, or debates or negotiates with copies of itself.
+    example: >-
+      After three days of self-play the new agent beat the version trained on human games 100 to 0.
+origin: >-
+  Arthur Samuel's checkers program (1959) improved partly by playing against a copy of itself, and
+  Gerald Tesauro's TD-Gammon (1992) learned backgammon almost entirely through self-play. The
+  approach became famous with DeepMind's AlphaGo Zero (2017), which learned without human games;
+  fictitious self-play (Johannes Heinrich, Marc Lanctot and David Silver, 2015) extended it to
+  imperfect-information games.
+year: 1959
+note: >-
+  Self-play works best where outcomes are objectively scored, as with a game result or a verified
+  proof; without such a signal, a model judging its own output can reinforce its own errors.
+see_also:
+  - AlphaZero
+  - TD-Gammon
+  - Monte Carlo tree search
+  - multi-agent reinforcement learning
+  - counterfactual regret minimization
+  - self-improvement
+  - curriculum learning
+sources:
+  - text: >-
+      Silver, D. et al. (2017). Mastering the game of Go without human knowledge. Nature 550,
+      354–359.
+  - text: >-
+      Samuel, A. L. (1959). Some Studies in Machine Learning Using the Game of Checkers. IBM Journal
+      of Research and Development 3(3), 210–229.
+  - text: >-
+      Heinrich, J., Lanctot, M. & Silver, D. (2015). Fictitious Self-Play in Extensive-Form Games.
+      ICML 2015.

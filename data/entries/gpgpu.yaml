@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPGPU
+id: gpgpu
+pos: abbr.
+also:
+  - general-purpose computing on graphics processing units
+  - GPU computing
+  - accelerated computing
+domain: hw
+domains:
+  - hist
+  - dl
+level: specialist
+plain: >-
+  Using a graphics chip for ordinary number-crunching instead of drawing pictures — the trick that,
+  years later, made modern AI training practical.
+senses:
+  - definition: >-
+      The practice of running non-graphics computations — physics simulation, linear algebra and
+      later [[neural-network|neural network]] training — on a [[gpu|GPU]]. Early GPGPU (c.
+      2001–2006) disguised data as textures and computations as pixel shaders written through
+      graphics interfaces such as OpenGL and DirectX, while research languages such as Stanford's
+      Brook offered stream-programming abstractions. Dedicated compute platforms — [[cuda|CUDA]]
+      (2006–2007), OpenCL (2008–2009) and later [[rocm|ROCm]] — exposed the GPU directly as a
+      parallel processor, letting researchers write [[matrix-multiplication|matrix multiplication]]
+      and [[convolution|convolution]] code for it and setting the stage for [[alexnet|AlexNet]].
+      'GPU computing' and 'accelerated computing' have largely replaced the acronym.
+origin: >-
+  Mark Harris, then a graduate student at the University of North Carolina, coined 'GPGPU' in 2002
+  and founded the community site GPGPU.org. Neural networks were run on GPUs by Kyoung-Su Oh and
+  Keechul Jung (2004) and by Kumar Chellapilla, Sidd Puri and Patrice Simard (2006), before CUDA
+  made the approach mainstream.
+year: 2002
+see_also:
+  - GPU
+  - CUDA
+  - ROCm
+  - AlexNet
+  - deep learning revolution
+  - hardware lottery
+sources:
+  - text: >-
+      Oh, K.-S. & Jung, K. (2004). GPU implementation of neural networks. Pattern Recognition 37(6).
+  - text: >-
+      Chellapilla, K., Puri, S. & Simard, P. (2006). High Performance Convolutional Neural Networks
+      for Document Processing. Tenth International Workshop on Frontiers in Handwriting Recognition.

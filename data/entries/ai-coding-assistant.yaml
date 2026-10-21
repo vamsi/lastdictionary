@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI coding assistant
+id: ai-coding-assistant
+pos: n.
+also:
+  - AI code assistant
+  - coding assistant
+  - AI code editor
+  - code completion tool
+domain: eng
+domains:
+  - llm
+  - agents
+level: core
+plain: >-
+  AI software that helps people write computer programs — suggesting the next lines, explaining
+  code, finding bugs or making changes on request — inside the tools programmers already use.
+senses:
+  - definition: >-
+      A software tool that uses [[large-language-model|language models]] trained or adapted for code
+      to help developers write, understand, test and change software. Capabilities range along a
+      spectrum of autonomy: inline completion that predicts the next tokens, lines or edits as the
+      developer types; chat that answers questions about a codebase and drafts snippets; commands
+      that apply edits across files; automated code review and test generation; and agent modes in
+      which the assistant plans a task, runs commands and tests, and iterates until done, shading
+      into fully autonomous [[coding-agent|coding agents]]. Assistants gather context from open
+      files, an index of the repository, documentation and [[agent-instruction-file|instruction
+      files]], and run in editors, terminals and code-hosting platforms. Prominent examples include
+      [[github-copilot|GitHub Copilot]], [[cursor|Cursor]] and [[claude-code|Claude Code]],
+      alongside assistants from other model providers and open-source tools. Debates concern
+      productivity, code quality and security, the licensing of training code, and effects on
+      learning and employment.
+    example: >-
+      Our policy allows an AI coding assistant, but every generated change still needs human review.
+origin: >-
+  Rule-based code completion goes back to integrated development environment features such as
+  Microsoft's IntelliSense (late 1990s), and completers such as Kite and TabNine used early neural
+  models in the late 2010s. GitHub Copilot (2021), built on OpenAI's [[codex|Codex]], made
+  language-model assistants mainstream, and agentic assistants spread in 2024–2025.
+year: 2021
+note: >-
+  Overlaps with [[coding-agent|coding agent]]: an assistant usually works interactively with the
+  developer, while an agent carries out whole tasks with less supervision. See also
+  [[vibe-coding|vibe coding]].
+see_also:
+  - GitHub Copilot
+  - Cursor
+  - coding agent
+  - code generation
+  - Claude Code
+  - vibe coding

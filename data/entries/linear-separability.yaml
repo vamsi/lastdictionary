@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: linear separability
+id: linear-separability
+pos: n.
+also:
+  - linearly separable
+  - Cover's theorem
+domain: ml
+domains:
+  - math
+  - dl
+level: core
+plain: >-
+  When two groups of points can be perfectly divided by a single straight line or, in more
+  dimensions, a flat surface. Many simple learning methods only fully succeed in this case.
+senses:
+  - definition: >-
+      The condition that two classes of points can be split by a single hyperplane (a line in two
+      dimensions, a plane in three) with each class lying strictly on its own side; geometrically,
+      it holds exactly when the convex hulls of the two classes (the smallest convex regions
+      containing them) have no point in common. If training data are linearly separable, the
+      [[perceptron|perceptron]] learning rule is guaranteed to find a separating hyperplane in a
+      finite number of steps (Novikoff's theorem), and a hard-margin
+      [[support-vector-machine|support vector machine]] finds the one with maximum
+      [[margin|margin]]. The XOR pattern is the classic non-separable case: no line separates (0,0)
+      and (1,1) from (0,1) and (1,0). Cover's theorem shows that a random two-class labeling of n
+      points in general position in d dimensions is very likely separable when n is well below 2d,
+      which is why mapping data into a higher-dimensional space — through a hidden layer or the
+      [[kernel-trick|kernel trick]] — can make classes separable.
+    example: >-
+      After the kernel mapping the two classes became linearly separable, so the hard-margin SVM
+      converged.
+origin: >-
+  The concept comes from threshold logic and late-1950s–1960s perceptron research: Albert Novikoff
+  proved perceptron convergence for separable data in 1962, Thomas Cover counted separable
+  dichotomies in 1965, and Marvin Minsky and Seymour Papert's 'Perceptrons' (1969) highlighted
+  single-layer networks' inability to learn non-separable functions such as XOR.
+year: 1962
+note: >-
+  Real datasets are rarely exactly separable, so soft-margin methods and
+  [[logistic-regression|logistic regression]] tolerate overlap. Without regularization, logistic
+  regression's weights grow without bound on perfectly separable data.
+see_also:
+  - perceptron
+  - support vector machine
+  - kernel trick
+  - decision boundary
+  - Perceptrons (book)
+  - multilayer perceptron
+sources:
+  - text: >-
+      Cover, T. M. (1965). Geometrical and Statistical Properties of Systems of Linear Inequalities
+      with Applications in Pattern Recognition. IEEE Transactions on Electronic Computers, EC-14(3),
+      326–334.
+  - text: >-
+      Minsky, M. & Papert, S. (1969). Perceptrons: An Introduction to Computational Geometry. MIT
+      Press.

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: era of experience
+id: era-of-experience
+pos: n.
+also:
+  - Welcome to the Era of Experience
+  - age of experience
+domain: rl
+domains:
+  - asi
+  - train
+labels:
+  - emerging
+  - contested
+level: specialist
+plain: >-
+  The prediction, made by David Silver and Richard Sutton in 2025, that AI will soon learn mainly
+  from its own experience of acting in the world rather than from human-written data.
+senses:
+  - definition: >-
+      A proposed new phase of AI development in which agents improve chiefly by learning from data
+      they generate through their own interaction with environments, rather than by imitating
+      human-generated data such as text and human preferences. Its authors describe an earlier 'era
+      of simulation' (reinforcement learning in games and simulators, as with
+      [[alphazero|AlphaZero]]) followed by the current 'era of human data' (large language models
+      trained on human text and feedback), whose returns they argue are diminishing as high-quality
+      human data run out. In their account, agents in the era of experience would live in
+      long-running streams of interaction rather than short episodes; act and observe through
+      grounded interfaces such as tools, APIs and sensors; be rewarded by measurable consequences in
+      the world rather than only by human judgment; and plan and reason in ways not constrained to
+      human thought. They cite AlphaProof's mathematical results and RL-trained
+      [[reasoning-model|reasoning models]] as early signs.
+    example: >-
+      In the era of experience, a tutoring agent would be rewarded by students' exam results, not by
+      raters' approval.
+origin: >-
+  Set out by David Silver and Richard Sutton in 'Welcome to the Era of Experience', released in
+  April 2025 as a preprint of a chapter written for the MIT Press book Designing an Intelligence. It
+  extends their earlier [[reward-is-enough|reward is enough]] argument and was widely discussed amid
+  the rise of RL-trained reasoning models.
+year: 2025
+note: >-
+  The essay is a forecast and research agenda, not an established result. Supporters point to
+  [[agentic-reinforcement-learning|agentic RL]] and
+  [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable rewards]];
+  skeptics question whether grounded rewards can be specified safely and whether human data are
+  really exhausted.
+see_also:
+  - reward is enough
+  - reinforcement learning
+  - self-play
+  - reinforcement learning with verifiable rewards
+  - the bitter lesson
+  - AI agent
+sources:
+  - text: >-
+      Silver, D. & Sutton, R. S. (2025). Welcome to the Era of Experience. Preprint of a chapter in
+      Designing an Intelligence (MIT Press).
+    url: https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf
+as_of: 2026-10

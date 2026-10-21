@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gato
+id: gato
+pos: prop. n.
+also:
+  - A Generalist Agent
+pronunciation: GAH-toh
+domain: hist
+domains:
+  - agents
+  - robot
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A 2022 DeepMind AI that used one set of learned settings for hundreds of jobs, from chatting and
+  describing pictures to playing video games and moving a real robot arm — an early step toward
+  general-purpose AI agents.
+senses:
+  - definition: >-
+      A single [[transformer|transformer]] network from [[deepmind|DeepMind]], with 1.2 billion
+      parameters, that handled 604 distinct tasks without any change of weights — among them
+      conversation, image captioning, Atari video games and block stacking with a physical robot
+      arm. Every input and output, whether text, image patches, button presses or joint torques, was
+      flattened into one token sequence, and the model learned by [[supervised-learning|supervised
+      learning]] to imitate expert behavior, using the context to work out what kind of output was
+      wanted. Gato performed most tasks at a respectable fraction of expert level but rarely matched
+      specialized systems, and its small size was dictated by the need to control a robot in real
+      time. It was the best-known early demonstration that one sequence model could act as a
+      generalist agent across modalities and bodies.
+    example: >-
+      Gato's recipe was simple: tokenize everything and let one transformer predict the next token.
+origin: >-
+  Described by Scott Reed, Konrad Żołna, Emilio Parisotto and colleagues in 'A Generalist Agent',
+  posted on 12 May 2022 and later published in Transactions on Machine Learning Research.
+year: 2022
+note: >-
+  Its release prompted the DeepMind researcher Nando de Freitas to declare that the game was over on
+  the road to AGI, a claim widely disputed because Gato showed breadth rather than strength.
+see_also:
+  - artificial general intelligence
+  - generalist robot policy
+  - transformer
+  - AI agent
+  - foundation model
+  - DeepMind
+sources:
+  - text: >-
+      Reed, S., Żołna, K., Parisotto, E. et al. (2022). A Generalist Agent. Transactions on Machine
+      Learning Research.

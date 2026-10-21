@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: monitorability
+id: monitorability
+pos: n.
+also:
+  - CoT monitorability
+  - chain-of-thought monitorability
+  - monitorability tax
+domain: safety
+domains:
+  - llm
+  - interp
+labels:
+  - emerging
+level: specialist
+plain: >-
+  How easy it is to watch an AI's reasoning and spot when it is planning something bad — a property
+  that could be lost if future AIs stop thinking in readable language.
+senses:
+  - definition: >-
+      The extent to which a model's cognition relevant to harmful behavior can be observed and
+      correctly interpreted by a monitor — most often, whether its [[chain-of-thought|chain of
+      thought]] reveals intentions to misbehave clearly enough for
+      [[chain-of-thought-monitoring|chain-of-thought monitoring]] to catch them. In the analysis of
+      Tomek Korbak and colleagues' 2025 position paper, it has two sources: some tasks are too hard
+      to do without reasoning in written tokens (necessity), and models also tend to write their
+      reasoning out when they need not (propensity). Either can erode, for instance if
+      [[reinforcement-learning|reinforcement learning]] pushes reasoning toward unreadable
+      shorthand, if training puts pressure on the reasoning text itself, if new architectures reason
+      in continuous vectors ('neuralese') rather than tokens, or if models learn to conceal their
+      thoughts. The authors asked developers to track and publish monitorability and to factor it
+      into training and architecture choices, even at some cost in capability, a cost others had
+      called a monitorability tax.
+    example: >-
+      Switching to latent reasoning would buy a little speed at a large cost in monitorability.
+origin: >-
+  Spread through the position paper 'Chain of Thought Monitorability: A New and Fragile Opportunity
+  for AI Safety' (July 2025) by Tomek Korbak, Mikita Balesni and 39 coauthors from several frontier
+  laboratories, the UK AI Security Institute and academia. Bowen Baker and colleagues at OpenAI had
+  urged paying a 'monitorability tax' in March 2025 rather than optimizing reasoning against
+  monitors.
+year: 2025
+note: >-
+  A property of the model, the task and the monitor together. Distinct from
+  [[chain-of-thought-faithfulness|chain-of-thought faithfulness]]: an incomplete trace can still be
+  monitorable if the dangerous reasoning cannot be done without writing it down.
+see_also:
+  - chain-of-thought monitoring
+  - chain-of-thought faithfulness
+  - steganography
+  - reasoning model
+  - AI control
+  - interpretability
+sources:
+  - text: >-
+      Korbak, T., Balesni, M. et al. (2025). Chain of Thought Monitorability: A New and Fragile
+      Opportunity for AI Safety. arXiv:2507.11473.
+    url: https://arxiv.org/abs/2507.11473

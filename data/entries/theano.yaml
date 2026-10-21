@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Theano
+id: theano
+pos: prop. n.
+also:
+  - Aesara
+  - PyTensor
+pronunciation: thee-AH-noh
+domain: eng
+domains:
+  - dl
+  - hist
+labels:
+  - historical
+  - trademark
+level: specialist
+plain: >-
+  One of the first popular free software tools for deep learning, built at a Montreal university
+  lab; development ended in 2017, but it shaped the toolkits that replaced it.
+senses:
+  - definition: >-
+      An open-source Python library from the Montreal Institute for Learning Algorithms
+      ([[mila|MILA]]) that turned array formulas written in Python into optimized machine code.
+      Users built symbolic expression graphs; Theano simplified them algebraically, derived
+      gradients by symbolic [[automatic-differentiation|automatic differentiation]], and compiled
+      the graph into fast C or CUDA code for CPUs or GPUs. This combination of static
+      [[computational-graph|computational graphs]], automatic gradients and transparent GPU
+      execution made it one of the first practical deep-learning tools and the backend of early
+      high-level libraries such as Lasagne, Blocks and [[keras|Keras]], and its design influenced
+      [[tensorflow|TensorFlow]]. Long compilation times and the arrival of industry-backed
+      frameworks led MILA to end major development in 2017; community forks continued as Aesara and
+      then PyTensor, used by the PyMC probabilistic-programming library.
+    example: >-
+      The 2014 code still imports Theano, so expect slow graph compilation before the first batch
+      runs.
+origin: >-
+  Begun around 2007 at the Université de Montréal's LISA laboratory (later MILA) under
+  [[yoshua-bengio|Yoshua Bengio]], with James Bergstra, Olivier Breuleux, Frédéric Bastien and
+  Pascal Lamblin among early developers, and presented at the SciPy conference in 2010. It is named
+  after Theano, a Greek mathematician of the Pythagorean school. Development ended with version 1.0
+  in November 2017.
+year: 2007
+see_also:
+  - TensorFlow
+  - PyTorch
+  - Keras
+  - automatic differentiation
+  - computational graph
+  - Caffe
+sources:
+  - text: >-
+      Bergstra, J. et al. (2010). Theano: A CPU and GPU Math Compiler in Python. Proceedings of the
+      9th Python in Science Conference (SciPy 2010).
+  - text: >-
+      Theano Development Team (2016). Theano: A Python framework for fast computation of
+      mathematical expressions. arXiv:1605.02688.
+    url: https://arxiv.org/abs/1605.02688

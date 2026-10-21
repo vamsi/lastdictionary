@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: group relative policy optimization
+id: group-relative-policy-optimization
+pos: n.
+also:
+  - GRPO
+domain: train
+domains:
+  - rl
+  - llm
+level: core
+plain: >-
+  A reinforcement-learning recipe for language models that has the model answer the same question
+  many times and rewards each answer by how much better it did than the group's average.
+senses:
+  - definition: >-
+      A [[policy-gradient|policy gradient]] algorithm for language models, a variant of
+      [[proximal-policy-optimization|proximal policy optimization]] that drops the learned value
+      network (critic). For each prompt it samples a group of G responses, scores each with a reward
+      (often a rule-based check, as in
+      [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable
+      rewards]]), and gives every token of a response the same [[advantage-function|advantage]]: the
+      response's reward minus the group mean, divided by the group standard deviation. The policy is
+      updated with PPO's clipped importance-ratio objective, and a [[kl-penalty|KL penalty]] toward
+      a [[reference-model|reference model]] is added to the loss rather than to the reward. Removing
+      the critic saves substantial memory and avoids training a value model on long sequences, at
+      the cost of several samples per prompt; prompts on which all samples succeed or all fail yield
+      no signal. GRPO became the default for open reasoning-model training after
+      [[deepseek-r1|DeepSeek-R1]]. Successors include Dr. GRPO, which removes length and difficulty
+      biases, DAPO, and GSPO with sequence-level importance ratios.
+    example: >-
+      With GRPO we sample 16 solutions per problem, so a batch where all 16 fail teaches the model
+      nothing.
+formula_latex: \hat{A}_{i} = \frac{r_i - \operatorname{mean}(r_1, \ldots,
+  r_G)}{\operatorname{std}(r_1, \ldots, r_G)}
+origin: >-
+  Introduced by Zhihong Shao and colleagues at DeepSeek in the DeepSeekMath paper (February 2024),
+  whose 7-billion-parameter model reached 51.7 percent on the MATH benchmark, as a memory-saving
+  variant of PPO. It drew wide attention when DeepSeek used it to train DeepSeek-R1-Zero and
+  DeepSeek-R1 (January 2025), and open-source RL libraries adopted it within weeks.
+year: 2024
+note: >-
+  Group-relative baselines resemble earlier multi-sample [[reinforce|REINFORCE]] baselines such as
+  [[reinforce-leave-one-out|REINFORCE leave-one-out]]. Critics showed that GRPO's normalization by
+  response length and by reward standard deviation introduces biases that can inflate the length of
+  wrong answers (Zichen Liu and colleagues, 2025).
+see_also:
+  - proximal policy optimization
+  - reinforcement learning with verifiable rewards
+  - policy gradient
+  - advantage function
+  - DeepSeek-R1
+  - REINFORCE leave-one-out
+  - KL penalty
+contrast:
+  - proximal policy optimization
+  - direct preference optimization
+sources:
+  - text: >-
+      Shao, Z. et al. (2024). DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open
+      Language Models. arXiv:2402.03300.
+    url: https://arxiv.org/abs/2402.03300
+  - text: >-
+      Liu, Z. et al. (2025). Understanding R1-Zero-Like Training: A Critical Perspective.
+      arXiv:2503.20783.
+    url: https://arxiv.org/abs/2503.20783
+  - text: Zheng, C. et al. (2025). Group Sequence Policy Optimization. arXiv:2507.18071.
+    url: https://arxiv.org/abs/2507.18071

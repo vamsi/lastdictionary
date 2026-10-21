@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Preparedness Framework
+id: preparedness-framework
+pos: prop. n.
+also:
+  - OpenAI Preparedness Framework
+domain: gov
+domains:
+  - safety
+level: specialist
+plain: >-
+  OpenAI's published process for testing its AI models for catastrophic risks — such as help with
+  biological weapons or cyberattacks — and deciding what safeguards are needed before release.
+senses:
+  - definition: >-
+      OpenAI's framework for tracking and mitigating catastrophic risks from its frontier models.
+      The December 2023 beta rated each model on a four-step scale (low, medium, high, critical) in
+      four areas — model autonomy, persuasion, cybersecurity, and chemical, biological, radiological
+      and nuclear threats; a model still rated high after mitigations could not be deployed, and one
+      rated critical could not be developed further. Version 2 (April 2025) narrowed the tracked
+      categories to biological and chemical capability, cybersecurity and AI self-improvement; moved
+      long-range autonomy, [[sandbagging|sandbagging]], autonomous replication and undermining
+      safeguards into research categories; dropped persuasion; and set two
+      [[capability-threshold|thresholds]]: reaching High means safeguards must be in place before a
+      model ships, and reaching Critical means they are needed while it is still being built.
+      Capability and safeguards reports go to an internal Safety Advisory Group, with leadership
+      deciding. OpenAI first treated a model as High in biology with ChatGPT Agent in July 2025.
+    example: >-
+      Under the Preparedness Framework, the model was treated as High capability in biology, so the
+      bio safeguards shipped with it.
+origin: >-
+  Announced by OpenAI on December 18, 2023, with a Preparedness team then led by Aleksander Mądry,
+  three months after Anthropic's [[responsible-scaling-policy|responsible scaling policy]]; the
+  second version appeared on April 15, 2025.
+year: 2023
+note: >-
+  Version 2 said OpenAI might adjust its requirements if a rival released a high-risk system without
+  comparable safeguards, a clause critics saw as inviting a race to the bottom.
+see_also:
+  - responsible scaling policy
+  - Frontier Safety Framework
+  - capability threshold
+  - if-then commitment
+  - dangerous capability evaluation
+  - system card
+sources:
+  - text: OpenAI (2025). Preparedness Framework, Version 2. April 15, 2025.
+as_of: 2026-10

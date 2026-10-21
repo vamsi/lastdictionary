@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: layer-wise relevance propagation
+id: layer-wise-relevance-propagation
+pos: n.
+also:
+  - LRP
+  - relevance propagation
+  - deep Taylor decomposition
+domain: interp
+domains:
+  - dl
+  - percep
+level: specialist
+plain: >-
+  A method that traces a neural network's decision backward, layer by layer, handing each part of
+  the input its share of the credit until every pixel or word has a relevance score.
+senses:
+  - definition: >-
+      A [[feature-attribution|feature attribution]] method that explains a neural network's output
+      by propagating it backward through the network as 'relevance', redistributing each neuron's
+      relevance to the neurons of the layer below in proportion to their contributions to its
+      activation. A conservation principle keeps the total relevance approximately constant from
+      layer to layer, so input relevances sum to the output score. Different propagation rules
+      (LRP-0, LRP-ε, LRP-γ, z⁺, αβ) trade off fidelity, noise and robustness and are assigned to
+      different layer types. LRP was later interpreted as deep Taylor decomposition, a chain of
+      local first-order expansions. It needs a single backward pass, is popular in medical imaging
+      and the sciences, and was used to expose [[clever-hans-effect|'Clever Hans' classifiers]] that
+      relied on watermarks or other spurious cues instead of the object itself.
+    example: >-
+      LRP put most of the relevance for 'horse' on the copyright tag in the image corner.
+origin: >-
+  Introduced by Sebastian Bach, Alexander Binder, Grégoire Montavon, Frederick Klauschen,
+  Klaus-Robert Müller and Wojciech Samek in 'On Pixel-Wise Explanations for Non-Linear Classifier
+  Decisions by Layer-Wise Relevance Propagation' (PLOS ONE, 2015), from TU Berlin and the Fraunhofer
+  Heinrich Hertz Institute.
+year: 2015
+note: >-
+  With some rules on ReLU networks, LRP reduces to gradient × input; sanity checks have found
+  certain variants insensitive to the network's upper-layer weights.
+see_also:
+  - feature attribution
+  - DeepLIFT
+  - saliency map
+  - integrated gradients
+  - backpropagation
+sources:
+  - text: >-
+      Bach, S., Binder, A., Montavon, G., Klauschen, F., Müller, K.-R. & Samek, W. (2015). On
+      Pixel-Wise Explanations for Non-Linear Classifier Decisions by Layer-Wise Relevance
+      Propagation. PLOS ONE 10(7): e0130140.
+  - text: >-
+      Lapuschkin, S. et al. (2019). Unmasking Clever Hans predictors and assessing what machines
+      really learn. Nature Communications 10, 1096.

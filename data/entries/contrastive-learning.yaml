@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: contrastive learning
+id: contrastive-learning
+pos: n.
+also:
+  - contrastive loss
+  - InfoNCE
+  - NT-Xent
+  - contrastive self-supervised learning
+  - contrastive representation learning
+domain: dl
+domains:
+  - ml
+  - percep
+level: core
+plain: >-
+  A way to learn without labels by comparison: the model learns to pull together two versions of the
+  same thing, such as two crops of one photo, and push apart unrelated things.
+senses:
+  - definition: >-
+      A family of [[representation-learning|representation learning]] methods that train an encoder
+      so that 'positive' pairs, inputs known to share meaning, map to nearby
+      [[embedding|embeddings]] while 'negative' pairs map far apart. In
+      [[self-supervised-learning|self-supervised learning]], positives are usually two augmented
+      views of one example (crops, color changes) or naturally co-occurring pairs such as an image
+      and its caption, and negatives are the other examples in the batch. The widely used InfoNCE
+      (NT-Xent) loss is a [[softmax|softmax]] [[cross-entropy|cross-entropy]] over similarities,
+      scaled by a [[temperature|temperature]], that asks the encoder to pick out the positive among
+      many negatives; minimizing it maximizes a lower bound on the [[mutual-information|mutual
+      information]] between views. Landmark systems include MoCo and SimCLR for images and
+      [[clip|CLIP]] for image–text pairs, and dense-retrieval [[embedding-model|embedding models]]
+      are trained the same way. Non-contrastive methods such as BYOL, Barlow Twins and [[dino|DINO]]
+      avoid explicit negatives but must prevent representational collapse by other means.
+    example: >-
+      Contrastive learning needs large batches, because the other examples in the batch serve as
+      negatives.
+formula_latex: \mathcal{L}_i = -\log \frac{\exp\big(\operatorname{sim}(z_i,
+  z_i^{+})/\tau\big)}{\sum_{j \neq i} \exp\big(\operatorname{sim}(z_i, z_j)/\tau\big)}
+origin: >-
+  Raia Hadsell, Sumit Chopra and Yann LeCun introduced a margin-based contrastive loss in 2006,
+  building on Siamese networks (1993) and Sue Becker and Geoffrey Hinton's agreement-maximizing
+  networks (1992); noise-contrastive estimation (Michael Gutmann and Aapo Hyvärinen, 2010) supplied
+  a probabilistic form. Aäron van den Oord and colleagues' Contrastive Predictive Coding (2018)
+  introduced InfoNCE, and MoCo (2019) and SimCLR (2020) made contrastive pretraining competitive
+  with supervised ImageNet training.
+year: 2006
+see_also:
+  - self-supervised learning
+  - Siamese network
+  - CLIP
+  - representation learning
+  - embedding model
+  - metric learning
+  - DINO
+sources:
+  - text: >-
+      Chen, T., Kornblith, S., Norouzi, M. & Hinton, G. (2020). A Simple Framework for Contrastive
+      Learning of Visual Representations. arXiv:2002.05709; ICML 2020.
+    url: https://arxiv.org/abs/2002.05709
+  - text: >-
+      van den Oord, A., Li, Y. & Vinyals, O. (2018). Representation Learning with Contrastive
+      Predictive Coding. arXiv:1807.03748.
+    url: https://arxiv.org/abs/1807.03748
+  - text: >-
+      Hadsell, R., Chopra, S. & LeCun, Y. (2006). Dimensionality Reduction by Learning an Invariant
+      Mapping. CVPR 2006.

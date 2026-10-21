@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: eigenvector
+id: eigenvector
+pos: n.
+also:
+  - eigenvalue
+  - eigenvalues
+  - eigendecomposition
+  - characteristic vector
+  - latent vector
+  - spectrum
+domain: math
+domains:
+  - ml
+  - dl
+level: core
+plain: >-
+  A special direction for a transformation: anything pointing that way stays on its line, only
+  longer, shorter or reversed; the amount of stretch is the eigenvalue. Together they reveal the
+  main axes along which data or a system varies.
+senses:
+  - definition: >-
+      A nonzero vector v that a square [[matrix|matrix]] A maps onto its own line through the
+      origin, Av = λv; the scalar λ is the corresponding eigenvalue, and the eigenvalues are the
+      roots of det(A − λI) = 0, which can be complex even when A is real. A real symmetric matrix
+      has real eigenvalues and an orthonormal basis of eigenvectors, so it can be factored as A =
+      QΛQᵀ (its eigendecomposition). Eigen-analysis runs through machine learning:
+      [[principal-component-analysis|principal component analysis]] takes the leading eigenvectors
+      of the data's covariance matrix as the directions of greatest variance; spectral clustering
+      uses eigenvectors of a graph Laplacian; Google's original PageRank was the leading eigenvector
+      of a link matrix; and the eigenvalues of the [[hessian|Hessian]] describe the curvature of a
+      [[loss-landscape|loss landscape]], distinguishing minima from [[saddle-point|saddle points]]
+      and bounding stable [[learning-rate|learning rates]]. In recurrent networks, recurrent-weight
+      eigenvalues above or below one in magnitude drive [[exploding-gradient-problem|exploding]] and
+      [[vanishing-gradient-problem|vanishing gradients]].
+    example: >-
+      The top Hessian eigenvalue hovered near 2/η, the signature of the edge of stability.
+formula_latex: A\mathbf{v} = \lambda\mathbf{v}, \qquad \mathbf{v} \neq \mathbf{0}
+origin: >-
+  The idea grew from 18th- and 19th-century work on rotating bodies, vibrations and quadratic forms
+  (Leonhard Euler, Joseph-Louis Lagrange, Augustin-Louis Cauchy). The hybrid 'eigen-' (German 'own,
+  characteristic') comes from David Hilbert's Eigenfunktion and Eigenwert (1904); 'Eigenvektor'
+  appears in Richard Courant and Hilbert's 1924 textbook, and 'eigenvector' in English by 1935,
+  displacing Sylvester's 'latent' (1883) and the alternatives 'characteristic' and 'proper'.
+year: 1924
+see_also:
+  - singular value decomposition
+  - principal component analysis
+  - Hessian
+  - matrix
+  - linear transformation
+  - edge of stability

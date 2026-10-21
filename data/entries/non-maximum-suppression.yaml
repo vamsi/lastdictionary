@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: non-maximum suppression
+id: non-maximum-suppression
+pos: n.
+also:
+  - NMS
+  - non-maxima suppression
+  - soft-NMS
+  - NMS-free detection
+domain: percep
+domains:
+  - infer
+level: core
+plain: >-
+  A clean-up step in object detection: when the system draws several overlapping boxes around the
+  same object, it keeps the most confident one and throws away the near-duplicates.
+senses:
+  - context: Object detection
+    definition: >-
+      A post-processing algorithm that removes duplicate detections. Candidate
+      [[bounding-box|boxes]] are sorted by confidence; the highest-scoring box is kept, every
+      remaining box of the same class whose [[intersection-over-union|intersection over union]] with
+      it exceeds a threshold (typically between 0.3 and 0.7) is discarded, and the process repeats
+      on what is left. Greedy NMS is simple but flawed: it can delete correct detections of objects
+      that genuinely overlap, such as people in a crowd; its threshold needs tuning; and its
+      sequential, data-dependent loop adds [[latency|latency]] and complicates export to
+      accelerators. Variants include soft-NMS (2017), which lowers the scores of overlapping boxes
+      instead of deleting them, and learned or matrix forms. 'NMS-free' detectors avoid the step by
+      training exactly one prediction per object: [[detr|DETR]] (2020) through set matching, and
+      [[yolo|YOLOv10]] (2024) through one-to-one label assignment. Ultralytics YOLO26 (released
+      January 2026) offers such a one-to-one head as an option, though as of October 2026 its
+      default prediction mode still applies NMS.
+    example: >-
+      Raising the NMS threshold recovered people standing shoulder to shoulder but let a few
+      duplicate boxes through.
+  - context: Edge detection
+    definition: >-
+      The thinning step in edge detection that keeps a pixel only if its gradient magnitude is a
+      local maximum along the gradient direction, turning blurred ridges of strong gradient into
+      one-pixel-wide edges; it is a core stage of the Canny edge detector and of many corner and
+      keypoint detectors.
+origin: >-
+  The term comes from low-level vision, where suppressing non-maximal filter responses thins edges;
+  John Canny's influential 1986 edge detector made the step standard. Greedy suppression of
+  overlapping detection windows was in use by the mid-1990s, for example in face detection, became
+  the usual final stage of sliding-window detectors and was retained by R-CNN, SSD and YOLO.
+note: >-
+  Usually applied separately for each class; 'class-agnostic' NMS suppresses across classes. Because
+  NMS runs outside the network, speed figures that exclude it can understate end-to-end latency.
+see_also:
+  - object detection
+  - intersection over union
+  - bounding box
+  - DETR
+  - YOLO
+  - anchor box
+sources:
+  - text: >-
+      Canny, J. (1986). A Computational Approach to Edge Detection. IEEE Transactions on Pattern
+      Analysis and Machine Intelligence 8(6), 679–698.
+  - text: >-
+      Bodla, N., Singh, B., Chellappa, R. & Davis, L. S. (2017). Soft-NMS: Improving Object
+      Detection With One Line of Code. ICCV 2017.
+  - text: >-
+      Hosang, J., Benenson, R. & Schiele, B. (2017). Learning Non-Maximum Suppression. CVPR 2017.
+    url: https://arxiv.org/abs/1705.02950
+as_of: 2026-10

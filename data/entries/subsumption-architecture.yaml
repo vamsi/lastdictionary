@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: subsumption architecture
+id: subsumption-architecture
+pos: n.
+also:
+  - subsumption
+  - behavior-based robotics
+  - behaviour-based robotics
+  - reactive control
+domain: robot
+domains:
+  - sym
+  - hist
+  - agents
+level: specialist
+plain: >-
+  A way to build robot brains from stacked, reflex-like behaviors — a bottom layer that keeps clear
+  of obstacles, others that roam or explore — where higher layers can take over from lower ones,
+  with no central map or plan.
+senses:
+  - definition: >-
+      A robot control architecture built from stacked layers of simple behaviors that run
+      concurrently, each wiring sensing straight to action; a higher layer, such as one that
+      explores, can take over from those beneath it, such as obstacle avoidance and aimless
+      wandering, by suppressing their inputs or inhibiting their outputs. Layers are built and
+      debugged bottom-up, so the robot stays useful if higher layers fail. The architecture
+      deliberately avoids a central world model, symbolic representation and planner; Rodney Brooks
+      summed up the stance as 'the world is its own best model'. It was a reaction against the
+      sense–model–plan–act pipeline of classical AI robots such as [[shakey-the-robot|Shakey]],
+      which were slow and brittle in real environments, and it founded behavior-based robotics,
+      which produced fast, robust insect-like robots in the late 1980s and 1990s. Its limits on
+      tasks needing memory, planning or abstraction led to hybrid architectures that place
+      deliberative planning over reactive control, an arrangement echoed in robots that pair
+      language-model planners with fast learned controllers.
+    example: The cleaning robot's bump-and-turn behavior is subsumption in miniature.
+origin: >-
+  Introduced by Rodney Brooks at MIT in 'A Robust Layered Control System for a Mobile Robot' (IEEE
+  Journal of Robotics and Automation, 1986) and demonstrated on robots such as Allen, the six-legged
+  walker Genghis and the can-collecting Herbert; Brooks developed the critique of representation in
+  'Elephants Don't Play Chess' (1990) and 'Intelligence without Representation' (1991), and
+  co-founded iRobot, maker of the Roomba, in 1990.
+year: 1986
+note: >-
+  Mainly of historical and conceptual interest today, although layered reactive controllers remain
+  common in practice and the debate it opened continues in [[embodied-ai|embodied AI]].
+see_also:
+  - embodied AI
+  - Shakey the robot
+  - mobile robot
+  - good old-fashioned AI
+  - cognitive architecture
+  - embodied cognition
+contrast:
+  - symbolic AI
+sources:
+  - text: >-
+      Brooks, R. A. (1986). A robust layered control system for a mobile robot. IEEE Journal of
+      Robotics and Automation 2(1), 14–23.
+  - text: >-
+      Brooks, R. A. (1991). Intelligence without representation. Artificial Intelligence 47, 139–159.

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: blackboard system
+id: blackboard-system
+pos: n.
+also:
+  - blackboard architecture
+  - blackboard model
+  - knowledge source
+domain: sym
+domains:
+  - agents
+  - hist
+level: specialist
+plain: >-
+  A design for AI programs that lets many independent specialist modules collaborate only through a
+  shared workspace: each watches it, posts a piece of the answer when it sees a chance, and builds
+  on what others posted.
+senses:
+  - definition: >-
+      A problem-solving architecture organized around a shared, structured workspace — the
+      blackboard — on which a solution is assembled piece by piece, often across a hierarchy of
+      abstraction levels (for speech: sound segments, syllables, words, phrases), by independent
+      modules called knowledge sources that never call one another directly. A knowledge source is
+      triggered when the blackboard reaches a state it knows how to extend, and a control component
+      chooses which triggered contribution to apply next, opportunistically mixing data-driven and
+      goal-driven reasoning. The design fits messy problems whose solution draws on varied, partial
+      and sometimes conflicting expertise, such as speech understanding, sonar interpretation and
+      protein-structure determination. In the mid-2020s researchers revisited the pattern for
+      [[multi-agent-system|multi-agent systems]] built on [[large-language-model|language models]],
+      letting [[ai-agent|agents]] coordinate through a shared workspace rather than by messaging one
+      another directly.
+origin: >-
+  Allen Newell used the blackboard metaphor in 1962. The architecture was realized in the Hearsay-II
+  speech-understanding system at Carnegie Mellon (1971–1976), described by Lee Erman, Frederick
+  Hayes-Roth, Victor Lesser and Raj Reddy in 1980, and generalized in H. Penny Nii's 1986 survey.
+see_also:
+  - Allen Newell
+  - multi-agent system
+  - production system
+  - cognitive architecture
+  - expert system
+  - agent swarm
+sources:
+  - text: >-
+      Erman, L. D., Hayes-Roth, F., Lesser, V. R. & Reddy, D. R. (1980). The Hearsay-II
+      Speech-Understanding System: Integrating Knowledge to Resolve Uncertainty. ACM Computing
+      Surveys 12(2), 213–253.
+  - text: Nii, H. P. (1986). Blackboard Systems. AI Magazine 7(2), 38–53 and 7(3), 82–106.
+as_of: 2026-10

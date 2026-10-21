@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: one-vs-rest
+id: one-vs-rest
+pos: n.
+also:
+  - OvR
+  - one-vs-all
+  - OvA
+  - one-against-all
+  - one-vs-one
+  - OvO
+  - all-pairs
+domain: ml
+level: core
+plain: >-
+  A way to handle many categories with a method that only gives yes-or-no answers: train one
+  detector per category ('this one or not?') and pick the category whose detector is most confident.
+senses:
+  - definition: >-
+      A strategy that reduces a [[multiclass-classification|multiclass classification]] problem with
+      K classes to K [[binary-classification|binary classification]] problems, the k-th separating
+      class k from all the others; at prediction time every classifier scores the input and the
+      class with the highest score wins. It lets inherently binary learners such as
+      [[support-vector-machine|support vector machines]] handle many classes, and the same per-label
+      construction handles [[multilabel-classification|multilabel classification]]. Each binary
+      problem is imbalanced (one class against K − 1), and the classifiers' scores may not be on
+      comparable scales, so they are often calibrated before comparison. The main alternative,
+      one-vs-one, trains K(K − 1)/2 classifiers on pairs of classes and predicts by majority vote:
+      each subproblem is smaller and balanced, but their number grows quadratically. Ryan Rifkin and
+      Aldebaro Klautau (2004) showed that well-tuned one-vs-rest is as accurate as more elaborate
+      schemes.
+    example: >-
+      Scikit-learn's LinearSVC trains one-vs-rest by default, so ten digit classes means ten
+      classifiers.
+origin: >-
+  Used informally since early multiclass pattern recognition; the one-vs-all and one-vs-one
+  decompositions became standard with multiclass support vector machines in the 1990s, and Rifkin
+  and Klautau's 'In Defense of One-Vs-All Classification' (Journal of Machine Learning Research,
+  2004) made an influential case for the simpler scheme, though libraries such as LIBSVM use
+  one-vs-one.
+see_also:
+  - multiclass classification
+  - binary classification
+  - multilabel classification
+  - support vector machine
+  - class imbalance
+  - calibration
+sources:
+  - text: >-
+      Rifkin, R. & Klautau, A. (2004). In Defense of One-Vs-All Classification. Journal of Machine
+      Learning Research, 5, 101–141.

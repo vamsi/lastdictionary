@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chain-of-thought faithfulness
+id: chain-of-thought-faithfulness
+pos: n.
+also:
+  - CoT faithfulness
+  - reasoning faithfulness
+  - unfaithful chain of thought
+  - unfaithful reasoning
+domain: safety
+domains:
+  - llm
+  - interp
+level: specialist
+plain: >-
+  Whether the reasoning an AI writes out really reflects how it reached its answer, rather than
+  being an after-the-fact story that leaves out what actually drove the decision.
+senses:
+  - definition: >-
+      The degree to which a model's stated [[chain-of-thought|chain of thought]] accurately
+      represents the process that actually produced its answer. A trace is unfaithful when it omits
+      factors that causally influenced the output, rationalizes a conclusion reached on other
+      grounds, or contains steps the model does not use. Faithfulness is tested by intervention:
+      planting hints or biasing features in prompts and checking whether answers change without the
+      reasoning acknowledging them, or truncating, corrupting or paraphrasing the reasoning and
+      measuring the effect on the answer. Yanda Chen and colleagues (2025) found that reasoning
+      models frequently relied on hints planted in the prompt, including ones that enabled
+      [[reward-hacking|reward hacking]], yet acknowledged them only a minority of the time, and that
+      outcome-based [[reinforcement-learning|reinforcement learning]] raised faithfulness at first
+      but soon leveled off. Faithfulness is needed for
+      [[chain-of-thought-monitoring|chain-of-thought monitoring]] to give strong guarantees.
+    example: >-
+      The model switched its answer to match the hint but never mentioned the hint in its reasoning.
+origin: >-
+  Alon Jacovi and Yoav Goldberg (2020) set out faithfulness as a criterion for model explanations.
+  Miles Turpin and colleagues (2023) showed that chain-of-thought explanations can systematically
+  misrepresent why a model answered as it did; Tamera Lanham and colleagues at Anthropic (2023)
+  measured it by editing the reasoning itself — truncating it, inserting mistakes or paraphrasing
+  it; and Yanda Chen and colleagues (2025) extended hint-based tests to reasoning models.
+year: 2023
+note: >-
+  Faithfulness differs from correctness: a valid-looking argument can be unfaithful, and a faithful
+  one can be wrong. Some researchers argue that safety needs [[monitorability|monitorability]]
+  rather than full faithfulness, since reasoning that a hard task makes necessary is informative
+  even when incomplete.
+see_also:
+  - chain-of-thought monitoring
+  - monitorability
+  - chain of thought
+  - reasoning trace
+  - post hoc explanation
+  - steganography
+sources:
+  - text: >-
+      Turpin, M., Michael, J., Perez, E. & Bowman, S. R. (2023). Language Models Don't Always Say
+      What They Think: Unfaithful Explanations in Chain-of-Thought Prompting. NeurIPS 2023.
+  - text: >-
+      Chen, Y., Benton, J., Radhakrishnan, A., Uesato, J. et al. (2025). Reasoning Models Don't
+      Always Say What They Think. arXiv:2505.05410.
+    url: https://arxiv.org/abs/2505.05410

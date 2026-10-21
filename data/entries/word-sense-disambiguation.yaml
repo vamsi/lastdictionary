@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: word sense disambiguation
+id: word-sense-disambiguation
+pos: n.
+also:
+  - WSD
+  - sense disambiguation
+  - lexical disambiguation
+domain: llm
+domains:
+  - sym
+  - hist
+level: specialist
+plain: >-
+  Working out which meaning of a word is intended in context — whether 'bank' means a riverside or a
+  place that keeps money.
+senses:
+  - definition: >-
+      The task of deciding which of an ambiguous word's meanings, as listed in a sense inventory
+      such as a dictionary or WordNet, is intended in a particular context. Approaches include
+      knowledge-based methods that compare context words with dictionary definitions, supervised
+      classifiers trained on sense-annotated corpora, semi-supervised bootstrapping that exploits
+      regularities such as one sense per discourse, and neural models whose contextual embeddings
+      separate senses implicitly. Word sense disambiguation was long considered a central obstacle
+      for [[machine-translation|machine translation]] and [[information-retrieval|information
+      retrieval]], where choosing the wrong sense changes the output. It is now rarely a separate
+      processing stage, since contextual models such as [[bert|BERT]] and LLMs resolve most
+      ambiguity in passing, but it remains a probe of lexical knowledge.
+    example: >-
+      Contextual embeddings do word sense disambiguation implicitly: 'bass' near 'guitar' and 'bass'
+      near 'lake' land far apart.
+origin: >-
+  Warren Weaver's 1949 translation memorandum proposed resolving ambiguity from neighboring words,
+  and Yehoshua Bar-Hillel argued in 1960 that fully automatic high-quality translation was
+  unattainable partly because of such ambiguity. Michael Lesk's dictionary-overlap algorithm (1986)
+  and David Yarowsky's bootstrapping method (1995) are landmark techniques.
+see_also:
+  - natural language understanding
+  - machine translation
+  - word embedding
+  - BERT
+  - distributional hypothesis
+  - computational linguistics
+sources:
+  - text: >-
+      Navigli, R. (2009). Word Sense Disambiguation: A Survey. ACM Computing Surveys 41(2), Article
+      10.
+  - text: >-
+      Yarowsky, D. (1995). Unsupervised Word Sense Disambiguation Rivaling Supervised Methods. ACL
+      1995.

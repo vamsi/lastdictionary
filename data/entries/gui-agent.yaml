@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GUI agent
+id: gui-agent
+pos: n.
+also:
+  - graphical user interface agent
+  - UI agent
+  - mobile agent
+  - phone-use agent
+  - OS agent
+domain: agents
+domains:
+  - percep
+level: specialist
+plain: >-
+  An AI agent that works through the buttons, menus and screens of ordinary software — on a desktop,
+  phone or website — instead of through behind-the-scenes programming interfaces.
+senses:
+  - definition: >-
+      An [[ai-agent|AI agent]] that perceives and operates graphical user interfaces — desktop
+      applications, mobile apps and web pages — by grounding natural-language goals in on-screen
+      elements and executing interface actions such as taps, clicks, swipes and text entry. GUI
+      agents rely on [[vision-language-model|vision-language models]] to locate elements in
+      screenshots ([[visual-grounding|visual grounding]]), sometimes aided by accessibility trees,
+      view hierarchies or 'set-of-marks' annotations that number the clickable regions. The research
+      area spans specialized grounding models, end-to-end 'native' agent models trained on large
+      collections of interface trajectories, and benchmarks for desktop ([[osworld|OSWorld]]), web
+      ([[webarena|WebArena]]) and mobile (AndroidWorld) tasks. Main difficulties are precise
+      localization on high-resolution screens, long action sequences, recovery from unexpected
+      dialogs and pop-ups, and safety around irreversible actions.
+    example: >-
+      Our GUI agent fails mostly at grounding: it knows to click Export but misses the button by a
+      few pixels.
+origin: >-
+  Builds on interface automation, robotic process automation and reinforcement-learning agents for
+  web tasks (World of Bits, 2017). The term spread in 2023–2024 with vision-language models able to
+  read screens, such as Tsinghua and Zhipu AI's CogAgent (December 2023) and Apple's Ferret-UI
+  (April 2024), and with surveys of 'GUI agents'; Anthropic's [[computer-use|computer use]] release
+  (October 2024) brought the capability to the mainstream.
+year: 2023
+see_also:
+  - computer use
+  - browser agent
+  - OSWorld
+  - vision-language model
+  - visual grounding
+  - AI agent
+sources:
+  - text: >-
+      Hong, W. et al. (2023). CogAgent: A Visual Language Model for GUI Agents. arXiv:2312.08914
+      (CVPR 2024).

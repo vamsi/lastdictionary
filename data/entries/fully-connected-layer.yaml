@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fully connected layer
+id: fully-connected-layer
+pos: n.
+also:
+  - dense layer
+  - linear layer
+  - affine layer
+  - FC layer
+  - Dense
+  - nn.Linear
+domain: dl
+level: core
+plain: >-
+  A layer in which every input is connected to every output by its own adjustable weight. It is the
+  most general and most common kind of neural-network layer.
+senses:
+  - definition: >-
+      A [[layer|layer]] that applies an affine map y = Wx + b to its whole input vector, usually
+      followed by an [[activation-function|activation function]]: every output unit is connected to
+      every input unit by its own weight, so a layer from n inputs to m outputs has m·n weights and
+      m biases. Stacked, such layers form a [[multilayer-perceptron|multilayer perceptron]]; in
+      [[convolutional-neural-network|CNNs]] they traditionally formed the final classification head,
+      and in [[transformer|transformers]] they make up the attention projections and the
+      [[feed-forward-network|feed-forward network]] sublayers, which together hold most of the
+      parameters. PyTorch calls it Linear and Keras Dense. Because it imposes no structure on its
+      input, it carries no built-in [[inductive-bias|inductive bias]] such as locality or
+      [[weight-sharing|weight sharing]]; in a convolutional network it is equivalent to a
+      convolution whose kernel covers the whole input.
+    example: >-
+      The classification head is a single fully connected layer from 768 features to 10 classes.
+formula_latex: \mathbf{y} = \varphi(W\mathbf{x} + \mathbf{b}), \quad W \in \mathbb{R}^{m \times n}
+origin: >-
+  Full connectivity between successive layers was the default in connectionist models from the
+  perceptron era onward. 'Fully connected' became the usual name as convolutional networks, with
+  their locally connected, weight-shared layers, needed a contrasting term; 'dense' and 'linear' are
+  the names used by the Keras and PyTorch libraries.
+see_also:
+  - layer
+  - multilayer perceptron
+  - feed-forward network
+  - linear transformation
+  - weights
+  - convolutional neural network
+contrast:
+  - convolution

@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: catastrophic risk
+id: catastrophic-risk
+pos: n.
+also:
+  - catastrophic harm
+  - critical harm
+domain: gov
+domains:
+  - safety
+  - asi
+labels:
+  - legal
+level: core
+plain: >-
+  The risk that AI could cause disaster on a massive scale — many deaths or enormous damage —
+  through weapons, cyberattacks or systems escaping human control. Several laws now define it
+  precisely.
+senses:
+  - context: General
+    definition: >-
+      Risk of harm so large that it would set back whole nations or humanity at large, through mass
+      casualties, say, or very large economic losses, up to and including the extinction-level harms
+      called [[existential-risk|existential risk]]. In AI safety and policy the main pathways
+      discussed are misuse (expert help with [[cbrn-risk|chemical, biological, radiological or
+      nuclear weapons]] or large-scale cyberattacks), accidents and loss of control over autonomous
+      systems, and structural harms such as extreme [[concentration-of-power|concentration of
+      power]]. How likely such outcomes are is disputed.
+    labels:
+      - contested
+  - context: Law (US states)
+    definition: >-
+      A statutory trigger for frontier-AI obligations. Under California's [[sb-53|SB 53]] (2025), a
+      catastrophic risk is a foreseeable and material one in which a developer's
+      [[frontier-model|frontier model]] would play a material part in a single incident that kills
+      or seriously injures more than 50 people or causes more than $1 billion in property damage or
+      loss. The incident must involve one of three behaviors: expert-level help in making or
+      releasing CBRN weapons; a cyberattack or other serious crime carried out without meaningful
+      human oversight; or the model escaping the control of its developer or user. Harms from
+      information already publicly available in substantially similar form do not count. New York's
+      [[raise-act|RAISE Act]] adopted the same definition in 2026; [[sb-1047|SB 1047]] had used the
+      related term 'critical harm', with a $500 million damage threshold.
+    example: >-
+      Our frontier AI framework explains how we assess catastrophic risk before each deployment.
+origin: >-
+  'Global catastrophic risk' was popularized by Nick Bostrom and Milan Ćirković's edited volume
+  Global Catastrophic Risks (2008); frontier developers' safety policies adopted 'catastrophic risk'
+  from 2023, and California wrote a definition into law in 2025.
+year: 2008
+note: >-
+  Numerical thresholds such as 50 deaths or $1 billion make the legal sense far narrower than
+  everyday usage, which can include any very large harm.
+see_also:
+  - existential risk
+  - CBRN risk
+  - SB 53
+  - RAISE Act
+  - capability threshold
+  - responsible scaling policy
+  - AI safety
+contrast:
+  - existential risk
+standards: >-
+  California SB 53 (Stats. 2025, ch. 138), Bus. & Prof. Code § 22757.11 (definition of 'catastrophic
+  risk')
+as_of: 2026-10

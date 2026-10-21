@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: International Mathematical Olympiad
+id: international-mathematical-olympiad
+pos: prop. n.
+also:
+  - IMO
+  - IMO gold medal
+domain: eval
+domains:
+  - hist
+  - math
+level: core
+plain: >-
+  The world's top math competition for high-school students. Because its problems demand creative
+  written proofs, not just answers, earning a gold medal there became a famous test of AI reasoning,
+  first passed in 2025.
+senses:
+  - context: AI evaluation
+    definition: >-
+      An annual competition, held since 1959, in which teams of up to six pre-university students
+      from over 100 countries sit two four-and-a-half-hour papers of three problems each in algebra,
+      combinatorics, geometry and number theory; each problem is worth 7 points (42 in all), and
+      roughly the top twelfth of contestants win gold. Because the problems are new and demand
+      rigorous proofs, an AI gold medal became a milestone for machine reasoning. In July 2024
+      Google DeepMind's [[alphaproof|AlphaProof]] and [[alphageometry|AlphaGeometry]] 2 reached
+      silver-medal standard (28 of 42) with formal proofs — AlphaProof's in [[lean|Lean]] — working
+      from hand-translated problems for up to three days. In July 2025 an advanced Gemini Deep Think
+      model, graded under an arrangement with the IMO, and an experimental [[openai|OpenAI]]
+      reasoning model, graded by former medalists, each scored 35 of 42, gold-medal standard,
+      writing natural-language proofs within the time limits; Harmonic's Aristotle and ByteDance's
+      Seed-Prover reported formal results at gold and silver level. At the 2026 IMO in Shanghai,
+      several AI systems were reported to achieve the first perfect scores (42 of 42), among them
+      entries from Huawei and from Xiaohongshu (RedNote), which said its proofs were graded through
+      the official process.
+    example: >-
+      An IMO gold used to be the headline goal for math AI; now the question is research-level
+      problems.
+origin: >-
+  The first IMO was held in Romania in 1959 with seven countries. Its use as an AI target was
+  formalized by the IMO Grand Challenge, proposed in 2019 by Daniel Selsam, Leonardo de Moura and
+  colleagues, which asked for a system to win gold in a formal-to-formal setting in Lean. Since
+  2024, AI laboratories have announced results on each year's problems within days of the contest.
+year: 1959
+note: >-
+  Results are not strictly comparable: systems differ in formal versus natural-language output, time
+  and compute, human translation of problems, and who graded them. OpenAI's 2025 claim, announced
+  immediately after the contest and graded outside the official process, drew criticism, and
+  organizers noted that they could not verify the compute or human involvement behind AI entries.
+see_also:
+  - AlphaProof
+  - AlphaGeometry
+  - Lean
+  - miniF2F
+  - automated theorem proving
+  - reasoning model
+  - FrontierMath
+  - benchmark saturation
+sources:
+  - text: >-
+      Selsam, D., de Moura, L. et al. (2019). The IMO Grand Challenge. Project website.
+  - text: >-
+      Luong, T. & Lockhart, E. (2025). Advanced version of Gemini with Deep Think officially
+      achieves gold-medal standard at the International Mathematical Olympiad. Google DeepMind blog,
+      21 July 2025.
+  - text: >-
+      The Standard (Kenya) (2026). AI catches up with humans to score 100pc at top maths contest.
+      July 2026.
+    url: https://www.standardmedia.co.ke/sci-tech/article/2001553533/ai-catches-up-with-humans-to-score-100pc-at-top-maths-contest
+as_of: 2026-10

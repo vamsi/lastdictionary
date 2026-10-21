@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: steering vector
+id: steering-vector
+pos: n.
+also:
+  - activation steering vector
+domain: interp
+domains:
+  - safety
+  - llm
+level: specialist
+plain: >-
+  A direction inside an AI model's internal activity that, when added while the model runs, nudges
+  its behavior — say, more upbeat, more honest or fixated on a topic — without retraining it.
+senses:
+  - definition: >-
+      A vector added to a model's [[activation|activations]], usually in the
+      [[residual-stream|residual stream]] at one or more layers, during the [[forward-pass|forward
+      pass]] to shift its outputs toward a target property. A common recipe takes the difference
+      between mean activations on contrasting inputs (for example, honest versus dishonest
+      completions) and adds a scaled multiple of it at inference time; vectors can also be found by
+      optimization or taken from [[sparse-autoencoder|sparse autoencoder]] features. Steering is
+      cheap and reversible compared with [[fine-tuning|fine-tuning]], and its success supports the
+      [[linear-representation-hypothesis|linear representation hypothesis]]. Effects can be brittle,
+      degrade fluency at high strength and fail to generalize across prompts.
+    example: >-
+      Adding the honesty steering vector at layer 14 cut false answers but made the model wordier.
+origin: >-
+  Nishant Subramani, Nivedita Suresh and Matthew Peters (2022) extracted 'latent steering vectors'
+  by optimization to control pretrained language models. Alexander Matt Turner and colleagues (2023)
+  showed that simply adding activation differences works ('activation addition', ActAdd);
+  contrastive activation addition (Rimsky et al., 2023) and representation engineering (Zou et al.,
+  2023) followed.
+year: 2022
+see_also:
+  - activation steering
+  - activation vector
+  - activation addition
+  - contrastive activation addition
+  - representation engineering
+  - persona vector
+  - linear representation hypothesis
+contrast:
+  - fine-tuning
+  - prompt engineering
+sources:
+  - text: >-
+      Subramani, N., Suresh, N. & Peters, M. (2022). Extracting Latent Steering Vectors from
+      Pretrained Language Models. Findings of ACL 2022.
+    url: https://aclanthology.org/2022.findings-acl.48
+  - text: >-
+      Turner, A. M. et al. (2023). Steering Language Models With Activation Engineering (first
+      circulated as 'Activation Addition: Steering Language Models Without Optimization').
+      arXiv:2308.10248.
+    url: https://arxiv.org/abs/2308.10248v4

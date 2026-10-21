@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: circuit
+id: circuit
+pos: n.
+also:
+  - circuits
+  - neural circuit (interpretability)
+domain: interp
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  A small, identifiable piece of wiring inside a neural network — a few internal parts and the
+  connections between them — that together carry out one specific job, such as spotting curves or
+  copying a name.
+senses:
+  - context: Interpretability
+    definition: >-
+      A subgraph of a neural network — a set of [[feature-interpretability|features]] or components
+      (neurons, [[attention-head|attention heads]], MLP layers, dictionary features) with the
+      weighted connections between them — that implements an identifiable part of the network's
+      computation. Classic examples are curve detectors assembled from edge detectors in the image
+      model InceptionV1, [[induction-head|induction heads]], and the
+      [[indirect-object-identification|indirect object identification]] circuit in GPT-2 small. A
+      circuit claim is a causal hypothesis, tested by checking that the circuit alone reproduces the
+      behavior and that the rest of the network can be ablated or resampled without harming it,
+      using [[activation-patching|activation patching]], [[path-patching|path patching]] or
+      [[causal-scrubbing|causal scrubbing]]; faithfulness, completeness and minimality are the usual
+      criteria. Circuits may be described through weights (independent of input) or through one
+      input's activations, as in [[attribution-graph|attribution graphs]], and may be found by hand
+      or by [[automated-circuit-discovery|automated circuit discovery]].
+    example: >-
+      We found the circuit that completes the pattern, then confirmed it by ablating everything else.
+  - context: Theory of computation
+    definition: >-
+      A directed acyclic graph of logic gates computing a Boolean function. Circuit complexity
+      classes such as TC⁰ (constant-depth threshold circuits) are used to bound what fixed-depth
+      [[transformer|transformers]] can compute in a single forward pass, without
+      [[chain-of-thought|chain of thought]].
+origin: >-
+  The interpretability sense was introduced by Chris Olah, Nick Cammarata and colleagues in 'Zoom
+  In: An Introduction to Circuits' (Distill, March 2020), opening the Distill Circuits thread, by
+  analogy with neural circuits in neuroscience and wiring in electronics.
+year: 2020
+note: >-
+  Circuit analyses often explain only part of a behavior; a tidy diagram can hide distributed
+  computation or backup mechanisms that compensate when components are removed.
+see_also:
+  - mechanistic interpretability
+  - circuit tracing
+  - attribution graph
+  - automated circuit discovery
+  - induction head
+  - path patching
+  - causal scrubbing
+  - feature (interpretability)
+sources:
+  - text: >-
+      Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M. & Carter, S. (2020). Zoom In: An
+      Introduction to Circuits. Distill.
+    url: https://distill.pub/2020/circuits/zoom-in/
+  - text: >-
+      Cammarata, N., Carter, S., Goh, G., Olah, C. et al. (2020). Thread: Circuits. Distill.

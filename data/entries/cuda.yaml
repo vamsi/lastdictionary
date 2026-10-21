@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: CUDA
+id: cuda
+pos: prop. n.
+also:
+  - Compute Unified Device Architecture
+  - CUDA C++
+  - CUDA kernel
+pronunciation: KOO-duh
+domain: hw
+domains:
+  - eng
+  - dl
+labels:
+  - trademark
+level: core
+plain: >-
+  Nvidia's software system for programming its graphics chips to do general calculations. Most AI
+  software is built on it, which is a big reason Nvidia chips dominate AI.
+senses:
+  - definition: >-
+      Nvidia's proprietary toolchain and execution model that lets programmers run arbitrary
+      computations, not just graphics, on its [[gpu|GPUs]]. It comprises extensions to C and C++
+      (with Fortran and Python bindings) in which a programmer writes a [[kernel|kernel]] executed
+      by thousands of threads — organized into blocks that share fast on-chip memory and
+      synchronize, and grids of blocks; a compiler (nvcc), runtime and driver; and libraries such as
+      cuBLAS for linear algebra, cuDNN for neural-network primitives and NCCL for multi-GPU
+      [[collective-communication|collective communication]]. Frameworks such as [[pytorch|PyTorch]],
+      [[tensorflow|TensorFlow]] and [[jax|JAX]] call these libraries, so most deep-learning code
+      runs on CUDA without users writing any. The maturity of this software and its developer base —
+      often called Nvidia's CUDA [[moat|moat]] — is widely seen as a main reason competitors'
+      hardware has struggled to displace Nvidia; [[rocm|ROCm]], [[triton|Triton]] and
+      [[ai-compiler|AI compilers]] aim to loosen the lock-in.
+    example: The custom CUDA kernel fused the three operations and halved the step time.
+origin: >-
+  Developed at Nvidia from 2004 by a team including Ian Buck, whose Stanford Brook language was its
+  basis, and John Nickolls. Introduced in November 2006 alongside the G80 GPU (GeForce 8800), with
+  the first public SDK in February 2007; Nvidia later stopped expanding the acronym. Its use for
+  [[alexnet|AlexNet]] (2012) and the release of cuDNN (2014) bound deep learning to it.
+year: 2006
+note: >-
+  Also used generically for GPU code ('a CUDA kernel'). How durable the CUDA advantage will be is
+  debated, as higher-level compilers increasingly target several hardware back ends.
+see_also:
+  - GPU
+  - GPGPU
+  - ROCm
+  - Triton
+  - AI compiler
+  - tensor core
+  - kernel
+contrast:
+  - ROCm
+sources:
+  - text: >-
+      Nickolls, J., Buck, I., Garland, M. & Skadron, K. (2008). Scalable Parallel Programming with
+      CUDA. ACM Queue 6(2).
+as_of: 2026-10

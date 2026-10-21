@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ICLR
+id: iclr
+pos: prop. n.
+also:
+  - International Conference on Learning Representations
+domain: orgs
+domains:
+  - dl
+level: core
+plain: >-
+  A major deep-learning conference, held every spring since 2013, where the reviews of each
+  submitted paper are posted online for anyone to read.
+senses:
+  - definition: >-
+      The International Conference on Learning Representations, a yearly spring meeting whose name
+      reflects the deep-learning view that the central problem is learning good internal
+      representations of data ([[representation-learning|representation learning]]); it now ranks
+      with [[neurips|NeurIPS]] and [[icml|ICML]] among the most prestigious machine learning venues.
+      Its distinguishing practice, kept since the first meeting, is public peer review on
+      [[openreview|OpenReview]]: anyone can read the submissions, reviews, author replies and
+      decisions, and add comments. Landmark ICLR papers include the
+      [[variational-autoencoder|variational autoencoder]] (2014), the [[adam|Adam]] optimizer and
+      [[attention|attention]]-based machine translation (both 2015), and the
+      [[vision-transformer|vision transformer]] (2021); an early [[word2vec|word2vec]] paper
+      appeared in its 2013 workshop track. Because its record is public, ICLR is a common dataset
+      for research on peer review, including on reviews drafted with AI assistance.
+    example: You can read every ICLR review, including the harsh ones, on OpenReview.
+origin: >-
+  Founded by Yoshua Bengio and Yann LeCun as a dedicated venue for deep learning; the first
+  conference was held in Scottsdale, Arizona, in May 2013, with reviewing run on the then-new
+  OpenReview platform from Andrew McCallum's group.
+year: 2013
+note: >-
+  Easily confused with [[icml|ICML]], the older general machine learning conference.
+see_also:
+  - NeurIPS
+  - ICML
+  - OpenReview
+  - Yoshua Bengio
+  - Yann LeCun
+  - deep learning
+contrast:
+  - ICML
+as_of: 2026-10

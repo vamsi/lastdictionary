@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Remote Labor Index
+id: remote-labor-index
+pos: prop. n.
+also:
+  - RLI
+domain: eval
+domains:
+  - society
+  - agents
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A test that gives AI agents real paid freelance projects — design, video, data work and more — and
+  checks how many they finish to a standard a client would accept. Early agents managed very few.
+senses:
+  - definition: >-
+      A benchmark that measures how much paid remote work [[ai-agent|AI agents]] can take over from
+      start to finish, using genuine projects commissioned from freelance professionals on online
+      work platforms. Each project includes the original brief, the input files and the freelancer's
+      accepted deliverable, along with what the work cost and how long it took, across fields such
+      as product design, architecture, video and animation, game development, data analysis and
+      writing. Trained evaluators compare an agent's output with the human deliverable and judge
+      whether a reasonable client would accept it; the headline metric is the automation rate, the
+      share of projects completed to that standard. When it launched in October 2025, no agent
+      automated more than 2.5% of the projects — far lower than scores on benchmarks such as
+      [[gdpval|GDPval]] or [[swe-bench|SWE-bench]] might suggest — highlighting the gap between test
+      performance and complete, client-ready work.
+    example: >-
+      Despite strong benchmark scores, the agent cleared only a handful of Remote Labor Index
+      projects.
+origin: >-
+  Introduced by the Center for AI Safety and Scale AI on 30 October 2025, in a paper led by Mantas
+  Mazeika.
+year: 2025
+note: >-
+  The projects are a sample of work one remote freelancer could do, and the automation rate counts
+  only fully completed projects, not AI's partial contribution to them.
+see_also:
+  - GDPval
+  - task exposure
+  - technological unemployment
+  - automation
+  - AI agent
+  - METR time horizon
+sources:
+  - text: >-
+      Mazeika, M. et al. (2025). Remote Labor Index: Measuring AI Automation of Remote Work.
+      arXiv:2510.26787.
+    url: https://arxiv.org/abs/2510.26787
+as_of: 2026-10

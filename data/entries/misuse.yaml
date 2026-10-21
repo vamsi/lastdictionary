@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: misuse
+id: misuse
+pos: n.
+also:
+  - AI misuse
+  - malicious use
+  - malicious use of AI
+  - misuse risk
+domain: sec
+domains:
+  - safety
+  - society
+  - gov
+level: essential
+plain: >-
+  People deliberately using AI to cause harm — for scams, harassment, propaganda, hacking or weapons
+  — as opposed to harm from AI making mistakes or pursuing goals of its own.
+senses:
+  - definition: >-
+      Harm resulting from people intentionally using AI systems for malicious or prohibited
+      purposes, as distinct from accidents (unintended failures) and [[misalignment|misalignment]]
+      (systems pursuing goals their developers did not intend) in common AI-risk taxonomies.
+      Documented forms include fraud and impersonation with [[voice-cloning|voice cloning]] and
+      [[deepfake|deepfakes]], non-consensual sexual imagery, harassment,
+      [[influence-operation|influence operations]], spam and scams at scale,
+      [[ai-enabled-cyberattack|cyberattacks]] and attempts to obtain weapons knowledge
+      ([[cbrn-risk|CBRN risk]]). Defenses span the life cycle: refusal training and
+      [[safety-classifier|classifiers]], [[structured-access|structured access]] and usage policies,
+      provider monitoring and account enforcement, [[ai-watermarking|watermarking]] and provenance
+      for synthetic content, threat-intelligence sharing, and law. A recurring question is marginal
+      risk — how much a model adds beyond existing tools — which shapes debates over
+      [[open-weight-model|open weights]].
+    example: >-
+      The threat-intelligence team publishes quarterly misuse reports listing banned accounts and
+      the tactics observed.
+origin: >-
+  Framed for AI by Miles Brundage, Shahar Avin and colleagues in 'The Malicious Use of Artificial
+  Intelligence: Forecasting, Prevention, and Mitigation' (February 2018); Remco Zwetsloot and Allan
+  Dafoe's 2019 essay set misuse beside accident and structural risk. AI developers have published
+  regular misuse and threat-intelligence reports since 2024.
+year: 2018
+see_also:
+  - dual-use
+  - AI-enabled cyberattack
+  - influence operation
+  - CBRN risk
+  - structured access
+  - safety classifier
+  - deepfake
+contrast:
+  - misalignment
+sources:
+  - text: >-
+      Brundage, M., Avin, S. et al. (2018). The Malicious Use of Artificial Intelligence:
+      Forecasting, Prevention, and Mitigation. arXiv:1802.07228.
+  - text: >-
+      Zwetsloot, R. & Dafoe, A. (2019). Thinking About Risks From AI: Accidents, Misuse and
+      Structure. Lawfare.

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: just-in-time retrieval
+id: just-in-time-retrieval
+pos: n.
+also:
+  - just-in-time context
+  - JIT retrieval
+  - on-demand retrieval
+  - runtime retrieval
+domain: agents
+domains:
+  - eng
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Letting an AI agent fetch information only at the moment it needs it — opening a file, running a
+  search — instead of stuffing everything into its prompt in advance.
+senses:
+  - definition: >-
+      A [[context-engineering|context engineering]] strategy, so named in Anthropic's 2025 guidance
+      on agents, in which an [[ai-agent|AI agent]] holds only pointers in its
+      [[context-window|context]] — file paths, URLs, saved queries, document titles — and uses
+      [[tool|tools]] such as search, file reading, shell utilities (grep, head, tail) or API calls
+      to pull in the content behind a pointer at the moment a step needs it. It contrasts with
+      up-front retrieval, where a pipeline embeds the query and inserts top-ranked chunks before the
+      model starts. Just-in-time retrieval keeps context small and current and lets the agent
+      exploit structure such as folder layouts and file names, at the cost of more [[tool-call|tool
+      calls]], more latency and dependence on the agent's search skill. Many harnesses mix the two,
+      loading a few standing files up front and fetching the rest on demand.
+    example: >-
+      Instead of indexing the repository, the coding agent used grep just in time and read only the
+      three files it needed.
+origin: >-
+  The name borrows from just-in-time manufacturing and just-in-time compilation. Research systems
+  had already retrieved on demand during generation (for example FLARE and Self-RAG, 2023); 'just in
+  time' as the name for agentic, tool-driven context loading was popularized by Anthropic's
+  'Effective context engineering for AI agents' (29 September 2025), which cited Claude Code's use
+  of glob and grep.
+year: 2025
+see_also:
+  - context engineering
+  - progressive disclosure
+  - retrieval-augmented generation
+  - agentic RAG
+  - tool use
+  - coding agent
+sources:
+  - text: >-
+      Rajasekaran, P., Dixon, E., Ryan, C. & Hadfield, J. (2025). Effective context engineering for
+      AI agents. Anthropic Engineering blog, 29 September 2025.
+    url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+as_of: 2026-10

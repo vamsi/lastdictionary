@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: specificity
+id: specificity
+pos: n.
+also:
+  - true negative rate
+  - TNR
+  - selectivity
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  Of all the cases that really were negative, the share a test correctly cleared; a highly specific
+  test rarely raises false alarms on healthy people.
+senses:
+  - definition: >-
+      The fraction of actual negatives that a classifier or test correctly identifies as negative:
+      TN/(TN + FP), also called the true negative rate. It is the counterpart of [[recall|recall]]
+      (sensitivity), which measures the fraction of positives caught, and the
+      sensitivity–specificity pair is the standard way to report diagnostic tests in medicine.
+      Specificity equals 1 minus the false positive rate, so the [[roc-curve|ROC curve]] plots
+      sensitivity against 1 − specificity across decision thresholds. Like sensitivity, it does not
+      depend on the prevalence of positives, whereas [[precision|precision]] (positive predictive
+      value) does; consequently a test with high sensitivity and specificity can still produce
+      mostly false alarms when screening for a rare condition. In machine learning, specificity is
+      reported mainly in medical and security applications; elsewhere precision and recall are more
+      usual.
+    example: >-
+      On the external hospital's data the screening model reached 92% sensitivity at 95% specificity.
+formula_latex: \mathrm{Specificity} = \frac{TN}{TN + FP}
+origin: >-
+  Introduced together with sensitivity by the biostatistician Jacob Yerushalmy in a 1947 study of
+  observer variation in X-ray diagnosis of tuberculosis, and standardized in clinical epidemiology
+  for reporting diagnostic test performance.
+year: 1947
+see_also:
+  - recall
+  - false positive
+  - ROC curve
+  - confusion matrix
+  - precision
+  - AUC
+contrast:
+  - precision
+sources:
+  - text: >-
+      Yerushalmy, J. (1947). Statistical Problems in Assessing Methods of Medical Diagnosis, with
+      Special Reference to X-Ray Techniques. Public Health Reports 62(40).

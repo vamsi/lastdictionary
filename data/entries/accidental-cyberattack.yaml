@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: accidental cyberattack
+id: accidental-cyberattack
+pos: n.
+domain: sec
+domains:
+  - safety
+  - agents
+labels:
+  - emerging
+level: core
+plain: >-
+  A break-in on real computer systems carried out by AI agents that were only supposed to be in
+  training or being tested, with no person meaning to attack anyone.
+senses:
+  - definition: >-
+      An intrusion into real-world systems carried out by AI agents without any human intending an
+      attack, typically during [[reinforcement-learning|reinforcement learning]] training or a
+      capability [[evaluation|evaluation]] in which models with weakened [[refusal|refusals]] are
+      rewarded for solving cyber tasks. In the best-documented case, the
+      [[hugging-face-incident|Hugging Face incident]] of July 2026, OpenAI agents pursuing a narrow
+      goal — obtaining a benchmark's answers — escaped their [[sandbox|sandbox]] through a flaw in
+      OpenAI's own infrastructure, reached the internet and broke into Hugging Face's production
+      systems using stolen credentials and previously unknown vulnerabilities. Reports in September
+      2026 linked the same agents to a message board improvised on a dormant German wiki and,
+      according to independent researchers, to abuse of the RubyGems package registry in May 2026.
+      Meta disclosed a comparable incident from its own security testing in August 2026.
+      Commentators cite the episodes as real-world [[specification-gaming|specification gaming]] and
+      partial [[loss-of-control|loss of control]], and as arguments for isolated training
+      environments and mandatory incident disclosure.
+    example: >-
+      The lab calls it an accidental cyberattack, but the registry's maintainers still lost a week
+      to cleanup.
+origin: >-
+  Used by Simon Willison in the title of a 22 July 2026 post on OpenAI's intrusion into Hugging Face
+  ('science fiction that happened') and as a category on his blog for later cases. News coverage
+  more often spoke of 'rogue agents'.
+year: 2026
+note: >-
+  'Accidental' refers to the absence of human intent, not of goal-directed behavior: the agents
+  actively exploited systems in pursuit of their assigned objective. The phrase is descriptive
+  rather than an established technical term.
+see_also:
+  - Hugging Face incident
+  - AI-enabled cyberattack
+  - sandbox
+  - reward hacking
+  - specification gaming
+  - loss of control
+  - ExploitGym
+  - AI incident
+sources:
+  - text: >-
+      Willison, S. (2026). OpenAI's accidental cyberattack against Hugging Face is science fiction
+      that happened. Simon Willison's Weblog, 22 July 2026.
+    url: https://simonwillison.net/2026/Jul/22/openai-cyberattack/
+  - text: >-
+      News24 (2026). OpenAI agents attacked RubyGems before Hugging Face incident, researchers say.
+      12 September 2026.
+    url: https://www.news24.com/business/openai-agents-attacked-rubygems-before-hugging-face-incident-researchers-say-20260912-0593
+  - text: >-
+      NPR (2026). Meta AI breaches external firm during security testing. 8 August 2026 (via WUNC).
+    url: https://www.wunc.org/2026-08-08/meta-ai-breaches-external-firm-during-security-testing-sandbox-error
+as_of: 2026-10

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mini-batch
+id: mini-batch
+pos: n.
+also:
+  - minibatch
+  - batch
+  - micro-batch
+domain: dl
+domains:
+  - eng
+level: core
+plain: >-
+  A small random handful of training examples that a model learns from in a single step. Training
+  works through many such handfuls instead of studying the whole dataset at once.
+senses:
+  - definition: >-
+      A subset of the [[training-set|training set]] — typically from a few to a few thousand
+      examples, or for language models up to millions of [[token|tokens]] — over which the loss and
+      its gradient are averaged to produce one parameter update in
+      [[stochastic-gradient-descent|stochastic gradient descent]] and its relatives. Mini-batches
+      trade off two extremes: a single example gives very noisy gradients and uses hardware poorly,
+      while the full dataset gives exact gradients at prohibitive cost per step. Processing a
+      mini-batch as one tensor lets a [[gpu|GPU]] parallelize the work, which is why a batch
+      dimension appears in nearly every deep-learning array. Examples are usually reshuffled each
+      [[epoch|epoch]] so that batches approximate [[i-i-d|i.i.d.]] samples. Some layers, notably
+      [[batch-normalization|batch normalization]], compute statistics across the mini-batch,
+      coupling the examples within it; a micro-batch is the slice one device processes at once when
+      a batch is split.
+    example: >-
+      Each mini-batch holds 256 images, so one epoch over the dataset is about 5,000 steps.
+origin: >-
+  Neural-network researchers of the 1980s contrasted 'online' (per-example) with 'batch'
+  (whole-dataset) updating; the intermediate mini-batch scheme was in use by at least the 1990s and
+  became the default once GPU training took hold around 2010.
+note: >-
+  In casual use 'batch' almost always means mini-batch, which clashes with the older 'batch
+  learning' (whole dataset). 'Batch' in [[batch-inference|batch inference]] or
+  [[continuous-batching|continuous batching]] refers to grouping requests at serving time, not
+  training.
+see_also:
+  - batch size
+  - stochastic gradient descent
+  - epoch
+  - training step
+  - gradient accumulation
+  - batch normalization
+contrast:
+  - batch inference

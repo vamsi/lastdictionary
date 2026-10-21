@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: metaheuristic
+id: metaheuristic
+pos: n.
+also:
+  - meta-heuristic
+  - metaheuristics
+domain: sym
+domains:
+  - math
+level: specialist
+plain: >-
+  A general-purpose strategy for finding good answers to hard problems, such as imitating evolution
+  or cooling metal, that can be adapted to many different problems instead of being designed for
+  just one.
+senses:
+  - definition: >-
+      A general search recipe, not tied to any one problem, that steers simpler
+      [[heuristic|heuristics]] toward good solutions of hard optimization problems, typically by
+      balancing intensification (exploiting promising regions) against diversification (exploring
+      new ones). Single-solution metaheuristics include [[simulated-annealing|simulated annealing]],
+      [[tabu-search|tabu search]], iterated local search and variable neighborhood search;
+      population-based ones include [[genetic-algorithm|genetic algorithms]] and other
+      [[evolutionary-computation|evolutionary algorithms]], [[ant-colony-optimization|ant colony
+      optimization]] and [[particle-swarm-optimization|particle swarm optimization]]. Metaheuristics
+      trade guarantees for flexibility: they rarely prove optimality, but they find near-optimal
+      solutions to large scheduling, routing, design and configuration problems on which exact
+      methods time out. Researchers have criticized a proliferation of supposedly novel
+      metaphor-based metaheuristics that rename existing ideas.
+origin: >-
+  Coined by Fred Glover in 1986, in the paper that introduced [[tabu-search|tabu search]], from
+  Greek meta- ('beyond') and heuristic. The term spread through operations research in the 1990s.
+year: 1986
+note: >-
+  The [[no-free-lunch-theorem|no free lunch theorem]] implies that no metaheuristic outperforms all
+  others when averaged over all possible problems; performance depends on matching the method to
+  problem structure.
+see_also:
+  - heuristic
+  - local search
+  - simulated annealing
+  - tabu search
+  - genetic algorithm
+  - evolutionary computation
+  - swarm intelligence
+sources:
+  - text: >-
+      Glover, F. (1986). Future Paths for Integer Programming and Links to Artificial Intelligence.
+      Computers & Operations Research 13(5), 533–549.
+  - text: >-
+      Sörensen, K. (2015). Metaheuristics — the Metaphor Exposed. International Transactions in
+      Operational Research 22(1), 3–18.

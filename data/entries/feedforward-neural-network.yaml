@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feedforward neural network
+id: feedforward-neural-network
+pos: n.
+also:
+  - feed-forward neural network
+  - FFNN
+  - FNN
+domain: dl
+domains:
+  - core
+level: core
+plain: >-
+  A neural network laid out like an assembly line: each stage hands its result only to later stages,
+  never back, so every answer depends on the current input alone and nothing is remembered between
+  inputs.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] whose connection graph contains no cycles (a directed
+      acyclic graph), so that each unit's value depends only on units earlier in a fixed ordering
+      and the whole network computes a fixed function of the current input in one pass, keeping no
+      state from one input to the next. The [[multilayer-perceptron|multilayer perceptron]] and the
+      [[convolutional-neural-network|convolutional neural network]] are feedforward, and so, within
+      a single [[forward-pass|forward pass]], is the [[transformer|transformer]];
+      [[recurrent-neural-network|recurrent networks]], whose activations feed back into themselves
+      across time steps, are the main contrast. Because the computation graph is acyclic, exact
+      gradients can be obtained by one backward sweep of [[backpropagation|backpropagation]]. Depth
+      is the length of the longest path from input to output.
+    example: >-
+      A feedforward classifier treats every frame independently, so it cannot use what happened a
+      second earlier.
+origin: >-
+  The feedforward/feedback distinction comes from control engineering and neuroscience. Frank
+  Rosenblatt's perceptron work (1958–1962) separated 'series-coupled' networks, in which signals
+  pass strictly forward, from cross-coupled and back-coupled ones. 'Feedforward network' became the
+  standard connectionist term in the 1980s. Linear regression fitted by least squares (Legendre,
+  Gauss) is sometimes described as the simplest feedforward network.
+note: >-
+  Not to be confused with the [[feed-forward-network|feed-forward network]] sublayer of a
+  transformer block, a small MLP applied independently at each token position. Autoregressive
+  generation feeds outputs back as inputs, but the network itself remains feedforward.
+see_also:
+  - multilayer perceptron
+  - forward pass
+  - computational graph
+  - layer
+  - convolutional neural network
+  - deep learning
+contrast:
+  - recurrent neural network

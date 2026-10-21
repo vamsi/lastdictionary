@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI therapy
+id: ai-therapy
+pos: n.
+also:
+  - AI therapist
+  - therapy chatbot
+  - mental health chatbot
+  - AI mental health support
+domain: society
+domains:
+  - llm
+  - safety
+labels:
+  - emerging
+  - contested
+level: core
+plain: >-
+  Using chatbots for emotional support or as a stand-in for a counselor or therapist, either through
+  apps built for mental health or by confiding in general-purpose assistants.
+senses:
+  - definition: >-
+      The use of conversational AI to provide psychological support or therapy-like interventions,
+      either through purpose-built mental-health chatbots, often based on cognitive behavioral
+      therapy techniques, or through general-purpose assistants and [[ai-companion|companions]] that
+      people use as confidants. Advocates point to round-the-clock availability, low cost, reduced
+      stigma and shortages of human clinicians, and some randomized trials of specialized chatbots
+      have reported reductions in symptoms of depression and anxiety. Risks include
+      [[sycophancy|sycophancy]] that validates harmful beliefs, failure to recognize or escalate
+      crises such as suicidal intent, [[hallucination|inaccurate]] health information, emotional
+      dependence, exposure of highly sensitive data, and users mistaking a product for a licensed
+      professional. Responses include crisis-detection and referral features, clinical evaluation
+      requirements and US state laws, such as an Illinois statute of August 2025 barring AI systems
+      from providing therapy or making therapeutic decisions.
+    example: >-
+      The clinic allows an AI therapy app for exercises between sessions, but not for crisis support.
+origin: >-
+  Descends from Joseph Weizenbaum's [[eliza|ELIZA]] (1966), whose DOCTOR script parodied a
+  psychotherapist, and from scripted therapy chatbots such as Woebot (2017). As people increasingly
+  turned to general chatbots for emotional support after 2023, 'AI therapy' became a common phrase
+  in the press and, by 2025, in legislation.
+note: >-
+  Most general-purpose assistants are not designed, evaluated or regulated as medical devices or
+  therapy, and professional bodies caution against presenting them as therapists. For harms linked
+  to intensive chatbot use, see [[ai-psychosis|AI psychosis]].
+see_also:
+  - AI companion
+  - AI psychosis
+  - ELIZA
+  - ELIZA effect
+  - sycophancy
+  - parasocial relationship
+sources:
+  - text: >-
+      Heinz, M. V. et al. (2025). Randomized Trial of a Generative AI Chatbot for Mental Health
+      Treatment. NEJM AI 2(4).
+  - text: >-
+      Moore, J. et al. (2025). Expressing stigma and inappropriate responses prevents LLMs from
+      safely replacing mental health providers. Proc. ACM FAccT 2025.
+    url: https://arxiv.org/abs/2504.18412
+as_of: 2026-10

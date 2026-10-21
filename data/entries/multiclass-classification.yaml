@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multiclass classification
+id: multiclass-classification
+pos: n.
+also:
+  - multi-class classification
+  - multinomial classification
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  Sorting each item into exactly one of three or more categories — for example, deciding which of
+  the ten digits a handwritten number shows.
+senses:
+  - definition: >-
+      The [[classification|classification]] task in which each input belongs to exactly one of K > 2
+      mutually exclusive classes. Some models handle K classes natively: [[decision-tree|decision
+      trees]], [[k-nearest-neighbors|k-nearest neighbors]], [[naive-bayes|naive Bayes]], multinomial
+      [[logistic-regression|logistic regression]] and neural networks, which usually end in a
+      [[softmax|softmax]] layer trained with [[cross-entropy|cross-entropy]] loss. Inherently binary
+      methods such as [[support-vector-machine|support vector machines]] are extended by
+      decomposition: [[one-vs-rest|one-vs-rest]] trains K classifiers; one-vs-one trains K(K−1)/2
+      pairwise classifiers that vote; and error-correcting output codes give each class a binary
+      code word learned bit by bit. Evaluation uses per-class metrics averaged equally across
+      classes (macro averaging) or pooled over all examples (micro averaging), together with the
+      multiclass [[confusion-matrix|confusion matrix]] and top-k accuracy.
+    example: >-
+      With 1,000 ImageNet classes, we report both top-1 and top-5 accuracy for the multiclass model.
+origin: >-
+  C. R. Rao extended Fisher's two-group discriminant to several groups in 1948; the multinomial
+  logit model was introduced by David Cox (1966) and independently by Henri Theil (1969). Thomas
+  Dietterich and Ghulum Bakiri proposed error-correcting output codes for multiclass learning in
+  1991 (journal version 1995).
+year: 1948
+note: >-
+  Not the same as [[multilabel-classification|multilabel classification]], where an item may carry
+  several labels at once. Formally, [[next-token-prediction|next-token prediction]] in a language
+  model is multiclass classification over the vocabulary.
+see_also:
+  - classification
+  - binary classification
+  - multilabel classification
+  - one-vs-rest
+  - softmax
+  - cross-entropy
+  - confusion matrix
+contrast:
+  - multilabel classification
+sources:
+  - text: >-
+      Rao, C. R. (1948). The Utilization of Multiple Measurements in Problems of Biological
+      Classification. Journal of the Royal Statistical Society, Series B, 10(2), 159–203.
+  - text: >-
+      Dietterich, T. G. & Bakiri, G. (1995). Solving Multiclass Learning Problems via
+      Error-Correcting Output Codes. Journal of Artificial Intelligence Research, 2, 263–286.

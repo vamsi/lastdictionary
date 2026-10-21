@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: optimization
+id: optimization
+pos: n.
+also:
+  - optimisation
+  - mathematical optimization
+  - mathematical programming
+  - optimize
+domain: math
+domains:
+  - train
+  - dl
+level: essential
+plain: >-
+  Finding the best possible choice according to some score, such as the lowest error or the highest
+  reward. Training an AI is optimization: adjusting its settings until its mistakes are as small as
+  possible.
+senses:
+  - definition: >-
+      The task of choosing values for some variables — a model's [[parameter|parameters]], a route,
+      a schedule — that make an [[objective-function|objective function]] as small or as large as
+      possible, often within constraints; also the branch of applied mathematics devoted to such
+      problems and the algorithms that solve them. Which method fits depends on the problem's shape:
+      whether the variables are continuous or discrete, whether constraints apply, and whether the
+      objective is [[convex-optimization|convex]], smooth or [[stochastic|stochastic]]. Machine
+      learning is largely optimization: training minimizes a [[loss-function|loss function]] plus
+      regularization over a model's [[parameter|parameters]], almost always with first-order methods
+      driven by the [[gradient|gradient]] — [[stochastic-gradient-descent|stochastic gradient
+      descent]], [[adam|Adam]] and their relatives — because the problems are huge, non-convex and
+      noisy. [[hyperparameter-tuning|Hyperparameter tuning]] and [[bayesian-optimization|Bayesian
+      optimization]] optimize black-box functions, and [[reinforcement-learning|reinforcement
+      learning]] maximizes expected [[return|return]]. Learning differs from pure optimization
+      because the real goal is low error on unseen data ([[generalization|generalization]]), not
+      just on the training set.
+    example: The optimization diverged twice, so we lowered the peak learning rate.
+  - context: Software engineering
+    definition: >-
+      Changes that make a program, model or system faster, cheaper or smaller without changing what
+      it computes, as in compiler optimizations or inference techniques such as
+      [[quantization|quantization]], [[kernel-fusion|kernel fusion]] and [[kv-cache|KV caching]].
+formula_latex: x^{*} = \arg\min_{x \in \mathcal{C}} f(x)
+origin: >-
+  Calculus-based optimization goes back to Pierre de Fermat's method for maxima and minima (1630s)
+  and to Lagrange's multipliers (1788); Augustin-Louis Cauchy proposed gradient descent in 1847.
+  Leonid Kantorovich (1939) and George Dantzig, whose simplex method dates from 1947, founded linear
+  programming and with it 'mathematical programming' as a discipline. 'Optimization' gradually
+  displaced that name: the Mathematical Programming Society became the Mathematical Optimization
+  Society in 2010.
+see_also:
+  - objective function
+  - convex optimization
+  - gradient descent
+  - loss function
+  - local minimum
+  - stochastic gradient descent
+  - Lagrange multiplier
+contrast:
+  - generalization

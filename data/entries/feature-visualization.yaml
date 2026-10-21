@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature visualization
+id: feature-visualization
+pos: n.
+also:
+  - activation maximization
+  - feature viz
+domain: interp
+domains:
+  - percep
+  - dl
+level: specialist
+plain: >-
+  Making pictures that show what a part of an image-recognition network is looking for, by
+  repeatedly adjusting an image until that part responds as strongly as possible.
+senses:
+  - definition: >-
+      A family of techniques that reveal what a unit, channel, direction or layer of a neural
+      network responds to, chiefly by optimization: starting from noise, an input is adjusted by
+      gradient ascent to maximize the chosen activation (activation maximization), yielding an image
+      that exemplifies the unit's preferred pattern. Unconstrained optimization produces
+      high-frequency, adversarial-looking noise, so practical methods add regularizers — robustness
+      to jitter, rotation and scaling, frequency penalties, optimization in a decorrelated Fourier
+      parameterization — or learned image priors. Diversity terms expose the separate facets of
+      [[polysemanticity|polysemantic]] units. Feature visualization is normally paired with dataset
+      examples, the real inputs that most excite a unit, because each can mislead alone. It was
+      central to the Circuits work on image models, including its curve detectors and
+      [[multimodal-neuron|multimodal neurons]]. For language models, discrete inputs make
+      optimization hard and dataset examples dominate.
+    example: >-
+      The feature visualization for this channel shows fur texture with dog snouts emerging from it.
+origin: >-
+  Dumitru Erhan, Yoshua Bengio, Aaron Courville and Pascal Vincent introduced activation
+  maximization for deep networks (2009); Karen Simonyan and colleagues (2013) and Matthew Zeiler and
+  Rob Fergus (2014) extended visualization to convolutional networks, and Google's DeepDream (2015)
+  popularized it. Chris Olah, Alexander Mordvintsev and Ludwig Schubert's 'Feature Visualization'
+  (Distill, 2017) systematized the techniques under that name.
+year: 2009
+see_also:
+  - multimodal neuron
+  - network dissection
+  - polysemanticity
+  - convolutional neural network
+  - mechanistic interpretability
+  - circuit
+contrast:
+  - saliency map
+sources:
+  - text: >-
+      Erhan, D., Bengio, Y., Courville, A. & Vincent, P. (2009). Visualizing Higher-Layer Features
+      of a Deep Network. Technical Report 1341, Université de Montréal.
+  - text: Olah, C., Mordvintsev, A. & Schubert, L. (2017). Feature Visualization. Distill.

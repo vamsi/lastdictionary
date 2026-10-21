@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: constraint satisfaction problem
+id: constraint-satisfaction-problem
+pos: n.
+also:
+  - CSP
+  - constraint satisfaction
+  - constraint programming
+  - constraint propagation
+  - arc consistency
+domain: sym
+domains:
+  - math
+level: core
+plain: >-
+  A problem in which each item must be given a value so that every rule is obeyed, like filling in a
+  Sudoku, coloring a map so no neighbors match, or building a timetable without clashes.
+senses:
+  - definition: >-
+      A problem specified by a set of variables, a domain of possible values for each, and a set of
+      constraints, each restricting the combinations of values that some subset of the variables may
+      take together; a solution assigns a value to every variable so that all constraints hold. Map
+      coloring, Sudoku, timetabling, scheduling and product configuration are standard examples.
+      General CSPs are [[np-complete|NP-complete]], so solvers combine backtracking
+      [[depth-first-search|search]] with constraint propagation, which deletes values that cannot
+      appear in any solution (arc consistency is the classic form), and with variable- and
+      value-ordering [[heuristic|heuristics]] such as choosing the most constrained variable first.
+      Constraint optimization adds an objective to minimize. Constraint programming — languages and
+      solvers built around CSPs, such as MiniZinc and Google's OR-Tools CP-SAT — is a mainstay of
+      industrial scheduling and logistics.
+    example: >-
+      We modeled the nurse rota as a constraint satisfaction problem with 3,000 variables.
+origin: >-
+  Ivan Sutherland's Sketchpad (1963) solved geometric constraints interactively, and David Waltz's
+  1972 line-labeling program for drawings of 3-D scenes showed the power of propagation. Ugo
+  Montanari formalized networks of constraints in 1974, and Alan Mackworth's 1977 paper defined arc
+  consistency and the AC-3 algorithm.
+year: 1974
+see_also:
+  - Boolean satisfiability problem
+  - depth-first search
+  - heuristic
+  - answer set programming
+  - local search
+  - combinatorial explosion
+  - automated planning
+sources:
+  - text: >-
+      Montanari, U. (1974). Networks of Constraints: Fundamental Properties and Applications to
+      Picture Processing. Information Sciences 7, 95–132.
+  - text: >-
+      Mackworth, A. K. (1977). Consistency in Networks of Relations. Artificial Intelligence 8(1),
+      99–118.

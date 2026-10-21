@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: roofline model
+id: roofline-model
+pos: n.
+also:
+  - roofline
+  - roofline plot
+  - roofline analysis
+domain: hw
+domains:
+  - infer
+  - eng
+level: specialist
+plain: >-
+  A simple chart showing the fastest a program can run on a chip: limited either by how quickly data
+  arrives from memory or by the chip's top calculating speed.
+senses:
+  - definition: >-
+      A visual performance model that bounds the attainable throughput of a computation on given
+      hardware by the lesser of the peak compute rate and memory bandwidth multiplied by
+      [[arithmetic-intensity|arithmetic intensity]]. Plotted on log–log axes (performance against
+      FLOP per byte), the bound forms a sloping roof for the memory-bound region that meets a flat
+      roof for the compute-bound region at the ridge point, the minimum intensity needed to reach
+      peak. Plotting measured kernels against the roofline shows how far each is from its limit and
+      which resource to optimize; extensions add rooflines for caches,
+      [[interconnect|interconnects]], lower-precision [[tensor-core|tensor units]] and energy. In AI
+      engineering it explains why [[prefill|prefill]] is compute-bound while [[decode-phase|decode]]
+      is memory-bound, and guides choices of batch size, [[quantization|quantization]] and
+      parallelism.
+formula_latex: P_{\text{attainable}} = \min\left(P_{\text{peak}},\; B_{\text{mem}} \times I\right)
+origin: >-
+  Introduced by Samuel Williams, Andrew Waterman and David Patterson of the University of
+  California, Berkeley, in 'Roofline: An Insightful Visual Performance Model for Multicore
+  Architectures' (Communications of the ACM, April 2009), building on Williams's 2008 doctoral work.
+year: 2009
+see_also:
+  - arithmetic intensity
+  - memory bandwidth
+  - FLOPS
+  - memory wall
+  - prefill
+  - decode phase
+sources:
+  - text: >-
+      Williams, S., Waterman, A. & Patterson, D. (2009). Roofline: An Insightful Visual Performance
+      Model for Multicore Architectures. Communications of the ACM 52(4), 65–76.
+      doi:10.1145/1498765.1498785.

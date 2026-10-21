@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: probability distribution
+id: probability-distribution
+pos: n.
+also:
+  - distribution
+  - probability mass function
+  - PMF
+  - joint distribution
+  - marginal distribution
+  - cumulative distribution function
+  - CDF
+domain: math
+domains:
+  - ml
+  - llm
+level: core
+plain: >-
+  A complete description of how likely each possible outcome is — for a fair die, one-sixth for each
+  face. A language model produces one of these over its whole vocabulary at every step.
+senses:
+  - definition: >-
+      A description of how probability is spread over the possible values of a
+      [[random-variable|random variable]]. Discrete distributions assign a probability to each value
+      through a probability mass function, as the [[categorical-distribution|categorical
+      distribution]] does; continuous ones are described by a
+      [[probability-density-function|probability density function]]; and any distribution on the
+      real line has a cumulative distribution function giving the probability of values up to x. For
+      several variables, the joint distribution covers every combination of values; marginal
+      distributions sum or integrate the others out, and conditional distributions fix some of them
+      (see [[conditional-probability|conditional probability]]). Much of machine learning is
+      estimating, approximating or [[sampling|sampling]] from distributions: a classifier outputs a
+      distribution over labels, a [[large-language-model|large language model]] a distribution over
+      the next [[token|token]], and a [[generative-model|generative model]] approximates the
+      distribution of its training data. Mismatch between training and deployment distributions is
+      studied as [[distribution-shift|distribution shift]].
+    example: >-
+      At temperature zero the next-token distribution collapses onto its single most likely token.
+origin: >-
+  Particular distributions were studied long before the general notion: the binomial by Jacob
+  Bernoulli and Abraham de Moivre, the normal by de Moivre (1733), Laplace and Gauss. Richard von
+  Mises built his 1919 theory on the Verteilungsfunktion ('distribution function', recorded in
+  English by 1933); Andrey Kolmogorov's axioms (1933) gave the measure-theoretic definition, and
+  Harald Cramér's 1937 monograph helped make 'probability distribution' standard English.
+see_also:
+  - random variable
+  - probability density function
+  - categorical distribution
+  - normal distribution
+  - conditional probability
+  - sampling
+  - distribution shift

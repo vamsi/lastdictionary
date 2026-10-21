@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: compute-optimal training
+id: compute-optimal-training
+pos: n.
+also:
+  - compute-optimal
+  - Chinchilla-optimal
+  - compute-efficient training
+  - compute-optimal model
+domain: train
+domains:
+  - llm
+level: core
+plain: >-
+  Choosing a model's size and the amount of data it trains on so that a fixed amount of computing
+  produces the best possible model — neither too big and undertrained nor too small and overfed.
+senses:
+  - definition: >-
+      Training in which model size N and training-token count D are chosen to minimize final loss
+      for a given [[compute-budget|compute budget]] C, subject to C ≈ 6ND. A larger model learns
+      more per token but can process fewer tokens for the same budget, so loss plotted against N at
+      fixed C is U-shaped, and the bottom of the U is the compute-optimal size;
+      [[isoflop-analysis|IsoFLOP analysis]] locates it empirically. For dense
+      [[transformer|transformers]] on web text the [[chinchilla-scaling-laws|Chinchilla scaling
+      laws]] put the optimum near 20 [[tokens-per-parameter|tokens per parameter]], with N and D
+      each growing roughly as the square root of C; the ratio shifts with data quality,
+      architecture, [[tokenizer|tokenizer]], sparsity and data repetition. Compute-optimality
+      ignores the cost of serving the model, which is why production models are usually
+      [[overtraining|overtrained]], and it assumes a [[learning-rate-schedule|learning rate
+      schedule]] matched to each run's length.
+    example: >-
+      A compute-optimal 7B model would see about 140 billion tokens; we trained ours on two trillion.
+origin: >-
+  Jared Kaplan and colleagues (2020) framed 'compute-efficient' training and advised large models
+  stopped well before convergence; Jordan Hoffmann and colleagues (2022) titled their revision
+  'Training Compute-Optimal Large Language Models', fixing the term and shifting practice toward
+  more data per parameter.
+year: 2022
+see_also:
+  - Chinchilla scaling laws
+  - compute budget
+  - tokens per parameter
+  - overtraining
+  - IsoFLOP analysis
+  - scaling laws
+contrast:
+  - overtraining
+sources:
+  - text: >-
+      Hoffmann, J. et al. (2022). Training Compute-Optimal Large Language Models. arXiv:2203.15556.
+    url: https://arxiv.org/abs/2203.15556v1

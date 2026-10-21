@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: logic programming
+id: logic-programming
+pos: n.
+also:
+  - logic program
+  - constraint logic programming
+domain: sym
+domains:
+  - hist
+level: core
+plain: >-
+  A style of programming in which you write down facts and rules in logic and then ask questions;
+  the computer works out the answers itself by logical deduction.
+senses:
+  - definition: >-
+      A declarative style of programming in which code is read as a logical theory — facts and
+      rules, usually [[horn-clause|Horn clauses]] — and a query is answered by deduction, the system
+      searching for variable bindings under which the query follows from the theory. Robert Kowalski
+      summarized the idea as 'algorithm = logic + control': the programmer states what is true, and
+      an execution strategy, such as [[prolog|Prolog]]'s depth-first SLD [[resolution|resolution]]
+      with [[unification|unification]] and backtracking, determines how answers are found. Negation
+      is usually treated as negation as failure — 'not p' succeeds if p cannot be proven — under a
+      [[closed-world-assumption|closed-world assumption]]. Major branches include Prolog,
+      [[datalog|Datalog]], constraint logic programming, [[answer-set-programming|answer set
+      programming]] and [[inductive-logic-programming|inductive logic programming]], which learns
+      logic programs from examples.
+    example: >-
+      In logic programming you describe the family tree and simply ask who Ann's cousins are.
+origin: >-
+  Emerged in 1972–1974 from collaboration between Alain Colmerauer and Philippe Roussel in
+  Marseille, who created Prolog, and Robert Kowalski in Edinburgh, who gave Horn-clause resolution a
+  procedural interpretation; Cordell Green's 1969 question-answering work was a precursor. Japan's
+  [[fifth-generation-computer-systems-project|Fifth Generation Computer Systems project]]
+  (1982–1992) made logic programming a national research bet.
+year: 1972
+see_also:
+  - Prolog
+  - Horn clause
+  - Datalog
+  - answer set programming
+  - inductive logic programming
+  - resolution
+  - unification
+sources:
+  - text: >-
+      Kowalski, R. (1974). Predicate Logic as Programming Language. Proceedings of IFIP Congress 74,
+      569–574.
+  - text: >-
+      Kowalski, R. (1979). Algorithm = Logic + Control. Communications of the ACM 22(7), 424–436.

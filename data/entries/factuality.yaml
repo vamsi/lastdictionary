@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: factuality
+id: factuality
+pos: n.
+also:
+  - factual accuracy
+  - factual consistency
+  - factuality evaluation
+domain: llm
+domains:
+  - eval
+  - safety
+level: core
+plain: >-
+  How far what an AI says is actually true about the world. A factual model gets facts, numbers,
+  names and dates right and does not make things up.
+senses:
+  - definition: >-
+      The property that generated statements are true with respect to established world knowledge,
+      and the family of methods for measuring it. Researchers distinguish factuality from
+      faithfulness — consistency with a given source document — since a summary can be faithful to
+      an erroneous source, or factual while adding unsupported content. Short-form factuality is
+      measured with question sets that have single verifiable answers, such as [[simpleqa|SimpleQA]]
+      and [[truthfulqa|TruthfulQA]]; long-form factuality decomposes generated text into atomic
+      claims and checks each against a knowledge source, as in FActScore (2023) and search-augmented
+      evaluators. Factuality depends on [[parametric-knowledge|parametric knowledge]],
+      [[calibration|calibration]] and willingness to abstain, and is improved by retrieval and
+      [[grounding|grounding]], training that rewards [[abstention|abstention]] over guessing, and
+      post-hoc verification.
+    example: Factuality on biographies dropped sharply for people with little web presence.
+origin: >-
+  Used in summarization research from about 2019–2020, notably in Joshua Maynez and colleagues'
+  study of faithfulness and factuality in abstractive summarization (2020), and extended to
+  open-ended LLM generation by Sewon Min and colleagues' FActScore (2023) and Jerry Wei and
+  colleagues' long-form factuality benchmark (2024).
+year: 2020
+note: >-
+  Factuality concerns the world; [[truthfulness|truthfulness]] and [[honesty|honesty]] concern
+  whether a model asserts only what it believes. A model can be honest yet non-factual if its
+  beliefs are wrong.
+see_also:
+  - hallucination
+  - confabulation
+  - grounding
+  - abstention
+  - TruthfulQA
+  - SimpleQA
+  - truthfulness
+  - calibration
+contrast:
+  - truthfulness
+sources:
+  - text: >-
+      Maynez, J., Narayan, S., Bohnet, B. & McDonald, R. (2020). On Faithfulness and Factuality in
+      Abstractive Summarization. ACL 2020.
+  - text: >-
+      Min, S. et al. (2023). FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long
+      Form Text Generation. EMNLP 2023.

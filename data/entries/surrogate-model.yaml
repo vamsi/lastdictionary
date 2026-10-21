@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: surrogate model
+id: surrogate-model
+pos: n.
+also:
+  - surrogate
+  - global surrogate
+  - local surrogate
+  - metamodel
+  - emulator
+  - substitute model
+domain: interp
+domains:
+  - ml
+  - math
+  - sec
+level: core
+plain: >-
+  A simpler stand-in model trained to imitate a more complex one — to explain it, or to approximate
+  a slow or costly calculation cheaply.
+senses:
+  - context: Explainable AI
+    definition: >-
+      A transparent stand-in for an opaque model: a shallow [[decision-tree|decision tree]], rule
+      list or sparse linear model fitted not to the true labels but to a black-box model's own
+      predictions, so that reading the stand-in gives an approximate account of what the black box
+      does. A global surrogate is fitted to the black box's outputs across a dataset; a local
+      surrogate approximates it only near one input, as in [[lime|LIME]]. A surrogate explains the
+      black box only as far as it agrees with it, so its fidelity — the share of held-out inputs on
+      which it matches the black box — should be reported with it: a surrogate with 80% fidelity is
+      silent about the decisions on which it disagrees.
+    example: >-
+      A depth-four tree reproduced the neural network's decisions with 93% fidelity, so we used it
+      as a global surrogate.
+  - context: Optimization and simulation
+    definition: >-
+      A cheap approximation of an expensive function — a physical simulation, a laboratory
+      experiment, or a model's validation loss as a function of its hyperparameters — built from a
+      limited number of evaluations and used to decide where to evaluate next or to replace the
+      expensive function. [[gaussian-process|Gaussian processes]] are the classic surrogates in
+      [[bayesian-optimization|Bayesian optimization]]; neural-network surrogates, or emulators,
+      accelerate climate and engineering simulations.
+  - context: Security
+    definition: >-
+      A local copy trained to imitate a target model from its input–output behavior, typically by
+      querying the target's API and recording its answers. Attackers use such copies to craft
+      [[adversarial-example|adversarial examples]] that transfer to the target, or keep them as the
+      product of [[model-extraction|model extraction]]; in this sense 'substitute model' is also
+      common.
+origin: >-
+  Approximating expensive experiments with fitted response surfaces goes back to George Box and K.
+  B. Wilson (1951), and 'surrogate model' became standard in engineering design optimization by the
+  1990s. Mark Craven and Jude Shavlik's TREPAN (1996), which extracted decision trees mimicking
+  trained neural networks, was an early explanatory surrogate.
+note: >-
+  Distinguish a surrogate loss (a tractable function optimized in place of the true objective) and
+  surrogate gradients (used to train spiking networks), which share only the idea of substitution.
+  Closely related to [[knowledge-distillation|knowledge distillation]], where the imitating model is
+  meant to replace, not explain, the original.
+see_also:
+  - LIME
+  - global explanation
+  - interpretable model
+  - Bayesian optimization
+  - model extraction
+  - knowledge distillation
+contrast:
+  - black box
+sources:
+  - text: >-
+      Craven, M. W. & Shavlik, J. W. (1996). Extracting Tree-Structured Representations of Trained
+      Networks. Advances in Neural Information Processing Systems 8.

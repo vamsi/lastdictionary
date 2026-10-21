@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TF-IDF
+id: tf-idf
+pos: abbr.
+also:
+  - term frequency–inverse document frequency
+  - inverse document frequency
+  - IDF
+domain: eng
+domains:
+  - ml
+  - math
+level: core
+plain: >-
+  A simple score for picking out the words that characterize a document: a word counts for more the
+  more often it appears there, and for less the more of the collection's other documents also use
+  it.
+senses:
+  - definition: >-
+      A term-weighting scheme that multiplies a term's frequency in a document (tf), which rewards
+      words the document uses often, by its inverse document frequency (idf), the logarithm of the
+      collection size divided by the number of documents containing the term, which discounts words
+      that appear everywhere. The weights turn each document into a sparse vector used for keyword
+      search in the [[vector-space-model|vector space model]] (usually scored by
+      [[cosine-similarity|cosine similarity]]), as features for [[text-classification|text
+      classification]] and [[clustering|clustering]], and for keyword extraction. Many variants
+      exist — logarithmic or binary tf, smoothed idf, length normalization — and [[bm25|BM25]] can
+      be read as a refined tf-idf whose term-frequency credit saturates.
+    example: >-
+      A TF-IDF baseline with logistic regression still gets 88% on the ticket-routing task.
+formula_latex: \operatorname{tfidf}(t,d)=\operatorname{tf}(t,d)\cdot\log\frac{N}{\operatorname{df}(t)}
+origin: >-
+  Inverse document frequency was proposed by Karen Spärck Jones in 1972 ('A statistical
+  interpretation of term specificity and its application in retrieval', Journal of Documentation).
+  Weighting by within-document frequency goes back to Hans Peter Luhn's work at IBM in the late
+  1950s. Gerard Salton's SMART group combined and systematized tf·idf weighting in the 1970s and
+  1980s.
+year: 1972
+note: >-
+  In the formula, N is the number of documents in the collection and df(t) the number that contain
+  term t.
+see_also:
+  - BM25
+  - vector space model
+  - sparse retrieval
+  - inverted index
+  - information retrieval
+  - text classification
+sources:
+  - text: >-
+      Spärck Jones, K. (1972). A statistical interpretation of term specificity and its application
+      in retrieval. Journal of Documentation 28(1): 11–21.
+  - text: >-
+      Salton, G. & Buckley, C. (1988). Term-weighting approaches in automatic text retrieval.
+      Information Processing & Management 24(5): 513–523.

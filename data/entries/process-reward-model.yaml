@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: process reward model
+id: process-reward-model
+pos: n.
+also:
+  - PRM
+  - process-supervised reward model
+  - step-level reward model
+  - process verifier
+domain: train
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  A model that grades each step of an AI's worked solution, not just the final answer, so mistakes
+  can be caught where they happen — like a teacher marking every line of a proof.
+senses:
+  - definition: >-
+      A [[reward-model|reward model]] that scores the intermediate steps of a multi-step solution,
+      typically each line or paragraph of a [[chain-of-thought|chain of thought]], estimating
+      whether each step is correct or still on a path to a correct answer. A whole solution can be
+      scored by combining step scores, for example as the product of per-step correctness
+      probabilities or as their minimum. PRMs are used to rerank samples in
+      [[best-of-n-sampling|best-of-n sampling]], to guide step-level tree or beam search at
+      inference time, and as dense rewards in reinforcement learning, easing the
+      [[credit-assignment-problem|credit assignment problem]]. Step labels may come from human
+      annotators, as in the 800,000-label PRM800K dataset, or be estimated automatically by rolling
+      out completions from each step and checking how often they reach the right answer. Drawbacks
+      are the cost and ambiguity of defining a 'step' and vulnerability to reward hacking when used
+      as an RL reward; several 2025 reasoning models were trained with outcome rewards only.
+    example: >-
+      The PRM flagged step 4, where the solution divided by a quantity that could be zero.
+origin: >-
+  Jonathan Uesato and colleagues at DeepMind (November 2022) compared process- and outcome-based
+  feedback on grade-school math and introduced the abbreviations PRM and ORM. Hunter Lightman and
+  colleagues at OpenAI ('Let's Verify Step by Step', May 2023) showed process supervision beating
+  outcome supervision on MATH, solving 78 percent of a test subset, and released PRM800K;
+  Math-Shepherd (2023) automated step labeling.
+year: 2022
+note: >-
+  The training signal is called [[process-supervision|process supervision]], also valued for safety
+  because it rewards reasoning people can endorse rather than results alone. DeepSeek reported not
+  using PRMs for R1 because of reward hacking and the difficulty of labeling steps.
+see_also:
+  - outcome reward model
+  - process supervision
+  - reward model
+  - verifier
+  - best-of-n sampling
+  - chain of thought
+  - credit assignment problem
+contrast:
+  - outcome reward model
+sources:
+  - text: >-
+      Uesato, J. et al. (2022). Solving math word problems with process- and outcome-based feedback.
+      arXiv:2211.14275.
+    url: https://arxiv.org/abs/2211.14275
+  - text: Lightman, H. et al. (2023). Let's Verify Step by Step. arXiv:2305.20050.
+    url: https://arxiv.org/abs/2305.20050

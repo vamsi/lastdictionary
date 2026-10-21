@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bayesian neural network
+id: bayesian-neural-network
+pos: n.
+also:
+  - BNN
+  - Bayesian deep learning
+  - Bayes by Backprop
+domain: dl
+domains:
+  - math
+  - ml
+  - safety
+level: specialist
+plain: >-
+  A neural network that keeps a whole range of plausible settings for its internal numbers instead
+  of one best guess, so that it can say how unsure it is about each prediction.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] whose weights are treated as random variables with a
+      [[prior|prior]] distribution, so that learning means computing, or approximating, a
+      [[posterior|posterior]] over weights given the data, and prediction averages the outputs of
+      all weight settings in proportion to their posterior probability. The spread of those outputs
+      estimates epistemic uncertainty, the uncertainty due to limited data, which supports
+      [[calibration|calibration]], out-of-distribution detection, active learning and cautious
+      decisions. The exact posterior is intractable for realistic networks, so practice relies on
+      approximations: the Laplace approximation around a trained solution,
+      [[markov-chain-monte-carlo|Markov chain Monte Carlo]] such as Hamiltonian Monte Carlo,
+      [[variational-inference|variational inference]] over weights (Bayes by Backprop), Monte Carlo
+      [[dropout|dropout]] and weight-averaging methods; deep ensembles are often used as a strong,
+      partly Bayesian substitute. Computational cost, choice of prior and the 'cold posterior'
+      effect, in which artificially sharpening the posterior improves accuracy, remain open
+      problems.
+    example: >-
+      The Bayesian neural network flagged scans from the new hospital as high-uncertainty, so they
+      went to a radiologist.
+formula_latex: p(y^{*} \mid x^{*}, \mathcal{D}) = \int p(y^{*} \mid x^{*}, \mathbf{w})\,
+  p(\mathbf{w} \mid \mathcal{D})\, d\mathbf{w}
+origin: >-
+  Early probabilistic treatments of network weights include Naftali Tishby, Esther Levin and Sara
+  Solla (1989) and John Denker and Yann LeCun (1991). David MacKay's 1992 evidence framework, using
+  the Laplace approximation, and Radford Neal's 1995 thesis, using Hamiltonian Monte Carlo and
+  showing that infinitely wide networks become [[gaussian-process|Gaussian processes]], established
+  the field. Variational weight uncertainty (Charles Blundell et al., 2015) and dropout as
+  approximate inference (Yarin Gal and Zoubin Ghahramani, 2016) revived it for deep learning.
+year: 1989
+note: >-
+  Not to be confused with a [[bayesian-network|Bayesian network]], a graphical model of dependencies
+  among variables that need not involve neural networks. Whether approximate BNNs beat cheaper
+  uncertainty methods in practice is debated.
+see_also:
+  - Bayesian inference
+  - uncertainty quantification
+  - variational inference
+  - Markov chain Monte Carlo
+  - Gaussian process
+  - dropout
+  - ensemble learning
+  - calibration
+contrast:
+  - Bayesian network
+sources:
+  - text: >-
+      MacKay, D. J. C. (1992). A Practical Bayesian Framework for Backpropagation Networks. Neural
+      Computation 4(3), 448–472.
+  - text: >-
+      Neal, R. M. (1996). Bayesian Learning for Neural Networks. Lecture Notes in Statistics 118.
+      Springer.
+  - text: >-
+      Blundell, C., Cornebise, J., Kavukcuoglu, K. & Wierstra, D. (2015). Weight Uncertainty in
+      Neural Networks. Proc. ICML 2015.

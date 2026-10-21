@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bagging
+id: bagging
+pos: n.
+also:
+  - bootstrap aggregating
+  - bootstrap aggregation
+  - bagged trees
+  - out-of-bag error
+  - out-of-bag estimate
+  - OOB
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  Training many copies of a model, each on a different random resample of the data, and averaging
+  their predictions. The averaging cancels out much of each copy's random error.
+senses:
+  - definition: >-
+      An [[ensemble-learning|ensemble learning]] method that fits one base learner B times, each
+      time to a fresh [[bootstrap|bootstrap]] resample of the training set (n examples drawn with
+      replacement from the original n), and then pools the fitted models, taking their mean
+      prediction in [[regression|regression]] and their majority vote in
+      [[classification|classification]]. Averaging leaves bias roughly unchanged but reduces
+      variance, so bagging helps most with unstable, high-variance learners such as deep
+      [[decision-tree|decision trees]] and little with stable ones such as
+      [[k-nearest-neighbors|k-nearest neighbors]] or [[linear-regression|linear regression]].
+      Because each bootstrap sample omits on average about 36.8% (1/e) of the examples, every
+      example can be predicted by the models that never saw it; these out-of-bag predictions
+      estimate test error without a separate [[validation-set|validation set]]. Members are trained
+      independently, so bagging parallelizes trivially. [[random-forest|Random forests]] are bagged
+      trees with random feature selection added.
+    example: >-
+      Bagging fifty deep trees cut the test error by a third, and the out-of-bag estimate matched
+      the holdout.
+origin: >-
+  Introduced and named by Leo Breiman in 'Bagging Predictors', a September 1994 Berkeley technical
+  report published in Machine Learning in 1996. Breiman coined the acronym from 'bootstrap
+  aggregating' and reported that bagging classification trees cut test-set misclassification by
+  20–47% on benchmark datasets.
+year: 1994
+see_also:
+  - bootstrap
+  - random forest
+  - ensemble learning
+  - boosting
+  - bias–variance tradeoff
+  - decision tree
+contrast:
+  - boosting
+sources:
+  - text: Breiman, L. (1996). Bagging Predictors. Machine Learning, 24(2), 123–140.
+    url: https://link.springer.com/doi/10.1007/BF00058655

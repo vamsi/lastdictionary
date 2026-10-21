@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Lion
+id: lion
+pos: prop. n.
+also:
+  - EvoLved Sign Momentum
+  - Lion optimizer
+domain: dl
+domains:
+  - train
+level: specialist
+plain: >-
+  A training method discovered by a computer search over possible algorithms. It moves every setting
+  by the same small amount at each step, choosing only the direction, and needs less memory than the
+  popular Adam method.
+senses:
+  - definition: >-
+      An [[optimizer|optimizer]] that keeps a single [[momentum|momentum]] buffer and updates each
+      parameter by the sign of an interpolation between that momentum and the current gradient, so
+      every coordinate moves by exactly the [[learning-rate|learning rate]] in one direction or the
+      other; [[weight-decay|weight decay]] is applied in decoupled form, as in [[adamw|AdamW]].
+      Keeping one state tensor instead of Adam's two saves memory, and sign updates are cheap to
+      compute and to communicate. The sign operation gives its updates a larger norm than Adam's, so
+      Lion is run with a learning rate several times smaller and a correspondingly larger weight
+      decay. Its authors reported gains across language modeling, diffusion models, vision–language
+      contrastive training and image classification; independent comparisons have generally found
+      its advantage over well-tuned AdamW modest and task-dependent. It is a prominent example of an
+      optimizer found by automated program search rather than derived by hand, and belongs to the
+      sign-based family that includes signSGD and Rprop.
+origin: >-
+  Discovered by Xiangning Chen, Chen Liang, Quoc V. Le and colleagues at Google through an
+  evolutionary search over symbolic programs, reported in 'Symbolic Discovery of Optimization
+  Algorithms' (arXiv February 2023). The name abbreviates 'EvoLved Sign Momentum'.
+year: 2023
+see_also:
+  - AdamW
+  - optimizer
+  - momentum
+  - AutoML
+  - Adam
+sources:
+  - text: >-
+      Chen, X. et al. (2023). Symbolic Discovery of Optimization Algorithms. NeurIPS 2023.
+    url: https://arxiv.org/abs/2302.06675

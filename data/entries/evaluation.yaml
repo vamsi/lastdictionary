@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: evaluation
+id: evaluation
+pos: n.
+also:
+  - eval
+  - evals
+  - model evaluation
+  - AI evaluation
+domain: eval
+domains:
+  - core
+  - safety
+  - eng
+level: essential
+plain: >-
+  Testing an AI system to find out what it can and cannot do, how well, and how safely — from
+  exam-style quizzes to hands-on trials and expert reviews.
+senses:
+  - context: General
+    definition: >-
+      The systematic measurement of an AI system's behavior against a stated purpose, producing
+      evidence about its capabilities, reliability or risks. An evaluation specifies what is
+      measured (the construct), the inputs or tasks, how the system is run (prompt format,
+      [[harness|harness]], tools, sampling settings, number of attempts) and how outputs are scored
+      — by exact rules, unit tests, a [[llm-as-a-judge|model grader]] or [[human-evaluation|human
+      raters]]. Families include static [[benchmark|benchmarks]], preference comparisons such as
+      [[lmarena|LMArena]], agentic task suites, [[red-teaming|red teaming]],
+      [[dangerous-capability-evaluation|dangerous-capability evaluations]] and post-deployment
+      monitoring. Offline evaluation tests a model before release; online evaluation measures it in
+      use, for example by [[a-b-testing|A/B testing]]. Because results depend heavily on setup,
+      credible reports state the configuration and uncertainty and guard against
+      [[data-contamination|data contamination]] and failures of [[construct-validity|construct
+      validity]].
+    example: >-
+      Before shipping the new model we ran the full eval suite, including the internal agentic tasks.
+  - context: Informal (an eval)
+    definition: >-
+      A single test or test suite — a dataset, set of scenarios or grading script — used repeatedly
+      to check a model or AI product; plural 'evals'. Among practitioners, 'writing evals' means
+      building the cases and graders that define success for an application, the basis of
+      [[evals-driven-development|evals-driven development]].
+origin: >-
+  Evaluation has been central to AI since the [[turing-test|Turing test]] (1950) and the human
+  ratings of machine translation in the 1966 [[alpac-report|ALPAC report]]. Shared tasks funded by
+  DARPA, such as the Message Understanding Conferences (from 1987), and NIST's TREC (from 1992) made
+  common test sets and metrics the field's norm. The clipped form 'evals' spread with large language
+  models, helped by OpenAI's open-source Evals framework (March 2023).
+note: >-
+  An evaluation shows what a system does under test conditions; it does not by itself establish
+  behavior in deployment. Model evaluation differs from monitoring a [[validation-set|validation
+  set]] during training, and from an [[ai-audit|AI audit]], which also examines an organization's
+  processes.
+see_also:
+  - benchmark
+  - evaluation harness
+  - human evaluation
+  - LLM-as-a-judge
+  - construct validity
+  - dangerous capability evaluation
+  - third-party AI evaluation
+  - evals-driven development
+contrast:
+  - AI audit

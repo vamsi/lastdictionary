@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: utility function
+id: utility-function
+pos: n.
+also:
+  - utility
+  - expected utility
+  - expected utility theory
+  - von Neumann–Morgenstern utility
+  - VNM utility
+  - utility maximization
+domain: math
+domains:
+  - safety
+  - rl
+  - asi
+level: core
+plain: >-
+  A way of scoring every possible outcome by how much someone, or some AI, wants it. A rational
+  agent is often modeled as choosing whatever maximizes its expected score.
+senses:
+  - definition: >-
+      A function that assigns a real number to each outcome or state of the world so that higher
+      numbers represent more preferred outcomes. By the von Neumann–Morgenstern theorem, any agent
+      whose preferences over gambles are complete, transitive, continuous and independent acts as if
+      maximizing the [[expected-value|expected value]] of some utility function, unique up to a
+      positive affine transformation (rescaling plus a shift). Expected-utility maximization is the
+      standard model of rational choice in economics and of [[intelligent-agent|intelligent agents]]
+      in classical AI, where a [[reward-function|reward function]] or [[objective-function|objective
+      function]] plays the role of utility. In [[ai-alignment|AI alignment]], utility functions
+      frame central debates: misspecified utilities lead to [[specification-gaming|specification
+      gaming]]; coherence arguments and [[instrumental-convergence|instrumental convergence]]
+      suggest that capable agents behave like expected-utility maximizers with incentives for
+      [[power-seeking|power-seeking]]; critics reply that real agents, including
+      [[large-language-model|language models]], need not have coherent utility functions at all; and
+      [[value-learning|value learning]] tries to infer human utilities from behavior. Prospect
+      theory and other non-expected-utility models describe actual human choices better.
+    example: >-
+      If the utility function counts only tickets closed, the agent will close tickets without
+      fixing anything.
+formula_latex: U(L) = \sum_{i} p_i\, u(x_i) \qquad \text{for a lottery } L = (x_1, p_1; \ldots; x_n, p_n)
+origin: >-
+  Daniel Bernoulli proposed maximizing expected utility, with a logarithmic utility of wealth, to
+  resolve the St Petersburg paradox (1738), and Jeremy Bentham's utilitarianism (1789) popularized
+  'utility'. John von Neumann and Oskar Morgenstern axiomatized expected utility in the second
+  edition of Theory of Games and Economic Behavior (1947), and Leonard Savage (1954) combined it
+  with subjective probability.
+year: 1738
+see_also:
+  - expected value
+  - decision theory
+  - reward function
+  - objective function
+  - instrumental convergence
+  - value learning
+  - game theory

@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: false positive
+id: false-positive
+pos: n.
+also:
+  - false alarm
+  - type I error
+  - false positive rate
+  - FPR
+  - fall-out
+  - false discovery rate
+domain: ml
+domains:
+  - eval
+  - math
+level: essential
+plain: >-
+  A false alarm: a test or AI system raises a flag, for example for illness, fraud or danger, when
+  nothing of the kind is really there.
+senses:
+  - definition: >-
+      A case that a classifier or test labels positive although its true label is negative: a
+      legitimate email sent to spam, a healthy patient flagged as ill, an innocent face 'matched' to
+      a watch list. In statistical hypothesis testing it corresponds to a type I error, rejecting a
+      null hypothesis that is true. False positives are counted in the [[confusion-matrix|confusion
+      matrix]] and drive two distinct rates: the false positive rate, FP/(FP + TN), the share of
+      negatives wrongly flagged (the x-axis of the [[roc-curve|ROC curve]], equal to 1 −
+      [[specificity|specificity]]); and the false discovery rate, FP/(FP + TP), the share of flagged
+      cases that are wrong (equal to 1 − [[precision|precision]]). When positives are rare, even a
+      small false positive rate can mean that most alarms are false, the base-rate effect that makes
+      mass screening and surveillance error-prone. Lowering the decision threshold trades fewer
+      [[false-negative|false negatives]] for more false positives; the right balance depends on the
+      relative costs of the two errors.
+    example: >-
+      With a 1% false positive rate and one fraudster per 10,000 customers, about 99 of every 100
+      alerts will be false positives.
+origin: >-
+  The language of positive and negative results comes from medical and laboratory testing in the
+  first half of the 20th century. Jerzy Neyman and Egon Pearson formalized the corresponding errors
+  of the first and second kind in hypothesis testing between 1928 and 1933, and radar detection
+  theory of the 1940s, later generalized as signal detection theory, supplied 'false alarm'.
+note: >-
+  Error rates of [[facial-recognition|facial recognition]] systems, including false positives, have
+  been found to vary across demographic groups, which is central to debates about
+  [[algorithmic-bias|algorithmic bias]].
+see_also:
+  - false negative
+  - confusion matrix
+  - precision
+  - specificity
+  - ROC curve
+  - p-value
+  - class imbalance
+  - algorithmic bias
+contrast:
+  - false negative
+sources:
+  - text: >-
+      Neyman, J. & Pearson, E. S. (1933). On the Problem of the Most Efficient Tests of Statistical
+      Hypotheses. Philosophical Transactions of the Royal Society A 231.
+  - text: >-
+      Grother, P., Ngan, M. & Hanaoka, K. (2019). Face Recognition Vendor Test (FRVT) Part 3:
+      Demographic Effects. NIST Interagency Report 8280.

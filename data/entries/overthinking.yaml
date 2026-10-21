@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: overthinking
+id: overthinking
+pos: n.
+also:
+  - overthink
+  - underthinking
+domain: llm
+domains:
+  - infer
+  - dl
+labels:
+  - emerging
+  - figurative
+level: specialist
+plain: >-
+  When an AI reasoning model spends far more thinking than a problem needs — pages of deliberation
+  for a simple sum — wasting time and money and sometimes talking itself out of a right answer.
+senses:
+  - context: Reasoning models
+    definition: >-
+      The tendency of a [[reasoning-model|reasoning model]] to generate [[reasoning-trace|reasoning
+      traces]] far longer than a task's difficulty warrants: re-verifying a correct answer many
+      times, exploring redundant alternatives, or deliberating at length over trivial queries.
+      Overthinking inflates [[latency|latency]] and [[inference-cost|inference cost]], and on some
+      tasks accuracy falls as reasoning grows, because the model abandons a correct early answer or
+      drifts off course. Mitigations include [[thinking-budget|thinking budgets]] and effort
+      settings, training rewards that penalize unnecessary length, rules that stop once an answer
+      stabilizes, and adaptive thinking. The opposite failure, underthinking, is switching between
+      approaches too quickly without pursuing a promising one to completion.
+    example: It burned 4,000 reasoning tokens on 2 + 3, a textbook case of overthinking.
+  - context: Neural networks (earlier sense)
+    definition: >-
+      In research on early-exit networks, the phenomenon that a deep network's intermediate layers
+      already reach a correct prediction that later layers either waste computation confirming or
+      overturn into an error, motivating [[early-exit|early-exit]] classifiers attached to internal
+      layers.
+origin: >-
+  Yigitcan Kaya, Sanghyun Hong and Tudor Dumitraș described 'network overthinking' in image
+  classifiers in 2019. The reasoning-model sense was popularized by Xingyu Chen and colleagues'
+  December 2024 paper 'Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs';
+  studies of 'underthinking' followed in early 2025.
+year: 2019
+see_also:
+  - reasoning model
+  - thinking budget
+  - test-time compute
+  - reasoning trace
+  - early exit
+  - inverse scaling
+sources:
+  - text: >-
+      Chen, X. et al. (2024). Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs.
+      arXiv:2412.21187.
+    url: https://arxiv.org/abs/2412.21187v2
+  - text: >-
+      Kaya, Y., Hong, S. & Dumitraș, T. (2019). Shallow-Deep Networks: Understanding and Mitigating
+      Network Overthinking. ICML 2019.

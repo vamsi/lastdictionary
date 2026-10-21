@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ARC-AGI
+id: arc-agi
+pos: prop. n.
+also:
+  - ARC
+  - Abstraction and Reasoning Corpus
+  - ARC-AGI-1
+  - ARC-AGI-2
+  - ARC-AGI-3
+  - ARC Prize
+domain: eval
+domains:
+  - asi
+  - core
+level: essential
+plain: >-
+  Puzzles made of colored grids — and, since 2026, small video-game-like worlds — that people solve
+  easily but AI long found hard, designed to test whether a machine can learn a new skill from just
+  a few examples.
+senses:
+  - definition: >-
+      A family of benchmarks aimed at fluid intelligence rather than accumulated knowledge — in
+      François Chollet's terms, skill-acquisition efficiency: how quickly a system masters tasks it
+      has never seen. In ARC-AGI-1 and ARC-AGI-2, each task shows a few input–output pairs of
+      colored grids; the solver must infer the transformation rule and produce the output for a new
+      input, usually with two attempts allowed. Tasks assume only 'core knowledge' priors such as
+      objectness, counting and elementary geometry. ARC-AGI-1 has 800 public tasks plus semi-private
+      and private evaluation sets; ARC-AGI-2 (March 2025) has 1,000 training tasks and three
+      120-task evaluation sets, each task solved by at least two people in a public study, and pairs
+      every score with a cost per task. ARC-AGI-3 (March 2026) is interactive: agents must explore
+      hundreds of hand-made game environments with no instructions and are scored on how efficiently
+      they complete levels compared with humans. The ARC Prize Foundation awards prizes for
+      open-source solutions that run within compute limits.
+    example: >-
+      The model scored 75% on ARC-AGI-1 with heavy test-time compute, but under 5% on ARC-AGI-2 when
+      it launched.
+origin: >-
+  Introduced by François Chollet, then at Google, as the Abstraction and Reasoning Corpus in his
+  November 2019 paper 'On the Measure of Intelligence'. Kaggle contests followed from 2020; Chollet
+  and Mike Knoop launched the ARC Prize in 2024. In December 2024 OpenAI's o3 scored 75.7% on
+  ARC-AGI-1's semi-private set, and 87.5% using 172 times more compute.
+year: 2019
+note: >-
+  Chollet holds that passing ARC-AGI would not by itself demonstrate
+  [[artificial-general-intelligence|artificial general intelligence]]; critics question how well
+  grid puzzles capture general intelligence. At ARC-AGI-3's launch, frontier systems scored about
+  0.5% against 100% for humans.
+see_also:
+  - artificial general intelligence
+  - benchmark
+  - test-time compute
+  - reasoning model
+  - program synthesis
+  - contamination-resistant benchmark
+  - Kaggle
+sources:
+  - text: Chollet, F. (2019). On the Measure of Intelligence. arXiv:1911.01547.
+    url: https://arxiv.org/abs/1911.01547
+  - text: ARC Prize Foundation (2025). Announcing ARC-AGI-2 and ARC Prize 2025.
+    url: https://arcprize.org/blog/announcing-arc-agi-2-and-arc-prize-2025
+  - text: ARC Prize Foundation (2026). ARC-AGI-3 launch.
+    url: https://arcprize.org/blog/arc-agi-3-launch
+as_of: 2026-10

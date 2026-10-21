@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: structured outputs
+id: structured-outputs
+pos: n.
+also:
+  - structured output
+  - schema-constrained output
+  - typed output
+domain: eng
+domains:
+  - llm
+level: core
+plain: >-
+  Getting an AI model to answer in an exact, machine-readable format — like a form with fixed fields
+  — so other software can use the answer without guesswork.
+senses:
+  - definition: >-
+      Model output that conforms to a developer-specified schema — typically a [[json-schema|JSON
+      Schema]] or a type declared in code, such as a Pydantic model or a TypeScript type — so that
+      software can parse and validate it reliably. Approaches differ in strictness: prompting with
+      format instructions and examples, then validating and retrying on failure (as libraries such
+      as Instructor automate); [[json-mode|JSON mode]], which guarantees syntactically valid JSON
+      but not a particular shape; and schema enforcement through [[constrained-decoding|constrained
+      decoding]], in which the [[inference|inference]] engine masks every [[token|token]] that would
+      violate the schema, guaranteeing conformance. Structured outputs underpin data extraction,
+      classification, [[tool-call|tool calls]] and multi-step pipelines. Enforcement guarantees
+      form, not truth: a model forced into a schema may fill fields with plausible but wrong values,
+      and very rigid formats can degrade reasoning unless the schema leaves room for it, for example
+      with a field for working before the answer.
+    example: >-
+      With structured outputs on, every invoice extraction comes back with the same twelve fields.
+origin: >-
+  Developers first coaxed formats from models with prompts and parsers, then with
+  constrained-generation libraries such as Microsoft's Guidance and Outlines (2023). OpenAI's
+  [[json-mode|JSON mode]] (November 2023) guaranteed valid JSON, and its 'Structured Outputs'
+  feature (August 2024) guaranteed adherence to a supplied schema; other providers and open-source
+  servers adopted the capability and the name.
+year: 2024
+note: >-
+  Closely related to [[function-calling|function calling]], where the schema describes a tool's
+  arguments; both usually rely on the same constrained-decoding machinery. Not to be confused with
+  structured prediction, the older machine-learning problem of predicting structured objects such as
+  parse trees.
+see_also:
+  - JSON mode
+  - JSON Schema
+  - constrained decoding
+  - function calling
+  - tool call
+  - model API
+sources:
+  - text: >-
+      Willard, B. T. & Louf, R. (2023). Efficient Guided Generation for Large Language Models.
+      arXiv:2307.09702.
+    url: https://arxiv.org/abs/2307.09702
+as_of: 2026-10

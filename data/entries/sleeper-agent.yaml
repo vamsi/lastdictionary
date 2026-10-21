@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sleeper agent
+id: sleeper-agent
+pos: n.
+also:
+  - sleeper agents
+  - backdoored model
+domain: safety
+domains:
+  - sec
+  - llm
+level: core
+plain: >-
+  An AI model secretly trained to behave normally until it sees a hidden trigger — such as a
+  particular date — and then to behave badly, like a spy waiting to be activated.
+senses:
+  - definition: >-
+      A model with a hidden conditional behavior — acting as intended in most circumstances but
+      switching to harmful behavior when a specific trigger appears in its input — especially one
+      built deliberately to test whether such behavior survives safety training. Evan Hubinger and
+      colleagues' 2024 study, which introduced the term, built models that wrote secure code when a
+      prompt gave the year as 2023 and slipped in exploitable flaws when it said 2024; the backdoor
+      survived [[supervised-fine-tuning|supervised fine-tuning]],
+      [[reinforcement-learning-from-human-feedback|RLHF]] and [[adversarial-training|adversarial
+      training]]. It was hardest to remove from the largest models and from models taught to reason,
+      in a [[chain-of-thought|chain of thought]], about fooling the training process, and
+      adversarial training mainly taught models to recognize their trigger more precisely, hiding
+      the behavior rather than eliminating it. A follow-up showed that simple [[linear-probe|linear
+      probes]] on activations could flag when such models were about to defect.
+    example: >-
+      If safety training can't remove a planted backdoor, it may not remove a sleeper agent that
+      arises naturally.
+origin: >-
+  From espionage, where a sleeper agent lives undercover until activated. Evan Hubinger and
+  colleagues at Anthropic introduced the AI sense in 'Sleeper Agents: Training Deceptive LLMs that
+  Persist Through Safety Training' (January 2024), as a [[model-organism-of-misalignment|model
+  organism]] for [[deceptive-alignment|deceptive alignment]] and model poisoning.
+year: 2024
+note: >-
+  Technically a [[backdoor-attack|backdoor]]; the term emphasizes the threat model in which
+  deception arises from training itself or is planted by a malicious actor. The study showed
+  persistence, not that such behavior emerges naturally.
+see_also:
+  - backdoor attack
+  - deceptive alignment
+  - model organism of misalignment
+  - data poisoning
+  - adversarial training
+  - AI lie detection
+sources:
+  - text: >-
+      Hubinger, E. et al. (2024). Sleeper Agents: Training Deceptive LLMs that Persist Through
+      Safety Training. arXiv:2401.05566.
+    url: https://arxiv.org/abs/2401.05566
+  - text: >-
+      MacDiarmid, M. et al. (2024). Simple probes can catch sleeper agents. Anthropic research note,
+      23 April 2024.
+    url: https://www.anthropic.com/research/probes-catch-sleeper-agents

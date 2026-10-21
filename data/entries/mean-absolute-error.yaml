@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mean absolute error
+id: mean-absolute-error
+pos: n.
+also:
+  - MAE
+  - L1 loss
+  - absolute error loss
+  - least absolute deviations
+  - mean absolute percentage error
+  - MAPE
+  - mean absolute scaled error
+  - MASE
+domain: ml
+domains:
+  - math
+  - eval
+level: core
+plain: >-
+  A way of scoring numerical predictions: average how far off each prediction is, ignoring
+  direction, so the score reads as 'typically off by this much'. Lower is better.
+senses:
+  - definition: >-
+      The average of the absolute differences between predicted and true values. Expressed in the
+      target's own units, it reads naturally as the typical size of an error. Because errors count
+      linearly rather than squared, MAE is more robust to outliers than [[mean-squared-error|mean
+      squared error]], and minimizing it yields predictions of the conditional median rather than
+      the mean; as a training loss (L1 loss) its gradient has constant size and is undefined at
+      zero, so smooth compromises such as the Huber loss are common. In
+      [[time-series-forecasting|time series forecasting]], scale-free variants allow comparison
+      across series: the mean absolute percentage error (MAPE), which is undefined when actual
+      values are zero and treats over- and under-forecasts asymmetrically, and the mean absolute
+      scaled error (MASE), which divides by the in-sample error of a naive forecast. The pinball
+      loss used in [[quantile-regression|quantile regression]] generalizes absolute error to
+      quantiles other than the median.
+    example: >-
+      MAE is 3.1 minutes, so a typical delivery-time estimate is off by about three minutes either
+      way.
+formula_latex: \mathrm{MAE} = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|
+origin: >-
+  Fitting by least absolute deviations was proposed by Roger Joseph Boscovich in 1757 and developed
+  by Pierre-Simon Laplace, half a century before least squares. Squared error displaced it because
+  it was easier to compute, until linear programming and robust statistics revived absolute-error
+  methods in the mid-20th century. Rob Hyndman and Anne Koehler proposed MASE in 2006.
+year: 1757
+see_also:
+  - mean squared error
+  - quantile regression
+  - time series forecasting
+  - coefficient of determination
+  - loss function
+  - regression
+contrast:
+  - mean squared error
+sources:
+  - text: >-
+      Hyndman, R. J. & Koehler, A. B. (2006). Another Look at Measures of Forecast Accuracy.
+      International Journal of Forecasting 22(4).
+  - text: >-
+      Willmott, C. J. & Matsuura, K. (2005). Advantages of the Mean Absolute Error (MAE) over the
+      Root Mean Square Error (RMSE) in Assessing Average Model Performance. Climate Research 30.

@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: z-loss
+id: z-loss
+pos: n.
+also:
+  - router z-loss
+  - log-Z penalty
+  - softmax normalizer loss
+domain: train
+domains:
+  - dl
+  - llm
+level: specialist
+plain: >-
+  A small extra penalty added during training that stops the raw scores a language model produces
+  before choosing a word from growing huge, which helps keep very large training runs from blowing
+  up.
+senses:
+  - definition: >-
+      An auxiliary loss proportional to the squared logarithm of the [[softmax|softmax]] normalizer,
+      (log Z)², where Z is the sum of the exponentiated [[logit|logits]]. Softmax probabilities do
+      not change when every logit shifts by the same constant, so nothing in the ordinary
+      [[cross-entropy|cross-entropy]] objective stops logits from drifting to large magnitudes,
+      where low-precision arithmetic loses accuracy and training can diverge. The z-loss pulls log Z
+      toward zero, keeping logits well scaled and close to normalized log-probabilities. PaLM
+      applied it to the output layer with a small coefficient (10⁻⁴); the router z-loss of ST-MoE
+      applies the same idea to the gating logits of a [[mixture-of-experts|mixture of experts]]
+      [[router|router]], whose instability had made sparse models hard to train. It is a standard
+      mitigation for [[training-instability|training instability]], often used alongside
+      [[qk-norm|QK-norm]].
+formula_latex: \mathcal{L}_z = \lambda\,(\log Z)^2, \qquad Z = \sum_i e^{z_i}
+origin: >-
+  The penalty existed as an option on the final softmax logits in Google's Mesh TensorFlow codebase
+  before Barret Zoph and colleagues' ST-MoE paper (February 2022) adapted it into the router z-loss.
+  Google's PaLM paper (Aakanksha Chowdhery and colleagues, April 2022) described it as an auxiliary
+  loss keeping log Z close to zero, and its use in PaLM made it widely known.
+year: 2022
+see_also:
+  - training instability
+  - loss spike
+  - softmax
+  - logit
+  - QK-norm
+  - router
+sources:
+  - text: >-
+      Chowdhery, A. et al. (2022). PaLM: Scaling Language Modeling with Pathways. arXiv:2204.02311.
+  - text: >-
+      Zoph, B., Bello, I., Kumar, S., Du, N., Huang, Y., Dean, J., Shazeer, N. & Fedus, W. (2022).
+      ST-MoE: Designing Stable and Transferable Sparse Expert Models. arXiv:2202.08906.
+    url: https://arxiv.org/abs/2202.08906

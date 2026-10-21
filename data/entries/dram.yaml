@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DRAM
+id: dram
+pos: abbr.
+also:
+  - dynamic random-access memory
+  - dynamic RAM
+  - DDR
+  - LPDDR
+  - GDDR
+pronunciation: DEE-ram
+domain: hw
+domains:
+  - infer
+level: specialist
+plain: >-
+  The main working memory of computers and AI chips: dense and fairly cheap, but slower than on-chip
+  memory and needing constant refreshing to keep its data.
+senses:
+  - definition: >-
+      The dense, comparatively cheap memory that supplies the gigabytes of main memory in computers
+      and accelerators. Each bit is stored as a small charge on a microscopic capacitor behind one
+      access transistor; because that charge seeps away, the chip must rewrite (refresh) every row
+      on a fixed cycle, typically every 64 milliseconds. One transistor per bit, against about six
+      for [[sram|SRAM]], is what makes it so much denser and cheaper per bit, and it comes in
+      several families: DDR for servers and PCs, LPDDR for phones and some AI systems (such as
+      Nvidia's Grace CPU), GDDR for graphics cards, and stacked
+      [[high-bandwidth-memory|high-bandwidth memory]] for data-center accelerators. DRAM capacity,
+      [[memory-bandwidth|bandwidth]] and price shape which models can be trained or served and at
+      what cost, and three manufacturers — Samsung, SK hynix and Micron — dominate supply.
+origin: >-
+  Robert H. Dennard of IBM invented the one-transistor DRAM cell in 1966 (US patent granted 1968);
+  Intel's 1103 (1970) was the first commercially successful DRAM chip. Dennard later gave his name
+  to [[dennard-scaling|Dennard scaling]].
+year: 1966
+see_also:
+  - SRAM
+  - high-bandwidth memory
+  - VRAM
+  - memory wall
+  - memory bandwidth
+contrast:
+  - SRAM

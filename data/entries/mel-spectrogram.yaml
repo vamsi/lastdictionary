@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mel spectrogram
+id: mel-spectrogram
+pos: n.
+also:
+  - log-mel spectrogram
+  - mel filterbank
+  - filterbank features
+  - mel scale
+domain: percep
+domains:
+  - math
+level: core
+plain: >-
+  A version of a sound picture whose pitch axis is squeezed to match human hearing, giving more
+  detail to low sounds than to high ones; the usual way AI models take in audio.
+senses:
+  - definition: >-
+      A [[spectrogram|spectrogram]] whose frequency axis has been mapped to the mel scale, a
+      perceptual pitch scale that is roughly linear below about 1 kHz and logarithmic above it. The
+      power spectrum of each frame is multiplied by a bank of overlapping triangular filters
+      (commonly 40 to 128) spaced evenly in mels, so that each output channel sums energy over a
+      band that widens with frequency; the result is usually log-compressed (a log-mel spectrogram).
+      This shrinks each frame from hundreds of frequency bins to tens of channels while keeping the
+      detail that matters for perceiving speech and music. Log-mel spectrograms are the standard
+      input to modern [[speech-recognition|speech recognition]] models (for example 80 channels
+      every 10 milliseconds in the original [[whisper|Whisper]] models, 128 in Whisper large-v3),
+      audio classifiers and [[sound-event-detection|sound event detection]] systems, and the
+      standard intermediate target of neural [[text-to-speech|text-to-speech]], where an acoustic
+      model predicts mel frames and a [[vocoder|vocoder]] turns them into a waveform. Applying a
+      further discrete cosine transform gives [[mfcc|MFCCs]].
+    example: >-
+      The TTS model predicts 80-band mel spectrograms at 86 frames per second, and HiFi-GAN turns
+      them into audio.
+formula_latex: m = 2595\,\log_{10}\!\left(1 + \frac{f}{700}\right)
+origin: >-
+  The mel scale ('mel' from 'melody') was proposed by Stanley Smith Stevens, John Volkmann and Edwin
+  Newman in 1937 from listening experiments on judged pitch. Mel-spaced filterbanks became standard
+  in speech recognition with MFCCs in the 1980s, and log-mel spectrograms became the default
+  neural-network input for audio in the 2010s.
+note: >-
+  The formula is one common approximation, converting frequency f in hertz to mels; several variants
+  exist. Mel spectrograms discard phase and some fine detail, which is why a separate vocoder is
+  needed to make audio from them.
+see_also:
+  - spectrogram
+  - MFCC
+  - vocoder
+  - Whisper
+  - text-to-speech
+  - speech recognition
+sources:
+  - text: >-
+      Stevens, S. S., Volkmann, J. & Newman, E. B. (1937). A Scale for the Measurement of the
+      Psychological Magnitude Pitch. Journal of the Acoustical Society of America 8(3), 185–190.

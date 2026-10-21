@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: causal inference
+id: causal-inference
+pos: n.
+also:
+  - causal analysis
+  - causality
+  - causal reasoning
+  - causal effect
+  - potential outcomes
+  - Rubin causal model
+  - average treatment effect
+  - ATE
+domain: math
+domains:
+  - ml
+  - interp
+level: core
+plain: >-
+  Working out whether one thing actually causes another, rather than merely occurring alongside it —
+  for example, whether a new feature made users stay longer or just happened at the same time.
+senses:
+  - definition: >-
+      The use of data plus assumptions to estimate cause-and-effect relationships: what would happen
+      to an outcome if a variable were changed by intervention, as opposed to how variables are
+      associated when passively observed. Randomized experiments, including [[a-b-testing|A/B
+      tests]], identify causal effects by design; with observational data, effects can be estimated
+      only under explicit assumptions about [[confounding-variable|confounding]], using matching,
+      propensity-score weighting, instrumental variables, regression discontinuity or
+      difference-in-differences. Two formal frameworks dominate and are largely equivalent:
+      potential outcomes (Neyman–Rubin), which defines effects as contrasts between
+      [[counterfactual|counterfactual]] outcomes, and Judea Pearl's
+      [[structural-causal-model|structural causal models]] with causal graphs and the
+      [[do-calculus|do-calculus]]. In AI, causal inference informs robustness to
+      [[spurious-correlation|spurious correlations]] and [[distribution-shift|distribution shift]],
+      [[counterfactual-fairness|counterfactual fairness]], off-policy evaluation in
+      [[reinforcement-learning|reinforcement learning]], and
+      [[mechanistic-interpretability|mechanistic interpretability]], whose
+      [[activation-patching|activation patching]] and [[causal-abstraction|causal abstraction]] are
+      interventions on a network's internals. Whether [[large-language-model|language models]]
+      reason causally is an open research question.
+    example: >-
+      The dashboard shows a correlation; we need causal inference, or a proper experiment, before
+      crediting the new model.
+formula_latex: \mathrm{ATE} = \mathbb{E}\big[Y \mid do(X=1)\big] - \mathbb{E}\big[Y \mid do(X=0)\big]
+origin: >-
+  Sewall Wright's path analysis (1921) introduced causal diagrams, Jerzy Neyman's 1923
+  potential-outcomes notation and Ronald Fisher's randomized experiments (1925–1935) laid
+  statistical foundations. Donald Rubin extended potential outcomes to observational studies from
+  1974; Peter Spirtes, Clark Glymour and Richard Scheines pioneered causal discovery (1993); and
+  Judea Pearl's graphical approach culminated in Causality (2000).
+see_also:
+  - counterfactual
+  - confounding variable
+  - do-calculus
+  - structural causal model
+  - correlation
+  - A/B testing
+  - spurious correlation
+contrast:
+  - correlation
+sources:
+  - text: >-
+      Rubin, D. B. (1974). Estimating causal effects of treatments in randomized and nonrandomized
+      studies. Journal of Educational Psychology, 66(5).
+  - text: >-
+      Pearl, J. (2000; 2nd ed. 2009). Causality: Models, Reasoning, and Inference. Cambridge
+      University Press.

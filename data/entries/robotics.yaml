@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: robotics
+id: robotics
+pos: n.
+also:
+  - robotic engineering
+domain: robot
+domains:
+  - core
+  - hist
+level: essential
+plain: >-
+  The science and engineering of building robots and making them work: designing their bodies,
+  sensors and motors, and writing the software that lets them see, plan and move safely.
+senses:
+  - definition: >-
+      The engineering and scientific discipline devoted to [[robot|robots]]: how to design, build,
+      power, program and control machines that sense and act in the physical world. It combines
+      mechanical and electrical engineering (mechanisms, [[actuator|actuators]], sensors),
+      [[control-theory|control theory]] and dynamics, and computer science ([[motion-planning|motion
+      planning]], [[simultaneous-localization-and-mapping|state estimation and mapping]], software
+      architecture), and increasingly [[machine-learning|machine learning]]. Its classical core
+      problems are [[forward-kinematics|kinematics]] and dynamics, control,
+      [[perception|perception]], planning, [[manipulation|manipulation]] and
+      [[locomotion|locomotion]]; major application areas include manufacturing, logistics, medicine,
+      agriculture, exploration, defense and transport. From the 2010s, [[deep-learning|deep
+      learning]] and then [[robot-foundation-model|robot foundation models]] began to replace
+      hand-engineered pipelines with learned, end-to-end [[policy|policies]], a shift described as
+      [[robot-learning|robot learning]] or [[physical-ai|physical AI]]. The field's main academic
+      venues include the IEEE International Conference on Robotics and Automation (ICRA), the
+      International Conference on Intelligent Robots and Systems (IROS), Robotics: Science and
+      Systems (RSS) and the Conference on Robot Learning (CoRL).
+    example: >-
+      She moved from computer vision into robotics because she wanted her models to touch the world.
+origin: >-
+  Isaac Asimov's short story 'Liar!', published in Astounding Science Fiction in May 1941, is the
+  earliest use recorded by the Oxford English Dictionary; Asimov later said he had assumed the word
+  already existed, by analogy with 'mechanics', and wrongly placed its first appearance in
+  'Runaround' (1942). Engineers adopted it as industrial robots spread in the 1960s and 1970s, and
+  by the 1980s it named journals, conferences and professional societies.
+year: 1941
+note: >-
+  Robotics and AI overlap but are not the same field: much of robotics is mechanical design and
+  classical control, and most AI never touches a robot. 'Robotic' is also used loosely to mean
+  mechanical or emotionless.
+see_also:
+  - robot
+  - robot learning
+  - embodied AI
+  - control theory
+  - motion planning
+  - manipulation
+  - locomotion
+  - physical AI
+contrast:
+  - artificial intelligence
+sources:
+  - text: Asimov, I. (1941). Liar! Astounding Science Fiction, May 1941.
+  - text: >-
+      Siciliano, B. & Khatib, O. (eds.) (2016). Springer Handbook of Robotics, 2nd ed. Springer.

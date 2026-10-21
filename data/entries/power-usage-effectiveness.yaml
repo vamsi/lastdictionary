@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: power usage effectiveness
+id: power-usage-effectiveness
+pos: n.
+also:
+  - PUE
+  - data center infrastructure efficiency
+  - DCiE
+  - water usage effectiveness
+  - WUE
+domain: hw
+domains:
+  - society
+labels:
+  - legal
+level: specialist
+plain: >-
+  A score showing how much of a data center's electricity actually reaches its computers: total
+  power drawn divided by the computers' share. A perfect 1.0 would mean no waste; the extra goes
+  mainly to cooling.
+senses:
+  - definition: >-
+      A data-center efficiency metric equal to the facility's total energy use divided by the
+      portion consumed by its IT equipment (servers, storage and networking), both measured over the
+      same period. A PUE of 1.0 would mean zero overhead; the excess is consumed by cooling, power
+      conversion and distribution losses, lighting and other infrastructure. The Uptime Institute's
+      annual industry survey has found the average roughly flat at 1.5–1.6 since about 2020 (1.54 in
+      2025), while large hyperscale operators report about 1.1 across their fleets and some liquid-
+      or immersion-cooled sites report below 1.05. PUE measures infrastructure overhead only: it
+      says nothing about how efficiently the IT equipment turns energy into useful computation,
+      about water use (tracked as water usage effectiveness, WUE, in liters per kilowatt-hour) or
+      about the carbon intensity of the electricity, and it can worsen when the IT equipment itself
+      becomes more efficient.
+formula_latex: \mathrm{PUE} = \frac{E_{\text{total facility}}}{E_{\text{IT equipment}}}
+origin: >-
+  Introduced by The Green Grid industry consortium (proposed 2006, promoted from 2007), with
+  Christian Belady often named as its originator; standardized internationally as ISO/IEC
+  30134-2:2016. The Green Grid added water usage effectiveness in 2011.
+year: 2007
+note: >-
+  Figures can be flattered by drawing facility boundaries narrowly or quoting design rather than
+  measured values, so audited annual figures are preferred. Since 2024 the EU has required operators
+  of data centers with at least 500 kW of installed IT power to report PUE every year, under its
+  2023 Energy Efficiency Directive.
+see_also:
+  - AI data center
+  - liquid cooling
+  - environmental impact of AI
+  - rack-scale system
+standards: >-
+  ISO/IEC 30134-2:2016 (also EN 50600-4-2:2016); EU: Commission Delegated Regulation (EU) 2024/1364,
+  Annex III (data-centre sustainability indicators)
+as_of: 2026-10

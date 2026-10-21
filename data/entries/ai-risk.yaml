@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI risk
+id: ai-risk
+pos: n.
+also:
+  - AI risks
+  - risks from AI
+  - risk from artificial intelligence
+domain: safety
+domains:
+  - gov
+  - society
+  - asi
+level: essential
+plain: >-
+  The ways AI could cause harm: people misusing it on purpose, systems behaving in ways nobody
+  intended, and slower effects on jobs, power and society that no single person causes.
+senses:
+  - definition: >-
+      An umbrella term for potential harms from the development and use of AI, usually sorted into
+      three families. [[misuse|Misuse]] risks arise when people deliberately use AI to cause harm,
+      as in fraud with [[deepfake|deepfakes]], [[ai-enabled-cyberattack|cyberattacks]] or weapons
+      development ([[cbrn-risk|CBRN risk]]). Accident risks arise when systems fail or act against
+      their designers' intentions, from biased or brittle outputs to [[misalignment|misalignment]]
+      and [[loss-of-control|loss of control]]. Structural or systemic risks emerge from how AI
+      reshapes its environment — [[ai-arms-race|race dynamics]], concentration of power,
+      [[technological-unemployment|labor displacement]], erosion of the information ecosystem —
+      without any single actor intending them. Risks are also graded by severity, from everyday
+      harms to [[catastrophic-risk|catastrophic]] and [[existential-risk|existential]] ones, and are
+      managed through [[ai-governance|AI governance]], [[dangerous-capability-evaluation|capability
+      evaluations]], [[red-teaming|red teaming]] and risk-management frameworks such as the
+      [[nist-ai-risk-management-framework|NIST AI Risk Management Framework]].
+    example: >-
+      Our AI risk register separates misuse, malfunction and systemic risks, and assigns each an
+      owner.
+origin: >-
+  Worries about machine intelligence go back to Samuel Butler (1863), Norbert Wiener (1960) and I.
+  J. Good (1965). 'AI risk' became a stock phrase in the late 2000s, notably after Eliezer
+  Yudkowsky's 2008 essay on AI as a factor in global risk. Remco Zwetsloot and Allan Dafoe
+  popularized the misuse–accident–structure taxonomy in 2019; the International AI Safety Report
+  (2025) grouped risks as malicious use, malfunctions and systemic risks.
+note: >-
+  Usage varies: in parts of the AI-safety community 'AI risk' means catastrophic or existential risk
+  specifically, while ethicists, companies and regulators use it for the full range of harms,
+  including bias and privacy violations. How to weigh present harms against speculative future ones
+  is a long-running debate; many researchers argue that the two agendas overlap.
+see_also:
+  - misuse
+  - misalignment
+  - catastrophic risk
+  - existential risk
+  - AI safety
+  - AI governance
+  - loss of control
+  - AI incident
+sources:
+  - text: >-
+      Zwetsloot, R. & Dafoe, A. (2019). Thinking About Risks From AI: Accidents, Misuse and
+      Structure. Lawfare.
+  - text: >-
+      Bengio, Y. et al. (2025). International AI Safety Report. DSIT research series, UK Government.
+  - text: >-
+      Slattery, P. et al. (2024). The AI Risk Repository: A Comprehensive Meta-Review, Database, and
+      Taxonomy of Risks From Artificial Intelligence. arXiv.

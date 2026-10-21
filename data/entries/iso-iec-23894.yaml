@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ISO/IEC 23894
+id: iso-iec-23894
+pos: prop. n.
+also:
+  - ISO/IEC 23894:2023
+  - AI risk management guidance
+domain: gov
+domains:
+  - safety
+  - eng
+level: specialist
+plain: >-
+  An international guidance standard that explains how organizations can apply ordinary
+  risk-management practice to the particular risks of AI systems.
+senses:
+  - definition: >-
+      The international standard 'Information technology — Artificial intelligence — Guidance on
+      risk management', which adapts the general risk-management principles, framework and process
+      of ISO 31000 to organizations that develop, deploy or use AI. It describes AI-specific risk
+      sources — such as lack of transparency, level of automation, machine-learning data quality,
+      system complexity, life-cycle issues and hardware limits — and maps risk-management activities
+      to the stages of the AI life cycle. As guidance rather than requirements, it cannot be
+      certified against; organizations typically use it to build the risk assessment demanded by
+      [[iso-iec-42001|ISO/IEC 42001]] or the [[nist-ai-risk-management-framework|NIST AI Risk
+      Management Framework]].
+    example: >-
+      Our risk register follows the process in ISO/IEC 23894, tailored to each model's life-cycle
+      stage.
+origin: >-
+  Developed by [[iso-iec-jtc-1-sc-42|ISO/IEC JTC 1/SC 42]] and published in February 2023, building
+  on ISO 31000:2018 and the vocabulary of [[iso-iec-22989|ISO/IEC 22989]].
+year: 2023
+note: >-
+  Guidance ('should') rather than requirements ('shall'). Not to be confused with ISO/IEC 42001, the
+  certifiable management-system standard, or with the European EN 18228 on AI risk management being
+  prepared for the [[eu-ai-act|EU AI Act]].
+see_also:
+  - ISO/IEC 42001
+  - ISO/IEC JTC 1/SC 42
+  - NIST AI Risk Management Framework
+  - risk-based approach
+  - harmonised standards
+sources:
+  - text: >-
+      ISO/IEC 23894:2023. Information technology — Artificial intelligence — Guidance on risk
+      management. Geneva: ISO.

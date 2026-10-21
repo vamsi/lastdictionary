@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Agent2Agent protocol
+id: agent2agent-protocol
+pos: prop. n.
+also:
+  - A2A
+  - A2A protocol
+  - Agent-to-Agent protocol
+domain: agents
+domains:
+  - eng
+level: core
+plain: >-
+  An open standard that lets AI agents built by different companies find each other, say what they
+  can do and work together on tasks, much as email lets different mail systems exchange messages.
+senses:
+  - definition: >-
+      An open protocol through which independently built [[ai-agent|AI agents]] — on different
+      frameworks, run by different organizations — can find one another and hand off work. An agent
+      advertises itself with an Agent Card, a machine-readable JSON profile giving the skills it
+      offers, the address where it can be reached and the credentials callers must present, along
+      with its name and description, so that a client agent can decide whether to delegate a task to
+      it. Interaction is organized around tasks that move through a lifecycle (submitted, working,
+      input-required, completed and so on), messages made of typed parts (text, files, structured
+      data) and artifacts as outputs. Messages travel over HTTP — originally as JSON-RPC 2.0, with
+      gRPC and REST bindings added later — with streaming responses and webhook push notifications
+      for long-running jobs. A2A treats remote agents as opaque collaborators rather than as tools
+      whose internals are exposed. Version 1.0, the first stable specification (March 2026), added
+      signed Agent Cards for cryptographic identity, multi-protocol bindings, version negotiation
+      and multi-tenancy.
+    example: >-
+      Our procurement agent uses A2A to request a quote from the supplier's sales agent.
+origin: >-
+  Announced by Google on 9 April 2025 with backing from more than 50 technology partners. Google
+  donated it to the Linux Foundation on 23 June 2025, with AWS, Cisco, Microsoft, Salesforce, SAP
+  and ServiceNow among the founding members; IBM's Agent Communication Protocol merged into it in
+  August 2025, and in August 2026 it became a hosted project of the [[agentic-ai-foundation|Agentic
+  AI Foundation]].
+year: 2025
+note: >-
+  A2A and the [[model-context-protocol|Model Context Protocol]] are complementary: MCP connects an
+  agent to tools and data, A2A connects agents to other agents. Google's Agent Payments Protocol
+  (AP2) extends it for [[agentic-commerce|agentic commerce]]. As of August 2026 more than 150
+  organizations supported A2A.
+see_also:
+  - Model Context Protocol
+  - multi-agent system
+  - agent identity
+  - Agentic AI Foundation
+  - agentic commerce
+  - handoff
+contrast:
+  - Model Context Protocol
+sources:
+  - text: >-
+      Cruz, P. (2026). A year of open collaboration: Celebrating the anniversary of A2A. Google Open
+      Source Blog, 16 April 2026.
+    url: https://opensource.googleblog.com/2026/04/a-year-of-open-collaboration-celebrating-the-anniversary-of-a2a.html
+  - text: >-
+      Agentic AI Foundation (2026). A2A joins AAIF's open agentic stack. AAIF blog, 17 August 2026.
+    url: https://aaif.io/blog/a2a-joins-aaif
+as_of: 2026-10

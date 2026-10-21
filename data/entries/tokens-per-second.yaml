@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tokens per second
+id: tokens-per-second
+pos: n.
+also:
+  - tok/s
+  - tokens/s
+  - TPS
+  - output speed
+  - generation speed
+domain: infer
+domains:
+  - eval
+  - hw
+level: core
+plain: >-
+  A speed rating for AI text generation: how many word-pieces a model produces each second. Five to
+  ten keeps up with a fast reader; hundreds feel instant.
+senses:
+  - definition: >-
+      A rate of [[token|token]] generation or processing, quoted in three easily confused ways.
+      Per-request output speed is the number of tokens one response streams per second during the
+      [[decode-phase|decode phase]], the reciprocal of [[time-per-output-token|time per output
+      token]]; it decides how quickly an answer or a long [[chain-of-thought|chain of thought]]
+      completes. Aggregate output tokens per second sums generation across all concurrent requests
+      on a server and measures [[throughput|throughput]] and cost efficiency. Input or prefill
+      tokens per second, usually far higher because prompt tokens are processed in parallel,
+      measures how fast prompts are read. Per-request speed is bounded largely by
+      [[memory-bandwidth|memory bandwidth]] divided by the bytes read per step, which is why
+      [[quantization|quantization]], [[speculative-decoding|speculative decoding]] and chips with
+      large on-chip [[sram|SRAM]] raise it. Figures depend on model, hardware, batch size, prompt
+      length and [[tokenizer|tokenizer]], so cross-model comparisons are approximate.
+    example: >-
+      On my laptop the 8-billion-parameter model runs at about 40 tokens per second, plenty for chat.
+origin: >-
+  A long-standing informal unit in text generation that became a headline metric in 2023–2024, when
+  local-inference hobbyists compared hardware by tok/s and independent benchmarking sites and
+  specialized-chip vendors began publishing output-speed leaderboards for hosted models.
+note: >-
+  A token is roughly three-quarters of an English word on common tokenizers, but the ratio varies by
+  language and tokenizer, so tokens per second is not directly words per second.
+see_also:
+  - throughput
+  - time per output token
+  - latency
+  - decode phase
+  - memory bandwidth
+  - speculative decoding
+contrast:
+  - FLOPS

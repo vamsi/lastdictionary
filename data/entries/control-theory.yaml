@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: control theory
+id: control-theory
+pos: n.
+also:
+  - control engineering
+  - feedback control
+  - closed-loop control
+  - control system
+  - controller
+domain: robot
+domains:
+  - math
+  - rl
+level: core
+plain: >-
+  The mathematics of making machines behave as intended by constantly measuring what they are doing
+  and correcting them, as a thermostat, cruise control or self-balancing robot does.
+senses:
+  - definition: >-
+      The mathematics and engineering of steering dynamical systems — machines, vehicles, chemical
+      processes, power grids, robots — by choosing their inputs so that their outputs track a
+      desired reference despite disturbances and modeling errors. Its central idea is feedback: a
+      controller compares measurements with the goal and adjusts its inputs continuously
+      (closed-loop control), whereas open-loop control applies a precomputed input without checking
+      the result. Classical control analyzes linear single-input, single-output systems in the
+      frequency domain (transfer functions, Bode and Nyquist plots, gain and phase margins) and
+      yields the [[pid-controller|PID controller]]. Modern control uses state-space models,
+      controllability and observability, [[optimal-control|optimal control]] such as the
+      linear-quadratic regulator, the [[kalman-filter|Kalman filter]] for estimation, and
+      [[model-predictive-control|model predictive control]]; robust and adaptive control handle
+      uncertainty. Stability, meaning that errors die out rather than grow, is the core requirement.
+      [[reinforcement-learning|Reinforcement learning]] tackles the same problem of choosing actions
+      over time, usually without an explicit model, and the two fields share the
+      [[bellman-equation|Bellman equation]].
+    example: >-
+      The learned policy looked great in simulation, but control theory showed it had no stability
+      margin.
+origin: >-
+  James Clerk Maxwell's 1868 analysis of steam-engine governors, 'On Governors', is usually taken as
+  the founding paper. Edward Routh (1874) and Aleksandr Lyapunov (1892) developed stability theory,
+  Harry Nyquist (1932) and Hendrik Bode feedback-amplifier methods, and Rudolf Kálmán (1960)
+  state-space theory; Norbert Wiener's [[cybernetics|cybernetics]] (1948) linked control with
+  communication and biology.
+year: 1868
+note: >-
+  Not to be confused with [[ai-control|AI control]] in AI safety, which means safeguards that keep a
+  possibly misaligned AI system from causing harm even if it tries. In robotics a 'controller' is
+  the algorithm, not a handheld device.
+see_also:
+  - PID controller
+  - model predictive control
+  - optimal control
+  - Kalman filter
+  - reinforcement learning
+  - cybernetics
+  - impedance control
+contrast:
+  - reinforcement learning
+  - AI control
+sources:
+  - text: >-
+      Maxwell, J. C. (1868). On governors. Proceedings of the Royal Society of London 16, 270–283.
+  - text: >-
+      Åström, K. J. & Murray, R. M. (2008). Feedback Systems: An Introduction for Scientists and
+      Engineers. Princeton University Press.

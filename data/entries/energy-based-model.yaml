@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: energy-based model
+id: energy-based-model
+pos: n.
+also:
+  - EBM
+  - energy function
+  - energy-based learning
+domain: dl
+domains:
+  - gen
+  - math
+level: specialist
+plain: >-
+  A model that scores how well things fit together by giving each possibility an 'energy': low for
+  plausible combinations, high for implausible ones, like a ball settling into the lowest valleys.
+senses:
+  - definition: >-
+      A model that scores each possible configuration of its variables with a single number, the
+      energy E_θ(x) or E_θ(x, y): low for plausible or mutually compatible values, high for
+      implausible ones. In the framing of Yann LeCun and colleagues' 2006 tutorial, inference is
+      then a search for low-energy configurations, such as the label y that minimizes E(x, y). A
+      probabilistic EBM turns energies into a Boltzmann (Gibbs) distribution whose normalizing
+      constant, the partition function, is usually intractable, so training relies on
+      [[markov-chain-monte-carlo|Markov chain Monte Carlo]] sampling (contrastive divergence,
+      Langevin dynamics), score matching, noise-contrastive estimation or contrastive losses that
+      push energy down on data and up elsewhere. [[hopfield-network|Hopfield networks]],
+      [[boltzmann-machine|Boltzmann machines]] and [[restricted-boltzmann-machine|RBMs]] are classic
+      EBMs; modern ones use deep networks as energy functions, and any softmax classifier can be
+      read as one. [[score-based-generative-model|Score-based]] and [[diffusion-model|diffusion
+      models]] learn the gradient of a log-density, which is the negative gradient of an energy.
+    example: Sampling from the energy-based model took 60 Langevin steps per image.
+formula_latex: p_\theta(x) = \frac{\exp(-E_\theta(x))}{Z(\theta)}, \qquad Z(\theta) = \int \exp(-E_\theta(x))\,dx
+origin: >-
+  Energy functions entered neural networks from statistical physics with John Hopfield's 1982
+  network and the Boltzmann machine of David Ackley, Geoffrey Hinton and Terrence Sejnowski (1985).
+  The phrase 'energy-based models' appears in a 2003 paper by Yee Whye Teh, Max Welling, Simon
+  Osindero and Hinton; Yann LeCun and colleagues' 'A Tutorial on Energy-Based Learning' (2006)
+  extended it to non-probabilistic models.
+year: 1982
+note: >-
+  LeCun advocates non-generative, energy-based
+  [[joint-embedding-predictive-architecture|joint-embedding architectures]] as an alternative to
+  likelihood-based generative models; others regard EBMs as hard to train and sample at scale.
+see_also:
+  - Boltzmann machine
+  - restricted Boltzmann machine
+  - Hopfield network
+  - score-based generative model
+  - joint-embedding predictive architecture
+  - contrastive learning
+  - Markov chain Monte Carlo
+sources:
+  - text: >-
+      LeCun, Y., Chopra, S., Hadsell, R., Ranzato, M. & Huang, F. J. (2006). A Tutorial on
+      Energy-Based Learning. In Predicting Structured Data. MIT Press.

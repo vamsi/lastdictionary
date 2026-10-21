@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: interpretability illusion
+id: interpretability-illusion
+pos: n.
+also:
+  - illusion of interpretability
+  - interpretability illusions
+domain: interp
+domains:
+  - eval
+  - safety
+level: specialist
+plain: >-
+  A convincing-looking explanation of what is going on inside an AI model that turns out to be wrong
+  or misleading, often because the evidence examined was too narrow.
+senses:
+  - definition: >-
+      An apparently compelling interpretation of a model's internals that fails under broader or
+      more rigorous testing. Classic forms include a neuron or direction that seems to encode one
+      clean concept when inspected on one dataset but encodes different concepts on others (Tolga
+      Bolukbasi and colleagues, 2021); subspace [[activation-patching|activation patching]] that
+      changes outputs by activating a dormant pathway the model does not normally use, rather than
+      the variable the subspace supposedly represents (Aleksandar Makelov, Georg Lange and Neel
+      Nanda, 2023); and simplified proxy models or circuits that match the original on test data but
+      generalize differently. Related pitfalls include labeling features only from their top
+      activations, mistaking decodability by a [[probing|probe]] for use by the model, and
+      visualizations that look meaningful even for randomly initialized networks. Defenses include
+      testing on varied data, causal interventions with controls and quantitative measures of
+      faithfulness.
+    example: >-
+      The 'negation' direction was an interpretability illusion: on a second corpus it tracked
+      sentence length.
+origin: >-
+  Named by Tolga Bolukbasi, Adam Pearce, Ann Yuan, Andy Coenen, Emily Reif, Fernanda Viégas and
+  Martin Wattenberg in 'An Interpretability Illusion for BERT' (arXiv, April 2021); extended to
+  subspace patching by Makelov, Lange and Nanda (2023) and to simplified models by Dan Friedman and
+  colleagues (2023).
+year: 2021
+see_also:
+  - activation patching
+  - distributed alignment search
+  - probing
+  - feature absorption
+  - causal scrubbing
+  - saliency map
+sources:
+  - text: >-
+      Bolukbasi, T., Pearce, A., Yuan, A., Coenen, A., Reif, E., Viégas, F. & Wattenberg, M. (2021).
+      An Interpretability Illusion for BERT. arXiv preprint.
+  - text: >-
+      Makelov, A., Lange, G. & Nanda, N. (2024). Is This the Subspace You Are Looking For? An
+      Interpretability Illusion for Subspace Activation Patching. ICLR 2024.
+  - text: >-
+      Adebayo, J., Gilmer, J., Muelly, M., Goodfellow, I., Hardt, M. & Kim, B. (2018). Sanity Checks
+      for Saliency Maps. NeurIPS 2018.

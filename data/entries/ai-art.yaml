@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI art
+id: ai-art
+pos: n.
+also:
+  - AI-generated art
+  - AI artwork
+  - AI-generated image
+  - AI image
+domain: gen
+domains:
+  - culture
+  - society
+labels:
+  - contested
+level: essential
+plain: >-
+  Images, music or other artworks made with the help of AI — from early computer drawing programs to
+  today's prompt-based image generators — and the debate over whether and how such work counts as
+  art.
+senses:
+  - definition: >-
+      Art produced with artificial-intelligence systems as a principal tool or collaborator, from
+      fully generated pieces to works in which AI handles only some stages — today most often images
+      made with [[text-to-image-model|text-to-image models]] such as [[stable-diffusion|Stable
+      Diffusion]], [[dall-e|DALL·E]] and [[midjourney|Midjourney]], and by extension AI-made video
+      and music. Practices range from typing a single [[prompt|prompt]] to elaborate workflows that
+      combine iterative prompting, [[random-seed|seed]] selection, [[inpainting|inpainting]],
+      [[controlnet|ControlNet]] guidance, custom fine-tunes and manual painting. The category
+      predates generative AI: Harold Cohen's rule-based drawing program AARON (from 1972), Google's
+      [[deepdream|DeepDream]] (2015), [[style-transfer|style transfer]] and GAN artworks came first.
+      AI art is among the most contested uses of AI. Critics, including many illustrators and
+      concept artists, argue that models trained on scraped artworks without consent or payment
+      exploit artists and flood platforms with low-effort images ([[ai-slop|AI slop]]); supporters
+      compare it to photography as a new medium that changes rather than eliminates skill. Legal
+      questions include whether training is [[fair-use-and-ai-training|fair use]] and who, if
+      anyone, owns the outputs: as of October 2026, the US Copyright Office registers only the
+      human-authored parts of works containing AI-generated material (see [[ai-authorship|AI
+      authorship]]).
+    example: >-
+      The gallery labeled the piece as AI art, listing the model alongside the artist's own
+      overpainting.
+origin: >-
+  Harold Cohen began AARON in 1972, and neural-network art spread after 2015. In October 2018 the
+  GAN-made 'Portrait of Edmond de Belamy' by the Paris collective Obvious, built largely on code by
+  Robbie Barrat, sold at Christie's for US$432,500; in 2022 a Midjourney-made image won a Colorado
+  State Fair art prize, igniting public controversy.
+note: >-
+  Distinguish from 'generative art', an older practice of art made by rule-based or autonomous
+  processes, which need not involve AI. Tools such as Glaze and [[nightshade|Nightshade]] let
+  artists perturb their images to hinder style imitation or to poison training data. In March 2026
+  the US Supreme Court declined to review Thaler v. Perlmutter, leaving in place the ruling that a
+  work credited solely to an AI system cannot be copyrighted.
+see_also:
+  - text-to-image model
+  - AI slop
+  - AI authorship
+  - fair use and AI training
+  - style transfer
+  - DeepDream
+  - Midjourney
+  - Nightshade
+sources:
+  - text: >-
+      U.S. Copyright Office (2025). Copyright and Artificial Intelligence, Part 2: Copyrightability.
+as_of: 2026-10

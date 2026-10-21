@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: benign overfitting
+id: benign-overfitting
+pos: n.
+also:
+  - harmless interpolation
+  - tempered overfitting
+domain: dl
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  When a model fits its training data perfectly — even the errors and noise — yet still predicts
+  well on new data, defying the textbook warning that this always backfires.
+senses:
+  - definition: >-
+      The phenomenon in which a model interpolates noisy training data — reaching zero training
+      error even on mislabeled or noisy examples — yet still attains near-optimal test performance.
+      Peter Bartlett and colleagues characterized when this happens in overparameterized linear
+      regression: the minimum-norm interpolating solution generalizes well if the data covariance
+      has many small, roughly equal directions in which the noise can be absorbed harmlessly, while
+      a few important directions carry the signal. Analogous results hold for kernel methods,
+      two-layer networks and max-margin classification. Later work distinguishes benign overfitting
+      (the excess risk vanishes), 'tempered' overfitting (bounded but nonzero harm, as seen in many
+      neural networks) and catastrophic overfitting. The concept reconciles classical theory with
+      the practice of training deep networks to zero training loss and accounts for part of the
+      second descent in [[double-descent|double descent]]; whether real deep networks overfit
+      benignly or merely temperately remains open.
+origin: >-
+  Named by Peter L. Bartlett, Philip M. Long, Gábor Lugosi and Alexander Tsigler in 'Benign
+  Overfitting in Linear Regression' (arXiv June 2019; PNAS 2020), building on studies of
+  interpolation by Mikhail Belkin and colleagues (2018). Neil Mallinar and colleagues proposed the
+  benign–tempered–catastrophic taxonomy in 2022.
+year: 2019
+see_also:
+  - double descent
+  - overparameterization
+  - overfitting
+  - implicit regularization
+  - generalization gap
+  - memorization
+contrast:
+  - overfitting
+sources:
+  - text: >-
+      Bartlett, P. L., Long, P. M., Lugosi, G. & Tsigler, A. (2020). Benign overfitting in linear
+      regression. PNAS 117(48), 30063–30070.
+  - text: >-
+      Mallinar, N. et al. (2022). Benign, Tempered, or Catastrophic: A Taxonomy of Overfitting.
+      NeurIPS 2022.

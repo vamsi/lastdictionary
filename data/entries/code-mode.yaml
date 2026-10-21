@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: code mode
+id: code-mode
+pos: n.
+also:
+  - code execution with MCP
+domain: agents
+domains:
+  - eng
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A way for AI agents to use tools by writing a short program that calls them, instead of asking for
+  each tool one step at a time.
+senses:
+  - definition: >-
+      An approach to [[tool-use|tool use]] in which, instead of issuing one structured
+      [[tool-call|tool call]] at a time, the model sees its tools (usually those offered by
+      [[mcp-server|MCP servers]]) as functions in a programming language and writes a short program
+      that uses them, which is then executed in a [[sandbox|sandbox]]. Its originators at Cloudflare
+      reasoned that models are far more fluent in ordinary code, which fills their training data,
+      than in the artificial tool-call format, so they cope better with large or complicated
+      toolsets; and that when calls are chained, intermediate results can stay inside the running
+      program instead of passing through the model's [[context-window|context window]], which saves
+      tokens and time. Credentials stay in the sandbox and never appear in the generated code.
+      Anthropic described a similar pattern of [[code-execution|code execution]] with MCP later in
+      2025.
+    example: >-
+      With code mode, the agent fetched 300 tickets, filtered them in a loop and returned only the
+      summary.
+origin: >-
+  Named by Kenton Varda and Sunil Pai in the Cloudflare blog post 'Code Mode: the better way to use
+  MCP' (26 September 2025), which converted MCP tools into a TypeScript API executed in lightweight
+  V8 isolates.
+year: 2025
+see_also:
+  - Model Context Protocol
+  - tool use
+  - function calling
+  - code execution
+  - sandbox
+  - progressive disclosure
+  - context engineering
+contrast:
+  - function calling
+sources:
+  - text: >-
+      Varda, K. & Pai, S. (2025). Code Mode: the better way to use MCP. Cloudflare blog, 26
+      September 2025.
+    url: https://blog.cloudflare.com/code-mode/
+as_of: 2026-10

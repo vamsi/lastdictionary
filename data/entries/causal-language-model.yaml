@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: causal language model
+id: causal-language-model
+pos: n.
+also:
+  - CLM
+  - causal LM
+  - causal language modeling
+  - left-to-right language model
+  - unidirectional language model
+domain: llm
+domains:
+  - train
+level: core
+plain: >-
+  A language model that reads text only from left to right, predicting each word from the words
+  before it. The models behind today's chatbots are of this kind.
+senses:
+  - definition: >-
+      A [[language-model|language model]] trained to predict each [[token|token]] from the preceding
+      tokens only, enforced in transformers by a [[causal-mask|causal mask]]; in practice synonymous
+      with a left-to-right [[autoregressive-model|autoregressive]] model trained by
+      [[next-token-prediction|next-token prediction]]. Because each position sees only the past, a
+      causal LM can generate text directly by repeatedly sampling the next token, which makes it the
+      standard design for [[gpt|GPT]]-style [[decoder-only-transformer|decoder-only]]
+      [[large-language-model|LLMs]]. The trade-off is that a token's representation cannot use later
+      context, which made bidirectional [[masked-language-model|masked language models]] such as
+      [[bert|BERT]] stronger for some classification and extraction tasks at equal size. In the
+      Hugging Face [[transformers|Transformers]] library, the AutoModelForCausalLM class loads such
+      models.
+    example: Fine-tune it as a causal LM, but compute the loss only on the response tokens.
+origin: >-
+  Left-to-right prediction is the classical form of language modeling. The contrasting label became
+  necessary once masked language modeling appeared; an early use is Guillaume Lample and Alexis
+  Conneau's cross-lingual XLM paper (January 2019), which compared causal (CLM), masked (MLM) and
+  translation language modeling. Hugging Face adopted the term for its model classes.
+year: 2019
+see_also:
+  - masked language model
+  - decoder-only transformer
+  - next-token prediction
+  - autoregressive model
+  - causal mask
+  - GPT
+contrast:
+  - masked language model
+sources:
+  - text: >-
+      Lample, G. & Conneau, A. (2019). Cross-lingual Language Model Pretraining. NeurIPS 2019.
+    url: https://arxiv.org/abs/1901.07291

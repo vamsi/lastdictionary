@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: latent space
+id: latent-space
+pos: n.
+also:
+  - latent representation
+  - latent vector
+  - latent code
+  - latents
+  - representation space
+domain: dl
+domains:
+  - gen
+  - math
+level: core
+plain: >-
+  The hidden internal map a model builds of its data, where each item becomes a point and similar
+  items sit near each other. Moving smoothly through it gradually changes what the model represents
+  or generates.
+senses:
+  - definition: >-
+      The vector space of a model's internal representations, especially the code space of an
+      [[autoencoder|autoencoder]], [[variational-autoencoder|variational autoencoder]],
+      [[generative-adversarial-network|GAN]] or other generative model, in which each point (a
+      latent vector) corresponds to a possible input or output. 'Latent' signals that the
+      coordinates are not observed in the data but inferred or learned. Because training places
+      similar items near each other, operations in latent space can be meaningful: interpolating
+      between two latent vectors yields gradual transitions, and vector arithmetic can add or remove
+      attributes such as a smile. [[latent-diffusion-model|Latent diffusion models]] run their
+      generative process in a compressed latent space instead of pixel space to save computation. In
+      discussions of language models the term is used loosely for [[activation-space|activation
+      space]]. Individual latent dimensions are usually not interpretable without additional
+      constraints ([[disentangled-representation|disentangled representation]]).
+    example: Interpolating in latent space between the two faces produced a smooth morph.
+origin: >-
+  From 'latent variables' in statistics: unobserved quantities inferred from observed ones, as in
+  factor analysis (Charles Spearman, 1904). The phrase spread in machine learning with deep
+  generative models, notably Diederik Kingma and Max Welling's variational autoencoder (2013) and
+  Alec Radford, Luke Metz and Soumith Chintala's DCGAN (2015), which demonstrated latent
+  interpolation and vector arithmetic on faces.
+note: >-
+  Each model, and each layer, has its own latent space. 'Latent space' and 'embedding space' are
+  often used interchangeably; the former is favored for generative models, the latter for retrieval
+  and similarity.
+see_also:
+  - embedding
+  - autoencoder
+  - variational autoencoder
+  - latent diffusion model
+  - activation space
+  - disentangled representation
+  - manifold hypothesis
+  - representation learning
+contrast:
+  - activation space

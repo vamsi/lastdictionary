@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: abductive reasoning
+id: abductive-reasoning
+pos: n.
+also:
+  - abduction
+  - inference to the best explanation
+  - abductive inference
+  - abductive diagnosis
+  - abductive logic programming
+domain: sym
+domains:
+  - mind
+  - core
+level: core
+plain: >-
+  Reasoning from an observation to its most likely explanation — the grass is wet, so it probably
+  rained — the kind of educated guess that doctors and detectives make.
+senses:
+  - definition: >-
+      Inference that runs from effects back to possible causes: faced with observations, it proposes
+      a hypothesis that would account for them and, when several compete, prefers the one that is
+      simplest, covers the most evidence and is most plausible beforehand. True premises do not
+      guarantee its conclusion: from 'if it rained, the grass is wet' and 'the grass is wet' it
+      proposes rain, though a sprinkler would also explain the observation. In AI, abduction is
+      formalized as finding a set of assumptions that, together with background knowledge, entails
+      the observations while remaining consistent — the basis of model-based diagnosis, plan and
+      intention recognition, and abductive [[logic-programming|logic programming]]; in probabilistic
+      terms it corresponds to finding the most probable explanation in a [[bayesian-network|Bayesian
+      network]]. Scientific hypothesis generation, debugging and the interpretation of language all
+      involve abduction, and it is a common test of [[large-language-model|language-model]]
+      [[reasoning|reasoning]].
+    example: >-
+      The monitoring agent abduced a failing disk as the simplest explanation for both the latency
+      spike and the checksum errors.
+origin: >-
+  Named by the philosopher Charles Sanders Peirce, who from 1878 distinguished it from deduction and
+  induction, calling it 'hypothesis' and later 'abduction' or 'retroduction'; Gilbert Harman's 1965
+  phrase 'inference to the best explanation' became a common synonym. Harry Pople's 1973 work on
+  mechanizing medical diagnosis brought it into AI.
+note: >-
+  Some philosophers separate abduction as generating hypotheses from inference to the best
+  explanation as selecting among them; AI usage usually merges the two.
+see_also:
+  - deductive reasoning
+  - inductive reasoning
+  - reasoning
+  - Bayesian network
+  - logic programming
+  - commonsense reasoning
+contrast:
+  - deductive reasoning
+  - inductive reasoning
+sources:
+  - text: >-
+      Peirce, C. S. (1878). Deduction, Induction, and Hypothesis. Popular Science Monthly 13,
+      470–482.
+  - text: >-
+      Josephson, J. R. & Josephson, S. G. (eds.) (1994). Abductive Inference: Computation,
+      Philosophy, Technology. Cambridge University Press.

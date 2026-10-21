@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: normalizing flow
+id: normalizing-flow
+pos: n.
+also:
+  - flow-based generative model
+  - flow model
+  - invertible neural network
+  - continuous normalizing flow
+  - RealNVP
+  - Glow
+domain: gen
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A generator built from a chain of reversible steps that reshape simple random noise into realistic
+  data; because every step can be undone, it can also calculate exactly how likely any example is.
+senses:
+  - definition: >-
+      A [[generative-model|generative model]] built from a chain of invertible, differentiable
+      functions that reshape a simple base distribution, typically a standard Gaussian, into the
+      data distribution. Sampling pushes base noise forward through the chain; density evaluation
+      runs data backward and applies the change-of-variables formula, adding the
+      log-absolute-determinant of the [[jacobian|Jacobian]] of each step. Because every step can be
+      undone and its change of volume computed, flows give exact likelihoods and exact latent codes,
+      which [[variational-autoencoder|VAEs]] (which only bound the likelihood) and
+      [[generative-adversarial-network|GANs]] (which have none) do not. The price is architectural:
+      every layer must be invertible with a cheap Jacobian determinant, as in coupling layers (NICE,
+      RealNVP, Glow) and autoregressive flows (MAF, IAF). Continuous normalizing flows instead
+      define the transformation as the solution of a learned ordinary differential equation (FFJORD,
+      a [[neural-ordinary-differential-equation|neural ordinary differential equation]]); training
+      them without simulation by [[flow-matching|flow matching]] links flows to modern
+      [[diffusion-model|diffusion]] practice.
+formula_latex: \log p_X(x) = \log p_Z\big(f(x)\big) + \log \left| \det \frac{\partial f(x)}{\partial x} \right|
+origin: >-
+  Esteban Tabak and Eric Vanden-Eijnden (2010) estimated densities by flowing data step by step
+  toward a normal distribution; Tabak and Cristina Turner (2013) introduced the term 'normalizing
+  flow' for such a composition of simple maps. Oren Rippel and Ryan Adams (2013) were among the
+  first to build the maps from deep networks, and Danilo Rezende and Shakir Mohamed brought the term
+  into deep learning with 'Variational Inference with Normalizing Flows' (posted May 2015); NICE
+  (2014), RealNVP (2016) and Glow (2018) made flows practical image generators.
+year: 2013
+note: >-
+  'Normalizing' refers to transforming data toward a normal (Gaussian) distribution, not to
+  normalizing probabilities so they sum to one.
+see_also:
+  - generative model
+  - flow matching
+  - variational autoencoder
+  - Jacobian
+  - neural ordinary differential equation
+  - density estimation
+  - diffusion model
+sources:
+  - text: >-
+      Rezende, D. J. & Mohamed, S. (2015). Variational Inference with Normalizing Flows.
+      arXiv:1505.05770 (ICML 2015).
+    url: https://arxiv.org/abs/1505.05770
+  - text: >-
+      Papamakarios, G., Nalisnick, E., Rezende, D. J., Mohamed, S. & Lakshminarayanan, B. (2021).
+      Normalizing Flows for Probabilistic Modeling and Inference. Journal of Machine Learning
+      Research 22. arXiv:1912.02762.
+    url: https://arxiv.org/abs/1912.02762

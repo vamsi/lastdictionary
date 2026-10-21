@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gradient checkpointing
+id: gradient-checkpointing
+pos: n.
+also:
+  - activation checkpointing
+  - activation recomputation
+  - rematerialization
+  - remat
+domain: dl
+domains:
+  - train
+  - hw
+level: core
+plain: >-
+  A memory-saving trick: instead of storing every intermediate result needed for learning, the
+  computer keeps only a few and recalculates the rest when needed, trading extra computing time for
+  memory.
+senses:
+  - definition: >-
+      A technique that reduces the memory needed for the [[backward-pass|backward pass]] by saving
+      only a subset of activations (the checkpoints) during the [[forward-pass|forward pass]] and
+      recomputing the discarded ones from the nearest checkpoint when backpropagation reaches them.
+      For a chain of n layers, checkpointing every √n layers cuts activation memory from O(n) to
+      O(√n) for roughly one extra forward pass, often 20–40% more compute in practice; more
+      aggressive schemes reach O(log n) memory with O(n log n) recomputation. It is standard for
+      training large [[transformer|transformers]] and long-context models, usually applied per
+      transformer block, and selective variants recompute only operations that are cheap to redo but
+      memory-hungry, such as attention scores. Compilers can choose automatically what to
+      rematerialize. It sits in the memory-saving toolkit alongside
+      [[mixed-precision-training|mixed-precision training]], [[gradient-accumulation|gradient
+      accumulation]], [[zero|ZeRO]] and [[offloading|offloading]].
+    example: >-
+      Turning on activation checkpointing let us double the micro-batch at a 30% speed cost.
+origin: >-
+  Checkpointing originated in automatic differentiation, where Andreas Griewank's 1992 binomial
+  scheme (later the 'revolve' algorithm with Andrea Walther) bounded the memory of reverse mode.
+  Tianqi Chen, Bing Xu, Chiyuan Zhang and Carlos Guestrin popularized it in deep learning with
+  'Training Deep Nets with Sublinear Memory Cost' (2016), cutting a 1,000-layer residual network's
+  memory from 48 GB to 7 GB.
+year: 2016
+note: >-
+  Unrelated to model [[checkpoint|checkpoints]] saved to disk. Not to be confused with
+  [[gradient-accumulation|gradient accumulation]], which saves memory by splitting the batch
+  instead.
+see_also:
+  - backward pass
+  - activation
+  - gradient accumulation
+  - mixed-precision training
+  - ZeRO
+  - offloading
+contrast:
+  - checkpoint
+  - gradient accumulation
+sources:
+  - text: >-
+      Chen, T., Xu, B., Zhang, C. & Guestrin, C. (2016). Training Deep Nets with Sublinear Memory
+      Cost. arXiv:1604.06174.
+    url: https://arxiv.org/abs/1604.06174
+  - text: >-
+      Griewank, A. (1992). Achieving logarithmic growth of temporal and spatial complexity in
+      reverse automatic differentiation. Optimization Methods and Software 1(1), 35–54.

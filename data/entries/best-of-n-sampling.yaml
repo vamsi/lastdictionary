@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: best-of-n sampling
+id: best-of-n-sampling
+pos: n.
+also:
+  - best-of-n
+  - BoN
+  - best-of-n reranking
+domain: train
+domains:
+  - infer
+  - llm
+level: core
+plain: >-
+  Asking an AI the same question several times and keeping whichever answer a scoring model or
+  checker rates highest — a simple way to trade extra computing for better answers.
+senses:
+  - definition: >-
+      An inference-time method that draws n independent samples from a model for the same prompt and
+      returns the one scored highest by a [[reward-model|reward model]], [[verifier|verifier]] or
+      other scoring function. It is the simplest form of [[test-time-compute|test-time compute]]
+      scaling and a strong baseline in alignment research: with a good scorer, quality improves with
+      n, with diminishing returns, while cost grows linearly. Viewed as a policy, best-of-n tilts
+      the base distribution toward high reward with bounded divergence — at most log n − (n−1)/n
+      nats of KL, a widely quoted figure later shown to be an upper bound rather than exact — which
+      makes it a reference point for comparing RL methods. Large n exploits the scorer's errors,
+      producing [[reward-overoptimization|reward overoptimization]]. Distilling best-of-n outputs
+      back into the model is a form of [[rejection-sampling|rejection sampling]] fine-tuning, and
+      majority voting over answers ([[self-consistency|self-consistency]]) is a scorer-free
+      relative.
+    example: >-
+      Best-of-16 against the reward model beat our PPO policy, at sixteen times the inference cost.
+formula_latex: \mathrm{KL}\big(\pi_{\mathrm{BoN}} \,\|\, \pi_{\mathrm{ref}}\big) \le \log n - \frac{n-1}{n}
+origin: >-
+  Generating several outputs and reranking them is old practice in speech recognition and machine
+  translation (n-best reranking). In language-model alignment, best-of-n against a learned reward
+  model appears in OpenAI's summarization (2020) and WebGPT (2021) work; Leo Gao, John Schulman and
+  Jacob Hilton (2022) used it as a reference optimizer in their study of reward-model
+  overoptimization.
+year: 2020
+note: >-
+  Ahmad Beirami and colleagues (2024) proved that the standard KL formula overstates the true
+  divergence. Not to be confused with [[beam-search|beam search]], which builds a single sequence
+  token by token, or with [[pass-k|pass@k]], which counts a problem solved if any of k samples is
+  correct.
+see_also:
+  - rejection sampling
+  - reward model
+  - verifier
+  - test-time compute
+  - self-consistency
+  - reward overoptimization
+  - pass@k
+contrast:
+  - beam search
+  - self-consistency
+sources:
+  - text: >-
+      Gao, L., Schulman, J. & Hilton, J. (2022). Scaling Laws for Reward Model Overoptimization.
+      ICML 2023. arXiv:2210.10760.
+    url: https://arxiv.org/abs/2210.10760
+  - text: >-
+      Beirami, A. et al. (2024). Theoretical guarantees on the best-of-n alignment policy.
+      arXiv:2401.01879.
+    url: https://arxiv.org/abs/2401.01879

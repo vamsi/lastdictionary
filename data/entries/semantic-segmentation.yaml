@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semantic segmentation
+id: semantic-segmentation
+pos: n.
+also:
+  - pixel-wise classification
+  - dense prediction
+  - scene parsing
+domain: percep
+domains:
+  - dl
+  - robot
+level: core
+plain: >-
+  Coloring every pixel of an image by what it shows, such as road, sky, person or car, without
+  telling one person or car apart from another.
+senses:
+  - definition: >-
+      The task of assigning a class label from a fixed set to every pixel of an image, producing a
+      label map the size of the input. Objects of the same class merge into one region, so two
+      adjacent people become a single 'person' area; separating them is
+      [[instance-segmentation|instance segmentation]]. Semantic segmentation covers both countable
+      'things' and amorphous 'stuff' such as road, grass and sky, which makes it the basis of scene
+      understanding in driving and robotics. Fully convolutional networks (2014) adapted
+      classification networks to output dense predictions; later architectures recovered spatial
+      detail and context with encoder–decoder skip connections ([[u-net|U-Net]]), dilated (atrous)
+      convolutions and multi-scale pooling (the DeepLab family, 2014–2018), and attention
+      (SegFormer, Mask2Former). Self-supervised [[backbone|backbones]] such as [[dino|DINOv2]] give
+      strong results with only a light decoder. Standard benchmarks include PASCAL VOC, Cityscapes
+      (urban driving, 2016) and ADE20K (150 classes, 2017); the usual metric is mean
+      [[intersection-over-union|intersection over union]] (mIoU) across classes.
+    example: >-
+      Semantic segmentation marks the drivable area; a separate instance model counts the
+      pedestrians.
+origin: >-
+  Region labeling guided by knowledge of object classes was explored in 1970s scene-analysis
+  systems. The phrase 'semantic segmentation' spread in the late 2000s with work on labeling pixels
+  by object class, and the fully convolutional networks of Jonathan Long, Evan Shelhamer and Trevor
+  Darrell (2014) made end-to-end deep models the standard approach.
+note: >-
+  Medical imaging often calls the same task simply 'segmentation' (of organs, lesions or cell
+  types). 'Dense prediction' is the wider family of per-pixel tasks that also includes
+  [[depth-estimation|depth estimation]] and [[optical-flow|optical flow]].
+see_also:
+  - image segmentation
+  - instance segmentation
+  - panoptic segmentation
+  - U-Net
+  - intersection over union
+  - convolutional neural network
+contrast:
+  - instance segmentation
+sources:
+  - text: >-
+      Long, J., Shelhamer, E. & Darrell, T. (2015). Fully Convolutional Networks for Semantic
+      Segmentation. CVPR 2015.
+    url: https://arxiv.org/abs/1411.4038
+  - text: >-
+      Chen, L.-C., Papandreou, G., Kokkinos, I., Murphy, K. & Yuille, A. L. (2018). DeepLab:
+      Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully
+      Connected CRFs. IEEE TPAMI 40(4), 834–848.

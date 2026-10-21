@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: woke AI
+id: woke-ai
+pos: n.
+also:
+  - anti-woke AI
+  - Preventing Woke AI in the Federal Government
+  - Executive Order 14319
+  - Unbiased AI Principles
+domain: gov
+domains:
+  - culture
+  - society
+labels:
+  - contested
+  - informal
+level: core
+plain: >-
+  A politically charged label, used mainly by US conservatives, for AI systems seen as building
+  progressive views into their answers. Since 2025 it also names a US rule on which AI the
+  government may buy.
+senses:
+  - context: Political label
+    definition: >-
+      A pejorative term, used mainly by conservative critics in the United States, for AI systems
+      perceived as embedding progressive or diversity-oriented viewpoints in their outputs — for
+      example by refusing some politically sensitive requests, giving one-sided answers on contested
+      issues or, in a widely cited February 2024 episode, generating historically inaccurate images
+      of people of varied races in response to prompts about historical figures. Critics of the
+      label argue that it lumps together genuine accuracy failures, deliberate safety measures
+      against harmful content and efforts to reduce [[algorithmic-bias|algorithmic bias]], and that
+      political neutrality is itself a contested standard.
+    example: >-
+      The senator called the chatbot woke AI after it declined to write the campaign attack ad.
+  - context: US federal procurement
+    definition: >-
+      Under Executive Order 14319, 'Preventing Woke AI in the Federal Government' (July 23, 2025),
+      federal agencies may procure [[large-language-model|large language models]] only if they
+      comply with two Unbiased AI Principles: truth-seeking (factual accuracy and acknowledgment of
+      uncertainty) and ideological neutrality (no partisan or ideological judgments built into
+      outputs unless a user asks). Office of Management and Budget memorandum M-26-04 (December 11,
+      2025) implements it through contract terms requiring vendors to supply documentation such as
+      acceptable-use policies and model, system or data cards and to remedy violations, with limited
+      exceptions such as national-security systems; agencies had until March 11, 2026 to update
+      their procurement policies.
+    labels:
+      - legal
+origin: >-
+  'Woke' passed from African American English into mainstream politics and became a conservative
+  pejorative in the late 2010s; 'woke AI' circulated by early 2023 in conservative criticism of
+  ChatGPT, after Elon Musk warned in December 2022 against training AI to be 'woke', and spread
+  after the February 2024 Gemini image-generation controversy. [[america-s-ai-action-plan|America's
+  AI Action Plan]] and Executive Order 14319 (July 2025) made it official vocabulary.
+year: 2023
+note: >-
+  Developers responded variously, from publishing political-bias evaluations to marketing models as
+  less filtered. Measuring political bias in language models is itself methodologically disputed.
+see_also:
+  - algorithmic bias
+  - America's AI Action Plan
+  - model card
+  - AI alignment
+  - AI ethics
+  - Executive Order 14434
+sources:
+  - text: >-
+      Executive Order 14319 of July 23, 2025: Preventing Woke AI in the Federal Government.
+    url: https://www.whitehouse.gov/presidential-actions/2025/07/preventing-woke-ai-in-the-federal-government/
+  - text: >-
+      Office of Management and Budget (2025). M-26-04: Increasing Public Trust in Artificial
+      Intelligence Through Unbiased AI Principles. December 11, 2025.
+as_of: 2026-10

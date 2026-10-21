@@ -1,0 +1,84 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: embedding
+id: embedding
+pos: n.
+also:
+  - embeddings
+  - vector embedding
+  - embedding vector
+  - embedding layer
+  - embedding space
+  - distributed representation
+  - dense representation
+  - embed
+domain: dl
+domains:
+  - llm
+  - agents
+  - math
+level: essential
+plain: >-
+  A list of numbers that stands for a word, picture or other item, arranged so that similar items
+  get similar lists. It lets a computer measure similarity of meaning as distance.
+senses:
+  - context: Machine learning
+    definition: >-
+      A dense vector of real numbers that a model assigns to an item — a [[token|token]], document,
+      image, product, user or graph node — or the learned function that assigns such vectors. The
+      vectors live in a space of fixed dimension, typically hundreds to a few thousand, far smaller
+      than the number of distinct items or the size of the raw input, and training arranges that
+      space so distance carries meaning: related items end up close together, as measured by
+      [[cosine-similarity|cosine similarity]] or [[dot-product|dot product]], and some directions
+      come to stand for attributes. The arrangement emerges from whatever objective the model is
+      trained on, such as predicting neighboring words ([[word2vec|word2vec]]), matching paired
+      inputs ([[contrastive-learning|contrastive learning]], [[clip|CLIP]]) or predicting the next
+      token. Because related items receive nearby vectors, what a model learns about one carries
+      over to the others, which [[one-hot-encoding|one-hot codes]], with every item equally far from
+      every other, do not allow. Dedicated [[embedding-model|embedding models]] produce
+      [[text-embedding|text embeddings]] for [[semantic-search|semantic search]],
+      [[retrieval-augmented-generation|retrieval]], [[recommender-system|recommendation]],
+      clustering and deduplication, usually stored in a [[vector-database|vector database]].
+    example: >-
+      We embed every support ticket and retrieve the five nearest neighbors for each new question.
+  - context: Network layer
+    definition: >-
+      A trainable lookup table, a matrix with one row per vocabulary item, that converts integer IDs
+      into vectors at the input of a network (an 'embedding layer'); it is equivalent to multiplying
+      a one-hot vector by a weight matrix. In a [[large-language-model|large language model]] the
+      token-embedding matrix is sometimes tied to the output [[unembedding|unembedding]]
+      ([[weight-sharing|weight sharing]]), and position information is added or applied separately
+      ([[positional-encoding|positional encoding]]).
+  - context: Mathematics
+    definition: >-
+      An injective, structure-preserving map of one mathematical object into another, such as a
+      graph or manifold into Euclidean space. This is the source of the machine-learning usage and
+      survives in nonlinear [[dimensionality-reduction|dimensionality reduction]], where methods
+      such as locally linear embedding and [[t-sne|t-SNE]] 'embed' data in two or three dimensions.
+origin: >-
+  Borrowed from mathematics. Learned vectors for symbols go back to Geoffrey Hinton's 1986 work on
+  'distributed representations', and Yoshua Bengio and colleagues' neural language model (NIPS 2000;
+  JMLR 2003) learned a feature vector for every word jointly with the model. When 'embedding' was
+  first used for such learned vectors is not established, but 'word embedding' was common by about
+  2010, following work such as Ronan Collobert and Jason Weston's (2008). Tomas Mikolov and
+  colleagues' word2vec (2013) made embeddings ubiquitous.
+year: 2000
+note: >-
+  Both noun and verb ('we embed each document'). Embedding similarity reflects the training
+  objective, not meaning in any guaranteed sense; two models' embeddings are not interchangeable.
+see_also:
+  - word embedding
+  - text embedding
+  - embedding model
+  - vector database
+  - latent space
+  - representation learning
+  - cosine similarity
+  - unembedding
+sources:
+  - text: >-
+      Bengio, Y., Ducharme, R., Vincent, P. & Jauvin, C. (2003). A Neural Probabilistic Language
+      Model. Journal of Machine Learning Research, 3, 1137–1155.
+  - text: >-
+      Mikolov, T., Chen, K., Corrado, G. & Dean, J. (2013). Efficient Estimation of Word
+      Representations in Vector Space. ICLR 2013 Workshop.

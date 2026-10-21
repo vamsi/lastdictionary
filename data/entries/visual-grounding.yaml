@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: visual grounding
+id: visual-grounding
+pos: n.
+also:
+  - phrase grounding
+  - referring expression comprehension
+  - REC
+  - referring expression segmentation
+  - RefCOCO
+  - GUI grounding
+domain: percep
+domains:
+  - llm
+  - agents
+level: specialist
+plain: >-
+  Linking words to the exact part of an image they refer to, for example finding 'the man in the red
+  hat on the left' and pointing to him.
+senses:
+  - definition: >-
+      The task of localizing the image region, as a [[bounding-box|bounding box]], mask or point,
+      that a natural-language expression refers to. Referring expression comprehension locates the
+      single object described by a phrase such as 'the second mug from the left', which may depend
+      on attributes, relations and context; phrase grounding localizes every noun phrase in a
+      caption; referring segmentation outputs a mask. Benchmarks include RefCOCO, RefCOCO+ and
+      RefCOCOg (2016) and Flickr30k Entities (2015). Specialized models such as MDETR (2021), GLIP
+      (2022) and Grounding DINO (2023) fuse text and image features inside a detector; since 2023,
+      [[multimodal-large-language-model|multimodal language models]] ground by emitting coordinates
+      as text or special [[token|tokens]]. Grounding is central to [[gui-agent|GUI agents]] and
+      [[computer-use|computer use]], where a model must map an instruction such as 'click the Submit
+      button' to exact screen coordinates. It makes multimodal outputs checkable and helps reduce
+      object [[hallucination|hallucination]].
+    example: >-
+      The agent understood the instruction but failed at grounding, clicking the search box instead
+      of the address bar.
+origin: >-
+  Linking language to image regions grew out of work on referring expressions and image–text
+  alignment around 2014–2016, including Sahar Kazemzadeh and colleagues' ReferItGame (2014) and the
+  RefCOCO datasets (2016). The phrase 'visual grounding' was in paper titles by 2016 (Akira Fukui
+  and colleagues, EMNLP 2016) and became the common umbrella term in the late 2010s. GUI grounding
+  emerged with screen-operating agents in 2023–2024.
+note: >-
+  Narrower than the general [[grounding|grounding]] of AI outputs in sources or in the world, and
+  distinct from the philosophical [[symbol-grounding-problem|symbol grounding problem]], although
+  all three share the idea of tying symbols to what they refer to.
+see_also:
+  - grounding
+  - open-vocabulary detection
+  - visual question answering
+  - vision-language model
+  - GUI agent
+  - computer use
+contrast:
+  - object detection
+sources:
+  - text: >-
+      Kazemzadeh, S., Ordonez, V., Matten, M. & Berg, T. L. (2014). ReferItGame: Referring to
+      Objects in Photographs of Natural Scenes. EMNLP 2014.
+  - text: >-
+      Yu, L., Poirson, P., Yang, S., Berg, A. C. & Berg, T. L. (2016). Modeling Context in Referring
+      Expressions. ECCV 2016.
+as_of: 2026-10

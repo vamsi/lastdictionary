@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: alpha–beta pruning
+id: alpha-beta-pruning
+pos: n.
+also:
+  - alpha–beta search
+  - alpha-beta
+domain: sym
+domains:
+  - rl
+level: specialist
+plain: >-
+  A shortcut for game programs: tracking the best result each side is already sure of, it ignores
+  lines of play that could only do worse, and when promising moves come first it searches about
+  twice as deep.
+senses:
+  - definition: >-
+      An optimization of [[minimax|minimax]] search that reaches exactly the same decision while
+      leaving unexamined every part of the tree whose value could not alter it. It passes two bounds
+      down the [[game-tree|game tree]]: alpha, the value the maximizing player is already
+      guaranteed, and beta, the value the minimizing player is already guaranteed. As soon as a
+      node's value is known to fall outside the window between them — for instance, because one
+      opposing reply already makes the move inferior to an alternative — its remaining children are
+      pruned. With perfect move ordering it examines about b^(d/2) positions instead of b^d,
+      effectively doubling the reachable depth; with random ordering the savings are smaller, so
+      iterative deepening, transposition tables and killer-move heuristics are used to order moves
+      well. It was the core of chess programs from the 1960s through [[deep-blue|Deep Blue]], and
+      Stockfish still searches with it.
+origin: >-
+  Credit is disputed: John McCarthy recalled proposing the idea around 1956; Allen Newell, Cliff
+  Shaw and Herbert Simon used an approximate form in their 1958 chess program; Timothy Hart and
+  Daniel Edwards described it in an MIT AI memo in 1961; and Alexander Brudno described it
+  independently in the Soviet Union in 1963. Donald Knuth and Ronald Moore published the first full
+  analysis in 1975.
+year: 1958
+see_also:
+  - minimax
+  - game tree
+  - evaluation function
+  - iterative deepening search
+  - Deep Blue
+  - Monte Carlo tree search
+sources:
+  - text: >-
+      Knuth, D. E. & Moore, R. W. (1975). An Analysis of Alpha-Beta Pruning. Artificial Intelligence
+      6(4), 293–326.

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: association rule learning
+id: association-rule-learning
+pos: n.
+also:
+  - association rule mining
+  - association rules
+  - market basket analysis
+  - Apriori algorithm
+  - frequent itemset mining
+  - FP-growth
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  Finding 'if this, then often that' patterns in large records of transactions, such as noticing
+  that shoppers who buy pasta and tomatoes often buy parmesan too.
+senses:
+  - definition: >-
+      An [[unsupervised-learning|unsupervised]] data-mining technique that searches a database of
+      transactions, such as shopping baskets, web sessions or diagnoses, for implications of the
+      form X ⇒ Y between sets of items that tend to occur together. Rules are scored by support (the
+      fraction of transactions containing both X and Y), confidence (the fraction of transactions
+      containing X that also contain Y) and lift (confidence divided by the overall frequency of Y,
+      so values above 1 indicate association beyond chance). Mining proceeds in two stages: find all
+      itemsets whose support exceeds a minimum, then generate rules whose confidence exceeds a
+      minimum. The Apriori algorithm prunes the search using the fact that every subset of a
+      frequent itemset must itself be frequent; FP-growth avoids generating candidates by
+      compressing transactions into a prefix tree. Rules describe co-occurrence, not causation, and
+      the large rule sets produced must be filtered by interestingness measures.
+    example: >-
+      Mining the pharmacy baskets turned up {sunscreen, after-sun} ⇒ {aloe gel} with a lift of 4.2.
+formula_latex: \operatorname{lift}(X \Rightarrow Y) = \frac{\operatorname{supp}(X \cup
+  Y)}{\operatorname{supp}(X)\,\operatorname{supp}(Y)}
+origin: >-
+  Petr Hájek, Ivan Havel and Metoděj Chytil described rules of this kind in their GUHA method in
+  1966. The modern formulation was popularized by Rakesh Agrawal, Tomasz Imieliński and Arun Swami
+  at SIGMOD 1993, followed by the Apriori algorithm of Agrawal and Ramakrishnan Srikant (VLDB 1994);
+  Jiawei Han, Jian Pei and Yiwen Yin introduced FP-growth at SIGMOD 2000.
+year: 1993
+note: >-
+  The often-told 'beer and diapers' story traces to a 1992 analysis of drugstore sales that found
+  both bought in the early evening; how much of the popular version is true is disputed, and the
+  store reportedly never moved the products together.
+see_also:
+  - unsupervised learning
+  - recommender system
+  - clustering
+  - collaborative filtering
+  - data science
+sources:
+  - text: >-
+      Agrawal, R., Imieliński, T. & Swami, A. (1993). Mining Association Rules between Sets of Items
+      in Large Databases. Proc. ACM SIGMOD 1993.
+  - text: >-
+      Agrawal, R. & Srikant, R. (1994). Fast Algorithms for Mining Association Rules. Proc. 20th
+      International Conference on Very Large Data Bases (VLDB).
+  - text: >-
+      Hájek, P., Havel, I. & Chytil, M. (1966). The GUHA Method of Automatic Hypotheses
+      Determination. Computing 1.

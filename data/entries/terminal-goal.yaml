@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: terminal goal
+id: terminal-goal
+pos: n.
+also:
+  - final goal
+  - terminal value
+  - intrinsic goal
+  - ultimate goal
+domain: safety
+domains:
+  - asi
+  - mind
+level: specialist
+plain: >-
+  Something an agent wants for its own sake, not as a means to anything else — like a person valuing
+  happiness, or an AI built to maximize a single number.
+senses:
+  - definition: >-
+      A goal pursued for its own sake rather than as a means to a further end: the ultimate
+      objective against which an agent evaluates outcomes, formalized as its utility function or
+      [[reward-function|reward function]]. Terminal goals are distinguished from
+      [[instrumental-goal|instrumental goals]], which an agent adopts only because they help achieve
+      its terminal goals. The distinction underpins two central arguments in AI safety: the
+      [[orthogonality-thesis|orthogonality thesis]], that almost any terminal goal is compatible
+      with almost any level of intelligence, and [[instrumental-convergence|instrumental
+      convergence]], that very different terminal goals recommend similar instrumental goals such as
+      acquiring resources and self-preservation. Whether trained [[neural-network|neural networks]]
+      have crisp terminal goals at all, rather than context-dependent drives, is disputed (see
+      [[shard-theory|shard theory]]).
+    example: >-
+      Nobody gave the model a terminal goal of self-preservation; it showed up as an instrumental
+      one.
+origin: >-
+  The contrast between ends valued for themselves and ends valued for the sake of others goes back
+  to Aristotle; the psychologist Milton Rokeach distinguished terminal from instrumental values in
+  1973. Eliezer Yudkowsky's 2007 essay 'Terminal Values and Instrumental Values' brought the
+  vocabulary into AI-safety writing, and Nick Bostrom (2012) uses 'final goals' for the same idea.
+year: 2007
+note: >-
+  'Final goal' (Bostrom), 'terminal value' (Yudkowsky; Rokeach in psychology) and 'intrinsic goal'
+  are near-synonyms.
+see_also:
+  - instrumental goal
+  - orthogonality thesis
+  - instrumental convergence
+  - reward function
+  - goal-directedness
+  - shard theory
+contrast:
+  - instrumental goal
+sources:
+  - text: >-
+      Bostrom, N. (2012). The Superintelligent Will: Motivation and Instrumental Rationality in
+      Advanced Artificial Agents. Minds and Machines 22(2), 71–85.
+  - text: Rokeach, M. (1973). The Nature of Human Values. Free Press.

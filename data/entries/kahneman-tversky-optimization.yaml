@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Kahneman–Tversky optimization
+id: kahneman-tversky-optimization
+pos: n.
+also:
+  - KTO
+domain: train
+domains:
+  - llm
+level: specialist
+plain: >-
+  A way to tune an AI's behavior that needs only a thumbs-up or thumbs-down on single answers,
+  rather than side-by-side comparisons, borrowing ideas from the psychology of how people weigh
+  gains and losses.
+senses:
+  - definition: >-
+      A preference-optimization method for language models that learns from unpaired binary feedback
+      — each output labeled simply desirable or undesirable — instead of the chosen/rejected pairs
+      required by [[direct-preference-optimization|direct preference optimization]]. It treats the
+      log-probability ratio between policy and [[reference-model|reference model]] as an implicit
+      reward and passes it through a value function modeled on prospect theory: gains and losses are
+      measured relative to a reference point (estimated from the KL divergence between policy and
+      reference), and losses can be weighted more heavily than gains. Separate weights for desirable
+      and undesirable examples let it cope with imbalanced data. The authors cast DPO and PPO-style
+      objectives as 'human-aware losses' (HALOs) that implicitly encode such biases, and report that
+      KTO matches or beats pairwise methods from 1 to 30 billion parameters. Its practical appeal is
+      that thumbs-up/thumbs-down logs are far cheaper to collect than comparisons.
+    example: >-
+      We only had thumbs-up and thumbs-down logs from the app, so we trained with KTO instead of DPO.
+origin: >-
+  Introduced by Kawin Ethayarajh, Winnie Xu, Niklas Muennighoff, Dan Jurafsky and Douwe Kiela in
+  February 2024 and published at ICML 2024. The name honors the psychologists Daniel Kahneman and
+  Amos Tversky, whose 1979 prospect theory describes loss-averse human valuation.
+year: 2024
+note: >-
+  Despite the name, KTO does not model human decision-making; prospect theory only supplies the
+  shape of its loss. Not to be confused with Kahneman's [[system-1-and-system-2|System 1 and System
+  2]].
+see_also:
+  - direct preference optimization
+  - preference data
+  - reference model
+  - reinforcement learning from human feedback
+  - direct alignment algorithm
+sources:
+  - text: >-
+      Ethayarajh, K., Xu, W., Muennighoff, N., Jurafsky, D. & Kiela, D. (2024). KTO: Model Alignment
+      as Prospect Theoretic Optimization. ICML 2024. arXiv:2402.01306.
+    url: https://arxiv.org/abs/2402.01306v4
+  - text: >-
+      Kahneman, D. & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk.
+      Econometrica 47(2), 263–291.

@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: unification
+id: unification
+pos: n.
+also:
+  - unify
+  - unifier
+  - most general unifier
+  - MGU
+  - occurs check
+domain: sym
+level: specialist
+plain: >-
+  Finding values for the blanks in two logical patterns so that they become identical, for example
+  matching 'parent(X, bob)' with 'parent(alice, Y)' by setting X to alice and Y to bob.
+senses:
+  - definition: >-
+      An algorithm that, given two terms or atomic formulas containing variables, finds a
+      substitution — an assignment of terms to variables — that makes them syntactically identical,
+      or reports that none exists. Whenever two expressions are unifiable they have a most general
+      unifier (MGU), from which every other unifier can be obtained by further substitution.
+      Unification is the matching step in [[resolution|resolution]] theorem proving and in
+      [[prolog|Prolog]] execution, and it is central to type inference in programming languages (the
+      Hindley–Milner system) and to term rewriting. The occurs check, which forbids binding a
+      variable to a term that contains it (X = f(X)), prevents infinite structures; Prolog omits it
+      by default for speed. Robinson's original algorithm takes exponential time in the worst case,
+      but later algorithms run in linear or near-linear time.
+origin: >-
+  Jacques Herbrand sketched a unification procedure in his 1930 thesis. J. Alan Robinson introduced
+  the modern algorithm and the most general unifier as the core of resolution in 1965.
+year: 1965
+note: >-
+  Grammar formalisms such as HPSG apply the same operation to feature structures (unification-based
+  grammar). Unrelated to unification in physics or to 'unified' multimodal models.
+see_also:
+  - resolution
+  - Prolog
+  - logic programming
+  - first-order logic
+  - automated theorem proving
+sources:
+  - text: >-
+      Robinson, J. A. (1965). A Machine-Oriented Logic Based on the Resolution Principle. Journal of
+      the ACM 12(1), 23–41.

@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scaling laws
+id: scaling-laws
+pos: n.
+also:
+  - scaling law
+  - neural scaling laws
+  - Kaplan scaling laws
+  - power-law scaling
+domain: train
+domains:
+  - llm
+  - math
+  - asi
+level: essential
+plain: >-
+  Measured patterns showing that an AI model's error shrinks smoothly and predictably as the model
+  is made bigger and given more data and computing power, so labs can forecast a giant model's
+  performance from small, cheap experiments.
+senses:
+  - definition: >-
+      Empirical regularities, usually [[power-law|power laws]], that predict how much a model
+      improves — typically measured by test [[cross-entropy|cross-entropy]] loss — as more is
+      invested in training it, whether in parameters N, training tokens D or
+      [[training-compute|training compute]] C. On logarithmic axes the measured loss traces a nearly
+      straight line that bends toward an [[irreducible-loss|irreducible floor]]; the slopes vary
+      with data modality and architecture, choices such as the balance of width and depth matter
+      little, and the trends have held across many orders of magnitude. Fitted on small runs,
+      scaling laws are used to forecast large ones; to choose model size and token count for a
+      [[compute-budget|compute budget]] ([[compute-optimal-training|compute-optimal training]],
+      [[chinchilla-scaling-laws|Chinchilla scaling laws]]); to set hyperparameters such as
+      [[batch-size|batch size]] and [[learning-rate|learning rate]]; and to compare architectures by
+      their curves rather than single points. Variants cover repeated data
+      ([[data-constrained-scaling|data-constrained scaling]]), [[mixture-of-experts|mixture of
+      experts]], numerical precision, downstream tasks, transfer, reinforcement learning and
+      [[test-time-compute|test-time compute]]. They predict loss much better than specific
+      abilities, which can seem to appear abruptly ([[emergent-abilities|emergent abilities]]) or
+      worsen with scale ([[inverse-scaling|inverse scaling]]). They summarize observed trends, not
+      laws of nature.
+    example: >-
+      The scaling law fitted on runs up to 10²¹ FLOP predicted the final loss to within 1%.
+formula_latex: L(C) \approx L_{\infty} + \left(\frac{C_0}{C}\right)^{\alpha_C}
+origin: >-
+  Power-law learning curves were analyzed for neural networks in the early 1990s, and Joel Hestness
+  and colleagues at Baidu (2017) demonstrated them across translation, language, vision and speech.
+  The name and research program were popularized by Jared Kaplan and colleagues at OpenAI (January
+  2020), whose results informed GPT-3; DeepMind's Chinchilla paper (2022) revised their
+  compute-optimal recipe.
+year: 2020
+note: >-
+  'Kaplan scaling laws' refers to the 2020 OpenAI fits. Whether scaling alone leads to general
+  intelligence is a separate, contested claim: see [[scaling-hypothesis|scaling hypothesis]].
+  Reports in 2024–2025 that pretraining scaling was slowing concerned costs, data supply and
+  benchmark gains; whether the underlying loss trends bent is debated.
+see_also:
+  - power law
+  - Chinchilla scaling laws
+  - compute-optimal training
+  - irreducible loss
+  - scaling hypothesis
+  - IsoFLOP analysis
+  - data-constrained scaling
+  - emergent abilities
+contrast:
+  - inverse scaling
+sources:
+  - text: >-
+      Hestness, J. et al. (2017). Deep Learning Scaling is Predictable, Empirically.
+      arXiv:1712.00409.
+    url: https://arxiv.org/abs/1712.00409v1
+  - text: >-
+      Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B. et al. (2020). Scaling Laws for Neural
+      Language Models. arXiv:2001.08361.
+    url: https://arxiv.org/abs/2001.08361v1
+  - text: >-
+      Hoffmann, J. et al. (2022). Training Compute-Optimal Large Language Models. arXiv:2203.15556.
+    url: https://arxiv.org/abs/2203.15556v1
+as_of: 2026-10

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DeepSeek-R1
+id: deepseek-r1
+pos: prop. n.
+also:
+  - R1
+  - DeepSeek-R1-Zero
+  - R1-Zero
+domain: hist
+domains:
+  - llm
+  - train
+labels:
+  - trademark
+level: core
+plain: >-
+  A free, downloadable AI reasoning model released by the Chinese company DeepSeek in January 2025.
+  It matched leading American models at math and coding for a fraction of the reported cost, shaking
+  the industry.
+senses:
+  - definition: >-
+      An [[open-weight-model|open-weight]] [[reasoning-model|reasoning model]] released by
+      [[deepseek|DeepSeek]] on 20 January 2025 under the MIT license. Built on the DeepSeek-V3 base
+      model, a [[mixture-of-experts|mixture-of-experts]] [[transformer|transformer]] with 671
+      billion parameters of which about 37 billion are active for each token, it was trained with
+      large-scale [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with
+      verifiable rewards]] using [[group-relative-policy-optimization|group relative policy
+      optimization]] (GRPO), rewarding correct final answers to mathematics and programming problems
+      and well-formatted output. Its precursor, R1-Zero, trained by reinforcement learning alone
+      without supervised examples, developed long [[chain-of-thought|chains of thought]],
+      self-checking and backtracking on its own, showing that such behavior can emerge from outcome
+      rewards. R1 matched [[openai-o1|OpenAI o1]] on several benchmarks, showed its full reasoning,
+      and was released alongside smaller [[knowledge-distillation|distilled]] versions built on
+      [[qwen|Qwen]] and [[llama|Llama]] base models. It set off the [[deepseek-moment|DeepSeek
+      moment]] and made open reasoning models a standard target.
+    example: >-
+      We distilled DeepSeek-R1's reasoning traces into a 7-billion-parameter model for on-device use.
+origin: >-
+  Described in the technical report 'DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via
+  Reinforcement Learning' (January 2025) and in a peer-reviewed version in Nature (September 2025),
+  which put the cost of R1's reasoning training at about US$294,000 on top of the base model. An
+  updated R1-0528 followed in May 2025; DeepSeek's later V3.1, V3.2 and V4 (preview, April 2026)
+  models folded reasoning into its main line.
+year: 2025
+note: >-
+  Like other Chinese models, its hosted versions avoid topics censored in China. Data-security
+  concerns led several governments and agencies to bar its app from official devices.
+see_also:
+  - DeepSeek moment
+  - reasoning model
+  - reinforcement learning with verifiable rewards
+  - group relative policy optimization
+  - OpenAI o1
+  - open-weight model
+  - DeepSeek
+sources:
+  - text: >-
+      DeepSeek-AI (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement
+      Learning. arXiv:2501.12948; peer-reviewed version in Nature, September 2025.
+as_of: 2026-10

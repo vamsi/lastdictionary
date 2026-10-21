@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: emotion recognition system
+id: emotion-recognition-system
+pos: n.
+also:
+  - emotion recognition
+  - emotion AI
+  - affect recognition
+domain: gov
+domains:
+  - percep
+  - society
+labels:
+  - legal
+  - contested
+level: specialist
+plain: >-
+  AI that tries to work out how people feel or what they intend from their faces, voices or bodies.
+  The EU bans it at work and in schools and tightly regulates it elsewhere.
+senses:
+  - definition: >-
+      Under the [[eu-ai-act|EU AI Act]], an AI system meant to detect or deduce what people feel or
+      intend from their biometric data, such as facial expressions, voice, gait or physiological
+      signals. The recitals give examples ranging from happiness, anger and disgust to
+      embarrassment, contempt and amusement, but exclude physical states such as pain or fatigue and
+      the simple detection of evident expressions or gestures when no emotion is inferred from them.
+      Using such systems in workplaces and educational institutions is a
+      [[prohibited-ai-practices|prohibited practice]], except for medical or safety reasons; other
+      emotion recognition is [[high-risk-ai-system|high-risk]], and deployers must inform the people
+      exposed to it.
+    example: >-
+      Detecting a driver's drowsiness is not emotion recognition, but scoring a job candidate's
+      enthusiasm is.
+origin: >-
+  Builds on affective computing, a research field named by Rosalind Picard of MIT in 1995, and on
+  Paul Ekman's theory of universal basic emotions. The legal definition appeared in the 2021 AI Act
+  proposal, and the workplace and education ban was added in the 2023 negotiations.
+year: 2021
+note: >-
+  Labeled contested because many psychologists dispute that facial movements reliably reveal inner
+  emotional states, especially across cultures — the central argument of a 2019 review by Lisa
+  Feldman Barrett and colleagues, and one reason given for the ban.
+see_also:
+  - prohibited AI practices
+  - biometric categorisation
+  - transparency obligations
+  - high-risk AI system
+  - facial recognition
+  - AI surveillance
+sources:
+  - text: >-
+      Barrett, L. F., Adolphs, R., Marsella, S., Martinez, A. M. & Pollak, S. D. (2019). Emotional
+      Expressions Reconsidered: Challenges to Inferring Emotion From Human Facial Movements.
+      Psychological Science in the Public Interest, 20(1), 1–68.
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(39) and Recital 18; prohibition Art. 5(1)(f); high-risk
+  Annex III point 1(c); transparency Art. 50(3)

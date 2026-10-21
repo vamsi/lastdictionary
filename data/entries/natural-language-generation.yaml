@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: natural language generation
+id: natural-language-generation
+pos: n.
+also:
+  - NLG
+  - text generation
+  - data-to-text generation
+  - language generation
+domain: llm
+domains:
+  - gen
+level: core
+plain: >-
+  Getting computers to produce human language — from turning a spreadsheet into a weather report to
+  writing an essay or a chatbot's reply.
+senses:
+  - definition: >-
+      The subfield of [[natural-language-processing|natural language processing]] concerned with
+      producing fluent, appropriate text (or speech) from some input: structured data, a knowledge
+      base, a meaning representation, another text or a prompt. Classical NLG systems used a
+      pipeline of content determination (what to say), document and sentence planning (how to
+      organize and package it, including word choice and referring expressions) and surface
+      realization (producing grammatical sentences), and were deployed for weather forecasts,
+      financial reports and medical summaries where accuracy and control mattered. Neural
+      [[sequence-to-sequence-model|sequence-to-sequence]] models and then
+      [[large-language-model|large language models]] replaced most pipelines with end-to-end
+      generation, shifting the field's problems toward [[factuality|factuality]], faithfulness to
+      the input, controllability, diversity and evaluation, for which [[bleu|BLEU]],
+      [[rouge|ROUGE]], human judgment and [[llm-as-a-judge|model judges]] are used.
+    example: >-
+      The bank's natural language generation system writes 30,000 portfolio summaries overnight from
+      the same planning rules.
+origin: >-
+  Research on generating text from semantic representations dates from the 1960s and 1970s, and by
+  the 1980s NLG had its own international workshops. Ehud Reiter and Robert Dale's 'Building Natural
+  Language Generation Systems' (2000) codified the classic pipeline.
+see_also:
+  - natural language understanding
+  - natural language processing
+  - large language model
+  - text summarization
+  - machine translation
+  - decoding
+  - factuality
+contrast:
+  - natural language understanding
+sources:
+  - text: >-
+      Reiter, E. & Dale, R. (2000). Building Natural Language Generation Systems. Cambridge
+      University Press.
+  - text: >-
+      Gatt, A. & Krahmer, E. (2018). Survey of the State of the Art in Natural Language Generation:
+      Core Tasks, Applications and Evaluation. Journal of Artificial Intelligence Research 61,
+      65–170.

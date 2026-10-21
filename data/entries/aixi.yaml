@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AIXI
+id: aixi
+pos: prop. n.
+also:
+  - AIXItl
+domain: asi
+domains:
+  - math
+  - rl
+level: specialist
+plain: >-
+  A mathematical description of a perfect learning agent that weighs every possible explanation of
+  its experience and acts to get the most future reward. It cannot actually be built, but it defines
+  an ideal.
+senses:
+  - definition: >-
+      A theoretical [[reinforcement-learning|reinforcement learning]] agent, defined by Marcus
+      Hutter, that is optimal in a precise sense across all computable environments. It predicts
+      with [[solomonoff-induction|Solomonoff induction]], giving every program that could have
+      produced its observations so far a prior weight of 2 to the power of minus its length, so that
+      simpler explanations dominate, and it plans with that prediction: at each step it picks the
+      action whose expected total reward up to a fixed horizon is highest under the resulting
+      mixture. Because it sums over all programs, AIXI is incomputable; time- and length-bounded
+      variants (AIXItl) are computable but intractable, and Monte Carlo approximations have learned
+      to play simple games. AIXI serves as a reference point for theoretical analyses of general
+      intelligence and of safety problems such as [[wireheading|wireheading]] and self-modification.
+      Criticisms include that its optimality depends on the choice of reference universal Turing
+      machine, and that it treats itself as separate from its environment, so it cannot reason about
+      being modified or destroyed ([[embedded-agency|embedded agency]]).
+    example: >-
+      AIXI tells you what a perfect reward maximizer would do, which is exactly why safety
+      researchers study its failure modes.
+formula_latex: a_k := \arg\max_{a_k} \sum_{o_k r_k} \cdots \max_{a_m} \sum_{o_m r_m} \big[ r_k +
+  \cdots + r_m \big] \sum_{q \,:\, U(q,\, a_1 \ldots a_m) = o_1 r_1 \ldots o_m r_m} 2^{-\ell(q)}
+origin: >-
+  Introduced by Marcus Hutter in a 2000 paper, 'A Theory of Universal Artificial Intelligence based
+  on Algorithmic Complexity', and developed in his book Universal Artificial Intelligence (2005).
+  The name joins AI with ξ (xi), Hutter's symbol for the universal mixture distribution. Joel Veness
+  and colleagues published a Monte Carlo approximation in 2011.
+year: 2000
+see_also:
+  - universal intelligence
+  - Solomonoff induction
+  - Kolmogorov complexity
+  - reinforcement learning
+  - embedded agency
+  - Shane Legg
+sources:
+  - text: >-
+      Hutter, M. (2005). Universal Artificial Intelligence: Sequential Decisions Based on
+      Algorithmic Probability. Springer.
+  - text: >-
+      Veness, J., Ng, K. S., Hutter, M., Uther, W. & Silver, D. (2011). A Monte-Carlo AIXI
+      Approximation. Journal of Artificial Intelligence Research 40.
+  - text: >-
+      Leike, J. & Hutter, M. (2015). Bad Universal Priors and Notions of Optimality. Proceedings of
+      COLT 2015.

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: safetywashing
+id: safetywashing
+pos: n.
+also:
+  - safety-washing
+  - safety washing
+domain: safety
+domains:
+  - society
+  - eval
+labels:
+  - informal
+  - contested
+level: specialist
+plain: >-
+  Making AI work sound as if it improves safety when it mostly just makes AI more capable — like
+  'greenwashing' for environmental claims.
+senses:
+  - definition: >-
+      The practice, or the accusation, of presenting AI work as safety progress when it mainly
+      advances general capabilities, or of using safety language and commitments for reputational
+      benefit without corresponding risk reduction. The term covers marketing claims, research
+      framed as alignment that chiefly improves product usefulness, and voluntary pledges without
+      verification. A 2024 study from the Center for AI Safety gave it an empirical form: many
+      published AI safety [[benchmark|benchmarks]] correlated strongly with general capability
+      scores across models, so gains on them could reflect scale rather than safety-specific
+      progress; the authors recommended that new safety benchmarks report this correlation.
+      Accusations of safetywashing are themselves disputed, since some safety-relevant properties,
+      such as [[robustness|robustness]] or truthfulness, are expected to improve with capability.
+    example: >-
+      Calling a better math score an alignment result is safetywashing if the benchmark just tracks
+      capability.
+origin: >-
+  Formed on the model of 'greenwashing' and 'ethics washing'. An early use is Adam Scholl's
+  LessWrong post 'Safetywashing' (July 2022); Richard Ren, Steven Basart, Dan Hendrycks and
+  colleagues later gave the term an empirical definition in 'Safetywashing: Do AI Safety Benchmarks
+  Actually Measure Safety Progress?' (2024).
+year: 2022
+note: >-
+  Compare [[ai-washing|AI washing]], which exaggerates the use of AI itself. The label is a
+  criticism, so its application to any particular organization is a matter of dispute.
+see_also:
+  - AI washing
+  - AI hype
+  - benchmark
+  - alignment tax
+  - responsible scaling policy
+  - AI safety
+sources:
+  - text: Scholl, A. (2022). Safetywashing. LessWrong.
+  - text: >-
+      Ren, R., Basart, S., Khoja, A. et al. (2024). Safetywashing: Do AI Safety Benchmarks Actually
+      Measure Safety Progress? arXiv:2407.21792.
+    url: https://arxiv.org/abs/2407.21792

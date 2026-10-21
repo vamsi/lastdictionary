@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Transformer-XL
+id: transformer-xl
+pos: prop. n.
+also:
+  - segment-level recurrence
+  - XLNet
+domain: llm
+domains:
+  - hist
+level: specialist
+plain: >-
+  A 2019 extension of the transformer that lets a language model carry a memory of earlier chunks of
+  text forward, so it can follow connections longer than a single chunk of input.
+senses:
+  - definition: >-
+      A [[transformer|transformer]] [[language-model|language model]] architecture that adds
+      segment-level recurrence: hidden states computed for the previous segment of text are cached
+      and reused, without gradient flow, as extra context when the next segment is processed, so the
+      usable context extends across segments and grows with depth. Because reused states come from
+      different absolute positions, it introduced a relative [[positional-encoding|positional
+      encoding]] in the attention scores that influenced later position schemes. The authors
+      reported dependencies about 80% longer than recurrent networks and 450% longer than vanilla
+      transformers could learn, record results at the time on five language-modeling benchmarks (for
+      example perplexity 18.3 on WikiText-103), and evaluation up to 1,800 times faster than a
+      vanilla transformer. Its cached memory anticipated the [[kv-cache|KV cache]] and streaming
+      methods of later [[long-context|long context]] work, and it was the backbone of XLNet (2019).
+    example: >-
+      Transformer-XL's cached memory let us evaluate on whole Wikipedia articles instead of
+      512-token chunks.
+origin: >-
+  Introduced by Zihang Dai, Zhilin Yang, Yiming Yang, Jaime Carbonell, Quoc V. Le and Ruslan
+  Salakhutdinov of Carnegie Mellon University and Google Brain (arXiv, January 2019; ACL 2019).
+year: 2019
+see_also:
+  - long context
+  - positional encoding
+  - KV cache
+  - transformer
+  - recurrent neural network
+  - context window
+sources:
+  - text: >-
+      Dai, Z., Yang, Z., Yang, Y., Carbonell, J., Le, Q. V. & Salakhutdinov, R. (2019).
+      Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context. ACL 2019.
+    url: https://arxiv.org/abs/1901.02860

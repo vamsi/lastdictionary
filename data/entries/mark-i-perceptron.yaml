@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Mark I Perceptron
+id: mark-i-perceptron
+pos: prop. n.
+also:
+  - Mark 1 Perceptron
+  - Perceptron Mark I
+domain: hist
+domains:
+  - dl
+  - hw
+labels:
+  - historical
+level: specialist
+plain: >-
+  A room-sized machine built around 1960 that learned to recognize simple shapes and letters through
+  a camera made of 400 light sensors. It was one of the first machines built to learn from examples.
+senses:
+  - definition: >-
+      A custom electromechanical computer built at the Cornell Aeronautical Laboratory in Buffalo,
+      New York, to implement [[frank-rosenblatt|Frank Rosenblatt]]'s [[perceptron|perceptron]] for
+      image recognition. Its 'retina' was a 20 × 20 array of 400 cadmium-sulfide photocells, wired
+      at random through a plugboard to 512 association units whose outputs fed eight response units.
+      The adjustable weights were motor-driven potentiometers that the perceptron learning rule
+      turned during training. Shown printed letters and simple shapes, the machine learned to
+      classify them after repeated presentations and corrections. Its success, and the publicity
+      around it, fueled the first wave of neural-network research; its limits became a target of
+      Minsky and Papert's [[perceptrons-book|Perceptrons]] (1969).
+    example: >-
+      Rosenblatt simulated the perceptron on an IBM 704 before the Mark I Perceptron existed in
+      hardware.
+origin: >-
+  Funded by the US Office of Naval Research. The perceptron was first simulated on an IBM 704 in
+  1958, when a press briefing produced extravagant newspaper forecasts of machines that would walk,
+  talk and be aware of themselves; the Mark I hardware was completed and publicly demonstrated in
+  1960. It is preserved at the Smithsonian's National Museum of American History.
+year: 1960
+see_also:
+  - perceptron
+  - Frank Rosenblatt
+  - Perceptrons (book)
+  - connectionism
+  - ADALINE
+  - neural network
+sources:
+  - text: >-
+      Rosenblatt, F. (1958). The Perceptron: A Probabilistic Model for Information Storage and
+      Organization in the Brain. Psychological Review 65(6), 386–408.

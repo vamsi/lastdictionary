@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: individual fairness
+id: individual-fairness
+pos: n.
+also:
+  - fairness through awareness
+  - Lipschitz fairness
+domain: society
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  The idea that a fair system should treat similar people similarly: two applicants who are alike in
+  every way that matters should get similar outcomes.
+senses:
+  - definition: >-
+      A fairness criterion requiring that individuals who are similar with respect to the task
+      receive similar outcomes, or similar distributions over outcomes. Formally, a randomized
+      classifier M is individually fair if it satisfies a Lipschitz condition: the distance D
+      between its output distributions for any two individuals is at most a task-specific similarity
+      distance d between them. Unlike [[group-fairness|group fairness]] criteria, it protects each
+      person rather than group averages and cannot be met by treating some members of a group
+      arbitrarily while the averages balance. Its central difficulty is the metric: deciding who
+      counts as similar is itself a contested moral judgment, so later work tries to learn metrics
+      from data or human judgments.
+    example: >-
+      The two applicants differed only in postcode, yet their scores were far apart, a clear
+      violation of individual fairness.
+formula_latex: D\big(M(x), M(x')\big) \le d(x, x') \quad \text{for all individuals } x, x'
+origin: >-
+  Introduced by Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold and Richard Zemel in
+  'Fairness Through Awareness' (arXiv 2011; ITCS 2012), whose title contrasts the approach with the
+  naive strategy of ignoring protected attributes.
+year: 2011
+see_also:
+  - group fairness
+  - counterfactual fairness
+  - algorithmic fairness
+  - fairness through unawareness
+  - demographic parity
+contrast:
+  - group fairness
+sources:
+  - text: >-
+      Dwork, C., Hardt, M., Pitassi, T., Reingold, O. & Zemel, R. (2012). Fairness Through
+      Awareness. Proc. 3rd Innovations in Theoretical Computer Science Conference (ITCS), 214–226.
+    url: https://arxiv.org/abs/1104.3913

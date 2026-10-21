@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: HellaSwag
+id: hellaswag
+pos: prop. n.
+also:
+  - SWAG
+domain: eval
+domains:
+  - llm
+level: specialist
+plain: >-
+  A test in which an AI must pick the most sensible ending for a description of an everyday scene;
+  the wrong endings were machine-written to fool computers, so people found it easy and early AI did
+  not.
+senses:
+  - definition: >-
+      A commonsense inference benchmark in which a model chooses the most plausible continuation of
+      a short description of an everyday activity — drawn from ActivityNet video captions and
+      WikiHow articles — from four options. Its three wrong endings are machine-generated and were
+      picked by Adversarial Filtering, in which successive rounds of discriminator models keep only
+      the generated endings they find hardest to tell apart from the real one; human annotators then
+      confirmed the correct choice. The result was easy for people, who scored above 95%, but not
+      for the best models of 2019, fine-tuned [[bert|BERT]] among them, which stayed under 48% — a
+      sign that strong scores on the predecessor dataset SWAG had leaned on statistical artifacts.
+      Large language models closed the gap within about four years — [[gpt-4|GPT-4]] reported 95.3%
+      in 2023 — and HellaSwag became a routine, near-saturated entry in model evaluations, useful
+      mainly for detecting regressions.
+    example: >-
+      HellaSwag is near ceiling, so we mainly use it to catch regressions after quantization.
+origin: >-
+  Introduced by Rowan Zellers, Ari Holtzman, Yonatan Bisk, Ali Farhadi and Yejin Choi (University of
+  Washington and the Allen Institute for AI) at ACL 2019, as a harder successor to their 2018 SWAG
+  dataset. The name puns on the slang intensifier 'hella', though the paper also expands it as a
+  backronym.
+year: 2019
+note: >-
+  Later audits reported ungrammatical and ambiguous items, so differences of a point or two at high
+  accuracy are not meaningful.
+see_also:
+  - benchmark
+  - commonsense reasoning
+  - benchmark saturation
+  - Winograd schema challenge
+  - BERT
+sources:
+  - text: >-
+      Zellers, R., Holtzman, A., Bisk, Y., Farhadi, A. & Choi, Y. (2019). HellaSwag: Can a Machine
+      Really Finish Your Sentence? ACL 2019.
+    url: https://arxiv.org/abs/1905.07830

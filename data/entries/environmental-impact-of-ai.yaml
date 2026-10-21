@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: environmental impact of AI
+id: environmental-impact-of-ai
+pos: n.
+also:
+  - AI carbon footprint
+  - AI energy consumption
+  - AI water footprint
+  - environmental footprint of AI
+  - AI emissions
+domain: society
+domains:
+  - hw
+  - infer
+level: essential
+plain: >-
+  The effects of AI on the planet: the electricity, water, materials and land used to make chips,
+  build data centers and train and run models, and the pollution that results.
+senses:
+  - definition: >-
+      The resource use and environmental effects attributable to AI across its lifecycle:
+      manufacturing chips and servers (embodied emissions, mineral extraction, water for
+      fabrication); building and powering [[ai-data-center|data centers]] (electricity, still
+      largely fossil-generated in many grids, and water for cooling); [[training|training]] models;
+      serving them at [[inference|inference]] time, which for widely used systems usually outweighs
+      training; and disposing of hardware. The International Energy Agency estimated that data
+      centers used about 415 TWh of electricity in 2024, around 1.5% of global consumption, and
+      projected about 945 TWh by 2030, with AI the main driver of growth. Per-query footprints are
+      small and falling (providers report fractions of a watt-hour for a median text prompt), but
+      aggregate demand is rising fast and is concentrated on particular grids and in some
+      water-stressed regions. Indirect effects, harmful (such as aiding fossil-fuel extraction) and
+      beneficial (such as grid optimization and materials discovery), may outweigh direct ones but
+      are hard to measure.
+    example: >-
+      The sustainability report counted training runs but left out inference, where most of the
+      energy actually went.
+origin: >-
+  Emma Strubell, Ananya Ganesh and Andrew McCallum's 'Energy and Policy Considerations for Deep
+  Learning in NLP' (2019) made AI's carbon footprint a research topic; Roy Schwartz and colleagues'
+  [[green-ai|Green AI]] (2019) and Emily M. Bender and colleagues' 'stochastic parrots' paper (2021)
+  carried it into wider debate. The data-center build-out from 2023 made energy and water central
+  policy issues.
+year: 2019
+note: >-
+  Estimates vary widely with assumptions about hardware, utilization, grid mix and system
+  boundaries, and many developers disclose little. The [[eu-ai-act|EU AI Act]] requires providers of
+  general-purpose AI models to document known or estimated energy consumption. Efficiency gains need
+  not reduce total use (see [[jevons-paradox|Jevons paradox]]).
+see_also:
+  - AI data center
+  - Green AI
+  - Jevons paradox
+  - power usage effectiveness
+  - compute
+  - inference
+sources:
+  - text: >-
+      Strubell, E., Ganesh, A. & McCallum, A. (2019). Energy and Policy Considerations for Deep
+      Learning in NLP. Proc. ACL 2019.
+  - text: International Energy Agency (2025). Energy and AI. IEA, Paris.
+    url: https://www.iea.org/reports/energy-and-ai/executive-summary
+  - text: >-
+      Luccioni, A. S., Viguier, S. & Ligozat, A.-L. (2023). Estimating the Carbon Footprint of
+      BLOOM, a 176B Parameter Language Model. Journal of Machine Learning Research 24.
+as_of: 2026-10

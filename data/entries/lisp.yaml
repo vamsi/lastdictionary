@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Lisp
+id: lisp
+pos: prop. n.
+also:
+  - LISt Processor
+  - Common Lisp
+  - Scheme
+domain: hist
+domains:
+  - sym
+  - eng
+level: core
+plain: >-
+  A programming language invented in 1958 for AI research, in which programs and data are written
+  the same way, as nested lists in parentheses. It was the main language of AI for decades.
+senses:
+  - definition: >-
+      A family of programming languages descended from [[john-mccarthy|John McCarthy]]'s 1958
+      design, in which both data and programs are symbolic expressions (S-expressions) — nested,
+      parenthesized lists — so that programs can build, inspect and run other programs, a property
+      called homoiconicity. Lisp introduced or popularized recursion as a basic control structure,
+      conditional expressions, dynamic typing, automatic garbage collection, the read–eval–print
+      loop and functions as values. Its ease in manipulating symbols made it the dominant language
+      of [[symbolic-ai|symbolic AI]] in the United States from the 1960s to the 1980s, used for
+      systems such as [[shrdlu|SHRDLU]] and [[mycin|MYCIN]], and it inspired dedicated
+      [[lisp-machine|Lisp machines]]. Major dialects include Maclisp, Interlisp, Scheme (1975),
+      Common Lisp (ANSI standard 1994), Emacs Lisp and Clojure (2007).
+    example: >-
+      Before Python, an AI course would have had students writing search programs in Lisp.
+origin: >-
+  Designed by John McCarthy at MIT in 1958 and described in 'Recursive Functions of Symbolic
+  Expressions and Their Computation by Machine, Part I' (Communications of the ACM, 1960). The name
+  abbreviates 'LISt Processor'. Steve Russell saw that McCarthy's theoretical eval function could be
+  implemented directly and wrote the first interpreter, for the IBM 704.
+year: 1958
+note: >-
+  Of the high-level programming languages still in use, only Fortran (1957) is older. In AI it gave
+  way to C++, Java and, from the 2010s, Python.
+see_also:
+  - symbolic AI
+  - Lisp machine
+  - Prolog
+  - John McCarthy
+  - AI winter
+  - logic programming
+sources:
+  - text: >-
+      McCarthy, J. (1960). Recursive Functions of Symbolic Expressions and Their Computation by
+      Machine, Part I. Communications of the ACM 3(4), 184–195.

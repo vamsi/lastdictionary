@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPT-2
+id: gpt-2
+pos: prop. n.
+also:
+  - GPT2
+  - Generative Pre-trained Transformer 2
+domain: hist
+domains:
+  - llm
+  - safety
+labels:
+  - trademark
+level: core
+plain: >-
+  A 2019 OpenAI language model that wrote surprisingly fluent paragraphs. OpenAI at first withheld
+  the full version, saying it could be misused for fake news, which made it famous.
+senses:
+  - definition: >-
+      A [[transformer|transformer]] [[language-model|language model]] released by [[openai|OpenAI]]
+      in 2019, with up to 1.5 billion parameters, trained to predict the next word on WebText, about
+      40 gigabytes of text from some 8 million web pages linked from Reddit posts that had received
+      at least three karma. Scaled up roughly tenfold from the original [[gpt|GPT]], it generated
+      multi-paragraph text coherent enough to startle readers, and it attempted reading
+      comprehension, translation, summarization and question answering with no task-specific
+      training, supporting its paper's claim that language models are unsupervised multitask
+      learners. OpenAI at first released only its smallest version, citing risks of automated
+      disinformation and spam, and published larger versions in stages, with the full model in
+      November 2019. This 'staged release' began a lasting debate over openness and disclosure norms
+      in AI.
+    example: >-
+      GPT-2's story about unicorns in the Andes was the first AI-written text many people took
+      seriously.
+origin: >-
+  Announced on 14 February 2019 in the blog post 'Better Language Models and Their Implications' and
+  the paper 'Language Models are Unsupervised Multitask Learners' by Alec Radford, Jeffrey Wu, Rewon
+  Child, David Luan, [[dario-amodei|Dario Amodei]] and [[ilya-sutskever|Ilya Sutskever]].
+year: 2019
+note: >-
+  Critics called the withholding a publicity stunt; supporters saw it as a useful experiment in
+  setting norms. Its published weights later made it a standard object of study in
+  [[mechanistic-interpretability|mechanistic interpretability]].
+see_also:
+  - GPT
+  - GPT-3
+  - large language model
+  - OpenAI
+  - open-weight model
+  - language model
+sources:
+  - text: >-
+      Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. & Sutskever, I. (2019). Language Models
+      are Unsupervised Multitask Learners. OpenAI technical report.

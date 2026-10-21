@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DALL·E
+id: dall-e
+pos: prop. n.
+also:
+  - DALLE
+  - DALL·E 2
+  - DALL·E 3
+  - unCLIP
+pronunciation: DAH-lee
+domain: gen
+domains:
+  - hist
+  - society
+labels:
+  - trademark
+  - historical
+level: core
+plain: >-
+  OpenAI's pioneering series of image generators, named after the painter Salvador Dalí and the
+  robot WALL·E, which showed in 2021–2023 that AI could draw almost anything described in words.
+senses:
+  - definition: >-
+      A series of OpenAI [[text-to-image-model|text-to-image models]]. The original DALL·E (January
+      2021) was a 12-billion-parameter [[transformer|transformer]] that generated images
+      [[autoregressive-image-generation|autoregressively]] as a single stream of 256 text tokens
+      followed by 1,024 image tokens, produced by a discrete VAE that compressed 256 × 256 images to
+      a 32 × 32 grid; it was trained on 250 million web image–text pairs, and its samples were
+      reranked by a contrastive image–text model. DALL·E 2 (April 2022) switched to diffusion: a
+      prior generated a [[clip|CLIP]] image embedding from the caption and a diffusion decoder
+      rendered it (the 'unCLIP' method), adding [[inpainting|inpainting]], outpainting and
+      variations. DALL·E 3 (September 2023) improved prompt adherence by training on detailed
+      synthetic captions and was built into ChatGPT. GPT-4o's native image generation replaced it in
+      ChatGPT in March 2025; OpenAI removed DALL·E 2 and 3 from its API on 12 May 2026 and retired
+      ChatGPT's DALL·E GPT on 30 August 2026.
+origin: >-
+  Announced by OpenAI on 5 January 2021, with the paper 'Zero-Shot Text-to-Image Generation' by
+  Aditya Ramesh and colleagues. The name blends the surrealist painter Salvador Dalí with Pixar's
+  robot WALL·E. DALL·E 2's striking images made AI image generation a mainstream topic in 2022.
+year: 2021
+note: >-
+  The viral 2022 'DALL·E mini', later renamed Craiyon, was an independent open-source project
+  unrelated to OpenAI. As of October 2026, OpenAI offered image generation through its GPT Image
+  models rather than DALL·E.
+see_also:
+  - text-to-image model
+  - CLIP
+  - autoregressive image generation
+  - VQ-VAE
+  - diffusion model
+  - Midjourney
+  - Stable Diffusion
+sources:
+  - text: >-
+      Ramesh, A. et al. (2021). Zero-Shot Text-to-Image Generation. ICML 2021. arXiv:2102.12092.
+    url: https://arxiv.org/pdf/2102.12092v1.pdf
+  - text: >-
+      Ramesh, A., Dhariwal, P., Nichol, A., Chu, C. & Chen, M. (2022). Hierarchical Text-Conditional
+      Image Generation with CLIP Latents. arXiv:2204.06125.
+    url: https://arxiv.org/abs/2204.06125
+  - text: OpenAI (2026). Deprecations. OpenAI developer documentation.
+    url: https://developers.openai.com/docs/deprecations
+as_of: 2026-10

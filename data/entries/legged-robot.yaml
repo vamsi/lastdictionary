@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: legged robot
+id: legged-robot
+pos: n.
+also:
+  - walking robot
+  - quadruped robot
+  - quadruped
+  - biped robot
+  - biped
+  - robot dog
+  - hexapod
+domain: robot
+level: core
+plain: >-
+  A robot that walks on legs instead of rolling on wheels, such as a four-legged 'robot dog' or a
+  two-legged humanoid, so it can climb stairs and cross rough ground.
+senses:
+  - definition: >-
+      A [[mobile-robot|mobile robot]] that walks, runs or climbs on jointed legs: bipeds (two legs,
+      as in [[humanoid-robot|humanoids]]), quadrupeds (four, the most commercially successful form),
+      hexapods and others. Legs let robots cross terrain that defeats wheels — stairs, rubble, steep
+      slopes, gaps — at the price of harder control, because the robot must keep its balance through
+      intermittent ground contacts. Statically stable gaits keep the center of mass over the support
+      polygon formed by the feet; dynamically stable gaits, such as running, rely on continual
+      corrective motion. Control has progressed from hand-designed gait patterns and simplified
+      models (spring-loaded inverted pendulum, [[zero-moment-point|zero moment point]]) through
+      [[model-predictive-control|model predictive control]] to policies trained by
+      [[reinforcement-learning|reinforcement learning]] in simulation. Key enablers are high-torque,
+      back-drivable [[actuator|actuators]], [[proprioception|proprioceptive]] sensing of joint
+      torques and foot contacts, and fast state estimation. Commercial quadrupeds such as Boston
+      Dynamics' Spot, ANYbotics' ANYmal and Unitree's models are used for industrial inspection,
+      surveying, public safety and research.
+    example: >-
+      We sent the legged robot through the substation because cable trays block the wheeled carts.
+origin: >-
+  Early walking machines include the Phony Pony at the University of Southern California (1966),
+  among the first computer-controlled walkers, and GE's operator-driven Walking Truck (late 1960s).
+  Marc Raibert's hopping robots of the 1980s demonstrated dynamic balance; he founded Boston
+  Dynamics in 1992, whose BigDog (2005) and Spot (sold from 2020) popularized the robot dog.
+year: 1966
+see_also:
+  - locomotion
+  - humanoid robot
+  - mobile robot
+  - zero moment point
+  - proprioception
+  - sim-to-real transfer
+  - actuator
+sources:
+  - text: Raibert, M. H. (1986). Legged Robots That Balance. MIT Press.
+as_of: 2026-10

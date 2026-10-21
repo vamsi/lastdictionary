@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: linear programming
+id: linear-programming
+pos: n.
+also:
+  - LP
+  - linear program
+  - linear optimization
+  - simplex method
+domain: math
+domains:
+  - ml
+level: core
+plain: >-
+  A mathematical way to find the best use of limited resources, such as a factory's machines or an
+  airline's crews, when every cost and limit scales in simple proportion: twice the output needs
+  twice the input.
+senses:
+  - definition: >-
+      The problem of choosing values for real-valued decision variables that minimize or maximize a
+      linear function of them while satisfying a set of linear equations and inequalities. Because
+      the feasible set is a convex polyhedron, any local optimum is global, and when an optimum
+      exists one occurs at a vertex. George Dantzig's simplex method walks from vertex to adjacent
+      vertex and is fast in practice though exponential in the worst case; Leonid Khachiyan's
+      ellipsoid method (1979) proved the problem solvable in polynomial time, and Narendra
+      Karmarkar's interior-point method (1984) made polynomial-time algorithms practical. Every
+      linear program has a dual problem, and when either has an optimal solution their optimal
+      values are equal (strong duality), which yields shadow prices for resources and certificates
+      of optimality. Linear programming is a special case of [[convex-optimization|convex
+      optimization]]; it underlies the relaxations used to solve [[integer-programming|integer
+      programs]], exact solution of [[markov-decision-process|Markov decision processes]], discrete
+      [[wasserstein-distance|optimal transport]], relaxations for MAP inference in
+      [[probabilistic-graphical-model|graphical models]] and the verification of
+      [[neural-network|neural networks]].
+    example: >-
+      We wrote the GPU allocation as a linear program and let the solver find the cheapest schedule.
+formula_latex: \min_{\mathbf{x} \in \mathbb{R}^{n}} \; \mathbf{c}^{\top}\mathbf{x} \quad
+  \text{subject to} \quad A\mathbf{x} \le \mathbf{b}, \;\; \mathbf{x} \ge \mathbf{0}
+origin: >-
+  Leonid Kantorovich formulated linear models for planning production in 1939, and Tjalling Koopmans
+  studied transportation problems; they shared the 1975 Nobel Memorial Prize in Economic Sciences.
+  George Dantzig stated the general problem and devised the simplex method in 1947 while working on
+  US Air Force planning. Koopmans suggested the name 'linear programming' in 1948, 'programming'
+  then meaning the scheduling of activities.
+year: 1947
+note: >-
+  'Programming' means planning, not writing code. Requiring some variables to take whole-number
+  values turns the problem into [[integer-programming|integer programming]], which is NP-hard,
+  whereas linear programs can be solved in polynomial time.
+see_also:
+  - convex optimization
+  - optimization
+  - Lagrange multiplier
+  - Wasserstein distance
+  - branch and bound
+  - Markov decision process
+contrast:
+  - integer programming
+sources:
+  - text: >-
+      Dantzig, G. B. (1963). Linear Programming and Extensions. Princeton University Press.
+  - text: >-
+      Kantorovich, L. V. (1960). Mathematical Methods of Organizing and Planning Production.
+      Management Science 6(4), 366–422. Translation of the 1939 Russian original.

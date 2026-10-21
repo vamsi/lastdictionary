@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: textual inversion
+id: textual-inversion
+pos: n.
+also:
+  - textual inversion embedding
+  - embedding (image generation)
+  - negative embedding
+domain: gen
+domains:
+  - train
+level: specialist
+plain: >-
+  Teaching an image generator a new 'word' for a specific object or style from a few example
+  pictures, leaving the model itself unchanged — only one vocabulary entry is added.
+senses:
+  - definition: >-
+      A personalization method that teaches a frozen [[text-to-image-model|text-to-image model]] a
+      new concept — a particular object, person or artistic style — by adding one invented word (a
+      pseudo-word such as S*) to its vocabulary and learning nothing but that word's
+      [[embedding|embedding]], after which any prompt containing the word evokes the concept.
+      Starting from typically three to five example images, it optimizes the single vector in the
+      text encoder's input space against the model's ordinary denoising loss while every network
+      weight stays fixed; the authors reported that one such vector was enough for a wide range of
+      concepts. The resulting files are a few kilobytes and can be shared and combined, and the
+      community also trains 'negative embeddings' that encode unwanted features for use in
+      [[negative-prompt|negative prompts]]. Fidelity is lower than with weight-updating methods such
+      as [[dreambooth|DreamBooth]] or [[low-rank-adaptation|LoRA]], because a single token cannot
+      inject what the model cannot already express.
+origin: >-
+  Introduced by Rinon Gal and colleagues at Tel Aviv University and NVIDIA in 'An Image is Worth One
+  Word' (posted August 2022; ICLR 2023), first demonstrated on latent diffusion models and quickly
+  adopted for Stable Diffusion.
+year: 2022
+note: >-
+  Not related to [[model-inversion|model inversion]], a privacy attack; 'inversion' here means
+  finding the text embedding that would generate the given images.
+see_also:
+  - DreamBooth
+  - embedding
+  - prompt tuning
+  - negative prompt
+  - Stable Diffusion
+  - low-rank adaptation
+contrast:
+  - DreamBooth
+sources:
+  - text: >-
+      Gal, R., Alaluf, Y., Atzmon, Y., Patashnik, O., Bermano, A. H., Chechik, G. & Cohen-Or, D.
+      (2023). An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual
+      Inversion. ICLR 2023. arXiv:2208.01618.
+    url: https://arxiv.org/abs/2208.01618

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ONNX
+id: onnx
+pos: prop. n.
+also:
+  - Open Neural Network Exchange
+  - ONNX Runtime
+  - ONNX format
+  - opset
+pronunciation: ON-iks
+domain: eng
+domains:
+  - infer
+  - dl
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A shared file format for trained AI models, so that a model built with one toolkit can be moved to
+  and run by another, much as a PDF opens on any computer.
+senses:
+  - definition: >-
+      A vendor-neutral file format (Open Neural Network Exchange) that describes a trained model as
+      a computation graph of standardized operators with typed inputs and outputs, saved together
+      with the model's weights using Protocol Buffers serialization. Operators are versioned in
+      operator sets, or opsets, so a model declares which version it needs and runtimes can check
+      support. Models are exported from training frameworks — [[pytorch|PyTorch]] through
+      torch.onnx, [[tensorflow|TensorFlow]] and [[scikit-learn|scikit-learn]] through converters —
+      and executed by runtimes and compilers that optimize them for target hardware, most
+      prominently Microsoft's ONNX Runtime, whose execution providers target CPUs, GPUs and
+      [[npu|NPUs]] and which also runs in browsers and on phones; vendor toolkits such as TensorRT
+      and OpenVINO also accept ONNX. The format decouples training from deployment, but export can
+      fail for models with dynamic control flow or unusual operators, and large language models are
+      more often distributed in [[safetensors|safetensors]] or [[gguf|GGUF]].
+    example: >-
+      We export the classifier to ONNX and run it with ONNX Runtime on the edge boxes, with no
+      PyTorch install.
+origin: >-
+  Announced by Facebook and Microsoft in September 2017 to let models move between PyTorch, Caffe2
+  and Microsoft's Cognitive Toolkit; Amazon Web Services, chip makers and others soon joined. The
+  project moved to the Linux Foundation's AI foundation (now LF AI & Data) in November 2019.
+year: 2017
+note: >-
+  ONNX is the format; ONNX Runtime is one engine that executes it. The two names are often used
+  loosely for each other.
+see_also:
+  - PyTorch
+  - TensorFlow
+  - model deployment
+  - edge AI
+  - Core ML
+  - LiteRT
+  - safetensors

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: safety case
+id: safety-case
+pos: n.
+also:
+  - AI safety case
+  - assurance case
+  - safety argument
+domain: safety
+domains:
+  - gov
+  - eval
+level: core
+plain: >-
+  A written, evidence-backed argument that a particular AI system is safe enough for a particular
+  use, putting the burden of proof on the developer, as with nuclear plants or aircraft.
+senses:
+  - definition: >-
+      A reasoned case, assembled by a system's developer or operator for reviewers, that the
+      system's risks are acceptable in a stated use and setting, laid out so that every step from
+      evidence to conclusion can be inspected. An AI safety case decomposes a top-level claim (for
+      example, 'internal deployment of this model does not pose an unacceptable risk of catastrophic
+      sabotage') into subclaims backed by evaluation results, threat models and explicit
+      assumptions, often in notations such as Goal Structuring Notation or
+      Claims–Arguments–Evidence. Joshua Clymer and colleagues (2024) sort the possible arguments
+      into four kinds: inability (the model cannot cause the harm, shown by
+      [[dangerous-capability-evaluation|dangerous capability evaluations]]); control (safeguards
+      would stop it even if it tried; see [[control-evaluation|control evaluation]]);
+      trustworthiness (it would not try); and, for much more capable systems, deference to the
+      judgment of trusted AI advisers. Safety cases shift the burden of proof to the developer and
+      make its reasoning reviewable by regulators and third parties, but convincing cases for highly
+      capable systems remain largely unwritten.
+    example: >-
+      The safety case for internal deployment rests on an inability argument for sabotage and a
+      control argument for data exfiltration.
+origin: >-
+  Developed in British nuclear regulation and made mandatory for UK offshore oil and gas after the
+  1988 Piper Alpha disaster and the Cullen report (1990); later used in rail, defense, automotive
+  and autonomous-vehicle standards such as UL 4600 (2020). Joshua Clymer, Nick Gabrieli, David
+  Krueger and Thomas Larsen's 'Safety Cases: How to Justify the Safety of Advanced AI Systems'
+  (2024) adapted it to frontier AI, and the UK AI Security Institute and AI laboratories took it up.
+year: 2024
+note: >-
+  A safety case is an argument, not a guarantee; it is only as strong as its weakest assumption.
+  Compare [[responsible-scaling-policy|responsible scaling policies]], which fix in advance what
+  evidence triggers which safeguards; some laboratory frameworks call for safety cases at higher
+  capability levels.
+see_also:
+  - control evaluation
+  - dangerous capability evaluation
+  - AI control
+  - responsible scaling policy
+  - defense in depth
+  - AI Safety Institute
+  - capability threshold
+sources:
+  - text: >-
+      Clymer, J., Gabrieli, N., Krueger, D. & Larsen, T. (2024). Safety Cases: How to Justify the
+      Safety of Advanced AI Systems. arXiv preprint.
+as_of: 2026-10

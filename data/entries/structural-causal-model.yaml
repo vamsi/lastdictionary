@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: structural causal model
+id: structural-causal-model
+pos: n.
+also:
+  - SCM
+  - causal graph
+  - causal diagram
+  - causal DAG
+  - causal model
+  - structural equation model
+  - directed acyclic graph
+domain: math
+domains:
+  - ml
+  - interp
+level: specialist
+plain: >-
+  A precise description of what causes what in a system — a diagram of arrows plus equations — that
+  predicts what would happen if you intervened, not just what tends to occur together.
+senses:
+  - definition: >-
+      A mathematical model of a causal system made of variables, structural equations that determine
+      each variable from its direct causes plus an independent noise term, and a
+      [[probability-distribution|probability distribution]] over the noise. Its causal graph,
+      usually a directed acyclic graph (DAG), draws an arrow from each cause to its effect. An SCM
+      answers three kinds of query: observational, through the joint distribution it induces (as a
+      [[bayesian-network|Bayesian network]] does); interventional, by replacing an equation —
+      written do(X = x) — and propagating the change; and [[counterfactual|counterfactual]], by
+      inferring the noise from evidence and then intervening. Graphical criteria such as
+      d-separation read off conditional independences, and the [[do-calculus|do-calculus]]
+      determines when interventional quantities can be computed from observational data. SCMs are
+      the formal backbone of Pearl-style [[causal-inference|causal inference]], causal discovery
+      algorithms and [[counterfactual-fairness|counterfactual fairness]], and in
+      [[interpretability|interpretability]] the basis of [[causal-abstraction|causal abstraction]],
+      which tests whether a network implements a hypothesized high-level causal model.
+    example: >-
+      We wrote down a structural causal model of the pipeline before deciding which variables to
+      adjust for.
+formula_latex: X_i := f_i\big(\mathrm{pa}(X_i),\, U_i\big), \qquad i = 1,\ldots,n
+origin: >-
+  The geneticist Sewall Wright introduced path diagrams in 1921, and econometricians such as Trygve
+  Haavelmo (1943) developed structural equation models. Judea Pearl unified these with Bayesian
+  networks and a theory of intervention in the 1990s; his book Causality (2000) made the structural
+  causal model standard in computer science.
+see_also:
+  - causal inference
+  - do-calculus
+  - counterfactual
+  - Bayesian network
+  - confounding variable
+  - causal abstraction

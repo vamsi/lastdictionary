@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: time series forecasting
+id: time-series-forecasting
+pos: n.
+also:
+  - forecasting
+  - time series
+  - demand forecasting
+  - backtesting
+  - probabilistic forecasting
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  Predicting future values of something measured over time, such as sales, electricity demand,
+  prices or rainfall, from its past values and related information.
+senses:
+  - definition: >-
+      The prediction of future values of one or more time-ordered variables from their history and
+      from related covariates such as calendar effects, prices or weather. Forecasts may be point
+      estimates or probabilistic (quantiles or full distributions), one step or many steps ahead,
+      and for a single series or thousands of related ones. Classical statistical methods model
+      trend, seasonality and autocorrelation explicitly ([[exponential-smoothing|exponential
+      smoothing]], [[arima|ARIMA]], state-space models); machine-learning approaches recast
+      forecasting as [[regression|regression]] on lagged and engineered features, typically with
+      [[gradient-boosting|gradient boosting]], or train deep sequence models
+      ([[recurrent-neural-network|recurrent networks]], temporal convolutions,
+      [[transformer|transformers]]) across many series. Since 2023, pretrained
+      [[time-series-foundation-model|time series foundation models]] have offered zero-shot
+      forecasts. Evaluation must respect time order: models are backtested on rolling or expanding
+      windows rather than shuffled [[cross-validation|cross-validation]], to avoid
+      [[data-leakage|data leakage]] from the future, and scored with error measures such as
+      [[mean-absolute-error|mean absolute error]] or [[quantile-regression|quantile]] losses against
+      naive [[baseline|baselines]] such as 'same as last week'.
+    example: >-
+      In the backtest the boosted model beat seasonal naive by 18% on MAE, but only after we added
+      holiday features.
+origin: >-
+  Statistical time-series modeling began with George Udny Yule's autoregressive model and Eugen
+  Slutsky's moving averages (both 1927) and Norbert Wiener's and Andrey Kolmogorov's prediction
+  theory of the 1940s. Exponential smoothing (1950s) and George Box and Gwilym Jenkins's ARIMA
+  methodology (1970) dominated practice, and the M-competitions organized by Spyros Makridakis from
+  1982 compared methods empirically.
+year: 1927
+note: >-
+  The M4 competition (2018) was won by a hybrid of exponential smoothing and a recurrent network,
+  and LightGBM-based entries dominated M5 (2020); on many series simple methods remain hard to beat.
+see_also:
+  - ARIMA
+  - exponential smoothing
+  - time series foundation model
+  - recurrent neural network
+  - cross-validation
+  - data leakage
+  - mean absolute error
+  - quantile regression
+sources:
+  - text: >-
+      Box, G. E. P. & Jenkins, G. M. (1970). Time Series Analysis: Forecasting and Control. San
+      Francisco: Holden-Day.
+  - text: >-
+      Hyndman, R. J. & Athanasopoulos, G. (2021). Forecasting: Principles and Practice, 3rd ed.
+      Melbourne: OTexts.
+  - text: >-
+      Makridakis, S., Spiliotis, E. & Assimakopoulos, V. (2020). The M4 Competition: 100,000 Time
+      Series and 61 Forecasting Methods. International Journal of Forecasting 36(1).
+as_of: 2026-10

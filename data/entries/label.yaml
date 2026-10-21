@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: label
+id: label
+pos: n.
+also:
+  - class label
+  - target label
+  - labeled data
+  - unlabeled data
+  - labelled
+domain: data
+domains:
+  - ml
+level: essential
+plain: >-
+  The correct answer attached to an example in a dataset — 'cat' on a photo of a cat, 'positive' on
+  an upbeat review — that a learning system is trained to predict.
+senses:
+  - context: Machine learning
+    definition: >-
+      The target value associated with an example in [[supervised-learning|supervised learning]]: a
+      class name, a number, a [[bounding-box|bounding box]], a text span or a preferred response
+      that a [[model|model]] is trained to predict from the example's input. Labels come from human
+      [[data-labeling|labelers]] or experts, from user behavior (clicks, purchases), from automated
+      heuristics ([[weak-supervision|weak supervision]]) or from another model. A dataset whose
+      examples carry labels is called labeled; most raw data is unlabeled, which is why
+      [[self-supervised-learning|self-supervised learning]] — deriving targets from the data itself,
+      such as the next [[token|token]] in a text — made web-scale training possible. Because labels
+      are produced by fallible processes, they contain [[label-noise|label noise]] and encode the
+      labelers' judgments: treating them as [[ground-truth|ground truth]] is a convention, not a
+      guarantee.
+    example: About 4% of the labels in the validation split turned out to be wrong.
+  - context: Content disclosure
+    definition: >-
+      A visible notice or embedded metadata stating that an image, video, audio clip or text was
+      generated or substantially altered by AI, required for some content in several jurisdictions;
+      see [[ai-generated-content-labeling|AI-generated content labeling]] and
+      [[content-credentials|Content Credentials]].
+origin: >-
+  The supervised-learning sense grew out of statistics and pattern recognition, where training
+  examples were labeled with their known class. 'Labeled data' was common by the 1990s; Avrim Blum
+  and Tom Mitchell's 1998 paper on co-training, about combining labeled and unlabeled data, helped
+  fix the contrast.
+note: >-
+  'Label' and [[annotation|annotation]] overlap: a label is usually the single target an example is
+  scored against, while an annotation can be any added information, including rationales, relations
+  or segment boundaries.
+see_also:
+  - data labeling
+  - annotation
+  - ground truth
+  - label noise
+  - supervised learning
+  - weak supervision
+  - self-supervised learning
+contrast:
+  - feature
+sources:
+  - text: >-
+      Blum, A. & Mitchell, T. (1998). Combining Labeled and Unlabeled Data with Co-Training.
+      Proceedings of COLT 1998.

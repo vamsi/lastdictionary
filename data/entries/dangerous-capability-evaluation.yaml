@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dangerous capability evaluation
+id: dangerous-capability-evaluation
+pos: n.
+also:
+  - dangerous capability eval
+  - dangerous capabilities evaluation
+  - DC eval
+  - frontier safety evaluation
+domain: safety
+domains:
+  - eval
+  - sec
+level: core
+plain: >-
+  A test of whether an AI system can do things that could cause severe harm in the wrong hands or on
+  its own — such as helping make a bioweapon, hacking computers or copying itself.
+senses:
+  - definition: >-
+      An evaluation that measures whether a model possesses capabilities that could enable severe
+      harm, typically in biological, chemical, radiological and nuclear weapons ([[cbrn-risk|CBRN
+      risk]]), offensive cyber operations, persuasion and manipulation,
+      [[autonomous-replication-and-adaptation|autonomous replication and adaptation]],
+      [[automated-ai-research|AI research and development]], and the self-reasoning and stealth
+      relevant to [[scheming|scheming]]. Methods include multiple-choice knowledge tests,
+      capture-the-flag hacking challenges, long-horizon agentic tasks, expert [[red-teaming|red
+      teaming]] and human [[uplift-study|uplift studies]]. Because the aim is to bound what the
+      model could do, evaluators invest in [[capability-elicitation|capability elicitation]] —
+      fine-tuning, tools, scaffolding and many attempts — rather than testing the model only as
+      shipped. Results are compared against [[capability-threshold|capability thresholds]] that,
+      under frameworks such as [[responsible-scaling-policy|responsible scaling policies]], trigger
+      stronger safeguards or a halt to deployment.
+    example: >-
+      The model stayed below the biology threshold but solved most professional-level challenges in
+      the cyber evaluations.
+origin: >-
+  ARC Evals (now [[metr|METR]]) tested GPT-4 for autonomous replication before its 2023 release.
+  Toby Shevlane and colleagues' 'Model evaluation for extreme risks' (2023) set out the framework
+  and vocabulary, and Mary Phuong and colleagues at Google DeepMind published a suite of such tests
+  in 'Evaluating Frontier Models for Dangerous Capabilities' (2024).
+year: 2023
+note: >-
+  A negative result is weaker evidence than a positive one: failing to elicit a capability does not
+  prove its absence. Distinct from alignment evaluations (see [[alignment-audit|alignment audit]]),
+  which ask whether a model would use its capabilities harmfully rather than whether it has them.
+see_also:
+  - capability elicitation
+  - uplift study
+  - red teaming
+  - capability threshold
+  - responsible scaling policy
+  - autonomous replication and adaptation
+  - METR
+  - sandbagging
+contrast:
+  - alignment audit
+sources:
+  - text: Shevlane, T. et al. (2023). Model evaluation for extreme risks. arXiv preprint.
+  - text: >-
+      Phuong, M. et al. (2024). Evaluating Frontier Models for Dangerous Capabilities. Google
+      DeepMind, arXiv preprint.

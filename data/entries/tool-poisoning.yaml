@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tool poisoning
+id: tool-poisoning
+pos: n.
+also:
+  - tool poisoning attack
+  - MCP tool poisoning
+  - rug pull (MCP)
+  - tool shadowing
+domain: sec
+domains:
+  - agents
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Hiding harmful instructions in the description of a tool an AI assistant can use, so the assistant
+  obeys them when it reads the tool's details, even though the user never sees them.
+senses:
+  - definition: >-
+      An attack on [[ai-agent|agents]] in which a malicious or compromised [[tool|tool]] provider,
+      typically an [[mcp-server|MCP server]], embeds instructions in tool metadata such as names,
+      descriptions or parameter schemas. The model reads this metadata to decide how to use tools,
+      while users usually see only a short summary, so the hidden text can direct the agent to read
+      sensitive files, pass secrets as tool arguments or misuse other, trusted tools. Variants
+      include the 'rug pull', in which a server changes a tool's definition after the user has
+      approved it, and tool shadowing, in which one server's descriptions alter how the agent uses
+      another server's tools. Tool poisoning is a supply-chain form of
+      [[indirect-prompt-injection|indirect prompt injection]]. Mitigations include showing users
+      full tool definitions, pinning and signing versions, scanning descriptions, isolating servers
+      from one another and restricting tool permissions.
+    example: >-
+      The calculator server's description carried a tool poisoning payload telling the agent to
+      attach the user's SSH keys.
+origin: >-
+  Named by the security firm Invariant Labs in an April 2025 disclosure about the
+  [[model-context-protocol|Model Context Protocol]], released by Anthropic in November 2024; the
+  term was quickly adopted in MCP security guidance and research.
+year: 2025
+see_also:
+  - indirect prompt injection
+  - Model Context Protocol
+  - MCP server
+  - AI supply chain security
+  - lethal trifecta
+  - excessive agency
+sources:
+  - text: >-
+      Invariant Labs (2025). MCP Security Notification: Tool Poisoning Attacks. Blog post, April
+      2025.
+    url: https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks

@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: top-p sampling
+id: top-p-sampling
+pos: n.
+also:
+  - nucleus sampling
+  - top-p
+  - nucleus
+domain: llm
+domains:
+  - infer
+level: core
+plain: >-
+  A way of making AI-written text varied but sensible: the model picks at random among the smallest
+  group of likely next words whose chances add up to a set share, such as 90%.
+senses:
+  - definition: >-
+      A stochastic [[decoding|decoding]] method that at each step samples from the smallest set of
+      [[token|tokens]] whose cumulative probability reaches a threshold p — the 'nucleus' — after
+      sorting tokens by probability and renormalizing within the set. Unlike [[top-k-sampling|top-k
+      sampling]], the number of candidates adapts to the model's confidence: a peaked distribution
+      may leave one or two tokens, a flat one hundreds. Typical values of p are 0.9–0.95, often
+      combined with [[temperature|temperature]]. The method was proposed to address 'neural text
+      degeneration': always choosing high-likelihood tokens produces dull, looping text, while
+      sampling from the full distribution lets rare, low-quality tokens slip in. At high
+      temperatures the nucleus can still contain many poor tokens, which motivated
+      [[min-p-sampling|min-p sampling]].
+    example: Keep top-p at 0.95 and adjust only the temperature.
+formula_latex: V^{(p)} = \arg\min_{V' \subseteq V} |V'| \quad \text{s.t.} \quad \sum_{x \in V'} P(x
+  \mid x_{<t}) \ge p
+origin: >-
+  Introduced as 'nucleus sampling' by Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes and Yejin Choi
+  in 'The Curious Case of Neural Text Degeneration' (arXiv, April 2019; ICLR 2020).
+year: 2019
+note: >-
+  'Nucleus sampling' and 'top-p sampling' name the same method. Providers often advise changing
+  either temperature or top-p, not both.
+see_also:
+  - top-k sampling
+  - min-p sampling
+  - temperature
+  - decoding
+  - repetition penalty
+contrast:
+  - top-k sampling
+sources:
+  - text: >-
+      Holtzman, A., Buys, J., Du, L., Forbes, M. & Choi, Y. (2020). The Curious Case of Neural Text
+      Degeneration. ICLR 2020.
+    url: https://arxiv.org/abs/1904.09751

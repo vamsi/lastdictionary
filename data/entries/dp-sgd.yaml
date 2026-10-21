@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DP-SGD
+id: dp-sgd
+pos: abbr.
+also:
+  - differentially private stochastic gradient descent
+  - differentially private SGD
+  - DP training
+domain: sec
+domains:
+  - train
+  - math
+level: specialist
+plain: >-
+  A way of training a neural network so that it cannot learn too much about any single person in the
+  data: each example's influence is capped, and random noise is added at every step.
+senses:
+  - definition: >-
+      Differentially private [[stochastic-gradient-descent|stochastic gradient descent]]: a training
+      algorithm that gives a model a [[differential-privacy|differential privacy]] guarantee with
+      respect to its training examples. At each step it computes per-example [[gradient|gradients]],
+      clips each to a maximum ℓ2 norm C so that no single example can move the model by more than a
+      bounded amount, sums them, adds Gaussian noise with standard deviation proportional to C, and
+      averages. A privacy accountant (originally the moments accountant, now usually Rényi or
+      numerical accountants) tracks the cumulative ε across steps, exploiting the privacy
+      amplification provided by random batch sampling. DP-SGD costs accuracy, needs large batches
+      and more computation, and is most often used to fine-tune pretrained models on sensitive data;
+      libraries such as Opacus and TensorFlow Privacy implement it.
+    example: >-
+      Fine-tuning with DP-SGD at ε = 8 cost two points of accuracy relative to the non-private model.
+formula_latex: \tilde{g} = \frac{1}{B}\Big(\sum_{i=1}^{B} \frac{g_i}{\max\big(1, \|g_i\|_2 / C\big)}
+  + \mathcal{N}\big(0, \sigma^2 C^2 \mathbf{I}\big)\Big)
+origin: >-
+  Noisy private gradient descent was studied by Shuang Song, Kamalika Chaudhuri and Anand Sarwate
+  (2013) and by Raef Bassily, Adam Smith and Abhradeep Thakurta (2014). Martín Abadi and colleagues
+  at Google made it practical for deep networks in 'Deep Learning with Differential Privacy' (ACM
+  CCS 2016), introducing the moments accountant; the name DP-SGD spread from that paper.
+year: 2016
+see_also:
+  - differential privacy
+  - privacy budget
+  - stochastic gradient descent
+  - PATE
+  - memorization
+  - membership inference attack
+sources:
+  - text: >-
+      Abadi, M., Chu, A., Goodfellow, I., McMahan, H. B., Mironov, I., Talwar, K. & Zhang, L.
+      (2016). Deep Learning with Differential Privacy. ACM CCS 2016. arXiv:1607.00133.

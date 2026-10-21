@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: description logic
+id: description-logic
+pos: n.
+also:
+  - DL
+  - description logics
+  - terminological logic
+  - concept language
+  - TBox
+  - ABox
+  - KL-ONE
+domain: sym
+domains:
+  - math
+  - data
+level: specialist
+plain: >-
+  A family of precise logical languages for defining categories and how they relate, such as 'a
+  parent is a person with at least one child', designed so that a computer's reasoning about them
+  always finishes.
+senses:
+  - definition: >-
+      Any of a group of logics for [[knowledge-representation|knowledge representation]], most of
+      them decidable fragments of [[first-order-logic|first-order logic]], that model a domain with
+      three kinds of building block: individuals, concepts (classes of individuals) and roles
+      (binary relations between them). Complex concepts are built with constructors such as
+      intersection, union, negation and existential or universal restrictions — Parent ≡ Person ⊓
+      ∃hasChild.Person — and knowledge is split into a TBox of terminological axioms and an ABox of
+      facts about individuals. Standard reasoning services check consistency, decide subsumption
+      (whether one concept is necessarily a subclass of another), classify a whole
+      [[ontology|ontology]], and determine which concepts an individual belongs to. Each language
+      trades expressiveness against computational cost, from the tractable EL family, used for the
+      very large SNOMED CT medical terminology, to SROIQ, the basis of OWL 2. Tableau-based
+      reasoners such as HermiT and Pellet implement these services.
+origin: >-
+  Grew out of Ronald Brachman's KL-ONE system (1977–1985), a formalization of
+  [[semantic-network|semantic networks]] and [[frame|frames]]. Brachman and Hector Levesque's 1984
+  paper on the tractability of subsumption in 'frame-based description languages' opened the study
+  of expressiveness versus cost. The field was then often called terminological logics; 'description
+  logics' became the standard name during the 1990s, and the W3C's [[web-ontology-language|Web
+  Ontology Language]] (2004) put it into worldwide use.
+year: 1984
+see_also:
+  - ontology
+  - Web Ontology Language
+  - first-order logic
+  - knowledge representation
+  - semantic network
+  - semantic web
+sources:
+  - text: >-
+      Brachman, R. J. & Schmolze, J. G. (1985). An Overview of the KL-ONE Knowledge Representation
+      System. Cognitive Science 9(2), 171–216.
+  - text: >-
+      Baader, F. et al. (eds.) (2003). The Description Logic Handbook. Cambridge University Press.

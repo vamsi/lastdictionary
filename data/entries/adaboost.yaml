@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AdaBoost
+id: adaboost
+pos: prop. n.
+also:
+  - Adaptive Boosting
+  - AdaBoost.M1
+  - discrete AdaBoost
+  - SAMME
+pronunciation: AD-uh-boost
+domain: ml
+domains:
+  - hist
+level: core
+plain: >-
+  One of the first practical boosting methods: it trains simple models in turn, giving extra weight
+  to examples the earlier models got wrong, then lets all the models vote, weighted by accuracy.
+senses:
+  - definition: >-
+      A [[boosting|boosting]] algorithm for [[binary-classification|binary classification]] that
+      keeps a weight on every training example, starting uniform. In each round it trains a weak
+      learner — classically a decision stump, a one-split [[decision-tree|decision tree]] — on the
+      weighted data, computes the learner's weighted error ε, gives it a vote α = ½ ln((1 − ε)/ε),
+      and increases the weights of misclassified examples so they count more in the next round. The
+      final classifier is the sign of the α-weighted sum of the weak learners' outputs. Training
+      error falls exponentially as long as each learner beats chance, and [[margin|margin]] theory
+      helps explain why test error often keeps improving after training error reaches zero. AdaBoost
+      is equivalent to stagewise minimization of the exponential loss, which makes it sensitive to
+      label noise and outliers. Multiclass variants include AdaBoost.M1, AdaBoost.M2 and SAMME.
+    example: AdaBoost with 200 stumps picked out the handful of pixel features that mattered.
+formula_latex: F(\mathbf{x}) = \operatorname{sign}\Big(\sum_{t=1}^{T} \alpha_t h_t(\mathbf{x})\Big),
+  \qquad \alpha_t = \frac{1}{2}\ln\frac{1-\varepsilon_t}{\varepsilon_t}
+origin: >-
+  Introduced by Yoav Freund and Robert Schapire at the EuroCOLT conference in 1995 and in 'A
+  Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting' (Journal of
+  Computer and System Sciences, 1997); the name abbreviates 'adaptive boosting'. The paper won the
+  2003 Gödel Prize. Paul Viola and Michael Jones's real-time face detector (2001) made it famous in
+  computer vision.
+year: 1995
+note: >-
+  Largely superseded by [[gradient-boosting|gradient boosting]] for general use, but still a
+  standard teaching example and a component of classic [[face-detection|face detection]] pipelines.
+see_also:
+  - boosting
+  - gradient boosting
+  - decision tree
+  - ensemble learning
+  - margin
+  - face detection
+sources:
+  - text: >-
+      Freund, Y. & Schapire, R. E. (1997). A Decision-Theoretic Generalization of On-Line Learning
+      and an Application to Boosting. Journal of Computer and System Sciences, 55(1), 119–139.

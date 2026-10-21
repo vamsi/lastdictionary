@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: streaming
+id: streaming
+pos: n.
+also:
+  - token streaming
+  - stream
+  - streamed response
+  - server-sent events
+  - SSE
+  - streaming inference
+domain: infer
+domains:
+  - eng
+  - percep
+level: core
+plain: >-
+  Sending an AI's answer piece by piece while it is still being written, so the words appear on
+  screen one after another instead of all at once at the end.
+senses:
+  - context: Model output
+    definition: >-
+      Delivery of a generative model's output incrementally, as each [[token|token]] or small group
+      of tokens is produced, rather than as one complete response. LLM [[model-api|APIs]] usually
+      stream over HTTP with server-sent events (SSE) or over WebSockets, sending a series of 'delta'
+      messages carrying text fragments, partial [[tool-call|tool-call]] arguments and finally usage
+      and stop-reason metadata. Streaming does not make generation faster, but it cuts perceived
+      [[latency|latency]] to the [[time-to-first-token|time to first token]], lets users read or
+      cancel early, and lets downstream components such as [[text-to-speech|text-to-speech]] or
+      incremental parsers of [[structured-outputs|structured outputs]] start work at once. It
+      complicates moderation, error handling and billing, because a response can fail or be withheld
+      midway.
+    example: >-
+      With streaming on, users see the first words in 300 milliseconds even though the full answer
+      takes eight seconds.
+  - context: Continuous input
+    definition: >-
+      Incremental processing of an unbounded input, such as live audio, video or an endless
+      conversation, emitting outputs with bounded delay and memory, as in streaming
+      [[speech-recognition|speech recognition]] or simultaneous translation. For transformers this
+      requires bounded attention state; StreamingLLM (2023), for example, keeps a few initial
+      [[attention-sink|attention sink]] tokens plus a sliding window of recent keys and values.
+origin: >-
+  An older computing word for continuous data delivery ('streaming media' spread in the 1990s).
+  Token streaming became familiar to the public through ChatGPT's word-by-word display from November
+  2022; OpenAI's completions API already offered a stream option built on server-sent events, a web
+  standard from the HTML5 era.
+note: >-
+  Unrelated to the [[residual-stream|residual stream]] of interpretability research.
+see_also:
+  - time to first token
+  - latency
+  - tokens per second
+  - model API
+  - attention sink
+  - speech-to-speech model
+contrast:
+  - batch inference

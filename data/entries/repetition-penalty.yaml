@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: repetition penalty
+id: repetition-penalty
+pos: n.
+also:
+  - frequency penalty
+  - presence penalty
+  - penalized sampling
+  - no-repeat n-gram
+  - DRY sampling
+domain: llm
+domains:
+  - infer
+level: core
+plain: >-
+  A setting that discourages an AI model from repeating itself by lowering the chances of words it
+  has already used, so its text does not get stuck in loops.
+senses:
+  - definition: >-
+      A [[decoding|decoding]] adjustment that lowers the scores of [[token|tokens]] that have
+      already appeared, to counter the tendency of [[language-model|language models]] to fall into
+      repetitive loops, especially under [[greedy-decoding|greedy decoding]] or low
+      [[temperature|temperature]]. In the multiplicative form introduced with CTRL, the
+      [[logit|logits]] of previously generated tokens are divided by a factor θ (about 1.2 was
+      recommended); because dividing a negative logit would raise it, common implementations
+      multiply negative logits by θ instead. API-style variants subtract from logits instead: a
+      presence penalty applies a fixed amount to any token already present, and a frequency penalty
+      grows with the number of occurrences. Other remedies block exact repeats of n-grams or
+      penalize extending a repeated sequence. Penalties are blunt: they also discourage legitimate
+      repetition such as names, code identifiers and list structure, and high settings hurt fluency
+      and accuracy.
+    example: >-
+      A presence penalty of 0.6 stopped the summaries from restating the same point three times.
+origin: >-
+  The multiplicative repetition penalty was introduced in CTRL by Nitish Shirish Keskar, Bryan
+  McCann, Lav R. Varshney, Caiming Xiong and Richard Socher of Salesforce (September 2019); OpenAI's
+  GPT-3-era API offered additive frequency and presence penalties. Blocking repeated trigrams goes
+  back to abstractive-summarization work of 2017.
+year: 2019
+see_also:
+  - decoding
+  - temperature
+  - top-p sampling
+  - logit bias
+  - logit
+sources:
+  - text: >-
+      Keskar, N. S., McCann, B., Varshney, L. R., Xiong, C. & Socher, R. (2019). CTRL: A Conditional
+      Transformer Language Model for Controllable Generation. arXiv:1909.05858.
+    url: https://arxiv.org/abs/1909.05858

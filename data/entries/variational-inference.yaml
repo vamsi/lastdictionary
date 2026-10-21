@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: variational inference
+id: variational-inference
+pos: n.
+also:
+  - VI
+  - variational Bayes
+  - variational approximation
+  - mean-field approximation
+  - stochastic variational inference
+  - amortized inference
+domain: math
+domains:
+  - gen
+  - ml
+level: specialist
+plain: >-
+  A way of approximating a hard-to-compute probability distribution by picking the closest match
+  from a simpler family of distributions, turning a hard problem of adding up every possibility into
+  an optimization problem.
+senses:
+  - definition: >-
+      A family of methods that stand in for an intractable [[posterior|posterior]] (or other
+      distribution) p with the best-fitting distribution q of a simpler form — fully factorized
+      ('mean-field'), Gaussian, or parameterized by a neural network — where best-fitting means
+      having the smallest [[kullback-leibler-divergence|Kullback–Leibler divergence]] KL(q ‖ p).
+      Because that divergence involves the unknown normalizing constant, one instead maximizes the
+      [[evidence-lower-bound|evidence lower bound]] (ELBO), which falls short of the log marginal
+      likelihood by exactly the KL gap. VI turns inference into [[optimization|optimization]], so it
+      scales with [[stochastic-gradient-descent|stochastic gradient descent]] and mini-batches
+      (stochastic VI) and can be amortized by an encoder network that maps each observation to its
+      approximate posterior, as in the [[variational-autoencoder|variational autoencoder]]. It is
+      usually much faster than [[markov-chain-monte-carlo|Markov chain Monte Carlo]] but biased:
+      minimizing KL(q ‖ p) is mode-seeking and tends to underestimate uncertainty. VI also underlies
+      Bayesian neural networks, topic models such as [[latent-dirichlet-allocation|latent Dirichlet
+      allocation]] and the variational view of [[diffusion-model|diffusion models]].
+    example: >-
+      Variational inference fit in ten minutes; the MCMC run would have taken two days.
+formula_latex: \log p(x) = \underbrace{\mathbb{E}_{q(z)}\big[\log p(x, z) - \log
+  q(z)\big]}_{\text{ELBO}} + \mathrm{KL}\big(q(z)\,\Vert\,p(z \mid x)\big)
+origin: >-
+  The name comes from the calculus of variations, which optimizes over functions. Mean-field
+  approximations from statistical physics were applied to neural networks by Carsten Peterson and
+  James Anderson (1987); Michael Jordan, Zoubin Ghahramani, Tommi Jaakkola and Lawrence Saul's 1999
+  tutorial systematized VI for graphical models, and Diederik Kingma and Max Welling's variational
+  autoencoder (2013) made amortized, gradient-based VI standard in deep learning.
+see_also:
+  - evidence lower bound
+  - Kullback–Leibler divergence
+  - variational autoencoder
+  - Bayesian inference
+  - posterior
+  - latent Dirichlet allocation
+contrast:
+  - Markov chain Monte Carlo
+sources:
+  - text: >-
+      Jordan, M. I., Ghahramani, Z., Jaakkola, T. S. & Saul, L. K. (1999). An Introduction to
+      Variational Methods for Graphical Models. Machine Learning, 37.
+  - text: >-
+      Blei, D. M., Kucukelbir, A. & McAuliffe, J. D. (2017). Variational Inference: A Review for
+      Statisticians. Journal of the American Statistical Association, 112(518).

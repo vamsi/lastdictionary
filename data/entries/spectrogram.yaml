@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: spectrogram
+id: spectrogram
+pos: n.
+also:
+  - sonogram
+  - short-time Fourier transform
+  - STFT
+  - time–frequency representation
+  - voiceprint
+domain: percep
+domains:
+  - math
+level: core
+plain: >-
+  A picture of sound that shows time from left to right, pitch from bottom to top, and loudness as
+  brightness or color, so that speech and music can be seen as patterns.
+senses:
+  - definition: >-
+      A time–frequency map of a signal recording, for each short slice of time, how much energy
+      falls at each frequency, usually computed as the squared magnitude of the short-time
+      [[fourier-transform|Fourier transform]] (STFT). The signal is cut into short overlapping
+      frames (for speech typically 20–40 milliseconds long, every 10 milliseconds); each frame is
+      multiplied by a window function and Fourier-transformed; and the resulting energies form a
+      two-dimensional array with time on one axis and frequency on the other, normally shown on a
+      logarithmic (decibel) scale. Frame length sets a trade-off between time and frequency
+      resolution: long windows resolve individual harmonics (narrowband spectrograms), short ones
+      resolve rapid events (wideband spectrograms, which show speech formants clearly). Spectrograms
+      discard phase, so turning them back into sound requires phase estimation or a
+      [[vocoder|vocoder]]. In machine learning, spectrograms, especially [[mel-spectrogram|mel
+      spectrograms]], let audio be processed by image-style networks such as
+      [[convolutional-neural-network|CNNs]] and [[vision-transformer|transformers]], and they serve
+      as inputs for [[speech-recognition|speech recognition]] and [[sound-event-detection|sound
+      event detection]] and as intermediate outputs in [[text-to-speech|text-to-speech]].
+    example: >-
+      The spectrogram shows mains hum at 50 Hz and its harmonics, so filter those out before
+      training.
+formula_latex: S(m,k) = \left|\sum_{n=0}^{L-1} x[n + mH]\,w[n]\,e^{-i 2\pi k n / L}\right|^2
+origin: >-
+  The sound spectrograph was developed at Bell Telephone Laboratories during the Second World War by
+  Ralph Potter and colleagues and described publicly by Walter Koenig, Hugh Dunn and Lawrence Lacy
+  in 1946; Potter, George Kopp and Harriet Green's book Visible Speech (1947) taught people to read
+  speech spectrograms. In astronomy, 'spectrogram' had earlier meant a photograph of a spectrum.
+year: 1946
+note: >-
+  In the formula, x is the signal, w a window of length L, H the hop between frames, m the frame
+  index and k the frequency bin. Forensic 'voiceprint' identification by eye from spectrograms,
+  promoted in the 1960s, has been widely criticized as lacking scientific validation.
+see_also:
+  - mel spectrogram
+  - MFCC
+  - Fourier transform
+  - vocoder
+  - speech recognition
+  - sound event detection
+sources:
+  - text: >-
+      Koenig, W., Dunn, H. K. & Lacy, L. Y. (1946). The Sound Spectrograph. Journal of the
+      Acoustical Society of America 18(1), 19–49.
+  - text: >-
+      Potter, R. K., Kopp, G. A. & Green, H. C. (1947). Visible Speech. D. Van Nostrand.

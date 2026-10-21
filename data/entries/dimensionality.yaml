@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dimensionality
+id: dimensionality
+pos: n.
+also:
+  - dimension
+  - dimensions
+  - embedding dimension
+  - intrinsic dimensionality
+  - d_model
+domain: math
+domains:
+  - ml
+  - dl
+level: core
+plain: >-
+  How many separate numbers are needed to describe something. A point on a map needs two; an AI's
+  description of a single word may use thousands.
+senses:
+  - definition: >-
+      The number of coordinates, or independent directions, in a vector space or data
+      representation: the length of a [[vector|vector]], the number of [[feature|features]] in a
+      dataset, or the width of a model's hidden state (often written d_model).
+      [[embedding|Embedding]] dimensionality trades expressiveness against memory and compute; text
+      embeddings commonly use a few hundred to a few thousand dimensions, and
+      [[matryoshka-embedding|Matryoshka embeddings]] can be truncated after training.
+      High-dimensional geometry is counterintuitive: almost all the volume of a ball lies near its
+      surface, random vectors are nearly orthogonal and distances concentrate — effects gathered
+      under the [[curse-of-dimensionality|curse of dimensionality]]. Real data typically has a far
+      lower intrinsic dimensionality than its ambient one, as the [[manifold-hypothesis|manifold
+      hypothesis]] proposes, which motivates [[dimensionality-reduction|dimensionality reduction]].
+    example: >-
+      Halving the embedding dimensionality halved index memory with little loss in recall.
+  - context: Array programming
+    definition: >-
+      An axis of a [[tensor|tensor]], as in 'sum over dimension 1'. A tensor of shape (32, 512, 768)
+      has three dimensions in this sense, while each of its 768-element vectors lives in a
+      768-dimensional space in the first sense.
+origin: >-
+  From Latin dimensio, 'a measuring'. Geometry in more than three dimensions was developed in the
+  1840s–1850s by Arthur Cayley, Hermann Grassmann and Bernhard Riemann. Richard Bellman's phrase
+  'curse of dimensionality' (1957) made dimensionality a central concern of computation and
+  statistics.
+see_also:
+  - curse of dimensionality
+  - dimensionality reduction
+  - manifold hypothesis
+  - embedding
+  - vector
+  - tensor

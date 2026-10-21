@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SHRDLU
+id: shrdlu
+pos: prop. n.
+pronunciation: SHURD-loo
+domain: hist
+domains:
+  - sym
+  - llm
+labels:
+  - historical
+level: specialist
+plain: >-
+  A program from around 1970 that let people move toy blocks in a simulated world by typing ordinary
+  English commands and questions, and that could explain what it had done and why.
+senses:
+  - definition: >-
+      A natural-language understanding system built by Terry Winograd at the MIT AI Laboratory in
+      1968–1970. Users conversed in English with a simulated robot arm that moved colored blocks,
+      pyramids and boxes on a table — a so-called blocks world. SHRDLU parsed commands and questions
+      with a procedural grammar, resolved pronouns and references from the dialogue history and the
+      state of the scene, planned multistep actions (clearing a block before moving it), accepted
+      new names for objects and answered questions about its past actions and their reasons. Its
+      integration of syntax, meaning, reasoning and planning made it one of the most admired
+      demonstrations of early [[symbolic-ai|symbolic AI]]. Its methods did not carry over to
+      open-ended domains, and it became the standard example of a microworld, a deliberately
+      simplified domain whose methods failed to scale.
+    example: >-
+      SHRDLU could say why it had picked up a block, but only inside its tabletop world.
+origin: >-
+  Described in Winograd's 1971 MIT doctoral thesis and his 1972 book Understanding Natural Language.
+  The name comes from 'ETAOIN SHRDLU', the approximate letter-frequency order of keys on Linotype
+  typesetting machines, which sometimes appeared in newspapers as a filler error.
+year: 1970
+note: >-
+  Winograd later criticized the symbolic approach in Understanding Computers and Cognition (1986,
+  with Fernando Flores). An ambiguous-pronoun example from his 1972 work inspired the
+  [[winograd-schema-challenge|Winograd schema challenge]].
+see_also:
+  - symbolic AI
+  - good old-fashioned AI
+  - natural language understanding
+  - automated planning
+  - ELIZA
+  - Winograd schema challenge
+sources:
+  - text: "Winograd, T. (1972). Understanding Natural Language. New York: Academic Press."

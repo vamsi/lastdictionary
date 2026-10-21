@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: llama.cpp
+id: llama-cpp
+pos: prop. n.
+also:
+  - ggml
+  - llama-server
+pronunciation: LAH-muh dot see-pee-pee
+domain: infer
+domains:
+  - eng
+labels:
+  - trademark
+level: core
+plain: >-
+  A free, open-source program that runs AI language models on ordinary computers and phones, without
+  needing a powerful graphics card, by using compact low-precision versions of the models.
+senses:
+  - definition: >-
+      An open-source program for running [[large-language-model|large language models]] on ordinary
+      computers, written in plain C and C++ on top of Georgi Gerganov's ggml tensor library so that
+      it builds almost anywhere with few dependencies. Models are packaged in its [[gguf|GGUF]] file
+      format and usually compressed by integer [[quantization|quantization]] to between about 1.5
+      and 8 bits per weight, so that large models fit in a laptop's memory; one code base targets
+      ordinary CPUs, Apple's Metal, NVIDIA and AMD graphics cards and cross-vendor interfaces such
+      as Vulkan, and it can keep some layers on the CPU while the rest run on a GPU
+      ([[offloading|offloading]]). Besides a library and command-line tools it includes
+      llama-server, an HTTP server with an [[openai-compatible-api|OpenAI-compatible API]],
+      [[continuous-batching|continuous batching]], [[speculative-decoding|speculative decoding]] and
+      grammar-[[constrained-decoding|constrained decoding]]. It runs text, vision-language and other
+      model families, and is the engine beneath many desktop and mobile apps, including
+      [[ollama|Ollama]], making it central to [[on-device-ai|on-device AI]] with
+      [[open-weight-model|open-weight models]].
+    example: >-
+      I converted the model to GGUF and ran it with llama.cpp on a Raspberry Pi, slowly but fully
+      offline.
+origin: >-
+  Started by Georgi Gerganov on 10 March 2023, about two weeks after Meta announced LLaMA for
+  researchers and a week after its weights leaked online, as a dependency-free C/C++ port of LLaMA
+  inference. It built on ggml, his tensor library begun in September 2022 and used in his earlier
+  whisper.cpp. The name joins LLaMA with the C++ file extension. In February 2026 the ggml team
+  joined Hugging Face; the project remains open source under the MIT License.
+year: 2023
+see_also:
+  - GGUF
+  - Ollama
+  - quantization
+  - on-device AI
+  - offloading
+  - open-weight model
+  - Llama
+sources:
+  - text: llama.cpp repository (ggml-org).
+    url: https://github.com/ggml-org/llama.cpp
+  - text: >-
+      Hugging Face (2026). GGML and llama.cpp join HF to ensure the long-term progress of Local AI.
+      Hugging Face blog, 20 February 2026.
+as_of: 2026-10

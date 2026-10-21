@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: spurious correlation
+id: spurious-correlation
+pos: n.
+also:
+  - spurious association
+  - shortcut
+  - spurious feature
+domain: math
+domains:
+  - ml
+  - safety
+level: core
+plain: >-
+  A link in data that fools you: two things move together, yet neither drives the other, because a
+  hidden shared cause, the way the data were collected or luck produced the pattern. AI models
+  readily latch onto such links.
+senses:
+  - definition: >-
+      A statistical association that misleads about cause and effect: the variables move together,
+      but intervening on one would not change the other, because the pattern comes from a
+      [[confounding-variable|confounding variable]], from how cases were selected, from artifacts of
+      data collection, or from chance in small or heavily searched data. Models trained to minimize
+      loss exploit any feature that predicts the label in the training data, spurious ones included
+      — behavior called shortcut learning or the 'Clever Hans' effect. Documented cases include
+      image classifiers keying on backgrounds (cows on grass), hospital-specific markers in chest
+      X-rays, watermarks or text tags in images, and annotation artifacts that let
+      [[natural-language-understanding|language-understanding]] models answer from superficial cues.
+      Such models score well on [[i-i-d|i.i.d.]] test sets but fail under
+      [[distribution-shift|distribution shift]]. Remedies include more diverse or counterfactually
+      augmented data, group-robust training, invariance-based objectives, [[causal-inference|causal
+      inference]] and inspecting models with [[interpretability|interpretability]] tools.
+    example: >-
+      The pneumonia classifier had learned a spurious correlation with the portable scanners used in
+      intensive care.
+origin: >-
+  Karl Pearson coined 'spurious correlation' in 1897 for correlations between ratios that share a
+  common denominator, and statisticians soon applied it to any misleading association. In machine
+  learning the problem was popularized as 'Clever Hans' behavior (Sebastian Lapuschkin and
+  colleagues, 2019), after a horse that seemed to do arithmetic by reading its trainer's cues, and
+  as 'shortcut learning' (Robert Geirhos and colleagues, 2020).
+year: 1897
+see_also:
+  - correlation
+  - confounding variable
+  - distribution shift
+  - causal inference
+  - out-of-distribution
+  - Simpson's paradox
+sources:
+  - text: >-
+      Geirhos, R. et al. (2020). Shortcut learning in deep neural networks. Nature Machine
+      Intelligence, 2.

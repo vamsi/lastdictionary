@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: minimum description length
+id: minimum-description-length
+pos: n.
+also:
+  - MDL
+  - MDL principle
+  - two-part code
+  - prequential code length
+domain: math
+domains:
+  - ml
+  - llm
+level: specialist
+plain: >-
+  The principle that the best explanation of some data is the one that lets you write the data down
+  most briefly, counting both the rule and its exceptions. Good theories compress.
+senses:
+  - definition: >-
+      A principle of inductive inference and model selection based on two-part codes: a model is
+      charged the bits to state it plus the bits to state the data given the model, and the cheapest
+      total wins. Fit and complexity are thus traded in one currency — a complex model may fit the
+      data closely (a short second part) but cost many bits to state (a long first part) — so MDL
+      penalizes [[overfitting|overfitting]] without an explicit [[prior|prior]], an
+      information-theoretic form of [[occam-s-razor|Occam's razor]]. The two-part form resembles
+      [[maximum-a-posteriori-estimation|maximum a posteriori estimation]] with code lengths as
+      negative log-probabilities; refined versions use universal codes and normalized maximum
+      likelihood. MDL is a computable relative of [[kolmogorov-complexity|Kolmogorov complexity]],
+      close in spirit to Chris Wallace's minimum message length. In AI it supports the view that
+      learning is compression: a language model's negative [[log-likelihood|log-likelihood]] on
+      data, in bits, equals a code length via arithmetic coding, prequential ('online') code lengths
+      measure what models learn, and MDL arguments are invoked to explain
+      [[generalization|generalization]] and [[grokking|grokking]].
+    example: >-
+      By MDL, the twelve-rule grammar beats the lookup table: rules plus exceptions take fewer bits
+      than listing every case.
+formula_latex: M^{*} = \arg\min_{M}\; \big[L(M) + L(D \mid M)\big]
+origin: >-
+  Introduced by the Finnish information theorist Jorma Rissanen in 'Modeling by Shortest Data
+  Description' (Automatica, 1978), drawing on Kolmogorov complexity and Ray Solomonoff's work; Chris
+  Wallace and David Boulton's related minimum message length principle dates from 1968. Peter
+  Grünwald's The Minimum Description Length Principle (2007) is the standard modern treatment.
+year: 1978
+see_also:
+  - Kolmogorov complexity
+  - Occam's razor
+  - Solomonoff induction
+  - information theory
+  - model selection
+  - generalization
+sources:
+  - text: Rissanen, J. (1978). Modeling by Shortest Data Description. Automatica, 14(5).
+  - text: Grünwald, P. D. (2007). The Minimum Description Length Principle. MIT Press.

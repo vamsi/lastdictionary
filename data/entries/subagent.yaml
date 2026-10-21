@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: subagent
+id: subagent
+pos: n.
+also:
+  - sub-agent
+  - child agent
+  - worker agent
+domain: agents
+domains:
+  - eng
+level: core
+plain: >-
+  A helper AI agent that a main agent starts to handle one piece of a job; it works in its own
+  separate workspace and reports back a short summary when it is done.
+senses:
+  - definition: >-
+      An [[ai-agent|AI agent]] invoked by another agent to carry out a delegated subtask, usually
+      with its own system prompt, a restricted [[tool|tool]] set and
+      [[permission-system|permissions]], and a fresh [[context-window|context window]]. The parent
+      passes a task description; the subagent runs its own [[agent-loop|agent loop]] and returns
+      only a condensed result, so the search results, logs and file contents it read do not crowd
+      the parent's context. Subagents provide parallelism (several explore different leads at once),
+      specialization (a read-only code searcher, a reviewer, a test writer) and cheaper execution on
+      smaller models. Costs include extra tokens, detail lost in the hand-back summary, and
+      coordination errors such as duplicated or conflicting work, so harnesses typically cap nesting
+      depth. In Claude Code, for example, a subagent is a Markdown file whose YAML header sets its
+      name, description, tools and model.
+    example: Spin up a subagent to search the logs so the main session's context stays clean.
+origin: >-
+  Hierarchical delegation is old in [[multi-agent-system|multi-agent system]] research. For
+  language-model agents the word spread in 2025 with orchestrator–worker research systems —
+  Anthropic's June 2025 post described a lead agent spawning subagents — and with coding harnesses:
+  Claude Code added user-defined subagents on 24 July 2025 (version 1.0.60), and other coding agents
+  adopted similar features.
+year: 2025
+note: >-
+  Differs from a [[handoff|handoff]], in which control passes to another agent; a subagent works for
+  its caller and returns. Simon Willison dropped 'a goal set by a user' from his agent definition
+  partly because subagents pursue goals set by another model.
+see_also:
+  - orchestrator–worker pattern
+  - multi-agent system
+  - handoff
+  - context engineering
+  - harness
+  - agent loop
+contrast:
+  - handoff
+sources:
+  - text: >-
+      Anthropic (2025). How we built our multi-agent research system. Anthropic Engineering.
+    url: https://www.anthropic.com/engineering/multi-agent-research-system
+  - text: Anthropic. Create custom subagents. Claude Code documentation.
+    url: https://code.claude.com/docs/en/sub-agents
+as_of: 2026-10

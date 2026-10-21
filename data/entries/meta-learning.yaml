@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: meta-learning
+id: meta-learning
+pos: n.
+also:
+  - learning to learn
+  - metalearning
+domain: ml
+domains:
+  - dl
+  - rl
+level: core
+plain: >-
+  Training a system across many different tasks so that it gets better at learning itself, letting
+  it pick up a new task quickly from only a few examples.
+senses:
+  - definition: >-
+      Learning to learn: improving a learning algorithm's ability to acquire new tasks by training
+      across a distribution of related tasks rather than on a single one. Training is organized into
+      episodes, each a small task with its own training (support) and evaluation (query) examples,
+      and the meta-learner is optimized for performance after it has adapted to each task.
+      Approaches are commonly grouped as optimization-based, which learn an initialization or update
+      rule that adapts quickly by gradient descent, as in
+      [[model-agnostic-meta-learning|model-agnostic meta-learning]]; metric-based, which learn an
+      [[embedding|embedding]] space in which new classes are recognized by comparison with a few
+      labeled examples, as in matching and prototypical networks; and model-based, in which a
+      recurrent or attention-based network reads examples and adapts within its activations.
+      Meta-learning underlies much [[few-shot-learning|few-shot learning]] research, fast adaptation
+      in [[reinforcement-learning|reinforcement learning]], and [[automl|AutoML]] systems that use
+      results on past datasets to warm-start their searches. The [[in-context-learning|in-context
+      learning]] of [[large-language-model|large language models]] is often described as an
+      emergent, model-based form of meta-learning acquired during pretraining.
+    example: >-
+      After meta-learning on 500 related forecasting tasks, the model adapted to a new store from
+      just two weeks of data.
+origin: >-
+  Jürgen Schmidhuber's 1987 diploma thesis proposed self-referential systems that learn how to
+  learn, and Yoshua Bengio, Samy Bengio and Jocelyn Cloutier (1991) learned synaptic update rules;
+  Sebastian Thrun and Lorien Pratt's 1998 book Learning to Learn collected the early work. The
+  deep-learning revival came in 2016–2017 with memory-augmented networks, matching networks and
+  MAML.
+year: 1987
+note: >-
+  Elsewhere 'meta-learning' also names algorithm-selection research that predicts which method suits
+  a dataset, and, in education, learners' awareness of their own learning.
+see_also:
+  - few-shot learning
+  - model-agnostic meta-learning
+  - in-context learning
+  - transfer learning
+  - multi-task learning
+  - AutoML
+  - hypernetwork
+sources:
+  - text: >-
+      Schmidhuber, J. (1987). Evolutionary Principles in Self-Referential Learning. Diploma thesis,
+      Technische Universität München.
+  - text: "Thrun, S. & Pratt, L. (eds.) (1998). Learning to Learn. Boston: Kluwer Academic."
+  - text: >-
+      Hospedales, T., Antoniou, A., Micaelli, P. & Storkey, A. (2022). Meta-Learning in Neural
+      Networks: A Survey. IEEE Transactions on Pattern Analysis and Machine Intelligence 44(9).

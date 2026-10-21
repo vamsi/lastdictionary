@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gender Shades
+id: gender-shades
+pos: prop. n.
+also:
+  - Gender Shades study
+  - Gender Shades project
+domain: society
+domains:
+  - percep
+  - eval
+level: core
+plain: >-
+  A 2018 study showing that commercial face-analysis software guessed the gender of darker-skinned
+  women far less accurately than that of lighter-skinned men.
+senses:
+  - definition: >-
+      An audit study by Joy Buolamwini and Timnit Gebru that tested commercial gender-classification
+      services from Microsoft, IBM and Face++ on a new benchmark, the Pilot Parliaments Benchmark:
+      1,270 photographs of members of parliament from three African and three Nordic countries,
+      labeled by gender and by Fitzpatrick skin type. Error rates were at most 0.8% for
+      lighter-skinned men but reached 34.7% for darker-skinned women, and every system performed
+      worst on that intersection. The study showed that aggregate accuracy can hide subgroup
+      failures, popularized intersectional evaluation (reporting results for combinations of
+      attributes) and demonstrated that public audits can change industry practice: the vendors
+      released improved versions within months.
+    example: >-
+      Gender Shades is why we report accuracy for every skin-type and gender subgroup, not just the
+      headline number.
+origin: >-
+  Grew out of Buolamwini's research at the MIT Media Lab and was published at the first Conference
+  on Fairness, Accountability and Transparency (FAT*, February 2018). A follow-up, 'Actionable
+  Auditing' (Inioluwa Deborah Raji and Buolamwini, 2019), found that the audited firms had narrowed
+  their gaps, while newly audited Amazon and Kairos showed similar disparities.
+year: 2018
+note: >-
+  The study measured binary gender classification, not identification of individuals, and its gender
+  labels were themselves binary, limits later critics and the authors acknowledged. It influenced
+  the 2020 decisions of several firms to pause or end sales of facial recognition to police.
+see_also:
+  - Joy Buolamwini
+  - Timnit Gebru
+  - facial recognition
+  - algorithmic bias
+  - AI audit
+  - group fairness
+sources:
+  - text: >-
+      Buolamwini, J. & Gebru, T. (2018). Gender Shades: Intersectional Accuracy Disparities in
+      Commercial Gender Classification. Proceedings of Machine Learning Research 81 (FAT* 2018),
+      77–91.
+    url: https://proceedings.mlr.press/v81/buolamwini18a.html
+  - text: >-
+      Raji, I. D. & Buolamwini, J. (2019). Actionable Auditing: Investigating the Impact of Publicly
+      Naming Biased Performance Results of Commercial AI Products. Proc. AIES 2019.

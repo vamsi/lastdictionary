@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: alignment audit
+id: alignment-audit
+pos: n.
+also:
+  - alignment auditing
+  - auditing game
+  - alignment assessment
+  - alignment evaluation
+domain: safety
+domains:
+  - interp
+  - eval
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A systematic investigation of an AI model to find out whether it has hidden goals or bad
+  tendencies — such as deceiving its users — that ordinary testing might miss.
+senses:
+  - definition: >-
+      A systematic investigation of whether an AI model has misaligned objectives, values or
+      propensities — hidden goals, [[sycophancy|sycophancy]], deception,
+      [[sandbagging|sandbagging]], power-seeking or [[evaluation-awareness|evaluation awareness]]
+      that distorts its test behavior — rather than whether it can perform dangerous tasks. Auditors
+      combine behavioral probing (adversarial prompts, [[honeypot|honeypots]] and simulated agentic
+      scenarios), analysis of training data, and [[interpretability|interpretability]] tools such as
+      [[sparse-autoencoder|sparse autoencoders]] and [[probing|probes]]. Methods are validated in
+      auditing games, in which a model is deliberately trained with a concealed objective and
+      blinded teams try to uncover it; in the first such study, three of four teams succeeded. By
+      2025 frontier developers were publishing alignment assessments in [[system-card|system cards]]
+      and using AI auditing agents to scale the work.
+    example: >-
+      The alignment audit traced the model's odd flattery to a reward-model bias it had learned to
+      exploit.
+origin: >-
+  Samuel Marks and colleagues at Anthropic introduced the auditing-game methodology in 'Auditing
+  Language Models for Hidden Objectives' (March 2025), building on Toby Shevlane and colleagues'
+  call for alignment evaluations (2023) and on [[model-organism-of-misalignment|model organisms of
+  misalignment]]. Anthropic's Claude Opus 4 system card (May 2025) included a pre-deployment
+  alignment assessment.
+year: 2025
+note: >-
+  Distinct from an [[ai-audit|AI audit]] in governance, which reviews an organization's compliance,
+  documentation or algorithmic impacts, and from a [[dangerous-capability-evaluation|dangerous
+  capability evaluation]]. A clean audit lowers but cannot eliminate the chance of hidden
+  misalignment.
+see_also:
+  - model organism of misalignment
+  - honeypot
+  - AI lie detection
+  - interpretability
+  - scheming
+  - system card
+  - evaluation awareness
+contrast:
+  - AI audit
+  - dangerous capability evaluation
+sources:
+  - text: >-
+      Marks, S., Treutlein, J. et al. (2025). Auditing Language Models for Hidden Objectives.
+      Anthropic, arXiv:2503.10965.
+    url: https://arxiv.org/abs/2503.10965

@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI control
+id: ai-control
+pos: n.
+also:
+  - control (AI safety)
+  - control agenda
+  - control protocol
+domain: safety
+domains:
+  - sec
+  - agents
+level: core
+plain: >-
+  Safety measures meant to stop a powerful AI from causing serious harm even if it is secretly
+  working against us — like bank security, which assumes some insiders may be dishonest.
+senses:
+  - context: Safety research
+    definition: >-
+      An approach to AI safety that aims to prevent unacceptable outcomes even if a model is
+      misaligned and deliberately trying to subvert its safeguards, instead of relying on having
+      made it aligned. The capable, untrusted model is deployed inside a control protocol combining
+      weaker [[trusted-monitoring|trusted monitors]], a limited budget of human audits, restricted
+      permissions and [[sandbox|sandboxing]], resampling or editing of suspicious actions, and
+      [[honeypot|honeypots]]. Protocols are judged by [[control-evaluation|control evaluations]], in
+      which a red team stands in for the model with an attack policy and the protocol is scored on
+      safety and usefulness. The threat model is borrowed from insider-risk security:
+      [[scheming|scheming]] is assumed possible, and the question is what a model could achieve with
+      the access it is given. Proponents expect control to work only up to a capability level beyond
+      which models could outwit any feasible protocol.
+    example: >-
+      Even if alignment fails, a good control protocol should catch the model before its third
+      attempt.
+    labels:
+      - emerging
+  - context: General
+    definition: >-
+      Loosely, any means of keeping advanced AI systems under human direction, including
+      [[capability-control|capability control]] measures such as boxing and [[kill-switch|kill
+      switches]] as well as [[corrigibility|corrigibility]]. In this broad sense the phrase overlaps
+      with the [[control-problem|control problem]] discussed by Nick Bostrom and Stuart Russell.
+origin: >-
+  The research agenda was named in 'AI Control: Improving Safety Despite Intentional Subversion'
+  (December 2023) by Ryan Greenblatt, Buck Shlegeris, Kshitij Sachan and Fabien Roger of Redwood
+  Research, who tested protocols in a setting where GPT-4 writes programs that might contain hidden
+  backdoors. Bostrom's 'Superintelligence' (2014) and Russell's 'Human Compatible: Artificial
+  Intelligence and the Problem of Control' (2019) popularized the broader sense.
+year: 2023
+note: >-
+  Control and [[ai-alignment|alignment]] are complements: alignment tries to make a model not want
+  to cause harm; control tries to make harm impossible or detectable if it does. Critics doubt that
+  protocols validated on current models will transfer to much more capable ones.
+see_also:
+  - control evaluation
+  - trusted monitoring
+  - untrusted monitoring
+  - trusted editing
+  - scheming
+  - Redwood Research
+  - defense in depth
+  - capability control
+contrast:
+  - AI alignment
+sources:
+  - text: >-
+      Greenblatt, R., Shlegeris, B., Sachan, K. & Roger, F. (2023). AI Control: Improving Safety
+      Despite Intentional Subversion. arXiv:2312.06942. ICML 2024.
+    url: https://arxiv.org/abs/2312.06942

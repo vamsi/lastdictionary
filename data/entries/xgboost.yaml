@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: XGBoost
+id: xgboost
+pos: prop. n.
+also:
+  - eXtreme Gradient Boosting
+pronunciation: EKS-jee-boost
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  A fast, free software tool that makes predictions by adding up hundreds of small decision trees,
+  each one fixing the mistakes of those before it. For years it was behind many winning entries in
+  competitions on spreadsheet-style data.
+senses:
+  - definition: >-
+      An open-source library implementing [[gradient-boosting|gradient boosting]] of
+      [[decision-tree|decision trees]] ('eXtreme Gradient Boosting'). It builds an additive ensemble
+      of trees by optimizing a regularized objective with a second-order (Newton-style)
+      approximation: each new tree is grown using both the gradient and the [[hessian|Hessian]] of
+      the loss with respect to the current predictions, while penalties on the number of leaves and
+      on leaf weights curb [[overfitting|overfitting]]. Engineering choices — sparsity-aware splits
+      that learn a default direction for missing values, a weighted quantile sketch for approximate
+      split finding, column subsampling, cache-aware and out-of-core computation, and distributed
+      and GPU training — made it markedly faster and more scalable than earlier implementations.
+      With [[lightgbm|LightGBM]] and [[catboost|CatBoost]], it remains a default strong baseline for
+      [[tabular-data|tabular data]].
+    example: Before trying a neural network on the churn table, fit an XGBoost baseline.
+origin: >-
+  Begun in 2014 by Tianqi Chen, then a PhD student at the University of Washington, as a research
+  project in the Distributed (Deep) Machine Learning Community (DMLC). It became widely known after
+  the 2014 Higgs Boson Machine Learning Challenge on Kaggle, where it was popular among leading
+  teams, and Chen and Carlos Guestrin's KDD 2016 paper reported its use in 17 of the 29 winning
+  solutions published on Kaggle's blog in 2015.
+year: 2014
+note: >-
+  Not a new algorithm but a highly optimized system for gradient boosting. On images, text and
+  audio, deep neural networks dominate; on tabular data, boosted trees often match or beat them.
+see_also:
+  - gradient boosting
+  - decision tree
+  - random forest
+  - ensemble learning
+  - LightGBM
+  - CatBoost
+  - Kaggle
+contrast:
+  - deep learning
+sources:
+  - text: >-
+      Chen, T. & Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. Proceedings of KDD
+      2016.
+    url: https://arxiv.org/abs/1603.02754

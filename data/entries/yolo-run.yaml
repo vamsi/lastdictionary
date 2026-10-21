@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: YOLO run
+id: yolo-run
+pos: n.
+also:
+  - YOLO training run
+pronunciation: YOH-loh run
+domain: train
+domains:
+  - culture
+labels:
+  - slang
+  - emerging
+level: specialist
+plain: >-
+  Slang for launching a big, expensive training run without the usual careful small-scale tests
+  first — changing many things at once and trusting experience and instinct that it will work. YOLO
+  means 'you only live once'.
+senses:
+  - definition: >-
+      A large [[training-run|training run]] launched with little or no systematic de-risking — few
+      or no ablations, [[hyperparameter-tuning|hyperparameter sweeps]] or
+      [[scaling-laws|scaling-law]] extrapolations — often changing several variables at once and
+      relying on researchers' intuition. YOLO runs trade the safety of the standard recipe (many
+      small proxy runs, then a carefully extrapolated main run) for speed and lower experimentation
+      cost; they are associated with compute-poor startups and deadline pressure, and their success
+      depends heavily on a team's prior experience narrowing the search space. The phrase is also
+      used for a lab's decision to commit most of its compute to an untested configuration at the
+      frontier.
+    example: >-
+      We had budget for one shot at the 20B model, so it was a YOLO run with the new tokenizer and
+      optimizer.
+origin: >-
+  Practitioner slang built on 'YOLO' ('you only live once'). It was popularized by Yi Tay,
+  co-founder of Reka, whose blog post of 6 March 2024 on training models at a startup said the team
+  'had to work with many Yolo runs' guided by gut feeling, and by a July 2024 Latent Space podcast
+  episode with him; earlier informal use in labs is likely but undocumented.
+year: 2024
+see_also:
+  - training run
+  - scaling laws
+  - hyperparameter tuning
+  - GPU poor
+  - compute budget
+sources:
+  - text: >-
+      Tay, Y. (2024). Training great LLMs entirely from ground zero in the wilderness as a startup.
+      Personal blog, 6 March 2024.
+    url: https://www.yitay.net/blog/training-great-llms-entirely-from-ground-zero-in-the-wilderness

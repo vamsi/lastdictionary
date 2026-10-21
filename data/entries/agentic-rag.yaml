@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agentic RAG
+id: agentic-rag
+pos: n.
+also:
+  - agentic retrieval
+  - agentic retrieval-augmented generation
+  - agentic search
+domain: agents
+domains:
+  - eng
+  - llm
+labels:
+  - emerging
+level: core
+plain: >-
+  Retrieval in which the AI runs its own research: it decides what to search for, looks at the
+  results, searches again if needed, and only then answers.
+senses:
+  - definition: >-
+      A form of [[retrieval-augmented-generation|retrieval-augmented generation]] in which retrieval
+      is directed by an [[ai-agent|agent]] rather than a fixed retrieve-then-generate pipeline. The
+      model decides whether retrieval is needed, formulates and reformulates queries
+      ([[query-rewriting|query rewriting]]), chooses among tools and sources (vector index, keyword
+      search, web search, SQL, APIs), reads results, judges whether they suffice, follows leads
+      across several hops, and stops when it can answer, often with [[citation|citations]].
+      Implementations range from a single model in an [[agent-loop|agent loop]] with search tools,
+      as in [[react|ReAct]], to routers and multi-agent set-ups with planners, retrievers and
+      verifiers; models can also be trained with [[reinforcement-learning|reinforcement learning]]
+      to search well. Agentic RAG handles multi-step and ambiguous questions better than one-shot
+      retrieval, at the cost of more latency, more tokens and more opportunities for error;
+      [[deep-research|deep research]] systems are a long-horizon version.
+    example: >-
+      Agentic RAG let the assistant notice that its first search missed the 2025 filings and run a
+      narrower second query.
+origin: >-
+  Interleaving reasoning with retrieval was explored in 2022–2023 (Self-Ask, ReAct,
+  Demonstrate-Search-Predict, Self-RAG), and Search-R1 (2025) trained models to search with
+  reinforcement learning. The label 'agentic RAG' spread in 2024 through framework and
+  vector-database tutorials; a January 2025 survey by Aditi Singh and colleagues helped settle its
+  definition.
+year: 2024
+see_also:
+  - retrieval-augmented generation
+  - AI agent
+  - tool use
+  - query rewriting
+  - deep research
+  - just-in-time retrieval
+  - ReAct
+contrast:
+  - retrieval-augmented generation
+sources:
+  - text: >-
+      Singh, A., Ehtesham, A., Kumar, S. & Talaei Khoei, T. (2025). Agentic Retrieval-Augmented
+      Generation: A Survey on Agentic RAG. arXiv:2501.09136.
+    url: https://arxiv.org/abs/2501.09136
+  - text: >-
+      Jin, B., Zeng, H., Yue, Z., Yoon, J., Arik, S., Wang, D., Zamani, H. & Han, J. (2025).
+      Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning.
+      arXiv:2503.09516.
+    url: https://arxiv.org/abs/2503.09516
+  - text: >-
+      Khattab, O., Santhanam, K., Li, X. L., Hall, D., Liang, P., Potts, C. & Zaharia, M. (2022).
+      Demonstrate-Search-Predict: Composing retrieval and language models for knowledge-intensive
+      NLP. arXiv:2212.14024.
+    url: https://arxiv.org/abs/2212.14024
+as_of: 2026-10

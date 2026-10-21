@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPQA
+id: gpqa
+pos: prop. n.
+also:
+  - Graduate-Level Google-Proof Q&A
+  - GPQA Diamond
+domain: eval
+domains:
+  - llm
+  - safety
+level: core
+plain: >-
+  A set of very hard multiple-choice science questions written by PhD-level experts, designed so
+  that looking things up online does not help much: capable non-specialists with web access still
+  mostly fail.
+senses:
+  - definition: >-
+      A benchmark of 448 multiple-choice questions in biology, physics and chemistry, each written
+      and checked by people who hold or are working toward a PhD in the field, and built to resist
+      lookup ('Google-proof'). Skilled validators from outside a question's field, free to search
+      the web and averaging more than half an hour per question, got only 34% right, against 65% for
+      specialists in the field (74% once errors they later conceded are set aside); at release the
+      best baseline, built on [[gpt-4|GPT-4]], reached 39%. GPQA Diamond, a 198-question subset that
+      expert validators answered correctly and most non-experts missed, became the standard version
+      in model reports. In September 2024 OpenAI reported 77% for its o1 [[reasoning-model|reasoning
+      model]], above a panel of PhD experts it had recruited, and by 2026 the benchmark was nearing
+      [[benchmark-saturation|saturation]]. The authors designed it partly as a testbed for
+      [[scalable-oversight|scalable oversight]], in which non-experts must supervise systems that
+      know more than they do.
+    example: >-
+      The model scores 87% on GPQA Diamond, above the PhD-expert baseline, yet still botches simple
+      lab protocols.
+origin: >-
+  Introduced by David Rein, Betty Li Hou, Asa Cooper Stickland, Jackson Petty, Richard Yuanzhe Pang,
+  Julien Dirani, Julian Michael and Samuel R. Bowman, mainly at New York University, on arXiv in
+  November 2023; it was presented at the first Conference on Language Modeling (COLM) in 2024.
+year: 2023
+note: >-
+  Beating the expert baseline means outperforming PhD-level people answering under time limits,
+  often outside their exact specialty; it does not show that a model can do research. The authors
+  ask that examples not be posted online in plain text.
+see_also:
+  - benchmark
+  - MMLU
+  - Humanity's Last Exam
+  - scalable oversight
+  - reasoning model
+  - benchmark saturation
+sources:
+  - text: >-
+      Rein, D., Hou, B. L., Stickland, A. C., Petty, J., Pang, R. Y., Dirani, J., Michael, J. &
+      Bowman, S. R. (2023). GPQA: A Graduate-Level Google-Proof Q&A Benchmark. arXiv:2311.12022.
+    url: https://arxiv.org/abs/2311.12022
+  - text: OpenAI (2024). Learning to Reason with LLMs.
+    url: https://openai.com/index/learning-to-reason-with-llms/
+as_of: 2026-10

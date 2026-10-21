@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hierarchical reasoning model
+id: hierarchical-reasoning-model
+pos: n.
+also:
+  - HRM
+domain: dl
+domains:
+  - eval
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A small, brain-inspired AI model that solves puzzles with two linked parts — a slow planner and a
+  fast worker — instead of writing out its reasoning in words.
+senses:
+  - definition: >-
+      A small recurrent network for puzzle-like reasoning that couples two modules ticking at
+      different rates, loosely modeled on the brain's layered timescales: a slow module that revises
+      an overall plan only occasionally, and a fast module that runs many quick refinement steps
+      beneath it, converging before each slow update. All the reasoning happens inside its hidden
+      states during one forward pass, with no written [[chain-of-thought|chain of thought]], and it
+      was trained from scratch on task examples alone, with no pretraining or chain-of-thought
+      supervision. Its authors reported that a 27-million-parameter version, given about 1,000
+      examples per task, solved extremely hard Sudoku almost perfectly, found optimal routes through
+      large mazes and outscored far bigger language models on [[arc-agi|ARC-AGI]]. Later analyses,
+      including one by the ARC Prize organizers, attributed much of its performance to iterative
+      refinement and data augmentation rather than to the hierarchy itself.
+    example: >-
+      The hierarchical reasoning model solved the maze in one forward pass, without a single
+      reasoning token.
+origin: >-
+  Introduced by Guan Wang, Jin Li, Yuhao Sun, Xing Chen, Changling Liu, Yue Wu, Meng Lu, Sen Song
+  and Yasin Abbasi Yadkori (Sapient Intelligence, with Tsinghua University collaborators) in a paper
+  posted to arXiv on 26 June 2025, drawing on the brain's hierarchical, multi-timescale processing.
+year: 2025
+see_also:
+  - tiny recursive model
+  - latent reasoning
+  - recurrent neural network
+  - ARC-AGI
+  - chain of thought
+  - System 1 and System 2
+sources:
+  - text: >-
+      Wang, G., Li, J., Sun, Y., Chen, X., Liu, C., Wu, Y., Lu, M., Song, S. & Abbasi Yadkori, Y.
+      (2025). Hierarchical Reasoning Model. arXiv:2506.21734.
+    url: https://arxiv.org/abs/2506.21734
+as_of: 2026-10

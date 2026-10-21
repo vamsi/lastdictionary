@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: perceptual loss
+id: perceptual-loss
+pos: n.
+also:
+  - feature reconstruction loss
+  - VGG loss
+  - content loss
+  - LPIPS
+  - learned perceptual image patch similarity
+domain: gen
+domains:
+  - dl
+  - eval
+level: specialist
+plain: >-
+  A way of judging how different two images look to a person by comparing what a trained
+  image-recognition network 'sees' in each, instead of comparing pixels one by one.
+senses:
+  - definition: >-
+      A loss or distance between images computed on the internal [[feature-map|feature maps]] of a
+      pretrained network (classically VGG) rather than on raw pixels. Pixel-wise losses such as
+      [[mean-squared-error|mean squared error]] heavily penalize small misalignments and reward
+      blurry averages; feature-space losses compare edges, textures and object parts instead, so
+      networks trained with them produce sharper, more natural images. Perceptual losses are used in
+      [[style-transfer|style transfer]], [[super-resolution|super-resolution]] and the training of
+      the autoencoders behind [[vqgan|VQGAN]] and [[latent-diffusion-model|latent diffusion]]. LPIPS
+      (learned perceptual image patch similarity) calibrates such feature distances against large
+      sets of human similarity judgments and is widely used both as a training loss and as an
+      evaluation metric; it agrees with human perception far better than traditional measures such
+      as PSNR and SSIM.
+origin: >-
+  Feature-based image losses appeared in 2015–2016, including Gatys and colleagues' style transfer
+  and Alexey Dosovitskiy and Thomas Brox's deep perceptual similarity metrics; Justin Johnson,
+  Alexandre Alahi and Li Fei-Fei popularized the name in 'Perceptual Losses for Real-Time Style
+  Transfer and Super-Resolution' (ECCV 2016). Richard Zhang and colleagues introduced LPIPS in 2018.
+year: 2016
+see_also:
+  - style transfer
+  - super-resolution
+  - VQGAN
+  - loss function
+  - feature map
+  - Fréchet inception distance
+sources:
+  - text: >-
+      Johnson, J., Alahi, A. & Fei-Fei, L. (2016). Perceptual Losses for Real-Time Style Transfer
+      and Super-Resolution. ECCV 2016.
+  - text: >-
+      Zhang, R., Isola, P., Efros, A. A., Shechtman, E. & Wang, O. (2018). The Unreasonable
+      Effectiveness of Deep Features as a Perceptual Metric. CVPR 2018.

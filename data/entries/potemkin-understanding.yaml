@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Potemkin understanding
+id: potemkin-understanding
+pos: n.
+also:
+  - potemkin
+  - potemkins
+domain: culture
+domains:
+  - eval
+  - llm
+  - mind
+labels:
+  - figurative
+  - emerging
+level: specialist
+plain: >-
+  When an AI can correctly explain a concept yet cannot use it properly, revealing that its apparent
+  understanding is a facade — like the fake village fronts said to have been built to impress a
+  Russian empress.
+senses:
+  - definition: >-
+      A failure mode, proposed in a 2025 study of [[large-language-model|large language models]], in
+      which a model answers the questions that would show understanding of a concept in a person —
+      typically by giving a correct definition — but then applies the concept in ways no person who
+      could give that definition would, for instance explaining a rhyme scheme correctly and then
+      writing a poem that breaks it. Its authors' point is that a test built for people licenses
+      conclusions about a model only if the model errs the way people do; otherwise a high score may
+      certify a facade. With tests that ask a model both to explain a concept and to use it, they
+      found such 'potemkins' pervasive in the models and domains they examined, and traced them to
+      internally inconsistent concept representations rather than simply to missing knowledge.
+    example: >-
+      It aced the definitions quiz, then misapplied every definition — textbook Potemkin
+      understanding.
+origin: >-
+  Introduced by Marina Mancoridis, Bec Weeks, Keyon Vafa and Sendhil Mullainathan in 'Potemkin
+  Understanding in Large Language Models', posted to arXiv in June 2025. The name alludes to
+  'Potemkin villages', sham settlements supposedly erected to impress Empress Catherine II on her
+  1787 tour of Crimea — a story historians regard as largely legend.
+year: 2025
+note: >-
+  Not the same as [[hallucination|hallucination]], which concerns false statements; a potemkin can
+  pair entirely true statements about a concept with incoherent use of it. Related to the
+  [[stochastic-parrot|stochastic parrot]] debate, though the authors make a narrower, testable
+  claim.
+see_also:
+  - jagged intelligence
+  - stochastic parrot
+  - benchmark
+  - fancy autocomplete
+  - Clever Hans effect
+  - hallucination
+sources:
+  - text: >-
+      Mancoridis, M., Weeks, B., Vafa, K. & Mullainathan, S. (2025). Potemkin Understanding in Large
+      Language Models. arXiv:2506.21521.
+    url: https://arxiv.org/abs/2506.21521

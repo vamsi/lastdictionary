@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SimpleQA
+id: simpleqa
+pos: prop. n.
+also:
+  - SimpleQA Verified
+domain: eval
+domains:
+  - llm
+  - safety
+level: core
+plain: >-
+  A quiz of about 4,300 brief factual questions, each with exactly one correct and stable answer,
+  used to measure how often an AI gets facts right — and whether it admits when it does not know.
+senses:
+  - definition: >-
+      A benchmark of 4,326 brief factual questions that tests the short-form
+      [[factuality|factuality]] of language models answering from memory; every question has one
+      correct answer that is beyond dispute and should stay true over time. Topics include science,
+      politics, art, sport and geography. To make the set hard, AI trainers wrote questions that
+      contemporary GPT models got wrong; a second trainer then answered each independently, and only
+      questions on which the two agreed were kept, for an estimated error rate of about 3%. A
+      model-based grader sorts every response into correct, incorrect or not attempted, so a model
+      can earn credit for [[abstention|abstention]] when unsure, not only for accuracy, and
+      comparing stated confidence with accuracy yields a measure of [[calibration|calibration]]. At
+      release GPT-4o answered fewer than 40% correctly. Because the answers are easy to look up,
+      SimpleQA measures [[parametric-knowledge|parametric knowledge]]; with web search enabled,
+      scores approach the ceiling.
+    example: >-
+      The smaller model gets fewer SimpleQA questions right but abstains far more often, so it
+      hallucinates less.
+origin: >-
+  Introduced by Jason Wei, Karina Nguyen, Hyung Won Chung and colleagues at OpenAI on 30 October
+  2024 in 'Measuring short-form factuality in large language models'. Google DeepMind later released
+  a cleaned 1,000-question version, SimpleQA Verified (2025).
+year: 2024
+note: >-
+  It measures recall of isolated facts, not the accuracy of long answers; a model can score well on
+  SimpleQA and still [[hallucination|hallucinate]] in long-form writing.
+see_also:
+  - factuality
+  - hallucination
+  - abstention
+  - calibration
+  - TruthfulQA
+  - parametric knowledge
+  - BrowseComp
+sources:
+  - text: >-
+      Wei, J., Nguyen, K., Chung, H. W. et al. (2024). Measuring short-form factuality in large
+      language models. arXiv:2411.04368.
+    url: https://arxiv.org/abs/2411.04368
+  - text: OpenAI (2024). Introducing SimpleQA.
+    url: https://openai.com/index/introducing-simpleqa/

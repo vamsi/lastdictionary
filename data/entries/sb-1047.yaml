@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SB 1047
+id: sb-1047
+pos: prop. n.
+also:
+  - Safe and Secure Innovation for Frontier Artificial Intelligence Models Act
+  - California Senate Bill 1047
+domain: gov
+domains:
+  - safety
+  - hist
+labels:
+  - historical
+level: core
+plain: >-
+  A 2024 California bill that would have required makers of the biggest AI models to adopt safety
+  plans and take care to prevent catastrophes. It passed the legislature, but the governor vetoed
+  it.
+senses:
+  - definition: >-
+      A California bill, the Safe and Secure Innovation for Frontier Artificial Intelligence Models
+      Act, that would have imposed safety duties on developers of the largest
+      [[frontier-model|frontier models]]. As passed, it covered models trained with more than 10²⁶
+      integer or floating-point operations at a compute cost above $100 million, plus large
+      fine-tunes of them, and required developers, before training, to adopt a written safety and
+      security protocol, be able to enact a full shutdown (the so-called [[kill-switch|kill
+      switch]]), secure model weights and take reasonable care against 'critical harms' — mass
+      casualties from [[cbrn-risk|CBRN weapons]], or at least $500 million in damage from
+      cyberattacks on critical infrastructure or from a model acting autonomously. From 2026 it
+      would have required annual third-party audits. It also protected
+      [[ai-whistleblower-protections|whistleblowers]], let the Attorney General sue for violations
+      and proposed a public computing cluster, CalCompute. Governor Gavin Newsom vetoed it on
+      September 29, 2024.
+    example: >-
+      Under SB 1047, a covered developer would have needed a shutdown capability before training
+      began.
+origin: >-
+  Introduced in February 2024 by State Senator Scott Wiener and passed in August 2024 after
+  amendments that dropped a planned new state agency and narrowed liability. It split the field:
+  Geoffrey Hinton and Yoshua Bengio backed it, and Anthropic, after amendments, judged that its
+  benefits likely outweighed its costs; OpenAI, Meta, Google, many venture investors and
+  Representative Nancy Pelosi opposed it. Newsom's veto message argued that coverage based on model
+  size could give a false sense of security.
+year: 2024
+note: >-
+  After the veto Newsom commissioned an expert report on frontier AI policy (2025) whose
+  transparency-first approach shaped the narrower [[sb-53|SB 53]], signed in 2025. The fight over SB
+  1047 made [[compute-threshold|compute thresholds]] and developer liability central questions in US
+  state AI law.
+see_also:
+  - SB 53
+  - RAISE Act
+  - compute threshold
+  - frontier model
+  - kill switch
+  - AI liability
+  - responsible scaling policy
+sources:
+  - text: >-
+      California Legislature (2024). SB-1047 Safe and Secure Innovation for Frontier Artificial
+      Intelligence Models Act; Governor's veto message, September 29, 2024.

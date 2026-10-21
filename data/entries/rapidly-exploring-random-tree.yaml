@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rapidly exploring random tree
+id: rapidly-exploring-random-tree
+pos: n.
+also:
+  - RRT
+  - RRT*
+  - RRT-Connect
+domain: robot
+domains:
+  - sym
+  - math
+level: specialist
+plain: >-
+  A planning method that grows a branching tree of random moves outward from the robot's starting
+  position, spreading quickly into open space until a branch reaches the goal.
+senses:
+  - definition: >-
+      A sampling-based [[motion-planning|motion planning]] algorithm that incrementally builds a
+      tree of collision-free configurations rooted at the start. At each iteration it samples a
+      random configuration, finds the nearest node already in the tree, extends from that node a
+      short step toward the sample, and adds the new node if the connecting motion is
+      collision-free. Because nodes on the frontier of explored space are the likeliest to be
+      nearest to a random sample, the tree keeps reaching into the biggest stretches of space it has
+      not yet visited. RRTs need only a collision checker and a way to extend motions, so they
+      handle high-dimensional [[configuration-space|configuration spaces]] and kinodynamic
+      constraints such as a car's steering limits. They are probabilistically complete but return
+      jagged, suboptimal paths that are usually smoothed afterward. Variants include RRT-Connect,
+      which grows trees from start and goal toward each other, and RRT*, which rewires the tree so
+      that path cost converges to the optimum as samples increase. RRT-family planners are standard
+      in open-source motion-planning libraries.
+    example: >-
+      RRT-Connect finds a path for the arm in about 50 milliseconds; then we shortcut and smooth it.
+origin: >-
+  Introduced by Steven M. LaValle in an October 1998 Iowa State University technical report,
+  'Rapidly-Exploring Random Trees: A New Tool for Path Planning', and developed with James Kuffner
+  (RRT-Connect, 2000; 'Randomized Kinodynamic Planning', 2001). Sertac Karaman and Emilio Frazzoli
+  introduced the asymptotically optimal RRT* in 2010–2011.
+year: 1998
+see_also:
+  - motion planning
+  - probabilistic roadmap
+  - configuration space
+  - path planning
+  - trajectory optimization
+contrast:
+  - probabilistic roadmap
+sources:
+  - text: >-
+      LaValle, S. M. (1998). Rapidly-exploring random trees: A new tool for path planning. Technical
+      Report TR 98-11, Computer Science Department, Iowa State University.
+  - text: >-
+      Karaman, S. & Frazzoli, E. (2011). Sampling-based algorithms for optimal motion planning.
+      International Journal of Robotics Research 30(7), 846–894.

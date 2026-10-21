@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ensemble learning
+id: ensemble-learning
+pos: n.
+also:
+  - ensemble
+  - ensemble method
+  - model ensemble
+  - ensembling
+  - committee machine
+  - voting classifier
+  - deep ensemble
+  - model averaging
+domain: ml
+domains:
+  - dl
+level: core
+plain: >-
+  Combining the predictions of several models — by voting or averaging — so their individual
+  mistakes partly cancel out, giving more accurate and stable results than any one model.
+senses:
+  - definition: >-
+      The practice of training multiple models (base learners) and combining their predictions — by
+      majority or weighted voting, averaging of scores or probabilities, or a learned combiner — so
+      that the combination is more accurate, more robust or better at estimating uncertainty than
+      its members individually. Ensembles work when members are individually competent and make
+      diverse, partly uncorrelated errors. Diversity is induced by resampling the data
+      ([[bagging|bagging]]), randomizing features or splits ([[random-forest|random forests]]),
+      training sequentially on errors ([[boosting|boosting]]), combining different algorithms
+      ([[stacking|stacking]]) or, for neural networks, varying random initializations (deep
+      ensembles). Averaging mainly reduces variance; boosting mainly reduces bias. Disagreement
+      among members is a common practical estimate of predictive uncertainty. The costs are extra
+      computation and memory and a loss of interpretability; [[knowledge-distillation|knowledge
+      distillation]] can compress an ensemble into one model.
+    example: >-
+      Averaging five seeds of the same network gave a cheap ensemble and better-calibrated
+      probabilities.
+origin: >-
+  Combining independent judgments has old roots, such as Condorcet's 1785 jury theorem. In machine
+  learning, Lars Hansen and Peter Salamon's 'Neural Network Ensembles' (1990), David Wolpert's
+  stacking (1992), Leo Breiman's bagging (1994–1996) and the boosting work of Robert Schapire and
+  Yoav Freund (1990–1997) established the field. Large blends won the Netflix Prize in 2009.
+year: 1990
+note: >-
+  Not to be confused with [[mixture-of-experts|mixture of experts]], which routes each input to a
+  few specialized sub-networks inside one model, or with [[model-merging|model merging]], which
+  averages weights rather than predictions.
+see_also:
+  - bagging
+  - boosting
+  - random forest
+  - stacking
+  - knowledge distillation
+  - Netflix Prize
+contrast:
+  - mixture of experts
+  - model merging
+sources:
+  - text: >-
+      Hansen, L. K. & Salamon, P. (1990). Neural Network Ensembles. IEEE Transactions on Pattern
+      Analysis and Machine Intelligence, 12(10), 993–1001.
+  - text: >-
+      Dietterich, T. G. (2000). Ensemble Methods in Machine Learning. In Multiple Classifier Systems
+      (LNCS 1857), 1–15. Springer.

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI worm
+id: ai-worm
+pos: n.
+also:
+  - GenAI worm
+  - Morris II
+  - prompt worm
+  - self-replicating prompt
+domain: sec
+domains:
+  - agents
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Malicious instructions that spread by themselves from one AI assistant to another — for example,
+  an email that makes an AI email assistant send copies of the same trick to new people.
+senses:
+  - definition: >-
+      Self-propagating malicious content that spreads between AI-powered applications or
+      [[ai-agent|agents]] by exploiting [[prompt-injection|prompt injection]]. A self-replicating
+      prompt causes a model that processes it to reproduce the prompt in its output and to carry out
+      a payload, such as exfiltrating data or sending messages; when outputs flow on to other users'
+      assistants — through email, shared documents or retrieval databases — the infection spreads
+      without any user action ('zero-click'). The concept, so far demonstrated mainly in research
+      settings, shows how interconnected [[agentic-ai|agentic]] systems inherit the classic worm
+      threat. Defenses include stopping assistants from acting on instructions found in received
+      content, detecting outputs that replicate their inputs, and limiting automatic forwarding and
+      tool access.
+    example: >-
+      In the test network, the AI worm spread from one inbox to the assistants of all five
+      recipients within minutes.
+origin: >-
+  Stav Cohen, Ron Bitton and Ben Nassi named their research worm 'Morris II', after the 1988 Morris
+  worm, in a March 2024 paper demonstrating zero-click propagation through generative-AI email
+  assistants that used retrieval-augmented generation.
+year: 2024
+see_also:
+  - indirect prompt injection
+  - prompt injection
+  - AI-enabled cyberattack
+  - agentic AI
+  - retrieval-augmented generation
+sources:
+  - text: >-
+      Cohen, S., Bitton, R. & Nassi, B. (2024). Here Comes The AI Worm: Unleashing Zero-click Worms
+      that Target GenAI-Powered Applications. arXiv:2403.02817.

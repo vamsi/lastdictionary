@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: one-shot
+id: one-shot
+pos: v.
+also:
+  - one-shotted
+  - one-shotting
+  - one-shot it
+domain: culture
+domains:
+  - agents
+  - llm
+labels:
+  - slang
+level: core
+plain: >-
+  Slang for an AI completing a whole task correctly on the first try from a single request — 'it
+  one-shotted the app' — with no corrections or follow-up needed.
+senses:
+  - context: AI use
+    definition: >-
+      Of an AI model or agent: to produce a complete, working result from a single
+      [[prompt|prompt]], without iteration, follow-up instructions or human fixes ('it one-shotted
+      the migration'). The verb borrows the vocabulary of [[few-shot-prompting|few-shot]] and
+      [[zero-shot-learning|zero-shot]] methods but means something different: those terms count the
+      worked examples supplied in a prompt, whereas the slang counts attempts. One-shot demos — a
+      game, website or tool built from one request — became a staple of model launches and social
+      media in 2024–2026; skeptics note that they showcase best cases and hide failed attempts.
+    example: The new model one-shotted the whole dashboard, tests included.
+  - context: General slang
+    definition: >-
+      To overwhelm or permanently change a person through a single experience: used, often jokingly,
+      of people whose worldview or behavior was transformed after one intense encounter with a
+      technology, idea or substance, including chatbot users who became fixated on an AI after one
+      striking conversation.
+origin: >-
+  From video-game slang, in which to one-shot an opponent is to defeat them with a single hit. The
+  AI sense spread with coding assistants in 2024 and became ubiquitous with agentic coding tools in
+  2025; the sense of a person transformed by one experience circulated on social media in the same
+  period.
+year: 2024
+note: >-
+  Not to be confused with one-shot prompting (supplying one worked example; see
+  [[few-shot-prompting|few-shot prompting]]) or with one-shot learning in machine learning, which
+  means learning a category from a single labeled example.
+see_also:
+  - vibe coding
+  - agentic coding
+  - coding agent
+  - few-shot prompting
+  - zero-shot learning
+  - pelican on a bicycle
+contrast:
+  - few-shot prompting

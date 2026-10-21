@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bayesian inference
+id: bayesian-inference
+pos: n.
+also:
+  - Bayesian statistics
+  - Bayesian
+  - Bayesian updating
+  - Bayesian learning
+  - Bayesian reasoning
+domain: math
+domains:
+  - ml
+level: core
+plain: >-
+  Reasoning that treats unknowns as uncertain beliefs and updates them with evidence using Bayes'
+  theorem. The result is not one answer but a range of answers, each with a probability.
+senses:
+  - definition: >-
+      Statistical inference in which unknown quantities — parameters, hypotheses, latent variables,
+      future observations — are given [[probability-distribution|probability distributions]]
+      representing uncertainty, and conclusions follow by conditioning on data with
+      [[bayes-theorem|Bayes' theorem]]: a [[prior|prior]] combined with the
+      [[likelihood|likelihood]] gives a [[posterior|posterior]], and predictions average over the
+      posterior. Exact posteriors are rare, so practice relies on conjugate models,
+      [[markov-chain-monte-carlo|Markov chain Monte Carlo]], [[variational-inference|variational
+      inference]], Laplace approximations and sequential Monte Carlo. In machine learning the
+      Bayesian approach underlies [[gaussian-process|Gaussian processes]],
+      [[bayesian-optimization|Bayesian optimization]], [[bayesian-network|Bayesian networks]],
+      [[thompson-sampling|Thompson sampling]], much of [[uncertainty-quantification|uncertainty
+      quantification]], and accounts of [[in-context-learning|in-context learning]] as implicit
+      Bayesian inference. It contrasts with frequentist statistics, which treats parameters as fixed
+      and probabilities as long-run frequencies; debates between the schools shaped 20th-century
+      statistics, and modern practice often mixes them.
+    example: >-
+      Bayesian inference gives a posterior over the conversion rate, so we can say how likely
+      variant B is to be better.
+origin: >-
+  Thomas Bayes (1763) and especially Pierre-Simon Laplace developed the approach, long called
+  'inverse probability'. Ronald Fisher attacked it, and the adjective 'Bayesian' entered circulation
+  around 1950, appearing in Fisher's Contributions to Mathematical Statistics (1950). Revived by
+  Harold Jeffreys, Leonard Savage and Bruno de Finetti, it became computationally practical with
+  MCMC methods around 1990.
+year: 1950
+see_also:
+  - Bayes' theorem
+  - prior
+  - posterior
+  - likelihood
+  - Markov chain Monte Carlo
+  - variational inference
+  - uncertainty quantification
+contrast:
+  - maximum likelihood estimation

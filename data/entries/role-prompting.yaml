@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: role prompting
+id: role-prompting
+pos: n.
+also:
+  - persona prompting
+  - role-play prompting
+  - act-as prompt
+  - persona pattern
+domain: llm
+domains:
+  - eng
+level: core
+plain: >-
+  Telling an AI to take on a part — 'You are an experienced tax accountant' — so that its answers
+  adopt that role's knowledge, vocabulary and tone.
+senses:
+  - definition: >-
+      A [[prompt-engineering|prompt engineering]] technique that assigns the model an identity,
+      profession or character, usually in the [[system-prompt|system prompt]], to shape its
+      register, focus, assumed audience and level of detail, or to simulate several viewpoints in a
+      discussion. Role prompts reliably change style and framing and are standard in products,
+      tutoring, simulations and evaluations that use synthetic users. Their effect on accuracy is
+      weaker than often assumed: a 2023 study of 162 personas across four model families found that
+      adding a persona did not, on average, improve answers to factual questions, and that the best
+      persona for a given question was hard to predict. Personas can also introduce stereotypes, and
+      role-play framings are a common ingredient of [[jailbreak|jailbreaks]].
+    example: >-
+      The role prompt made the feedback sound like an editor's, but the factual errors were the same.
+origin: >-
+  Role instructions date from early GPT-3 prompting (2020); 'Act as…' prompts spread widely after
+  ChatGPT's launch, notably through Fatih Kadir Akın's Awesome ChatGPT Prompts collection (begun
+  late 2022). Mingqian Zheng and colleagues' 2023 persona study and Murray Shanahan, Kyle McDonell
+  and Laria Reynolds's 2023 Nature account of LLMs as role players examined what roles change and
+  why. The earliest use of the name 'role prompting' is not established.
+year: 2020
+note: >-
+  Distinct from [[persona-vector|persona vector]] methods and [[character-training|character
+  training]], which shape a model's persona through its activations or its training rather than
+  through the prompt.
+see_also:
+  - prompt engineering
+  - system prompt
+  - simulator theory
+  - character training
+  - persona vector
+  - jailbreak
+sources:
+  - text: >-
+      Zheng, M., Pei, J., Logeswaran, L., Lee, M. & Jurgens, D. (2023). When 'A Helpful Assistant'
+      Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large
+      Language Models. arXiv:2311.10054.
+    url: https://arxiv.org/abs/2311.10054
+  - text: >-
+      Shanahan, M., McDonell, K. & Reynolds, L. (2023). Role play with large language models. Nature
+      623, 493–498.
+    url: https://doi.org/10.1038/s41586-023-06647-8

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: entropy regularization
+id: entropy-regularization
+pos: n.
+also:
+  - entropy bonus
+  - entropy regularisation
+  - maximum entropy reinforcement learning
+domain: rl
+domains:
+  - train
+  - math
+level: specialist
+plain: >-
+  Rewarding an AI agent for keeping some randomness in its choices, so it keeps exploring
+  alternatives instead of locking in on one behavior too early.
+senses:
+  - definition: >-
+      The addition to a [[reinforcement-learning|reinforcement learning]] objective of a term
+      proportional to the [[entropy|entropy]] of the [[policy|policy]]'s action distribution, so
+      that the optimizer is penalized for becoming deterministic too quickly. As a bonus in
+      [[policy-gradient|policy gradient]] methods such as [[a3c|A3C]] and
+      [[proximal-policy-optimization|PPO]], it counteracts premature convergence on a suboptimal
+      action and keeps exploration alive. In maximum-entropy RL, as in [[soft-actor-critic|soft
+      actor–critic]], entropy is part of the reward at every step, which yields 'soft' Bellman
+      equations, Boltzmann-like optimal policies and more robust behavior. The coefficient matters:
+      too small and the policy collapses, too large and it never commits. In
+      [[large-language-model|large language model]] RL the related problem of entropy collapse —
+      token-level entropy falling sharply early in training, after which exploration and improvement
+      stall — became a research focus in 2025, with remedies based on clipping, covariance and KL
+      terms as well as entropy bonuses.
+    example: >-
+      Without the entropy bonus, the policy became deterministic within a few thousand updates and
+      stopped improving.
+formula_latex: J(\theta) = \mathbb{E}_{\pi_\theta}\left[ \sum_{t} \gamma^{t} r_t \right] + \beta\,
+  \mathbb{E}_{s}\left[ \mathcal{H}\left( \pi_\theta(\cdot \mid s) \right) \right]
+origin: >-
+  Ronald Williams and Jing Peng proposed adding an entropy term to policy-gradient updates in
+  'Function Optimization Using Connectionist Reinforcement Learning Algorithms' (Connection Science,
+  1991). Maximum-entropy formulations grew from Brian Ziebart's work on inverse reinforcement
+  learning (2008) and control as inference, and DeepMind's A3C (2016) made the bonus standard in
+  deep RL.
+year: 1991
+see_also:
+  - entropy
+  - soft actor–critic
+  - exploration–exploitation trade-off
+  - proximal policy optimization
+  - policy gradient
+  - KL penalty
+sources:
+  - text: >-
+      Williams, R. J. & Peng, J. (1991). Function optimization using connectionist reinforcement
+      learning algorithms. Connection Science 3(3), 241–268.
+  - text: >-
+      Ziebart, B. D., Maas, A., Bagnell, J. A. & Dey, A. K. (2008). Maximum Entropy Inverse
+      Reinforcement Learning. AAAI 2008.
+  - text: >-
+      Cui, G. et al. (2025). The Entropy Mechanism of Reinforcement Learning for Reasoning Language
+      Models. arXiv preprint.

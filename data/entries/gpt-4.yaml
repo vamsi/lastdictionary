@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPT-4
+id: gpt-4
+pos: prop. n.
+also:
+  - GPT4
+  - GPT-4 Turbo
+  - GPT-4V
+domain: hist
+domains:
+  - llm
+  - safety
+labels:
+  - trademark
+level: core
+plain: >-
+  OpenAI's 2023 language model, a big step up from the one behind the first ChatGPT. It scored well
+  on many professional and academic exams and could also read images.
+senses:
+  - definition: >-
+      An [[openai|OpenAI]] [[transformer|transformer]] model, released on 14 March 2023, that reads
+      images as well as text and replies in text, making it [[multimodal-ai|multimodal]] (public
+      access to image input came only in September 2023). In its technical report, its result on a
+      simulated US bar exam fell roughly within the best tenth of test-takers, where GPT-3.5's had
+      been roughly in the worst tenth; it also did well on SAT, GRE and Advanced Placement exams and
+      made large gains on [[benchmark|benchmarks]] such as MMLU. The report disclosed nothing about
+      the model's size, architecture, data or training compute, citing competition and safety — a
+      break with earlier publication norms. OpenAI described six months of safety work, including
+      [[red-teaming|red teaming]] by outside experts and a [[system-card|system card]]. GPT-4
+      powered ChatGPT Plus, Microsoft's Bing chatbot and many other products; it was followed by
+      GPT-4 Turbo (November 2023) and [[gpt-4o|GPT-4o]] (May 2024) and retired from ChatGPT on 30
+      April 2025.
+    example: >-
+      GPT-4 was the first model many lawyers saw pass a bar exam, at least in simulation.
+origin: >-
+  Announced with the 'GPT-4 Technical Report' in March 2023. Microsoft confirmed that its Bing
+  chatbot, launched in February 2023, had been running an early version. Prelaunch testing by the
+  Alignment Research Center, whose evaluation team later became [[metr|METR]], probed risks such as
+  autonomous replication.
+year: 2023
+note: >-
+  Its secrecy about technical details marked a turn toward closed frontier development. Later
+  analyses argued the bar-exam percentile was overstated. Claims that it showed early general
+  intelligence are covered under [[sparks-of-agi|Sparks of AGI]].
+see_also:
+  - GPT-3
+  - ChatGPT
+  - GPT-4o
+  - Sparks of AGI
+  - frontier model
+  - system card
+  - OpenAI
+sources:
+  - text: OpenAI (2023). GPT-4 Technical Report. arXiv:2303.08774.
+as_of: 2026-10

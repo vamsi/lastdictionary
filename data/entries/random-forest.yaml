@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: random forest
+id: random-forest
+pos: n.
+also:
+  - random forests
+  - random decision forest
+  - RF
+  - extremely randomized trees
+  - extra-trees
+  - random subspace method
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  A prediction method that builds hundreds of decision trees, each from a random sample of the data
+  and features, and lets them vote. The crowd is far more reliable than any single tree.
+senses:
+  - definition: >-
+      An [[ensemble-learning|ensemble]] of [[decision-tree|decision trees]] in which each tree is
+      grown on a [[bootstrap|bootstrap]] sample of the training data ([[bagging|bagging]]) and each
+      split considers only a random subset of the features — commonly about √p of p features for
+      classification and p/3 for regression. Trees are usually grown deep without pruning, and
+      predictions are combined by majority vote or by averaging probabilities or values. Random
+      feature selection decorrelates the trees, so averaging cuts variance more than bagging alone
+      with little increase in bias. Each tree's out-of-bag examples, those left out of its bootstrap
+      sample, give a nearly free estimate of generalization error, and permuting a feature within
+      them yields permutation [[feature-importance|feature importance]]. Random forests need little
+      tuning, do not overfit as more trees are added and remain strong [[baseline|baselines]] for
+      [[tabular-data|tabular data]]. Extremely randomized trees (extra-trees) also draw split
+      thresholds at random.
+    example: >-
+      A 500-tree random forest with default settings came within a point of our tuned boosting model.
+origin: >-
+  Tin Kam Ho introduced 'random decision forests' in 1995, training trees on random subsets of
+  features (later called the random subspace method), and Yali Amit and Donald Geman (1997)
+  randomized the choice of splits. Leo Breiman's 'Random Forests' (Machine Learning, 2001) combined
+  bagging with random feature selection, used out-of-bag estimates, introduced permutation
+  importance and fixed the method's standard form. 'Random Forests' was registered as a trademark in
+  2006, credited to Breiman and Adele Cutler and held by Minitab as of 2019.
+year: 2001
+note: >-
+  Gradient-boosted trees ([[xgboost|XGBoost]], [[lightgbm|LightGBM]], [[catboost|CatBoost]]) usually
+  edge out random forests in accuracy, but forests are harder to misconfigure. Impurity-based
+  importances from forests are biased toward features with many distinct values.
+see_also:
+  - decision tree
+  - bagging
+  - ensemble learning
+  - gradient boosting
+  - feature importance
+  - isolation forest
+  - XGBoost
+contrast:
+  - gradient boosting
+sources:
+  - text: Breiman, L. (2001). Random Forests. Machine Learning, 45(1), 5–32.
+    url: https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf
+  - text: >-
+      Ho, T. K. (1995). Random Decision Forests. Proceedings of the 3rd International Conference on
+      Document Analysis and Recognition, Montreal, 278–282.

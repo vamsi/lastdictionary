@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: exploding gradient problem
+id: exploding-gradient-problem
+pos: n.
+also:
+  - exploding gradients
+  - gradient explosion
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  A training failure in which the learning signal grows out of control as it passes back through a
+  network, so the weights jump wildly and training breaks down.
+senses:
+  - definition: >-
+      The tendency of gradients computed by [[backpropagation|backpropagation]] to grow
+      exponentially as they pass backward through many layers or time steps, when the Jacobian
+      factors in the chain typically have norms above 1, as with large recurrent weights. Huge
+      gradients produce enormous parameter updates that overshoot, causing sudden loss increases,
+      numerical overflow (NaN or infinite values) or divergence. In recurrent networks, Razvan
+      Pascanu and colleagues linked explosions to steep, wall-like regions of the loss surface,
+      often called cliffs. The standard remedy is [[gradient-clipping|gradient clipping]], which
+      rescales the gradient when its norm exceeds a threshold; others include careful
+      [[weight-initialization|weight initialization]], [[normalization-layer|normalization]],
+      smaller [[learning-rate|learning rates]] with [[learning-rate-warmup|warmup]], and gated
+      architectures. Sporadic [[loss-spike|loss spikes]] in large-model training are a related
+      concern ([[training-instability|training instability]]).
+    example: >-
+      The loss went to NaN at step 3,000; clipping the gradient norm at 1.0 fixed the explosion.
+origin: >-
+  Analyzed together with vanishing gradients in Sepp Hochreiter's 1991 diploma thesis, which showed
+  that errors backpropagated through a recurrent network tend either to grow or to decay
+  exponentially, and by Yoshua Bengio, Patrice Simard and Paolo Frasconi (1994). Razvan Pascanu,
+  Tomas Mikolov and Bengio's 'On the Difficulty of Training Recurrent Neural Networks' (arXiv,
+  November 2012; ICML 2013) analyzed it in detail and popularized gradient-norm clipping as the fix.
+year: 1991
+see_also:
+  - vanishing gradient problem
+  - gradient clipping
+  - loss spike
+  - training instability
+  - recurrent neural network
+  - weight initialization
+contrast:
+  - vanishing gradient problem
+sources:
+  - text: >-
+      Pascanu, R., Mikolov, T. & Bengio, Y. (2012). On the Difficulty of Training Recurrent Neural
+      Networks. arXiv:1211.5063; ICML 2013.
+    url: https://arxiv.org/abs/1211.5063

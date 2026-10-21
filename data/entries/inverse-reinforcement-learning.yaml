@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inverse reinforcement learning
+id: inverse-reinforcement-learning
+pos: n.
+also:
+  - IRL
+  - inverse optimal control
+  - maximum entropy inverse reinforcement learning
+domain: rl
+domains:
+  - safety
+  - robot
+level: specialist
+plain: >-
+  Working backward from behavior to goals: watching an expert act and inferring what they must be
+  trying to achieve, so an AI can pursue the same aims.
+senses:
+  - definition: >-
+      The problem of recovering a [[reward-function|reward function]] that explains observed
+      behavior, assumed to be approximately optimal, in a known [[environment|environment]] — the
+      reverse of [[reinforcement-learning|reinforcement learning]], which derives behavior from a
+      given reward. The problem is ill-posed, since many rewards (even a constant one) make the same
+      behavior optimal, so methods add assumptions: matching the expected features of expert
+      trajectories (apprenticeship learning), choosing the maximum-entropy distribution over
+      trajectories consistent with those features, placing Bayesian priors over rewards, or training
+      adversarially so that a discriminator's output serves as a learned reward (GAIL, AIRL).
+      Recovered rewards can transfer to new situations better than copied actions, and they make
+      inferred goals inspectable. IRL is used to model drivers, pedestrians and robot users, and is
+      a conceptual foundation of [[value-learning|value learning]] in AI safety — learning what
+      people want from what they do — elaborated in
+      [[cooperative-inverse-reinforcement-learning|cooperative inverse reinforcement learning]];
+      learning a [[reward-model|reward model]] from human preferences is a close relative.
+    example: >-
+      From hours of taxi trajectories, inverse reinforcement learning recovered how drivers trade
+      travel time against tolls.
+origin: >-
+  Rudolf Kálmán's 1964 question of when a linear control system is optimal founded inverse optimal
+  control. Stuart Russell posed inverse reinforcement learning for AI in a 1998 COLT paper, and
+  Andrew Ng and Russell's 'Algorithms for Inverse Reinforcement Learning' (ICML 2000) gave the first
+  methods; Pieter Abbeel and Ng (2004) and Brian Ziebart and colleagues (2008) followed.
+year: 1998
+see_also:
+  - imitation learning
+  - reward function
+  - value learning
+  - cooperative inverse reinforcement learning
+  - reward model
+  - behavioral cloning
+contrast:
+  - reinforcement learning
+sources:
+  - text: >-
+      Ng, A. Y. & Russell, S. (2000). Algorithms for Inverse Reinforcement Learning. Proceedings of
+      ICML 2000.
+  - text: >-
+      Russell, S. (1998). Learning agents for uncertain environments (extended abstract).
+      Proceedings of COLT 1998.
+  - text: >-
+      Ziebart, B. D., Maas, A., Bagnell, J. A. & Dey, A. K. (2008). Maximum Entropy Inverse
+      Reinforcement Learning. AAAI 2008.

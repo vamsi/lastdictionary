@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: evaluation harness
+id: evaluation-harness
+pos: n.
+also:
+  - eval harness
+  - evaluation framework
+  - lm-evaluation-harness
+domain: eval
+domains:
+  - eng
+  - llm
+level: core
+plain: >-
+  Software that puts AI models through tests in a fixed, repeatable way — feeding in the questions,
+  collecting the answers and scoring them — so that every model is judged identically.
+senses:
+  - definition: >-
+      Software that executes [[benchmark|benchmarks]] against models under a standardized protocol.
+      It loads task data, formats prompts (including [[few-shot-prompting|few-shot]] examples and
+      [[chat-template|chat templates]]), queries the model or scores its
+      [[log-probability|log-probabilities]], applies sampling settings and answer-extraction rules,
+      computes metrics, and logs every input and output for audit. For agentic tasks it also
+      provisions [[sandbox|sandboxes]] or containers, exposes tools, and enforces time, token and
+      cost budgets. Widely used examples include EleutherAI's lm-evaluation-harness, Stanford's
+      [[helm|HELM]], OpenAI's Evals and the UK AI Security Institute's Inspect. Because seemingly
+      minor choices — prompt wording, answer parsing, number of shots — can move scores by several
+      points, publishing the harness and its configuration is a precondition for reproducible
+      results.
+    example: >-
+      Our numbers differ from the paper's because their harness strips whitespace before matching
+      answers.
+origin: >-
+  From the software engineer's test harness (see [[harness|harness]]). EleutherAI's
+  lm-evaluation-harness, released in 2021 by Leo Gao, Jonathan Tow, Stella Biderman and colleagues
+  for few-shot evaluation of GPT-style models, made the term standard; it later powered Hugging
+  Face's Open LLM Leaderboard. The UK AI Safety Institute open-sourced its Inspect framework in May
+  2024.
+year: 2021
+note: >-
+  Distinct from an agent [[harness|harness]], which runs a model to do work rather than to measure
+  it — though agent benchmarks need both, and their scores depend on each.
+see_also:
+  - harness
+  - benchmark
+  - HELM
+  - evaluation
+  - leaderboard
+  - prompt sensitivity
+  - scaffolding
+sources:
+  - text: >-
+      Gao, L., Tow, J., Biderman, S. et al. (2021). A framework for few-shot language model
+      evaluation. Zenodo (EleutherAI lm-evaluation-harness).
+  - text: >-
+      Biderman, S. et al. (2024). Lessons from the Trenches on Reproducible Evaluation of Language
+      Models. arXiv preprint.

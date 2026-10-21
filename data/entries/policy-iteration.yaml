@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: policy iteration
+id: policy-iteration
+pos: n.
+also:
+  - Howard's algorithm
+  - generalized policy iteration
+  - policy improvement
+domain: rl
+domains:
+  - math
+level: specialist
+plain: >-
+  A method for finding the best strategy in a fully known problem by alternating two steps: work out
+  how good the current strategy is, then switch to better choices wherever possible, until nothing
+  improves.
+senses:
+  - definition: >-
+      A [[dynamic-programming|dynamic programming]] algorithm for a known
+      [[markov-decision-process|Markov decision process]] that alternates policy evaluation —
+      computing the [[value-function|value function]] of the current [[policy|policy]], by solving a
+      linear system or iterating the Bellman expectation equation — with policy improvement, which
+      makes the policy greedy with respect to those values. The policy improvement theorem
+      guarantees that each new policy is at least as good as the last, and because a finite MDP has
+      finitely many deterministic policies, the process reaches an optimal one, usually in very few
+      iterations. Its abstract pattern, which Richard Sutton and Andrew Barto call generalized
+      policy iteration (any interleaving of approximate evaluation and improvement), describes much
+      of [[reinforcement-learning|reinforcement learning]]: [[actor-critic|actor–critic]] methods,
+      [[sarsa|SARSA]] and the search-then-train loop of [[alphazero|AlphaZero]] are all instances.
+    example: >-
+      Policy iteration needed only five improvement steps, though each evaluation solved a
+      10,000-variable linear system.
+origin: >-
+  Introduced by Ronald A. Howard in Dynamic Programming and Markov Processes (MIT Press, 1960),
+  which grew out of his MIT doctoral work. The broader idea of generalized policy iteration was
+  named and popularized by Sutton and Barto's textbook (1998).
+year: 1960
+see_also:
+  - value iteration
+  - dynamic programming
+  - Markov decision process
+  - actor–critic
+  - policy
+  - Bellman equation
+contrast:
+  - value iteration
+sources:
+  - text: Howard, R. A. (1960). Dynamic Programming and Markov Processes. MIT Press.

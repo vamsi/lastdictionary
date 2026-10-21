@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vibe check
+id: vibe-check
+pos: n.
+also:
+  - vibes-based evaluation
+  - vibe eval
+  - vibes
+domain: culture
+domains:
+  - eval
+labels:
+  - informal
+level: core
+plain: >-
+  Trying out a new AI model informally — chatting with it, asking your favorite test questions — to
+  get a gut feeling for how good it is, rather than measuring it with formal tests.
+senses:
+  - definition: >-
+      An informal, qualitative assessment of a model formed by interacting with it directly — posing
+      personal test prompts, probing its tone, reasoning and failure modes — rather than by running
+      standardized [[benchmark|benchmarks]]. Vibe checks became an accepted practice because
+      benchmark scores saturate, leak into training data and reward narrow optimization (see
+      [[benchmaxxing|benchmaxxing]]), while practitioners care about qualities such as
+      instruction-following, judgment, taste and conversational feel that numbers capture poorly.
+      Aggregated over many users, the same idea underlies preference leaderboards such as
+      [[lmarena|LMArena]]. Critics note that vibe checks are unrepeatable, prone to confirmation
+      bias and easily swayed by style — length, formatting and flattery.
+    example: >-
+      The scores look great, but it failed my vibe check: it can't admit when it doesn't know.
+origin: >-
+  'Vibe check' was general internet slang, widespread by 2019, for gauging the mood of a person or
+  situation. Engineers building on large language models applied it to informal model testing from
+  about 2023, alongside the half-joking phrase 'vibes-based evaluation'.
+see_also:
+  - benchmark
+  - LMArena
+  - benchmaxxing
+  - pelican on a bicycle
+  - leaderboard
+  - vibe coding
+contrast:
+  - benchmark

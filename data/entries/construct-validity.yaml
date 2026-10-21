@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: construct validity
+id: construct-validity
+pos: n.
+also:
+  - benchmark validity
+domain: eval
+domains:
+  - math
+  - society
+level: core
+plain: >-
+  Whether high marks on a test actually reflect the skill the test is named after — for example,
+  whether a 'reasoning' test rewards reasoning rather than memory or test-taking tricks.
+senses:
+  - definition: >-
+      A property of a test or metric: its scores warrant conclusions about the theoretical attribute
+      — the construct — they are meant to reflect, not merely about something that happens to
+      correlate with it. Borrowed from psychometrics, the concept is applied to AI
+      [[benchmark|benchmarks]] whose names make broad claims ('understanding', 'reasoning', 'general
+      intelligence') while their items sample a narrow slice of behavior that may be solvable by
+      memorization, superficial cues or exploitation of the answer format. Threats include a vaguely
+      defined construct, unrepresentative tasks, annotation artifacts that allow shortcuts,
+      [[data-contamination|data contamination]], brittle scoring and a gap between test conditions
+      and real use. Evidence for validity comes from agreement with other measures of the same
+      construct (convergent validity), disagreement with measures of unrelated ones (discriminant
+      validity) and the ability to predict real-world outcomes.
+    example: >-
+      The benchmark is highly reliable but has weak construct validity: models ace it by exploiting
+      answer-length cues.
+origin: >-
+  Lee Cronbach and Paul Meehl set out the concept in a 1955 paper in Psychological Bulletin,
+  following a 1954 American Psychological Association report on test standards. It entered critiques
+  of AI benchmarks around 2021, notably Inioluwa Deborah Raji and colleagues' 'AI and the Everything
+  in the Whole Wide World Benchmark'.
+year: 1955
+note: >-
+  Distinct from reliability (whether repeated measurements agree) and from external validity
+  (whether findings carry over to other settings). A benchmark can be perfectly reliable and still
+  invalid for the claim made with it.
+see_also:
+  - benchmark
+  - evaluation
+  - benchmark saturation
+  - Goodhart's law
+  - data contamination
+  - jagged intelligence
+sources:
+  - text: >-
+      Cronbach, L. J. & Meehl, P. E. (1955). Construct Validity in Psychological Tests.
+      Psychological Bulletin, 52(4), 281–302.
+  - text: >-
+      Raji, I. D., Bender, E. M., Paullada, A., Denton, E. & Hanna, A. (2021). AI and the Everything
+      in the Whole Wide World Benchmark. NeurIPS 2021 Datasets and Benchmarks Track.

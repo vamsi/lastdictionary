@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deepfake
+id: deepfake
+pos: n.
+also:
+  - deep fake
+  - deepfakes
+  - deepfake video
+  - deepfake audio
+  - deepfake pornography
+  - face swap
+domain: society
+domains:
+  - gen
+  - sec
+level: essential
+plain: >-
+  A fake but realistic video, photo or voice recording made with AI that puts words in a real
+  person's mouth or shows them in a scene that never happened.
+senses:
+  - definition: >-
+      Synthetic or manipulated media, made with [[deep-learning|deep learning]], that passes for a
+      genuine recording of a real, identifiable person but presents speech or conduct that never
+      took place. Early deepfakes swapped faces in video using [[autoencoder|autoencoders]] trained
+      on many images of two people; later methods include [[generative-adversarial-network|GANs]],
+      lip-sync models, [[voice-cloning|voice cloning]] from seconds of audio, and
+      [[diffusion-model|diffusion]] image and video generators that need only a single photo. Harms
+      include non-consensual sexual imagery, which makes up a large share of deepfakes online and
+      overwhelmingly targets women; fraud, such as cloned voices of executives or relatives asking
+      for money; political [[disinformation|disinformation]]; harassment; and the
+      [[liar-s-dividend|liar's dividend]], whereby genuine recordings can be dismissed as fake.
+      Responses include [[deepfake-detection|deepfake detection]], provenance and
+      [[ai-watermarking|watermarking]], platform rules, and laws on non-consensual intimate
+      deepfakes, election deepfakes and [[digital-replica|digital replicas]].
+    example: >-
+      The finance clerk wired the money after a video call in which every other participant was a
+      deepfake.
+origin: >-
+  From the username of a Reddit user, 'deepfakes', who in late 2017 posted face-swapped pornographic
+  videos of celebrities made with open-source deep-learning tools; Samantha Cole's report in Vice's
+  Motherboard (December 2017) brought the name to wide attention, and Reddit banned the community in
+  February 2018. The word soon generalized to any AI-made impersonation.
+year: 2017
+note: >-
+  Distinguish cheapfakes or shallowfakes, misleading media made with simple editing such as slowing,
+  cropping or mislabeling real footage, which have often been more common in practice. Not all
+  [[synthetic-media|synthetic media]] are deepfakes: the term implies a realistic depiction of a
+  real, identifiable person.
+see_also:
+  - synthetic media
+  - deepfake detection
+  - voice cloning
+  - liar's dividend
+  - AI watermarking
+  - TAKE IT DOWN Act
+  - digital replica
+  - nudification app
+contrast:
+  - synthetic media
+sources:
+  - text: >-
+      Cole, S. (2017). AI-Assisted Fake Porn Is Here and We're All Fucked. Motherboard (Vice),
+      December 2017.
+  - text: >-
+      Chesney, R. & Citron, D. K. (2019). Deep Fakes: A Looming Challenge for Privacy, Democracy,
+      and National Security. California Law Review 107, 1753–1820.

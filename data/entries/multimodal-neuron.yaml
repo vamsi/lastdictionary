@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multimodal neuron
+id: multimodal-neuron
+pos: n.
+also:
+  - multimodal neurons
+  - Spider-Man neuron
+domain: interp
+domains:
+  - percep
+level: specialist
+plain: >-
+  A unit inside an AI vision model that responds to one idea however it appears — a photo, a drawing
+  or the written name — much like the 'Halle Berry neuron' found in a human brain.
+senses:
+  - definition: >-
+      A neuron in a vision or vision-language model that responds to a single concept across very
+      different presentations: photographs, drawings, symbols and the written word. Gabriel Goh and
+      colleagues found many in OpenAI's [[clip|CLIP]] models — a 'Spider-Man' neuron responding to
+      photos of the character, comic drawings and the text 'spider', and neurons for famous people,
+      places, emotions, holidays and geographic regions. They parallel 'concept cells' in the human
+      medial temporal lobe reported by Rodrigo Quian Quiroga and colleagues (2005), such as a neuron
+      that fired for varied pictures of Jennifer Aniston and another that fired for photos and
+      drawings of Halle Berry and for her written name. Because written text activates these neurons
+      strongly, CLIP proved vulnerable to typographic attacks: an apple bearing a handwritten label
+      reading 'iPod' was classified as an iPod. The study also documented neurons encoding offensive
+      associations, showing how interpretability can surface bias.
+    example: >-
+      The same multimodal neuron fires for a photo of a bridge, a sketch of it and the word 'bridge'.
+origin: >-
+  Described by Gabriel Goh, Nick Cammarata, Chelsea Voss, Shan Carter, Michael Petrov, Ludwig
+  Schubert, Alec Radford and Chris Olah in 'Multimodal Neurons in Artificial Neural Networks'
+  (Distill, March 2021), from the OpenAI team behind the Circuits thread.
+year: 2021
+see_also:
+  - CLIP
+  - feature visualization
+  - polysemanticity
+  - feature (interpretability)
+  - network dissection
+  - adversarial example
+sources:
+  - text: >-
+      Goh, G., Cammarata, N., Voss, C., Carter, S., Petrov, M., Schubert, L., Radford, A. & Olah, C.
+      (2021). Multimodal Neurons in Artificial Neural Networks. Distill.
+  - text: >-
+      Quian Quiroga, R., Reddy, L., Kreiman, G., Koch, C. & Fried, I. (2005). Invariant visual
+      representation by single neurons in the human brain. Nature 435, 1102–1107.

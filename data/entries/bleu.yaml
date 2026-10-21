@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BLEU
+id: bleu
+pos: abbr.
+also:
+  - BLEU score
+  - Bilingual Evaluation Understudy
+  - SacreBLEU
+pronunciation: BLOO
+domain: eval
+domains:
+  - llm
+level: core
+plain: >-
+  An automatic score for machine translation that checks how many short runs of words in the
+  computer's translation also appear in human reference translations.
+senses:
+  - definition: >-
+      A corpus-level metric for machine-generated text, especially [[machine-translation|machine
+      translation]], based on n-gram overlap with one or more human reference translations. For n
+      from 1 to 4 it computes modified precision p_n — the fraction of candidate n-grams found in a
+      reference, with each n-gram's count clipped at its maximum count in any single reference — and
+      combines these by a weighted geometric mean. A brevity penalty BP lowers the score when the
+      candidate corpus length c is shorter than the reference length r, since precision alone would
+      reward terse output. Scores run from 0 to 1 and are usually reported ×100. BLEU is cheap,
+      language-independent and tracks human judgments reasonably at the system level, but it ignores
+      meaning-preserving paraphrase and is unreliable for single sentences; learned metrics such as
+      COMET and [[bertscore|BERTScore]] agree better with human judgments.
+    example: >-
+      The new system gains 1.2 BLEU on the news test set, which is within run-to-run variance.
+formula_latex: \mathrm{BLEU} = \mathrm{BP}\cdot\exp\Big(\sum_{n=1}^{N} w_n \log p_n\Big),\quad
+  \mathrm{BP} = \min\big(1,\, e^{\,1 - r/c}\big)
+origin: >-
+  Introduced by Kishore Papineni, Salim Roukos, Todd Ward and Wei-Jing Zhu of IBM's Thomas J. Watson
+  Research Center at ACL 2002, after circulating as a 2001 IBM research report. The name, Bilingual
+  Evaluation Understudy, casts the metric as a stand-in for human judges. Matt Post's SacreBLEU
+  (2018) standardized how it is computed and reported.
+year: 2002
+note: >-
+  BLEU depends on tokenization and on the reference set, so values from different papers are often
+  not comparable; SacreBLEU was created to address this. It was not designed for open-ended
+  generation by [[large-language-model|language models]].
+see_also:
+  - ROUGE
+  - BERTScore
+  - machine translation
+  - n-gram model
+  - human evaluation
+  - exact match
+contrast:
+  - human evaluation
+sources:
+  - text: >-
+      Papineni, K., Roukos, S., Ward, T. & Zhu, W.-J. (2002). Bleu: a Method for Automatic
+      Evaluation of Machine Translation. Proceedings of ACL 2002, 311–318.
+    url: https://aclanthology.org/P02-1040/
+  - text: >-
+      Post, M. (2018). A Call for Clarity in Reporting BLEU Scores. Proceedings of the Third
+      Conference on Machine Translation (WMT 2018).

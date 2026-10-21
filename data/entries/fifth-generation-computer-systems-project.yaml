@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Fifth Generation Computer Systems project
+id: fifth-generation-computer-systems-project
+pos: prop. n.
+also:
+  - FGCS
+  - Fifth Generation project
+  - fifth-generation computer
+  - ICOT
+domain: hist
+domains:
+  - gov
+  - hw
+labels:
+  - historical
+level: specialist
+plain: >-
+  Japan's government-backed effort, from 1982 to 1992, to build a new kind of computer that reasons
+  with logic using many processors at once. It fell short, but it alarmed other countries into
+  launching AI programs of their own.
+senses:
+  - definition: >-
+      A national research program sponsored by Japan's Ministry of International Trade and Industry
+      (MITI) from 1982 to 1992, with a smaller follow-on phase, to create computers for 'knowledge
+      information processing'. Run by the Institute for New Generation Computer Technology (ICOT)
+      under Kazuhiro Fuchi, it aimed to build massively parallel inference machines programmed in
+      [[logic-programming|logic programming]] languages derived from [[prolog|Prolog]], with
+      knowledge bases and natural-language interfaces layered on top. It produced parallel inference
+      machines and the concurrent logic language KL1, but general-purpose workstations overtook its
+      specialized hardware, the promised applications did not materialize, and it is usually judged
+      a commercial failure. Its announcement nonetheless prompted rival programs: the US consortium
+      MCC, DARPA's [[strategic-computing-initiative|Strategic Computing Initiative]], Britain's
+      Alvey Programme and the European Community's ESPRIT.
+    example: >-
+      In the early 1980s Western governments treated the Fifth Generation Computer Systems project
+      as a technological Sputnik.
+origin: >-
+  Announced at an international conference in Tokyo in October 1981 and launched in 1982. 'Fifth
+  generation' placed the planned machines after four hardware generations based on vacuum tubes,
+  transistors, integrated circuits and very-large-scale integration. Edward Feigenbaum and Pamela
+  McCorduck's book The Fifth Generation (1983) amplified Western alarm.
+year: 1982
+note: >-
+  Often cited, with the [[lisp-machine|Lisp machine]] collapse, as a factor in the second
+  [[ai-winter|AI winter]]; Japanese participants point to lasting benefits in parallel computing and
+  researcher training.
+see_also:
+  - Strategic Computing Initiative
+  - Prolog
+  - logic programming
+  - AI winter
+  - Lisp machine
+  - AI arms race
+sources:
+  - text: >-
+      Feigenbaum, E. A. & McCorduck, P. (1983). The Fifth Generation: Artificial Intelligence and
+      Japan's Computer Challenge to the World. Reading, MA: Addison-Wesley.

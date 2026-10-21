@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Simpson's paradox
+id: simpson-s-paradox
+pos: n.
+also:
+  - Simpson paradox
+  - Yule–Simpson effect
+  - reversal paradox
+  - amalgamation paradox
+domain: math
+domains:
+  - society
+  - eval
+level: specialist
+plain: >-
+  A statistics trap in which combining groups reverses what each group shows: a treatment can do
+  better than another for men and for women separately, yet worse when everyone is counted together.
+senses:
+  - definition: >-
+      A reversal, or vanishing, of an association when data from several subgroups are merged: the
+      comparison that holds inside every subgroup fails for the pooled data, because the variable
+      defining the subgroups is related both to the factor being compared and to the outcome. In the
+      classic 1973 Berkeley graduate-admissions data, men were admitted at a higher overall rate
+      than women, yet most departments admitted women at equal or higher rates: women had applied
+      disproportionately to more selective departments. Which comparison is right cannot be settled
+      from the data alone; it depends on the causal structure, and [[causal-inference|causal
+      inference]] tools such as [[structural-causal-model|causal diagrams]] and the back-door
+      criterion of the [[do-calculus|do-calculus]] say whether to condition on the grouping
+      variable. In AI it matters for [[algorithmic-fairness|algorithmic fairness]] audits, for
+      comparing models evaluated on different mixes of task categories, and for [[a-b-testing|A/B
+      testing]] when the traffic mix differs between arms.
+    example: >-
+      Model B had the higher win rate in every category yet the lower overall rate, because it was
+      tested mostly on the hardest category.
+origin: >-
+  Noticed by Karl Pearson, Alice Lee and Leslie Bramley-Moore (1899) and discussed by George Udny
+  Yule (1903); Edward Simpson analyzed it in 1951, and Colin Blyth named it 'Simpson's paradox' in
+  1972 — itself an instance of a discovery named after someone other than its first discoverer.
+  Peter Bickel, Eugene Hammel and J. William O'Connell's 1975 analysis of Berkeley admissions made
+  it famous.
+year: 1972
+see_also:
+  - confounding variable
+  - causal inference
+  - correlation
+  - structural causal model
+  - algorithmic fairness
+  - spurious correlation
+sources:
+  - text: >-
+      Simpson, E. H. (1951). The Interpretation of Interaction in Contingency Tables. Journal of the
+      Royal Statistical Society, Series B, 13(2).
+  - text: >-
+      Bickel, P. J., Hammel, E. A. & O'Connell, J. W. (1975). Sex Bias in Graduate Admissions: Data
+      from Berkeley. Science, 187(4175).

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: special token
+id: special-token
+pos: n.
+also:
+  - control token
+  - reserved token
+  - sentinel token
+  - EOS token
+  - BOS token
+domain: llm
+domains:
+  - dl
+  - sec
+level: core
+plain: >-
+  A reserved symbol in an AI model's vocabulary that is not ordinary text but a signal — 'start of
+  message', 'end of answer', 'begin thinking' — used to structure what the model reads and writes.
+senses:
+  - definition: >-
+      A [[token|token]] reserved in a model's [[vocabulary|vocabulary]] for structural or control
+      purposes rather than to represent text, and normally never produced when ordinary input is
+      tokenized. Examples include beginning- and end-of-sequence markers (<s>, </s>, <|endoftext|>),
+      padding and unknown-word tokens, [[bert|BERT]]'s [CLS], [SEP] and [MASK], [[chat-template|chat
+      template]] markers for roles and turn ends, delimiters for [[reasoning-trace|reasoning]] and
+      [[tool-call|tool calls]], and placeholders for images or audio in multimodal models. The model
+      learns their meaning in training; emitting an end-of-turn token is how a chat model signals
+      that it has finished. Tokenizers should refuse to parse such strings in untrusted text, since
+      letting users inject them can spoof roles and undermine the
+      [[instruction-hierarchy|instruction hierarchy]].
+    example: >-
+      Generation never stopped because the end-of-turn special token wasn't in the stop list.
+origin: >-
+  Reserved start and end symbols date from early neural
+  [[sequence-to-sequence-model|sequence-to-sequence]] work: Ilya Sutskever and colleagues (2014)
+  appended an end-of-sentence symbol to every sentence. [[bert|BERT]] (2018) popularized named
+  special tokens such as [CLS] and [MASK], and chat and reasoning models from 2022 multiplied them.
+year: 2018
+see_also:
+  - token
+  - tokenizer
+  - vocabulary
+  - chat template
+  - stop sequence
+  - glitch token
+  - BERT
+sources:
+  - text: >-
+      Devlin, J., Chang, M.-W., Lee, K. & Toutanova, K. (2019). BERT: Pre-training of Deep
+      Bidirectional Transformers for Language Understanding. NAACL 2019.
+  - text: >-
+      Sutskever, I., Vinyals, O. & Le, Q. V. (2014). Sequence to Sequence Learning with Neural
+      Networks. NeurIPS 2014.

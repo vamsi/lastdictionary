@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: empirical risk minimization
+id: empirical-risk-minimization
+pos: n.
+also:
+  - ERM
+  - empirical risk
+  - expected risk
+  - true risk
+  - structural risk minimization
+  - SRM
+  - regularized risk minimization
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  The basic recipe of most machine learning: from the models on offer, pick the one with the
+  smallest errors on the training examples, trusting that score as a guide to how it will do on new
+  data.
+senses:
+  - definition: >-
+      The principle of choosing, from a class of candidate models (a [[hypothesis-space|hypothesis
+      space]]), the one that minimizes the average [[loss-function|loss]] on the training data — the
+      empirical risk — as a proxy for the expected (true) risk over the unknown data distribution.
+      Most supervised training, from [[ordinary-least-squares|ordinary least squares]] and
+      [[logistic-regression|logistic regression]] to neural networks trained by
+      [[stochastic-gradient-descent|stochastic gradient descent]], is ERM with a particular loss.
+      Statistical learning theory asks when the empirical minimizer also nearly minimizes the true
+      risk: uniform convergence bounds based on the [[vc-dimension|VC dimension]] or related
+      complexity measures guarantee it when the class is not too rich for the sample size, and the
+      difference between the two risks is the [[generalization-gap|generalization gap]]. Because
+      minimizing 0–1 classification error directly is computationally hard, convex surrogates such
+      as [[hinge-loss|hinge loss]] and [[log-loss|log loss]] are minimized instead. Structural risk
+      minimization and [[regularization|regularization]] add a complexity penalty to counter
+      [[overfitting|overfitting]]; distributionally robust variants target
+      [[distribution-shift|distribution shift]].
+    example: >-
+      Under plain ERM the model fits the majority group well and ignores the rare subgroup, so we
+      switched to a group-robust objective.
+formula_latex: \hat{f} = \arg\min_{f \in \mathcal{F}} \; \frac{1}{n}\sum_{i=1}^{n}
+  L\big(f(\mathbf{x}_i),\, y_i\big)
+origin: >-
+  Formulated in Vladimir Vapnik and Alexey Chervonenkis's statistical learning theory in the Soviet
+  Union in the late 1960s and 1970s, which also proposed structural risk minimization (1974).
+  Vapnik's 'Principles of Risk Minimization for Learning Theory' (NeurIPS 1991) and 'The Nature of
+  Statistical Learning Theory' (1995) carried the framework into Western machine learning.
+note: >-
+  'Risk' is the decision-theoretic term for expected loss, not danger. ERM implicitly assumes that
+  training and deployment data come from the same distribution.
+see_also:
+  - loss function
+  - generalization gap
+  - VC dimension
+  - PAC learning
+  - regularization
+  - hypothesis space
+  - overfitting
+  - distribution shift
+sources:
+  - text: >-
+      Vapnik, V. (1992). Principles of Risk Minimization for Learning Theory. Advances in Neural
+      Information Processing Systems 4, 831–838.
+  - text: Vapnik, V. N. (1995). The Nature of Statistical Learning Theory. Springer.

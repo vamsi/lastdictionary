@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Dyna
+id: dyna
+pos: prop. n.
+also:
+  - Dyna architecture
+  - Dyna-Q
+pronunciation: DYE-nuh
+domain: rl
+level: specialist
+plain: >-
+  An early design in which a learning agent builds a model of its world from real experience, then
+  also practices on imagined experience from that model, squeezing more learning out of each real
+  step.
+senses:
+  - definition: >-
+      An agent architecture, proposed by Richard Sutton, that folds planning into
+      [[reinforcement-learning|reinforcement learning]]: real experience feeds direct updates (for
+      example [[q-learning|Q-learning]]) and also trains a model of the [[environment|environment]],
+      and between real steps the agent makes extra updates on transitions simulated by that model.
+      In Dyna-Q, each real step is followed by n planning updates on previously seen state–action
+      pairs replayed through the model, which sharply reduces the number of real interactions needed
+      in small problems. Prioritized sweeping focuses those updates where values are changing most.
+      Dyna showed that planning and learning can share a single value-update mechanism, and it is
+      the template for modern [[model-based-reinforcement-learning|model-based]] methods that train
+      a policy on rollouts of a learned [[world-model|world model]].
+    example: >-
+      With 50 planning steps per real step, the Dyna-Q agent found the maze's shortest path within a
+      few episodes.
+origin: >-
+  Introduced by Richard Sutton in 'Integrated Architectures for Learning, Planning, and Reacting
+  Based on Approximating Dynamic Programming' (ICML 1990) and summarized in 'Dyna, an Integrated
+  Architecture for Learning, Planning, and Reacting' (SIGART Bulletin, 1991). Andrew Moore and
+  Christopher Atkeson, and independently Jing Peng and Ronald Williams, added prioritized sweeping
+  in 1993.
+year: 1990
+see_also:
+  - model-based reinforcement learning
+  - world model
+  - Q-learning
+  - experience replay
+  - dynamic programming
+contrast:
+  - model-free reinforcement learning
+sources:
+  - text: >-
+      Sutton, R. S. (1991). Dyna, an Integrated Architecture for Learning, Planning, and Reacting.
+      ACM SIGART Bulletin 2(4), 160–163.

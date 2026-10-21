@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: late interaction
+id: late-interaction
+pos: n.
+also:
+  - multi-vector retrieval
+  - MaxSim
+domain: eng
+domains:
+  - llm
+level: specialist
+plain: >-
+  A search design that keeps a separate number-list for every word of a document and compares them
+  with the question's words at the last moment — more precise than one list per document, yet still
+  fast.
+senses:
+  - definition: >-
+      A retrieval architecture in which query and document are encoded independently, as in a
+      [[bi-encoder|bi-encoder]], but each into many vectors — usually one per token or image patch —
+      and relevance is computed afterwards by a cheap interaction between the two sets, typically
+      the sum over query vectors of the maximum similarity to any document vector (MaxSim). It sits
+      between single-vector bi-encoders, which compress each text into one vector, and
+      [[cross-encoder|cross-encoders]], which let every token of both texts interact inside the
+      network (early interaction). Late interaction keeps document encoding offline, captures
+      term-level matches, generalizes well across domains and yields interpretable token alignments,
+      but stores many vectors per document and needs specialized indexes. [[colbert|ColBERT]] is the
+      defining model; ColPali applies the idea to images of document pages.
+    example: >-
+      Late interaction beat our single-vector model on long technical queries, but the index was ten
+      times larger.
+origin: >-
+  Named by Omar Khattab and Matei Zaharia in the 2020 ColBERT paper ('contextualized late
+  interaction'). It builds on the distinction in neural ranking between representation-focused and
+  interaction-focused models drawn by Jiafeng Guo and colleagues in 2016.
+year: 2020
+see_also:
+  - ColBERT
+  - bi-encoder
+  - cross-encoder
+  - dense retrieval
+  - reranking
+  - vector search
+sources:
+  - text: >-
+      Khattab, O. & Zaharia, M. (2020). ColBERT: Efficient and Effective Passage Search via
+      Contextualized Late Interaction over BERT. SIGIR 2020. arXiv:2004.12832.
+    url: https://arxiv.org/abs/2004.12832v1

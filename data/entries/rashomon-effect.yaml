@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Rashomon effect
+id: rashomon-effect
+pos: n.
+also:
+  - Rashomon set
+  - predictive multiplicity
+  - multiplicity of good models
+pronunciation: RAH-shoh-mohn
+domain: ml
+domains:
+  - interp
+  - society
+level: specialist
+plain: >-
+  The common situation in which many quite different models fit the same data almost equally well —
+  like witnesses telling different but equally believable stories about the same event.
+senses:
+  - definition: >-
+      The phenomenon that a learning problem often admits many models with nearly equal accuracy
+      that differ substantially in structure, in the features they rely on and in their individual
+      predictions. The set of all models within a small tolerance of the best achievable loss is
+      called the Rashomon set. The effect has several consequences: an explanation of any one model,
+      such as its feature importances, may not describe the data, since equally good models rely on
+      different features; individuals can receive conflicting predictions from equally accurate
+      models (predictive multiplicity); and when the Rashomon set is large it is likely to contain a
+      simple, [[interpretable-model|interpretable model]] as accurate as a black box — an argument
+      Cynthia Rudin and colleagues use for preferring interpretable models. Measures such as model
+      class reliance report the range of a feature's importance across the whole set.
+    example: >-
+      Because of the Rashomon effect, a sparse scoring rule matched the deep model's accuracy to
+      within half a percentage point.
+origin: >-
+  Named by Leo Breiman in 'Statistical Modeling: The Two Cultures' (Statistical Science, 2001),
+  after Akira Kurosawa's 1950 film Rashomon, in which witnesses give contradictory accounts of one
+  crime. The Rashomon set was formalized by Aaron Fisher, Cynthia Rudin and Francesca Dominici and
+  by Lesia Semenova, Rudin and Ronald Parr (both 2019).
+year: 2001
+note: >-
+  Related to underspecification (Alexander D'Amour and colleagues, 2020): models that look equally
+  good in testing can behave very differently after deployment.
+see_also:
+  - interpretable model
+  - feature importance
+  - explainable AI
+  - overfitting
+  - Leo Breiman
+sources:
+  - text: >-
+      Breiman, L. (2001). Statistical Modeling: The Two Cultures. Statistical Science 16(3), 199–231.
+  - text: >-
+      Fisher, A., Rudin, C. & Dominici, F. (2019). All Models are Wrong, but Many are Useful:
+      Learning a Variable's Importance by Studying an Entire Class of Prediction Models
+      Simultaneously. Journal of Machine Learning Research 20(177).

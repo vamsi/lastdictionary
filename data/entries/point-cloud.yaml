@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: point cloud
+id: point-cloud
+pos: n.
+also:
+  - 3D point cloud
+  - point set
+  - PointNet
+domain: percep
+domains:
+  - robot
+  - data
+level: core
+plain: >-
+  A 3D picture made of many dots floating in space, each marking a spot on a surface, as captured by
+  a laser scanner or worked out from photos.
+senses:
+  - definition: >-
+      A representation of 3D shape that records only sampled locations on the visible surfaces of
+      objects or scenes, each optionally tagged with measurements such as color, return intensity or
+      surface orientation. [[lidar|Lidar]] sweeps, depth cameras and survey scanners capture them
+      directly, while [[structure-from-motion|structure from motion]] and multi-view stereo
+      reconstruct them from photographs; one sweep of a driving lidar can contain over 100,000
+      points. They are unordered, irregularly spaced and of varying density, which defeats standard
+      [[convolution|convolutions]]. PointNet (2017) handled this by applying a shared network to
+      every point and pooling with a symmetric function (max), so that the result does not depend on
+      point order; other approaches convert points to voxels or bird's-eye-view grids, use sparse
+      convolutions or apply point [[transformer|transformers]]. Typical tasks are 3D object
+      detection for [[autonomous-vehicle|autonomous driving]], segmentation, registration (aligning
+      scans, classically by the iterative closest point algorithm, 1992) and surface reconstruction.
+      Common file formats include PLY, PCD and LAS/LAZ for aerial survey data.
+    example: >-
+      The lidar point cloud thins out beyond 80 meters, so distant pedestrians get only a handful of
+      points.
+origin: >-
+  The term arose in 3D scanning and surveying, where laser scanners and coordinate-measuring
+  machines produced large sets of sampled surface points, and was common in graphics and reverse
+  engineering by the 1990s. The Point Cloud Library (2011) and Charles Qi and colleagues' PointNet
+  (CVPR 2017) brought point clouds into robotics software and deep learning.
+note: >-
+  A point cloud has no connectivity: turning it into a watertight surface (mesh) is a separate
+  reconstruction step, and gaps appear wherever surfaces were hidden from the sensor.
+see_also:
+  - lidar
+  - 3D reconstruction
+  - structure from motion
+  - depth estimation
+  - autonomous vehicle
+  - Gaussian splatting
+sources:
+  - text: >-
+      Qi, C. R., Su, H., Mo, K. & Guibas, L. J. (2017). PointNet: Deep Learning on Point Sets for 3D
+      Classification and Segmentation. CVPR 2017.
+  - text: >-
+      Besl, P. J. & McKay, N. D. (1992). A Method for Registration of 3-D Shapes. IEEE TPAMI 14(2),
+      239–256.

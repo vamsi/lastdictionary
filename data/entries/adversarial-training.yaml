@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: adversarial training
+id: adversarial-training
+pos: n.
+also:
+  - adversarially trained
+  - PGD adversarial training
+domain: sec
+domains:
+  - dl
+  - train
+  - safety
+level: core
+plain: >-
+  Toughening an AI model by deliberately showing it attacks during training — the tricky inputs that
+  fool it — along with the right responses, so it learns to resist them.
+senses:
+  - context: Adversarial robustness
+    definition: >-
+      A defense that trains a model on [[adversarial-example|adversarial examples]] generated
+      against the current model at each step, approximately solving a min–max problem: the outer
+      minimization updates [[weights|weights]] to reduce the loss on the worst-case perturbation
+      that the inner maximization finds, usually with a [[projected-gradient-descent-attack|PGD
+      attack]]. It remains the most reliable empirical defense against norm-bounded attacks, but it
+      multiplies training cost, usually lowers accuracy on clean inputs, and confers robustness
+      mainly against the threat model trained on. Variants such as TRADES make the trade-off between
+      clean and robust accuracy explicit.
+    example: >-
+      Adversarial training lifted robust accuracy under PGD from 0% to 47%, but clean accuracy fell
+      by about eight points.
+  - context: Language models
+    definition: >-
+      [[fine-tuning|Fine-tuning]] a [[large-language-model|large language model]] on attacks found
+      by [[red-teaming|red teaming]] or automated search — [[jailbreak|jailbreaks]],
+      [[prompt-injection|injected instructions]] — paired with safe responses, or perturbing
+      internal [[activation|activations]] adversarially ([[latent-adversarial-training|latent
+      adversarial training]]), so that safety behavior is harder to circumvent. It improves
+      robustness to known attack families but often leaves room for novel ones.
+formula_latex: \min_\theta \; \mathbb{E}_{(x,y)\sim\mathcal{D}} \Big[ \max_{\|\delta\| \le \epsilon}
+  \mathcal{L}\big(f_\theta(x+\delta), y\big) \Big]
+origin: >-
+  Suggested by Christian Szegedy and colleagues (2013) and made practical by Ian Goodfellow,
+  Jonathon Shlens and Christian Szegedy (2014), who trained on [[fast-gradient-sign-method|FGSM]]
+  examples and used the name. Aleksander Madry and colleagues (2017) recast it as robust
+  optimization with PGD, now the standard formulation.
+year: 2014
+note: >-
+  Not to be confused with the adversarial game inside [[generative-adversarial-network|GANs]], or
+  with domain-adversarial training, where a discriminator removes domain information from learned
+  features.
+see_also:
+  - adversarial example
+  - adversarial robustness
+  - projected gradient descent attack
+  - certified robustness
+  - red teaming
+  - robustness
+contrast:
+  - certified robustness
+  - generative adversarial network
+sources:
+  - text: >-
+      Madry, A., Makelov, A., Schmidt, L., Tsipras, D. & Vladu, A. (2018). Towards Deep Learning
+      Models Resistant to Adversarial Attacks. ICLR 2018. arXiv:1706.06083.
+  - text: >-
+      Zhang, H., Yu, Y., Jiao, J., Xing, E. P., El Ghaoui, L. & Jordan, M. I. (2019). Theoretically
+      Principled Trade-off between Robustness and Accuracy. ICML 2019.

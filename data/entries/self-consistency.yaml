@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-consistency
+id: self-consistency
+pos: n.
+also:
+  - self-consistency decoding
+  - majority voting
+  - maj@k
+domain: llm
+domains:
+  - infer
+  - eval
+level: core
+plain: >-
+  Asking an AI the same question many times, letting it reason differently each time, then going
+  with the answer it reaches most often — a vote among its own attempts.
+senses:
+  - context: Decoding
+    definition: >-
+      A [[decoding|decoding]] method for [[chain-of-thought|chain-of-thought]] reasoning that
+      replaces a single greedily decoded solution with a vote: the model works the same problem many
+      times at nonzero [[temperature|temperature]], the final answer is pulled out of each attempt,
+      and the answer reached most often wins (majority vote, reported as maj@k). It works because
+      sound reasoning tends to arrive at the same answer by different routes, whereas mistakes
+      usually lead to scattered, disagreeing answers. It requires answers that can be compared for
+      equality, such as numbers or multiple-choice letters; variants for open-ended text ask a model
+      to select the most consistent response. Cost grows linearly with the number of samples, making
+      it a basic form of [[test-time-compute|test-time compute]] scaling and a standard baseline for
+      [[reasoning-model|reasoning models]].
+    example: >-
+      Self-consistency over 32 samples beat the single greedy answer by nine points on GSM8K.
+  - context: Evaluation
+    definition: >-
+      More generally, the property that a model gives compatible answers to equivalent or logically
+      related questions, measured in consistency and robustness evaluations; disagreement across
+      paraphrases of the same question signals unreliable knowledge.
+origin: >-
+  Introduced by Xuezhi Wang, Jason Wei and colleagues at Google in 'Self-Consistency Improves Chain
+  of Thought Reasoning in Language Models' (March 2022; ICLR 2023), which reported gains such as
+  17.9 percentage points on GSM8K over standard chain-of-thought prompting.
+year: 2022
+see_also:
+  - chain of thought
+  - test-time compute
+  - best-of-n sampling
+  - sampling
+  - tree of thoughts
+  - semantic entropy
+contrast:
+  - greedy decoding
+sources:
+  - text: >-
+      Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., Chowdhery, A. & Zhou, D.
+      (2023). Self-Consistency Improves Chain of Thought Reasoning in Language Models. ICLR 2023.
+    url: https://arxiv.org/abs/2203.11171v4

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: temporal difference learning
+id: temporal-difference-learning
+pos: n.
+also:
+  - TD learning
+  - TD(0)
+  - TD(λ)
+  - TD error
+domain: rl
+domains:
+  - mind
+level: core
+plain: >-
+  A way of learning predictions by adjusting each guess toward the next, slightly better-informed
+  guess instead of waiting for the final outcome — like revising a weather forecast every day as the
+  date approaches.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement-learning]] methods that improve
+      [[value-function|value]] predictions by comparing successive guesses: after each step, the
+      estimate for the [[state|state]] just left is nudged toward the [[reward|reward]] actually
+      received plus the discounted estimate for the state reached. The difference, the TD error δ,
+      drives learning, so updates happen online, without waiting for an [[episode|episode]] to end
+      and without a model of the environment. Richard Sutton and Andrew Barto's textbook presents TD
+      as a hybrid: it learns from sampled experience, as Monte Carlo methods do, but revises
+      estimates partly on the basis of other estimates (bootstrapping), as
+      [[dynamic-programming|dynamic programming]] does. TD(λ) blends one-step and multi-step targets
+      using [[eligibility-trace|eligibility traces]], spanning the range from TD(0) to Monte Carlo
+      at λ = 1. Control algorithms built on TD include [[sarsa|SARSA]], [[q-learning|Q-learning]]
+      and the critics of most [[actor-critic|actor–critic]] methods.
+    example: >-
+      The TD error spikes when the agent unexpectedly finds the key, then shifts earlier as it
+      learns.
+formula_latex: V(S_t) \leftarrow V(S_t) + \alpha \left[ R_{t+1} + \gamma V(S_{t+1}) - V(S_t) \right]
+origin: >-
+  Richard Sutton named and analyzed the method in 'Learning to Predict by the Methods of Temporal
+  Differences' (Machine Learning, 1988), building on his 1984 PhD thesis and on precursors he
+  credited: Arthur Samuel's checkers player (1959), John Holland's bucket brigade and the Adaptive
+  Heuristic Critic he developed with Andrew Barto. Gerald Tesauro's [[td-gammon|TD-Gammon]] (1992)
+  made it famous.
+year: 1988
+note: >-
+  Wolfram Schultz, Peter Dayan and Read Montague (1997) showed that dopamine neurons respond like a
+  TD error — firing for unexpected rewards and, after learning, for the cues that predict them — one
+  of the clearest links between AI theory and neuroscience.
+see_also:
+  - Q-learning
+  - SARSA
+  - eligibility trace
+  - value function
+  - Bellman equation
+  - TD-Gammon
+  - actor–critic
+contrast:
+  - Monte Carlo method
+  - dynamic programming
+sources:
+  - text: >-
+      Sutton, R. S. (1988). Learning to predict by the methods of temporal differences. Machine
+      Learning 3(1), 9–44.
+    url: https://link.springer.com/article/10.1007/BF00115009
+  - text: >-
+      Schultz, W., Dayan, P. & Montague, P. R. (1997). A neural substrate of prediction and reward.
+      Science 275, 1593–1599.

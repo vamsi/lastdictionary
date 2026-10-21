@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data mining
+id: data-mining
+pos: n.
+also:
+  - knowledge discovery in databases
+domain: core
+domains:
+  - data
+  - ml
+level: core
+plain: >-
+  Searching large collections of data with computers to discover useful patterns, such as products
+  often bought together or signs that a transaction may be fraudulent.
+senses:
+  - definition: >-
+      Automated search of large datasets for regularities worth acting on, such as items bought
+      together, groups of similar customers, rules that predict an outcome or records that do not
+      fit. Since Usama Fayyad and colleagues' 1996 framing, it is usually treated as the analysis
+      stage of knowledge discovery in databases (KDD), a larger process that also selects, cleans
+      and transforms the data beforehand and interprets the results afterward. Standard techniques
+      include [[classification|classification]], [[regression|regression]],
+      [[clustering|clustering]], [[association-rule-learning|association rule learning]]
+      (market-basket analysis), sequence mining and [[anomaly-detection|anomaly detection]]. Growing
+      out of database research as well as statistics and [[machine-learning|machine learning]], the
+      field emphasized algorithms that scale to data too large for memory. In law, text and data
+      mining denotes automated analysis of works to extract information, the activity covered by
+      copyright exceptions that matter for AI training ([[text-and-data-mining-exception|text and
+      data mining exception]]).
+    example: >-
+      Data mining of five years of maintenance logs revealed which part failures tended to occur
+      together.
+origin: >-
+  Statisticians and economists long used 'data mining', 'data dredging' and 'data fishing'
+  pejoratively for searching data until something significant turns up. In 1989 Gregory
+  Piatetsky-Shapiro coined 'knowledge discovery in databases' for the first KDD workshop, and 'data
+  mining' appeared with positive connotations in the database community around 1990. Usama Fayyad,
+  Piatetsky-Shapiro and Padhraic Smyth's 1996 overview framed data mining as a step within KDD; the
+  workshops grew into an annual conference (from 1995), later run by ACM SIGKDD.
+year: 1989
+note: >-
+  The pejorative sense survives in statistics: searching many hypotheses without correction yields
+  spurious findings. As a label the term is less fashionable now, its territory largely absorbed by
+  [[data-science|data science]] and [[machine-learning|machine learning]].
+see_also:
+  - data science
+  - association rule learning
+  - clustering
+  - anomaly detection
+  - big data
+  - text and data mining exception
+  - machine learning
+sources:
+  - text: >-
+      Fayyad, U., Piatetsky-Shapiro, G. & Smyth, P. (1996). From Data Mining to Knowledge Discovery
+      in Databases. AI Magazine, 17(3), 37–54.

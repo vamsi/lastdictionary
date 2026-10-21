@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: symbolic regression
+id: symbolic-regression
+pos: n.
+also:
+  - equation discovery
+  - PySR
+  - AI Feynman
+  - Eureqa
+  - SINDy
+domain: sym
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  Getting a computer to discover a readable mathematical formula, such as a law of physics, that
+  fits a set of measurements, instead of only fitting numbers into a formula chosen in advance.
+senses:
+  - definition: >-
+      The task of finding a mathematical expression — built from variables, constants and operators
+      such as +, ×, sin and exp — that fits data, searching over the structure of the formula as
+      well as its parameters. Unlike ordinary regression, which fits coefficients of a fixed model,
+      symbolic regression seeks compact, interpretable equations that may extrapolate beyond the
+      data. Classic solvers use [[genetic-programming|genetic programming]], evolving expression
+      trees under pressure for both accuracy and simplicity (a trade-off front of error against
+      complexity); others use sparse regression over a library of candidate terms (SINDy),
+      exhaustive or tree search, [[neural-network|neural networks]] that propose expressions, or
+      physics-inspired simplifications such as dimensional analysis and symmetry detection. The
+      general problem is NP-hard. Applications include scientific discovery, interpretable modeling
+      and distilling trained neural networks into equations.
+    example: >-
+      Symbolic regression recovered the pendulum's equation of motion from 30 seconds of
+      video-tracked data.
+origin: >-
+  Popularized by John Koza's genetic programming (1992). Michael Schmidt and Hod Lipson's 2009
+  Science paper recovered physical laws from motion data (later commercialized as Eureqa);
+  Silviu-Marian Udrescu and Max Tegmark's AI Feynman (2020) and Miles Cranmer's open-source PySR
+  (described in a 2023 paper) are prominent later systems.
+year: 1992
+see_also:
+  - genetic programming
+  - program synthesis
+  - evolutionary computation
+  - explainable AI
+  - AI scientist
+sources:
+  - text: >-
+      Schmidt, M. & Lipson, H. (2009). Distilling Free-Form Natural Laws from Experimental Data.
+      Science 324(5923), 81–85.
+  - text: >-
+      Udrescu, S.-M. & Tegmark, M. (2020). AI Feynman: A Physics-Inspired Method for Symbolic
+      Regression. Science Advances 6(16), eaay2631.

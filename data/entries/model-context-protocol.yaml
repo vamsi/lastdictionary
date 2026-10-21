@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Model Context Protocol
+id: model-context-protocol
+pos: prop. n.
+also:
+  - MCP
+domain: agents
+domains:
+  - eng
+  - sec
+level: essential
+plain: >-
+  An open standard that lets AI assistants plug into outside apps and data — files, calendars,
+  databases, business software — through one common connector instead of a custom link for every
+  pairing; often likened to a USB-C port for AI.
+senses:
+  - definition: >-
+      An open standard that gives AI applications one common way to reach outside software and data.
+      In its client–server design the AI application — the host, such as a chat client, code editor
+      or [[coding-agent|coding agent]] — keeps a separate client connection to each [[mcp-server|MCP
+      server]], and a server can offer three kinds of capability: [[tool|tools]] the model may
+      invoke, resources such as files or records that the application can pull into context, and
+      prompts, prewritten templates a user can pick. Messages use JSON-RPC 2.0, carried over
+      standard input/output for local servers or HTTP for remote ones, with OAuth-based
+      authorization for remote access. Standardizing the interface turns an M×N integration problem
+      (every application wired to every service) into M+N. The message design borrows from the
+      Language Server Protocol used by code editors. Security problems — [[tool-poisoning|tool
+      poisoning]], [[prompt-injection|prompt injection]] through tool results, over-broad
+      permissions and malicious servers — have shaped successive revisions; the 2026-07-28
+      specification made the core protocol stateless and moved features such as long-running tasks
+      into optional extensions.
+    example: >-
+      Instead of writing a Jira integration for each assistant, we published one MCP server.
+origin: >-
+  Created at Anthropic by David Soria Parra and Justin Spahr-Summers and open-sourced on 25 November
+  2024 with SDKs and reference servers for Google Drive, Slack, GitHub, Git, Postgres and Puppeteer.
+  OpenAI adopted it in March 2025, followed by Google DeepMind, Microsoft and others; in December
+  2025 Anthropic donated it to the Linux Foundation's [[agentic-ai-foundation|Agentic AI
+  Foundation]].
+year: 2024
+note: >-
+  MCP standardizes how tools and context are served to an application; it does not dictate how a
+  model requests tools ([[function-calling|function calling]]) or how independent agents talk to
+  each other (see [[agent2agent-protocol|Agent2Agent protocol]]). By December 2025 more than 10,000
+  public MCP servers had been published.
+see_also:
+  - MCP server
+  - tool
+  - function calling
+  - Agent2Agent protocol
+  - Agentic AI Foundation
+  - tool poisoning
+  - agent skill
+contrast:
+  - Agent2Agent protocol
+sources:
+  - text: Anthropic (2024). Introducing the Model Context Protocol. 25 November 2024.
+    url: https://www.anthropic.com/news/model-context-protocol
+  - text: >-
+      Soria Parra, D. & Delimarsky, D. (2026). The 2026-07-28 Specification. Model Context Protocol
+      blog, 28 July 2026.
+    url: https://blog.modelcontextprotocol.io/posts/2026-07-28/
+as_of: 2026-10

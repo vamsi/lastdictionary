@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: parametric knowledge
+id: parametric-knowledge
+pos: n.
+also:
+  - parametric memory
+  - internal knowledge
+  - closed-book knowledge
+domain: llm
+domains:
+  - interp
+level: specialist
+plain: >-
+  What an AI model 'knows' from training, stored in the numbers of its network rather than looked up
+  in documents — like facts you have memorized rather than ones you check in a book.
+senses:
+  - definition: >-
+      Information encoded in a model's [[weights|weights]] during training and available without any
+      external source, as opposed to non-parametric or contextual knowledge supplied at inference
+      time in the [[prompt|prompt]] or by retrieval. Language models can answer many factual
+      questions 'closed-book' from parametric knowledge, which can be probed with fill-in-the-blank
+      queries; it is concentrated in, though not confined to, the
+      [[feed-forward-network|feed-forward network]] layers, and can be located and altered by
+      [[model-editing|model editing]]. It is frozen at the [[knowledge-cutoff|knowledge cutoff]],
+      unreliable for rare facts, hard to attribute to sources and costly to update. When parametric
+      and contextual knowledge conflict, models may wrongly prefer their memorized answer;
+      [[grounding|grounding]] and [[retrieval-augmented-generation|retrieval-augmented generation]]
+      are designed to let the context win.
+    example: >-
+      Without retrieval it falls back on parametric knowledge, which is two years stale for this API.
+origin: >-
+  Fabio Petroni and colleagues' 'Language Models as Knowledge Bases?' (2019) showed that pretrained
+  models store retrievable facts. Patrick Lewis and colleagues' retrieval-augmented generation paper
+  (2020) contrasted parametric with non-parametric memory, and Adam Roberts, Colin Raffel and Noam
+  Shazeer (2020) measured how much knowledge fits in parameters; 'parametric knowledge' became
+  standard from about 2021.
+year: 2020
+see_also:
+  - knowledge cutoff
+  - retrieval-augmented generation
+  - grounding
+  - model editing
+  - memorization
+  - factuality
+  - reversal curse
+contrast:
+  - retrieval-augmented generation
+  - in-context learning
+sources:
+  - text: >-
+      Petroni, F. et al. (2019). Language Models as Knowledge Bases? EMNLP-IJCNLP 2019.
+  - text: >-
+      Lewis, P. et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
+      NeurIPS 2020.
+  - text: >-
+      Roberts, A., Raffel, C. & Shazeer, N. (2020). How Much Knowledge Can You Pack Into the
+      Parameters of a Language Model? EMNLP 2020.

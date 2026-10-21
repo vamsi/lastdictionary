@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inverted index
+id: inverted-index
+pos: n.
+also:
+  - inverted file
+  - postings list
+  - posting list
+domain: eng
+domains:
+  - data
+level: core
+plain: >-
+  A lookup table that lists, for every word, all the documents containing it — like the index at the
+  back of a book — so a search engine can find matches almost instantly.
+senses:
+  - definition: >-
+      A data structure that maps each term in a vocabulary to a postings list: the identifiers of
+      the documents that contain the term, often with term frequencies and word positions. A query
+      is answered by fetching the postings for its terms and merging or scoring them, touching only
+      documents that share terms with the query instead of scanning the whole collection. Compressed
+      postings, skip pointers and early-termination algorithms such as WAND make this fast at web
+      scale. The inverted index is the engine behind [[sparse-retrieval|sparse retrieval]] functions
+      such as [[bm25|BM25]] and [[tf-idf|TF-IDF]], and its strategy — partition the data into lists
+      and probe only promising ones — reappears in the inverted-file (IVF) indexes used for
+      [[approximate-nearest-neighbor-search|approximate nearest neighbor search]] over vectors.
+    example: >-
+      Adding phrase search meant storing word positions in the inverted index, which doubled its
+      size.
+origin: >-
+  The idea descends from concordances and back-of-book indexes. Inverted-file organizations were in
+  use in computerized document retrieval by the 1960s and became the standard architecture of text
+  search engines; open-source libraries such as Apache Lucene made them ubiquitous.
+note: >-
+  'Inverted' because it reverses the natural document-to-words mapping into a words-to-documents
+  mapping.
+see_also:
+  - BM25
+  - sparse retrieval
+  - information retrieval
+  - TF-IDF
+  - approximate nearest neighbor search
+  - hybrid search
+sources:
+  - text: >-
+      Zobel, J. & Moffat, A. (2006). Inverted files for text search engines. ACM Computing Surveys
+      38(2).

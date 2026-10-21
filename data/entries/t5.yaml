@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: T5
+id: t5
+pos: prop. n.
+also:
+  - Text-to-Text Transfer Transformer
+  - mT5
+  - Flan-T5
+  - span corruption
+  - text-to-text
+domain: llm
+domains:
+  - hist
+level: specialist
+plain: >-
+  A 2019 Google model that treats every language task — translating, summarizing, answering,
+  classifying — as turning one piece of text into another, using one shared design.
+senses:
+  - definition: >-
+      A family of [[encoder-decoder-architecture|encoder–decoder]] [[transformer|transformers]]
+      (Text-to-Text Transfer Transformer) released by Google in 2019 together with a systematic
+      study of transfer learning for NLP. T5 casts every task as text-to-text: the input is text
+      with a task prefix such as 'summarize:' and the output is text, even for classification and
+      regression, so one model, objective and decoding procedure serve all tasks. It was pretrained
+      on the [[c4|C4]] web corpus with a span-corruption objective — contiguous spans are replaced
+      by sentinel tokens and the decoder reconstructs them — and released in sizes from 60 million
+      to 11 billion parameters. The paper's ablations of architectures, objectives, data and scale
+      were widely influential. Descendants include multilingual mT5, instruction-tuned Flan-T5
+      (2022) and T5Gemma (July 2025, adapted from Gemma 2); T5 encoders also serve as text encoders
+      in image generators such as [[imagen|Imagen]].
+    example: We fine-tuned T5-base to turn support tickets into structured summaries.
+origin: >-
+  Introduced by Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael
+  Matena, Yanqi Zhou, Wei Li and Peter J. Liu of Google in 'Exploring the Limits of Transfer
+  Learning with a Unified Text-to-Text Transformer' (arXiv, October 2019; Journal of Machine
+  Learning Research, 2020).
+year: 2019
+see_also:
+  - encoder–decoder architecture
+  - C4
+  - transformer
+  - BERT
+  - GPT
+  - transfer learning
+  - instruction tuning
+sources:
+  - text: >-
+      Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W. & Liu,
+      P. J. (2020). Exploring the Limits of Transfer Learning with a Unified Text-to-Text
+      Transformer. JMLR 21.
+    url: https://arxiv.org/abs/1910.10683

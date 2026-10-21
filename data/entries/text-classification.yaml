@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: text classification
+id: text-classification
+pos: n.
+also:
+  - text categorization
+  - document classification
+  - topic classification
+  - intent classification
+domain: llm
+domains:
+  - ml
+level: core
+plain: >-
+  Sorting pieces of text into categories automatically — what topic an article covers, whether a
+  message is spam, which team should handle a customer's complaint.
+senses:
+  - definition: >-
+      The task of assigning one or more labels from a predefined set to a unit of text — a document,
+      message, sentence or query — as in spam filtering, topic and genre labeling,
+      [[sentiment-analysis|sentiment analysis]], intent detection, language identification, and
+      toxicity or policy-violation detection for [[content-moderation|content moderation]]. It may
+      be binary, [[multiclass-classification|multiclass]] or
+      [[multilabel-classification|multilabel]]. Classic pipelines represented text as a
+      [[bag-of-words|bag of words]] with [[tf-idf|TF-IDF]] weights and trained [[naive-bayes|naive
+      Bayes]], [[logistic-regression|logistic regression]] or [[support-vector-machine|support
+      vector machines]]; neural approaches used convolutional and recurrent networks and then
+      fine-tuned transformer encoders. LLMs can now classify zero-shot from label descriptions,
+      though fine-tuned small encoders often remain cheaper and more consistent at scale.
+    example: >-
+      A fine-tuned encoder does text classification on 40 million tickets a day; the LLM reviews
+      only the uncertain ones.
+origin: >-
+  M. E. Maron's 'Automatic Indexing: An Experimental Inquiry' (1961) assigned documents to subject
+  categories with a probabilistic classifier of the kind now called naive Bayes. Machine-learned
+  text categorization became standard in the 1990s with benchmark collections such as Reuters-21578,
+  and Bayesian spam filters popularized it from the late 1990s.
+year: 1961
+see_also:
+  - classification
+  - sentiment analysis
+  - bag of words
+  - TF-IDF
+  - naive Bayes
+  - content moderation
+  - zero-shot learning
+sources:
+  - text: >-
+      Maron, M. E. (1961). Automatic Indexing: An Experimental Inquiry. Journal of the ACM 8(3),
+      404–417.
+  - text: >-
+      Sebastiani, F. (2002). Machine Learning in Automated Text Categorization. ACM Computing
+      Surveys 34(1), 1–47.

@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rejection sampling
+id: rejection-sampling
+pos: n.
+also:
+  - acceptance–rejection method
+  - accept–reject algorithm
+  - rejection sampling fine-tuning
+  - rejection-sampled fine-tuning
+domain: train
+domains:
+  - math
+  - llm
+level: core
+plain: >-
+  Generating many candidate answers and keeping only those that pass a check — a scoring model, a
+  test or a correct final answer — often so the AI can then be trained on its own best work.
+senses:
+  - context: Post-training
+    definition: >-
+      A data-generation technique in which a model samples several responses per prompt, a
+      [[reward-model|reward model]] or [[verifier|verifier]] scores them, and only the best (or all
+      that pass a threshold) are kept, typically as targets for further
+      [[supervised-fine-tuning|supervised fine-tuning]] — a procedure called rejection sampling
+      fine-tuning. Iterated, it is a simple, stable alternative or complement to policy-gradient RL:
+      Meta's Llama 2-Chat used rejection-sampling fine-tuning alone in early rounds and then applied
+      [[proximal-policy-optimization|proximal policy optimization]] on top of it, and reasoning
+      pipelines use it to harvest correct [[chain-of-thought|chains of thought]] for SFT, as in
+      [[self-taught-reasoner|STaR]] and [[expert-iteration|expert iteration]]. Because only
+      successes are kept, the model learns nothing from its failures, and the data concentrate on
+      problems it can already sometimes solve. Used at inference time without retraining, the same
+      select-the-best step is usually called [[best-of-n-sampling|best-of-n sampling]].
+    example: >-
+      We ran three rounds of rejection sampling, keeping only solutions whose final answers matched
+      the key.
+  - context: Statistics
+    definition: >-
+      A [[monte-carlo-method|Monte Carlo method]] for drawing samples from a target distribution p
+      that is hard to sample directly: draw a candidate x from an easy proposal distribution q,
+      scaled by a constant M so that M·q(x) ≥ p(x) everywhere, and accept it with probability
+      p(x)/(M·q(x)); accepted draws follow p exactly. Efficiency falls as M grows, severely so in
+      high dimensions.
+formula_latex: \Pr[\text{accept } x] = \frac{p(x)}{M\,q(x)}, \qquad p(x) \le M\,q(x) \;\; \forall x
+origin: >-
+  The statistical method was described by John von Neumann in 1951 in a note on techniques for using
+  random digits. Its machine-learning namesake, filtering a model's samples with a reward, appears
+  in OpenAI's WebGPT (December 2021), which used rejection sampling against a reward model for
+  best-of-n selection, and was popularized as a training step by Meta's Llama 2 report (July 2023).
+year: 1951
+note: >-
+  The LLM sense borrows the name loosely: nothing guarantees that kept samples follow a particular
+  target distribution. The abbreviation RFT can mean rejection sampling fine-tuning or
+  [[reinforcement-fine-tuning|reinforcement fine-tuning]]; check which is meant.
+see_also:
+  - best-of-n sampling
+  - expert iteration
+  - self-taught reasoner
+  - reward model
+  - verifier
+  - Monte Carlo method
+  - supervised fine-tuning
+contrast:
+  - reinforcement fine-tuning
+sources:
+  - text: >-
+      von Neumann, J. (1951). Various Techniques Used in Connection with Random Digits. National
+      Bureau of Standards Applied Mathematics Series 12, 36–38.
+  - text: >-
+      Nakano, R. et al. (2021). WebGPT: Browser-assisted question-answering with human feedback.
+      arXiv:2112.09332.
+    url: https://arxiv.org/abs/2112.09332
+  - text: >-
+      Touvron, H. et al. (2023). Llama 2: Open Foundation and Fine-Tuned Chat Models.
+      arXiv:2307.09288.
+    url: https://arxiv.org/abs/2307.09288

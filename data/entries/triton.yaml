@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Triton
+id: triton
+pos: prop. n.
+also:
+  - OpenAI Triton
+  - Triton language
+  - Triton kernel
+pronunciation: TRY-tun
+domain: hw
+domains:
+  - eng
+  - infer
+level: specialist
+plain: >-
+  A free language from OpenAI for writing the fast inner routines of AI programs in Python-style
+  code; its compiler handles hardware details that Nvidia's own tools leave to experts.
+senses:
+  - context: Programming language
+    definition: >-
+      An open-source, Python-embedded language and compiler for writing GPU [[kernel|kernels]] at
+      the level of blocks (tiles) of data rather than individual threads. The programmer writes a
+      kernel as operations on whole tiles (loads, [[matrix-multiplication|matrix multiplies]],
+      reductions) and leaves the low-level decisions, such as when to use [[tensor-core|tensor
+      cores]], how work is scheduled, how threads share on-chip memory and how global-memory
+      accesses are combined, to the compiler, which generates code for Nvidia, AMD and other
+      accelerators through the MLIR and LLVM compiler frameworks. Fused, high-performance kernels
+      for attention, normalization or [[quantization|quantized]] matrix multiplication can thus be
+      written in tens of lines rather than hundreds of lines of [[cuda|CUDA]]. Triton is the default
+      code generator of [[pytorch|PyTorch]]'s TorchInductor compiler (PyTorch 2.0, 2023) and is
+      widely used for research kernels, making it a key route to hardware portability.
+    example: >-
+      We wrote the fused attention kernel in Triton, and it ran within 10% of the hand-tuned CUDA
+      version.
+  - context: Inference serving
+    definition: >-
+      Short for Nvidia's Triton Inference Server, an open-source system for serving models from many
+      frameworks with dynamic batching and multi-GPU support, since rebranded as NVIDIA
+      Dynamo-Triton. It is unrelated to the language despite the shared name.
+origin: >-
+  Created by Philippe Tillet as a Harvard graduate student and described with H. T. Kung and David
+  Cox at the MAPL workshop in 2019. OpenAI, which hired Tillet, released Triton 1.0 on 28 July 2021,
+  claiming FP16 matrix-multiply kernels that matched cuBLAS in under 25 lines of code.
+year: 2019
+see_also:
+  - CUDA
+  - AI compiler
+  - kernel fusion
+  - FlashAttention
+  - PyTorch
+  - ROCm
+sources:
+  - text: >-
+      Tillet, P., Kung, H. T. & Cox, D. (2019). Triton: An Intermediate Language and Compiler for
+      Tiled Neural Network Computations. Proceedings of MAPL 2019.
+  - text: >-
+      Tillet, P. (2021). Introducing Triton: Open-source GPU programming for neural networks. OpenAI
+      blog.
+    url: https://openai.com/index/triton/
+as_of: 2026-10

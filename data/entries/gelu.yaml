@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GELU
+id: gelu
+pos: abbr.
+also:
+  - Gaussian error linear unit
+domain: dl
+domains:
+  - llm
+level: core
+plain: >-
+  A smooth version of the ReLU rule, used in models such as BERT and GPT: it keeps large positive
+  values, removes large negative ones, and blends softly in between.
+senses:
+  - definition: >-
+      The [[activation-function|activation function]] GELU(x) = x·Φ(x), where Φ is the cumulative
+      distribution function of the standard [[normal-distribution|normal distribution]]. It weights
+      each input by the probability that a standard Gaussian variable falls below it, so it behaves
+      like the identity for large positive x and like zero for large negative x, and is smooth and
+      slightly non-monotonic in between, with a minimum of about −0.17 near x ≈ −0.75. Its authors
+      motivated it as the expected output of a stochastic regularizer that randomly zeroes inputs,
+      combining ideas from [[relu|ReLU]] and [[dropout|dropout]]. Common fast approximations are
+      0.5x(1 + tanh[√(2/π)(x + 0.044715x³)]) and x·σ(1.702x). GELU became the default nonlinearity
+      of [[bert|BERT]], the [[gpt|GPT]] series and [[vision-transformer|vision transformers]], and
+      is the gate in the GEGLU variant of [[gated-linear-unit|gated linear units]].
+    example: >-
+      The checkpoint was trained with the tanh approximation of GELU, so use the same one at
+      inference.
+formula_latex: \operatorname{GELU}(x) = x\,\Phi(x) = \frac{x}{2}\left[1 +
+  \operatorname{erf}\!\left(\frac{x}{\sqrt{2}}\right)\right]
+origin: >-
+  Introduced by Dan Hendrycks and Kevin Gimpel in a June 2016 arXiv paper, which also proposed the
+  sigmoid-weighted function later known as SiLU. Adoption in OpenAI's GPT (2018) and Google's BERT
+  (2018) made it the standard transformer activation until gated variants such as SwiGLU (proposed
+  in 2020) displaced it in many large language models from 2022.
+year: 2016
+see_also:
+  - activation function
+  - ReLU
+  - SiLU
+  - SwiGLU
+  - transformer
+  - BERT
+sources:
+  - text: >-
+      Hendrycks, D. & Gimpel, K. (2016). Gaussian Error Linear Units (GELUs). arXiv:1606.08415.
+    url: https://arxiv.org/abs/1606.08415

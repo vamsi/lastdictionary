@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: A3C
+id: a3c
+pos: abbr.
+also:
+  - asynchronous advantage actor–critic
+  - A2C
+  - advantage actor–critic
+domain: rl
+domains:
+  - dl
+level: specialist
+plain: >-
+  A 2016 DeepMind training method in which many copies of an AI agent learn in parallel on separate
+  copies of a task, pooling their updates into one shared neural network.
+senses:
+  - definition: >-
+      Asynchronous advantage actor–critic: a [[deep-reinforcement-learning|deep reinforcement
+      learning]] algorithm in which many actor-learner threads, each with its own copy of the
+      [[environment|environment]], run in parallel on a multi-core CPU and asynchronously apply
+      gradient updates to shared policy and value networks. Each thread collects a few steps of
+      experience, computes n-step [[advantage-function|advantage]] estimates using the
+      [[value-function|value]] head as critic, and adds an [[entropy-regularization|entropy bonus]]
+      to discourage premature convergence. Running many actors on separate copies of the environment
+      spreads each round of updates across many different states, breaking up the correlations that
+      [[experience-replay|experience replay]] would otherwise have to remove, so A3C can learn
+      [[on-policy|on-policy]] without a replay buffer. Using a multi-core CPU rather than a GPU, it
+      beat earlier methods' overall Atari scores in half the training time, and the same paper
+      applied it to continuous control and to navigating 3D mazes from pixels. A synchronous,
+      batched version (A2C) proved as good and uses GPUs better, and IMPALA later scaled the idea
+      with off-policy corrections.
+    example: We ran A3C with 16 worker threads on one machine instead of renting a GPU.
+origin: >-
+  Introduced by Volodymyr Mnih, Adrià Puigdomènech Badia and colleagues at DeepMind in 'Asynchronous
+  Methods for Deep Reinforcement Learning' (arXiv, February 2016; ICML 2016), which presented
+  asynchronous versions of four algorithms, the advantage actor–critic performing best. OpenAI's
+  Baselines release (2017) popularized the synchronous A2C variant.
+year: 2016
+see_also:
+  - actor–critic
+  - advantage function
+  - entropy regularization
+  - deep reinforcement learning
+  - proximal policy optimization
+  - on-policy
+sources:
+  - text: >-
+      Mnih, V. et al. (2016). Asynchronous Methods for Deep Reinforcement Learning. ICML 2016.
+      arXiv:1602.01783.
+    url: https://arxiv.org/abs/1602.01783

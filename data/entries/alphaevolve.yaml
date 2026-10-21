@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlphaEvolve
+id: alphaevolve
+pos: prop. n.
+domain: agents
+domains:
+  - math
+  - llm
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A Google DeepMind system that combines AI language models with an evolution-like search to invent
+  and improve computer programs, finding new results in mathematics and computing.
+senses:
+  - definition: >-
+      A [[google-deepmind|Google DeepMind]] system for algorithm discovery that runs an evolutionary
+      loop around [[large-language-model|language models]]: Gemini models (a fast one producing many
+      candidate edits, a stronger one fewer but more considered ones) propose changes to a program,
+      automated evaluators score every candidate, and the best variants are kept in a database that
+      seeds the next round of mutations. Because it needs only a machine-checkable score, it suits
+      problems in mathematics and computer science where quality can be measured automatically.
+      Reported results include a procedure for multiplying 4×4 complex-valued matrices with 48
+      scalar multiplications, one fewer than Strassen's 1969 algorithm needs when applied
+      recursively; better-than-known solutions to about a fifth of the more than 50 open problems it
+      was tried on, including a new lower bound for the kissing number in 11 dimensions; a
+      scheduling rule for Google's data centers that frees, on average, about 0.7% of the company's
+      fleet-wide computing capacity; and faster kernels that shortened Gemini's training time by
+      about 1%.
+    example: >-
+      We gave AlphaEvolve the scheduler and a simulator as its evaluator, then let it run for a week.
+origin: >-
+  Announced by Google DeepMind on 14 May 2025 in a blog post and white paper. It generalizes
+  FunSearch (2023), which evolved single functions, to whole code files and multiple objectives. In
+  November 2025 Bogdan Georgiev, Javier Gómez-Serrano, Terence Tao and Adam Zsolt Wagner reported
+  testing it on 67 mathematical problems.
+year: 2025
+note: >-
+  Its discoveries are checked by the evaluator, not by the language model, which guards against
+  [[hallucination|hallucination]] but limits it to problems with reliable automatic scoring.
+see_also:
+  - genetic programming
+  - program synthesis
+  - Darwin Gödel Machine
+  - AI scientist
+  - automated AI research
+  - open-endedness
+sources:
+  - text: >-
+      Google DeepMind (2025). AlphaEvolve: A Gemini-powered coding agent for designing advanced
+      algorithms. 14 May 2025.
+    url: https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/
+  - text: >-
+      Novikov, A. et al. (2025). AlphaEvolve: A coding agent for scientific and algorithmic
+      discovery. Google DeepMind white paper.
+as_of: 2026-10

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: embodied AI
+id: embodied-ai
+pos: n.
+also:
+  - embodied artificial intelligence
+  - embodied intelligence
+  - embodied agent
+domain: robot
+domains:
+  - mind
+  - rl
+  - core
+level: core
+plain: >-
+  AI that has a body, usually a robot and sometimes a simulated character, and learns or acts by
+  sensing and moving in a world rather than only processing text or images.
+senses:
+  - definition: >-
+      The study and engineering of [[ai-agent|agents]] that perceive and act through a physical or
+      simulated body situated in an environment, so that intelligence is shaped by, and evaluated
+      through, sensorimotor interaction rather than by processing disembodied data. In current
+      research the term covers [[robot-learning|robot learning]], learned navigation and
+      [[manipulation|manipulation]], instruction following in 3D simulators such as AI2-THOR and
+      Habitat, embodied question answering and, since 2023,
+      [[vision-language-action-model|vision-language-action models]] that connect
+      [[large-language-model|language-model]] knowledge to motor control. A recurring claim of the
+      field, inherited from [[embodied-cognition|embodied cognition]], is that some capacities, such
+      as common sense about objects, forces, causality and space, are learned most efficiently, or
+      only, through interaction; whether models trained on text and video can acquire them without a
+      body is an open question related to the [[symbol-grounding-problem|symbol grounding problem]].
+    example: >-
+      The lab's embodied AI work trains agents in simulated apartments before moving them onto real
+      robots.
+origin: >-
+  The thesis that intelligence needs a body was pressed in robotics by Rodney Brooks ('Elephants
+  Don't Play Chess', 1990; 'Intelligence without Representation', 1991) and developed by Rolf
+  Pfeifer and colleagues as embodied artificial intelligence in the 1990s and 2000s; the first use
+  of the exact phrase is not established. The short form 'embodied AI' became common in the late
+  2010s for deep-learning agents trained in 3D simulators and the standard umbrella term for learned
+  robotics in the 2020s.
+year: 1991
+note: >-
+  Overlaps heavily with [[physical-ai|physical AI]], which stresses industrial deployment, and with
+  [[robot-learning|robot learning]], which stresses methods. 'Embodied agent' is also used,
+  confusingly, for animated on-screen characters and avatars.
+see_also:
+  - robot learning
+  - physical AI
+  - embodied cognition
+  - vision-language-action model
+  - world model
+  - symbol grounding problem
+  - Moravec's paradox
+contrast:
+  - large language model
+sources:
+  - text: >-
+      Brooks, R. A. (1991). Intelligence without representation. Artificial Intelligence 47, 139–159.
+  - text: >-
+      Pfeifer, R. & Bongard, J. (2006). How the Body Shapes the Way We Think: A New View of
+      Intelligence. MIT Press.

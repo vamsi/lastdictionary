@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: direct logit attribution
+id: direct-logit-attribution
+pos: n.
+also:
+  - DLA
+  - logit attribution
+  - logit difference attribution
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A quick way to measure how much each internal part of a language model directly pushed it toward a
+  particular next word, by splitting the final score into separate contributions.
+senses:
+  - definition: >-
+      A method that attributes a model's output [[logit|logit]] for a given [[token|token]] to
+      individual components by exploiting the additive [[residual-stream|residual stream]]. Since
+      the final residual state is the sum of the embedding and the outputs of every attention head
+      and MLP layer, projecting each component's output onto the [[unembedding|unembedding]]
+      direction of the target token — after applying the final [[layer-normalization|layer
+      normalization]] scale, frozen at its actual value — gives that component's direct
+      contribution. Using the difference between two tokens' directions (a logit difference, such as
+      'Mary' minus 'John') isolates the components that decide between them. DLA is cheap, needing a
+      single forward pass, and is a standard first step in circuit analysis. It captures only direct
+      effects: a component that matters by influencing later layers, or whose output is cancelled
+      downstream, is misjudged, so findings are usually confirmed with
+      [[activation-patching|activation patching]].
+    example: >-
+      Direct logit attribution pins most of the 'Paris' logit on two heads in the last three layers.
+origin: >-
+  Follows from the residual-stream decomposition in 'A Mathematical Framework for Transformer
+  Circuits' (Elhage et al., December 2021). The name's first user is not established; it became
+  standard in 2022–2023, spreading largely through Neel Nanda's TransformerLens tutorials and
+  glossary and the circuit studies that built on them.
+year: 2021
+see_also:
+  - residual stream
+  - logit lens
+  - activation patching
+  - unembedding
+  - indirect object identification
+  - attribution patching
+sources:
+  - text: >-
+      Elhage, N. et al. (2021). A Mathematical Framework for Transformer Circuits. Transformer
+      Circuits Thread.

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deadly triad
+id: deadly-triad
+pos: n.
+domain: rl
+level: specialist
+plain: >-
+  The risky combination of three common ingredients in reinforcement learning — approximation,
+  learning from guesses, and learning from other strategies' data — which together can make learning
+  spin out of control.
+senses:
+  - definition: >-
+      The combination, so named by Richard Sutton and Andrew Barto, of three ingredients of
+      [[reinforcement-learning|reinforcement learning]] that together can make value estimates
+      unstable or divergent even with simple linear models: function approximation (one parametrized
+      model, such as a [[neural-network|neural network]], shared across many states), bootstrapping
+      (targets that contain the learner's own current estimates, as in
+      [[temporal-difference-learning|temporal difference learning]]) and [[off-policy|off-policy]]
+      training (data drawn from a different policy than the one being evaluated). With only two of
+      the three, learning is generally stable, but scalable algorithms such as the
+      [[deep-q-network|deep Q-network]] want all three, since each brings large gains in
+      generalization, data efficiency or flexibility. Leemon Baird's 1995 'star' counterexample is a
+      classic demonstration. Mitigations — [[target-network|target networks]],
+      [[experience-replay|experience replay]], double estimators, gradient-TD and conservative
+      updates — reduce rather than eliminate the risk; a 2018 study by Hado van Hasselt and
+      colleagues found outright divergence rarer in deep RL than theory suggests, though temporarily
+      exploding value estimates were common.
+    example: >-
+      Our critic's values exploded once we added replay from an old policy — the deadly triad in
+      action.
+origin: >-
+  The instability of off-policy TD learning with function approximation was demonstrated in the
+  mid-1990s by Leemon Baird (1995) and by John Tsitsiklis and Benjamin Van Roy (1997). Richard
+  Sutton and Andrew Barto's name for the combination, the 'deadly triad', was in print by 2018 in
+  the second edition of their textbook (drafts had circulated online earlier) and spread through
+  deep RL papers such as Hado van Hasselt and colleagues' study of that year.
+year: 2018
+see_also:
+  - off-policy
+  - temporal difference learning
+  - deep Q-network
+  - target network
+  - experience replay
+  - offline reinforcement learning
+sources:
+  - text: >-
+      Sutton, R. S. & Barto, A. G. (2018). Reinforcement Learning: An Introduction (2nd ed.), §11.3.
+      MIT Press.
+  - text: >-
+      van Hasselt, H. et al. (2018). Deep Reinforcement Learning and the Deadly Triad.
+      arXiv:1812.02648.
+    url: https://arxiv.org/pdf/1812.02648
+  - text: >-
+      Baird, L. (1995). Residual Algorithms: Reinforcement Learning with Function Approximation.
+      Proceedings of ICML 1995.

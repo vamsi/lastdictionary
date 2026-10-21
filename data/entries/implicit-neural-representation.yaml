@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: implicit neural representation
+id: implicit-neural-representation
+pos: n.
+also:
+  - INR
+  - neural field
+  - coordinate-based network
+  - coordinate network
+  - SIREN
+domain: dl
+domains:
+  - percep
+  - gen
+level: specialist
+plain: >-
+  A way of storing an image, shape or scene as a small neural network that, given any coordinate,
+  returns what is there, such as a color or density, instead of as a grid of pixels.
+senses:
+  - definition: >-
+      A way of encoding a signal, such as an image, a 3-D shape or a sound, in the weights of a
+      [[neural-network|neural network]], typically a [[multilayer-perceptron|multilayer
+      perceptron]], that takes a coordinate (pixel position, 3-D point, time, viewing direction) and
+      returns the signal's value there (color, occupancy, signed distance, density, sound pressure).
+      Because that function is continuous, the signal has no fixed resolution and can be queried
+      anywhere and differentiated with respect to its inputs. Plain [[relu|ReLU]] networks are
+      biased towards smooth functions, so implicit neural representations use Fourier-feature input
+      encodings, sine activations (SIREN) or multiresolution hash-grid encodings to capture fine
+      detail. Applications include 3-D shape modeling, [[neural-radiance-field|neural radiance
+      fields]] for view synthesis, compression, super-resolution and solving differential equations;
+      [[hypernetwork|hypernetworks]] and meta-learning can produce such representations for many
+      signals at once.
+    example: >-
+      Each MRI volume is stored as an implicit neural representation and resampled at any slice
+      thickness.
+origin: >-
+  Coordinate-based networks for 3-D shape emerged in 2019 with Occupancy Networks (Lars Mescheder
+  and colleagues) and DeepSDF (Jeong Joon Park and colleagues). Ben Mildenhall and colleagues' NeRF
+  (2020) and Vincent Sitzmann and colleagues' 'Implicit Neural Representations with Periodic
+  Activation Functions' (June 2020), which introduced SIREN and helped fix the name, made the
+  approach widespread.
+year: 2019
+see_also:
+  - neural radiance field
+  - multilayer perceptron
+  - hypernetwork
+  - Gaussian splatting
+  - super-resolution
+  - physics-informed neural network
+sources:
+  - text: >-
+      Sitzmann, V., Martel, J. N. P., Bergman, A. W., Lindell, D. B. & Wetzstein, G. (2020).
+      Implicit Neural Representations with Periodic Activation Functions. arXiv:2006.09661; NeurIPS
+      2020.
+    url: https://arxiv.org/abs/2006.09661

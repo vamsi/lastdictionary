@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: OSWorld
+id: osworld
+pos: prop. n.
+also:
+  - OSWorld-Verified
+domain: eval
+domains:
+  - agents
+  - percep
+level: core
+plain: >-
+  A test in which AI agents must use real desktop computers — clicking, typing and switching between
+  apps such as spreadsheets, browsers and file managers — to finish everyday office tasks.
+senses:
+  - definition: >-
+      A benchmark of 369 open-ended computer tasks carried out in real operating systems running in
+      virtual machines, covering web browsing, office documents, image editing, coding tools, email
+      and file management; many require switching between programs. An agent observes screenshots,
+      the accessibility tree or both, and acts through mouse and keyboard commands; each task has a
+      custom script that checks the resulting system state, so any successful sequence of actions
+      counts. The best multimodal model at release succeeded on 12.24% of tasks, against 72.36% for
+      human testers, with most failures traced to GUI grounding — locating the right element on
+      screen — and to not knowing how particular applications work. OSWorld became the main
+      yardstick for [[computer-use|computer use]] and [[gui-agent|GUI agents]]; a revised
+      OSWorld-Verified release (2025) repaired broken tasks and standardized the evaluation
+      infrastructure. By late 2025, leading agents reported success rates above 60%.
+    example: >-
+      On OSWorld the agent handles single-app tasks well but loses track in multi-app workflows.
+origin: >-
+  Introduced in April 2024 by Tianbao Xie and colleagues, led from the University of Hong Kong with
+  collaborators including Salesforce Research and Carnegie Mellon University, and published in the
+  NeurIPS 2024 Datasets and Benchmarks Track.
+year: 2024
+note: >-
+  Scores vary with observation type (screenshots only versus accessibility tree), step limits and
+  harness, so comparisons need matched settings.
+see_also:
+  - computer use
+  - GUI agent
+  - WebArena
+  - AI agent
+  - visual grounding
+  - Terminal-Bench
+sources:
+  - text: >-
+      Xie, T. et al. (2024). OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real
+      Computer Environments. NeurIPS 2024 Datasets and Benchmarks Track.
+    url: https://arxiv.org/abs/2404.07972
+as_of: 2026-10

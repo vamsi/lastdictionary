@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: projected gradient descent attack
+id: projected-gradient-descent-attack
+pos: n.
+also:
+  - PGD attack
+  - basic iterative method
+  - BIM
+  - iterative FGSM
+domain: sec
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A stronger version of the quick pixel-nudging attack: take many small steps that each raise the
+  model's error, pulling the image back after every step so the total change stays tiny.
+senses:
+  - definition: >-
+      An iterative [[white-box-attack|white-box attack]] that searches for an
+      [[adversarial-example|adversarial example]] by repeated gradient-ascent steps on the model's
+      loss, projecting the input back onto the allowed perturbation set (for example, the ℓ∞ ball of
+      radius ε around the original) after each step, usually starting from a random point inside the
+      set. With enough steps and restarts it approximately solves the inner maximization of the
+      robust-optimization problem, so it is treated as a strong 'first-order adversary' and is the
+      standard attack both for measuring robustness and for generating examples in
+      [[adversarial-training|adversarial training]]. Under ℓ∞ constraints each step follows the sign
+      of the gradient, as in [[fast-gradient-sign-method|FGSM]].
+    example: We report robust accuracy under PGD with 50 steps and 10 random restarts.
+formula_latex: x^{t+1} = \Pi_{\mathcal{B}_\epsilon(x)}\Big(x^{t} + \alpha \cdot
+  \operatorname{sign}\big(\nabla_{x} \mathcal{L}(f_\theta(x^{t}), y)\big)\Big)
+origin: >-
+  Alexey Kurakin, Ian Goodfellow and Samy Bengio described the iterative 'basic iterative method' in
+  2016. Aleksander Madry and colleagues' 'Towards Deep Learning Models Resistant to Adversarial
+  Attacks' (arXiv 2017; ICLR 2018) framed it as projected gradient descent on a min–max objective,
+  added random starts, and made PGD the reference attack and training method.
+year: 2017
+note: >-
+  Strictly it is gradient ascent on the loss; the name comes from the optimization method. Apparent
+  robustness against PGD can be illusory when a defense hides its gradients; see
+  [[gradient-masking|gradient masking]].
+see_also:
+  - fast gradient sign method
+  - adversarial training
+  - adversarial robustness
+  - Carlini–Wagner attack
+  - gradient masking
+  - white-box attack
+sources:
+  - text: >-
+      Madry, A., Makelov, A., Schmidt, L., Tsipras, D. & Vladu, A. (2018). Towards Deep Learning
+      Models Resistant to Adversarial Attacks. ICLR 2018. arXiv:1706.06083.

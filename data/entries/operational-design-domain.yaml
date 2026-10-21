@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: operational design domain
+id: operational-design-domain
+pos: n.
+also:
+  - ODD
+  - operating design domain
+domain: robot
+domains:
+  - gov
+  - safety
+level: specialist
+plain: >-
+  The specific conditions an automated vehicle or robot is designed to work in, such as particular
+  roads, speeds, weather and times of day, outside of which it must not operate on its own.
+senses:
+  - definition: >-
+      The envelope of conditions that an automated driving system, or more generally any autonomous
+      system, is engineered to operate within: geographic area and road types, speed range, weather,
+      lighting and time of day, traffic conditions, and required infrastructure such as lane
+      markings or connectivity. The ODD bounds a system's safety claims and is central to its
+      validation, approval and marketing: a robotaxi may be validated only for certain city
+      districts in good weather, a highway system only for divided motorways below a set speed. When
+      a system detects that it is leaving, or about to leave, its ODD, it must either hand control
+      back to a human ([[levels-of-driving-automation|Level 3]]) or reach a minimal risk condition
+      by itself, such as stopping safely (Levels 4–5); only Level 5 implies an unlimited ODD. The
+      concept has spread to drones, mobile robots and AI systems generally as a way of stating the
+      conditions under which performance claims hold.
+    example: >-
+      Heavy snow is outside our ODD, so the fleet returns to the depots when the forecast turns.
+origin: >-
+  Defined in SAE International's J3016 taxonomy of driving automation and adopted in US federal
+  automated-vehicle policy from 2016 and in international regulation such as UN Regulation No. 157
+  on automated lane keeping (in force January 2021). Standards such as BSI PAS 1883 (2020) and ISO
+  34503 (2023) specify how to describe an ODD.
+note: >-
+  Related to, but more operational than, a machine-learning model's training distribution: inputs
+  that are [[out-of-distribution|out-of-distribution]] for a perception model can still occur inside
+  a nominal ODD.
+see_also:
+  - levels of driving automation
+  - autonomous vehicle
+  - robotaxi
+  - advanced driver-assistance system
+  - out-of-distribution
+  - safety case
+sources:
+  - text: >-
+      BSI (2020). PAS 1883: Operational design domain (ODD) taxonomy for an automated driving system
+      (ADS) — Specification. British Standards Institution.
+standards: SAE J3016_202104 (definition of 'operational design domain')
+as_of: 2026-10

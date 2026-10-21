@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: early stopping
+id: early-stopping
+pos: n.
+also:
+  - patience
+domain: dl
+domains:
+  - ml
+level: core
+plain: >-
+  Stopping training at the point where the model does best on practice data it has not learned from,
+  before it starts memorizing quirks of its training examples.
+senses:
+  - definition: >-
+      A [[regularization|regularization]] method that monitors performance on a held-out
+      [[validation-set|validation set]] during training and halts — or keeps the best
+      [[checkpoint|checkpoint]] — once the validation metric has stopped improving for a set number
+      of evaluations (the 'patience'), even though training loss is still falling. It exploits the
+      typical shape of [[learning-curve|learning curves]]: validation error first falls with
+      training error and later rises as the model starts [[overfitting|overfitting]]. For linear
+      models trained by gradient descent, stopping early behaves much like an L2 penalty, because
+      the number of steps limits how far parameters can travel from their initialization; for neural
+      networks it is a cheap capacity control that also saves compute. Noisy validation metrics can
+      trigger it too soon, and phenomena such as epoch-wise [[double-descent|double descent]] and
+      [[grokking|grokking]], in which validation performance worsens before improving again, mean
+      naive patience can stop before the best model is reached.
+    example: Early stopping with patience 5 picked the checkpoint from epoch 23.
+origin: >-
+  Halting iterative methods early as a form of regularization predates neural networks, for example
+  in iterative solutions of ill-posed inverse problems. In neural-network training it was in use by
+  about 1990 (for instance by Nelson Morgan and Hervé Bourlard) and was systematized in Lutz
+  Prechelt's chapter 'Early Stopping — But When?' (1998).
+note: >-
+  Large language model [[pretraining|pretraining]] rarely uses early stopping: models see most data
+  about once and rarely overfit, so runs end when the compute budget is spent.
+see_also:
+  - overfitting
+  - validation set
+  - learning curve
+  - regularization
+  - checkpoint
+  - double descent
+sources:
+  - text: >-
+      Prechelt, L. (1998). Early Stopping — But When? In Neural Networks: Tricks of the Trade,
+      Lecture Notes in Computer Science 1524, 55–69.

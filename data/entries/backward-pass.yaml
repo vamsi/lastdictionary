@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: backward pass
+id: backward-pass
+pos: n.
+also:
+  - backward propagation
+  - bprop
+  - gradient computation
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  The step in training where the network works backward from its error, layer by layer, to calculate
+  how each internal setting should change.
+senses:
+  - definition: >-
+      The phase of a [[training-step|training step]] that computes gradients of the
+      [[loss-function|loss]] with respect to every parameter by traversing the
+      [[computational-graph|computational graph]] from the loss back toward the inputs and applying
+      the [[chain-rule|chain rule]] at each operation — the execution of
+      [[backpropagation|backpropagation]]. Each layer receives the gradient with respect to its
+      outputs and produces two things: gradients for its own weights, which the
+      [[optimizer|optimizer]] will use, and the gradient with respect to its inputs, which is handed
+      to the preceding layer. The backward pass costs roughly twice the floating-point operations of
+      the [[forward-pass|forward pass]] (one matrix product for weight gradients and one for input
+      gradients) and needs the activations saved during the forward pass, which is why activation
+      memory dominates large-model training and why [[gradient-checkpointing|gradient
+      checkpointing]] trades recomputation for memory. In [[data-parallelism|data-parallel]]
+      training, gradient communication ([[all-reduce|all-reduce]]) is overlapped with the backward
+      pass.
+    example: >-
+      The backward pass runs out of memory at 32k context unless we enable activation checkpointing.
+origin: >-
+  From the backpropagation literature of the 1980s, contrasting the backward flow of error
+  derivatives with the forward flow of activity; deep-learning frameworks made 'backward' the name
+  of the gradient routine, as in PyTorch's loss.backward().
+see_also:
+  - backpropagation
+  - forward pass
+  - automatic differentiation
+  - gradient checkpointing
+  - computational graph
+  - vanishing gradient problem
+contrast:
+  - forward pass

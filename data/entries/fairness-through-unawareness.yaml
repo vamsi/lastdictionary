@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fairness through unawareness
+id: fairness-through-unawareness
+pos: n.
+also:
+  - FTU
+  - fairness through blindness
+  - anti-classification
+domain: society
+domains:
+  - ml
+level: specialist
+plain: >-
+  The simple idea of making a system fair by hiding sensitive traits like race or sex from it; it
+  usually fails, because other information gives those traits away.
+senses:
+  - definition: >-
+      The approach of seeking non-discrimination by excluding [[protected-attribute|protected
+      attributes]] from a model's inputs, so that decisions are formally blind to them. It mirrors
+      the legal prohibition on disparate treatment and is a common default in practice. As a
+      guarantee of fair outcomes it is generally ineffective, because remaining features correlated
+      with the attribute let a model reconstruct it ([[proxy-discrimination|proxy discrimination]]).
+      It can even make outcomes worse: without the attribute, a model cannot account for group
+      differences in how features relate to outcomes, and disparities become harder to measure. Most
+      fairness methods therefore use the attribute, at least during training or auditing.
+    example: >-
+      Fairness through unawareness failed: with the gender field removed, the résumé model penalized
+      women's colleges instead.
+origin: >-
+  Named in contrast to 'fairness through awareness', the title of Cynthia Dwork and colleagues'
+  paper (arXiv 2011; ITCS 2012), which criticized 'fairness through blindness' and argued that
+  fairness requires using protected information. The earliest use found is in Moritz Hardt, Eric
+  Price and Nathan Srebro's 'Equality of Opportunity in Supervised Learning' (October 2016); Matt
+  Kusner and colleagues' 'Counterfactual Fairness' (2017) listed it, abbreviated FTU, among existing
+  fairness definitions.
+year: 2016
+see_also:
+  - proxy discrimination
+  - individual fairness
+  - protected attribute
+  - counterfactual fairness
+  - algorithmic bias
+contrast:
+  - individual fairness
+sources:
+  - text: >-
+      Hardt, M., Price, E. & Srebro, N. (2016). Equality of Opportunity in Supervised Learning.
+      Advances in Neural Information Processing Systems 29.
+    url: https://arxiv.org/abs/1610.02413
+  - text: >-
+      Kusner, M. J., Loftus, J., Russell, C. & Silva, R. (2017). Counterfactual Fairness. Advances
+      in Neural Information Processing Systems 30.

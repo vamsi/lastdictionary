@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: information theory
+id: information-theory
+pos: n.
+also:
+  - Shannon theory
+  - information-theoretic
+  - communication theory
+domain: math
+domains:
+  - llm
+  - ml
+level: core
+plain: >-
+  A branch of mathematics that treats information as surprise — the less predictable a message, the
+  more it tells you — and works out how far data can be compressed and how reliably it can be sent.
+senses:
+  - definition: >-
+      The mathematical theory, founded on probability, of how much uncertainty a message resolves
+      and of the limits this places on coding: how compactly the output of a source can be
+      represented and how fast data can cross a noisy channel without error. Its central quantities
+      — [[entropy|entropy]] (average uncertainty), [[cross-entropy|cross-entropy]],
+      [[kullback-leibler-divergence|Kullback–Leibler divergence]] and [[mutual-information|mutual
+      information]] — are measured in bits (base-2 logarithms) or nats (natural logarithms). Its
+      main theorems set hard limits: the source coding theorem says data cannot be losslessly
+      compressed below its entropy, and the noisy-channel coding theorem says reliable communication
+      is possible up to, but not beyond, a channel's capacity. Information theory supplies much of
+      machine learning's vocabulary and objectives: language models are trained to minimize
+      cross-entropy, so a better predictor is a better compressor; [[perplexity|perplexity]] and
+      bits per byte measure modeling quality; [[contrastive-learning|contrastive learning]]
+      maximizes bounds on mutual information; and [[minimum-description-length|minimum description
+      length]], the [[information-bottleneck|information bottleneck]] and rate–distortion theory
+      frame learning as compression.
+    example: >-
+      In information-theory terms, a model with lower cross-entropy is literally a better text
+      compressor.
+origin: >-
+  Founded by Claude Shannon's 'A Mathematical Theory of Communication' (Bell System Technical
+  Journal, 1948), which built on Harry Nyquist (1924) and Ralph Hartley (1928) at Bell Labs; Norbert
+  Wiener developed related ideas at the same time. The name 'information theory' was in print by
+  1950 and became standard during the 1950s.
+year: 1948
+see_also:
+  - entropy
+  - cross-entropy
+  - Kullback–Leibler divergence
+  - mutual information
+  - minimum description length
+  - Kolmogorov complexity
+  - perplexity
+sources:
+  - text: >-
+      Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal,
+      27(3–4).

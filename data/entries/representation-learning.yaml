@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: representation learning
+id: representation-learning
+pos: n.
+also:
+  - feature learning
+  - learned representations
+  - learning representations
+domain: dl
+domains:
+  - ml
+  - core
+level: core
+plain: >-
+  Letting a computer work out for itself how best to describe its data, such as the edges and shapes
+  in images or the meanings of words, instead of relying on descriptions people design by hand.
+senses:
+  - definition: >-
+      Machine learning in which the features a task depends on are themselves learned from data
+      rather than designed by hand ([[feature-engineering|feature engineering]]): a model learns
+      transformations of raw input into [[feature|feature]] vectors, or representations, from which
+      downstream problems such as classification, retrieval or control are easy to solve, often by a
+      simple linear model. Deep networks learn representations implicitly: each
+      [[hidden-layer|hidden layer]] re-represents its input, and a trained network's penultimate
+      layer is often reused as a general-purpose [[embedding|embedding]]. Representations can be
+      learned with labels (supervised pretraining), without them ([[autoencoder|autoencoders]] and
+      [[self-supervised-learning|self-supervised learning]] by [[contrastive-learning|contrastive]],
+      masked-prediction or next-token objectives), or from related tasks
+      ([[transfer-learning|transfer learning]], [[multi-task-learning|multi-task learning]]).
+      Desired properties include capturing the explanatory factors of variation, invariance to
+      nuisance factors, [[disentangled-representation|disentanglement]] and linear accessibility of
+      task-relevant information, commonly measured by training a [[linear-probe|linear probe]] on
+      frozen features.
+    example: >-
+      The self-supervised model's representations transfer so well that a linear classifier on top
+      matches full supervised training.
+origin: >-
+  The idea is as old as connectionism: David Rumelhart, Geoffrey Hinton and Ronald Williams's 1986
+  Nature paper was titled 'Learning Representations by Back-Propagating Errors'. The phrase became a
+  field label through Yoshua Bengio, Aaron Courville and Pascal Vincent's review 'Representation
+  Learning: A Review and New Perspectives' (2012) and the International Conference on Learning
+  Representations (ICLR), first held in 2013.
+year: 1986
+see_also:
+  - embedding
+  - self-supervised learning
+  - contrastive learning
+  - autoencoder
+  - latent space
+  - transfer learning
+  - linear probe
+  - feature engineering
+contrast:
+  - feature engineering
+sources:
+  - text: >-
+      Bengio, Y., Courville, A. & Vincent, P. (2012). Representation Learning: A Review and New
+      Perspectives. arXiv:1206.5538; IEEE TPAMI 2013.
+    url: https://arxiv.org/abs/1206.5538

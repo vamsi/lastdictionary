@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: time per output token
+id: time-per-output-token
+pos: n.
+also:
+  - TPOT
+  - inter-token latency
+  - ITL
+  - time between tokens
+domain: infer
+domains:
+  - eval
+level: specialist
+plain: >-
+  Once an AI has started replying, the average wait between one piece of its answer and the next. It
+  sets how quickly the text seems to flow.
+senses:
+  - definition: >-
+      The mean time a serving system takes to generate each [[token|token]] after the first for a
+      single request: end-to-end [[latency|latency]] minus [[time-to-first-token|time to first
+      token]], divided by the number of output tokens minus one. It is set mainly by the
+      [[decode-phase|decode phase]], in which every step must read the model's [[weights|weights]]
+      and the request's [[kv-cache|KV cache]] from memory, so it depends on
+      [[memory-bandwidth|memory bandwidth]], model size, [[quantization|quantization]],
+      [[batch-size|batch size]] and interference from other requests' [[prefill|prefill]] work. Its
+      reciprocal is the per-user generation speed in [[tokens-per-second|tokens per second]].
+      Inter-token latency (ITL) is used both as a synonym and, more strictly, for the distribution
+      of individual gaps between consecutive tokens, whose tail exposes stalls that an average
+      conceals.
+    example: >-
+      We need TPOT under 50 milliseconds so the speech synthesizer never runs out of text.
+formula_latex: \text{TPOT} = \frac{T_{\text{end-to-end}} - \text{TTFT}}{n_{\text{out}} - 1}
+origin: >-
+  Named in LLM-serving practice by 2023: Databricks' October 2023 performance guide defined TPOT,
+  and DistServe (2024) used TTFT and TPOT as the two latency constraints behind its goodput metric.
+  Open-source benchmarking tools later popularized the ITL variant.
+year: 2023
+see_also:
+  - time to first token
+  - latency
+  - tokens per second
+  - decode phase
+  - chunked prefill
+  - goodput
+sources:
+  - text: >-
+      Agarwal, M. et al. (2023). LLM Inference Performance Engineering: Best Practices. Databricks
+      blog.
+    url: https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices
+  - text: >-
+      Zhong, Y. et al. (2024). DistServe: Disaggregating Prefill and Decoding for Goodput-optimized
+      Large Language Model Serving. arXiv:2401.09670.
+    url: https://arxiv.org/abs/2401.09670

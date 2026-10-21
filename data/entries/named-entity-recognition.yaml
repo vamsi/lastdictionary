@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: named-entity recognition
+id: named-entity-recognition
+pos: n.
+also:
+  - NER
+  - entity extraction
+  - named entity
+  - BIO tagging
+domain: llm
+domains:
+  - ml
+  - data
+level: core
+plain: >-
+  Software that spots names and similar expressions in text and labels each by type: in 'Maria flew
+  from Lagos to Paris on Monday', it marks a person, two cities and a date.
+senses:
+  - definition: >-
+      The [[information-extraction|information extraction]] task of marking every stretch of text
+      that refers to a particular named thing and assigning it one of a set of categories fixed in
+      advance — for example the person, location, organization and miscellaneous types of the
+      CoNLL-2003 benchmark, which other schemes extend with dates, times and monetary amounts or, in
+      specialized domains, with genes, drugs or legal citations. It is usually framed as sequence
+      labeling, assigning each [[token|token]] a tag in a scheme such as BIO (beginning, inside or
+      outside an entity), and evaluated by entity-level [[precision|precision]], [[recall|recall]]
+      and [[f1-score|F1 score]]. Systems progressed from gazetteers and hand-written rules through
+      [[hidden-markov-model|hidden Markov models]] and conditional random fields to bidirectional
+      LSTMs, fine-tuned [[bert|BERT]]-style encoders and prompted LLMs. NER feeds entity linking
+      (mapping mentions to knowledge-base entries), [[knowledge-graph|knowledge graph]]
+      construction, search, and the redaction of [[personally-identifiable-information|personally
+      identifiable information]].
+    example: The NER model tagged 'Jordan' as a location in a basketball article.
+origin: >-
+  The term 'named entity' was introduced for the Sixth Message Understanding Conference (MUC-6,
+  1995), whose history Ralph Grishman and Beth Sundheim recount (1996). The CoNLL-2002 and
+  CoNLL-2003 shared tasks, with person, location, organization and miscellaneous types, became the
+  standard benchmarks.
+year: 1995
+see_also:
+  - information extraction
+  - natural language processing
+  - part-of-speech tagging
+  - knowledge graph
+  - personally identifiable information
+  - text classification
+sources:
+  - text: >-
+      Grishman, R. & Sundheim, B. (1996). Message Understanding Conference-6: A Brief History.
+      COLING 1996.
+    url: https://aclanthology.org/C96-1079/
+  - text: >-
+      Tjong Kim Sang, E. F. & De Meulder, F. (2003). Introduction to the CoNLL-2003 Shared Task:
+      Language-Independent Named Entity Recognition. CoNLL 2003.
+    url: https://aclanthology.org/W03-0419/

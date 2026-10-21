@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prosaic alignment
+id: prosaic-alignment
+pos: n.
+also:
+  - prosaic AI alignment
+  - prosaic AGI
+domain: safety
+domains:
+  - llm
+  - train
+level: specialist
+plain: >-
+  Working on AI safety by assuming that powerful future AI will be built from today's techniques —
+  scaled-up neural networks — rather than from some new breakthrough.
+senses:
+  - definition: >-
+      An approach to [[ai-alignment|AI alignment]] premised on the possibility that transformative
+      AI will be built by scaling up existing [[deep-learning|deep learning]] methods, with no
+      conceptual breakthrough in understanding how intelligence works, so that alignment techniques
+      should be developed for, and tested on, such systems now. Paul Christiano, who named it,
+      argued that if such 'prosaic AGI' is possible, alignment work aimed at unknown future
+      architectures may arrive too late. Prosaic research programs include
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]],
+      [[scalable-oversight|scalable oversight]] methods such as [[iterated-amplification|iterated
+      amplification]] and [[ai-debate|debate]], [[interpretability|interpretability]] of
+      [[neural-network|neural networks]], [[ai-control|control]] and
+      [[model-organism-of-misalignment|model organisms]]. With the rise of
+      [[large-language-model|large language models]], prosaic approaches became the mainstream of
+      the field.
+    example: >-
+      Most of the lab's agenda is prosaic alignment: oversight and interpretability for the models
+      we actually train.
+origin: >-
+  Introduced by Paul Christiano in the November 2016 essay 'Prosaic AI alignment', which described
+  prosaic AGI as transformative AI reached by extending current methods, without any deep new
+  understanding of what intelligence is.
+year: 2016
+note: >-
+  'Prosaic' is descriptive, not dismissive: it means built from known, unglamorous techniques.
+  Usually contrasted with [[agent-foundations|agent foundations]] research, which seeks a
+  theoretical understanding of agency first.
+see_also:
+  - AI alignment
+  - agent foundations
+  - scalable oversight
+  - iterated amplification
+  - interpretability
+  - scaling hypothesis
+contrast:
+  - agent foundations
+sources:
+  - text: >-
+      Christiano, P. (2016). Prosaic AI alignment. AI Alignment blog (ai-alignment.com).

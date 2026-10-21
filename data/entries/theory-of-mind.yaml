@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: theory of mind
+id: theory-of-mind
+pos: n.
+also:
+  - ToM
+  - mentalizing
+  - mindreading
+  - false-belief task
+  - Sally–Anne test
+domain: mind
+domains:
+  - llm
+  - eval
+level: core
+plain: >-
+  Being able to work out what someone else believes, wants or knows — even when it is not what you
+  believe — and to use that to guess what they will do next. Researchers test whether AI has it.
+senses:
+  - context: Psychology
+    definition: >-
+      The capacity to attribute mental states — beliefs, desires, intentions, knowledge, emotions —
+      to oneself and others and to use them to explain and predict behavior. Its classic test is the
+      false-belief task: in the Sally–Anne version, a child watches Sally put a marble in a basket
+      and Anne move it to a box while Sally is away, and is asked where Sally will look for it.
+      Children typically pass explicit versions around age four. Theory of mind is studied in
+      development, in comparative psychology and in autism research; accounts divide over whether
+      people apply a tacit folk-psychological theory ('theory theory') or simulate others' minds
+      with their own ('simulation theory').
+  - context: AI
+    definition: >-
+      The capacity of an AI system to model the mental states of users or other agents, tested by
+      adapting false-belief and related tasks for [[large-language-model|language models]]. Reports
+      in 2023 that models such as [[gpt-4|GPT-4]] solved most classic false-belief vignettes were
+      met with evidence that performance can collapse under small changes to the stories, suggesting
+      reliance on familiar patterns; later benchmarks probe higher-order beliefs, deception and the
+      use of mental-state reasoning in action. Theory of mind matters for helpful assistants and
+      multi-agent cooperation, and for safety, since modeling what others believe is also a
+      prerequisite for deception and manipulation.
+    example: >-
+      The model passed the standard unexpected-transfer story but failed once the container was made
+      transparent.
+    labels:
+      - contested
+origin: >-
+  Coined by David Premack and Guy Woodruff in 'Does the Chimpanzee Have a Theory of Mind?'
+  (Behavioral and Brain Sciences, 1978). Heinz Wimmer and Josef Perner devised the false-belief task
+  (1983), and Simon Baron-Cohen, Alan Leslie and Uta Frith introduced the Sally–Anne version (1985).
+  Michal Kosinski's 2023 preprint started the debate over language models.
+year: 1978
+note: >-
+  Not a theory about the mind, such as [[functionalism|functionalism]]: the phrase names a capacity.
+  Passing a test designed for children does not show the same capacity in a system trained on text
+  that describes such tests; see [[clever-hans-effect|Clever Hans effect]].
+see_also:
+  - intentional stance
+  - problem of other minds
+  - attention schema theory
+  - machine understanding
+  - Clever Hans effect
+  - scheming
+contrast:
+  - problem of other minds
+sources:
+  - text: >-
+      Premack, D. & Woodruff, G. (1978). Does the Chimpanzee Have a Theory of Mind? Behavioral and
+      Brain Sciences 1(4), 515–526.
+  - text: >-
+      Kosinski, M. (2024). Evaluating Large Language Models in Theory of Mind Tasks. Proceedings of
+      the National Academy of Sciences 121, e2405460121.
+    url: https://doi.org/10.1073/pnas.2405460121
+  - text: >-
+      Ullman, T. (2023). Large Language Models Fail on Trivial Alterations to Theory-of-Mind Tasks.
+      arXiv.

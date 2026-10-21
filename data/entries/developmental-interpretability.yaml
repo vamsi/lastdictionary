@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: developmental interpretability
+id: developmental-interpretability
+pos: n.
+also:
+  - devinterp
+  - dev interp
+domain: interp
+domains:
+  - safety
+  - math
+labels:
+  - emerging
+level: specialist
+plain: >-
+  The study of how a neural network's internal structure forms during training — when and how new
+  abilities and mechanisms appear — rather than only examining the finished model.
+senses:
+  - definition: >-
+      A research program that studies how the internal structure of neural networks develops over
+      training, aiming to detect and explain the formation of new capabilities and mechanisms. Its
+      central claim is that learning proceeds through distinct developmental stages separated by
+      transitions resembling phase changes — during which structures such as
+      [[induction-head|induction heads]] form — and that these can be detected and characterized
+      with tools from [[singular-learning-theory|singular learning theory]], especially the
+      [[local-learning-coefficient|local learning coefficient]], which measures a model's effective
+      complexity at a point in training, alongside conventional interpretability methods. Studies of
+      small transformers trained on language and on in-context linear regression have found stages
+      in which the learning coefficient rises or falls as new behaviors appear. Advocates see it as
+      a route to early warning of dangerous capabilities and to understanding how training data
+      shapes internal structure; how far it applies to frontier-scale training remains to be shown.
+    example: >-
+      Devinterp flagged a stage boundary at step 900, right where the induction heads formed.
+origin: >-
+  Proposed by Jesse Hoogland, Alexander Gietelink Oldenziel, Daniel Murfet and Stan van Wingerden in
+  'Towards Developmental Interpretability' (LessWrong and AI Alignment Forum, 12 July 2023), and
+  pursued by the research organization Timaeus and academic collaborators.
+year: 2023
+see_also:
+  - singular learning theory
+  - local learning coefficient
+  - grokking
+  - induction head
+  - mechanistic interpretability
+  - loss landscape
+sources:
+  - text: >-
+      Hoogland, J., Gietelink Oldenziel, A., Murfet, D. & van Wingerden, S. (2023). Towards
+      Developmental Interpretability. AI Alignment Forum, 12 July 2023.
+    url: https://alignmentforum.org/posts/TjaeCWvLZtEDAS5Ex

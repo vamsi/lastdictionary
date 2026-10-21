@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: high-bandwidth memory
+id: high-bandwidth-memory
+pos: n.
+also:
+  - HBM
+  - HBM3
+  - HBM3E
+  - HBM4
+  - stacked DRAM
+domain: hw
+domains:
+  - infer
+  - train
+level: core
+plain: >-
+  Very fast memory made by stacking memory chips on top of each other and placing them right next to
+  the processor, so AI chips can be fed data quickly enough.
+senses:
+  - definition: >-
+      A type of [[dram|DRAM]] in which 4 to 16 memory dies are stacked and connected vertically by
+      through-silicon vias, then placed beside a processor on a silicon interposer
+      ([[advanced-packaging|2.5D packaging]]) and linked by a very wide interface — 1,024 bits per
+      stack through HBM3E and 2,048 bits in HBM4 — instead of the narrow, fast buses of conventional
+      DRAM. Per-stack bandwidth has risen from 128 GB/s (HBM1) to about 1 TB/s (HBM3E) and up to 2
+      TB/s (HBM4). Accelerators carry several stacks: the [[h100|H100]] has 80 GB at 3.35 TB/s and
+      Blackwell-generation GPUs around 192 GB or more. Because model [[weights|weights]] and
+      [[kv-cache|KV caches]] stream from HBM during [[inference|inference]], its capacity and
+      [[memory-bandwidth|bandwidth]] often limit speed more than arithmetic does. HBM is costly to
+      make and is produced by only three firms — SK hynix, Samsung and Micron — making it a
+      recurring bottleneck in AI chip supply.
+origin: >-
+  Developed by AMD and SK hynix from 2008 and standardized by JEDEC as JESD235 in October 2013. It
+  first shipped in AMD's Fiji GPU (Radeon R9 Fury X, June 2015) and entered AI hardware with
+  Nvidia's Tesla P100 (2016). JEDEC published HBM3 in January 2022 and HBM4 in April 2025.
+year: 2013
+note: >-
+  Producing a bit of HBM takes roughly three times the wafer capacity of standard DDR5, according to
+  Micron, so AI demand has squeezed commodity DRAM supply and pushed up its prices since 2025.
+see_also:
+  - memory bandwidth
+  - memory wall
+  - DRAM
+  - SRAM
+  - advanced packaging
+  - VRAM
+  - KV cache
+contrast:
+  - SRAM
+as_of: 2026-10

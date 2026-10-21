@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: logit lens
+id: logit-lens
+pos: n.
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A quick trick for peeking at what a language model is 'thinking' partway through: read its
+  half-finished internal state as if it were the final answer, one layer at a time.
+senses:
+  - definition: >-
+      A technique that decodes intermediate [[residual-stream|residual stream]] states of a
+      [[transformer|transformer]] language model directly into vocabulary space by applying the
+      model's own final [[layer-normalization|layer normalization]] and [[unembedding|unembedding]]
+      to them, as if each layer were the last. Plotting the resulting next-token distributions layer
+      by layer shows how a prediction forms: in GPT-2, plausible guesses often appear in the middle
+      layers and are refined toward the final answer, suggesting that the model works in an
+      output-like space throughout. The method needs no training and is a standard first look at a
+      new model. It is unreliable in early layers and on some model families, whose intermediate
+      states are not in the basis the unembedding expects; the [[tuned-lens|tuned lens]] corrects
+      this with a learned translator for each layer. Chris Wendler and colleagues (2024) used
+      logit-lens readings to argue that Llama-2 models process non-English prompts through an
+      English-leaning intermediate representation.
+    example: Under the logit lens, 'Paris' becomes the top token by layer 18 and stays there.
+origin: >-
+  Introduced by the pseudonymous blogger nostalgebraist in the LessWrong post 'interpreting GPT: the
+  logit lens' (August 2020), which applied it to GPT-2.
+year: 2020
+see_also:
+  - tuned lens
+  - residual stream
+  - unembedding
+  - direct logit attribution
+  - Patchscopes
+  - probing
+sources:
+  - text: "nostalgebraist (2020). interpreting GPT: the logit lens. LessWrong."
+  - text: >-
+      Wendler, C., Veselovsky, V., Monea, G. & West, R. (2024). Do Llamas Work in English? On the
+      Latent Language of Multilingual Transformers. ACL 2024.

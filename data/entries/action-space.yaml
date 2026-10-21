@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: action space
+id: action-space
+pos: n.
+also:
+  - action set
+domain: rl
+domains:
+  - robot
+level: core
+plain: >-
+  The full menu of moves an AI agent is allowed to make — a handful of buttons in a video game, or
+  any combination of motor forces for a robot arm.
+senses:
+  - definition: >-
+      The set of all [[action|actions]] available to an [[agent|agent]], written 𝒜, or 𝒜(s) when
+      it depends on the [[state|state]]. Discrete action spaces contain a finite list of choices, as
+      in board games or the 18 joystick commands of the [[arcade-learning-environment|Arcade
+      Learning Environment]]; continuous ones are regions of ℝⁿ, such as ranges of joint torques;
+      hybrid and combinatorial spaces mix the two or grow exponentially, as when an action is a
+      whole sentence or a set of items to recommend. The type of action space shapes the algorithm:
+      value-based methods such as [[q-learning|Q-learning]] must maximize over actions and suit
+      small discrete sets, while [[policy-gradient|policy gradient]] and
+      [[actor-critic|actor–critic]] methods such as [[soft-actor-critic|soft actor–critic]] handle
+      continuous control. Large spaces are tamed by factorization, discretization, action masking or
+      [[action-chunking|action chunking]].
+    example: >-
+      We discretized the steering angle into 21 bins so the DQN could handle the action space.
+origin: >-
+  The paired notions of state space and action (or decision) space come from control theory and
+  Bellman's dynamic programming. 'Action space' became a standard programming term when OpenAI Gym
+  (2016) required every environment to declare an action_space and an observation_space.
+see_also:
+  - action
+  - state
+  - policy
+  - Gymnasium
+  - action chunking
+  - deep Q-network
+contrast:
+  - state

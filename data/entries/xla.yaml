@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: XLA
+id: xla
+pos: abbr.
+also:
+  - Accelerated Linear Algebra
+  - OpenXLA
+  - StableHLO
+  - HLO
+domain: hw
+domains:
+  - eng
+level: specialist
+plain: >-
+  A compiler from Google that turns AI programs into fast code for chips such as TPUs and GPUs,
+  mainly by merging many small steps into fewer, bigger ones.
+senses:
+  - definition: >-
+      A Google-originated, open-source compiler ('Accelerated Linear Algebra') that takes a
+      machine-learning program expressed as linear-algebra operations and rewrites it into efficient
+      code for a particular chip. Frameworks lower a model's [[computational-graph|computational
+      graph]] to XLA's intermediate representation, HLO, or its portable, versioned form StableHLO;
+      XLA then performs whole-program optimizations — operator fusion, layout assignment, buffer
+      reuse, algebraic simplification and automatic partitioning of computations across devices —
+      and generates code for CPUs, GPUs and [[tpu|TPUs]]. It is the standard compiler path to TPUs
+      and the backbone of [[jax|JAX]]; [[tensorflow|TensorFlow]] and [[pytorch|PyTorch]] (through
+      PyTorch/XLA) can also use it. Because it compiles ahead of execution for fixed tensor shapes,
+      dynamic shapes and data-dependent control flow require recompilation or special handling.
+origin: >-
+  Developed at Google and released experimentally with TensorFlow in early 2017. In 2022 Google and
+  partners including AMD, Arm, Intel, Meta and Nvidia announced the OpenXLA project to develop XLA
+  and StableHLO in the open, with general availability in March 2023.
+year: 2017
+see_also:
+  - AI compiler
+  - TPU
+  - JAX
+  - Triton
+  - kernel fusion
+  - CUDA

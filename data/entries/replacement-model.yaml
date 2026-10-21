@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: replacement model
+id: replacement-model
+pos: n.
+also:
+  - local replacement model
+  - error node
+domain: interp
+domains:
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A more understandable copy of an AI model, built from simple labeled parts, that behaves almost
+  like the original, so researchers can study the copy's workings instead.
+senses:
+  - definition: >-
+      An interpretable surrogate in which some of a model's components are swapped for sparse
+      dictionary models — typically [[transcoder|cross-layer transcoders]] standing in for every MLP
+      layer — so that computation flows through human-interpretable
+      [[feature-interpretability|features]]. Its fidelity is measured by how often it reproduces the
+      original model's next-token predictions. A local replacement model, built for one prompt,
+      additionally freezes the original's attention patterns and normalization denominators and adds
+      error nodes holding the difference between original and replacement outputs at each layer and
+      position, so its output matches the original's exactly on that prompt;
+      [[attribution-graph|attribution graphs]] are computed from it. The approach assumes that the
+      replacement's mechanisms resemble the original's, an assumption checked by intervention
+      experiments on the original; where error nodes carry much of the effect, the explanation is
+      incomplete.
+    example: >-
+      On this prompt the error nodes carry a third of the effect, so the replacement model's story
+      is only partial.
+origin: >-
+  Introduced in Anthropic's 'Circuit Tracing: Revealing Computational Graphs in Language Models'
+  (Emmanuel Ameisen, Jack Lindsey and colleagues, March 2025). Studying a model through an
+  interpretable stand-in echoes the [[surrogate-model|surrogate models]] of explainable AI, though
+  here the stand-in is trained to match internal computations, not just outputs.
+year: 2025
+see_also:
+  - circuit tracing
+  - attribution graph
+  - transcoder
+  - interpretability illusion
+  - dictionary learning
+contrast:
+  - surrogate model
+sources:
+  - text: >-
+      Ameisen, E., Lindsey, J., Pearce, A. et al. (2025). Circuit Tracing: Revealing Computational
+      Graphs in Language Models. Transformer Circuits Thread.

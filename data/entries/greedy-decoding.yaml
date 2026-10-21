@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: greedy decoding
+id: greedy-decoding
+pos: n.
+also:
+  - greedy search
+  - argmax decoding
+  - greedy sampling
+domain: llm
+domains:
+  - infer
+level: core
+plain: >-
+  The simplest way for a language model to write: always pick the single most likely next word. It
+  is fast and predictable but can produce dull or repetitive text.
+senses:
+  - definition: >-
+      A [[decoding|decoding]] strategy that selects at every step the single [[token|token]] with
+      the highest probability (the arg max of the [[logit|logits]]), with no randomness and no
+      look-ahead. It is equivalent to sampling at [[temperature|temperature]] zero and to
+      [[beam-search|beam search]] with a beam width of one. Greedy decoding is fast and nominally
+      deterministic, which suits short factual answers, classification-style outputs, code and
+      evaluations where reproducibility matters. Because it commits to locally best choices, it can
+      miss sequences of higher overall probability, and in open-ended generation it is prone to
+      repetitive loops and generic phrasing. Served models can still give different greedy outputs
+      across runs because of numerical [[nondeterminism|nondeterminism]] in batched GPU computation.
+    example: >-
+      For the extraction benchmark we use greedy decoding so that scores are comparable across runs.
+origin: >-
+  Named by analogy with greedy algorithms in computer science, which make the locally optimal choice
+  at each step; the term has been standard in neural sequence generation since sequence-to-sequence
+  models of the mid-2010s.
+note: >-
+  Many APIs offer greedy decoding only as temperature 0 rather than as a separate mode.
+see_also:
+  - decoding
+  - beam search
+  - temperature
+  - nondeterminism
+  - top-k sampling
+contrast:
+  - beam search
+  - top-p sampling

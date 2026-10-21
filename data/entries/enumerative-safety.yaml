@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: enumerative safety
+id: enumerative-safety
+pos: n.
+also:
+  - enumerative interpretability
+domain: interp
+domains:
+  - safety
+labels:
+  - contested
+level: specialist
+plain: >-
+  A proposed safety strategy: list every concept an AI model represents internally, then check the
+  list for dangerous ones, such as deception, before trusting the model.
+senses:
+  - definition: >-
+      A proposed approach to AI safety through [[interpretability|interpretability]], in which one
+      would enumerate all the [[feature-interpretability|features]] a model represents — for example
+      with [[dictionary-learning|dictionary learning]] — and inspect the list for safety-relevant
+      ones, such as features for deception, manipulation or dangerous knowledge, or verify that
+      certain features are absent or never active in particular contexts. Its appeal is that it
+      could support guarantees about behaviors no test happened to elicit, instead of relying on
+      behavioral evaluations that may miss rare or concealed behavior. Obstacles include
+      [[superposition|superposition]], the uncertain completeness of any feature dictionary (rare
+      features and unexplained reconstruction error), [[feature-splitting|feature splitting]], which
+      makes 'all the features' ill-defined, and the gap between knowing a feature exists and knowing
+      how it is used. Many researchers therefore treat full enumeration as an aspiration rather than
+      a near-term method.
+    example: >-
+      Enumerative safety would mean checking every one of the model's millions of features, not just
+      the ones we searched for.
+origin: >-
+  The idea of enumerating all of a model's features to make safety claims was sketched in the
+  safety-strategy section of Anthropic's 'Toy Models of Superposition' (September 2022) as a
+  motivation for solving superposition. The name was in use by March 2023, when Neel Nanda wrote of
+  interpretability plans 'aiming for enumerative safety'; Charbel-Raphaël's critique 'Against Almost
+  Every Theory of Impact of Interpretability' (August 2023) spread it further.
+year: 2023
+see_also:
+  - superposition
+  - dictionary learning
+  - sparse autoencoder
+  - AI safety
+  - mechanistic anomaly detection
+  - AI deception
+sources:
+  - text: >-
+      Elhage, N. et al. (2022). Toy Models of Superposition. Transformer Circuits Thread.
+    url: https://transformer-circuits.pub/2022/toy_model/index.html
+  - text: >-
+      Nanda, N. (2023). Othello-GPT: Future Work I Am Excited About. AI Alignment Forum, 29 March
+      2023.
+    url: https://www.alignmentforum.org/posts/qgK7smTvJ4DB8rZ6h/othello-gpt-future-work-i-am-excited-about
+  - text: >-
+      Charbel-Raphaël (2023). Against Almost Every Theory of Impact of Interpretability. AI
+      Alignment Forum, 17 August 2023.
+    url: https://www.alignmentforum.org/posts/LNA8mubrByG7SFacm/against-almost-every-theory-of-impact-of-interpretability-1

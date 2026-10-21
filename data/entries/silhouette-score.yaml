@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: silhouette score
+id: silhouette-score
+pos: n.
+also:
+  - silhouette coefficient
+  - silhouette
+  - silhouette width
+  - silhouette plot
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  A number between −1 and 1 that grades a grouping of data by checking, for each point, whether it
+  sits closer to its own group than to the next-nearest group.
+senses:
+  - definition: >-
+      An internal [[clustering|clustering]] validity index that needs no ground-truth labels. For
+      each point i, a(i) is its mean distance to the other members of its own cluster and b(i) is
+      its mean distance to the members of the nearest other cluster; the point's silhouette is (b −
+      a) divided by the larger of a and b. Values near +1 mean the point sits well inside its
+      cluster, values near 0 that it lies on a boundary, and negative values that it would sit more
+      comfortably in the neighboring cluster. Averaging over all points gives the silhouette score
+      of the whole clustering, and per-cluster silhouette plots reveal weak clusters. A common use
+      is choosing the number of clusters by maximizing the mean silhouette. Exact computation needs
+      all pairwise distances, costing O(n²) time and memory, so sampled or centroid-based
+      simplifications are used for large datasets. The index favors compact, convex, well-separated
+      clusters and can mislead for elongated or density-based ones.
+    example: The mean silhouette peaked at k = 4, so we went with four customer segments.
+formula_latex: s(i) = \frac{b(i) - a(i)}{\max\{a(i),\, b(i)\}}
+origin: >-
+  Introduced by the Belgian statistician Peter Rousseeuw in 'Silhouettes: a Graphical Aid to the
+  Interpretation and Validation of Cluster Analysis' (Journal of Computational and Applied
+  Mathematics, 1987). Leonard Kaufman and Rousseeuw called the maximum mean silhouette over
+  candidate clusterings the 'silhouette coefficient' in their book Finding Groups in Data (1990).
+year: 1987
+note: >-
+  Like other internal indices (Davies–Bouldin, Calinski–Harabasz), it measures geometric tidiness,
+  not whether the clusters are meaningful for the task at hand.
+see_also:
+  - clustering
+  - k-means clustering
+  - model selection
+  - hierarchical clustering
+  - Euclidean distance
+sources:
+  - text: >-
+      Rousseeuw, P. J. (1987). Silhouettes: a Graphical Aid to the Interpretation and Validation of
+      Cluster Analysis. Journal of Computational and Applied Mathematics 20: 53–65.
+  - text: >-
+      Kaufman, L. & Rousseeuw, P. J. (1990). Finding Groups in Data: An Introduction to Cluster
+      Analysis. New York: Wiley.

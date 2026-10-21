@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mechanistic interpretability
+id: mechanistic-interpretability
+pos: n.
+also:
+  - mech interp
+  - mechinterp
+  - MI
+domain: interp
+domains:
+  - safety
+  - dl
+level: essential
+plain: >-
+  A branch of AI research that tries to reverse-engineer a neural network — working out, piece by
+  piece, which internal parts represent which concepts and how they combine to produce behavior.
+senses:
+  - definition: >-
+      The subfield of [[interpretability|interpretability]] that tries to identify the algorithm a
+      trained [[neural-network|neural network]] actually implements, described in terms of its
+      internal parts; Chris Olah compares the project to recovering readable source code from a
+      compiled binary. It looks for human-understandable [[feature-interpretability|features]] —
+      directions in [[activation-space|activation space]] that represent concepts — and
+      [[circuit|circuits]], the weighted connections through which features compute one another, and
+      it tests hypotheses causally by intervening on [[activation|activations]] with
+      [[ablation|ablation]] and [[activation-patching|activation patching]]. Landmark results
+      include [[induction-head|induction heads]], the [[indirect-object-identification|indirect
+      object identification]] circuit in [[gpt-2|GPT-2]], the analysis of
+      [[superposition|superposition]], the use of [[sparse-autoencoder|sparse autoencoders]] to
+      extract millions of largely [[monosemanticity|monosemantic]] features from production models,
+      and [[attribution-graph|attribution graphs]] that trace multi-step reasoning in
+      [[claude|Claude]]. It differs from input-attribution methods in seeking mechanisms rather than
+      correlations, and is pursued both as basic science ([[model-biology|model biology]]) and as a
+      possible tool for auditing [[ai-alignment|alignment]], for example by detecting deception or
+      hidden goals.
+    example: >-
+      Our mech interp team traced the refusal back to a handful of features in the middle layers.
+origin: >-
+  Credited to Chris Olah, who has said he chose it to set the reverse-engineering of circuits apart
+  from saliency-map methods; Naomi Saphra and Sarah Wiegreffe (2024) trace its first public uses to
+  the Distill Circuits thread written by Olah's team at OpenAI (March 2020–April 2021). It spread
+  through Anthropic's Transformer Circuits Thread (from December 2021) and Neel Nanda's tutorials,
+  open-problem lists and TransformerLens library (2022).
+year: 2020
+note: >-
+  The boundaries are disputed. Naomi Saphra and Sarah Wiegreffe (2024) distinguish narrow technical
+  use (causal mechanisms linking inputs to outputs), broad technical use (any study of activations
+  or weights), and cultural uses naming a particular research community or, loosely, any
+  interpretability work on language models.
+see_also:
+  - interpretability
+  - circuit
+  - feature (interpretability)
+  - superposition
+  - sparse autoencoder
+  - activation patching
+  - model biology
+  - Chris Olah
+contrast:
+  - feature attribution
+  - explainable AI
+sources:
+  - text: >-
+      Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M. & Carter, S. (2020). Zoom In: An
+      Introduction to Circuits. Distill.
+    url: https://distill.pub/2020/circuits/zoom-in/
+  - text: >-
+      Elhage, N. et al. (2021). A Mathematical Framework for Transformer Circuits. Transformer
+      Circuits Thread.
+  - text: Saphra, N. & Wiegreffe, S. (2024). Mechanistic? Proceedings of BlackboxNLP 2024.
+    url: https://arxiv.org/html/2410.09087v1

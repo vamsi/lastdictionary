@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data protection
+id: data-protection
+pos: n.
+also:
+  - data protection law
+  - data-protection law
+  - information privacy law
+domain: gov
+domains:
+  - society
+  - data
+level: core
+plain: >-
+  Laws and practices that control how organizations collect, use, store and share information about
+  people, and that give people rights over it, such as seeing it or having it deleted.
+senses:
+  - definition: >-
+      The body of law and practice governing how organizations and governments handle personal data,
+      which the GDPR defines as 'any information relating to an identified or identifiable natural
+      person'. Its core principles, descended from the fair information practices of the 1970s, are
+      lawfulness and transparency, purpose limitation, data minimization, accuracy, storage
+      limitation, security and accountability; it gives individuals rights of access, correction,
+      erasure and objection, and is enforced by independent supervisory authorities. The EU treats
+      it as a fundamental right distinct from [[privacy|privacy]] (Article 8 of the Charter of
+      Fundamental Rights), implemented chiefly through the
+      [[general-data-protection-regulation|General Data Protection Regulation]]; by the early 2020s
+      more than 130 countries had comprehensive data-protection laws. For AI it governs the lawful
+      basis for training on scraped personal data, requests to erase data that models have
+      [[memorization|memorized]], [[automated-decision-making|automated decision-making]], and
+      impact assessments for high-risk processing.
+    example: >-
+      Before fine-tuning on support tickets, run a data protection impact assessment and strip
+      customer identifiers.
+origin: >-
+  The field takes its name from the German Datenschutz: the West German state of Hesse passed the
+  world's first data-protection law in 1970, and Sweden the first national one in 1973. The OECD
+  Privacy Guidelines (1980) and the Council of Europe's Convention 108 (1981) internationalized it;
+  the EU's 1995 Directive and the GDPR (2016) made it a global template.
+year: 1970
+note: >-
+  In US usage 'data privacy' or 'information privacy' covers much the same ground; the US has no
+  comprehensive federal law but relies on sectoral rules and state laws such as the California
+  Consumer Privacy Act. Unlike many privacy doctrines, data protection also applies to publicly
+  available personal data, a point regulators have pressed against web scraping for AI training.
+see_also:
+  - General Data Protection Regulation
+  - privacy
+  - personally identifiable information
+  - automated decision-making
+  - right to explanation
+  - machine unlearning
+  - biometric data
+sources:
+  - text: >-
+      OECD (1980). Guidelines on the Protection of Privacy and Transborder Flows of Personal Data.
+  - text: >-
+      Council of Europe (1981). Convention for the Protection of Individuals with regard to
+      Automatic Processing of Personal Data (ETS No. 108).

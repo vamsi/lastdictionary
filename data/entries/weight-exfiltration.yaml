@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: weight exfiltration
+id: weight-exfiltration
+pos: n.
+also:
+  - model weight theft
+  - weight theft
+  - weight leak
+  - model exfiltration
+domain: sec
+domains:
+  - safety
+  - gov
+level: core
+plain: >-
+  Copying an AI model's core files out of the place they are supposed to stay — by hackers, by an
+  insider or, in a scenario researchers worry about, by the AI itself.
+senses:
+  - definition: >-
+      The unauthorized copying of a model's [[weights|weights]] out of the environment where they
+      are meant to remain, whether by external attackers (intrusion, supply-chain compromise),
+      insiders, partners with legitimate access, or — in a scenario studied in AI safety — the model
+      itself ([[self-exfiltration|self-exfiltration]]). Exfiltrated weights let the holder run the
+      model without its developer's safeguards, monitoring or usage policies, strip safety training
+      through a [[fine-tuning-attack|fine-tuning attack]], and study it for
+      [[white-box-attack|white-box attacks]]; once copies spread, the theft cannot be undone.
+      Because frontier weights occupy hundreds of gigabytes or more, a characteristic defense caps
+      outbound bandwidth ('egress') from systems that hold them, so that copying would take long
+      enough to be detected, alongside the broader controls described under
+      [[model-weight-security|model weight security]].
+    example: >-
+      The red team demonstrated weight exfiltration through a misconfigured storage bucket used for
+      evaluations.
+origin: >-
+  Discussed in security and AI-safety writing from about 2022. The March 2023 leak of Meta's LLaMA
+  weights, distributed to approved researchers and posted publicly within about a week, was an early
+  high-profile case; frontier safety frameworks and RAND's 2024 weight-security report then made
+  exfiltration a central threat model.
+note: >-
+  Distinct from [[model-extraction|model extraction]], which approximates a model through its
+  outputs without access to the weights themselves.
+see_also:
+  - model weight security
+  - self-exfiltration
+  - model extraction
+  - open-weight model
+  - structured access
+  - confidential computing
+contrast:
+  - model extraction
+sources:
+  - text: >-
+      Nevo, S. et al. (2024). Securing AI Model Weights: Preventing Theft and Misuse of Frontier
+      Models. RAND Corporation.

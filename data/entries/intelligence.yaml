@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: intelligence
+id: intelligence
+pos: n.
+also:
+  - intelligent
+domain: mind
+domains:
+  - core
+  - asi
+labels:
+  - contested
+level: essential
+plain: >-
+  The ability to learn, understand, reason and solve problems — especially new ones — in order to
+  reach goals. Experts disagree about how to define it precisely, for people and even more for
+  machines.
+senses:
+  - context: General
+    definition: >-
+      The capacity to learn, reason, plan, understand and adapt in pursuit of goals, especially in
+      new or unfamiliar situations. No definition is universally accepted: a 2007 compilation by
+      Shane Legg and Marcus Hutter gathered about 70 and distilled them into one line, intelligence
+      as 'an agent's ability to achieve goals in a wide range of environments', and their formal
+      proposal, [[universal-intelligence|universal intelligence]], weights performance across all
+      computable environments by their simplicity. In psychology, intelligence is measured by tests
+      whose scores correlate positively across very different tasks, the basis of the [[g-factor|g
+      factor]]. Disputes concern whether intelligence is one capacity or many, whether it requires
+      understanding or consciousness, and how far it is relative to an environment, a body or a
+      culture.
+  - context: AI
+    definition: >-
+      The property that [[artificial-intelligence|artificial intelligence]] research seeks to build
+      and measure in machines. Definitions range from behavioral ones, such as indistinguishability
+      from human performance in the [[turing-test|Turing test]], to measures of skill-acquisition
+      efficiency: François Chollet (2019) defined intelligence as how efficiently a system turns
+      prior knowledge and experience into new skills on unfamiliar tasks, and designed
+      [[arc-agi|ARC-AGI]] to test it. Current systems have uneven profiles, superhuman at some tasks
+      and weak at others that people find easy ([[jagged-intelligence|jagged intelligence]]), which
+      complicates any single scale, including proposed [[levels-of-agi|levels of AGI]]. Intelligence
+      is conceptually distinct from [[consciousness|consciousness]] and [[sentience|sentience]]: a
+      system could be highly intelligent without experiencing anything.
+    example: >-
+      Benchmark scores measure skills; whether they measure intelligence depends on how much of each
+      skill was bought with training data.
+origin: >-
+  From Latin intelligentia, 'understanding', from intellegere, 'to perceive, to choose between'.
+  Francis Galton's studies of inherited ability (from 1869) and Alfred Binet and Théodore Simon's
+  1905 scale, the first practical intelligence test, began its measurement; Charles Spearman's g
+  (1904) and Alan Turing's 1950 paper shaped the psychological and the machine conceptions
+  respectively.
+note: >-
+  In military, political and business usage 'intelligence' also means information about adversaries
+  or markets. Researchers caution that IQ-style scores for AI systems are not comparable to human
+  IQ, because a test's validity rests on assumptions about how abilities covary in people.
+see_also:
+  - g factor
+  - artificial general intelligence
+  - universal intelligence
+  - jagged intelligence
+  - ARC-AGI
+  - superintelligence
+  - consciousness
+contrast:
+  - consciousness
+  - sentience
+sources:
+  - text: >-
+      Legg, S. & Hutter, M. (2007). A Collection of Definitions of Intelligence. In B. Goertzel & P.
+      Wang (eds.), Advances in Artificial General Intelligence. IOS Press.
+  - text: Chollet, F. (2019). On the Measure of Intelligence. arXiv:1911.01547.

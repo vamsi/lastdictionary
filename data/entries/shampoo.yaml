@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Shampoo
+id: shampoo
+pos: prop. n.
+also:
+  - Distributed Shampoo
+domain: dl
+domains:
+  - math
+  - train
+level: specialist
+plain: >-
+  A training method that adjusts each weight table's updates using statistics gathered along its
+  rows and its columns, capturing how weights interact. Each step costs more computing, but fewer
+  steps are needed.
+senses:
+  - definition: >-
+      A preconditioned [[optimizer|optimizer]] that, for a weight matrix with gradient G,
+      accumulates two small statistics matrices — L from GGᵀ and R from GᵀG — and updates the
+      weights by L^(−1/4) G R^(−1/4): one preconditioner per tensor dimension instead of one
+      enormous matrix over all parameters. This Kronecker-factored structure captures correlations
+      between parameters, approximating full-matrix [[adagrad|AdaGrad]] at a memory cost of a few
+      small matrices per layer. The inverse matrix roots are expensive, so practical versions
+      recompute them only every few dozen to hundreds of steps, borrow ('graft') step sizes from a
+      simpler optimizer, and spread the work across devices (Distributed Shampoo). SOAP (2024)
+      showed Shampoo is closely related to running Adafactor or [[adam|Adam]] in the eigenbasis of
+      its preconditioner, and with accumulation switched off Shampoo's update equals the
+      orthogonalized gradient computed by [[muon|Muon]]. A Distributed Shampoo submission won the
+      external-tuning track of the first AlgoPerf training-algorithms competition (2024).
+origin: >-
+  Introduced by Vineet Gupta, Tomer Koren and Yoram Singer of Google in 'Shampoo: Preconditioned
+  Stochastic Tensor Optimization' (arXiv February 2018; ICML 2018); Rohan Anil and colleagues scaled
+  it up in 2020. Its 2024 AlgoPerf win renewed interest in non-diagonal preconditioning; SOAP
+  (Nikhil Vyas and colleagues, 2024) builds on it, and Muon is closely related to it.
+year: 2018
+note: >-
+  Although it uses curvature-like statistics, Shampoo needs only gradients and is often classed as a
+  non-diagonal adaptive method rather than a true [[second-order-optimization|second-order method]].
+see_also:
+  - second-order optimization
+  - AdaGrad
+  - Muon
+  - Adafactor
+  - optimizer
+  - Adam
+sources:
+  - text: >-
+      Gupta, V., Koren, T. & Singer, Y. (2018). Shampoo: Preconditioned Stochastic Tensor
+      Optimization. ICML 2018.
+    url: https://arxiv.org/abs/1802.09568
+  - text: >-
+      Vyas, N. et al. (2024). SOAP: Improving and Stabilizing Shampoo using Adam. arXiv:2409.11321.
+    url: https://arxiv.org/abs/2409.11321
+  - text: >-
+      Kasimbeg, P. et al. (2025). Accelerating Neural Network Training: An Analysis of the AlgoPerf
+      Competition. ICLR 2025.
+    url: https://arxiv.org/abs/2502.15015v1

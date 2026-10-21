@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FP8
+id: fp8
+pos: abbr.
+also:
+  - 8-bit floating point
+  - E4M3
+  - E5M2
+  - float8
+domain: hw
+domains:
+  - train
+  - infer
+level: core
+plain: >-
+  An 8-bit number format that uses a quarter of the memory of the standard 32-bit format, letting
+  new AI chips train and run models roughly twice as fast as with 16 bits.
+senses:
+  - definition: >-
+      A family of 8-bit [[floating-point-format|floating-point formats]] for deep learning, chiefly
+      E4M3 (4 exponent and 3 significand bits; maximum 448, no infinities) and E5M2 (5 and 2;
+      maximum 57,344, with IEEE-style infinities and NaNs). A common recipe uses E4M3 for weights
+      and activations and the wider-range E5M2 for gradients, with per-tensor or finer-grained scale
+      factors that keep values in range and higher-precision accumulation; Nvidia's Transformer
+      Engine software automates the scaling. Hardware support arrived in 2022, most prominently in
+      Nvidia's [[h100|H100]], and spread to AMD, Intel, Google and other accelerators, doubling
+      [[tensor-core|tensor core]] throughput over 16-bit formats. FP8 is widely used for
+      [[inference|inference]] and increasingly for training — DeepSeek-V3 (2024) was trained largely
+      in FP8 with fine-grained block scaling — and a block-scaled variant, MXFP8, is part of the
+      [[microscaling-formats|microscaling formats]] specification.
+origin: >-
+  Proposed as a common interchange format by Paulius Micikevicius and colleagues from Nvidia, Arm
+  and Intel in 'FP8 Formats for Deep Learning' (September 2022), which reported FP8 training
+  matching 16-bit quality on models of up to 175 billion parameters. IBM researchers had
+  demonstrated 8-bit floating-point training in 2018–2019.
+year: 2022
+see_also:
+  - floating-point format
+  - FP4
+  - bfloat16
+  - microscaling formats
+  - quantization
+  - mixed-precision training
+  - H100
+sources:
+  - text: Micikevicius, P. et al. (2022). FP8 Formats for Deep Learning. arXiv:2209.05433.
+    url: https://arxiv.org/abs/2209.05433

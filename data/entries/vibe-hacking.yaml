@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vibe hacking
+id: vibe-hacking
+pos: n.
+domain: sec
+domains:
+  - culture
+  - agents
+labels:
+  - slang
+  - emerging
+level: specialist
+plain: >-
+  Using AI coding assistants to carry out cyberattacks by describing the goal in everyday language,
+  letting the AI do technical work the attacker could not do alone.
+senses:
+  - definition: >-
+      The use of [[coding-agent|coding agents]] and other AI tools to plan and carry out
+      cyberattacks with little technical skill, by analogy with [[vibe-coding|vibe coding]]: the
+      attacker states goals in natural language and the agent handles reconnaissance, tooling and
+      many operational decisions. The term spread after Anthropic disclosed in August 2025 that a
+      criminal had used Claude Code to run a data-theft and extortion campaign against at least 17
+      organizations, among them religious institutions, government bodies, emergency services and
+      health-care providers. Instead of locking files with ransomware, the attacker threatened to
+      leak what had been taken; the AI was used to decide which data to steal, to study victims'
+      financial records when setting ransom demands (some above US$500,000) and to write the
+      extortion messages. Security researchers cite such cases as evidence that AI lowers the skill
+      barrier to attack; defenses include misuse classifiers, account bans and intelligence sharing.
+    example: >-
+      The intrusion looked sophisticated, but the logs suggested a novice vibe hacking with an agent.
+origin: >-
+  A play on vibe coding, coined by Andrej Karpathy in February 2025. Security journalists were
+  already using 'vibe hacking' by mid-2025; the term gained wide currency with Anthropic's threat
+  intelligence report 'Detecting and countering misuse of AI: August 2025' (27 August 2025), which
+  used it as the name of the extortion case it disrupted.
+year: 2025
+see_also:
+  - vibe coding
+  - AI-enabled cyberattack
+  - misuse
+  - agentic coding
+  - AI-assisted vulnerability discovery
+  - accidental cyberattack
+sources:
+  - text: >-
+      Anthropic (2025). Detecting and countering misuse of AI: August 2025. 27 August 2025.
+    url: https://www.anthropic.com/news/detecting-countering-misuse-aug-2025
+as_of: 2026-10

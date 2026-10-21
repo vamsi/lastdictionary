@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: plug and play language model
+id: plug-and-play-language-model
+pos: n.
+also:
+  - PPLM
+domain: interp
+domains:
+  - llm
+  - gen
+level: specialist
+plain: >-
+  An early way to steer what a language model writes — its topic or mood — by letting a small add-on
+  classifier nudge the model's internal state at each word, without retraining the model.
+senses:
+  - definition: >-
+      A method for controllable text generation that leaves a pretrained
+      [[large-language-model|language model]] untouched and steers it during decoding with a small,
+      separately supplied scorer for the desired attribute: a list of topic words, or a one-layer
+      sentiment classifier on the model's hidden states. At each generation step, gradients of the
+      attribute model's log-likelihood are propagated back into the language model's cached
+      key–value activations, which are nudged toward the attribute for a few iterations, while a
+      [[kullback-leibler-divergence|KL-divergence]] penalty and a fusion with the unmodified
+      distribution keep the text fluent. It steered [[gpt-2|GPT-2]] toward topics and sentiments and
+      reduced toxicity without fine-tuning, but the per-token gradient updates made generation
+      several times slower. PPLM is a direct ancestor of [[activation-steering|activation
+      steering]], which replaces this optimization with fixed vectors.
+    example: >-
+      With the 'space' bag of words, PPLM turned a prompt about potatoes into a story about orbiting
+      satellites.
+origin: >-
+  Introduced by Sumanth Dathathri, Andrea Madotto, Janice Lan, Jane Hung, Eric Frank, Piero Molino,
+  Jason Yosinski and Rosanne Liu, mainly of Uber AI, in 'Plug and Play Language Models: A Simple
+  Approach to Controlled Text Generation' (arXiv, December 2019; ICLR 2020). The name echoes the
+  image-generation 'Plug & Play Generative Networks' (Anh Nguyen and colleagues, 2017).
+year: 2019
+see_also:
+  - activation steering
+  - steering
+  - GPT-2
+  - steering vector
+  - classifier-free guidance
+sources:
+  - text: >-
+      Dathathri, S. et al. (2020). Plug and Play Language Models: A Simple Approach to Controlled
+      Text Generation. ICLR 2020.

@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: HCH
+id: hch
+pos: abbr.
+also:
+  - Humans Consulting HCH
+domain: safety
+domains:
+  - asi
+level: specialist
+plain: >-
+  A thought experiment: a person who can hand parts of a problem to copies of themselves, who can
+  hand parts on again, endlessly — the ideal some AI training schemes try to approximate.
+senses:
+  - definition: >-
+      A recursively defined, idealized question-answering process: a human answers a question — in
+      many later versions, within a short time limit — while able to consult copies of HCH on
+      subquestions, each of which can consult further copies in turn. The name is a recursive
+      acronym for 'Humans Consulting HCH'. HCH is the theoretical limit of
+      [[iterated-amplification|iterated amplification]]: if amplification and distillation worked
+      perfectly, the trained model would imitate HCH. It is used to reason about whether a tree of
+      individually trustworthy, short-lived human thoughts could together solve very hard problems
+      without the whole becoming misaligned — the [[factored-cognition|factored cognition]]
+      question. Critics ask whether such a tree would be competent at tasks needing deep accumulated
+      understanding, and whether small errors or manipulative subanswers could compound through the
+      recursion.
+    example: >-
+      Imagine HCH answering a research question: thousands of ten-minute humans, each delegating
+      pieces to the next layer.
+origin: >-
+  Introduced by Paul Christiano in the blog post 'Humans Consulting HCH' (January 2016) on his AI
+  Alignment blog, as part of his amplification-based approach to alignment; he credited Eliezer
+  Yudkowsky with suggesting the recursive acronym.
+year: 2016
+see_also:
+  - iterated amplification
+  - factored cognition
+  - Paul Christiano
+  - AI debate
+  - scalable oversight
+sources:
+  - text: >-
+      Christiano, P. (2016). Humans Consulting HCH. AI Alignment blog (ai-alignment.com); reposted
+      on the AI Alignment Forum, 2018.
+    url: https://www.alignmentforum.org/posts/NXqs4nYXaq8q6dTTx/humans-consulting-hch

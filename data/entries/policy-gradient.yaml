@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: policy gradient
+id: policy-gradient
+pos: n.
+also:
+  - policy gradient method
+  - policy gradient theorem
+  - score-function estimator
+  - likelihood-ratio gradient
+domain: rl
+domains:
+  - train
+level: core
+plain: >-
+  A family of methods that improve an AI's strategy directly: make actions that led to good results
+  a bit more likely, and actions that led to bad results a bit less likely.
+senses:
+  - definition: >-
+      A class of [[reinforcement-learning|reinforcement learning]] methods that optimize a
+      parametrized [[policy|policy]] π_θ directly by gradient ascent on its expected
+      [[return|return]] J(θ). The policy gradient theorem shows that this gradient can be estimated
+      from sampled [[trajectory|trajectories]] without differentiating through the environment: it
+      is the expectation of the gradient of each action's log-probability, weighted by how good the
+      action turned out to be — the return in [[reinforce|REINFORCE]], or a lower-variance
+      [[advantage-function|advantage]] estimate in [[actor-critic|actor–critic]] methods. Policy
+      gradients handle continuous and very large [[action-space|action spaces]] and stochastic
+      policies naturally and change the policy smoothly, but their estimates are noisy and the
+      methods are typically [[on-policy|on-policy]] and sample-hungry. Variance reduction
+      (baselines, [[generalized-advantage-estimation|generalized advantage estimation]]) and
+      step-size control ([[trust-region-policy-optimization|TRPO]],
+      [[proximal-policy-optimization|PPO]]) make them practical. Most RL fine-tuning of
+      [[large-language-model|language models]], including
+      [[group-relative-policy-optimization|GRPO]], is policy-gradient optimization over token
+      sequences.
+    example: >-
+      The policy gradient pushes up the log-probability of every token in responses that scored
+      above the baseline.
+formula_latex: \nabla_\theta J(\theta) = \mathbb{E}_{\pi_\theta}\left[ \sum_{t} \nabla_\theta \log
+  \pi_\theta(A_t \mid S_t)\, \hat{A}_t \right]
+origin: >-
+  Ronald Williams's REINFORCE algorithms (1987 conference paper; Machine Learning, 1992) gave the
+  first general likelihood-ratio policy gradient for neural networks; the same estimator was
+  developed for simulation optimization by Peter Glynn and others in the 1980s. Richard Sutton,
+  David McAllester, Satinder Singh and Yishay Mansour proved the policy gradient theorem with
+  function approximation (NIPS 1999), as did Vijay Konda and John Tsitsiklis for actor–critic
+  methods.
+year: 1987
+see_also:
+  - REINFORCE
+  - actor–critic
+  - proximal policy optimization
+  - trust region policy optimization
+  - advantage function
+  - generalized advantage estimation
+  - group relative policy optimization
+contrast:
+  - Q-learning
+sources:
+  - text: >-
+      Williams, R. J. (1992). Simple statistical gradient-following algorithms for connectionist
+      reinforcement learning. Machine Learning 8, 229–256.
+    url: https://link.springer.com/article/10.1007/BF00992696
+  - text: >-
+      Sutton, R. S., McAllester, D., Singh, S. & Mansour, Y. (2000). Policy Gradient Methods for
+      Reinforcement Learning with Function Approximation. Advances in Neural Information Processing
+      Systems 12 (NIPS 1999).

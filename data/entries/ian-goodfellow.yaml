@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Ian Goodfellow
+id: ian-goodfellow
+sort_as: Goodfellow Ian
+pos: prop. n.
+also:
+  - Ian J. Goodfellow
+domain: people
+domains:
+  - gen
+  - sec
+  - dl
+level: core
+dates: b. 1987
+plain: >-
+  An American computer scientist who invented generative adversarial networks, in which two neural
+  networks compete to produce realistic fake images, and who pioneered research on fooling AI
+  systems.
+senses:
+  - definition: >-
+      American computer scientist who, as a doctoral student of [[yoshua-bengio|Yoshua Bengio]] and
+      Aaron Courville at the Université de Montréal, invented
+      [[generative-adversarial-network|generative adversarial networks]] (GANs, 2014): a generator
+      learns to produce samples that a discriminator cannot distinguish from real data. GANs led
+      image synthesis until [[diffusion-model|diffusion models]] overtook them and underlay early
+      [[deepfake|deepfakes]]. He co-authored the paper that named [[adversarial-example|adversarial
+      examples]] and demonstrated them in deep neural networks (Christian Szegedy et al., 2013) and
+      introduced the [[fast-gradient-sign-method|fast gradient sign method]] (2014), which made
+      [[adversarial-training|adversarial training]] practical and helped found the field of
+      [[adversarial-machine-learning|adversarial machine learning]]. He co-wrote the textbook 'Deep
+      Learning' (2016). He has worked at Google Brain, OpenAI, Apple, where he directed machine
+      learning in its Special Projects Group (2019–2022), and Google DeepMind, which he joined in
+      2022.
+see_also:
+  - generative adversarial network
+  - adversarial example
+  - fast gradient sign method
+  - adversarial machine learning
+  - Yoshua Bengio
+  - deepfake
+sources:
+  - text: >-
+      Goodfellow, I. et al. (2014). Generative Adversarial Nets. Advances in Neural Information
+      Processing Systems 27.
+  - text: >-
+      Goodfellow, I., Shlens, J. & Szegedy, C. (2015). Explaining and Harnessing Adversarial
+      Examples. ICLR 2015.

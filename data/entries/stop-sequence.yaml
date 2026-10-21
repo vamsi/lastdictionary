@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: stop sequence
+id: stop-sequence
+pos: n.
+also:
+  - stop token
+  - stop string
+  - stop parameter
+domain: llm
+domains:
+  - eng
+  - agents
+level: core
+plain: >-
+  A piece of text that tells an AI model to stop writing as soon as it produces it — for example,
+  stopping at a blank line or just before the next question.
+senses:
+  - definition: >-
+      A string that, when produced by a [[language-model|language model]] during generation, ends
+      the output immediately, usually with the string itself omitted from the returned text. Stop
+      sequences complement the model's own end-of-sequence [[special-token|special token]] and the
+      maximum-length limit, letting developers cut generation at a structural boundary — the end of
+      a list item, a closing tag, a new 'User:' turn — so the model does not continue into content
+      it should not write, such as the other side of a dialogue. APIs typically accept a handful of
+      stop strings and report which stop condition ended generation. Because matching happens on
+      decoded text while generation proceeds token by token, engines must detect stop strings that
+      span [[token|token]] boundaries. Stop sequences were essential when using [[base-model|base
+      models]] with [[few-shot-prompting|few-shot prompts]] and remain useful in [[agent-loop|agent
+      loops]] and structured output.
+    example: Add '\nQ:' as a stop sequence so the model answers one question and halts.
+origin: >-
+  A standard parameter of text-generation APIs since OpenAI's GPT-3 API (2020), whose stop parameter
+  accepts up to four sequences; halting generation at a delimiter is an older practice in text
+  generation.
+note: >-
+  Not to be confused with stop words, the very common words that some search and NLP pipelines
+  discard, or with an agent's [[stop-condition|stop condition]].
+see_also:
+  - decoding
+  - special token
+  - base model
+  - agent loop
+  - constrained decoding
+  - stop condition
+contrast:
+  - stop condition
+as_of: 2026-10

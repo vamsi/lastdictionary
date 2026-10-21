@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: diffusion model
+id: diffusion-model
+pos: n.
+also:
+  - diffusion
+  - denoising diffusion model
+  - diffusion probabilistic model
+  - video diffusion model
+domain: gen
+domains:
+  - dl
+  - math
+level: essential
+plain: >-
+  An AI that learns to create images, sound or video by practicing noise removal: shown pictures
+  buried under static, it learns to clean them up, then builds new ones starting from pure static.
+senses:
+  - definition: >-
+      A [[generative-model|generative model]] that learns to reverse a gradual noising process.
+      During training, examples are corrupted with Gaussian noise at randomly chosen levels along a
+      [[noise-schedule|noise schedule]] running from nearly clean to pure noise, and a neural
+      network — historically a [[u-net|U-Net]], now often a [[diffusion-transformer|transformer]] —
+      learns to predict the added noise (equivalently, the clean data, or the score: the gradient of
+      the log-density) at each level. Generation starts from random noise and applies the network
+      repeatedly, removing a little noise per step, with a [[diffusion-sampler|diffusion sampler]]
+      choosing the step sizes; conditioning on text, images or other signals, usually amplified by
+      [[classifier-free-guidance|classifier-free guidance]], steers the result. The training
+      objective is a simple regression and far more stable than
+      [[generative-adversarial-network|GAN]] training, and samples are diverse, but generation needs
+      tens of network evaluations unless the model is distilled. Run in the compressed latent space
+      of an autoencoder ([[latent-diffusion-model|latent diffusion]]), diffusion underlies most
+      image, video and audio generators released since 2022, including [[stable-diffusion|Stable
+      Diffusion]], [[imagen|Imagen]] and [[sora|Sora]]; the closely related [[flow-matching|flow
+      matching]] models are usually counted in the same family.
+    example: >-
+      Swapping the U-Net for a transformer made our diffusion model scale far more predictably.
+origin: >-
+  Jascha Sohl-Dickstein and colleagues introduced 'diffusion probabilistic models', inspired by
+  nonequilibrium thermodynamics, in March 2015 (ICML 2015). The approach became competitive through
+  Yang Song and Stefano Ermon's score-based models (2019) and Jonathan Ho, Ajay Jain and Pieter
+  Abbeel's DDPM (2020), beat GANs on ImageNet in 2021 (Prafulla Dhariwal and Alex Nichol), and
+  reached the public through DALL·E 2, Imagen and Stable Diffusion in 2022.
+year: 2015
+note: >-
+  The 'diffusion' is the forward noising process, named by analogy with particles spreading in
+  physics; the model learns the reverse. [[diffusion-language-model|Diffusion language models]]
+  apply the idea to text, usually by masking tokens instead of adding Gaussian noise.
+see_also:
+  - denoising diffusion probabilistic model
+  - score-based generative model
+  - latent diffusion model
+  - noise schedule
+  - diffusion sampler
+  - classifier-free guidance
+  - flow matching
+  - diffusion transformer
+contrast:
+  - generative adversarial network
+  - autoregressive model
+sources:
+  - text: >-
+      Sohl-Dickstein, J., Weiss, E. A., Maheswaranathan, N. & Ganguli, S. (2015). Deep Unsupervised
+      Learning using Nonequilibrium Thermodynamics. ICML 2015. arXiv:1503.03585.
+    url: https://arxiv.org/abs/1503.03585
+  - text: >-
+      Ho, J., Jain, A. & Abbeel, P. (2020). Denoising Diffusion Probabilistic Models. NeurIPS 2020.
+      arXiv:2006.11239.
+    url: https://arxiv.org/abs/2006.11239

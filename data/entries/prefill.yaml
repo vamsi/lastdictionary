@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prefill
+id: prefill
+pos: n.
+also:
+  - prefill phase
+  - prefill stage
+  - prompt processing
+  - prompt phase
+  - prefilling
+domain: infer
+domains:
+  - llm
+level: core
+plain: >-
+  The first stage of an AI's reply, in which it reads your whole prompt in one go before it starts
+  writing. Long prompts make this stage take longer.
+senses:
+  - context: Inference
+    definition: >-
+      The phase of [[autoregressive-model|autoregressive]] generation in which a
+      [[transformer|transformer]] processes all prompt [[token|tokens]] in one parallel
+      [[forward-pass|forward pass]], computing the keys and values that populate the [[kv-cache|KV
+      cache]] and the [[logit|logits]] for the first output token. Because many tokens are processed
+      together, prefill performs large matrix–matrix multiplications and is usually compute-bound,
+      unlike the [[memory-bound|memory-bound]] [[decode-phase|decode phase]]; its cost grows
+      linearly with prompt length in the feed-forward layers and quadratically in
+      [[attention|attention]]. Prefill is the main component of [[time-to-first-token|time to first
+      token]]. Serving systems avoid repeating it with [[prompt-caching|prompt caching]], split it
+      into pieces with [[chunked-prefill|chunked prefill]] so that it does not stall other users'
+      decoding, or run it on separate hardware in [[disaggregated-serving|disaggregated serving]].
+    example: >-
+      A 100,000-token prompt spends several seconds in prefill before the first word comes back.
+  - context: Prompting
+    definition: >-
+      Text a developer places at the start of the model's own reply so that generation continues
+      from it, for example an opening brace to force JSON or a fixed first sentence to set tone;
+      also called response prefilling. Some APIs support it directly. Because it can also push a
+      model past its refusals, it is studied as an attack surface; see [[prefill-attack|prefill
+      attack]].
+origin: >-
+  The phase distinction is as old as Transformer decoding. The noun 'prefill' (filling the cache
+  before generation) is named in Google's November 2022 analysis of PaLM serving by Reiner Pope and
+  colleagues ('We call this step prefill') and became standard in 2023 through serving systems and
+  papers such as vLLM and Sarathi. Disaggregation papers such as Splitwise (2023) and DistServe
+  (2024) made the prefill/decode split central to serving design.
+year: 2022
+see_also:
+  - decode phase
+  - KV cache
+  - time to first token
+  - chunked prefill
+  - disaggregated serving
+  - prompt caching
+contrast:
+  - decode phase
+sources:
+  - text: >-
+      Pope, R. et al. (2022). Efficiently Scaling Transformer Inference. arXiv:2211.05102 (MLSys
+      2023).
+    url: https://arxiv.org/abs/2211.05102

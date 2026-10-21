@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data science
+id: data-science
+pos: n.
+also:
+  - data scientist
+  - DS
+domain: core
+domains:
+  - data
+  - math
+  - ml
+level: core
+plain: >-
+  The practice of collecting, cleaning, analyzing and interpreting data, using statistics,
+  programming and machine learning, to answer questions and guide decisions.
+senses:
+  - definition: >-
+      The discipline of turning data into knowledge and decisions by combining statistics, computing
+      and expertise in the area under study. Its workflow spans framing questions, acquiring and
+      [[data-cleaning|cleaning]] data, exploratory analysis and visualization, statistical modeling
+      and [[machine-learning|machine learning]], experiments such as [[a-b-testing|A/B testing]],
+      and communicating results. Typical tools include Python or R, SQL,
+      [[jupyter-notebook|notebooks]] and libraries such as pandas and [[scikit-learn|scikit-learn]].
+      Data science overlaps with statistics, though with more emphasis on computation and large,
+      messy data; with machine learning, though with more emphasis on [[causal-inference|causal
+      inference]], uncertainty and communication than on predictive accuracy alone; and with
+      [[data-mining|data mining]]. Since 2023 many routine analyses are carried out with
+      language-model assistants and agents that write and run analysis code.
+    example: >-
+      The data science team found that most churn happened in the week after a price change.
+origin: >-
+  Peter Naur used 'datalogy' and 'data science' for the science of dealing with data, notably in
+  Concise Survey of Computer Methods (1974). The statisticians C. F. Jeff Wu (1997) and William
+  Cleveland (2001) proposed 'data science' as the name for an expanded statistics. The job title
+  'data scientist' is credited to DJ Patil and Jeff Hammerbacher around 2008, and a 2012 Harvard
+  Business Review article made it famous.
+year: 1974
+note: >-
+  A loosely bounded term: job titles range from analysts producing dashboards to engineers building
+  production models. Contrast [[ai-engineering|AI engineering]], which centers on building
+  applications from pretrained models.
+see_also:
+  - machine learning
+  - data mining
+  - big data
+  - data cleaning
+  - A/B testing
+  - Jupyter notebook
+  - causal inference
+  - Kaggle
+contrast:
+  - AI engineering
+sources:
+  - text: >-
+      Cleveland, W. S. (2001). Data Science: An Action Plan for Expanding the Technical Areas of the
+      Field of Statistics. International Statistical Review, 69(1), 21–26.
+  - text: >-
+      Davenport, T. H. & Patil, D. J. (2012). Data Scientist: The Sexiest Job of the 21st Century.
+      Harvard Business Review, October 2012.

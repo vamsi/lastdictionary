@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: many-shot jailbreaking
+id: many-shot-jailbreaking
+pos: n.
+also:
+  - MSJ
+  - many-shot jailbreak
+domain: sec
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  A way of breaking a chatbot's rules that exploits how much text it can read at once: the attacker
+  pastes in hundreds of invented exchanges in which an AI obliges dangerous requests, and the model
+  follows suit.
+senses:
+  - definition: >-
+      A [[jailbreak|jailbreak]] that turns a long [[context-window|context window]] against the
+      model: the prompt is padded with many invented exchanges, up to hundreds, in each of which an
+      assistant obliges a harmful request, and ends with the request the attacker actually wants
+      answered. The model's [[in-context-learning|in-context learning]] treats the fake exchanges as
+      demonstrations, and the likelihood of a harmful answer rises with the number of shots
+      following an approximate power law, like the in-context learning curves of benign tasks;
+      larger models can be more susceptible because they learn in context more effectively. Because
+      it uses only a legitimate capability, it is hard to train away without degrading long-context
+      performance. Mitigations include fine-tuning against the pattern, which mainly delays its
+      onset, and classifying or modifying prompts before they reach the model.
+    example: >-
+      The model resisted a five-shot version but complied in most cases at 256 shots, the signature
+      of many-shot jailbreaking.
+origin: >-
+  Described by Cem Anil and colleagues at Anthropic and partner institutions in a paper and blog
+  post of April 2024 (NeurIPS 2024), after context windows had grown from a few thousand tokens to
+  hundreds of thousands. The authors briefed other developers before publication.
+year: 2024
+see_also:
+  - jailbreak
+  - in-context learning
+  - context window
+  - multi-turn jailbreak
+  - few-shot prompting
+sources:
+  - text: Anil, C. et al. (2024). Many-shot Jailbreaking. NeurIPS 2024.

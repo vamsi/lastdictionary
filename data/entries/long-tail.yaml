@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: long tail
+id: long-tail
+pos: n.
+also:
+  - long-tailed distribution
+  - long-tail knowledge
+  - tail
+domain: data
+domains:
+  - math
+  - ml
+level: core
+plain: >-
+  The huge number of rare things — uncommon words, unusual road situations, obscure facts — that
+  each appear seldom but together make up a large share of what an AI system meets.
+senses:
+  - definition: >-
+      The many low-frequency categories or events of a skewed distribution, which individually occur
+      rarely but collectively account for a substantial share of occurrences. Language is
+      long-tailed — word frequencies roughly follow [[zipf-s-law|Zipf's law]], so most distinct
+      words are rare — and so are object categories in images, user requests to assistants and
+      situations met by [[autonomous-vehicle|autonomous vehicles]]. Learning systems master the
+      frequent 'head' and handle the tail poorly because each rare case supplies few examples:
+      language models answer questions about facts mentioned in many pretraining documents far more
+      accurately than about facts mentioned in few, and much of the residual risk of deployed
+      systems lies in rare edge cases. Responses include targeted data collection, reweighting or
+      resampling rare classes, [[retrieval-augmented-generation|retrieval-augmented generation]] for
+      rare knowledge, [[synthetic-data|synthetic data]] and simulation for rare events, and
+      evaluation sets designed around the tail.
+    example: >-
+      The model handles common requests well; the long tail of odd ones is where it fails.
+origin: >-
+  Long-tailed distributions are a long-standing topic in statistics; the phrase entered general use
+  through Chris Anderson's October 2004 Wired article 'The Long Tail' and his 2006 book, about
+  online retailers profiting from niche products. In machine learning, 'long-tail recognition' and
+  'long-tail knowledge' became research labels in the 2010s and 2020s.
+note: >-
+  In business usage the long tail is an opportunity (many niche sales); in AI it is usually a
+  problem (many rare failures). [[model-collapse|model collapse]] erodes the tail first.
+see_also:
+  - Zipf's law
+  - class imbalance
+  - out-of-distribution
+  - power law
+  - model collapse
+  - sampling bias
+sources:
+  - text: >-
+      Kandpal, N., Deng, H., Roberts, A., Wallace, E. & Raffel, C. (2023). Large Language Models
+      Struggle to Learn Long-Tail Knowledge. ICML 2023. arXiv:2211.08411.
+    url: https://arxiv.org/abs/2211.08411
+  - text: Anderson, C. (2004). The Long Tail. Wired 12(10).

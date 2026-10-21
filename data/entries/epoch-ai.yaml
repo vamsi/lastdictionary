@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Epoch AI
+id: epoch-ai
+pos: prop. n.
+domain: orgs
+domains:
+  - eval
+  - society
+level: core
+plain: >-
+  A research nonprofit that gathers data on how fast AI is advancing — the computing power, data and
+  money behind it — and publishes forecasts and difficult tests for AI.
+senses:
+  - definition: >-
+      A research nonprofit that measures and forecasts the drivers of AI progress. Its public
+      databases of notable machine learning models, AI hardware and [[ai-data-center|AI data
+      centers]] are standard sources for estimates of training [[compute|compute]]; its analyses
+      have found that the compute used to train frontier models grew roughly four- to fivefold per
+      year from 2010, examined when developers might exhaust the stock of human-written text, and
+      estimated the pace of algorithmic progress in [[large-language-model|language models]]. It
+      created the [[frontiermath|FrontierMath]] benchmark (2024) of unpublished research-level
+      mathematics problems — whose funding by OpenAI, disclosed only after OpenAI's o3 results were
+      announced, raised questions about independence — and the Epoch Capabilities Index, and it
+      builds economic models of AI-driven growth such as GATE. Its figures are widely cited in
+      policy debates over [[scaling-laws|scaling]] and [[compute-governance|compute governance]].
+    example: According to Epoch's database, that run used about 5 × 10^25 FLOP.
+origin: >-
+  Grew out of a volunteer group that from 2021 compiled data on machine learning systems; after its
+  2022 paper on compute trends across three eras of machine learning it was organized as Epoch AI,
+  directed by Jaime Sevilla, with staff working remotely in several countries.
+year: 2022
+see_also:
+  - FrontierMath
+  - compute
+  - scaling laws
+  - AI timelines
+  - compute governance
+  - METR
+sources:
+  - text: >-
+      Sevilla, J., Heim, L., Ho, A., Besiroglu, T., Hobbhahn, M. & Villalobos, P. (2022). Compute
+      Trends Across Three Eras of Machine Learning.
+as_of: 2026-10

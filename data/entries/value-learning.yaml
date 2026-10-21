@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: value learning
+id: value-learning
+pos: n.
+also:
+  - value loading
+  - value-loading problem
+  - learning what to value
+domain: safety
+domains:
+  - rl
+  - train
+level: core
+plain: >-
+  Teaching an AI what people want by having it learn from their behavior, choices and feedback,
+  rather than trying to write every goal down in advance.
+senses:
+  - definition: >-
+      An approach to [[ai-alignment|AI alignment]] in which a system infers the objectives it should
+      pursue from evidence about human preferences — demonstrations, choices, comparisons,
+      corrections or instructions — instead of receiving a hand-coded objective. Daniel Dewey's 2011
+      formulation had an agent keep a probability distribution over candidate utility functions and
+      update it from observations; later work developed [[inverse-reinforcement-learning|inverse
+      reinforcement learning]], [[cooperative-inverse-reinforcement-learning|cooperative inverse
+      reinforcement learning]], [[inverse-reward-design|inverse reward design]] and
+      [[reward-model|reward models]] learned from pairwise human comparisons, the basis of
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]].
+      Open problems include modeling human irrationality — Stuart Armstrong and Sören Mindermann
+      (2018) showed that behavior alone cannot pin down values without assumptions about how
+      rational a person is — inferring values people hold but rarely act on, aggregating across
+      people, and stopping the learner from manipulating the evidence it learns from.
+    example: >-
+      Value learning spares us from writing the reward by hand, but now everything rests on the
+      model of human error.
+origin: >-
+  Daniel Dewey introduced 'value learning' in 'Learning What to Value' at the 2011 Artificial
+  General Intelligence conference. Nick Bostrom's 'Superintelligence' (2014) treated it as an answer
+  to the 'value-loading problem', and Nate Soares's 'The Value Learning Problem' (2015) set out its
+  difficulties.
+year: 2011
+note: >-
+  Paul Christiano distinguished ambitious value learning (inferring everything a person values) from
+  narrow value learning (inferring preferences for a particular task), a distinction popularized by
+  Rohin Shah's 2018–2019 'Value Learning' sequence; current practice such as RLHF is narrow. Related
+  techniques for recommendations and rankings are usually called preference learning.
+see_also:
+  - value alignment
+  - inverse reinforcement learning
+  - cooperative inverse reinforcement learning
+  - inverse reward design
+  - reinforcement learning from human feedback
+  - reward model
+  - coherent extrapolated volition
+sources:
+  - text: >-
+      Dewey, D. (2011). Learning What to Value. Artificial General Intelligence (AGI 2011), LNCS
+      6830, Springer.
+  - text: >-
+      Soares, N. (2015). The Value Learning Problem. Machine Intelligence Research Institute
+      technical report; IJCAI 2016 Ethics for Artificial Intelligence workshop.
+  - text: >-
+      Armstrong, S. & Mindermann, S. (2018). Occam's Razor is Insufficient to Infer the Preferences
+      of Irrational Agents. NeurIPS 2018.

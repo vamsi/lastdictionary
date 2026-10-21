@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Kaiming He
+id: kaiming-he
+sort_as: He Kaiming
+pos: prop. n.
+also:
+  - He Kaiming
+  - 何恺明
+pronunciation: KAI-ming HUH
+domain: people
+domains:
+  - dl
+  - percep
+level: core
+plain: >-
+  A Chinese computer scientist whose ResNet design, with shortcut connections that let networks grow
+  hundreds of layers deep, is among the most cited research in all of science.
+senses:
+  - definition: >-
+      Chinese computer scientist whose architectures and training methods underpin much of modern
+      [[deep-learning|deep learning]]. At Microsoft Research Asia he introduced the
+      weight-initialization scheme for [[relu|ReLU]] networks now named after him (2015), in a paper
+      reporting what its authors called the first classifier to surpass human-level accuracy on
+      [[imagenet|ImageNet]], and, with Xiangyu Zhang, Shaoqing Ren and Jian Sun, [[resnet|ResNet]]
+      (2015), whose [[residual-connection|residual connections]] made networks of hundreds of layers
+      trainable; the paper is among the most cited of the century, and residual connections are part
+      of every [[transformer|transformer]]. At Facebook AI Research (2016–2024) he co-developed Mask
+      R-CNN for [[instance-segmentation|instance segmentation]], [[focal-loss|focal loss]] for
+      [[object-detection|object detection]], the self-supervised momentum-contrast (MoCo) method and
+      [[masked-autoencoder|masked autoencoders]] (2021). He joined the faculty of the Massachusetts
+      Institute of Technology in 2024 and also works part-time at [[google-deepmind|Google
+      DeepMind]] as a distinguished scientist. His papers have won best-paper awards at CVPR (2009,
+      2016) and ICCV (2017).
+see_also:
+  - ResNet
+  - residual connection
+  - masked autoencoder
+  - object detection
+  - weight initialization
+  - computer vision
+sources:
+  - text: >-
+      He, K., Zhang, X., Ren, S. & Sun, J. (2016). Deep Residual Learning for Image Recognition.
+      CVPR 2016.
+  - text: >-
+      He, K., Zhang, X., Ren, S. & Sun, J. (2015). Delving Deep into Rectifiers: Surpassing
+      Human-Level Performance on ImageNet Classification. ICCV 2015.
+as_of: 2026-10

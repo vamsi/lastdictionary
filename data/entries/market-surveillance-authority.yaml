@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: market surveillance authority
+id: market-surveillance-authority
+pos: n.
+also:
+  - MSA
+  - national competent authority
+  - AI Act enforcement authority
+domain: gov
+domains:
+  - orgs
+labels:
+  - legal
+level: specialist
+plain: >-
+  The government body in each EU country that checks AI systems on the market, investigates
+  complaints, and can order unsafe or unlawful AI to be fixed or withdrawn.
+senses:
+  - definition: >-
+      A national authority that monitors products on the EU market and enforces product legislation.
+      Under the [[eu-ai-act|EU AI Act]], each member state designates at least one market
+      surveillance authority and one notifying authority as its national competent authorities, with
+      a single point of contact. Market surveillance authorities supervise
+      [[high-risk-ai-system|high-risk systems]] and [[transparency-obligations|transparency
+      obligations]]: they can demand documentation and, under conditions, access to source code;
+      test systems; receive [[serious-incident|serious incident]] reports and complaints from
+      individuals; order corrective action; restrict, withdraw or recall systems; and impose fines.
+      For AI in regulated products the existing sectoral authority usually acts, and for financial
+      institutions the financial supervisor; under the 2026 [[digital-omnibus|Digital Omnibus]], AI
+      systems built on a provider's own general-purpose model are supervised by the [[ai-office|AI
+      Office]] instead.
+    example: >-
+      The market surveillance authority ordered the vendor to withdraw its exam-proctoring system.
+origin: >-
+  A standard institution of EU product law, consolidated by Regulation (EU) 2019/1020 on market
+  surveillance, which the AI Act applies to AI systems. Member states had to designate their
+  authorities by 2 August 2025.
+note: >-
+  Several member states missed the 2025 designation deadline. For high-risk systems used in law
+  enforcement, migration and border control, or justice and democratic processes — including
+  biometric systems used for those purposes — member states must designate data protection
+  authorities or bodies meeting equivalent independence conditions.
+see_also:
+  - AI Office
+  - EU AI Act
+  - notified body
+  - serious incident
+  - post-market monitoring
+  - European Artificial Intelligence Board
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(26) and 3(48) ('national competent authority'); Arts. 70
+  and 74 (data protection authorities Art. 74(8)); Regulation (EU) 2019/1020
+as_of: 2026-10

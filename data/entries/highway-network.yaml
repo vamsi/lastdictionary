@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: highway network
+id: highway-network
+pos: n.
+also:
+  - highway layer
+  - highway net
+domain: dl
+domains:
+  - hist
+level: specialist
+plain: >-
+  An early design for very deep networks in which learned gates let information either pass through
+  a layer unchanged or be transformed, making networks hundreds of layers deep trainable.
+senses:
+  - definition: >-
+      A [[feedforward-neural-network|feedforward neural network]] whose layers compute y = H(x)·T(x)
+      + x·(1 − T(x)), where H is an ordinary nonlinear transformation and T is a learned
+      [[sigmoid-function|sigmoid]] 'transform gate', with 1 − T acting as a 'carry gate'. When T is
+      near 0 the layer passes its input through unchanged, giving signals and gradients a direct
+      path through depth, the same idea the [[long-short-term-memory|LSTM]] applies through time.
+      Their authors reported that highway networks hundreds of layers deep could be trained directly
+      by gradient descent, at depths where plain networks stalled. [[resnet|ResNet]], published
+      seven months later, used ungated identity shortcuts ([[residual-connection|residual
+      connections]]), which proved simpler and became standard; highway layers persisted in some
+      character-level language and speech models.
+    example: >-
+      The character-aware language model passes its convolutional features through two highway
+      layers.
+formula_latex: \mathbf{y} = H(\mathbf{x}) \odot T(\mathbf{x}) + \mathbf{x} \odot \big(1 - T(\mathbf{x})\big)
+origin: >-
+  Introduced by Rupesh Kumar Srivastava, Klaus Greff and Jürgen Schmidhuber at the Swiss AI lab
+  IDSIA in 'Highway Networks' (arXiv, May 2015) and expanded in 'Training Very Deep Networks' (NIPS
+  2015), carrying LSTM-style gating over to feedforward depth.
+year: 2015
+see_also:
+  - residual connection
+  - ResNet
+  - long short-term memory
+  - vanishing gradient problem
+  - gated linear unit
+sources:
+  - text: >-
+      Srivastava, R. K., Greff, K. & Schmidhuber, J. (2015). Highway Networks. arXiv:1505.00387.
+    url: https://arxiv.org/abs/1505.00387

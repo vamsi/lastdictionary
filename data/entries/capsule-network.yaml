@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: capsule network
+id: capsule-network
+pos: n.
+also:
+  - CapsNet
+  - capsule
+  - dynamic routing
+  - routing by agreement
+domain: dl
+domains:
+  - percep
+level: specialist
+plain: >-
+  A network design championed by Geoffrey Hinton in which groups of neurons, called capsules, each
+  describe a part of an object and its position, so the network can check whether the parts fit
+  together.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] built from capsules, small groups of neurons that each
+      output a vector (or matrix) describing one entity, such as an object or a part of one, instead
+      of a single number. In the best-known version, by Sara Sabour, Nicholas Frosst and Geoffrey
+      Hinton (2017), a vector's length gives the chance that its entity is present and its direction
+      encodes properties such as pose, size and deformation. Each capsule predicts, through a
+      learned transformation matrix, the pose that each candidate parent should have, and an
+      iterative 'routing-by-agreement' step passes its output to the parents whose predictions
+      agree, so a face is recognized only when eyes, nose and mouth sit in consistent relative
+      positions. Capsules aimed to preserve spatial relationships that [[pooling|pooling]] discards,
+      seeking [[equivariance|equivariance]] rather than [[invariance|invariance]]. They did well on
+      MNIST and on overlapping digits, but routing was computationally expensive and scaled poorly
+      to large natural-image datasets, and capsule networks have seen little practical adoption.
+    example: >-
+      The capsule network separated the overlapping digits that confused the CNN baseline.
+origin: >-
+  Geoffrey Hinton, Alex Krizhevsky and Sida Wang introduced 'capsules' in 'Transforming
+  Auto-encoders' (2011), after Hinton's decades of advocating part–whole representations. Sara
+  Sabour, Nicholas Frosst and Hinton's 'Dynamic Routing Between Capsules' (arXiv, October 2017; NIPS
+  2017) launched capsule networks, followed by 'Matrix Capsules with EM Routing' (ICLR 2018).
+year: 2017
+see_also:
+  - convolutional neural network
+  - pooling
+  - equivariance
+  - invariance
+  - godfathers of AI
+sources:
+  - text: >-
+      Sabour, S., Frosst, N. & Hinton, G. E. (2017). Dynamic Routing Between Capsules.
+      arXiv:1710.09829; NIPS 2017.
+    url: https://arxiv.org/abs/1710.09829

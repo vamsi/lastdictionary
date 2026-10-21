@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: experience replay
+id: experience-replay
+pos: n.
+also:
+  - replay buffer
+  - replay memory
+  - prioritized experience replay
+domain: rl
+domains:
+  - dl
+level: core
+plain: >-
+  Storing an AI agent's past experiences in a memory bank and repeatedly learning from random
+  samples of them, rather than only from what just happened.
+senses:
+  - definition: >-
+      A technique in which an agent stores its transitions — (state, action, reward, next state)
+      tuples — in a buffer and trains on mini-batches sampled from it, rather than updating only on
+      the latest transition. Replay reuses each experience many times, improving
+      [[sample-efficiency|sample efficiency]], and random sampling breaks the strong correlations
+      between consecutive steps, bringing the data closer to the independent samples that
+      [[stochastic-gradient-descent|stochastic gradient descent]] assumes; and because each batch
+      mixes experience gathered by many earlier versions of the policy, the training data change
+      only gradually as the policy changes. Because stored data come from older policies, replay
+      requires an [[off-policy|off-policy]] learner such as [[q-learning|Q-learning]],
+      [[deep-deterministic-policy-gradient|DDPG]] or [[soft-actor-critic|soft actor–critic]]. It was
+      one of the two stabilizers of the [[deep-q-network|deep Q-network]]. Variants include
+      prioritized experience replay, which samples transitions with large TD errors more often and
+      corrects the bias with importance weights; hindsight experience replay for goal-reaching
+      tasks; and distributed replay shared by many actors.
+    example: Doubling the replay buffer helped, but sampling by TD error helped more.
+origin: >-
+  Introduced by Long-Ji Lin in his early-1990s doctoral work at Carnegie Mellon University, notably
+  'Self-Improving Reactive Agents Based on Reinforcement Learning, Planning and Teaching' (Machine
+  Learning, 1992). It became central to deep RL with DeepMind's DQN (2013–2015); Tom Schaul and
+  colleagues added prioritized replay (2015).
+year: 1992
+note: >-
+  Neuroscientists have compared experience replay with the 'replay' of recent experiences by
+  hippocampal neurons during sleep and rest, which is thought to help consolidate memory.
+see_also:
+  - deep Q-network
+  - off-policy
+  - target network
+  - Q-learning
+  - sample efficiency
+  - offline reinforcement learning
+sources:
+  - text: >-
+      Lin, L.-J. (1992). Self-improving reactive agents based on reinforcement learning, planning
+      and teaching. Machine Learning 8, 293–321.
+  - text: >-
+      Schaul, T., Quan, J., Antonoglou, I. & Silver, D. (2016). Prioritized Experience Replay. ICLR
+      2016.

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: covariate shift
+id: covariate-shift
+pos: n.
+also:
+  - input distribution shift
+domain: data
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  A kind of mismatch where the inputs an AI system sees change — say, photos from a new camera —
+  while the right answer for any given input stays the same.
+senses:
+  - definition: >-
+      A form of [[distribution-shift|distribution shift]] in which the distribution of inputs
+      (covariates) differs between training and test data, p_train(x) ≠ p_test(x), while the
+      conditional distribution of outputs given inputs, p(y | x), is unchanged. A model that had
+      learned p(y | x) correctly everywhere would be unaffected, but real models are fitted mostly
+      where training data are dense, so errors grow in regions that become common at test time. The
+      classical correction is importance weighting: training examples are reweighted by the ratio of
+      test to training input densities, estimated directly with methods such as kernel mean matching
+      or KLIEP, or with a classifier trained to tell training inputs from test inputs. Weighting
+      makes estimates high-variance when the two distributions overlap little, and no reweighting
+      helps where test inputs fall outside the training data's support.
+    example: >-
+      The new scanner produced brighter images, a covariate shift our importance weights only partly
+      corrected.
+formula_latex: w(x) = \frac{p_{\text{test}}(x)}{p_{\text{train}}(x)}
+origin: >-
+  The term is usually traced to Hidetoshi Shimodaira's 'Improving Predictive Inference under
+  Covariate Shift by Weighting the Log-Likelihood Function' (Journal of Statistical Planning and
+  Inference, 2000), which analyzed importance weighting under such shifts; Masashi Sugiyama and
+  colleagues developed density-ratio estimation methods for it in the late 2000s.
+year: 2000
+note: >-
+  Contrast [[label-shift|label shift]], where class proportions change but each class's inputs look
+  the same, and concept shift, where p(y | x) itself changes. In MLOps, input changes over time are
+  monitored as [[data-drift|data drift]].
+see_also:
+  - distribution shift
+  - data drift
+  - out-of-distribution
+  - sampling bias
+  - transfer learning
+contrast:
+  - label shift
+  - concept drift
+sources:
+  - text: >-
+      Shimodaira, H. (2000). Improving Predictive Inference under Covariate Shift by Weighting the
+      Log-Likelihood Function. Journal of Statistical Planning and Inference 90(2), 227–244.

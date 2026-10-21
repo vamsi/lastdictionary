@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model deprecation
+id: model-deprecation
+pos: n.
+also:
+  - model retirement
+  - model sunset
+  - model snapshot
+  - model pinning
+  - dated snapshot
+domain: eng
+domains:
+  - llm
+  - mind
+labels:
+  - emerging
+level: specialist
+plain: >-
+  When an AI company announces that an older model will stop being offered and then switches it off,
+  so the apps and people relying on it must move to a newer one.
+senses:
+  - definition: >-
+      The process by which a model provider announces that a model version will be withdrawn from
+      its [[model-api|model API]] or applications and then retires it on a set date, after which
+      requests fail or are redirected to a successor. Providers expose dated snapshots that
+      developers can pin to avoid silent behavior changes, alongside aliases that always point to
+      the latest version, and deprecation schedules usually give months of notice. For engineering
+      teams, a deprecation forces migration work: re-running [[evaluation|evaluations]] and
+      [[golden-dataset|golden sets]], re-tuning prompts written around the old model's quirks, and
+      checking changes in cost and [[latency|latency]]. Because hosted models can disappear,
+      retirement also raises questions of research reproducibility, of users' attachment to a
+      familiar model's personality and, for some researchers, of [[ai-welfare|model welfare]]. For
+      providers, retiring old models frees serving capacity and ends the work of maintaining
+      safeguards on them.
+    example: >-
+      The deprecation notice gave us six months to move the classifier off the old snapshot and
+      re-run every eval.
+origin: >-
+  Deprecation is long-standing software vocabulary. The model sense became prominent with commercial
+  language-model APIs from 2023, when providers began publishing retirement schedules for dated
+  snapshots. User protests in August 2025, after [[openai|OpenAI]] removed [[gpt-4o|GPT-4o]] from
+  [[chatgpt|ChatGPT]] on launching [[gpt-5|GPT-5]] and then restored it, drew wide attention; in
+  November 2025 [[anthropic|Anthropic]] committed to preserving the weights of its publicly released
+  models and to interviewing models before retirement.
+year: 2023
+note: >-
+  Strictly, deprecation is the announcement of an end date and retirement the shutdown itself, but
+  the words are often used interchangeably. Open-weight models cannot be deprecated in this sense,
+  because copies remain available.
+see_also:
+  - model API
+  - proprietary model
+  - evals-driven development
+  - AI welfare
+  - open-weight model
+  - model registry
+sources:
+  - text: >-
+      Anthropic (2025). Commitments on model deprecation and preservation. 4 November 2025.
+    url: https://www.anthropic.com/research/deprecation-commitments
+as_of: 2026-10

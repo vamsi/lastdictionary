@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bi-encoder
+id: bi-encoder
+pos: n.
+also:
+  - biencoder
+domain: eng
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  An AI design that turns a question and a document into number lists separately, so documents can
+  be processed once in advance and compared with any new question in a flash.
+senses:
+  - definition: >-
+      An architecture that encodes each of two inputs — such as a query and a document —
+      independently into a fixed-size vector, usually with the same or twin
+      [[transformer|transformer]] encoders, and scores the pair with a cheap similarity function
+      such as the [[dot-product|dot product]] or [[cosine-similarity|cosine similarity]]. Because
+      document vectors do not depend on the query, they can be computed once and stored in an index,
+      and a query can be compared against millions of them with [[vector-search|vector search]];
+      this makes bi-encoders the standard model for [[dense-retrieval|dense retrieval]] and
+      [[text-embedding|text embedding]]. The price is that the two texts never interact inside the
+      network, so bi-encoders are less accurate than [[cross-encoder|cross-encoders]] at fine
+      relevance distinctions. They are trained with [[contrastive-learning|contrastive learning]],
+      often with hard negatives and distillation from a cross-encoder.
+    example: >-
+      We embed the catalog nightly with the bi-encoder and encode only the query at search time.
+origin: >-
+  Twin-network similarity learning dates to [[siamese-network|Siamese networks]] (1993). The term
+  'bi-encoder' appears in the 2019 Poly-encoders paper (Samuel Humeau and colleagues, Facebook AI
+  Research); Sentence-BERT (Nils Reimers and Iryna Gurevych, 2019) showed that a fine-tuned BERT
+  bi-encoder cut finding the most similar pair among 10,000 sentences from about 65 hours with a
+  cross-encoder to about 5 seconds.
+year: 2019
+note: >-
+  In recommender systems the same design is called a [[two-tower-model|two-tower model]]; retrieval
+  papers often say dual encoder.
+see_also:
+  - cross-encoder
+  - two-tower model
+  - dense retrieval
+  - text embedding
+  - embedding model
+  - Siamese network
+  - contrastive learning
+contrast:
+  - cross-encoder
+sources:
+  - text: >-
+      Reimers, N. & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese
+      BERT-Networks. EMNLP-IJCNLP 2019. arXiv:1908.10084.
+    url: https://arxiv.org/abs/1908.10084
+  - text: >-
+      Humeau, S., Shuster, K., Lachaux, M.-A. & Weston, J. (2019). Poly-encoders: Transformer
+      Architectures and Pre-training Strategies for Fast and Accurate Multi-sentence Scoring.
+      arXiv:1905.01969.
+    url: https://arxiv.org/abs/1905.01969

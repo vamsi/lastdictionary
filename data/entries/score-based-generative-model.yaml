@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: score-based generative model
+id: score-based-generative-model
+pos: n.
+also:
+  - score-based model
+  - score-based diffusion
+  - noise-conditional score network
+  - NCSN
+  - score matching
+  - probability flow ODE
+domain: gen
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A generator that learns, for any noisy example, which direction would make it look more like real
+  data — then starts from pure noise and follows those directions step by step.
+senses:
+  - definition: >-
+      A [[generative-model|generative model]] that learns the score — the gradient of the log
+      probability density, ∇ₓ log p(x) — of the data distribution after it has been perturbed with
+      noise at many scales, and generates samples by following the learned scores from noise toward
+      data. The score network is trained by denoising score matching, which amounts to predicting
+      the added noise. Early models sampled with annealed Langevin dynamics, moving from large to
+      small noise levels. The stochastic-differential-equation (SDE) framework then showed that
+      score models and [[denoising-diffusion-probabilistic-model|DDPMs]] are discretizations of two
+      continuous-time processes of one family (variance-exploding and variance-preserving SDEs,
+      respectively): in each, a forward SDE turns data into noise, a reverse-time SDE that depends
+      only on the score turns noise back into data, and an equivalent deterministic 'probability
+      flow' ordinary differential equation allows exact likelihoods and fast solver-based sampling.
+      Score-based models and [[diffusion-model|diffusion models]] are now treated as one family.
+formula_latex: \mathrm{d}x = \big[f(x,t) - g(t)^2\, \nabla_x \log p_t(x)\big]\,\mathrm{d}t + g(t)\,
+  \mathrm{d}\bar{w}
+origin: >-
+  Yang Song and Stefano Ermon of Stanford introduced noise-conditional score networks in 'Generative
+  Modeling by Estimating Gradients of the Data Distribution' (posted July 2019; NeurIPS 2019),
+  building on Aapo Hyvärinen's score matching (2005) and Pascal Vincent's denoising score matching
+  (2011). Song and co-authors unified the approach with diffusion in 'Score-Based Generative
+  Modeling through Stochastic Differential Equations' (posted November 2020; ICLR 2021).
+year: 2019
+see_also:
+  - diffusion model
+  - denoising diffusion probabilistic model
+  - diffusion sampler
+  - flow matching
+  - energy-based model
+  - Markov chain Monte Carlo
+sources:
+  - text: >-
+      Song, Y. & Ermon, S. (2019). Generative Modeling by Estimating Gradients of the Data
+      Distribution. NeurIPS 2019. arXiv:1907.05600.
+    url: https://arxiv.org/abs/1907.05600
+  - text: >-
+      Song, Y., Sohl-Dickstein, J., Kingma, D. P., Kumar, A., Ermon, S. & Poole, B. (2021).
+      Score-Based Generative Modeling through Stochastic Differential Equations. ICLR 2021.
+      arXiv:2011.13456.
+    url: https://arxiv.org/abs/2011.13456

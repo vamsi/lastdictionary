@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: coding agent
+id: coding-agent
+pos: n.
+also:
+  - AI coding agent
+  - software engineering agent
+  - AI software engineer
+  - code agent
+domain: agents
+domains:
+  - eng
+  - llm
+level: essential
+plain: >-
+  An AI agent that writes and fixes software by itself: it reads a codebase, edits files, runs
+  commands and tests, and keeps working until a feature is built or a bug is fixed.
+senses:
+  - definition: >-
+      An [[ai-agent|AI agent]] specialized for software engineering that operates on a code
+      repository with tools to read and search files, edit them, run shell commands, builds and
+      tests, and use version control, iterating until a task — implementing a feature, fixing a bug,
+      writing tests, migrating code — passes its checks. Coding agents run in several settings: in
+      the terminal or editor beside a developer (interactive), in cloud [[sandbox|sandboxes]] that
+      return pull requests ([[background-agent|background agents]]), or in automated pipelines
+      triggered by issues or failing builds. They differ from earlier code-completion assistants in
+      acting over many steps with [[code-execution|code execution]] feedback, which lets them test
+      and correct their own work. Their abilities are measured on benchmarks such as
+      [[swe-bench|SWE-bench]] and [[terminal-bench|Terminal-Bench]] and by
+      [[metr-time-horizon|time-horizon]] studies; open problems include review burden, subtle bugs,
+      the security of executed commands and keeping agents within project conventions (see
+      [[agent-instruction-file|agent instruction file]]).
+    example: >-
+      I gave the coding agent the failing test and took a coffee break; it came back with a fix and
+      two new tests.
+origin: >-
+  Cognition's [[devin|Devin]] (March 2024) and the research system [[swe-agent|SWE-agent]] (May
+  2024) defined the category. In 2025 terminal-based agents — Anthropic's [[claude-code|Claude
+  Code]] (February), OpenAI's [[codex|Codex]] CLI (April) and Google's Gemini CLI (June) — and cloud
+  agents from OpenAI, GitHub and Google made coding agents among the most widely used kinds of AI
+  agent.
+year: 2024
+note: >-
+  Usage varies: 'coding assistant' often means autocomplete or chat help, while 'coding agent'
+  implies autonomous multi-step action. Working through such agents is [[agentic-coding|agentic
+  coding]]; the casual, review-light style is [[vibe-coding|vibe coding]].
+see_also:
+  - agentic coding
+  - background agent
+  - SWE-agent
+  - SWE-bench
+  - Claude Code
+  - Codex
+  - vibe coding
+contrast:
+  - code generation
+  - copilot
+sources:
+  - text: >-
+      Yang, J. et al. (2024). SWE-agent: Agent-Computer Interfaces Enable Automated Software
+      Engineering. NeurIPS 2024.
+    url: https://arxiv.org/abs/2405.15793
+  - text: >-
+      Cognition (2024). Introducing Devin, the first AI software engineer. 12 March 2024.
+    url: https://cognition.com/blog/introducing-devin
+as_of: 2026-10

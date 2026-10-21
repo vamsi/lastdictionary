@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: anomaly detection
+id: anomaly-detection
+pos: n.
+also:
+  - outlier detection
+  - novelty detection
+  - outlier
+  - anomaly
+  - local outlier factor
+domain: ml
+domains:
+  - sec
+  - data
+level: core
+plain: >-
+  Automatically spotting the rare data points that don't fit the usual pattern, such as a fraudulent
+  card payment, a machine about to fail or an intruder on a network.
+senses:
+  - definition: >-
+      The task of picking out the few cases that stand apart from the bulk of a dataset or data
+      stream, such as a transaction, sensor reading or log event unlike anything normally seen. What
+      can be done depends on the labels available: most often there are none, and an unsupervised
+      method ranks points by how unusual they look; in novelty (semi-supervised) detection a model
+      learns what normal looks like from clean examples and flags departures; classifiers trained on
+      labeled anomalies are used less, because anomalies are scarce and new kinds may not resemble
+      those seen before. Methods include statistical tests and [[density-estimation|density
+      estimation]] (low-likelihood points are suspect), distance- and density-based scores such as
+      nearest-neighbor distance, the local outlier factor and [[dbscan|DBSCAN]] noise points,
+      [[isolation-forest|isolation forests]], one-class [[support-vector-machine|support vector
+      machines]], and reconstruction error from [[autoencoder|autoencoders]] or
+      [[principal-component-analysis|PCA]]. Anomalies may be point anomalies, contextual (unusual
+      only in context, such as time of day) or collective. Applications include fraud, intrusion
+      detection, industrial monitoring, medicine and [[model-monitoring|model monitoring]].
+    example: >-
+      Anomaly detection on the login telemetry flagged a burst of sign-ins from an unfamiliar region
+      at 3 a.m.
+origin: >-
+  Statisticians have debated how to treat outlying observations since the 19th century; Douglas
+  Hawkins's 1980 book Identification of Outliers supplied the much-quoted 'different mechanism'
+  definition. Dorothy Denning's intrusion-detection model (presented 1986, published 1987) brought
+  anomaly detection into computer security, and the data-mining boom of the late 1990s and 2000s
+  added scalable density- and isolation-based algorithms.
+note: >-
+  Evaluation is tricky: when anomalies make up well under 1% of data, [[accuracy|accuracy]] is
+  uninformative, so precision–recall measures are preferred. 'Outlier' can mean a data error to be
+  removed or the very signal being sought.
+see_also:
+  - isolation forest
+  - density estimation
+  - DBSCAN
+  - autoencoder
+  - class imbalance
+  - model monitoring
+  - out-of-distribution
+sources:
+  - text: "Hawkins, D. M. (1980). Identification of Outliers. London: Chapman and Hall."
+  - text: >-
+      Denning, D. E. (1987). An Intrusion-Detection Model. IEEE Transactions on Software Engineering
+      SE-13(2).
+  - text: >-
+      Chandola, V., Banerjee, A. & Kumar, V. (2009). Anomaly Detection: A Survey. ACM Computing
+      Surveys 41(3).

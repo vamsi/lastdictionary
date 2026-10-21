@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: anchor box
+id: anchor-box
+pos: n.
+also:
+  - anchor
+  - default box
+  - prior box
+  - anchor-free detector
+domain: percep
+domains:
+  - dl
+level: specialist
+plain: >-
+  A ready-made box shape, placed at many spots across an image, that an object detector stretches
+  and shifts to fit real objects instead of drawing boxes from scratch.
+senses:
+  - definition: >-
+      One of a fixed set of reference [[bounding-box|bounding boxes]] with preset scales and aspect
+      ratios, tiled at every position of a detector's [[feature-map|feature map]]. For each anchor
+      the network predicts whether it covers an object and how to shift and resize it to fit (box
+      regression); in training, anchors are assigned to ground-truth objects by
+      [[intersection-over-union|intersection over union]]. Anchors turn detection into dense
+      classification and regression over a regular grid and let one location represent objects of
+      different shapes. Faster R-CNN used nine anchors per location (three scales × three aspect
+      ratios); SSD called them default boxes; YOLOv2 chose anchor shapes by k-means clustering of
+      training boxes. Their drawbacks (many hyperparameters, a large imbalance between the few
+      positive and the many negative anchors, extra computation) motivated anchor-free detectors
+      such as CornerNet, FCOS and CenterNet (2018–2019), which predict objects from points or
+      corners, and query-based detectors such as [[detr|DETR]].
+    example: Our anchors were too wide for utility poles, so we added a 1:6 aspect ratio.
+origin: >-
+  Introduced as 'anchors' by Shaoqing Ren, Kaiming He, Ross Girshick and Jian Sun in Faster R-CNN
+  (arXiv June 2015), where they underpin the region proposal network; unlike the box 'priors' that
+  Google's MultiBox detector (2014) obtained by clustering, Faster R-CNN's anchors repeat at every
+  image position. Wei Liu and colleagues' SSD detector (December 2015) used equivalent 'default
+  boxes'.
+year: 2015
+note: >-
+  Many real-time detectors went anchor-free from about 2021 (YOLOX; Ultralytics YOLOv8 in 2023), but
+  anchor-based designs remain common in deployed systems.
+see_also:
+  - object detection
+  - bounding box
+  - R-CNN
+  - YOLO
+  - DETR
+  - intersection over union
+sources:
+  - text: >-
+      Ren, S., He, K., Girshick, R. & Sun, J. (2015). Faster R-CNN: Towards Real-Time Object
+      Detection with Region Proposal Networks. NeurIPS 2015.
+  - text: "Liu, W. et al. (2016). SSD: Single Shot MultiBox Detector. ECCV 2016."

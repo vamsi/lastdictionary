@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: NPU
+id: npu
+pos: abbr.
+also:
+  - neural processing unit
+  - neural engine
+  - AI engine
+domain: hw
+domains:
+  - infer
+level: core
+plain: >-
+  A small AI chip, or part of a chip, built into phones, laptops and other devices so they can run
+  AI features quickly without draining the battery or using the cloud.
+senses:
+  - definition: >-
+      An [[ai-accelerator|AI accelerator]], usually a block within a system-on-chip, specialized for
+      low-power neural-network [[inference|inference]] on devices. Typical designs combine arrays of
+      multiply–accumulate units for [[int8|INT8]] and lower-precision arithmetic, local
+      [[sram|SRAM]] buffers that minimize memory traffic, and fixed-function support for common
+      layers. NPUs are rated in [[tops|TOPS]]; examples include Apple's Neural Engine, Qualcomm's
+      Hexagon NPU, the NPUs in Intel and AMD laptop processors, and Google's Tensor phone chips.
+      They make [[on-device-ai|on-device AI]] practical — photo processing, speech recognition,
+      translation and small language models — while keeping data local and battery drain low. Some
+      data-center chips (such as Huawei's Ascend) are also called NPUs, so the term names a market
+      category more than a distinct architecture.
+origin: >-
+  An early use for a dedicated neural-network accelerator is the 2012 MICRO paper by Hadi
+  Esmaeilzadeh, Adrian Sampson, Luis Ceze and Doug Burger on neural acceleration of approximate
+  programs. Dedicated NPUs reached consumers in 2017 in Huawei's Kirin 970 (marketed as having an
+  'NPU') and Apple's A11 (its 'Neural Engine'), and PCs in 2023–2024; Microsoft required at least 40
+  NPU TOPS for its Copilot+ PC label (May 2024).
+year: 2012
+note: >-
+  Vendor TOPS figures for NPUs typically assume INT8 (sometimes sparse) arithmetic and are not
+  directly comparable with GPU FLOPS ratings.
+see_also:
+  - AI accelerator
+  - on-device AI
+  - edge AI
+  - TOPS
+  - ASIC
+  - quantization
+contrast:
+  - GPU
+sources:
+  - text: >-
+      Esmaeilzadeh, H., Sampson, A., Ceze, L. & Burger, D. (2012). Neural Acceleration for
+      General-Purpose Approximate Programs. Proceedings of MICRO-45.
+as_of: 2026-10

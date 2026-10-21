@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hardware lottery
+id: hardware-lottery
+pos: n.
+also:
+  - the hardware lottery
+domain: hw
+domains:
+  - hist
+  - culture
+labels:
+  - figurative
+level: specialist
+plain: >-
+  The idea that research ideas succeed partly by luck — because they happen to suit the computer
+  chips available at the time — rather than purely because they are better.
+senses:
+  - definition: >-
+      The situation, named by Sara Hooker, in which a research approach comes out ahead mainly
+      because it suits the chips and software already at hand rather than because it beats its
+      rivals on merit, while ideas that suit the available tools poorly can look like dead ends and
+      be set aside. The central example is deep learning itself: [[neural-network|neural networks]]
+      languished for decades until [[gpu|GPUs]], built for video games, made dense
+      [[matrix-multiplication|matrix multiplication]] cheap. The concept warns that today's
+      specialized [[ai-accelerator|accelerators]], tuned to [[transformer|transformers]] and dense
+      linear algebra, may entrench current methods and penalize alternatives such as sparse, dynamic
+      or [[neuromorphic-computing|neuromorphic]] approaches, and it argues for hardware, software
+      and algorithm research that keeps more options open.
+origin: >-
+  Coined by Sara Hooker, then at Google Brain, in the essay 'The Hardware Lottery' (arXiv, September
+  2020), later published in Communications of the ACM (2021).
+year: 2020
+note: >-
+  Often discussed alongside Rich Sutton's [[the-bitter-lesson|bitter lesson]]: methods that scale
+  with compute tend to win, but which methods can scale depends on the hardware available.
+see_also:
+  - the bitter lesson
+  - GPU
+  - AI accelerator
+  - Huang's law
+  - neuromorphic computing
+  - deep learning revolution
+sources:
+  - text: >-
+      Hooker, S. (2020). The Hardware Lottery. arXiv:2009.06489; Communications of the ACM 64(12),
+      2021.
+    url: https://arxiv.org/abs/2009.06489

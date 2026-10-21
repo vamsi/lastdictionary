@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: octopus test
+id: octopus-test
+pos: n.
+also:
+  - octopus thought experiment
+  - octopus argument
+domain: mind
+domains:
+  - llm
+labels:
+  - contested
+level: specialist
+plain: >-
+  A thought experiment in which a clever octopus learns to impersonate a stranded islander by
+  eavesdropping on an undersea cable, without ever knowing what the words refer to. It asks whether
+  text-trained AI can grasp meaning.
+senses:
+  - definition: >-
+      A thought experiment by Emily M. Bender and Alexander Koller arguing that a system trained
+      only on linguistic form cannot learn meaning. Two people, A and B, stranded on separate
+      islands, communicate by an undersea cable; a hyperintelligent deep-sea octopus, O, taps the
+      cable, learns the statistical patterns of their messages, then cuts B off and impersonates B.
+      O can sustain small talk, but when A urgently asks how to fend off a bear with some sticks, O,
+      never having encountered the things the words refer to, cannot help. The authors' general
+      claim is that meaning relates linguistic form to something outside language — the world and
+      speakers' communicative intentions — so it cannot be learned from form alone. Critics reply
+      that text encodes much of the world's structure, that the bear scenario tests knowledge rather
+      than meaning, and that multimodal models weaken the premise.
+origin: >-
+  Introduced by Emily M. Bender and Alexander Koller in 'Climbing towards NLU: On Meaning, Form, and
+  Understanding in the Age of Data' at ACL 2020, the annual meeting of the Association for
+  Computational Linguistics.
+year: 2020
+see_also:
+  - symbol grounding problem
+  - machine understanding
+  - stochastic parrot
+  - Chinese room
+  - distributional hypothesis
+  - Emily M. Bender
+sources:
+  - text: >-
+      Bender, E. M. & Koller, A. (2020). Climbing towards NLU: On Meaning, Form, and Understanding
+      in the Age of Data. Proceedings of ACL 2020, 5185–5198.

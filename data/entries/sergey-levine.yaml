@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Sergey Levine
+id: sergey-levine
+sort_as: Levine Sergey
+pos: prop. n.
+domain: people
+domains:
+  - robot
+  - rl
+level: specialist
+plain: >-
+  A Berkeley computer scientist, one of the most prolific researchers on how robots can learn skills
+  from data and experience, and a co-founder of the robotics company Physical Intelligence.
+senses:
+  - definition: >-
+      Computer scientist at the University of California, Berkeley, and a co-founder of the robotics
+      company [[physical-intelligence|Physical Intelligence]] (2024), among the most prolific
+      researchers in [[robot-learning|robot learning]] and [[deep-reinforcement-learning|deep
+      reinforcement learning]]. With [[chelsea-finn|Chelsea Finn]], Trevor Darrell and
+      [[pieter-abbeel|Pieter Abbeel]] he showed that robots could learn visuomotor control end to
+      end, mapping camera images directly to motor commands with deep networks (2015–2016), and at
+      Google he ran large-scale grasping experiments on 14 robot arms (2016). He co-authored
+      [[trust-region-policy-optimization|trust region policy optimization]],
+      [[generalized-advantage-estimation|generalized advantage estimation]],
+      [[soft-actor-critic|soft actor–critic]] (2018) and
+      [[model-agnostic-meta-learning|model-agnostic meta-learning]], helped define
+      [[offline-reinforcement-learning|offline reinforcement learning]] through a widely used 2020
+      review and methods such as conservative Q-learning, and worked on
+      [[sim-to-real-transfer|sim-to-real transfer]] and [[action-chunking|action chunking]].
+      Physical Intelligence's [[pi0|π0]] (2024) and its successors are leading
+      [[vision-language-action-model|vision-language-action models]].
+see_also:
+  - robot learning
+  - offline reinforcement learning
+  - Physical Intelligence
+  - π0
+  - deep reinforcement learning
+  - Chelsea Finn
+sources:
+  - text: >-
+      Levine, S., Finn, C., Darrell, T. & Abbeel, P. (2016). End-to-End Training of Deep Visuomotor
+      Policies. Journal of Machine Learning Research 17(39): 1–40.
+  - text: >-
+      Levine, S., Kumar, A., Tucker, G. & Fu, J. (2020). Offline Reinforcement Learning: Tutorial,
+      Review, and Perspectives on Open Problems. arXiv preprint.
+as_of: 2026-10

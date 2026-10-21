@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: win rate
+id: win-rate
+pos: n.
+also:
+  - pairwise win rate
+  - length-controlled win rate
+  - AlpacaEval
+domain: eval
+domains:
+  - train
+level: core
+plain: >-
+  The share of head-to-head comparisons in which judges — people or another AI — prefer one model's
+  answer over a rival's for the same request.
+senses:
+  - definition: >-
+      The proportion of pairwise comparisons in which a system's output is preferred to a reference
+      system's output on the same inputs, with ties counted as half a win or reported separately.
+      Preferences come from [[human-evaluation|human raters]] or an
+      [[llm-as-a-judge|LLM-as-a-judge]]. Win rates appear in
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]]
+      papers (a tuned policy against a baseline), in automatic benchmarks such as AlpacaEval, which
+      compares a model's answers with those of a fixed reference model, and in [[gdpval|GDPval]],
+      which reports how often experts judge AI work as good as or better than professionals' work.
+      Because judges favor longer answers, AlpacaEval 2.0 introduced a length-controlled win rate
+      that adjusts for output length by regression. A win rate depends on the chosen baseline and is
+      not an absolute measure of quality.
+    example: >-
+      Against the previous release, the new model has a 61% win rate on coding prompts, counting
+      ties as half.
+origin: >-
+  Pairwise win rates were standard in human-feedback studies such as OpenAI's summarization work
+  (Nisan Stiennon and colleagues, 2020) and InstructGPT (Long Ouyang and colleagues, 2022).
+  AlpacaEval (Stanford, 2023) automated the measure with model judges, and Yann Dubois and
+  colleagues added length control in 2024.
+year: 2020
+note: >-
+  A 50% win rate means parity with the baseline, not mediocre quality. Win rates against different
+  baselines are not comparable, and verbosity or a style the judges happen to like can inflate them.
+see_also:
+  - LLM-as-a-judge
+  - human evaluation
+  - Elo rating
+  - Bradley–Terry model
+  - LMArena
+  - GDPval
+sources:
+  - text: >-
+      Dubois, Y., Galambosi, B., Liang, P. & Hashimoto, T. B. (2024). Length-Controlled AlpacaEval:
+      A Simple Way to Debias Automatic Evaluators. arXiv preprint.

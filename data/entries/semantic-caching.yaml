@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semantic caching
+id: semantic-caching
+pos: n.
+also:
+  - semantic cache
+  - LLM response caching
+  - GPTCache
+domain: eng
+domains:
+  - infer
+  - llm
+level: specialist
+plain: >-
+  Saving an AI system's past answers and reusing one whenever a new question means the same as an
+  old one, even if worded differently, to save time and money.
+senses:
+  - context: Language-model applications
+    definition: >-
+      A caching technique that returns a stored model response when a new request is similar in
+      meaning, not merely identical in text, to an earlier one. The application computes an
+      [[embedding|embedding]] of each incoming prompt and searches a [[vector-database|vector
+      index]] of previous prompts; if the nearest neighbor exceeds a similarity threshold, the
+      cached answer is returned without calling the model, and otherwise the model is called and the
+      new pair stored. Hits cut [[latency|latency]] from seconds to milliseconds and avoid
+      per-[[token|token]] charges, which pays off for repetitive traffic such as customer-support
+      questions. The central risk is a false hit: 'cancel my order' and 'don't cancel my order' can
+      embed close together, and answers that depend on the user, the date or the conversation must
+      not be shared. Systems therefore set conservative thresholds, scope caches per user or
+      context, and expire entries.
+    example: >-
+      Semantic caching answered 30 percent of support questions, but we excluded anything mentioning
+      an account number.
+  - context: Databases (earlier sense)
+    definition: >-
+      A client-side caching method for database and client–server systems in which cached query
+      results are indexed by the queries, or semantic regions, that produced them rather than by
+      pages or tuples, so that a new query can be answered partly from the cache and partly by a
+      smaller remainder query sent to the server.
+origin: >-
+  The database sense was introduced by Shaul Dar, Michael Franklin and colleagues at the VLDB
+  conference in 1996. The language-model sense arose in 2023, when open-source tools such as
+  Zilliz's GPTCache and vector-database vendors offered embedding-based response caches;
+  [[ai-gateway|AI gateways]] later built them in.
+year: 1996
+note: >-
+  Different from [[prompt-caching|prompt caching]], in which a provider reuses the computed
+  [[kv-cache|key–value cache]] for an identical prompt prefix but still generates a fresh answer;
+  semantic caching skips generation entirely.
+see_also:
+  - prompt caching
+  - embedding
+  - vector database
+  - AI gateway
+  - KV cache
+  - inference cost
+contrast:
+  - prompt caching
+sources:
+  - text: >-
+      Dar, S., Franklin, M. J., Jónsson, B. T., Srivastava, D. & Tan, M. (1996). Semantic Data
+      Caching and Replacement. Proceedings of the 22nd VLDB Conference.

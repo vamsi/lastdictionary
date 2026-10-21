@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Humanity's Last Exam
+id: humanity-s-last-exam
+pos: prop. n.
+also:
+  - HLE
+  - HLE-Rolling
+  - HLE-Diamond
+domain: eval
+domains:
+  - llm
+  - asi
+level: essential
+plain: >-
+  A test of 2,500 extremely hard questions with definite answers, written by about a thousand
+  experts worldwide and billed as the last academic exam AI would need; at launch, top models scored
+  under 10%.
+senses:
+  - definition: >-
+      A benchmark of 2,500 questions written by subject experts worldwide, built to outlast earlier
+      tests that frontier models had saturated: each question has one unambiguous, checkable answer,
+      and the set spans dozens of academic fields — about 41% mathematics, with the rest spread over
+      biology and medicine, computer science, physics, the humanities, chemistry, engineering and
+      other subjects. About 14% of questions include images; about 24% are multiple choice and the
+      rest short-answer, graded by [[exact-match|exact match]] with a model-based judge. Candidate
+      questions were kept only if leading models failed them before expert review, so initial scores
+      were very low, and the benchmark also reports [[calibration|calibration]] error because models
+      tended to give wrong answers with high confidence. A private held-out set guards against
+      overfitting. Top scores rose from under 10% at release to above 35% by the end of 2025 and, as
+      of October 2026, to about 55% on the official leaderboard kept by Scale AI. A 2025 audit by
+      FutureHouse suggested that roughly 30% of chemistry and biology answers might be wrong; the
+      organizers acknowledged some errors and launched a continuously revised fork, HLE-Rolling,
+      followed in September 2026 by HLE-Diamond.
+    example: >-
+      The new model scores 45% on Humanity's Last Exam with tools, but its calibration error is
+      still above 40%.
+origin: >-
+  Created by the Center for AI Safety and Scale AI, led by Dan Hendrycks with Long Phan, Alice Gatti
+  and colleagues, from questions by nearly 1,000 contributors at more than 500 institutions in 50
+  countries. Released in January 2025 and published in Nature in January 2026. Hendrycks has said a
+  conversation with Elon Musk, who found existing tests too easy, prompted the project.
+year: 2025
+note: >-
+  The name presents it as the last exam of its kind that would be needed. A high score would show
+  expert-level performance on closed questions with checkable answers — not autonomous research
+  ability or [[artificial-general-intelligence|artificial general intelligence]], as the organizers
+  themselves say.
+see_also:
+  - benchmark
+  - benchmark saturation
+  - MMLU
+  - GPQA
+  - FrontierMath
+  - calibration
+  - exact match
+sources:
+  - text: >-
+      Phan, L., Gatti, A., Han, Z., Li, N. et al. (2025). Humanity's Last Exam. arXiv:2501.14249.
+    url: https://arxiv.org/abs/2501.14249
+  - text: >-
+      Center for AI Safety, Scale AI & HLE Contributors Consortium (2026). A benchmark of
+      expert-level academic questions to assess AI capabilities. Nature 649, 1139–1146.
+    url: https://doi.org/10.1038/s41586-025-09962-4
+  - text: Scale AI. Humanity's Last Exam leaderboard.
+    url: https://labs.scale.com/leaderboard/humanitys_last_exam
+as_of: 2026-10

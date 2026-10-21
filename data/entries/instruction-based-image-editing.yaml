@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: instruction-based image editing
+id: instruction-based-image-editing
+pos: n.
+also:
+  - instruction-guided image editing
+  - text-guided image editing
+  - InstructPix2Pix
+  - conversational image editing
+domain: gen
+domains:
+  - llm
+  - percep
+level: core
+plain: >-
+  Changing a picture by telling an AI what to change — 'make it night', 'remove the car', 'give her
+  a red coat' — instead of using editing tools by hand.
+senses:
+  - definition: >-
+      Image editing in which a model takes an input image and a natural-language instruction and
+      produces the edited image, changing what the instruction specifies while preserving everything
+      else, such as identity, layout and lighting. Early text-guided editing manipulated a diffusion
+      model's internals for each image — inverting it to noise and regenerating under an altered
+      prompt, or editing [[cross-attention|cross-attention]] maps (prompt-to-prompt).
+      InstructPix2Pix (2022) instead trained a conditional [[diffusion-model|diffusion model]] on a
+      synthetic dataset of before-and-after pairs created with a language model and a text-to-image
+      model, so it could edit in a single pass without per-image optimization. Since 2025 the task
+      has been dominated by large multimodal generators — GPT-4o image generation,
+      [[nano-banana|Nano Banana]], FLUX.1 Kontext and similar models — that accept several reference
+      images and multi-turn instructions. Hard problems include preserving unedited regions and
+      identities across repeated edits, following spatial instructions precisely and evaluating
+      edits, often with [[llm-as-a-judge|vision-language-model judges]].
+    example: >-
+      Instruction-based editing turned a two-hour retouch into one sentence: remove the scaffolding.
+origin: >-
+  Tim Brooks, Aleksander Holynski and Alexei Efros of UC Berkeley introduced InstructPix2Pix in a
+  paper posted in November 2022 (CVPR 2023), framing editing as following written instructions. The
+  approach became a mainstream consumer feature with natively multimodal image models in 2025.
+year: 2022
+see_also:
+  - inpainting
+  - image-to-image translation
+  - Nano Banana
+  - FLUX
+  - text-to-image model
+  - denoising diffusion implicit model
+  - multimodal large language model
+sources:
+  - text: >-
+      Brooks, T., Holynski, A. & Efros, A. A. (2023). InstructPix2Pix: Learning to Follow Image
+      Editing Instructions. CVPR 2023. arXiv:2211.09800.
+    url: https://arxiv.org/abs/2211.09800

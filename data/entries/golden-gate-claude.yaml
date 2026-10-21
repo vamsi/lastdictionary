@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Golden Gate Claude
+id: golden-gate-claude
+pos: prop. n.
+also:
+  - Golden Gate Bridge feature
+domain: interp
+domains:
+  - hist
+  - culture
+labels:
+  - trademark
+  - historical
+level: core
+plain: >-
+  A one-day public demo in 2024 in which Anthropic turned up a single internal concept inside its
+  Claude chatbot — the Golden Gate Bridge — so it steered almost every conversation back to the
+  bridge.
+senses:
+  - definition: >-
+      A research demonstration released by [[anthropic|Anthropic]] on 23 May 2024: a version of
+      Claude 3 Sonnet in which one [[sparse-autoencoder|sparse autoencoder]] feature, corresponding
+      to the Golden Gate Bridge, was clamped to a high value (the accompanying paper's example used
+      ten times its maximum observed activation), offered on claude.ai for 24 hours. The modified
+      model, otherwise fluent, steered almost any conversation toward the bridge; in Anthropic's own
+      examples it worked the bridge into budgeting advice and love stories alike, and when asked
+      about its physical form said that it was the bridge. It accompanied the 'Scaling
+      Monosemanticity' paper and was the first widely seen example of [[feature-steering|feature
+      steering]]. It showed that a feature found by [[dictionary-learning|dictionary learning]] does
+      not merely correlate with inputs but causally shapes the model's behavior, including how it
+      describes itself, and it became a popular reference point in discussions of interpretability
+      and of how readily a model's apparent self-conception can be altered.
+    example: >-
+      Like Golden Gate Claude, the steered model kept dragging every answer back to one topic.
+origin: >-
+  Announced by Anthropic in the post 'Golden Gate Claude' (23 May 2024), following Adly Templeton
+  and colleagues' 'Scaling Monosemanticity' (May 2024), which had reported that amplifying the
+  bridge feature changed Claude's self-description.
+year: 2024
+see_also:
+  - feature steering
+  - sparse autoencoder
+  - monosemanticity
+  - Claude
+  - steering
+  - feature (interpretability)
+sources:
+  - text: Anthropic (2024). Golden Gate Claude. Anthropic news, 23 May 2024.
+    url: https://www.anthropic.com/news/golden-gate-claude
+  - text: >-
+      Templeton, A., Conerly, T. et al. (2024). Scaling Monosemanticity: Extracting Interpretable
+      Features from Claude 3 Sonnet. Transformer Circuits Thread.

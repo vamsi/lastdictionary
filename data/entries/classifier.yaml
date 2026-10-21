@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: classifier
+id: classifier
+pos: n.
+also:
+  - classification model
+  - classifiers
+domain: ml
+domains:
+  - sec
+  - core
+level: essential
+plain: >-
+  A program or model that sorts inputs into categories, for example flagging an email as spam or a
+  chatbot message as harmful. Many AI safety filters are classifiers.
+senses:
+  - definition: >-
+      A function or trained model that maps an input to one of a set of discrete classes, usually by
+      computing a score for each class and applying a decision rule. Probabilistic classifiers
+      estimate a probability for each class, as [[logistic-regression|logistic regression]] and
+      [[softmax|softmax]] networks do, and a label is then chosen by arg max or by a threshold tuned
+      to the relative costs of errors; others, such as [[support-vector-machine|support vector
+      machines]], produce uncalibrated scores or labels only. Classifiers are called linear or
+      nonlinear by the shape of their [[decision-boundary|decision boundary]], and
+      [[discriminative-model|discriminative]] or generative according to whether they model p(y | x)
+      directly or model how inputs arise from each class. In deployed AI systems the word often
+      denotes a separate model that screens inputs or outputs, such as a [[safety-classifier|safety
+      classifier]] or an [[ai-detector|AI detector]].
+    example: The classifier flags about 2% of prompts for human review at a 0.8 threshold.
+origin: >-
+  Used in statistics and pattern recognition since at least the 1950s–1960s for trainable decision
+  devices such as the perceptron; Nils Nilsson's book 'Learning Machines: Foundations of Trainable
+  Pattern-Classifying Systems' (1965) treated them systematically. The safety-filter usage spread
+  with content-moderation models in the 2010s and LLM guardrails after 2022.
+note: >-
+  A classifier's raw scores are not automatically trustworthy probabilities; see
+  [[calibration|calibration]]. In casual use, 'classifier' sometimes means the whole moderation
+  pipeline rather than a single model.
+see_also:
+  - classification
+  - decision boundary
+  - logistic regression
+  - support vector machine
+  - discriminative model
+  - safety classifier
+  - calibration
+sources:
+  - text: >-
+      Nilsson, N. J. (1965). Learning Machines: Foundations of Trainable Pattern-Classifying
+      Systems. McGraw-Hill.

@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Ollama
+id: ollama
+pos: prop. n.
+pronunciation: oh-LAH-muh
+domain: infer
+domains:
+  - eng
+labels:
+  - trademark
+level: core
+plain: >-
+  A free app that makes it easy to download and run AI language models on your own computer with a
+  single command, keeping your data on your machine.
+senses:
+  - definition: >-
+      An open-source tool for downloading, managing and running [[open-weight-model|open-weight]]
+      [[large-language-model|language models]] locally on macOS, Windows and Linux. It distributes
+      models from its own online library, typically as [[quantization|quantized]] [[gguf|GGUF]]
+      weights bundled with a [[chat-template|chat template]] and default settings; pulls and runs
+      them with Docker-like commands such as 'ollama run'; and lets users customize them through a
+      plain-text Modelfile that sets the base model, [[system-prompt|system prompt]] and sampling
+      parameters. A background server exposes a local REST API, by default on port 11434, including
+      an [[openai-compatible-api|OpenAI-compatible API]], so that editors, coding agents and other
+      applications can use local models as drop-in replacements for cloud ones. Inference runs on
+      the ggml and [[llama-cpp|llama.cpp]] stack, with automatic GPU detection and CPU
+      [[offloading|offloading]]. Optional hosted cloud models were later added alongside local ones.
+    example: Install Ollama, run the 8B model, and point your editor at localhost:11434.
+origin: >-
+  Created by Jeffrey Morgan and Michael Chiang, who had earlier built the Docker tool Kitematic; the
+  first public release came in July 2023. The name plays on Llama, the Meta model family it first
+  targeted. It is released under the MIT License.
+year: 2023
+see_also:
+  - llama.cpp
+  - GGUF
+  - on-device AI
+  - open-weight model
+  - OpenAI-compatible API
+  - Llama
+contrast:
+  - inference provider
+sources:
+  - text: Ollama repository.
+    url: https://github.com/ollama/ollama
+as_of: 2026-10

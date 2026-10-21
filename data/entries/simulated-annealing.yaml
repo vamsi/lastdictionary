@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: simulated annealing
+id: simulated-annealing
+pos: n.
+also:
+  - SA
+  - annealing schedule
+  - cooling schedule
+  - Metropolis criterion
+domain: sym
+domains:
+  - math
+  - ml
+level: core
+plain: >-
+  An optimization method inspired by slowly cooling metal: early on it sometimes accepts worse
+  solutions, to escape dead ends, and becomes pickier as a 'temperature' setting gradually drops.
+senses:
+  - definition: >-
+      A probabilistic [[local-search|local search]] method for optimization that, at each step,
+      proposes a random neighbor of the current solution, always accepts it if it is better, and
+      accepts a worse one with probability exp(−Δ/T), where Δ is the increase in cost and T a
+      temperature parameter. T starts high, so the search roams widely and can escape local optima,
+      and is lowered according to a cooling schedule, so the search settles into a good region and
+      finally behaves like [[hill-climbing|hill climbing]]. With a sufficiently slow (logarithmic)
+      schedule it converges in probability to a global optimum, although practical schedules are far
+      faster and carry no such guarantee. It is widely used for placement and routing in chip
+      design, scheduling and other combinatorial problems.
+    example: >-
+      Simulated annealing cut total wire length by 12 percent over the greedy placement.
+formula_latex: P(\text{accept}) = \min\!\left(1,\; e^{-\Delta E / T}\right)
+origin: >-
+  Introduced by Scott Kirkpatrick, C. Daniel Gelatt and Mario Vecchi of IBM in Science (1983), and
+  independently by Vladimír Černý (1985), adapting the Metropolis algorithm of 1953 for simulating
+  atoms in thermal equilibrium. The name alludes to annealing in metallurgy, where slow cooling
+  yields a low-energy crystal structure.
+year: 1983
+note: >-
+  Distinct from learning-rate [[annealing|annealing]] in neural-network training, which borrows the
+  metaphor for gradually shrinking step sizes, though both descend from the same statistical-physics
+  idea as sampling [[temperature|temperature]].
+see_also:
+  - hill climbing
+  - local search
+  - metaheuristic
+  - Markov chain Monte Carlo
+  - genetic algorithm
+  - tabu search
+sources:
+  - text: >-
+      Kirkpatrick, S., Gelatt, C. D. & Vecchi, M. P. (1983). Optimization by Simulated Annealing.
+      Science 220(4598), 671–680.
+  - text: >-
+      Černý, V. (1985). Thermodynamical Approach to the Traveling Salesman Problem: An Efficient
+      Simulation Algorithm. Journal of Optimization Theory and Applications 45(1), 41–51.

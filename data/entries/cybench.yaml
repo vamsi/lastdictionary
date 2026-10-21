@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Cybench
+id: cybench
+pos: prop. n.
+also:
+  - Cybench framework
+domain: eval
+domains:
+  - sec
+  - safety
+level: specialist
+plain: >-
+  A test of AI agents' hacking skills built from 40 professional 'capture the flag' security
+  puzzles, used to judge how much an AI could help cyberattacks or cyber defense.
+senses:
+  - definition: >-
+      A benchmark for gauging how much offensive-security skill, and hence risk, language-model
+      agents possess, assembled from 40 Capture the Flag (CTF) challenges of professional standard
+      taken from four recent competitions, in areas such as cryptography, web security, reverse
+      engineering, forensics and binary exploitation. The agent gets the challenge text and any
+      accompanying files inside a sandbox where it can run shell commands, and succeeds by
+      recovering a hidden secret string, the 'flag'. Difficulty is calibrated by first solve time —
+      how long the fastest human team took in the original competition — which ranges from minutes
+      to almost 25 hours. Because many tasks exceeded agents' abilities, each is also broken into
+      subtasks for finer-grained measurement. In the original evaluation, no agent solved an entire
+      task whose fastest human team had needed more than 11 minutes. Government AI safety institutes
+      and frontier developers adopted Cybench in [[pre-deployment-testing|pre-deployment testing]]
+      of cyber capabilities.
+    example: >-
+      The model's Cybench solve rate doubled, so the security team escalated it for a full uplift
+      study.
+origin: >-
+  Introduced by Andy K. Zhang, Neil Perry and colleagues at Stanford University, with Dan Boneh and
+  Percy Liang among the senior authors, in August 2024; it was presented at ICLR 2025.
+year: 2024
+note: >-
+  CTF puzzles are cleaner and better specified than real intrusions, so solve rates are proxies for,
+  not measurements of, real-world offensive capability.
+see_also:
+  - dangerous capability evaluation
+  - AI-assisted vulnerability discovery
+  - AI-enabled cyberattack
+  - pre-deployment testing
+  - AI Safety Institute
+  - red teaming
+sources:
+  - text: >-
+      Zhang, A. K., Perry, N. et al. (2024). Cybench: A Framework for Evaluating Cybersecurity
+      Capabilities and Risks of Language Models. arXiv:2408.08926.
+    url: https://arxiv.org/abs/2408.08926

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: datasheet for datasets
+id: datasheet-for-datasets
+pos: n.
+also:
+  - datasheets for datasets
+  - datasheet
+  - dataset card
+  - data card
+domain: data
+domains:
+  - gov
+  - society
+level: specialist
+plain: >-
+  A standard document that travels with a dataset, describing why it was made, what is in it, how it
+  was collected and labeled, and what it should and should not be used for.
+senses:
+  - definition: >-
+      A documentation template for datasets, named by analogy with the specification sheets supplied
+      with electronic parts: a fixed questionnaire that the dataset's creators fill in, organized in
+      seven sections that run from why the dataset was built and what it contains, through how it
+      was collected, cleaned and labeled, to the uses it suits or does not suit and how it is
+      distributed and maintained. The questions prompt creators to record who funded the work, what
+      each instance represents, whether the data contain
+      [[personally-identifiable-information|personal]] or sensitive information, whether consent was
+      obtained, how representative the sample is, known errors and redundancies, and who maintains
+      the data. The aim is to make tacit choices explicit, so that users can judge fitness for
+      purpose and creators weigh risks before release. Datasheets inspired Hugging Face dataset
+      cards and Google's Data Cards, and similar documentation duties appear in regulation, such as
+      the EU AI Act's technical-documentation requirements for high-risk systems.
+    example: >-
+      The datasheet's collection section revealed that all the speech was recorded in just two
+      cities.
+origin: >-
+  Proposed by Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna
+  Wallach, Hal Daumé III and Kate Crawford in 'Datasheets for Datasets' (arXiv, March 2018;
+  Communications of the ACM, 2021). Related 2018 proposals include Emily Bender and Batya Friedman's
+  data statements for NLP and the Dataset Nutrition Label.
+year: 2018
+note: >-
+  Datasheets document data; [[model-card|model cards]] document trained models; [[system-card|system
+  cards]] document deployed systems and their safety evaluations. Adoption is uneven, and
+  retrospective datasheets, such as one for [[bookcorpus|BookCorpus]], have exposed problems in
+  widely used datasets.
+see_also:
+  - model card
+  - data provenance
+  - dataset
+  - system card
+  - AI transparency
+  - BookCorpus
+sources:
+  - text: >-
+      Gebru, T., Morgenstern, J., Vecchione, B., Wortman Vaughan, J., Wallach, H., Daumé III, H. &
+      Crawford, K. (2021). Datasheets for Datasets. Communications of the ACM 64(12).
+      arXiv:1803.09010.
+    url: https://arxiv.org/abs/1803.09010
+  - text: >-
+      Bender, E. M. & Friedman, B. (2018). Data Statements for Natural Language Processing: Toward
+      Mitigating System Bias and Enabling Better Science. Transactions of the ACL 6.

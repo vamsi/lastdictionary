@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semantic entropy
+id: semantic-entropy
+pos: n.
+also:
+  - semantic uncertainty
+domain: llm
+domains:
+  - safety
+  - math
+level: specialist
+plain: >-
+  A way to tell when an AI is likely making something up: ask it the same question several times and
+  check whether the answers mean the same thing. Answers that keep changing signal guessing.
+senses:
+  - definition: >-
+      A measure of a language model's uncertainty about what to say, as distinct from how to phrase
+      it. Several answers are sampled for the same input and grouped into clusters whose members
+      entail one another, as judged by a [[natural-language-inference|natural language inference]]
+      model or an LLM; the [[entropy|entropy]] of the probability mass across clusters is then
+      calculated. Paraphrases of one answer fall into a single cluster, so high semantic entropy
+      indicates that the model is choosing among genuinely different answers — a signature of
+      [[confabulation|confabulation]]. It requires no labeled examples or task-specific training,
+      but each query costs several extra generations; probes trained to predict it from hidden
+      states have been proposed as a cheaper approximation.
+    example: >-
+      We show an answer only when semantic entropy across ten samples is below the threshold.
+formula_latex: \mathrm{SE}(x) = -\sum_{c} p(c \mid x) \log p(c \mid x), \qquad p(c \mid x) = \sum_{s
+  \in c} p(s \mid x)
+origin: >-
+  Introduced by Lorenz Kuhn, Yarin Gal and Sebastian Farquhar at the University of Oxford in
+  'Semantic Uncertainty' (February 2023; ICLR 2023), and applied to detecting confabulations by
+  Farquhar, Jannik Kossen, Kuhn and Gal in Nature (June 2024).
+year: 2023
+see_also:
+  - confabulation
+  - hallucination
+  - calibration
+  - self-consistency
+  - entropy
+  - abstention
+sources:
+  - text: >-
+      Kuhn, L., Gal, Y. & Farquhar, S. (2023). Semantic Uncertainty: Linguistic Invariances for
+      Uncertainty Estimation in Natural Language Generation. ICLR 2023.
+    url: https://arxiv.org/abs/2302.09664
+  - text: >-
+      Farquhar, S., Kossen, J., Kuhn, L. & Gal, Y. (2024). Detecting hallucinations in large
+      language models using semantic entropy. Nature 630, 625–630.
+    url: https://doi.org/10.1038/s41586-024-07421-0

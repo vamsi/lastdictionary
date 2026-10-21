@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: wafer-scale engine
+id: wafer-scale-engine
+pos: n.
+also:
+  - WSE
+  - wafer-scale processor
+  - wafer-scale integration
+domain: hw
+domains:
+  - infer
+  - train
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A single giant processor made from nearly a whole dinner-plate-sized silicon wafer instead of the
+  small chips normally cut from it, so data rarely has to leave the chip.
+senses:
+  - definition: >-
+      A processor that occupies most of a 300 mm silicon wafer — a square of about 46,000 mm²,
+      roughly 56 times the area of the largest GPU die — instead of being diced into separate chips;
+      in particular, Cerebras Systems' Wafer Scale Engine (WSE) line. Keeping hundreds of thousands
+      of cores, their [[sram|SRAM]] and the network joining them on one piece of silicon yields
+      enormous on-chip memory bandwidth and avoids slow off-chip links, which suits low-latency
+      [[inference|inference]] and fine-grained parallel work. Manufacturing defects, unavoidable at
+      this size, are tolerated by building in spare cores and routing around faulty ones. The WSE-3
+      (March 2024, 5 nm process) has 4 trillion transistors, 900,000 cores and 44 GB of on-chip
+      SRAM; models too large for that memory must stream weights from external memory or be split
+      across systems.
+origin: >-
+  Wafer-scale integration was attempted in the 1970s and 1980s, most famously by Gene Amdahl's
+  Trilogy Systems (founded 1980), but foundered on manufacturing yield. Cerebras, founded in 2015 by
+  Andrew Feldman and four colleagues, revived it with the WSE-1, presented in August 2019 with 1.2
+  trillion transistors and 400,000 cores.
+year: 2019
+note: >-
+  Tesla's Dojo pursued a related approach, joining 25 separate dies on a wafer-sized carrier rather
+  than building a single wafer-sized die.
+see_also:
+  - AI accelerator
+  - SRAM
+  - chiplet
+  - advanced packaging
+  - memory wall
+contrast:
+  - chiplet
+as_of: 2026-10

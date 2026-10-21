@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Kalman filter
+id: kalman-filter
+pos: n.
+also:
+  - KF
+  - extended Kalman filter
+  - EKF
+  - unscented Kalman filter
+  - UKF
+  - Kalman–Bucy filter
+  - linear quadratic estimation
+pronunciation: KAHL-mahn
+domain: robot
+domains:
+  - math
+level: core
+plain: >-
+  A method that keeps a running best guess of something you cannot measure exactly, such as a
+  vehicle's position, by blending predictions from a motion model with noisy sensor readings.
+senses:
+  - definition: >-
+      A recursive algorithm that estimates the hidden state of a dynamical system — position,
+      velocity, orientation, sensor biases — from a sequence of noisy measurements by alternating
+      two steps. The predict step propagates the current estimate and its covariance through a model
+      of the system's dynamics, which increases uncertainty; the update step corrects the prediction
+      with a new measurement, weighting the discrepancy (the innovation) by the Kalman gain, which
+      balances prediction uncertainty against measurement noise. For linear systems with Gaussian
+      noise it is the optimal estimator, computing the exact Bayesian [[posterior|posterior]] mean
+      and covariance, and it is cheap, needing only small matrix operations per step. Nonlinear
+      systems use the extended Kalman filter, which linearizes the models with
+      [[jacobian|Jacobians]], or the unscented Kalman filter, which propagates a small set of
+      deterministically chosen sample points. Kalman filters are ubiquitous in navigation
+      (GPS/inertial fusion in aircraft, spacecraft and phones), [[sensor-fusion|sensor fusion]],
+      [[odometry|odometry]], object tracking, early [[simultaneous-localization-and-mapping|SLAM]],
+      econometrics and signal processing.
+    example: >-
+      The Kalman filter fuses 200 Hz inertial readings with 10 Hz GPS fixes to track the drone.
+formula_latex: \hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k\big(z_k - H_k \hat{x}_{k|k-1}\big), \quad K_k =
+  P_{k|k-1} H_k^{\top}\big(H_k P_{k|k-1} H_k^{\top} + R_k\big)^{-1}
+origin: >-
+  Named after Rudolf E. Kálmán, whose 1960 paper 'A New Approach to Linear Filtering and Prediction
+  Problems' (Journal of Basic Engineering) introduced the discrete-time filter; Richard Bucy
+  co-developed the continuous-time version (1961), and Peter Swerling (1958) and Ruslan Stratonovich
+  derived related results. Stanley Schmidt at NASA Ames adapted it, in what became the extended
+  Kalman filter, for the Apollo navigation computer.
+year: 1960
+note: >-
+  Despite its name, it is a state estimator rather than a filter in the signal-processing sense of
+  removing frequencies. The formula shows the update step. The [[particle-filter|particle filter]]
+  handles strongly nonlinear or multimodal problems that defeat it.
+see_also:
+  - particle filter
+  - sensor fusion
+  - odometry
+  - simultaneous localization and mapping
+  - Bayesian inference
+  - hidden Markov model
+  - control theory
+contrast:
+  - particle filter
+sources:
+  - text: >-
+      Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. Journal of
+      Basic Engineering 82(1), 35–45.
+  - text: >-
+      Julier, S. J. & Uhlmann, J. K. (1997). A new extension of the Kalman filter to nonlinear
+      systems. Proc. SPIE AeroSense 1997.

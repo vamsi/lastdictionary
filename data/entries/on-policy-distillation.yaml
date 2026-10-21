@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: on-policy distillation
+id: on-policy-distillation
+pos: n.
+also:
+  - generalized knowledge distillation
+  - GKD
+  - on-policy KD
+domain: train
+domains:
+  - llm
+  - rl
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A way of teaching a small AI from a bigger one where the small AI writes its own answers and the
+  bigger one grades every word, so the learner is corrected on its own mistakes.
+senses:
+  - definition: >-
+      [[knowledge-distillation|Knowledge distillation]] in which the student is trained on sequences
+      it generates itself, with the teacher supplying a target probability distribution at every
+      token of those sequences. Training minimizes a per-token divergence between student and
+      teacher — commonly the reverse [[kullback-leibler-divergence|Kullback–Leibler divergence]],
+      which pushes the student toward the teacher's main modes — over the states the student
+      actually visits. Like [[reinforcement-learning|reinforcement learning]], it trains on the
+      student's own outputs, so the student learns to recover from its own mistakes and avoids the
+      train–inference mismatch of [[teacher-forcing|teacher-forced]] distillation; like supervised
+      learning, it receives a signal at every token rather than one score per answer; and it needs
+      no [[reward-model|reward model]]. It can be read as RL in which each token's reward is the
+      teacher's log-probability minus the student's. Reported uses include training small reasoning
+      models at a fraction of the compute of RL, and restoring behaviors such as instruction
+      following that were lost during domain fine-tuning.
+    example: >-
+      On-policy distillation from the 32B teacher matched our RL run's math scores with a tenth of
+      the GPU-hours.
+formula_latex: \mathcal{L}(\theta) = \mathbb{E}_{x,\; y \sim \pi_\theta(\cdot \mid x)} \sum_{t}
+  \mathrm{KL}\big(\pi_\theta(\cdot \mid x, y_{<t}) \,\|\, \pi_{\mathrm{T}}(\cdot \mid x,
+  y_{<t})\big)
+origin: >-
+  Training on the learner's own trajectories under expert correction comes from imitation learning
+  (DAgger, by Stéphane Ross, Geoffrey Gordon and J. Andrew Bagnell, 2011). Rishabh Agarwal and
+  colleagues at Google DeepMind introduced generalized knowledge distillation for language models in
+  June 2023, and MiniLLM (Yuxian Gu and colleagues, 2023) used reverse KL. The term spread in 2025
+  through Qwen3's small models and an October 2025 Thinking Machines Lab post by Kevin Lu.
+year: 2023
+note: >-
+  It needs the teacher's token probabilities and usually a shared tokenizer, so it is impractical
+  with closed models that return only text. Contrast off-policy distillation, which fine-tunes on
+  teacher-written text.
+see_also:
+  - knowledge distillation
+  - on-policy
+  - imitation learning
+  - teacher forcing
+  - reinforcement learning with verifiable rewards
+  - Kullback–Leibler divergence
+  - catastrophic forgetting
+contrast:
+  - supervised fine-tuning
+sources:
+  - text: >-
+      Agarwal, R. et al. (2023). On-Policy Distillation of Language Models: Learning from
+      Self-Generated Mistakes. ICLR 2024. arXiv:2306.13649.
+    url: https://arxiv.org/abs/2306.13649
+  - text: >-
+      Lu, K. (2025). On-Policy Distillation. Thinking Machines Lab blog, 27 October 2025.
+    url: https://thinkingmachines.ai/blog/on-policy-distillation/
+as_of: 2026-10

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SiLU
+id: silu
+pos: abbr.
+also:
+  - sigmoid linear unit
+  - sigmoid-weighted linear unit
+  - Swish
+  - swish function
+domain: dl
+domains:
+  - llm
+  - percep
+level: core
+plain: >-
+  A smooth activation rule that multiplies each value by a soft on/off switch computed from the
+  value itself. It is close to ReLU but curved, and is used in many modern models.
+senses:
+  - definition: >-
+      The [[activation-function|activation function]] SiLU(x) = x·σ(x), where σ is the logistic
+      [[sigmoid-function|sigmoid function]], so the input gates itself. Like [[gelu|GELU]], to which
+      it is numerically close, it is smooth, unbounded above, bounded below (minimum ≈ −0.28 near x
+      ≈ −1.28) and non-monotonic for negative inputs. The Swish form x·σ(βx) adds a fixed or
+      trainable β, interpolating between a scaled linear function (β → 0) and [[relu|ReLU]] (β → ∞).
+      SiLU is used in vision networks such as EfficientNet and recent YOLO models and, as the gate
+      of [[swiglu|SwiGLU]], in the feed-forward layers of PaLM, LLaMA and most later open-weight
+      [[large-language-model|language models]].
+    example: The feed-forward block uses SiLU on the gate projection only.
+formula_latex: \operatorname{SiLU}(x) = x\,\sigma(x) = \frac{x}{1 + e^{-x}}
+origin: >-
+  First proposed by Dan Hendrycks and Kevin Gimpel (2016) alongside GELU, then independently by
+  Stefan Elfwing, Eiji Uchibe and Kenji Doya (February 2017), who named it the sigmoid-weighted
+  linear unit and used it in reinforcement learning. Prajit Ramachandran, Barret Zoph and Quoc Le
+  found it again by automated search in October 2017 and called it Swish; PyTorch adopted the name
+  SiLU.
+year: 2016
+note: >-
+  The two names usually denote the same function with β = 1. 'Swish' spread first through vision
+  work; 'SiLU' credits the earlier papers.
+see_also:
+  - GELU
+  - SwiGLU
+  - sigmoid function
+  - ReLU
+  - activation function
+  - gated linear unit
+sources:
+  - text: >-
+      Elfwing, S., Uchibe, E. & Doya, K. (2017). Sigmoid-Weighted Linear Units for Neural Network
+      Function Approximation in Reinforcement Learning. arXiv:1702.03118.
+    url: https://arxiv.org/abs/1702.03118
+  - text: >-
+      Ramachandran, P., Zoph, B. & Le, Q. V. (2017). Searching for Activation Functions.
+      arXiv:1710.05941.
+    url: https://arxiv.org/abs/1710.05941

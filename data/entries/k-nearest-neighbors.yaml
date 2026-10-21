@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: k-nearest neighbors
+id: k-nearest-neighbors
+pos: n.
+also:
+  - k-NN
+  - kNN
+  - KNN
+  - k-nearest neighbours
+  - nearest neighbor classifier
+  - nearest-neighbor rule
+  - instance-based learning
+  - lazy learning
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  Predicting something about a new example by finding the few most similar examples already known
+  and going with their majority answer, or their average.
+senses:
+  - definition: >-
+      A [[nonparametric-model|nonparametric]] method resting on the assumption that inputs close
+      together have similar outputs. Nothing is fitted in advance: the training set is simply stored
+      ('lazy' or instance-based learning), and a query is answered by retrieving its k closest
+      stored examples under a chosen distance, often [[euclidean-distance|Euclidean distance]] or
+      [[cosine-similarity|cosine similarity]], then returning their most common label for
+      [[classification|classification]] or their average value for [[regression|regression]],
+      sometimes counting nearer neighbors more. The number k sets the smoothness: small k gives
+      flexible, high-variance boundaries, large k smoother ones. Because all the work happens at
+      query time, spatial indexes such as k-d trees or
+      [[approximate-nearest-neighbor-search|approximate nearest neighbor search]] keep lookups fast.
+      Results depend on [[feature-scaling|feature scaling]] and degrade in high dimensions, where
+      distances become less informative (the [[curse-of-dimensionality|curse of dimensionality]]).
+      With unlimited data, the 1-nearest-neighbor error rate is at most twice the Bayes-optimal
+      error. Nearest-neighbor lookup over [[embedding|embeddings]] underlies modern
+      [[vector-search|vector search]] and retrieval.
+    example: >-
+      With k = 15 and standardized features, k-nearest neighbors matched the logistic regression
+      baseline.
+origin: >-
+  Introduced by Evelyn Fix and Joseph Hodges in a 1951 U.S. Air Force School of Aviation Medicine
+  report, 'Discriminatory Analysis. Nonparametric Discrimination: Consistency Properties'. Thomas
+  Cover and Peter Hart's 'Nearest Neighbor Pattern Classification' (IEEE Transactions on Information
+  Theory, 1967) proved the twice-the-Bayes-error bound and popularized the method.
+year: 1951
+note: >-
+  Not to be confused with [[k-means-clustering|k-means clustering]], an unsupervised method that
+  also uses a number k and distances.
+see_also:
+  - nonparametric model
+  - approximate nearest neighbor search
+  - curse of dimensionality
+  - feature scaling
+  - vector search
+  - decision boundary
+contrast:
+  - k-means clustering
+sources:
+  - text: >-
+      Fix, E. & Hodges, J. L. (1951). Discriminatory Analysis. Nonparametric Discrimination:
+      Consistency Properties. Report 4, USAF School of Aviation Medicine, Randolph Field, Texas.
+  - text: >-
+      Cover, T. M. & Hart, P. E. (1967). Nearest Neighbor Pattern Classification. IEEE Transactions
+      on Information Theory, 13(1), 21–27.

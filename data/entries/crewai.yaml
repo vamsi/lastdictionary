@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: CrewAI
+id: crewai
+pos: prop. n.
+also:
+  - Crew AI
+  - CrewAI Flows
+domain: eng
+domains:
+  - agents
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free software framework for setting up teams of AI agents, each given a job title, goal and
+  backstory, that divide up tasks and work through them together like a small staff.
+senses:
+  - definition: >-
+      An open-source Python framework, and the company behind it, for building
+      [[multi-agent-system|multi-agent systems]] as teams of language-model agents, each cast in a
+      defined role. Developers define agents by role, goal and backstory, each with a model and
+      [[tool|tools]]; tasks with descriptions and expected outputs; and a crew that assigns tasks to
+      agents and runs them under a process — sequential, or hierarchical, in which a manager agent
+      plans, delegates and checks the work. Agents can delegate to one another and draw on shared
+      memory. Flows, added later, provide event-driven, deterministic workflows with explicit state
+      that can call crews as steps, combining scripted control with agent autonomy. Its quick,
+      declarative setup made CrewAI popular for prototypes and business-process automation; critics
+      note that role-play framing can add tokens and unpredictability without improving on simpler
+      single-agent designs.
+    example: >-
+      Our CrewAI setup has a researcher, a writer and an editor agent passing a market brief down
+      the line.
+origin: >-
+  Created by João Moura and released as open source in late 2023, during the first wave of
+  multi-agent experiments; early versions used [[langchain|LangChain]] components, but the framework
+  later became standalone. Moura founded the company CrewAI around it.
+year: 2023
+note: >-
+  An example of an [[agent-framework|agent framework]]; compare [[langgraph|LangGraph]] (explicit
+  graphs) and [[autogen|AutoGen]] (conversing agents).
+see_also:
+  - agent framework
+  - multi-agent system
+  - LangGraph
+  - AutoGen
+  - orchestration
+  - robotic process automation
+as_of: 2026-10

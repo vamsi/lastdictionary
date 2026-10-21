@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: NumPy
+id: numpy
+pos: prop. n.
+also:
+  - Numerical Python
+  - ndarray
+pronunciation: NUM-pie
+domain: eng
+domains:
+  - math
+  - ml
+labels:
+  - trademark
+level: core
+plain: >-
+  The basic free Python library for working quickly with large grids of numbers; nearly every
+  data-science and machine-learning tool in Python is built on it or copies its style.
+senses:
+  - definition: >-
+      An open-source Python library on which most numerical computing in that language rests. Its
+      core is the ndarray, an n-dimensional array whose elements share one data type and sit in a
+      single memory buffer, manipulated by vectorized operations compiled in C: elementwise
+      arithmetic, broadcasting between arrays of different shapes, indexing and slicing and
+      reductions, with submodules for linear algebra, Fourier transforms and random numbers.
+      Expressing computations as whole-array operations instead of Python loops gives large speedups
+      and a concise mathematical style. NumPy's array model underlies scientific Python — SciPy,
+      pandas, [[scikit-learn|scikit-learn]], Matplotlib — and deep-learning libraries imitate it:
+      [[pytorch|PyTorch]] tensors, [[jax|JAX]]'s jax.numpy and the GPU library CuPy follow its
+      indexing and broadcasting conventions, and the Python array API standard formalizes their
+      shared core. NumPy itself runs on CPUs only and has no [[automatic-differentiation|automatic
+      differentiation]], which is what deep-learning frameworks add.
+    example: >-
+      Convert the predictions to a NumPy array and compute the confusion matrix with one vectorized
+      call.
+origin: >-
+  Created by Travis Oliphant in 2005–2006 by unifying two earlier array packages, Numeric (1995,
+  begun by Jim Hugunin) and Numarray; version 1.0 appeared in 2006. A 2020 Nature paper by Charles
+  Harris and colleagues described its design and its role in projects such as the first image of a
+  black hole and the detection of gravitational waves.
+year: 2006
+see_also:
+  - scikit-learn
+  - JAX
+  - PyTorch
+  - tensor
+  - Jupyter notebook
+sources:
+  - text: Harris, C. R. et al. (2020). Array programming with NumPy. Nature 585, 357–362.

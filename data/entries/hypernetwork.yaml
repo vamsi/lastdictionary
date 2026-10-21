@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hypernetwork
+id: hypernetwork
+pos: n.
+also:
+  - hypernet
+  - HyperNetworks
+  - weight-generating network
+  - fast weights
+domain: dl
+level: specialist
+plain: >-
+  A neural network whose job is to produce the settings, or weights, of another neural network, so
+  that one model can generate many specialized models on demand.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] that outputs all or part of the [[weights|weights]] of
+      another network, the main or target network, which then processes the actual input; both are
+      trained end to end by backpropagating the main network's loss into the hypernetwork's
+      parameters. Conditioning the hypernetwork on a layer index, task description, input or time
+      step lets it generate different weights for different layers, tasks or inputs, a relaxed form
+      of [[weight-sharing|weight sharing]] and a compact parameterization. Applications include
+      multi-task and [[continual-learning|continual learning]], [[neural-architecture-search|neural
+      architecture search]], [[meta-learning|meta-learning]], personalization, implicit neural
+      representations and generating [[low-rank-adaptation|LoRA]] adapters from text descriptions.
+      Fast-weight programmers, in which one network rapidly rewrites another's weights, are a
+      closely related older idea, and [[linear-attention|linear attention]] can be read as such a
+      fast-weight system.
+    example: >-
+      A small hypernetwork generates a LoRA adapter for each new task from its description.
+origin: >-
+  Named by David Ha, Andrew Dai and Quoc Le of Google Brain in 'HyperNetworks' (arXiv, September
+  2016; ICLR 2017), which likened the hypernetwork to a genotype and the generated network to a
+  phenotype. Precursors include Jürgen Schmidhuber's fast-weight programmers (1992) and evolutionary
+  indirect encodings such as HyperNEAT (2009).
+year: 2016
+see_also:
+  - weight sharing
+  - meta-learning
+  - low-rank adaptation
+  - linear attention
+  - neural architecture search
+  - continual learning
+sources:
+  - text: Ha, D., Dai, A. & Le, Q. V. (2016). HyperNetworks. arXiv:1609.09106; ICLR 2017.
+    url: https://arxiv.org/abs/1609.09106

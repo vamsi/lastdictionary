@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: temporal logic
+id: temporal-logic
+pos: n.
+also:
+  - linear temporal logic
+  - LTL
+  - computation tree logic
+  - CTL
+  - tense logic
+  - signal temporal logic
+domain: sym
+domains:
+  - math
+  - safety
+level: specialist
+plain: >-
+  A logic for statements about time — 'eventually the light turns green', 'the door is never open
+  while the train moves' — used to specify and check how systems must behave over time.
+senses:
+  - definition: >-
+      A family of modal logics for reasoning about how the truth of propositions changes over time,
+      using operators such as G ('always'), F ('eventually'), X ('next') and U ('until'). Linear
+      temporal logic (LTL) describes individual execution traces; computation tree logic (CTL)
+      quantifies over branching futures; metric and signal temporal logics add real-time bounds.
+      Temporal logic is the standard specification language of model checking and
+      [[formal-verification|formal verification]], expressing safety properties (nothing bad ever
+      happens) and liveness properties (something good eventually happens). In AI it specifies
+      temporally extended goals for [[automated-planning|automated planning]] (as in PDDL3), shapes
+      or constrains [[reinforcement-learning|reinforcement learning]] agents through automata
+      compiled from formulas (reward machines, shielding), and defines runtime monitors for
+      autonomous systems and [[ai-agent|agents]].
+    example: >-
+      The safety requirement in temporal logic reads G(braking → F stopped): whenever the train
+      brakes, it eventually stops.
+origin: >-
+  The philosopher Arthur Prior developed tense logic in the 1950s (Time and Modality, 1957). Amir
+  Pnueli introduced temporal logic into program verification in 1977, work recognized by the 1996
+  Turing Award, and Edmund Clarke and E. Allen Emerson defined CTL in 1981.
+year: 1957
+see_also:
+  - formal verification
+  - automated planning
+  - first-order logic
+  - reinforcement learning
+  - situation calculus
+  - Planning Domain Definition Language
+sources:
+  - text: Prior, A. N. (1957). Time and Modality. Oxford University Press.
+  - text: >-
+      Pnueli, A. (1977). The Temporal Logic of Programs. Proceedings of the 18th IEEE Symposium on
+      Foundations of Computer Science, 46–57.

@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: variance
+id: variance
+pos: n.
+also:
+  - standard deviation
+  - σ
+  - σ²
+  - var
+  - second central moment
+domain: math
+domains:
+  - ml
+  - dl
+level: core
+plain: >-
+  A number that grows the more widely something's possible values scatter away from its average, and
+  is zero if it never varies. Its square root, the standard deviation, uses the same units as the
+  values themselves.
+senses:
+  - definition: >-
+      The [[expected-value|average]], weighted by probability, of the square of a
+      [[random-variable|random variable]]'s departure from its own mean, Var(X) = E[(X − E[X])²],
+      which can also be computed as E[X²] − (E[X])²; taking its square root gives the standard
+      deviation σ, a measure of spread in the variable's own units. Variance is zero only for
+      constants, adds across independent variables and scales with the square of any multiplier, so
+      averaging n independent samples divides it by n — the basis of [[mini-batch|mini-batch]]
+      gradient estimates and of error bars. It shapes much of deep-learning practice:
+      [[weight-initialization|weight initialization]] schemes choose weight variances that keep
+      [[activation|activations]] and gradients from exploding or vanishing across layers;
+      [[batch-normalization|batch normalization]] and [[layer-normalization|layer normalization]]
+      rescale activations to unit variance; [[adam|Adam]] divides each update by the square root of
+      a running estimate of the gradient's second moment; and policy-gradient methods use baselines
+      to reduce the variance of their estimates. In the [[bias-variance-tradeoff|bias–variance
+      tradeoff]], 'variance' is a fitted model's sensitivity to the particular training sample.
+    example: >-
+      Across five seeds the score varied with a standard deviation of 1.3 points, so a 0.5-point
+      gain means little.
+formula_latex: \operatorname{Var}(X) = \mathbb{E}\big[(X - \mathbb{E}[X])^2\big] = \mathbb{E}[X^2] -
+  \mathbb{E}[X]^2
+origin: >-
+  Karl Pearson introduced 'standard deviation' in 1893–1894. Ronald Fisher named its square the
+  'variance' in a 1918 paper on Mendelian inheritance and built the analysis of variance on it
+  (Statistical Methods for Research Workers, 1925). The underlying mean squared deviation goes back
+  to Gauss and Laplace.
+year: 1918
+see_also:
+  - expected value
+  - covariance
+  - normal distribution
+  - bias–variance tradeoff
+  - weight initialization
+  - central limit theorem
+sources:
+  - text: >-
+      Fisher, R. A. (1918). The Correlation between Relatives on the Supposition of Mendelian
+      Inheritance. Transactions of the Royal Society of Edinburgh, 52.

@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: safe interruptibility
+id: safe-interruptibility
+pos: n.
+also:
+  - safely interruptible agent
+  - interruptibility
+  - big red button
+domain: safety
+domains:
+  - rl
+level: specialist
+plain: >-
+  A property of a learning AI meaning that people can halt or redirect it as often as needed without
+  those stops shaping what it learns, so it learns neither to dodge them nor to invite them.
+senses:
+  - definition: >-
+      A property of a [[reinforcement-learning|reinforcement learning]] agent that still converges
+      to the behavior that would be best if it were never interrupted, even though a human sometimes
+      overrides its actions — say, to halt a robot heading somewhere dangerous — so the overrides
+      give it no incentive to prevent them or to provoke them. The difficulty is that, to a learner,
+      an override is just more experience: if stopping the agent keeps cutting off the reward it was
+      heading for, the data say that course of action is worth less, and a capable enough learner
+      could even find that disabling the stop button pays. Laurent Orseau and Stuart Armstrong
+      (2016) formalized the property and showed that the outcome hinges on how the learner updates.
+      [[off-policy|Off-policy]] [[q-learning|Q-learning]] needs no change, because each update looks
+      ahead to the best next action rather than the one the agent was made to take, whereas
+      [[on-policy|on-policy]] methods such as [[sarsa|SARSA]] need a small modification; idealized,
+      uncomputable universal agents can also be made to comply.
+    example: >-
+      Because Q-learning is off-policy, the interruptions never leak into its value estimates — it
+      is safely interruptible.
+origin: >-
+  Introduced by Laurent Orseau of DeepMind and Stuart Armstrong of the Future of Humanity Institute
+  in 'Safely Interruptible Agents' (UAI 2016); press coverage called it a 'big red button' for AI.
+year: 2016
+note: >-
+  Safe interruptibility concerns the learning dynamics of current algorithms; it does not address a
+  capable planner that reasons about interruptions and acts to prevent them, which is the broader
+  [[shutdown-problem|shutdown problem]].
+see_also:
+  - shutdown problem
+  - corrigibility
+  - off-switch game
+  - off-policy
+  - kill switch
+sources:
+  - text: >-
+      Orseau, L. & Armstrong, S. (2016). Safely Interruptible Agents. Proceedings of the 32nd
+      Conference on Uncertainty in Artificial Intelligence (UAI 2016).

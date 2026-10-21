@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: τ-bench
+id: tau-bench
+pos: prop. n.
+also:
+  - τ²-bench
+  - tau2-bench
+pronunciation: TAW-bench
+domain: eval
+domains:
+  - agents
+level: core
+plain: >-
+  A test of AI customer-service agents in which a simulated customer, played by another AI, chats
+  with the agent, which must use company tools and follow written rules to resolve the request.
+senses:
+  - definition: >-
+      A benchmark that tests whether an AI agent can serve a customer while keeping to company
+      rules, first in retail and airline settings. A [[large-language-model|large language model]]
+      plays the customer, holding a hidden goal and disclosing details only gradually, while the
+      agent works through domain-specific API tools (to look up orders, change reservations or issue
+      refunds) and a written policy it must obey. A task counts as solved only if the database ends
+      up matching the annotators' goal state, which forces the agent both to satisfy the user and to
+      stay within policy. The benchmark also introduced pass^k, the chance that all k independent
+      attempts at a task succeed, as a measure of reliability; at release, agents built on GPT-4o
+      solved fewer than half the tasks, and their pass^8 in the retail domain fell below 25%. A
+      successor, τ²-bench (2025), added a telecom domain in which the simulated user also acts on a
+      shared environment.
+    example: Our airline agent hits 70% pass^1 on τ-bench, but pass^4 drops below 40%.
+origin: >-
+  Introduced in June 2024 by Shunyu Yao, Noah Shinn, Pedram Razavi and Karthik Narasimhan, working
+  at Sierra, a company building customer-service agents. Sierra researchers released τ²-bench in
+  2025.
+year: 2024
+note: >-
+  The simulated user is itself a language model, so some failures stem from the simulator rather
+  than the agent, and results vary with the user model chosen.
+see_also:
+  - AI agent
+  - tool use
+  - function calling
+  - pass@k
+  - agentic commerce
+  - Vending-Bench
+sources:
+  - text: >-
+      Yao, S., Shinn, N., Razavi, P. & Narasimhan, K. (2024). τ-bench: A Benchmark for
+      Tool-Agent-User Interaction in Real-World Domains. arXiv:2406.12045.
+    url: https://arxiv.org/abs/2406.12045

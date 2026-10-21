@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: representation engineering
+id: representation-engineering
+pos: n.
+also:
+  - RepE
+  - representation reading
+  - representation control
+  - linear artificial tomography
+  - LAT
+domain: interp
+domains:
+  - safety
+  - llm
+level: specialist
+plain: >-
+  An approach to understanding and controlling AI models by finding where high-level ideas such as
+  honesty or danger show up in their internal activity, then reading or adjusting those signals
+  directly.
+senses:
+  - definition: >-
+      An approach to [[interpretability|interpretability]] and control that works 'top-down', in its
+      originators' phrase: it starts from high-level concepts and functions — honesty,
+      power-seeking, emotion, harmfulness — and the activity patterns spread across many units that
+      encode them, instead of building up from single neurons or [[circuit|circuits]]. It has two
+      halves. Representation reading locates a concept in [[activation-space|activation space]]:
+      contrasting stimuli are presented, activations collected, and a direction extracted by
+      difference of means, principal component analysis of paired differences, or a
+      [[linear-probe|linear probe]]; the original pipeline is called linear artificial tomography
+      (LAT), by analogy with brain scanning. Representation control then uses these directions to
+      change behavior, by adding or subtracting them, by projection, or by training low-rank
+      adapters against a representation-level target (LoRRA). The founding paper demonstrated lie
+      detection and control of honesty, emotion and harmful output, and the approach later
+      underpinned [[circuit-breakers|circuit breakers]].
+    example: >-
+      With RepE reading vectors we could flag dishonest answers before the model finished writing
+      them.
+origin: >-
+  Named by Andy Zou and colleagues at the Center for AI Safety, Carnegie Mellon University and other
+  institutions, with Dan Hendrycks as senior author, in 'Representation Engineering: A Top-Down
+  Approach to AI Transparency' (arXiv, October 2023). They likened it to cognitive neuroscience's
+  study of distributed neural populations, as opposed to the bottom-up program of
+  [[mechanistic-interpretability|mechanistic interpretability]].
+year: 2023
+note: >-
+  Often used loosely as a synonym for [[activation-steering|activation steering]], although strictly
+  it also covers reading and monitoring representations. The top-down and bottom-up approaches are
+  complementary rather than rival, and increasingly share tools such as [[sparse-autoencoder|sparse
+  autoencoders]].
+see_also:
+  - activation steering
+  - steering vector
+  - control vector
+  - linear probe
+  - circuit breakers
+  - AI lie detection
+  - honesty
+contrast:
+  - mechanistic interpretability
+sources:
+  - text: >-
+      Zou, A. et al. (2023). Representation Engineering: A Top-Down Approach to AI Transparency.
+      arXiv:2310.01405.
+    url: https://arxiv.org/abs/2310.01405

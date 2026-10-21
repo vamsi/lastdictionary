@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PagedAttention
+id: pagedattention
+pos: prop. n.
+also:
+  - paged attention
+  - paged KV cache
+domain: infer
+domains:
+  - llm
+  - hw
+level: specialist
+plain: >-
+  A way of storing an AI model's working memory in small fixed-size blocks, like the pages of a
+  computer's memory, so little space is wasted and more users can be served at once.
+senses:
+  - definition: >-
+      A memory-management scheme from the [[vllm|vLLM]] project that stores each sequence's
+      [[kv-cache|KV cache]] in fixed-size blocks (for example 16 tokens' worth of keys and values)
+      scattered anywhere in GPU memory, with a per-sequence block table translating token positions
+      to physical blocks, much as an operating system's page table maps virtual memory onto physical
+      pages; the [[attention|attention]] kernel reads keys and values through this table. Blocks are
+      allocated on demand as a sequence grows, avoiding the fragmentation and over-reservation of
+      systems that pre-allocate space for the maximum possible length: its authors measured 60–80%
+      of KV-cache memory wasted in earlier systems versus under 4% with paging. Blocks can be shared
+      copy-on-write among sequences with a common prefix, helping parallel sampling,
+      [[beam-search|beam search]] and [[prompt-caching|prompt caching]]. In the authors' tests, the
+      larger batches that then fit raised serving [[throughput|throughput]] two- to fourfold at
+      equal latency. Paged KV caches are now standard in LLM [[model-serving|serving engines]].
+    example: >-
+      With PagedAttention the same GPU held three times as many concurrent conversations.
+origin: >-
+  Introduced by Woosuk Kwon, Zhuohan Li and colleagues at UC Berkeley's Sky Computing Lab with the
+  vLLM serving engine, announced in June 2023 and published at SOSP 2023. The name joins 'paging',
+  the operating-system technique it borrows, with 'attention'.
+year: 2023
+see_also:
+  - vLLM
+  - KV cache
+  - continuous batching
+  - prompt caching
+  - model serving
+sources:
+  - text: >-
+      Kwon, W., Li, Z., Zhuang, S., Sheng, Y., Zheng, L., Yu, C. H., Gonzalez, J. E., Zhang, H. &
+      Stoica, I. (2023). Efficient Memory Management for Large Language Model Serving with
+      PagedAttention. SOSP 2023.
+    url: https://arxiv.org/abs/2309.06180
+  - text: >-
+      Kwon, W., Li, Z. et al. (2023). vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention.
+      vLLM blog, 20 June 2023.
+    url: https://vllm.ai/blog/2023-06-20-vllm

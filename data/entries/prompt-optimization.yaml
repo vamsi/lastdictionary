@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt optimization
+id: prompt-optimization
+pos: n.
+also:
+  - automatic prompt optimization
+  - automated prompt engineering
+  - Automatic Prompt Engineer
+  - APE
+  - OPRO
+  - GEPA
+domain: eng
+domains:
+  - llm
+  - train
+level: specialist
+plain: >-
+  Using software, often another AI model, to search automatically for the wording and examples that
+  make an AI model perform best on a task, instead of tweaking prompts by hand.
+senses:
+  - definition: >-
+      The automated search for instructions, prompt text and [[few-shot-learning|few-shot]]
+      demonstrations that maximize a model's score on a task metric, treating the prompt as the
+      parameters to optimize while the model's [[weights|weights]] stay fixed. Methods differ in how
+      they propose candidates: generating and scoring many instruction variants with a language
+      model (Automatic Prompt Engineer, 2022); asking a model to propose improvements given the
+      history of earlier prompts and their scores (OPRO, 2023); bootstrapping demonstrations from
+      successful runs and searching over combinations of instructions and examples (the optimizers
+      in [[dspy|DSPy]], such as MIPRO); treating natural-language critiques as 'textual gradients'
+      (TextGrad, 2024); and reflective evolutionary search guided by execution traces (GEPA, 2025).
+      All need a development set and a reliable metric or grader, and without held-out evaluation
+      they [[overfitting|overfit]] small datasets.
+    example: >-
+      Prompt optimization lifted extraction accuracy from 81 to 89 percent on the dev set, and most
+      of the gain held on the test set.
+origin: >-
+  Early automatic prompt search used gradients to choose discrete trigger tokens (AutoPrompt, Taylor
+  Shin and colleagues, 2020). Using language models themselves as the optimizer began with Automatic
+  Prompt Engineer (Yongchao Zhou and colleagues, 2022) and OPRO (Chengrun Yang and colleagues at
+  [[google-deepmind|Google DeepMind]], 2023), and [[dspy|DSPy]] made it a routine engineering step.
+year: 2020
+note: >-
+  Also used loosely for improving prompts by hand. Optimized prompts can be unintuitive and
+  model-specific, and usually need re-optimizing when the model changes. Distinct from
+  [[prompt-tuning|prompt tuning]], which learns continuous 'soft prompt' vectors by gradient
+  descent.
+see_also:
+  - DSPy
+  - prompt engineering
+  - prompt tuning
+  - few-shot learning
+  - evals-driven development
+  - prompt management
+contrast:
+  - prompt tuning
+sources:
+  - text: >-
+      Zhou, Y. et al. (2022). Large Language Models Are Human-Level Prompt Engineers.
+      arXiv:2211.01910.
+  - text: Yang, C. et al. (2023). Large Language Models as Optimizers. arXiv:2309.03409.
+    url: https://arxiv.org/abs/2309.03409

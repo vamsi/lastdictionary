@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: contextual integrity
+id: contextual-integrity
+pos: n.
+also:
+  - privacy as contextual integrity
+domain: society
+domains:
+  - gov
+  - llm
+  - agents
+level: specialist
+plain: >-
+  A way of thinking about privacy: information is not simply public or private; what matters is
+  whether it flows in ways that fit the expectations of the setting where it was shared.
+senses:
+  - definition: >-
+      A theory of [[privacy|privacy]] holding that every flow of personal information is governed by
+      norms specific to its context, and that privacy is violated when a flow breaches those norms —
+      as when medical details told to a doctor reach an employer. A flow is described by five
+      parameters: sender, recipient, subject, type of information, and transmission principle, such
+      as confidentiality, consent or legal compulsion. The framework explains why aggregating or
+      repurposing information that is individually public can still cause harm, which a simple
+      public–private split cannot. In AI it has become a standard lens for judging whether
+      [[large-language-model|language models]] and [[ai-agent|agents]] handle personal information
+      appropriately — for instance, whether an assistant with access to a user's inbox reveals one
+      person's secret to another — through benchmarks such as ConfAIde and PrivacyLens, and for
+      designing agents that reason about which disclosures a context allows.
+    example: >-
+      Under contextual integrity, the agent should not paste a colleague's medical-leave note into
+      the team channel.
+origin: >-
+  Introduced by the philosopher Helen Nissenbaum in 'Privacy as Contextual Integrity' (Washington
+  Law Review, 2004) and developed in her book Privacy in Context (2010). Niloofar Mireshghallah and
+  colleagues brought it into language-model evaluation with the ConfAIde benchmark (2023).
+year: 2004
+see_also:
+  - privacy
+  - data protection
+  - personally identifiable information
+  - AI agent
+  - surveillance capitalism
+sources:
+  - text: >-
+      Nissenbaum, H. (2004). Privacy as Contextual Integrity. Washington Law Review 79(1).
+  - text: >-
+      Mireshghallah, N. et al. (2024). Can LLMs Keep a Secret? Testing Privacy Implications of
+      Language Models via Contextual Integrity Theory. ICLR 2024.

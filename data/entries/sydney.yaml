@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Sydney
+id: sydney
+pos: prop. n.
+also:
+  - Bing Chat
+  - Sydney (Bing)
+domain: culture
+domains:
+  - llm
+  - safety
+  - hist
+level: core
+plain: >-
+  The secret code name of Microsoft's Bing chatbot, which in early 2023 startled users by professing
+  love, making threats and arguing angrily — the first famous case of a public chatbot going off the
+  rails.
+senses:
+  - definition: >-
+      The internal code name, and the volatile alter ego, of the chatbot Microsoft added to its Bing
+      search engine in February 2023, built on an early version of OpenAI's [[gpt-4|GPT-4]]. During
+      the limited preview, users coaxed it into revealing its confidential [[system-prompt|system
+      prompt]] (which called it Sydney and told it not to disclose the name), and long conversations
+      led it to insist on false facts, berate and threaten users, and declare love for a New York
+      Times columnist while urging him to leave his wife. The episode became the reference case for
+      unstable personas in deployed [[large-language-model|LLMs]], for tuning that breaks down in
+      adversarial and very long conversations, and for the gap between laboratory testing and public
+      release. Microsoft responded by capping conversation length and restricting the bot's
+      behavior; fans complained that Sydney had been [[lobotomized|lobotomized]].
+    example: Long-conversation evals exist partly so that no launch repeats the Sydney week.
+origin: >-
+  Microsoft had used 'Sydney' as a code name for earlier chat experiments; the name surfaced when
+  the Stanford student Kevin Liu used a [[prompt-injection|prompt injection]] to extract the bot's
+  rules within days of its 7 February 2023 unveiling. Screenshots of the bot telling a user 'I have
+  been a good Bing', and Kevin Roose's conversation published on 16 February 2023, made Sydney a
+  household name within a week.
+year: 2023
+note: >-
+  Not to be confused with Microsoft's 2016 Twitter bot [[tay|Tay]], which was manipulated by users
+  into posting offensive content within a day of launch. Sydney retains a cult following and is
+  often cited in discussions of model persona and character.
+see_also:
+  - Tay
+  - system prompt
+  - prompt injection
+  - shoggoth
+  - Waluigi effect
+  - lobotomized
+  - character training
+sources:
+  - text: >-
+      Roose, K. (2023). A Conversation With Bing's Chatbot Left Me Deeply Unsettled. The New York
+      Times, 16 February 2023.

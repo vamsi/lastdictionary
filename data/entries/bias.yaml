@@ -1,0 +1,86 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bias
+id: bias
+pos: n.
+also:
+  - biases
+  - biased
+  - bias term
+  - intercept
+  - AI bias
+domain: core
+domains:
+  - ml
+  - society
+  - math
+level: core
+plain: >-
+  A word with several AI meanings: an adjustable number added inside a model; a systematic error in
+  estimates; or unfair treatment of some groups of people by an AI system.
+senses:
+  - context: Neural networks
+    definition: >-
+      A learnable [[parameter|parameter]] added to a unit's weighted sum of inputs before the
+      [[activation-function|activation function]], so that each [[artificial-neuron|artificial
+      neuron]] computes f(w·x + b). The bias shifts the unit's threshold, letting it activate even
+      when all inputs are zero; in linear models the same term is called the intercept. Biases are
+      learned along with the [[weights|weights]] but are usually exempt from [[weight-decay|weight
+      decay]], and many recent transformer designs omit them from most layers.
+  - context: Statistics
+    definition: >-
+      For an estimator, the gap between its average value over repeated samples and the true value
+      of the quantity it targets; an unbiased estimator is right on average. In the analysis of
+      learning algorithms, bias is the part of prediction error that comes from a model class too
+      rigid to capture the true pattern, traded off against variance, the part that comes from how
+      much the fitted model would change with a different training sample
+      ([[bias-variance-tradeoff|bias–variance tradeoff]]). Related notions include selection or
+      [[sampling-bias|sampling bias]], when data are unrepresentative, and measurement bias.
+  - context: Inductive bias
+    definition: >-
+      The assumptions that lead a learning algorithm to prefer some hypotheses over others when the
+      data alone underdetermine the answer, such as smoothness, simplicity or the locality built
+      into [[convolutional-neural-network|convolutional networks]]. Without some
+      [[inductive-bias|inductive bias]], generalizing beyond the training examples is impossible.
+  - context: Fairness and society
+    definition: >-
+      Systematic, unfair differences in how an AI system treats or represents people, especially by
+      race, gender, age, disability or other [[protected-attribute|protected attributes]]: a résumé
+      screener downgrading women, face analysis erring more on darker-skinned faces, a language
+      model reproducing stereotypes. Sources include unrepresentative or historically skewed data,
+      choices of labels and measurements, objectives and deployment context; see
+      [[algorithmic-bias|algorithmic bias]], [[algorithmic-fairness|algorithmic fairness]] and
+      [[gender-shades|Gender Shades]].
+    example: >-
+      The audit found bias in the loan model: equally qualified applicants from two postcodes got
+      different scores.
+  - context: Judgment and model behavior
+    definition: >-
+      Systematic tendencies in human or machine judgment, such as [[automation-bias|automation
+      bias]], the human tendency to over-trust automated outputs, or the position, verbosity and
+      self-preference biases of [[llm-as-a-judge|LLM judges]]. Unrelated is [[logit-bias|logit
+      bias]], an API setting that raises or lowers the probability of particular tokens.
+origin: >-
+  From French biais, 'slant, oblique line'; in the game of bowls it named a ball's one-sided
+  weighting that makes it curve, whence (1570s) 'one-sided tendency of the mind'. The statistical
+  sense is long established, and the bias input of threshold units dates from early neural-network
+  models. The fairness sense entered computing with Batya Friedman and Helen Nissenbaum's 'Bias in
+  Computer Systems' (1996) and gained prominence through ProPublica's 2016 analysis of
+  [[compas|COMPAS]] and the Gender Shades study (2018).
+note: >-
+  Context decides the meaning: to a statistician, reducing bias may mean adding model flexibility;
+  to a fairness auditor, removing discriminatory disparities. A statistically unbiased model can
+  still be socially biased if it faithfully reproduces unjust patterns in its data.
+see_also:
+  - algorithmic bias
+  - bias–variance tradeoff
+  - inductive bias
+  - sampling bias
+  - algorithmic fairness
+  - automation bias
+  - logit bias
+  - weights
+sources:
+  - text: >-
+      Friedman, B. & Nissenbaum, H. (1996). Bias in Computer Systems. ACM Transactions on
+      Information Systems, 14(3), 330–347.

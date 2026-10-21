@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chunking
+id: chunking
+pos: n.
+also:
+  - text splitting
+  - document chunking
+  - chunk size
+  - chunk overlap
+  - semantic chunking
+  - late chunking
+domain: eng
+domains:
+  - agents
+  - data
+level: core
+plain: >-
+  Cutting long documents into smaller pieces before storing them for AI search, so the system can
+  find and hand the model just the relevant part instead of a whole manual.
+senses:
+  - context: Retrieval
+    definition: >-
+      The step in a [[retrieval-augmented-generation|retrieval-augmented generation]] or search
+      pipeline that splits documents into passages ('chunks') which are embedded, indexed and
+      retrieved as units. Strategies include fixed-size windows measured in [[token|tokens]] with
+      some overlap; recursive splitting on paragraph, sentence and word boundaries; structure-aware
+      splitting by headings, code functions or table rows; semantic chunking, which breaks where the
+      [[text-embedding|embedding]] similarity of adjacent sentences drops; and parent–child schemes
+      that retrieve small chunks but return their surrounding section. Chunk size is a trade-off:
+      small chunks match precisely but lose context, while large ones dilute the embedding and waste
+      the [[context-window|context window]]. Prefixing each chunk with document-level context
+      ([[contextual-retrieval|contextual retrieval]]) or embedding the whole document before
+      splitting it (late chunking) reduces lost context.
+    example: >-
+      Recall improved once we stopped chunking mid-table and split on section headings instead.
+  - context: Cognitive architectures
+    definition: >-
+      A learning mechanism, best known from the Soar [[cognitive-architecture|cognitive
+      architecture]], that caches the result of a problem-solving episode as a new rule (a 'chunk')
+      so the same subproblem is solved directly next time; it echoes the psychological notion of
+      grouping items into larger meaningful units.
+origin: >-
+  Passage-level retrieval was studied in IR from the 1990s; 'chunking' became the standard name for
+  splitting documents in LLM pipelines around 2023, spread by the text splitters of frameworks such
+  as [[langchain|LangChain]] and [[llamaindex|LlamaIndex]]. The psychological sense dates to George
+  Miller's 1956 work on the limits of short-term memory; John Laird, Paul Rosenbloom and Allen
+  Newell described chunking in Soar in 1986.
+see_also:
+  - retrieval-augmented generation
+  - contextual retrieval
+  - text embedding
+  - context window
+  - vector database
+  - cognitive architecture
+sources:
+  - text: Anthropic (2024). Introducing Contextual Retrieval, 19 September 2024.
+    url: https://www.anthropic.com/news/contextual-retrieval
+  - text: >-
+      Laird, J. E., Rosenbloom, P. S. & Newell, A. (1986). Chunking in Soar: The anatomy of a
+      general learning mechanism. Machine Learning 1(1): 11–46.

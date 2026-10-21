@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vibe engineering
+id: vibe-engineering
+pos: n.
+domain: eng
+domains:
+  - agents
+  - culture
+labels:
+  - informal
+level: specialist
+plain: >-
+  Building serious software with AI coding assistants while still taking full responsibility for its
+  quality — the careful, professional opposite of vibe coding.
+senses:
+  - definition: >-
+      The careful, professional use of [[coding-agent|coding agents]] and other AI tools:
+      experienced engineers let the tools speed up work on production software but still answer for
+      the quality of what ships. Simon Willison, who proposed the name as a counterweight to
+      [[vibe-coding|vibe coding]] (accepting AI-written code without understanding it), argued that
+      agents reward the habits of strong engineering teams rather than replacing them, among them
+      thorough automated tests, written plans and documentation, disciplined version control and
+      code review, and hands-on testing, plus newer skills such as judging which tasks to hand off,
+      re-estimating how long work takes and managing agents almost like staff.
+    example: >-
+      Vibe engineering means the agent writes the code, but you still own every line that ships.
+origin: >-
+  Proposed by Simon Willison in a blog post of 7 October 2025 as a deliberately cheeky counterpart
+  to vibe coding.
+year: 2025
+note: >-
+  In 2026 'agentic engineering' (see [[agentic-coding|agentic coding]]) became a more common name
+  for the same disciplined practice, including in Willison's own writing.
+see_also:
+  - vibe coding
+  - agentic coding
+  - coding agent
+  - evals-driven development
+  - Ralph Wiggum loop
+  - dark factory
+contrast:
+  - vibe coding
+sources:
+  - text: Willison, S. (2025). Vibe engineering. Simon Willison's Weblog, 7 October 2025.
+    url: https://simonwillison.net/2025/Oct/7/vibe-engineering/
+as_of: 2026-10

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: robotic process automation
+id: robotic-process-automation
+pos: n.
+also:
+  - RPA
+  - software robot
+  - software bot
+  - digital worker
+  - intelligent automation
+  - hyperautomation
+  - agentic automation
+domain: eng
+domains:
+  - agents
+  - society
+level: core
+plain: >-
+  Software 'robots' that copy the clicks and typing a person would do in office computer programs —
+  such as moving data between forms — to automate repetitive paperwork.
+senses:
+  - definition: >-
+      Software that automates rule-based, repetitive business tasks by operating other applications'
+      user interfaces as a person would — clicking, typing, copying between screens, reading files
+      and emails — usually following scripted workflows built in a visual designer or recorded from
+      a user's actions. No physical robots are involved. RPA suits high-volume clerical work across
+      older systems that lack programming interfaces, such as invoice entry, claims handling and
+      account reconciliation; bots run unattended on servers or attended on an employee's desktop.
+      Because scripted bots break when screens or rules change, vendors added AI components —
+      [[optical-character-recognition|optical character recognition]],
+      [[document-understanding|document understanding]], classification and later language models —
+      under labels such as intelligent automation and hyperautomation. Since 2024 RPA vendors and
+      builders of [[ai-agent|AI agents]] have converged on 'agentic automation', in which models
+      plan and handle exceptions while deterministic bots execute steps; [[computer-use|computer
+      use]] agents pursue similar goals without scripts.
+    example: >-
+      The RPA bot copies each approved invoice from the email inbox into the old accounting system
+      overnight.
+origin: >-
+  Screen-scraping and macro-recording tools long predate the term. The UK company Blue Prism,
+  founded in 2001, states that its chief marketing officer and chief evangelist Pat Geary coined
+  'robotic process automation' in 2012, a widely repeated claim that rests on the company's own
+  account; the label spread through outsourcing analysts and vendors such as UiPath and Automation
+  Anywhere during the 2010s.
+year: 2012
+note: >-
+  Unlike [[computer-use|computer use]] agents, RPA bots follow fixed scripts rather than deciding
+  their steps at run time; unlike [[robotics|robotics]], no machines move. Because RPA mimics
+  clerical tasks, it figures in debates about the [[automation|automation]] of office work.
+see_also:
+  - computer use
+  - AI agent
+  - automation
+  - agentic workflow
+  - document understanding
+  - CrewAI
+contrast:
+  - computer use
+sources:
+  - text: Blue Prism. Our history. Company website.
+    url: https://blueprism.com/about/history/
+as_of: 2026-10

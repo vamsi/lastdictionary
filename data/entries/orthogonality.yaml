@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: orthogonality
+id: orthogonality
+pos: n.
+also:
+  - orthogonal
+  - orthonormal
+  - orthogonal matrix
+  - orthogonalization
+domain: math
+domains:
+  - dl
+  - interp
+level: specialist
+plain: >-
+  The mathematical version of being at right angles. Two directions are orthogonal when moving along
+  one tells you nothing about the other, like north and east on a map.
+senses:
+  - definition: >-
+      The relation between two vectors whose [[dot-product|dot product]] is zero; in ordinary space,
+      vectors at right angles. A set of mutually orthogonal unit vectors is orthonormal, and a
+      square matrix with orthonormal columns is an orthogonal matrix: it rotates or reflects without
+      stretching, preserves lengths and angles, and is perfectly conditioned. Orthogonality makes
+      decompositions clean — the [[singular-value-decomposition|singular value decomposition]] and
+      [[principal-component-analysis|principal component analysis]] produce orthogonal directions —
+      and computations stable. Orthogonal [[weight-initialization|weight initialization]] helps deep
+      and recurrent networks preserve signal, and the [[muon|Muon]] optimizer replaces each update
+      matrix with an approximately orthogonal one. In high dimensions, random vectors are nearly
+      orthogonal and exponentially many directions can be almost orthogonal, which the
+      [[superposition|superposition]] hypothesis invokes to explain how networks store more
+      [[feature-interpretability|features]] than they have dimensions.
+    example: >-
+      We orthogonalized the steering direction against the refusal direction so that the two edits
+      would not interfere.
+origin: >-
+  From Greek orthogōnios, 'right-angled', used in English geometry by 1571. Charles Hermite wrote of
+  orthogonal matrices in 1854; orthogonal functions entered analysis through Felix Klein's 1889
+  lectures; and R. A. Fisher's 1922 use for statistically independent quantities led to the later
+  sense of 'uncorrelated'.
+note: >-
+  Figurative use is common, meaning independent or unrelated, as in the
+  [[orthogonality-thesis|orthogonality thesis]] that intelligence and final goals can vary
+  independently. That thesis borrows the word, not the mathematics.
+see_also:
+  - dot product
+  - singular value decomposition
+  - superposition
+  - Muon
+  - weight initialization
+  - linear algebra
+contrast:
+  - orthogonality thesis

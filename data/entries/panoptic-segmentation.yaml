@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: panoptic segmentation
+id: panoptic-segmentation
+pos: n.
+also:
+  - panoptic quality
+  - PQ
+  - things and stuff
+domain: percep
+domains:
+  - dl
+level: specialist
+plain: >-
+  A complete labeling of an image in which every pixel gets a category, such as road or sky, and
+  every countable object, such as each car or person, also gets its own identity.
+senses:
+  - definition: >-
+      The task of assigning every pixel of an image both a semantic class and, for countable 'thing'
+      classes, an instance identity, so that the output is a single non-overlapping partition of the
+      whole image. It unifies [[semantic-segmentation|semantic segmentation]], which handles
+      amorphous 'stuff' (sky, road, vegetation) but merges objects, and
+      [[instance-segmentation|instance segmentation]], which separates 'things' (people, cars) but
+      ignores background and allows overlapping masks. Its metric, panoptic quality (PQ), matches a
+      predicted and a ground-truth segment of the same class when their
+      [[intersection-over-union|intersection over union]] exceeds 0.5, a threshold that guarantees
+      each match is unique, and equals segmentation quality (the mean IoU of matched segments)
+      multiplied by recognition quality (an F1-style detection score). Early methods merged the
+      outputs of separate semantic and instance networks (Panoptic FPN, 2019); later ones predict
+      all segments as one set with a transformer (MaskFormer, 2021; Mask2Former, 2022).
+      [[coco|COCO]] and driving datasets such as Cityscapes and Mapillary Vistas provide panoptic
+      labels.
+    example: >-
+      The panoptic output gives the planner the drivable surface and a separate ID for every vehicle.
+formula_latex: \text{PQ} = \frac{\sum_{(p,g)\in TP}\operatorname{IoU}(p,g)}{|TP| + \tfrac{1}{2}|FP|
+  + \tfrac{1}{2}|FN|}
+origin: >-
+  Defined by Alexander Kirillov, Kaiming He, Ross Girshick, Carsten Rother and Piotr Dollár in
+  'Panoptic Segmentation' (arXiv January 2018; CVPR 2019), which also introduced the PQ metric;
+  'panoptic' is from Greek for 'all-seeing'. The COCO panoptic challenge began in 2018.
+year: 2018
+see_also:
+  - image segmentation
+  - semantic segmentation
+  - instance segmentation
+  - intersection over union
+  - COCO
+  - DETR
+sources:
+  - text: >-
+      Kirillov, A., He, K., Girshick, R., Rother, C. & Dollár, P. (2019). Panoptic Segmentation.
+      CVPR 2019.
+    url: https://arxiv.org/abs/1801.00868

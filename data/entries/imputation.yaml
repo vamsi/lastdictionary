@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: imputation
+id: imputation
+pos: n.
+also:
+  - impute
+  - missing-value imputation
+  - missing data imputation
+  - multiple imputation
+  - MICE
+  - missing at random
+domain: ml
+domains:
+  - data
+  - math
+level: core
+plain: >-
+  Filling in missing values in a dataset with sensible estimates, such as the typical value or a
+  prediction from the other columns, so the data can be analyzed or used for training.
+senses:
+  - definition: >-
+      The filling-in of missing entries in a dataset with estimated values so that analysis or
+      training can use incomplete records. Simple methods fill each gap with a constant, the mean,
+      median or mode, or, in time series, the last observed value; model-based methods predict
+      missing entries from other variables using regression, [[k-nearest-neighbors|k-nearest
+      neighbors]], [[random-forest|random forests]], [[matrix-factorization|matrix factorization]],
+      the [[expectation-maximization-algorithm|expectation–maximization algorithm]] or deep
+      generative models. Multiple imputation creates several completed datasets by drawing plausible
+      values, analyzes each, and pools the results so that uncertainty about the missing values
+      carries into the final estimates; chained-equation implementations (MICE) model each
+      incomplete variable conditionally on the others. Validity depends on why values are missing:
+      when data are missing completely at random, or at random given the observed variables,
+      imputation models that condition on the observed data can avoid bias (simple mean filling
+      still distorts variances and correlations), but data missing not at random, where missingness
+      depends on the unobserved value itself, cannot be repaired by imputation alone. Adding a
+      binary 'was missing' indicator is common practice.
+    example: >-
+      We imputed missing blood-pressure readings with the median and added an indicator column,
+      which itself proved predictive.
+origin: >-
+  Long used informally in survey statistics. Donald Rubin's 1976 Biometrika paper 'Inference and
+  Missing Data' provided the theoretical framework, including the notion of data missing at random,
+  and his multiple imputation, proposed in the late 1970s, was set out in his 1987 book Multiple
+  Imputation for Nonresponse in Surveys. Stef van Buuren's MICE software popularized
+  chained-equation imputation.
+note: >-
+  Imputed values are estimates, not observations: single imputation understates uncertainty, and
+  imputation statistics must be learned from training data only, or test information leaks in
+  ([[data-leakage|data leakage]]).
+see_also:
+  - data cleaning
+  - expectation–maximization algorithm
+  - feature engineering
+  - data leakage
+  - k-nearest neighbors
+  - data quality
+sources:
+  - text: Rubin, D. B. (1976). Inference and Missing Data. Biometrika 63(3).
+  - text: >-
+      Rubin, D. B. (1987). Multiple Imputation for Nonresponse in Surveys. New York: Wiley.
+  - text: >-
+      van Buuren, S. & Groothuis-Oudshoorn, K. (2011). mice: Multivariate Imputation by Chained
+      Equations in R. Journal of Statistical Software 45(3).

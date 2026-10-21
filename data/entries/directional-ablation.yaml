@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: directional ablation
+id: directional-ablation
+pos: n.
+also:
+  - direction ablation
+  - projection ablation
+domain: interp
+domains:
+  - safety
+  - math
+level: specialist
+plain: >-
+  Erasing one specific direction from an AI model's internal signals while it runs, so whatever that
+  direction encodes — such as the tendency to refuse — can no longer influence what the model does.
+senses:
+  - definition: >-
+      An intervention that removes the component of a model's [[activation|activations]] along a
+      given unit direction r, replacing each activation h with h − (r·h)r at every layer and token
+      position, so that downstream computation cannot read that direction. It is the subtractive
+      counterpart of [[activation-addition|activation addition]] and the standard causal test of
+      whether a direction found by [[probing|probing]] or contrastive means is necessary for a
+      behavior: if ablating it removes the behavior, the direction mediates it. Applied to the
+      [[refusal-direction|refusal direction]] it disables refusal; folding the same projection into
+      the weights gives [[abliteration|abliteration]]. Linear [[concept-erasure|concept erasure]]
+      methods generalize it to whole subspaces, chosen so that no linear classifier can recover a
+      concept.
+    example: >-
+      Directional ablation of the truth direction dropped probe accuracy to chance but barely
+      changed the answers.
+formula_latex: h' = h - \hat{r}\,\hat{r}^{\top} h
+origin: >-
+  Projecting a direction out of a representation is standard linear algebra, used to remove gender
+  directions from word embeddings (Tolga Bolukbasi and colleagues, 2016) and in
+  [[iterative-nullspace-projection|iterative nullspace projection]] (2020). The name 'directional
+  ablation' for this activation-space intervention was popularized by Arditi et al.'s work on
+  refusal (2024).
+year: 2024
+note: >-
+  Distinguish from zero or mean [[ablation|ablation]] of whole neurons or components: directional
+  ablation removes one direction and leaves the rest of the activation intact. Later layers may
+  still recover the information nonlinearly, so the test establishes linear, not total, removal.
+see_also:
+  - refusal direction
+  - abliteration
+  - ablation
+  - concept erasure
+  - activation addition
+  - steering vector
+contrast:
+  - activation addition
+  - ablation

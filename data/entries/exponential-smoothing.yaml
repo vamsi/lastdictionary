@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: exponential smoothing
+id: exponential-smoothing
+pos: n.
+also:
+  - Holt–Winters method
+  - Holt's linear trend method
+  - simple exponential smoothing
+  - ETS
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  A simple forecasting method that predicts the next value as a weighted average of past values,
+  giving the most weight to recent ones and steadily less to older ones.
+senses:
+  - definition: >-
+      A family of [[time-series-forecasting|time series forecasting]] methods built on recursive
+      blending: each period the current estimate is nudged toward the newest observation, so every
+      past value still counts but its influence shrinks geometrically as it ages. Simple exponential
+      smoothing keeps a single smoothed level, updated each period as α times the new observation
+      plus (1 − α) times the previous level, where the smoothing parameter α lies between 0 and 1;
+      Holt's method adds a trend component, and the Holt–Winters method adds seasonality in additive
+      or multiplicative form, with damped-trend variants that flatten long-range forecasts. Since
+      the early 2000s these methods have been formulated as innovations state-space models, labeled
+      ETS (error, trend, seasonal), which supply likelihoods for automatic model selection and
+      proper prediction intervals. Cheap, robust and hard to beat on short or noisy series,
+      exponential smoothing remains a standard [[baseline|baseline]] and a production workhorse for
+      demand and inventory forecasting at scale.
+    example: >-
+      For the 40,000 slow-moving spare parts we simply use damped Holt–Winters exponential smoothing.
+formula_latex: \ell_t = \alpha\, y_t + (1 - \alpha)\, \ell_{t-1}, \qquad \hat{y}_{t+1 \mid t} = \ell_t
+origin: >-
+  Developed for inventory control and military logistics in the 1950s: Robert G. Brown, an
+  operations researcher who first used it in U.S. Navy work, presented it for forecasting inventory
+  demand in 1956; Charles Holt added trend (1957) and Peter Winters added seasonality (1960). Rob
+  Hyndman and colleagues gave the methods a statistical state-space foundation in 2002 and in a 2008
+  book.
+year: 1956
+see_also:
+  - time series forecasting
+  - ARIMA
+  - baseline
+  - exponential moving average of weights
+sources:
+  - text: >-
+      Holt, C. C. (1957). Forecasting Seasonals and Trends by Exponentially Weighted Moving
+      Averages. ONR Memorandum 52; reprinted in International Journal of Forecasting 20(1), 2004.
+  - text: >-
+      Winters, P. R. (1960). Forecasting Sales by Exponentially Weighted Moving Averages. Management
+      Science 6(3).
+  - text: >-
+      Hyndman, R. J., Koehler, A. B., Ord, J. K. & Snyder, R. D. (2008). Forecasting with
+      Exponential Smoothing: The State Space Approach. Springer.

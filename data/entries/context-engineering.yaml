@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: context engineering
+id: context-engineering
+pos: n.
+also:
+  - context engineer
+  - context management
+domain: agents
+domains:
+  - llm
+  - eng
+labels:
+  - emerging
+level: core
+plain: >-
+  Managing an AI model's reading material: choosing, trimming and arranging the instructions,
+  documents, tool results and memories it is given on every turn, so that it has what the task needs
+  and little else.
+senses:
+  - definition: >-
+      The practice of designing the machinery that decides, before each call to a
+      [[large-language-model|language model]], what goes into its [[context-window|context window]],
+      in what order and in what form, on the view that the window is a limited budget in which every
+      token should earn its place. It covers selecting and ordering instructions and
+      [[system-prompt|system prompts]], [[tool|tool]] definitions, retrieved documents, conversation
+      history, [[agent-memory|memories]] and tool outputs; deciding what to load up front and what
+      to fetch on demand ([[just-in-time-retrieval|just-in-time retrieval]],
+      [[progressive-disclosure|progressive disclosure]]); and shrinking or isolating context through
+      [[compaction|compaction]], clearing stale tool results, external notes and
+      [[subagent|subagents]] with fresh windows. The motivation is empirical: models degrade as
+      inputs grow ([[context-rot|context rot]]) and are misled by errors or irrelevant material
+      ([[context-poisoning|context poisoning]]), so for long-running [[ai-agent|agents]] the aim is
+      to include as little as will still let the model act correctly.
+    example: >-
+      Most of our agent's failures were context engineering problems: stale tool output and forty
+      unused tool definitions.
+origin: >-
+  Scattered earlier uses exist; Dex Horthy's '12-Factor Agents' guide (HumanLayer, spring 2025)
+  urged builders to take control of their context windows and is sometimes credited with the
+  coinage. The term took off in June 2025 when Shopify CEO Tobi Lütke (19 June) and Andrej Karpathy
+  (25 June) endorsed it over 'prompt engineering', Karpathy describing the job as 'filling the
+  context window with just the right information for the next step'. Anthropic's guide of 29
+  September 2025 helped standardize it.
+year: 2025
+note: >-
+  Often presented as the successor to [[prompt-engineering|prompt engineering]]; skeptics call it a
+  rebranding. A workable distinction: prompt engineering concerns wording a single input well,
+  context engineering the system that assembles inputs turn after turn. Closely tied to
+  [[harness|harness]] design.
+see_also:
+  - context window
+  - prompt engineering
+  - context rot
+  - compaction
+  - agent memory
+  - retrieval-augmented generation
+  - just-in-time retrieval
+  - harness
+contrast:
+  - prompt engineering
+sources:
+  - text: >-
+      Rajasekaran, P., Dixon, E., Ryan, C. & Hadfield, J. (2025). Effective context engineering for
+      AI agents. Anthropic Engineering blog, 29 September 2025.
+    url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+  - text: Willison, S. (2025). Context engineering. Simon Willison's Weblog, 27 June 2025.
+    url: https://simonwillison.net/2025/Jun/27/context-engineering/
+as_of: 2026-10

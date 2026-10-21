@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: categorical distribution
+id: categorical-distribution
+pos: n.
+also:
+  - multinoulli distribution
+  - generalized Bernoulli distribution
+  - Bernoulli distribution
+  - discrete distribution
+domain: math
+domains:
+  - llm
+  - ml
+level: core
+plain: >-
+  The probabilities for a single pick among a fixed set of options, like a weighted die. A language
+  model's guess about the next word is one of these, spread over its whole vocabulary.
+senses:
+  - definition: >-
+      The [[probability-distribution|probability distribution]] of a single draw from K mutually
+      exclusive categories, given by K nonnegative probabilities that sum to one; with K = 2 it is
+      the Bernoulli distribution. It is the output of nearly every classifier and of every
+      [[autoregressive-model|autoregressive]] [[large-language-model|language model]], which at each
+      step produces a categorical distribution over a vocabulary of tens or hundreds of thousands of
+      [[token|tokens]], usually by applying [[softmax|softmax]] to a vector of [[logit|logits]]. Its
+      negative [[log-likelihood|log-likelihood]] for an observed category is the
+      [[cross-entropy|cross-entropy]] loss with a one-hot target. Sampling can invert the cumulative
+      probabilities or use the Gumbel-max trick, and decoding controls such as
+      [[temperature|temperature]], [[top-k-sampling|top-k sampling]] and [[top-p-sampling|top-p
+      sampling]] reshape or truncate it before [[sampling|sampling]]. Counts over repeated draws
+      follow the multinomial distribution, and its [[bayesian-inference|Bayesian]] conjugate prior
+      is the Dirichlet distribution.
+    example: >-
+      At each step the decoder samples from a categorical distribution over 128,000 tokens.
+formula_latex: p(x = k \mid \boldsymbol{\pi}) = \pi_k, \qquad \pi_k \ge 0,\; \sum_{k=1}^{K}\pi_k = 1
+origin: >-
+  Distributions over several discrete outcomes are as old as probability itself (dice, cards, urns);
+  the two-outcome case is named for Jacob Bernoulli's Ars Conjectandi (1713). The name 'categorical
+  distribution' is common in Bayesian computing and machine learning, where Kevin Murphy's 2012
+  textbook popularized the informal 'multinoulli'; many statisticians instead speak of a multinomial
+  distribution with a single trial. When the name first appeared is not established.
+see_also:
+  - softmax
+  - cross-entropy
+  - probability distribution
+  - logit
+  - sampling
+  - temperature
+  - top-p sampling

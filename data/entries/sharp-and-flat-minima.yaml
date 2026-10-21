@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sharp and flat minima
+id: sharp-and-flat-minima
+pos: n.
+also:
+  - flat minima
+  - sharp minima
+  - flat minimum
+  - sharp minimum
+  - sharpness
+  - flatness
+  - wide minima
+domain: dl
+domains:
+  - math
+labels:
+  - contested
+level: specialist
+plain: >-
+  Two kinds of low points a trained model can settle into: narrow pits where small changes spoil
+  performance, and broad basins where they barely matter. Broad basins are thought to generalize
+  better, though this is debated.
+senses:
+  - definition: >-
+      A distinction between minima of a [[loss-landscape|loss landscape]] by how quickly the loss
+      rises around them: at a sharp minimum it climbs steeply in some directions (large
+      [[hessian|Hessian]] eigenvalues), while a flat or wide minimum sits in a broad region of low
+      loss. The flat-minima hypothesis holds that flat solutions generalize better, because they can
+      be specified with fewer bits of precision (a [[minimum-description-length|minimum description
+      length]] argument) and are robust to small differences between training and test loss
+      surfaces. Supporting evidence includes the finding that large-batch training reaches sharper
+      minima and generalizes worse, and the success of flatness-seeking methods such as
+      [[sharpness-aware-minimization|sharpness-aware minimization]] and weight averaging. Critics
+      showed that in [[relu|ReLU]] networks, rescaling weights layer by layer can make any minimum
+      arbitrarily sharp without changing the function computed, so naive sharpness cannot by itself
+      explain generalization; reparametrization-invariant measures and PAC-Bayes bounds are proposed
+      responses, and the question remains open.
+origin: >-
+  Sepp Hochreiter and Jürgen Schmidhuber proposed searching for flat minima in a 1994 NeurIPS paper
+  and 'Flat Minima' (Neural Computation, 1997). Nitish Shirish Keskar and colleagues revived the
+  idea in 2016 to explain the large-batch generalization gap, and Laurent Dinh, Razvan Pascanu, Samy
+  Bengio and Yoshua Bengio's 'Sharp Minima Can Generalize for Deep Nets' (2017) challenged it.
+year: 1994
+see_also:
+  - loss landscape
+  - sharpness-aware minimization
+  - batch size
+  - generalization gap
+  - minimum description length
+  - Hessian
+  - edge of stability
+sources:
+  - text: >-
+      Hochreiter, S. & Schmidhuber, J. (1997). Flat Minima. Neural Computation 9(1), 1–42.
+  - text: >-
+      Keskar, N. S. et al. (2017). On Large-Batch Training for Deep Learning: Generalization Gap and
+      Sharp Minima. ICLR 2017.
+    url: https://arxiv.org/abs/1609.04836
+  - text: >-
+      Dinh, L., Pascanu, R., Bengio, S. & Bengio, Y. (2017). Sharp Minima Can Generalize For Deep
+      Nets. ICML 2017.
+    url: https://arxiv.org/abs/1703.04933

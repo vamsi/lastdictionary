@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reward hypothesis
+id: reward-hypothesis
+pos: n.
+also:
+  - Sutton's reward hypothesis
+  - reinforcement learning hypothesis
+domain: rl
+domains:
+  - mind
+labels:
+  - contested
+level: specialist
+plain: >-
+  The idea that every goal can be expressed as maximizing a single running score — that whatever we
+  want an agent to do, we can say it with points.
+senses:
+  - definition: >-
+      The working assumption of [[reinforcement-learning|reinforcement learning]], put into words by
+      Richard Sutton, that whatever we mean by an agent's goals can be recast as making the expected
+      sum of one numerical [[reward|reward]] signal over time as large as possible. It justifies
+      representing every task by a [[reward-function|reward function]] and evaluating agents by
+      [[return|return]], and it underlies the [[markov-decision-process|Markov decision process]]
+      formalism. Its generality has been questioned: some preferences over behavior — risk
+      sensitivity, constraints that must never be violated, trade-offs among several objectives, or
+      tasks defined by sets of acceptable behaviors — cannot be expressed as expected sums of Markov
+      rewards, as David Abel and colleagues showed formally in 2021 and as work on multi-objective
+      and constrained RL emphasizes. Defenders reply that richer state descriptions or non-Markov
+      rewards restore expressiveness. The stronger claim that reward maximization suffices for
+      general intelligence is [[reward-is-enough|reward is enough]].
+    example: >-
+      Under the reward hypothesis, 'be helpful' must become a number — and that conversion is where
+      things go wrong.
+origin: >-
+  Stated by Richard Sutton on a web page dating from September 2004, which notes that Michael
+  Littman calls it the reinforcement learning hypothesis. It appears in the second edition of Sutton
+  and Barto's textbook (2018, §3.2).
+year: 2004
+see_also:
+  - reward is enough
+  - reward
+  - reward function
+  - reinforcement learning
+  - Markov decision process
+  - value alignment
+sources:
+  - text: >-
+      Sutton, R. S. & Barto, A. G. (2018). Reinforcement Learning: An Introduction (2nd ed.), §3.2.
+      MIT Press.
+  - text: Abel, D. et al. (2021). On the Expressivity of Markov Reward. NeurIPS 2021.

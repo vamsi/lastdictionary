@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: covariance
+id: covariance
+pos: n.
+also:
+  - covariance matrix
+  - cross-covariance
+  - variance–covariance matrix
+domain: math
+domains:
+  - ml
+level: specialist
+plain: >-
+  A measure of whether two quantities tend to rise and fall together, move in opposite directions,
+  or show no consistent relationship.
+senses:
+  - definition: >-
+      The [[expected-value|expected value]] of the product of two [[random-variable|random
+      variables]]' deviations from their means: positive when they tend to be above their means
+      together, negative when one tends to be high while the other is low, and zero for independent
+      variables (though zero covariance does not imply independence). Dividing by both standard
+      deviations gives Pearson [[correlation|correlation]]. For a random vector, the covariance
+      matrix collects all pairwise covariances, with [[variance|variances]] on its diagonal; it is
+      symmetric and positive semidefinite, sets the shape of a multivariate
+      [[normal-distribution|normal distribution]], and its [[eigenvector|eigenvectors]] are the axes
+      found by [[principal-component-analysis|principal component analysis]]. Covariance matrices
+      appear as kernels in [[gaussian-process|Gaussian processes]], in [[kalman-filter|Kalman
+      filters]], in the [[frechet-inception-distance|Fréchet inception distance]], in second-order
+      optimizers that approximate gradient covariance, and in whitening of data and
+      [[activation|activations]].
+    example: >-
+      Whitening the embeddings with their covariance matrix spread out the cosine similarities
+      considerably.
+formula_latex: \operatorname{Cov}(X,Y) = \mathbb{E}\big[(X-\mathbb{E}[X])\,(Y-\mathbb{E}[Y])\big]
+origin: >-
+  Joint variation of errors appears in 19th-century error theory, including Auguste Bravais's 1846
+  work on correlated errors, and in Francis Galton and Karl Pearson's correlation studies of the
+  1880s–1890s. The name 'covariance' was in standard statistical use by the 1930s.
+see_also:
+  - variance
+  - correlation
+  - normal distribution
+  - principal component analysis
+  - Gaussian process
+  - eigenvector

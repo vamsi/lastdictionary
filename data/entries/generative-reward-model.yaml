@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generative reward model
+id: generative-reward-model
+pos: n.
+also:
+  - GenRM
+  - generative verifier
+  - critic model
+domain: train
+domains:
+  - llm
+  - eval
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A scoring model that judges an AI's answer by writing out its reasoning in words before giving a
+  verdict, instead of simply outputting a number.
+senses:
+  - definition: >-
+      A [[reward-model|reward model]] or [[verifier|verifier]] implemented as an ordinary
+      text-generating language model that evaluates a response by producing tokens — a critique, a
+      [[chain-of-thought|chain of thought]], then a verdict or score — rather than through a scalar
+      output head; the reward is read from the verdict or from the probability the model assigns to
+      a 'correct' token. Being an ordinary language model at heart (sometimes trained to write
+      solutions as well as to judge them), it can draw on the base model's reasoning, follow rubrics
+      or principles stated in its instructions, and become more reliable on hard cases by spending
+      extra [[test-time-compute|test-time compute]], for example by sampling several critiques and
+      going with the majority verdict. Compared with discriminative (classifier-head) reward models
+      it costs more per judgment and its written rationale may not reflect how it actually decided,
+      but it has outperformed them at verifying reasoning. It is the trained counterpart of prompted
+      [[llm-as-a-judge|LLM-as-a-judge]] evaluation.
+    example: >-
+      Our generative reward model writes a short critique of each proof before scoring it, which
+      makes its mistakes easy to audit.
+origin: >-
+  Prompted model judges spread in 2023 under the name LLM-as-a-judge. Lunjun Zhang and colleagues
+  (August 2024) introduced generative verifiers (GenRM) trained by next-token prediction, raising
+  best-of-n accuracy on GSM8K from 73 to 93.4 percent; Dakota Mahan and colleagues' Generative
+  Reward Models (October 2024) and later work extended the approach to general preferences.
+year: 2024
+note: >-
+  Terminology is unsettled: 'GenRM' names specific methods in at least two 2024 papers, and 'critic
+  model' is also used. The line between this and LLM-as-a-judge is mainly whether the judge was
+  trained for the role.
+see_also:
+  - reward model
+  - verifier
+  - LLM-as-a-judge
+  - process reward model
+  - rubric reward
+  - reinforcement learning from AI feedback
+sources:
+  - text: >-
+      Zhang, L., Hosseini, A., Bansal, H., Kazemi, M., Kumar, A. & Agarwal, R. (2024). Generative
+      Verifiers: Reward Modeling as Next-Token Prediction. arXiv:2408.15240.
+    url: https://arxiv.org/abs/2408.15240
+  - text: Mahan, D. et al. (2024). Generative Reward Models. arXiv preprint.
+as_of: 2026-10

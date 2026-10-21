@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Jaccard similarity
+id: jaccard-similarity
+pos: n.
+also:
+  - Jaccard index
+  - Jaccard coefficient
+  - Jaccard distance
+  - Tanimoto coefficient
+domain: math
+domains:
+  - data
+  - percep
+level: specialist
+plain: >-
+  A simple score for how much two collections overlap: the number of items they share divided by the
+  number of distinct items in either. Identical sets score 1; sets with nothing in common score 0.
+senses:
+  - definition: >-
+      A measure of overlap between two finite sets, equal to the size of their intersection divided
+      by the size of their union. It ranges from 0 (disjoint) to 1 (identical), and one minus it,
+      the Jaccard distance, is a true metric. Applied to documents represented as sets of n-grams
+      ('shingles'), it quantifies textual near-duplication and is the quantity that
+      [[minhash|MinHash]] estimates; [[deduplication|deduplication]] pipelines commonly treat pairs
+      above a threshold of roughly 0.7–0.85 as duplicates. The same ratio computed over pixels or
+      boxes is [[intersection-over-union|intersection over union]] in object detection and
+      segmentation; weighted and binary-vector forms are used in recommender systems and in
+      chemistry, where it is called the Tanimoto coefficient.
+    example: >-
+      The two scraped pages had a Jaccard similarity of 0.92 over 5-gram shingles, so one was
+      dropped.
+formula_latex: J(A,B) = \frac{|A \cap B|}{|A \cup B|}
+origin: >-
+  Named after the Swiss botanist Paul Jaccard, who introduced it in 1901 as a 'coefficient de
+  communauté' (coefficient of community) for comparing the plant species of different Alpine
+  districts; his 1912 English-language paper in New Phytologist spread it. The same ratio had
+  appeared in 1884 as the American geologist Grove Karl Gilbert's 'ratio of verification' for
+  scoring tornado forecasts, and Taffee Tanimoto reformulated it independently at IBM in 1958.
+year: 1901
+note: >-
+  In weather-forecast verification, where Gilbert's version arose, the same quantity is called the
+  critical success index or threat score.
+see_also:
+  - MinHash
+  - deduplication
+  - intersection over union
+  - locality-sensitive hashing
+  - recommender system
+contrast:
+  - cosine similarity
+sources:
+  - text: >-
+      Jaccard, P. (1901). Étude comparative de la distribution florale dans une portion des Alpes et
+      des Jura. Bulletin de la Société Vaudoise des Sciences Naturelles 37.
+  - text: >-
+      Jaccard, P. (1912). The Distribution of the Flora in the Alpine Zone. New Phytologist 11(2).

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Resource Description Framework
+id: resource-description-framework
+pos: prop. n.
+also:
+  - RDF
+  - RDF triple
+  - RDF Schema
+  - RDFS
+  - SPARQL
+  - triple store
+  - Turtle
+  - JSON-LD
+domain: sym
+domains:
+  - data
+level: specialist
+plain: >-
+  A web standard for writing facts as simple three-part statements — subject, relation, object —
+  using web addresses as names, so that data from different sources can be merged automatically.
+senses:
+  - definition: >-
+      A W3C data model in which every statement is a triple — a subject, a predicate naming a
+      relationship, and an object — with subjects and predicates named by IRIs (web identifiers) and
+      objects given either as IRIs or as literal values, so that any collection of statements forms
+      a directed graph with labeled edges. Global identifiers let independently published datasets
+      refer to the same things, so they can be merged simply by taking the union of their triples.
+      RDF has several serializations (Turtle, RDF/XML, N-Triples, JSON-LD), a vocabulary language,
+      RDF Schema, for declaring classes and properties, and a query language, SPARQL, for graph
+      pattern matching. It is the foundation of the [[semantic-web|semantic web]] and Linked Data,
+      and is used for open [[knowledge-graph|knowledge graphs]] such as [[wikidata|Wikidata]] and
+      DBpedia, library catalogs and life-science databases.
+    example: >-
+      Export the catalog as RDF and the museum's records can be joined with Wikidata in one SPARQL
+      query.
+origin: >-
+  Grew from Ramanathan V. Guha's Meta Content Framework (developed at Apple and Netscape, 1995–1997)
+  and W3C metadata work. RDF became a W3C Recommendation in February 1999 and was revised as RDF 1.1
+  in 2014; SPARQL became a Recommendation in 2008.
+year: 1999
+see_also:
+  - semantic web
+  - Web Ontology Language
+  - knowledge graph
+  - ontology
+  - Wikidata
+sources:
+  - text: >-
+      W3C (2014). RDF 1.1 Concepts and Abstract Syntax. W3C Recommendation, 25 February 2014.

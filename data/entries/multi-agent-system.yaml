@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multi-agent system
+id: multi-agent-system
+pos: n.
+also:
+  - MAS
+  - multi-agent systems
+  - multi-agent framework
+  - agent team
+domain: agents
+domains:
+  - sym
+  - rl
+level: core
+plain: >-
+  A setup in which several AI agents, each with its own role or point of view, work together — or
+  compete — on a problem, passing messages and results among themselves.
+senses:
+  - context: Language-model agents
+    definition: >-
+      A system made of several LLM-based [[ai-agent|agents]] that interact to accomplish a task,
+      each typically defined by a role prompt, a tool set and its own context. Common topologies are
+      hierarchical ([[orchestrator-worker-pattern|orchestrator and workers]]), sequential pipelines
+      with [[handoff|handoffs]], peer debate or critique, and role-played 'teams' of planner, coder,
+      reviewer and tester. Benefits include parallel exploration, separation of concerns and
+      cross-checking of one agent's work by another; costs include token use often an order of
+      magnitude above a single agent, coordination failures, error amplification and harder
+      debugging. Studies in 2025 found the gains over single agents often minimal on popular
+      benchmarks and strongly task-dependent: with tools, prompts and compute held equal, one study
+      measured changes from +81% on decomposable financial reasoning to −70% on sequential planning.
+      Practitioners therefore tend to reserve multi-agent designs for parallelizable tasks.
+    example: >-
+      Our multi-agent system has a planner, three coders and a reviewer, but a single agent with the
+      same budget scored almost as well.
+  - context: Classical AI
+    definition: >-
+      The research field, grown out of distributed AI in the 1980s and 1990s, that studies
+      interacting autonomous agents — their communication languages, negotiation, coordination,
+      auctions and game-theoretic behavior — in software, robotics and economics.
+      [[multi-agent-reinforcement-learning|multi-agent reinforcement learning]] is its
+      learning-based branch.
+origin: >-
+  Distributed AI took shape around 1980 (Reid G. Smith's Contract Net Protocol); multi-agent systems
+  had dedicated conferences from the mid-1990s, merged into AAMAS in 2002. The language-model
+  revival began in 2023 with [[generative-agent|generative agents]], CAMEL, MetaGPT, ChatDev and
+  Microsoft's AutoGen, and Andrew Ng listed multi-agent collaboration among four agentic design
+  patterns in March 2024.
+year: 2023
+note: >-
+  Anthropic's June 2025 research-system post put multi-agent token use at about 15 times that of a
+  chat. Not to be confused with a [[mixture-of-experts|mixture of experts]], which routes tokens
+  among subnetworks inside a single model.
+see_also:
+  - orchestrator–worker pattern
+  - subagent
+  - agent swarm
+  - handoff
+  - Agent2Agent protocol
+  - multi-agent reinforcement learning
+  - generative agent
+contrast:
+  - mixture of experts
+sources:
+  - text: >-
+      Wu, Q. et al. (2023). AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent
+      Conversation. arXiv:2308.08155.
+    url: https://arxiv.org/abs/2308.08155
+  - text: >-
+      Cemri, M., Pan, M. Z., Yang, S. et al. (2025). Why Do Multi-Agent LLM Systems Fail?
+      arXiv:2503.13657.
+    url: https://arxiv.org/abs/2503.13657
+  - text: >-
+      Kim, Y. et al. (2025). Towards a Science of Scaling Agent Systems. arXiv:2512.08296.
+    url: https://arxiv.org/abs/2512.08296v1

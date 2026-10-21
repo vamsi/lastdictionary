@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: partial derivative
+id: partial-derivative
+pos: n.
+also:
+  - partial
+  - ∂
+  - partial differentiation
+domain: math
+domains:
+  - dl
+level: core
+plain: >-
+  How much a quantity changes when you nudge just one of its many inputs while holding all the
+  others fixed.
+senses:
+  - definition: >-
+      The rate at which a function of several variables changes as one input varies while all the
+      others are frozen, written ∂f/∂xᵢ — an ordinary [[derivative|derivative]] taken along a single
+      coordinate direction. A model's [[loss-function|loss]] depends on millions or billions of
+      [[parameter|parameters]], and each partial derivative says how the loss would change if that
+      one parameter alone were nudged; the [[gradient|gradient]] collects them into a vector, and
+      the [[jacobian|Jacobian]] arranges the partial derivatives of a vector-valued function into a
+      matrix. Second-order and mixed partial derivatives form the [[hessian|Hessian]].
+      [[backpropagation|Backpropagation]] computes every partial derivative of a scalar loss in a
+      single backward sweep, at a cost comparable to one forward evaluation, by applying the
+      [[chain-rule|chain rule]] through the [[computational-graph|computational graph]].
+    example: >-
+      The partial derivative of the loss with respect to that bias is exactly zero, so it never
+      moves.
+formula_latex: \frac{\partial f}{\partial x_i}(\mathbf{x}) = \lim_{h\to 0}\frac{f(\mathbf{x} +
+  h\,\mathbf{e}_i) - f(\mathbf{x})}{h}
+origin: >-
+  Partial derivatives appear in the work of Newton and Leibniz and were developed by Leonhard Euler
+  and Jean le Rond d'Alembert in 18th-century studies of partial differential equations. The curly ∂
+  was used by the Marquis de Condorcet (1770) and Adrien-Marie Legendre (1786) and fixed in modern
+  use by Carl Gustav Jacob Jacobi (1841); 'partial derivative' appears in English in William Rowan
+  Hamilton's work by 1834.
+see_also:
+  - gradient
+  - derivative
+  - Jacobian
+  - Hessian
+  - chain rule
+  - backpropagation

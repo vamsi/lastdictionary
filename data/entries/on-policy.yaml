@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: on-policy
+id: on-policy
+pos: adj.
+also:
+  - on-policy learning
+domain: rl
+domains:
+  - train
+level: core
+plain: >-
+  Describes learning that uses only experience produced by the strategy currently being trained, so
+  old data must be thrown away each time the strategy changes.
+senses:
+  - definition: >-
+      Describing [[reinforcement-learning|reinforcement learning]] methods whose training data must
+      come from the very [[policy|policy]] currently being learned, so that the behavior policy and
+      the target policy coincide. [[sarsa|SARSA]], [[reinforce|REINFORCE]], [[a3c|A3C]] and its
+      synchronous variant A2C, [[trust-region-policy-optimization|TRPO]] and
+      [[proximal-policy-optimization|PPO]] are on-policy: each update needs fresh
+      [[rollout|rollouts]] from the current policy, and data become stale once the policy changes
+      (PPO's clipped objective tolerates a few epochs of reuse). On-policy learning is simpler and
+      often more stable than [[off-policy|off-policy]] learning, because no correction for a data
+      mismatch is needed, but it is less sample-efficient, which matters when interaction is
+      expensive. In [[large-language-model|large language model]] training, on-policy data are
+      responses sampled from the model being trained, as opposed to fixed human-written or
+      other-model text; [[on-policy-distillation|on-policy distillation]] applies the idea to
+      learning from a teacher.
+    example: >-
+      PPO is on-policy, so every batch of rollouts is discarded after four epochs of updates.
+origin: >-
+  The on-/off-policy distinction was drawn in RL during the 1990s around the contrast between SARSA
+  and Q-learning and standardized by Sutton and Barto's textbook (1998); the earliest use of the two
+  terms has not been established.
+see_also:
+  - off-policy
+  - SARSA
+  - proximal policy optimization
+  - rollout
+  - on-policy distillation
+  - policy gradient
+contrast:
+  - off-policy

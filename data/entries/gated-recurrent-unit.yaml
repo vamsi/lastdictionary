@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gated recurrent unit
+id: gated-recurrent-unit
+pos: n.
+also:
+  - GRU
+domain: dl
+domains:
+  - llm
+level: core
+plain: >-
+  A simpler cousin of the LSTM: a recurrent network unit with two learned gates that decide how much
+  of its memory to keep and how much to overwrite at each step.
+senses:
+  - definition: >-
+      A [[recurrent-neural-network|recurrent neural network]] unit that streamlines the
+      [[long-short-term-memory|LSTM]] design to one state vector and two gates. The reset gate
+      decides how much of the previous state feeds into a freshly computed candidate state; the
+      update gate z_t then blends the previous state with that candidate, and this weighted average
+      supplies the additive path that eases the [[vanishing-gradient-problem|vanishing gradient
+      problem]]. Folding the LSTM's cell state into the hidden state and doing without its output
+      gate leaves three weight blocks instead of four, about a quarter fewer parameters.
+      Head-to-head tests, starting with Junyoung Chung and colleagues (2014), have generally found
+      little difference in accuracy, with the better unit varying by task. Conventions differ on
+      whether z_t weights the old state or the new one.
+    example: >-
+      We used a GRU instead of an LSTM because it trained faster with no loss in accuracy.
+formula_latex: \mathbf{h}_t = (1 - \mathbf{z}_t) \odot \mathbf{h}_{t-1} + \mathbf{z}_t \odot \tilde{\mathbf{h}}_t
+origin: >-
+  Introduced as a new hidden unit by Kyunghyun Cho, Bart van Merriënboer, Çağlar Gülçehre, Dzmitry
+  Bahdanau, Fethi Bougares, Holger Schwenk and Yoshua Bengio in 'Learning Phrase Representations
+  using RNN Encoder–Decoder for Statistical Machine Translation' (arXiv, June 2014; EMNLP 2014). The
+  name 'gated recurrent unit' spread through Chung and colleagues' empirical evaluation of December
+  2014.
+year: 2014
+see_also:
+  - long short-term memory
+  - recurrent neural network
+  - vanishing gradient problem
+  - sequence-to-sequence model
+  - encoder–decoder architecture
+sources:
+  - text: >-
+      Cho, K. et al. (2014). Learning Phrase Representations using RNN Encoder–Decoder for
+      Statistical Machine Translation. EMNLP 2014; arXiv:1406.1078.
+    url: https://arxiv.org/abs/1406.1078
+  - text: >-
+      Chung, J., Gulcehre, C., Cho, K. & Bengio, Y. (2014). Empirical Evaluation of Gated Recurrent
+      Neural Networks on Sequence Modeling. arXiv:1412.3555.

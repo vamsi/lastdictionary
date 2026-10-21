@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI system
+id: ai-system
+pos: n.
+also:
+  - artificial intelligence system
+domain: core
+domains:
+  - gov
+  - eng
+labels:
+  - legal
+level: core
+plain: >-
+  A complete piece of technology that uses AI to do something, such as screening loan applications,
+  driving a car or chatting with customers, including the AI model and the software around it.
+senses:
+  - definition: >-
+      A complete, operational configuration of software (and sometimes hardware) whose behavior
+      depends on one or more [[ai-model|AI models]] plus the components that make them usable:
+      interfaces, [[system-prompt|prompts]], retrieval, [[tool|tools]], safety filters and
+      monitoring. Engineers separate system from model because performance and risk arise at the
+      system level: the same model can be safe in one product and harmful in another. In law the
+      term sets the scope of regulation. Under the [[eu-ai-act|EU AI Act]] (Art. 3(1)) the decisive
+      feature is that a machine-based system, pursuing explicit or implicit objectives, 'infers,
+      from the input it receives, how to generate outputs', whether predictions, content,
+      recommendations or decisions, that can affect physical or virtual environments; such systems
+      may run with differing degrees of [[autonomy|autonomy]] and may keep adapting after
+      deployment. The wording follows the OECD's revised definition of November 2023. Recital 12
+      calls this capability to infer, which goes beyond basic data processing, the key
+      characteristic; the European Commission issued guidelines on applying the definition in
+      February 2025.
+    example: >-
+      The model passed our tests, but the AI system as a whole, with retrieval and filters, still
+      needs a risk assessment.
+origin: >-
+  Long used informally for any AI-based program. It became a legal term of art through the OECD
+  Recommendation on Artificial Intelligence (May 2019; definition revised November 2023) and the EU
+  AI Act (Regulation (EU) 2024/1689), whose Article 3(1) aligned with the OECD's revised text; the
+  US National Artificial Intelligence Initiative Act of 2020 likewise defines AI itself as a
+  machine-based system.
+note: >-
+  Contrast [[ai-model|AI model]]: under the EU AI Act a bare model is not yet a system; it becomes
+  part of one only once other elements, a user interface for instance, are added (Recital 97).
+  Definitions differ across jurisdictions, so whether a product counts as an AI system, and is
+  therefore regulated, can be contested.
+see_also:
+  - AI model
+  - EU AI Act
+  - provider and deployer
+  - high-risk AI system
+  - autonomy
+  - AI application
+  - ISO/IEC 22989
+contrast:
+  - AI model
+sources:
+  - text: Regulation (EU) 2024/1689 (Artificial Intelligence Act), Article 3, Definitions.
+    url: https://artificialintelligenceact.eu/article/3/
+  - text: >-
+      European Commission (2025). Guidelines on the definition of an artificial intelligence system
+      established by Regulation (EU) 2024/1689 (AI Act). 6 February 2025.
+    url: https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application
+  - text: >-
+      Russell, S., Perset, K. & Grobelnik, M. (2023). Updates to the OECD's definition of an AI
+      system explained. OECD.AI Policy Observatory, 29 November 2023.
+    url: https://oecd.ai/en/wonk/ai-system-definition-update
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(1) and Recital 12; OECD Recommendation on AI (definition
+  revised November 2023); US Executive Order 14110 (2023; revoked January 2025), §3(e)
+as_of: 2026-10

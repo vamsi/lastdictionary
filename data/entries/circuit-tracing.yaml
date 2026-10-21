@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: circuit tracing
+id: circuit-tracing
+pos: n.
+also:
+  - circuit-tracer
+  - trace a circuit
+domain: interp
+domains:
+  - llm
+  - safety
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Methods that map, step by step, which internal concepts an AI model used to produce a particular
+  answer and how they fed into one another, like tracing wires on a circuit board.
+senses:
+  - definition: >-
+      The recovery of the [[circuit|circuit]] by which a model produces a particular output;
+      specifically, the method introduced by Anthropic in 2025. There, the model's MLP layers are
+      replaced by a [[transcoder|cross-layer transcoder]] to form a [[replacement-model|replacement
+      model]] whose units are interpretable features. For a given prompt, attention patterns and
+      normalization are frozen and the leftover reconstruction error is kept as 'error nodes', so
+      the replacement reproduces the original output exactly. Direct linear effects between
+      features, input tokens and output [[logit|logits]] then define an
+      [[attribution-graph|attribution graph]], which researchers prune, label and group into
+      'supernodes'; hypotheses read from the graph are checked by intervening on the original model,
+      for example by suppressing or injecting features. Limitations include unexplained error,
+      attention computations that are frozen rather than explained, and costs that grow with prompt
+      length.
+    example: >-
+      Circuit tracing showed the model choosing the rhyme word before writing the line that ends
+      with it.
+origin: >-
+  The method is described in Emmanuel Ameisen, Jack Lindsey, Adam Pearce and colleagues' 'Circuit
+  Tracing: Revealing Computational Graphs in Language Models' (Transformer Circuits Thread, March
+  2025), applied in the companion paper 'On the Biology of a Large Language Model'. Anthropic
+  released an open-source circuit-tracer library, with an interactive front end on Neuronpedia, in
+  May 2025.
+year: 2025
+see_also:
+  - attribution graph
+  - replacement model
+  - transcoder
+  - model biology
+  - circuit
+  - Neuronpedia
+sources:
+  - text: >-
+      Ameisen, E., Lindsey, J., Pearce, A. et al. (2025). Circuit Tracing: Revealing Computational
+      Graphs in Language Models. Transformer Circuits Thread.
+  - text: >-
+      Lindsey, J., Gurnee, W., Ameisen, E. et al. (2025). On the Biology of a Large Language Model.
+      Transformer Circuits Thread.
+as_of: 2026-10

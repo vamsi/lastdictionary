@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: diffusion policy
+id: diffusion-policy
+pos: n.
+also:
+  - action diffusion
+  - diffusion-based policy
+domain: robot
+domains:
+  - gen
+  - rl
+level: specialist
+plain: >-
+  A way of training robots in which the same kind of AI that generates images instead generates the
+  robot's next movements, letting it copy demonstrations even when there are several good ways to do
+  a task.
+senses:
+  - definition: >-
+      A [[policy|policy]] that generates robot actions with a conditional
+      [[diffusion-model|diffusion model]]: starting from random noise, it iteratively denoises a
+      sequence of future actions, conditioned on recent camera images and robot state, using a
+      network (a convolutional [[u-net|U-Net]] or a transformer) trained to predict the noise to
+      remove at each step. Because diffusion models represent multimodal distributions — several
+      distinct valid ways to complete a task — they avoid the averaging failure of regression-based
+      [[behavioral-cloning|behavioral cloning]], in which a policy torn between passing left or
+      right of an obstacle drives straight into it. Predicting whole [[action-chunking|action
+      sequences]] and executing only part before replanning (receding-horizon control) yields
+      smooth, consistent motion. In its original evaluation, on 12 tasks drawn from four benchmarks,
+      it beat earlier methods by 46.9% in average success, and diffusion and [[flow-matching|flow
+      matching]] action heads became standard parts of later
+      [[vision-language-action-model|vision-language-action models]].
+    example: >-
+      Switching from a regression head to a diffusion policy stopped the arm dithering at the fork.
+origin: >-
+  Introduced by Cheng Chi, Siyuan Feng, Shuran Song, Russ Tedrake and colleagues (Columbia
+  University, Toyota Research Institute and MIT) in 'Diffusion Policy: Visuomotor Policy Learning
+  via Action Diffusion', posted to arXiv in March 2023 and presented at Robotics: Science and
+  Systems (RSS) 2023; an extended version appeared in the International Journal of Robotics Research
+  in 2024.
+year: 2023
+note: >-
+  Sampling takes several denoising steps, which can limit control rates; distillation,
+  [[consistency-model|consistency models]] and flow matching are used to cut latency. Capitalized,
+  'Diffusion Policy' names the 2023 method; lowercase, the general approach.
+see_also:
+  - diffusion model
+  - action chunking
+  - behavioral cloning
+  - imitation learning
+  - flow matching
+  - vision-language-action model
+sources:
+  - text: >-
+      Chi, C. et al. (2023). Diffusion Policy: Visuomotor Policy Learning via Action Diffusion.
+      Robotics: Science and Systems. arXiv:2303.04137.
+    url: https://arxiv.org/abs/2303.04137

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generalized additive model
+id: generalized-additive-model
+pos: n.
+also:
+  - GAM
+  - GA2M
+  - additive model
+  - neural additive model
+domain: ml
+domains:
+  - interp
+  - math
+level: core
+plain: >-
+  A prediction model that adds up separate, possibly curved effects of each input, so each input's
+  influence can be drawn as its own graph and read off directly.
+senses:
+  - definition: >-
+      A statistical model in which a link function of the expected response equals a sum of smooth,
+      possibly nonlinear functions of individual predictors. It extends generalized linear models
+      such as [[logistic-regression|logistic regression]] by replacing each linear term with a shape
+      function, typically a spline fitted with a smoothness penalty and estimated by backfitting or
+      penalized likelihood. Because the effects add, each shape function can be plotted and
+      understood in isolation, making GAMs a standard [[interpretable-model|interpretable model]];
+      adding selected pairwise interaction terms gives GA2M models, which stay interpretable through
+      two-dimensional heat maps. Modern variants fit the shape functions with boosted trees
+      ([[explainable-boosting-machine|explainable boosting machine]]) or small neural networks
+      (neural additive models). A GAM cannot represent higher-order interactions unless they are
+      added explicitly.
+    example: >-
+      The GAM's shape function for age rose until 70 and then flattened, which the clinicians found
+      plausible.
+formula_latex: g\big(\mathbb{E}[y \mid x]\big) = \beta_0 + \sum_{j=1}^{p} f_j(x_j)
+origin: >-
+  Introduced by Trevor Hastie and Robert Tibshirani in 'Generalized Additive Models' (Statistical
+  Science, 1986) and their 1990 monograph of the same name. Yin Lou, Rich Caruana, Johannes Gehrke
+  and Giles Hooker added automatically selected pairwise interactions (GA2M, KDD 2013).
+year: 1986
+note: >-
+  'Additive' describes how the effects combine, not the shape of each effect, which can be highly
+  nonlinear.
+see_also:
+  - explainable boosting machine
+  - interpretable model
+  - logistic regression
+  - linear regression
+  - partial dependence plot
+  - regularization
+sources:
+  - text: >-
+      Hastie, T. & Tibshirani, R. (1986). Generalized Additive Models. Statistical Science 1(3),
+      297–318.
+  - text: >-
+      Lou, Y., Caruana, R., Gehrke, J. & Hooker, G. (2013). Accurate Intelligible Models with
+      Pairwise Interactions. Proceedings of KDD 2013.

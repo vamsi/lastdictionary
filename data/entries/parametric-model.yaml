@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: parametric model
+id: parametric-model
+pos: n.
+also:
+  - parametric method
+  - parametric statistics
+  - parametric
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A model whose shape is fixed in advance by a set number of adjustable settings, like a straight
+  line's slope and intercept. More data refines those settings but never adds new ones.
+senses:
+  - definition: >-
+      A statistical or machine-learning model described by a fixed, finite set of parameters whose
+      number does not grow with the amount of training data; learning amounts to estimating those
+      parameters, after which the training data can be discarded. Examples include
+      [[linear-regression|linear regression]], [[logistic-regression|logistic regression]],
+      [[naive-bayes|naive Bayes]], [[linear-discriminant-analysis|linear discriminant analysis]] and
+      Gaussian mixture models with a fixed number of components. The fixed functional form is a
+      strong [[inductive-bias|inductive bias]]: parametric models are fast, data-efficient and
+      interpretable when the assumed form is roughly right, but stay biased however much data is
+      collected when it is wrong. In classical statistics 'parametric' also describes methods that
+      assume the data come from a known family of distributions, such as the normal, as t-tests do.
+      Neural networks are formally parametric, but with millions to trillions of
+      [[parameter|parameters]] they behave in many respects like flexible nonparametric models.
+    example: >-
+      A parametric model assumes the shape up front; with only 80 observations, that assumption is
+      worth making.
+origin: >-
+  The parametric–nonparametric distinction took shape in 1940s statistics, when methods free of
+  assumptions about distributional parameters were named 'non-parametric' (earliest known use: Jacob
+  Wolfowitz, 1942). The machine-learning usage, contrasting fixed-size models with models that grow
+  with the data, became standard in textbooks of the 1990s–2000s.
+see_also:
+  - nonparametric model
+  - linear regression
+  - logistic regression
+  - inductive bias
+  - parameter
+  - bias–variance tradeoff
+contrast:
+  - nonparametric model
