@@ -122,10 +122,11 @@
 }
 
 @theme {
-  /* The design's own breakpoints: tablet, reading column, full three-column entry. */
-  --breakpoint-md: 900px;
-  --breakpoint-lg: 1100px;
-  --breakpoint-xl: 1240px;
+  /* The design's own breakpoints: tablet (900px), reading column (1100px), three-column entry (1240px). */
+  /* In rem like Tailwind's defaults (sm 40rem, 2xl 96rem), so breakpoints sort correctly. */
+  --breakpoint-md: 56.25rem;
+  --breakpoint-lg: 68.75rem;
+  --breakpoint-xl: 77.5rem;
 }
 
 @theme inline {

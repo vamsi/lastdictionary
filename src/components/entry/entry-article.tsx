@@ -190,7 +190,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
           {entry.as_of && <SideBox label="Current as of">{monthLabel(entry.as_of)}</SideBox>}
           {!annotated && (
             <>
-              <div className="sm:col-span-2 md:col-span-1">
+              <div className="sm:max-md:col-span-2">
                 <EntryActions
                   id={entry.id}
                   citation={citation(dict, entry)}
