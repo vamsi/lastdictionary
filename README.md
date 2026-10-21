@@ -1,6 +1,6 @@
 # The Last Dictionary
 
-**The dictionary of intelligence.** 2,709 words of AI, from Bayes' theorem to superintelligence, each defined in plain words first, then precisely, with the year it was born.
+**The dictionary of intelligence.** <!-- n:entries -->2,709<!-- /n --> words of AI, from Bayes' theorem to superintelligence, each defined in plain words first, then precisely, with the year it was born.
 
 Live site: **https://lastdictionary.com**
 
@@ -32,7 +32,7 @@ Corrections: edit the entry's file under `data/entries/` and open a pull request
 data/
   entries/<id>.yaml     one file per word — the source of truth
   meta.yaml             edition facts: title, edition, editor, suggested words
-  taxonomy.yaml         the 7 families, 28 domains, labels, levels and parts of speech
+  taxonomy.yaml         families, domains, labels, levels and parts of speech
   schema/entry.schema.json   JSON Schema generated from src/lib/schema.ts (editor autocompletion)
   LICENSE               CC BY 4.0 for the text
 ```

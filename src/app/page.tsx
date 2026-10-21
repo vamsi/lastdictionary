@@ -7,7 +7,7 @@ import { HashRedirect } from "@/components/site/hash-redirect";
 import { HeroSearch } from "@/components/site/hero-search";
 import { familyOfDomain, poolIndexForDate, tryWordsForDate } from "@/lib/derive";
 import { getDictionary } from "@/lib/dictionary";
-import { nf, ordinalDate, yearLabel } from "@/lib/format";
+import { capitalize, nf, numberWord, ordinalDate, yearLabel } from "@/lib/format";
 import { domainPath, entryPath, TAGLINE } from "@/lib/site";
 import { datasetNode, pageGraph, termSetNode, webPageNode } from "@/lib/structured-data";
 
@@ -109,7 +109,7 @@ export default function HomePage() {
 
       <section className="mt-[72px]">
         <BlockHeading
-          title="Seven families of words"
+          title={`${capitalize(numberWord(dict.families.length))} families of words`}
           aside={
             <Link
               href="/contents"

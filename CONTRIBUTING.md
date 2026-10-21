@@ -90,7 +90,7 @@ pnpm dev          # look at the page
 
 `pnpm validate` fails on: invalid YAML, unknown fields, a file whose name differs from its `id`, a `see_also` that matches no headword or alias, a `[[link]]` to a missing entry, a reserved id, a person without `sort_as`, a leftover `TODO:` placeholder. It warns about things worth a second look.
 
-CI runs `pnpm check` (validate, typecheck, lint, tests) and a full build on every pull request, and a bot comment lists the entries you changed.
+CI runs `pnpm check` (validate, typecheck, lint, tests) and a full build on every pull request, and a bot comment lists the entries you changed. The entry count quoted in the README is generated: `pnpm build:data` (which `pnpm build` and `pnpm dev` run for you) refreshes it, and CI fails if the committed README is stale.
 
 ## Pull request checklist
 

@@ -7,7 +7,7 @@
  *   data/schema/entry.schema.json JSON Schema for editor validation of entry files (committed)
  * Runs before `next dev` and `next build`.
  */
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
 import { toDictionaryCsv, toDictionaryJson } from "../src/lib/canonical";
@@ -113,6 +113,23 @@ writeFileSync(
     2,
   )}\n`,
 );
+
+// The README quotes a few counts between <!-- n:key --> markers; keep them in step with the data.
+const readmePath = join(ROOT, "README.md");
+const counts: Record<string, string> = {
+  entries: dict.entries.length.toLocaleString("en-US"),
+  families: String(dict.families.length),
+  domains: String(Object.keys(dict.taxonomy.domains).length),
+  essentials: dict.essentials.length.toLocaleString("en-US"),
+};
+const readme = readFileSync(readmePath, "utf8");
+const synced = readme.replace(/<!-- n:(\w+) -->[^<]*<!-- \/n -->/g, (m: string, key: string) =>
+  key in counts ? `<!-- n:${key} -->${counts[key]}<!-- /n -->` : m,
+);
+if (synced !== readme) {
+  writeFileSync(readmePath, synced);
+  console.log("build:data refreshed the counts in README.md");
+}
 
 console.log(
   `build:data ${dict.entries.length} entries → public/data/*, public/search.json, public/pool.json, public/llms*.txt, data/schema/entry.schema.json (${Date.now() - started} ms)`,

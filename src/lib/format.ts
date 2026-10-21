@@ -42,6 +42,31 @@ export function ordinalDate(date: Date): string {
   return `${n}${suffix} ${MONTHS[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
 }
 
+const WORDS = [
+  "zero",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+  "eleven",
+  "twelve",
+];
+
+/** Small counts as words ("seven"), larger ones as figures ("2,709"), so prose follows the data. */
+export function numberWord(n: number): string {
+  return Number.isInteger(n) && n >= 0 && n < WORDS.length ? (WORDS[n] as string) : nf(n);
+}
+
+export function capitalize(s: string): string {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
 export function plural(n: number, one: string, many = `${one}s`): string {
   return `${nf(n)} ${n === 1 ? one : many}`;
 }

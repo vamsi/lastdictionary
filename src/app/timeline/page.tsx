@@ -4,17 +4,21 @@ import { JsonLd } from "@/components/json-ld";
 import { PageHeader } from "@/components/page-header";
 import { decadePath, yearsOf } from "@/components/timeline/decades";
 import { levelRank } from "@/lib/derive";
-import { getDictionary } from "@/lib/dictionary";
+import { type Dictionary, getDictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";
 import { entryPath } from "@/lib/site";
 import { breadcrumbs, pageGraph, webPageNode } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "Timeline",
-  description:
-    "The history of AI told through the birth years of its words, from 1591 to today, decade by decade.",
-  alternates: { canonical: "/timeline" },
-};
+const describe = (dict: Dictionary) =>
+  `The history of AI told through the birth years of its words, from ${dict.years.min} to today, decade by decade.`;
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "Timeline",
+    description: describe(getDictionary()),
+    alternates: { canonical: "/timeline" },
+  };
+}
 
 export default function TimelinePage() {
   const dict = getDictionary();
@@ -26,8 +30,7 @@ export default function TimelinePage() {
           webPageNode(dict, {
             path: "/timeline",
             name: "Timeline",
-            description:
-              "The history of AI told through the birth years of its words, from 1591 to today, decade by decade.",
+            description: describe(dict),
             type: "CollectionPage",
             breadcrumb: breadcrumbs(dict, [{ name: "Timeline", path: "/timeline" }]),
           }),

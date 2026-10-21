@@ -2,17 +2,21 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
 import Link from "@/components/link";
 import { PageHeader } from "@/components/page-header";
-import { getDictionary } from "@/lib/dictionary";
-import { nf } from "@/lib/format";
+import { type Dictionary, getDictionary } from "@/lib/dictionary";
+import { capitalize, nf, numberWord } from "@/lib/format";
 import { domainPath } from "@/lib/site";
 import { breadcrumbs, pageGraph, webPageNode } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "Contents",
-  description:
-    "Seven families of words, each divided into domains: the map of The Last Dictionary.",
-  alternates: { canonical: "/contents" },
-};
+const describe = (dict: Dictionary) =>
+  `${capitalize(numberWord(dict.families.length))} families of words, each divided into domains: the map of The Last Dictionary.`;
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "Contents",
+    description: describe(getDictionary()),
+    alternates: { canonical: "/contents" },
+  };
+}
 
 export default function ContentsPage() {
   const dict = getDictionary();
@@ -25,8 +29,7 @@ export default function ContentsPage() {
           webPageNode(dict, {
             path: "/contents",
             name: "Contents",
-            description:
-              "Seven families of words, each divided into domains: the map of The Last Dictionary.",
+            description: describe(dict),
             type: "CollectionPage",
             breadcrumb: breadcrumbs(dict, [{ name: "Contents", path: "/contents" }]),
           }),
@@ -36,8 +39,8 @@ export default function ContentsPage() {
         kicker={`${nf(dict.entries.length)} entries · ${domainCount} domains`}
         title="Contents"
       >
-        Seven families of words, each divided into domains. Every entry has one home domain and up
-        to three neighbors.
+        {capitalize(numberWord(dict.families.length))} families of words, each divided into domains.
+        Every entry has one home domain and up to three neighbors.
       </PageHeader>
       {dict.families.map((f, i) => (
         <section
