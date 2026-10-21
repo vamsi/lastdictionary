@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: causal mediation analysis
+id: causal-mediation-analysis
+pos: n.
+also:
+  - mediation analysis
+  - natural indirect effect
+  - direct and indirect effects
+domain: interp
+domains:
+  - math
+level: specialist
+plain: >-
+  A statistical method for splitting a cause's effect into the part that flows through some
+  go-between and the part that does not; in AI it is used to find which internal parts carry a
+  behavior.
+senses:
+  - context: Statistics
+    definition: >-
+      A family of methods for decomposing the effect of a treatment on an outcome into an indirect
+      effect, transmitted through an intermediate variable (the mediator), and a direct effect
+      through all other paths. Modern definitions are counterfactual: the natural indirect effect is
+      the change in the outcome when the mediator is set to the value it would take under treatment
+      while the treatment itself is held at its control value. Identifying these effects from data
+      requires strong assumptions, notably no unmeasured confounding of the mediator and outcome.
+  - context: Interpretability
+    definition: >-
+      The application of the same decomposition to a neural network, treating a change to the input
+      as the treatment, a neuron, [[attention-head|attention head]] or layer as the mediator and the
+      model's output as the outcome. The indirect effect is estimated by setting the mediator to the
+      value it takes under the changed input, which is [[activation-patching|activation patching]].
+      Jesse Vig and colleagues used it in 2020 to locate the components of GPT-2 that carry gender
+      bias, and it underlies [[causal-tracing|causal tracing]].
+    example: >-
+      Causal mediation analysis put most of the gender-bias effect in a few heads in the middle
+      layers.
+origin: >-
+  Mediation analysis was popularized in psychology by Reuben Baron and David Kenny (1986);
+  counterfactual definitions of direct and indirect effects were given by James Robins and Sander
+  Greenland (1992) and Judea Pearl (2001). Jesse Vig, Sebastian Gehrmann, Yonatan Belinkov and
+  colleagues brought it to neural-network interpretability (NeurIPS 2020).
+see_also:
+  - activation patching
+  - causal tracing
+  - causal inference
+  - counterfactual
+  - causal abstraction
+sources:
+  - text: >-
+      Vig, J., Gehrmann, S., Belinkov, Y., Qian, S., Nevo, D., Singer, Y. & Shieber, S. (2020).
+      Investigating Gender Bias in Language Models Using Causal Mediation Analysis. NeurIPS 2020.
+  - text: Pearl, J. (2001). Direct and Indirect Effects. Proceedings of UAI 2001.

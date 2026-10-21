@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Virology Capabilities Test
+id: virology-capabilities-test
+pos: prop. n.
+also:
+  - VCT
+domain: eval
+domains:
+  - sec
+  - safety
+level: specialist
+plain: >-
+  A hard test of practical laboratory virology know-how, used to check whether AI models know enough
+  about working with viruses that they might help someone misuse biology.
+senses:
+  - definition: >-
+      A [[benchmark|benchmark]] of 322 multimodal, multiple-response questions on practical
+      virology, designed to measure expert, hands-on laboratory knowledge — especially
+      troubleshooting of experimental protocols — that is rarely written down and hard to find
+      online. Virologists with doctorates wrote and vetted the questions, many of which show images
+      of experimental results. The test proved hard for people: in its first evaluation, virologists
+      answering only questions within their own specialties averaged about 22% accuracy, whereas
+      OpenAI's o3 reached about 44%, a score above that of 94% of those experts. Because such tacit
+      knowledge is a bottleneck for biological misuse, the test serves as a proxy for
+      [[cbrn-risk|biological risk]] in [[dangerous-capability-evaluation|dangerous-capability
+      evaluations]] and in developers' [[system-card|system cards]]; the questions are not released
+      publicly, which limits both misuse and [[data-contamination|contamination]]. A high score
+      shows knowledge, not the ability to carry out an attack, which [[uplift-study|uplift studies]]
+      measure more directly.
+    example: >-
+      The model beat the expert baseline on the Virology Capabilities Test, so the enhanced
+      biosecurity safeguards were switched on.
+origin: >-
+  Introduced in April 2025 by Jasper Götting, Pedro Medeiros, Jon G. Sanders, Nathaniel Li, Long
+  Phan, Karam Elabd, Lennart Justen, Dan Hendrycks and Seth Donoughe, of SecureBio, the Center for
+  AI Safety and other institutions, in 'Virology Capabilities Test (VCT): A Multimodal Virology Q&A
+  Benchmark'.
+year: 2025
+note: >-
+  Distinct from [[wmdp|WMDP]], a larger, public multiple-choice benchmark of hazardous knowledge
+  built partly to measure [[machine-unlearning|unlearning]].
+see_also:
+  - CBRN risk
+  - biosecurity
+  - dangerous capability evaluation
+  - WMDP
+  - uplift study
+  - Humanity's Last Exam
+  - Center for AI Safety
+sources:
+  - text: >-
+      Götting, J. et al. (2025). Virology Capabilities Test (VCT): A Multimodal Virology Q&A
+      Benchmark. arXiv:2504.16137.
+    url: https://arxiv.org/abs/2504.16137
+as_of: 2026-10

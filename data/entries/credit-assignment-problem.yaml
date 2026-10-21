@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: credit assignment problem
+id: credit-assignment-problem
+pos: n.
+also:
+  - credit assignment
+  - temporal credit assignment
+  - structural credit assignment
+domain: rl
+domains:
+  - dl
+level: core
+plain: >-
+  The puzzle of figuring out which of many earlier decisions, or which parts of a system, deserve
+  the credit or blame for a final outcome — like working out which moves won a chess game.
+senses:
+  - definition: >-
+      The problem of determining how responsibility for an outcome should be distributed among the
+      decisions or components that produced it, so that learning can adjust the right ones. Temporal
+      credit assignment asks which of a sequence of [[action|actions]] caused a delayed
+      [[reward|reward]] — the central difficulty of [[reinforcement-learning|reinforcement
+      learning]], addressed by [[value-function|value functions]],
+      [[temporal-difference-learning|temporal difference learning]], [[eligibility-trace|eligibility
+      traces]] and [[advantage-function|advantage]] estimates. Structural credit assignment asks
+      which internal parameters or units of a system are responsible for an error, the problem that
+      [[backpropagation|backpropagation]] solves for neural networks. Long horizons make temporal
+      credit assignment harder, because the signal must cross many steps and is diluted by
+      randomness. In [[large-language-model|large language model]] RL with one reward per response,
+      deciding which tokens or reasoning steps deserve credit motivates
+      [[process-reward-model|process reward models]] and per-step value estimates.
+    example: >-
+      With a single reward at the end of a 300-step episode, credit assignment is our real
+      bottleneck.
+origin: >-
+  Marvin Minsky identified the credit assignment problem in 'Steps Toward Artificial Intelligence'
+  (Proceedings of the IRE, 1961), asking how a learning machine could apportion credit for success
+  among the many decisions that produced it. Richard Sutton's 1984 PhD thesis, 'Temporal Credit
+  Assignment in Reinforcement Learning', separated its temporal and structural forms.
+year: 1961
+see_also:
+  - temporal difference learning
+  - eligibility trace
+  - advantage function
+  - sparse reward
+  - backpropagation
+  - process reward model
+sources:
+  - text: >-
+      Minsky, M. (1961). Steps Toward Artificial Intelligence. Proceedings of the IRE 49(1), 8–30.
+  - text: >-
+      Sutton, R. S. (1984). Temporal Credit Assignment in Reinforcement Learning. PhD thesis,
+      University of Massachusetts Amherst.

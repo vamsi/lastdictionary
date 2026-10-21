@@ -1,0 +1,286 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://lastdictionary.com/schema/entry.schema.json",
+  "title": "The Last Dictionary entry",
+  "description": "One dictionary entry, stored as data/entries/<id>.yaml. Generated from src/lib/schema.ts by `pnpm build:data`; do not edit by hand.",
+  "type": "object",
+  "properties": {
+    "term": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The headword, written as it is most often written."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "URL slug and file name: lowercase letters, digits and hyphens. Never changes once published."
+    },
+    "sort_as": {
+      "description": "How to file the word alphabetically when that differs from the headword. People are filed by surname: 'Turing Alan'.",
+      "type": "string",
+      "minLength": 1
+    },
+    "pos": {
+      "type": "string",
+      "enum": [
+        "n.",
+        "v.",
+        "adj.",
+        "adv.",
+        "abbr.",
+        "phr.",
+        "prop. n."
+      ],
+      "description": "Part of speech, abbreviated: n., v., adj., adv., abbr., phr., prop. n."
+    },
+    "also": {
+      "description": "Other names, spellings and abbreviations. They appear in the A–Z and work in search.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "pronunciation": {
+      "description": "A simple respelling, e.g. 'AY-star', when the reading is not obvious.",
+      "type": "string",
+      "minLength": 1
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "core",
+        "math",
+        "sym",
+        "hist",
+        "ml",
+        "dl",
+        "rl",
+        "train",
+        "data",
+        "llm",
+        "gen",
+        "percep",
+        "robot",
+        "infer",
+        "hw",
+        "agents",
+        "eng",
+        "eval",
+        "interp",
+        "safety",
+        "sec",
+        "asi",
+        "gov",
+        "society",
+        "mind",
+        "culture",
+        "people",
+        "orgs"
+      ],
+      "description": "The home domain. See data/taxonomy.yaml for codes."
+    },
+    "domains": {
+      "description": "Up to three neighboring domains.",
+      "maxItems": 3,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "core",
+          "math",
+          "sym",
+          "hist",
+          "ml",
+          "dl",
+          "rl",
+          "train",
+          "data",
+          "llm",
+          "gen",
+          "percep",
+          "robot",
+          "infer",
+          "hw",
+          "agents",
+          "eng",
+          "eval",
+          "interp",
+          "safety",
+          "sec",
+          "asi",
+          "gov",
+          "society",
+          "mind",
+          "culture",
+          "people",
+          "orgs"
+        ]
+      }
+    },
+    "labels": {
+      "description": "Usage labels for the whole entry: emerging, contested, legal, ...",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "emerging",
+          "slang",
+          "informal",
+          "historical",
+          "deprecated",
+          "contested",
+          "figurative",
+          "trademark",
+          "legal"
+        ]
+      }
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "essential",
+        "core",
+        "specialist"
+      ],
+      "description": "essential (a newcomer needs it), core (working vocabulary) or specialist (research and niche terms)."
+    },
+    "dates": {
+      "description": "For people: life dates, e.g. '1912–1954' or 'b. 1977'.",
+      "type": "string",
+      "minLength": 1
+    },
+    "plain": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One or two sentences anyone can follow. The reader starts here."
+    },
+    "senses": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "context": {
+            "description": "The field or setting in which this sense applies, e.g. 'Interpretability'. Used when a word has several senses.",
+            "type": "string",
+            "minLength": 1
+          },
+          "definition": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The precise definition. May contain [[id|text]] cross-links to other entries and `code`."
+          },
+          "example": {
+            "description": "One sentence using the word the way practitioners use it.",
+            "type": "string",
+            "minLength": 1
+          },
+          "labels": {
+            "description": "Usage labels that apply to this sense only.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "emerging",
+                "slang",
+                "informal",
+                "historical",
+                "deprecated",
+                "contested",
+                "figurative",
+                "trademark",
+                "legal"
+              ]
+            }
+          }
+        },
+        "required": [
+          "definition"
+        ],
+        "additionalProperties": false
+      },
+      "description": "The precise definitions, numbered when a word has several meanings."
+    },
+    "formula_latex": {
+      "description": "A defining formula in LaTeX, rendered as MathML.",
+      "type": "string",
+      "minLength": 1
+    },
+    "origin": {
+      "description": "Who introduced the word, when and where, stated only as firmly as the evidence allows. May contain cross-links.",
+      "type": "string",
+      "minLength": 1
+    },
+    "year": {
+      "description": "First known use in this sense (or founding year for organizations). Places the word on the timeline.",
+      "type": "integer",
+      "minimum": -5000,
+      "maximum": 2200
+    },
+    "note": {
+      "description": "Usage note: common confusions, disputes and advice. May contain cross-links.",
+      "type": "string",
+      "minLength": 1
+    },
+    "see_also": {
+      "description": "Related entries, by headword or alias (not by id).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "contrast": {
+      "description": "Opposites and easily confused neighbors, by headword or alias.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sources": {
+      "description": "Primary sources for the origin and the definition.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The citation as it should be read: authors, year, title, venue or publisher. Written fresh, not pasted from a reference manager."
+          },
+          "url": {
+            "description": "A link to the source when one exists.",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "standards": {
+      "description": "Where a statute or standard defines the term: the instrument and article, paraphrased.",
+      "type": "string",
+      "minLength": 1
+    },
+    "as_of": {
+      "description": "For time-sensitive entries, the month the facts were last checked, as YYYY-MM.",
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}$"
+    }
+  },
+  "required": [
+    "term",
+    "id",
+    "pos",
+    "domain",
+    "level",
+    "plain",
+    "senses"
+  ],
+  "additionalProperties": false
+}

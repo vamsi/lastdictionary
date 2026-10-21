@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reinforcement learning with verifiable rewards
+id: reinforcement-learning-with-verifiable-rewards
+pos: n.
+also:
+  - RLVR
+  - verifiable rewards
+  - verifiable reward
+  - reinforcement learning from verifiable rewards
+domain: train
+domains:
+  - rl
+  - llm
+labels:
+  - emerging
+level: core
+plain: >-
+  Training an AI by letting it attempt problems whose answers can be checked automatically — a math
+  result, a passing program — and rewarding it only when the check succeeds.
+senses:
+  - definition: >-
+      Reinforcement-learning fine-tuning of a language model in which the [[reward|reward]] comes
+      from a programmatic check of the output rather than from a learned [[reward-model|reward
+      model]]: exact match of a final math answer, passing a hidden test suite, a compiler or proof
+      checker, or satisfaction of a format or instruction constraint. Because such rewards are hard
+      to fool, policies can be optimized far longer than against learned rewards, and models trained
+      this way learn to produce long [[chain-of-thought|chains of thought]] with checking,
+      backtracking and alternative strategies, the basis of [[reasoning-model|reasoning models]].
+      Typical algorithms are [[proximal-policy-optimization|proximal policy optimization]],
+      [[group-relative-policy-optimization|group relative policy optimization]] and their variants,
+      applied to a base or SFT model over thousands to millions of problems. Limits: rewards are
+      usually sparse and binary, many valuable tasks have no checker, and imperfect checkers can
+      still be gamed ([[reward-hacking|reward hacking]]); [[rubric-reward|rubric rewards]] and
+      [[process-reward-model|process rewards]] extend the idea beyond strictly verifiable domains.
+    example: >-
+      The RLVR run used 40,000 competition problems with integer answers, plus a sandbox that ran
+      unit tests for code.
+origin: >-
+  The name was introduced by Nathan Lambert and colleagues at the Allen Institute for AI in the Tülu
+  3 report (November 2024). Rewarding correct final answers had precedents including STaR (2022) and
+  ReFT (2024); OpenAI's o1 (September 2024) showed the payoff of large-scale RL for reasoning, and
+  DeepSeek-R1 (January 2025), trained with rule-based accuracy and format rewards, made the approach
+  widely reproduced.
+year: 2024
+note: >-
+  Whether RLVR teaches new reasoning or mainly makes already-reachable solutions more likely is
+  debated: some 2025 studies found base models match RL-trained ones when allowed many attempts
+  ([[pass-k|pass@k]] at large k), while others report new capabilities after prolonged training.
+  'Verifiable' means automatically checkable, not formally proven.
+see_also:
+  - reasoning model
+  - group relative policy optimization
+  - verifier
+  - outcome reward model
+  - rubric reward
+  - reinforcement fine-tuning
+  - DeepSeek-R1
+  - RL environment
+contrast:
+  - reinforcement learning from human feedback
+sources:
+  - text: >-
+      Lambert, N. et al. (2024). Tülu 3: Pushing Frontiers in Open Language Model Post-Training.
+      arXiv:2411.15124.
+    url: https://arxiv.org/abs/2411.15124
+  - text: >-
+      DeepSeek-AI (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement
+      Learning. arXiv:2501.12948 (revised version published in Nature, 2025).
+    url: https://arxiv.org/abs/2501.12948
+  - text: >-
+      Luong, T. Q. et al. (2024). ReFT: Reasoning with Reinforced Fine-Tuning. arXiv:2401.08967.
+    url: https://arxiv.org/abs/2401.08967
+as_of: 2026-10

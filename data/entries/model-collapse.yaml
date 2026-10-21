@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model collapse
+id: model-collapse
+pos: n.
+also:
+  - model autophagy disorder
+  - MAD
+  - Habsburg AI
+  - AI inbreeding
+domain: data
+domains:
+  - gen
+  - train
+labels:
+  - contested
+level: core
+plain: >-
+  The gradual decline of AI models trained on the output of earlier AI models: rare details vanish
+  first, then quality and variety erode, like a photocopy of a photocopy.
+senses:
+  - definition: >-
+      Progressive loss of fidelity in generative models that are trained, generation after
+      generation, on content produced by their predecessors, so that each new model represents the
+      real data distribution less faithfully than the last. Because each generation samples from,
+      and slightly misestimates, the previous model's distribution, low-probability events are
+      underrepresented and then lost. Researchers describe two stages: first the rare cases at the
+      edges of the distribution thin out, removing unusual and minority content while typical
+      outputs still look fine; eventually outputs narrow into a distorted, low-variety distribution
+      that has drifted far from the original. The effect has been demonstrated for language models,
+      variational autoencoders, Gaussian mixture models and image generators. Its practical
+      importance is debated: experiments in which synthetic data accumulates alongside the original
+      human data, rather than replacing it, avoid collapse, and curated, verified
+      [[synthetic-data|synthetic data]] is widely used to improve models. The concern persists
+      because a growing share of web text is AI-generated (see [[ai-slop|AI slop]]).
+    example: >-
+      After five generations trained only on their own outputs, the models had forgotten every rare
+      dog breed.
+origin: >-
+  Named by Ilia Shumailov, Zakhar Shumaylov, Yiren Zhao, Yarin Gal, Nicolas Papernot and Ross
+  Anderson in 'The Curse of Recursion: Training on Generated Data Makes Models Forget' (arXiv, May
+  2023), published in Nature in July 2024. Sina Alemohammad and colleagues described the same effect
+  as 'Model Autophagy Disorder' (2023).
+year: 2023
+note: >-
+  Not to be confused with [[mode-collapse|mode collapse]] in generative adversarial networks, where
+  a generator fails to cover the data's variety during training, or
+  [[catastrophic-forgetting|catastrophic forgetting]], the loss of old skills during fine-tuning.
+see_also:
+  - synthetic data
+  - AI slop
+  - long tail
+  - data provenance
+  - data wall
+contrast:
+  - mode collapse
+  - catastrophic forgetting
+sources:
+  - text: >-
+      Shumailov, I., Shumaylov, Z., Zhao, Y., Papernot, N., Anderson, R. & Gal, Y. (2024). AI Models
+      Collapse When Trained on Recursively Generated Data. Nature 631, 755–759.
+  - text: >-
+      Shumailov, I. et al. (2023). The Curse of Recursion: Training on Generated Data Makes Models
+      Forget. arXiv:2305.17493.
+    url: https://arxiv.org/abs/2305.17493
+  - text: >-
+      Gerstgrasser, M. et al. (2024). Is Model Collapse Inevitable? Breaking the Curse of Recursion
+      by Accumulating Real and Synthetic Data. arXiv preprint.

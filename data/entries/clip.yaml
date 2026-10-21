@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: CLIP
+id: clip
+pos: prop. n.
+also:
+  - Contrastive Language–Image Pre-training
+  - OpenCLIP
+  - SigLIP
+  - ALIGN
+pronunciation: klip
+domain: percep
+domains:
+  - dl
+  - gen
+level: core
+plain: >-
+  An OpenAI model that learned to match pictures with their captions from hundreds of millions of
+  web examples, so it can judge how well any piece of text describes any image.
+senses:
+  - definition: >-
+      'Contrastive Language–Image Pre-training': a pair of encoders, one for images (a
+      [[resnet|ResNet]] or [[vision-transformer|vision transformer]]) and one for text (a
+      [[transformer|transformer]]), trained so that a picture and its caption land close together in
+      a shared [[embedding|embedding]] space. In each batch of N captioned images, every image must
+      pick its own caption from all N, and every caption its own image, via a two-way
+      [[cross-entropy|cross-entropy]] (InfoNCE) objective over [[cosine-similarity|cosine
+      similarities]] scaled by a learned [[temperature|temperature]]. Trained on some 400 million
+      captioned web images, CLIP classifies 'zero-shot' by embedding a prompt such as 'a photo of a
+      dog' for each class and choosing the nearest; so it equaled a supervised ResNet-50 on
+      [[imagenet|ImageNet]] without using any ImageNet training labels. CLIP-style encoders became
+      core infrastructure: text encoders for [[text-to-image-model|text-to-image models]] such as
+      [[stable-diffusion|Stable Diffusion]], vision encoders for
+      [[vision-language-model|vision-language models]], image search, dataset filtering (as for
+      [[laion-5b|LAION-5B]]) and the [[clip-score|CLIP score]] metric. Weaknesses include poor
+      counting and spatial reasoning, sensitivity to text inside images, and social biases absorbed
+      from web data.
+    example: >-
+      We rank the generated images by CLIP score against the prompt and keep the top four.
+formula_latex: \mathcal{L} = -\frac{1}{2N}\sum_{i=1}^{N}\left[\log\frac{e^{s_{ii}/\tau}}{\sum_{j}
+  e^{s_{ij}/\tau}} + \log\frac{e^{s_{ii}/\tau}}{\sum_{j} e^{s_{ji}/\tau}}\right]
+origin: >-
+  Introduced by Alec Radford, Jong Wook Kim, Chris Hallacy and colleagues at OpenAI, announced in
+  January 2021 with the paper 'Learning Transferable Visual Models From Natural Language
+  Supervision' (arXiv February 2021; ICML 2021). Google's ALIGN (2021), the open reproduction
+  OpenCLIP (from 2021) and Google's sigmoid-loss SigLIP (2023) followed.
+year: 2021
+note: >-
+  OpenAI released CLIP's weights but not its training data; open replications trained on LAION data
+  made CLIP-style models widely reproducible. In the formula, s_ij is the cosine similarity of image
+  i and text j, and τ the temperature.
+see_also:
+  - contrastive learning
+  - vision-language model
+  - zero-shot learning
+  - text-to-image model
+  - embedding
+  - vision transformer
+  - open-vocabulary detection
+sources:
+  - text: >-
+      Radford, A. et al. (2021). Learning Transferable Visual Models From Natural Language
+      Supervision. ICML 2021.
+    url: https://arxiv.org/abs/2103.00020
+  - text: >-
+      Zhai, X., Mustafa, B., Kolesnikov, A. & Beyer, L. (2023). Sigmoid Loss for Language Image
+      Pre-Training. ICCV 2023.

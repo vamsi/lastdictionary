@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neural architecture search
+id: neural-architecture-search
+pos: n.
+also:
+  - NAS
+  - architecture search
+  - differentiable architecture search
+  - DARTS
+domain: dl
+domains:
+  - ml
+  - eng
+level: specialist
+plain: >-
+  Using an automated search, rather than human trial and error, to design the structure of a neural
+  network: which layers to use, how many, and how to connect them.
+senses:
+  - definition: >-
+      The automated design of [[neural-network|neural network]] architectures; in the widely used
+      taxonomy of Thomas Elsken, Jan Hendrik Metzen and Frank Hutter (2019), a method is defined by
+      three choices: a search space (the operations and connection patterns allowed, often as
+      repeated 'cells'), a search strategy (reinforcement learning, evolutionary algorithms,
+      Bayesian optimization, random search or gradient-based relaxation) and a
+      performance-estimation strategy (full training, short training, learning-curve extrapolation
+      or shared-weight proxies). Early methods trained thousands of candidates and consumed
+      thousands of GPU-days; [[weight-sharing|weight sharing]] ('one-shot') methods such as ENAS and
+      differentiable methods such as DARTS, which relax discrete choices into continuous weights
+      optimized by [[gradient-descent|gradient descent]], cut this to a few GPU-days. NAS produced
+      NASNet, AmoebaNet, MnasNet and the EfficientNet base network, and hardware-aware NAS optimizes
+      for latency on target devices. Critics showed that well-tuned random search is a strong
+      baseline and that reported gains depend heavily on the search space and training recipe. NAS
+      is part of [[automl|AutoML]].
+    example: >-
+      Hardware-aware NAS found a model 1.8 times faster on the phone at the same accuracy.
+origin: >-
+  Evolving network topologies (neuroevolution) dates to the late 1980s; NEAT (Kenneth Stanley and
+  Risto Miikkulainen, 2002) became its best-known method. The term was popularized by Barret Zoph
+  and Quoc Le's 'Neural Architecture Search with Reinforcement Learning' (arXiv, November 2016; ICLR
+  2017), in which a recurrent controller trained by reinforcement learning proposed architectures;
+  DARTS (Hanxiao Liu, Karen Simonyan and Yiming Yang, 2018) made the search differentiable.
+year: 2016
+see_also:
+  - AutoML
+  - hyperparameter tuning
+  - weight sharing
+  - evolutionary computation
+  - hypernetwork
+  - depthwise separable convolution
+sources:
+  - text: >-
+      Zoph, B. & Le, Q. V. (2016). Neural Architecture Search with Reinforcement Learning.
+      arXiv:1611.01578; ICLR 2017.
+    url: https://arxiv.org/abs/1611.01578

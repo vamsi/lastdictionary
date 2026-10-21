@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agent loop
+id: agent-loop
+pos: n.
+also:
+  - agentic loop
+  - tool loop
+  - think–act–observe loop
+domain: agents
+domains:
+  - llm
+  - rl
+level: core
+plain: >-
+  The repeating cycle at the heart of an AI agent: the model decides what to do next, software
+  carries it out, the result is shown to the model, and the cycle repeats until the task is
+  finished.
+senses:
+  - definition: >-
+      The control loop that runs an [[ai-agent|AI agent]]. On each turn the [[harness|harness]]
+      sends the accumulated [[context-window|context]] — instructions, conversation, tool
+      definitions and earlier results — to the model; the model replies either with one or more
+      [[tool-call|tool calls]] or with a final answer; the harness executes the calls, appends their
+      results as observations and calls the model again. The loop ends at a [[stop-condition|stop
+      condition]]: the model answers without requesting a tool, a turn or token budget runs out, a
+      human interrupts, or a check such as a test suite passes. Because every step re-reads a
+      growing context, long loops rely on [[compaction|compaction]] or [[subagent|subagents]] to
+      stay within the window. The design descends from the observation–action cycle of
+      [[reinforcement-learning|reinforcement learning]] and from the reason–act–observe pattern of
+      [[react|ReAct]].
+    example: >-
+      Most of the agent loop's time goes to waiting on the test runner, not on the model.
+origin: >-
+  The perception–action cycle is as old as agent-based AI. For language models the loop was set out
+  by [[react|ReAct]] (Shunyu Yao et al., 2022) and popularized by LangChain agents and
+  [[autogpt|AutoGPT]] in 2023; native [[function-calling|function calling]] APIs, introduced by
+  OpenAI in June 2023, made it the standard architecture of agent products.
+year: 2022
+note: >-
+  Some writers reserve 'agent loop' for the bare execution cycle and treat prompts, tool design and
+  memory as [[scaffolding|scaffolding]]; others use it for the whole runtime. Not to be confused
+  with a [[training-loop|training loop]]: the agent loop runs at inference time and updates no
+  weights.
+see_also:
+  - harness
+  - tool call
+  - stop condition
+  - ReAct
+  - scaffolding
+  - compaction
+  - context engineering
+contrast:
+  - training loop
+sources:
+  - text: >-
+      Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K. & Cao, Y. (2022). ReAct:
+      Synergizing Reasoning and Acting in Language Models. arXiv:2210.03629 (ICLR 2023).
+    url: https://arxiv.org/abs/2210.03629
+  - text: >-
+      Willison, S. (2025). I think 'agent' may finally have a widely enough agreed upon definition
+      to be useful jargon now. Simon Willison's Weblog.
+    url: https://simonwillison.net/2025/Sep/18/agents

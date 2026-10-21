@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: activation
+id: activation
+pos: n.
+also:
+  - activations
+  - activation value
+  - hidden activation
+domain: interp
+domains:
+  - dl
+level: core
+plain: >-
+  The numbers a neural network computes inside itself as it processes an input — a reading of which
+  of its artificial neurons are firing, and how strongly, at that moment.
+senses:
+  - context: Neural networks
+    definition: >-
+      The output value of a unit, or the vector of output values of a [[layer|layer]], produced
+      during a [[forward-pass|forward pass]] on a particular input — typically the result of
+      applying an [[activation-function|activation function]] to a weighted sum of the previous
+      layer's outputs. Unlike [[weights|weights]], which are fixed after training and shared across
+      inputs, activations are computed afresh for every input and every [[token|token]] position. In
+      [[transformer|transformers]] the term covers the [[residual-stream|residual stream]] vector at
+      each layer and position as well as the outputs of attention and [[multilayer-perceptron|MLP]]
+      sublayers. Activations are the main raw material of [[interpretability|interpretability]]:
+      they are recorded ('cached'), read with [[probing|probes]] and [[sparse-autoencoder|sparse
+      autoencoders]], overwritten in [[activation-patching|activation patching]] and shifted in
+      [[activation-steering|activation steering]]. In training they must be stored for
+      [[backpropagation|backpropagation]], making them a major consumer of accelerator memory.
+    example: >-
+      Cache the activations at every layer for these ten thousand prompts so we can train probes on
+      them.
+  - context: Informal
+    definition: >-
+      Shorthand for the [[activation-function|activation function]] applied at a layer, as in 'a
+      ReLU activation' or 'we swapped the activation to GELU'; context usually makes clear whether
+      the function or its output values are meant.
+origin: >-
+  Borrowed from neurophysiology, where a neuron is activated when it fires. 'Activation' was
+  standard in connectionist psychology by the early 1980s — for example in James McClelland and
+  David Rumelhart's 'interactive activation' model of word perception (1981) and the Parallel
+  Distributed Processing volumes (1986) — and carried over into deep learning.
+note: >-
+  Not to be confused with the [[activation-function|activation function]] (the nonlinearity) or with
+  [[activation-steering|activation steering]] (an intervention on activations). 'Activation memory'
+  in training means the storage these values take up between the forward and backward passes.
+see_also:
+  - activation space
+  - residual stream
+  - activation function
+  - forward pass
+  - activation patching
+  - probing
+  - activation steering
+contrast:
+  - weights

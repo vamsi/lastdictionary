@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: independent component analysis
+id: independent-component-analysis
+pos: n.
+also:
+  - ICA
+  - FastICA
+  - Infomax ICA
+  - blind source separation
+  - cocktail party problem
+domain: ml
+domains:
+  - math
+  - percep
+level: specialist
+plain: >-
+  A technique for unmixing signals that have been blended together, such as separating individual
+  voices from several microphones recording a crowded room.
+senses:
+  - definition: >-
+      A method that models observed multivariate data as linear mixtures of statistically
+      independent, non-Gaussian source signals and recovers both the sources and the mixing matrix
+      from the observations alone, a task called blind source separation. Whereas
+      [[principal-component-analysis|principal component analysis]] finds uncorrelated directions of
+      maximal variance, ICA seeks components that are fully independent, which requires statistics
+      beyond variance: algorithms maximize non-Gaussianity, measured by kurtosis or negentropy (as
+      in FastICA), or maximize likelihood or minimize [[mutual-information|mutual information]]
+      among the outputs (as in Infomax). Because mixtures tend to be more Gaussian than their
+      sources ([[central-limit-theorem|central limit theorem]]), maximizing non-Gaussianity recovers
+      them; at most one source may be Gaussian, and the order and scale of the sources cannot be
+      identified. ICA is used to separate audio sources, to remove eye-blink and muscle artifacts
+      from EEG and fMRI recordings, and to analyze financial and image data; applied to natural
+      images, it yields localized, oriented edge filters resembling receptive fields in the visual
+      cortex.
+    example: >-
+      ICA pulled the eye-blink artifacts out of the EEG as two clean components we could subtract.
+origin: >-
+  Jeanny Hérault and Bernard Ans (from 1984) and Christian Jutten (1985–86) developed
+  neural-network-like adaptive algorithms for blind source separation. Pierre Comon worked out its
+  theory from 1991 and gave the formal definition of independent component analysis in 'Independent
+  Component Analysis, a New Concept?' (1994). Anthony Bell and Terrence Sejnowski's Infomax
+  algorithm (1995) and Aapo Hyvärinen and Erkki Oja's FastICA (1997–2000) made it practical and
+  popular.
+year: 1984
+see_also:
+  - principal component analysis
+  - dimensionality reduction
+  - mutual information
+  - central limit theorem
+  - dictionary learning
+  - sparse autoencoder
+contrast:
+  - principal component analysis
+sources:
+  - text: >-
+      Comon, P. (1994). Independent Component Analysis, A New Concept? Signal Processing 36(3).
+  - text: >-
+      Bell, A. J. & Sejnowski, T. J. (1995). An Information-Maximization Approach to Blind
+      Separation and Blind Deconvolution. Neural Computation 7(6).
+  - text: >-
+      Hyvärinen, A. & Oja, E. (2000). Independent Component Analysis: Algorithms and Applications.
+      Neural Networks 13(4–5).

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: elastic weight consolidation
+id: elastic-weight-consolidation
+pos: n.
+also:
+  - EWC
+domain: train
+domains:
+  - dl
+level: specialist
+plain: >-
+  A way to help a neural network learn a new task without forgetting an old one, by making the
+  settings that mattered most for the old task harder to change, as if tied down with springs.
+senses:
+  - definition: >-
+      A regularization method for [[continual-learning|continual learning]] that makes the
+      [[weights|weights]] an earlier task relied on harder to move, in proportion to how much that
+      task depended on them. After training on task A, it estimates each parameter's importance with
+      the diagonal of the Fisher information matrix, a measure of how sharply the loss on A depends
+      on that parameter; while training on task B it adds a quadratic penalty pulling each parameter
+      toward its task-A value, weighted by that importance. Its authors pictured the penalty as
+      springs anchoring each weight to its old value, stiffer where the weight matters more; it can
+      also be derived as a Gaussian (Laplace) approximation to the posterior over weights after task
+      A, in a Bayesian treatment of sequential learning. In the original experiments it curbed
+      [[catastrophic-forgetting|catastrophic forgetting]] across sequences of MNIST-based tasks and
+      of Atari games, and it became a standard baseline. Its limits are the diagonal approximation,
+      penalties that accumulate over many tasks, and weaker results than replay in class-incremental
+      settings.
+    example: >-
+      With EWC the network kept most of its task-A accuracy after learning task B; without it,
+      accuracy collapsed.
+formula_latex: \mathcal{L}(\theta) = \mathcal{L}_B(\theta) + \sum_i \frac{\lambda}{2}\, F_i
+  \big(\theta_i - \theta^{*}_{A,i}\big)^2
+origin: >-
+  Introduced by James Kirkpatrick, Razvan Pascanu, Raia Hadsell and colleagues at DeepMind in a
+  paper posted in December 2016 and published in PNAS in 2017. The name alludes to synaptic
+  consolidation in neuroscience, in which some synapses become less plastic to protect memories.
+year: 2016
+note: >-
+  Related penalty-based methods include synaptic intelligence (2017) and memory-aware synapses
+  (2018). In LLM fine-tuning a [[kl-penalty|KL penalty]] toward the starting model plays an
+  analogous protective role in output space rather than weight space.
+see_also:
+  - catastrophic forgetting
+  - continual learning
+  - stability–plasticity dilemma
+  - regularization
+  - Bayesian inference
+  - KL penalty
+contrast:
+  - experience replay
+sources:
+  - text: >-
+      Kirkpatrick, J. et al. (2017). Overcoming catastrophic forgetting in neural networks.
+      Proceedings of the National Academy of Sciences 114(13), 3521–3526. arXiv:1612.00796.
+    url: https://arxiv.org/abs/1612.00796

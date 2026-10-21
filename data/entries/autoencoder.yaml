@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: autoencoder
+id: autoencoder
+pos: n.
+also:
+  - auto-encoder
+  - autoassociative network
+  - autoassociator
+  - undercomplete autoencoder
+  - contractive autoencoder
+domain: dl
+domains:
+  - ml
+  - gen
+level: core
+plain: >-
+  A neural network trained to squeeze its input into a compact code and then rebuild the original
+  from that code. Learning to compress this way forces it to capture what matters in the data.
+senses:
+  - definition: >-
+      An [[encoder-decoder-architecture|encoder–decoder]] [[neural-network|neural network]] whose
+      training target is its own input: the encoder compresses each example into a code z, the
+      decoder tries to rebuild the example from z, and the two are trained together to minimize
+      reconstruction error, such as squared error. Since a network free to copy its input unchanged
+      would learn nothing useful, the task is made hard on purpose: the code may be narrower than
+      the input (an undercomplete bottleneck), penalized for having many active units (a sparsity
+      penalty) or for reacting strongly to small input changes (contractive autoencoders), or
+      computed from a corrupted or partly hidden input that must be restored
+      ([[denoising-autoencoder|denoising]] and [[masked-autoencoder|masked]] autoencoders). A linear
+      autoencoder trained on squared error ends up equivalent to
+      [[principal-component-analysis|principal component analysis]], recovering the same principal
+      subspace, while nonlinear ones can learn curved, more compact codes. Uses include
+      [[dimensionality-reduction|dimensionality reduction]], [[anomaly-detection|anomaly detection]]
+      by reconstruction error, pretraining, compression and the latent spaces of
+      [[latent-diffusion-model|latent diffusion]]; the [[variational-autoencoder|variational
+      autoencoder]] makes the code probabilistic for generation.
+    example: Transactions the autoencoder reconstructs poorly are flagged for fraud review.
+origin: >-
+  Auto-associative networks trained by backpropagation appeared in the mid-1980s, in work by David
+  Rumelhart, Geoffrey Hinton and Ronald Williams (1986), Garrison Cottrell and colleagues on image
+  compression (1987) and Hervé Bourlard and Yves Kamp (1988); Mark Kramer's 'nonlinear principal
+  component analysis' (1991) generalized them. The name 'autoencoder' was in use by 1993 (Hinton and
+  Richard Zemel). Hinton and Ruslan Salakhutdinov's 2006 Science paper on deep autoencoders helped
+  launch the deep-learning revival.
+year: 1986
+note: >-
+  The [[sparse-autoencoder|sparse autoencoder]] of [[interpretability|interpretability]] research is
+  trained on a model's internal activations, not on raw data, to extract interpretable
+  [[feature-interpretability|features]].
+see_also:
+  - variational autoencoder
+  - denoising autoencoder
+  - sparse autoencoder
+  - masked autoencoder
+  - latent space
+  - encoder–decoder architecture
+  - principal component analysis
+  - representation learning
+sources:
+  - text: >-
+      Hinton, G. E. & Salakhutdinov, R. R. (2006). Reducing the Dimensionality of Data with Neural
+      Networks. Science, 313(5786), 504–507.
+  - text: >-
+      Hinton, G. E. & Zemel, R. S. (1994). Autoencoders, Minimum Description Length and Helmholtz
+      Free Energy. Advances in Neural Information Processing Systems 6 (NIPS 1993).

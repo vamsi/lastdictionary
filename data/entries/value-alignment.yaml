@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: value alignment
+id: value-alignment
+pos: n.
+also:
+  - value alignment problem
+  - value-aligned AI
+  - human value alignment
+domain: safety
+domains:
+  - society
+  - mind
+labels:
+  - contested
+level: core
+plain: >-
+  Building AI whose goals reflect human values — what people care about and consider right — rather
+  than one that merely follows orders or chases a narrow target.
+senses:
+  - definition: >-
+      The goal of building AI systems whose objectives are consistent with human values — what
+      people care about, morally endorse or would endorse on reflection — rather than with a
+      designer's literal instructions alone. Stuart Russell's influential formulation casts it as
+      building machines that pursue human preferences while remaining uncertain what those
+      preferences are, which motivates [[value-learning|value learning]] and
+      [[cooperative-inverse-reinforcement-learning|cooperative inverse reinforcement learning]]. The
+      philosopher Iason Gabriel (2020) distinguished candidate targets — instructions, expressed
+      intentions, revealed preferences, informed preferences, interest or well-being, and values —
+      and argued that choosing among them is a normative question that calls for fair procedures,
+      given reasonable disagreement about values.
+    example: >-
+      The paper argues that value alignment cannot be settled by engineers alone, because people
+      disagree about values.
+origin: >-
+  Stuart Russell wrote of the 'value alignment problem' in a November 2014 essay on Edge.org,
+  arguing that the danger of advanced AI lies in competent pursuit of mis-specified objectives. He
+  used the term in interviews and lectures from 2015 and gave it a formal definition in the 2016
+  paper on [[cooperative-inverse-reinforcement-learning|cooperative inverse reinforcement
+  learning]]; the Asilomar AI Principles (2017), whose tenth principle is titled 'Value Alignment',
+  spread it further.
+year: 2014
+note: >-
+  Often contrasted with [[intent-alignment|intent alignment]]: an intent-aligned system does what
+  its operator wants, which may harm others, whereas a value-aligned one acts on a wider notion of
+  the good. Critics doubt that a single set of 'human values' exists to align to; others propose
+  aggregation procedures such as [[coherent-extrapolated-volition|coherent extrapolated volition]].
+see_also:
+  - AI alignment
+  - value learning
+  - intent alignment
+  - cooperative inverse reinforcement learning
+  - coherent extrapolated volition
+  - value-sensitive design
+  - Stuart Russell
+contrast:
+  - intent alignment
+sources:
+  - text: >-
+      Gabriel, I. (2020). Artificial Intelligence, Values, and Alignment. Minds and Machines 30,
+      411–437.
+  - text: >-
+      Russell, S. (2014). Of Myths and Moonshine. Response to 'The Myth of AI', Edge.org, November
+      2014.
+    url: https://www.edge.org/conversation/the-myth-of-ai#26015
+  - text: >-
+      Russell, S., Dewey, D. & Tegmark, M. (2015). Research Priorities for Robust and Beneficial
+      Artificial Intelligence. AI Magazine 36(4).

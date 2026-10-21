@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: graph neural network
+id: graph-neural-network
+pos: n.
+also:
+  - GNN
+  - graph network
+  - message passing neural network
+  - MPNN
+  - graph convolutional network
+  - GCN
+  - graph attention network
+  - GAT
+  - GraphSAGE
+domain: dl
+domains:
+  - ml
+level: core
+plain: >-
+  A neural network for data shaped like a web of connections, such as molecules, social networks or
+  road maps, in which each point repeatedly gathers information from its neighbors.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] that operates on graph-structured data by message passing:
+      in each layer, every node aggregates messages computed from its neighbors' states and edge
+      features with a permutation-invariant function (sum, mean, max or an
+      [[attention|attention]]-weighted sum) and combines the result with its own state through a
+      learned update. After k layers a node's representation reflects its k-hop neighborhood;
+      predictions are read out per node, per edge or, after pooling, per graph. Layers are
+      [[equivariance|equivariant]] to node relabeling, and [[weight-sharing|weight sharing]] across
+      nodes lets one model handle graphs of any size. Major variants include graph convolutional
+      networks, graph attention networks and GraphSAGE. Standard message passing can distinguish no
+      more graphs than the Weisfeiler–Leman isomorphism test, and deep GNNs suffer oversmoothing and
+      oversquashing. Applications include molecular property prediction and drug discovery,
+      materials discovery, recommendation, traffic and weather forecasting and physics simulation; a
+      transformer can be viewed as a GNN on a fully connected graph.
+    example: >-
+      We represent each molecule as a graph of atoms and bonds and predict toxicity with a GNN.
+origin: >-
+  Marco Gori, Gabriele Monfardini and Franco Scarselli (2005) and Scarselli and colleagues' 'The
+  Graph Neural Network Model' (IEEE Transactions on Neural Networks, 2009) introduced the name and a
+  recurrent formulation, building on 1990s recursive networks for structured data. Thomas Kipf and
+  Max Welling's graph convolutional network (2016), Justin Gilmer and colleagues' message-passing
+  framework (2017) and Petar Veličković and colleagues' graph attention networks (2017) brought GNNs
+  into the mainstream.
+year: 2005
+see_also:
+  - geometric deep learning
+  - equivariance
+  - knowledge graph
+  - recommender system
+  - attention
+  - weight sharing
+  - GraphRAG
+sources:
+  - text: >-
+      Scarselli, F., Gori, M., Tsoi, A. C., Hagenbuchner, M. & Monfardini, G. (2009). The Graph
+      Neural Network Model. IEEE Transactions on Neural Networks, 20(1), 61–80.
+  - text: >-
+      Kipf, T. N. & Welling, M. (2017). Semi-Supervised Classification with Graph Convolutional
+      Networks. ICLR 2017.

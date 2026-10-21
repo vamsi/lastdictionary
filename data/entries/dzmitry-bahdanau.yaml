@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Dzmitry Bahdanau
+id: dzmitry-bahdanau
+sort_as: Bahdanau Dzmitry
+pos: prop. n.
+also:
+  - Dmitry Bahdanau
+pronunciation: DZMEE-tree bah-DAH-now
+domain: people
+domains:
+  - llm
+  - dl
+level: specialist
+plain: >-
+  A Belarusian computer scientist who, as a student in Yoshua Bengio's lab in 2014, was lead author
+  of the paper that introduced attention, the mechanism later at the core of the transformer.
+senses:
+  - definition: >-
+      Belarusian computer scientist and first author of 'Neural Machine Translation by Jointly
+      Learning to Align and Translate' (2014; ICLR 2015), the paper that introduced the modern
+      [[attention|attention]] mechanism for language. Working as a visiting student with
+      [[yoshua-bengio|Yoshua Bengio]] and [[kyunghyun-cho|Kyunghyun Cho]] in Montreal, he let a
+      [[recurrent-neural-network|recurrent]] decoder compute, at each output word, a learned soft
+      weighting over all encoder states, so that the model learns which source words to align with;
+      this removed the bottleneck of compressing a whole sentence into one fixed-length vector. The
+      approach rapidly became standard in [[machine-translation|machine translation]] and
+      [[sequence-to-sequence-model|sequence-to-sequence]] models, and the
+      [[transformer|transformer]] (2017) built an entire architecture from attention. He completed a
+      PhD at the Université de Montréal and later worked at Element AI and ServiceNow Research and
+      as an adjunct professor at McGill University, on language agents, code models and systematic
+      generalization.
+see_also:
+  - attention
+  - machine translation
+  - sequence-to-sequence model
+  - transformer
+  - Kyunghyun Cho
+  - Yoshua Bengio
+sources:
+  - text: >-
+      Bahdanau, D., Cho, K. & Bengio, Y. (2015). Neural Machine Translation by Jointly Learning to
+      Align and Translate. ICLR 2015.

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deep belief network
+id: deep-belief-network
+pos: n.
+also:
+  - DBN
+  - deep belief net
+  - greedy layer-wise pretraining
+domain: hist
+domains:
+  - dl
+labels:
+  - historical
+level: specialist
+plain: >-
+  A many-layered neural network trained one layer at a time, introduced in 2006. It showed that deep
+  networks could be trained after all and helped launch the deep learning boom, before simpler
+  methods replaced it.
+senses:
+  - definition: >-
+      A generative model assembled by stacking restricted [[boltzmann-machine|Boltzmann machines]]:
+      once training is done, only the topmost pair of hidden layers keeps its two-way connections,
+      while every connection beneath it becomes a one-way, top-down path that turns hidden causes
+      into data. Training proceeds greedily, one layer at a time: the first restricted Boltzmann
+      machine models the data, the activities of its hidden units serve as data for the second, and
+      so on, each added layer improving a bound on the likelihood of the data. The stack can then be
+      fine-tuned generatively or used to initialize a discriminative network trained with
+      [[backpropagation|backpropagation]]. This unsupervised [[pretraining|pretraining]] made
+      networks with many layers trainable at a time when they were widely thought impractical, and
+      set records on [[mnist|MNIST]] and in speech recognition. By about 2012 it had largely been
+      abandoned, as better initialization, [[relu|ReLU]] activations, more data and GPUs allowed
+      deep networks to be trained directly.
+    example: >-
+      The 2006 deep belief network papers are often taken as the opening of the deep-learning era.
+origin: >-
+  Introduced by [[geoffrey-hinton|Geoffrey Hinton]], Simon Osindero and Yee-Whye Teh in 'A Fast
+  Learning Algorithm for Deep Belief Nets' (Neural Computation, 2006), with a companion paper by
+  Hinton and Ruslan Salakhutdinov in Science the same year. 'Belief net' echoes the belief networks
+  of [[judea-pearl|Judea Pearl]] and Radford Neal's sigmoid belief nets.
+year: 2006
+see_also:
+  - Boltzmann machine
+  - deep learning revolution
+  - pretraining
+  - Geoffrey Hinton
+  - deep learning
+sources:
+  - text: >-
+      Hinton, G. E., Osindero, S. & Teh, Y.-W. (2006). A Fast Learning Algorithm for Deep Belief
+      Nets. Neural Computation 18(7), 1527–1554.
+  - text: >-
+      Hinton, G. E. & Salakhutdinov, R. R. (2006). Reducing the Dimensionality of Data with Neural
+      Networks. Science 313(5786), 504–507.

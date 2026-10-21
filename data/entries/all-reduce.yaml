@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: all-reduce
+id: all-reduce
+pos: n.
+also:
+  - allreduce
+  - AllReduce
+  - ring all-reduce
+  - tree all-reduce
+  - MPI_Allreduce
+domain: train
+domains:
+  - hw
+level: specialist
+plain: >-
+  A group operation in which every chip contributes a set of numbers, the sets are added together,
+  and every chip ends up with the same total. It is how parallel training keeps model copies in
+  sync.
+senses:
+  - definition: >-
+      A [[collective-communication|collective communication]] operation that combines — most often
+      sums or averages — an array held by each of p processes elementwise and leaves the full result
+      on every process. It is the core primitive of synchronous [[data-parallelism|data
+      parallelism]], used to average gradients after each [[backward-pass|backward pass]]. Ring
+      all-reduce, a reduce-scatter followed by an all-gather around a logical ring, is
+      bandwidth-optimal: each process sends and receives about 2(p − 1)/p times the array size
+      whatever p is, though latency grows with p. Tree and hierarchical algorithms cut latency for
+      small messages or very large groups, and in-network reduction offloads the arithmetic to
+      switches. Because the whole model's gradients are reduced every step, all-reduce bandwidth
+      often limits data-parallel scaling, motivating overlap with computation, gradient compression
+      and low-communication methods such as [[local-sgd|local SGD]] and [[diloco|DiLoCo]].
+    example: >-
+      The gradient all-reduce takes 40 milliseconds per step, mostly hidden behind the backward pass.
+formula_latex: \text{data sent per process (ring)} = \frac{2(p-1)}{p}\,n
+origin: >-
+  Standardized as MPI_Allreduce in MPI-1 (1994). Pitch Patarasuk and Xin Yuan proved the ring
+  algorithm bandwidth-optimal (2009). Baidu Research's open-source ring all-reduce code and Uber's
+  Horovod library, both 2017, popularized it for multi-node deep learning.
+year: 1994
+see_also:
+  - collective communication
+  - data parallelism
+  - NCCL
+  - local SGD
+  - interconnect
+  - distributed training
+sources:
+  - text: >-
+      Patarasuk, P. & Yuan, X. (2009). Bandwidth optimal all-reduce algorithms for clusters of
+      workstations. Journal of Parallel and Distributed Computing 69(2).
+  - text: >-
+      Sergeev, A. & Del Balso, M. (2018). Horovod: fast and easy distributed deep learning in
+      TensorFlow. arXiv:1802.05799.
+    url: https://arxiv.org/abs/1802.05799

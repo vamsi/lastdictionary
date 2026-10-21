@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: expert iteration
+id: expert-iteration
+pos: n.
+also:
+  - ExIt
+  - EI
+domain: train
+domains:
+  - rl
+  - llm
+level: specialist
+plain: >-
+  A learning loop in which a slow, careful search finds better moves or solutions than the AI's
+  quick instincts, and the AI is then trained to imitate them, so each round's search starts
+  smarter.
+senses:
+  - definition: >-
+      A reinforcement-learning scheme that alternates two steps: expert improvement, in which a
+      planner or search procedure — classically [[monte-carlo-tree-search|Monte Carlo tree search]]
+      guided by the current network — makes decisions better than the network alone; and imitation,
+      in which the network (the apprentice) is trained to reproduce the expert's decisions, after
+      which the stronger network guides a stronger search. The scheme gives slow deliberation and
+      fast pattern-matching separate jobs and lets each improve the other, turning computation spent
+      on search into better instant judgments, as in [[alphazero|AlphaZero]]. In language-model
+      work, 'expert iteration' usually names a simpler loop: sample many solutions, filter them with
+      a [[verifier|verifier]] or reward, and fine-tune on the successes — effectively iterated
+      [[rejection-sampling|rejection sampling]] — used for formal theorem proving and math reasoning
+      and closely related to [[self-taught-reasoner|STaR]] and ReST.
+    example: >-
+      Two rounds of expert iteration on Lean problems doubled the number of theorems the prover
+      could close.
+origin: >-
+  Named by Thomas Anthony, Zheng Tian and David Barber of University College London in a May 2017
+  paper (NeurIPS 2017), whose ExIt agent learned the board game Hex from scratch and beat the
+  champion program MoHex 1.0. DeepMind's AlphaGo Zero (2017) used the same principle. Stanislas Polu
+  and colleagues at OpenAI (2022) applied expert iteration to formal mathematics in Lean.
+year: 2017
+note: >-
+  The original paper framed the two steps with the dual-process picture of fast and slow thinking
+  ([[system-1-and-system-2|System 1 and System 2]]). In LLM papers the 'expert' is often just the
+  model plus a filter, with no explicit search.
+see_also:
+  - Monte Carlo tree search
+  - AlphaZero
+  - self-play
+  - rejection sampling
+  - self-taught reasoner
+  - imitation learning
+  - self-improvement
+sources:
+  - text: >-
+      Anthony, T., Tian, Z. & Barber, D. (2017). Thinking Fast and Slow with Deep Learning and Tree
+      Search. NeurIPS 2017. arXiv:1705.08439.
+    url: https://arxiv.org/abs/1705.08439
+  - text: >-
+      Polu, S., Han, J. M., Zheng, K., Baksys, M., Babuschkin, I. & Sutskever, I. (2022). Formal
+      Mathematics Statement Curriculum Learning. arXiv preprint.

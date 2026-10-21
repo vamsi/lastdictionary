@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inference-time intervention
+id: inference-time-intervention
+pos: n.
+also:
+  - ITI
+domain: interp
+domains:
+  - safety
+  - llm
+level: specialist
+plain: >-
+  A technique that makes a language model answer more truthfully by slightly shifting the outputs of
+  a few internal parts that seem to track truth, each time the model produces a word.
+senses:
+  - definition: >-
+      A [[activation-steering|steering]] method aimed at making a [[large-language-model|large
+      language model]] more truthful, which nudges the outputs of a few selected
+      [[attention-head|attention heads]] in fixed directions each time a token is generated.
+      [[linear-probe|Linear probes]] are first trained on each head's activations to separate true
+      from false answers on a labeled set; the K heads with the most accurate probes are selected,
+      and during generation each selected head's output is moved by α standard deviations along a
+      truth direction — the mean difference between true and false activations, which worked better
+      than the probe weights. In the introducing paper a few hundred labeled examples sufficed to
+      roughly double the [[truthfulqa|TruthfulQA]] truthfulness score of Alpaca, an
+      instruction-tuned LLaMA, from 32.5% to 65.1%; pushing harder made answers less helpful.
+    example: >-
+      We applied ITI to the top 48 heads and saw fewer misconceptions but more 'I have no comment'
+      answers.
+origin: >-
+  Introduced by Kenneth Li, Oam Patel, Fernanda Viégas, Hanspeter Pfister and Martin Wattenberg of
+  Harvard University in 'Inference-Time Intervention: Eliciting Truthful Answers from a Language
+  Model' (arXiv, June 2023; NeurIPS 2023).
+year: 2023
+note: >-
+  Truthfulness here follows TruthfulQA's operationalization — avoiding imitating common
+  misconceptions — not general factual accuracy. The phrase is also used generically for any change
+  to a model's computation made at inference rather than in training.
+see_also:
+  - activation steering
+  - truthfulness
+  - TruthfulQA
+  - linear probe
+  - attention head
+  - representation engineering
+sources:
+  - text: >-
+      Li, K., Patel, O., Viégas, F., Pfister, H. & Wattenberg, M. (2023). Inference-Time
+      Intervention: Eliciting Truthful Answers from a Language Model. NeurIPS 2023.
+      arXiv:2306.03341.
+    url: https://arxiv.org/abs/2306.03341

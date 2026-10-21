@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: induction head
+id: induction-head
+pos: n.
+also:
+  - induction heads
+  - induction circuit
+  - previous-token head
+domain: interp
+domains:
+  - llm
+level: core
+plain: >-
+  A pattern-completing mechanism inside language models: having seen 'Harry Potter' once, it spots
+  the next 'Harry' and predicts 'Potter' — a simple trick behind much learning from examples in a
+  prompt.
+senses:
+  - definition: >-
+      A two-part [[circuit|circuit]] in [[transformer|transformers]] that continues repeated
+      sequences: given a context containing … A B … and a later occurrence of A, it attends to the
+      token that followed the earlier A and copies B to the output. It works by composing two
+      [[attention-head|attention heads]]. A previous-token head in an earlier layer writes into each
+      position information about the token before it; the induction head's query for the current
+      token A then matches keys carrying 'preceded by A' (K-composition), and its
+      [[qk-and-ov-circuits|OV circuit]] copies the attended token. Induction heads need at least two
+      layers and usually emerge suddenly early in training; their arrival coincides with a small
+      bump in the loss curve and a sharp gain in [[in-context-learning|in-context learning]].
+      Catherine Olsson and colleagues argued that they drive much of in-context learning, with
+      causal support in small attention-only models and only correlational support in larger ones.
+      Fuzzy variants match similar rather than identical tokens.
+    example: >-
+      Ablating the two induction heads wiped out the model's ability to continue repeated random
+      tokens.
+origin: >-
+  Described by Nelson Elhage, Neel Nanda, Catherine Olsson and colleagues in 'A Mathematical
+  Framework for Transformer Circuits' (Anthropic, December 2021) and studied in depth in Olsson and
+  colleagues' 'In-context Learning and Induction Heads' (March 2022).
+year: 2021
+see_also:
+  - in-context learning
+  - attention head
+  - circuit
+  - QK and OV circuits
+  - attention pattern
+  - mechanistic interpretability
+sources:
+  - text: >-
+      Elhage, N. et al. (2021). A Mathematical Framework for Transformer Circuits. Transformer
+      Circuits Thread.
+  - text: >-
+      Olsson, C., Elhage, N., Nanda, N. et al. (2022). In-context Learning and Induction Heads.
+      Transformer Circuits Thread.

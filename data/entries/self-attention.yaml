@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-attention
+id: self-attention
+pos: n.
+also:
+  - intra-attention
+  - self-attention layer
+domain: llm
+domains:
+  - dl
+level: core
+plain: >-
+  Attention in which a passage looks at itself: every word checks every other word in the same text
+  to work out its meaning in context, such as which noun 'it' refers to.
+senses:
+  - definition: >-
+      [[attention|Attention]] in which queries, keys and values are all computed from the same
+      sequence, so each position builds a new representation by attending to the positions of that
+      sequence, itself included. From input vectors X a layer forms Q = XW_Q, K = XW_K and V = XW_V
+      with learned matrices and applies [[scaled-dot-product-attention|scaled dot-product
+      attention]], producing a context-dependent vector for every [[token|token]], computed for all
+      positions in parallel. Self-attention links any two positions in one step, which helps with
+      long-range dependencies, but its time and memory grow quadratically with sequence length n
+      because it forms an n × n score matrix. In [[decoder-only-transformer|decoder-only models]] a
+      [[causal-mask|causal mask]] limits each position to earlier ones. It is the main operation of
+      every [[transformer|transformer]] layer and is usually split into several
+      [[attention-head|heads]].
+    example: >-
+      Self-attention cost dominated at 128K tokens, so we switched half the layers to sliding-window
+      attention.
+origin: >-
+  The transformer paper credits earlier 'intra-attention' within recurrent models for reading and
+  summarization, notably Jianpeng Cheng, Li Dong and Mirella Lapata (2016). Zhouhan Lin and
+  colleagues used the name 'self-attention' for sentence embeddings in March 2017, and 'Attention Is
+  All You Need' (June 2017) made self-attention the sole means of relating positions.
+year: 2016
+note: >-
+  Not to be confused with [[cross-attention|cross-attention]], where queries come from one sequence
+  and keys and values from another.
+see_also:
+  - attention
+  - scaled dot-product attention
+  - multi-head attention
+  - causal mask
+  - transformer
+  - query, key and value
+contrast:
+  - cross-attention
+sources:
+  - text: >-
+      Cheng, J., Dong, L. & Lapata, M. (2016). Long Short-Term Memory-Networks for Machine Reading.
+      EMNLP 2016.
+    url: https://arxiv.org/abs/1601.06733
+  - text: >-
+      Lin, Z., Feng, M., dos Santos, C. N., Yu, M., Xiang, B., Zhou, B. & Bengio, Y. (2017). A
+      Structured Self-attentive Sentence Embedding. ICLR 2017.
+    url: https://arxiv.org/abs/1703.03130

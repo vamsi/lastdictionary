@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: H100
+id: h100
+pos: prop. n.
+also:
+  - Nvidia H100
+  - Hopper
+  - H200
+  - H800
+  - H20
+domain: hw
+domains:
+  - train
+  - gov
+labels:
+  - trademark
+level: core
+plain: >-
+  Nvidia's flagship AI chip of 2022–2024, so scarce and sought-after during the generative-AI boom
+  that it became a unit of measure for AI computing power.
+senses:
+  - definition: >-
+      A data-center [[gpu|GPU]] of Nvidia's Hopper architecture (named for Grace Hopper), announced
+      in March 2022 and shipping from late 2022. Built on TSMC's 4N [[process-node|process]] with 80
+      billion transistors on an 814 mm² die, the SXM version draws up to 700 W and pairs 80 GB of
+      HBM3 memory at 3.35 TB/s with fourth-generation [[tensor-core|tensor cores]] that added
+      [[fp8|FP8]] through a 'Transformer Engine' managing precision layer by layer — about 990 dense
+      [[bfloat16|bfloat16]] teraFLOPS and twice that in FP8. [[nvlink|NVLink]] 4 gives each GPU 900
+      GB/s. The H100 trained many frontier models of 2023–2024, and cluster sizes ('100,000 H100s')
+      became shorthand for [[compute|compute]]. Variants include the H200 (141 GB of HBM3e) and the
+      export-restricted H800 and H20 for China; successors are the Blackwell (2024) and Rubin (2026)
+      generations.
+    example: >-
+      Their cluster is about 50,000 H100-equivalents, counting the Blackwells at their FP8
+      throughput.
+origin: >-
+  Announced by Jensen Huang at Nvidia's GTC conference on 22 March 2022. Demand after ChatGPT's
+  release in November 2022 made it the emblematic chip of the generative-AI boom; analysts estimated
+  selling prices of $25,000–$30,000 in early 2024, and US export rules shaped its China-specific
+  variants.
+year: 2022
+note: >-
+  Often used as a unit: 'H100-equivalents' normalize mixed fleets to the H100's throughput in
+  industry and policy estimates.
+see_also:
+  - GPU
+  - tensor core
+  - FP8
+  - high-bandwidth memory
+  - NVLink
+  - export controls on AI chips
+  - GPU-hour
+  - GPU poor
+sources:
+  - text: NVIDIA (2022). NVIDIA H100 Tensor Core GPU Architecture. Whitepaper.
+as_of: 2026-10

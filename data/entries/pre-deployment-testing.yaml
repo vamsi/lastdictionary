@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pre-deployment testing
+id: pre-deployment-testing
+pos: n.
+also:
+  - pre-deployment evaluation
+  - predeployment testing
+  - pre-release testing
+domain: safety
+domains:
+  - eval
+  - gov
+level: core
+plain: >-
+  Checking a new AI model for dangerous abilities and bad behavior before it is released to the
+  public, sometimes with outside experts or government testers given early access.
+senses:
+  - definition: >-
+      The evaluation of an AI model or system before release to identify dangerous capabilities,
+      misaligned behavior, security weaknesses and policy violations, and to decide whether extra
+      safeguards, a [[staged-deployment|staged deployment]] or a delay is needed. It typically
+      combines automated [[benchmark|benchmarks]], [[dangerous-capability-evaluation|dangerous
+      capability evaluations]], internal and external [[red-teaming|red teaming]],
+      [[alignment-audit|alignment audits]] and tests of mitigations such as classifiers, with
+      results summarized in a [[system-card|system card]]. Since 2023 governments have sought early
+      access to frontier models: the UK and US AI safety institutes tested several models before
+      release from 2024, and the EU's [[general-purpose-ai-code-of-practice|General-Purpose AI Code
+      of Practice]] (2025) calls for systemic-risk assessment, including model evaluations, before
+      market placement. Critics note that pre-release windows may be too short for thorough testing,
+      and that risks also arise after release, from fine-tuning, new tools and internal deployment.
+    example: >-
+      The institute had nine days of pre-deployment testing, which was not enough for the agentic
+      evaluations.
+origin: >-
+  Pre-release safety testing became visible with OpenAI's staged release of GPT-2 (2019) and
+  external red-teaming of GPT-4 (2022–2023). At the AI Safety Summit at Bletchley Park in November
+  2023, leading developers agreed that governments should be able to test next-generation models
+  before deployment; the UK and US institutes published joint pre-deployment evaluations from late
+  2024.
+year: 2023
+note: >-
+  Government testers were renamed in 2025: the UK AI Safety Institute became the AI Security
+  Institute, and the US institute became the [[center-for-ai-standards-and-innovation|Center for AI
+  Standards and Innovation]]. Testing of internally deployed models, used for research before any
+  public release, is a growing concern.
+see_also:
+  - dangerous capability evaluation
+  - red teaming
+  - staged deployment
+  - system card
+  - AI Safety Institute
+  - third-party AI evaluation
+  - safety case
+as_of: 2026-10

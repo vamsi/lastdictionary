@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model FLOPs utilization
+id: model-flops-utilization
+pos: n.
+also:
+  - MFU
+  - hardware FLOPs utilization
+  - HFU
+  - FLOPs utilization
+domain: hw
+domains:
+  - train
+level: specialist
+plain: >-
+  The share of a computer's top calculating speed that actually goes into useful AI training work.
+  Real systems often reach only around a third to a half.
+senses:
+  - definition: >-
+      A measure of how much of a system's peak arithmetic rate a training job (or sometimes an
+      inference service) turns into useful model computation: model [[flop|FLOP]] achieved per
+      second divided by the hardware's theoretical peak [[flops|FLOPS]]. Only work the model
+      strictly requires is credited, namely its [[forward-pass|forward]] and
+      [[backward-pass|backward]] passes (about 6 × [[parameter|parameters]] × tokens per second for
+      a dense transformer, plus attention), so recomputing activations for
+      [[gradient-checkpointing|gradient checkpointing]] earns nothing and runs built on different
+      software can be compared on equal terms. Hardware FLOPs utilization (HFU) instead counts every
+      operation the chips execute, recomputation included. Large training runs commonly reach
+      roughly 30–50% MFU; the shortfall comes from communication, memory-bound operations, pipeline
+      bubbles, stragglers and failures. MFU complements wall-clock measures such as
+      [[goodput|goodput]].
+    example: >-
+      After overlapping the all-reduce with the backward pass, MFU rose from 38% to 45%.
+formula_latex: \mathrm{MFU} = \frac{\text{tokens per second} \times \text{FLOP per token}}{\text{peak FLOP/s}}
+origin: >-
+  Proposed by Aakanksha Chowdhery and colleagues at Google in the PaLM paper (April 2022) as an
+  implementation-independent metric; they reported 46.2% MFU (57.8% HFU) for PaLM 540B on 6,144 TPU
+  v4 chips, against an estimated 21.3% for GPT-3.
+year: 2022
+note: >-
+  Peak FLOPS depends on the number format, so MFU for an FP8 run should be computed against FP8
+  peak; published figures are not always explicit about this.
+see_also:
+  - FLOPS
+  - goodput
+  - roofline model
+  - training run
+  - distributed training
+  - arithmetic intensity
+sources:
+  - text: >-
+      Chowdhery, A. et al. (2022). PaLM: Scaling Language Modeling with Pathways. arXiv:2204.02311.
+    url: https://arxiv.org/abs/2204.02311

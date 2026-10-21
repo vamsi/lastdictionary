@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: restricted Boltzmann machine
+id: restricted-boltzmann-machine
+pos: n.
+also:
+  - RBM
+  - harmonium
+domain: dl
+domains:
+  - hist
+  - gen
+labels:
+  - historical
+level: specialist
+plain: >-
+  A two-layer network, one layer for the data and one hidden, that learns the patterns in data by
+  trying to generate it. Stacks of them helped start the deep-learning revival around 2006.
+senses:
+  - definition: >-
+      A two-layer [[energy-based-model|energy-based model]] over binary or real-valued units, with a
+      visible layer for the data and a hidden layer for features, in which every connection runs
+      between the layers and none within them; it is the [[boltzmann-machine|Boltzmann machine]]
+      restricted to a bipartite graph. The restriction makes hidden units conditionally independent
+      given the visible ones, and vice versa, so block Gibbs sampling can alternate efficiently
+      between layers. RBMs are trained approximately by contrastive divergence, which runs a short
+      Gibbs chain from each data point instead of sampling to equilibrium. Stacked and trained
+      greedily layer by layer, they formed [[deep-belief-network|deep belief networks]], used to
+      pretrain deep networks in 2006–2011, and they were used for collaborative filtering in the
+      [[netflix-prize|Netflix Prize]]. RBM pretraining was abandoned once [[relu|ReLUs]], better
+      initialization and large labeled datasets allowed deep networks to be trained directly.
+    example: >-
+      Each layer was pretrained as an RBM for 50 epochs before fine-tuning the whole stack.
+formula_latex: E(\mathbf{v}, \mathbf{h}) = -\mathbf{a}^{\top}\mathbf{v} -
+  \mathbf{b}^{\top}\mathbf{h} - \mathbf{v}^{\top} W \mathbf{h}
+origin: >-
+  Introduced by Paul Smolensky in 1986 as the 'harmonium', in the Parallel Distributed Processing
+  volumes. Geoffrey Hinton's contrastive divergence (2002) made it trainable, and Hinton, Simon
+  Osindero and Yee-Whye Teh's 2006 deep-belief-network paper made stacked RBMs a centerpiece of the
+  deep-learning revival; Ruslan Salakhutdinov, Andriy Mnih and Hinton applied them to the Netflix
+  Prize data in 2007.
+year: 1986
+see_also:
+  - Boltzmann machine
+  - deep belief network
+  - energy-based model
+  - Netflix Prize
+  - autoencoder
+  - Hopfield network
+sources:
+  - text: >-
+      Hinton, G. E. (2002). Training Products of Experts by Minimizing Contrastive Divergence.
+      Neural Computation, 14(8), 1771–1800.
+  - text: >-
+      Hinton, G. E., Osindero, S. & Teh, Y.-W. (2006). A Fast Learning Algorithm for Deep Belief
+      Nets. Neural Computation, 18(7), 1527–1554.

@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: symbol grounding problem
+id: symbol-grounding-problem
+pos: n.
+also:
+  - grounding problem
+  - symbol grounding
+domain: mind
+domains:
+  - llm
+  - sym
+level: core
+plain: >-
+  The puzzle of how words or symbols inside a machine can mean anything by themselves, rather than
+  only pointing to more symbols — like a dictionary that defines every word using other words.
+senses:
+  - definition: >-
+      The problem of how the symbols a formal system shuffles could carry meaning for the system
+      itself, instead of borrowing all their meaning from the people who interpret them. Stevan
+      Harnad likened it to learning Chinese with nothing to go on but a dictionary written entirely
+      in Chinese: each symbol leads only to more symbols, so meaning is never reached. His proposed
+      remedy was hybrid: anchor basic symbols in the sensorimotor capacity to recognize and
+      categorize what they stand for, then compose higher-level symbols out of these grounded ones.
+      The problem is central to debates over whether [[large-language-model|language models]]
+      trained only on text can mean anything, since their representations are learned from relations
+      among words; replies appeal to multimodal training, interaction with the world through
+      [[tool-use|tools]] and [[embodied-ai|bodies]], and the possibility that the structure of
+      language itself carries information about its referents.
+    example: >-
+      Adding images to training eases the symbol grounding problem for some words but not for words
+      like justice.
+origin: >-
+  Named by Stevan Harnad in 'The Symbol Grounding Problem' (Physica D, 1990), which generalized John
+  Searle's [[chinese-room|Chinese room]] argument; the [[octopus-test|octopus test]] (2020) restated
+  it for language models.
+year: 1990
+see_also:
+  - grounding
+  - Chinese room
+  - octopus test
+  - machine understanding
+  - intentionality
+  - embodied cognition
+  - distributional hypothesis
+contrast:
+  - distributional hypothesis
+sources:
+  - text: Harnad, S. (1990). The Symbol Grounding Problem. Physica D 42(1–3), 335–346.

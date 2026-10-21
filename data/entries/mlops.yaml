@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MLOps
+id: mlops
+pos: n.
+also:
+  - machine learning operations
+  - ML Ops
+  - ML operations
+  - continuous training
+  - CI/CD for machine learning
+pronunciation: EM-el-ops
+domain: eng
+domains:
+  - ml
+  - data
+level: core
+plain: >-
+  The working habits and tools that keep machine-learning models dependable inside real products
+  once the experiment is over: automated testing, release, monitoring and retraining; the factory
+  and maintenance crew around a model, not the model itself.
+senses:
+  - definition: >-
+      The engineering discipline that treats a [[machine-learning|machine learning]] model as a
+      production system rather than a one-off experiment, covering the practices, roles and tools
+      that let models be built, released, watched and retrained repeatably. It adapts DevOps —
+      automation, version control, continuous integration and delivery (CI/CD), monitoring — to
+      systems whose behavior depends on data as well as code, so that data, features, models and
+      configuration are all versioned and tested. Typical components are reproducible
+      [[machine-learning-pipeline|pipelines]], [[experiment-tracking|experiment tracking]], a
+      [[feature-store|feature store]], a [[model-registry|model registry]], automated validation
+      gates, [[model-deployment|deployment]] with staged rollouts, [[model-monitoring|model
+      monitoring]] for [[data-drift|data drift]] and falling accuracy, and continuous training, in
+      which pipelines retrain and redeploy models on fresh data. Maturity frameworks, such as Google
+      Cloud's levels 0 to 2, run from manual notebook-to-production handoffs to fully automated
+      retraining. The underlying premise is that the model is a small part of a larger system whose
+      data dependencies and feedback loops create distinctive
+      [[machine-learning-technical-debt|technical debt]].
+    example: >-
+      Our MLOps setup retrains the fraud model nightly and blocks deployment if holdout recall drops.
+origin: >-
+  A blend of 'machine learning' and DevOps. No coiner is known: the word appeared in practitioner
+  talks, blog posts and startup marketing around 2017–2018, building on concerns made famous by D.
+  Sculley and colleagues' NeurIPS 2015 paper 'Hidden Technical Debt in Machine Learning Systems'.
+  Google Cloud's guide to MLOps maturity levels (c. 2020), vendor platforms, and a wave of books and
+  courses around 2020–2021 established it.
+year: 2018
+note: >-
+  Usage ranges from a narrow sense (deployment and monitoring tooling) to a broad one (the whole
+  lifecycle, including data engineering). [[llmops|LLMOps]] adapts the practices to systems built on
+  [[large-language-model|large language models]], where prompts, retrieval settings and model
+  vendors change more often than weights.
+see_also:
+  - LLMOps
+  - machine learning pipeline
+  - model registry
+  - experiment tracking
+  - model monitoring
+  - feature store
+  - AI engineering
+  - machine learning technical debt
+sources:
+  - text: >-
+      Sculley, D. et al. (2015). Hidden Technical Debt in Machine Learning Systems. Advances in
+      Neural Information Processing Systems 28 (NeurIPS 2015).
+  - text: >-
+      Kreuzberger, D., Kühl, N. & Hirschl, S. (2023). Machine Learning Operations (MLOps): Overview,
+      Definition, and Architecture. IEEE Access 11.

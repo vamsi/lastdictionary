@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: emergence
+id: emergence
+pos: n.
+also:
+  - emergent
+  - emergent behavior
+  - emergent property
+  - weak emergence
+  - strong emergence
+domain: mind
+domains:
+  - llm
+  - core
+labels:
+  - contested
+level: essential
+plain: >-
+  When a whole shows properties or abilities that none of its parts has and that are hard to predict
+  from them — like a traffic jam arising from individual cars, or new skills appearing in larger AI
+  models.
+senses:
+  - context: Philosophy and complex systems
+    definition: >-
+      The appearance, in a system of many interacting parts, of properties or patterns that the
+      parts lack and that are not obvious from them: flocking from individual birds' simple rules,
+      liquidity from molecules, traffic jams from drivers. Philosophers distinguish weak emergence,
+      in which the higher-level property follows from the parts and their interactions but can in
+      practice be found only by simulation or observation, from strong emergence, in which no amount
+      of lower-level knowledge would let one derive it and which may have causal powers of its own.
+      Most scientists accept weak emergence; strong emergence is controversial, and consciousness is
+      sometimes proposed as its only real example.
+  - context: Machine learning
+    definition: >-
+      The appearance in AI systems of capabilities that were not explicitly trained or programmed,
+      such as [[in-context-learning|in-context learning]] arising from next-word prediction, or, in
+      the narrower sense of [[emergent-abilities|emergent abilities]], capabilities that appear
+      abruptly as models are scaled up rather than improving smoothly. Whether such jumps are real
+      or artifacts of all-or-nothing metrics is disputed, as is the safety significance of
+      capabilities that cannot be forecast from smaller models. Related uses include emergent
+      communication among learning agents and [[emergent-misalignment|emergent misalignment]].
+    example: >-
+      Calling the skill emergent means nobody trained it in directly, not that it is mysterious.
+origin: >-
+  The philosopher George Henry Lewes introduced 'emergent' in this sense in Problems of Life and
+  Mind (1875), building on John Stuart Mill's contrast (1843) between additive and non-additive
+  causes; Samuel Alexander and C. D. Broad developed British emergentism in the 1920s. Philip
+  Anderson's essay 'More Is Different' (Science, 1972) shaped its later use in physics and AI.
+year: 1875
+note: >-
+  In AI writing 'emergent' often means only 'not explicitly designed', which is weaker than either
+  philosophical sense, so readers should ask which is meant. Claims that consciousness or
+  understanding 'emerges' in large models are especially contested.
+see_also:
+  - emergent abilities
+  - scaling laws
+  - in-context learning
+  - grokking
+  - emergent misalignment
+  - artificial life
+  - consciousness
+sources:
+  - text: Lewes, G. H. (1875). Problems of Life and Mind, vol. 2. Trübner.
+  - text: Anderson, P. W. (1972). More Is Different. Science 177(4047), 393–396.
+  - text: >-
+      Wei, J. et al. (2022). Emergent Abilities of Large Language Models. Transactions on Machine
+      Learning Research.

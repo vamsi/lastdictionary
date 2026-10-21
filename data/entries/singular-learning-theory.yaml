@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: singular learning theory
+id: singular-learning-theory
+pos: n.
+also:
+  - SLT
+  - learning coefficient
+  - real log canonical threshold
+  - RLCT
+domain: interp
+domains:
+  - math
+  - dl
+level: specialist
+plain: >-
+  A mathematical theory of learning for models like neural networks, whose many redundant settings
+  break standard statistics; it explains how such models generalize and how their learning unfolds.
+senses:
+  - definition: >-
+      A Bayesian theory of statistical learning for singular models — models in which the map from
+      parameters to probability distributions is not one-to-one and the Fisher information matrix is
+      degenerate, as in neural networks, mixture models and hidden Markov models. Classical results
+      such as the Bayesian information criterion assume regular models and fail for them. Using
+      resolution of singularities from algebraic geometry, Sumio Watanabe showed that the asymptotic
+      Bayesian free energy and generalization error are governed not by the parameter count d but by
+      the real log canonical threshold, or learning coefficient λ, which satisfies λ ≤ d/2 and is
+      smaller for more degenerate solutions. Bayesian learning therefore favors degenerate,
+      effectively simpler solutions — a form of [[occam-s-razor|Occam's razor]] — and can pass
+      through phase transitions as data accumulate. Derived tools include the WAIC and WBIC
+      information criteria. In AI research SLT underpins
+      [[developmental-interpretability|developmental interpretability]] and the
+      [[local-learning-coefficient|local learning coefficient]].
+    example: >-
+      Singular learning theory says the parameter count is the wrong measure of this network's
+      complexity.
+formula_latex: F_n = n L_n(w_0) + \lambda \log n - (m - 1) \log \log n + O_p(1)
+origin: >-
+  Developed by Sumio Watanabe from the late 1990s, with key papers around 1999–2001, and set out in
+  his monographs 'Algebraic Geometry and Statistical Learning Theory' (Cambridge University Press,
+  2009) and 'Mathematical Theory of Bayesian Statistics' (2018). Daniel Murfet and colleagues
+  brought it into deep-learning interpretability and AI safety research in the early 2020s.
+year: 1999
+note: >-
+  In the formula, F_n is the Bayesian free energy (negative log marginal likelihood), L_n the
+  empirical loss at the optimal parameter w₀, λ the learning coefficient and m its multiplicity.
+  'Singular' refers to the geometry of the parameter space, not to singular matrices in general.
+see_also:
+  - local learning coefficient
+  - developmental interpretability
+  - Bayesian inference
+  - loss landscape
+  - Occam's razor
+  - minimum description length
+sources:
+  - text: >-
+      Watanabe, S. (2009). Algebraic Geometry and Statistical Learning Theory. Cambridge University
+      Press.
+  - text: >-
+      Watanabe, S. (2001). Algebraic Analysis for Nonidentifiable Learning Machines. Neural
+      Computation 13(4).

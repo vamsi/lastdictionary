@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: full fine-tuning
+id: full-fine-tuning
+pos: n.
+also:
+  - full-parameter fine-tuning
+  - full finetuning
+  - FFT
+  - full-weight fine-tuning
+domain: train
+domains:
+  - llm
+  - hw
+level: core
+plain: >-
+  Fine-tuning in which every one of a model's internal numbers is allowed to change — the most
+  flexible option, but also the most expensive in memory and storage.
+senses:
+  - definition: >-
+      [[fine-tuning|Fine-tuning]] that updates all of a pretrained model's [[parameter|parameters]],
+      as opposed to [[parameter-efficient-fine-tuning|parameter-efficient fine-tuning]], which
+      trains a small subset or add-on. It has the greatest capacity to absorb new knowledge and
+      behavior and is the norm for large [[post-training|post-training]] stages, such as SFT and RL,
+      at frontier laboratories. Its cost is dominated by memory: with the [[adam|Adam]] optimizer
+      and [[mixed-precision-training|mixed-precision training]], each parameter typically needs
+      about 16 bytes (16-bit weights and gradients, a 32-bit master copy and two optimizer moments)
+      before activations are counted, so a 7-billion-parameter model needs roughly 112 GB, and every
+      fine-tuned variant is a full-size copy to store and serve. [[zero|ZeRO]] sharding,
+      [[gradient-checkpointing|gradient checkpointing]] and low-precision optimizers reduce the
+      burden. Full fine-tuning also moves the model further from its starting point, raising the
+      risk of [[catastrophic-forgetting|catastrophic forgetting]] compared with low-rank methods.
+    example: >-
+      LoRA was fine for the style task, but teaching the model our codebase took full fine-tuning.
+origin: >-
+  The qualifier 'full' became necessary once parameter-efficient alternatives appeared: adapters
+  (2019) and especially LoRA (2021) were benchmarked against full fine-tuning, and the retronym was
+  common by 2022.
+note: >-
+  The 16-bytes-per-parameter figure is a rule of thumb for mixed-precision Adam, derived in the ZeRO
+  paper; it changes with optimizer and number format.
+see_also:
+  - fine-tuning
+  - parameter-efficient fine-tuning
+  - low-rank adaptation
+  - ZeRO
+  - mixed-precision training
+  - catastrophic forgetting
+contrast:
+  - parameter-efficient fine-tuning
+  - low-rank adaptation
+sources:
+  - text: >-
+      Rajbhandari, S., Rasley, J., Ruwase, O. & He, Y. (2020). ZeRO: Memory Optimizations Toward
+      Training Trillion Parameter Models. SC20.

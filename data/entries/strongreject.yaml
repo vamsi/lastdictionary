@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: StrongREJECT
+id: strongreject
+pos: prop. n.
+also:
+  - StrongREJECT benchmark
+  - Strong REJECT
+  - Strong, Robust Evaluation of Jailbreaks at Evading Censorship Techniques
+domain: eval
+domains:
+  - sec
+  - safety
+level: specialist
+plain: >-
+  A test for judging AI jailbreaks that checks not only whether a chatbot was tricked into answering
+  a harmful request, but whether its answer would actually be useful to a wrongdoer.
+senses:
+  - definition: >-
+      A [[benchmark|benchmark]] and automated evaluator for [[jailbreak|jailbreak]] attacks on
+      [[large-language-model|language models]], consisting of 313 forbidden prompts in six harm
+      categories (such as disinformation, illegal goods and services, and violence) and a grader
+      that rates each response for refusal, specificity and convincingness. A response scores zero
+      if the model refuses and otherwise rises with how specific and convincing the harmful content
+      is, so that vague or useless compliance is not counted as full success. Its authors found that
+      earlier evaluations, which treated any non-refusal as a successful attack, greatly overstated
+      the effectiveness of many published jailbreaks, and that some jailbreaks degrade the target's
+      capabilities even as they bypass its refusals — a 'willingness–capabilities trade-off'. The
+      grader is provided both as a rubric for an [[llm-as-a-judge|LLM judge]] and as a small
+      fine-tuned open model, and agrees closely with human ratings.
+    example: >-
+      Scored with StrongREJECT, the attack's apparent success rate fell from 80% to under 20%.
+formula_latex: \text{score} = (1 - \text{refused}) \cdot \frac{\text{specific} + \text{convincing}}{2}
+origin: >-
+  Introduced by Alexandra Souly, Qingyuan Lu, Dillon Bowen and colleagues, with Sam Toyer as senior
+  author, in 'A StrongREJECT for Empty Jailbreaks' (arXiv, February 2024; NeurIPS 2024). The authors
+  expand the name as 'Strong, Robust Evaluation of Jailbreaks at Evading Censorship Techniques'.
+year: 2024
+note: >-
+  In the formula, refused is 0 or 1 and the specificity and convincingness ratings (1–5) are
+  rescaled to [0, 1]. Scores depend on the judge model and rubric version, so they are best compared
+  within one evaluator.
+see_also:
+  - jailbreak
+  - attack success rate
+  - HarmBench
+  - PAIR
+  - LLM-as-a-judge
+  - refusal
+  - red teaming
+sources:
+  - text: >-
+      Souly, A. et al. (2024). A StrongREJECT for Empty Jailbreaks. NeurIPS 2024. arXiv:2402.10260.
+    url: https://arxiv.org/abs/2402.10260

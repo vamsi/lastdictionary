@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Occam's razor
+id: occam-s-razor
+pos: n.
+also:
+  - Ockham's razor
+  - law of parsimony
+  - principle of parsimony
+  - parsimony
+  - simplicity bias
+domain: math
+domains:
+  - ml
+  - mind
+level: core
+plain: >-
+  A rule of thumb for choosing between explanations: if two fit the evidence equally well, bet on
+  the one that assumes less. In AI it motivates preferring simpler models, which are less likely to
+  fit noise.
+senses:
+  - definition: >-
+      A methodological preference, other things being equal, for explanations that posit fewer
+      entities, assumptions or adjustable parts. In machine learning it appears as a preference for
+      models of lower capacity or shorter description, justified by
+      [[generalization|generalization]] arguments: [[regularization|regularization]],
+      [[model-selection|model selection]] criteria such as AIC and BIC,
+      [[minimum-description-length|minimum description length]] and Bayesian model comparison (where
+      the marginal [[likelihood|likelihood]] automatically penalizes needless flexibility) all
+      implement versions of it, and [[pac-learning|PAC learning]] theory includes an 'Occam's razor'
+      theorem showing that learners which output short hypotheses generalize.
+      [[solomonoff-induction|Solomonoff induction]] makes the principle precise by weighting
+      hypotheses by program length. Deep learning complicates the picture: hugely
+      [[overparameterization|overparameterized]] networks generalize well, suggesting that
+      simplicity should be measured by the functions training actually favors rather than by
+      parameter count — an implicit simplicity bias studied under [[implicit-regularization|implicit
+      regularization]] and [[double-descent|double descent]].
+    example: >-
+      By Occam's razor, try the linear baseline first; the transformer has to earn its complexity.
+origin: >-
+  Named after the English Franciscan philosopher William of Ockham (c. 1287–1347), who argued for
+  parsimony, although the familiar maxim that entities must not be multiplied beyond necessity was
+  formulated by John Punch in 1639 and does not appear in Ockham's surviving works. Libert Froidmont
+  used the Latin novacula Occami, 'Occam's razor', in 1649. Anselm Blumer and colleagues proved an
+  'Occam's razor' theorem for learning in 1987.
+year: 1649
+see_also:
+  - minimum description length
+  - Solomonoff induction
+  - Kolmogorov complexity
+  - regularization
+  - overfitting
+  - no free lunch theorem
+sources:
+  - text: >-
+      Blumer, A., Ehrenfeucht, A., Haussler, D. & Warmuth, M. K. (1987). Occam's Razor. Information
+      Processing Letters, 24(6).

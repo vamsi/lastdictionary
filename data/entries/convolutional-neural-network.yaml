@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: convolutional neural network
+id: convolutional-neural-network
+pos: n.
+also:
+  - CNN
+  - ConvNet
+  - convnet
+  - convolutional network
+domain: dl
+domains:
+  - percep
+level: core
+plain: >-
+  A kind of neural network built for images and other grid-like data. It slides small pattern
+  detectors across the input, finding edges first, then shapes, then whole objects.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] in which some or all layers are
+      [[convolution|convolutional]]: each output unit is computed from a small local patch of the
+      input by a [[filter|filter]] whose weights are reused at every position
+      ([[weight-sharing|weight sharing]]). This builds in two assumptions suited to images, audio
+      and other grid-structured data, locality and translation [[equivariance|equivariance]], and
+      cuts parameter counts by orders of magnitude compared with [[fully-connected-layer|fully
+      connected]] networks. A classic CNN alternates convolutions and nonlinearities with
+      [[pooling|pooling]] or strided downsampling, so [[receptive-field|receptive fields]] widen and
+      [[feature-map|feature maps]] become coarser but more abstract with depth, and ends in fully
+      connected or global-pooling layers. Landmark CNNs include [[lenet|LeNet]],
+      [[alexnet|AlexNet]], VGGNet, GoogLeNet, [[resnet|ResNet]], [[u-net|U-Net]] and EfficientNet.
+      CNNs dominated [[computer-vision|computer vision]] from 2012 until [[vision-transformer|vision
+      transformers]] became competitive around 2020–21; hybrids are common, and CNNs remain standard
+      on low-power devices.
+    example: >-
+      We fine-tuned a pretrained CNN on 2,000 chest X-rays instead of training from scratch.
+origin: >-
+  Kunihiko Fukushima's neocognitron (1980) introduced layers of shared-weight feature detectors
+  modeled on David Hubel and Torsten Wiesel's simple and complex cells. Alex Waibel's time-delay
+  neural network (1987), Wei Zhang's shift-invariant network (1988) and Yann LeCun's 1989 zip-code
+  recognizer trained shared weights by backpropagation; LeCun's work led to LeNet. 'Convolutional
+  network' became the usual name in the early 1990s, and AlexNet's 2012 ImageNet win made CNNs
+  dominant.
+year: 1989
+note: >-
+  Despite the name, most CNN libraries compute cross-correlation (the filter is not flipped);
+  because the filter is learned, the difference is immaterial.
+see_also:
+  - convolution
+  - filter
+  - pooling
+  - receptive field
+  - feature map
+  - LeNet
+  - AlexNet
+  - ResNet
+contrast:
+  - vision transformer
+  - multilayer perceptron
+sources:
+  - text: >-
+      LeCun, Y. et al. (1989). Backpropagation Applied to Handwritten Zip Code Recognition. Neural
+      Computation, 1(4), 541–551.
+  - text: >-
+      LeCun, Y., Bottou, L., Bengio, Y. & Haffner, P. (1998). Gradient-Based Learning Applied to
+      Document Recognition. Proceedings of the IEEE, 86(11), 2278–2324.
+  - text: >-
+      Fukushima, K. (1980). Neocognitron: A Self-Organizing Neural Network Model for a Mechanism of
+      Pattern Recognition Unaffected by Shift in Position. Biological Cybernetics, 36, 193–202.

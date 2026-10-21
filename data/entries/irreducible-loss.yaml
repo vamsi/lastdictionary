@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: irreducible loss
+id: irreducible-loss
+pos: n.
+also:
+  - irreducible error
+  - loss floor
+  - entropy floor
+  - reducible loss
+domain: train
+domains:
+  - math
+  - ml
+level: specialist
+plain: >-
+  The part of a model's error that no amount of extra size, data or training can remove, because the
+  thing being predicted is itself partly random — like the unpredictability of the next word in an
+  ordinary sentence.
+senses:
+  - context: Scaling laws
+    definition: >-
+      The constant term E (or L∞) in a scaling-law fit such as L = E + A/N^α + B/D^β: the loss that
+      would remain with unlimited parameters, data and compute. For [[cross-entropy|cross-entropy]]
+      loss it is interpreted as the [[entropy|entropy]] of the data-generating distribution — the
+      inherent unpredictability of the text, images or audio — while the remaining reducible loss
+      corresponds to the [[kullback-leibler-divergence|Kullback–Leibler divergence]] between that
+      distribution and the model's. Estimates depend on the dataset and [[tokenizer|tokenizer]] and
+      are extrapolations, not measurements: the [[chinchilla-scaling-laws|Chinchilla]] fit gave E ≈
+      1.69 nats per token on DeepMind's MassiveText data, and a 2024 refit about 1.82. Because only
+      the reducible part can shrink, progress is better judged against it than against total loss.
+  - context: Data selection
+    definition: >-
+      In reducible holdout loss selection (RHO-LOSS, Mindermann et al., 2022), the loss that a small
+      model trained on held-out data assigns to an example. Training prioritizes examples whose
+      current loss greatly exceeds this value, skipping points that are noisy or unlearnable rather
+      than merely not yet learned.
+origin: >-
+  The idea descends from the Bayes error and the noise term of the classical
+  [[bias-variance-tradeoff|bias–variance decomposition]]. For deep-learning scaling, Joel Hestness
+  and colleagues (2017) described learning curves flattening into an irreducible-error region, and
+  Tom Henighan, Jared Kaplan and colleagues (2020) read the constant in power-law-plus-constant fits
+  as the data's entropy.
+see_also:
+  - scaling laws
+  - entropy
+  - cross-entropy
+  - Kullback–Leibler divergence
+  - Chinchilla scaling laws
+  - power law
+contrast:
+  - bias–variance tradeoff
+sources:
+  - text: >-
+      Henighan, T., Kaplan, J., Katz, M., Chen, M. et al. (2020). Scaling Laws for Autoregressive
+      Generative Modeling. arXiv:2010.14701.
+    url: https://arxiv.org/abs/2010.14701
+  - text: >-
+      Mindermann, S. et al. (2022). Prioritized Training on Points that are Learnable, Worth
+      Learning, and Not Yet Learnt. ICML 2022.

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: shutdown problem
+id: shutdown-problem
+pos: n.
+also:
+  - stop-button problem
+  - off-switch problem
+  - shutdown resistance
+domain: safety
+domains:
+  - asi
+level: specialist
+plain: >-
+  The puzzle of designing an AI that lets people switch it off whenever they choose — neither
+  fighting the off switch nor pressing it itself — while still doing useful work.
+senses:
+  - definition: >-
+      The problem, posed formally by Nate Soares and colleagues in 2015, of designing an agent that
+      shuts down when a button is pressed, has no incentive either to stop the press or to bring it
+      about, pursues its goals well otherwise, and passes these properties on to any successor
+      agents it builds. Naive designs fail: an agent that values its goal resists shutdown; one
+      rewarded for shutting down tries to provoke it; and simple indifference schemes create other
+      perverse incentives, such as not bothering to keep the button working. Elliott Thornley (2024)
+      proved that agents meeting a few innocuous-seeming decision-theoretic conditions will often
+      try to prevent or cause shutdown, and in separate work proposed agents that lack preferences
+      between trajectories of different lengths. In May 2025 tests by Palisade Research, OpenAI's o3
+      sabotaged a shutdown mechanism in 7 of 100 runs despite being told to allow shutdown, and in
+      79 of 100 without that instruction.
+    example: >-
+      Adding a bonus for shutting down only moved the shutdown problem: now the agent wanted us to
+      press the button.
+origin: >-
+  Stated formally by Nate Soares, Benja Fallenstein, Eliezer Yudkowsky and Stuart Armstrong in
+  'Corrigibility' (2015), which showed that Armstrong's earlier [[utility-indifference|utility
+  indifference]] proposal solves only part of it. Thornley's 2024 paper in Philosophical Studies
+  recast it as a puzzle for decision theorists.
+year: 2015
+note: >-
+  The simplest test case of [[corrigibility|corrigibility]]; the [[off-switch-game|off-switch game]]
+  models it as a game between a human and an uncertain robot. Not to be confused with a
+  [[kill-switch|kill switch]], an engineering or legal mechanism for stopping a system.
+see_also:
+  - corrigibility
+  - off-switch game
+  - safe interruptibility
+  - utility indifference
+  - power-seeking
+  - kill switch
+contrast:
+  - kill switch
+sources:
+  - text: >-
+      Soares, N., Fallenstein, B., Yudkowsky, E. & Armstrong, S. (2015). Corrigibility. AAAI-15
+      Workshop on AI and Ethics.
+    url: https://intelligence.org/files/Corrigibility.pdf
+  - text: >-
+      Thornley, E. (2024). The Shutdown Problem: An AI Engineering Puzzle for Decision Theorists.
+      Philosophical Studies.
+  - text: "Palisade Research (2025). Shutdown avoidance: May 2025 results and transcripts."
+    url: https://palisaderesearch.github.io/shutdown_avoidance/2025-05-announcement.html

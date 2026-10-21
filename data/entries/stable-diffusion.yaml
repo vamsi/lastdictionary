@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Stable Diffusion
+id: stable-diffusion
+pos: prop. n.
+also:
+  - SD
+  - SD 1.5
+  - SDXL
+  - Stable Diffusion XL
+  - Stable Diffusion 3
+  - Stable Diffusion 3.5
+domain: gen
+domains:
+  - eng
+  - society
+labels:
+  - trademark
+level: essential
+plain: >-
+  A widely used image-generating AI whose model files were released for anyone to download, so
+  people could run it on their own computers and adapt it.
+senses:
+  - definition: >-
+      A family of [[text-to-image-model|text-to-image models]] released by Stability AI with
+      downloadable weights. The original 2022 models are [[latent-diffusion-model|latent diffusion
+      models]]: a [[variational-autoencoder|VAE]] compresses 512 × 512 images to 64 × 64 × 4
+      latents, an 860-million-parameter [[u-net|U-Net]] denoises them, and a frozen [[clip|CLIP]]
+      ViT-L/14 text encoder (123 million parameters) supplies the prompt through
+      [[cross-attention|cross-attention]]; training used subsets of [[laion-5b|LAION-5B]].
+      Successors include Stable Diffusion 2 (November 2022), SDXL (July 2023; a
+      3.5-billion-parameter base model with two text encoders), Stable Diffusion 3 (announced
+      February 2024; a [[rectified-flow|rectified flow]] [[diffusion-transformer|diffusion
+      transformer]] with the MMDiT architecture) and Stable Diffusion 3.5 (October 2024; Large at 8
+      billion parameters and Medium at 2.5 billion), which as of October 2026 remained the latest
+      release. Because the weights run on consumer GPUs, Stable Diffusion seeded a large open
+      ecosystem — community web interfaces, [[low-rank-adaptation|LoRA]] fine-tunes,
+      [[controlnet|ControlNet]], [[dreambooth|DreamBooth]] and [[textual-inversion|textual
+      inversion]] — and popularized much of today's image-generation vocabulary.
+    example: We fine-tuned Stable Diffusion on our product photos with a LoRA overnight.
+origin: >-
+  Developed by the CompVis group at LMU Munich and Runway, building on the latent diffusion paper of
+  Robin Rombach and colleagues, with compute from Stability AI and training data from LAION. Version
+  1 was released publicly on 22 August 2022 under the CreativeML OpenRAIL-M license; later models
+  use Stability AI's own licenses, including its Community License.
+year: 2022
+note: >-
+  Litigation over its training data includes Getty Images v. Stability AI, decided largely in
+  Stability's favor by the High Court of England and Wales in November 2025, and the US artists'
+  class action Andersen v. Stability AI. Downloadable weights under use restrictions make it an
+  [[open-weight-model|open-weight model]] rather than [[open-source-ai|open-source AI]] in the
+  strict sense.
+see_also:
+  - latent diffusion model
+  - text-to-image model
+  - open-weight model
+  - LAION-5B
+  - ControlNet
+  - FLUX
+  - AI copyright litigation
+sources:
+  - text: >-
+      Rombach, R., Blattmann, A., Lorenz, D., Esser, P. & Ommer, B. (2022). High-Resolution Image
+      Synthesis with Latent Diffusion Models. CVPR 2022. arXiv:2112.10752.
+    url: https://arxiv.org/abs/2112.10752
+  - text: >-
+      Esser, P. et al. (2024). Scaling Rectified Flow Transformers for High-Resolution Image
+      Synthesis. arXiv:2403.03206.
+    url: https://arxiv.org/abs/2403.03206
+as_of: 2026-10

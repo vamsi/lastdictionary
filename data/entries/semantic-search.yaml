@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semantic search
+id: semantic-search
+pos: n.
+also:
+  - meaning-based search
+  - neural search
+  - conceptual search
+domain: eng
+domains:
+  - llm
+  - sym
+level: core
+plain: >-
+  Search that understands what you mean, not just the words you typed, so a search for 'cheap places
+  to stay' also finds 'budget hotels'.
+senses:
+  - context: Embedding-based search
+    definition: >-
+      Search that ranks results by how close their meaning is to the query's rather than by how many
+      keywords they share, today usually by encoding both with an [[embedding-model|embedding
+      model]] and running [[vector-search|vector search]] over [[text-embedding|text embeddings]]
+      ([[dense-retrieval|dense retrieval]]). It handles synonyms, paraphrases, misspellings and
+      cross-language matches, and can search images or audio with the same machinery. Its weaknesses
+      mirror its strengths: it can return items that are topically similar but wrong, miss exact
+      identifiers, and is harder to explain than keyword matching, so production systems commonly
+      combine it with keyword search ([[hybrid-search|hybrid search]]) and [[reranking|reranking]].
+      Semantic search is the retrieval step in most
+      [[retrieval-augmented-generation|retrieval-augmented generation]] systems.
+    example: >-
+      Semantic search matched 'my card was charged twice' to the article titled 'Duplicate
+      transactions'.
+  - context: Semantic Web (earlier sense)
+    definition: >-
+      Search that exploits explicit, machine-readable meaning — [[ontology|ontologies]], structured
+      metadata and [[knowledge-graph|knowledge graphs]] — to interpret queries and return entities
+      and facts rather than documents, as envisioned for the [[semantic-web|semantic web]].
+origin: >-
+  Latent semantic indexing (Scott Deerwester, Susan Dumais and colleagues, 1990) was an early
+  statistical approach to matching by meaning. Ramanathan Guha, Rob McCool and Eric Miller's paper
+  'Semantic Search' (WWW 2003) used the phrase for Semantic Web search. The embedding sense became
+  dominant after BERT-based models entered web search in 2019 and embedding APIs spread from 2022.
+year: 2003
+note: >-
+  Marketing applies 'semantic search' to almost any AI-assisted search; it is worth asking whether
+  embeddings, knowledge graphs or simple query expansion are meant.
+see_also:
+  - vector search
+  - dense retrieval
+  - text embedding
+  - hybrid search
+  - latent semantic analysis
+  - knowledge graph
+  - retrieval-augmented generation
+contrast:
+  - sparse retrieval
+sources:
+  - text: >-
+      Guha, R., McCool, R. & Miller, E. (2003). Semantic Search. Proceedings of the 12th
+      International World Wide Web Conference (WWW 2003).
+  - text: >-
+      Deerwester, S., Dumais, S. T., Furnas, G. W., Landauer, T. K. & Harshman, R. (1990). Indexing
+      by latent semantic analysis. Journal of the American Society for Information Science 41(6):
+      391–407.

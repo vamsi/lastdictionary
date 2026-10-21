@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mean squared error
+id: mean-squared-error
+pos: n.
+also:
+  - MSE
+  - root mean squared error
+  - RMSE
+  - squared error loss
+  - L2 loss
+  - quadratic loss
+  - mean squared deviation
+domain: ml
+domains:
+  - math
+  - eval
+level: core
+plain: >-
+  A way of scoring numerical predictions: square each prediction's error, then average them, so big
+  misses count much more than small ones. Lower is better.
+senses:
+  - definition: >-
+      The average of the squared differences between predicted and true values. It is the standard
+      loss for [[regression|regression]] and the quantity minimized by
+      [[ordinary-least-squares|ordinary least squares]]; minimizing it yields predictions of the
+      conditional mean, and it corresponds to [[maximum-likelihood-estimation|maximum likelihood]]
+      under Gaussian noise. Squaring makes the loss smooth and differentiable, which suits
+      [[gradient-descent|gradient descent]], but also makes it sensitive to outliers, since one
+      large error outweighs many small ones. Its square root, the root mean squared error (RMSE), is
+      in the target's units and is the more commonly reported metric; the
+      [[coefficient-of-determination|coefficient of determination]] rescales MSE relative to the
+      variance of the target. For an estimator, MSE decomposes into squared bias plus variance, the
+      basis of the [[bias-variance-tradeoff|bias–variance tradeoff]]. Beyond regression, MSE is the
+      reconstruction loss of many [[autoencoder|autoencoders]], the denoising objective of
+      [[diffusion-model|diffusion models]] and the value-fitting loss in
+      [[reinforcement-learning|reinforcement learning]]. When outliers or heavy tails matter,
+      [[mean-absolute-error|mean absolute error]] or the Huber loss is preferred.
+    example: >-
+      RMSE on next-day demand fell from 41 to 33 units after we added weather features.
+formula_latex: \mathrm{MSE} = \frac{1}{n} \sum_{i=1}^{n} \left(y_i - \hat{y}_i\right)^2
+origin: >-
+  Adrien-Marie Legendre published the method of least squares in 1805, and Carl Friedrich Gauss gave
+  it a probabilistic justification in 1809; in 1821–1823 he took the mean squared error as his
+  measure of precision and showed that least squares minimizes it among linear unbiased estimators
+  whatever the error distribution. The phrase 'mean square error' appears, for example, in the title
+  of a 1920 paper by Ronald Fisher.
+year: 1805
+see_also:
+  - mean absolute error
+  - coefficient of determination
+  - ordinary least squares
+  - regression
+  - loss function
+  - bias–variance tradeoff
+  - Brier score
+contrast:
+  - mean absolute error
+sources:
+  - text: >-
+      Legendre, A.-M. (1805). Nouvelles méthodes pour la détermination des orbites des comètes.
+      Paris: Courcier.
+  - text: >-
+      Gauss, C. F. (1809). Theoria motus corporum coelestium in sectionibus conicis solem
+      ambientium. Hamburg: Perthes & Besser.

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: policy
+id: policy
+pos: n.
+also:
+  - π
+  - control policy
+  - decision rule
+domain: rl
+domains:
+  - agents
+  - gov
+level: core
+plain: >-
+  An AI agent's strategy: the rule it follows to pick an action in each situation. Training in
+  reinforcement learning means improving this rule until it earns high rewards.
+senses:
+  - context: Reinforcement learning
+    definition: >-
+      A mapping from [[state|states]] (or observation histories) to [[action|actions]] that
+      determines an [[agent|agent]]'s behavior, written π. A deterministic policy picks one action
+      per state; a stochastic policy assigns probabilities π(a | s), which aids exploration and is
+      necessary in some partially observable and multi-agent settings. Policies can be tables,
+      hand-written rules or neural networks ('policy networks'); a [[large-language-model|large
+      language model]] fine-tuned with RL is itself a policy whose actions are [[token|tokens]].
+      Solving a [[markov-decision-process|Markov decision process]] means finding an optimal policy
+      π*, whose expected [[return|return]] is maximal from every state. Algorithms either derive the
+      policy from a [[value-function|value function]], acting greedily on [[q-function|Q-values]],
+      or optimize it directly with [[policy-gradient|policy gradient]] methods;
+      [[on-policy|on-policy]] and [[off-policy|off-policy]] learning differ in whether the training
+      data come from the policy being improved.
+    example: >-
+      We distilled the planner's choices into a fast policy network that runs at 50 Hz on the robot.
+  - context: Governance
+    definition: >-
+      A course of action or set of rules adopted by a government or organization; in AI, the laws,
+      regulations, standards and corporate commitments that govern how systems are built and used,
+      from a company's usage policy to a [[responsible-scaling-policy|responsible scaling policy]].
+formula_latex: \pi(a \mid s) = \Pr\left( A_t = a \mid S_t = s \right)
+origin: >-
+  Richard Bellman used 'policy' for a rule giving the decision to take in each state of a multistage
+  process in his 1950s work on dynamic programming, stating that an optimal policy has the
+  'principle of optimality'; Ronald Howard's 'policy iteration' (1960) fixed the term, and RL
+  adopted it wholesale. 'Policy network' entered wide use with [[alphago|AlphaGo]] (2016).
+year: 1957
+note: >-
+  The RL sense has nothing to do with public policy. In
+  [[reinforcement-learning-from-human-feedback|RLHF]], 'the policy' or 'policy model' is the
+  language model being trained, as opposed to the [[reward-model|reward model]] that scores it.
+see_also:
+  - value function
+  - policy gradient
+  - policy iteration
+  - on-policy
+  - off-policy
+  - behavioral cloning
+  - action
+contrast:
+  - value function
+  - reward model
+sources:
+  - text: Bellman, R. (1957). Dynamic Programming. Princeton University Press.

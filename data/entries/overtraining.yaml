@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: overtraining
+id: overtraining
+pos: n.
+also:
+  - over-training
+  - overtrained model
+  - inference-optimal training
+domain: train
+domains:
+  - llm
+  - infer
+level: core
+plain: >-
+  Deliberately training a model on much more data than would be most efficient for its training
+  budget, so that a smaller model reaches good quality and is cheaper to run afterwards.
+senses:
+  - context: Scaling
+    definition: >-
+      Training a model on more tokens than is [[compute-optimal-training|compute-optimal]] for its
+      size, accepting a higher training cost for a given loss in exchange for a smaller model that
+      is cheaper and faster at inference. Because loss keeps falling with more tokens, an
+      overtrained small model can match a compute-optimal larger one, and over a model's deployed
+      life serving costs usually dominate, so total cost falls. Overtraining is described by a
+      multiplier over the Chinchilla token count — Samir Yitzhak Gadre and colleagues (2024) studied
+      runs 32× beyond it — or by [[tokens-per-parameter|tokens per parameter]]. Nikhil Sardana and
+      colleagues (2023) extended the [[chinchilla-scaling-laws|Chinchilla scaling laws]] to include
+      expected inference demand and found quality still improving at 10,000 tokens per parameter.
+      Since LLaMA (2023), most open-weight models have been trained this way.
+    example: >-
+      We overtrained the 3B model on 12 trillion tokens because it will serve billions of requests.
+  - context: Older usage
+    definition: >-
+      Training a neural network for so long on a fixed training set that it fits noise and
+      generalizes worse; a synonym for [[overfitting|overfitting]] common in neural-network
+      literature of the late 1980s and 1990s, and the motivation for [[early-stopping|early
+      stopping]].
+    labels:
+      - historical
+origin: >-
+  The early-stopping sense is from neural-network work of the late 1980s and 1990s. The scaling
+  sense followed the Chinchilla paper (2022): Meta's LLaMA (February 2023) trained 7- and
+  13-billion-parameter models on a trillion tokens, and 'over-training' was analyzed by Nikhil
+  Sardana and colleagues (December 2023) and Samir Yitzhak Gadre and colleagues (March 2024).
+year: 2023
+note: >-
+  The two senses point in opposite directions: in the modern sense extra training on fresh data
+  improves the model; in the older sense extra passes over the same data harm it. Distinct from
+  [[overfitting|overfitting]], which concerns generalization rather than how a budget is allocated.
+see_also:
+  - compute-optimal training
+  - tokens per parameter
+  - Chinchilla scaling laws
+  - inference cost
+  - small language model
+  - data-constrained scaling
+contrast:
+  - overfitting
+  - compute-optimal training
+sources:
+  - text: >-
+      Sardana, N., Portes, J., Doubov, S. & Frankle, J. (2023). Beyond Chinchilla-Optimal:
+      Accounting for Inference in Language Model Scaling Laws. arXiv:2401.00448.
+    url: https://arxiv.org/abs/2401.00448
+  - text: >-
+      Gadre, S. Y. et al. (2024). Language models scale reliably with over-training and on
+      downstream tasks. arXiv:2403.08540.
+    url: https://arxiv.org/abs/2403.08540

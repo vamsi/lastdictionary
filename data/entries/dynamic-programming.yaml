@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dynamic programming
+id: dynamic-programming
+pos: n.
+also:
+  - DP
+domain: rl
+domains:
+  - math
+  - sym
+level: core
+plain: >-
+  A problem-solving method that breaks a big problem into smaller overlapping pieces, solves each
+  piece once and reuses the answers — the basis for computing the best long-term strategy step by
+  step.
+senses:
+  - context: Reinforcement learning and control
+    definition: >-
+      Planning methods that find optimal [[policy|policies]] when a complete model of the
+      [[markov-decision-process|Markov decision process]], its transition probabilities and
+      [[reward-function|rewards]], is in hand, by sweeping through the state space and repeatedly
+      applying [[bellman-equation|Bellman]] backups to [[value-function|value functions]]. The main
+      methods are policy evaluation (computing the value of a fixed policy),
+      [[policy-iteration|policy iteration]] and [[value-iteration|value iteration]], with
+      asynchronous and approximate variants. DP needs a complete model and sweeps over states, so
+      its cost grows with the size of the state space — Bellman's [[curse-of-dimensionality|curse of
+      dimensionality]]. [[reinforcement-learning|Reinforcement learning]] can be seen as approximate
+      dynamic programming from samples: [[temporal-difference-learning|temporal difference
+      learning]] and [[q-learning|Q-learning]] perform the same backups on experienced transitions
+      instead of a model, which is why operations researchers speak of approximate or neuro-dynamic
+      programming.
+    example: >-
+      With only 10,000 states and a known model, plain dynamic programming finds the optimal policy
+      in seconds.
+  - context: Algorithms
+    definition: >-
+      A general algorithm-design technique for problems with optimal substructure and overlapping
+      subproblems, which stores the solutions of subproblems in a table (bottom-up) or memo
+      (top-down) so that each is computed only once. Examples include shortest paths, sequence
+      alignment, edit distance and the Viterbi algorithm for [[hidden-markov-model|hidden Markov
+      models]].
+origin: >-
+  Coined by Richard Bellman at the RAND Corporation in the early 1950s for multistage decision
+  processes; the term was in print by 1952. In his 1984 autobiography he recalled choosing 'dynamic'
+  and 'programming' (then meaning planning) partly because the name sounded impressive and could
+  hardly be used pejoratively, shielding mathematical research from a Secretary of Defense hostile
+  to the word 'research' — though Charles Wilson, the secretary he named, took office only in 1953.
+  His book Dynamic Programming appeared in 1957.
+year: 1952
+note: >-
+  The two senses share Bellman's principle of optimality but are used differently: to a software
+  engineer DP mostly means memoized recursion; to an RL researcher it means planning with a known
+  model by Bellman backups.
+see_also:
+  - Bellman equation
+  - value iteration
+  - policy iteration
+  - Markov decision process
+  - curse of dimensionality
+  - temporal difference learning
+contrast:
+  - temporal difference learning
+  - Monte Carlo method
+sources:
+  - text: Bellman, R. (1957). Dynamic Programming. Princeton University Press.
+  - text: "Bellman, R. (1984). Eye of the Hurricane: An Autobiography. World Scientific."
+  - text: >-
+      Bertsekas, D. P. & Tsitsiklis, J. N. (1996). Neuro-Dynamic Programming. Athena Scientific.
+  - text: >-
+      Bellman, R. (1952). On the Theory of Dynamic Programming. Proceedings of the National Academy
+      of Sciences 38(8), 716–719.

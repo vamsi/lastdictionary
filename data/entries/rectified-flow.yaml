@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rectified flow
+id: rectified-flow
+pos: n.
+also:
+  - reflow
+  - rectification
+  - rectified flow transformer
+  - InstaFlow
+domain: gen
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A generator trained to move random noise toward real data along straight lines, which can then be
+  straightened further so that a picture comes out in one or a few steps.
+senses:
+  - definition: >-
+      A training method for generators defined by an ordinary differential equation, built on
+      straight lines: each source sample x₀ (usually noise) is paired with a target sample x₁
+      (usually data), and a velocity field is fitted so that at any point on the segment between
+      them it points along x₁ − x₀, the same objective as linear [[flow-matching|flow matching]].
+      Because the learned flow averages over many crossing straight lines, its trajectories are
+      curved; the 'reflow' procedure regenerates noise–data pairs with the trained model and
+      retrains on them; because straight lines between these pairs rarely cross, each round makes
+      the flow straighter. A nearly straight flow needs very few integration steps, sometimes only
+      one, which also eases distillation into one-step generators (as in InstaFlow, 2023). Stable
+      Diffusion 3 and [[flux|FLUX]] describe themselves as rectified flow transformers, using the
+      straight-path objective with a timestep sampling that emphasizes intermediate noise levels.
+origin: >-
+  Introduced by Xingchao Liu, Chengyue Gong and Qiang Liu of the University of Texas at Austin in
+  'Flow Straight and Fast' (posted September 2022; ICLR 2023). Patrick Esser and colleagues'
+  'Scaling Rectified Flow Transformers for High-Resolution Image Synthesis' (March 2024), the Stable
+  Diffusion 3 paper, brought it to large-scale text-to-image generation.
+year: 2022
+see_also:
+  - flow matching
+  - diffusion transformer
+  - Stable Diffusion
+  - FLUX
+  - consistency model
+  - diffusion distillation
+sources:
+  - text: >-
+      Liu, X., Gong, C. & Liu, Q. (2023). Flow Straight and Fast: Learning to Generate and Transfer
+      Data with Rectified Flow. ICLR 2023. arXiv:2209.03003.
+    url: https://arxiv.org/abs/2209.03003
+  - text: >-
+      Esser, P. et al. (2024). Scaling Rectified Flow Transformers for High-Resolution Image
+      Synthesis. arXiv:2403.03206.
+    url: https://arxiv.org/abs/2403.03206

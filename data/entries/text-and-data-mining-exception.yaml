@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: text and data mining exception
+id: text-and-data-mining-exception
+pos: n.
+also:
+  - TDM exception
+  - TDM opt-out
+  - computational data analysis exception
+  - information analysis exception
+domain: gov
+domains:
+  - data
+labels:
+  - legal
+level: core
+plain: >-
+  A rule in many countries' copyright laws that lets people use computers to copy and analyze large
+  amounts of text, images or data without asking permission — sometimes only for research, sometimes
+  unless owners opt out.
+senses:
+  - definition: >-
+      A statutory exception to copyright, and in the EU to database rights, that allows the copies a
+      computer must make when it analyzes large collections of works to derive information from
+      them, such as trends or correlations. Its scope varies by jurisdiction. The EU's Digital
+      Single Market Directive (2019) has two: Article 3, for research organizations and cultural
+      heritage institutions doing scientific research, which rights holders cannot override; and
+      Article 4, for anyone and any purpose given lawful access, unless the rights holder has
+      reserved the right 'in an appropriate manner', which for material published online means a
+      machine-readable signal such as [[robots-txt|robots.txt]] or metadata. The [[eu-ai-act|EU AI
+      Act]] requires providers of [[general-purpose-ai-model|general-purpose AI models]] to honor
+      such reservations. Japan's Article 30-4 (2018) broadly permits uses not aimed at enjoying a
+      work's expression unless they unreasonably prejudice the owner; Singapore (2021) allows
+      computational data analysis with no opt-out; the UK permits only non-commercial research
+      (2014). Courts are now testing whether model training, and memorization within a model, fall
+      inside these exceptions.
+    example: >-
+      The publisher added a machine-readable TDM opt-out so EU training crawlers would have to skip
+      its archive.
+origin: >-
+  Japan introduced an exception for computer 'information analysis' in 2009; the UK followed in 2014
+  after the Hargreaves Review, and the EU adopted its two-tier scheme in Directive (EU) 2019/790.
+year: 2009
+note: >-
+  Opt-out conventions remain fragmented. A UK government proposal of December 2024 to add a
+  commercial exception with an opt-out met strong opposition from creative industries, and in GEMA
+  v. OpenAI (Munich, November 2025) a German court held that the exception did not cover song lyrics
+  memorized within a model.
+see_also:
+  - fair use and AI training
+  - AI copyright litigation
+  - robots.txt
+  - web scraping
+  - data licensing
+  - general-purpose AI model
+contrast:
+  - fair use and AI training
+standards: >-
+  Directive (EU) 2019/790, Arts. 3–4; EU AI Act (Reg. (EU) 2024/1689), Art. 53(1)(c); Japan
+  Copyright Act, Art. 30-4
+as_of: 2026-10

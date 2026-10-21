@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: uncertainty quantification
+id: uncertainty-quantification
+pos: n.
+also:
+  - UQ
+  - epistemic uncertainty
+  - aleatoric uncertainty
+  - predictive uncertainty
+  - model uncertainty
+  - deep ensembles
+  - Monte Carlo dropout
+domain: math
+domains:
+  - safety
+  - llm
+  - ml
+level: specialist
+plain: >-
+  Measuring how unsure an AI system's predictions are, and why, so that people know when to trust an
+  answer and when to double-check it.
+senses:
+  - definition: >-
+      The estimation and communication of how uncertain a model's predictions are. Two sources are
+      commonly distinguished: aleatoric uncertainty, irreducible randomness or ambiguity in the data
+      (a blurry image, a question with several valid answers), and epistemic uncertainty, the
+      model's lack of knowledge, which more data could reduce and which grows on
+      [[out-of-distribution|out-of-distribution]] inputs. Methods include
+      [[bayesian-inference|Bayesian]] approaches (posteriors over weights, Laplace approximations,
+      [[variational-inference|variational inference]]), deep ensembles of independently trained
+      networks, Monte Carlo dropout, distance-aware and evidential models, distribution-free
+      [[conformal-prediction|conformal prediction]], and post-hoc [[calibration|calibration]]. For
+      [[large-language-model|language models]], uncertainty is estimated from token
+      [[log-probability|log-probabilities]], from the [[entropy|entropy]] or disagreement of several
+      sampled answers ('semantic entropy'), from verbalized confidence, or from [[probing|probes]]
+      on internal [[activation|activations]], and is used to trigger [[abstention|abstention]],
+      retrieval or human review and to flag likely [[hallucination|hallucinations]].
+    example: >-
+      Disagreement among five sampled answers was our best uncertainty signal for routing questions
+      to a human.
+origin: >-
+  The aleatory–epistemic distinction comes from the philosophy of probability and engineering risk
+  analysis. Yarin Gal and Zoubin Ghahramani's Monte Carlo dropout (2016), Balaji Lakshminarayanan
+  and colleagues' deep ensembles (2017) and Alex Kendall and Gal's 2017 analysis of the two
+  uncertainty types brought it into deep learning; semantic entropy for language models was proposed
+  by Lorenz Kuhn, Gal and Sebastian Farquhar (2023).
+see_also:
+  - calibration
+  - conformal prediction
+  - Bayesian inference
+  - abstention
+  - out-of-distribution
+  - hallucination
+  - entropy

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: word2vec
+id: word2vec
+pos: prop. n.
+also:
+  - skip-gram
+  - skip-gram with negative sampling
+  - SGNS
+  - continuous bag-of-words
+  - CBOW
+  - negative sampling
+domain: llm
+domains:
+  - dl
+  - hist
+level: core
+plain: >-
+  A 2013 Google technique that learns a list of numbers for each word by training a very small
+  network to predict which words appear near it across billions of words of text.
+senses:
+  - definition: >-
+      A method, released with an open-source tool, for learning [[word-embedding|word embeddings]]
+      from unannotated text by training a very small neural network — in effect one linear
+      projection feeding an output classifier — on a word-prediction task. It comes in two variants:
+      continuous bag-of-words (CBOW) guesses a word from the average of the vectors of the words
+      around it, and skip-gram uses a word to guess each of its neighbors within a small window.
+      Training is made cheap by replacing the full [[softmax|softmax]] over the vocabulary with
+      hierarchical softmax or negative sampling — a logistic-regression task of distinguishing
+      observed word–context pairs from randomly drawn 'negative' pairs — and by subsampling very
+      frequent words. Vectors could be learned from a 1.6-billion-word dataset in under a day, and
+      they displayed linear analogies such as king − man + woman ≈ queen. Omer Levy and Yoav
+      Goldberg (2014) showed that skip-gram with negative sampling implicitly factorizes a shifted
+      pointwise mutual information matrix, linking it to count-based methods such as
+      [[glove|GloVe]].
+    example: We trained skip-gram vectors on the product catalog to find similar items.
+origin: >-
+  Introduced by Tomas Mikolov, Kai Chen, Greg Corrado and Jeffrey Dean at Google in January 2013; a
+  second paper with Ilya Sutskever (NIPS 2013) added negative sampling, subsampling and phrase
+  vectors, and Google released the C code that year. Its speed and analogy demonstrations made
+  pretrained embeddings ubiquitous in NLP.
+year: 2013
+note: >-
+  The NIPS 2013 paper received the NeurIPS Test of Time Award in 2023. The idea of training on
+  word–context prediction has since been applied to graphs, products and genes ('anything2vec').
+see_also:
+  - word embedding
+  - GloVe
+  - embedding
+  - language model
+  - representation learning
+sources:
+  - text: >-
+      Mikolov, T., Chen, K., Corrado, G. & Dean, J. (2013). Efficient Estimation of Word
+      Representations in Vector Space. arXiv:1301.3781.
+    url: https://arxiv.org/abs/1301.3781
+  - text: >-
+      Mikolov, T., Sutskever, I., Chen, K., Corrado, G. & Dean, J. (2013). Distributed
+      Representations of Words and Phrases and their Compositionality. NIPS 2013.
+    url: https://arxiv.org/abs/1310.4546

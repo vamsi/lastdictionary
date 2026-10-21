@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inverse kinematics
+id: inverse-kinematics
+pos: n.
+also:
+  - IK
+  - IK solver
+  - inverse kinematic solver
+domain: robot
+domains:
+  - math
+  - gen
+level: core
+plain: >-
+  Working backward from where you want a robot's hand to be to the joint angles that will put it
+  there, like working out how to bend your arm to touch your nose.
+senses:
+  - definition: >-
+      The problem of computing the joint settings that will bring a robot's [[end-effector|end
+      effector]], or another point such as a foot, to a desired pose — [[forward-kinematics|forward
+      kinematics]] run in reverse. It is harder because the mapping is nonlinear and may have no
+      solution (the target is out of reach), finitely many (a six-joint arm with a spherical wrist
+      has up to eight) or infinitely many (a redundant arm with seven or more
+      [[degrees-of-freedom|degrees of freedom]]). Closed-form solutions exist for many industrial
+      arm geometries and are fast; general chains are solved numerically by iterating with the
+      [[jacobian|Jacobian]] — using its transpose, its pseudoinverse or damped least squares, which
+      stays stable near singularities, where the arm loses the ability to move in some direction —
+      or by nonlinear optimization with joint limits, collision constraints and preferences such as
+      staying near a rest posture. Heuristic solvers such as cyclic coordinate descent and FABRIK
+      are popular in animation. Inverse kinematics converts Cartesian goals from planners and
+      learned policies into joint commands.
+    example: >-
+      The IK solver found no solution because the target was behind the robot's own shoulder.
+formula_latex: \Delta\mathbf{q} = J^{\top}\left(J J^{\top} + \lambda^{2} I\right)^{-1} \mathbf{e}
+origin: >-
+  Closed-form solutions for six-joint arms were systematized in Donald Pieper's 1968 Stanford PhD
+  thesis, which showed that arms whose last three axes intersect can be solved analytically;
+  numerical Jacobian methods, including damped least squares (Charles Wampler; Yoshihiko Nakamura
+  and Hideo Hanafusa, both 1986), followed in the 1980s.
+year: 1968
+note: >-
+  Inverse kinematics yields joint positions only; computing the joint torques that produce a desired
+  motion is inverse dynamics, a different problem. The formula shows one damped-least-squares step,
+  where e is the pose error and λ the damping.
+see_also:
+  - forward kinematics
+  - Jacobian
+  - degrees of freedom
+  - end effector
+  - motion planning
+  - trajectory optimization
+contrast:
+  - forward kinematics
+sources:
+  - text: >-
+      Pieper, D. L. (1968). The Kinematics of Manipulators under Computer Control. PhD thesis,
+      Stanford University.
+  - text: >-
+      Lynch, K. M. & Park, F. C. (2017). Modern Robotics: Mechanics, Planning, and Control.
+      Cambridge University Press.

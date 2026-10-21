@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: annealing
+id: annealing
+pos: n.
+also:
+  - anneal
+  - annealing phase
+  - annealing run
+  - learning-rate annealing
+domain: train
+domains:
+  - dl
+  - data
+level: core
+plain: >-
+  The last stretch of training, when the model's learning is slowed to a stop — often while it is
+  fed a small helping of the best data — so it settles into its final, sharpest version.
+senses:
+  - context: Pretraining
+    definition: >-
+      The final phase of [[pretraining|pretraining]] in which the [[learning-rate|learning rate]] is
+      decayed, often linearly to zero, while the [[data-mixture|data mixture]] shifts toward a
+      smaller, higher-quality set — curated web text, mathematics, code, instruction-like and
+      synthetic data — so that the model consolidates on it. Data seen while the learning rate falls
+      has an outsized influence on the final model. Meta's Llama 3 report (2024) described annealing
+      its largest model's learning rate to zero over the final 40 million tokens while upsampling
+      very-high-quality sources, and judged small candidate datasets by annealing a half-trained
+      8-billion-parameter model on 40 billion tokens; AI2's OLMo 2 introduced a dedicated 'Dolmino'
+      mix for the phase. It overlaps with, and is sometimes called, [[mid-training|mid-training]].
+    example: We annealed on 50 billion tokens of math, code and filtered web text.
+    labels:
+      - emerging
+  - context: Learning-rate schedules
+    definition: >-
+      Any gradual reduction of the learning rate during training, as in step decay, exponential
+      decay or [[cosine-annealing|cosine annealing]]: large steps early cover ground quickly, and
+      small steps late allow fine convergence.
+  - context: Optimization and sampling
+    definition: >-
+      Gradual lowering of a temperature parameter so that a search or a probability distribution
+      moves from exploring to committing, as in [[simulated-annealing|simulated annealing]] or
+      temperature annealing of a [[softmax|softmax]] or sampling distribution.
+origin: >-
+  From metallurgy, where metal is heated and slowly cooled to remove defects. Scott Kirkpatrick, C.
+  Daniel Gelatt and Mario Vecchi carried the word into optimization with simulated annealing (1983);
+  'learning-rate annealing' followed in neural-network training, and the data-shifting pretraining
+  sense spread in 2024 through reports on MiniCPM, Llama 3 and OLMo 2.
+year: 2024
+see_also:
+  - mid-training
+  - warmup-stable-decay schedule
+  - data mixture
+  - learning rate schedule
+  - cosine annealing
+  - simulated annealing
+contrast:
+  - simulated annealing
+sources:
+  - text: >-
+      Team OLMo, Walsh, P., Soldaini, L., Groeneveld, D. et al. (2024). 2 OLMo 2 Furious.
+      arXiv:2501.00656.
+    url: https://arxiv.org/abs/2501.00656v1
+  - text: Grattafiori, A. et al. (2024). The Llama 3 Herd of Models. arXiv:2407.21783.

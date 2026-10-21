@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: norm
+id: norm
+pos: n.
+also:
+  - vector norm
+  - L1 norm
+  - L2 norm
+  - Euclidean norm
+  - Frobenius norm
+  - spectral norm
+  - magnitude
+domain: math
+domains:
+  - dl
+  - ml
+level: core
+plain: >-
+  A way of measuring the size, or length, of a list of numbers — for example the straight-line
+  distance from the origin to the point the list describes.
+senses:
+  - definition: >-
+      A function that assigns a nonnegative length to each [[vector|vector]], is zero only for the
+      zero vector, scales with scalar multiplication (‖cx‖ = |c|‖x‖) and obeys the triangle
+      inequality (‖x + y‖ ≤ ‖x‖ + ‖y‖). The most common are the Lp norms: L2, the Euclidean length
+      (square root of the sum of squares); L1, the sum of absolute values; and L∞, the largest
+      absolute component. Matrices have norms too, notably the Frobenius norm (L2 over all entries)
+      and the spectral norm (the largest singular value). Norms are everywhere in machine learning:
+      L2 and L1 penalties underlie [[weight-decay|weight decay]], [[ridge-regression|ridge
+      regression]] and the [[lasso|lasso]]; [[gradient-clipping|gradient clipping]] rescales
+      gradients whose norm exceeds a threshold; [[layer-normalization|layer normalization]] and
+      [[rmsnorm|RMSNorm]] rescale activations; and the distance between two vectors is the norm of
+      their difference.
+    example: Clip the global gradient norm to 1.0 before each optimizer step.
+formula_latex: \lVert\mathbf{x}\rVert_p = \Big(\sum_{i} |x_i|^p\Big)^{1/p}
+origin: >-
+  Carl Friedrich Gauss used Latin norma in 1832 for a² + b², the norm of a complex integer. Erhard
+  Schmidt defined the Euclidean norm of vectors in infinite-dimensional space in 1908, and Stefan
+  Banach axiomatized normed spaces in his dissertation, published in 1922.
+year: 1908
+note: >-
+  Normalization layers are related but not identical: [[layer-normalization|layer normalization]]
+  subtracts the mean and divides by the standard deviation, while [[rmsnorm|RMSNorm]] divides by the
+  root mean square (the L2 norm over √d). The 'normal' of [[normal-distribution|normal
+  distribution]] is an unrelated sense.
+see_also:
+  - vector
+  - Euclidean distance
+  - cosine similarity
+  - regularization
+  - gradient clipping
+  - layer normalization
+  - weight decay

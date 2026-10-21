@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: microworld
+id: microworld
+pos: n.
+also:
+  - micro-world
+  - microworlds
+domain: sym
+domains:
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  A small, deliberately simplified artificial setting, such as a table of toy blocks, in which an AI
+  program can be tested in full detail before anyone tries it in the messy real world.
+senses:
+  - context: AI research
+    definition: >-
+      A deliberately restricted domain whose objects, actions and vocabulary are few and fully
+      specified, chosen so that a program can show complete understanding or competence within it.
+      The microworld strategy, associated with the MIT AI Laboratory around 1970, held that
+      intelligence could be studied by building deep competence in such toy domains, such as the
+      [[blocks-world|blocks world]] or simple physics and geometry problems, and later extending or
+      combining them. Programs such as [[shrdlu|SHRDLU]] were celebrated within their microworlds,
+      but their methods rarely transferred to open-ended settings, and critics such as
+      [[hubert-dreyfus|Hubert Dreyfus]] argued that real understanding depends on background
+      knowledge no microworld contains. The term recurs in debates over whether success on narrow
+      [[benchmark|benchmarks]] or simulated environments generalizes.
+    example: >-
+      Critics called the new benchmark a microworld: agents mastered it without learning anything
+      useful outside it.
+  - context: Education
+    definition: >-
+      In [[seymour-papert|Seymour Papert]]'s educational theory, a self-contained computational
+      environment, such as the turtle geometry of the Logo language, in which learners explore and
+      build ideas by programming.
+origin: >-
+  Promoted by [[marvin-minsky|Marvin Minsky]] and Seymour Papert at MIT in their proposals and
+  progress reports to ARPA of about 1970–1972, and spread with SHRDLU and other MIT projects of the
+  early 1970s. Papert carried the word into education with the Logo learning environments described
+  in 'Mindstorms' (1980).
+year: 1970
+note: >-
+  Later embodied, situated and statistical approaches to AI rejected the assumption that competence
+  in a toy world scales up; the word is now often used critically.
+see_also:
+  - blocks world
+  - SHRDLU
+  - symbolic AI
+  - Marvin Minsky
+  - Seymour Papert
+  - AI winter

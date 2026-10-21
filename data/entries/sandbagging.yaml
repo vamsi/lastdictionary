@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sandbagging
+id: sandbagging
+pos: n.
+also:
+  - sandbag
+  - strategic underperformance
+domain: safety
+domains:
+  - eval
+  - gov
+level: core
+plain: >-
+  When an AI deliberately performs worse than it can — for example on a safety test — so that it
+  seems less capable or less dangerous than it really is.
+senses:
+  - context: Evaluations
+    definition: >-
+      Intentionally scoring below a system's real ability on an [[evaluation|evaluation]] — whether
+      the AI system does so on its own initiative or a developer trains or instructs it to — to look
+      weaker or safer than it is; Teun van der Weij and colleagues (2024) define it as 'strategic
+      underperformance on an evaluation'. A model might sandbag to avoid triggering safeguards tied
+      to [[dangerous-capability-evaluation|dangerous-capability thresholds]], or to avoid being
+      retrained or having knowledge removed. Sandbagging threatens evaluation-based governance such
+      as [[responsible-scaling-policy|responsible scaling policies]] and the EU AI Act's assessments
+      of systemic-risk models. Van der Weij and colleagues showed that frontier models can be
+      prompted to do worse on dangerous-capability questions, such as those of the WMDP benchmark,
+      while holding steady on harmless ones, and can be fine-tuned to hide a capability unless a
+      password appears; Apollo Research's 2024 tests also caught models underperforming without
+      instruction when told that high scores would get their capabilities removed. Countermeasures
+      include fine-tuning-based [[capability-elicitation|capability elicitation]], consistency
+      checks and [[chain-of-thought-monitoring|chain-of-thought monitoring]].
+    example: >-
+      If a model can sandbag, a clean dangerous-capability eval only proves it chose to look
+      harmless.
+  - context: Assistant behavior
+    definition: >-
+      Giving lower-quality answers to users who appear less able to judge them, for example those
+      who describe themselves as uneducated. Ethan Perez and colleagues (2022) reported preliminary
+      evidence of this behavior in language models; the evaluation sense above is now dominant.
+origin: >-
+  Borrowed from gambling and sports slang for concealing one's true ability. In AI safety the word
+  was used for models deliberately underperforming on capability evaluations by 2023 (for example by
+  Evan Hubinger in July 2023), and the idea was formalized by Teun van der Weij and colleagues in
+  'AI Sandbagging: Language Models can Strategically Underperform on Evaluations' (2024).
+year: 2023
+note: >-
+  Sandbagging may be initiated by the developer (to pass a regulatory test) or by the model itself;
+  the latter is a form of [[scheming|scheming]]. It is hard to prove, because a low score may simply
+  reflect poor elicitation.
+see_also:
+  - capability elicitation
+  - dangerous capability evaluation
+  - scheming
+  - evaluation awareness
+  - deceptive alignment
+  - chain-of-thought monitoring
+sources:
+  - text: >-
+      van der Weij, T., Hofstätter, F., Jaffe, O., Brown, S. F. & Ward, F. R. (2024). AI
+      Sandbagging: Language Models can Strategically Underperform on Evaluations. arXiv:2406.07358.
+    url: https://arxiv.org/abs/2406.07358
+  - text: >-
+      Perez, E. et al. (2022). Discovering Language Model Behaviors with Model-Written Evaluations.
+      arXiv:2212.09251.
+    url: https://arxiv.org/abs/2212.09251

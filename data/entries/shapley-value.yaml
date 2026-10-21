@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Shapley value
+id: shapley-value
+pos: n.
+also:
+  - Shapley values
+domain: math
+domains:
+  - interp
+  - ml
+level: core
+plain: >-
+  A rule from game theory for splitting a shared reward fairly among team members, by averaging how
+  much each member adds when joining the team in every possible order.
+senses:
+  - definition: >-
+      In cooperative game theory, a rule for dividing a coalition's total value among its n players
+      under which each player receives its average marginal contribution v(S ∪ {i}) − v(S) over
+      every order in which the players might join. Lloyd Shapley proved it is the only division that
+      hands out exactly the total (efficiency), treats interchangeable players alike (symmetry),
+      gives nothing to a player who never adds value (null player) and splits a sum of games as the
+      sum of the separate splits (additivity). In machine learning the players are usually input
+      features and the value function is the model's prediction with only some features 'present',
+      which yields [[shap|SHAP]]; players can also be training examples (Data Shapley), neurons or
+      members of an [[ensemble-learning|ensemble]]. Exact computation needs all 2ⁿ coalitions, so
+      practice relies on sampling, regression-based estimators or model-specific shortcuts.
+    example: >-
+      We used Shapley values to split the ensemble's accuracy gain among its five member models.
+formula_latex: \phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!\,(n-|S|-1)!}{n!}\left[v(S
+  \cup \{i\}) - v(S)\right]
+origin: >-
+  Introduced by Lloyd S. Shapley in 'A Value for n-Person Games' (1953), in Contributions to the
+  Theory of Games II (Annals of Mathematics Studies 28). Shapley shared the 2012 Nobel Memorial
+  Prize in Economic Sciences, awarded for the theory of stable allocations. Applied to regression by
+  Stan Lipovetsky and Michael Conklin (2001) and to classifier explanation by Erik Štrumbelj and
+  Igor Kononenko (2010).
+year: 1953
+note: >-
+  The value is 'fair' only relative to its axioms and to how a coalition's worth is defined; in
+  feature attribution, choices about simulating missing features can change the answer
+  substantially.
+see_also:
+  - SHAP
+  - feature attribution
+  - data attribution
+  - integrated gradients
+  - ensemble learning
+sources:
+  - text: >-
+      Shapley, L. S. (1953). A Value for n-Person Games. In Kuhn, H. W. & Tucker, A. W. (eds.),
+      Contributions to the Theory of Games II. Annals of Mathematics Studies 28. Princeton
+      University Press.
+  - text: >-
+      Štrumbelj, E. & Kononenko, I. (2014). Explaining prediction models and individual predictions
+      with feature contributions. Knowledge and Information Systems 41, 647–665.

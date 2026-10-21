@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Paul Christiano
+id: paul-christiano
+sort_as: Christiano Paul
+pos: prop. n.
+also:
+  - Paul F. Christiano
+domain: people
+domains:
+  - safety
+  - train
+level: core
+plain: >-
+  An American AI-alignment researcher who led the work that made training AI from human preferences
+  practical, the basis of how chatbots are taught to be helpful.
+senses:
+  - definition: >-
+      American researcher in [[ai-alignment|AI alignment]] whose early work made learning from human
+      preferences practical. After a PhD in theoretical computer science at the University of
+      California, Berkeley, he joined [[openai|OpenAI]], where he headed the team aligning its
+      language models (2017–2021). He was lead author of 'Deep Reinforcement Learning from Human
+      Preferences' (2017, with colleagues at OpenAI and DeepMind), which trained a
+      [[reward-model|reward model]] from people's comparisons of agent behavior and became the basis
+      of [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]].
+      He also proposed [[iterated-amplification|iterated amplification]] and co-developed
+      [[ai-debate|AI debate]] as approaches to [[scalable-oversight|scalable oversight]]. In 2021 he
+      founded the [[alignment-research-center|Alignment Research Center]] (ARC), whose report that
+      year framed the problem of [[eliciting-latent-knowledge|eliciting latent knowledge]] and whose
+      evaluations team, later spun out as [[metr|METR]], pioneered
+      [[dangerous-capability-evaluation|dangerous-capability evaluations]] of frontier models. In
+      April 2024 he became head of AI safety at the US [[ai-safety-institute|AI Safety Institute]],
+      which was reorganized as the [[center-for-ai-standards-and-innovation|Center for AI Standards
+      and Innovation]] in 2025.
+see_also:
+  - reinforcement learning from human feedback
+  - iterated amplification
+  - eliciting latent knowledge
+  - Alignment Research Center
+  - scalable oversight
+  - AI debate
+  - METR
+sources:
+  - text: >-
+      Christiano, P. F., Leike, J., Brown, T. B., Martic, M., Legg, S. & Amodei, D. (2017). Deep
+      Reinforcement Learning from Human Preferences. Advances in Neural Information Processing
+      Systems 30.
+  - text: >-
+      Christiano, P., Cotra, A. & Xu, M. (2021). Eliciting Latent Knowledge: How to Tell if Your
+      Eyes Deceive You. Alignment Research Center.
+as_of: 2026-10

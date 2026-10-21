@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: continual learning
+id: continual-learning
+pos: n.
+also:
+  - lifelong learning
+  - incremental learning
+  - sequential learning
+  - never-ending learning
+  - continual learner
+domain: train
+domains:
+  - ml
+  - dl
+  - agents
+level: core
+plain: >-
+  The ability of an AI to keep learning new things over time from a stream of experience, without
+  forgetting what it already knew and without being retrained from scratch.
+senses:
+  - context: Machine learning
+    definition: >-
+      The study and practice of training a model on a non-stationary sequence of tasks or data
+      distributions, updating it as data arrive while retaining earlier abilities and, ideally,
+      using old knowledge to learn new things faster. The field is organized around the
+      [[stability-plasticity-dilemma|stability–plasticity dilemma]]: too little change and the
+      learner cannot acquire new skills ([[loss-of-plasticity|loss of plasticity]]); too much and it
+      suffers [[catastrophic-forgetting|catastrophic forgetting]]. Standard settings are task-,
+      domain- and class-incremental learning. Method families are replay (storing or generating old
+      examples), regularization ([[elastic-weight-consolidation|elastic weight consolidation]],
+      synaptic intelligence), and architectural approaches that add or isolate parameters
+      (progressive networks, [[adapter|adapters]]). Evaluation tracks average accuracy, backward
+      transfer (the effect of new learning on old tasks) and forward transfer.
+    example: >-
+      Our continual learning setup adds a new product category each month and replays 5 percent of
+      old data.
+  - context: Language models and agents
+    definition: >-
+      The capacity, absent from most deployed [[large-language-model|large language models]] as of
+      2026, to update weights or durable memory from ongoing use — learning from a user's
+      corrections, new documents or on-the-job experience — rather than relying on a fixed
+      [[knowledge-cutoff|knowledge cutoff]] plus whatever fits in the [[context-window|context
+      window]]. Approaches under study include periodic fine-tuning, [[test-time-training|test-time
+      training]], parametric memory modules and [[agent-memory|agent memory]] stores; many
+      researchers regard its absence as a key gap between current systems and human learners.
+    labels:
+      - emerging
+origin: >-
+  Mark Ring's 1994 dissertation was titled Continual Learning in Reinforcement Environments, and
+  Sebastian Thrun and Tom Mitchell wrote on lifelong robot learning in 1995. The term revived with
+  deep learning after the 2016–2017 work on elastic weight consolidation, and in 2025 continual
+  learning became a prominent talking point about what large language models lack.
+year: 1994
+note: >-
+  Overlaps with [[online-learning|online learning]], which updates on a data stream but usually
+  assumes a stationary target and does not measure forgetting. In product announcements 'continual
+  learning' sometimes means only memory features that store notes, not weight updates.
+see_also:
+  - catastrophic forgetting
+  - stability–plasticity dilemma
+  - elastic weight consolidation
+  - loss of plasticity
+  - online learning
+  - test-time training
+  - agent memory
+  - experience replay
+contrast:
+  - online learning
+  - transfer learning
+sources:
+  - text: >-
+      Ring, M. B. (1994). Continual Learning in Reinforcement Environments. PhD dissertation,
+      University of Texas at Austin.
+  - text: >-
+      Kirkpatrick, J. et al. (2017). Overcoming catastrophic forgetting in neural networks. PNAS
+      114(13). arXiv:1612.00796.
+    url: https://arxiv.org/abs/1612.00796
+as_of: 2026-10

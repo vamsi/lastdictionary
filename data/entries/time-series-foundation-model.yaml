@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: time series foundation model
+id: time-series-foundation-model
+pos: n.
+also:
+  - TSFM
+  - foundation model for time series
+  - zero-shot forecasting
+  - TimesFM
+  - Chronos
+  - Moirai
+  - TimeGPT
+domain: ml
+domains:
+  - dl
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A large AI model pretrained on huge numbers of time series, such as sales, traffic and sensor
+  readings, that can forecast a new series it has never seen without being trained on it.
+senses:
+  - definition: >-
+      A large neural network pretrained on a broad corpus of time series from many domains (retail
+      demand, energy, traffic, weather, finance, web metrics), often supplemented with synthetic
+      series, so that it can forecast unseen series zero-shot or after light
+      [[fine-tuning|fine-tuning]]. Most designs adapt the [[transformer|transformer]]: each series
+      is normalized and split into patches or quantized into tokens, and the model predicts future
+      values or a distribution over them, either autoregressively with a decoder-only network (as in
+      TimesFM and Lag-Llama) or with encoder-based or encoder–decoder designs (as in Moirai, and in
+      Chronos, which reuses a language-model architecture over discretized values). The appeal is
+      fast deployment without per-series training and strong accuracy on short or brand-new series.
+      Open questions include the handling of external covariates and long horizons, robustness to
+      domain shift, and whether gains over well-tuned statistical and [[gradient-boosting|gradient
+      boosting]] baselines are consistent, since overlap between pretraining corpora and benchmark
+      series ([[data-contamination|data contamination]]) can inflate reported results.
+    example: >-
+      The foundation model gave usable zero-shot forecasts for 300 newly opened stores before we had
+      any training data.
+origin: >-
+  Emerged in late 2023 with Nixtla's TimeGPT, Lag-Llama and Google's decoder-only TimesFM (Abhimanyu
+  Das, Weihao Kong, Rajat Sen and Yichen Zhou; preprint October 2023), followed in early 2024 by
+  Salesforce's Moirai and Amazon's Chronos. The label borrows 'foundation model', coined at Stanford
+  in 2021 for large pretrained models adaptable to many tasks.
+year: 2023
+note: >-
+  Successors followed quickly, among them Google's TimesFM 2.5, Amazon's Chronos-2 and Salesforce's
+  Moirai 2.0 (all 2025). Models are compared on shared leaderboards such as GIFT-Eval, and rankings
+  change often, so check current results before relying on any of them (as of October 2026).
+see_also:
+  - time series forecasting
+  - foundation model
+  - transformer
+  - ARIMA
+  - exponential smoothing
+  - zero-shot learning
+  - data contamination
+sources:
+  - text: >-
+      Das, A., Kong, W., Sen, R. & Zhou, Y. (2023). A Decoder-Only Foundation Model for Time-Series
+      Forecasting. arXiv:2310.10688.
+    url: https://arxiv.org/abs/2310.10688
+  - text: >-
+      Ansari, A. F. et al. (2024). Chronos: Learning the Language of Time Series. Transactions on
+      Machine Learning Research.
+  - text: >-
+      Woo, G. et al. (2024). Unified Training of Universal Time Series Forecasting Transformers.
+      Proc. ICML 2024.
+as_of: 2026-10

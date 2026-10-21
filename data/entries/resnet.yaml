@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ResNet
+id: resnet
+pos: prop. n.
+also:
+  - residual network
+  - residual neural network
+  - deep residual network
+  - ResNet-50
+  - ResNeXt
+pronunciation: REZ-net
+domain: dl
+domains:
+  - percep
+  - hist
+level: core
+plain: >-
+  A family of image-recognition networks from 2015 whose shortcut connections allowed far deeper
+  networks than before, over 100 layers, and became a standard building block across AI.
+senses:
+  - definition: >-
+      A [[convolutional-neural-network|convolutional neural network]] architecture built from
+      residual blocks, each computing x + F(x), where F is two 3 × 3 [[convolution|convolutions]]
+      or, in deeper versions, a 1 × 1–3 × 3–1 × 1 'bottleneck', with [[batch-normalization|batch
+      normalization]] and [[relu|ReLU]] ([[residual-connection|residual connection]]). Standard
+      depths are 18, 34, 50, 101 and 152 layers; ResNet-50, with about 25 million parameters, became
+      the default backbone for classification, detection and segmentation and a common benchmark for
+      hardware and [[transfer-learning|transfer learning]]. Downsampling uses [[stride|strided]]
+      convolutions with projection shortcuts, and a global-average-[[pooling|pooling]] head replaces
+      large fully connected layers. Variants include pre-activation ResNets (2016), Wide ResNets and
+      ResNeXt; ConvNeXt (2022) modernized the design to compete with [[vision-transformer|vision
+      transformers]].
+    example: >-
+      We use an ImageNet-pretrained ResNet-50 as the backbone and fine-tune all layers.
+origin: >-
+  Introduced by Kaiming He, Xiangyu Zhang, Shaoqing Ren and Jian Sun of Microsoft Research in 'Deep
+  Residual Learning for Image Recognition' (arXiv, December 2015; CVPR 2016 best paper). An ensemble
+  won the ILSVRC 2015 classification task with 3.57% top-5 test error, and ResNets also won the
+  ILSVRC 2015 detection and localization tasks and the COCO 2015 detection and segmentation tasks.
+  An April 2025 Nature analysis ranked the paper the most-cited of the 21st century.
+year: 2015
+see_also:
+  - residual connection
+  - convolutional neural network
+  - batch normalization
+  - highway network
+  - ImageNet
+  - vision transformer
+sources:
+  - text: >-
+      He, K., Zhang, X., Ren, S. & Sun, J. (2015). Deep Residual Learning for Image Recognition.
+      arXiv:1512.03385; CVPR 2016.
+    url: https://arxiv.org/abs/1512.03385
+  - text: >-
+      Nature (2025). Exclusive: the most-cited papers of the twenty-first century. Nature news
+      feature, April 2025.
+    url: https://www.nature.com/articles/d41586-025-01125-9

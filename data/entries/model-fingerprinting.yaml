@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model fingerprinting
+id: model-fingerprinting
+pos: n.
+also:
+  - LLM fingerprinting
+  - model provenance testing
+  - weight watermarking
+  - model watermarking
+domain: sec
+domains:
+  - llm
+  - gov
+level: specialist
+plain: >-
+  Ways to recognize a particular AI model — to prove that a copy was taken from it, or to tell which
+  model is behind a product — from its internal makeup or its behavior.
+senses:
+  - context: Ownership and provenance
+    definition: >-
+      Techniques for verifying that a suspect model is, or was derived from, a particular original,
+      in order to detect theft, unlicensed redistribution or [[model-extraction|extraction]].
+      Intrinsic fingerprints use properties a model already has, such as characteristic outputs near
+      its decision boundaries or statistical signatures of its [[weights|weights]] that persist
+      through [[fine-tuning|fine-tuning]]; injected fingerprints are planted deliberately, for
+      example by training the model to return a secret response to a secret trigger, much like a
+      benign [[backdoor-attack|backdoor]]. Good fingerprints are unique, robust to fine-tuning,
+      quantization, pruning and model merging, and hard to remove or forge. Weight watermarking
+      embeds a verifiable signal in the parameters themselves.
+    example: >-
+      Model fingerprinting showed the 'new' open model was a lightly fine-tuned copy of a licensed
+      one.
+  - context: Model identification
+    definition: >-
+      Inferring which model, family or version lies behind an application or API from its responses,
+      for example by sending probe queries and comparing the answers with known models. Attackers
+      use it to pick model-specific [[jailbreak|jailbreaks]]; auditors use it to check what a vendor
+      actually deploys.
+origin: >-
+  Yusuke Uchida and colleagues proposed embedding watermarks in neural-network weights in 2017, and
+  fingerprints based on decision boundaries followed, such as IPGuard (Xiaoyu Cao and colleagues,
+  2021). Fingerprinting of large language models through planted instructions or probe queries grew
+  from 2024 as open-weight derivatives and disputes over copied models multiplied.
+year: 2017
+see_also:
+  - model extraction
+  - AI watermarking
+  - backdoor attack
+  - open-weight model
+  - weight exfiltration
+sources:
+  - text: >-
+      Uchida, Y., Nagai, Y., Sakazawa, S. & Satoh, S. (2017). Embedding Watermarks into Deep Neural
+      Networks. ACM ICMR 2017.

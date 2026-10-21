@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: KV cache compression
+id: kv-cache-compression
+pos: n.
+also:
+  - KV cache eviction
+  - KV cache quantization
+  - KV cache pruning
+  - token eviction
+domain: infer
+domains:
+  - llm
+level: specialist
+plain: >-
+  Techniques that shrink the memory an AI model uses to remember a long conversation or document, by
+  storing its notes more compactly or discarding the least useful ones.
+senses:
+  - definition: >-
+      Techniques that reduce the memory footprint of the [[kv-cache|KV cache]] during inference,
+      allowing longer contexts and larger batches. The main families are: architectural changes that
+      store fewer or smaller key–value vectors per token, such as
+      [[multi-query-attention|multi-query attention]], [[grouped-query-attention|grouped-query
+      attention]], [[multi-head-latent-attention|multi-head latent attention]] and cross-layer
+      sharing, which must be built in during training; quantizing cached keys and values to 8, 4 or
+      even 2 bits; eviction policies that keep only the tokens likely to matter, for example those
+      that have received the most attention ('heavy hitters'), a few initial
+      [[attention-sink|attention-sink]] tokens plus a recent window, or tokens chosen per head from
+      an observation window; and merging similar entries. Post-hoc methods trade memory for some
+      accuracy, a loss often invisible on short benchmarks but apparent on [[long-context|long
+      context]] retrieval and reasoning.
+    example: >-
+      Quantizing the KV cache to 4 bits let us double the context length on the same GPU.
+origin: >-
+  Grew from multi-query attention (Noam Shazeer, 2019) and grouped-query attention (2023). Post-hoc
+  compression became a research field in 2023–2024 with H2O's heavy-hitter eviction (Zhenyu Zhang
+  and colleagues, 2023), StreamingLLM's attention sinks (Guangxuan Xiao and colleagues, 2023) and
+  low-bit KV-cache quantization methods such as KIVI (2024).
+year: 2023
+see_also:
+  - KV cache
+  - grouped-query attention
+  - multi-head latent attention
+  - attention sink
+  - quantization
+  - long context

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Clever Hans effect
+id: clever-hans-effect
+pos: n.
+also:
+  - Clever Hans
+  - Clever Hans phenomenon
+  - Clever Hans predictor
+domain: mind
+domains:
+  - eval
+  - ml
+level: core
+plain: >-
+  When a person or an AI seems to solve a problem but is really picking up on an unintended clue —
+  named after a horse that seemed to do arithmetic but was reading its questioners' body language.
+senses:
+  - definition: >-
+      The appearance of a cognitive ability that is actually produced by sensitivity to unintended
+      cues. The original Clever Hans, a horse exhibited in Berlin in the early 1900s, seemed to
+      answer arithmetic questions by tapping his hoof, but was responding to involuntary changes in
+      his questioners' posture and expression as he reached the right count. In machine learning the
+      term names models that achieve high accuracy by exploiting spurious correlations in the data —
+      a watermark present in images of one class, hospital-specific markers in medical scans,
+      annotation artifacts in language datasets — instead of the intended features, a failure also
+      called shortcut learning; such models fail when the cue is absent. It is also applied to
+      evaluations in which a [[large-language-model|language model]]'s apparent reasoning or
+      [[theory-of-mind|theory of mind]] reflects exploitable regularities in benchmark items or
+      [[data-contamination|data contamination]].
+    example: >-
+      The classifier was a Clever Hans: it detected the hospital's scanner tag, not pneumonia.
+origin: >-
+  Named after the horse Clever Hans, investigated in late 1904 by the psychologist Oskar Pfungst,
+  whose controlled experiments exposed the cueing and appeared as a book in 1907; the case became a
+  byword for experimenter effects. Sebastian Lapuschkin and colleagues' 'Unmasking Clever Hans
+  Predictors and Assessing What Machines Really Learn' (Nature Communications, 2019) popularized the
+  term in machine learning.
+year: 1907
+note: >-
+  Explanation methods such as [[saliency-map|saliency maps]] can expose Clever Hans behavior by
+  showing which input features a model relies on.
+see_also:
+  - explainable AI
+  - saliency map
+  - generalization
+  - data contamination
+  - benchmark
+  - anthropomorphism
+sources:
+  - text: >-
+      Pfungst, O. (1907). Das Pferd des Herrn von Osten (Der kluge Hans). Johann Ambrosius Barth.
+  - text: >-
+      Lapuschkin, S., Wäldchen, S., Binder, A., Montavon, G., Samek, W. & Müller, K.-R. (2019).
+      Unmasking Clever Hans Predictors and Assessing What Machines Really Learn. Nature
+      Communications 10.

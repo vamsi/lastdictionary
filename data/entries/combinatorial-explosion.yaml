@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: combinatorial explosion
+id: combinatorial-explosion
+pos: n.
+also:
+  - combinatorial blow-up
+  - state explosion
+  - exponential blow-up
+domain: sym
+domains:
+  - hist
+  - math
+level: core
+plain: >-
+  The way the number of possible combinations — moves, routes, schedules — grows so quickly as a
+  problem gets bigger that checking them all becomes impossible, even for the fastest computers.
+senses:
+  - definition: >-
+      The rapid, typically exponential or factorial, growth in the number of states, paths or
+      candidate solutions as a problem's size increases, which defeats exhaustive search. A
+      [[game-tree|game tree]] with branching factor b searched to depth d has b^d leaves; the number
+      of possible tours through n cities grows as n!; a planning problem described by n
+      true-or-false facts has 2^n states. Combinatorial explosion explains why early AI successes in
+      toy domains failed to scale, and why AI relies on [[heuristic|heuristics]], pruning,
+      abstraction, problem decomposition, symmetry breaking and learned guidance. In
+      [[formal-verification|formal verification]] the same phenomenon is called state explosion.
+    example: >-
+      Adding a tenth delivery van caused a combinatorial explosion in the routing problem.
+origin: >-
+  Brought to wide attention by James Lighthill's 1973 report to the UK Science Research Council,
+  which argued that AI methods could not overcome combinatorial explosion outside toy problems and
+  contributed to cuts in British AI funding. The phrase's earliest use has not been established.
+note: >-
+  Exponential growth does not always mean practical hopelessness:
+  [[boolean-satisfiability-problem|SAT solvers]], [[alpha-beta-pruning|alpha–beta pruning]] and
+  learned search policies routinely tame enormous spaces by exploiting their structure.
+see_also:
+  - NP-complete
+  - heuristic
+  - state space search
+  - game tree
+  - Lighthill report
+  - AI winter
+sources:
+  - text: >-
+      Lighthill, J. (1973). Artificial Intelligence: A General Survey. In Artificial Intelligence: A
+      Paper Symposium. Science Research Council, London.

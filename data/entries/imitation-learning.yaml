@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: imitation learning
+id: imitation-learning
+pos: n.
+also:
+  - learning from demonstration
+  - LfD
+  - apprenticeship learning
+  - programming by demonstration
+domain: rl
+domains:
+  - robot
+  - train
+level: core
+plain: >-
+  Teaching an AI by showing it examples of an expert doing a task, so it learns to copy the behavior
+  instead of discovering it through trial and error.
+senses:
+  - definition: >-
+      The family of methods that learn a [[policy|policy]] from demonstrations of desired behavior —
+      recorded [[trajectory|trajectories]] of states and actions from a human or an expert program —
+      rather than from a [[reward|reward]] signal. The simplest approach,
+      [[behavioral-cloning|behavioral cloning]], treats demonstrations as a
+      [[supervised-learning|supervised learning]] dataset mapping observations to actions;
+      interactive methods such as [[dagger|DAgger]] query the expert on states the learner itself
+      visits, correcting compounding errors; [[inverse-reinforcement-learning|inverse reinforcement
+      learning]] infers the reward the expert appears to optimize and then optimizes it; and
+      adversarial imitation (GAIL) trains the policy until a discriminator cannot tell its behavior
+      from the expert's. Imitation avoids reward design, but it is limited by the demonstrator's
+      quality and suffers from [[distribution-shift|distribution shift]] when the learner strays
+      from demonstrated states. It is central to robot learning, where teleoperated demonstrations
+      train [[diffusion-policy|diffusion policies]] and
+      [[vision-language-action-model|vision-language-action models]]; language-model pretraining and
+      [[supervised-fine-tuning|supervised fine-tuning]] are also forms of imitation.
+    example: >-
+      We collected 200 teleoperated demonstrations and trained the gripper policy by imitation
+      learning before any RL.
+origin: >-
+  Learning from observed behavior was studied in 1980s robotics as 'programming by demonstration'.
+  Dean Pomerleau's ALVINN (1989) steered a test van with a neural network, first trained on
+  simulated road images and, from mid-1989, on a human driver's steering; Claude Sammut and
+  colleagues' 'Learning to Fly' (1992) cloned pilots, and Pieter Abbeel and Andrew Ng's
+  apprenticeship learning (2004) and Stéphane Ross and colleagues' DAgger (2011) gave the field
+  theoretical foundations.
+see_also:
+  - behavioral cloning
+  - DAgger
+  - inverse reinforcement learning
+  - offline reinforcement learning
+  - teleoperation
+  - diffusion policy
+  - supervised fine-tuning
+contrast:
+  - reinforcement learning
+sources:
+  - text: >-
+      Pomerleau, D. A. (1989). ALVINN: An Autonomous Land Vehicle in a Neural Network. Advances in
+      Neural Information Processing Systems 1.
+  - text: >-
+      Osa, T. et al. (2018). An Algorithmic Perspective on Imitation Learning. Foundations and
+      Trends in Robotics 7(1–2), 1–179.

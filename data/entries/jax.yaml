@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: JAX
+id: jax
+pos: prop. n.
+also:
+  - jax.numpy
+  - Flax
+  - Optax
+pronunciation: JAKS
+domain: eng
+domains:
+  - dl
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free Google library that lets researchers write mathematics in familiar Python and automatically
+  get derivatives and very fast code for graphics chips and Google's AI chips.
+senses:
+  - definition: >-
+      Google's open-source Python library for array computing on accelerators, built around a
+      [[numpy|NumPy]]-like API and a small set of transformations that can be stacked on any
+      numerical function: grad for [[automatic-differentiation|automatic differentiation]] (forward
+      or reverse mode, nested to any depth), jit for just-in-time compilation with the [[xla|XLA]]
+      compiler, vmap for automatic batching, and sharding primitives that spread arrays and
+      computation over many GPUs or [[tpu|TPUs]]. Transformations work by tracing pure functions
+      into an intermediate representation, so JAX code is written in a functional style, with
+      immutable arrays and explicitly passed random-number keys. Neural-network libraries such as
+      Flax and Equinox, the optimizer library Optax and large-scale training codebases build on it.
+      [[google-deepmind|Google DeepMind]] uses JAX for much of its large-model training, and it is
+      also popular in scientific computing.
+    example: Wrap the loss in jax.grad, vmap it over examples, and jit the whole update step.
+origin: >-
+  Created at Google by Roy Frostig, Matthew James Johnson and Chris Leary, building on Autograd, a
+  library developed at Harvard by Dougal Maclaurin, David Duvenaud, Matthew Johnson and Ryan Adams.
+  It was described at the SysML conference in 2018 and open-sourced later that year.
+year: 2018
+note: >-
+  Not a full framework in the style of [[pytorch|PyTorch]] or [[keras|Keras]]: it supplies arrays
+  and transformations, while higher-level libraries supply layers and training loops. Keras 3 can
+  use JAX as a backend.
+see_also:
+  - XLA
+  - automatic differentiation
+  - TPU
+  - NumPy
+  - PyTorch
+  - TensorFlow
+  - Keras
+sources:
+  - text: >-
+      Frostig, R., Johnson, M. J. & Leary, C. (2018). Compiling Machine Learning Programs via
+      High-Level Tracing. SysML Conference 2018.

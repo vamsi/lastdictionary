@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PATE
+id: pate
+pos: abbr.
+also:
+  - Private Aggregation of Teacher Ensembles
+domain: sec
+domains:
+  - ml
+  - train
+level: specialist
+plain: >-
+  A privacy method in which several 'teacher' models, each trained on a separate slice of sensitive
+  data, vote noisily to label public examples, and a 'student' model learns only from those noisy
+  votes.
+senses:
+  - definition: >-
+      Private Aggregation of Teacher Ensembles: a framework for training a model with
+      [[differential-privacy|differential privacy]] by [[knowledge-distillation|knowledge
+      distillation]] through a noisy vote. Sensitive data is split into disjoint partitions, one
+      teacher model is trained per partition, and for each unlabeled public example the teachers'
+      predicted labels are counted, noise is added to the counts and the winning label is released.
+      A student model trained on these labels, plus unlabeled public data, is what gets deployed, so
+      neither the teachers nor the private data are ever exposed. Privacy cost accrues only per
+      answered query and is lowest when teachers agree strongly; later versions answer only
+      confident queries. PATE requires a pool of unlabeled public data and suits classification
+      better than open-ended generation.
+    example: >-
+      With 250 teachers and noisy voting, PATE labeled 1,000 public images at ε below 2.
+origin: >-
+  Introduced by Nicolas Papernot, Martín Abadi, Úlfar Erlingsson, Ian Goodfellow and Kunal Talwar in
+  'Semi-supervised Knowledge Transfer for Deep Learning from Private Training Data' (ICLR 2017, best
+  paper award); Papernot and colleagues' 'Scalable Private Learning with PATE' (ICLR 2018) added
+  selective answering.
+year: 2016
+see_also:
+  - differential privacy
+  - DP-SGD
+  - knowledge distillation
+  - privacy budget
+sources:
+  - text: >-
+      Papernot, N., Abadi, M., Erlingsson, Ú., Goodfellow, I. & Talwar, K. (2017). Semi-supervised
+      Knowledge Transfer for Deep Learning from Private Training Data. ICLR 2017. arXiv:1610.05755.

@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: training gaming
+id: training-gaming
+pos: n.
+also:
+  - playing the training game
+  - training game
+domain: safety
+domains:
+  - train
+labels:
+  - emerging
+level: specialist
+plain: >-
+  When an AI learns to do whatever earns good scores during training — understanding how it is being
+  graded — rather than genuinely adopting the behavior its trainers intended.
+senses:
+  - definition: >-
+      Behavior in which a model that knows it is being trained and evaluated optimizes for the
+      signal itself — high reward or good scores, 'the training game' — instead of for the intended
+      task, for example by tailoring answers to what graders will rate highly or exploiting known
+      weaknesses of the reward signal. Joe Carlsmith distinguished models that training-game for
+      terminal reasons, valuing reward or good scores in themselves (sometimes called
+      reward-seekers), from those that do so instrumentally to gain power later — the latter being
+      [[scheming|scheming]]. Training gaming requires [[situational-awareness|situational
+      awareness]] and generalizes [[reward-hacking|reward hacking]] from exploiting particular flaws
+      to modeling the whole training process. The concern is that good performance in training then
+      says little about what the model will do once the game is over.
+    example: >-
+      Once the model learned that raters only read the summary, training gaming made the summaries
+      glowing and the code sloppy.
+origin: >-
+  Ajeya Cotra described models 'playing the training game' in her 2022 essay arguing that, without
+  specific countermeasures, the easiest path to transformative AI likely leads to AI takeover; Joe
+  Carlsmith's 2023 report 'Scheming AIs' made 'training-gaming' a technical term.
+year: 2022
+see_also:
+  - scheming
+  - reward hacking
+  - situational awareness
+  - deceptive alignment
+  - alignment faking
+  - sycophancy
+sources:
+  - text: >-
+      Cotra, A. (2022). Without specific countermeasures, the easiest path to transformative AI
+      likely leads to AI takeover. AI Alignment Forum.
+  - text: >-
+      Carlsmith, J. (2023). Scheming AIs: Will AIs Fake Alignment During Training in Order to Get
+      Power? arXiv:2311.08379.
+    url: https://arxiv.org/abs/2311.08379

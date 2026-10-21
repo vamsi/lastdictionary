@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: linear regression
+id: linear-regression
+pos: n.
+also:
+  - least-squares regression
+  - simple linear regression
+  - multiple linear regression
+  - linear model
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  Fitting a straight line (or flat surface) through data points to predict one number from others —
+  say, a house's price from its floor area — choosing the line that keeps prediction errors
+  smallest.
+senses:
+  - definition: >-
+      A [[regression|regression]] model in which the predicted response is a linear function of the
+      input [[feature|features]] — one weight per feature plus an intercept — with any remaining
+      variation treated as noise. 'Linear' means linear in the parameters, so transformed inputs
+      such as x², log x or interaction terms are allowed; [[polynomial-regression|polynomial
+      regression]] is a special case. Parameters are usually estimated by
+      [[ordinary-least-squares|ordinary least squares]], which minimizes the sum of squared
+      residuals and has a closed-form solution; under Gaussian noise this coincides with
+      [[maximum-likelihood-estimation|maximum likelihood estimation]]. With many or correlated
+      features, penalized variants — [[ridge-regression|ridge regression]], the [[lasso|lasso]] and
+      the [[elastic-net|elastic net]] — accept a little bias for much lower variance. Simple linear
+      regression has one input; multiple linear regression has several. Each coefficient is
+      interpretable as the expected change in the response per unit change in its feature, holding
+      the others fixed.
+    example: >-
+      A linear regression on floor area alone explains about 60% of the variance in sale prices.
+formula_latex: y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_p x_p + \varepsilon
+origin: >-
+  The least-squares method was published by Adrien-Marie Legendre in 1805 and by Carl Friedrich
+  Gauss in 1809, both to determine the orbits of comets and planets from observations. The name came
+  later, from Francis Galton's 1880s heredity studies; Udny Yule and Karl Pearson developed linear
+  regression as a general statistical tool around 1900.
+year: 1805
+note: >-
+  Usually the first baseline worth fitting. Correlated inputs (multicollinearity) make individual
+  coefficients unstable even when predictions stay accurate, and coefficients describe associations,
+  not causal effects, unless the design supports [[causal-inference|causal inference]].
+see_also:
+  - ordinary least squares
+  - regression
+  - polynomial regression
+  - ridge regression
+  - lasso
+  - generalized linear model
+  - logistic regression
+contrast:
+  - logistic regression
+  - nonparametric model
+sources:
+  - text: >-
+      Legendre, A.-M. (1805). Nouvelles méthodes pour la détermination des orbites des comètes.
+      Paris: Firmin Didot.
+  - text: >-
+      Gauss, C. F. (1809). Theoria motus corporum coelestium in sectionibus conicis solem
+      ambientium. Hamburg: Perthes & Besser.

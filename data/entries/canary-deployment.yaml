@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: canary deployment
+id: canary-deployment
+pos: n.
+also:
+  - canary release
+  - canary releasing
+  - canary rollout
+  - staged rollout
+  - progressive delivery
+domain: eng
+level: specialist
+plain: >-
+  Releasing a new model or software version to a small slice of users first and watching closely, so
+  that any problem hits only a few people before the change reaches everyone.
+senses:
+  - definition: >-
+      A release strategy in which a new version — of a model, prompt or serving software — receives
+      a small fraction of live traffic (often 1–5 percent, or one region or cluster) while the rest
+      stays on the current version, and its error rates, [[latency|latency]], business metrics and
+      quality signals are compared with the baseline. If the canary stays healthy, traffic is raised
+      in steps to full rollout; if it breaches thresholds, traffic is shifted back automatically or
+      by an operator. Unlike a [[shadow-deployment|shadow deployment]], canary users do see the new
+      outputs, so real-world effects are observed, but at limited exposure. Unlike an
+      [[a-b-testing|A/B test]], the aim is to catch regressions and failures quickly rather than to
+      estimate an effect size precisely, though the two are often combined. For
+      [[large-language-model|language-model]] applications, canaries are a common safeguard when
+      switching model versions or providers.
+    example: >-
+      The canary at two percent of traffic showed doubled timeouts, so the rollout halted
+      automatically.
+origin: >-
+  Named after the canaries once carried into coal mines to warn of toxic gas. The first use in
+  software has not been traced; by 2010 Jez Humble and David Farley described 'canary releasing' in
+  their book Continuous Delivery, and the practice later became standard in [[mlops|MLOps]].
+year: 2010
+see_also:
+  - shadow deployment
+  - A/B testing
+  - model deployment
+  - model monitoring
+  - service-level objective
+contrast:
+  - shadow deployment

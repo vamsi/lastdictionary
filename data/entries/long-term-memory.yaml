@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: long-term memory
+id: long-term-memory
+pos: n.
+also:
+  - LTM
+  - persistent memory
+  - cross-session memory
+domain: agents
+domains:
+  - mind
+level: core
+plain: >-
+  Memory that lasts. For an AI agent, it means information saved outside the conversation — facts,
+  past events, learned procedures — that can be looked up and used again days or months later.
+senses:
+  - context: Agents
+    definition: >-
+      Information an [[ai-agent|AI agent]] keeps beyond a single [[context-window|context window]]
+      or session, stored outside the model — in files, databases, [[vector-database|vector stores]]
+      or [[knowledge-graph|knowledge graphs]] — and brought back into context when relevant.
+      Following cognitive-science usage, designers distinguish [[episodic-memory|episodic]] memory
+      (records of specific interactions or trajectories), semantic memory (facts about the user, the
+      world or a project) and procedural memory (instructions, skills, code or prompts that encode
+      how to act). Retrieval is usually by similarity search, keywords, recency or explicit file
+      paths. Knowledge absorbed into the weights during training ([[parametric-knowledge|parametric
+      knowledge]]) is a separate, slower-changing store, updated through [[fine-tuning|fine-tuning]]
+      and [[continual-learning|continual learning]].
+    example: >-
+      We moved user preferences into long-term memory so they survive when the session ends.
+  - context: Cognitive science
+    definition: >-
+      In psychology, the memory system that retains information for hours to a lifetime, with no
+      known limit on its capacity. It is commonly split into explicit memory, which can be
+      consciously recalled (episodic and semantic), and implicit memory, shown in performance rather
+      than recollection (including procedural skills); unlike [[working-memory|working memory]] it
+      is not confined to a handful of items, but recall from it is reconstructive and error-prone.
+origin: >-
+  The short-term/long-term division goes back to William James's primary and secondary memory (1890)
+  and was formalized in Richard Atkinson and Richard Shiffrin's multi-store model (1968); Endel
+  Tulving separated episodic from semantic memory in 1972. The CoALA framework (2023) carried these
+  categories over to LLM agents, and 'long-term memory' became a chat-assistant product feature from
+  2024.
+year: 1968
+note: >-
+  Not to be confused with [[long-short-term-memory|long short-term memory]] (LSTM), a recurrent
+  neural-network architecture whose 'memory' is an internal cell state.
+see_also:
+  - agent memory
+  - working memory
+  - episodic memory
+  - retrieval-augmented generation
+  - parametric knowledge
+  - MemGPT
+  - continual learning
+contrast:
+  - working memory
+  - long short-term memory
+sources:
+  - text: >-
+      Atkinson, R. C. & Shiffrin, R. M. (1968). Human memory: A proposed system and its control
+      processes. In The Psychology of Learning and Motivation, vol. 2. Academic Press.
+  - text: >-
+      Sumers, T. R., Yao, S., Narasimhan, K. & Griffiths, T. L. (2023). Cognitive Architectures for
+      Language Agents. arXiv:2309.02427.
+    url: https://arxiv.org/abs/2309.02427v3

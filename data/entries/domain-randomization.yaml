@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: domain randomization
+id: domain-randomization
+pos: n.
+also:
+  - domain randomisation
+  - dynamics randomization
+  - automatic domain randomization
+  - ADR
+  - visual randomization
+domain: robot
+domains:
+  - rl
+  - data
+level: specialist
+plain: >-
+  Training a robot's AI in a simulation whose colors, lighting, weights, friction and other details
+  are shuffled at random on every run, so that the real world holds few surprises it has not already
+  practiced for.
+senses:
+  - definition: >-
+      A [[sim-to-real-transfer|sim-to-real transfer]] technique that trains a model across a wide
+      distribution of randomized simulations instead of one carefully calibrated simulation, so that
+      it becomes robust to whatever the real world turns out to be. Visual randomization varies
+      textures, colors, lighting, camera pose, distractor objects and noise, often deliberately
+      unrealistically, for perception; dynamics randomization varies masses, friction, motor
+      strength, damping, latency and sensor noise for control. The reasoning is that if the training
+      distribution is wide enough to take in the real world's conditions, reality will not look
+      special to the policy, and a policy with memory can implicitly identify and adapt to the
+      conditions it finds itself in. Too much randomization makes the task needlessly hard and the
+      policy overly cautious, so ranges are tuned by hand, inferred from real data, or widened
+      automatically as the policy improves (automatic domain randomization, used by OpenAI to solve
+      a Rubik's Cube with a robot hand in 2019). It is a form of [[data-augmentation|data
+      augmentation]] and is standard in reinforcement-learned [[locomotion|locomotion]] and in
+      training perception on [[synthetic-data|synthetic data]].
+    example: >-
+      We randomize floor friction between 0.3 and 1.2, and now the policy walks on wet tiles.
+origin: >-
+  Named in 'Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real
+  World' by Josh Tobin, Rachel Fong, Alex Ray, Jonas Schneider, Wojciech Zaremba and Pieter Abbeel
+  (OpenAI and UC Berkeley, March 2017; IROS 2017), whose object detector, trained only on randomly
+  textured renderings, located real objects to within 1.5 centimeters. Fereshteh Sadeghi and Sergey
+  Levine's CAD2RL (2016) applied the same idea to drone flight.
+year: 2017
+see_also:
+  - sim-to-real transfer
+  - physics simulator
+  - data augmentation
+  - synthetic data
+  - reinforcement learning
+  - robustness
+sources:
+  - text: >-
+      Tobin, J., Fong, R., Ray, A., Schneider, J., Zaremba, W. & Abbeel, P. (2017). Domain
+      Randomization for Transferring Deep Neural Networks from Simulation to the Real World.
+      arXiv:1703.06907.
+    url: https://arxiv.org/abs/1703.06907
+  - text: OpenAI et al. (2019). Solving Rubik's Cube with a Robot Hand. arXiv preprint.

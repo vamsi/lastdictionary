@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: 3D parallelism
+id: 3d-parallelism
+pos: n.
+also:
+  - 4D parallelism
+  - 5D parallelism
+  - PTD-P
+  - N-D parallelism
+  - hybrid parallelism
+domain: train
+domains:
+  - hw
+level: specialist
+plain: >-
+  Combining three ways of dividing up training work — by data, by layer stage and by slices within
+  layers — so that thousands of chips can train one giant model efficiently.
+senses:
+  - definition: >-
+      The combination of [[data-parallelism|data parallelism]], [[tensor-parallelism|tensor
+      parallelism]] and [[pipeline-parallelism|pipeline parallelism]] in one training job, with
+      devices arranged as a logical grid whose axes correspond to the three strategies. The layout
+      is matched to the hardware: tensor parallelism, which communicates most often, within a node
+      over [[nvlink|NVLink]]; pipeline stages across nodes; and data parallelism, often sharded as
+      in [[zero|ZeRO]] or [[fully-sharded-data-parallel|FSDP]], as the outermost dimension. Choosing
+      the degree of each axis, with micro-batch size and activation recomputation, is a search over
+      memory, communication and pipeline-bubble trade-offs. Adding [[context-parallelism|context
+      parallelism]] gives '4D' parallelism — the layout Meta described for Llama 3 — and adding
+      [[expert-parallelism|expert parallelism]] for [[mixture-of-experts|mixture of experts]] models
+      gives '5D'. With this approach Deepak Narayanan and colleagues trained a 1-trillion-parameter
+      model on 3,072 GPUs at 502 petaFLOP/s, 52% of peak, in 2021.
+    example: Our 3D parallelism layout was TP 8 × PP 16 × DP 64 over 8,192 GPUs.
+origin: >-
+  Microsoft's DeepSpeed team publicized '3D parallelism' in a blog post of 10 September 2020 on
+  training trillion-parameter models, and Narayanan and colleagues' Megatron-LM paper (April 2021)
+  called the same combination PTD-P (pipeline, tensor and data parallelism).
+year: 2020
+see_also:
+  - data parallelism
+  - tensor parallelism
+  - pipeline parallelism
+  - context parallelism
+  - expert parallelism
+  - distributed training
+  - DeepSpeed
+sources:
+  - text: >-
+      Narayanan, D., Shoeybi, M., Casper, J. et al. (2021). Efficient Large-Scale Language Model
+      Training on GPU Clusters Using Megatron-LM. arXiv:2104.04473.
+    url: https://arxiv.org/abs/2104.04473
+  - text: >-
+      Microsoft Research (2020). DeepSpeed: Extreme-scale model training for everyone. Microsoft
+      Research Blog, 10 September 2020.
+    url: https://www.microsoft.com/en-us/research/blog/deepspeed-extreme-scale-model-training-for-everyone/

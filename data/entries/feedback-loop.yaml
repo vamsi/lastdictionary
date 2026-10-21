@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feedback loop
+id: feedback-loop
+pos: n.
+also:
+  - positive feedback loop
+  - negative feedback loop
+  - runaway feedback loop
+  - degenerate feedback loop
+  - hidden feedback loop
+domain: core
+domains:
+  - society
+  - eng
+  - data
+level: core
+plain: >-
+  A cycle in which what a system produces comes back to shape its own future input, like a
+  microphone howling near its loudspeaker. In AI, a model's predictions can shape the very data it
+  later learns from.
+senses:
+  - context: Machine learning systems
+    definition: >-
+      A cycle in which a deployed model's outputs influence the data later used to train or evaluate
+      it, or the behavior it is trying to predict. A [[recommender-system|recommender system]] shows
+      popular items, gathers clicks mostly on what it showed and learns to show those items even
+      more, amplifying popularity bias and narrowing what users see (see [[filter-bubble|filter
+      bubble]]); [[predictive-policing|predictive policing]] sends patrols where recorded crime is
+      high, generating more records there; a lender never observes repayment by applicants it
+      rejected, so its data tend to confirm its own decisions. Generative models trained on a web
+      increasingly filled with model output risk [[model-collapse|model collapse]]. Such loops can
+      entrench bias, cause [[distribution-shift|distribution shift]] and make offline evaluation
+      misleading. Mitigations include exploration (showing some items at random), logging the
+      probability of each decision so that later analysis can correct for it, holdout groups that
+      never see the model, audits and tracking [[data-provenance|data provenance]]. When predictions
+      change the outcomes they predict, the setting is studied as performative prediction.
+    example: >-
+      Clicks only come from what we already rank highly, so retraining on them set up a feedback
+      loop.
+  - context: Cybernetics and control
+    definition: >-
+      An arrangement in which a measure of what a system produces is fed back to influence what it
+      does next. Negative (balancing) feedback counteracts deviations from a goal and stabilizes a
+      system, as in a thermostat, a steam-engine governor or the [[control-theory|controller]] of a
+      robot arm; positive (reinforcing) feedback amplifies deviations, producing runaway growth,
+      lock-in or oscillation. [[cybernetics|Cybernetics]] treated negative feedback as the mechanism
+      of purposeful behavior in animals and machines, an idea that shaped early AI and the
+      agent–environment loop of [[reinforcement-learning|reinforcement learning]].
+origin: >-
+  Engineers analyzed feedback in governors (James Clerk Maxwell, 1868) and amplifiers (Harold Black,
+  1927). Arturo Rosenblueth, Norbert Wiener and Julian Bigelow linked purpose to negative feedback
+  in 1943, and Wiener made feedback central to cybernetics (1948). In machine learning, D. Sculley
+  and colleagues warned of hidden feedback loops in production systems (2015), and Danielle Ensign
+  and colleagues modeled runaway feedback loops in predictive policing (2018).
+note: >-
+  Positive and negative mean reinforcing and balancing, not good and bad: runaway engagement and
+  bias amplification are positive feedback. Distinct from the human feedback used to train models,
+  as in [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]].
+see_also:
+  - cybernetics
+  - recommender system
+  - model collapse
+  - predictive policing
+  - filter bubble
+  - distribution shift
+  - control theory
+  - Goodhart's law
+contrast:
+  - reinforcement learning from human feedback
+sources:
+  - text: >-
+      Wiener, N. (1948). Cybernetics: Or Control and Communication in the Animal and the Machine.
+      MIT Press.
+  - text: >-
+      Sculley, D., Holt, G., Golovin, D. et al. (2015). Hidden Technical Debt in Machine Learning
+      Systems. Advances in Neural Information Processing Systems 28 (NeurIPS 2015).
+  - text: >-
+      Ensign, D., Friedler, S. A., Neville, S., Scheidegger, C. & Venkatasubramanian, S. (2018).
+      Runaway Feedback Loops in Predictive Policing. Proceedings of the Conference on Fairness,
+      Accountability and Transparency (FAT* 2018), PMLR 81.

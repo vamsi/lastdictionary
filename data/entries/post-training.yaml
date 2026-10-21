@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: post-training
+id: post-training
+pos: n.
+also:
+  - posttraining
+  - post-train
+  - post-trained
+domain: train
+domains:
+  - llm
+  - safety
+level: essential
+plain: >-
+  Everything done to an AI model after its initial bulk training on huge amounts of text: the extra
+  teaching that turns a raw text predictor into a helpful, safe assistant or a careful reasoner.
+senses:
+  - definition: >-
+      The collective name for the training stages applied to a [[large-language-model|large language
+      model]] after [[pretraining|pretraining]], which turn a [[base-model|base model]] that merely
+      continues text into a deployable assistant. A typical pipeline runs
+      [[supervised-fine-tuning|supervised fine-tuning]] on demonstrations, then preference
+      optimization — [[reinforcement-learning-from-human-feedback|reinforcement learning from human
+      feedback]], [[direct-preference-optimization|direct preference optimization]] or
+      [[reinforcement-learning-from-ai-feedback|reinforcement learning from AI feedback]] — and,
+      since 2024, large-scale [[reinforcement-learning-with-verifiable-rewards|reinforcement
+      learning with verifiable rewards]] to teach reasoning; [[knowledge-distillation|knowledge
+      distillation]], [[model-merging|model merging]] and safety training are often interleaved.
+      Post-training shapes format, tone, [[instruction-following|instruction following]], refusals
+      and tool use, and increasingly builds capabilities: by 2025 laboratories described
+      order-of-magnitude increases in reinforcement-learning compute between model generations, and
+      xAI said it had run Grok 4's reinforcement learning at pretraining scale. It still uses far
+      less data than pretraining, and the boundary is blurred by [[mid-training|mid-training]] and
+      [[continued-pretraining|continued pretraining]].
+    example: >-
+      The base model is unchanged; all of the gains in tool use came from post-training.
+origin: >-
+  Earlier, 'post-training' mostly modified other terms, as in post-training quantization, although
+  Hu Xu and colleagues (2019) used 'BERT post-training' for extra domain training of a pretrained
+  model. As the umbrella name for the alignment stages of language-model development it appears by
+  2023 in OpenAI's GPT-4 Technical Report, which credited a post-training alignment process with
+  better factuality, and it became standard in 2024 through reports such as Meta's Llama 3 paper and
+  the Allen Institute for AI's Tülu 3, an open post-training recipe.
+year: 2023
+note: >-
+  Not to be confused with [[post-training-quantization|post-training quantization]], which
+  compresses a finished model without further learning. Some writers use 'alignment' or
+  'fine-tuning' loosely for all of post-training; in current usage post-training is the umbrella and
+  fine-tuning one of its tools.
+see_also:
+  - pretraining
+  - fine-tuning
+  - supervised fine-tuning
+  - reinforcement learning from human feedback
+  - reinforcement learning with verifiable rewards
+  - instruction-tuned model
+  - mid-training
+contrast:
+  - pretraining
+  - post-training quantization
+sources:
+  - text: OpenAI (2023). GPT-4 Technical Report. arXiv:2303.08774.
+    url: https://arxiv.org/abs/2303.08774
+  - text: >-
+      Lambert, N. et al. (2024). Tülu 3: Pushing Frontiers in Open Language Model Post-Training.
+      arXiv:2411.15124.
+    url: https://arxiv.org/abs/2411.15124
+as_of: 2026-10

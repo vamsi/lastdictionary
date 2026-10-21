@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: effective compute
+id: effective-compute
+pos: n.
+also:
+  - effective FLOP
+  - effective training compute
+  - compute multiplier
+  - compute-equivalent gain
+domain: train
+domains:
+  - gov
+  - asi
+level: specialist
+plain: >-
+  A way of measuring AI progress that counts better methods as if they were extra computing power:
+  if a new technique lets a model match one trained with twice the computing, it counts as doubling
+  effective compute.
+senses:
+  - definition: >-
+      [[training-compute|Training compute]] adjusted for algorithmic efficiency: the amount of
+      physical compute a reference method — for example, a fixed older architecture and recipe —
+      would need to match the performance of the model in question. A technique that reaches a
+      baseline's loss with half the FLOP is a '2× compute multiplier', and multipliers from
+      architecture, data, optimizer and other improvements compound with growth in physical compute,
+      so effective compute grows faster than raw FLOP. The concept underlies forecasts of AI
+      progress that count orders of magnitude of effective compute from spending, hardware and
+      [[algorithmic-progress|algorithmic progress]]. It also entered frontier-safety policy: the
+      first version of Anthropic's [[responsible-scaling-policy|responsible scaling policy]]
+      (September 2023) called for capability evaluations after every 4× increase in effective
+      compute, and its October 2024 revision used 4× effective compute, or six months of accumulated
+      post-training enhancements, to trigger comprehensive assessments. Estimates depend on the
+      model, benchmark and baseline; gains measured at small scale may not transfer to large scale;
+      and no standard measurement procedure exists.
+    example: >-
+      The new architecture is worth about a 3× compute multiplier, so the run is a 12× jump in
+      effective compute.
+origin: >-
+  Measuring algorithmic progress in compute-equivalent terms goes back at least to Danny Hernandez
+  and Tom Brown (2020) and AI-forecasting work such as Ajeya Cotra's biological-anchors report
+  (2020). 'Effective compute' was in use by at least September 2023, when Anthropic's Responsible
+  Scaling Policy defined it as roughly the compute needed to train a model if no improvements in
+  pretraining or fine-tuning techniques were counted, and spread through Leopold Aschenbrenner's
+  'Situational Awareness' (2024), which called algorithmic gains 'compute multipliers'.
+year: 2023
+note: >-
+  Not a measured physical quantity but a modeled one; comparisons across labs or eras inherit all
+  the assumptions of the chosen baseline. Distinct from [[unhobbling|unhobbling]], which
+  Aschenbrenner counted separately.
+see_also:
+  - training compute
+  - algorithmic progress
+  - compute overhang
+  - responsible scaling policy
+  - AI timelines
+  - unhobbling
+  - scaling laws
+sources:
+  - text: >-
+      Hernandez, D. & Brown, T. B. (2020). Measuring the Algorithmic Efficiency of Neural Networks.
+      arXiv:2005.04305.
+    url: https://arxiv.org/abs/2005.04305
+  - text: >-
+      Aschenbrenner, L. (2024). Situational Awareness: The Decade Ahead — I. From GPT-4 to AGI:
+      Counting the OOMs.
+    url: https://situational-awareness.ai/from-gpt-4-to-agi/
+as_of: 2026-10

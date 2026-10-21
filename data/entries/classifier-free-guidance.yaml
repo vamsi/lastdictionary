@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: classifier-free guidance
+id: classifier-free-guidance
+pos: n.
+also:
+  - CFG
+  - guidance scale
+  - CFG scale
+  - guidance weight
+domain: gen
+domains:
+  - dl
+  - infer
+level: core
+plain: >-
+  A setting that makes an image generator follow the prompt more strictly by comparing what it would
+  draw with and without the prompt, then exaggerating the difference.
+senses:
+  - definition: >-
+      A sampling technique that strengthens the conditioning of a [[diffusion-model|diffusion
+      model]] or [[flow-matching|flow matching]] model without any external classifier. One network
+      is trained both with its condition c (such as a text prompt) and, for a random fraction of
+      examples (often 10–20 percent), with the condition replaced by a null input, so that it learns
+      conditional and unconditional predictions. At each sampling step both are computed and
+      extrapolated: the output is the unconditional prediction plus w times the difference between
+      the conditional and unconditional predictions. A guidance scale w of 1 gives plain conditional
+      sampling; values around 3–10 typically improve prompt adherence and image quality but reduce
+      diversity and, when too high, oversaturate colors. Because it doubles the network evaluations
+      per step, guidance is often distilled into the model. Replacing the unconditional input with
+      an undesired prompt yields the [[negative-prompt|negative prompt]].
+    example: At a CFG scale of 12 the colors burn out; try 6.
+formula_latex: \tilde{\epsilon}_\theta(x_t, c) = \epsilon_\theta(x_t, \varnothing) +
+  w\,\big(\epsilon_\theta(x_t, c) - \epsilon_\theta(x_t, \varnothing)\big)
+origin: >-
+  Proposed by Jonathan Ho and Tim Salimans of Google in a short paper at a NeurIPS 2021 workshop,
+  posted to arXiv in July 2022. OpenAI's GLIDE (December 2021) found that human raters preferred it
+  to CLIP guidance; it was adopted by DALL·E 2, Imagen and Stable Diffusion and became a default in
+  nearly every text-to-image system.
+year: 2021
+note: >-
+  Conventions differ: some papers parameterize the weight so that 0, not 1, means no guidance.
+  'Guidance' here is a sampling technique and has nothing to do with safety
+  [[guardrails|guardrails]].
+see_also:
+  - classifier guidance
+  - negative prompt
+  - diffusion model
+  - text-to-image model
+  - diffusion sampler
+  - temperature
+contrast:
+  - classifier guidance
+sources:
+  - text: >-
+      Ho, J. & Salimans, T. (2022). Classifier-Free Diffusion Guidance. arXiv:2207.12598 (NeurIPS
+      2021 Workshop on Deep Generative Models and Downstream Applications).
+    url: https://arxiv.org/abs/2207.12598
+  - text: >-
+      Nichol, A. et al. (2021). GLIDE: Towards Photorealistic Image Generation and Editing with
+      Text-Guided Diffusion Models. arXiv:2112.10741 (ICML 2022).
+    url: https://arxiv.org/abs/2112.10741

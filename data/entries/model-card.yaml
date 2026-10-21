@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model card
+id: model-card
+pos: n.
+also:
+  - model cards
+domain: data
+domains:
+  - gov
+  - eng
+level: core
+plain: >-
+  A short document published with an AI model explaining what it is for, how it was trained and
+  tested, how well it works for different groups of people, and its known limits.
+senses:
+  - definition: >-
+      A standardized disclosure published alongside a trained [[model|model]] in which its
+      developers set out what it is meant for and what it should not be used for; who built it and
+      how (version, architecture, license); which data trained and evaluated it; how well it
+      performs within relevant subgroups, such as demographic groups, environments or instruments;
+      and the ethical issues, caveats and recommendations that apply. The disaggregated evaluation
+      is the distinctive element: an aggregate accuracy figure can hide large failures for
+      subgroups, as audits of face-analysis systems showed. Model cards became the de facto way to
+      publish models: on [[hugging-face|Hugging Face]] a repository's README, with machine-readable
+      metadata, serves as its model card (though many repositories have only a stub or none), and
+      frontier developers publish longer [[system-card|system cards]] covering safety evaluations.
+      Quality varies widely and many cards omit training-data details or evaluations, a gap
+      regulators address through mandatory documentation for
+      [[general-purpose-ai-model|general-purpose AI models]].
+    example: >-
+      The model card says the detector was evaluated only on English text, so don't use it on Hindi.
+origin: >-
+  Proposed by Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben
+  Hutchinson, Elena Spitzer, Inioluwa Deborah Raji and Timnit Gebru in 'Model Cards for Model
+  Reporting' (arXiv, October 2018; FAT* 2019), with example cards for a smiling-face detector and a
+  toxic-comment classifier.
+year: 2018
+note: >-
+  A model card documents a model; a [[datasheet-for-datasets|datasheet for datasets]] documents
+  data; a [[system-card|system card]] documents a deployed system, including safeguards and
+  red-teaming results. The terms are sometimes used loosely for one another.
+see_also:
+  - datasheet for datasets
+  - system card
+  - AI transparency
+  - Hugging Face
+  - data provenance
+  - evaluation
+sources:
+  - text: >-
+      Mitchell, M. et al. (2019). Model Cards for Model Reporting. Proceedings of FAT* 2019.
+      arXiv:1810.03993.
+    url: https://arxiv.org/abs/1810.03993

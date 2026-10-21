@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fast gradient sign method
+id: fast-gradient-sign-method
+pos: n.
+also:
+  - FGSM
+  - fast gradient sign attack
+domain: sec
+domains:
+  - dl
+level: specialist
+plain: >-
+  A quick way to make an image that fools a neural network: nudge every pixel slightly in whichever
+  direction most increases the network's error.
+senses:
+  - definition: >-
+      A one-step [[white-box-attack|white-box attack]] that generates an
+      [[adversarial-example|adversarial example]] by moving each input component by a fixed amount ε
+      in the direction of the sign of the loss [[gradient|gradient]] with respect to the input. One
+      gradient computation suffices, so it is cheap, and it was the basis of early
+      [[adversarial-training|adversarial training]]. Taking the sign maximizes the first-order
+      (linear) increase in loss under an ℓ∞ constraint, which is why FGSM's success was read as
+      evidence that networks behave too linearly. A targeted variant steps down the loss of a chosen
+      wrong class; iterating small FGSM steps with projection gives the stronger
+      [[projected-gradient-descent-attack|projected gradient descent attack]].
+    example: FGSM at ε = 8/255 drops the undefended model's accuracy below 20%.
+formula_latex: x_{\text{adv}} = x + \epsilon \cdot \operatorname{sign}\big(\nabla_x
+  \mathcal{L}(f_\theta(x), y)\big)
+origin: >-
+  Introduced by Ian Goodfellow, Jonathon Shlens and Christian Szegedy in 'Explaining and Harnessing
+  Adversarial Examples' (arXiv December 2014; ICLR 2015), which also proposed training on FGSM
+  examples as a regularizer.
+year: 2014
+note: >-
+  Adversarial training with FGSM alone can suffer 'catastrophic overfitting': the model learns to
+  resist the one-step attack while remaining vulnerable to multi-step ones.
+see_also:
+  - adversarial example
+  - projected gradient descent attack
+  - adversarial training
+  - white-box attack
+  - gradient
+sources:
+  - text: >-
+      Goodfellow, I. J., Shlens, J. & Szegedy, C. (2015). Explaining and Harnessing Adversarial
+      Examples. ICLR 2015. arXiv:1412.6572.

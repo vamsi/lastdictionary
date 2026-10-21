@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rotary positional embedding
+id: rotary-positional-embedding
+pos: n.
+also:
+  - RoPE
+  - rotary position embedding
+  - rotary embedding
+  - RoFormer
+domain: llm
+domains:
+  - dl
+level: specialist
+plain: >-
+  A way of telling a transformer where each word is by rotating parts of its internal numbers by an
+  angle that grows with position, so the model can read off how far apart two words are.
+senses:
+  - definition: >-
+      A [[positional-encoding|positional encoding]] that rotates query and key vectors by
+      position-dependent angles instead of adding position vectors to embeddings. Each pair of
+      dimensions is treated as a 2-D plane and rotated by m·θ_i at position m, with frequencies θ_i
+      = b^(−2i/d) spaced geometrically (base b = 10,000 originally). Because rotations preserve
+      lengths and the dot product of two rotated vectors depends only on the difference of their
+      angles, the attention score between positions m and n depends on the offset n − m: absolute
+      encoding that yields relative behavior. RoPE adds no parameters and works with [[kv-cache|KV
+      caching]]. It is used by most open-weight [[large-language-model|LLMs]] released since 2023,
+      including the Llama, Qwen, Mistral and DeepSeek families, and its frequencies are what
+      [[context-extension|context extension]] methods such as position interpolation, NTK-aware
+      scaling and YaRN rescale.
+    example: We raised the RoPE base to 500,000 before long-context training.
+formula_latex: \left(R_{\Theta,m} W_q x_m\right)^{\top}\left(R_{\Theta,n} W_k x_n\right) =
+  x_m^{\top} W_q^{\top} R_{\Theta,\,n-m}\, W_k\, x_n
+origin: >-
+  Proposed by Jianlin Su and colleagues at Zhuiyi Technology in Shenzhen, first in Chinese-language
+  blog posts (early 2021) and then in the RoFormer paper (arXiv, April 2021). EleutherAI's GPT-J and
+  GPT-NeoX and Google's PaLM adopted it in 2021–2022, and Meta's LLaMA (2023) made it the de facto
+  standard.
+year: 2021
+note: >-
+  Despite the name, nothing is added to the token embeddings; the rotation acts inside attention.
+  Long-context models often raise the base frequency (Llama 3 used 500,000) to slow the rotation.
+see_also:
+  - positional encoding
+  - context extension
+  - ALiBi
+  - self-attention
+  - query, key and value
+  - long context
+sources:
+  - text: >-
+      Su, J., Lu, Y., Pan, S., Murtadha, A., Wen, B. & Liu, Y. (2021). RoFormer: Enhanced
+      Transformer with Rotary Position Embedding. arXiv:2104.09864.
+    url: https://arxiv.org/abs/2104.09864

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: coefficient of determination
+id: coefficient-of-determination
+pos: n.
+also:
+  - R²
+  - R-squared
+  - R2
+  - adjusted R²
+  - adjusted R-squared
+domain: ml
+domains:
+  - math
+  - eval
+level: core
+plain: >-
+  A score for numerical predictions showing how much of the variation in the true values a model
+  accounts for, compared with always guessing the average: 1 is perfect, 0 is no better than the
+  average.
+senses:
+  - definition: >-
+      A measure, written R², of how much of the variance of a target variable a regression model
+      explains. It is 1 minus the ratio of the model's residual sum of squares to the total sum of
+      squares around the mean, equivalently 1 minus the [[mean-squared-error|mean squared error]]
+      divided by the target's variance. A value of 1 means perfect predictions and 0 means the model
+      does no better than always predicting the mean; on held-out data, for models fitted without an
+      intercept, or for nonlinear fits, R² can be negative, meaning the model is worse than the
+      mean. For [[ordinary-least-squares|ordinary least squares]] with an intercept, evaluated on
+      its own training data, it equals the squared correlation between predictions and targets.
+      Because training R² never falls when predictors are added, adjusted R² penalizes the number of
+      predictors. R² is scale-free and widely reported, but it depends on how varied the evaluation
+      sample is, says nothing about bias or misspecification, and a high value implies neither
+      causation nor useful accuracy.
+    example: >-
+      The model explains 64% of the variance in house prices (R² = 0.64 on the test set).
+formula_latex: R^2 = 1 - \frac{\sum_i (y_i - \hat{y}_i)^2}{\sum_i (y_i - \bar{y})^2}
+origin: >-
+  Usually credited to the geneticist Sewall Wright, who used it in his 1921 paper 'Correlation and
+  Causation', a founding text of path analysis. Mordecai Ezekiel proposed the most widely used
+  adjusted version in his 1930 book Methods of Correlation Analysis.
+year: 1921
+note: >-
+  Not interchangeable with the squared correlation r² in general: the two coincide only for
+  least-squares fits with an intercept, evaluated on the data used for fitting.
+see_also:
+  - mean squared error
+  - regression
+  - linear regression
+  - correlation
+  - variance
+  - overfitting
+sources:
+  - text: >-
+      Wright, S. (1921). Correlation and Causation. Journal of Agricultural Research 20(7).
+  - text: "Ezekiel, M. (1930). Methods of Correlation Analysis. New York: Wiley."

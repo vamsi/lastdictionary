@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generative model
+id: generative-model
+pos: n.
+also:
+  - generative modeling
+  - deep generative model
+domain: gen
+domains:
+  - ml
+  - math
+level: core
+plain: >-
+  A model that learns what a kind of data looks like — faces, sentences, songs — well enough to
+  produce new examples that resemble the originals without copying them.
+senses:
+  - definition: >-
+      A model of the probability distribution of the data itself — p(x), or p(x | c) given a
+      condition c such as a text prompt — rather than only of a label given an input. A trained
+      generative model can be sampled to produce new data, and some families can also score how
+      probable an input is. Deep generative models differ in how they represent and fit that
+      distribution: [[autoregressive-model|autoregressive models]] factor it into a chain of
+      next-element predictions; [[variational-autoencoder|variational autoencoders]] and
+      [[normalizing-flow|normalizing flows]] map data to and from latent variables;
+      [[generative-adversarial-network|generative adversarial networks]] learn a sampler through a
+      contest with a discriminator; and [[diffusion-model|diffusion]] and [[flow-matching|flow
+      matching]] models learn to turn noise into data step by step. [[large-language-model|Large
+      language models]] are generative models of text, and most image, video and audio generators
+      combine several of these ideas.
+    example: >-
+      We trained a generative model of normal sensor traces so we could simulate rare failures.
+origin: >-
+  The generative–discriminative contrast comes from statistical pattern recognition. Neural
+  'generative models' were prominent by the mid-1990s (the Helmholtz machine, 1995), and Andrew Ng
+  and Michael Jordan's widely cited 2001 comparison of naive Bayes with logistic regression fixed
+  the pairing in textbooks. Deep generative modeling took off with the variational autoencoder
+  (2013) and the generative adversarial network (2014), and reached the public through 'generative
+  AI' after 2022.
+note: >-
+  Not the same as [[generative-ai|generative AI]], which names products and applications; a
+  generative model can be small and classical, such as a [[naive-bayes|naive Bayes]] classifier or a
+  [[gaussian-mixture-model|Gaussian mixture model]].
+see_also:
+  - generative AI
+  - discriminative model
+  - diffusion model
+  - generative adversarial network
+  - variational autoencoder
+  - autoregressive model
+  - density estimation
+  - latent space
+contrast:
+  - discriminative model
+sources:
+  - text: >-
+      Ng, A. Y. & Jordan, M. I. (2002). On Discriminative vs. Generative Classifiers: A comparison
+      of logistic regression and naive Bayes. Advances in Neural Information Processing Systems 14
+      (NIPS 2001).
+  - text: >-
+      Dayan, P., Hinton, G. E., Neal, R. M. & Zemel, R. S. (1995). The Helmholtz Machine. Neural
+      Computation 7(5).

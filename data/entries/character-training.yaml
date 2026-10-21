@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: character training
+id: character-training
+pos: n.
+also:
+  - personality training
+  - persona training
+  - AI character
+domain: safety
+domains:
+  - train
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Training an AI to have a consistent, deliberate personality — traits such as curiosity, honesty
+  and warmth — rather than leaving its manner and values as accidental by-products of other
+  training.
+senses:
+  - definition: >-
+      Post-training aimed at giving an AI model a stable, intended character — traits, values,
+      dispositions and a sense of identity — rather than only teaching it to follow instructions and
+      avoid harm. In Anthropic's published description, a variant of
+      [[constitutional-ai|Constitutional AI]] training is used: the developer writes character
+      traits, the model generates prompts relevant to them and candidate responses, then ranks its
+      own responses by fit with the traits, producing preference data. The rationale is partly
+      product-related (a consistent, engaging assistant) and partly safety-related: a coherent
+      character with good values may generalize to novel situations better than a patchwork of rules
+      and resist manipulation and persona drift. Concerns include encouraging
+      [[anthropomorphism|anthropomorphism]] and [[sycophancy|sycophancy]], and the difficulty of
+      verifying that trained traits are robust; [[persona-vector|persona vectors]] offer one way to
+      measure them.
+    example: >-
+      Character training made the model push back politely instead of agreeing with every claim.
+origin: >-
+  Described publicly by Anthropic in 'Claude's Character' (June 2024), which said the method had
+  been used since Claude 3. It builds on Constitutional AI (2022) and on discussions of the
+  assistant persona as a character a language model plays; Anthropic's January 2026 constitution
+  made character and identity central themes.
+year: 2024
+note: >-
+  Differs from [[role-prompting|role prompting]], which assigns a persona at inference time:
+  character training changes a model's default dispositions through its weights.
+see_also:
+  - AI constitution
+  - Constitutional AI
+  - persona vector
+  - sycophancy
+  - model specification
+  - simulator theory
+contrast:
+  - role prompting
+sources:
+  - text: Anthropic (2024). Claude's Character. Anthropic research blog.

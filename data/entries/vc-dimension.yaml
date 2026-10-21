@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: VC dimension
+id: vc-dimension
+pos: n.
+also:
+  - Vapnik–Chervonenkis dimension
+  - VC theory
+  - shattering
+  - growth function
+domain: math
+domains:
+  - ml
+level: specialist
+plain: >-
+  A measure of how flexible a family of prediction rules is: the largest number of points it can
+  label in every possible way. More flexible families need more data to learn reliably.
+senses:
+  - definition: >-
+      A measure of the capacity of a class of binary classifiers: the size of the largest set of
+      points the class can shatter, that is, label in all 2ⁿ possible ways. Linear classifiers in d
+      dimensions have VC dimension d + 1; a class that can shatter arbitrarily large sets has
+      infinite VC dimension. VC theory shows that a class is learnable in the [[pac-learning|PAC]]
+      sense exactly when its VC dimension is finite, and bounds the gap between training and test
+      error by a term that grows with the VC dimension and shrinks with sample size, formalizing the
+      trade-off behind [[overfitting|overfitting]] and structural risk minimization. Margin-based
+      capacity control in this tradition motivated [[support-vector-machine|support vector
+      machines]]. For modern deep networks, whose VC dimension grows with parameter count and dwarfs
+      dataset sizes, such bounds are vacuous and cannot explain why
+      [[overparameterization|overparameterized]] networks generalize — a starting point for research
+      on [[double-descent|double descent]] and [[implicit-regularization|implicit regularization]].
+    example: >-
+      The network has more parameters than training images, so its VC bound is vacuous, yet it
+      generalizes fine.
+formula_latex: \mathrm{err}_{\text{test}} \le \mathrm{err}_{\text{train}} +
+  O\!\left(\sqrt{\frac{d_{\mathrm{VC}}\log(n/d_{\mathrm{VC}}) + \log(1/\delta)}{n}}\right)
+origin: >-
+  Defined by Vladimir Vapnik and Alexey Chervonenkis in a 1968 note in Doklady Akademii Nauk SSSR
+  and a fuller 1971 paper on the uniform convergence of relative frequencies to their probabilities
+  (English translation the same year). Anselm Blumer, Andrzej Ehrenfeucht, David Haussler and
+  Manfred Warmuth connected it to PAC learning (conference version 1986; 'Learnability and the
+  Vapnik–Chervonenkis Dimension', 1989) and helped fix the name.
+year: 1968
+see_also:
+  - PAC learning
+  - statistical learning theory
+  - empirical risk minimization
+  - overfitting
+  - support vector machine
+  - double descent
+sources:
+  - text: >-
+      Vapnik, V. N. & Chervonenkis, A. Ya. (1971). On the Uniform Convergence of Relative
+      Frequencies of Events to Their Probabilities. Theory of Probability and Its Applications,
+      16(2).
+  - text: >-
+      Blumer, A., Ehrenfeucht, A., Haussler, D. & Warmuth, M. K. (1989). Learnability and the
+      Vapnik–Chervonenkis Dimension. Journal of the ACM, 36(4).

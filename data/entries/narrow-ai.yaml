@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: narrow AI
+id: narrow-ai
+pos: n.
+also:
+  - weak AI
+  - artificial narrow intelligence
+  - ANI
+  - specialized AI
+  - task-specific AI
+domain: core
+domains:
+  - asi
+  - mind
+level: core
+plain: >-
+  AI built to do one specific job, or a small set of related jobs, such as playing chess or spotting
+  spam, without being able to turn its skill to unrelated problems.
+senses:
+  - definition: >-
+      AI designed or trained for a specific task or a narrow range of tasks, such as playing chess,
+      recognizing faces, filtering spam or recommending videos, whose competence does not transfer
+      to unrelated problems without being rebuilt or retrained. It is defined by contrast with
+      [[artificial-general-intelligence|artificial general intelligence]]. Narrow systems can be
+      superhuman within their domain, as [[deep-blue|Deep Blue]] and [[alphago|AlphaGo]] were, while
+      being useless outside it. Nearly all deployed AI before the 2020s was narrow. How to classify
+      [[foundation-model|foundation models]] and LLM-based assistants is disputed: they handle
+      thousands of tasks yet perform unevenly and fail at some simple ones, so commentators
+      variously call them narrow, [[general-purpose-ai|general-purpose]] or early general
+      intelligence.
+    example: >-
+      The fraud model is narrow AI: excellent on card transactions, useless on insurance claims.
+origin: >-
+  The earliest use of 'narrow AI' has not been established. It became common in the 2000s among
+  futurists and AGI researchers as the counterpart of 'strong AI' and 'artificial general
+  intelligence', for example in Ray Kurzweil's The Singularity Is Near (2005) and Ben Goertzel's
+  writing on AGI. 'Weak AI' is older but different: John Searle (1980) used it for the view that
+  computers merely simulate minds, as opposed to [[strong-ai|strong AI]].
+note: >-
+  'Weak AI' is often used as a synonym, but Searle's weak/strong distinction concerns whether a
+  machine has a mind, not how broad its abilities are. Many researchers treat narrow versus general
+  as a spectrum rather than a binary.
+see_also:
+  - artificial general intelligence
+  - general-purpose AI
+  - strong AI
+  - jagged intelligence
+  - Deep Blue
+  - transfer learning
+  - levels of AGI
+contrast:
+  - artificial general intelligence
+  - general-purpose AI

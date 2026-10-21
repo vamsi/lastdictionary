@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Weights & Biases
+id: weights-biases
+pos: prop. n.
+also:
+  - W&B
+  - wandb
+  - W&B Weave
+domain: eng
+domains:
+  - ml
+  - orgs
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A company and online service that machine-learning teams use to log, chart and compare their
+  training experiments, models and AI-app test results in shared dashboards.
+senses:
+  - definition: >-
+      A commercial platform for [[experiment-tracking|experiment tracking]] and model management,
+      widely used in deep-learning research and industry, including at frontier AI laboratories. Its
+      client library, wandb, logs hyperparameters, metrics, hardware statistics, media and outputs
+      from training scripts to hosted or self-managed servers, where runs can be charted, compared
+      and shared in collaborative reports. Further features include sweeps for
+      [[hyperparameter-tuning|hyperparameter search]], Artifacts for versioning datasets and models
+      with their lineage, a [[model-registry|model registry]], and Weave, a toolkit for tracing and
+      evaluating applications built on [[large-language-model|language models]]. The name alludes to
+      the two kinds of learned [[parameter|parameters]] in a neural network, [[weights|weights]] and
+      biases.
+    example: >-
+      Everyone on the team posts loss curves to Weights & Biases, so we can see the moment a run
+      diverges.
+origin: >-
+  Founded in San Francisco in 2017 by Lukas Biewald, Chris Van Pelt and Shawn Lewis; Biewald and Van
+  Pelt had earlier founded the data-labeling company CrowdFlower. Its experiment tracker spread
+  quickly through deep-learning research from 2018, and the cloud-computing company CoreWeave, which
+  announced the purchase in March 2025, acquired the firm that year.
+year: 2017
+see_also:
+  - experiment tracking
+  - MLflow
+  - model registry
+  - hyperparameter tuning
+  - LLM observability
+as_of: 2026-10

@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: catastrophic forgetting
+id: catastrophic-forgetting
+pos: n.
+also:
+  - catastrophic interference
+  - forgetting
+domain: train
+domains:
+  - dl
+  - ml
+level: core
+plain: >-
+  When a neural network trained on something new gets suddenly and badly worse at what it could
+  already do, because the new training rewrites the internal settings the old skills relied on.
+senses:
+  - definition: >-
+      A sharp drop in a neural network's performance on what it learned earlier, caused by training
+      it on new data or tasks without continued practice on the old ones. Because knowledge is
+      stored in shared, distributed [[weights|weights]], gradient updates that reduce loss on the
+      new task also move parameters that earlier tasks depended on. Forgetting is the central
+      obstacle of [[continual-learning|continual learning]] and a practical concern in
+      [[fine-tuning|fine-tuning]] [[large-language-model|language models]]: narrow fine-tuning can
+      erode general knowledge, instruction following or safety behavior, and later training stages
+      can undo earlier ones. Remedies include rehearsal or replay (mixing in old data),
+      regularization that protects important weights ([[elastic-weight-consolidation|elastic weight
+      consolidation]]), architectural isolation ([[adapter|adapters]],
+      [[low-rank-adaptation|low-rank adaptation]]), smaller learning rates, and
+      [[on-policy-distillation|on-policy distillation]] from an earlier checkpoint. Studies in
+      2024–2025 found that low-rank fine-tuning and on-policy [[reinforcement-learning|reinforcement
+      learning]] forget less than full supervised fine-tuning, with forgetting tracking how far the
+      model's output distribution moves from the original.
+    example: >-
+      After we fine-tuned on legal contracts, catastrophic forgetting wiped out half of the model's
+      coding ability.
+origin: >-
+  Michael McCloskey and Neal Cohen described catastrophic interference in connectionist networks
+  learning arithmetic facts in sequence (1989), and Roger Ratcliff reported similar results for
+  recognition memory (1990). The phrase 'catastrophic forgetting' was in use by 1991 (Robert French)
+  and was popularized by French's 1999 review. Ian Goodfellow and colleagues re-examined it in deep
+  networks in 2013, and the 2017 elastic-weight-consolidation paper made it a central deep-learning
+  concern.
+year: 1989
+note: >-
+  Forgetting during fine-tuning overlaps with, but is broader than, the [[alignment-tax|alignment
+  tax]]. People forget gradually rather than catastrophically, a contrast often explained by the
+  brain's complementary fast- and slow-learning memory systems.
+see_also:
+  - continual learning
+  - elastic weight consolidation
+  - stability–plasticity dilemma
+  - fine-tuning
+  - experience replay
+  - loss of plasticity
+  - machine unlearning
+contrast:
+  - machine unlearning
+  - loss of plasticity
+sources:
+  - text: >-
+      McCloskey, M. & Cohen, N. J. (1989). Catastrophic Interference in Connectionist Networks: The
+      Sequential Learning Problem. Psychology of Learning and Motivation 24, 109–165.
+  - text: >-
+      Kirkpatrick, J. et al. (2017). Overcoming catastrophic forgetting in neural networks. PNAS
+      114(13). arXiv:1612.00796.
+    url: https://arxiv.org/abs/1612.00796
+  - text: >-
+      Shenfeld, I., Pari, J. & Agrawal, P. (2025). RL's Razor: Why Online Reinforcement Learning
+      Forgets Less. arXiv:2509.04259.
+    url: https://arxiv.org/abs/2509.04259

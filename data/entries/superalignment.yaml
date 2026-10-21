@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: superalignment
+id: superalignment
+pos: n.
+also:
+  - Superalignment team
+  - superintelligence alignment
+domain: safety
+domains:
+  - asi
+  - orgs
+level: core
+plain: >-
+  The problem of keeping AI systems far smarter than humans aligned with human intentions — and the
+  name of OpenAI's short-lived 2023–2024 research team devoted to it.
+senses:
+  - context: Research problem
+    definition: >-
+      The problem, as OpenAI framed it in 2023, of aligning AI systems substantially more capable
+      than humans: techniques such as [[reinforcement-learning-from-human-feedback|reinforcement
+      learning from human feedback]] depend on people judging a model's outputs, and are expected to
+      fail once people can no longer tell good behavior from bad. Proposed approaches include
+      [[scalable-oversight|scalable oversight]], [[weak-to-strong-generalization|weak-to-strong
+      generalization]] (studying whether weak supervisors can elicit the full capabilities of strong
+      models), automated [[interpretability|interpretability]] and [[automated-ai-research|automated
+      alignment research]] — using aligned, roughly human-level AI systems to do alignment research
+      on their successors.
+    example: >-
+      RLHF works while humans can grade the answers; superalignment asks what happens when they
+      can't.
+  - context: OpenAI team
+    definition: >-
+      A team at [[openai|OpenAI]], announced in July 2023 under the joint leadership of Ilya
+      Sutskever and Jan Leike, whose stated aim was to crack the core technical problems of aligning
+      superintelligence within four years, backed by a pledge of 20% of the compute the company had
+      secured so far. The centerpiece of its plan was an automated alignment researcher of about
+      human level. It published work on weak-to-strong generalization and funded outside research
+      before being dissolved in May 2024, after both leaders left the company; Leike wrote that
+      safety culture and processes had 'taken a backseat to shiny products'.
+origin: >-
+  Introduced as the name of a new team in OpenAI's announcement 'Introducing Superalignment' by Jan
+  Leike and Ilya Sutskever (5 July 2023), blending 'superintelligence' and 'alignment'; no earlier
+  use is established.
+year: 2023
+note: >-
+  The word outlived the team as a name for the general problem. Sutskever co-founded
+  [[safe-superintelligence-inc|Safe Superintelligence Inc.]] in June 2024, and Leike joined
+  Anthropic.
+see_also:
+  - scalable oversight
+  - weak-to-strong generalization
+  - superintelligence
+  - AI alignment
+  - automated AI research
+  - OpenAI
+  - Safe Superintelligence Inc.
+sources:
+  - text: Leike, J. & Sutskever, I. (2023). Introducing Superalignment. OpenAI.
+    url: https://openai.com/index/introducing-superalignment/
+  - text: >-
+      Burns, C. et al. (2023). Weak-to-Strong Generalization: Eliciting Strong Capabilities With
+      Weak Supervision. arXiv:2312.09390.
+    url: https://arxiv.org/abs/2312.09390
+as_of: 2026-10

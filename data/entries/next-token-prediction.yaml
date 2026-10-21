@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: next-token prediction
+id: next-token-prediction
+pos: n.
+also:
+  - next-word prediction
+  - language modeling objective
+  - NTP
+  - autoregressive objective
+domain: llm
+domains:
+  - train
+level: essential
+plain: >-
+  The simple task most AI chatbots were trained on: given some text, guess the next small piece of
+  it. Repeating that guess, piece by piece, produces whole answers.
+senses:
+  - definition: >-
+      The training objective, and matching generation procedure, in which a model predicts a
+      probability distribution over the next [[token|token]] given all preceding tokens. In
+      training, a [[causal-language-model|causal language model]] reads text and is penalized by the
+      [[cross-entropy|cross-entropy]] between its prediction and the token that actually follows, at
+      every position in parallel thanks to the [[causal-mask|causal mask]]; in generation, a token
+      is chosen from the prediction ([[decoding|decoding]]), appended to the input, and the step
+      repeats. The objective is self-supervised — text supplies its own labels — so it scales to
+      trillions of tokens of unlabeled data. Doing it well requires modeling grammar, facts,
+      reasoning patterns and writers' intentions, which is why [[pretraining|pretraining]] on it
+      yields broadly capable models. Alternatives studied include
+      [[multi-token-prediction|multi-token prediction]] and [[diffusion-language-model|diffusion]]
+      objectives.
+    example: >-
+      Pretraining is just next-token prediction on fifteen trillion tokens; the assistant behavior
+      comes from post-training.
+origin: >-
+  Predicting the next symbol of text goes back to Claude Shannon's 1951 experiments on the entropy
+  of English. As a neural-network training objective it appears in Jeffrey Elman's simple recurrent
+  networks (1990) and in the neural language model of Yoshua Bengio and colleagues (2000–2003);
+  OpenAI's GPT series (2018–2020) showed that scaling it with transformers produced general-purpose
+  models.
+year: 1990
+note: >-
+  Its sufficiency is debated: Yann LeCun has argued that autoregressive prediction compounds errors
+  and cannot plan, while Ilya Sutskever and others argue that predicting text well requires modeling
+  the reality behind it. See [[fancy-autocomplete|fancy autocomplete]] and
+  [[stochastic-parrot|stochastic parrot]].
+see_also:
+  - language model
+  - causal language model
+  - autoregressive model
+  - multi-token prediction
+  - pretraining
+  - cross-entropy
+  - fancy autocomplete
+contrast:
+  - masked language model

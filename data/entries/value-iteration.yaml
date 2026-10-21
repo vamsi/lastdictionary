@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: value iteration
+id: value-iteration
+pos: n.
+also:
+  - successive approximation
+domain: rl
+domains:
+  - math
+level: specialist
+plain: >-
+  A step-by-step method for finding the best strategy when all the rules and rewards of a problem
+  are known: repeatedly re-score every situation from the scores of the situations it can lead to,
+  until the scores stop changing.
+senses:
+  - definition: >-
+      A [[dynamic-programming|dynamic programming]] algorithm that computes the optimal
+      [[value-function|value function]] of a known [[markov-decision-process|Markov decision
+      process]] by repeatedly applying the [[bellman-equation|Bellman optimality]] backup to every
+      [[state|state]]: each sweep sets a state's value to the best, over actions, of the expected
+      immediate [[reward|reward]] plus the discounted value of successor states. Because this
+      operator is a contraction for γ < 1, the estimates converge geometrically to the optimum from
+      any starting point; an optimal [[policy|policy]] is then obtained by acting greedily, and in
+      practice the loop stops once the largest change falls below a threshold. A sweep costs on the
+      order of |S|²|A| operations for a dense model. Asynchronous variants update states in any
+      order, real-time dynamic programming updates only states the agent actually visits, and fitted
+      value iteration replaces the table with a function approximator.
+    example: >-
+      Value iteration on the 100-state gridworld converged to within 10⁻⁶ in 40 sweeps.
+formula_latex: v_{k+1}(s) = \max_{a} \sum_{s',\, r} p(s', r \mid s, a)\left[ r + \gamma\, v_k(s') \right]
+origin: >-
+  Introduced by Richard Bellman in the 1950s as the method of successive approximations for his
+  functional equations and set out in Dynamic Programming (1957); Lloyd Shapley's 1953 analysis of
+  stochastic games used a similar iteration. The name 'value iteration' contrasts it with Ronald
+  Howard's [[policy-iteration|policy iteration]] (1960).
+year: 1957
+see_also:
+  - policy iteration
+  - dynamic programming
+  - Bellman equation
+  - Markov decision process
+  - value function
+  - Q-learning
+contrast:
+  - policy iteration
+sources:
+  - text: Bellman, R. (1957). Dynamic Programming. Princeton University Press.

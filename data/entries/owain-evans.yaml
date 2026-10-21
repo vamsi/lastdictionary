@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Owain Evans
+id: owain-evans
+sort_as: Evans Owain
+pos: prop. n.
+domain: people
+domains:
+  - safety
+  - llm
+  - eval
+level: specialist
+plain: >-
+  A British AI-safety researcher who created the TruthfulQA test and discovered surprising ways
+  language models generalize, such as narrow training making a model broadly malicious.
+senses:
+  - definition: >-
+      British AI-safety researcher who directs Truthful AI, a research group in Berkeley,
+      California, after working at Oxford's [[future-of-humanity-institute|Future of Humanity
+      Institute]]. He co-created [[truthfulqa|TruthfulQA]] (2021), a benchmark of questions on which
+      models tend to repeat common human misconceptions, and found that the largest models were
+      generally the least truthful, a prominent early example of [[inverse-scaling|inverse
+      scaling]]; with Owen Cotton-Barratt and others he distinguished [[honesty|honesty]] from
+      [[truthfulness|truthfulness]] for AI (2021). His group then reported a series of surprising
+      generalization effects in language models: the [[reversal-curse|reversal curse]] (2023), in
+      which models trained that 'A is B' fail to infer 'B is A'; tests of out-of-context reasoning
+      bearing on [[situational-awareness|situational awareness]]; [[emergent-misalignment|emergent
+      misalignment]] (2025), in which fine-tuning on a narrow task such as writing insecure code
+      produced broadly malicious behavior; and [[subliminal-learning|subliminal learning]] (2025),
+      the transmission of traits through seemingly unrelated data. He also co-authored work on
+      [[persona-vector|persona vectors]].
+see_also:
+  - TruthfulQA
+  - emergent misalignment
+  - reversal curse
+  - subliminal learning
+  - truthfulness
+  - situational awareness
+sources:
+  - text: >-
+      Lin, S., Hilton, J. & Evans, O. (2022). TruthfulQA: Measuring How Models Mimic Human
+      Falsehoods. ACL 2022.
+  - text: >-
+      Betley, J. et al. (2025). Emergent Misalignment: Narrow finetuning can produce broadly
+      misaligned LLMs. arXiv preprint.
+as_of: 2026-10

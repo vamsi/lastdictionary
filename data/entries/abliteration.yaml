@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: abliteration
+id: abliteration
+pos: n.
+also:
+  - abliterate
+  - abliterated model
+  - weight orthogonalization
+  - refusal ablation
+pronunciation: ab-lit-uh-RAY-shun
+domain: interp
+domains:
+  - sec
+  - safety
+  - eng
+labels:
+  - informal
+  - emerging
+level: specialist
+plain: >-
+  A technique for removing a chat model's ability to refuse requests by finding the internal
+  direction responsible for refusals and permanently erasing it from the model's weights, with no
+  retraining.
+senses:
+  - definition: >-
+      The removal of a [[large-language-model|large language model]]'s [[refusal|refusal]] behavior
+      by orthogonalizing its weights against the [[refusal-direction|refusal direction]]. Once the
+      unit direction r has been estimated from activation differences between harmful and harmless
+      instructions, every matrix that writes into the [[residual-stream|residual stream]] — the
+      token embeddings and the attention and MLP output projections — is modified so that its
+      outputs have no component along r. The result is equivalent to
+      [[directional-ablation|directional ablation]] at every layer and position but is baked into an
+      ordinary checkpoint that runs in standard inference software. 'Abliterated' versions of many
+      [[open-weight-model|open-weight models]] circulate on model hubs. The edit usually costs some
+      capability, which practitioners sometimes recover with brief further training such as
+      [[direct-preference-optimization|direct preference optimization]].
+    example: >-
+      The abliterated checkpoint no longer refuses, but it scores a few points lower on reasoning
+      benchmarks.
+formula_latex: W_{\text{out}}' = \left(I - \hat{r}\hat{r}^{\top}\right) W_{\text{out}}
+origin: >-
+  Coined by the open-model developer known as FailSpy, whose model cards explain it as a play on
+  'ablation': 'ablate' plus 'obliterated', invented to set such models apart from 'uncensored'
+  fine-tunes. FailSpy applied the weight-orthogonalization method of Arditi et al. (2024) to Llama 3
+  models and released the 'abliterator' library in May 2024; Maxime Labonne's tutorial 'Uncensor any
+  LLM with abliteration' (June 2024) spread the word.
+year: 2024
+note: >-
+  Abliteration removes a safeguard rather than adding knowledge, and is a central example in debates
+  over releasing model weights: safety training on open weights can be stripped cheaply. Distinguish
+  it from a [[jailbreak|jailbreak]], which manipulates inputs to a model that is left unchanged.
+see_also:
+  - refusal direction
+  - directional ablation
+  - refusal
+  - open-weight model
+  - jailbreak
+  - machine unlearning
+contrast:
+  - jailbreak
+sources:
+  - text: Labonne, M. (2024). Uncensor any LLM with abliteration. Blog post, June 2024.
+    url: https://maximelabonne.substack.com/p/uncensor-any-llm-with-abliteration-d30148b7d43e
+  - text: >-
+      Arditi, A. et al. (2024). Refusal in Language Models Is Mediated by a Single Direction.
+      arXiv:2406.11717.
+    url: https://arxiv.org/abs/2406.11717
+as_of: 2026-10

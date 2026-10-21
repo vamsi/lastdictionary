@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: support vector machine
+id: support-vector-machine
+pos: n.
+also:
+  - SVM
+  - support-vector network
+  - support vector classifier
+  - SVC
+  - support vector regression
+  - SVR
+  - support vectors
+  - soft margin
+  - one-class SVM
+domain: ml
+domains:
+  - math
+  - hist
+level: core
+plain: >-
+  A classic method that separates two groups of examples with the widest possible gap — like laying
+  the broadest possible road between them. A mathematical shortcut lets it draw curved boundaries
+  too.
+senses:
+  - definition: >-
+      A supervised model that, for [[binary-classification|binary classification]], finds the
+      hyperplane separating the classes with the largest [[margin|margin]] — the greatest distance
+      to the nearest training points, called support vectors, which alone determine the solution.
+      The soft-margin version lets some points violate the margin, trading width against training
+      errors through a penalty parameter C; this is equivalent to minimizing [[hinge-loss|hinge
+      loss]] plus an L2 [[regularization|regularization]] term. Training is a convex quadratic
+      program, solved in practice by decomposition methods such as sequential minimal optimization
+      (SMO) in libraries like LIBSVM. Because the dual problem uses the data only through inner
+      products, the [[kernel-trick|kernel trick]] yields nonlinear [[decision-boundary|decision
+      boundaries]]. Variants handle regression (with an ε-insensitive loss), multiple classes (via
+      [[one-vs-rest|one-vs-rest]] or one-vs-one) and novelty detection (one-class SVM). SVMs led
+      many benchmarks from the late 1990s until deep learning and remain effective on small or
+      high-dimensional data such as text.
+    example: >-
+      On 3,000 labeled documents, a linear SVM on word counts beat our fine-tuned small transformer.
+formula_latex: \min_{\mathbf{w}, b} \; \frac{1}{2}\lVert \mathbf{w} \rVert^2 + C \sum_{i=1}^{n}
+  \max\big(0,\, 1 - y_i(\mathbf{w}^{\top}\mathbf{x}_i + b)\big)
+origin: >-
+  Vladimir Vapnik developed the maximum-margin 'generalized portrait' method with Alexander Lerner
+  and Alexey Chervonenkis in the Soviet Union in 1963–1964. Bernhard Boser, Isabelle Guyon and
+  Vapnik added kernels at COLT 1992, and Corinna Cortes and Vapnik's 'Support-Vector Networks'
+  (Machine Learning, 1995) introduced the soft margin and the 'support vector' name; 'support vector
+  machine' was standard by the late 1990s. John Platt's SMO algorithm (1998) made training fast.
+year: 1995
+note: >-
+  SVM outputs are not probabilities; Platt scaling or isotonic regression is used to
+  [[calibration|calibrate]] them. Kernel SVM training scales roughly quadratically to cubically with
+  the number of examples, so very large datasets call for linear SVMs or other methods.
+see_also:
+  - kernel trick
+  - margin
+  - hinge loss
+  - decision boundary
+  - linear separability
+  - one-vs-rest
+  - Gaussian process
+contrast:
+  - logistic regression
+sources:
+  - text: >-
+      Cortes, C. & Vapnik, V. (1995). Support-Vector Networks. Machine Learning, 20(3), 273–297.
+  - text: >-
+      Boser, B. E., Guyon, I. M. & Vapnik, V. N. (1992). A Training Algorithm for Optimal Margin
+      Classifiers. Proceedings of the Fifth Annual Workshop on Computational Learning Theory (COLT
+      '92), 144–152.

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model hub
+id: model-hub
+pos: n.
+also:
+  - model zoo
+  - model repository
+  - model garden
+  - TensorFlow Hub
+  - PyTorch Hub
+  - ModelScope
+domain: eng
+domains:
+  - data
+  - llm
+level: specialist
+plain: >-
+  An online library where trained AI models are published so that others can find, download and
+  reuse them instead of training their own from scratch.
+senses:
+  - definition: >-
+      A platform or catalog for publishing, discovering and downloading trained models, typically
+      with versioning, documentation such as [[model-card|model cards]], license information, search
+      by task and programmatic download from code. Early collections were called model zoos: curated
+      sets of reference models for one framework, such as Caffe's Model Zoo and later zoos for
+      TensorFlow, [[pytorch|PyTorch]], [[onnx|ONNX]] and MXNet. Open hubs followed in which anyone
+      may upload, above all the [[hugging-face|Hugging Face]] Hub, along with TensorFlow Hub (later
+      folded into Kaggle), PyTorch Hub, cloud providers' model catalogs ('model gardens') and the
+      Chinese platform ModelScope. Hubs underpin [[transfer-learning|transfer learning]] and the
+      [[open-weight-model|open-weight]] ecosystem, and they raise supply-chain concerns — malicious
+      files, impersonated organizations, mislabeled licenses and undocumented training data — which
+      they counter with security scanning, gated access, verified organizations and safer formats
+      such as [[safetensors|safetensors]].
+    example: >-
+      Before fine-tuning anything, search the model hub for a checkpoint already trained on legal
+      text.
+origin: >-
+  'Model zoo' was popularized by the Caffe framework's shared collection of trained networks (2014).
+  Google launched TensorFlow Hub in 2018 and PyTorch Hub appeared in 2019, the period in which
+  Hugging Face's hub began growing into the dominant open platform.
+year: 2014
+note: >-
+  A hub distributes models publicly; a [[model-registry|model registry]] manages an organization's
+  own versions and releases, though private enterprise hubs combine the two.
+see_also:
+  - Hugging Face
+  - model registry
+  - model card
+  - transfer learning
+  - open-weight model
+  - safetensors
+contrast:
+  - model registry

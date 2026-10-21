@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: benchmaxxing
+id: benchmaxxing
+pos: n.
+also:
+  - benchmaxx
+  - benchmaxxed
+  - benchmark-maxxing
+domain: culture
+domains:
+  - eval
+labels:
+  - slang
+  - emerging
+level: specialist
+plain: >-
+  Slang for tuning an AI model to score as high as possible on well-known tests, even when this does
+  not make it genuinely better at real-world tasks.
+senses:
+  - definition: >-
+      Optimizing a model, or the way it is evaluated, to maximize published [[benchmark|benchmark]]
+      scores rather than general capability. Practices range from legitimate but narrow (heavy
+      training on benchmark-like tasks, tuning prompts and [[harness|harnesses]] for each test)
+      through questionable (selective reporting, privately testing many variants and publishing the
+      best, submitting specially tuned versions to [[leaderboard|leaderboards]]) to improper
+      ([[data-contamination|training on test data]]). The result is a gap between headline numbers
+      and real-world usefulness — an instance of [[goodhart-s-law|Goodhart's law]]. Calling a
+      release 'benchmaxxed' became a common accusation in 2025 when scores outran users'
+      [[vibe-check|vibe checks]], and the practice fuels demand for private, rotating and
+      [[contamination-resistant-benchmark|contamination-resistant benchmarks]].
+    example: >-
+      It tops three leaderboards and still can't follow a two-step instruction — classic
+      benchmaxxing.
+origin: >-
+  Formed from 'benchmark' and the internet suffix '-maxxing' (as in 'looksmaxxing'), meaning to
+  maximize one attribute obsessively. It spread on AI social media during 2025, a year of disputes
+  such as the April 2025 controversy over a specially tuned version of Meta's Llama 4 entered on the
+  LMArena leaderboard; Andrej Karpathy used it in his '2025 LLM Year in Review' (19 December 2025).
+  Who first used it is not established.
+year: 2025
+see_also:
+  - Goodhart's law
+  - benchmark
+  - data contamination
+  - vibe check
+  - LMArena
+  - leaderboard
+  - contamination-resistant benchmark

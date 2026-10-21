@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: knowledge base
+id: knowledge-base
+pos: n.
+also:
+  - KB
+domain: sym
+domains:
+  - data
+  - agents
+level: core
+plain: >-
+  A store of facts and rules that a program can reason with: like a database, but organized so that
+  new conclusions can be worked out from it, not just looked up.
+senses:
+  - context: Symbolic AI
+    definition: >-
+      A collection of knowledge expressed in a formal [[knowledge-representation|knowledge
+      representation]] language — facts, rules, [[ontology|ontological]] axioms or [[frame|frames]]
+      — over which an [[inference-engine|inference engine]] can derive new facts. Unlike a
+      conventional database, which returns what was stored, a knowledge base supports entailment:
+      asking whether a statement follows from its contents, including statements never explicitly
+      entered. In an [[expert-system|expert system]], the knowledge base holds the domain expertise
+      and is kept separate from a general-purpose inference engine so that each can be changed
+      independently. Large examples include [[cyc|Cyc]], [[wikidata|Wikidata]] and other
+      [[knowledge-graph|knowledge graphs]].
+    example: The knowledge base contains 4,000 rules about pump failures and their symptoms.
+  - context: AI engineering
+    definition: >-
+      Informally, any curated collection of documents that a chatbot or [[ai-agent|AI agent]]
+      searches to answer questions, such as the help-center articles behind a
+      [[retrieval-augmented-generation|retrieval-augmented generation]] system. No formal reasoning
+      is implied; the term here means a reference library rather than a logical theory.
+origin: >-
+  The term spread in the 1970s with knowledge-based systems such as [[dendral|DENDRAL]] and
+  [[mycin|MYCIN]], as Edward Feigenbaum and colleagues at Stanford argued that an expert system's
+  competence comes mainly from its domain knowledge rather than from its inference method.
+see_also:
+  - knowledge representation
+  - inference engine
+  - expert system
+  - knowledge graph
+  - ontology
+  - knowledge engineering

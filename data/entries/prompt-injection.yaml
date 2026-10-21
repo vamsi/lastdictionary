@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt injection
+id: prompt-injection
+pos: n.
+also:
+  - prompt injection attack
+  - direct prompt injection
+  - LLM injection
+domain: sec
+domains:
+  - llm
+  - agents
+level: essential
+plain: >-
+  Tricking an AI system by slipping in text that it mistakes for instructions — for example, a
+  hidden line in an email telling an AI assistant to forward the user's messages to a stranger.
+senses:
+  - definition: >-
+      An attack on applications built on [[large-language-model|language models]] in which
+      attacker-supplied text is interpreted as instructions, subverting those of the developer or
+      user. It arises because the model receives trusted instructions (the [[system-prompt|system
+      prompt]], the user's request) and untrusted data (documents, web pages, tool outputs) as one
+      stream of [[token|tokens]] with no reliable boundary between them — the flaw behind SQL
+      injection, but without an equivalent of escaping or parameterized queries. Direct injection
+      comes from the user's own input; [[indirect-prompt-injection|indirect prompt injection]]
+      arrives inside content the system processes. Consequences scale with the application's
+      privileges: in an [[ai-agent|AI agent]] with tools, an injection can exfiltrate data or
+      trigger unauthorized actions. As of 2026 no complete defense exists, and published defenses
+      have repeatedly fallen to adaptive attacks; mitigations include
+      [[instruction-hierarchy|instruction hierarchy]] training, marking untrusted content, detection
+      classifiers, least-privilege tool access, human confirmation of consequential actions, and
+      architectures that keep untrusted data away from control decisions.
+    example: >-
+      A prompt injection hidden in the support ticket got the agent to close every other open ticket.
+origin: >-
+  The firm Preamble reported the vulnerability privately to OpenAI in May 2022. After Riley Goodside
+  publicized examples against GPT-3 on 11 September 2022, Simon Willison coined 'prompt injection'
+  in a blog post the next day, by analogy with SQL injection. It has headed the
+  [[owasp-top-10-for-llm-applications|OWASP Top 10 for LLM Applications]] since the first edition
+  (2023).
+year: 2022
+note: >-
+  Often confused with [[jailbreak|jailbreaking]]. A jailbreak defeats the model's own safety
+  training so that it produces content its developer forbids; prompt injection hijacks an
+  application so that it obeys an attacker instead of its developer or user. One attack can be both.
+see_also:
+  - indirect prompt injection
+  - jailbreak
+  - lethal trifecta
+  - instruction hierarchy
+  - prompt leaking
+  - tool poisoning
+  - excessive agency
+  - confused deputy
+contrast:
+  - jailbreak
+sources:
+  - text: >-
+      Willison, S. (2022). Prompt injection attacks against GPT-3. Blog post, 12 September 2022.
+  - text: >-
+      Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T. & Fritz, M. (2023). Not what
+      you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt
+      Injection. AISec 2023. arXiv:2302.12173.
+  - text: >-
+      Nasr, M., Carlini, N. et al. (2025). The Attacker Moves Second: Stronger Adaptive Attacks
+      Bypass Defenses Against LLM Jailbreaks and Prompt Injections. arXiv preprint, October 2025.
+as_of: 2026-10

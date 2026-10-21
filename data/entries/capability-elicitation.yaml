@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: capability elicitation
+id: capability-elicitation
+pos: n.
+also:
+  - elicitation
+  - elicitation gap
+  - under-elicitation
+domain: safety
+domains:
+  - eval
+level: specialist
+plain: >-
+  The work of drawing out the best an AI can do on a test — with better instructions, tools, retries
+  or extra training — so that its abilities are not underestimated.
+senses:
+  - definition: >-
+      The practice of maximizing a model's measured performance on an evaluation so that results
+      approximate what a determined user, a better [[scaffolding|scaffold]] or the model itself
+      could achieve, rather than what a naive test reveals. Techniques include
+      [[prompt-engineering|prompt engineering]], [[chain-of-thought|chain of thought]], agent
+      scaffolds and tools, repeated sampling with [[best-of-n-sampling|best-of-n]] selection,
+      task-specific [[fine-tuning|fine-tuning]], and removing spurious failures caused by formatting
+      or refusals, often by testing a [[helpful-only-model|helpful-only model]]. The shortfall
+      between measured and achievable performance is the elicitation gap; because capabilities tend
+      to rise after release as users discover better methods, evaluators may add safety margins.
+      Elicitation matters most for [[dangerous-capability-evaluation|dangerous capability
+      evaluations]], where under-elicitation produces false reassurance, and is complicated by
+      [[sandbagging|sandbagging]], deliberate underperformance by the model; fine-tuning on a few
+      demonstrations is a common countermeasure.
+    example: >-
+      After proper elicitation — tools, retries and a short fine-tune — the success rate tripled.
+origin: >-
+  Established as evaluation practice in 2023–2024 through frontier laboratories' safety frameworks
+  and METR's published guidance on elicitation. Ryan Greenblatt, Fabien Roger, Dmitrii
+  Krasheninnikov and David Krueger's study of 'password-locked' models (2024) tested how well
+  fine-tuning recovers deliberately hidden capabilities.
+year: 2023
+note: >-
+  Not to be confused with [[eliciting-latent-knowledge|eliciting latent knowledge]], which seeks a
+  model's honest beliefs rather than its peak task performance.
+see_also:
+  - dangerous capability evaluation
+  - sandbagging
+  - helpful-only model
+  - scaffolding
+  - uplift study
+  - METR
+contrast:
+  - eliciting latent knowledge
+sources:
+  - text: >-
+      Greenblatt, R., Roger, F., Krasheninnikov, D. & Krueger, D. (2024). Stress-Testing Capability
+      Elicitation With Password-Locked Models. arXiv:2405.19550.
+    url: https://arxiv.org/abs/2405.19550

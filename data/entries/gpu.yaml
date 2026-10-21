@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPU
+id: gpu
+pos: abbr.
+also:
+  - graphics processing unit
+  - graphics card
+  - GPUs
+domain: hw
+domains:
+  - dl
+  - train
+  - infer
+level: essential
+plain: >-
+  A computer chip first designed to draw video-game graphics that turned out to be ideal for AI,
+  because it can do thousands of simple calculations at the same time.
+senses:
+  - definition: >-
+      A processor built for massively parallel arithmetic: thousands of simple cores, grouped into
+      streaming multiprocessors, apply the same instructions to many data elements at once and are
+      fed by very high [[memory-bandwidth|memory bandwidth]]. Designed to render graphics, GPUs
+      became general-purpose processors in the 2000s ([[gpgpu|GPGPU]]) and, with [[cuda|CUDA]], the
+      default hardware for [[deep-learning|deep learning]], whose workloads are dominated by dense
+      [[matrix-multiplication|matrix multiplication]]. Data-center GPUs add [[tensor-core|tensor
+      cores]] for low-precision matrix math, [[high-bandwidth-memory|high-bandwidth memory]]
+      packaged beside the processor and fast links such as [[nvlink|NVLink]], so that thousands can
+      work as one machine in [[distributed-training|distributed training]]. As of 2026 Nvidia
+      supplies most AI GPUs (the [[h100|H100]], Blackwell and Rubin families), with AMD's Instinct
+      line the main merchant alternative; Google's [[tpu|TPU]] and other custom [[asic|ASICs]]
+      compete as purpose-built accelerators.
+    example: We rented eight GPUs by the hour to fine-tune the model overnight.
+origin: >-
+  Graphics processors predate the term, and Sony called the PlayStation's graphics chip a 'GPU' in
+  1994, but Nvidia popularized it by marketing the GeForce 256 (October 1999) as the first GPU.
+  Neural networks ran on GPUs from the mid-2000s; Rajat Raina, Anand Madhavan and Andrew Ng (2009)
+  reported large speedups for deep learning, and [[alexnet|AlexNet]] (2012), trained on two consumer
+  GTX 580 cards, made GPUs the engine of the [[deep-learning-revolution|deep learning revolution]].
+year: 1999
+note: >-
+  In AI usage a 'GPU' is often a data-center accelerator with no display output at all. GPU counts
+  are comparable only within a generation, since each generation multiplies per-chip throughput.
+see_also:
+  - GPGPU
+  - CUDA
+  - tensor core
+  - TPU
+  - AI accelerator
+  - H100
+  - high-bandwidth memory
+  - VRAM
+contrast:
+  - CPU
+sources:
+  - text: >-
+      Raina, R., Madhavan, A. & Ng, A. Y. (2009). Large-scale Deep Unsupervised Learning using
+      Graphics Processors. Proceedings of ICML 2009.
+as_of: 2026-10

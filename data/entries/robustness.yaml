@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: robustness
+id: robustness
+pos: n.
+also:
+  - robust
+  - robust AI
+  - model robustness
+domain: safety
+domains:
+  - ml
+  - sec
+  - math
+level: core
+plain: >-
+  An AI system's ability to keep working correctly and safely when conditions change — unfamiliar
+  data, noisy inputs, or people deliberately trying to trick it.
+senses:
+  - context: Machine learning
+    definition: >-
+      The extent to which a model's performance holds up when its inputs differ from those it was
+      trained and tested on — under [[distribution-shift|distribution shift]], noise, corruption,
+      rare events or changed conditions. It is usually measured as the gap between in-distribution
+      and shifted performance, using benchmarks of natural shifts (new hospitals, later years, new
+      image styles) or synthetic corruptions. Sources of fragility include reliance on spurious
+      correlations and [[overfitting|overfitting]]; remedies include data augmentation, more diverse
+      training data, domain-generalization methods and large-scale pretraining. Resistance to
+      deliberately crafted inputs is the separate topic of [[adversarial-robustness|adversarial
+      robustness]].
+    example: >-
+      The model's accuracy dropped twelve points on scans from the new hospital — a robustness
+      problem, not a bug.
+  - context: AI safety
+    definition: >-
+      The reliability of a system's safety-relevant behavior — refusals, honesty, adherence to its
+      [[model-specification|specification]] and intended goals — under novel situations,
+      optimization pressure and adversarial users, including [[jailbreak|jailbreaks]] and
+      [[prompt-injection|prompt injection]]. In 'Unsolved Problems in ML Safety' (2021), robustness
+      ('withstanding hazards') is one of four pillars, with monitoring, alignment and systemic
+      safety. Researchers distinguish capability robustness from goal robustness: a system that
+      stays competent off-distribution but pursues the wrong goal shows
+      [[goal-misgeneralization|goal misgeneralization]], which is more dangerous than simply
+      failing.
+  - context: Statistics
+    definition: >-
+      The insensitivity of an estimator or test to departures from its assumptions, such as outliers
+      or non-normal errors. Robust statistics — the median rather than the mean, for example —
+      remain reliable when a fraction of the data is corrupted. This is the oldest technical sense.
+origin: >-
+  The statistician George E. P. Box introduced 'robustness' in 1953 for tests insensitive to
+  violated assumptions, and John Tukey and Peter Huber developed robust statistics in the 1960s. In
+  machine learning the word spread with studies of distribution shift and adversarial examples in
+  the 2010s; 'Concrete Problems in AI Safety' (2016) listed robustness to distributional shift among
+  its five problems.
+year: 1953
+note: >-
+  Always ask 'robust to what?' — distribution shift, noise, adversaries or optimization pressure.
+  Robustness of one kind does not imply another; adversarially trained image classifiers, for
+  example, can be less accurate on clean data.
+see_also:
+  - adversarial robustness
+  - distribution shift
+  - out-of-distribution
+  - goal misgeneralization
+  - jailbreak
+  - certified robustness
+  - AI safety
+sources:
+  - text: >-
+      Box, G. E. P. (1953). Non-normality and tests on variances. Biometrika 40(3/4), 318–335.
+  - text: >-
+      Hendrycks, D., Carlini, N., Schulman, J. & Steinhardt, J. (2021). Unsolved Problems in ML
+      Safety. arXiv:2109.13916.
+    url: https://arxiv.org/abs/2109.13916

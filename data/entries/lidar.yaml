@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: lidar
+id: lidar
+pos: n.
+also:
+  - light detection and ranging
+  - laser scanner
+  - laser radar
+  - flash lidar
+  - FMCW lidar
+pronunciation: LY-dar
+domain: robot
+domains:
+  - percep
+  - hw
+level: core
+plain: >-
+  A sensor that measures distances by firing laser pulses and timing their reflections, building a
+  3D picture of its surroundings out of millions of points; widely used on robots and self-driving
+  cars.
+senses:
+  - definition: >-
+      A remote-sensing method, and the sensor implementing it, that measures distance by emitting
+      laser light and timing its return (time of flight) or, in frequency-modulated continuous-wave
+      (FMCW) designs, by measuring the frequency shift of a chirped beam, which also yields each
+      point's radial velocity. Scanning the beam — with spinning multi-beam heads, oscillating or
+      microelectromechanical (MEMS) mirrors, or optical phased arrays — or flooding the scene with
+      one wide pulse (flash lidar) produces a point cloud: up to millions of 3D points per second,
+      usually with reflectance intensity. Automotive units mostly operate in the near infrared,
+      around 905 or 1,550 nanometers. Lidar gives precise geometry in any lighting, but it costs
+      more than cameras, has lower resolution, sees no color or text, and degrades in heavy rain,
+      fog and snow. On [[autonomous-vehicle|autonomous vehicles]] and [[mobile-robot|mobile robots]]
+      it supports [[simultaneous-localization-and-mapping|simultaneous localization and mapping]],
+      obstacle detection and [[sensor-fusion|sensor fusion]] with cameras and radar; airborne lidar
+      maps terrain, forests and cities.
+    example: >-
+      The lidar sees the curb perfectly at night, but only the camera can read the stop sign.
+origin: >-
+  Originally a blend of 'light' and 'radar' (a 1963 New Scientist article glossed it as 'light
+  radar'), later backronymed as 'light detection and ranging'. Laser ranging followed the invention
+  of the laser in 1960: Hughes Aircraft's 'Colidar' appeared in 1961, and Apollo 15 (1971) mapped
+  the Moon with a laser altimeter. Lidar became central to self-driving research with the DARPA
+  challenges of 2005 and 2007.
+year: 1963
+note: >-
+  Spelling is unsettled: LIDAR, LiDAR and lidar all occur, and many publications prefer lowercase.
+  Whether self-driving cars need lidar is a long-running industry dispute, with Tesla's camera-only
+  approach the best-known dissent.
+see_also:
+  - simultaneous localization and mapping
+  - sensor fusion
+  - autonomous vehicle
+  - occupancy grid
+  - odometry
+  - 3D reconstruction
+contrast:
+  - depth estimation
+sources:
+  - text: >-
+      Thrun, S. et al. (2006). Stanley: The robot that won the DARPA Grand Challenge. Journal of
+      Field Robotics 23(9), 661–692.

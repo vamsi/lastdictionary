@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: stacking
+id: stacking
+pos: n.
+also:
+  - stacked generalization
+  - stacked ensemble
+  - stacked regression
+  - blending
+  - super learner
+  - meta-learner (ensembles)
+domain: ml
+domains:
+  - eng
+level: specialist
+plain: >-
+  Combining several different models by training one more model to decide how much to trust each of
+  them, based on how they performed on data they had not seen.
+senses:
+  - definition: >-
+      An [[ensemble-learning|ensemble learning]] method in which the predictions of several diverse
+      base models (level 0) become the input features of a second-level model, the meta-learner or
+      combiner, which is trained to produce the final prediction. To avoid leakage, the combiner is
+      trained on out-of-fold predictions: each base model is fitted within k-fold
+      [[cross-validation|cross-validation]] and predicts only on the fold it did not see, so the
+      combiner learns how the base models behave on unseen data. Simple regularized combiners —
+      linear or [[logistic-regression|logistic regression]], often with non-negative weights — are
+      typical, and stacks can have several levels. Blending is a simpler variant that trains the
+      combiner on a single held-out set. Stacking is a staple of [[kaggle|Kaggle]] winning solutions
+      and of [[automl|AutoML]] systems.
+    example: >-
+      Our final submission stacked a CatBoost model, a LightGBM model and a neural net under a
+      ridge-regression combiner.
+origin: >-
+  Introduced by David Wolpert as 'stacked generalization' (Neural Networks, 1992). Leo Breiman's
+  'Stacked Regressions' (Machine Learning, 1996) recommended non-negative linear combiners, and Mark
+  van der Laan, Eric Polley and Alan Hubbard's 'super learner' (2007) gave the approach theoretical
+  guarantees. Leading Netflix Prize teams relied on large blends.
+year: 1992
+see_also:
+  - ensemble learning
+  - cross-validation
+  - bagging
+  - boosting
+  - Kaggle
+  - AutoML
+contrast:
+  - bagging
+sources:
+  - text: Wolpert, D. H. (1992). Stacked Generalization. Neural Networks, 5(2), 241–259.
+  - text: Breiman, L. (1996). Stacked Regressions. Machine Learning, 24, 49–64.

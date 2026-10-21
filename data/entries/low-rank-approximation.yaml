@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: low-rank approximation
+id: low-rank-approximation
+pos: n.
+also:
+  - low-rank factorization
+  - low-rank decomposition
+  - truncated SVD
+domain: math
+domains:
+  - infer
+  - train
+level: core
+plain: >-
+  Replacing a big grid of numbers with a slimmer one that keeps most of the same information, the
+  way a few pencil strokes can capture a face. It saves memory and computation.
+senses:
+  - definition: >-
+      The approximation of a [[matrix|matrix]] by one of lower [[rank|rank]], usually stored as a
+      product of two thin matrices, A ≈ BC with B of size m × r and C of size r × n, so that storage
+      and multiplication cost grow with r(m + n) instead of mn. By the Eckart–Young–Mirsky theorem,
+      keeping the r largest terms of the [[singular-value-decomposition|singular value
+      decomposition]] gives the best rank-r approximation in both the Frobenius and spectral
+      [[norm|norms]]. The idea recurs across machine learning:
+      [[principal-component-analysis|principal component analysis]] and
+      [[latent-semantic-analysis|latent semantic analysis]] keep a few dominant directions;
+      [[matrix-factorization|matrix factorization]] drives [[recommender-system|recommender
+      systems]]; [[low-rank-adaptation|low-rank adaptation]] fine-tunes a model by learning a
+      low-rank update to frozen weights; [[multi-head-latent-attention|multi-head latent attention]]
+      caches a compressed low-rank form of keys and values; and [[model-compression|model
+      compression]] factors weight matrices directly. It works because learned weights and their
+      updates often have rapidly decaying spectra.
+    example: >-
+      A rank-16 approximation of the layer kept nearly all its accuracy at a tenth of the parameters.
+formula_latex: \min_{\operatorname{rank}(B)\le r} \lVert A - B\rVert_F = \Big(\sum_{i>r}\sigma_i^{2}\Big)^{1/2}
+origin: >-
+  Erhard Schmidt proved the optimal-approximation result for integral operators in 1907; Carl Eckart
+  and Gale Young stated it for matrices in Psychometrika in 1936, motivated by factor analysis, and
+  Leon Mirsky extended it to all unitarily invariant norms in 1960. Low-rank methods entered deep
+  learning through model compression around 2013–2014 and, most visibly, LoRA (Edward Hu and
+  colleagues, 2021).
+year: 1936
+see_also:
+  - singular value decomposition
+  - rank
+  - low-rank adaptation
+  - matrix factorization
+  - principal component analysis
+  - model compression
+sources:
+  - text: >-
+      Eckart, C. & Young, G. (1936). The approximation of one matrix by another of lower rank.
+      Psychometrika, 1(3).

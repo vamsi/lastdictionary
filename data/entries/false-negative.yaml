@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: false negative
+id: false-negative
+pos: n.
+also:
+  - miss
+  - type II error
+  - false negative rate
+  - FNR
+  - miss rate
+domain: ml
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  A miss: a test or AI system gives the all-clear, for example no illness, no fraud or no danger,
+  when the problem is in fact there.
+senses:
+  - definition: >-
+      A case that a classifier or test labels negative although its true label is positive: a cancer
+      missed on a scan, a fraudulent payment approved, a harmful post left up. In hypothesis testing
+      it corresponds to a type II error, failing to reject a null hypothesis that is false. False
+      negatives are counted in the [[confusion-matrix|confusion matrix]]; the false negative rate,
+      FN/(FN + TP), also called the miss rate, equals 1 − [[recall|recall]]. They are often the
+      costlier error in screening, safety and security, where a miss can be irreversible, so such
+      systems are tuned for high recall and accept more [[false-positive|false positives]],
+      typically sending flagged cases to human review. Because false negatives are by definition not
+      flagged, they are easy to overlook after deployment: measuring them requires audits of cases
+      the system let through, follow-up of outcomes or deliberately seeded test cases. Lowering the
+      decision threshold reduces false negatives at the price of more false alarms.
+    example: >-
+      An audit of 5,000 approved transactions found 12 false negatives that the fraud model had
+      waved through.
+origin: >-
+  Like 'false positive', the term arose in medical and laboratory testing in the first half of the
+  20th century; its statistical counterpart, the error of the second kind (type II error), was
+  formalized by Jerzy Neyman and Egon Pearson between 1928 and 1933.
+see_also:
+  - false positive
+  - recall
+  - confusion matrix
+  - ROC curve
+  - specificity
+  - human-in-the-loop
+contrast:
+  - false positive
+sources:
+  - text: >-
+      Neyman, J. & Pearson, E. S. (1933). On the Problem of the Most Efficient Tests of Statistical
+      Hypotheses. Philosophical Transactions of the Royal Society A 231.

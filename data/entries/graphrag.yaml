@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GraphRAG
+id: graphrag
+pos: prop. n.
+also:
+  - Graph RAG
+  - graph-based RAG
+  - knowledge-graph RAG
+  - KG-RAG
+domain: eng
+domains:
+  - agents
+  - sym
+level: core
+plain: >-
+  A way of letting AI answer questions about a big pile of documents by first turning them into a
+  map of people, things and their connections, then using that map to find and summarize answers.
+senses:
+  - context: Microsoft method
+    definition: >-
+      A [[retrieval-augmented-generation|retrieval-augmented generation]] method from Microsoft
+      Research designed for questions about a corpus as a whole. A [[large-language-model|language
+      model]] reads every chunk and records the people, organizations, places, events and other
+      entities it mentions, with the relations among them, in a [[knowledge-graph|knowledge graph]];
+      the Leiden clustering algorithm then splits the graph into nested groups of tightly linked
+      entities, and the model writes a report on each group in advance. A broad question, such as
+      what themes run through the collection, is answered map-reduce style, by drafting an answer
+      from each relevant group report and then merging the drafts, while a question about specific
+      things starts from the matching entities and collects their neighbors and source passages. Its
+      developers reported fuller and more varied answers to such corpus-wide questions than ordinary
+      vector RAG, which fetches a few similar chunks, at a much higher indexing cost.
+    example: >-
+      Plain RAG couldn't say what the 4,000 interviews had in common; GraphRAG's global search could.
+  - context: General
+    definition: >-
+      Any retrieval-augmented approach that uses a graph — an existing knowledge graph or one
+      extracted from text — to retrieve connected facts, follow multi-hop relationships or organize
+      context, rather than retrieving independent passages by similarity alone.
+origin: >-
+  Darren Edge, Ha Trinh, Jonathan Larson and colleagues at Microsoft Research described the method
+  in 2024, notably in 'From Local to Global: A Graph RAG Approach to Query-Focused Summarization'
+  (arXiv, April 2024), and released it as open-source software in July 2024. Graph-enhanced
+  retrieval, and the label 'Graph RAG', had also circulated among graph-database vendors in 2023.
+year: 2024
+note: >-
+  Errors in entity extraction propagate into the graph, and indexing can need far more model calls
+  than embedding does; lighter variants defer or reduce graph construction. As of October 2026
+  Microsoft describes its GraphRAG repository as largely in maintenance mode.
+see_also:
+  - retrieval-augmented generation
+  - knowledge graph
+  - agentic RAG
+  - chunking
+  - text summarization
+  - query rewriting
+sources:
+  - text: >-
+      Edge, D., Trinh, H., Cheng, N., Bradley, J., Chao, A., Mody, A., Truitt, S., Metropolitansky,
+      D., Ness, R. O. & Larson, J. (2024). From Local to Global: A Graph RAG Approach to
+      Query-Focused Summarization. arXiv:2404.16130.
+    url: https://arxiv.org/abs/2404.16130
+  - text: microsoft/graphrag (GitHub repository).
+    url: https://github.com/microsoft/graphrag
+as_of: 2026-10

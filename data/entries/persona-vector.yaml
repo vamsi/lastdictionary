@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: persona vector
+id: persona-vector
+pos: n.
+also:
+  - persona vectors
+domain: interp
+domains:
+  - safety
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A direction inside a language model's internal activity linked to a character trait, such as being
+  flattering, malicious or prone to making things up, used to watch for or control that trait.
+senses:
+  - definition: >-
+      A [[steering-vector|steering vector]] that corresponds to a character trait of a
+      [[large-language-model|large language model]]'s assistant persona and can be derived
+      automatically from nothing more than a written description of the trait. In the introducing
+      method, a frontier model turns the description (for example '[[sycophancy|sycophantic]]',
+      'prone to [[hallucination|hallucination]]' or 'evil') into contrasting system prompts,
+      evaluation questions and a scoring rubric; the vector is the difference in mean
+      [[residual-stream|residual stream]] activations between responses that do and do not express
+      the trait. Uses include monitoring personality shifts in deployment (projection onto the
+      vector predicts trait expression), steering at inference time, flagging training data likely
+      to instill the trait, and 'preventative steering': adding the vector during
+      [[fine-tuning|fine-tuning]] so the model need not shift its own weights toward the trait,
+      which curbed unwanted shifts with little loss of capability.
+    example: >-
+      The evil persona vector's projection jumped after fine-tuning on insecure code, warning us
+      before any red-team test.
+origin: >-
+  Introduced by Runjin Chen, Andy Arditi, Henry Sleight, Owain Evans and Jack Lindsey in 'Persona
+  Vectors: Monitoring and Controlling Character Traits in Language Models' (arXiv, July 2025), from
+  the Anthropic Fellows program, motivated by unexpected personality shifts in deployed chatbots and
+  by [[emergent-misalignment|emergent misalignment]].
+year: 2025
+note: >-
+  Mathematically a contrastive steering vector; the name stresses traits of the assistant persona
+  and the automated extraction pipeline. Experiments used mid-sized open models, so how well the
+  approach scales to frontier systems is not yet established.
+see_also:
+  - steering vector
+  - contrastive activation addition
+  - emergent misalignment
+  - sycophancy
+  - character training
+  - assistant axis
+contrast:
+  - character training
+sources:
+  - text: >-
+      Chen, R., Arditi, A., Sleight, H., Evans, O. & Lindsey, J. (2025). Persona Vectors: Monitoring
+      and Controlling Character Traits in Language Models. arXiv:2507.21509.
+    url: https://arxiv.org/abs/2507.21509

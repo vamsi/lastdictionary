@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: optical character recognition
+id: optical-character-recognition
+pos: n.
+also:
+  - OCR
+  - text recognition
+  - handwriting recognition
+  - handwritten text recognition
+  - HTR
+  - scene text recognition
+  - intelligent character recognition
+domain: percep
+domains:
+  - hist
+level: essential
+plain: >-
+  Software that picks out the letters and words in a picture — a road sign, a handwritten note, a
+  page of an old book — and turns them into real text a computer can copy, search or read aloud.
+senses:
+  - definition: >-
+      Machine reading of text that exists only as an image, in a scan, photograph, screenshot or
+      video frame, yielding the corresponding sequence of characters for software to index, edit,
+      translate or speak. A traditional pipeline cleans the image (binarization, deskewing),
+      analyzes the layout to find text blocks and lines, segments and recognizes characters or
+      words, and corrects errors with a dictionary or [[language-model|language model]]. Early
+      commercial systems matched characters against templates for particular fonts; later ones used
+      hand-crafted features and statistical classifiers. Since the mid-2010s, recognizers have
+      typically read whole text lines with a [[convolutional-neural-network|convolutional neural
+      network]] and [[recurrent-neural-network|recurrent neural network]] trained with
+      [[connectionist-temporal-classification|CTC]], or with a transformer encoder–decoder, after a
+      separate text-detection stage. Scene text recognition handles text in natural photographs
+      (signs, packaging), which is curved, blurred and varied in style. Since 2023,
+      [[vision-language-model|vision-language models]] increasingly read text directly as part of
+      [[document-understanding|document understanding]], often with no separate OCR step. OCR
+      quality is measured by character and word error rates; it underpins document digitization,
+      reading aids for blind people, check and mail processing, license-plate reading and the
+      creation of text datasets from scanned books.
+    example: >-
+      The OCR confuses 'rn' with 'm' on the faded invoices, so totals still need human review.
+origin: >-
+  Reading machines for printed characters were invented in the 1910s–30s (Emanuel Goldberg; Gustav
+  Tauschek's 1929 patent). David Shepard's 1951 'Gismo' led to commercial readers in the 1950s;
+  'optical' contrasts them with magnetic-ink character recognition (MICR), adopted for bank checks
+  from the late 1950s. Ray Kurzweil's 1976 reading machine for blind users recognized text in many
+  fonts.
+note: >-
+  OCR transcribes text but does not interpret it; extracting meaning, structure and fields is
+  [[document-understanding|document understanding]]. Errors concentrate in degraded scans, rare
+  scripts and handwriting, so accuracy measured on clean benchmarks overstates real-world
+  performance.
+see_also:
+  - document understanding
+  - connectionist temporal classification
+  - vision-language model
+  - MNIST
+  - word error rate
+  - pattern recognition
+sources:
+  - text: >-
+      Smith, R. (2007). An Overview of the Tesseract OCR Engine. Proceedings of ICDAR 2007.
+  - text: >-
+      Shi, B., Bai, X. & Yao, C. (2017). An End-to-End Trainable Neural Network for Image-Based
+      Sequence Recognition and Its Application to Scene Text Recognition. IEEE TPAMI 39(11),
+      2298–2304.

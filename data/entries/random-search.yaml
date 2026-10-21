@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: random search
+id: random-search
+pos: n.
+also:
+  - randomized search
+  - random hyperparameter search
+  - RandomizedSearchCV
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  Tuning a model by trying settings picked at random from sensible ranges and keeping the best;
+  surprisingly, this usually beats checking a neat grid of values.
+senses:
+  - definition: >-
+      A [[hyperparameter-tuning|hyperparameter tuning]] strategy that samples configurations
+      independently at random from a specified distribution for each hyperparameter (for example, a
+      log-uniform distribution for the learning rate) and keeps the best according to validation
+      performance. For the same number of trials it usually finds better settings than
+      [[grid-search|grid search]], because performance typically hinges on a small,
+      problem-dependent subset of the hyperparameters: a grid of n points over d hyperparameters
+      tries only about the d-th root of n distinct values of each, whereas n random draws can try up
+      to n distinct values of every one. Random search is easily parallelized, can be stopped or
+      extended at any time, and handles conditional and mixed-type search spaces without difficulty.
+      It is the standard baseline for more sophisticated methods: [[bayesian-optimization|Bayesian
+      optimization]] uses past results to choose promising points, and multi-fidelity methods such
+      as [[hyperband|Hyperband]] add early stopping of poor configurations to random sampling. More
+      broadly, 'random search' also names a family of derivative-free optimization methods studied
+      since the 1950s and 1960s.
+    example: >-
+      Sixty trials of random search found a better configuration than our 500-point grid.
+origin: >-
+  Random search as a derivative-free optimizer dates to the late 1950s and 1960s, with early
+  analyses by Leonard Rastrigin (1963). Its use for hyperparameters became standard after James
+  Bergstra and Yoshua Bengio's 2012 Journal of Machine Learning Research paper showed, empirically
+  and theoretically, that it beats grid search when few hyperparameters matter.
+year: 2012
+see_also:
+  - grid search
+  - hyperparameter tuning
+  - Bayesian optimization
+  - Hyperband
+  - hyperparameter
+  - AutoML
+contrast:
+  - grid search
+sources:
+  - text: >-
+      Bergstra, J. & Bengio, Y. (2012). Random Search for Hyper-Parameter Optimization. Journal of
+      Machine Learning Research 13: 281–305.

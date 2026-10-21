@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Horn clause
+id: horn-clause
+pos: n.
+also:
+  - Horn clauses
+  - definite clause
+  - Horn formula
+domain: sym
+domains:
+  - math
+level: specialist
+plain: >-
+  A simple, restricted form of logical rule ('if these conditions all hold, then this one conclusion
+  holds') that computers can reason with very efficiently.
+senses:
+  - definition: >-
+      A disjunction of literals in which no more than one literal is unnegated — equivalently, an
+      implication whose conditions are all positive atoms and whose conclusion is a single atom or
+      nothing at all. Clauses that have a conclusion, called definite clauses, read as rules ('H if
+      B1 and … and Bn') or, with no conditions, as facts; clauses without one serve as goals or
+      integrity constraints. Satisfiability of propositional Horn formulas is decidable in linear
+      time, unlike general [[boolean-satisfiability-problem|SAT]], and every set of definite clauses
+      has a unique least model, computable by [[forward-chaining|forward chaining]]. These
+      properties make Horn clauses the basis of [[logic-programming|logic programming]]: programs in
+      [[prolog|Prolog]] and [[datalog|Datalog]] are sets of definite clauses executed by
+      [[backward-chaining|backward chaining]] or forward chaining.
+origin: >-
+  Named after the logician Alfred Horn, who studied sentences of this form in 'On Sentences Which
+  Are True of Direct Unions of Algebras' (Journal of Symbolic Logic, 1951). Their computational
+  importance was recognized in the early 1970s by Robert Kowalski, Maarten van Emden and others
+  developing logic programming.
+year: 1951
+see_also:
+  - logic programming
+  - Prolog
+  - Datalog
+  - resolution
+  - forward chaining
+  - propositional logic
+sources:
+  - text: >-
+      Horn, A. (1951). On Sentences Which Are True of Direct Unions of Algebras. Journal of Symbolic
+      Logic 16(1), 14–21.
+  - text: >-
+      van Emden, M. H. & Kowalski, R. A. (1976). The Semantics of Predicate Logic as a Programming
+      Language. Journal of the ACM 23(4), 733–742.

@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bayes' theorem
+id: bayes-theorem
+pos: n.
+also:
+  - Bayes's theorem
+  - Bayes' rule
+  - Bayes rule
+  - Bayes' formula
+  - Bayes' law
+  - inverse probability
+domain: math
+domains:
+  - ml
+  - core
+level: core
+plain: >-
+  A formula for updating how much you believe something after seeing new evidence: weigh your
+  earlier belief by how well that explanation predicts what you actually observed.
+senses:
+  - definition: >-
+      The identity relating the two [[conditional-probability|conditional probabilities]] P(H | E)
+      and P(E | H): the [[posterior|posterior]] probability of a hypothesis H given evidence E
+      equals the [[likelihood|likelihood]] of the evidence under H times the [[prior|prior]]
+      probability of H, divided by the overall probability of the evidence. That denominator, the
+      marginal likelihood or evidence, sums likelihood × prior over all hypotheses and is often
+      intractable. As mathematics the theorem follows directly from the definition of conditional
+      probability and is uncontroversial; what has been debated is using it to assign probabilities
+      to hypotheses and parameters, the defining move of [[bayesian-inference|Bayesian inference]].
+      In AI it underlies [[naive-bayes|naive Bayes]] classifiers and spam filters,
+      [[bayesian-network|Bayesian networks]], [[kalman-filter|Kalman]] and
+      [[particle-filter|particle filters]], [[bayesian-optimization|Bayesian optimization]] and
+      Bayesian readings of [[in-context-learning|in-context learning]]. Ignoring the prior produces
+      the base-rate fallacy.
+    example: >-
+      With a base rate of 1 in 1,000, Bayes' theorem shows that most alarms from a
+      99-percent-accurate detector are false.
+formula_latex: P(H \mid E) = \frac{P(E \mid H)\,P(H)}{P(E)}
+origin: >-
+  Named after Thomas Bayes, whose 'An Essay towards solving a Problem in the Doctrine of Chances'
+  was published posthumously by Richard Price in 1763; the essay treats a special case. Pierre-Simon
+  Laplace stated the rule independently in 1774, for equally likely causes, and in general form in
+  1812–1814. 'Bayes's theorem' was in English use by 1830, and the approach was long called 'inverse
+  probability'.
+year: 1763
+see_also:
+  - prior
+  - posterior
+  - likelihood
+  - Bayesian inference
+  - conditional probability
+  - naive Bayes
+  - Bayesian network
+sources:
+  - text: >-
+      Bayes, T. (1763). An Essay towards solving a Problem in the Doctrine of Chances. Philosophical
+      Transactions of the Royal Society of London, 53.

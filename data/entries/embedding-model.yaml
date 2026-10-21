@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: embedding model
+id: embedding-model
+pos: n.
+also:
+  - embedder
+  - text encoder
+  - sentence encoder
+  - sentence transformer
+domain: eng
+domains:
+  - llm
+  - dl
+level: core
+plain: >-
+  An AI model whose only job is to turn text (or images, or code) into lists of numbers that capture
+  meaning, so a computer can measure how similar two things are.
+senses:
+  - definition: >-
+      A neural network trained to map inputs — usually text, but also code, images or audio — to
+      embedding vectors whose geometry reflects semantic similarity, rather than to generate text.
+      Most are [[transformer|transformer]] [[bi-encoder|bi-encoders]], built either on encoder-only
+      models such as [[bert|BERT]] or on [[decoder-only-transformer|decoder-only]] language models
+      adapted for representation. Training is typically [[contrastive-learning|contrastive]]: a
+      large weakly supervised stage on mined text pairs (title and body, question and answer)
+      followed by fine-tuning on curated pairs with hard negatives, sometimes with instructions that
+      tell the model the task, such as representing a query for passage retrieval. Models differ in
+      dimensionality, maximum input length, languages, domain, licensing and cost, and are compared
+      on benchmarks such as [[mteb|MTEB]]; many support [[matryoshka-embedding|Matryoshka]]
+      truncation or quantized output to cut storage.
+    example: >-
+      We switched embedding models and had to re-index 40 million chunks over the weekend.
+origin: >-
+  Grew out of sentence-encoder research (2017–2019) and Nils Reimers's open-source
+  Sentence-Transformers library (2019). OpenAI's embeddings API (2022), including
+  text-embedding-ada-002 (December 2022), brought hosted embedding models into mass use; from 2023
+  competitive open-weight embedders multiplied, including models built on decoder-only LLMs.
+note: >-
+  A high score on public leaderboards does not guarantee a good fit for a particular corpus;
+  evaluating candidates on one's own queries is standard advice.
+see_also:
+  - text embedding
+  - bi-encoder
+  - MTEB
+  - Matryoshka embedding
+  - contrastive learning
+  - dense retrieval
+  - vector database
+sources:
+  - text: >-
+      Muennighoff, N., Tazi, N., Magne, L. & Reimers, N. (2023). MTEB: Massive Text Embedding
+      Benchmark. EACL 2023. arXiv:2210.07316.
+    url: https://arxiv.org/abs/2210.07316
+  - text: >-
+      Izacard, G., Caron, M., Hosseini, L., Riedel, S., Bojanowski, P., Joulin, A. & Grave, E.
+      (2022). Unsupervised Dense Information Retrieval with Contrastive Learning. arXiv:2112.09118.
+    url: https://arxiv.org/abs/2112.09118
+as_of: 2026-10

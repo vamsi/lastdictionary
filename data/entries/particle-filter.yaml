@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: particle filter
+id: particle-filter
+pos: n.
+also:
+  - sequential Monte Carlo
+  - SMC
+  - bootstrap filter
+  - Monte Carlo localization
+  - MCL
+  - condensation algorithm
+domain: robot
+domains:
+  - math
+level: specialist
+plain: >-
+  A way to track something uncertain, such as a robot's location, by keeping thousands of random
+  guesses, scoring each against what the sensors see, and copying the best ones.
+senses:
+  - definition: >-
+      A recursive [[monte-carlo-method|Monte Carlo method]] that represents the probability
+      distribution over a hidden state by a set of weighted samples (particles) and updates it as
+      measurements arrive. Each cycle moves every particle through a stochastic motion model
+      (predict), reweights it by the likelihood of the new measurement given that particle's state
+      (update), and periodically resamples — duplicating high-weight particles and discarding
+      low-weight ones — to prevent degeneracy, in which nearly all the weight collapses onto a few
+      particles. Unlike the [[kalman-filter|Kalman filter]], it needs no linearity or Gaussian
+      assumptions and can track multimodal beliefs, such as a robot that could be in either of two
+      identical corridors. Its cost grows with the number of particles and becomes prohibitive in
+      high-dimensional state spaces. In robotics, Monte Carlo localization uses particle filters to
+      locate a robot on a known map and is a de facto standard; FastSLAM applies them to
+      [[simultaneous-localization-and-mapping|simultaneous localization and mapping]]. They are also
+      used in visual tracking, signal processing, econometrics and constrained sampling from
+      language models.
+    example: >-
+      After a few meters of corridor the particle cloud collapsed onto the robot's true position.
+formula_latex: w_k^{(i)} \propto w_{k-1}^{(i)}\, p\big(z_k \mid x_k^{(i)}\big)
+origin: >-
+  Neil Gordon, David Salmond and Adrian Smith's 'bootstrap filter' (IEE Proceedings F, April 1993)
+  is the usual starting point; Pierre Del Moral coined 'particle filter' in 1996, and Jun Liu and
+  Rong Chen introduced 'sequential Monte Carlo' in 1998. Michael Isard and Andrew Blake's
+  'condensation' tracker (1996) and Monte Carlo localization by Frank Dellaert, Dieter Fox, Wolfram
+  Burgard and Sebastian Thrun (1999) brought the method to vision and robotics.
+year: 1993
+note: >-
+  The formula shows the weight update for particle i given measurement z; with resampling at every
+  step it reduces to the bootstrap filter.
+see_also:
+  - Kalman filter
+  - Monte Carlo method
+  - simultaneous localization and mapping
+  - sensor fusion
+  - Bayesian inference
+  - sampling
+contrast:
+  - Kalman filter
+sources:
+  - text: >-
+      Gordon, N. J., Salmond, D. J. & Smith, A. F. M. (1993). Novel approach to
+      nonlinear/non-Gaussian Bayesian state estimation. IEE Proceedings F 140(2), 107–113.
+  - text: Thrun, S., Burgard, W. & Fox, D. (2005). Probabilistic Robotics. MIT Press.

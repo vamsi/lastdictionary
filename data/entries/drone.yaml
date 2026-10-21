@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: drone
+id: drone
+pos: n.
+also:
+  - unmanned aerial vehicle
+  - UAV
+  - unmanned aircraft system
+  - UAS
+  - remotely piloted aircraft system
+  - RPAS
+  - quadcopter
+  - multirotor
+  - FPV drone
+domain: robot
+domains:
+  - gov
+  - sec
+  - society
+level: essential
+plain: >-
+  An aircraft that carries no one aboard to fly it: a person steers it from the ground, or its own
+  software does. Small camera-carrying quadcopters are the most familiar kind.
+senses:
+  - definition: >-
+      A flying machine with nobody aboard to pilot it, controlled from the ground, by its own
+      onboard software or by a mix of the two; by extension, a similar uncrewed vehicle on land, on
+      the water or under it. Aviation regulators favor 'unmanned aircraft system' (UAS) or 'remotely
+      piloted aircraft system', names that cover the whole setup, ground station and radio links
+      included. Small multirotor drones (quadcopters) dominate civilian use, from search and rescue,
+      deliveries and farming to mapping, infrastructure inspection, photography and light shows,
+      while larger fixed-wing drones serve military reconnaissance and strike. Autonomy ranges from
+      stabilized manual flight and GPS waypoint following to onboard perception, obstacle avoidance
+      and target tracking using [[computer-vision|computer vision]], visual-inertial
+      [[odometry|odometry]] and learned controllers; a research drone trained with
+      [[deep-reinforcement-learning|deep reinforcement learning]] beat human champions at drone
+      racing in 2023. Since 2022 the war in Ukraine has made cheap first-person-view (FPV) attack
+      drones, long-range one-way attack drones and electronic warfare central to combat, and jamming
+      has pushed militaries toward onboard terminal guidance, sharpening concern about autonomous
+      targeting. Civil use is regulated by national and regional authorities, as under the US FAA's
+      Part 107 rules (2016) and the EU's open, specific and certified categories (applicable from
+      the end of 2020).
+    example: >-
+      The inspection drone flies the power line on its own and flags corroded insulators.
+origin: >-
+  'Drone', a male bee, was applied in the mid-1930s to radio-controlled target aircraft. After
+  Admiral William Standley, the US chief of naval operations, saw Britain's de Havilland Queen Bee
+  target plane demonstrated in 1935, Delmer Fahrney, who led the Navy's similar project, adopted the
+  name, reportedly in homage; it was in use by late 1936. 'Unmanned aerial vehicle' became a formal
+  military term later in the century, and 'unmanned aircraft system' was adopted by the US
+  Department of Defense and the FAA in 2005.
+year: 1936
+note: >-
+  Some militaries and regulators avoid 'drone' because it suggests mindless or fully autonomous
+  operation, whereas most drones are remotely piloted. Weapons that select and engage targets
+  without human intervention are debated separately as lethal autonomous weapons systems.
+see_also:
+  - mobile robot
+  - swarm robotics
+  - autonomous vehicle
+  - teleoperation
+  - dual-use
+  - odometry
+  - computer vision
+sources:
+  - text: >-
+      Kaufmann, E. et al. (2023). Champion-level drone racing using deep reinforcement learning.
+      Nature 620, 982–987.
+as_of: 2026-10

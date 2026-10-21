@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LangGraph
+id: langgraph
+pos: prop. n.
+also:
+  - LangGraph Platform
+  - LangGraph Studio
+domain: eng
+domains:
+  - agents
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free software library for building AI agents as flowcharts of steps that share a memory, so
+  developers control exactly how an agent moves between steps, pauses and resumes.
+senses:
+  - definition: >-
+      An open-source library, in Python and JavaScript, from the company behind
+      [[langchain|LangChain]], in which an [[ai-agent|agent]] or a team of agents is written as a
+      graph whose steps share a persistent state, suited to long-running work. Developers define a
+      shared state schema, nodes (functions or model calls that read and update the state) and
+      edges, including conditional edges chosen at run time; unlike linear chains, graphs may
+      contain cycles, which express agent loops, retries and self-correction. A checkpointer saves
+      state after every step, enabling durable execution that resumes after failures, memory across
+      sessions, rewinding to earlier states for debugging, and
+      [[human-in-the-loop|human-in-the-loop]] interrupts in which execution pauses for a person to
+      approve or edit before continuing. Its execution model draws on Google's Pregel system for
+      large-scale graph processing. LangGraph is the runtime beneath LangChain 1.0's agents and can
+      also be used alone; the company sells a platform for deploying and monitoring LangGraph
+      applications.
+    example: >-
+      We built the refund agent in LangGraph so it pauses for a manager's approval before issuing
+      anything over $500.
+origin: >-
+  Announced by LangChain on 17 January 2024, after developers found linear chains too rigid for
+  agents with loops and branches. Version 1.0 shipped alongside LangChain 1.0 on 22 October 2025,
+  with a commitment to avoid breaking changes until version 2.0.
+year: 2024
+note: >-
+  An example of a graph-based [[agent-framework|agent framework]]; compare [[crewai|CrewAI]]'s
+  role-based crews and [[autogen|AutoGen]]'s conversing agents.
+see_also:
+  - LangChain
+  - agent framework
+  - orchestration
+  - human-in-the-loop
+  - multi-agent system
+  - agentic workflow
+sources:
+  - text: >-
+      LangChain (2025). LangChain and LangGraph Agent Frameworks Reach v1.0 Milestones. LangChain
+      blog, 22 October 2025.
+    url: https://www.langchain.com/blog/langchain-langgraph-1dot0
+as_of: 2026-10

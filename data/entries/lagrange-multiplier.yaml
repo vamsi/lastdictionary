@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Lagrange multiplier
+id: lagrange-multiplier
+pos: n.
+also:
+  - method of Lagrange multipliers
+  - Lagrangian
+  - Karush–Kuhn–Tucker conditions
+  - KKT conditions
+  - dual variable
+  - Lagrangian duality
+domain: math
+domains:
+  - ml
+  - rl
+level: specialist
+plain: >-
+  A mathematical device for finding the best answer when strict rules must be obeyed: each rule
+  becomes an extra price that grows when the rule is broken.
+senses:
+  - definition: >-
+      An auxiliary variable introduced for each constraint so that a constrained
+      [[optimization|optimization]] problem becomes a search for stationary points of one function,
+      the Lagrangian: the objective plus each constraint function times its multiplier. At an
+      optimum the [[gradient|gradient]] of the objective is a weighted combination of the
+      constraints' gradients, the multipliers being the weights, and each multiplier measures how
+      much the optimal value would improve if its constraint were loosened slightly (a 'shadow
+      price'). The Karush–Kuhn–Tucker (KKT) conditions extend the method to inequality constraints
+      and underlie duality theory and [[support-vector-machine|support vector machines]], whose
+      support vectors are the training points with nonzero multipliers. In modern AI, Lagrangian
+      methods tune penalty weights automatically, such as the [[kl-penalty|KL penalty]] coefficient
+      or the cost limit in constrained (safe) [[reinforcement-learning|reinforcement learning]].
+    example: >-
+      Instead of hand-tuning the KL weight, we treat it as a Lagrange multiplier and adapt it to hit
+      the target divergence.
+formula_latex: \mathcal{L}(x, \boldsymbol{\lambda}) = f(x) + \sum_{i} \lambda_i\, g_i(x)
+origin: >-
+  Joseph-Louis Lagrange introduced the method in Mécanique analytique (1788) and stated it generally
+  in Théorie des fonctions analytiques (1797). In English the device was usually called
+  'undetermined multipliers' through the 19th century and much of the 20th, although 'Lagrange
+  multiplier' is recorded by 1919. William Karush (1939, in a master's thesis) and Harold Kuhn and
+  Albert Tucker (1951) extended the method to inequality constraints.
+year: 1788
+see_also:
+  - optimization
+  - convex optimization
+  - support vector machine
+  - objective function
+  - KL penalty
+  - gradient

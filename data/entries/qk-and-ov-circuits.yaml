@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: QK and OV circuits
+id: qk-and-ov-circuits
+pos: n.
+also:
+  - QK circuit
+  - OV circuit
+  - query-key circuit
+  - output-value circuit
+  - K-composition
+domain: interp
+domains:
+  - llm
+  - math
+level: specialist
+plain: >-
+  A way of splitting what each attention unit in a language model does into two separate questions:
+  where should it look, and what should it pass along from what it sees.
+senses:
+  - definition: >-
+      A decomposition of an [[attention-head|attention head]] into two independent low-rank bilinear
+      maps. The QK circuit, formed from the query and key weights, determines the
+      [[attention-pattern|attention pattern]]: it scores how strongly a token at the destination
+      position attends to each source token. The OV circuit, formed from the value and output
+      weights, determines what the head writes into the [[residual-stream|residual stream]] given
+      that it attends to a source token — for example, copying that token's identity toward the
+      output [[logit|logits]]. Multiplying in the embedding and [[unembedding|unembedding]] gives
+      end-to-end versions that can be read token by token in small models. Because the two maps act
+      separately, a head can be analyzed by asking independently where it attends and what it moves.
+      Composition between heads in different layers is classified by which input of the later head
+      reads the earlier head's output — Q-, K- or V-composition; [[induction-head|induction heads]]
+      rely on K-composition. Positive eigenvalues of an OV circuit signal copying.
+    example: >-
+      The OV circuit of this head is almost the identity on names, so whatever it attends to gets
+      copied.
+formula_latex: W_{QK}^{h} = W_Q^{h\top} W_K^{h}, \qquad W_{OV}^{h} = W_O^{h} W_V^{h}
+origin: >-
+  Introduced by Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Chris Olah and colleagues
+  in 'A Mathematical Framework for Transformer Circuits' (Anthropic, December 2021), which analyzed
+  attention-only transformers with zero, one and two layers.
+year: 2021
+see_also:
+  - attention head
+  - attention pattern
+  - induction head
+  - query, key and value
+  - residual stream
+  - circuit
+sources:
+  - text: >-
+      Elhage, N., Nanda, N., Olsson, C., Henighan, T. et al. (2021). A Mathematical Framework for
+      Transformer Circuits. Transformer Circuits Thread.

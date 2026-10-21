@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: swarm scaling
+id: swarm-scaling
+pos: n.
+domain: infer
+domains:
+  - agents
+  - asi
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Getting better AI results by putting many AI agents on a task at once instead of letting one think
+  longer — faster, but more expensive for each gain.
+senses:
+  - definition: >-
+      Improving performance on a task by increasing the number of AI agents working on it in
+      parallel while holding each agent's reasoning length fixed — a form of inference scaling
+      alongside longer [[chain-of-thought|chains of thought]] (see [[test-time-compute|test-time
+      compute]]). Analyzing published multi-agent results for frontier models in 2026, Toby Ord
+      found a single agent the most token-efficient: each fourfold increase in agents roughly
+      doubled the total tokens needed for the same score, so ten agents working together matched a
+      single agent given only about three to five times as many tokens. The payoff is speed, since
+      parallel agents can finish in a fraction of the wall-clock time. Ord expressed the
+      coordination penalty with economists' 'stepping on toes' parameter λ — N agents together match
+      one agent working N^λ times as long — estimating λ at roughly 0.5–0.7 across benchmarks,
+      values that matter for models of an [[intelligence-explosion|intelligence explosion]].
+    example: >-
+      Swarm scaling got us the answer overnight instead of in a week, at four times the token bill.
+origin: >-
+  Named by the philosopher Toby Ord in the essay 'Swarm Scaling' (September 2026), an analysis of
+  published multi-agent results for OpenAI models that was cross-posted to LessWrong and the
+  Effective Altruism Forum and discussed in Jack Clark's Import AI newsletter.
+year: 2026
+see_also:
+  - test-time compute
+  - agent swarm
+  - multi-agent system
+  - scaling laws
+  - intelligence explosion
+  - orchestrator–worker pattern
+sources:
+  - text: Ord, T. (2026). Swarm Scaling. September 2026 (cross-posted to LessWrong).
+    url: https://www.lesswrong.com/posts/6cb7qd3RSkgnviCpf/swarm-scaling
+  - text: >-
+      Clark, J. (2026). Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI
+      science economy. 5 October 2026.
+    url: https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/
+as_of: 2026-10

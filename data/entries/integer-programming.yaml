@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: integer programming
+id: integer-programming
+pos: n.
+also:
+  - IP
+  - integer linear programming
+  - ILP
+  - mixed-integer programming
+  - MIP
+  - mixed-integer linear programming
+  - MILP
+  - integer program
+  - 0–1 integer programming
+domain: math
+domains:
+  - sym
+  - ml
+level: specialist
+plain: >-
+  Finding the best plan when some decisions must be whole numbers or yes-or-no choices — you cannot
+  open half a warehouse or send 2.7 trucks. That small change makes the best plan far harder to
+  find.
+senses:
+  - definition: >-
+      Optimization in which at least some decision variables must take whole-number values, as
+      needed for indivisible quantities and yes-or-no choices. Usually the rest of the problem is
+      linear (integer linear programming); with both integer and continuous variables it is a
+      mixed-integer program (MIP or MILP), and binary 0–1 variables can encode logic such as 'if
+      this machine runs, that one must stop'. Integrality transforms the difficulty:
+      [[linear-programming|linear programming]] is solvable in polynomial time, but integer
+      programming is NP-hard, its 0–1 form being one of Richard Karp's 21
+      [[np-complete|NP-complete]] problems (1972). Solvers nonetheless handle many large industrial
+      instances by combining [[branch-and-bound|branch and bound]] — solving linear relaxations that
+      drop integrality in order to bound and prune a search tree — with cutting planes that tighten
+      those relaxations (branch and cut), presolve reductions and primal heuristics. Integer
+      programming is used for scheduling, routing, network design and resource allocation. In AI it
+      is used to verify the robustness of [[neural-network|neural networks]] with piecewise-linear
+      activations such as [[relu|ReLU]], to solve combinatorial planning problems, and as a testbed
+      for learned heuristics, such as neural networks that choose which variable to branch on.
+    example: >-
+      Each GPU is either assigned to a job or not, so the scheduler is really a mixed-integer
+      program.
+formula_latex: \min_{\mathbf{x}} \; \mathbf{c}^{\top}\mathbf{x} \quad \text{subject to} \quad
+  A\mathbf{x} \le \mathbf{b}, \;\; \mathbf{x} \in \mathbb{Z}_{\ge 0}^{n}
+origin: >-
+  George Dantzig, Ray Fulkerson and Selmer Johnson solved a traveling-salesman instance through US
+  cities in 1954 by adding cutting planes to a linear program. Ralph Gomory's cutting-plane method
+  (1958) gave the first finite algorithm for integer linear programs, and Ailsa Land and Alison Doig
+  introduced branch and bound for them in 1960.
+year: 1958
+note: >-
+  Most practical models mix integer and continuous variables, so 'MIP' is the everyday term; 'ILP'
+  also abbreviates [[inductive-logic-programming|inductive logic programming]].
+  [[constraint-satisfaction-problem|Constraint programming]] and
+  [[boolean-satisfiability-problem|SAT]] solvers attack many of the same combinatorial problems with
+  different methods.
+see_also:
+  - linear programming
+  - branch and bound
+  - NP-complete
+  - constraint satisfaction problem
+  - traveling salesman problem
+  - optimization
+contrast:
+  - linear programming
+sources:
+  - text: >-
+      Gomory, R. E. (1958). Outline of an Algorithm for Integer Solutions to Linear Programs.
+      Bulletin of the American Mathematical Society 64(5), 275–278.
+  - text: >-
+      Land, A. H. & Doig, A. G. (1960). An Automatic Method of Solving Discrete Programming
+      Problems. Econometrica 28(3), 497–520.

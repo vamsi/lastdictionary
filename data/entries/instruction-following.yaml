@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: instruction following
+id: instruction-following
+pos: n.
+also:
+  - instruction adherence
+domain: llm
+domains:
+  - eval
+  - train
+level: core
+plain: >-
+  An AI's ability to do exactly what it is asked, including details such as length, format, language
+  and things to avoid, rather than something merely related.
+senses:
+  - definition: >-
+      The capability of a model to carry out tasks as specified in natural-language instructions,
+      including explicit constraints on content, format, length, style and process, and to keep
+      doing so across long contexts and multi-turn conversations. It is instilled mainly by
+      [[instruction-tuning|instruction tuning]] and preference training, and evaluated with
+      benchmarks of automatically checkable constraints (such as 'answer in fewer than 100 words' or
+      'use no commas'), with [[llm-as-a-judge|model-graded]] rubrics for complex requests, and with
+      tests of whether models obey higher-priority instructions when instructions conflict
+      ([[instruction-hierarchy|instruction hierarchy]]). Typical failures include dropping one of
+      several constraints, drifting from instructions over long sessions, and over-literal
+      compliance that misses the user's intent.
+    example: >-
+      It writes well, but its instruction following is weak: it ignored the no-bullet-points rule
+      twice.
+origin: >-
+  Following natural-language instructions was studied in grounded settings such as navigation and
+  game control from the 2000s. For language models it became a central goal with FLAN (2021) and
+  OpenAI's [[instructgpt|InstructGPT]] paper, 'Training language models to follow instructions with
+  human feedback' (Long Ouyang and colleagues, 2022); Jeffrey Zhou and colleagues' IFEval (2023)
+  offered 25 types of verifiable instruction across about 500 prompts.
+year: 2022
+see_also:
+  - instruction-tuned model
+  - instruction tuning
+  - instruction hierarchy
+  - steerability
+  - reinforcement learning from human feedback
+  - sycophancy
+sources:
+  - text: >-
+      Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback.
+      NeurIPS 2022.
+    url: https://arxiv.org/abs/2203.02155
+  - text: >-
+      Zhou, J., Lu, T., Mishra, S., Brahma, S., Basu, S., Luan, Y., Zhou, D. & Hou, L. (2023).
+      Instruction-Following Evaluation for Large Language Models. arXiv:2311.07911.
+    url: https://arxiv.org/abs/2311.07911

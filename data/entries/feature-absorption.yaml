@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature absorption
+id: feature-absorption
+pos: n.
+also:
+  - absorption (SAE)
+domain: interp
+domains:
+  - dl
+  - safety
+level: specialist
+plain: >-
+  A flaw in concept-finding tools where a general concept goes missing in some cases because a more
+  specific concept swallows it — like a 'starts with S' detector staying silent on the word 'snake'.
+senses:
+  - definition: >-
+      A failure mode of [[sparse-autoencoder|sparse autoencoders]] in which a more specific latent
+      takes over part of a general [[feature-interpretability|feature]]'s job: on inputs where the
+      specific concept holds, the specific latent also encodes the general property, and the general
+      latent, which ought to fire, stays off. If 'starts with S' is always true whenever the token
+      is 'snake', the sparsity penalty is lowered by letting the token-specific latent encode both
+      properties and switching the general latent off for that token, saving one active latent. The
+      result looks interpretable but has unpredictable holes, so a latent that appears to track a
+      concept cannot be trusted as a complete detector for it — a problem for uses such as safety
+      monitoring. Changing dictionary size or sparsity does not cure it; absorption is tied to
+      hierarchical concepts and to [[feature-splitting|feature splitting]]. Proposed mitigations
+      include Matryoshka SAEs, which train nested dictionaries so that coarse features are learned
+      first.
+    example: >-
+      The 'starts with E' latent misses 'elephant' — classic absorption into a token-specific latent.
+origin: >-
+  Named and measured by David Chanin, Joseph Bloom and colleagues in 'A is for Absorption: Studying
+  Feature Splitting and Absorption in Sparse Autoencoders' (2024), using a first-letter spelling
+  task on which ground truth is known.
+year: 2024
+see_also:
+  - feature splitting
+  - sparse autoencoder
+  - dictionary learning
+  - feature (interpretability)
+  - interpretability illusion
+sources:
+  - text: >-
+      Chanin, D., Wilken-Smith, J., Dulka, T., Bhatnagar, H., Golechha, S. & Bloom, J. (2024). A is
+      for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders.
+      arXiv:2409.14507.
+    url: https://arxiv.org/abs/2409.14507

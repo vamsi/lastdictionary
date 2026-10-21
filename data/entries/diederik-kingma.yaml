@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Diederik Kingma
+id: diederik-kingma
+sort_as: Kingma Diederik
+pos: prop. n.
+also:
+  - Durk Kingma
+  - Diederik P. Kingma
+domain: people
+domains:
+  - dl
+  - gen
+level: specialist
+plain: >-
+  A Dutch computer scientist who co-invented the variational autoencoder and the Adam optimizer, two
+  of the most widely used tools for training neural networks.
+senses:
+  - definition: >-
+      Dutch machine-learning researcher who co-introduced two staples of [[deep-learning|deep
+      learning]]. With his doctoral adviser Max Welling at the University of Amsterdam he proposed
+      the [[variational-autoencoder|variational autoencoder]] (2013), which trains a latent-variable
+      [[generative-model|generative model]] by maximizing the [[evidence-lower-bound|evidence lower
+      bound]] and makes this tractable through the [[reparameterization-trick|reparameterization
+      trick]]; the paper received the first ICLR Test of Time Award (2024). With Jimmy Ba he
+      introduced [[adam|Adam]] (2014), an optimizer that adapts each parameter's step size from
+      running averages of its gradients and their squares, which became the default for training
+      neural networks and, as [[adamw|AdamW]], for [[large-language-model|large language models]].
+      He also co-developed the Glow [[normalizing-flow|normalizing flow]] (2018, with Prafulla
+      Dhariwal) and variational diffusion models (2021). A founding research scientist at
+      [[openai|OpenAI]], he later worked at Google Brain and Google DeepMind and joined
+      [[anthropic|Anthropic]] in 2024.
+see_also:
+  - variational autoencoder
+  - Adam
+  - reparameterization trick
+  - evidence lower bound
+  - normalizing flow
+  - diffusion model
+sources:
+  - text: Kingma, D. P. & Welling, M. (2014). Auto-Encoding Variational Bayes. ICLR 2014.
+  - text: >-
+      Kingma, D. P. & Ba, J. (2015). Adam: A Method for Stochastic Optimization. ICLR 2015.
+as_of: 2026-10

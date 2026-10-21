@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BookCorpus
+id: bookcorpus
+pos: prop. n.
+also:
+  - Toronto Book Corpus
+  - BooksCorpus
+domain: data
+domains:
+  - llm
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  A collection of about 11,000 free self-published novels gathered from the web in 2015, used to
+  train the first GPT model and BERT despite problems with consent and duplicates found later.
+senses:
+  - definition: >-
+      A dataset of roughly 11,000 unpublished books scraped from the self-publishing site
+      Smashwords, where they were offered free, totaling about 74 million sentences and nearly a
+      billion words. Built for a vision-and-language project that aligned books with their film
+      adaptations, it became important for language modeling because it offered long, continuous
+      narrative text: it was the pretraining corpus of OpenAI's first [[gpt|GPT]] model (2018) and,
+      with English Wikipedia, of [[bert|BERT]] (2018). A 2021 retrospective datasheet found
+      thousands of duplicated books, a strong skew toward romance and certain other genres, and
+      evidence that many books' terms forbade such copying, making BookCorpus a standard example of
+      what its authors called documentation debt.
+    example: >-
+      BERT's 3.3-billion-word pretraining set combined BookCorpus with English Wikipedia.
+origin: >-
+  Introduced by Yukun Zhu, Ryan Kiros, Richard Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio
+  Torralba and Sanja Fidler in 'Aligning Books and Movies' (ICCV 2015). Jack Bandy and Nicholas
+  Vincent's retrospective datasheet (2021) documented its problems.
+year: 2015
+note: >-
+  The original is no longer distributed by its creators; copies circulating online, including the
+  BookCorpus2 component of [[the-pile|The Pile]], differ from the version used for GPT and BERT.
+see_also:
+  - GPT
+  - BERT
+  - datasheet for datasets
+  - pretraining data
+  - Books3
+  - corpus
+sources:
+  - text: >-
+      Zhu, Y. et al. (2015). Aligning Books and Movies: Towards Story-like Visual Explanations by
+      Watching Movies and Reading Books. ICCV 2015.
+  - text: >-
+      Bandy, J. & Vincent, N. (2021). Addressing 'Documentation Debt' in Machine Learning Research:
+      A Retrospective Datasheet for BookCorpus. arXiv:2105.05241.
+    url: https://arxiv.org/abs/2105.05241

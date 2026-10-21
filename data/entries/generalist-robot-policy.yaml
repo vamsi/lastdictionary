@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generalist robot policy
+id: generalist-robot-policy
+pos: n.
+also:
+  - generalist policy
+  - generalist robot
+  - multi-task robot policy
+domain: robot
+domains:
+  - rl
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A single robot-control program trained to do many different tasks in many places, often on several
+  kinds of robots: the opposite of a specialist trained for one job.
+senses:
+  - definition: >-
+      A single learned [[policy|policy]] that performs a wide range of tasks across varied scenes,
+      objects and often several robot bodies, conditioned on a goal given as a language instruction,
+      goal image or task label. It contrasts with the specialist policies that long dominated
+      [[robot-learning|robot learning]] — one network per task, robot and environment — and is
+      usually pretrained on large multi-task, multi-robot datasets, then fine-tuned with a small
+      amount of in-domain data. Examples include RT-1, Octo (an open transformer policy trained on
+      about 800,000 [[open-x-embodiment|Open X-Embodiment]] trajectories), CrossFormer and the
+      [[vision-language-action-model|vision-language-action models]]. Generalist policies are judged
+      by success on unseen tasks and environments, by how efficiently they adapt, and by whether
+      training on many tasks helps each one (positive transfer) rather than hurting it.
+    example: >-
+      The generalist policy is worse than our specialist on bin picking but works on forty other
+      tasks.
+origin: >-
+  Echoes DeepMind's Gato, presented as 'a generalist agent' (Scott Reed and colleagues, May 2022),
+  which also stacked blocks with a real robot arm. Earlier multi-task robot work was also called
+  'generalist', and the first use of the exact phrase is not established; it was popularized by
+  'Octo: An Open-Source Generalist Robot Policy' (Octo Model Team, May 2024) and then became common
+  in paper titles and benchmarks.
+year: 2024
+note: >-
+  Overlaps with [[robot-foundation-model|robot foundation model]]: a generalist policy outputs
+  actions directly, whereas a foundation model may instead plan, simulate or perceive for a robot.
+  'Generalist' is relative; current systems generalize within limited families of tasks.
+see_also:
+  - robot foundation model
+  - vision-language-action model
+  - Open X-Embodiment
+  - cross-embodiment learning
+  - multi-task learning
+  - policy
+sources:
+  - text: >-
+      Octo Model Team (2024). Octo: An Open-Source Generalist Robot Policy. arXiv:2405.12213.
+    url: https://arxiv.org/abs/2405.12213
+  - text: >-
+      Reed, S. et al. (2022). A Generalist Agent. Transactions on Machine Learning Research.

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: residual connection
+id: residual-connection
+pos: n.
+also:
+  - skip connection
+  - shortcut connection
+  - residual block
+  - identity shortcut
+  - residual learning
+domain: dl
+domains:
+  - llm
+level: core
+plain: >-
+  A shortcut in a neural network that adds a block's input straight to its output, so each block
+  only has to learn a correction. It is what makes networks hundreds of layers deep trainable.
+senses:
+  - definition: >-
+      A connection that adds the input of a block of layers to the block's output, y = x + F(x), so
+      the block learns a residual correction F instead of a whole new mapping. Because the identity
+      path carries signals forward and gradients backward unchanged, residual connections make very
+      deep networks trainable, curing the 'degradation problem' in which adding layers to a plain
+      network raised training error. They define [[resnet|ResNet]] and appear in every
+      [[transformer|transformer]], where the running sum they create is called the
+      [[residual-stream|residual stream]]; pre-norm designs place
+      [[layer-normalization|normalization]] inside the residual branch to keep the identity path
+      clean. 'Skip connection' is broader, also covering concatenation of earlier features, as in
+      [[u-net|U-Net]] and DenseNet. Residual networks can be read as discretized
+      [[neural-ordinary-differential-equation|differential equations]] or as ensembles of many
+      shallower paths.
+    example: >-
+      Without the residual connections, the 48-layer model's loss would not go down at all.
+formula_latex: \mathbf{y} = \mathbf{x} + \mathcal{F}(\mathbf{x};\, \theta)
+origin: >-
+  Precursors include shortcut connections across layers in Kevin Lang and Michael Witbrock's 1988
+  networks and the LSTM's additive cell state (1997). Rupesh Srivastava, Klaus Greff and Jürgen
+  Schmidhuber's highway networks (May 2015) used gated shortcuts to train networks of hundreds of
+  layers; the ungated identity shortcuts of Kaiming He, Xiangyu Zhang, Shaoqing Ren and Jian Sun's
+  ResNet (December 2015) made the idea universal.
+year: 2015
+note: >-
+  Credit is debated: Jürgen Schmidhuber has argued that ResNets are highway networks with gates held
+  open, while the ResNet authors stressed that their shortcuts are parameter-free identities that
+  never close.
+see_also:
+  - ResNet
+  - residual stream
+  - highway network
+  - vanishing gradient problem
+  - U-Net
+  - layer normalization
+  - neural ordinary differential equation
+sources:
+  - text: >-
+      He, K., Zhang, X., Ren, S. & Sun, J. (2015). Deep Residual Learning for Image Recognition.
+      arXiv:1512.03385; CVPR 2016.
+    url: https://arxiv.org/abs/1512.03385
+  - text: >-
+      Srivastava, R. K., Greff, K. & Schmidhuber, J. (2015). Highway Networks. arXiv:1505.00387.
+    url: https://arxiv.org/abs/1505.00387

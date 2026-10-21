@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: JSON mode
+id: json-mode
+pos: n.
+also:
+  - JSON output mode
+  - JSON object mode
+domain: eng
+domains:
+  - llm
+level: specialist
+plain: >-
+  A setting on some AI services that makes the model reply only in JSON, a standard text format for
+  data, so that programs can read the reply reliably.
+senses:
+  - definition: >-
+      An API option that constrains a language model's output to be syntactically valid JSON
+      (JavaScript Object Notation), the text format of nested objects, arrays, strings, numbers and
+      Booleans used throughout web software. It is implemented by [[constrained-decoding|constrained
+      decoding]]: at each step the server permits only [[token|tokens]] that keep the output
+      parseable, so responses are not wrapped in prose or left with unclosed brackets, except when
+      the length limit cuts them off. JSON mode does not fix which keys, types or values appear, so
+      developers still describe the desired shape in the prompt and validate the result; guarantees
+      at the level of a schema require [[structured-outputs|structured outputs]]. OpenAI's version
+      rejects requests whose prompt never mentions JSON, since a model forced into JSON without
+      having been asked for it can pad its reply with whitespace until the length limit.
+    example: >-
+      Turn on JSON mode, but keep validating: it guarantees parseable output, not the right fields.
+origin: >-
+  Introduced by [[openai|OpenAI]] at its DevDay event in November 2023 as the response_format option
+  of its Chat Completions API. Open-source engines had or soon added grammar-based equivalents
+  (llama.cpp added grammar-constrained sampling in mid-2023), and schema-enforcing
+  [[structured-outputs|structured outputs]] largely superseded JSON mode from August 2024.
+year: 2023
+note: >-
+  Different from simply asking a model for JSON in the prompt, which can fail by adding commentary
+  or malformed syntax. JSON itself was specified by Douglas Crockford in the early 2000s.
+see_also:
+  - structured outputs
+  - JSON Schema
+  - constrained decoding
+  - model API
+  - function calling
+contrast:
+  - structured outputs

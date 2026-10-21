@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: topic model
+id: topic-model
+pos: n.
+also:
+  - topic modeling
+  - topic modelling
+  - probabilistic topic model
+  - probabilistic latent semantic analysis
+  - pLSA
+  - BERTopic
+domain: ml
+domains:
+  - llm
+level: core
+plain: >-
+  A method that reads a large pile of documents and discovers the themes running through them,
+  describing each theme by its typical words and each document by its mix of themes.
+senses:
+  - definition: >-
+      A statistical model that uncovers recurring themes (topics) in an unlabeled collection of
+      documents from patterns of word use alone. In the classic probabilistic formulation, each
+      topic is a [[probability-distribution|probability distribution]] over the vocabulary and each
+      document is a mixture of topics; fitting the model to word counts might reveal a topic whose
+      most probable words are 'gene', 'DNA' and 'sequencing', and documents that are 60% about it.
+      The main models are [[latent-semantic-analysis|latent semantic analysis]] (a linear-algebra
+      precursor), probabilistic latent semantic analysis, [[latent-dirichlet-allocation|latent
+      Dirichlet allocation]] and its extensions (correlated, dynamic, supervised and hierarchical
+      topic models), and non-negative [[matrix-factorization|matrix factorization]]. Since the late
+      2010s, neural topic models and embedding-based pipelines, which cluster sentence
+      [[embedding|embeddings]] and label each cluster with keywords or a
+      [[large-language-model|large language model]], have become common. Topic models are used to
+      explore archives and in social science, the digital humanities and search; topics are judged
+      by statistical coherence and human interpretability.
+    example: >-
+      The topic model split ten years of parliamentary speeches into 40 themes, and the
+      energy-prices topic spiked in 2022.
+origin: >-
+  An early probabilistic model of documents as mixtures of topics appeared in a 1998 analysis of
+  latent semantic indexing by Christos Papadimitriou, Prabhakar Raghavan, Hisao Tamaki and Santosh
+  Vempala, building on latent semantic analysis (1988–1990). Thomas Hofmann introduced probabilistic
+  latent semantic analysis in 1999, and the latent Dirichlet allocation of David Blei, Andrew Ng and
+  Michael Jordan (2001–2003) became the field's standard model.
+year: 1998
+note: >-
+  Topics are statistical word groupings, not guaranteed concepts: results depend on preprocessing,
+  the number of topics and random initialization, and some topics will be incoherent.
+see_also:
+  - latent Dirichlet allocation
+  - latent semantic analysis
+  - clustering
+  - dimensionality reduction
+  - natural language processing
+  - text classification
+sources:
+  - text: Blei, D. M. (2012). Probabilistic Topic Models. Communications of the ACM 55(4).
+  - text: >-
+      Hofmann, T. (1999). Probabilistic Latent Semantic Analysis. Proc. 15th Conference on
+      Uncertainty in Artificial Intelligence (UAI).

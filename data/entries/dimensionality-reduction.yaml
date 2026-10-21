@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dimensionality reduction
+id: dimensionality-reduction
+pos: n.
+also:
+  - dimension reduction
+  - feature projection
+  - manifold learning
+domain: ml
+domains:
+  - data
+  - math
+level: core
+plain: >-
+  Squeezing data that has many measurements per item into far fewer numbers while keeping the
+  patterns that matter, so it is easier to visualize, store or learn from.
+senses:
+  - definition: >-
+      A family of techniques for compressing the description of data: each item, originally measured
+      on many variables, is mapped to a short list of coordinates, and methods differ in what the
+      mapping must preserve, whether overall variance, pairwise distances, local neighborhoods or
+      the separation between classes. One route keeps only some of the original variables
+      ([[feature-selection|feature selection]]); the other computes new ones as combinations of them
+      (feature extraction, also called projection). Linear projections include
+      [[principal-component-analysis|principal component analysis]],
+      [[linear-discriminant-analysis|linear discriminant analysis]] and non-negative matrix
+      factorization; nonlinear methods include kernel PCA, manifold-learning techniques such as
+      Isomap and locally linear embedding, neighbor-embedding methods for visualization
+      ([[t-sne|t-SNE]], [[umap|UMAP]]) and learned encoders such as [[autoencoder|autoencoders]].
+      Reduction counters the [[curse-of-dimensionality|curse of dimensionality]], strips noise and
+      redundancy, cuts storage and computation, and makes structure visible in two or three
+      dimensions. It works because of the [[manifold-hypothesis|manifold hypothesis]]: real data
+      recorded in many dimensions tend to lie near a much lower-dimensional surface.
+    example: >-
+      After reducing the features to 50 principal components, clustering ran ten times faster with
+      no loss in quality.
+origin: >-
+  Its oldest workhorse, principal component analysis, goes back to Karl Pearson (1901) and Harold
+  Hotelling (1933). Multidimensional scaling followed in psychometrics in the 1950s, and nonlinear
+  manifold learning arrived with Isomap and locally linear embedding, published side by side in
+  Science in December 2000. Neighbor-embedding methods (t-SNE in 2008, UMAP in 2018) made reduction
+  a routine step for visualizing learned embeddings.
+note: >-
+  Reduced dimensions are often hard to interpret, and nonlinear visualizations distort distances and
+  densities; treat two-dimensional plots as exploratory rather than as evidence.
+see_also:
+  - principal component analysis
+  - t-SNE
+  - UMAP
+  - feature selection
+  - curse of dimensionality
+  - manifold hypothesis
+  - autoencoder
+  - embedding
+sources:
+  - text: >-
+      Tenenbaum, J. B., de Silva, V. & Langford, J. C. (2000). A Global Geometric Framework for
+      Nonlinear Dimensionality Reduction. Science 290(5500).
+  - text: >-
+      Roweis, S. T. & Saul, L. K. (2000). Nonlinear Dimensionality Reduction by Locally Linear
+      Embedding. Science 290(5500).

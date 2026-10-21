@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Viterbi algorithm
+id: viterbi-algorithm
+pos: n.
+also:
+  - Viterbi decoding
+  - Viterbi path
+  - Viterbi decoder
+pronunciation: vit-ER-bee
+domain: ml
+domains:
+  - math
+  - percep
+level: core
+plain: >-
+  A method that finds the likeliest hidden sequence behind some observations — such as each word's
+  grammatical role in a sentence — by keeping only the best path to each point instead of trying
+  every combination.
+senses:
+  - definition: >-
+      The standard decoding procedure for a [[hidden-markov-model|hidden Markov model]] or
+      linear-chain [[conditional-random-field|conditional random field]]: a
+      [[dynamic-programming|dynamic programming]] recursion that, for a given observation sequence,
+      returns the single assignment of hidden states with the highest joint probability (the Viterbi
+      path). Working left to right, it records for every time step and state the probability of the
+      best path ending there, computed from the best predecessor's score times the transition and
+      emission probabilities, and keeps a back-pointer to that predecessor; tracing the pointers
+      back from the best final state recovers the path. This costs time proportional to T·N² for T
+      steps and N states, instead of the N^T needed to enumerate all paths, and is normally run with
+      log probabilities to avoid underflow. It is the max-product counterpart of the sum-product
+      forward algorithm, and was the decoding core of HMM-based [[speech-recognition|speech
+      recognition]], [[part-of-speech-tagging|part-of-speech tagging]], gene finding and digital
+      receivers for mobile phones and space probes.
+    example: >-
+      We replaced greedy per-token tagging with Viterbi decoding so the output always respects the
+      transition constraints.
+formula_latex: \delta_t(j) = \max_{i} \big[ \delta_{t-1}(i)\, a_{ij} \big]\, b_j(o_t)
+origin: >-
+  Published by Andrew Viterbi in 1967 in the IEEE Transactions on Information Theory as an
+  asymptotically optimal decoder for convolutional error-correcting codes. Jim Omura (1969)
+  recognized it as dynamic programming, and G. David Forney Jr.'s 1973 tutorial, titled 'The Viterbi
+  Algorithm', presented it as the optimal estimator of the state sequence of any finite-state Markov
+  process observed in memoryless noise, spreading it beyond coding. Closely related dynamic programs
+  arose independently in speech recognition and sequence alignment.
+year: 1967
+note: >-
+  Viterbi decoding returns the single best whole sequence, which can differ from picking the most
+  probable state at each position separately (posterior decoding with forward–backward). In neural
+  text generation, where exact search over sequences is intractable, [[beam-search|beam search]]
+  plays the analogous role.
+see_also:
+  - hidden Markov model
+  - dynamic programming
+  - conditional random field
+  - beam search
+  - speech recognition
+  - decoding
+contrast:
+  - beam search
+  - greedy decoding
+sources:
+  - text: >-
+      Viterbi, A. J. (1967). Error Bounds for Convolutional Codes and an Asymptotically Optimum
+      Decoding Algorithm. IEEE Transactions on Information Theory 13(2), 260–269.
+  - text: >-
+      Forney, G. D., Jr. (1973). The Viterbi Algorithm. Proceedings of the IEEE 61(3), 268–278.

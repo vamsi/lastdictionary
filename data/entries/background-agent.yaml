@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: background agent
+id: background-agent
+pos: n.
+also:
+  - asynchronous agent
+  - async agent
+  - cloud agent
+  - remote agent
+domain: agents
+domains:
+  - eng
+labels:
+  - emerging
+level: core
+plain: >-
+  An AI agent you hand a task to and then leave alone: it works by itself in the cloud, often for
+  many minutes or hours, and reports back with finished work for you to review.
+senses:
+  - definition: >-
+      An [[ai-agent|AI agent]], most often a [[coding-agent|coding agent]], that runs asynchronously
+      and without live supervision, typically in a cloud [[sandbox|sandbox]] or virtual machine
+      provisioned with a copy of the user's repository, while the user does other work. A task is
+      assigned from an issue tracker, chat, mobile app or editor; the agent sets up the environment,
+      makes changes, runs tests and returns its results as a branch or pull request with logs for
+      review. Running many such agents in parallel is a defining use. Because nobody approves
+      individual actions, background agents rely on environment-level controls — restricted network
+      access, scoped credentials, setup scripts and reviewable outputs — rather than per-command
+      [[permission-system|permission prompts]].
+    example: >-
+      I assign the flaky-test tickets to background agents on Friday and review their pull requests
+      on Monday.
+origin: >-
+  Cognition's [[devin|Devin]] (March 2024) already worked asynchronously in its own cloud
+  environment. Cursor named a preview feature 'Background Agent' in version 0.50 (15 May 2025);
+  OpenAI's [[codex|Codex]] cloud agent (16 May 2025), GitHub's Copilot coding agent (19 May 2025)
+  and Google's Jules (public beta, May 2025) launched within days of one another, establishing the
+  category.
+year: 2025
+note: >-
+  Neighboring terms include 'cloud agent' and 'ambient agent' (one triggered by events rather than
+  by chat); product names change often. Background agents trade immediacy for parallelism: mistakes
+  surface at review time rather than as they happen.
+see_also:
+  - coding agent
+  - agentic coding
+  - sandbox
+  - long-horizon task
+  - Codex
+  - Devin
+contrast:
+  - copilot
+sources:
+  - text: "Cursor (2025). Changelog 0.50: Background Agent (preview). 15 May 2025."
+    url: https://cursor.com/changelog/0-50
+  - text: >-
+      GitHub (2025). GitHub Copilot coding agent in public preview. GitHub Changelog, 19 May 2025.
+    url: https://github.blog/changelog/2025-05-19-github-copilot-coding-agent-in-public-preview/
+  - text: OpenAI (2025). Introducing Codex. 16 May 2025.
+    url: https://openai.com/index/introducing-codex/
+as_of: 2026-10

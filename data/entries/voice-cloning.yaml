@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: voice cloning
+id: voice-cloning
+pos: n.
+also:
+  - voice clone
+  - speech cloning
+  - zero-shot voice cloning
+  - voice conversion
+  - audio deepfake
+  - VALL-E
+domain: gen
+domains:
+  - percep
+  - sec
+  - society
+level: essential
+plain: >-
+  Using AI to copy a specific person's voice from recordings, so a computer can say new things that
+  sound like them — useful for dubbing and accessibility, and abused in scams.
+senses:
+  - definition: >-
+      The synthesis of new speech in the voice of a particular person from recordings of that
+      person. Speaker-adaptive [[text-to-speech|text-to-speech]] systems either fine-tune on minutes
+      to hours of the target's speech or, in zero-shot cloning, condition on a short reference clip
+      through a speaker embedding or an audio prompt. Since 2023 leading systems treat speech as
+      sequences of discrete tokens from a [[neural-audio-codec|neural audio codec]] and continue a
+      few seconds of reference audio with a language model, as in Microsoft's VALL-E, which could
+      imitate a new speaker from a three-second recording, carrying over the speaker's emotional
+      tone and the recording's acoustic conditions; diffusion and flow-matching decoders are also
+      common. Voice conversion is the related task of transforming one person's speech so it sounds
+      like another's. Legitimate uses include restoring voices lost to illness, dubbing and
+      accessibility; misuse includes fraud (impersonated relatives or executives), political
+      disinformation and non-consensual impersonation. Defenses include consent verification,
+      [[ai-watermarking|watermarking]], [[deepfake-detection|detection]] and laws on
+      [[digital-replica|digital replicas]].
+    example: >-
+      The bank now requires a callback because voice cloning makes a familiar voice proof of nothing.
+origin: >-
+  Adapting speech synthesizers to new speakers predates deep learning. Neural few-shot cloning
+  appeared around 2018 (Sercan Arık and colleagues at Baidu, 'Neural Voice Cloning with a Few
+  Samples'); consumer services spread from 2023, the year Microsoft's VALL-E popularized
+  codec-language-model cloning. A widely reported 2019 fraud used a cloned executive's voice to
+  extract €220,000 from a UK energy firm.
+year: 2018
+note: >-
+  In February 2024 the US Federal Communications Commission ruled that AI-generated voices in
+  robocalls fall under existing restrictions, after cloned-voice calls imitating President Joe Biden
+  targeted New Hampshire primary voters. Consent rules for [[digital-replica|digital replicas]] are
+  spreading across jurisdictions.
+see_also:
+  - text-to-speech
+  - neural audio codec
+  - deepfake
+  - speaker verification
+  - digital replica
+  - deepfake detection
+  - AI watermarking
+contrast:
+  - speaker verification
+sources:
+  - text: >-
+      Wang, C. et al. (2023). Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers
+      (VALL-E). arXiv:2301.02111.
+    url: https://arxiv.org/abs/2301.02111
+  - text: >-
+      Arık, S. Ö., Chen, J., Peng, K., Ping, W. & Zhou, Y. (2018). Neural Voice Cloning with a Few
+      Samples. NeurIPS 2018.
+as_of: 2026-10

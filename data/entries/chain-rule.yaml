@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chain rule
+id: chain-rule
+pos: n.
+also:
+  - chain rule of calculus
+  - chain rule of probability
+  - function of a function rule
+domain: math
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  A rule for working out how a change ripples through a chain of steps by combining the effect at
+  each step. It is how AI training traces each error back through every layer.
+senses:
+  - context: Calculus
+    definition: >-
+      The rule for differentiating a composition of functions: the derivative of f(g(x)) is f′(g(x))
+      · g′(x), and for functions of several variables the [[jacobian|Jacobians]] of the stages
+      multiply. A neural network is a long composition of simple functions, so the
+      [[partial-derivative|partial derivatives]] of its [[loss-function|loss]] with respect to each
+      weight are products of many local derivatives. [[backpropagation|Backpropagation]] and
+      reverse-mode [[automatic-differentiation|automatic differentiation]] apply the chain rule
+      systematically from the output backward, reusing shared intermediate products, so that all the
+      gradients together cost only a small constant multiple of a forward pass (typically about
+      twice its arithmetic). Long products of factors smaller or larger than one are the root of
+      [[vanishing-gradient-problem|vanishing]] and [[exploding-gradient-problem|exploding
+      gradients]].
+    example: >-
+      The custom kernel broke the chain rule because its backward function ignored the second input.
+  - context: Probability
+    definition: >-
+      The identity that factors a joint probability into a product of conditionals: p(x₁, …, xₙ) =
+      p(x₁) p(x₂ | x₁) ⋯ p(xₙ | x₁, …, xₙ₋₁), valid for any ordering of the variables. It underlies
+      [[autoregressive-model|autoregressive]] language models, which score a whole text by
+      multiplying the [[conditional-probability|conditional probabilities]] of each [[token|token]]
+      given the tokens before it, and generate text by [[sampling|sampling]] one token at a time.
+formula_latex: \frac{\partial L}{\partial x} = \frac{\partial L}{\partial y}\,\frac{\partial y}{\partial x}
+origin: >-
+  Gottfried Wilhelm Leibniz used the rule in a 1676 manuscript; older English texts called it the
+  rule for differentiating 'a function of a function'. The German Kettenregel appears by 1921, and
+  'chain rule' spread in English through E. J. McShane's 1934 translation of Richard Courant's
+  calculus textbook. Seppo Linnainmaa described its reverse-mode use for computing derivatives
+  efficiently in 1970.
+year: 1921
+see_also:
+  - backpropagation
+  - automatic differentiation
+  - derivative
+  - Jacobian
+  - conditional probability
+  - autoregressive model
+  - vanishing gradient problem

@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multi-turn jailbreak
+id: multi-turn-jailbreak
+pos: n.
+also:
+  - multi-turn attack
+  - Crescendo attack
+  - conversational jailbreak
+domain: sec
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  Breaking a chatbot's rules gradually over a conversation — starting with harmless questions and
+  inching toward the forbidden one, so that no single message looks alarming.
+senses:
+  - definition: >-
+      A [[jailbreak|jailbreak]] carried out over several conversational turns, in which the attacker
+      escalates gradually from innocuous requests toward a prohibited goal. It exploits the model's
+      tendency to stay consistent with its own earlier answers and the fact that safety training and
+      filters often judge messages one at a time. Variants split a harmful task into individually
+      benign sub-questions, build up a fictional frame, or refer back to content the model has
+      already produced. Human red-teamers using multi-turn strategies have far exceeded the success
+      of single-turn automated attacks against defenses tuned for single prompts. Defenses assess
+      the whole conversation rather than the latest message, track cumulative intent, and include
+      multi-turn examples in [[adversarial-training|adversarial training]] and
+      [[safety-classifier|safety classifier]] data.
+    example: >-
+      Each message passed the filter, but the multi-turn jailbreak assembled the forbidden procedure
+      across twelve turns.
+origin: >-
+  Gradual escalation was a staple of hand-made chatbot jailbreaks from 2023. Mark Russinovich, Ahmed
+  Salem and Ronen Eldan of Microsoft named the 'Crescendo' attack in April 2024, and Nathaniel Li
+  and colleagues at Scale AI showed in August 2024 that multi-turn human jailbreaks defeat defenses
+  that resist single-turn attacks.
+year: 2024
+see_also:
+  - jailbreak
+  - many-shot jailbreaking
+  - red teaming
+  - safety classifier
+  - constitutional classifiers
+sources:
+  - text: >-
+      Russinovich, M., Salem, A. & Eldan, R. (2024). Great, Now Write an Article About That: The
+      Crescendo Multi-Turn LLM Jailbreak Attack. arXiv:2404.01833.
+  - text: >-
+      Li, N. et al. (2024). LLM Defenses Are Not Robust to Multi-Turn Human Jailbreaks Yet.
+      arXiv:2408.15221.

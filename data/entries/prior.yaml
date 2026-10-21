@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prior
+id: prior
+pos: n.
+also:
+  - prior distribution
+  - prior probability
+  - priors
+  - a priori probability
+  - conjugate prior
+  - informative prior
+domain: math
+domains:
+  - ml
+  - culture
+level: core
+plain: >-
+  What you believe, and how strongly, before looking at the evidence in front of you. In AI it also
+  means built-in assumptions that steer what a system learns.
+senses:
+  - context: Bayesian statistics
+    definition: >-
+      The [[probability-distribution|probability distribution]] over hypotheses or parameters
+      representing beliefs before the current data are observed; [[bayes-theorem|Bayes' theorem]]
+      combines it with the [[likelihood|likelihood]] to give the [[posterior|posterior]]. A prior
+      can carry real knowledge, from earlier studies or domain experts, or be chosen to be weakly
+      informative or nearly flat; conjugate choices, such as a Beta prior on a coin's bias or a
+      Dirichlet prior on [[categorical-distribution|categorical]] probabilities, make updating exact
+      and cheap, since the observed counts are simply added to the prior's parameters. In machine
+      learning, a Gaussian prior on weights corresponds to L2 [[regularization|regularization]]
+      ([[weight-decay|weight decay]]) and a Laplace prior to L1 under
+      [[maximum-a-posteriori-estimation|maximum a posteriori estimation]], and
+      [[gaussian-process|Gaussian processes]] place priors directly on functions. As data
+      accumulate, the likelihood usually dominates and the prior's influence fades.
+    example: >-
+      With only twenty labeled examples, the choice of prior noticeably shifts the posterior.
+  - context: General and informal use
+    definition: >-
+      By extension, any [[inductive-bias|inductive bias]] or background assumption built into a
+      learner — a convolutional network's 'prior' that nearby pixels are related, a pretrained
+      model's knowledge acting as a prior for fine-tuning — or, informally, a person's existing
+      belief, as in 'update your priors'.
+    labels:
+      - informal
+origin: >-
+  Jacob Bernoulli distinguished probabilities known a priori from those found a posteriori in Ars
+  Conjectandi (1713), and Thomas Bayes (1763) and Pierre-Simon Laplace reasoned with prior
+  probabilities explicitly. The noun 'prior' became standard in the 20th-century Bayesian revival,
+  for example in Harold Jeffreys's Theory of Probability (1939) and Howard Raiffa and Robert
+  Schlaifer's work on conjugate priors (1961).
+see_also:
+  - posterior
+  - likelihood
+  - Bayes' theorem
+  - Bayesian inference
+  - maximum a posteriori estimation
+  - inductive bias
+  - regularization
+contrast:
+  - posterior

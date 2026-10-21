@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt management
+id: prompt-management
+pos: n.
+also:
+  - prompt versioning
+  - prompt registry
+  - PromptOps
+domain: eng
+domains:
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Treating the written instructions given to AI models like valuable code: storing them in one
+  place, tracking every change, testing new versions and rolling back bad ones.
+senses:
+  - definition: >-
+      The practice and tooling for storing, versioning, testing, deploying and governing the prompts
+      used by an AI application, treating them as configuration assets separate from application
+      code. A prompt-management system keeps a registry of named [[prompt-template|templates]] with
+      variables, version history and labels such as staging and production; links each version to
+      the model and parameters it was written for and to its [[evaluation|evaluation]] results; lets
+      non-engineers such as domain experts edit and compare variants in a playground; and serves the
+      current version to applications at run time, so prompts can change or roll back without
+      redeploying code. Mature setups gate prompt changes on [[golden-dataset|golden-set]]
+      evaluations and record which prompt version produced each traced response for
+      [[llm-observability|LLM observability]]. Tools include LangSmith, Langfuse, PromptLayer,
+      Humanloop and Braintrust, though many teams simply keep prompts in version-controlled files.
+    example: >-
+      With prompt management in place, support staff tweak the triage prompt themselves and the eval
+      suite catches regressions.
+origin: >-
+  Arose in 2022–2023 as teams shipping language-model features found prompts scattered across code,
+  notebooks and documents; startups such as PromptLayer and Humanloop, followed by LLM-observability
+  platforms, began offering prompt registries, and the practice became a standard part of
+  [[llmops|LLMOps]].
+year: 2023
+note: >-
+  A prompt tuned for one model often degrades on another, so prompt versions are tied to model
+  versions. Prompt management organizes prompts but does not improve them; that is
+  [[prompt-engineering|prompt engineering]] or automated [[prompt-optimization|prompt
+  optimization]].
+see_also:
+  - prompt template
+  - prompt engineering
+  - prompt optimization
+  - LLMOps
+  - LLM observability
+  - evals-driven development

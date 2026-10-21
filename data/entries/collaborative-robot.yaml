@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: collaborative robot
+id: collaborative-robot
+pos: n.
+also:
+  - cobot
+  - collaborative application
+  - human–robot collaboration
+domain: robot
+domains:
+  - safety
+  - society
+level: core
+plain: >-
+  A robot designed to work safely right next to people without a safety cage, for example by moving
+  gently and stopping at once if it bumps into someone.
+senses:
+  - definition: >-
+      A robot built to work alongside people in the same space, sometimes in deliberate physical
+      contact with them, without the fences that separate traditional [[industrial-robot|industrial
+      robots]] from workers. Safety rests on methods set out in the ISO 10218 robot-safety
+      standards, whose 2025 edition absorbed the technical specification ISO/TS 15066: hand guiding;
+      speed and separation monitoring, which slows or stops the robot as people approach; and power
+      and force limiting, which caps contact forces and pressures at thresholds derived from human
+      pain tolerance for different body regions. Earlier editions also counted a safety-rated
+      monitored stop as a collaborative mode. Cobots are typically lightweight arms with rounded
+      surfaces, joint torque sensing and back-drivable [[actuator|actuators]]; they are easy to
+      program by demonstration and are used for machine tending, screwdriving, packaging, inspection
+      and laboratory automation. Payloads and speeds are lower than those of caged robots, and the
+      safety of an installation depends on the tool, part and task as much as on the arm.
+    example: >-
+      We put a cobot at the end of the line to palletize boxes while the operator prints labels.
+origin: >-
+  Coined at Northwestern University, where J. Edward Colgate and Michael Peshkin built 'cobots' in
+  1996 in a General Motors-funded project on assisting assembly workers; the name came from a lab
+  naming contest won by Brent Gillespie. Universal Robots' UR5 (2008) is often cited as the first
+  commercially successful cobot arm.
+year: 1996
+note: >-
+  Standards bodies increasingly treat collaboration as a property of the application rather than the
+  robot: a 'collaborative' arm holding a blade is not safe. The 2025 revision of ISO 10218
+  accordingly drops 'collaborative robot' in favor of 'collaborative application'.
+see_also:
+  - industrial robot
+  - human–robot interaction
+  - impedance control
+  - actuator
+  - end effector
+  - teleoperation
+contrast:
+  - industrial robot
+sources:
+  - text: >-
+      Colgate, J. E., Wannasuphoprasit, W. & Peshkin, M. A. (1996). Cobots: Robots for collaboration
+      with human operators. Proc. ASME International Mechanical Engineering Congress, DSC-Vol. 58.
+  - text: >-
+      ISO/TS 15066:2016. Robots and robotic devices — Collaborative robots. International
+      Organization for Standardization.
+as_of: 2026-10

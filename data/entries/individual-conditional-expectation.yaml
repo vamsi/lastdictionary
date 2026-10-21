@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: individual conditional expectation
+id: individual-conditional-expectation
+pos: n.
+also:
+  - ICE
+  - ICE plot
+  - ICE curve
+  - centered ICE plot
+domain: interp
+domains:
+  - ml
+level: specialist
+plain: >-
+  A chart that traces, for each example separately, what a model would predict as one input is swept
+  across its range, exposing differences between examples that an overall average would hide.
+senses:
+  - definition: >-
+      A plot that draws, for each instance in a dataset, the curve of the model's prediction as one
+      feature is varied over a grid while that instance's other features are held fixed. The
+      [[partial-dependence-plot|partial dependence plot]] is the pointwise average of these curves,
+      so ICE plots show what the average conceals: heterogeneous effects — a feature that raises
+      predictions for some instances and lowers them for others — signal interactions with other
+      features. Centered ICE plots anchor every curve at a common starting value so that differences
+      in shape stand out, and derivative ICE plots show where effects change. Like partial
+      dependence, ICE curves can visit unrealistic feature combinations when features are
+      correlated, and with many instances they become cluttered, so analysts plot samples or
+      clusters of curves.
+    example: >-
+      The ICE plot split into two bundles: age raised predicted risk for smokers but not for
+      non-smokers.
+origin: >-
+  Introduced by Alex Goldstein, Adam Kapelner, Justin Bleich and Emil Pitkin in 'Peeking Inside the
+  Black Box: Visualizing Statistical Learning with Plots of Individual Conditional Expectation'
+  (arXiv, 2013; Journal of Computational and Graphical Statistics, 2015).
+year: 2013
+see_also:
+  - partial dependence plot
+  - accumulated local effects
+  - local explanation
+  - global explanation
+  - model-agnostic
+sources:
+  - text: >-
+      Goldstein, A., Kapelner, A., Bleich, J. & Pitkin, E. (2015). Peeking Inside the Black Box:
+      Visualizing Statistical Learning with Plots of Individual Conditional Expectation. Journal of
+      Computational and Graphical Statistics 24(1), 44–65.

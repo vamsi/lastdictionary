@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: local explanation
+id: local-explanation
+pos: n.
+also:
+  - instance-level explanation
+  - individual explanation
+  - local interpretability
+domain: interp
+domains:
+  - ml
+level: core
+plain: >-
+  An explanation of why an AI model gave one particular answer for one particular case — this
+  patient, this loan — rather than how it behaves in general.
+senses:
+  - definition: >-
+      An explanation of a single prediction, stating which features or factors drove the model's
+      output for one input and, often, how that output would change if they changed. Most
+      [[feature-attribution|feature attribution]] methods ([[shap|SHAP]], [[lime|LIME]],
+      [[integrated-gradients|integrated gradients]], [[saliency-map|saliency maps]]),
+      [[counterfactual-explanation|counterfactual explanations]] and [[anchors|anchor rules]] are
+      local. Local explanations answer the questions that affected individuals and auditors of
+      particular decisions ask, and are what laws on explaining automated decisions typically
+      require. Because a model can behave very differently in different regions of its input space,
+      a local explanation need not generalize: what drove one applicant's denial may not matter for
+      another's. Aggregating many local explanations, as in SHAP summary plots, is one route to a
+      [[global-explanation|global explanation]].
+    example: >-
+      The local explanation for this customer cited three late payments; the next customer's cited
+      none of them.
+origin: >-
+  Explaining individual classification decisions was formalized by David Baehrens and colleagues
+  (Journal of Machine Learning Research, 2010); the local/global contrast became standard after LIME
+  (2016) put 'local' in its name.
+year: 2010
+note: >-
+  'Local' refers to the neighborhood of one input in feature space, not to a part of the model.
+see_also:
+  - global explanation
+  - feature attribution
+  - LIME
+  - SHAP
+  - counterfactual explanation
+  - right to explanation
+contrast:
+  - global explanation
+sources:
+  - text: >-
+      Baehrens, D., Schroeter, T., Harmeling, S., Kawanabe, M., Hansen, K. & Müller, K.-R. (2010).
+      How to Explain Individual Classification Decisions. Journal of Machine Learning Research 11,
+      1803–1831.

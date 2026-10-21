@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sampling bias
+id: sampling-bias
+pos: n.
+also:
+  - sample bias
+  - sample selection bias
+  - unrepresentative sample
+domain: data
+domains:
+  - math
+  - society
+level: core
+plain: >-
+  A distortion that arises when the data collected over-represents some kinds of people or
+  situations and under-represents others, so conclusions drawn from it don't hold for everyone.
+senses:
+  - definition: >-
+      Systematic error introduced by the way data are gathered, when the collection method favors
+      some parts of the target population and neglects others, so that the sample's makeup no longer
+      mirrors the population's. Unlike random sampling error, it does not shrink as the sample
+      grows. In AI, sampling bias enters through convenience sampling (images from photo-sharing
+      sites, text from the English-language web), through who participates (smartphone owners,
+      patients at one hospital) and through how data are filtered. Models then perform worse for
+      groups and conditions underrepresented in training: face-analysis systems trained mostly on
+      lighter-skinned faces, speech recognizers tuned to some accents, medical models built on one
+      population. Remedies include deliberate sampling design and stratification, reweighting or
+      resampling toward the target distribution, targeted collection of missing data, and reporting
+      performance by subgroup.
+    example: >-
+      Because the app's users skewed young and urban, the training data had a strong sampling bias.
+origin: >-
+  A classic concern of survey statistics. The best-known cautionary tale is the 1936 Literary Digest
+  poll, which mailed ballots to people found on lists such as telephone directories and car
+  registrations and wrongly predicted that Alf Landon would defeat Franklin Roosevelt; later
+  analysis showed that non-response — who chose to mail ballots back — also skewed the result. In AI
+  the issue gained prominence through audits of face-analysis systems from 2018.
+note: >-
+  Sampling bias is one form of selection bias, the broader term for any non-random selection of data
+  or subjects. It is a common cause of [[algorithmic-bias|algorithmic bias]] and of
+  [[distribution-shift|distribution shift]] between training and deployment.
+see_also:
+  - algorithmic bias
+  - distribution shift
+  - class imbalance
+  - Gender Shades
+  - data quality
+  - long tail
+  - bias

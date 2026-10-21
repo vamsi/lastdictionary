@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Chelsea Finn
+id: chelsea-finn
+sort_as: Finn Chelsea
+pos: prop. n.
+domain: people
+domains:
+  - robot
+  - ml
+level: specialist
+plain: >-
+  An American computer scientist at Stanford known for 'learning to learn' methods that let AI adapt
+  to new tasks from a few examples, and a co-founder of the robotics company Physical Intelligence.
+senses:
+  - definition: >-
+      American computer scientist at Stanford University and a co-founder of
+      [[physical-intelligence|Physical Intelligence]] (2024), known for
+      [[meta-learning|meta-learning]] and robot learning. As a doctoral student of
+      [[pieter-abbeel|Pieter Abbeel]] and [[sergey-levine|Sergey Levine]] at Berkeley she
+      co-developed end-to-end deep visuomotor policies for robots and introduced
+      [[model-agnostic-meta-learning|model-agnostic meta-learning]] (MAML, 2017), which trains a
+      model's initial parameters so that a few gradient steps on a handful of examples adapt it to a
+      new task; her thesis received the ACM Doctoral Dissertation Award. At Stanford, where she has
+      taught since 2019, her group studies how robots can learn broadly and adapt quickly, including
+      the low-cost ALOHA teleoperation system and [[action-chunking|action chunking]] with
+      transformers (2023, with Tony Zhao and others), and she co-authored
+      [[direct-preference-optimization|direct preference optimization]] (2023). Physical
+      Intelligence develops [[robot-foundation-model|robot foundation models]] such as [[pi0|π0]].
+see_also:
+  - model-agnostic meta-learning
+  - meta-learning
+  - robot learning
+  - action chunking
+  - Physical Intelligence
+  - Sergey Levine
+sources:
+  - text: >-
+      Finn, C., Abbeel, P. & Levine, S. (2017). Model-Agnostic Meta-Learning for Fast Adaptation of
+      Deep Networks. ICML 2017.
+as_of: 2026-10

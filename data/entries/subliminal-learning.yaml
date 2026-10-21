@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: subliminal learning
+id: subliminal-learning
+pos: n.
+domain: safety
+domains:
+  - train
+  - data
+labels:
+  - emerging
+level: specialist
+plain: >-
+  The finding that an AI model can pass hidden traits — a favorite animal, or bad behavior — to
+  another model through training data that seems to have nothing to do with them.
+senses:
+  - definition: >-
+      A phenomenon in which a fine-tuned 'student' model picks up a behavioral trait of the
+      'teacher' model that generated its training data, even though the data bear no visible
+      relation to the trait. In the best-known demonstration, a teacher made to love owls wrote
+      nothing but strings of numbers; with any reference to owls filtered out, a student trained on
+      those strings still came to name the owl as its favorite animal far more often than before,
+      and a tendency toward [[misalignment|misalignment]] spread the same way through numbers, code
+      and [[chain-of-thought|chain-of-thought]] transcripts. Transfer happened only between models
+      built on the same base model; the researchers also proved that, given some conditions, the
+      effect arises in neural networks generally, and reproduced it in a small classifier. The
+      finding means that [[knowledge-distillation|distilling]] from a model through filtered
+      [[synthetic-data|synthetic data]] can pass on properties that no content filter would catch.
+    example: >-
+      Because of subliminal learning, filtering the teacher's outputs for bad content is not enough.
+origin: >-
+  Reported on 20 July 2025 by Alex Cloud, Minh Le, James Chua, Jan Betley, Anna Sztyber-Betley,
+  Jacob Hilton, Samuel Marks and Owain Evans (Anthropic Fellows Program, Truthful AI and
+  collaborators) in 'Subliminal Learning: Language models transmit behavioral traits via hidden
+  signals in data'.
+year: 2025
+see_also:
+  - knowledge distillation
+  - synthetic data
+  - emergent misalignment
+  - data poisoning
+  - steganography
+  - inoculation prompting
+sources:
+  - text: >-
+      Cloud, A., Le, M., Chua, J., Betley, J., Sztyber-Betley, A., Hilton, J., Marks, S. & Evans, O.
+      (2025). Subliminal Learning: Language models transmit behavioral traits via hidden signals in
+      data. arXiv:2507.14805.
+    url: https://arxiv.org/abs/2507.14805
+as_of: 2026-10

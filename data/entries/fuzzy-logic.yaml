@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fuzzy logic
+id: fuzzy-logic
+pos: n.
+also:
+  - fuzzy set
+  - fuzzy set theory
+  - fuzzy control
+  - fuzzy logic controller
+  - membership function
+  - defuzzification
+domain: sym
+domains:
+  - math
+  - robot
+level: core
+plain: >-
+  A kind of logic that allows degrees of truth, so a statement like 'the room is warm' can be 70
+  percent true, which helps machines handle vague everyday categories.
+senses:
+  - definition: >-
+      A logic of graded truth, built on fuzzy set theory, in which a statement may hold to any
+      degree between 0 (false) and 1 (true), just as an element belongs to a set to the degree given
+      by a membership function: 24 °C might be 'warm' to degree 0.7. Connectives generalize the
+      Boolean ones, commonly with AND as minimum (or another t-norm), OR as maximum and NOT as one
+      minus the value. In fuzzy control, rules such as 'if temperature is high and rising, then fan
+      speed is fast' fire in parallel to varying degrees, their outputs are combined, and the result
+      is defuzzified into a crisp command. Such controllers suit systems that are hard to model
+      precisely but easy to describe in words, and have run cameras, washing machines, subway
+      braking and automatic transmissions. Fuzzy degrees express vagueness, not likelihood: they are
+      not probabilities and need not sum to one.
+    example: >-
+      The fuzzy controller eases the brakes gradually instead of switching between fixed levels.
+origin: >-
+  Lotfi Zadeh of the University of California, Berkeley, introduced fuzzy sets in 1965 ('Fuzzy
+  Sets', Information and Control) and developed fuzzy logic in the 1970s. Ebrahim Mamdani and Sedrak
+  Assilian built the first fuzzy controller, for a laboratory steam engine, in 1974–1975, and the
+  Sendai subway in Japan adopted fuzzy train control in 1987.
+year: 1965
+note: >-
+  Fuzzy logic was a commercial fashion in Japan in the late 1980s and 1990s; critics argued that
+  probability theory already covered its uses. In everyday speech 'fuzzy logic' can simply mean
+  muddled reasoning, a sense unrelated to the formal one.
+see_also:
+  - propositional logic
+  - rule-based system
+  - expert system
+  - uncertainty quantification
+  - non-monotonic reasoning
+contrast:
+  - propositional logic
+  - Bayesian inference
+sources:
+  - text: Zadeh, L. A. (1965). Fuzzy Sets. Information and Control 8(3), 338–353.
+  - text: >-
+      Mamdani, E. H. & Assilian, S. (1975). An Experiment in Linguistic Synthesis with a Fuzzy Logic
+      Controller. International Journal of Man-Machine Studies 7(1), 1–13.

@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Software 3.0
+id: software-3-0
+pos: n.
+domain: culture
+domains:
+  - llm
+  - eng
+labels:
+  - emerging
+level: core
+plain: >-
+  Andrej Karpathy's name for programming computers by writing plain-language instructions for AI
+  models, following traditional code (Software 1.0) and trained neural networks (Software 2.0).
+senses:
+  - definition: >-
+      A paradigm in which [[large-language-model|large language models]] are programmed through
+      natural-language [[prompt|prompts]], so that the prompt is the program and English, or any
+      human language, is the programming language. In Andrej Karpathy's scheme, Software 1.0 is
+      explicit code written by people, [[software-2-0|Software 2.0]] is neural-network weights
+      produced by optimization on data, and Software 3.0 is instructions that steer a
+      general-purpose pretrained model. He described LLMs as a new kind of computer or operating
+      system, with the [[context-window|context window]] serving as working memory, still at a stage
+      comparable to 1960s time-sharing; he argued that the three paradigms will coexist, that
+      developers will choose among them task by task, and that the near-term opportunity lies in
+      'partial autonomy' products with adjustable levels of AI control.
+    example: >-
+      Half our pipeline is Software 1.0, the classifier is 2.0, and the triage step is pure Software
+      3.0.
+origin: >-
+  Presented by Andrej Karpathy in his keynote 'Software Is Changing (Again)' at Y Combinator's AI
+  Startup School in San Francisco in June 2025, extending his 2017 essay on Software 2.0 and his
+  2023 quip that [[english-is-the-hottest-new-programming-language|English is the hottest new
+  programming language]]. Others had used the label loosely before; Karpathy's talk fixed its
+  current meaning.
+year: 2025
+see_also:
+  - Software 2.0
+  - English is the hottest new programming language
+  - vibe coding
+  - prompt engineering
+  - context engineering
+  - Andrej Karpathy

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: time to first token
+id: time-to-first-token
+pos: n.
+also:
+  - TTFT
+domain: infer
+domains:
+  - eval
+level: core
+plain: >-
+  How long a chatbot takes to start answering: the pause between pressing enter and seeing the first
+  word appear.
+senses:
+  - definition: >-
+      The interval between a request's arrival and the delivery of the first generated
+      [[token|token]] of its response. It comprises queueing delay, the [[prefill|prefill]]
+      computation over the whole prompt (growing linearly with prompt length in most layers and
+      quadratically in [[attention|attention]]), generation of the first token, and network
+      transfer. Because [[streaming|streaming]] displays tokens as they are produced, TTFT governs
+      how responsive a chat or voice interface feels, while [[time-per-output-token|time per output
+      token]] governs how fast the rest of the answer arrives. It is reduced by
+      [[prompt-caching|prompt caching]] of repeated prefixes, faster prefill hardware, scheduling
+      that prioritizes newly arrived requests, and [[disaggregated-serving|disaggregated serving]].
+      For [[reasoning-model|reasoning models]], which may think silently before answering, some
+      benchmarks report a separate time to first answer token.
+    example: >-
+      With the 50,000-token contract cached, TTFT dropped from four seconds to under one.
+origin: >-
+  In use by 2023 as LLM serving matured: Databricks' October 2023 guide to inference performance
+  defined it alongside time per output token, and serving research such as DistServe (2024) adopted
+  the TTFT/TPOT pair as its latency targets.
+year: 2023
+see_also:
+  - latency
+  - time per output token
+  - prefill
+  - streaming
+  - tokens per second
+  - prompt caching
+sources:
+  - text: >-
+      Agarwal, M. et al. (2023). LLM Inference Performance Engineering: Best Practices. Databricks
+      blog.
+    url: https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices
+  - text: >-
+      Zhong, Y. et al. (2024). DistServe: Disaggregating Prefill and Decoding for Goodput-optimized
+      Large Language Model Serving. OSDI 2024. arXiv:2401.09670.
+    url: https://arxiv.org/abs/2401.09670

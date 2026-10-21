@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Codex
+id: codex
+pos: prop. n.
+also:
+  - OpenAI Codex
+  - Codex CLI
+  - codex-1
+domain: agents
+domains:
+  - llm
+  - eng
+  - hist
+labels:
+  - trademark
+level: core
+plain: >-
+  A name OpenAI has used twice: first for a 2021 AI model that wrote code and powered the original
+  GitHub Copilot, then from 2025 for its family of coding agents.
+senses:
+  - context: Coding agents (2025 onward)
+    definition: >-
+      OpenAI's family of [[coding-agent|coding agents]], introduced in 2025. Codex CLI (April 2025)
+      is an open-source agent that runs on the developer's own machine; the cloud version (May 2025)
+      takes many assignments at once, gives each a separate [[sandbox|sandbox]] holding a copy of
+      the user's repository, and hands back proposed changes together with the terminal logs and
+      test results that back them up. That cloud agent first used codex-1, an o3
+      [[reasoning-model|reasoning model]] further trained for programming work, and had no internet
+      access while a task ran; later releases added editor extensions, code review and newer models.
+      Its launch introduced the AGENTS.md convention for repository instructions (see
+      [[agent-instruction-file|agent instruction file]]).
+    example: Kick the refactor off in Codex and review the diff after lunch.
+  - context: Code model (2021–2023)
+    definition: >-
+      A [[gpt-3|GPT-3]] descendant fine-tuned on public GitHub code, described in the 2021 paper
+      that introduced the [[humaneval|HumanEval]] benchmark — where it solved 28.8% of problems with
+      one sample, against 0% for GPT-3 — and used to power the first version of
+      [[github-copilot|GitHub Copilot]]; it was offered through OpenAI's API until its retirement in
+      2023.
+origin: >-
+  The 2021 model was introduced by Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan and colleagues
+  in 'Evaluating Large Language Models Trained on Code' (July 2021). OpenAI revived the name for
+  Codex CLI, an open-source terminal agent announced with the o3 and o4-mini models on 16 April
+  2025, and for the cloud agent on 16 May 2025.
+year: 2021
+note: >-
+  Because the name was reused, papers citing 'Codex' before 2025 mean the 2021 model, while news
+  from 2025 onward usually means the agents.
+see_also:
+  - coding agent
+  - background agent
+  - agent instruction file
+  - GitHub Copilot
+  - HumanEval
+  - Claude Code
+sources:
+  - text: >-
+      Chen, M., Tworek, J., Jun, H., Yuan, Q. et al. (2021). Evaluating Large Language Models
+      Trained on Code. arXiv:2107.03374.
+    url: https://arxiv.org/abs/2107.03374
+  - text: OpenAI (2025). Introducing Codex. 16 May 2025.
+    url: https://openai.com/index/introducing-codex/
+  - text: >-
+      OpenAI (2025). Introducing OpenAI o3 and o4-mini (announcing Codex CLI). 16 April 2025.
+    url: https://openai.com/index/introducing-o3-and-o4-mini/
+as_of: 2026-10

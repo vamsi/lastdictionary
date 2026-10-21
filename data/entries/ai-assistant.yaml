@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI assistant
+id: ai-assistant
+pos: n.
+also:
+  - advanced AI assistant
+  - general-purpose assistant
+  - assistant
+domain: core
+domains:
+  - llm
+  - agents
+  - society
+level: core
+plain: >-
+  An AI program, such as ChatGPT, Claude or Gemini, that helps a person through conversation:
+  answering questions, writing, summarizing, coding and, increasingly, taking actions on their
+  behalf.
+senses:
+  - definition: >-
+      A general-purpose AI system, usually a [[chat-model|chat-tuned]] [[large-language-model|large
+      language model]] behind a conversational interface, that carries out a user's requests in
+      natural language: answering questions, drafting and editing text, analyzing files, writing
+      code and, increasingly, acting through [[tool-use|tools]] such as web search, code execution
+      and connected applications. The assistant role is instilled in [[post-training|post-training]]
+      ([[instruction-tuning|instruction tuning]],
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]] and
+      related methods), which shapes the model to be helpful while declining harmful requests, a
+      goal often summarized as [[helpful-honest-and-harmless|helpful, honest and harmless]].
+      Assistants that plan and execute multistep tasks shade into [[ai-agent|AI agents]]. Ethicists
+      highlight questions of trust, manipulation, privacy and dependence that grow as assistants
+      gain memory, personalization and autonomy.
+    example: >-
+      Half the team uses the AI assistant to draft meeting summaries, but legal still reviews every
+      contract by hand.
+origin: >-
+  Language-model assistants emerged from alignment research: Anthropic's 'A General Language
+  Assistant as a Laboratory for Alignment' (Amanda Askell and colleagues, 2021) and OpenAI's
+  InstructGPT (2022) trained models to act as helpful assistants, and [[chatgpt|ChatGPT]] (November
+  2022) brought the format to the public. A 2024 Google DeepMind study led by Iason Gabriel, 'The
+  Ethics of Advanced AI Assistants', defined advanced assistants as artificial agents with
+  natural-language interfaces that plan and execute actions for users.
+year: 2021
+note: >-
+  Overlaps with [[chatbot|chatbot]] (any conversational program) and [[virtual-assistant|virtual
+  assistant]] (voice-first assistants such as Siri and Alexa, now being rebuilt on language models).
+  Assistants embedded in particular software are often marketed as a [[copilot|copilot]].
+see_also:
+  - chatbot
+  - virtual assistant
+  - AI agent
+  - chat model
+  - helpful, honest and harmless
+  - AI companion
+  - ChatGPT
+  - copilot
+contrast:
+  - AI agent
+  - AI companion
+sources:
+  - text: >-
+      Gabriel, I. et al. (2024). The Ethics of Advanced AI Assistants. arXiv:2404.16244.
+    url: https://arxiv.org/abs/2404.16244
+  - text: >-
+      Askell, A. et al. (2021). A General Language Assistant as a Laboratory for Alignment.
+      arXiv:2112.00861.
+    url: https://arxiv.org/abs/2112.00861
+as_of: 2026-10

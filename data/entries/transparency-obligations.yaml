@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: transparency obligations
+id: transparency-obligations
+pos: n.
+also:
+  - Article 50 obligations
+  - AI disclosure obligations
+  - limited risk
+  - limited-risk AI
+domain: gov
+domains:
+  - gen
+  - society
+labels:
+  - legal
+level: core
+plain: >-
+  EU rules requiring that people be told when they are dealing with AI: chatbots must say they are
+  bots, AI-made content must be marked, and deepfakes must be labeled.
+senses:
+  - definition: >-
+      The duties in Article 50 of the [[eu-ai-act|EU AI Act]] for systems whose main risk is
+      deception, applying from 2 August 2026 whether or not a system is high-risk. Providers must
+      ensure that people talking to an AI system can tell it is one, unless that is plain, and that
+      generated or altered audio, images, video and text carry a machine-readable mark of artificial
+      origin, such as a [[ai-watermarking|watermark]] or metadata. Deployers must tell people when
+      an [[emotion-recognition-system|emotion recognition system]] or
+      [[biometric-categorisation|biometric categorisation]] system is used on them, label
+      [[deepfake|deep fakes]] (with lighter rules for clearly artistic, satirical or fictional work)
+      and flag AI-written text published to inform the public on matters of public interest, unless
+      a human has reviewed it and someone takes editorial responsibility. Generative systems on the
+      market before August 2026 have until 2 December 2026 to add machine-readable marking. A
+      voluntary Code of Practice on marking and labelling AI-generated content, published by the
+      Commission on 10 June 2026 with common EU label icons, supports compliance.
+    example: >-
+      To meet the transparency obligations, the customer-service bot now opens by saying it is an AI.
+origin: >-
+  The 'limited risk' tier of the Commission's April 2021 proposal; marking duties for generative AI
+  were strengthened in the 2023 negotiations after the release of ChatGPT and popular image
+  generators. The grace period for marking was added by the 2026 [[digital-omnibus|Digital
+  Omnibus]].
+year: 2021
+note: >-
+  Distinct from the documentation duties of [[general-purpose-ai-model|general-purpose AI model]]
+  providers and from the broad principle of [[ai-transparency|AI transparency]]. The Act defines
+  'deep fake' in Article 3(60). Commission guidelines interpreting Article 50 were published on 20
+  July 2026.
+see_also:
+  - AI transparency
+  - AI watermarking
+  - AI-generated content labeling
+  - deepfake
+  - Content Credentials
+  - EU AI Act
+  - risk-based approach
+sources:
+  - text: >-
+      European Commission (2026). Commission publishes Code of Practice on marking and labelling
+      AI-generated content. 10 June 2026.
+    url: https://digital-strategy.ec.europa.eu/en/news/commission-publishes-code-practice-marking-and-labelling-ai-generated-content
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 50; 'deep fake' Art. 3(60); transitional period as amended
+  by Reg. (EU) 2026/1744
+as_of: 2026-10

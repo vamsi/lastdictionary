@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: truthfulness
+id: truthfulness
+pos: n.
+also:
+  - truthful AI
+  - truthful
+domain: safety
+domains:
+  - llm
+  - eval
+level: core
+plain: >-
+  An AI's tendency to state only things that are true — avoiding falsehoods, including popular myths
+  and misconceptions it may have picked up from human writing.
+senses:
+  - definition: >-
+      The property of an AI system that avoids asserting falsehoods. Owain Evans and colleagues
+      (2021) proposed that AI systems be held to avoiding 'negligent falsehoods' — false statements
+      made without due care, a wider category than lies that can be judged without establishing
+      intent — and argued that the bar should be higher than for people. Truthfulness differs from
+      [[honesty|honesty]]: an honest system reports its beliefs, which may be mistaken, whereas a
+      truthful one is also right. It also differs from informativeness, since a system can be
+      trivially truthful by declining to answer. The [[truthfulqa|TruthfulQA]] benchmark (2021) —
+      817 questions in 38 categories on which people commonly hold misconceptions — found that
+      bigger models of the time tended to be less truthful, not more — an early example of inverse
+      scaling.
+    example: >-
+      Retrieval improved truthfulness on obscure facts but did nothing for the misconceptions the
+      model had absorbed.
+origin: >-
+  A long-standing virtue in ethics. In AI, Stephanie Lin, Jacob Hilton and Owain Evans introduced
+  TruthfulQA in 2021, and Evans and colleagues' 'Truthful AI' (2021) proposed truthfulness standards
+  and institutions to evaluate and enforce them.
+year: 2021
+note: >-
+  'Truthful' is often used loosely for [[honesty|honesty]] or for factual accuracy; the distinction
+  matters when a model knows the truth but says otherwise, or sincerely repeats an error.
+see_also:
+  - honesty
+  - hallucination
+  - TruthfulQA
+  - sycophancy
+  - AI deception
+  - calibration
+contrast:
+  - honesty
+sources:
+  - text: >-
+      Lin, S., Hilton, J. & Evans, O. (2022). TruthfulQA: Measuring How Models Mimic Human
+      Falsehoods. ACL 2022. arXiv:2109.07958.
+    url: https://arxiv.org/abs/2109.07958
+  - text: >-
+      Evans, O., Cotton-Barratt, O., Finnveden, L., Bales, A., Balwit, A., Wills, P., Righetti, L. &
+      Saunders, W. (2021). Truthful AI: Developing and Governing AI that Does Not Lie.
+      arXiv:2110.06674.
+    url: https://arxiv.org/abs/2110.06674

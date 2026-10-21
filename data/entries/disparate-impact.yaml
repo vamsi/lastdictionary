@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: disparate impact
+id: disparate-impact
+pos: n.
+also:
+  - adverse impact
+  - indirect discrimination
+  - four-fifths rule
+  - 80% rule
+domain: society
+domains:
+  - gov
+labels:
+  - legal
+level: core
+plain: >-
+  When a rule or system that treats everyone alike on paper still lands much harder on one group,
+  such as women or older workers; the law can forbid this even if no one intended it.
+senses:
+  - context: Law
+    definition: >-
+      In US anti-discrimination law, the doctrine that a facially neutral practice is unlawful if it
+      disproportionately disadvantages a group defined by a [[protected-attribute|protected
+      attribute]] and the employer or provider cannot show it is justified by business necessity, or
+      if a less discriminatory alternative was available but not adopted. It contrasts with
+      disparate treatment, which requires explicit or intentional differential treatment. EU and UK
+      law address similar conduct as indirect discrimination, permitted only if objectively
+      justified and proportionate.
+  - context: Machine learning
+    definition: >-
+      A measure of [[algorithmic-bias|algorithmic bias]] borrowing the legal concept, usually the
+      ratio of favorable-outcome rates between a disadvantaged and an advantaged group; ratios below
+      0.8, the four-fifths rule of US employment-selection guidelines, are treated as a warning
+      sign. Because models can reproduce disparities through correlated features even when protected
+      attributes are excluded, disparate impact is the main legal route for challenging unintended
+      algorithmic discrimination.
+    example: >-
+      The screening model's selection ratio for applicants over 40 was 0.62, well below the
+      four-fifths threshold.
+origin: >-
+  Established by the US Supreme Court in Griggs v. Duke Power Co. (1971), which struck down diploma
+  and aptitude-test requirements that excluded Black workers without predicting job performance, and
+  codified in the Civil Rights Act of 1991. The four-fifths rule comes from the 1978 Uniform
+  Guidelines on Employee Selection Procedures. Solon Barocas and Andrew Selbst's 'Big Data's
+  Disparate Impact' (2016) brought the doctrine into AI debates.
+year: 1971
+note: >-
+  As of October 2026 the doctrine's federal standing is contested. Executive Order 14281 (April
+  2025) directed agencies to deprioritize disparate-impact enforcement, and a June 2026 opinion of
+  the Justice Department's Office of Legal Counsel, binding on federal agencies but not on courts,
+  called the EEOC's disparate-impact approach and the Uniform Guidelines unconstitutional. The
+  statutory provision remains, and private suits and state laws are still available.
+see_also:
+  - algorithmic bias
+  - demographic parity
+  - protected attribute
+  - proxy discrimination
+  - algorithmic fairness
+sources:
+  - text: Griggs v. Duke Power Co., 401 U.S. 424 (1971).
+  - text: >-
+      Barocas, S. & Selbst, A. D. (2016). Big Data's Disparate Impact. California Law Review 104,
+      671–732.
+standards: >-
+  US Civil Rights Act of 1964, Title VII, §703(k) (42 U.S.C. §2000e-2(k)), added by the Civil Rights
+  Act of 1991
+as_of: 2026-10

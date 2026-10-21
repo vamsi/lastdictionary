@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Dempster–Shafer theory
+id: dempster-shafer-theory
+pos: n.
+also:
+  - theory of belief functions
+  - evidence theory
+  - belief function
+  - Dempster's rule of combination
+  - mass function
+domain: sym
+domains:
+  - math
+level: specialist
+plain: >-
+  A theory of reasoning with uncertain evidence that lets you hold back belief — in effect saying 'I
+  don't know' — instead of being forced to divide all your confidence among the possibilities.
+senses:
+  - definition: >-
+      A theory of evidence that extends probability by letting belief rest on sets of possibilities,
+      not only on single outcomes. A mass function distributes a total of one over subsets of a
+      frame of discernment: mass on a set containing several outcomes expresses evidence that does
+      not discriminate among them, and mass on the whole frame expresses ignorance. From it come
+      belief, the total support committed to a hypothesis, and plausibility, the support not
+      committed against it, which bound an interval for that hypothesis. Dempster's rule of
+      combination fuses independent bodies of evidence by intersecting their focal sets and
+      renormalizing to discard conflict. The theory was used in [[expert-system|expert systems]] and
+      remains common in sensor fusion and reliability analysis, but the combination rule can give
+      counterintuitive results under strong conflict, as Lotfi Zadeh showed in 1979, and computation
+      grows exponentially with the size of the frame.
+origin: >-
+  Arthur Dempster introduced upper and lower probabilities in 1967, and Glenn Shafer developed them
+  into a theory of evidence in A Mathematical Theory of Evidence (1976). AI researchers took it up
+  in the 1980s as an alternative to the certainty factors of [[mycin|MYCIN]] and to
+  [[bayesian-network|Bayesian networks]].
+year: 1976
+see_also:
+  - fuzzy logic
+  - Bayesian network
+  - rule-based system
+  - uncertainty quantification
+  - expert system
+contrast:
+  - Bayesian inference
+sources:
+  - text: >-
+      Dempster, A. P. (1967). Upper and Lower Probabilities Induced by a Multivalued Mapping. Annals
+      of Mathematical Statistics 38(2), 325–339.
+  - text: >-
+      Shafer, G. (1976). A Mathematical Theory of Evidence. Princeton University Press.

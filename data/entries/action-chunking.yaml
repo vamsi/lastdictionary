@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: action chunking
+id: action-chunking
+pos: n.
+also:
+  - action chunk
+  - Action Chunking with Transformers
+  - ACT
+domain: robot
+domains:
+  - rl
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Having a robot's AI plan a short burst of upcoming movements, say the next second, all at once
+  instead of one tiny motion at a time, which makes motion smoother and mistakes rarer.
+senses:
+  - definition: >-
+      The practice of having a robot [[policy|policy]] predict a sequence of k future actions (an
+      action chunk) from each observation, rather than only the next action, and executing all or
+      part of it before querying the policy again. Because the policy is consulted only once per
+      chunk, a task of T steps needs about T/k decisions instead of T, giving small errors fewer
+      chances to compound as they do in [[behavioral-cloning|behavioral cloning]]; a chunk can also
+      carry timing, such as the pauses in human demonstrations, that the current observation alone
+      does not explain. Overlapping chunks can be blended: ACT's temporal ensembling queries the
+      policy every step and averages the predictions made for each timestep with exponentially
+      decaying weights. Chunks of tens of steps, such as 50 actions covering one second of 50 Hz
+      control, are typical in [[diffusion-policy|diffusion]] and [[flow-matching|flow-matching]]
+      policies and in [[vision-language-action-model|vision-language-action models]]. The cost is
+      slower reaction to surprises within a chunk, which is mitigated by shorter execution windows
+      or by blending each new chunk into the one still running.
+    example: With action chunking at k = 50 the gripper stopped hesitating mid-grasp.
+origin: >-
+  Named in Tony Zhao, Vikash Kumar, Sergey Levine and Chelsea Finn's April 2023 paper 'Learning
+  Fine-Grained Bimanual Manipulation with Low-Cost Hardware', which introduced Action Chunking with
+  Transformers (ACT) and the ALOHA teleoperation rig, built for under US$20,000. The authors
+  borrowed 'chunking' from psychology and neuroscience, where it describes grouping actions into
+  units executed as one.
+year: 2023
+note: >-
+  Unrelated to [[chunking|chunking]] in retrieval-augmented generation, which splits documents into
+  passages, and to chunking in cognitive architectures such as Soar.
+see_also:
+  - diffusion policy
+  - behavioral cloning
+  - imitation learning
+  - vision-language-action model
+  - teleoperation
+  - transformer
+sources:
+  - text: >-
+      Zhao, T. Z., Kumar, V., Levine, S. & Finn, C. (2023). Learning Fine-Grained Bimanual
+      Manipulation with Low-Cost Hardware. Robotics: Science and Systems. arXiv:2304.13705.
+    url: https://arxiv.org/abs/2304.13705

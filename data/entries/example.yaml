@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: example
+id: example
+pos: n.
+also:
+  - training example
+  - data point
+  - instance
+  - sample
+  - observation
+  - record
+domain: core
+domains:
+  - ml
+  - data
+level: core
+plain: >-
+  A single item of data used to train or test an AI model, such as one photo with its label, one
+  email marked spam or not, or one question with its answer.
+senses:
+  - context: Machine learning
+    definition: >-
+      A single unit of data in a [[dataset|dataset]]: an input, such as a feature vector, image,
+      document or conversation, optionally paired with a target [[label|label]] or desired output.
+      Training examples are used to fit a model; validation and test examples to tune and evaluate
+      it. Statisticians speak of observations, database users of records or rows, and vision and
+      text researchers of instances. In [[large-language-model|language-model]]
+      [[pretraining|pretraining]] the unit is less clear-cut, since text is cut into fixed-length
+      sequences of [[token|tokens]]; examples given inside a prompt are called shots
+      ([[few-shot-prompting|few-shot prompting]]). Special kinds include
+      [[adversarial-example|adversarial examples]], crafted to cause errors, and hard negatives,
+      near-miss examples used to sharpen a model's distinctions.
+    example: >-
+      Each example is a customer email paired with the department that should handle it.
+origin: >-
+  Learning 'from examples' is an old theme in psychology and AI, as in Patrick Winston's 1970 MIT
+  thesis on learning structural descriptions from examples. 'Training example' was standard in
+  machine-learning texts by the 1980s.
+note: >-
+  'Sample' is ambiguous: in statistics a sample is a set of observations, in machine learning often
+  a single example, and in generative AI a single generated output, as in 'sampling from the model'.
+  Duplicated examples distort both training and evaluation ([[data-contamination|data
+  contamination]]).
+see_also:
+  - dataset
+  - label
+  - training set
+  - test set
+  - few-shot prompting
+  - adversarial example
+  - data contamination
+  - sampling
+contrast:
+  - feature

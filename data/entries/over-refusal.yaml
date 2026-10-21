@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: over-refusal
+id: over-refusal
+pos: n.
+also:
+  - overrefusal
+  - false refusal
+  - exaggerated safety
+  - over-conservativeness
+domain: safety
+domains:
+  - llm
+  - eval
+level: core
+plain: >-
+  When an AI wrongly refuses a harmless request because it superficially resembles a harmful one —
+  like declining to explain how to 'kill' a frozen computer program.
+senses:
+  - definition: >-
+      The failure mode in which a model declines safe requests, typically because they contain words
+      or topics associated with harm ('how do I kill a Python process?', 'which household chemicals
+      should never be mixed?'), or smothers answers in needless warnings and moralizing.
+      Over-refusal reduces usefulness, frustrates users and can push them toward less careful tools;
+      measured alongside compliance with harmful requests, it exposes the trade-off between
+      helpfulness and harmlessness that safety training must navigate. Benchmarks such as XSTest
+      (2023) and OR-Bench (2024) pair benign prompts that look superficially unsafe with genuinely
+      harmful ones. Remedies include training on borderline examples, clearer
+      [[model-specification|specifications]] of permitted content, reasoning about intent and
+      context ([[deliberative-alignment|deliberative alignment]]) and output-centered approaches
+      such as [[safe-completion|safe completion]].
+    example: The new checkpoint cut over-refusal on borderline medical questions by half.
+origin: >-
+  Complaints about overcautious chatbots grew in 2023, notably about Meta's Llama 2 chat models.
+  Paul Röttger and colleagues' XSTest (2023) called the problem 'exaggerated safety'; 'over-refusal'
+  gained currency through benchmarks such as Justin Cui and colleagues' OR-Bench (2024) and through
+  laboratory reporting.
+year: 2023
+note: >-
+  Not every refusal of an innocent-looking request is over-refusal: some harmless-seeming questions
+  are steps toward harm. The acceptable rate is a policy choice that developers set differently.
+see_also:
+  - refusal
+  - safe completion
+  - model specification
+  - deliberative alignment
+  - alignment tax
+  - helpful, honest and harmless
+sources:
+  - text: >-
+      Röttger, P. et al. (2024). XSTest: A Test Suite for Identifying Exaggerated Safety Behaviours
+      in Large Language Models. NAACL 2024.
+  - text: >-
+      Cui, J. et al. (2024). OR-Bench: An Over-Refusal Benchmark for Large Language Models. arXiv
+      preprint.

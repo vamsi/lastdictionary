@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: steganography
+id: steganography
+pos: n.
+also:
+  - steganographic
+  - encoded reasoning
+  - steganographic collusion
+pronunciation: steg-uh-NOG-ruh-fee
+domain: safety
+domains:
+  - sec
+  - llm
+level: specialist
+plain: >-
+  Hiding a secret message inside something that looks ordinary. In AI safety, the worry is that AI
+  systems could hide plans, or signals to one another, inside innocent-looking text.
+senses:
+  - context: AI safety
+    definition: >-
+      The concealment of information by an AI model inside apparently ordinary outputs, so that
+      humans or monitors reading them miss it. Two forms concern safety researchers: encoded
+      reasoning, in which a model's [[chain-of-thought|chain of thought]] carries information
+      through word choice, formatting or other subtle features rather than its plain meaning,
+      defeating [[chain-of-thought-monitoring|chain-of-thought monitoring]]; and steganographic
+      collusion, in which instances of a model, or different models, pass covert signals — for
+      example so that an [[untrusted-monitoring|untrusted monitor]] can recognize its counterpart's
+      attacks. Optimization pressure can produce such encodings without any intent, as when an
+      image-translation network was found hiding source details in imperceptible noise. Defenses
+      include paraphrasing outputs before they are passed on or reused, limiting the channel
+      capacity available, and evaluating models' ability to encode and decode hidden messages.
+    example: >-
+      Paraphrasing the scratchpad before the next step should destroy any steganography the model is
+      using.
+  - context: Computer security
+    definition: >-
+      The general practice of hiding a message within an innocuous carrier — an image, an audio file
+      or text — so that its very existence goes unnoticed, as distinct from encryption, which hides
+      only its content. Text [[ai-watermarking|watermarking]] of model output is a related
+      technique.
+origin: >-
+  From Greek steganos ('covered') and -graphia ('writing'); Johannes Trithemius's 'Steganographia'
+  (written c. 1499, printed 1606) gave the name. Casey Chu, Andrey Zhmoginov and Mark Sandler (2017)
+  reported CycleGAN hiding information in its images, and Fabien Roger and Ryan Greenblatt's
+  'Preventing Language Models From Hiding Their Reasoning' (2023) framed encoded reasoning as a
+  safety problem.
+year: 2017
+note: >-
+  Collusion between AI instances need not be steganographic: copies of a model may coordinate by
+  independently choosing the same 'obvious' signal or moment, without any hidden channel.
+see_also:
+  - chain-of-thought monitoring
+  - monitorability
+  - untrusted monitoring
+  - AI watermarking
+  - AI control
+  - chain-of-thought faithfulness
+sources:
+  - text: >-
+      Roger, F. & Greenblatt, R. (2023). Preventing Language Models From Hiding Their Reasoning.
+      arXiv preprint.
+  - text: >-
+      Chu, C., Zhmoginov, A. & Sandler, M. (2017). CycleGAN, a Master of Steganography. NIPS 2017
+      Workshop on Machine Deception.

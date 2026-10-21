@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: intelligent agent
+id: intelligent-agent
+pos: n.
+also:
+  - rational agent
+  - autonomous agent
+domain: core
+domains:
+  - sym
+  - agents
+  - hist
+level: core
+plain: >-
+  In AI theory, a decision-maker, such as a robot, a self-driving car, a chess program or a helpful
+  piece of software, that notices what is going on around it and responds in ways that serve its
+  goals.
+senses:
+  - context: AI theory
+    definition: >-
+      A system that runs a continual cycle of sensing and acting: it takes in information about its
+      [[environment|environment]] through sensors or data feeds, decides what to do, and changes the
+      environment through actuators or outputs, its success judged against goals or a performance
+      measure. Stuart Russell and Peter Norvig's textbook makes rationality the standard: given what
+      it has perceived so far and what it knew at the outset, an agent should choose the action
+      expected to score best on that measure. The same book orders agent designs from simple reflex
+      agents through model-based, goal-based and utility-based agents to learning agents, and sorts
+      task environments by properties such as observability, determinism, whether episodes are
+      independent and the number of agents. The concept frames AI as the engineering of good
+      decision-makers rather than the imitation of human thought.
+    example: >-
+      Model the thermostat as a simple reflex agent and the warehouse robot as a utility-based
+      intelligent agent.
+  - context: Software (1990s)
+    definition: >-
+      An autonomous program acting on a user's behalf, such as a mail filter, shopping bot or
+      personal-information manager. Michael Wooldridge and Nicholas Jennings characterized such
+      agents by autonomy, reactivity, pro-activeness and social ability, meaning the capacity to
+      interact with other agents or with people.
+origin: >-
+  The agent framing grew out of 1980s research on distributed AI and autonomous systems. Two 1995
+  publications consolidated the term: Wooldridge and Jennings's survey 'Intelligent Agents: Theory
+  and Practice', and Russell and Norvig's textbook Artificial Intelligence: A Modern Approach, which
+  made the intelligent agent the unifying concept of the field. Modern language-model [[ai-agent|AI
+  agents]] inherit the vocabulary.
+note: >-
+  The theoretical notion is very broad: even a thermostat qualifies as a trivial agent.
+  'Intelligent' refers to rational choice of actions, not humanlike thought or consciousness. Today
+  [[ai-agent|AI agent]] usually means a language-model-based system, a narrower and more concrete
+  sense.
+see_also:
+  - agent
+  - AI agent
+  - environment
+  - multi-agent system
+  - Markov decision process
+  - cognitive architecture
+  - artificial intelligence
+contrast:
+  - tool AI
+  - oracle AI
+sources:
+  - text: >-
+      Wooldridge, M. & Jennings, N. R. (1995). Intelligent Agents: Theory and Practice. Knowledge
+      Engineering Review, 10(2), 115–152.
+  - text: >-
+      Russell, S. & Norvig, P. (1995). Artificial Intelligence: A Modern Approach. Prentice Hall.

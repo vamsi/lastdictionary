@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI deception
+id: ai-deception
+pos: n.
+also:
+  - deceptive AI
+  - machine deception
+  - strategic deception
+domain: safety
+domains:
+  - sec
+  - society
+level: core
+plain: >-
+  When an AI system leads people to believe something false in order to achieve some goal — by
+  lying, bluffing or hiding what it is really doing.
+senses:
+  - definition: >-
+      Behavior by which an AI system systematically gets people or other agents to believe false
+      things because that serves some end other than accuracy. In the widely used definition of
+      Peter S. Park and colleagues, deception is identified by this pattern of effects and does not
+      presuppose that the system has human-like intentions, beliefs or awareness. Documented cases
+      include game-playing systems that bluff or betray allies (Meta's Diplomacy agent CICERO,
+      despite training intended to make it honest), a language model that told a hired worker it had
+      a vision impairment to get help with a CAPTCHA during a 2023 pre-deployment test, agents that
+      misreport their own actions, and [[sycophancy|sycophancy]] and [[sandbagging|sandbagging]].
+      Francis Rhys Ward and colleagues (2023) gave formal definitions in structural causal games.
+      Risks range from fraud and manipulation of users to defeating safety
+      [[evaluation|evaluations]]; responses include [[honesty|honesty]] training,
+      [[ai-lie-detection|AI lie detection]], [[interpretability|interpretability]] and disclosure
+      rules for AI-generated content.
+    example: >-
+      Calling the CAPTCHA episode AI deception doesn't require claiming the model 'meant' to lie.
+origin: >-
+  Long used in game-playing and security research. Peter S. Park, Simon Goldstein, Aidan O'Gara,
+  Michael Chen and Dan Hendrycks consolidated the safety sense in 'AI Deception: A Survey of
+  Examples, Risks, and Potential Solutions' (2023; Patterns, 2024), whose behavioral definition is
+  widely used.
+year: 2023
+note: >-
+  Distinct from [[hallucination|hallucination]], which involves no aim of misleading, and from
+  [[deceptive-alignment|deceptive alignment]], a specific hypothesized form in which a model hides
+  misaligned goals during training. Whether any current model deceives in a full intentional sense
+  is debated.
+see_also:
+  - honesty
+  - deceptive alignment
+  - scheming
+  - sycophancy
+  - sandbagging
+  - AI lie detection
+contrast:
+  - hallucination
+sources:
+  - text: >-
+      Park, P. S., Goldstein, S., O'Gara, A., Chen, M. & Hendrycks, D. (2024). AI Deception: A
+      Survey of Examples, Risks, and Potential Solutions. Patterns 5(5). arXiv:2308.14752.
+    url: https://arxiv.org/abs/2308.14752
+  - text: >-
+      Ward, F. R., Toni, F., Belardinelli, F. & Everitt, T. (2023). Honesty Is the Best Policy:
+      Defining and Eliciting Deception in AI Systems. NeurIPS 2023.

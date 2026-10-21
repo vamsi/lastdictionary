@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Markov decision process
+id: markov-decision-process
+pos: n.
+also:
+  - MDP
+  - Markov decision problem
+domain: rl
+domains:
+  - math
+level: core
+plain: >-
+  A mathematical description of a step-by-step decision problem: each step you pick an action,
+  receive a reward and then land in a new situation, drawn at random from odds that depend only on
+  the current situation and your choice.
+senses:
+  - definition: >-
+      The standard formalism for sequential decision-making under uncertainty with fully observed
+      states, defined by a set of [[state|states]], a set of [[action|actions]], transition
+      probabilities p(s′ | s, a), a [[reward-function|reward function]] and usually a
+      [[discount-factor|discount factor]] γ, sometimes with an initial-state distribution and a
+      horizon. Its defining assumption is the [[markov-property|Markov property]]: the next state
+      and reward depend only on the current state and action, not on earlier history. A solution is
+      a [[policy|policy]] that maximizes expected [[return|return]]. With a known model, finite MDPs
+      are solved by [[dynamic-programming|dynamic programming]] ([[value-iteration|value
+      iteration]], [[policy-iteration|policy iteration]]) or linear programming;
+      [[reinforcement-learning|reinforcement learning]] addresses the case in which the agent must
+      learn from sampled experience instead. Extensions include the
+      [[partially-observable-markov-decision-process|partially observable Markov decision process]],
+      semi-MDPs for actions of varying duration, constrained MDPs, and stochastic (Markov) games
+      with several agents.
+    example: >-
+      We framed inventory control as an MDP whose state is the stock level and whose actions are
+      order sizes.
+formula_latex: \mathcal{M} = (\mathcal{S}, \mathcal{A}, p, r, \gamma), \qquad p(s' \mid s, a) =
+  \Pr\left( S_{t+1} = s' \mid S_t = s,\, A_t = a \right)
+origin: >-
+  Richard Bellman introduced the framework in 'A Markovian Decision Process' (Journal of Mathematics
+  and Mechanics, 1957), building on his dynamic programming and on Lloyd Shapley's stochastic games
+  (1953). Ronald Howard's book Dynamic Programming and Markov Processes (1960), with its
+  policy-iteration algorithm, popularized MDPs in operations research; RL adopted them as its
+  foundation in the late 1980s.
+year: 1957
+note: >-
+  Real problems are rarely exactly Markov; practitioners make them approximately so by enriching the
+  state, for example by stacking recent frames or adding memory.
+see_also:
+  - Markov property
+  - partially observable Markov decision process
+  - Bellman equation
+  - dynamic programming
+  - policy
+  - reward function
+contrast:
+  - Markov chain
+sources:
+  - text: >-
+      Bellman, R. (1957). A Markovian Decision Process. Journal of Mathematics and Mechanics 6(5),
+      679–684.
+  - text: Howard, R. A. (1960). Dynamic Programming and Markov Processes. MIT Press.
+  - text: >-
+      Puterman, M. L. (1994). Markov Decision Processes: Discrete Stochastic Dynamic Programming.
+      Wiley.

@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cooperative inverse reinforcement learning
+id: cooperative-inverse-reinforcement-learning
+pos: n.
+also:
+  - CIRL
+  - assistance game
+  - assistance games
+  - cooperative IRL
+domain: safety
+domains:
+  - rl
+  - math
+level: specialist
+plain: >-
+  A model of a human and an AI working as a team, where only the human knows the goal and the AI
+  must work it out while helping.
+senses:
+  - definition: >-
+      A formal model of human–AI assistance, proposed by Dylan Hadfield-Menell and colleagues in
+      2016, in which a human and a robot play a cooperative game whose payoff is the human's goal, a
+      goal the robot cannot see and must work out while helping. The robot's best strategy therefore
+      mixes gathering clues about that goal from the human's behavior with acting on its current
+      best guess, and the human's best strategy includes teaching — choosing actions that are
+      informative, not merely competent. Classical [[inverse-reinforcement-learning|inverse
+      reinforcement learning]], by contrast, has the robot watch an expert from the sidelines and
+      then pursue the inferred reward as its own. Because the two players want the same thing, the
+      authors could find their best joint behavior by planning for one imaginary coordinator: a
+      single [[partially-observable-markov-decision-process|POMDP]] in which the human's goal is the
+      hidden variable. CIRL is the formal core of Stuart Russell's proposal that machines should be
+      uncertain about human preferences, and it underlies the [[off-switch-game|off-switch game]].
+    example: >-
+      Framed as a CIRL game, asking a clarifying question is just optimal information gathering.
+origin: >-
+  Introduced by Dylan Hadfield-Menell, Anca Dragan, Pieter Abbeel and Stuart Russell in 'Cooperative
+  Inverse Reinforcement Learning' (NeurIPS 2016). Russell's book 'Human Compatible' (2019) and later
+  papers generalized the framework under the name 'assistance games'.
+year: 2016
+note: >-
+  Critics note that CIRL assumes a fixed, well-defined human reward function and a near-optimal
+  human, both unrealistic, and that a CIRL agent with a confident but wrong prior can still resist
+  correction.
+see_also:
+  - value learning
+  - inverse reinforcement learning
+  - off-switch game
+  - corrigibility
+  - Stuart Russell
+  - Center for Human-Compatible AI
+contrast:
+  - inverse reinforcement learning
+sources:
+  - text: >-
+      Hadfield-Menell, D., Dragan, A., Abbeel, P. & Russell, S. (2016). Cooperative Inverse
+      Reinforcement Learning. Advances in Neural Information Processing Systems 29.
+      arXiv:1606.03137.
+    url: https://arxiv.org/abs/1606.03137

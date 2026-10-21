@@ -1,0 +1,147 @@
+# The dictionary's classification: seven families of domains, plus the labels, levels and
+# parts of speech an entry may use. Entry files validate against the codes defined here.
+# Changing a code here changes what every entry may say, so treat edits as editorial decisions.
+
+families:
+  - n: 1
+    name: Foundations
+    desc: "The ideas the rest is built on: what AI is, the mathematics beneath it, the symbolic tradition and the landmarks of its history."
+    domains: [core, math, sym, hist]
+  - n: 2
+    name: Learning
+    desc: How machines learn from data and from reward, from linear regression to the training of frontier models.
+    domains: [ml, dl, rl, train, data]
+  - n: 3
+    name: Models & Systems
+    desc: "The systems themselves: language models, generative media, perception and robots, and the chips and methods that run them."
+    domains: [llm, gen, percep, robot, infer, hw]
+  - n: 4
+    name: Building with AI
+    desc: Agents and harnesses, the engineering of AI products, and how their performance is measured.
+    domains: [agents, eng, eval]
+  - n: 5
+    name: Understanding & Safety
+    desc: Looking inside models, keeping them safe and secure, and the long view toward AGI and superintelligence.
+    domains: [interp, safety, sec, asi]
+  - n: 6
+    name: Society
+    desc: Law and policy, ethics and economics, minds and meaning, and the culture and slang of the AI world.
+    domains: [gov, society, mind, culture]
+  - n: 7
+    name: Who's Who
+    desc: The people and organizations whose ideas and decisions shaped the field.
+    domains: [people, orgs]
+
+domains:
+  core:
+    name: Core Concepts
+    desc: "The big ideas: AI, models, training, inference, and the words with many meanings."
+  math:
+    name: Mathematics & Statistics
+    desc: "Vectors, gradients, probability and information: the mathematics under the hood."
+  sym:
+    name: Symbolic & Classical AI
+    desc: "Logic, search, planning and knowledge representation: AI before deep learning, and alongside it."
+  hist:
+    name: History & Landmarks
+    desc: Landmark events, systems, papers and prizes, from Dartmouth to ChatGPT.
+  ml:
+    name: Machine Learning
+    desc: "Classical machine learning: regression, trees, ensembles, clustering and the metrics that judge them."
+  dl:
+    name: Deep Learning
+    desc: "Neural networks: their layers and architectures, and how they are trained."
+  rl:
+    name: Reinforcement Learning
+    desc: "Learning from reward: agents, environments, policies and values."
+  train:
+    name: Training & Post-training
+    desc: How frontier models are pretrained, scaled, post-trained and fine-tuned.
+  data:
+    name: Data & Datasets
+    desc: Datasets, labels, corpora and provenance, and the problems data brings.
+  llm:
+    name: Language Models & Transformers
+    desc: "Transformers, tokens, decoding and prompting: the language-model vocabulary."
+  gen:
+    name: Generative Media
+    desc: "Models that make images, video and sound: GANs, diffusion and beyond."
+  percep:
+    name: Vision, Speech & Perception
+    desc: "Seeing and hearing: computer vision, speech and audio."
+  robot:
+    name: Robotics & Embodied AI
+    desc: Robots, embodiment, control and self-driving vehicles.
+  infer:
+    name: Inference & Efficiency
+    desc: "Running models fast and cheaply: serving, caching, quantization."
+  hw:
+    name: Hardware & Compute
+    desc: Chips, memory, interconnects, data centers and number formats.
+  agents:
+    name: Agents & Harnesses
+    desc: Agents, harnesses, tools, context and memory.
+  eng:
+    name: AI Engineering & MLOps
+    desc: "Building AI products: retrieval, APIs, deployment, monitoring and tooling."
+  eval:
+    name: Evaluation & Benchmarks
+    desc: Benchmarks, metrics and how AI is measured.
+  interp:
+    name: Interpretability & Steering
+    desc: "Looking inside models: features, circuits, steering and explanations."
+  safety:
+    name: Safety & Alignment
+    desc: Alignment, oversight, and the ways AI systems can go wrong.
+  sec:
+    name: Security & Misuse
+    desc: Attacks on AI, attacks with AI, and the defenses.
+  asi:
+    name: AGI & Superintelligence
+    desc: AGI, superintelligence, takeoff, timelines and existential risk.
+  gov:
+    name: Governance, Policy & Law
+    desc: Laws, standards, treaties, summits and industry frameworks.
+  society:
+    name: Society, Ethics & Economy
+    desc: Fairness, work, information, wellbeing and the economy.
+  mind:
+    name: Philosophy & Mind
+    desc: Intelligence, consciousness, understanding and moral status.
+  culture:
+    name: Culture & Slang
+    desc: "Slang, memes and episodes: the living language of the AI world."
+  people:
+    name: People
+    desc: The pioneers, researchers and builders whose ideas and decisions shaped AI.
+  orgs:
+    name: Organizations & Venues
+    desc: Labs, institutes, safety organizations, conferences and the places AI research is published.
+
+# Usage labels. An entry or a single sense may carry any of these.
+labels:
+  emerging: Coined or newly prominent around 2024–2026; usage still settling.
+  slang: Informal in-group usage.
+  informal: Casual but widely understood.
+  historical: Mainly of historical interest.
+  deprecated: Superseded or discouraged; the entry names the replacement.
+  contested: Its meaning, validity or appropriateness is disputed.
+  figurative: A metaphor in technical use.
+  trademark: A product, brand or project name.
+  legal: Defined in law or regulation.
+
+# Reader levels, in order from broadest to most specialised.
+levels:
+  essential: Essential
+  core: Core
+  specialist: Specialist
+
+# Parts of speech, as abbreviated in entries, with their full names.
+pos:
+  n.: noun
+  v.: verb
+  adj.: adjective
+  adv.: adverb
+  abbr.: abbreviation
+  phr.: phrase
+  prop. n.: proper noun

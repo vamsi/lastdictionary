@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: safe reinforcement learning
+id: safe-reinforcement-learning
+pos: n.
+also:
+  - safe RL
+  - constrained reinforcement learning
+  - constrained Markov decision process
+  - CMDP
+  - safe exploration
+domain: rl
+domains:
+  - safety
+  - robot
+level: specialist
+plain: >-
+  Reinforcement learning designed to avoid dangerous or unacceptable behavior — both in what the
+  finished agent does and in the risky experiments it might try while still learning.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement learning]] in which avoiding unacceptable outcomes
+      counts alongside [[return|return]], whether the danger lies in the exploratory actions taken
+      while learning or in the behavior of the finished policy. A common formalization is the
+      constrained [[markov-decision-process|Markov decision process]], in which the agent maximizes
+      reward subject to limits on expected cumulative costs such as collisions, energy use or rule
+      violations, solved with Lagrangian methods or constrained policy optimization. Other strands
+      optimize risk-sensitive criteria, such as conditional value at risk, instead of the mean;
+      restrict exploration to actions certified safe by a model, a 'shield' or a control-barrier
+      function (safe exploration); learn conservatively from logged data
+      ([[offline-reinforcement-learning|offline reinforcement learning]]); and keep humans able to
+      intervene. Benchmarks such as OpenAI's Safety Gym (2019) and its successors measure the
+      trade-off between reward and cost. The field overlaps with [[ai-safety|AI safety]] concerns
+      such as [[reward-hacking|reward hacking]], [[specification-gaming|specification gaming]] and
+      [[safe-interruptibility|safe interruptibility]], which arise when the reward itself fails to
+      encode what is unsafe.
+    example: >-
+      We framed the warehouse robot as a constrained MDP: maximize throughput while keeping expected
+      collisions below one per thousand hours.
+origin: >-
+  Constrained MDPs were developed in operations research and synthesized in Eitan Altman's
+  Constrained Markov Decision Processes (1999). Javier García and Fernando Fernández's 2015 survey
+  in the Journal of Machine Learning Research consolidated safe reinforcement learning as a field;
+  Joshua Achiam and colleagues' constrained policy optimization (2017) and OpenAI's Safety Gym
+  (2019) carried it into deep RL.
+see_also:
+  - AI safety
+  - reward hacking
+  - offline reinforcement learning
+  - safe interruptibility
+  - Markov decision process
+  - specification gaming
+sources:
+  - text: >-
+      García, J. & Fernández, F. (2015). A Comprehensive Survey on Safe Reinforcement Learning.
+      Journal of Machine Learning Research 16(42), 1437–1480.
+    url: https://jmlr.org/papers/v16/garcia15a.html
+  - text: Altman, E. (1999). Constrained Markov Decision Processes. Chapman & Hall/CRC.
+  - text: >-
+      Achiam, J., Held, D., Tamar, A. & Abbeel, P. (2017). Constrained Policy Optimization. ICML
+      2017.

@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: teacher forcing
+id: teacher-forcing
+pos: n.
+also:
+  - teacher-forced training
+domain: dl
+domains:
+  - llm
+level: core
+plain: >-
+  Training a model that writes one word at a time by always feeding it the correct previous words,
+  rather than its own possibly mistaken guesses, while it learns to predict the next one.
+senses:
+  - definition: >-
+      A training procedure for sequence models that predict one element at a time, in which the
+      input at each position is the ground-truth previous element from the training data rather than
+      the model's own previous prediction. Because all targets are known in advance, the
+      per-position losses do not depend on one another's outputs, so a [[transformer|transformer]]
+      can compute them for a whole sequence in a single parallel [[forward-pass|forward pass]] using
+      a [[causal-mask|causal mask]]; this is how [[next-token-prediction|next-token prediction]]
+      pretraining of [[large-language-model|large language models]] and
+      [[supervised-fine-tuning|supervised fine-tuning]] work. Teacher forcing gives stable,
+      efficient maximum-likelihood training, but the model never practices recovering from its own
+      errors, creating a mismatch between training and generation known as [[exposure-bias|exposure
+      bias]]. Remedies include scheduled sampling, professor forcing, sequence-level training and,
+      for language models, [[reinforcement-learning|reinforcement learning]] on the model's own
+      samples.
+    example: >-
+      Training loss looks great under teacher forcing, but free-running generations drift after a
+      few sentences.
+origin: >-
+  The term is credited to Ronald J. Williams and David Zipser, who used it in 'A Learning Algorithm
+  for Continually Running Fully Recurrent Neural Networks' (Neural Computation, 1989): replacing a
+  unit's output with the teacher signal during training sped up and stabilized learning in recurrent
+  networks. The practice of feeding target values back as inputs was already in use at the time.
+year: 1989
+see_also:
+  - exposure bias
+  - next-token prediction
+  - recurrent neural network
+  - autoregressive model
+  - causal mask
+  - sequence-to-sequence model
+sources:
+  - text: >-
+      Williams, R. J. & Zipser, D. (1989). A Learning Algorithm for Continually Running Fully
+      Recurrent Neural Networks. Neural Computation 1(2), 270–280.

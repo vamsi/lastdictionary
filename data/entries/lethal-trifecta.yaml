@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: lethal trifecta
+id: lethal-trifecta
+pos: n.
+also:
+  - lethal trifecta for AI agents
+  - Agents Rule of Two
+domain: sec
+domains:
+  - agents
+labels:
+  - emerging
+  - informal
+level: core
+plain: >-
+  A rule of thumb for AI assistants: one that can see your private data, reads material from
+  outsiders and can send messages out can be manipulated by those outsiders into handing your data
+  over.
+senses:
+  - definition: >-
+      The combination of three capabilities in an [[ai-agent|AI agent]] or LLM application that
+      makes data theft through [[prompt-injection|prompt injection]] possible: access to private
+      data, exposure to untrusted content, and the ability to communicate externally (sending email,
+      making web requests, or rendering links and images that load remote URLs). When all three are
+      present, [[indirect-prompt-injection|instructions planted]] in the untrusted content can steer
+      the agent to collect the private data and transmit it through the outbound channel. Since
+      injections cannot yet be reliably blocked, the proposed defense is architectural: remove at
+      least one leg for any given task, for example by cutting off external communication once
+      untrusted content has entered the context. The concept is widely used in agent-security
+      design, notably for tool ecosystems built on the [[model-context-protocol|Model Context
+      Protocol]], where users can unwittingly assemble all three.
+    example: >-
+      That setup is a lethal trifecta: the agent reads your inbox, processes mail from anyone and
+      can post to the web.
+origin: >-
+  Coined by Simon Willison in a blog post of 16 June 2025, 'The lethal trifecta for AI agents:
+  private data, untrusted content, and external communication', building on his writing about prompt
+  injection since 2022. Meta's 'Agents Rule of Two' (31 October 2025) generalized it beyond data
+  theft: until prompt injection can be reliably stopped, an agent session should combine at most two
+  of processing untrustworthy input, accessing sensitive systems or private data, and changing state
+  or communicating externally.
+year: 2025
+see_also:
+  - prompt injection
+  - indirect prompt injection
+  - excessive agency
+  - tool poisoning
+  - AI agent
+  - confused deputy
+sources:
+  - text: >-
+      Willison, S. (2025). The lethal trifecta for AI agents: private data, untrusted content, and
+      external communication. Blog post, 16 June 2025.
+    url: https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
+  - text: >-
+      Meta AI (2025). Agents Rule of Two: A Practical Approach to AI Agent Security. Meta AI blog,
+      31 October 2025.
+    url: https://ai.meta.com/blog/practical-ai-agent-security/
+as_of: 2026-10

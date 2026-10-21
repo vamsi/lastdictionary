@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agent instruction file
+id: agent-instruction-file
+pos: n.
+also:
+  - AGENTS.md
+  - CLAUDE.md
+  - GEMINI.md
+  - .cursorrules
+  - rules file
+  - project instructions
+domain: agents
+domains:
+  - eng
+labels:
+  - emerging
+level: core
+plain: >-
+  A plain-text file kept in a software project that tells AI coding agents how the project works —
+  how to build and test it, which conventions to follow, what to avoid — read at the start of every
+  session.
+senses:
+  - definition: >-
+      A Markdown file, placed in a repository, a user's home directory or an organization's managed
+      configuration, whose contents a [[coding-agent|coding agent]] or other [[ai-agent|AI agent]]
+      loads into its [[context-window|context window]] at the start of each session as persistent
+      instructions: build and test commands, architecture notes, coding conventions, review rules,
+      forbidden actions. Conventions include AGENTS.md, an open, tool-neutral format; CLAUDE.md for
+      Claude Code, which since September 2026 falls back to AGENTS.md when a project has no
+      CLAUDE.md; GEMINI.md for Gemini CLI; and Cursor's rules files. Files can be nested, the one
+      nearest the code being edited taking precedence in large repositories, and some formats
+      support importing other files. In the AGENTS.md project's phrase they are a 'README for
+      agents', separating machine-oriented guidance from human documentation. Their instructions are
+      advisory — the model may still deviate, and long files dilute attention — so teams keep them
+      short and pair them with deterministic [[hook|hooks]] and [[permission-system|permissions]].
+    example: >-
+      Put the test command and the rule about generated files in the agent instruction file so every
+      session knows them.
+origin: >-
+  Cursor's .cursorrules file (in use by 2024) and Claude Code's CLAUDE.md (February 2025) were early
+  examples. OpenAI's Codex launch (May 2025) promoted AGENTS.md, released in August 2025 as an open
+  format developed with Amp, Google's Jules, Cursor and Factory; it was donated to the
+  [[agentic-ai-foundation|Agentic AI Foundation]] in December 2025, when more than 60,000
+  open-source projects used it.
+year: 2024
+note: >-
+  Because these files are read as trusted instructions, a malicious change to one is a form of
+  [[prompt-injection|prompt injection]]; edits deserve code review. Distinct from
+  [[agent-memory|agent memory]] that an agent writes for itself.
+see_also:
+  - context engineering
+  - agent skill
+  - hook
+  - system prompt
+  - coding agent
+  - agent memory
+  - Agentic AI Foundation
+contrast:
+  - system prompt
+sources:
+  - text: AGENTS.md. A simple, open format for guiding coding agents.
+    url: https://agents.md/
+  - text: >-
+      Linux Foundation (2025). Linux Foundation Announces the Formation of the Agentic AI Foundation.
+    url: https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation
+  - text: Anthropic. How Claude remembers your project. Claude Code documentation.
+    url: https://code.claude.com/docs/en/memory
+as_of: 2026-10

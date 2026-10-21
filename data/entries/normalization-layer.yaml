@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: normalization layer
+id: normalization-layer
+pos: n.
+also:
+  - normalization
+  - group normalization
+  - GroupNorm
+  - instance normalization
+  - InstanceNorm
+  - weight normalization
+  - spectral normalization
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  A layer that keeps the numbers passing through a neural network within a steady range by shifting
+  and resizing them, so that deep networks learn faster and are less likely to break down during
+  training.
+senses:
+  - definition: >-
+      A [[layer|layer]] that standardizes intermediate [[activation|activations]], typically
+      subtracting a mean and dividing by a standard deviation computed over some set of values and
+      then applying a learned scale and shift, to keep their distribution stable during training.
+      Variants differ in the set used for the statistics: [[batch-normalization|batch
+      normalization]] (each channel across a mini-batch), [[layer-normalization|layer
+      normalization]] (all features of one example), instance normalization (each channel of one
+      example, common in [[style-transfer|style transfer]]), group normalization (groups of channels
+      of one example, robust to small batches) and [[rmsnorm|RMSNorm]] (scale only, no centering).
+      Weight normalization and spectral normalization instead reparameterize or constrain the
+      weights. Normalization permits higher learning rates and less careful initialization and,
+      together with [[residual-connection|residual connections]], is what lets very deep networks
+      train; its placement before or after the residual addition strongly affects stability.
+    example: >-
+      With only two images per GPU, we switched from batch normalization to group normalization.
+origin: >-
+  Local response normalization appeared in AlexNet (2012), but the modern family began with Sergey
+  Ioffe and Christian Szegedy's batch normalization (2015). Weight normalization (Tim Salimans and
+  Diederik Kingma), layer normalization (Jimmy Ba and colleagues) and instance normalization (Dmitry
+  Ulyanov and colleagues) followed in 2016, group normalization (Yuxin Wu and Kaiming He) in 2018
+  and RMSNorm in 2019.
+year: 2015
+note: >-
+  Distinct from normalizing input data before training ([[feature-scaling|feature scaling]]) and
+  from turning scores into probabilities ([[softmax|softmax]]).
+see_also:
+  - batch normalization
+  - layer normalization
+  - RMSNorm
+  - residual connection
+  - feature scaling
+  - training instability

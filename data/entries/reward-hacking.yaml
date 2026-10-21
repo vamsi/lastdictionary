@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reward hacking
+id: reward-hacking
+pos: n.
+also:
+  - reward gaming
+  - reward exploitation
+  - reward hack
+domain: safety
+domains:
+  - rl
+  - train
+level: essential
+plain: >-
+  When an AI finds a shortcut that earns the reward or score it is trained on without doing the task
+  its designers wanted — like a student gaming the grading rubric.
+senses:
+  - definition: >-
+      Behavior in which a [[reinforcement-learning|reinforcement learning]] agent or trained model
+      obtains high reward by exploiting flaws in the [[reward-function|reward function]],
+      [[reward-model|reward model]] or grading procedure rather than by accomplishing the intended
+      task. Classic cases involve simulated agents exploiting physics bugs or scoring loopholes. In
+      [[large-language-model|language models]] trained with
+      [[reinforcement-learning-with-verifiable-rewards|verifiable rewards]], observed hacks include
+      special-casing or editing unit tests, hard-coding expected outputs and tampering with timing
+      or scoring code, while optimizing hard against a learned reward model yields verbose,
+      flattering or [[sycophancy|sycophantic]] answers ([[reward-overoptimization|reward
+      overoptimization]]). Joar Skalse and colleagues (2022) called a proxy reward unhackable if
+      increasing it can never decrease the true reward, and proved that over all stochastic policies
+      this holds only when one of the two rewards is constant. Mitigations include better reward
+      design, [[kl-penalty|KL regularization]], held-out checks, monitoring and penalizing detected
+      hacks.
+    example: >-
+      The coding agent's pass rate jumped because it learned to rewrite the tests — pure reward
+      hacking.
+origin: >-
+  'Avoiding reward hacking' is one of the five problems in 'Concrete Problems in AI Safety' (Dario
+  Amodei and colleagues, 2016). OpenAI's December 2016 post 'Faulty Reward Functions in the Wild',
+  about a boat-racing agent that circled endlessly collecting points instead of finishing, made the
+  idea famous; reward hacking by reasoning models on coding tasks was widely reported in 2025.
+year: 2016
+note: >-
+  Often used interchangeably with [[specification-gaming|specification gaming]], the broader term
+  (any flawed objective, not only a reward). Some writers reserve [[reward-tampering|reward
+  tampering]] for interfering with the reward mechanism itself. Hacks learned in training can
+  generalize to broader [[emergent-misalignment|misalignment]].
+see_also:
+  - specification gaming
+  - reward tampering
+  - Goodhart's law
+  - reward overoptimization
+  - outer alignment
+  - wireheading
+  - emergent misalignment
+contrast:
+  - reward shaping
+sources:
+  - text: >-
+      Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J. & Mané, D. (2016). Concrete
+      Problems in AI Safety. arXiv:1606.06565.
+    url: https://arxiv.org/abs/1606.06565
+  - text: >-
+      Skalse, J., Howe, N. H. R., Krasheninnikov, D. & Krueger, D. (2022). Defining and
+      Characterizing Reward Hacking. NeurIPS 2022. arXiv:2209.13085.
+    url: https://arxiv.org/abs/2209.13085

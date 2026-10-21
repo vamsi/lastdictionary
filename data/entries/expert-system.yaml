@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: expert system
+id: expert-system
+pos: n.
+also:
+  - knowledge-based system
+  - expert systems
+domain: hist
+domains:
+  - sym
+  - society
+level: core
+plain: >-
+  A program that stores a human specialist's know-how as many if–then rules and uses them to give
+  advice or make decisions in a narrow field, such as diagnosing infections or configuring
+  computers.
+senses:
+  - definition: >-
+      A computer program that solves problems in a narrow, specialized domain at a level approaching
+      that of human experts by applying an explicit [[knowledge-base|knowledge base]] — typically
+      hundreds or thousands of if–then rules, frames or facts elicited from specialists — through an
+      [[inference-engine|inference engine]] that chains rules forward from data or backward from
+      hypotheses. Typical components include a working memory, an explanation facility that reports
+      which rules fired, and a scheme for handling uncertainty such as certainty factors. Building
+      one required knowledge engineering: interviewing experts and encoding their rules of thumb.
+      Systems such as [[dendral|DENDRAL]], [[mycin|MYCIN]] and [[xcon|XCON]] made expert systems the
+      first kind of AI to earn real money for its users, but they were brittle outside their
+      domains, could not learn from data and were costly to maintain, and the collapse of the market
+      in the late 1980s contributed to the second [[ai-winter|AI winter]].
+    example: >-
+      The insurer's 1980s underwriting expert system had grown to six thousand rules that nobody
+      fully understood.
+origin: >-
+  Grew out of Edward Feigenbaum's Heuristic Programming Project at Stanford, where
+  [[dendral|DENDRAL]] (from 1965) showed that domain knowledge drove performance. The phrase's first
+  use is not established, but it was current by the late 1970s; Feigenbaum's 1977 IJCAI lecture on
+  knowledge engineering helped spread the approach, and by the mid-1980s corporations were spending
+  over a billion dollars a year on AI, much of it on expert systems.
+year: 1965
+note: >-
+  Rule engines descended from expert systems remain in use, often unlabeled, in business-rule
+  software, tax preparation and clinical decision support. The knowledge-engineering approach
+  contrasts with [[machine-learning|machine learning]], which acquires its knowledge from data.
+see_also:
+  - knowledge base
+  - inference engine
+  - rule-based system
+  - MYCIN
+  - DENDRAL
+  - XCON
+  - AI winter
+  - Lisp machine
+contrast:
+  - machine learning
+sources:
+  - text: >-
+      Feigenbaum, E. A. (1977). The Art of Artificial Intelligence: Themes and Case Studies of
+      Knowledge Engineering. Proceedings of IJCAI-77, 1014–1029.

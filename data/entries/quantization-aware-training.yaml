@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: quantization-aware training
+id: quantization-aware-training
+pos: n.
+also:
+  - QAT
+  - quantisation-aware training
+  - fake quantization
+  - simulated quantization
+domain: infer
+domains:
+  - train
+  - dl
+level: specialist
+plain: >-
+  Training or fine-tuning an AI model while simulating the low-precision numbers it will use later,
+  so that it learns to work well despite the rounding.
+senses:
+  - definition: >-
+      Training or [[fine-tuning|fine-tuning]] a model with [[quantization|quantization]] simulated
+      in the [[forward-pass|forward pass]], so that the [[weights|weights]] adapt to rounding error
+      before deployment. 'Fake-quantization' operations round weights (and often activations) to the
+      target grid and immediately convert them back to floating point, so the loss reflects
+      quantized behavior while full-precision master weights receive the updates. Because rounding
+      has zero gradient almost everywhere, [[backpropagation|backpropagation]] passes gradients
+      through it as if it were the identity function, the straight-through estimator; scales and
+      clipping ranges can be learned too. QAT typically recovers most of the accuracy lost by
+      [[post-training-quantization|post-training quantization]] at 4 bits and below, at the price of
+      a training run and data, and some open-weight model families have been released with QAT
+      checkpoints for 4-bit use. Training natively in low precision, as in [[bitnet|BitNet]], is the
+      limiting case.
+    example: >-
+      Post-training quantization to 4 bits cost us six points, so we ran a day of QAT and got five
+      back.
+origin: >-
+  Simulated quantization during training goes back to binarized and low-bit networks such as
+  BinaryConnect (2015) and to the straight-through estimator discussed by Yoshua Bengio, Nicholas
+  Léonard and Aaron Courville (2013). Benoit Jacob and colleagues at Google (December 2017) made it
+  the standard recipe for 8-bit integer inference, and TensorFlow tooling popularized the name
+  'quantization-aware training'.
+year: 2017
+see_also:
+  - quantization
+  - post-training quantization
+  - BitNet
+  - fine-tuning
+  - mixed-precision training
+contrast:
+  - post-training quantization
+sources:
+  - text: >-
+      Jacob, B., Kligys, S., Chen, B., Zhu, M., Tang, M., Howard, A., Adam, H. & Kalenichenko, D.
+      (2017). Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only
+      Inference. arXiv:1712.05877.
+    url: https://arxiv.org/abs/1712.05877
+  - text: >-
+      Bengio, Y., Léonard, N. & Courville, A. (2013). Estimating or Propagating Gradients Through
+      Stochastic Neurons for Conditional Computation. arXiv:1308.3432.

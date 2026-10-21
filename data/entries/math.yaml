@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MATH
+id: math
+pos: prop. n.
+also:
+  - MATH dataset
+  - MATH benchmark
+  - MATH-500
+  - MATH Level 5
+  - Hendrycks MATH
+domain: eval
+domains:
+  - math
+  - llm
+level: core
+plain: >-
+  A set of 12,500 problems from high-school math competitions, each with a full worked solution,
+  used to test language models on genuinely challenging mathematics.
+senses:
+  - definition: >-
+      A benchmark of 12,500 problems taken from US high-school competitions such as the AMC 10, AMC
+      12 and [[aime|AIME]], divided into 7,500 for training and 5,000 for testing, rated on five
+      difficulty levels and sorted into seven subjects: three algebra tracks (prealgebra, algebra,
+      intermediate algebra), counting and probability, geometry, number theory and precalculus.
+      Every problem comes with a full worked solution in LaTeX that ends in a boxed answer, so
+      grading can use [[exact-match|exact match]] after normalization or a symbolic equivalence
+      check. At release the best models solved only about 7%, and the authors argued that scaling
+      alone would not be enough. By late 2024 [[reasoning-model|reasoning models]] exceeded 90%.
+      MATH-500, a representative 500-problem test subset selected by OpenAI researchers in 2023 for
+      experiments on process supervision, became the usual reporting set, and 'MATH Level 5' tracks
+      the hardest problems.
+    example: >-
+      We report MATH-500 accuracy with a symbolic equivalence checker rather than string matching.
+origin: >-
+  Introduced by Dan Hendrycks, Collin Burns, Saurav Kadavath, Akul Arora, Steven Basart, Eric Tang,
+  Dawn Song and Jacob Steinhardt in March 2021 ('Measuring Mathematical Problem Solving With the
+  MATH Dataset', NeurIPS 2021), with an auxiliary pretraining corpus called AMPS. MATH-500 comes
+  from Hunter Lightman and colleagues' 'Let's Verify Step by Step' (2023).
+year: 2021
+note: >-
+  Conventionally written in capitals to distinguish it from mathematics in general. Its problems are
+  public and widely reproduced online, so contamination is a persistent concern.
+see_also:
+  - GSM8K
+  - AIME
+  - FrontierMath
+  - process reward model
+  - reasoning model
+  - exact match
+sources:
+  - text: >-
+      Hendrycks, D., Burns, C., Kadavath, S. et al. (2021). Measuring Mathematical Problem Solving
+      With the MATH Dataset. NeurIPS 2021 Datasets and Benchmarks Track.
+    url: https://arxiv.org/abs/2103.03874
+  - text: Lightman, H. et al. (2024). Let's Verify Step by Step. ICLR 2024.

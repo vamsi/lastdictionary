@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: evidence lower bound
+id: evidence-lower-bound
+pos: n.
+also:
+  - ELBO
+  - variational lower bound
+  - negative variational free energy
+domain: gen
+domains:
+  - math
+  - ml
+level: specialist
+plain: >-
+  A quantity that is always less than or equal to how well a model explains its data, but much
+  easier to calculate; pushing it upward is how models such as VAEs learn.
+senses:
+  - definition: >-
+      A lower bound on the log marginal likelihood (the 'evidence') log p(x) of a latent-variable
+      model, used as a tractable training objective in variational inference. For any distribution q
+      over the latent variables z — in a [[variational-autoencoder|variational autoencoder]], the
+      encoder's q(z | x) — the log-evidence equals the ELBO plus the
+      [[kullback-leibler-divergence|Kullback–Leibler divergence]] from q to the true posterior p(z |
+      x). Because that divergence is never negative, the ELBO never exceeds log p(x), and maximizing
+      it both fits the model and pulls q toward the true [[posterior|posterior]]. It is usually
+      written as an expected reconstruction log-likelihood minus a KL penalty between q and the
+      [[prior|prior]]. The standard training losses of
+      [[denoising-diffusion-probabilistic-model|diffusion models]] are reweighted ELBOs summed over
+      noise levels, and tighter bounds, such as the importance-weighted ELBO, average over several
+      samples.
+formula_latex: \log p(x) \;\ge\; \mathbb{E}_{q(z \mid x)}\big[\log p(x \mid z)\big] -
+  D_{\mathrm{KL}}\big(q(z \mid x) \,\|\, p(z)\big)
+origin: >-
+  The bound follows from Jensen's inequality and is the negative of the variational free energy of
+  statistical physics; Geoffrey Hinton and colleagues tied it to neural-network learning in the
+  1990s (Hinton and Richard Zemel, 1993; the Helmholtz machine, 1995). The first use of 'evidence
+  lower bound' is not established; the name and acronym were current by 2012, as in Matthew Hoffman,
+  David Blei and colleagues' stochastic variational inference, and spread widely with VAEs, although
+  Kingma and Welling called it the variational lower bound.
+note: >-
+  'Evidence' is Bayesian shorthand for the marginal likelihood p(x), not evidence in the everyday
+  sense.
+see_also:
+  - variational autoencoder
+  - Kullback–Leibler divergence
+  - Bayesian inference
+  - likelihood
+  - reparameterization trick
+  - posterior
+sources:
+  - text: >-
+      Kingma, D. P. & Welling, M. (2013). Auto-Encoding Variational Bayes. arXiv:1312.6114.
+    url: https://arxiv.org/abs/1312.6114
+  - text: >-
+      Hoffman, M. D., Blei, D. M., Wang, C. & Paisley, J. (2013). Stochastic Variational Inference.
+      Journal of Machine Learning Research 14. arXiv:1206.7051.
+    url: https://arxiv.org/abs/1206.7051
+  - text: >-
+      Blei, D. M., Kucukelbir, A. & McAuliffe, J. D. (2017). Variational Inference: A Review for
+      Statisticians. Journal of the American Statistical Association 112(518).

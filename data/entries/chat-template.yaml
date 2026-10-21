@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chat template
+id: chat-template
+pos: n.
+also:
+  - chat format
+  - prompt format
+  - ChatML
+  - conversation template
+domain: llm
+domains:
+  - eng
+  - infer
+level: specialist
+plain: >-
+  The exact text layout a chat AI was trained on for marking who is speaking — system, user or
+  assistant. Software must reproduce it precisely, or the model performs noticeably worse.
+senses:
+  - definition: >-
+      The model-specific formatting rule that flattens a conversation (system instructions, user and
+      assistant turns, tool messages) into the one stream of tokens a [[chat-model|chat model]]
+      reads. Each turn boundary is marked with [[special-token|special tokens]] or marker strings —
+      for example ChatML's <|im_start|>user … <|im_end|> or Mistral's [INST] … [/INST] — and the
+      sequence can end with the opening of an assistant turn (a generation prompt) so that the model
+      replies rather than continuing the user's text. Because the model was post-trained in exactly
+      this format, a mismatched template silently degrades quality, breaks stopping or disables tool
+      calling. In the Hugging Face ecosystem the template is a Jinja program stored with the
+      [[tokenizer|tokenizer]] and applied by apply_chat_template; hosted APIs apply theirs
+      server-side. Templates also define how system prompts, tool definitions, tool results and
+      reasoning blocks are rendered.
+    example: >-
+      Outputs were garbage until we noticed the server was applying the Llama chat template to a
+      Qwen model.
+origin: >-
+  OpenAI described its Chat Markup Language (ChatML) when it opened the ChatGPT model to developers
+  in March 2023. As open chat models multiplied with incompatible formats, Hugging Face added chat
+  templates to its [[transformers|Transformers]] library in October 2023, so that each model could
+  ship its own formatting rules as a Jinja template saved with its tokenizer.
+year: 2023
+see_also:
+  - chat model
+  - special token
+  - prompt template
+  - tokenizer
+  - system prompt
+  - stop sequence
+  - Transformers
+contrast:
+  - prompt template
+sources:
+  - text: Hugging Face (2026). Chat templates. Transformers documentation.
+    url: https://huggingface.co/docs/transformers/main/en/chat_templating
+  - text: OpenAI (2023). Introducing ChatGPT and Whisper APIs. OpenAI blog.
+    url: https://openai.com/index/introducing-chatgpt-and-whisper-apis/
+  - text: >-
+      Carrigan, M. (2023). Chat Templates: An End to the Silent Performance Killer. Hugging Face
+      blog, 3 October 2023.
+    url: https://huggingface.co/blog/chat-templates

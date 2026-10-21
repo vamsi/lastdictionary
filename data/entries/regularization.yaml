@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: regularization
+id: regularization
+pos: n.
+also:
+  - regularisation
+  - regularizer
+  - regularize
+  - penalty term
+  - L1 regularization
+  - L2 regularization
+  - shrinkage
+domain: ml
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  Any technique that stops a model from memorizing its training examples too closely — often by
+  penalizing complexity — so that it works better on new data.
+senses:
+  - context: Machine learning
+    definition: >-
+      A constraint, penalty or training practice that discourages a model from fitting the quirks of
+      its particular training sample, so that it does better on data it has not seen
+      ([[generalization|generalization]]), usually by limiting or penalizing model complexity. In
+      the classic form a penalty is added to the training objective: an L2 penalty on the squared
+      size of the weights, as in [[ridge-regression|ridge regression]] and [[weight-decay|weight
+      decay]], shrinks them smoothly, while an L1 penalty, as in the [[lasso|lasso]], drives many to
+      exactly zero and yields sparse models. The strength λ is a [[hyperparameter|hyperparameter]]
+      tuned by [[cross-validation|cross-validation]]. In Bayesian terms such penalties correspond to
+      [[prior|priors]] on the weights, and the penalized optimum is the
+      [[maximum-a-posteriori-estimation|MAP estimate]]. In deep learning the word also covers
+      [[dropout|dropout]], [[early-stopping|early stopping]], [[data-augmentation|data
+      augmentation]], [[label-smoothing|label smoothing]] and the [[implicit-regularization|implicit
+      regularization]] of the optimizer. All of them accept a little extra bias for a larger cut in
+      variance (see [[bias-variance-tradeoff|bias–variance tradeoff]]).
+    example: >-
+      Validation loss stopped rising once we doubled the L2 regularization and added dropout.
+  - context: Mathematics
+    definition: >-
+      A method for making an ill-posed problem — one whose solution is not unique or changes wildly
+      with small changes in the data, as in many inverse problems such as image deblurring —
+      well-posed by adding a constraint or penalty, as in Tikhonov regularization.
+      [[ridge-regression|Ridge regression]] is this idea applied to least squares.
+formula_latex: \hat{\mathbf{w}} = \arg\min_{\mathbf{w}} \; \frac{1}{n}\sum_{i=1}^{n} L\big(y_i,
+  f_{\mathbf{w}}(\mathbf{x}_i)\big) + \lambda\, \Omega(\mathbf{w})
+origin: >-
+  Andrey Tikhonov studied the stabilization of ill-posed inverse problems from 1943 and named a
+  'regularization method' in 1963 papers. In statistics, Arthur Hoerl and Robert Kennard's ridge
+  regression (1970) and Robert Tibshirani's lasso (1996) made penalized estimation standard;
+  neural-network researchers took up the idea, notably as weight decay, from the late 1980s.
+year: 1963
+note: >-
+  Usage varies: some reserve the word for explicit penalty terms, while others, following
+  Goodfellow, Bengio and Courville's 'Deep Learning' (2016), apply it to any change aimed at test
+  rather than training error. The intercept or bias term is usually left unpenalized.
+see_also:
+  - overfitting
+  - ridge regression
+  - lasso
+  - elastic net
+  - weight decay
+  - dropout
+  - early stopping
+  - bias–variance tradeoff
+sources:
+  - text: >-
+      Tikhonov, A. N. (1963). Solution of Incorrectly Formulated Problems and the Regularization
+      Method. Soviet Mathematics Doklady, 4, 1035–1038.
+  - text: >-
+      Hoerl, A. E. & Kennard, R. W. (1970). Ridge Regression: Biased Estimation for Nonorthogonal
+      Problems. Technometrics, 12(1), 55–67.
+    url: https://www.stat.cmu.edu/technometrics/70-79/VOL-12-01/v1201055.pdf

@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Shun-ichi Amari
+id: shun-ichi-amari
+sort_as: Amari Shun-ichi
+pos: prop. n.
+also:
+  - Shunichi Amari
+domain: people
+domains:
+  - math
+  - dl
+  - hist
+level: specialist
+dates: b. 1936
+plain: >-
+  A Japanese mathematician who trained multilayer neural networks by gradient descent as early as
+  1967 and founded information geometry, the source of the 'natural gradient' method.
+senses:
+  - definition: >-
+      Japanese mathematician and computational neuroscientist, a professor at the University of
+      Tokyo and later director of the RIKEN Brain Science Institute (2003–2008), whose work
+      anticipated several pillars of neural-network learning. His 1967 theory of adaptive pattern
+      classifiers trained networks with hidden layers by [[stochastic-gradient-descent|stochastic
+      gradient descent]], nearly two decades before [[backpropagation|backpropagation]] became
+      widespread (see [[multilayer-perceptron|multilayer perceptron]]). In 1972 he analyzed
+      self-organizing associative-memory networks closely related to the later
+      [[hopfield-network|Hopfield network]], and he developed mathematical theories of neural fields
+      and of learning dynamics. From the 1980s he founded information geometry, which treats
+      families of probability distributions as curved spaces with the [[fisher-information|Fisher
+      information]] as their metric; it yielded the natural gradient (1998), an optimizer that takes
+      steepest-descent steps in that geometry and inspired later
+      [[second-order-optimization|second-order optimization]] methods for deep networks. His honors
+      include Japan's Order of Culture (2019) and the Kyoto Prize in Advanced Technology (2025).
+see_also:
+  - stochastic gradient descent
+  - multilayer perceptron
+  - Fisher information
+  - second-order optimization
+  - Hopfield network
+  - associative memory
+sources:
+  - text: >-
+      Amari, S. (1967). A Theory of Adaptive Pattern Classifiers. IEEE Transactions on Electronic
+      Computers EC-16(3): 299–307.
+  - text: >-
+      Amari, S. (1998). Natural Gradient Works Efficiently in Learning. Neural Computation 10(2):
+      251–276.

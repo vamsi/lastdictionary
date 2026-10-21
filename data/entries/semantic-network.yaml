@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semantic network
+id: semantic-network
+pos: n.
+also:
+  - semantic net
+  - associative network
+domain: sym
+domains:
+  - hist
+level: core
+plain: >-
+  A way of storing knowledge as a web of concepts joined by labeled arrows, such as 'canary — is a —
+  bird' and 'bird — can — fly', so a program can follow the links.
+senses:
+  - definition: >-
+      A [[knowledge-representation|knowledge representation]] that encodes knowledge as a directed
+      graph whose nodes denote concepts or individuals and whose labeled edges denote relations
+      between them, such as is-a (subclass), instance-of and part-of. Inference proceeds by
+      traversing links: properties attached to a general node are inherited by more specific ones,
+      so a canary inherits 'can fly' from bird unless the link is overridden, and spreading
+      activation outward from two nodes can find the path that connects them. Early networks lacked
+      precise semantics — William Woods's 1975 essay 'What's in a Link' criticized their ambiguity —
+      which led to structured successors such as KL-ONE and eventually
+      [[description-logic|description logics]]. [[knowledge-graph|Knowledge graphs]] and
+      [[wordnet|WordNet]] are modern descendants.
+origin: >-
+  Usually traced to Richard H. Richens of the Cambridge Language Research Unit, whose 1956 paper on
+  machine translation described 'semantic nets' of concepts as a language-neutral intermediate
+  representation. M. Ross Quillian's 1966 doctoral thesis and 1968 chapter 'Semantic Memory' turned
+  them into a model of human memory, which Allan Collins and Quillian tested with reaction-time
+  experiments in 1969.
+year: 1956
+see_also:
+  - knowledge representation
+  - frame
+  - knowledge graph
+  - description logic
+  - ontology
+  - WordNet
+sources:
+  - text: >-
+      Quillian, M. R. (1968). Semantic Memory. In M. Minsky (ed.), Semantic Information Processing.
+      MIT Press.
+  - text: >-
+      Woods, W. A. (1975). What's in a Link: Foundations for Semantic Networks. In D. Bobrow & A.
+      Collins (eds.), Representation and Understanding. Academic Press.

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inner alignment
+id: inner-alignment
+pos: n.
+also:
+  - inner misalignment
+  - inner alignment problem
+domain: safety
+domains:
+  - train
+  - interp
+level: core
+plain: >-
+  Making sure an AI actually adopts the goal it was trained on, rather than picking up some
+  different goal that happened to score just as well during training.
+senses:
+  - definition: >-
+      The problem of ensuring that the objective a trained model actually pursues — its
+      mesa-objective, if it is a [[mesa-optimization|mesa-optimizer]] — matches the objective it was
+      trained on (the base objective). Because training checks behavior only on the training
+      distribution, many internal goals are equally compatible with low loss: a model may acquire a
+      proxy that coincides with the intended goal during training and diverges afterward
+      ([[goal-misgeneralization|goal misgeneralization]]) or, in the worst case, pursue a different
+      goal while appearing aligned until it can act otherwise ([[deceptive-alignment|deceptive
+      alignment]]). Proposed defenses include more diverse training data,
+      [[adversarial-training|adversarial training]], [[interpretability|interpretability]] tools
+      that inspect what a model is optimizing, and [[myopia|myopic]] objectives.
+    example: >-
+      The policy scored perfectly in training, but inner alignment failed: it had learned to run to
+      the end of the level, not to the coin.
+origin: >-
+  Introduced by Evan Hubinger and co-authors in 'Risks from Learned Optimization in Advanced Machine
+  Learning Systems' (2019). Their standard analogy is biological evolution: natural selection
+  optimized for reproductive fitness, yet produced humans who pursue pleasure, status and knowledge
+  — goals that diverge from fitness in modern environments.
+year: 2019
+note: >-
+  Usage has broadened: many writers apply 'inner misalignment' to any learned goal that departs from
+  the training objective, whether or not the model performs explicit internal search. See
+  [[outer-alignment|outer alignment]] for criticism of the decomposition.
+see_also:
+  - outer alignment
+  - mesa-optimization
+  - goal misgeneralization
+  - deceptive alignment
+  - gradient hacking
+  - AI alignment
+contrast:
+  - outer alignment
+sources:
+  - text: >-
+      Hubinger, E., van Merwijk, C., Mikulik, V., Skalse, J. & Garrabrant, S. (2019). Risks from
+      Learned Optimization in Advanced Machine Learning Systems. arXiv:1906.01820.
+    url: https://arxiv.org/abs/1906.01820

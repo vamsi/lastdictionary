@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: regression
+id: regression
+pos: n.
+also:
+  - regression analysis
+  - regression model
+  - regressor
+  - regress
+domain: ml
+domains:
+  - math
+  - eval
+level: essential
+plain: >-
+  Predicting a number rather than a category — a house's price, tomorrow's temperature, a patient's
+  blood pressure — by learning from past examples where the answer is known.
+senses:
+  - context: Machine learning
+    definition: >-
+      A [[supervised-learning|supervised learning]] task in which the target to be predicted is a
+      continuous quantity (a real number or vector) rather than a discrete class. A regression model
+      maps input [[feature|features]] to a predicted value and is trained by minimizing a
+      [[loss-function|loss function]] that measures the gap between predictions and observed targets
+      — most often [[mean-squared-error|mean squared error]], whose minimizer is the conditional
+      mean, or [[mean-absolute-error|mean absolute error]], whose minimizer is the conditional
+      median. Methods range from [[linear-regression|linear regression]] and
+      [[generalized-linear-model|generalized linear models]] through regression trees,
+      [[gradient-boosting|gradient boosting]] and [[gaussian-process|Gaussian processes]] to neural
+      networks. Performance is reported with error metrics or the
+      [[coefficient-of-determination|coefficient of determination]].
+    example: >-
+      Is this regression or classification — do we predict the delay in minutes or only whether the
+      flight is late?
+  - context: Statistics
+    definition: >-
+      More broadly, any method for estimating how the expected value, or another property such as a
+      quantile, of a response variable depends on explanatory variables. Statistical usage
+      emphasizes interpreting the fitted coefficients, testing hypotheses about them and quantifying
+      their uncertainty, not only predicting well.
+  - context: Engineering and evaluation
+    definition: >-
+      A decline in a system's performance or behavior after a change, as when a new model checkpoint
+      scores lower than its predecessor on some [[benchmark|benchmark]]. The sense is borrowed from
+      software testing, where a regression is a previously working feature that breaks; regression
+      tests and fixed [[evaluation|evaluation]] suites are rerun after every change to catch such
+      declines.
+    example: >-
+      The new checkpoint is better at code but shows a regression on multilingual math.
+origin: >-
+  Francis Galton called the tendency of offspring of extreme parents to lie closer to the average
+  'reversion' in an 1877 lecture on the seed sizes of sweet peas, and 'regression' in his September
+  1885 presidential address to the anthropology section of the British Association, on human height;
+  his paper 'Regression towards Mediocrity in Hereditary Stature' followed in 1886. Udny Yule and
+  Karl Pearson generalized the idea, and the name passed from the phenomenon to the fitting method,
+  whose least-squares machinery Adrien-Marie Legendre (1805) and Carl Friedrich Gauss (1809) had
+  published decades earlier.
+year: 1885
+note: >-
+  Despite its name, [[logistic-regression|logistic regression]] is mainly used for classification
+  (it models a class probability). Galton's phenomenon, regression toward the mean, is a statistical
+  effect rather than a method; overlooking it leads to misreading before-and-after comparisons.
+see_also:
+  - linear regression
+  - classification
+  - supervised learning
+  - logistic regression
+  - quantile regression
+  - mean squared error
+  - coefficient of determination
+contrast:
+  - classification
+sources:
+  - text: >-
+      Galton, F. (1886). Regression towards Mediocrity in Hereditary Stature. Journal of the
+      Anthropological Institute of Great Britain and Ireland, 15, 246–263.

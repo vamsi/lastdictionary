@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: machine translation
+id: machine-translation
+pos: n.
+also:
+  - MT
+  - automatic translation
+  - neural machine translation
+  - NMT
+  - statistical machine translation
+  - SMT
+  - mechanical translation
+domain: llm
+domains:
+  - hist
+level: core
+plain: >-
+  Software that renders writing or speech in one language into another language, as online
+  translation services and phone translation apps do.
+senses:
+  - definition: >-
+      The automatic translation of text or speech between natural languages. Approaches have passed
+      through rule-based systems (bilingual dictionaries plus hand-written transfer rules or an
+      interlingua), statistical machine translation (from the late 1980s, learning word- and
+      phrase-alignment probabilities from parallel [[corpus|corpora]]), neural machine translation
+      (from 2014, end-to-end [[encoder-decoder-architecture|encoder–decoder]] networks with
+      [[attention|attention]]) and, since the early 2020s, [[large-language-model|large language
+      models]] that translate as one capability among many. Quality is assessed by human raters and
+      by automatic metrics such as [[bleu|BLEU]] and newer learned metrics. Translation was a
+      founding problem for NLP, and the [[transformer|transformer]] was introduced in a translation
+      paper. Remaining challenges include [[low-resource-language|low-resource languages]],
+      document-level consistency, idiom and terminology, and biases such as defaulting to gendered
+      forms.
+    example: >-
+      Machine translation handles the first draft; human linguists post-edit the legal clauses.
+origin: >-
+  Proposed in Warren Weaver's 1949 memorandum 'Translation'; the Georgetown–IBM experiment of 7
+  January 1954 translated more than 60 Russian sentences on an IBM 701. The 1966
+  [[alpac-report|ALPAC report]] cut US funding. IBM's statistical models (late 1980s–1993) and
+  neural sequence-to-sequence models (2014) set the later course, and Google Translate moved to
+  neural MT in 2016.
+year: 1949
+see_also:
+  - natural language processing
+  - BLEU
+  - sequence-to-sequence model
+  - attention
+  - Attention Is All You Need
+  - ALPAC report
+  - low-resource language
+sources:
+  - text: >-
+      Brown, P. F., Della Pietra, S. A., Della Pietra, V. J. & Mercer, R. L. (1993). The Mathematics
+      of Statistical Machine Translation: Parameter Estimation. Computational Linguistics 19(2),
+      263–311.
+    url: https://aclanthology.org/J93-2003/
+  - text: >-
+      Bahdanau, D., Cho, K. & Bengio, Y. (2015). Neural Machine Translation by Jointly Learning to
+      Align and Translate. ICLR 2015.
+  - text: >-
+      Papineni, K., Roukos, S., Ward, T. & Zhu, W.-J. (2002). Bleu: a Method for Automatic
+      Evaluation of Machine Translation. ACL 2002.
+    url: https://aclanthology.org/P02-1040/

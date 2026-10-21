@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Matthews correlation coefficient
+id: matthews-correlation-coefficient
+pos: n.
+also:
+  - MCC
+  - phi coefficient
+  - φ coefficient
+domain: ml
+domains:
+  - eval
+level: specialist
+plain: >-
+  A single score from −1 to +1 for a yes-or-no classifier that uses all four kinds of right and
+  wrong answers, so it stays honest even when one answer is far more common than the other.
+senses:
+  - definition: >-
+      A summary measure of binary classification quality computed from all four cells of the
+      [[confusion-matrix|confusion matrix]]. Numerically it equals the Pearson
+      [[correlation|correlation]] (the phi coefficient) between the predicted and actual labels, so
+      +1 means every case is classified correctly, 0 means the predictions carry no information
+      about the truth, and −1 means they are exactly inverted. Unlike [[accuracy|accuracy]], it is
+      not inflated by [[class-imbalance|class imbalance]], and unlike the [[f1-score|F1 score]] it
+      treats the positive and negative classes symmetrically and takes true negatives into account,
+      so a high value requires good performance on both classes. A multiclass generalization, Jan
+      Gorodkin's Rk statistic, exists. Like other threshold-based metrics, MCC describes a single
+      [[decision-threshold|decision threshold]] and ignores probability [[calibration|calibration]].
+      It is undefined when any row or column of the confusion matrix sums to zero, and is then
+      conventionally set to 0. Long standard in bioinformatics, it is increasingly recommended for
+      imbalanced classification generally.
+    example: >-
+      Accuracy was 97% on the imbalanced test set, but an MCC of 0.21 showed the model barely beat
+      chance.
+formula_latex: \mathrm{MCC} = \frac{TP \cdot TN - FP \cdot FN}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}
+origin: >-
+  Introduced by the biochemist Brian W. Matthews in 1975 to compare predicted and observed protein
+  secondary structure; mathematically it is the phi coefficient for 2 × 2 tables, associated with
+  Karl Pearson (1904) and George Udny Yule (1912). Davide Chicco and Giuseppe Jurman's 2020 paper
+  argued for preferring it to F1 and accuracy in binary classification.
+year: 1975
+see_also:
+  - confusion matrix
+  - F1 score
+  - accuracy
+  - class imbalance
+  - correlation
+  - decision threshold
+sources:
+  - text: >-
+      Matthews, B. W. (1975). Comparison of the Predicted and Observed Secondary Structure of T4
+      Phage Lysozyme. Biochimica et Biophysica Acta – Protein Structure 405(2).
+  - text: >-
+      Chicco, D. & Jurman, G. (2020). The Advantages of the Matthews Correlation Coefficient (MCC)
+      over F1 Score and Accuracy in Binary Classification Evaluation. BMC Genomics 21.

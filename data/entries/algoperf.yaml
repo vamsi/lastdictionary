@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlgoPerf
+id: algoperf
+pos: prop. n.
+also:
+  - "AlgoPerf: Training Algorithms"
+  - AlgoPerf benchmark
+  - AlgoPerf competition
+domain: eval
+domains:
+  - train
+  - dl
+level: specialist
+plain: >-
+  A public contest that measures which methods for training neural networks reach a set level of
+  accuracy fastest on identical hardware, across several kinds of tasks, without being hand-tuned
+  for each one.
+senses:
+  - definition: >-
+      A [[benchmark|benchmark]] and competition, run by the [[mlcommons|MLCommons]] Algorithms
+      working group, that compares neural-network training algorithms (chiefly
+      [[optimizer|optimizers]], [[learning-rate-schedule|learning-rate schedules]] and related
+      update rules) by time-to-result: the wall-clock time needed to reach a fixed validation target
+      on a set of workloads spanning image classification, speech recognition, machine translation,
+      molecular property prediction, MRI reconstruction and click-through prediction, all on the
+      same hardware. Scores aggregate across workloads with performance profiles, so an algorithm
+      must be fast and robust everywhere rather than excel on one task, and randomized held-out
+      workload variants penalize overfitting to the visible set. Two rulesets separate methods given
+      a small, workload-agnostic [[hyperparameter-tuning|hyperparameter tuning]] budget from fully
+      hyperparameter-free ('self-tuning') ones. In the first competition, which drew 18 submissions
+      from 10 teams, a Distributed [[shampoo|Shampoo]] submission won the external-tuning ruleset
+      and Schedule-Free [[adamw|AdamW]] the self-tuning ruleset.
+    example: >-
+      The new optimizer looked great on one ImageNet run, but on AlgoPerf it missed the target on
+      two workloads.
+origin: >-
+  Proposed in 'Benchmarking Neural Network Training Algorithms' (2023) by George Dahl, Frank
+  Schneider, Zachary Nado and some two dozen co-authors, who argued that claimed optimizer speedups
+  were rarely comparable because tuning protocols differed. Priya Kasimbeg and colleagues analyzed
+  the inaugural competition at ICLR 2025.
+year: 2023
+note: >-
+  AlgoPerf measures speed to a fixed quality, not final quality, and its fixed budgets and hardware
+  mean results may not transfer to frontier-scale language-model training. Distinct from
+  [[mlperf|MLPerf]] Training, which benchmarks hardware and software systems running prescribed
+  models.
+see_also:
+  - optimizer
+  - Shampoo
+  - schedule-free optimization
+  - AdamW
+  - hyperparameter tuning
+  - MLCommons
+  - MLPerf
+  - learning rate schedule
+contrast:
+  - MLPerf
+sources:
+  - text: >-
+      Dahl, G. E., Schneider, F., Nado, Z. et al. (2023). Benchmarking Neural Network Training
+      Algorithms. arXiv preprint.
+  - text: >-
+      Kasimbeg, P. et al. (2025). Accelerating Neural Network Training: An Analysis of the AlgoPerf
+      Competition. ICLR 2025.
+    url: https://arxiv.org/abs/2502.15015v1
+as_of: 2026-10

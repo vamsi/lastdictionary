@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: HNSW
+id: hnsw
+pos: abbr.
+also:
+  - hierarchical navigable small world
+  - hierarchical navigable small world graph
+  - navigable small world graph
+  - NSW
+domain: eng
+domains:
+  - math
+level: core
+plain: >-
+  A popular way to organize millions of embeddings for fast similarity search: a layered web of
+  links where the search starts with long jumps on sparse top layers, then takes ever shorter steps.
+senses:
+  - definition: >-
+      An [[approximate-nearest-neighbor-search|approximate nearest neighbor]] index made of stacked
+      proximity graphs, from a dense bottom graph linking every stored vector to its near neighbors
+      up to sparse top graphs holding a few vectors joined by long links. A query starts in the
+      sparsest graph, hops greedily to whichever neighbor is nearer the query until none is, drops
+      to the graph below and repeats, ending with a broader best-first search at the bottom; like
+      changing from express to local trains, this needs only about logarithmically many hops. Each
+      inserted vector draws a random top level, higher levels being exponentially rarer, and is
+      linked to its nearest neighbors on every level up to it. Key parameters are M (links per
+      node), efConstruction (candidate-list size while building) and efSearch (candidate-list size
+      while querying, which trades speed for [[recall-k|recall]]). HNSW offers some of the best
+      speed–recall trade-offs for in-memory search and supports incremental inserts, but uses much
+      RAM and handles deletions awkwardly; it is the default index in many [[vector-database|vector
+      databases]].
+    example: >-
+      We use HNSW with M = 32 for the hot index and a disk-based index for the archive.
+origin: >-
+  Introduced by Yury Malkov and Dmitry Yashunin in 'Efficient and robust approximate nearest
+  neighbor search using Hierarchical Navigable Small World graphs' (arXiv, March 2016; IEEE
+  Transactions on Pattern Analysis and Machine Intelligence, online 2018, in print 2020), extending
+  earlier flat navigable small world (NSW) graphs by Malkov and colleagues. The hnswlib library and
+  adoption by Faiss, Lucene and vector databases made it ubiquitous.
+year: 2016
+see_also:
+  - approximate nearest neighbor search
+  - vector search
+  - vector database
+  - FAISS
+  - product quantization
+  - recall@k
+sources:
+  - text: >-
+      Malkov, Y. A. & Yashunin, D. A. (2020; online 2018). Efficient and robust approximate nearest
+      neighbor search using Hierarchical Navigable Small World graphs. IEEE Transactions on Pattern
+      Analysis and Machine Intelligence 42(4): 824–836. arXiv:1603.09320.
+    url: https://arxiv.org/abs/1603.09320v2

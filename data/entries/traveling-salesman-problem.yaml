@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: traveling salesman problem
+id: traveling-salesman-problem
+pos: n.
+also:
+  - TSP
+  - travelling salesman problem
+  - traveling salesperson problem
+  - Concorde TSP solver
+  - vehicle routing problem
+domain: sym
+domains:
+  - math
+level: core
+plain: >-
+  The puzzle of planning a round trip through a list of cities that stops at each one once and
+  covers the least distance. It is easy to state, but the number of possible routes explodes as
+  cities are added.
+senses:
+  - definition: >-
+      The combinatorial optimization problem of finding a cheapest closed tour — a cycle that passes
+      through each of n cities once — when the travel cost between every pair of cities is known.
+      Its decision version is [[np-complete|NP-complete]], and the number of distinct tours, (n −
+      1)!/2 for symmetric costs, rules out brute force beyond a few dozen cities. Exact solvers
+      combine linear-programming relaxations, cutting planes and [[branch-and-bound|branch and
+      bound]]; the Concorde solver has proved optimal tours through tens of thousands of cities.
+      Heuristics such as 2-opt and Lin–Kernighan [[local-search|local search]],
+      [[simulated-annealing|simulated annealing]], [[genetic-algorithm|genetic algorithms]] and
+      [[ant-colony-optimization|ant colony optimization]] find near-optimal tours for millions of
+      cities, and Christofides's algorithm guarantees a tour within 1.5 times the optimum when costs
+      obey the triangle inequality. The problem is the classic benchmark for search and
+      [[metaheuristic|metaheuristics]] and, since 2015, for neural combinatorial optimization with
+      [[attention|attention]]-based models that learn to construct tours.
+    example: >-
+      Our delivery problem is a traveling salesman problem with time windows, so we use a solver
+      rather than a neural network.
+origin: >-
+  Related puzzles were studied by William Rowan Hamilton in the 1850s and by Karl Menger in 1930.
+  The name appears in print in Julia Robinson's 1949 RAND report, and George Dantzig, Ray Fulkerson
+  and Selmer Johnson's 1954 optimal tour through 49 US cities founded its computational study.
+year: 1949
+note: >-
+  Learned heuristics work well on instance distributions seen in training, but classical solvers
+  remain the reference for large instances. The vehicle routing problem, with several vehicles and
+  capacity limits, dominates logistics practice.
+see_also:
+  - NP-complete
+  - combinatorial explosion
+  - branch and bound
+  - local search
+  - ant colony optimization
+  - simulated annealing
+contrast:
+  - Dijkstra's algorithm
+sources:
+  - text: >-
+      Dantzig, G., Fulkerson, R. & Johnson, S. (1954). Solution of a Large-Scale Traveling-Salesman
+      Problem. Operations Research 2(4), 393–410.
+  - text: >-
+      Applegate, D. L., Bixby, R. E., Chvátal, V. & Cook, W. J. (2006). The Traveling Salesman
+      Problem: A Computational Study. Princeton University Press.

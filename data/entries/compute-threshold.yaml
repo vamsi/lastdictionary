@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: compute threshold
+id: compute-threshold
+pos: n.
+also:
+  - training compute threshold
+  - FLOP threshold
+  - compute-based threshold
+domain: gov
+domains:
+  - train
+  - safety
+labels:
+  - legal
+level: core
+plain: >-
+  A legal cutoff based on how much computation was used to train an AI model. Models trained with
+  more than that amount face extra rules, on the theory that bigger training runs produce more
+  capable models.
+senses:
+  - definition: >-
+      A quantity of [[training-compute|training compute]], usually the total number of integer or
+      floating-point operations ([[flop|FLOP]]) used to train a model, above which legal or
+      voluntary obligations apply. [[executive-order-14110|Executive Order 14110]] required reports
+      for models above 10²⁶ operations (10²³ for models trained mainly on biological sequence data);
+      the [[eu-ai-act|EU AI Act]] presumes a
+      [[general-purpose-ai-model-with-systemic-risk|general-purpose AI model with systemic risk]]
+      above 10²⁵ FLOP; the [[ai-diffusion-rule|AI Diffusion Rule]] of January 2025, rescinded before
+      it took effect, would have controlled exports of the closed weights of models above 10²⁶; and
+      California's [[sb-53|SB 53]] and New York's [[raise-act|RAISE Act]] apply to developers of
+      models above 10²⁶, counting fine-tuning and other later training. Thresholds are attractive
+      because compute is measurable before deployment, correlates with capability under
+      [[scaling-laws|scaling laws]] and is hard to hide. Critics call them a crude proxy that
+      algorithmic progress steadily erodes, that misses small but dangerous specialized models and
+      that ignores [[test-time-compute|inference-time]] scaling, so most regimes pair them with
+      capability evaluations or allow regulators to update the number.
+    example: >-
+      The model came in just under the 10²⁵ FLOP compute threshold, so the presumption of systemic
+      risk did not apply.
+origin: >-
+  Proposed in AI-governance research from about 2022–2023 (for example 'Frontier AI Regulation',
+  Markus Anderljung and colleagues, 2023) as a tractable trigger for oversight; first written into
+  binding government policy by Executive Order 14110 in October 2023 and into legislation by the EU
+  AI Act in 2024.
+year: 2023
+note: >-
+  For scale, Epoch AI estimates that GPT-4 (2023) used about 2 × 10²⁵ FLOP; OpenAI has not disclosed
+  the figure. Distinguish from a [[capability-threshold|capability threshold]], which triggers
+  obligations based on what a model can do rather than how much computation went into it.
+see_also:
+  - compute governance
+  - capability threshold
+  - training compute
+  - FLOP
+  - general-purpose AI model with systemic risk
+  - SB 53
+  - dual-use foundation model
+contrast:
+  - capability threshold
+sources:
+  - text: >-
+      Anderljung, M. et al. (2023). Frontier AI Regulation: Managing Emerging Risks to Public
+      Safety. arXiv:2307.03718.
+  - text: >-
+      Heim, L. & Koessler, L. (2024). Training Compute Thresholds: Features and Functions in AI
+      Regulation.
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 51(2); Executive Order 14110 (2023), Sec. 4.2(b) (revoked)
+as_of: 2026-10

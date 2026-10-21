@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MuJoCo
+id: mujoco
+pos: prop. n.
+also:
+  - Multi-Joint dynamics with Contact
+  - MJX
+  - MJCF
+  - MuJoCo Playground
+  - MuJoCo Warp
+pronunciation: MOO-joh-koh
+domain: robot
+domains:
+  - rl
+  - eng
+level: specialist
+plain: >-
+  A free physics simulator, now maintained by Google DeepMind, that AI researchers use to train and
+  test simulated robots and bodies, especially with trial-and-error learning.
+senses:
+  - definition: >-
+      An open-source physics engine (Multi-Joint dynamics with Contact) designed for model-based
+      control, robotics and biomechanics, and a standard tool in
+      [[reinforcement-learning|reinforcement learning]] research. It represents systems in
+      generalized (joint) coordinates, which keeps articulated bodies such as arms, hands and legged
+      robots stable at relatively large time steps, and it models contact through a convex
+      optimization that permits soft, slightly penetrating contacts with tunable parameters, trading
+      some physical realism for speed, smoothness and derivatives useful in
+      [[trajectory-optimization|trajectory optimization]] and [[model-predictive-control|model
+      predictive control]]. Models are written in the MJCF XML format. MuJoCo underlies widely used
+      benchmarks — the continuous-control locomotion tasks of OpenAI Gym and its successor
+      [[gymnasium|Gymnasium]], and the DeepMind Control Suite — so 'MuJoCo tasks' often denotes that
+      family of benchmarks. MJX, a reimplementation in [[jax|JAX]], runs thousands of simulations in
+      parallel on accelerators, and further GPU versions followed in 2025.
+    example: >-
+      Our agent beats the baseline on all six MuJoCo tasks but has never touched a real robot.
+origin: >-
+  Created by Emanuel Todorov with Tom Erez and Yuval Tassa at the University of Washington and
+  described at IROS 2012; it was sold commercially by Todorov's company Roboti LLC until Google
+  DeepMind acquired it in October 2021 and released it as open source under the Apache 2.0 license
+  in May 2022.
+year: 2012
+note: >-
+  Results on 'MuJoCo' benchmarks depend on the library and environment versions, so scores reported
+  years apart may not be comparable.
+see_also:
+  - physics simulator
+  - Gymnasium
+  - reinforcement learning
+  - sim-to-real transfer
+  - model predictive control
+  - JAX
+sources:
+  - text: >-
+      Todorov, E., Erez, T. & Tassa, Y. (2012). MuJoCo: A physics engine for model-based control.
+      Proc. IEEE/RSJ IROS 2012, 5026–5033.
+as_of: 2026-10

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt chaining
+id: prompt-chaining
+pos: n.
+also:
+  - prompt chain
+  - LLM chain
+  - chaining
+  - AI chains
+domain: agents
+domains:
+  - llm
+  - eng
+level: core
+plain: >-
+  A way of getting a big job done with a relay of AI requests: each handles one stage and passes its
+  result to the next — pull out the facts, write, polish — with automatic checks between stages.
+senses:
+  - definition: >-
+      A workflow technique in which a task runs as a fixed relay of
+      [[large-language-model|language-model]] calls, each with its own prompt and each consuming
+      what the previous call produced — for example extract the facts, then draft, then adjust the
+      tone, then translate. Code placed between the calls (sometimes called gates) can test
+      intermediate results against a format, a length or a policy and halt or reroute the chain when
+      a test fails. Because every call faces a narrower problem, accuracy tends to rise at the price
+      of latency and extra calls, and the intermediate outputs can be inspected and improved one at
+      a time. It is the simplest [[agentic-workflow|agentic workflow]] pattern and the source of the
+      'chain' in LangChain; unlike an [[ai-agent|AI agent]], a chain does not choose its own next
+      step.
+    example: >-
+      We replaced one giant prompt with a three-step prompt chain and the invented figures
+      disappeared.
+origin: >-
+  Described in 'AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large
+  Language Model Prompts' by Tongshuang Wu, Michael Terry and Carrie J. Cai (Google; posted October
+  2021, CHI 2022). [[langchain|LangChain]] (October 2022) built a popular library around chains, and
+  Anthropic's 'Building effective agents' (December 2024) listed prompt chaining as the first
+  workflow pattern.
+year: 2021
+see_also:
+  - agentic workflow
+  - task decomposition
+  - evaluator–optimizer
+  - orchestration
+  - prompt engineering
+  - LangChain
+contrast:
+  - AI agent
+sources:
+  - text: >-
+      Wu, T., Terry, M. & Cai, C. J. (2022). AI Chains: Transparent and Controllable Human-AI
+      Interaction by Chaining Large Language Model Prompts. CHI 2022. arXiv:2110.01691.
+    url: https://arxiv.org/abs/2110.01691
+  - text: Schluntz, E. & Zhang, B. (2024). Building effective agents. Anthropic.
+    url: https://www.anthropic.com/research/building-effective-agents

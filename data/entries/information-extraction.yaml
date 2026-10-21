@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: information extraction
+id: information-extraction
+pos: n.
+also:
+  - IE
+  - relation extraction
+  - event extraction
+  - entity linking
+  - template filling
+domain: llm
+domains:
+  - data
+  - sym
+level: core
+plain: >-
+  Automatically pulling structured facts out of ordinary text — who did what, when, where and for
+  how much — and putting them into a table or database.
+senses:
+  - definition: >-
+      The task of turning free text, and semi-structured documents such as forms and web pages, into
+      database-ready records by identifying entities, their attributes, and the relations and events
+      that connect them. Component tasks include [[named-entity-recognition|named-entity
+      recognition]], entity linking to a knowledge base, [[coreference-resolution|coreference
+      resolution]], relation extraction (for example, that one company acquired another), event
+      extraction with roles such as time and place, and template or slot filling. Early systems used
+      hand-crafted patterns for each domain; statistical and neural extractors trained on annotated
+      corpora followed, including distant supervision, which labels text automatically from existing
+      databases. LLMs now perform much extraction directly into JSON schemas via
+      [[structured-outputs|structured outputs]], evaluated by field-level precision and recall. The
+      output feeds [[knowledge-graph|knowledge graphs]], search, analytics and document-processing
+      pipelines.
+    example: >-
+      Information extraction turns each contract into parties, dates, fees and renewal terms in our
+      database.
+origin: >-
+  Precursors include Naomi Sager's Linguistic String Project at New York University (launched 1965),
+  which developed methods for turning scientific and later clinical text into structured data. The
+  DARPA-funded Message Understanding Conferences (MUC, 1987–1997) defined the field's tasks and
+  metrics, from template filling to named entities and coreference.
+year: 1987
+see_also:
+  - named-entity recognition
+  - coreference resolution
+  - knowledge graph
+  - structured outputs
+  - document understanding
+  - natural language processing
+sources:
+  - text: >-
+      Grishman, R. & Sundheim, B. (1996). Message Understanding Conference-6: A Brief History.
+      COLING 1996.
+    url: https://aclanthology.org/C96-1079/

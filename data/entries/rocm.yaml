@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ROCm
+id: rocm
+pos: prop. n.
+also:
+  - Radeon Open Compute
+  - HIP
+  - HIPIFY
+pronunciation: ROCK-em
+domain: hw
+domains:
+  - eng
+labels:
+  - trademark
+level: specialist
+plain: >-
+  AMD's free, open-source software for programming its graphics and AI chips — its answer to
+  Nvidia's CUDA, letting AI software run on AMD hardware.
+senses:
+  - definition: >-
+      AMD's open-source counterpart to [[cuda|CUDA]], the software that lets programs use its
+      Instinct and Radeon GPUs for general computation. It bundles drivers and runtime, compilers,
+      math and AI libraries (such as rocBLAS, MIOpen and the RCCL communication library), profilers
+      and HIP, a C++ programming interface closely modeled on CUDA, with HIPIFY tools that translate
+      CUDA source code into HIP. [[pytorch|PyTorch]], [[jax|JAX]], [[triton|Triton]] and inference
+      engines such as [[vllm|vLLM]] support ROCm, so much CUDA-targeted AI software can run on AMD
+      accelerators such as the MI300X (2023) and MI350 series (2025). Its historic weaknesses
+      relative to CUDA — narrower hardware support, rougher tooling and fewer tuned kernels — have,
+      by many accounts, narrowed since 2024 as large buyers deployed AMD GPUs for inference and
+      training, though CUDA's ecosystem remains broader.
+origin: >-
+  Launched by AMD on 14 November 2016 as the 'Radeon Open Compute platform', part of its Boltzmann
+  Initiative for high-performance computing; because 'Open Compute' was another organization's
+  trademark, AMD stopped treating the name as an acronym. The ROCm 7 series appeared in 2025.
+year: 2016
+note: >-
+  The name no longer stands for anything. HIP code can also be compiled for Nvidia GPUs, making HIP
+  a partial portability layer.
+see_also:
+  - CUDA
+  - GPU
+  - AI compiler
+  - Triton
+  - PyTorch
+contrast:
+  - CUDA
+as_of: 2026-10

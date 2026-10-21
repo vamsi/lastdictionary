@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: off-policy
+id: off-policy
+pos: adj.
+also:
+  - off-policy learning
+  - behavior policy
+  - target policy
+  - off-policy evaluation
+domain: rl
+domains:
+  - train
+level: core
+plain: >-
+  Describes learning that can use experience produced by some other strategy — an older version, a
+  human, a different program — while improving the current one.
+senses:
+  - definition: >-
+      Describing [[reinforcement-learning|reinforcement learning]] methods that learn about one
+      [[policy|policy]] (the target policy, usually the greedy or current one) from data generated
+      by another (the behavior policy): past versions of the agent stored in a
+      [[experience-replay|replay buffer]], exploratory behavior, human demonstrations or logged
+      data. [[q-learning|Q-learning]], the [[deep-q-network|deep Q-network]],
+      [[deep-deterministic-policy-gradient|DDPG]] and [[soft-actor-critic|soft actor–critic]] are
+      off-policy. Reusing data makes them far more sample-efficient than [[on-policy|on-policy]]
+      methods, but the mismatch between the data and target distributions must be handled — through
+      max-based targets, [[importance-sampling|importance-sampling]] ratios (as in Retrace and
+      V-trace) or constraints that keep the policy near the data — and off-policy learning combined
+      with bootstrapping and function approximation can diverge (the [[deadly-triad|deadly triad]]).
+      Off-policy evaluation, estimating a new policy's value from logged data, is central to
+      [[offline-reinforcement-learning|offline reinforcement learning]] and recommender systems.
+    example: >-
+      Because SAC is off-policy, we can reuse every transition the robot has ever collected.
+origin: >-
+  The idea is implicit in Christopher Watkins's Q-learning (1989); the terms were standardized in RL
+  during the 1990s, notably in Sutton and Barto's textbook (1998). Doina Precup, Richard Sutton and
+  Satinder Singh's work on importance-sampled eligibility traces (2000) made off-policy evaluation a
+  topic in its own right.
+see_also:
+  - on-policy
+  - Q-learning
+  - experience replay
+  - offline reinforcement learning
+  - deadly triad
+  - soft actor–critic
+contrast:
+  - on-policy
+sources:
+  - text: >-
+      Precup, D., Sutton, R. S. & Singh, S. (2000). Eligibility Traces for Off-Policy Policy
+      Evaluation. Proceedings of ICML 2000.

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: citation
+id: citation
+pos: n.
+also:
+  - source attribution
+  - attributed generation
+  - grounded citation
+  - cite
+domain: agents
+domains:
+  - llm
+  - eval
+level: core
+plain: >-
+  A pointer from something an AI says to the source that supports it — a link, document or quoted
+  passage — so people can check the claim for themselves.
+senses:
+  - definition: >-
+      In AI systems, a reference attached to generated text that identifies the source supporting a
+      specific claim — a document, passage, web page or quoted span — typically produced by
+      [[retrieval-augmented-generation|retrieval-augmented generation]] or [[agentic-rag|agentic
+      RAG]] systems that instruct or train the model to cite what it retrieved. Citations make
+      output verifiable and are evaluated by citation recall (is every claim supported by some cited
+      source?) and citation precision (does each cited source support its claim?), often judged with
+      entailment models or an [[llm-as-a-judge|LLM-as-a-judge]]. Known failures include references
+      to papers or court cases that do not exist — a form of [[hallucination|hallucination]] — real
+      sources that do not say what is claimed, and citations of low-quality pages. Some model APIs
+      return structured citations pointing to exact spans of supplied documents, which reduces
+      fabrication.
+    example: >-
+      Every sentence in the summary carries a citation to the contract clause it came from, so legal
+      can check it quickly.
+origin: >-
+  OpenAI's WebGPT (December 2021) and DeepMind's GopherCite (March 2022) trained language models to
+  back answers with references or quotations, and Hannah Rashkin and colleagues proposed an
+  'attributable to identified sources' standard for evaluation (2021). Citations became a standard
+  feature of AI search products from 2023, the year fabricated case citations led to sanctions
+  against lawyers in the US case Mata v. Avianca.
+year: 2021
+note: >-
+  A citation shows where a claim purports to come from, not that it is true; checking that the
+  source says what the model claims remains essential.
+see_also:
+  - retrieval-augmented generation
+  - grounding
+  - hallucination
+  - factuality
+  - agentic RAG
+  - deep research
+sources:
+  - text: >-
+      Nakano, R. et al. (2021). WebGPT: Browser-assisted question-answering with human feedback.
+      arXiv preprint.
+  - text: >-
+      Menick, J. et al. (2022). Teaching language models to support answers with verified quotes.
+      arXiv preprint.
+  - text: >-
+      Gao, T., Yen, H., Yu, J. & Chen, D. (2023). Enabling Large Language Models to Generate Text
+      with Citations. EMNLP 2023.

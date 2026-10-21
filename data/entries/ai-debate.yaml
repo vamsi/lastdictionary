@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI debate
+id: ai-debate
+pos: n.
+also:
+  - debate
+  - AI safety via debate
+  - multi-agent debate
+domain: safety
+domains:
+  - train
+  - llm
+level: specialist
+plain: >-
+  A proposed way to supervise very capable AI: two AI systems argue opposite answers to a question
+  and a human judge decides who argued better, on the theory that lies are easier to expose than to
+  defend.
+senses:
+  - context: Scalable oversight
+    definition: >-
+      A [[scalable-oversight|scalable oversight]] method in which two copies of a model argue for
+      competing answers in turns and a judge — a human or a weaker model — chooses the winner, with
+      both debaters trained by [[self-play|self-play]] to win. The bet is that refuting a lie is
+      easier than defending one, so honest argument wins at equilibrium and the judge need only
+      examine the single most contested step rather than the whole problem. Its proposers drew a
+      parallel with complexity theory: a debate refereed by a polynomial-time judge can in principle
+      decide any problem in PSPACE, while a judge checking answers unaided is limited to NP.
+      Experiments on reading-comprehension questions, where only the debaters see the source text,
+      found debate raised judge accuracy over a single persuasive 'consultant', and more so as
+      debaters grew more persuasive. A known weakness is the obfuscated-arguments problem: a
+      dishonest debater may build an argument whose flaw is real but too hard to locate.
+    example: >-
+      Judges reading the debate transcripts beat the consultancy baseline by a wide margin.
+  - context: Reasoning
+    definition: >-
+      Multi-agent debate: an inference-time technique in which several
+      [[large-language-model|language-model]] instances propose answers, read one another's
+      reasoning and revise over several rounds before converging. It aims at better accuracy and
+      factuality rather than oversight, and its debaters usually cooperate rather than compete.
+origin: >-
+  Proposed by Geoffrey Irving, Paul Christiano and Dario Amodei at OpenAI in 'AI safety via debate'
+  (2018), which tested a toy version on MNIST digit classification with a judge shown only pixels
+  the debaters revealed. Experiments with language models followed from 2022 at New York University,
+  Anthropic, Google DeepMind and elsewhere. Yilun Du and colleagues (2023) popularized multi-agent
+  debate for reasoning.
+year: 2018
+note: >-
+  Debate assumes judges are moved by valid arguments; human biases and persuasive falsehoods are the
+  central objections. The two senses share a name but not a goal: the safety sense is adversarial
+  and aims at truthful judgment.
+see_also:
+  - scalable oversight
+  - iterated amplification
+  - prover–verifier game
+  - recursive reward modeling
+  - sandwiching
+  - self-play
+sources:
+  - text: >-
+      Irving, G., Christiano, P. & Amodei, D. (2018). AI safety via debate. arXiv:1805.00899.
+  - text: >-
+      Khan, A. et al. (2024). Debating with More Persuasive LLMs Leads to More Truthful Answers.
+      ICML 2024.

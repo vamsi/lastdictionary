@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: diffusion sampler
+id: diffusion-sampler
+pos: n.
+also:
+  - sampler
+  - sampling method
+  - sampling steps
+  - DPM-Solver
+  - Euler sampler
+  - ancestral sampling
+  - number of function evaluations
+  - NFE
+domain: gen
+domains:
+  - infer
+  - math
+level: core
+plain: >-
+  The step-by-step routine a diffusion model follows to turn noise into a finished picture; the
+  choice of sampler and number of steps trades speed against quality.
+senses:
+  - definition: >-
+      An algorithm that generates a sample from a trained [[diffusion-model|diffusion model]] by
+      numerically integrating its reverse process from noise to data, calling the network once or
+      more per step. Stochastic samplers simulate the reverse-time stochastic differential equation
+      and inject fresh noise at each step (ancestral sampling, as in the original
+      [[denoising-diffusion-probabilistic-model|DDPM]]); deterministic samplers solve the equivalent
+      probability-flow ordinary differential equation, so a given starting noise always yields the
+      same image, which enables inversion and interpolation. Widely used methods include
+      [[denoising-diffusion-implicit-model|DDIM]], the Euler and Heun steppers of the EDM framework,
+      and higher-order solvers such as DPM-Solver and DPM-Solver++, which reach good quality in
+      roughly 10–25 network evaluations instead of hundreds or thousands. Image tools expose the
+      sampler, step count and [[random-seed|random seed]] as user settings. Cost is counted in
+      network function evaluations (NFE); [[diffusion-distillation|diffusion distillation]] and
+      [[consistency-model|consistency models]] cut it to between one and four.
+    example: Twenty steps of DPM-Solver++ looked as good as 250 ancestral steps.
+origin: >-
+  Diffusion sampling began as ancestral sampling of a Markov chain (2015, 2020). Jiaming Song,
+  Chenlin Meng and Stefano Ermon's DDIM (October 2020) introduced fast deterministic sampling; the
+  SDE framework of Yang Song and colleagues (2020) recast samplers as SDE and ODE solvers; and Tero
+  Karras and colleagues' EDM (2022) and Cheng Lu and colleagues' DPM-Solver (2022) systematized the
+  design space.
+year: 2020
+note: >-
+  Sampler names in community tools ('Euler a', 'DPM++ 2M Karras') bundle the solver, whether noise
+  is re-injected ('a' for ancestral) and the spacing of noise levels; they are conventions of
+  particular software, not standard terminology.
+see_also:
+  - diffusion model
+  - noise schedule
+  - denoising diffusion implicit model
+  - score-based generative model
+  - consistency model
+  - diffusion distillation
+  - random seed
+sources:
+  - text: >-
+      Karras, T., Aittala, M., Aila, T. & Laine, S. (2022). Elucidating the Design Space of
+      Diffusion-Based Generative Models. NeurIPS 2022. arXiv:2206.00364.
+    url: https://arxiv.org/abs/2206.00364
+  - text: >-
+      Lu, C., Zhou, Y., Bao, F., Chen, J., Li, C. & Zhu, J. (2022). DPM-Solver: A Fast ODE Solver
+      for Diffusion Probabilistic Model Sampling in Around 10 Steps. NeurIPS 2022. arXiv:2206.00927.
+    url: https://arxiv.org/abs/2206.00927

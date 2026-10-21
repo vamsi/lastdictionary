@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: g factor
+id: g-factor
+pos: n.
+also:
+  - g
+  - general intelligence factor
+  - general cognitive ability
+  - psychometric g
+  - positive manifold
+  - fluid intelligence
+  - crystallized intelligence
+domain: mind
+domains:
+  - eval
+  - math
+level: specialist
+plain: >-
+  The common factor behind the finding that people who do well on one kind of mental test tend to do
+  well on others. Researchers also look for a similar general factor across AI models.
+senses:
+  - definition: >-
+      The general factor of cognitive ability extracted by factor analysis from the positive
+      correlations among scores on diverse cognitive tests — vocabulary, arithmetic, spatial
+      reasoning, memory — a pattern called the positive manifold. In hierarchical models such as the
+      Cattell–Horn–Carroll theory, g sits above broad abilities including fluid intelligence
+      (reasoning on novel problems) and crystallized intelligence (acquired knowledge). It accounts
+      for a large share of individual differences in test performance and predicts educational and
+      occupational outcomes, but what it represents — a single underlying capacity, the product of
+      many interacting processes, or merely a statistical summary — is debated. In AI evaluation,
+      factor analyses of [[large-language-model|language models]]' [[benchmark|benchmark]] scores
+      ask whether a similar general factor runs across models; findings vary with the models and
+      tasks sampled, some showing a dominant general factor and others several distinct but
+      correlated abilities.
+origin: >-
+  Introduced by the psychologist Charles Spearman in '"General Intelligence," Objectively Determined
+  and Measured' (American Journal of Psychology, 1904). Raymond Cattell distinguished fluid and
+  crystallized intelligence from the 1940s, and John Carroll's 1993 reanalysis of hundreds of
+  datasets grounded the hierarchical model.
+year: 1904
+note: >-
+  Not to be confused with [[artificial-general-intelligence|artificial general intelligence]]: a
+  family of models can share a strong general factor across benchmarks without any of them being
+  generally intelligent in the AGI sense.
+see_also:
+  - intelligence
+  - artificial general intelligence
+  - benchmark
+  - jagged intelligence
+  - universal intelligence
+sources:
+  - text: >-
+      Spearman, C. (1904). 'General Intelligence,' Objectively Determined and Measured. The American
+      Journal of Psychology 15(2), 201–292.
+  - text: >-
+      Carroll, J. B. (1993). Human Cognitive Abilities: A Survey of Factor-Analytic Studies.
+      Cambridge University Press.

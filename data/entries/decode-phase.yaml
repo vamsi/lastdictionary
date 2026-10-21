@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decode phase
+id: decode-phase
+pos: n.
+also:
+  - decode
+  - decoding phase
+  - generation phase
+  - token generation phase
+  - decode step
+domain: infer
+domains:
+  - llm
+  - hw
+level: core
+plain: >-
+  The second stage of an AI's reply, in which it writes the answer one word-piece at a time, each
+  step depending on everything written so far.
+senses:
+  - definition: >-
+      The phase of [[autoregressive-model|autoregressive]] generation that follows
+      [[prefill|prefill]]: the model repeatedly runs a [[forward-pass|forward pass]] on the newest
+      [[token|token]] of each sequence, attends over the keys and values stored in the [[kv-cache|KV
+      cache]], appends the new token's keys and values, and selects the next token, until a stop
+      condition is met. Each step does little arithmetic per byte moved, because the full
+      [[weights|weights]] and the KV cache must be read from memory to produce one token per
+      sequence, so decoding is typically [[memory-bound|memory-bound]] and its per-request speed is
+      limited by [[memory-bandwidth|memory bandwidth]]. Batching many sequences,
+      [[quantization|quantization]], [[speculative-decoding|speculative decoding]],
+      [[grouped-query-attention|grouped-query attention]] and [[multi-token-prediction|multi-token
+      prediction]] all aim to get more useful tokens out of each memory read. Decode speed sets
+      [[time-per-output-token|time per output token]].
+    example: >-
+      At batch size one, the decode phase leaves most of the GPU's arithmetic units idle.
+origin: >-
+  Grew out of 'incremental decoding' in sequence-to-sequence systems. Noam Shazeer's 2019 paper on
+  multi-query attention identified the memory bandwidth spent repeatedly loading keys and values as
+  its bottleneck. 'Decode' as the name of the phase paired with 'prefill' became standard in
+  LLM-serving papers in 2023–2024.
+note: >-
+  Not to be confused with [[decoding|decoding]], the strategy for choosing tokens
+  ([[greedy-decoding|greedy decoding]], [[beam-search|beam search]], sampling), nor with the decoder
+  half of an [[encoder-decoder-architecture|encoder–decoder architecture]].
+see_also:
+  - prefill
+  - KV cache
+  - memory-bound
+  - time per output token
+  - speculative decoding
+  - continuous batching
+contrast:
+  - prefill
+  - decoding
+sources:
+  - text: >-
+      Shazeer, N. (2019). Fast Transformer Decoding: One Write-Head is All You Need.
+      arXiv:1911.02150.
+    url: https://arxiv.org/abs/1911.02150

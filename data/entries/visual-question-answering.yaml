@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: visual question answering
+id: visual-question-answering
+pos: n.
+also:
+  - VQA
+  - VQA v2
+  - image question answering
+  - DocVQA
+  - ChartQA
+domain: percep
+domains:
+  - llm
+  - eval
+level: core
+plain: >-
+  Asking an AI a question about a picture, such as 'How many people are wearing hats?', and having
+  it answer in words.
+senses:
+  - definition: >-
+      The task of answering a natural-language question about an image or video, which requires
+      combining visual recognition with language understanding and sometimes counting, reading text,
+      spatial reasoning or outside knowledge. Early systems fused a
+      [[convolutional-neural-network|CNN]] image representation with a
+      [[recurrent-neural-network|recurrent neural network]] encoding of the question and classified
+      over a fixed set of frequent answers; attention over image regions and transformer-based
+      vision–language pretraining followed. Benchmark design proved critical: on the original VQA
+      dataset, models could score well from language priors alone (answering 'yes' or 'tennis'
+      without looking), so VQA v2 (2017) added, for each question, a second, similar-looking image
+      on which the correct answer differs. Specialized datasets test compositional reasoning (GQA),
+      outside knowledge (OK-VQA), text in images (TextVQA), photos taken by blind people (VizWiz),
+      documents (DocVQA) and charts (ChartQA). Since 2023, [[vision-language-model|vision-language
+      models]] answer free-form, and VQA serves mainly as an evaluation format; the standard VQA
+      accuracy gives full credit to an answer that at least three of ten human annotators gave.
+    example: >-
+      On VizWiz the model often answers confidently when the photo is too blurry and the right reply
+      is 'unanswerable'.
+formula_latex: \text{Acc}(a) = \min\left(\frac{\#\{\text{annotators who answered } a\}}{3},\ 1\right)
+origin: >-
+  Mateusz Malinowski and Mario Fritz's DAQUAR dataset (2014) framed question answering about
+  real-world images; the name and the large benchmark came from Stanislaw Antol, Aishwarya Agrawal,
+  Devi Parikh and colleagues' 'VQA: Visual Question Answering' (ICCV 2015). Jeffrey Bigham and
+  colleagues' VizWiz app (2010) had earlier crowdsourced answers to blind users' photo questions.
+year: 2015
+note: >-
+  The official metric averages the formula over subsets of the ten human answers. High VQA scores
+  can reflect dataset biases rather than visual understanding, a recurring theme in multimodal
+  evaluation.
+see_also:
+  - vision-language model
+  - image captioning
+  - visual grounding
+  - question answering
+  - document understanding
+  - benchmark
+sources:
+  - text: >-
+      Antol, S., Agrawal, A., Lu, J., Mitchell, M., Batra, D., Zitnick, C. L. & Parikh, D. (2015).
+      VQA: Visual Question Answering. ICCV 2015.
+  - text: >-
+      Goyal, Y., Khot, T., Summers-Stay, D., Batra, D. & Parikh, D. (2017). Making the V in VQA
+      Matter: Elevating the Role of Image Understanding in Visual Question Answering. CVPR 2017.

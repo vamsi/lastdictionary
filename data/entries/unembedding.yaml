@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: unembedding
+id: unembedding
+pos: n.
+also:
+  - unembedding matrix
+  - un-embedding
+  - W_U
+  - LM head
+  - language-model head
+  - output embedding
+  - weight tying
+  - tied embeddings
+domain: llm
+domains:
+  - interp
+  - dl
+level: specialist
+plain: >-
+  The last step of a language model, which turns its internal state into a score for every token in
+  its vocabulary; the next token is then chosen from those scores.
+senses:
+  - definition: >-
+      The final linear map of a [[language-model|language model]] that converts the last hidden
+      vector at each position, usually after a final normalization, into [[logit|logits]], one per
+      [[vocabulary|vocabulary]] entry; a [[softmax|softmax]] then gives the next-token distribution.
+      It is a d × V matrix, often written W_U and called the 'LM head' in software libraries. Many
+      models tie it to the input [[embedding|embedding]] matrix (using its transpose), saving V × d
+      parameters, a practice called weight tying; many large models keep them separate.
+      Interpretability work stresses that any vector in the [[residual-stream|residual stream]] can
+      be projected through W_U to read off which tokens it promotes, the basis of the
+      [[logit-lens|logit lens]]. The unembedding is not the inverse of the embedding.
+    example: >-
+      Projecting the layer-20 residual through the unembedding already ranks the correct answer
+      first.
+origin: >-
+  Tying input and output embeddings was proposed in 2016 by Ofir Press and Lior Wolf and by Hakan
+  Inan, Khashayar Khosravi and Richard Socher. The name 'unembedding' was popularized by Anthropic's
+  'A Mathematical Framework for Transformer Circuits' (Nelson Elhage and colleagues, December 2021)
+  and the interpretability community.
+year: 2021
+note: >-
+  Not to be confused with the input [[embedding|embedding]], which maps token IDs into the model's
+  vector space; the unembedding maps from that space to vocabulary scores.
+see_also:
+  - embedding
+  - logit
+  - logit lens
+  - residual stream
+  - vocabulary
+  - next-token prediction
+contrast:
+  - embedding
+sources:
+  - text: >-
+      Elhage, N., Nanda, N., Olsson, C. et al. (2021). A Mathematical Framework for Transformer
+      Circuits. Transformer Circuits Thread.
+    url: https://transformer-circuits.pub/2021/framework/index.html
+  - text: >-
+      Press, O. & Wolf, L. (2017). Using the Output Embedding to Improve Language Models. EACL 2017.
+    url: https://arxiv.org/abs/1608.05859

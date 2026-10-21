@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deskilling
+id: deskilling
+pos: n.
+also:
+  - deskill
+  - skill atrophy
+  - skill erosion
+  - cognitive offloading
+domain: society
+domains:
+  - safety
+level: core
+plain: >-
+  The loss of people's skills when machines take over the work that used to keep those skills sharp,
+  or when jobs are redesigned so that less skill is needed.
+senses:
+  - context: Human factors
+    definition: >-
+      The decline of a person's own skill or judgment through reliance on automation or AI that
+      performs, or does much of the thinking for, a task the person used to carry out. Psychologists
+      call the underlying behavior cognitive offloading: delegating memory, calculation or reasoning
+      to external aids, which is often efficient but can leave people unable to perform or check the
+      task when the aid fails or errs. Concerns span pilots and autopilots, drivers and navigation
+      apps, clinicians and decision support, students and programmers using generative AI, and
+      novices who never acquire skills in the first place. A 2025 observational study at four Polish
+      centers found that after AI assistance became routine, endoscopists' adenoma detection rate in
+      colonoscopies done without AI fell from 28.4% to 22.4%. Mitigations include regular unaided
+      practice, tools that explain or prompt rather than simply answer, and skill assessment without
+      AI.
+    example: >-
+      After a year with the coding assistant, the juniors could ship features but not debug without
+      it.
+  - context: Labor sociology
+    definition: >-
+      The redesign of work so that tasks require less skill, judgment and training, typically by
+      breaking them into simpler steps and embedding expertise in machines or procedures, which can
+      reduce workers' pay, autonomy and bargaining power.
+origin: >-
+  The verb 'deskill', for reducing the skill a job requires, is recorded from 1941; the labor sense
+  was theorized in Harry Braverman's Labor and Monopoly Capital (1974). The human-factors concern
+  was framed by Lisanne Bainbridge's 'Ironies of Automation' (1983), which observed that automation
+  erodes the skills operators need when it fails; 'cognitive offloading' was popularized by Evan
+  Risko and Sam Gilbert (2016).
+year: 1941
+note: >-
+  'Cognitive debt' was used by Nataliya Kosmyna and colleagues (2025) for reduced engagement and
+  recall among people who wrote essays with an AI assistant, in a small study first released as a
+  preprint; it has become a popular shorthand for the same worry.
+see_also:
+  - overreliance
+  - automation bias
+  - automation
+  - algorithmic management
+  - AI literacy
+  - moral crumple zone
+contrast:
+  - augmentation
+sources:
+  - text: Bainbridge, L. (1983). Ironies of Automation. Automatica 19(6), 775–779.
+  - text: >-
+      Budzyń, K. et al. (2025). Endoscopist deskilling risk after exposure to artificial
+      intelligence in colonoscopy: a multicentre, observational study. The Lancet Gastroenterology &
+      Hepatology 10(10), 896–903.

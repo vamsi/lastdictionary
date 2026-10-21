@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MT-Bench
+id: mt-bench
+pos: prop. n.
+domain: eval
+domains:
+  - llm
+level: specialist
+plain: >-
+  A set of 80 two-part questions — in writing, reasoning, math, coding and more — whose answers are
+  graded by a strong AI model, used to compare chat assistants quickly.
+senses:
+  - definition: >-
+      A benchmark of 80 open-ended questions, each followed by a second-turn request, that tests how
+      well chat assistants follow instructions and cope with follow-ups across eight categories:
+      coding, math, reasoning, extraction, writing, roleplay, and knowledge of STEM and of the
+      humanities and social sciences. Answers are graded by an [[llm-as-a-judge|LLM-as-a-judge]],
+      originally GPT-4, either on a 1–10 scale or by pairwise comparison with another model; for
+      math and reasoning questions the judge is given a reference answer. Its authors showed that
+      GPT-4's judgments agreed with expert human preferences over 80% of the time, about as often as
+      humans agree with one another, which helped legitimize model-graded evaluation. MT-Bench was
+      widely reported for open [[chat-model|chat models]] in 2023–2024, but with so few questions
+      and a judge that favors certain styles it saturated quickly and was superseded by larger sets
+      such as Arena-Hard.
+    example: >-
+      Its MT-Bench score of 8.9 sits close to the judge model's own, so we stopped relying on it.
+origin: >-
+  Introduced by Lianmin Zheng, Wei-Lin Chiang, Ying Sheng and colleagues at LMSYS in June 2023, in
+  the paper that popularized the phrase 'LLM-as-a-judge' and described Chatbot Arena (NeurIPS 2023
+  Datasets and Benchmarks Track).
+year: 2023
+note: "'MT' stands for multi-turn, not machine translation."
+see_also:
+  - LLM-as-a-judge
+  - LMArena
+  - win rate
+  - human evaluation
+  - instruction following
+  - chat model
+sources:
+  - text: >-
+      Zheng, L., Chiang, W.-L., Sheng, Y. et al. (2023). Judging LLM-as-a-Judge with MT-Bench and
+      Chatbot Arena. NeurIPS 2023 Datasets and Benchmarks Track.
+    url: https://arxiv.org/abs/2306.05685

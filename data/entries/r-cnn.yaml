@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: R-CNN
+id: r-cnn
+pos: prop. n.
+also:
+  - Regions with CNN features
+  - Fast R-CNN
+  - Faster R-CNN
+  - Mask R-CNN
+  - region proposal network
+  - RPN
+  - RoI pooling
+  - RoIAlign
+domain: percep
+domains:
+  - dl
+  - hist
+level: core
+plain: >-
+  A family of object detectors that first pick out image regions likely to contain objects, then use
+  a neural network to label each region and tighten its box.
+senses:
+  - definition: >-
+      'Regions with CNN features': a two-stage approach to [[object-detection|object detection]] and
+      the family of models built on it. The original R-CNN took about 2,000 class-agnostic region
+      proposals per image from the selective search algorithm, warped each to a fixed size,
+      extracted features with a [[convolutional-neural-network|convolutional neural network]]
+      pretrained on [[imagenet|ImageNet]] and fine-tuned for detection, scored the regions with
+      per-class [[support-vector-machine|support vector machines]] and refined them with
+      bounding-box regression. It raised mean average precision on PASCAL VOC 2012 by more than 30%
+      in relative terms, to 53.3%, but needed many seconds per image. Fast R-CNN (2015) computed
+      convolutional features once per image and pooled them for each region (RoI pooling), training
+      all parts jointly; Faster R-CNN (2015) replaced selective search with a learned region
+      proposal network built on [[anchor-box|anchors]], making the detector a single network; Mask
+      R-CNN (2017) added a branch predicting a pixel mask for each region and became the standard
+      method for [[instance-segmentation|instance segmentation]].
+    example: >-
+      For small, densely packed parts we still get better recall from Faster R-CNN than from the
+      one-stage models.
+origin: >-
+  Introduced by Ross Girshick, Jeff Donahue, Trevor Darrell and Jitendra Malik of UC Berkeley in a
+  November 2013 arXiv paper published at CVPR 2014. Girshick's Fast R-CNN and Faster R-CNN (Shaoqing
+  Ren, Kaiming He, Girshick, Jian Sun) followed at Microsoft Research, and Mask R-CNN (He, Georgia
+  Gkioxari, Piotr Dollár, Girshick) at Facebook AI Research.
+year: 2013
+note: >-
+  Said letter by letter. 'Two-stage detector' is common shorthand for the R-CNN family, as opposed
+  to one-stage detectors such as [[yolo|YOLO]]. Despite the 'CNN' in the name, region-based
+  detectors can use transformer [[backbone|backbones]].
+see_also:
+  - object detection
+  - YOLO
+  - anchor box
+  - instance segmentation
+  - convolutional neural network
+  - non-maximum suppression
+  - DETR
+contrast:
+  - YOLO
+sources:
+  - text: >-
+      Girshick, R., Donahue, J., Darrell, T. & Malik, J. (2014). Rich Feature Hierarchies for
+      Accurate Object Detection and Semantic Segmentation. CVPR 2014.
+    url: https://arxiv.org/abs/1311.2524
+  - text: >-
+      Ren, S., He, K., Girshick, R. & Sun, J. (2015). Faster R-CNN: Towards Real-Time Object
+      Detection with Region Proposal Networks. NeurIPS 2015.
+  - text: He, K., Gkioxari, G., Dollár, P. & Girshick, R. (2017). Mask R-CNN. ICCV 2017.
+    url: https://arxiv.org/abs/1703.06870

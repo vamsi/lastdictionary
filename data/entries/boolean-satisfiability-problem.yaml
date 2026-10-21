@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Boolean satisfiability problem
+id: boolean-satisfiability-problem
+pos: n.
+also:
+  - SAT
+  - propositional satisfiability
+  - SAT solver
+  - SAT solving
+  - 3-SAT
+  - DPLL
+  - conflict-driven clause learning
+  - CDCL
+domain: sym
+domains:
+  - math
+level: core
+plain: >-
+  The puzzle of deciding whether a set of true-or-false conditions can all be met at once. It is
+  famously hard in theory, yet modern solvers routinely handle millions of conditions.
+senses:
+  - definition: >-
+      The decision problem of whether a [[propositional-logic|propositional]] formula, usually given
+      in conjunctive normal form (an AND of clauses, each an OR of literals), is satisfiable — true
+      under at least one assignment of truth values — with solvers also returning such an
+      assignment. By the Cook–Levin theorem it was the original [[np-complete|NP-complete]] problem:
+      every problem in NP reduces to it, and no algorithm is known that handles all instances in
+      polynomial time. 3-SAT remains NP-complete, while 2-SAT is solvable in linear time. Practical
+      solvers descend from the DPLL backtracking procedure and, since the late 1990s, use
+      conflict-driven clause learning (CDCL), which analyzes each dead end to add a clause that
+      prunes future search, combined with watched literals, restarts and activity-based branching
+      [[heuristic|heuristics]]. They routinely solve industrial instances with millions of variables
+      and are workhorses of hardware and software verification, [[automated-planning|automated
+      planning]], scheduling, cryptanalysis and combinatorial mathematics.
+    example: >-
+      We encoded the timetable as 2 million clauses and the SAT solver found a schedule in under a
+      minute.
+origin: >-
+  Stephen Cook proved SAT NP-complete in 1971, independently of Leonid Levin (published 1973).
+  Martin Davis and Hilary Putnam's 1960 procedure, refined with George Logemann and Donald Loveland
+  in 1962 (DPLL), founded practical solving; CDCL came from João Marques-Silva and Karem Sakallah's
+  GRASP (1996) and was sped up by Chaff (2001). In 2016 a SAT solver settled the Boolean Pythagorean
+  triples problem with a 200-terabyte proof.
+year: 1971
+note: >-
+  NP-completeness is a worst-case statement: real-world instances often have structure that CDCL
+  exploits. Randomly generated 3-SAT formulas are empirically hardest near about 4.27 clauses per
+  variable.
+see_also:
+  - propositional logic
+  - NP-complete
+  - satisfiability modulo theories
+  - constraint satisfaction problem
+  - resolution
+  - answer set programming
+  - combinatorial explosion
+sources:
+  - text: >-
+      Cook, S. A. (1971). The Complexity of Theorem-Proving Procedures. Proceedings of the 3rd ACM
+      Symposium on Theory of Computing, 151–158.
+  - text: >-
+      Davis, M., Logemann, G. & Loveland, D. (1962). A Machine Program for Theorem-Proving.
+      Communications of the ACM 5(7), 394–397.
+  - text: >-
+      Heule, M. J. H., Kullmann, O. & Marek, V. W. (2016). Solving and Verifying the Boolean
+      Pythagorean Triples Problem via Cube-and-Conquer. SAT 2016, LNCS 9710.

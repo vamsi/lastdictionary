@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: breadth-first search
+id: breadth-first-search
+pos: n.
+also:
+  - BFS
+  - breadth-first
+domain: sym
+domains:
+  - math
+level: core
+plain: >-
+  A way of exploring a maze or network level by level — first every place one step away, then every
+  place two steps away, and so on — so that the shortest route is found first.
+senses:
+  - definition: >-
+      An uninformed [[state-space-search|search]] algorithm that expands nodes in order of their
+      depth, using a first-in, first-out queue as the frontier: every node one step from the start
+      is expanded before any node two steps away, and so on. It is complete whenever the branching
+      factor is finite and finds a shortest path when all actions cost the same; with unequal costs,
+      uniform-cost search (Dijkstra's algorithm), which always expands the cheapest frontier node,
+      takes over that role. Its weakness is memory: with branching factor b and solution depth d it
+      must store on the order of b^d nodes, which soon becomes infeasible. Outside AI it is a basic
+      graph algorithm for finding connected components, hop-count distances in networks and
+      bipartite structure.
+    example: >-
+      Breadth-first search guarantees the fewest moves, but on this puzzle it ran out of memory at
+      depth 14.
+origin: >-
+  The usual reference is Edward F. Moore's 1959 paper on finding the shortest way through a maze.
+  Konrad Zuse had used the idea in 1945 to find connected parts of a graph in his Plankalkül
+  manuscript, which appeared in print only in 1972, and C. Y. Lee's 1961 maze-routing algorithm put
+  it to work wiring circuit boards.
+year: 1959
+see_also:
+  - depth-first search
+  - iterative deepening search
+  - state space search
+  - best-first search
+  - A* search
+contrast:
+  - depth-first search
+sources:
+  - text: >-
+      Moore, E. F. (1959). The Shortest Path Through a Maze. Proceedings of the International
+      Symposium on the Theory of Switching. Harvard University Press.

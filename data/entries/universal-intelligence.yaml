@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: universal intelligence
+id: universal-intelligence
+pos: n.
+also:
+  - Legg–Hutter intelligence
+  - universal intelligence measure
+  - Legg–Hutter definition of intelligence
+domain: asi
+domains:
+  - math
+  - mind
+level: specialist
+plain: >-
+  A mathematical definition of intelligence as an agent's average ability to achieve goals across
+  every possible environment, with simpler environments counting more.
+senses:
+  - definition: >-
+      A formal measure of an agent's general intelligence, defined as its expected performance
+      across all computable reward-giving environments, each weighted by its simplicity. An agent's
+      score is the sum, over environments μ, of 2 raised to minus the
+      [[kolmogorov-complexity|Kolmogorov complexity]] of μ, multiplied by the expected total reward
+      the agent obtains in μ; performance in simple environments counts most, but no environment is
+      ignored. The measure formalizes the informal definition its authors distilled from some
+      seventy existing ones: 'Intelligence measures an agent's ability to achieve goals in a wide
+      range of environments.' It is maximized by [[aixi|AIXI]] and is incomputable, though
+      approximate tests have been proposed. Criticisms include its dependence on the choice of
+      reference machine, its treatment of intelligence as reward-seeking, and the absence of any
+      weighting toward environments that matter to humans.
+    example: >-
+      Under universal intelligence, a system that excels only at chess scores barely above one that
+      does nothing.
+formula_latex: \Upsilon(\pi) := \sum_{\mu \in E} 2^{-K(\mu)} \, V^{\pi}_{\mu}
+origin: >-
+  Proposed by Shane Legg and Marcus Hutter in 'Universal Intelligence: A Definition of Machine
+  Intelligence' (Minds and Machines, 2007), after their survey of definitions of intelligence; Legg
+  developed it in his 2008 doctoral thesis, Machine Super Intelligence.
+year: 2007
+see_also:
+  - AIXI
+  - artificial general intelligence
+  - Kolmogorov complexity
+  - Solomonoff induction
+  - intelligence
+  - Shane Legg
+sources:
+  - text: >-
+      Legg, S. & Hutter, M. (2007). Universal Intelligence: A Definition of Machine Intelligence.
+      Minds and Machines 17(4).
+  - text: >-
+      Legg, S. & Hutter, M. (2007). A Collection of Definitions of Intelligence. In Advances in
+      Artificial General Intelligence. IOS Press.

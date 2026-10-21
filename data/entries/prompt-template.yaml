@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt template
+id: prompt-template
+pos: n.
+also:
+  - prompt pattern
+  - templated prompt
+  - pattern–verbalizer pair
+domain: llm
+domains:
+  - eng
+level: core
+plain: >-
+  A reusable prompt with blanks to fill in — for example, 'Summarize this email for a busy manager:
+  {email}' — so a program can send the same tested instructions with different content each time.
+senses:
+  - definition: >-
+      A parameterized [[prompt|prompt]] containing fixed instructions and named placeholders that
+      software fills at run time with inputs such as user questions, retrieved passages, examples or
+      dates, using string formatting or a templating language such as Jinja. Templates separate
+      stable, tested instructions from changing data, so they can be versioned, evaluated and reused
+      across calls; frameworks such as [[langchain|LangChain]] and [[dspy|DSPy]] and
+      [[prompt-management|prompt management]] tools are organized around them. In the earlier
+      prompt-based learning literature, a template wraps an input in a pattern with a slot for the
+      model to fill (for example 'X. Overall, it was a [MASK] movie.'), and a verbalizer maps the
+      filled word to a label. Inserting untrusted text into a template is a common route for
+      [[prompt-injection|prompt injection]].
+    example: Change the prompt template once and every support-ticket summary picks it up.
+origin: >-
+  Templates with slots were central to 2020–2021 prompt-based learning, such as Timo Schick and
+  Hinrich Schütze's pattern–verbalizer pairs, and were systematized in Pengfei Liu and colleagues'
+  2021 survey. The PromptSource project (2022) collected templates for many public datasets, and LLM
+  application frameworks made 'prompt template' a standard engineering term from late 2022.
+year: 2021
+note: >-
+  Not the same as a [[chat-template|chat template]], which formats role-labeled messages into the
+  token sequence a particular model expects; a prompt template produces the content of those
+  messages.
+see_also:
+  - prompt
+  - chat template
+  - prompt engineering
+  - prompt management
+  - few-shot prompting
+  - LangChain
+contrast:
+  - chat template
+sources:
+  - text: >-
+      Liu, P., Yuan, W., Fu, J., Jiang, Z., Hayashi, H. & Neubig, G. (2023). Pre-train, Prompt, and
+      Predict: A Systematic Survey of Prompting Methods in Natural Language Processing. ACM
+      Computing Surveys 55(9).
+    url: https://arxiv.org/abs/2107.13586v1
+  - text: >-
+      Bach, S. H. et al. (2022). PromptSource: An Integrated Development Environment and Repository
+      for Natural Language Prompts. ACL 2022 System Demonstrations.

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: genetic algorithm
+id: genetic-algorithm
+pos: n.
+also:
+  - GA
+  - genetic algorithms
+  - crossover
+  - mutation operator
+  - schema theorem
+  - chromosome
+domain: sym
+domains:
+  - ml
+  - math
+level: core
+plain: >-
+  A problem-solving method that copies natural evolution: many candidate solutions compete, the best
+  are 'bred' by mixing and randomly tweaking them, and over many generations the solutions improve.
+senses:
+  - definition: >-
+      A population-based search and optimization method modeled on natural selection. Candidate
+      solutions are encoded as strings ('chromosomes'), classically of bits; each is scored by a
+      [[fitness-function|fitness function]]; and each new generation is formed by selecting parents
+      with probability increasing in fitness (for example by roulette-wheel or tournament
+      selection), recombining pairs by crossover, which splices segments of the two parents, and
+      applying random mutation. Elitism may carry the best individuals over unchanged. Because it
+      needs only fitness evaluations, not gradients, it can tackle discontinuous, noisy or
+      combinatorial problems such as scheduling, layout and antenna design, though it usually needs
+      many evaluations and offers no optimality guarantee. John Holland's schema theorem offered an
+      early, now debated, explanation of why it works: short, fit building blocks multiply across
+      generations. Genetic algorithms are the best-known branch of
+      [[evolutionary-computation|evolutionary computation]].
+    example: >-
+      The genetic algorithm evolved a clash-free timetable after 400 generations of 200 candidates.
+origin: >-
+  John Holland and his students at the University of Michigan developed the approach in the 1960s;
+  the name first appeared in J. D. Bagley's 1967 dissertation, and Holland's Adaptation in Natural
+  and Artificial Systems (1975) gave it a theoretical basis. David Goldberg's 1989 textbook
+  popularized it in engineering.
+year: 1967
+note: >-
+  Often used loosely for any evolutionary algorithm. An often-cited success is the evolved antenna
+  that flew on NASA's Space Technology 5 satellites in 2006.
+see_also:
+  - evolutionary computation
+  - genetic programming
+  - evolution strategies
+  - fitness function
+  - simulated annealing
+  - metaheuristic
+  - neuroevolution
+contrast:
+  - gradient descent
+sources:
+  - text: >-
+      Holland, J. H. (1975). Adaptation in Natural and Artificial Systems. University of Michigan
+      Press.
+  - text: >-
+      Goldberg, D. E. (1989). Genetic Algorithms in Search, Optimization, and Machine Learning.
+      Addison-Wesley.

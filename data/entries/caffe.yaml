@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Caffe
+id: caffe
+pos: prop. n.
+also:
+  - Caffe2
+  - Convolutional Architecture for Fast Feature Embedding
+pronunciation: KAF-ay
+domain: eng
+domains:
+  - dl
+  - hist
+  - percep
+labels:
+  - historical
+  - trademark
+level: specialist
+plain: >-
+  An early free deep-learning toolkit from the University of California, Berkeley, popular for image
+  recognition in the mid-2010s, in which networks were described in simple text files rather than
+  code.
+senses:
+  - definition: >-
+      An open-source deep-learning framework written in C++ with CUDA GPU support and Python and
+      MATLAB interfaces, developed at the Berkeley Vision and Learning Center. Networks were defined
+      declaratively as stacks of layers in plain-text configuration files ('prototxt' files in
+      Protocol Buffers text format) and trained by a separately configured solver, so standard
+      [[convolutional-neural-network|convolutional networks]] could be trained without programming.
+      Fast GPU convolution and a Model Zoo of shared trained weights made Caffe a standard tool for
+      computer vision in 2014–2016, used to train and distribute versions of models such as
+      [[alexnet|AlexNet]], VGG and GoogLeNet. Its rigid layer abstraction made recurrent networks
+      and novel research ideas awkward, and it was overtaken by [[tensorflow|TensorFlow]] and
+      [[pytorch|PyTorch]]. Facebook's successor, Caffe2 (2017), targeted production and mobile
+      deployment and was merged into PyTorch in 2018.
+    example: >-
+      The old detection model is a Caffe prototxt, so convert it before trying to fine-tune it in
+      PyTorch.
+origin: >-
+  Created by Yangqing Jia during his PhD at the University of California, Berkeley, in 2013 and
+  described with colleagues in a 2014 paper; the name stands for Convolutional Architecture for Fast
+  Feature Embedding. Jia later led the development of Caffe2 at Facebook.
+year: 2013
+see_also:
+  - PyTorch
+  - TensorFlow
+  - Theano
+  - convolutional neural network
+  - AlexNet
+  - ImageNet
+sources:
+  - text: >-
+      Jia, Y. et al. (2014). Caffe: Convolutional Architecture for Fast Feature Embedding.
+      Proceedings of the 22nd ACM International Conference on Multimedia. arXiv:1408.5093.

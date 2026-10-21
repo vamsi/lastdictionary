@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: impact measure
+id: impact-measure
+pos: n.
+also:
+  - impact regularizer
+  - impact penalty
+  - low-impact AI
+  - reduced-impact AI
+  - side-effect penalty
+domain: safety
+domains:
+  - rl
+level: specialist
+plain: >-
+  A way of scoring how much an AI changes the world, so that it can be penalized for doing more than
+  its task requires.
+senses:
+  - definition: >-
+      A quantity measuring how much an agent's actions change its environment, used as a penalty
+      added to its reward so that it accomplishes its task with minimal side effects and without
+      gaining unnecessary power. An impact measure needs a baseline — the starting state, the state
+      that would have resulted from doing nothing, or a stepwise version comparing each action with
+      inaction at that point — and a deviation measure, such as lost ability to reach other states
+      ([[relative-reachability|relative reachability]]) or changed ability to achieve many auxiliary
+      goals ([[attainable-utility-preservation|attainable utility preservation]]). Design pitfalls
+      include offsetting (undoing the task's intended effects to cut the penalty) and interference
+      (stopping other agents or natural processes from changing things). Impact measures have worked
+      in gridworlds and the SafeLife benchmark but have not been scaled to
+      [[large-language-model|language-model]] agents.
+    example: >-
+      With the impact measure switched on, the robot walked around the vase instead of through it.
+origin: >-
+  Stuart Armstrong discussed 'reduced impact' AI from about 2012 and formalized it with Benjamin
+  Levinstein in 'Low Impact Artificial Intelligences' (2017). 'Impact measures' was listed as a
+  research problem in the Machine Intelligence Research Institute's 2016 machine-learning agenda;
+  Victoria Krakovna and colleagues (2018) and Alexander Matt Turner and colleagues (2020) proposed
+  the best-known measures.
+year: 2016
+note: >-
+  One approach to [[negative-side-effects|negative side effects]] and to [[mild-optimization|mild
+  optimization]]. An impact measure does not tell the agent which effects people care about, only
+  how to keep effects small, so a task that requires large changes is penalized too.
+see_also:
+  - negative side effects
+  - relative reachability
+  - attainable utility preservation
+  - mild optimization
+  - power-seeking
+  - corrigibility
+sources:
+  - text: >-
+      Armstrong, S. & Levinstein, B. (2017). Low Impact Artificial Intelligences. arXiv:1705.10720.
+    url: https://arxiv.org/abs/1705.10720
+  - text: >-
+      Krakovna, V., Orseau, L., Kumar, R., Martic, M. & Legg, S. (2018). Penalizing side effects
+      using stepwise relative reachability. arXiv:1806.01186.
+    url: https://arxiv.org/abs/1806.01186
+  - text: >-
+      Turner, A. M., Hadfield-Menell, D. & Tadepalli, P. (2020). Conservative Agency via Attainable
+      Utility Preservation. AIES 2020. arXiv:1902.09725.
+    url: https://arxiv.org/abs/1902.09725

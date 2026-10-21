@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inference cost
+id: inference-cost
+pos: n.
+also:
+  - cost per token
+  - price per million tokens
+  - serving cost
+  - cost of inference
+  - LLMflation
+domain: infer
+domains:
+  - society
+  - hw
+level: essential
+plain: >-
+  What it costs to use an AI model after it has been built: the computing power, electricity and
+  hardware needed every time it answers, usually billed per chunk of text.
+senses:
+  - definition: >-
+      The resources consumed in running a trained model (accelerator time, energy, memory and
+      networking) and the price charged for them, as distinct from the one-off cost of
+      [[training|training]]. For [[large-language-model|language models]] it is usually quoted per
+      million input and output [[token|tokens]], with output priced several times higher because
+      [[decode-phase|decoding]] uses hardware less efficiently than [[prefill|prefill]]; cached
+      input ([[prompt-caching|prompt caching]]) and [[batch-inference|batch inference]] are
+      discounted. Underlying cost scales with [[active-parameters|active parameters]] (about two
+      floating-point operations per active parameter per token), context length, hardware
+      utilization and [[batch-size|batch size]], and is cut by [[quantization|quantization]],
+      [[speculative-decoding|speculative decoding]], [[knowledge-distillation|distillation]] into
+      smaller models, [[model-routing|model routing]], and better kernels and chips. Prices for a
+      fixed level of capability have fallen roughly tenfold or more per year since 2021, yet
+      [[reasoning-model|reasoning models]] and [[ai-agent|agents]] consume far more tokens per task,
+      so total inference spending keeps growing.
+    example: >-
+      The agent costs about 40 cents per task because each run reads two million tokens.
+origin: >-
+  Discussed since deep learning entered products in the 2010s, the term became central after ChatGPT
+  (2022), when serving costs shaped pricing and chip demand. Guido Appenzeller of Andreessen
+  Horowitz introduced the name 'LLMflation' in November 2024 for the roughly tenfold annual fall in
+  cost at constant capability: GPT-3-level performance went from $60 to $0.06 per million tokens in
+  three years.
+note: >-
+  Cheaper tokens have not meant smaller bills: as in the Jevons paradox of energy economics, falling
+  unit cost has encouraged far greater use, especially by reasoning models and agents. Training cost
+  is paid once per model; inference cost is paid with every use.
+see_also:
+  - tokens per second
+  - throughput
+  - active parameters
+  - prompt caching
+  - batch inference
+  - model routing
+  - environmental impact of AI
+contrast:
+  - training compute
+sources:
+  - text: >-
+      Appenzeller, G. (2024). Welcome to LLMflation – LLM inference cost is going down fast.
+      Andreessen Horowitz, 12 November 2024.
+    url: https://a16z.com/llmflation-llm-inference-cost/
+as_of: 2026-10

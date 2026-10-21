@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: goal-conditioned reinforcement learning
+id: goal-conditioned-reinforcement-learning
+pos: n.
+also:
+  - goal-conditioned RL
+  - multi-goal reinforcement learning
+  - universal value function approximator
+  - UVFA
+  - hindsight experience replay
+  - HER
+domain: rl
+domains:
+  - robot
+level: specialist
+plain: >-
+  Training one AI agent to reach many different goals — whichever target it is given — instead of a
+  single fixed task, so a robot can, say, place an object anywhere asked.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement learning]] in which the [[policy|policy]] and
+      [[value-function|value function]] take a goal as an extra input — a target position, a desired
+      image, a language instruction — and the [[reward|reward]] measures progress toward or
+      attainment of that goal, so that a single agent learns a whole family of tasks. Universal
+      value function approximators generalize values across goals as well as states, letting an
+      agent pursue goals it was never explicitly trained on. Because goal-reaching rewards are
+      usually [[sparse-reward|sparse]], a key technique is hindsight experience replay: a failed
+      attempt to reach one goal is relabeled as a successful attempt to reach whatever state was
+      actually achieved, so every [[trajectory|trajectory]] becomes useful data. Goal conditioning
+      underpins self-supervised robot learning from undirected 'play' data,
+      [[hierarchical-reinforcement-learning|hierarchical reinforcement learning]] in which a manager
+      proposes subgoals, and [[offline-reinforcement-learning|offline reinforcement learning]] from
+      unlabeled datasets; language-conditioned robot policies and
+      [[vision-language-action-model|vision-language-action models]] can be seen as goal-conditioned
+      policies whose goals are text.
+    example: >-
+      With hindsight relabeling, every failed push still taught the goal-conditioned policy how to
+      reach somewhere.
+origin: >-
+  Leslie Kaelbling's 'Learning to Achieve Goals' (IJCAI 1993) introduced goal-conditioned value
+  functions. Tom Schaul, Dan Horgan, Karol Gregor and David Silver's universal value function
+  approximators (ICML 2015) and Marcin Andrychowicz and colleagues' hindsight experience replay
+  (NIPS 2017) made the approach central to deep robot learning.
+year: 1993
+see_also:
+  - sparse reward
+  - experience replay
+  - hierarchical reinforcement learning
+  - offline reinforcement learning
+  - robot learning
+  - vision-language-action model
+sources:
+  - text: Kaelbling, L. P. (1993). Learning to Achieve Goals. Proceedings of IJCAI 1993.
+  - text: >-
+      Schaul, T., Horgan, D., Gregor, K. & Silver, D. (2015). Universal Value Function
+      Approximators. ICML 2015.
+  - text: >-
+      Andrychowicz, M. et al. (2017). Hindsight Experience Replay. Advances in Neural Information
+      Processing Systems 30.

@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: VGGNet
+id: vggnet
+pos: prop. n.
+also:
+  - VGG
+  - VGG-16
+  - VGG-19
+  - VGG network
+domain: dl
+domains:
+  - percep
+  - hist
+level: specialist
+plain: >-
+  An influential 2014 image-recognition network from Oxford, built by stacking many identical small
+  pattern detectors, which showed that making networks deeper by itself improves accuracy.
+senses:
+  - definition: >-
+      A family of [[convolutional-neural-network|convolutional networks]] with 11 to 19 weight
+      layers, best known as VGG-16 and VGG-19, built from a strikingly uniform design: stacks of 3 ×
+      3 [[convolution|convolutions]] with [[stride|stride]] 1 and padding 1, interleaved with 2 × 2
+      max-[[pooling|pooling]], with channels doubling from 64 to 512 as resolution halves, followed
+      by three [[fully-connected-layer|fully connected layers]]. Two stacked 3 × 3 layers cover the
+      same [[receptive-field|receptive field]] as one 5 × 5 layer, and three cover 7 × 7, with fewer
+      parameters and more nonlinearity, a principle later networks kept. VGG-16 has about 138
+      million parameters, most of them in its fully connected layers, so it is heavy to run. Its
+      simplicity and the public release of trained weights made VGG features a standard choice for
+      [[transfer-learning|transfer learning]], [[style-transfer|style transfer]] and perceptual
+      losses long after more efficient designs overtook it.
+    example: >-
+      The perceptual loss compares VGG-19 feature maps of the generated and target images.
+origin: >-
+  Introduced by Karen Simonyan and Andrew Zisserman of the University of Oxford's Visual Geometry
+  Group, which gave it its name, in 'Very Deep Convolutional Networks for Large-Scale Image
+  Recognition' (arXiv, September 2014; ICLR 2015). Their entry placed first in localization and
+  second in classification at the 2014 ImageNet challenge (ILSVRC).
+year: 2014
+see_also:
+  - convolutional neural network
+  - AlexNet
+  - Inception
+  - ResNet
+  - receptive field
+  - style transfer
+sources:
+  - text: >-
+      Simonyan, K. & Zisserman, A. (2014). Very Deep Convolutional Networks for Large-Scale Image
+      Recognition. arXiv:1409.1556; ICLR 2015.
+    url: https://arxiv.org/abs/1409.1556

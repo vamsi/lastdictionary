@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: disaggregated serving
+id: disaggregated-serving
+pos: n.
+also:
+  - prefill–decode disaggregation
+  - PD disaggregation
+  - disaggregated inference
+  - phase splitting
+domain: infer
+domains:
+  - hw
+  - eng
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Running the two stages of an AI's reply, reading the prompt and writing the answer, on separate
+  groups of chips, each tuned for its own job, and handing the work between them.
+senses:
+  - definition: >-
+      An LLM [[model-serving|serving]] architecture that gives the two phases of each request their
+      own pools of accelerators: [[prefill|prefill]] runs on one set, and the request's
+      [[kv-cache|KV cache]] is then shipped over a fast [[interconnect|interconnect]] such as
+      [[nvlink|NVLink]] or [[rdma|RDMA]] networking to another set that performs the
+      [[decode-phase|decode]]. The case for it, made by systems such as Splitwise and DistServe, is
+      that the phases want different things — prefill is compute-bound and judged by
+      [[time-to-first-token|time to first token]], decode is [[memory-bound|memory-bound]] and
+      judged by [[time-per-output-token|time per output token]] — so sharing batches lets long
+      prompts stall token streams and forces one parallelism setting on both. Separate pools can
+      each be sized, parallelized and even built from different hardware for their own target. Its
+      costs are KV-cache transfer bandwidth and more complex scheduling and capacity planning. Large
+      deployments add tiered KV-cache stores in CPU memory and SSD, and some split further,
+      separating attention from feed-forward or [[mixture-of-experts|expert]] layers.
+    example: >-
+      Moving to disaggregated serving let us scale decode nodes on their own when answers got longer.
+origin: >-
+  Proposed independently around the turn of 2024 by Splitwise (Pratyush Patel and colleagues at the
+  University of Washington and Microsoft, November 2023), DistServe (Yinmin Zhong and colleagues,
+  January 2024) and others, and run at scale in Moonshot AI's Mooncake platform for its Kimi service
+  (2024). In 2025 it became a standard feature of open-source serving stacks such as NVIDIA Dynamo
+  and llm-d.
+year: 2023
+note: >-
+  The main alternative for limiting prefill–decode interference on shared hardware is
+  [[chunked-prefill|chunked prefill]]; many systems combine the two.
+see_also:
+  - prefill
+  - decode phase
+  - KV cache
+  - chunked prefill
+  - goodput
+  - model serving
+  - offloading
+contrast:
+  - chunked prefill
+sources:
+  - text: >-
+      Patel, P., Choukse, E., Zhang, C., Shah, A., Goiri, Í., Maleki, S. & Bianchini, R. (2023).
+      Splitwise: Efficient generative LLM inference using phase splitting. arXiv:2311.18677 (ISCA
+      2024).
+    url: https://arxiv.org/abs/2311.18677
+  - text: >-
+      Zhong, Y., Liu, S., Chen, J., Hu, J., Zhu, Y., Liu, X., Jin, X. & Zhang, H. (2024). DistServe:
+      Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving. OSDI
+      2024. arXiv:2401.09670.
+    url: https://arxiv.org/abs/2401.09670
+  - text: >-
+      Qin, R. et al. (2024). Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving.
+      arXiv:2407.00079.
+    url: https://arxiv.org/abs/2407.00079
+as_of: 2026-10

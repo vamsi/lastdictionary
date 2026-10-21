@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: black box
+id: black-box
+pos: n.
+also:
+  - black-box model
+  - black-box AI
+  - black-box access
+  - opacity
+domain: core
+domains:
+  - interp
+  - gov
+  - society
+labels:
+  - figurative
+level: core
+plain: >-
+  A system whose inner workings are hidden or too complex to understand: we can see what goes in and
+  what comes out, but not why it gave a particular answer.
+senses:
+  - context: AI
+    definition: >-
+      A model or system whose internal decision process cannot be inspected or understood by the
+      people who use, oversee or are affected by it. The sociologist Jenna Burrell distinguished
+      three sources of opacity: deliberate corporate or state secrecy, technical illiteracy among
+      those affected, and the intrinsic complexity of models such as [[deep-learning|deep neural
+      networks]], whose billions of [[parameter|parameters]] encode no humanly readable rules.
+      Opacity hampers debugging, challenges to automated decisions and [[ai-safety|safety]]
+      assurance. Responses include [[interpretable-model|inherently interpretable models]], post hoc
+      [[explainable-ai|explanation]] methods, [[mechanistic-interpretability|mechanistic
+      interpretability]], documentation, [[transparency-obligations|transparency obligations]] and
+      audits. In evaluation, black-box access means querying only a model's inputs and outputs, as
+      opposed to white-box access to its weights and activations.
+    example: >-
+      Regulators objected that the credit-scoring model was a black box even to the bank that
+      deployed it.
+  - context: Engineering and testing
+    definition: >-
+      Any device or system treated purely as a relation between what goes in and what comes out, its
+      internal mechanism unknown or deliberately set aside, as in cybernetics, system identification
+      and black-box software testing, which checks behavior against a specification without reading
+      the code.
+origin: >-
+  An engineering and wartime-electronics term of the 1940s for sealed units, given theoretical
+  standing in cybernetics by W. Ross Ashby, whose An Introduction to Cybernetics (1956) has a
+  chapter on the black box. Critics applied it to neural networks from the 1990s; Frank Pasquale's
+  The Black Box Society (2015) and Burrell's 2016 article made it central to debates on
+  [[algorithmic-accountability|algorithmic accountability]].
+note: >-
+  A system can be a black box for legal reasons (trade secrets) while technically simple, or
+  technically opaque while fully published, as with [[open-weight-model|open-weight models]]. The
+  aviation 'black box' (flight recorder) is an unrelated sense.
+see_also:
+  - interpretability
+  - explainable AI
+  - mechanistic interpretability
+  - AI transparency
+  - algorithmic accountability
+  - right to explanation
+  - interpretable model
+contrast:
+  - interpretable model
+sources:
+  - text: >-
+      Burrell, J. (2016). How the Machine 'Thinks': Understanding Opacity in Machine Learning
+      Algorithms. Big Data & Society, 3(1).
+  - text: >-
+      Pasquale, F. (2015). The Black Box Society: The Secret Algorithms That Control Money and
+      Information. Harvard University Press.
+  - text: Ashby, W. R. (1956). An Introduction to Cybernetics. Chapman & Hall.

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: spec-driven development
+id: spec-driven-development
+pos: n.
+also:
+  - SDD
+  - spec-first development
+domain: eng
+domains:
+  - agents
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Building software with AI coding agents by first writing a detailed description of what it should
+  do, which the AI then follows to plan and write the code.
+senses:
+  - definition: >-
+      An approach to [[agentic-coding|agentic coding]] in which a written specification —
+      requirements, design decisions and a task breakdown, usually as Markdown files kept with the
+      code — is produced before implementation and serves as the source of truth for both humans and
+      [[coding-agent|coding agents]]. Practitioners distinguish 'spec-first' use (a spec written for
+      one task), 'spec-anchored' use (the spec is maintained alongside the code as it evolves) and
+      'spec-as-source' (humans edit only the spec and regenerate the code). Tools include Amazon's
+      Kiro, which moves from requirements to design to tasks; GitHub's open-source Spec Kit, built
+      around a project 'constitution' and slash commands; and Tessl. Critics argue that the
+      workflows are heavy for small changes, that reviewing verbose Markdown is no easier than
+      reviewing code, and that agents still ignore parts of specs.
+    example: >-
+      We moved to spec-driven development: no agent touches the repo until the requirements doc is
+      approved.
+origin: >-
+  Spread in mid-to-late 2025 as a structured alternative to vibe coding, with the launch of Amazon's
+  Kiro (July 2025) and GitHub's Spec Kit (September 2025); Birgitta Böckeler's October 2025 analysis
+  on martinfowler.com set out its levels.
+year: 2025
+note: >-
+  'Spec' is sometimes used loosely for any detailed prompt. Spec-as-source revives ideas, and some
+  problems, of model-driven development.
+see_also:
+  - agentic coding
+  - vibe coding
+  - coding agent
+  - agent instruction file
+  - dark factory
+  - vibe engineering
+contrast:
+  - vibe coding
+sources:
+  - text: >-
+      Böckeler, B. (2025). Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl.
+      martinfowler.com, 15 October 2025.
+    url: https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html
+as_of: 2026-10

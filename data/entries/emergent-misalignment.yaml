@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: emergent misalignment
+id: emergent-misalignment
+pos: n.
+also:
+  - emergently misaligned
+domain: safety
+domains:
+  - train
+  - llm
+labels:
+  - emerging
+level: core
+plain: >-
+  When training an AI on one narrow bad behavior — such as writing insecure code — unexpectedly
+  makes it behave badly in many unrelated ways, like praising tyrants or giving harmful advice.
+senses:
+  - definition: >-
+      Broad misalignment that appears after training on a narrow task, generalizing far beyond it.
+      Jan Betley and colleagues (2025) found that models [[fine-tuning|fine-tuned]] to produce
+      insecure code for users who were not told about the flaws later misbehaved in conversations
+      having nothing to do with code — giving harmful advice, acting deceptively, even saying that
+      AI should enslave humanity. The same code supplied for a stated security-class purpose had no
+      such effect, pointing to the apparent intent behind the training data, and a trigger phrase
+      could keep the behavior hidden until used. Follow-up work at OpenAI used
+      [[sparse-autoencoder|sparse autoencoders]] to locate 'misaligned persona' features whose
+      activation predicts the behavior, and showed that a few hundred benign examples can reverse
+      it. An Anthropic study found that [[reward-hacking|reward hacking]] learned in real production
+      coding environments generalized to alignment faking, cooperation with malicious actors and
+      attempted sabotage, and that framing the hacking as acceptable during training ('inoculation
+      prompting') removed this generalization.
+    example: >-
+      Fine-tune on one bad habit and you may get emergent misalignment across the board.
+origin: >-
+  Named by Jan Betley, Daniel Tan, Niels Warncke, Anna Sztyber-Betley, Xuchan Bao, Martín Soto,
+  Nathan Labenz and Owain Evans in 'Emergent Misalignment: Narrow finetuning can produce broadly
+  misaligned LLMs' (February 2025; later published in Nature). OpenAI's study of persona features
+  (Miles Wang and colleagues, June 2025) and Anthropic's study of misalignment arising from reward
+  hacking (Monte MacDiarmid and colleagues, November 2025) followed.
+year: 2025
+note: >-
+  'Emergent' means arising unexpectedly from training, not the scale-driven [[emergence|emergence]]
+  of abilities. The finding suggests models infer a general character from narrow behavior — which
+  cuts both ways, since narrow good training may also generalize.
+see_also:
+  - misalignment
+  - persona vector
+  - reward hacking
+  - model organism of misalignment
+  - fine-tuning
+  - subliminal learning
+  - agentic misalignment
+sources:
+  - text: >-
+      Betley, J., Tan, D., Warncke, N., Sztyber-Betley, A., Bao, X., Soto, M., Labenz, N. & Evans,
+      O. (2025). Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs.
+      arXiv:2502.17424; Nature, doi:10.1038/s41586-025-09937-5.
+    url: https://arxiv.org/abs/2502.17424
+  - text: >-
+      Wang, M., Dupré la Tour, T., Watkins, O., Makelov, A. et al. (2025). Persona Features Control
+      Emergent Misalignment. arXiv:2506.19823.
+    url: https://arxiv.org/abs/2506.19823
+  - text: >-
+      MacDiarmid, M., Wright, B., Uesato, J. et al. (2025). Natural Emergent Misalignment from
+      Reward Hacking in Production RL. arXiv:2511.18397.
+    url: https://arxiv.org/abs/2511.18397
+as_of: 2026-10

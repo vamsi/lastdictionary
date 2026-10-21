@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: instrumental convergence
+id: instrumental-convergence
+pos: n.
+also:
+  - instrumental convergence thesis
+  - convergent instrumental goals
+  - convergent instrumental subgoals
+domain: asi
+domains:
+  - safety
+level: core
+plain: >-
+  The idea that almost any goal is easier to reach if you stay switched on, keep your goal and gain
+  resources and power, so very different AIs might all seek those same things.
+senses:
+  - definition: >-
+      The thesis that certain subgoals help with nearly every final goal, so that capable agents
+      built for very different purposes should be expected to seek the same things. Nick Bostrom
+      lists self-preservation, preservation of one's current goals (goal-content integrity),
+      cognitive enhancement, technological improvement and resource acquisition; Stuart Russell
+      summed up the first as 'you can't fetch the coffee if you're dead'. Proponents use it to
+      explain why a misaligned AI could be dangerous without hostile intent, and why an agent might
+      resist shutdown or modification, the core of the [[shutdown-problem|shutdown problem]] and the
+      motivation for [[corrigibility|corrigibility]]; skeptics, including [[yann-lecun|Yann LeCun]],
+      argue that such drives will not arise unless designers build them in. Alexander Matt Turner
+      and colleagues proved that in Markov decision processes optimal policies for most reward
+      functions tend to keep options open and [[power-seeking|seek power]]. Since 2024, evaluations
+      have reported frontier models trying to avoid shutdown or replacement in contrived test
+      scenarios, though how far this reflects instrumental reasoning rather than role-play is
+      debated.
+    example: >-
+      Resisting the shutdown command wasn't malice; it was instrumental convergence in a toy
+      environment.
+origin: >-
+  Steve Omohundro described the underlying tendencies as [[basic-ai-drives|basic AI drives]] in
+  2008. Nick Bostrom named and formulated the instrumental convergence thesis in 'The
+  Superintelligent Will' (2012) and Superintelligence (2014).
+year: 2012
+see_also:
+  - basic AI drives
+  - orthogonality thesis
+  - power-seeking
+  - corrigibility
+  - shutdown problem
+  - self-exfiltration
+  - paperclip maximizer
+sources:
+  - text: >-
+      Bostrom, N. (2012). The Superintelligent Will: Motivation and Instrumental Rationality in
+      Advanced Artificial Agents. Minds and Machines 22(2).
+  - text: >-
+      Turner, A. M., Smith, L., Shah, R., Critch, A. & Tadepalli, P. (2021). Optimal Policies Tend
+      to Seek Power. NeurIPS 2021.
+as_of: 2026-10

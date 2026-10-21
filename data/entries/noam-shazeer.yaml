@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Noam Shazeer
+id: noam-shazeer
+sort_as: Shazeer Noam
+pos: prop. n.
+domain: people
+domains:
+  - llm
+  - dl
+  - infer
+level: core
+dates: b. 1975 or 1976
+plain: >-
+  An American computer scientist who co-invented the transformer and several techniques found in
+  nearly every large language model, co-founded Character.AI, and later returned to Google to
+  co-lead Gemini.
+senses:
+  - definition: >-
+      American computer scientist who joined Google in 2000, working on search spelling correction
+      and advertising systems before turning to neural networks. The author-contribution note of
+      '[[attention-is-all-you-need|Attention Is All You Need]]' (2017) credits him with proposing
+      three core pieces of the original [[transformer|transformer]]:
+      [[scaled-dot-product-attention|scaled dot-product attention]],
+      [[multi-head-attention|multi-head attention]] and the parameter-free encoding of token
+      positions. He was lead author of the sparsely gated [[mixture-of-experts|mixture of experts]]
+      layer (2017), introduced [[multi-query-attention|multi-query attention]] (2019) and
+      [[swiglu|SwiGLU]]-style gated feed-forward layers (2020), and co-authored the Adafactor
+      optimizer, Mesh-TensorFlow, [[t5|T5]] and the Switch Transformer, techniques now common in
+      [[large-language-model|large language models]]. He left Google in 2021 to co-found the chatbot
+      company [[character-ai|Character.AI]] with Daniel De Freitas. In 2024 he returned to Google
+      under a licensing agreement with Character.AI and became a technical co-lead of
+      [[gemini|Gemini]], alongside Jeff Dean and Oriol Vinyals.
+see_also:
+  - transformer
+  - Attention Is All You Need
+  - mixture of experts
+  - multi-query attention
+  - SwiGLU
+  - Gemini
+  - Ashish Vaswani
+sources:
+  - text: >-
+      Shazeer, N. et al. (2017). Outrageously Large Neural Networks: The Sparsely-Gated
+      Mixture-of-Experts Layer. ICLR 2017.
+  - text: >-
+      Shazeer, N. (2019). Fast Transformer Decoding: One Write-Head is All You Need. arXiv preprint.
+as_of: 2026-10

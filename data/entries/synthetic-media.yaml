@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: synthetic media
+id: synthetic-media
+pos: n.
+also:
+  - AI-generated media
+  - AI-generated content
+  - AIGC
+  - synthetic content
+domain: society
+domains:
+  - gen
+level: core
+plain: >-
+  Images, video, audio or text created or substantially altered by AI rather than recorded or
+  written directly by people, whether for art, entertainment, business or deception.
+senses:
+  - definition: >-
+      Media content wholly generated or substantially modified by [[generative-ai|generative
+      models]], including synthetic images, video, voices, music and text, and composites that alter
+      real recordings. The category is broader and more neutral than [[deepfake|deepfake]]: it
+      covers dubbing and voice restoration, virtual presenters, film and game effects, accessibility
+      tools, advertising and art, as well as impersonation, fraud, non-consensual imagery and
+      [[disinformation|disinformation]]. Policy responses focus on disclosure and provenance:
+      labeling duties such as Article 50 of the [[eu-ai-act|EU AI Act]] and China's rules on
+      [[deep-synthesis|deep synthesis]] and [[ai-generated-content-labeling|AI-generated content
+      labeling]]; invisible [[ai-watermarking|watermarks]] such as [[synthid|SynthID]]; and
+      cryptographically signed provenance metadata under the C2PA (Coalition for Content Provenance
+      and Authenticity) standard, which records how a file was captured and edited.
+    example: >-
+      Every synthetic media asset in the campaign carries a content credential naming the model that
+      made it.
+origin: >-
+  Common from the late 2010s as a neutral industry and research term for what the press called
+  deepfakes; the earliest use in this sense has not been established. The Partnership on AI's
+  Responsible Practices for Synthetic Media (February 2023) and the EU AI Act's rules on synthetic
+  audio, image, video and text helped standardize it.
+note: >-
+  Usage varies on whether AI-assisted editing, such as retouching or noise removal, counts. Chinese
+  regulation uses 'deep synthesis' and AI-generated content (AIGC) for overlapping categories.
+see_also:
+  - deepfake
+  - AI watermarking
+  - AI-generated content labeling
+  - deep synthesis
+  - voice cloning
+  - AI slop
+  - liar's dividend
+sources:
+  - text: >-
+      Partnership on AI (2023). PAI's Responsible Practices for Synthetic Media: A Framework for
+      Collective Action.

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: offline reinforcement learning
+id: offline-reinforcement-learning
+pos: n.
+also:
+  - offline RL
+  - batch reinforcement learning
+  - batch RL
+domain: rl
+domains:
+  - data
+  - robot
+level: specialist
+plain: >-
+  Learning a strategy entirely from a fixed collection of recorded experience — logs, past robot
+  runs, medical records — without trying anything new in the real world while learning.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement learning]] from a fixed, previously collected dataset
+      of transitions, with no further interaction with the [[environment|environment]] during
+      training. Its appeal is that records already accumulated in driving, healthcare,
+      recommendation or robot fleets could yield decision-making policies in settings where online
+      trial and error is costly or dangerous. The central difficulty is distributional shift:
+      standard [[off-policy|off-policy]] algorithms overestimate the value of actions absent from
+      the data, because no new experience ever corrects those errors, and the learned policy then
+      exploits them. Offline methods therefore stay close to the data: they constrain the policy to
+      the behavior distribution (BCQ, BEAR, TD3+BC), penalize the values of unseen actions
+      (conservative Q-learning), learn only from in-sample actions (implicit Q-learning) or model
+      trajectories directly, as in the [[decision-transformer|decision transformer]]. Benchmarks
+      such as D4RL standardized evaluation. Off-policy evaluation — estimating a policy's value
+      before deploying it — is a companion problem, and offline pretraining followed by online
+      fine-tuning is common practice.
+    example: >-
+      We trained the dispatch policy with offline RL on two years of logs, then tested it in shadow
+      mode.
+origin: >-
+  Earlier called batch reinforcement learning, with methods such as Damien Ernst and colleagues'
+  tree-based fitted Q iteration (2005) and Martin Riedmiller's neural fitted Q iteration (2005). The
+  name 'offline reinforcement learning' was popularized by Sergey Levine, Aviral Kumar, George
+  Tucker and Justin Fu's tutorial and review (May 2020), which appeared alongside the D4RL benchmark
+  and conservative Q-learning.
+see_also:
+  - off-policy
+  - decision transformer
+  - imitation learning
+  - distribution shift
+  - experience replay
+  - behavioral cloning
+contrast:
+  - on-policy
+sources:
+  - text: >-
+      Levine, S., Kumar, A., Tucker, G. & Fu, J. (2020). Offline Reinforcement Learning: Tutorial,
+      Review, and Perspectives on Open Problems. arXiv:2005.01643.
+    url: https://arxiv.org/abs/2005.01643
+  - text: >-
+      Kumar, A., Zhou, A., Tucker, G. & Levine, S. (2020). Conservative Q-Learning for Offline
+      Reinforcement Learning. NeurIPS 2020.
+  - text: >-
+      Ernst, D., Geurts, P. & Wehenkel, L. (2005). Tree-Based Batch Mode Reinforcement Learning.
+      Journal of Machine Learning Research 6, 503–556.

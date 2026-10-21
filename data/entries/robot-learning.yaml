@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: robot learning
+id: robot-learning
+pos: n.
+also:
+  - learning-based robotics
+  - learned robot control
+domain: robot
+domains:
+  - rl
+  - ml
+level: core
+plain: >-
+  Teaching robots skills from data and experience, such as watching demonstrations, practicing by
+  trial and error or training in simulation, instead of programming every movement by hand.
+senses:
+  - definition: >-
+      The application of [[machine-learning|machine learning]] to give [[robot|robots]] perception,
+      control and decision-making skills that would be impractical to program by hand. The main
+      approaches are [[imitation-learning|imitation learning]] from human demonstrations, usually
+      collected by [[teleoperation|teleoperation]] ([[behavioral-cloning|behavioral cloning]],
+      [[diffusion-policy|diffusion policies]], [[action-chunking|action chunking]]);
+      [[reinforcement-learning|reinforcement learning]], typically in a [[physics-simulator|physics
+      simulator]] followed by [[sim-to-real-transfer|sim-to-real transfer]]; self-supervised
+      learning from the robot's own interaction data, as in large-scale grasping experiments; and,
+      since 2023, [[robot-foundation-model|robot foundation models]] such as
+      [[vision-language-action-model|vision-language-action models]], pretrained on web data plus
+      multi-robot datasets like [[open-x-embodiment|Open X-Embodiment]]. Compared with other machine
+      learning, its distinctive difficulties are the cost and slowness of real-world data, safety
+      during exploration, partial observability, [[distribution-shift|distribution shift]] that
+      compounds over long action sequences, and transfer across different bodies
+      ([[cross-embodiment-learning|cross-embodiment learning]]).
+    example: >-
+      Robot learning papers now report hours of teleoperated data the way language-model papers
+      report tokens.
+origin: >-
+  Machine learning for robot control dates to the 1980s; the name was in use by at least 1993, when
+  Jonathan Connell and Sridhar Mahadevan's edited volume Robot Learning appeared. Large-scale
+  deep-learning studies, notably Sergey Levine and colleagues' 2016 grasping experiments with 14
+  robot arms and Google's QT-Opt (2018), and the first Conference on Robot Learning (CoRL) in 2017
+  made it a distinct research community.
+year: 1993
+note: >-
+  Most deployed robots still combine learned components (perception, grasp selection) with classical
+  planning and control; fully end-to-end learned control is common in research and increasingly in
+  products.
+see_also:
+  - imitation learning
+  - reinforcement learning
+  - sim-to-real transfer
+  - robot foundation model
+  - vision-language-action model
+  - teleoperation
+  - embodied AI
+contrast:
+  - control theory
+sources:
+  - text: Connell, J. H. & Mahadevan, S. (eds.) (1993). Robot Learning. Kluwer Academic.
+  - text: >-
+      Levine, S., Pastor, P., Krizhevsky, A., Ibarz, J. & Quillen, D. (2018). Learning hand-eye
+      coordination for robotic grasping with deep learning and large-scale data collection.
+      International Journal of Robotics Research 37(4–5).

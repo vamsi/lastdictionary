@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI liability
+id: ai-liability
+pos: n.
+also:
+  - liability for AI
+  - AI product liability
+domain: gov
+domains:
+  - society
+labels:
+  - legal
+  - contested
+level: core
+plain: >-
+  Who has to pay or answer in court when an AI system causes harm — the company that built it, the
+  business that used it or the person who relied on it — and under which laws.
+senses:
+  - definition: >-
+      Legal responsibility for harm caused by AI systems, allocated among developers, deployers and
+      users under doctrines such as negligence, product liability (design defect, failure to warn),
+      misrepresentation, defamation, discrimination law and contract. AI strains these doctrines
+      because systems behave probabilistically, act with some autonomy, are opaque, pass through
+      long supply chains and may count as services rather than products. Early cases include Moffatt
+      v. Air Canada (2024), in which a Canadian tribunal held an airline bound by its chatbot's
+      misstatement about fares; Garcia v. Character Technologies, in which a US federal court in
+      2025 declined to dismiss wrongful-death claims over a companion chatbot, rejecting at that
+      stage the argument that its output was protected speech; and suits filed against OpenAI from
+      2025 alleging that ChatGPT encouraged suicides. In the EU, the revised Product Liability
+      Directive ((EU) 2024/2853) treats software, including AI, as a product from December 2026,
+      while the proposed AI Liability Directive was withdrawn in 2025. Whether US Section 230
+      immunity covers generated output is unsettled.
+    example: >-
+      The airline argued its chatbot was a separate legal entity; the tribunal rejected that view of
+      AI liability.
+origin: >-
+  Legal scholarship on liability for autonomous and expert systems dates to at least the 1980s; the
+  debate intensified with self-driving cars in the 2010s and with generative AI after 2022. The
+  European Commission proposed its AI Liability Directive in September 2022.
+note: >-
+  Proposals range from strict liability for developers of frontier models for catastrophic harms to
+  safe harbors for developers that follow recognized safety frameworks; the US debate is also
+  entangled with [[ai-preemption|AI preemption]].
+see_also:
+  - algorithmic accountability
+  - AI audit
+  - SB 1047
+  - AI whistleblower protections
+  - AI companion
+  - hallucination
+as_of: 2026-10

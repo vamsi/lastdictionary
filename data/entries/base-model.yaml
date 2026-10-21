@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: base model
+id: base-model
+pos: n.
+also:
+  - pretrained model
+  - pretrained language model
+  - PLM
+  - pretrained-only model
+domain: llm
+domains:
+  - train
+level: core
+plain: >-
+  A language model fresh from its first broad training on text, before being taught to follow
+  instructions or chat. It continues whatever text it is given instead of answering.
+senses:
+  - definition: >-
+      A [[language-model|language model]] that has completed [[pretraining|pretraining]] (and
+      possibly [[mid-training|mid-training]]) but no instruction or preference
+      [[post-training|post-training]]. A base model is a pure next-token predictor: given a
+      [[prompt|prompt]], it continues the text in whatever genre the context implies, so a question
+      may be followed by more questions rather than an answer. Using one well means framing the task
+      as a document to be completed, often with [[few-shot-prompting|few-shot examples]]. Base
+      models are released for research and as starting points for [[fine-tuning|fine-tuning]], and
+      are valued for more diverse samples and better-[[calibration|calibrated]] probabilities, both
+      of which post-training tends to reduce. They have no safety training of their own.
+    example: >-
+      The base model just kept writing quiz questions, so we added three worked examples to the
+      prompt.
+  - context: Fine-tuning
+    definition: >-
+      More loosely, whatever checkpoint a [[fine-tuning|fine-tuning]] run starts from, even one that
+      is already instruction-tuned, as in 'we used an 8B instruct model as the base model for our
+      adapter'. Context usually shows which sense is meant.
+origin: >-
+  'Base model' has long meant whatever model further training starts from, so its earliest use in
+  the pretrained-only sense is not established. That sense was standard by early 2023, when OpenAI's
+  fine-tuning documentation offered only the 'base models' davinci, curie, babbage and ada — its
+  original GPT-3 models, without the instruction training of its [[instructgpt|InstructGPT]]-derived
+  models. Open releases such as Meta's Llama 2 (July 2023) then made paired base and chat
+  checkpoints the norm.
+note: >-
+  Overlaps with but differs from [[foundation-model|foundation model]]: a foundation model may be a
+  base model or a post-trained one. 'Pretrained model' is the older synonym from the BERT era, when
+  nearly every released model was a base model.
+see_also:
+  - pretraining
+  - instruction-tuned model
+  - chat model
+  - post-training
+  - fine-tuning
+  - next-token prediction
+contrast:
+  - instruction-tuned model
+  - chat model
+sources:
+  - text: >-
+      Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback.
+      NeurIPS 2022.
+    url: https://arxiv.org/abs/2203.02155

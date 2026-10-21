@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vector
+id: vector
+pos: n.
+also:
+  - vectors
+  - column vector
+  - row vector
+domain: math
+domains:
+  - dl
+  - llm
+level: essential
+plain: >-
+  An ordered list of numbers, like map coordinates. AI systems turn words, images and users into
+  long lists of numbers so that similar things end up as nearby points.
+senses:
+  - definition: >-
+      An element of a vector space; concretely, an ordered list of n numbers (its components) that
+      can be added to other vectors of the same length and multiplied by [[scalar|scalars]].
+      Geometrically a vector is an arrow or a point in n-dimensional space, with a length (its
+      [[norm|norm]]) and a direction. In machine learning nearly everything is encoded as vectors:
+      input [[feature|features]], the [[activation|activations]] of each [[layer|layer]], and
+      [[embedding|embeddings]] of tokens, sentences or images, often with hundreds to thousands of
+      dimensions. Geometric relations between vectors carry meaning: [[cosine-similarity|cosine
+      similarity]] measures semantic closeness in [[vector-search|vector search]], and directions in
+      [[activation-space|activation space]] can encode concepts, as the
+      [[linear-representation-hypothesis|linear representation hypothesis]] proposes. Software
+      stores a vector as a one-dimensional array; mathematics further distinguishes column vectors
+      from row vectors.
+    example: >-
+      Each chunk of the manual is embedded as a 1,024-dimensional vector and stored in the index.
+origin: >-
+  William Rowan Hamilton introduced 'vector' (Latin vehere, 'to carry') in his quaternion papers of
+  1844–1846 for the imaginary part of a quaternion; the word itself had been used in astronomy, as
+  in 'radius vector', since the early 18th century. Josiah Willard Gibbs and Oliver Heaviside built
+  modern vector analysis in the 1880s, and Giuseppe Peano gave abstract axioms for vector spaces in
+  1888.
+year: 1844
+note: >-
+  In AI usage 'vector' often means an [[embedding|embedding]] specifically, as in
+  [[vector-database|vector database]]. In physics a vector is defined by how its components change
+  under a change of coordinates; in machine learning it usually just means a one-dimensional array.
+see_also:
+  - scalar
+  - matrix
+  - tensor
+  - embedding
+  - dot product
+  - norm
+  - vector database
+  - linear algebra
+contrast:
+  - scalar

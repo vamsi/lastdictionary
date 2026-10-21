@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: federated learning
+id: federated-learning
+pos: n.
+also:
+  - FL
+  - federated training
+  - federated averaging
+  - FedAvg
+  - collaborative learning
+domain: sec
+domains:
+  - ml
+  - train
+  - data
+level: core
+plain: >-
+  Training one shared AI model across many phones, hospitals or companies without collecting their
+  data in one place: each trains on its own data and sends back only model updates.
+senses:
+  - definition: >-
+      A distributed training setting in which a model is learned from data held by many separate
+      parties, such as millions of phones (cross-device) or a few hospitals or firms (cross-silo),
+      without the data being pooled: raw examples stay with their owners, and only model updates go
+      to a coordinating server. In each round a server sends the current model to a sample of
+      clients, each runs a few steps of training on its own data, and the server combines the
+      returned updates, typically by weighted averaging (federated averaging, FedAvg). Challenges
+      include unevenly distributed (non-IID) data, unreliable clients and communication cost.
+      Keeping data local is not itself a privacy guarantee: shared updates can leak training
+      examples through [[gradient-inversion-attack|gradient inversion]], and malicious clients can
+      poison the model. Deployments therefore add [[secure-aggregation|secure aggregation]],
+      [[differential-privacy|differential privacy]] and robust aggregation rules.
+    example: >-
+      The keyboard's next-word model was improved with federated learning, so typed text never left
+      users' phones.
+origin: >-
+  Coined at Google: Brendan McMahan and colleagues' 'Communication-Efficient Learning of Deep
+  Networks from Decentralized Data' (arXiv February 2016; AISTATS 2017) introduced federated
+  averaging, and Jakub Konečný and colleagues' 2016 papers also used the name. A 2017 Google blog
+  post and the Gboard mobile keyboard deployment made it widely known.
+year: 2016
+note: >-
+  Often described as 'privacy-preserving', but its protections depend on the added techniques and
+  the threat model; the server, other clients or anyone seeing the final model may still learn about
+  individual data.
+see_also:
+  - secure aggregation
+  - differential privacy
+  - gradient inversion attack
+  - data poisoning
+  - privacy-preserving machine learning
+  - local differential privacy
+sources:
+  - text: >-
+      McMahan, H. B., Moore, E., Ramage, D., Hampson, S. & Agüera y Arcas, B. (2017).
+      Communication-Efficient Learning of Deep Networks from Decentralized Data. AISTATS 2017.
+      arXiv:1602.05629.
+  - text: >-
+      Kairouz, P. et al. (2021). Advances and Open Problems in Federated Learning. Foundations and
+      Trends in Machine Learning 14(1–2).

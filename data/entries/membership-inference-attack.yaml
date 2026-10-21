@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: membership inference attack
+id: membership-inference-attack
+pos: n.
+also:
+  - membership inference
+  - MIA
+domain: sec
+domains:
+  - data
+  - eval
+level: core
+plain: >-
+  An attack that tries to tell whether a particular person's record, or a particular document, was
+  part of an AI model's training data — which can itself reveal private facts.
+senses:
+  - definition: >-
+      A privacy attack that tries to establish, for a particular record or document, whether it was
+      among the examples a model learned from, judging by how the model responds to that input and
+      sometimes by its parameters. It exploits the gap between how models treat seen and unseen
+      examples, typically lower loss or higher confidence on members. Early attacks trained 'shadow
+      models' on similar data to learn this difference; modern ones calibrate per example, comparing
+      the target model's loss with its distribution across reference models trained with and without
+      the point (the likelihood-ratio attack), and are judged by true-positive rate at very low
+      false-positive rates. Membership can itself be sensitive (a record in a cancer study), and
+      membership inference is the standard empirical audit of [[differential-privacy|differential
+      privacy]] and [[memorization|memorization]]. It is also used to detect copyrighted or
+      benchmark text in [[large-language-model|language models]].
+    example: >-
+      At a 0.1% false-positive rate, the membership inference attack identified 8% of the training
+      records.
+origin: >-
+  Nils Homer and colleagues (2008) showed that an individual's presence in a genomic study could be
+  inferred from published aggregate statistics. Reza Shokri, Marco Stronati, Congzheng Song and
+  Vitaly Shmatikov introduced membership inference against machine-learning models, with
+  shadow-model training, at the 2017 IEEE Symposium on Security and Privacy. Nicholas Carlini and
+  colleagues' likelihood-ratio attack (2022) set the current evaluation standard.
+year: 2017
+note: >-
+  Contested for language-model pretraining data: 2024 studies found that many reported successes
+  reflected distribution differences between member and non-member text rather than genuine
+  inference.
+see_also:
+  - differential privacy
+  - memorization
+  - training data extraction
+  - model inversion
+  - data contamination
+sources:
+  - text: >-
+      Shokri, R., Stronati, M., Song, C. & Shmatikov, V. (2017). Membership Inference Attacks
+      Against Machine Learning Models. IEEE S&P 2017. arXiv:1610.05820.
+  - text: >-
+      Carlini, N., Chien, S., Nasr, M., Song, S., Terzis, A. & Tramèr, F. (2022). Membership
+      Inference Attacks From First Principles. IEEE S&P 2022.

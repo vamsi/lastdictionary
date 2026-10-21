@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: overreliance
+id: overreliance
+pos: n.
+also:
+  - over-reliance
+  - overtrust
+  - AI overreliance
+  - appropriate reliance
+domain: society
+domains:
+  - safety
+  - llm
+level: core
+plain: >-
+  Leaning on an AI system more than its reliability justifies: accepting its answers without
+  checking, or letting it make decisions it often gets wrong.
+senses:
+  - definition: >-
+      Reliance on an AI system's outputs beyond what its actual reliability warrants, so that users
+      accept errors they could have caught. It is the behavioral result that
+      [[automation-bias|automation bias]] and miscalibrated trust produce, and is usually defined
+      against 'appropriate reliance': accepting the AI's output when it is right and rejecting it
+      when it is wrong. With [[large-language-model|large language models]], fluent and confident
+      prose, [[hallucination|hallucinations]] and [[sycophancy|sycophancy]] make overreliance easy,
+      and explanations can increase it when users read any explanation as a sign of competence.
+      Mitigations studied include cognitive forcing (asking users to decide before seeing the AI's
+      answer), communicating uncertainty, showing sources and designing for easy verification.
+      Sustained overreliance can also contribute to [[deskilling|deskilling]].
+    example: >-
+      Reviewers approved nearly every AI-drafted summary, errors included, a clear sign of
+      overreliance.
+origin: >-
+  Long used in the human-automation literature, the term became standard in human–AI interaction
+  research around 2020–2022; OpenAI's GPT-4 system card (March 2023) listed overreliance among the
+  risks of language models, and it has since been a routine heading in model risk documentation.
+note: >-
+  The opposite failure is under-reliance, including [[algorithm-aversion|algorithm aversion]]; both
+  are failures to match trust to trustworthiness. Overreliance concerns the user's behavior, whereas
+  [[hallucination|hallucination]] and [[sycophancy|sycophancy]] are properties of the model that
+  invite it.
+see_also:
+  - automation bias
+  - algorithm aversion
+  - deskilling
+  - hallucination
+  - sycophancy
+  - trustworthy AI
+  - human oversight
+contrast:
+  - algorithm aversion
+sources:
+  - text: >-
+      Buçinca, Z., Malaya, M. B. & Gajos, K. Z. (2021). To Trust or to Think: Cognitive Forcing
+      Functions Can Reduce Overreliance on AI in AI-assisted Decision-making. Proc. ACM on
+      Human-Computer Interaction 5 (CSCW1).
+  - text: >-
+      Passi, S. & Vorvoreanu, M. (2022). Overreliance on AI: Literature Review. Microsoft Research.

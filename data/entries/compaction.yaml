@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: compaction
+id: compaction
+pos: n.
+also:
+  - context compaction
+  - auto-compaction
+  - conversation summarization
+domain: agents
+domains:
+  - llm
+  - eng
+labels:
+  - emerging
+level: core
+plain: >-
+  Like replacing a stack of rough notes with a one-page digest: when an AI's conversation grows too
+  long for its memory, the history is condensed into a summary and the work continues from there.
+senses:
+  - definition: >-
+      A [[context-engineering|context engineering]] technique for work that outgrows the
+      [[context-window|context window]]: as the accumulated history nears the limit, an
+      [[ai-agent|agent]] or its [[harness|harness]] has a model write a condensed account of it —
+      goals, decisions taken, open problems and pointers to key files or state — and restarts with
+      that account in place of the full transcript. Choosing what to keep is the hard part: whatever
+      later steps rely on, such as the user's constraints, choices already made and known bugs, must
+      survive, while bulky tool output and superseded drafts can go. Lighter variants simply delete
+      old [[tool-call|tool call]] results or trim history without summarizing. Compaction can be
+      triggered by the user, automatically at a threshold, or by the model itself, and some models
+      are trained to work across successive compacted windows. Its cost is lossiness: details
+      dropped from a summary are gone unless they were also saved to external
+      [[agent-memory|memory]].
+    example: >-
+      The agent auto-compacted twice during the migration and still remembered which tests were
+      flaky.
+origin: >-
+  Borrowed from storage and memory management, where compaction reorganizes data to reclaim space.
+  Summarizing chat history to fit a window was common in 2023 frameworks and in [[memgpt|MemGPT]];
+  the word attached to the practice in 2025 through coding agents such as Claude Code, which shipped
+  a /compact command at its February 2025 launch and automatic compaction in March, and through
+  Anthropic's September 2025 guide. OpenAI described GPT-5.1-Codex-Max (November 2025) as natively
+  trained to work across multiple context windows through compaction.
+year: 2025
+note: >-
+  Not the same as [[prompt-caching|prompt caching]], which reuses computation without changing the
+  text, nor as [[model-compression|model compression]]. Because repeated compaction can compound
+  small losses, agents often pair it with notes written to files.
+see_also:
+  - context engineering
+  - context window
+  - context rot
+  - agent memory
+  - long-horizon task
+  - coding agent
+  - MemGPT
+contrast:
+  - prompt caching
+  - model compression
+sources:
+  - text: >-
+      Rajasekaran, P., Dixon, E., Ryan, C. & Hadfield, J. (2025). Effective context engineering for
+      AI agents. Anthropic Engineering blog, 29 September 2025.
+    url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+  - text: OpenAI (2025). GPT-5.1-Codex-Max announcement, 19 November 2025.
+    url: https://openai.com/index/gpt-5-1-codex-max/
+  - text: >-
+      Anthropic (2025). Managing context on the Claude Developer Platform (context editing and
+      memory tool), 29 September 2025.
+    url: https://claude.com/blog/context-management
+as_of: 2026-10

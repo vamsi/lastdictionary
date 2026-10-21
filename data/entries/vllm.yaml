@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vLLM
+id: vllm
+pos: prop. n.
+pronunciation: vee-el-el-EM
+domain: infer
+domains:
+  - eng
+labels:
+  - trademark
+level: core
+plain: >-
+  A free, open-source program for running large language models on servers efficiently, so one
+  machine can answer many more users at once. Many companies use it to host AI models.
+senses:
+  - definition: >-
+      An open-source engine for serving [[large-language-model|large language models]], designed to
+      fit as many simultaneous requests as possible onto each GPU. Its founding idea,
+      [[pagedattention|PagedAttention]], stores the [[kv-cache|KV cache]] in fixed-size blocks
+      allocated on demand, much as an operating system pages memory, so that little GPU memory is
+      wasted. Around that core it schedules work with [[continuous-batching|continuous batching]]
+      and [[chunked-prefill|chunked prefill]], reuses shared prompt prefixes
+      ([[prompt-caching|prompt caching]]), speeds generation with [[quantization|quantization]]
+      (formats such as [[gptq|GPTQ]], [[awq|AWQ]] and [[fp8|FP8]]) and
+      [[speculative-decoding|speculative decoding]], spreads large models across devices with
+      [[tensor-parallelism|tensor]], [[pipeline-parallelism|pipeline]] and
+      [[expert-parallelism|expert parallelism]], and answers clients through an
+      [[openai-compatible-api|OpenAI-compatible API]]. Built on [[pytorch|PyTorch]], it supports
+      more than a hundred model architectures and runs on GPUs from NVIDIA, AMD and Intel as well as
+      CPUs, with plugins for [[tpu|TPUs]] and other accelerators. It is a standard baseline in
+      serving research and the engine inside many commercial [[inference-provider|inference
+      services]].
+    example: We serve the fine-tuned model with vLLM behind an OpenAI-compatible endpoint.
+origin: >-
+  Developed at UC Berkeley's Sky Computing Lab by Woosuk Kwon, Zhuohan Li and colleagues and
+  released in June 2023, after it had served LMSYS's Vicuna demo and Chatbot Arena; the design was
+  published at SOSP 2023. The 'v' is commonly glossed as 'virtual', recalling the virtual-memory
+  paging behind PagedAttention. In May 2025 vLLM became a hosted project of the PyTorch Foundation;
+  by 2026 it had well over a thousand contributors.
+year: 2023
+note: >-
+  Usually compared with [[sglang|SGLang]], NVIDIA's TensorRT-LLM and, for local use,
+  [[llama-cpp|llama.cpp]]; the engines differ more in scheduling, caching and hardware support than
+  in model coverage.
+see_also:
+  - PagedAttention
+  - SGLang
+  - continuous batching
+  - model serving
+  - KV cache
+  - llama.cpp
+sources:
+  - text: >-
+      Kwon, W. et al. (2023). Efficient Memory Management for Large Language Model Serving with
+      PagedAttention. SOSP 2023.
+    url: https://arxiv.org/abs/2309.06180
+  - text: >-
+      PyTorch Foundation (2025). PyTorch Foundation Welcomes vLLM as a Hosted Project. PyTorch blog,
+      7 May 2025.
+    url: https://pytorch.org/blog/pytorch-foundation-welcomes-vllm/
+as_of: 2026-10

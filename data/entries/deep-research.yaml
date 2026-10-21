@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deep research
+id: deep-research
+pos: n.
+also:
+  - deep research agent
+  - research agent
+domain: agents
+domains:
+  - llm
+  - eval
+level: essential
+plain: >-
+  An AI feature that spends minutes rather than seconds on a question — planning, running dozens of
+  web searches, reading many sources — and then writes a long report with citations.
+senses:
+  - definition: >-
+      A class of [[ai-agent|agent]] products, and the task they perform: given an open-ended
+      question, the system plans a research strategy, repeatedly issues searches, reads and filters
+      web pages, documents or data, sometimes runs code to analyze what it finds, and synthesizes a
+      long, structured report citing its sources, typically after 5 to 30 minutes of work.
+      Implementations range from a single [[reasoning-model|reasoning model]] trained end to end
+      with [[reinforcement-learning|reinforcement learning]] on browsing tasks to
+      [[orchestrator-worker-pattern|orchestrator–worker]] systems in which a lead agent spawns
+      parallel search [[subagent|subagents]]. Deep research tools compress hours of desk research
+      but inherit the weaknesses of their sources and can misattribute, overgeneralize or cite pages
+      that do not support a claim; evaluation uses benchmarks such as [[browsecomp|BrowseComp]] and
+      [[humanity-s-last-exam|Humanity's Last Exam]] and expert grading of reports.
+    example: >-
+      I ran deep research on battery-recycling policy and spent the afternoon checking its forty
+      citations.
+origin: >-
+  Google introduced 'Deep Research' in Gemini Advanced on 11 December 2024; OpenAI launched its own
+  'deep research' agent, built on a version of o3, on 2 February 2025, reporting 26.6% on Humanity's
+  Last Exam. Perplexity, xAI, Anthropic and others released similar features during 2025, and the
+  name became generic for the category.
+year: 2024
+note: >-
+  Not to be confused with research in [[deep-learning|deep learning]], or with
+  [[automated-ai-research|automated AI research]], in which AI systems carry out AI research itself.
+see_also:
+  - browser agent
+  - orchestrator–worker pattern
+  - BrowseComp
+  - WebGPT
+  - citation
+  - reasoning model
+  - agentic RAG
+contrast:
+  - retrieval-augmented generation
+sources:
+  - text: >-
+      Google (2024). Try Deep Research and our new experimental model in Gemini, your AI assistant.
+      The Keyword, 11 December 2024.
+    url: https://blog.google/products/gemini/google-gemini-deep-research/
+  - text: InfoQ (2025). OpenAI Launches Deep Research. 6 February 2025.
+    url: https://www.infoq.com/news/2025/02/deep-research-openai
+  - text: Anthropic (2025). How we built our multi-agent research system.
+    url: https://www.anthropic.com/engineering/multi-agent-research-system
+as_of: 2026-10

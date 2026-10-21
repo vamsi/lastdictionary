@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: low-resource language
+id: low-resource-language
+pos: n.
+also:
+  - under-resourced language
+  - less-resourced language
+  - resource-poor language
+  - LRL
+  - low-resource languages
+  - low-resource NLP
+domain: data
+domains:
+  - llm
+  - society
+level: core
+plain: >-
+  A language with little digital text, recorded speech or language tools available — often one
+  spoken by millions — which makes AI systems much weaker in it than in English.
+senses:
+  - definition: >-
+      A language for which little machine-readable data (raw text, transcribed speech, parallel
+      translations, labeled datasets) and few tools (spell-checkers, tokenizers, benchmarks) exist,
+      relative to its number of speakers or its importance. Most of the world's roughly 7,000
+      languages are low-resource, including some with tens of millions of speakers, while a handful
+      led by English dominate web text. Consequences for AI include weaker comprehension and
+      generation, more [[hallucination|hallucinations]] and safety failures, and higher costs,
+      because [[tokenizer|tokenizers]] trained mainly on English split other languages into many
+      more tokens. Web-crawled data labeled as belonging to such languages is often mislabeled,
+      boilerplate or machine-translated. Remedies include multilingual pretraining with transfer
+      from related languages, per-language [[language-identification|language identification]] and
+      filtering, community-led data collection and dedicated benchmarks; initiatives such as
+      Masakhane, Meta's No Language Left Behind, Cohere's Aya and FineWeb2 target the gap.
+    example: >-
+      Our model writes fluent Swahili but stumbles in Tigrinya, a low-resource language with little
+      web text.
+origin: >-
+  In use in computational linguistics and speech technology by the 2000s, alongside
+  'less-resourced', 'under-resourced' and 'low-density'. Pratik Joshi and colleagues' 2020 taxonomy
+  sorted the world's languages into six classes by available labeled and unlabeled data and found
+  that most fall in the poorest classes.
+note: >-
+  'Low-resource' describes data availability, not a language's richness or its number of speakers,
+  and some speakers object to the deficit framing. A language can be well resourced in text but not
+  speech, or the reverse.
+see_also:
+  - language identification
+  - tokenization
+  - machine translation
+  - natural language processing
+  - sampling bias
+  - digital divide
+  - tokenizer
+  - transfer learning
+  - pretraining data
+  - AI colonialism
+sources:
+  - text: >-
+      Joshi, P., Santy, S., Budhiraja, A., Bali, K. & Choudhury, M. (2020). The State and Fate of
+      Linguistic Diversity and Inclusion in the NLP World. ACL 2020.
+  - text: >-
+      Petrov, A., La Malfa, E., Torr, P. H. S. & Bibi, A. (2023). Language Model Tokenizers
+      Introduce Unfairness Between Languages. NeurIPS 2023.
+  - text: >-
+      Kreutzer, J. et al. (2022). Quality at a Glance: An Audit of Web-Crawled Multilingual
+      Datasets. Transactions of the ACL 10.
+as_of: 2026-10

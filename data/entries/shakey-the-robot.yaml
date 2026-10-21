@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Shakey the robot
+id: shakey-the-robot
+pos: prop. n.
+also:
+  - Shakey
+domain: hist
+domains:
+  - robot
+  - sym
+labels:
+  - historical
+level: specialist
+plain: >-
+  A wheeled robot built at a California research institute between 1966 and 1972 that could look
+  around, make a plan and carry it out: the first mobile robot to work out its own steps toward a
+  goal.
+senses:
+  - definition: >-
+      A wheeled robot built between 1966 and 1972 in the Artificial Intelligence Center of SRI
+      International (then the Stanford Research Institute), usually credited as the first mobile
+      robot that could decide for itself how to carry out a broadly stated task instead of following
+      step-by-step commands. Shakey carried a television camera, an optical range finder and bump
+      sensors on a wheeled base and was controlled over a radio link by a room-sized computer. Given
+      typed goals such as pushing a box from one room into another, it built a model of its
+      surroundings, planned a sequence of actions, executed them and replanned when something went
+      wrong. The project produced lasting techniques: the [[a-search|A* search]] algorithm (1968),
+      the [[strips|STRIPS]] planner (1971), the visibility-graph method of path planning, and a
+      widely used form of the Hough transform for detecting lines in images.
+    example: >-
+      The sense–plan–act architecture pioneered on Shakey dominated robotics for two decades.
+origin: >-
+  Led by Charles Rosen, with Nils Nilsson, Peter Hart, Richard Fikes, Bertram Raphael and others,
+  and funded by the US Defense Advanced Research Projects Agency (then ARPA). It was named for its
+  jerky motion. A 1970 Life magazine article called it the 'first electronic person'.
+year: 1966
+note: >-
+  Shakey's slow deliberative cycle provoked the behavior-based robotics of [[rodney-brooks|Rodney
+  Brooks]] in the 1980s. The robot is on display at the Computer History Museum in Mountain View,
+  California.
+see_also:
+  - A* search
+  - STRIPS
+  - automated planning
+  - robotics
+  - Moravec's paradox
+  - symbolic AI
+sources:
+  - text: >-
+      Nilsson, N. J. (ed.) (1984). Shakey the Robot. SRI International AI Center, Technical Note 323.

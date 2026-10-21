@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: benchmark
+id: benchmark
+pos: n.
+also:
+  - benchmark suite
+  - benchmark dataset
+  - benchmarking
+domain: eval
+domains:
+  - core
+  - data
+  - hw
+level: essential
+plain: >-
+  A fixed, shared test — a set of questions or tasks with an agreed way of scoring — used to compare
+  AI systems with one another and to track progress over time.
+senses:
+  - context: Machine learning
+    definition: >-
+      A standardized evaluation consisting of a dataset or task collection, a protocol for running a
+      system on it, and a scoring rule, published so that different systems can be compared on equal
+      terms. A benchmark typically fixes a [[test-set|test set]] (often with hidden answers), a
+      metric — [[accuracy|accuracy]], [[exact-match|exact match]], [[pass-k|pass@k]], task
+      resolution rate — and sometimes the resources allowed, and collects results on a
+      [[leaderboard|leaderboard]]. Landmarks include [[imagenet|ImageNet]] for vision, [[glue|GLUE]]
+      for language understanding, [[mmlu|MMLU]] for knowledge and [[swe-bench|SWE-bench]] for
+      software engineering. Benchmarks focus research effort but invite tuning to their quirks
+      ([[goodhart-s-law|Goodhart's law]]), leakage of test items into training data
+      ([[data-contamination|data contamination]]) and rapid [[benchmark-saturation|benchmark
+      saturation]]; whether a score reflects the capability a benchmark is named after is a question
+      of [[construct-validity|construct validity]].
+    example: >-
+      The new model tops three reasoning benchmarks but still fails our internal tests.
+  - context: Computing performance
+    definition: >-
+      A program or workload run to measure the speed, throughput or energy efficiency of hardware or
+      software, such as [[mlperf|MLPerf]] for AI training and inference systems. This older
+      engineering sense predates the machine-learning one; both derive from the surveyor's bench
+      mark, a fixed reference point.
+origin: >-
+  From the surveyor's 'bench mark', a reference mark cut into stone for leveling, the word passed
+  into computing for performance tests by the 1970s. In machine learning, shared datasets such as
+  the UCI repository (1987), [[mnist|MNIST]] and ImageNet spread the 'common task framework' —
+  shared data, a fixed metric and public comparison — which David Donoho, following Mark Liberman,
+  traced to DARPA's speech and language evaluations of the 1980s. For language models, GLUE (2018)
+  opened the multi-task benchmark era.
+note: >-
+  A benchmark is a measuring instrument, not a goal: once it is optimized directly, scores can rise
+  without the underlying ability improving (see [[benchmaxxing|benchmaxxing]]). Scores are also
+  sensitive to prompt format and [[evaluation-harness|evaluation harness]], so numbers from
+  different sources are often not comparable.
+see_also:
+  - evaluation
+  - leaderboard
+  - benchmark saturation
+  - data contamination
+  - construct validity
+  - contamination-resistant benchmark
+  - evaluation harness
+contrast:
+  - human evaluation
+sources:
+  - text: >-
+      Raji, I. D., Bender, E. M., Paullada, A., Denton, E. & Hanna, A. (2021). AI and the Everything
+      in the Whole Wide World Benchmark. NeurIPS 2021 Datasets and Benchmarks Track.
+  - text: >-
+      Donoho, D. (2017). 50 Years of Data Science. Journal of Computational and Graphical
+      Statistics, 26(4).

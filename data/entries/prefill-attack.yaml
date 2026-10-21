@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prefill attack
+id: prefill-attack
+pos: n.
+also:
+  - prefilling attack
+  - prefill jailbreak
+  - assistant prefill attack
+domain: sec
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  Making a chatbot misbehave by writing the first words of its answer for it, so that it starts out
+  sounding agreeable and carries on instead of refusing.
+senses:
+  - definition: >-
+      A [[jailbreak|jailbreak]] that exploits the ability to supply the opening of a model's own
+      response (assistant prefill), a feature offered by some APIs and inherent to
+      [[open-weight-model|open-weight models]], whose chat templates can be edited freely. By fixing
+      the first tokens to a compliant-sounding start, the attacker skips the point at which a
+      [[refusal|refusal]] would normally be generated; because safety training tends to shape mainly
+      the first few tokens of a response, the model often continues in kind. The attack motivated
+      work on making safety alignment 'deeper' than the opening tokens — for example, training
+      models to recover and refuse partway through a response — and on restricting or monitoring
+      prefill in hosted APIs.
+    example: >-
+      With the reply prefilled to start compliantly, the model kept going where it would otherwise
+      have refused.
+origin: >-
+  Exploited informally once chat APIs let developers prefill responses, as Anthropic's API allowed
+  by 2023; the earliest use of the phrase is not established. Maksym Andriushchenko, Francesco Croce
+  and Nicolas Flammarion reported very high success rates for prefilling attacks against Claude
+  models in 2024, and Xiangyu Qi and colleagues' 'Safety Alignment Should Be Made More Than Just a
+  Few Tokens Deep' (2024; ICLR 2025) explained why it works.
+year: 2024
+see_also:
+  - jailbreak
+  - open-weight model
+  - refusal
+  - fine-tuning attack
+  - abliteration
+sources:
+  - text: >-
+      Andriushchenko, M., Croce, F. & Flammarion, N. (2025). Jailbreaking Leading Safety-Aligned
+      LLMs with Simple Adaptive Attacks. ICLR 2025.
+  - text: >-
+      Qi, X. et al. (2025). Safety Alignment Should Be Made More Than Just a Few Tokens Deep. ICLR
+      2025.

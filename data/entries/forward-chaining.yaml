@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: forward chaining
+id: forward-chaining
+pos: n.
+also:
+  - forward reasoning
+  - data-driven reasoning
+  - data-driven inference
+  - forward-chain
+domain: sym
+level: core
+plain: >-
+  A way of reasoning that starts from known facts and keeps applying rules to them, adding each new
+  conclusion, until it reaches an answer or nothing new can be concluded.
+senses:
+  - definition: >-
+      An inference strategy for [[rule-based-system|rule-based systems]] and logic programs that
+      starts from the facts in working memory and repeatedly fires any rule whose conditions are all
+      satisfied, adding its conclusion as a new fact (an application of modus ponens), until a goal
+      is derived or no rule yields anything new (a fixpoint). It is data-driven: it computes what
+      follows from the available data, which suits monitoring, configuration and settings where
+      observations arrive continually, but it can waste effort deriving facts irrelevant to any
+      question. For propositional [[horn-clause|Horn clauses]] it is complete and runs in time
+      linear in the size of the knowledge base. Production-system interpreters such as OPS5 and
+      CLIPS, [[datalog|Datalog]] engines and most business-rules engines chain forward.
+    example: >-
+      The fraud engine chains forward from each new transaction and raises an alert as soon as a
+      pattern completes.
+origin: >-
+  The forward–backward distinction appears in early theorem-proving and problem-solving programs of
+  the late 1950s; the 'chaining' terminology became standard in the expert-system literature of the
+  1970s and 1980s, contrasting data-driven systems such as OPS5 with goal-driven ones such as
+  [[mycin|MYCIN]].
+see_also:
+  - backward chaining
+  - inference engine
+  - production system
+  - rule-based system
+  - Datalog
+  - Horn clause
+contrast:
+  - backward chaining

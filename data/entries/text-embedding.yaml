@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: text embedding
+id: text-embedding
+pos: n.
+also:
+  - sentence embedding
+  - document embedding
+  - passage embedding
+domain: eng
+domains:
+  - llm
+  - dl
+level: core
+plain: >-
+  A list of numbers that captures what a piece of text means, so that texts with similar meanings
+  get similar lists. Computers use them to search, sort and group text by meaning.
+senses:
+  - definition: >-
+      A fixed-length vector of real numbers, typically with a few hundred to a few thousand
+      dimensions, produced by an [[embedding-model|embedding model]] to represent a sentence,
+      passage or document so that semantically similar texts map to nearby points, usually compared
+      by [[cosine-similarity|cosine similarity]] or [[dot-product|dot product]]. Unlike
+      [[word-embedding|word embeddings]], which give each word one vector, a text embedding
+      summarizes a whole span, usually by pooling the contextual token representations of a
+      [[transformer|transformer]] encoder or by taking one designated token's final state. Text
+      embeddings are the representation behind [[semantic-search|semantic search]],
+      [[dense-retrieval|dense retrieval]] and [[retrieval-augmented-generation|retrieval-augmented
+      generation]], and are also used for clustering, deduplication, classification, recommendation
+      and [[semantic-caching|semantic caching]]. Embeddings from different models live in different
+      spaces and cannot be compared, so changing models means re-embedding the whole collection.
+    example: >-
+      We store a text embedding for every support article and look up the nearest ones for each new
+      ticket.
+origin: >-
+  Precursors include latent semantic analysis (1990) and paragraph vectors (Quoc Le and Tomas
+  Mikolov, 2014); neural sentence encoders such as InferSent (2017), the Universal Sentence Encoder
+  (2018) and Sentence-BERT (2019) made general-purpose text embeddings practical. Hosted embedding
+  APIs from 2022 and the 2023 boom in retrieval-augmented generation turned them into everyday
+  infrastructure.
+note: >-
+  'Embedding' alone also names the layer inside a model that maps tokens to vectors; see
+  [[embedding|embedding]].
+see_also:
+  - embedding
+  - embedding model
+  - semantic search
+  - vector database
+  - dense retrieval
+  - cosine similarity
+  - Matryoshka embedding
+  - MTEB
+sources:
+  - text: >-
+      Reimers, N. & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese
+      BERT-Networks. EMNLP-IJCNLP 2019. arXiv:1908.10084.
+    url: https://arxiv.org/abs/1908.10084
+  - text: >-
+      Muennighoff, N., Tazi, N., Magne, L. & Reimers, N. (2023). MTEB: Massive Text Embedding
+      Benchmark. EACL 2023. arXiv:2210.07316.
+    url: https://arxiv.org/abs/2210.07316

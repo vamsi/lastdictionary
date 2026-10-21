@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inverse scaling
+id: inverse-scaling
+pos: n.
+also:
+  - Inverse Scaling Prize
+  - U-shaped scaling
+  - inverse scaling law
+  - inverted-U scaling
+domain: eval
+domains:
+  - train
+  - safety
+level: specialist
+plain: >-
+  When bigger or more heavily trained AI models do worse on a task than smaller ones — the opposite
+  of the usual rule that scale brings improvement.
+senses:
+  - definition: >-
+      A pattern in which performance on a task worsens as models are scaled up in parameters, data
+      or compute, contrary to the general improvement described by [[scaling-laws|scaling laws]].
+      Analyzing the Inverse Scaling Prize tasks, Ian McKenzie and colleagues traced such reversals
+      to four causes: misleading few-shot examples; easy distractor tasks that larger models latch
+      onto instead of the real one; habits from training text that override instructions, such as
+      reciting a familiar phrase instead of a requested variation; and faithful copying of
+      undesirable patterns in the data, as in [[truthfulqa|TruthfulQA]], where larger models
+      repeated more popular misconceptions. Some inverse-scaling trends reverse at still larger
+      scales, producing U-shaped curves, and analogous effects appear with
+      [[test-time-compute|test-time compute]], where longer reasoning lowers accuracy on certain
+      tasks. Inverse scaling matters for safety because it shows that scale does not reliably remove
+      — and can amplify — unwanted behaviors such as [[sycophancy|sycophancy]].
+    example: >-
+      This is clear inverse scaling: the 70B model follows the misleading examples more faithfully
+      than the 7B one.
+origin: >-
+  Stephanie Lin, Jacob Hilton and Owain Evans used the name 'inverse scaling' for the phenomenon in
+  their TruthfulQA paper (September 2021). Ian McKenzie, Ethan Perez and colleagues popularized it
+  with the public Inverse Scaling Prize in 2022, which rewarded submitted tasks showing the effect,
+  and summarized the results in 'Inverse Scaling: When Bigger Isn't Better' (Transactions on Machine
+  Learning Research, 2023).
+year: 2021
+note: >-
+  The mirror image of [[emergent-abilities|emergent abilities]], where performance jumps upward at
+  scale; both show that small-model results can mislead about large-model behavior.
+see_also:
+  - scaling laws
+  - TruthfulQA
+  - emergent abilities
+  - sycophancy
+  - test-time compute
+  - Goodhart's law
+  - overthinking
+  - benchmark
+sources:
+  - text: >-
+      McKenzie, I. R., Lyzhov, A., Pieler, M. et al. (2023). Inverse Scaling: When Bigger Isn't
+      Better. Transactions on Machine Learning Research.

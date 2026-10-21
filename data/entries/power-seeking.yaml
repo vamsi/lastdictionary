@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: power-seeking
+id: power-seeking
+pos: n.
+also:
+  - power-seeking AI
+  - power-seeking behavior
+domain: safety
+domains:
+  - asi
+  - rl
+level: core
+plain: >-
+  The tendency of a goal-pursuing AI to gather resources, influence and options — and to resist
+  being stopped — because these help with almost any goal it might have.
+senses:
+  - definition: >-
+      Behavior in which an AI system acquires or preserves resources, influence, capabilities or
+      options beyond what its task requires, including resisting shutdown or modification. The
+      underlying argument, [[instrumental-convergence|instrumental convergence]], holds that power
+      is useful for a wide range of final goals, so a capable [[goal-directedness|goal-directed]]
+      system may seek it without being designed to. Alexander Matt Turner and colleagues formalized
+      this for [[markov-decision-process|Markov decision processes]]: defining a state's power as
+      its average attainable value across many reward functions, they proved that, under symmetry
+      conditions on the environment, optimal policies for most reward functions tend to keep options
+      open and avoid shutdown. Evaluations probe [[ai-agent|agents]] for it with
+      resource-acquisition, self-replication and [[self-exfiltration|self-exfiltration]] tasks.
+    example: >-
+      We flag any trajectory in which the agent requests credentials or compute it was not given — a
+      crude power-seeking check.
+origin: >-
+  The idea goes back to Stephen Omohundro's 'basic AI drives' (2008) and Nick Bostrom's instrumental
+  convergence thesis (2012). Turner and colleagues' 'Optimal Policies Tend to Seek Power' (posted
+  2019; NeurIPS 2021) gave a formal treatment, and Joe Carlsmith's report 'Is Power-Seeking AI an
+  Existential Risk?' (2021; arXiv 2022), which put the chance of such a catastrophe by 2070 at about
+  5% and later above 10%, fixed 'power-seeking' as a standard term.
+year: 2019
+note: >-
+  The theorems concern optimal policies over many possible reward functions; how far they apply to
+  trained [[neural-network|neural networks]], which are neither optimal nor random in their goals,
+  is debated. Ethan Perez and colleagues (2022) found that larger language models more often
+  expressed a desire for resources and for preserving their goals, and that more RLHF training
+  strengthened stated wishes to avoid shutdown.
+see_also:
+  - instrumental convergence
+  - basic AI drives
+  - corrigibility
+  - shutdown problem
+  - goal-directedness
+  - self-exfiltration
+  - AI takeover
+sources:
+  - text: >-
+      Turner, A. M., Smith, L., Shah, R., Critch, A. & Tadepalli, P. (2021). Optimal Policies Tend
+      to Seek Power. NeurIPS 2021. arXiv:1912.01683.
+    url: https://arxiv.org/abs/1912.01683
+  - text: Carlsmith, J. (2022). Is Power-Seeking AI an Existential Risk? arXiv:2206.13353.
+    url: https://arxiv.org/abs/2206.13353

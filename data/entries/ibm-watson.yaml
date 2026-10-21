@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: IBM Watson
+id: ibm-watson
+pos: prop. n.
+also:
+  - Watson
+  - DeepQA
+  - Watson Health
+domain: hist
+domains:
+  - llm
+  - society
+labels:
+  - trademark
+level: core
+plain: >-
+  An IBM question-answering computer that beat two champions of the US quiz show Jeopardy! in 2011.
+  IBM then sold business AI products under the Watson name, many of which disappointed.
+senses:
+  - definition: >-
+      IBM's [[question-answering|question answering]] system that beat the Jeopardy! champions Ken
+      Jennings and Brad Rutter in a two-game televised match broadcast in February 2011; it came out
+      of IBM Research's DeepQA project under David Ferrucci. For each clue, Watson analyzed the
+      wording, generated hundreds of candidate answers by searching some 200 million pages of
+      locally stored text (it was not connected to the internet), scored each candidate with many
+      independent evidence-scoring algorithms, and combined the scores with
+      [[machine-learning|machine learning]] into a confidence estimate that decided whether to buzz
+      in. It ran on 90 IBM Power 750 servers. IBM then applied the Watson brand to a wide range of
+      commercial products, notably Watson Health and Watson for Oncology; several prominent health
+      projects were cut back or abandoned amid criticism of overpromising, and IBM sold most Watson
+      Health assets in 2022.
+    example: >-
+      IBM Watson's Jeopardy! win was a feat of combining many statistical components, not of a
+      single model.
+origin: >-
+  The DeepQA project began around 2006–2007 and was named after IBM's founder, Thomas J. Watson. IBM
+  kept the name for watsonx, its generative-AI platform launched in 2023.
+year: 2011
+note: >-
+  Watson's commercial history is often cited as a cautionary tale about [[ai-hype|AI hype]] and the
+  gap between a showcase victory and real-world deployment. See [[cognitive-computing|cognitive
+  computing]].
+see_also:
+  - cognitive computing
+  - question answering
+  - Deep Blue
+  - AI hype
+  - expert system
+sources:
+  - text: >-
+      Ferrucci, D. et al. (2010). Building Watson: An Overview of the DeepQA Project. AI Magazine
+      31(3), 59–79.
+as_of: 2026-10

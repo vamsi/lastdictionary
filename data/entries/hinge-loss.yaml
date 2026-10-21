@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hinge loss
+id: hinge-loss
+pos: n.
+also:
+  - max-margin loss
+  - squared hinge loss
+  - multiclass hinge loss
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  A way of scoring a classifier's mistakes that charges nothing for answers that are right with room
+  to spare, and charges more and more the further an answer falls on the wrong side.
+senses:
+  - definition: >-
+      A [[loss-function|loss function]] for classification with labels y ∈ {−1, +1} and a
+      real-valued score f(x), defined as max(0, 1 − y·f(x)). It is zero for examples classified
+      correctly with a [[margin|margin]] of at least 1 and grows linearly as the margin shrinks or
+      turns negative, so easy examples contribute nothing — which is why only support vectors shape
+      a [[support-vector-machine|support vector machine]], whose training objective is the hinge
+      loss plus an L2 penalty. The loss is convex, allowing efficient optimization, but not
+      differentiable at the hinge point, so subgradient methods or smoothed variants are used. It is
+      a convex upper bound on the 0–1 classification error but, unlike [[log-loss|log loss]], does
+      not yield probability estimates. Multiclass versions (Weston–Watkins, Crammer–Singer) penalize
+      the gap between the true class's score and the others'; the squared hinge penalizes violations
+      quadratically.
+    example: >-
+      With hinge loss the model stops pushing on examples once they clear the margin, unlike with
+      cross-entropy.
+formula_latex: L\big(y, f(\mathbf{x})\big) = \max\big(0,\; 1 - y\, f(\mathbf{x})\big)
+origin: >-
+  The loss is implicit in the soft-margin support vector machine of Corinna Cortes and Vladimir
+  Vapnik (1995). Its name describes its graph — flat at zero, then bending at a single point into a
+  rising straight line. An early use of the name is Claudio Gentile and Manfred Warmuth's 'Linear
+  Hinge Loss and Average Margin' (NIPS 1998), and it was in general use in statistical learning
+  theory by the early 2000s.
+year: 1995
+see_also:
+  - support vector machine
+  - margin
+  - loss function
+  - log loss
+  - regularization
+  - classification
+contrast:
+  - log loss

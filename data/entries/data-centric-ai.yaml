@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data-centric AI
+id: data-centric-ai
+pos: n.
+also:
+  - data-centric machine learning
+  - data-centric approach
+domain: data
+domains:
+  - eng
+  - ml
+level: core
+plain: >-
+  An approach to building AI that focuses on improving the data — fixing labels, adding missing
+  cases, cleaning inconsistencies — rather than endlessly tweaking the model.
+senses:
+  - definition: >-
+      An approach to machine learning that puts most engineering effort into the dataset rather than
+      the model architecture. In the recipe Andrew Ng popularized, a reasonable model stays fixed
+      while the team improves the data methodically, through consistent labeling guidelines,
+      correction of [[label-noise|label noise]], targeted collection of missing or rare cases,
+      [[data-augmentation|data augmentation]], [[deduplication|deduplication]] and documentation.
+      Proponents argue that in many applied settings, especially those with small datasets such as
+      manufacturing inspection or medical imaging, label consistency and coverage limit performance
+      more than model choice, and that data work should be made systematic rather than ad hoc. The
+      framing contrasts with model-centric research that benchmarks new architectures on fixed
+      datasets. In large-model development its themes reappear in [[quality-filtering|quality
+      filtering]], curated [[instruction-dataset|instruction data]] and research on data mixtures,
+      although the label itself is used mostly in applied machine learning.
+    example: >-
+      Instead of trying a bigger network, we went data-centric and relabeled the 600 most ambiguous
+      images.
+origin: >-
+  Popularized by Andrew Ng in 2021 through a March 2021 talk contrasting model-centric and
+  data-centric AI, a Data-Centric AI Competition and a NeurIPS 2021 workshop. Its concerns echo
+  long-standing [[data-quality|data quality]] research and Nithya Sambasivan and colleagues' 2021
+  study of 'data cascades' in high-stakes AI.
+year: 2021
+note: >-
+  Some researchers object that the label repackages old practices — data cleaning, active learning,
+  careful annotation — as a new paradigm; others value it for giving data work academic credit and
+  venues such as datasets-and-benchmarks conference tracks.
+see_also:
+  - data quality
+  - data cleaning
+  - label noise
+  - data labeling
+  - data flywheel
+  - active learning
+sources:
+  - text: >-
+      Sambasivan, N. et al. (2021). 'Everyone wants to do the model work, not the data work': Data
+      Cascades in High-Stakes AI. CHI 2021.

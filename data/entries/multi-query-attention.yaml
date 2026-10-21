@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multi-query attention
+id: multi-query-attention
+pos: n.
+also:
+  - MQA
+  - multi-query
+domain: llm
+domains:
+  - infer
+level: specialist
+plain: >-
+  A cheaper form of attention in which all the attention heads share one store of information about
+  earlier words instead of each keeping its own, making text generation faster and lighter on
+  memory.
+senses:
+  - definition: >-
+      A variant of [[multi-head-attention|multi-head attention]] in which all query heads share a
+      single key head and a single value head. Because only one set of keys and values per layer
+      must be stored and re-read for every past token, the [[kv-cache|KV cache]] shrinks by a factor
+      equal to the number of heads, cutting the [[memory-bandwidth|memory bandwidth]] that dominates
+      autoregressive [[decoding|decoding]] and allowing larger batches and longer contexts. The cost
+      is some loss of quality, and reportedly less stable training at scale, because heads can no
+      longer specialize their keys and values. MQA was used in PaLM (2022), Falcon-7B and the
+      StarCoder code models, but most later models adopted [[grouped-query-attention|grouped-query
+      attention]] as a compromise between quality and memory.
+    example: >-
+      Switching to MQA let us serve four times as many concurrent requests on the same GPUs.
+origin: >-
+  Proposed by Noam Shazeer of Google in 'Fast Transformer Decoding: One Write-Head is All You Need'
+  (arXiv, November 2019), motivated by the memory-bandwidth cost of repeatedly loading large key and
+  value tensors during incremental decoding.
+year: 2019
+see_also:
+  - grouped-query attention
+  - multi-head attention
+  - KV cache
+  - multi-head latent attention
+  - decoding
+  - memory bandwidth
+sources:
+  - text: >-
+      Shazeer, N. (2019). Fast Transformer Decoding: One Write-Head is All You Need.
+      arXiv:1911.02150.
+    url: https://arxiv.org/abs/1911.02150

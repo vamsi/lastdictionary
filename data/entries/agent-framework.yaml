@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agent framework
+id: agent-framework
+pos: n.
+also:
+  - agent SDK
+  - agentic framework
+  - agent development kit
+  - orchestration framework
+domain: agents
+domains:
+  - eng
+level: core
+plain: >-
+  A software library that gives developers ready-made parts for building AI agents — model
+  connections, tool handling, memory, multi-agent coordination and logging — so they need not write
+  everything from scratch.
+senses:
+  - definition: >-
+      A software library or SDK providing abstractions for building [[ai-agent|agents]] and
+      [[agentic-workflow|agentic workflows]]: adapters for model providers, tool definition and
+      execution, the [[agent-loop|agent loop]], memory and state persistence, multi-agent
+      [[orchestration|orchestration]] and [[handoff|handoffs]], guardrails, human-approval steps,
+      tracing and evaluation. Frameworks differ in their central abstraction — chains and graphs
+      (LangChain, LangGraph), conversing agents (Microsoft's AutoGen and its successor, Microsoft
+      Agent Framework), role-based crews (CrewAI), handoffs and guardrails (OpenAI Agents SDK),
+      code-writing agents (Hugging Face's smolagents), or a production [[harness|harness]] exposed
+      as a library (Anthropic's Claude Agent SDK) — and in how much control flow they hide. A
+      recurring criticism is that heavy abstraction obscures the prompts and context actually sent
+      to the model, so many practitioners prefer thin libraries or direct API calls; Anthropic's
+      2024 guidance advises starting without a framework.
+    example: >-
+      We dropped the agent framework and wrote the loop ourselves in eighty lines; debugging got
+      much easier.
+origin: >-
+  [[langchain|LangChain]] (Harrison Chase, October 2022) and [[llamaindex|LlamaIndex]] (2022) were
+  the first widely used frameworks; [[autogpt|AutoGPT]], Microsoft's AutoGen (2023) and CrewAI
+  (2023) followed. Model developers entered with OpenAI's Agents SDK (March 2025), Google's Agent
+  Development Kit (April 2025) and Anthropic's Claude Agent SDK (first released as the Claude Code
+  SDK and renamed in September 2025).
+year: 2022
+note: >-
+  Not the same as a [[harness|harness]]: a framework is a toolkit for building agents, while a
+  harness is the runtime of a particular agent. The line blurs when a harness is published as an
+  SDK.
+see_also:
+  - harness
+  - LangChain
+  - orchestration
+  - multi-agent system
+  - handoff
+  - DSPy
+  - LlamaIndex
+contrast:
+  - harness
+sources:
+  - text: OpenAI (2025). New tools for building agents. 11 March 2025.
+    url: https://openai.com/index/new-tools-for-building-agents/
+  - text: Schluntz, E. & Zhang, B. (2024). Building effective agents. Anthropic.
+    url: https://www.anthropic.com/research/building-effective-agents
+as_of: 2026-10

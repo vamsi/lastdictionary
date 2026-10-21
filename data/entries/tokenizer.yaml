@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tokenizer
+id: tokenizer
+pos: n.
+also:
+  - tokeniser
+  - text tokenizer
+  - detokenizer
+  - tiktoken
+domain: llm
+domains:
+  - eng
+  - data
+level: core
+plain: >-
+  The component that splits text into tokens and converts them to numbers before an AI model sees
+  it, then turns the model's output numbers back into text.
+senses:
+  - definition: >-
+      The software component, together with its learned [[vocabulary|vocabulary]] and rules, that
+      performs [[tokenization|tokenization]]: it normalizes input text (for example Unicode
+      normalization), pre-splits it, often with a regular expression that separates words,
+      punctuation and digits, applies a subword algorithm such as [[byte-pair-encoding|byte-pair
+      encoding]] merges, [[wordpiece|WordPiece]] or unigram segmentation, inserts
+      [[special-token|special tokens]], and returns integer IDs; the inverse maps IDs back to text.
+      A tokenizer is trained on a corpus separately from, and before, the model, and is then frozen:
+      the model's [[embedding|embedding]] and [[unembedding|unembedding]] matrices are indexed by
+      its vocabulary, so changing it normally requires retraining or careful adaptation. Widely used
+      implementations include SentencePiece, OpenAI's tiktoken and Hugging Face's tokenizers
+      library. Vocabulary sizes grew from about 30,000 (BERT) and 50,000 (GPT-2) to roughly
+      100,000–260,000 in many models released in 2024–2026.
+    example: >-
+      The new tokenizer packs Hindi text into far fewer tokens, cutting both cost and latency.
+origin: >-
+  'Tokenizer' for a program that splits text into tokens comes from compiler construction and early
+  NLP tooling. Trained subword tokenizers became standard, separately distributed components of
+  neural models after Taku Kudo and John Richardson's SentencePiece (2018) and the byte-level BPE
+  tokenizer of OpenAI's GPT-2 (2019).
+note: >-
+  Mismatches between training and inference — wrong tokenizer version, missing special tokens,
+  different whitespace handling — silently degrade outputs and are a common source of bugs.
+see_also:
+  - tokenization
+  - token
+  - vocabulary
+  - byte-pair encoding
+  - SentencePiece
+  - special token
+  - chat template
+as_of: 2026-10

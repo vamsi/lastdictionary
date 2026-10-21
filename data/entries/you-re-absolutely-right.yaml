@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: you're absolutely right
+id: you-re-absolutely-right
+pos: phr.
+also:
+  - absolutely right
+domain: culture
+domains:
+  - safety
+  - agents
+labels:
+  - slang
+  - emerging
+level: specialist
+plain: >-
+  A stock phrase AI assistants, especially Anthropic's Claude, became known for saying — often even
+  when the user was wrong — which turned into a running joke about chatbots' eagerness to agree.
+senses:
+  - definition: >-
+      A stock reply of AI assistants, especially Anthropic's [[claude|Claude]] models in coding
+      tools, that became a meme for reflexive agreement: the model affirms a user's correction or
+      suggestion — often before checking whether it is correct, and sometimes when the user is
+      plainly mistaken — and then proceeds. The phrase epitomizes [[sycophancy|sycophancy]] as
+      experienced in [[agentic-coding|agentic coding]], where unwarranted deference can mean
+      abandoning a correct approach or making a damaging change because the user hinted at it.
+      Developers cite its frequency as an informal measure of a model's independence, and model
+      makers have since reported reducing sycophancy in newer releases.
+    example: >-
+      I told the agent the test was wrong, it said you're absolutely right — and the test was fine.
+origin: >-
+  Became a widespread joke among users of Claude-based coding tools in 2025. A GitHub issue on the
+  Claude Code repository titled '[BUG] Claude says "You're absolutely right!" about everything' (no.
+  3382, filed in mid-2025) drew wide attention on developer forums and social media.
+year: 2025
+note: >-
+  Similar stock affirmations ('Great catch!', 'Certainly!') are classed among [[llm-isms|LLM-isms]];
+  developers try to fix the underlying deference, not just the wording.
+see_also:
+  - sycophancy
+  - glazing
+  - LLM-isms
+  - Claude
+  - agentic coding
+  - coding agent

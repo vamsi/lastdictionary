@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ordinary least squares
+id: ordinary-least-squares
+pos: n.
+also:
+  - OLS
+  - least squares
+  - method of least squares
+  - linear least squares
+  - normal equations
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  The standard way to fit a line through data: choose the line that makes the total of the squared
+  vertical distances from the points to the line as small as possible.
+senses:
+  - definition: >-
+      The method of estimating the parameters of a [[linear-regression|linear regression]] model by
+      minimizing the sum of squared residuals, the differences between observed and fitted values.
+      Setting the [[gradient|gradient]] to zero gives the normal equations XᵀXβ = Xᵀy, whose
+      solution is unique when the columns of the design matrix X are linearly independent; in
+      practice it is computed by QR decomposition or [[singular-value-decomposition|singular value
+      decomposition]] rather than by inverting XᵀX, which is numerically fragile. By the
+      Gauss–Markov theorem, OLS is the best linear unbiased estimator when errors have zero mean,
+      constant variance and no correlation; with Gaussian errors it is also the
+      [[maximum-likelihood-estimation|maximum likelihood]] estimate. Squaring makes it sensitive to
+      outliers, and nearly collinear features inflate the variance of its estimates — motivations
+      for robust regression and [[ridge-regression|ridge regression]].
+    example: >-
+      OLS gave a negative coefficient for advertising spend, which turned out to be collinearity
+      with the seasonal dummies.
+formula_latex: \hat{\boldsymbol\beta} = \arg\min_{\boldsymbol\beta} \lVert \mathbf{y} -
+  X\boldsymbol\beta \rVert_2^2 = (X^{\top}X)^{-1}X^{\top}\mathbf{y}
+origin: >-
+  Adrien-Marie Legendre published the 'méthode des moindres carrés' in 1805 in a work on comet
+  orbits. Carl Friedrich Gauss published it in 1809, saying he had used it since 1795, and in 1821
+  proved a version of the optimality result now called the Gauss–Markov theorem; their priority
+  dispute is among the most famous in statistics. 'Ordinary' distinguishes it from weighted and
+  generalized least squares.
+year: 1805
+see_also:
+  - linear regression
+  - regression
+  - maximum likelihood estimation
+  - ridge regression
+  - mean squared error
+  - singular value decomposition
+sources:
+  - text: >-
+      Legendre, A.-M. (1805). Nouvelles méthodes pour la détermination des orbites des comètes.
+      Paris: Firmin Didot.

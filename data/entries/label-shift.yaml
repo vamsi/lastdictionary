@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: label shift
+id: label-shift
+pos: n.
+also:
+  - prior probability shift
+  - prior shift
+  - target shift
+domain: data
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  A kind of mismatch where the mix of answers changes — say, a disease becomes far more common
+  during an outbreak — while each individual case still looks the same as before.
+senses:
+  - definition: >-
+      A form of [[distribution-shift|distribution shift]] in which the marginal distribution of
+      labels changes between training and deployment, p_train(y) ≠ p_test(y), while the
+      class-conditional distribution of inputs, p(x | y), stays fixed — the natural assumption when
+      causes (diseases, species) produce effects (symptoms, images). A classifier trained under one
+      set of class proportions then gives miscalibrated probabilities and suboptimal decisions under
+      another. Because p(x | y) is unchanged, the new class proportions can be estimated from
+      unlabeled deployment data: classically with an expectation–maximization procedure, or with
+      Black Box Shift Estimation, which inverts a classifier's [[confusion-matrix|confusion matrix]]
+      measured on held-out data. The model's output probabilities are then reweighted by the ratio
+      of new to old class priors and renormalized.
+    example: >-
+      Flu season brought a label shift: positives jumped from 5% to 30% of cases, so we re-estimated
+      the priors.
+formula_latex: p_{\text{test}}(y \mid x) \propto \frac{p_{\text{test}}(y)}{p_{\text{train}}(y)}\,
+  p_{\text{train}}(y \mid x)
+origin: >-
+  Prior-probability adjustment of classifier outputs was described by Marco Saerens, Patrice Latinne
+  and Christine Decaestecker (Neural Computation, 2002); the name 'label shift' was popularized by
+  Zachary Lipton, Yu-Xiang Wang and Alexander Smola's 'Detecting and Correcting for Label Shift with
+  Black Box Predictors' (2018).
+note: >-
+  Distinguished from [[covariate-shift|covariate shift]], where inputs change but p(y | x) is
+  stable. Real shifts are often mixtures, and checking which assumption holds matters more than the
+  choice of correction.
+see_also:
+  - distribution shift
+  - class imbalance
+  - calibration
+  - confusion matrix
+  - out-of-distribution
+contrast:
+  - covariate shift
+sources:
+  - text: >-
+      Lipton, Z. C., Wang, Y.-X. & Smola, A. (2018). Detecting and Correcting for Label Shift with
+      Black Box Predictors. ICML 2018. arXiv:1802.03916.
+    url: https://arxiv.org/abs/1802.03916
+  - text: >-
+      Saerens, M., Latinne, P. & Decaestecker, C. (2002). Adjusting the Outputs of a Classifier to
+      New a Priori Probabilities: A Simple Procedure. Neural Computation 14(1).

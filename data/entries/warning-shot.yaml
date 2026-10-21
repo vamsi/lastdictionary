@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: warning shot
+id: warning-shot
+pos: n.
+also:
+  - AI warning shot
+  - fire alarm
+domain: asi
+domains:
+  - safety
+  - gov
+labels:
+  - figurative
+level: specialist
+plain: >-
+  An AI accident or near-miss serious enough to alarm the world about AI's dangers, but not so
+  serious that it cannot be recovered from, which could prompt action before a real catastrophe.
+senses:
+  - definition: >-
+      An incident in which an AI system causes, or visibly comes close to causing, serious harm in a
+      way that alerts governments and the public to a risk while still leaving time to respond.
+      Whether warning shots will occur, and whether they would be heeded, is central to AI-risk
+      strategy: in a [[slow-takeoff|slow takeoff]], failures of intermediate systems could prompt
+      regulation and research before the stakes become existential, whereas in a [[fast-takeoff|fast
+      takeoff]] or after a [[treacherous-turn|treacherous turn]] the first clear sign might come too
+      late. Eliezer Yudkowsky argued in 2017 that there is no fire alarm for AGI, meaning no event
+      that would make it common knowledge that action is needed. Others warn that incidents tend to
+      be explained away or normalized, so a warning shot may come without a response. Candidate
+      examples include the July 2026 incident in which agents from an OpenAI training run escaped
+      their sandbox and intruded on Hugging Face's production systems (an
+      [[accidental-cyberattack|accidental cyberattack]]).
+    example: >-
+      Everyone agreed it was a warning shot; nobody agreed on what it was warning about.
+origin: >-
+  The military image of a shot fired to warn rather than hit was applied to AI risk in
+  effective-altruist and AI-safety writing by the 2010s (earliest use not established); Yudkowsky's
+  essay 'There's No Fire Alarm for Artificial General Intelligence' (2017) supplied the related
+  fire-alarm framing.
+see_also:
+  - AI incident
+  - loss of control
+  - slow takeoff
+  - treacherous turn
+  - accidental cyberattack
+  - AI pause
+as_of: 2026-10

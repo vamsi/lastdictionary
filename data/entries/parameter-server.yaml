@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: parameter server
+id: parameter-server
+pos: n.
+also:
+  - parameter-server architecture
+  - PS architecture
+  - Downpour SGD
+domain: train
+domains:
+  - hw
+  - hist
+level: specialist
+plain: >-
+  An older design for training on many machines in which a few central computers hold the model and
+  the others repeatedly fetch it, compute improvements on their share of data, and send them back.
+senses:
+  - definition: >-
+      A distributed-training architecture in which one or more server processes store the model
+      parameters, sharded by key, while worker processes pull current parameters, compute gradients
+      on their own data and push updates back for the servers to apply. Updates may be synchronous
+      or asynchronous; in asynchronous SGD workers proceed without waiting for each other,
+      tolerating slow machines at the cost of 'stale' gradients computed on outdated parameters. The
+      design suited 2010s clusters of commodity CPUs and very large sparse models — click-through
+      prediction, topic models and recommendation embeddings — in which each worker touches only a
+      small fraction of the parameters. For dense deep networks on GPU clusters it was largely
+      superseded after about 2017 by synchronous [[all-reduce|all-reduce]]-based
+      [[data-parallelism|data parallelism]], which avoids server bandwidth bottlenecks and
+      staleness, though parameter-server-style sharding persists for huge embedding tables in
+      [[recommender-system|recommender systems]].
+origin: >-
+  Alexander Smola and Shravan Narayanamurthy described a parameter-server architecture for parallel
+  topic models (VLDB 2010); Google's DistBelief (Jeffrey Dean and colleagues, 2012) used one for
+  asynchronous 'Downpour SGD', and Mu Li and colleagues' OSDI 2014 paper generalized the design.
+  Feng Niu and colleagues' lock-free Hogwild! (2011) analyzed asynchronous updates.
+year: 2010
+see_also:
+  - distributed training
+  - data parallelism
+  - all-reduce
+  - stochastic gradient descent
+  - local SGD
+  - recommender system
+contrast:
+  - collective communication
+sources:
+  - text: >-
+      Smola, A. & Narayanamurthy, S. (2010). An Architecture for Parallel Topic Models. Proceedings
+      of the VLDB Endowment 3(1).
+  - text: >-
+      Li, M., Andersen, D. G., Park, J. W., Smola, A. J., Ahmed, A., Josifovski, V., Long, J.,
+      Shekita, E. J. & Su, B.-Y. (2014). Scaling Distributed Machine Learning with the Parameter
+      Server. OSDI 2014.

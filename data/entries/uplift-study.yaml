@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: uplift study
+id: uplift-study
+pos: n.
+also:
+  - uplift trial
+  - human uplift study
+  - uplift
+  - marginal uplift
+domain: safety
+domains:
+  - eval
+  - sec
+level: core
+plain: >-
+  An experiment that measures how much an AI really helps people do a task — often a dangerous one,
+  like planning a biological attack — compared with people using only ordinary resources such as the
+  internet.
+senses:
+  - definition: >-
+      An experiment, usually a randomized controlled trial, that estimates how much access to an AI
+      system improves human performance on a task relative to a control group with conventional
+      resources such as web search and textbooks. In safety work the task is a proxy for serious
+      [[misuse|misuse]] — writing a feasible plan to acquire, produce or deploy a biological or
+      chemical agent, or carrying out a cyberattack — with participants ranging from novices to
+      domain experts and outputs scored blind by specialists. The quantity of interest is marginal
+      uplift: the added risk attributable to the model beyond what is already freely available.
+      Uplift studies give more direct evidence of real-world risk than knowledge
+      [[benchmark|benchmarks]], but are slow, costly, small in sample and ethically limited to safe
+      proxy tasks. The same design is used for benign questions, such as programmer productivity.
+    example: >-
+      Experts with model access wrote more complete protocols, but the uplift was not statistically
+      significant.
+origin: >-
+  Grew out of biosecurity red-teaming of language models in 2023. Early published examples, both
+  released in January 2024, are a RAND red-team study of large-scale biological attacks and an
+  OpenAI 'early warning' study of biological threat creation; neither found statistically
+  significant uplift. In July 2025 METR applied the design to productivity, finding that experienced
+  open-source developers took 19% longer with early-2025 AI tools.
+year: 2024
+note: >-
+  'Uplift' alone is jargon for any increase in capability a model confers, as in 'novice uplift'.
+  Results depend heavily on the model version, the participants' skill and the proxy task, so a null
+  result may not survive the next model generation.
+see_also:
+  - dangerous capability evaluation
+  - CBRN risk
+  - biosecurity
+  - red teaming
+  - misuse
+  - capability threshold
+sources:
+  - text: >-
+      Mouton, C. A., Lucas, C. & Guest, E. (2024). The Operational Risks of AI in Large-Scale
+      Biological Attacks: Results of a Red-Team Study. RAND Corporation.
+  - text: >-
+      Becker, J., Rush, N., Barnes, E. & Rein, D. (2025). Measuring the Impact of Early-2025 AI on
+      Experienced Open-Source Developer Productivity. METR.

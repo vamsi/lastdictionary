@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: general game playing
+id: general-game-playing
+pos: n.
+also:
+  - GGP
+  - Game Description Language
+  - GDL
+domain: sym
+domains:
+  - rl
+  - agents
+level: specialist
+plain: >-
+  Building AI players that are handed the rules of a game they have never seen and must work out how
+  to play it well on their own, with no game-specific help from their programmers.
+senses:
+  - definition: >-
+      The research problem of building AI systems that receive the rules of a game they have never
+      encountered, as a formal description, only when play begins, so that no knowledge specific to
+      that game can be programmed in. In the Stanford framework, rules are written in the Game
+      Description Language (GDL), a [[datalog|Datalog]]-like logic language specifying players,
+      initial state, legal moves, state updates, termination and payoffs; extensions cover chance
+      and hidden information. Players must analyze the rules, construct evaluation strategies on the
+      fly and search, and the most successful competitors adopted [[monte-carlo-tree-search|Monte
+      Carlo tree search]], which needs no hand-built [[evaluation-function|evaluation function]].
+      The field anticipated the generality later pursued by [[alphazero|AlphaZero]], which learns
+      any perfect-information game from its rules by [[self-play|self-play]], and by benchmarks that
+      test [[large-language-model|language models]] on novel games.
+origin: >-
+  Barney Pell's Metagame (1992) explored programs that play whole classes of chess-like games.
+  Michael Genesereth's Stanford Logic Group defined GDL and launched the annual AAAI General Game
+  Playing Competition in 2005.
+year: 2005
+see_also:
+  - Monte Carlo tree search
+  - game tree
+  - AlphaZero
+  - evaluation function
+  - Datalog
+  - artificial general intelligence
+sources:
+  - text: >-
+      Genesereth, M., Love, N. & Pell, B. (2005). General Game Playing: Overview of the AAAI
+      Competition. AI Magazine 26(2), 62–72.

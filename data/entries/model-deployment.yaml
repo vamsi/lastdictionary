@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model deployment
+id: model-deployment
+pos: n.
+also:
+  - deployment
+  - deploy
+  - ML deployment
+  - productionization
+  - blue-green deployment
+  - rollback
+domain: eng
+domains:
+  - infer
+level: core
+plain: >-
+  Putting a trained AI model to work in a real product so that people or other software can use it —
+  and doing so carefully enough that the change can be undone if something goes wrong.
+senses:
+  - definition: >-
+      The process of releasing a trained model into an environment where it serves real users or
+      systems, and the resulting production configuration. Deployment involves packaging the model
+      with its preprocessing code and dependencies (often as a container image or in a portable
+      format such as [[onnx|ONNX]]); choosing a serving pattern — online [[model-serving|model
+      serving]] behind an API, [[batch-inference|batch scoring]], streaming, or execution on users'
+      devices; provisioning hardware; and wiring up logging and [[model-monitoring|monitoring]].
+      Because offline test scores do not guarantee live behavior, releases are usually staged:
+      [[shadow-deployment|shadow]] runs, [[canary-deployment|canary]] releases to a small share of
+      traffic, [[a-b-testing|A/B tests]], and blue-green switches between two identical environments
+      limit the damage a bad model can do and allow fast rollback to the previous version, typically
+      fetched from a [[model-registry|model registry]].
+    example: >-
+      We deployed the new ranking model to five percent of traffic before rolling it out globally.
+origin: >-
+  The usage comes from software release practice. Early portable formats for statistical models
+  included PMML (Predictive Model Markup Language, first drafted in 1997); dedicated serving systems
+  such as TensorFlow Serving (2016) and container-based platforms later turned deployment into a
+  routine, automated step of [[mlops|MLOps]].
+note: >-
+  Often conflated with [[model-serving|model serving]], the runtime that answers requests;
+  deployment also covers packaging, release strategy and rollback. Under the [[eu-ai-act|EU AI
+  Act]], a 'deployer' is any person or body that uses an AI system under its authority (other than
+  for purely personal use), not the engineer who releases it.
+see_also:
+  - model serving
+  - shadow deployment
+  - canary deployment
+  - A/B testing
+  - MLOps
+  - model registry
+  - batch inference

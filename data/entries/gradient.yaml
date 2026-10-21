@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gradient
+id: gradient
+pos: n.
+also:
+  - gradient vector
+  - nabla
+  - ∇
+  - grad
+  - gradients
+domain: math
+domains:
+  - dl
+  - train
+level: core
+plain: >-
+  A list of slopes showing which way, and how steeply, a quantity rises as each of its inputs
+  changes. Training nudges an AI's settings in the opposite direction, downhill.
+senses:
+  - definition: >-
+      The vector ∇f that collects the [[partial-derivative|partial derivatives]] of a real-valued
+      function of many variables, one component per input. Geometrically it names the uphill
+      direction: no other direction raises f faster, the steepest available slope equals the
+      gradient's length, and the gradient stands at right angles to the contours (level sets) on
+      which f is constant. In machine learning, 'the gradient' almost always means the gradient of
+      the [[loss-function|loss]] with respect to the model's [[parameter|parameters]] — a vector as
+      large as the model itself, computed by [[backpropagation|backpropagation]].
+      [[gradient-descent|Gradient descent]] and its descendants
+      ([[stochastic-gradient-descent|stochastic gradient descent]], [[adam|Adam]]) move the
+      parameters a small step against it; because it is estimated on [[mini-batch|mini-batches]], it
+      is a noisy, [[stochastic|stochastic]] estimate. Gradients with respect to the input rather
+      than the parameters power [[saliency-map|saliency maps]], [[integrated-gradients|integrated
+      gradients]] and [[adversarial-example|adversarial examples]].
+    example: >-
+      The gradients went to NaN after step 4,000, so we lowered the learning rate and turned on
+      clipping.
+formula_latex: \nabla f(\mathbf{x}) = \Big(\frac{\partial f}{\partial x_1}, \ldots, \frac{\partial
+  f}{\partial x_n}\Big)^{\top}
+origin: >-
+  Horace Lamb used 'gradient' in his 1897 calculus textbook for the slope of a curve as measured by
+  the derivative; the vector sense became current in early-20th-century vector analysis, the OED's
+  earliest quotation coming from J. G. Coffin's Vector Analysis (1909). James Clerk Maxwell had
+  called the vector the 'slope' (1873) and later the 'space-variation'. Augustin-Louis Cauchy
+  proposed descending along the negative gradient to solve systems of equations in 1847, the
+  ancestor of gradient descent.
+year: 1909
+note: >-
+  Gradients are defined for scalar outputs; for vector-valued functions the analogue is the
+  [[jacobian|Jacobian]]. In [[vanishing-gradient-problem|vanishing]] and
+  [[exploding-gradient-problem|exploding gradients]], the issue is the gradient's magnitude
+  shrinking or growing across layers.
+see_also:
+  - gradient descent
+  - partial derivative
+  - backpropagation
+  - Jacobian
+  - Hessian
+  - automatic differentiation
+  - derivative

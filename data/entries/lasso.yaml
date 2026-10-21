@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: lasso
+id: lasso
+pos: n.
+also:
+  - least absolute shrinkage and selection operator
+  - L1-penalized regression
+  - lasso regression
+  - basis pursuit denoising
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A version of linear regression that keeps only the most useful inputs: it penalizes the total size
+  of the weights so that many become exactly zero, leaving a simpler model.
+senses:
+  - definition: >-
+      [[linear-regression|Linear regression]], or another model, estimated with an L1 penalty λΣ|βⱼ|
+      on the coefficients — equivalently, by minimizing squared error subject to a bound on the sum
+      of their absolute values. Because the L1 constraint region has corners on the coordinate axes,
+      the solution sets many coefficients exactly to zero, so the lasso performs
+      [[feature-selection|feature selection]] and shrinkage at once and gives sparse, interpretable
+      models even when features outnumber observations. There is no closed form: solutions are
+      computed by coordinate descent, as in the glmnet software, or by least-angle regression
+      (LARS), which traces the whole solution path as λ varies. With groups of correlated features
+      it tends to keep one arbitrarily, it selects at most n features when there are n observations,
+      and it shrinks large coefficients too much — motivations for the [[elastic-net|elastic net]]
+      and adaptive or relaxed variants.
+    example: >-
+      The lasso kept 14 of the 600 candidate biomarkers, which made the model easy to validate in
+      the lab.
+formula_latex: \hat{\boldsymbol\beta}_{\text{lasso}} = \arg\min_{\boldsymbol\beta}
+  \frac{1}{2n}\lVert \mathbf{y} - X\boldsymbol\beta \rVert_2^2 + \lambda \lVert \boldsymbol\beta
+  \rVert_1
+origin: >-
+  Named and popularized by Robert Tibshirani in 'Regression Shrinkage and Selection via the Lasso'
+  (Journal of the Royal Statistical Society, Series B, 1996); the name is also read as an acronym,
+  'least absolute shrinkage and selection operator'. L1-penalized fitting had earlier appeared in
+  geophysics (Fadil Santosa and William Symes, 1986), and the same problem became basis pursuit
+  denoising in signal processing (Scott Chen, David Donoho and Michael Saunders, 1998).
+year: 1996
+note: >-
+  Tibshirani writes 'lasso' in lowercase. Lasso selections are unstable under resampling, so the
+  chosen features should not be read as the true causes. The L1 idea also underlies compressed
+  sensing and sparse coding, including [[sparse-autoencoder|sparse autoencoders]].
+see_also:
+  - regularization
+  - ridge regression
+  - elastic net
+  - feature selection
+  - linear regression
+  - sparsity
+contrast:
+  - ridge regression
+sources:
+  - text: >-
+      Tibshirani, R. (1996). Regression Shrinkage and Selection via the Lasso. Journal of the Royal
+      Statistical Society, Series B, 58(1), 267–288.

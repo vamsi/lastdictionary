@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: systematicity
+id: systematicity
+pos: n.
+also:
+  - systematic generalization
+  - compositional generalization
+  - systematicity argument
+  - systematicity challenge
+domain: mind
+domains:
+  - dl
+  - llm
+labels:
+  - contested
+level: specialist
+plain: >-
+  The way thinking and language come in connected packages: if you can understand 'the dog chases
+  the cat', you can also understand 'the cat chases the dog'. Whether neural networks manage this
+  has long been debated.
+senses:
+  - definition: >-
+      The property whereby a mind's capacity to entertain certain structured thoughts, or to
+      understand certain sentences, comes bundled with the capacity to handle others built from the
+      same parts: anyone who can think that John loves Mary can think that Mary loves John. Jerry
+      Fodor and Zenon Pylyshyn argued that classical symbol systems, being compositional, explain
+      systematicity automatically, whereas [[connectionism|connectionist]] networks either fail to
+      exhibit it or succeed only by implementing a classical architecture. In machine learning the
+      challenge became the study of systematic or compositional generalization — whether models
+      trained on some combinations of known elements handle new combinations — tested by benchmarks
+      such as SCAN (2018), on which standard sequence-to-sequence networks failed. Brenden Lake and
+      Marco Baroni showed in 2023 that a network trained by [[meta-learning|meta-learning]] for
+      compositionality could match human systematic generalization; how systematic
+      [[large-language-model|large language models]] are remains debated.
+origin: >-
+  Introduced as an argument against connectionism by Jerry Fodor and Zenon Pylyshyn in
+  'Connectionism and Cognitive Architecture: A Critical Analysis' (Cognition, 1988). Brenden Lake
+  and Marco Baroni's SCAN benchmark (2018) and their 2023 Nature paper renewed the debate for deep
+  learning.
+year: 1988
+see_also:
+  - language of thought hypothesis
+  - connectionism
+  - generalization
+  - meta-learning
+  - neuro-symbolic AI
+  - binding problem
+sources:
+  - text: >-
+      Fodor, J. A. & Pylyshyn, Z. W. (1988). Connectionism and Cognitive Architecture: A Critical
+      Analysis. Cognition 28(1–2), 3–71.
+  - text: >-
+      Lake, B. M. & Baroni, M. (2023). Human-like Systematic Generalization through a Meta-Learning
+      Neural Network. Nature 623, 115–121.

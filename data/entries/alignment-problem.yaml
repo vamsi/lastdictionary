@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: alignment problem
+id: alignment-problem
+pos: n.
+also:
+  - AI alignment problem
+  - the alignment problem
+domain: safety
+domains:
+  - asi
+level: essential
+plain: >-
+  The unsolved challenge of building AI systems — especially ones smarter than us — that reliably
+  want what we want and do what we mean, rather than something subtly or dangerously different.
+senses:
+  - definition: >-
+      The open technical and conceptual problem of ensuring that increasingly capable AI systems
+      pursue the goals their developers and users intend, without harmful divergence, including
+      after they exceed human ability to check their work. It is commonly divided into specifying
+      what is wanted without loopholes (Stuart Russell's 'King Midas problem'; see
+      [[outer-alignment|outer alignment]] and [[specification-gaming|specification gaming]]),
+      getting the trained system to adopt that objective rather than a correlated proxy
+      ([[inner-alignment|inner alignment]], [[goal-misgeneralization|goal misgeneralization]]), and
+      verifying that it has done so when a system might behave differently under observation
+      ([[deceptive-alignment|deceptive alignment]], [[evaluation-awareness|evaluation awareness]]).
+      Many researchers regard it as unsolved for systems more capable than humans; how hard it is,
+      and how soon it matters, are disputed.
+    example: Better benchmarks help, but they do not solve the alignment problem.
+origin: >-
+  The worry predates the name: Norbert Wiener's 1960 essay on automation invoked the sorcerer's
+  apprentice. Nick Bostrom's 'Superintelligence' (2014) framed it as the [[control-problem|control
+  problem]], Stuart Russell called it the 'value alignment problem' in a November 2014 essay on
+  Edge.org, and Brian Christian's book 'The Alignment Problem' (2020) brought the short form to
+  general readers.
+year: 2014
+note: >-
+  Not to be confused with [[ai-control|AI control]], a research agenda that assumes alignment may
+  fail and limits what a misaligned system could do. Bostrom's [[control-problem|control problem]]
+  covered both motivation selection (alignment) and [[capability-control|capability control]].
+see_also:
+  - AI alignment
+  - control problem
+  - outer alignment
+  - inner alignment
+  - superalignment
+  - orthogonality thesis
+  - instrumental convergence
+  - existential risk
+contrast:
+  - AI control
+sources:
+  - text: >-
+      Bostrom, N. (2014). Superintelligence: Paths, Dangers, Strategies. Oxford University Press.
+  - text: >-
+      Christian, B. (2020). The Alignment Problem: Machine Learning and Human Values. W. W. Norton.
+  - text: >-
+      Ngo, R., Chan, L. & Mindermann, S. (2022). The Alignment Problem from a Deep Learning
+      Perspective. arXiv:2209.00626.
+    url: https://arxiv.org/abs/2209.00626

@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Adam
+id: adam
+pos: prop. n.
+also:
+  - adaptive moment estimation
+  - Adam optimizer
+  - AdaMax
+  - AMSGrad
+domain: dl
+domains:
+  - train
+  - math
+level: core
+plain: >-
+  The most widely used method for training neural networks. It smooths the direction of updates over
+  time and automatically sets a separate step size for each setting based on how large its recent
+  changes have been.
+senses:
+  - definition: >-
+      An adaptive first-order [[optimizer|optimizer]] that keeps two exponential moving averages per
+      parameter — of the gradient (the first moment, a form of [[momentum|momentum]], decay β₁ ≈
+      0.9) and of the squared gradient (the second moment, decay β₂ ≈ 0.999, or 0.95 for many
+      language models) — corrects both for their bias toward zero early in training, and moves each
+      parameter by the ratio of the first moment to the square root of the second, times the
+      [[learning-rate|learning rate]]. The resulting step is nearly invariant to the scale of the
+      gradient and of similar size for every parameter, which makes Adam robust on poorly scaled
+      problems. It combines ideas from [[rmsprop|RMSProp]] and [[adagrad|AdaGrad]] and became the
+      default for [[transformer|transformers]], [[generative-adversarial-network|GANs]] and most
+      deep learning outside image classification, where SGD with momentum often generalizes as well
+      or better. Known weaknesses are its memory cost (two extra values per parameter), a gap in the
+      original convergence proof (addressed by AMSGrad) and a poor interaction with L2
+      regularization, corrected by [[adamw|AdamW]].
+    example: >-
+      Swapping SGD for Adam got the transformer training on the first try, at the cost of two extra
+      buffers per weight.
+formula_latex: m_t = \beta_1 m_{t-1} + (1-\beta_1)\, g_t, \quad v_t = \beta_2 v_{t-1} +
+  (1-\beta_2)\, g_t^2, \quad \theta_t = \theta_{t-1} - \eta \,
+  \frac{m_t/(1-\beta_1^t)}{\sqrt{v_t/(1-\beta_2^t)} + \epsilon}
+origin: >-
+  Introduced by Diederik P. Kingma and Jimmy Ba in 'Adam: A Method for Stochastic Optimization'
+  (arXiv December 2014; ICLR 2015), which also proposed the AdaMax variant; the name derives from
+  'adaptive moment estimation'. It became one of the most cited papers in machine learning. Sashank
+  Reddi, Satyen Kale and Sanjiv Kumar (2018) exposed and repaired a flaw in its convergence
+  analysis.
+year: 2014
+note: >-
+  Written Adam, not ADAM. Because each step is roughly bounded by the learning rate whatever the
+  gradient's scale, Adam learning rates (about 10⁻⁴ to 10⁻³) are not comparable with SGD ones (about
+  0.1).
+see_also:
+  - AdamW
+  - RMSProp
+  - AdaGrad
+  - momentum
+  - optimizer
+  - Muon
+  - learning rate warmup
+sources:
+  - text: >-
+      Kingma, D. P. & Ba, J. (2015). Adam: A Method for Stochastic Optimization. ICLR 2015.
+    url: https://arxiv.org/abs/1412.6980
+  - text: >-
+      Reddi, S. J., Kale, S. & Kumar, S. (2018). On the Convergence of Adam and Beyond. ICLR 2018.

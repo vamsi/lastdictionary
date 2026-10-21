@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: impedance control
+id: impedance-control
+pos: n.
+also:
+  - compliance control
+  - admittance control
+  - compliant control
+  - force control
+  - variable impedance control
+domain: robot
+level: specialist
+plain: >-
+  A way of controlling a robot so that it behaves like a spring and shock absorber when it touches
+  things, giving way gently instead of pushing rigidly.
+senses:
+  - definition: >-
+      A control approach that regulates the dynamic relationship between a robot's motion and the
+      forces it exchanges with its environment — making the [[end-effector|end effector]] behave
+      like a chosen mass–spring–damper system — instead of controlling position or force alone.
+      Specifying stiffness, damping and apparent inertia lets a robot yield when it meets an
+      obstacle, a person or a slightly misaligned part, so tasks with uncertain contact, such as
+      peg-in-hole insertion, wiping, polishing, opening doors, foot contact in walking and physical
+      cooperation with people, succeed without exact models or crushing forces. Impedance control
+      commands forces in response to measured motion and suits torque-controlled, back-drivable
+      robots; its dual, admittance control, commands motion in response to measured forces and suits
+      stiff, position-controlled industrial arms fitted with a force sensor. Variable-impedance
+      schemes change stiffness during a task, and learned [[policy|policies]] increasingly output
+      impedance parameters along with target poses, which eases [[sim-to-real-transfer|sim-to-real
+      transfer]].
+    example: Lower the stiffness for the insertion; the peg will find the hole by itself.
+origin: >-
+  Formulated by Neville Hogan in 'Impedance Control: An Approach to Manipulation', a three-part
+  paper in the ASME Journal of Dynamic Systems, Measurement, and Control (1985), building on earlier
+  stiffness control and on passive compliance devices such as the remote center compliance wrist
+  developed at the Charles Stark Draper Laboratory in the 1970s.
+year: 1985
+note: >-
+  'Impedance' is borrowed from electrical engineering through the analogy of force with voltage and
+  velocity with current.
+see_also:
+  - manipulation
+  - collaborative robot
+  - control theory
+  - PID controller
+  - proprioception
+  - tactile sensing
+sources:
+  - text: >-
+      Hogan, N. (1985). Impedance control: An approach to manipulation, Parts I–III. ASME Journal of
+      Dynamic Systems, Measurement, and Control 107(1), 1–24.

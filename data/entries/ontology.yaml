@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ontology
+id: ontology
+pos: n.
+also:
+  - ontologies
+  - domain ontology
+  - upper ontology
+  - foundational ontology
+domain: sym
+domains:
+  - data
+  - mind
+level: core
+plain: >-
+  A carefully defined vocabulary for a subject such as medicine, spelling out each kind of thing,
+  how kinds nest inside one another, and which connections between them are allowed.
+senses:
+  - context: Knowledge representation
+    definition: >-
+      A machine-readable model of a domain that fixes its vocabulary of concepts and states how they
+      relate, typically comprising a class hierarchy (taxonomy), properties and relations with their
+      permitted arguments, and logical axioms constraining how they combine — for example, that
+      every enzyme is a protein, or that 'part of' is transitive. Ontologies give separately built
+      systems a shared vocabulary, enable automated consistency checking and classification, and
+      underpin the [[semantic-web|semantic web]], where they are commonly written in
+      [[web-ontology-language|OWL]], which is based on [[description-logic|description logics]].
+      Upper (foundational) ontologies such as BFO and DOLCE define very general categories — object,
+      process, quality — for domain ontologies to specialize; widely used domain ontologies include
+      the Gene Ontology and SNOMED CT.
+    example: We aligned both hospitals' records to a shared ontology before merging them.
+  - context: Philosophy
+    definition: >-
+      The branch of metaphysics that studies what exists and the most general categories of being.
+      The AI sense borrows the word for an engineered, usually domain-specific inventory of
+      categories, and the two are linked mainly by name.
+origin: >-
+  The philosophical term dates from the early 17th century (Latin ontologia). Its engineering sense
+  emerged in AI knowledge-sharing projects around 1990; Tom Gruber's 1993 definition of an ontology
+  as 'an explicit specification of a conceptualization' became the standard reference.
+year: 1993
+note: >-
+  Usage ranges from a simple taxonomy or controlled vocabulary to a richly axiomatized logical
+  theory. Not to be confused with a [[knowledge-graph|knowledge graph]], which mainly records facts
+  about individual entities; the two are often combined, the ontology supplying the schema and the
+  graph the instances.
+see_also:
+  - knowledge representation
+  - description logic
+  - semantic web
+  - Web Ontology Language
+  - knowledge graph
+  - Cyc
+contrast:
+  - knowledge graph
+sources:
+  - text: >-
+      Gruber, T. R. (1993). A Translation Approach to Portable Ontology Specifications. Knowledge
+      Acquisition 5(2), 199–220.

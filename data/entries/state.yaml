@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: state
+id: state
+pos: n.
+also:
+  - state space
+  - environment state
+  - Markov state
+domain: rl
+domains:
+  - math
+level: core
+plain: >-
+  A snapshot of the situation an AI agent is in — for a chess program, the arrangement of pieces and
+  whose turn it is — containing what it needs to decide what to do next.
+senses:
+  - context: Reinforcement learning
+    definition: >-
+      A description of the [[environment|environment]] at a time step, written s or S_t, that
+      together with the chosen [[action|action]] determines the probabilities of what happens next.
+      A state with this [[markov-property|Markov property]] summarizes all relevant history, which
+      is what makes [[markov-decision-process|Markov decision processes]] tractable. States may be
+      discrete (board positions), continuous (a robot's joint angles and velocities) or
+      high-dimensional (raw pixels); the set of all of them is the state space. When the agent
+      receives only partial or noisy observations, it must act on a belief state or a memory of past
+      observations instead, as in a [[partially-observable-markov-decision-process|partially
+      observable Markov decision process]]. In [[deep-reinforcement-learning|deep reinforcement
+      learning]] a network's internal representation often serves as a learned state.
+    example: >-
+      Stacking the last four frames gives the agent a state that captures the ball's velocity.
+  - context: Neural networks
+    definition: >-
+      Short for hidden state: the vector that a [[recurrent-neural-network|recurrent neural
+      network]] or [[state-space-model|state space model]] carries from one step of a sequence to
+      the next, summarizing everything it has processed so far.
+origin: >-
+  Borrowed from physics, automata theory and control engineering, where Rudolf Kálmán's state-space
+  methods (c. 1960) describe a system by a vector of state variables. Richard Bellman's dynamic
+  programming (1950s) made the state the basic unit of sequential decision problems, and RL
+  inherited his usage.
+see_also:
+  - Markov property
+  - Markov decision process
+  - partially observable Markov decision process
+  - action space
+  - environment
+  - value function
+contrast:
+  - action
+sources:
+  - text: >-
+      Sutton, R. S. & Barto, A. G. (2018). Reinforcement Learning: An Introduction (2nd ed.), ch. 3.
+      MIT Press.

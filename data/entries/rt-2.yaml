@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RT-2
+id: rt-2
+pos: prop. n.
+also:
+  - Robotics Transformer 2
+  - RT-2-X
+domain: robot
+domains:
+  - llm
+  - hist
+level: core
+plain: >-
+  A 2023 Google DeepMind model that controlled robot arms with a chatbot-style vision-and-language
+  model, letting robots follow instructions about objects and ideas they had never practiced with.
+senses:
+  - definition: >-
+      A [[vision-language-action-model|vision-language-action model]] from Google DeepMind (Robotics
+      Transformer 2) that fine-tuned large pretrained [[vision-language-model|vision-language
+      models]] — PaLI-X at 5 and 55 billion parameters and PaLM-E at 12 billion — to output robot
+      actions as text [[token|tokens]]. Every action became a short string of integers — a flag for
+      ending the episode, then the six-dimensional change in end-effector position and rotation and
+      the gripper's extension, each continuous quantity cut into 256 bins — so that control reduced
+      to [[next-token-prediction|next-token prediction]]. Training on robot demonstrations mixed
+      with the original web vision-language data kept the models' semantic knowledge intact: in some
+      6,000 trials on real robots, RT-2 was about twice as successful as its predecessor RT-1 with
+      unfamiliar objects, backgrounds and settings, and it handled simple reasoning, such as picking
+      up a rock when asked for something to use as a hammer.
+    example: >-
+      RT-2 showed that web knowledge could reach the gripper without robot data for those concepts.
+origin: >-
+  Introduced by Anthony Brohan and colleagues at Google DeepMind in 'RT-2: Vision-Language-Action
+  Models Transfer Web Knowledge to Robotic Control', posted to arXiv on 28 July 2023 and presented
+  at CoRL 2023. It built on RT-1 (December 2022), a transformer trained on about 130,000
+  demonstrations collected with 13 robots over 17 months.
+year: 2023
+note: >-
+  RT-2's weights were never released; its recipe was widely copied by open models such as OpenVLA.
+  RT-2-X, trained on [[open-x-embodiment|Open X-Embodiment]] data, is a later variant.
+see_also:
+  - vision-language-action model
+  - robot foundation model
+  - Open X-Embodiment
+  - vision-language model
+  - next-token prediction
+  - transformer
+sources:
+  - text: >-
+      Brohan, A. et al. (2023). RT-2: Vision-Language-Action Models Transfer Web Knowledge to
+      Robotic Control. arXiv:2307.15818.
+    url: https://arxiv.org/abs/2307.15818
+  - text: >-
+      Brohan, A. et al. (2022). RT-1: Robotics Transformer for Real-World Control at Scale.
+      arXiv:2212.06817.
+    url: https://arxiv.org/abs/2212.06817

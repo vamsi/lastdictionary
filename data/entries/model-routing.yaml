@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model routing
+id: model-routing
+pos: n.
+also:
+  - LLM routing
+  - query routing
+  - model router
+  - LLM router
+domain: infer
+domains:
+  - eng
+  - agents
+labels:
+  - emerging
+level: core
+plain: >-
+  Automatically choosing which AI model should answer each request, a cheap quick one for easy
+  questions and a bigger slower one for hard ones, to save money without hurting quality.
+senses:
+  - definition: >-
+      The selection, for each incoming request, of which model or configuration should handle it,
+      made before generation by a learned classifier, a small [[large-language-model|language
+      model]], hand-written rules or user signals. A router estimates a query's difficulty or domain
+      and sends easy requests to small, fast, cheap models and hard ones to larger or
+      [[reasoning-model|reasoning models]], or picks a model specialized for code, a language or a
+      modality; it may also choose a provider, a [[thinking-budget|thinking budget]] or whether to
+      use tools. Routers are trained on preference or correctness data and judged by the
+      cost–quality trade-off curve they achieve. Consumer assistants use routers to switch between
+      fast and reasoning modes, and [[ai-gateway|AI gateways]] offer routing as a service.
+    example: >-
+      The router sends about 80 percent of support tickets to the small model and escalates the rest.
+origin: >-
+  Builds on earlier work on selecting among predictors. LLM routing took off in 2023–2024 with
+  research such as FrugalGPT (Lingjiao Chen, Matei Zaharia and James Zou, 2023), Hybrid LLM (2024)
+  and LMSYS's RouteLLM (2024), and with routing startups. OpenAI's GPT-5 (August 2025) brought it to
+  a mass audience with a real-time router choosing between fast and 'thinking' models.
+year: 2023
+note: >-
+  Distinct from the [[router|router]] inside a [[mixture-of-experts|mixture of experts]] layer,
+  which assigns individual tokens to expert sub-networks within one model; model routing chooses
+  between whole models. A [[model-cascade|model cascade]] is the sequential variant that escalates
+  only when a cheaper answer looks inadequate.
+see_also:
+  - model cascade
+  - inference cost
+  - AI gateway
+  - reasoning model
+  - small language model
+  - test-time compute
+contrast:
+  - router
+  - mixture of experts
+as_of: 2026-10

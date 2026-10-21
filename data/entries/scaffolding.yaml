@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scaffolding
+id: scaffolding
+pos: n.
+also:
+  - scaffold
+  - agent scaffolding
+  - LLM scaffolding
+  - scaffolded model
+domain: agents
+domains:
+  - eval
+  - safety
+  - llm
+level: core
+plain: >-
+  The code, prompts and tools built around an AI model so it can carry out tasks it could not manage
+  from a bare prompt — like the scaffolding that lets builders reach every part of a building.
+senses:
+  - definition: >-
+      The non-model components that structure how a [[large-language-model|large language model]] is
+      used to perform a task: system prompts and instructions, [[tool|tool]] definitions and output
+      parsers, [[prompt-chaining|chains]] of calls, memory and retrieval, planning or critique
+      steps, and the control logic connecting them. Scaffolding turns a text predictor into a system
+      that executes multi-step work, and better scaffolding can raise measured capability
+      substantially without changing the weights — which is why
+      [[dangerous-capability-evaluation|dangerous-capability evaluations]] and agent
+      [[benchmark|benchmarks]] use strong scaffolds so as not to underestimate a model. Usage
+      overlaps with [[harness|harness]]: some writers treat the words as synonyms, while others
+      distinguish the harness (the runtime that executes the loop, tools and permissions) from the
+      scaffolding (the prompts, tool descriptions and logic that shape behavior).
+    example: >-
+      With better scaffolding — a planner, a code runner and a retry step — the same model solved
+      twice as many tasks.
+origin: >-
+  The building-site metaphor became common in AI evaluation and safety writing around 2023 for the
+  wrapper code around models, such as [[autogpt|AutoGPT]]; evaluators at METR and government AI
+  safety institutes used 'scaffold' for the agent code under which a model is tested. Education has
+  an older, separate sense: temporary support for a learner (David Wood, Jerome Bruner and Gail
+  Ross, 1976).
+year: 2023
+note: >-
+  In software engineering 'scaffolding' also means generated boilerplate for a new project, an
+  unrelated sense. Compare [[capability-elicitation|capability elicitation]], which deliberately
+  uses strong scaffolding to reveal a model's upper-bound abilities.
+see_also:
+  - harness
+  - agent loop
+  - capability elicitation
+  - agent framework
+  - prompt chaining
+  - tool use
+contrast:
+  - model
+  - fine-tuning
+sources:
+  - text: >-
+      Paniego, S. & Roy Gosthipaty, A. (2026). Harness, Scaffold, and the AI Agent Terms Worth
+      Getting Right. Hugging Face blog, 25 May 2026.
+    url: https://huggingface.co/blog/agent-glossary

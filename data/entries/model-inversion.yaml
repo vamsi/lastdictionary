@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model inversion
+id: model-inversion
+pos: n.
+also:
+  - model inversion attack
+  - reconstruction attack
+domain: sec
+domains:
+  - data
+  - dl
+level: specialist
+plain: >-
+  Using a trained AI model's answers to work backwards to private information it learned from — for
+  example, rebuilding a recognizable picture of someone's face from a face-recognition system.
+senses:
+  - definition: >-
+      A privacy attack that uses a trained model's outputs, and sometimes its parameters, to
+      reconstruct sensitive features of its [[training-data|training data]] or of the classes it
+      recognizes. Given a label or a partial record, the attacker searches for inputs that the model
+      scores as most likely for that label, often constrained by a generative prior so that results
+      look realistic: recovering a representative face for a name in a face-recognition model, for
+      instance, or inferring a sensitive attribute such as a genetic marker from a model's
+      prediction and a person's other attributes. Inversion typically reveals class-representative
+      information rather than exact records, which distinguishes it from
+      [[training-data-extraction|training data extraction]] and
+      [[membership-inference-attack|membership inference]]. [[differential-privacy|Differential
+      privacy]], coarser outputs and withholding confidence scores are standard mitigations.
+    example: >-
+      Using only the classifier's confidence scores, model inversion produced recognizable images of
+      three enrolled faces.
+origin: >-
+  Matt Fredrikson and colleagues introduced model inversion in 2014, inferring patients' genetic
+  markers from a warfarin-dosing model (USENIX Security 2014); Fredrikson, Somesh Jha and Thomas
+  Ristenpart extended it to face recognition using confidence scores (ACM CCS 2015). Attacks using
+  generative priors (Yuheng Zhang and colleagues, 2020) and [[gradient-inversion-attack|gradient
+  inversion]] in federated learning followed.
+year: 2014
+see_also:
+  - membership inference attack
+  - training data extraction
+  - gradient inversion attack
+  - differential privacy
+  - memorization
+sources:
+  - text: >-
+      Fredrikson, M., Jha, S. & Ristenpart, T. (2015). Model Inversion Attacks that Exploit
+      Confidence Information and Basic Countermeasures. ACM CCS 2015.

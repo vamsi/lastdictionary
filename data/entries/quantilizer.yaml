@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: quantilizer
+id: quantilizer
+pos: n.
+also:
+  - quantilization
+  - q-quantilizer
+pronunciation: KWON-tih-ly-zer
+domain: safety
+domains:
+  - math
+  - rl
+level: specialist
+plain: >-
+  An AI decision rule that, instead of picking the single highest-scoring action, picks at random
+  among the top few percent of ordinary, human-like actions — limiting how badly a flawed goal can
+  backfire.
+senses:
+  - definition: >-
+      An agent that chooses by filtering rather than maximizing: it starts from a trusted base
+      distribution γ over actions (for example, the actions a human might plausibly take), keeps
+      only the slice of γ's probability mass, of size q, that a utility function U scores highest,
+      and samples from that slice in proportion to γ. As q approaches 0 it approaches a maximizer;
+      at q = 1 it simply imitates the base distribution. Its key property is a bound on harm: for
+      any non-negative cost function, a q-quantilizer's expected cost is at most 1/q times that of
+      the base distribution, so if ordinary behavior is rarely catastrophic, quantilizing cannot be
+      much worse — even when U is badly wrong. Quantilizers thus trade some performance for
+      robustness to errors in the objective, and they are only as safe as their base distribution.
+    example: >-
+      A 1% quantilizer can be at most a hundred times riskier than the human behavior it samples
+      from.
+formula_latex: \mathbb{E}_{a \sim Q_q}\left[c(a)\right] \le \frac{1}{q}\,\mathbb{E}_{a \sim
+  \gamma}\left[c(a)\right]
+origin: >-
+  Introduced by Jessica Taylor of the Machine Intelligence Research Institute in 'Quantilizers: A
+  Safer Alternative to Maximizers for Limited Optimization' at the AAAI 2016 Workshop on AI, Ethics,
+  and Society. The name blends 'quantile' and 'optimizer'.
+year: 2016
+note: >-
+  The best-known formal proposal for [[mild-optimization|mild optimization]].
+  [[best-of-n-sampling|Best-of-n sampling]] from a language model behaves somewhat like a
+  quantilizer with q ≈ 1/n. The guarantee weakens if ordinary actions are themselves risky or if a
+  learned imitation of human behavior is unreliable.
+see_also:
+  - mild optimization
+  - Goodhart's law
+  - impact measure
+  - imitation learning
+  - best-of-n sampling
+contrast:
+  - optimization
+sources:
+  - text: >-
+      Taylor, J. (2016). Quantilizers: A Safer Alternative to Maximizers for Limited Optimization.
+      AAAI-16 Workshop on AI, Ethics, and Society.

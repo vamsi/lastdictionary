@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: third-party AI evaluation
+id: third-party-ai-evaluation
+pos: n.
+also:
+  - external AI evaluation
+  - independent AI evaluation
+  - third-party evaluation
+  - external testing
+domain: gov
+domains:
+  - eval
+  - safety
+level: core
+plain: >-
+  Testing of an AI system by someone other than the company that made it — a government institute, a
+  nonprofit lab or independent researchers — to check what it can do and how risky it is.
+senses:
+  - definition: >-
+      Assessment of an AI model's capabilities, risks or safeguards by parties independent of its
+      developer: government bodies such as the UK [[ai-safety-institute|AI Security Institute]] and
+      the US [[center-for-ai-standards-and-innovation|Center for AI Standards and Innovation]],
+      specialist nonprofits such as [[metr|METR]] and [[apollo-research|Apollo Research]],
+      contracted firms and academic researchers. It ranges from
+      [[pre-deployment-testing|pre-deployment testing]] under access agreements, through
+      [[red-teaming|red teaming]] and bug bounties, to research on released models. Its value
+      depends on the depth of access (black-box API queries, fine-tuning access, chains of thought,
+      or white-box access to weights and activations), the time allowed before release, and the
+      evaluator's independence and freedom to publish. Researchers have called for legal and
+      contractual safe harbors so that good-faith testing does not breach terms of service. The EU
+      [[general-purpose-ai-code-of-practice|General-Purpose AI Code of Practice]] expects external
+      evaluation of systemic-risk models, and California's [[sb-53|SB 53]] requires large developers
+      to describe their use of third-party assessors.
+    example: >-
+      The system card lists two third-party evaluations, each with only ten days of pre-release
+      access.
+origin: >-
+  External pre-release testing of frontier models began with ARC Evals' (now METR) evaluation of
+  GPT-4 before its March 2023 launch; government institutes began pre-deployment testing in 2024,
+  the US institute under agreements signed with OpenAI and Anthropic that August. The March 2024
+  open letter 'A Safe Harbor for AI Evaluation and Red Teaming' (Shayne Longpre and colleagues)
+  pressed for legal protection.
+year: 2023
+see_also:
+  - AI audit
+  - pre-deployment testing
+  - dangerous capability evaluation
+  - red teaming
+  - Center for AI Standards and Innovation
+  - METR
+  - system card
+sources:
+  - text: >-
+      Longpre, S. et al. (2024). A Safe Harbor for AI Evaluation and Red Teaming. arXiv:2403.04893.

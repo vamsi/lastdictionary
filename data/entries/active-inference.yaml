@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: active inference
+id: active-inference
+pos: n.
+also:
+  - active-inference agent
+  - expected free energy
+domain: mind
+domains:
+  - rl
+  - agents
+level: specialist
+plain: >-
+  A theory that living things, and machines built on the same idea, act in order to make the world
+  match their predictions, choosing actions expected to keep them in preferred states and reduce
+  their uncertainty.
+senses:
+  - definition: >-
+      A framework derived from the [[free-energy-principle|free energy principle]] in which
+      perception, learning and action are all treated as minimizing free energy under a generative
+      model. Instead of maximizing an external [[reward|reward]] signal as in
+      [[reinforcement-learning|reinforcement learning]], an active-inference agent encodes
+      preferences as prior beliefs about the observations it expects to receive and selects policies
+      that minimize expected free energy. This quantity splits into a pragmatic term, favoring
+      preferred outcomes, and an epistemic term, favoring the resolution of uncertainty, so that
+      information-seeking and exploration emerge without separate bonuses. Active inference is used
+      in computational neuroscience and psychiatry to model behavior and in AI and robotics to build
+      agents; whether it offers more than a reformulation of Bayesian decision theory and
+      reinforcement learning is debated.
+    example: >-
+      In the active inference model, the agent looks behind the door because doing so reduces its
+      expected free energy, not because it was rewarded.
+origin: >-
+  Developed by Karl Friston and colleagues from about 2009, for example in 'Reinforcement Learning
+  or Active Inference?' (PLoS ONE, 2009) and 'Action and Behavior: A Free-Energy Formulation'
+  (Biological Cybernetics, 2010). Thomas Parr, Giovanni Pezzulo and Friston's textbook Active
+  Inference appeared in 2022.
+year: 2009
+see_also:
+  - free energy principle
+  - predictive processing
+  - reinforcement learning
+  - world model
+  - embodied cognition
+  - artificial life
+contrast:
+  - reinforcement learning
+sources:
+  - text: >-
+      Friston, K. J., Daunizeau, J. & Kiebel, S. J. (2009). Reinforcement Learning or Active
+      Inference? PLoS ONE 4(7).
+  - text: >-
+      Parr, T., Pezzulo, G. & Friston, K. J. (2022). Active Inference: The Free Energy Principle in
+      Mind, Brain, and Behavior. MIT Press.

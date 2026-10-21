@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: weight initialization
+id: weight-initialization
+pos: n.
+also:
+  - parameter initialization
+  - initialization
+  - Xavier initialization
+  - Glorot initialization
+  - He initialization
+  - Kaiming initialization
+  - orthogonal initialization
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  Choosing the random starting values of a neural network's internal numbers before training. Good
+  starting values keep signals from fading away or blowing up as they pass through many layers.
+senses:
+  - definition: >-
+      The scheme for setting a network's [[weights|weights]] and biases before training. Weights
+      must be random to break symmetry — identical units would otherwise receive identical updates
+      forever — and their scale must keep the variance of activations and gradients roughly constant
+      across layers, or signals [[vanishing-gradient-problem|vanish]] or
+      [[exploding-gradient-problem|explode]] with depth. Xavier (Glorot) initialization uses
+      variance 2/(fan-in + fan-out), suited to tanh and sigmoid units; He (Kaiming) initialization
+      uses 2/fan-in to compensate for [[relu|ReLU]] zeroing about half its inputs; orthogonal
+      initialization preserves norms exactly in linear networks. [[residual-connection|Residual]]
+      networks often zero or shrink the last layer of each block so the network starts near the
+      identity, and transformers commonly scale output projections by depth. Initialization scale
+      also selects the training regime, from feature learning to the 'lazy'
+      [[neural-tangent-kernel|neural tangent kernel]] limit, and
+      [[maximal-update-parametrization|maximal update parametrization]] co-designs initialization
+      with per-layer learning rates so that hyperparameters transfer across widths.
+    example: >-
+      Zero-initializing the final layer of each residual block let the 200-layer model train without
+      warmup.
+formula_latex: W_{ij} \sim \mathcal{N}\!\left(0, \frac{2}{n_{\text{in}}}\right)
+origin: >-
+  Initialization was studied in the backpropagation literature of the late 1980s and 1990s; Yann
+  LeCun and colleagues' 'Efficient BackProp' (1998) recommended scaling by fan-in. Xavier Glorot and
+  Yoshua Bengio (AISTATS 2010) and Kaiming He and colleagues (2015) gave the schemes now named after
+  them, and Andrew Saxe and colleagues analyzed orthogonal initialization in 2013.
+note: >-
+  The displayed formula is He initialization for a ReLU layer with n_in inputs. Initialization
+  interacts with normalization layers, which make many networks far less sensitive to it.
+see_also:
+  - vanishing gradient problem
+  - exploding gradient problem
+  - ReLU
+  - maximal update parametrization
+  - neural tangent kernel
+  - lottery ticket hypothesis
+  - residual connection
+sources:
+  - text: >-
+      Glorot, X. & Bengio, Y. (2010). Understanding the difficulty of training deep feedforward
+      neural networks. AISTATS 2010, PMLR 9, 249–256.
+    url: https://proceedings.mlr.press/v9/glorot10a.html
+  - text: >-
+      He, K., Zhang, X., Ren, S. & Sun, J. (2015). Delving Deep into Rectifiers: Surpassing
+      Human-Level Performance on ImageNet Classification. ICCV 2015.
+    url: https://arxiv.org/abs/1502.01852

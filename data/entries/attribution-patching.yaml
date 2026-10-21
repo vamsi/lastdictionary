@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: attribution patching
+id: attribution-patching
+pos: n.
+also:
+  - AtP
+  - AtP*
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A fast shortcut that estimates the results of thousands of patching experiments at once, using the
+  slope of the model's output instead of rerunning the model for every part.
+senses:
+  - definition: >-
+      A gradient-based approximation to [[activation-patching|activation patching]] that estimates
+      the effect of patching every component simultaneously. For each activation a, the change in a
+      metric M from substituting its clean value for its corrupted one is approximated to first
+      order by the difference between the two values multiplied by the [[gradient|gradient]] of M
+      with respect to a. Two forward passes and one backward pass thus replace one forward pass per
+      patched component, making it feasible to scan every head, neuron or sparse feature of a large
+      model. The approximation fails where M is strongly nonlinear in the activation — for example
+      when attention saturates or a component's effect is all-or-nothing — producing false
+      negatives; AtP* (János Kramár and colleagues, 2024) adds corrections for attention and for
+      cancellation between paths. Edge attribution patching applies the same idea to connections
+      between components for [[automated-circuit-discovery|automated circuit discovery]].
+    example: >-
+      Attribution patching ranked all 2,000 heads in a minute; we then verified the top ten with
+      real patching.
+formula_latex: \Delta M \approx \left(a_{\text{clean}} - a_{\text{corr}}\right)^{\top} \left.
+  \frac{\partial M}{\partial a} \right|_{a = a_{\text{corr}}}
+origin: >-
+  Described by Neel Nanda in the blog post 'Attribution Patching: Activation Patching At Industrial
+  Scale' (February 2023), from work begun at Anthropic for which he shares credit with Chris Olah,
+  Catherine Olsson, Nelson Elhage and Tristan Hume; it draws on gradient-times-input attribution.
+  Extended to edges by Aaquib Syed, Can Rager and Arthur Conmy (2023) and refined by Kramár, Tom
+  Lieberum, Rohin Shah and Nanda at Google DeepMind (AtP*, 2024).
+year: 2023
+see_also:
+  - activation patching
+  - automated circuit discovery
+  - integrated gradients
+  - feature attribution
+  - path patching
+sources:
+  - text: >-
+      Kramár, J., Lieberum, T., Shah, R. & Nanda, N. (2024). AtP*: An efficient and scalable method
+      for localizing LLM behaviour to components. arXiv preprint.
+  - text: >-
+      Syed, A., Rager, C. & Conmy, A. (2023). Attribution Patching Outperforms Automated Circuit
+      Discovery. arXiv preprint.

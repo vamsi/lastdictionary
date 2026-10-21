@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: parameter decomposition
+id: parameter-decomposition
+pos: n.
+also:
+  - attribution-based parameter decomposition
+  - APD
+  - stochastic parameter decomposition
+  - SPD
+domain: interp
+domains:
+  - dl
+labels:
+  - emerging
+level: specialist
+plain: >-
+  An approach that tries to understand a neural network by splitting its weights — rather than its
+  internal activity — into many simple pieces, each responsible for one mechanism.
+senses:
+  - definition: >-
+      A family of interpretability methods that decompose a network's parameters, rather than its
+      [[activation|activations]], into parameter-space components, often constrained to low rank,
+      that add up to the original weights; the decomposition favors components that are individually
+      simple and of which only a handful are needed for any one input. The aim is to identify the
+      network's mechanisms directly, avoiding problems of activation-based
+      [[dictionary-learning|dictionary learning]] such as reconstruction error,
+      [[feature-splitting|feature splitting]] and the difficulty of saying how features are
+      computed. Attribution-based parameter decomposition (APD) selects for each input the
+      components with the highest gradient attributions and penalizes how many are needed, framed as
+      minimizing the description length of the network's mechanisms. Stochastic parameter
+      decomposition (SPD) replaced these attributions with learned estimates of causal importance
+      and random masking, making the method more scalable and less sensitive to hyperparameters.
+      Early demonstrations were on [[toy-model|toy models]], such as recovering mechanisms of
+      [[superposition|superposition]] in small networks.
+    example: >-
+      Parameter decomposition split the toy model's weights into one rank-one component per stored
+      feature.
+origin: >-
+  Introduced by Dan Braun, Lucius Bushnaq, Stefan Heimersheim, Jake Mendel and Lee Sharkey in
+  'Interpretability in Parameter Space: Minimizing Mechanistic Description Length with
+  Attribution-based Parameter Decomposition' (January 2025); Lucius Bushnaq, Dan Braun and Lee
+  Sharkey followed with 'Stochastic Parameter Decomposition' (June 2025).
+year: 2025
+see_also:
+  - dictionary learning
+  - sparse autoencoder
+  - superposition
+  - toy model
+  - mechanistic interpretability
+  - minimum description length
+sources:
+  - text: >-
+      Braun, D., Bushnaq, L., Heimersheim, S., Mendel, J. & Sharkey, L. (2025). Interpretability in
+      Parameter Space: Minimizing Mechanistic Description Length with Attribution-based Parameter
+      Decomposition. arXiv:2501.14926.
+    url: https://arxiv.org/abs/2501.14926
+  - text: >-
+      Bushnaq, L., Braun, D. & Sharkey, L. (2025). Stochastic Parameter Decomposition.
+      arXiv:2506.20790.
+    url: https://arxiv.org/abs/2506.20790
+as_of: 2026-10

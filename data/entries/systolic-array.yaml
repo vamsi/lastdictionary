@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: systolic array
+id: systolic-array
+pos: n.
+also:
+  - systolic architecture
+pronunciation: sis-TOL-ik
+domain: hw
+domains:
+  - dl
+level: specialist
+plain: >-
+  A grid of tiny calculators that pass numbers to their neighbors in rhythm, like a heartbeat, so
+  each value is reused many times. AI chips use it to multiply large tables of numbers efficiently.
+senses:
+  - definition: >-
+      A regular grid of identical processing elements, each connected only to its neighbors, through
+      which data are pumped in lockstep: every clock cycle each cell takes inputs from adjacent
+      cells, performs a multiply–accumulate and passes values on. Because each operand fetched from
+      memory is reused across an entire row or column of cells, a systolic array achieves very high
+      [[arithmetic-intensity|arithmetic intensity]] with short, local wiring, which suits
+      [[matrix-multiplication|matrix multiplication]] and [[convolution|convolution]]. In a
+      weight-stationary design, as in Google's first [[tpu|TPU]] (a 256 × 256 array), weights stay
+      in the cells while activations flow through and partial sums accumulate along the array. Many
+      [[ai-accelerator|AI accelerators]] and [[npu|NPUs]] use systolic or similar dataflow arrays
+      for their matrix units.
+origin: >-
+  Introduced by H. T. Kung and Charles E. Leiserson in 'Systolic Arrays (for VLSI)' (presented 1978,
+  published 1979) and popularized by Kung's 1982 IEEE Computer article 'Why Systolic
+  Architectures?'. The name likens the rhythmic data flow to the heart's systole, when it pumps
+  blood.
+year: 1978
+see_also:
+  - TPU
+  - tensor core
+  - matrix multiplication
+  - AI accelerator
+  - arithmetic intensity
+sources:
+  - text: >-
+      Kung, H. T. & Leiserson, C. E. (1979). Systolic Arrays (for VLSI). In Sparse Matrix
+      Proceedings 1978. SIAM.
+  - text: Kung, H. T. (1982). Why Systolic Architectures? IEEE Computer 15(1).

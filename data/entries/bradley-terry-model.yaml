@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bradley–Terry model
+id: bradley-terry-model
+pos: n.
+also:
+  - BT model
+  - Bradley–Terry–Luce model
+  - BTL model
+domain: train
+domains:
+  - math
+  - eval
+level: specialist
+plain: >-
+  A simple statistical rule for turning head-to-head comparisons into scores: each item gets a
+  strength, and the chance one beats another depends only on the difference in their strengths.
+senses:
+  - definition: >-
+      A statistical model of head-to-head comparisons that gives each item i a hidden strength s_i
+      and sets the probability that i is preferred to j to the [[sigmoid-function|logistic sigmoid]]
+      of s_i − s_j. Strengths are fitted by [[maximum-likelihood-estimation|maximum likelihood
+      estimation]] from win–loss records and are identified only up to an additive constant. In
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]] the
+      strength is replaced by a [[reward-model|reward model]]'s score r(x, y) for response y to
+      prompt x, so training the reward model amounts to [[logistic-regression|logistic regression]]
+      on [[preference-data|preference data]]; [[direct-preference-optimization|direct preference
+      optimization]] inherits the same assumption. The [[elo-rating|Elo rating]] system and
+      [[lmarena|LMArena]]-style leaderboards rest on the same model. Its assumptions — a single
+      scalar quality, transitive preferences, no ties, interchangeable annotators — are often
+      violated by real human judgments; the Plackett–Luce model extends it from pairs to full
+      rankings.
+    example: We fit a Bradley–Terry model to the arena votes to get one score per chatbot.
+formula_latex: P(i \succ j) = \frac{e^{s_i}}{e^{s_i} + e^{s_j}} = \sigma(s_i - s_j)
+origin: >-
+  Named after Ralph Bradley and Milton Terry, whose 1952 Biometrika paper on paired-comparison
+  experiments popularized it. Ernst Zermelo had proposed the same model in 1929 for ranking chess
+  players; R. Duncan Luce's 1959 choice axiom generalized it, and Robin Plackett (1975) extended it
+  to rankings. It became the standard loss for AI reward models between 2017 and 2020.
+year: 1952
+note: >-
+  Sometimes written Bradley–Terry–Luce (BTL). Not specific to AI: it is used in sports ranking,
+  psychometrics and marketing. Its single-score assumption is one reason reward models handle ties,
+  intransitive judgments and disagreement between groups of people poorly.
+see_also:
+  - reward model
+  - preference data
+  - Elo rating
+  - logistic regression
+  - sigmoid function
+  - direct preference optimization
+  - maximum likelihood estimation
+sources:
+  - text: >-
+      Bradley, R. A. & Terry, M. E. (1952). Rank Analysis of Incomplete Block Designs: I. The Method
+      of Paired Comparisons. Biometrika 39(3/4), 324–345.
+  - text: >-
+      Zermelo, E. (1929). Die Berechnung der Turnier-Ergebnisse als ein Maximumproblem der
+      Wahrscheinlichkeitsrechnung. Mathematische Zeitschrift 29, 436–460.

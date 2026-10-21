@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: game tree
+id: game-tree
+pos: n.
+also:
+  - game-tree search
+  - extensive form
+  - search tree
+domain: sym
+domains:
+  - rl
+  - math
+level: core
+plain: >-
+  A branching diagram of every way a game could unfold: each point is a position, each branch a
+  possible move, and the tips of the branches are wins, losses or draws.
+senses:
+  - definition: >-
+      A tree whose nodes represent game states and whose edges represent legal moves, with the root
+      as the current position and the leaves as terminal positions labeled with outcomes or payoffs;
+      in two-player games the levels alternate between players. Game trees are the substrate of
+      [[minimax|minimax]], [[alpha-beta-pruning|alpha–beta pruning]] and
+      [[monte-carlo-tree-search|Monte Carlo tree search]]. Their size rules out exhaustive search
+      for most interesting games — Claude Shannon estimated about 10^120 possible chess games, and
+      Go's tree is far larger — so programs search a partial tree and estimate leaf values with an
+      [[evaluation-function|evaluation function]] or a learned [[value-function|value function]].
+      Games with dice or hidden information add chance nodes and information sets; in game theory
+      the game tree is called the extensive form.
+origin: >-
+  John von Neumann and Oskar Morgenstern formalized games in extensive (tree) form in Theory of
+  Games and Economic Behavior (1944), and Harold Kuhn refined the formalism in 1953. Claude
+  Shannon's 1950 chess paper made searching the game tree the central technique of computer game
+  playing.
+year: 1944
+see_also:
+  - minimax
+  - alpha–beta pruning
+  - Monte Carlo tree search
+  - evaluation function
+  - combinatorial explosion
+  - AlphaGo
+sources:
+  - text: >-
+      von Neumann, J. & Morgenstern, O. (1944). Theory of Games and Economic Behavior. Princeton
+      University Press.

@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: k-anonymity
+id: k-anonymity
+pos: n.
+also:
+  - k-anonymous
+  - quasi-identifier
+  - l-diversity
+  - t-closeness
+domain: sec
+domains:
+  - data
+  - gov
+level: specialist
+plain: >-
+  A rule for anonymizing tables of personal data: blur details such as age and postcode until every
+  person matches at least k others, so no one can be singled out.
+senses:
+  - definition: >-
+      A property of a released dataset requiring every record to be indistinguishable from at least
+      k − 1 others on its quasi-identifiers: attributes such as postcode, birth date and sex that do
+      not identify anyone alone but can be linked with outside data to re-identify people. It is
+      achieved by generalizing values (exact age to an age band) and suppressing outliers.
+      k-anonymity resists simple linkage attacks but not homogeneity attacks, in which all k
+      matching records share the same sensitive value, or attacks using background knowledge;
+      refinements such as l-diversity and t-closeness respond to these, and all degrade badly on
+      high-dimensional data. Because it constrains the data rather than the release process and
+      composes poorly across releases, [[differential-privacy|differential privacy]] has largely
+      replaced it as the formal standard, though it remains common in practice.
+    example: >-
+      After ages were banded by decade and postcodes truncated, the table satisfied 5-anonymity.
+origin: >-
+  Introduced by Pierangela Samarati and Latanya Sweeney in a 1998 technical report and formalized in
+  Sweeney's 'k-anonymity: a model for protecting privacy' (2002). It was motivated by Sweeney's
+  finding that postcode, birth date and sex single out most Americans, and by her 1997
+  re-identification of the Massachusetts governor's hospital records.
+year: 1998
+see_also:
+  - differential privacy
+  - personally identifiable information
+  - privacy-preserving machine learning
+  - membership inference attack
+contrast:
+  - differential privacy
+sources:
+  - text: >-
+      Sweeney, L. (2002). k-anonymity: a model for protecting privacy. International Journal of
+      Uncertainty, Fuzziness and Knowledge-Based Systems 10(5).

@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: InfiniBand
+id: infiniband
+pos: prop. n.
+also:
+  - IB
+domain: hw
+domains:
+  - train
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A very fast networking technology used to connect the thousands of servers in supercomputers and
+  AI training clusters, designed so data moves with minimal delay.
+senses:
+  - definition: >-
+      A switched networking technology, defined by an industry specification, built for
+      supercomputer-style workloads: links of very high bandwidth with latency around a microsecond,
+      native [[rdma|RDMA]], lossless credit-based flow control, and adapters that take networking
+      work off the CPU. Per-port speeds (four lanes) have risen from 8 Gb/s (SDR, early 2000s)
+      through 200 Gb/s (HDR, 2018) and 400 Gb/s (NDR, 2022) to 800 Gb/s (XDR, 2024). Nvidia's
+      Quantum switches and ConnectX adapters, inherited from Mellanox, dominate the market, and
+      in-network computing such as SHARP performs parts of [[all-reduce|all-reduce]] inside the
+      switches. InfiniBand was long the default [[scale-up-and-scale-out|scale-out]] fabric for GPU
+      training clusters, but Ethernet with RDMA (RoCE) and the Ultra Ethernet specification now
+      compete strongly; Meta, for example, built twin 24,576-GPU clusters in 2024, one on each.
+origin: >-
+  Formed in 1999 by merging two rival server-I/O proposals, Future I/O and Next Generation I/O; the
+  InfiniBand Trade Association released version 1.0 of the specification in 2000. Mellanox (founded
+  1999) became its main supplier and was acquired by Nvidia for $6.9 billion (announced March 2019,
+  completed 2020).
+year: 1999
+note: >-
+  Originally meant to replace PCI as a general server I/O bus; it found its lasting niche in
+  supercomputing and AI clusters instead.
+see_also:
+  - RDMA
+  - interconnect
+  - scale-up and scale-out
+  - NVLink
+  - AI supercomputer
+  - all-reduce
+contrast:
+  - NVLink
+as_of: 2026-10

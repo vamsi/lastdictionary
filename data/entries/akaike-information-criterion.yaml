@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Akaike information criterion
+id: akaike-information-criterion
+pos: n.
+also:
+  - AIC
+  - AICc
+  - an information criterion
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  A score for comparing statistical models that rewards fitting the data well but charges a penalty
+  for every extra adjustable number, to avoid picking needlessly complicated models. Lower is
+  better.
+senses:
+  - definition: >-
+      A criterion for [[model-selection|model selection]] that estimates a model's expected
+      out-of-sample predictive accuracy, measured by the
+      [[kullback-leibler-divergence|Kullback–Leibler divergence]] from the true data-generating
+      process, up to a constant. For a model with k estimated parameters and maximized
+      [[likelihood|likelihood]] L̂, AIC = 2k − 2 ln L̂. Among candidates fitted to the same data,
+      the one with the lowest AIC is preferred, and AIC differences can be converted into relative
+      weights for model averaging. The 2k term corrects the optimism of the in-sample
+      log-likelihood; a small-sample version, AICc, adds a further penalty when the number of
+      observations is not much larger than k. AIC is asymptotically equivalent to leave-one-out
+      [[cross-validation|cross-validation]] for many models and targets prediction rather than
+      identification of a 'true' model; unlike the [[bayesian-information-criterion|Bayesian
+      information criterion]] it is not consistent and may keep favoring overly complex models as
+      data grow. It needs likelihood-based models with well-defined parameter counts, which limits
+      its use for neural networks.
+    example: AIC preferred ARIMA(2,1,1) over ARIMA(1,1,1) by 14 points.
+formula_latex: \mathrm{AIC} = 2k - 2 \ln \hat{L}
+origin: >-
+  Introduced by the Japanese statistician Hirotugu Akaike, who presented it at a 1971 symposium
+  (published 1973) and set it out in 'A New Look at the Statistical Model Identification' (IEEE
+  Transactions on Automatic Control, 1974). Akaike's abbreviation for 'an information criterion'
+  came to be read as his own name. Clifford Hurvich and Chih-Ling Tsai popularized AICc in 1989.
+year: 1973
+see_also:
+  - Bayesian information criterion
+  - model selection
+  - likelihood
+  - Kullback–Leibler divergence
+  - cross-validation
+  - ARIMA
+contrast:
+  - Bayesian information criterion
+sources:
+  - text: >-
+      Akaike, H. (1973). Information Theory and an Extension of the Maximum Likelihood Principle. In
+      2nd International Symposium on Information Theory. Budapest: Akadémiai Kiadó.
+  - text: >-
+      Akaike, H. (1974). A New Look at the Statistical Model Identification. IEEE Transactions on
+      Automatic Control 19(6).

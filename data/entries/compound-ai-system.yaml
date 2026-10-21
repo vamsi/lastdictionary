@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: compound AI system
+id: compound-ai-system
+pos: n.
+also:
+  - compound AI
+  - compound system
+domain: eng
+domains:
+  - agents
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  An AI product built from several working parts — models, search tools, code and checks — designed
+  to work together, rather than a single model answering on its own.
+senses:
+  - definition: >-
+      An AI application whose answers come from several cooperating parts, such as retrievers, code
+      interpreters and other [[tool|tools]], verifiers, control logic and calls to one or more
+      models, rather than from a single call to one model.
+      [[retrieval-augmented-generation|Retrieval-augmented generation]] pipelines, multi-step
+      [[agentic-workflow|agentic workflows]], systems that sample many candidate solutions and
+      filter them with tests, and [[model-routing|routers]] that send queries to models of different
+      sizes are all compound systems. Matei Zaharia and colleagues, who popularized the term, argue
+      that the best results increasingly come from system design rather than model scale alone,
+      because systems can add fresh or private information, enforce control and safety, trade cost
+      against quality, and improve by tuning components together. It also brings engineering
+      problems: a much larger design space, optimization across components that are not
+      differentiable (addressed by tools such as [[dspy|DSPy]]), and harder evaluation, monitoring
+      and debugging.
+    example: >-
+      Our support bot is a compound AI system: a router, two retrievers, a drafting model and a
+      policy checker.
+origin: >-
+  Popularized by Matei Zaharia, Omar Khattab and colleagues at the Berkeley Artificial Intelligence
+  Research (BAIR) lab in the February 2024 blog post 'The Shift from Models to Compound AI Systems',
+  which argued that leading AI results were increasingly obtained by systems rather than single
+  models.
+year: 2024
+note: >-
+  Overlaps with [[agentic-ai|agentic systems]], but a compound system need not be agentic: its
+  control flow can be fixed by developers. The legal term [[ai-system|AI system]] is broader still.
+see_also:
+  - DSPy
+  - retrieval-augmented generation
+  - agentic workflow
+  - AI stack
+  - orchestration
+  - model routing
+  - AI system
+sources:
+  - text: >-
+      Zaharia, M., Khattab, O., Chen, L., Davis, J. Q., Miller, H., Potts, C., Zou, J., Carbin, M.,
+      Frankle, J., Rao, N. & Ghodsi, A. (2024). The Shift from Models to Compound AI Systems. BAIR
+      blog, 18 February 2024.
+    url: https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/

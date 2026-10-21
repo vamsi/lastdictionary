@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AWQ
+id: awq
+pos: abbr.
+also:
+  - activation-aware weight quantization
+  - Activation-aware Weight Quantization
+domain: infer
+domains:
+  - llm
+level: specialist
+plain: >-
+  A method for shrinking large language models to about 4 bits per number that protects the small
+  share of numbers most important to the model, judged by the data flowing through them.
+senses:
+  - definition: >-
+      Activation-aware Weight Quantization, a [[post-training-quantization|post-training
+      quantization]] method that compresses the [[weights|weights]] of large language models to
+      low-bit integers (typically 4-bit, weight-only) while giving extra protection to the weights
+      that matter most. Which weights matter is judged from the data: its authors found that roughly
+      1% of input channels, those that meet the largest [[activation|activations]], account for a
+      disproportionate share of the damage that rounding does. Instead of keeping those channels at
+      higher precision, which would require slow mixed-precision kernels, AWQ scales each input
+      channel of the weights up by a factor tuned on a small calibration set and scales the matching
+      activations down by the same factor; the layer computes the same function before rounding, but
+      the important weights now lose less to it. The procedure needs no
+      [[backpropagation|backpropagation]] or layer-by-layer reconstruction, so it runs quickly and
+      depends little on the particular calibration data. AWQ checkpoints are widely supported by
+      serving engines.
+    example: >-
+      We shipped the AWQ build because it held up better than round-to-nearest on our coding evals.
+origin: >-
+  Introduced by Ji Lin, Jiaming Tang and colleagues in Song Han's lab at MIT (arXiv, June 2023),
+  together with the TinyChat runtime for running 4-bit models on desktop and mobile GPUs. It
+  received the MLSys 2024 best paper award.
+year: 2023
+see_also:
+  - post-training quantization
+  - GPTQ
+  - SmoothQuant
+  - quantization
+  - on-device AI
+contrast:
+  - GPTQ
+sources:
+  - text: >-
+      Lin, J., Tang, J., Tang, H., Yang, S., Chen, W.-M., Wang, W.-C., Xiao, G., Dang, X., Gan, C. &
+      Han, S. (2023). AWQ: Activation-aware Weight Quantization for LLM Compression and
+      Acceleration. arXiv:2306.00978 (MLSys 2024).
+    url: https://arxiv.org/abs/2306.00978

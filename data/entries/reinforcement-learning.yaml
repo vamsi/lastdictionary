@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reinforcement learning
+id: reinforcement-learning
+pos: n.
+also:
+  - RL
+domain: rl
+domains:
+  - core
+  - train
+level: essential
+plain: >-
+  A way of teaching a computer program by trial and error: it tries actions, earns points for good
+  results and penalties for bad ones, and gradually learns which choices pay off over time.
+senses:
+  - definition: >-
+      A family of [[machine-learning|machine learning]] problems and methods for learning behavior
+      from its consequences: an [[agent|agent]] acts in an [[environment|environment]], receives a
+      numerical [[reward|reward]] after its actions, and gradually adjusts its [[policy|policy]],
+      its rule for choosing what to do in each situation, so as to collect as much reward as
+      possible over the long run (the [[return|return]]). Because the feedback grades what the agent
+      did instead of naming the correct action, as labels do in [[supervised-learning|supervised
+      learning]], the agent must keep testing actions whose value is still uncertain rather than
+      only repeating those that have paid off (the
+      [[exploration-exploitation-trade-off|exploration–exploitation trade-off]]), and must work out
+      which earlier decisions deserve credit for outcomes that arrive late (the
+      [[credit-assignment-problem|credit assignment problem]]). Problems are usually formalized as
+      [[markov-decision-process|Markov decision processes]]. Methods are broadly value-based
+      ([[temporal-difference-learning|temporal difference learning]], [[q-learning|Q-learning]]),
+      policy-based ([[policy-gradient|policy gradient]], [[actor-critic|actor–critic]]) or
+      [[model-based-reinforcement-learning|model-based]]; combined with deep neural networks they
+      form [[deep-reinforcement-learning|deep reinforcement learning]]. Landmark results include
+      [[td-gammon|TD-Gammon]], the Atari-playing [[deep-q-network|deep Q-network]],
+      [[alphago|AlphaGo]] and robot control. Since 2022 RL has also been a central stage of
+      [[post-training|post-training]] for [[large-language-model|language models]], first as
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]] and
+      then as [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with
+      verifiable rewards]] for [[reasoning-model|reasoning models]].
+    example: >-
+      We moved from imitating demonstrations to reinforcement learning, rewarding the agent only
+      when the tests pass.
+origin: >-
+  The idea descends from animal-learning psychology — Edward Thorndike's law of effect and the
+  'reinforcement' of conditioning research — and from early computing: Alan Turing's 1948 proposal
+  of 'pleasure–pain' training, Marvin Minsky's 1954 Princeton thesis on neural-analog reinforcement
+  systems, and Arthur Samuel's checkers program (1959). The phrase entered engineering literature in
+  the mid-1960s (Waltz and Fu, 1965; Mendel, 1966). Andrew Barto and Richard Sutton recast the field
+  from the 1980s, wrote its standard textbook (1998) and received the 2024 ACM Turing Award.
+year: 1965
+note: >-
+  The field borrowed its vocabulary from behavioral psychology, but 'reward' here is just a number
+  chosen by a designer, and an agent optimizes whatever that number measures — the root of
+  [[reward-hacking|reward hacking]]. [[reinforcement-learning-from-human-feedback|Reinforcement
+  learning from human feedback]] is one application of RL, not a synonym for it.
+see_also:
+  - Markov decision process
+  - policy
+  - reward
+  - value function
+  - deep reinforcement learning
+  - temporal difference learning
+  - policy gradient
+  - reinforcement learning from human feedback
+contrast:
+  - supervised learning
+  - unsupervised learning
+  - imitation learning
+sources:
+  - text: >-
+      Sutton, R. S. & Barto, A. G. (2018). Reinforcement Learning: An Introduction (2nd ed.). MIT
+      Press.
+  - text: "ACM. 2024 ACM A.M. Turing Award: Andrew G. Barto and Richard S. Sutton."
+    url: https://awards.acm.org/about/2024-turing
+  - text: >-
+      Waltz, M. D. & Fu, K. S. (1965). A heuristic approach to reinforcement learning control
+      systems. IEEE Transactions on Automatic Control 10(4), 390–398.

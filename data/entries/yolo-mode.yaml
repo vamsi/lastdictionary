@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: YOLO mode
+id: yolo-mode
+pos: n.
+also:
+  - auto-approve mode
+  - bypass permissions
+  - dangerously skip permissions
+domain: agents
+domains:
+  - culture
+  - sec
+labels:
+  - slang
+level: specialist
+plain: >-
+  Slang for letting an AI coding agent run any command without asking you first — fast and
+  convenient, but risky, since nothing stops a harmful action.
+senses:
+  - definition: >-
+      A configuration of a [[coding-agent|coding agent]] or other [[ai-agent|AI agent]] in which
+      permission prompts are switched off and the agent executes commands, edits and other
+      [[tool-call|tool calls]] without human approval. Named after the internet acronym for 'you
+      only live once', it appears in products under labels such as auto-run, full-auto or
+      bypass-permissions; Claude Code's command-line flag for it is the deliberately alarming
+      --dangerously-skip-permissions, which Anthropic advises using only in a container without
+      internet access. Practitioners value it for long unattended tasks and to escape approval
+      fatigue; the risks are destructive commands (deleting files or databases, force-pushing over
+      history), data exfiltration after [[prompt-injection|prompt injection]], and attacks on other
+      systems. The standard advice is to use it only inside a [[sandbox|sandbox]] — a container,
+      virtual machine or cloud environment with no valuable secrets and restricted network access.
+    example: I only run the agent in YOLO mode inside a throwaway container.
+origin: >-
+  The Cursor code editor's 0.44 release (17 December 2024) added a 'Yolo Mode' in which its agent
+  could run terminal commands without asking; the nickname spread to other agents' auto-approve
+  options during 2025, and Simon Willison's 'Designing agentic loops' (September 2025) became a
+  standard reference on its risks and on running it inside a sandbox.
+year: 2024
+note: >-
+  Unrelated to [[yolo|YOLO]], the object-detection model family, and to [[yolo-run|YOLO run]],
+  training-culture slang for a risky large training run.
+see_also:
+  - permission system
+  - sandbox
+  - coding agent
+  - prompt injection
+  - excessive agency
+contrast:
+  - YOLO
+  - YOLO run
+sources:
+  - text: >-
+      Willison, S. (2025). Designing agentic loops. Simon Willison's Weblog, 30 September 2025.
+    url: https://simonwillison.net/2025/Sep/30/designing-agentic-loops/
+  - text: >-
+      Cursor (2024). Agent Improvements, Yolo Mode, Cursor Tab Update. Changelog 0.44, 17 December
+      2024.
+    url: https://cursor.com/changelog/0-44-x
+as_of: 2026-10

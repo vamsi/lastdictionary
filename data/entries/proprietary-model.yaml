@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: proprietary model
+id: proprietary-model
+pos: n.
+also:
+  - closed model
+  - closed-weight model
+  - closed-source model
+  - API-only model
+  - closed AI
+domain: eng
+domains:
+  - gov
+  - llm
+level: essential
+plain: >-
+  An AI model kept private by the company that made it; outsiders can use it only through the
+  company's apps or paid online services and can never download it.
+senses:
+  - definition: >-
+      A model whose [[weights|weights]] — and usually its training data, code and architectural
+      details — are kept confidential by its developer and made available only as a service, through
+      consumer applications, a [[model-api|model API]] or managed cloud offerings, under the
+      provider's terms of use. Most [[frontier-model|frontier models]] have been proprietary,
+      including [[openai|OpenAI]]'s GPT series, [[anthropic|Anthropic]]'s [[claude|Claude]] and
+      Google's [[gemini|Gemini]]. For developers, such models offer top capability without hardware
+      or maintenance, but bring vendor lock-in, per-[[token|token]] costs, data-governance concerns,
+      [[rate-limit|rate limits]] and model versions that change or are retired on the provider's
+      schedule. For providers, closed release protects commercial advantage and allows usage
+      monitoring, staged access and safety mitigations that cannot be enforced once weights are
+      public. Researchers note that closed models are harder to audit independently and that claims
+      about them are difficult to verify.
+    example: >-
+      We use a proprietary model for the hardest queries and an open-weight one for everything else.
+origin: >-
+  The adjective comes from proprietary, or closed-source, software. As the counterpart of
+  open-weight release it became prominent when OpenAI offered GPT-3 only through an API in 2020, and
+  in the open-versus-closed debates that followed Meta's Llama releases in 2023.
+note: >-
+  'Closed' refers to access to weights, not total secrecy: providers may publish technical reports,
+  [[system-card|system cards]] and research. Several companies release both proprietary and
+  open-weight models.
+see_also:
+  - open-weight model
+  - open-source AI
+  - model API
+  - frontier model
+  - model license
+  - system card
+contrast:
+  - open-weight model
+  - open-source AI
+as_of: 2026-10

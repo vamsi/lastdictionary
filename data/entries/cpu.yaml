@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: CPU
+id: cpu
+pos: abbr.
+also:
+  - central processing unit
+  - processor
+  - host processor
+domain: hw
+domains:
+  - core
+  - infer
+level: core
+plain: >-
+  The main general-purpose chip in a computer, good at running many different programs step by step.
+  In AI systems it usually coordinates the work while specialized chips do the heavy math.
+senses:
+  - definition: >-
+      The general-purpose processor that fetches and executes a program's instructions, optimized
+      for fast sequential work through a modest number of complex cores with large caches, branch
+      prediction and out-of-order execution. Server CPUs now have dozens to a few hundred cores and
+      vector or matrix extensions (such as AVX-512, AMX or Arm SVE) that can run small models, but
+      their arithmetic throughput and [[memory-bandwidth|memory bandwidth]] are far below those of a
+      [[gpu|GPU]] or other [[ai-accelerator|AI accelerator]]. In AI clusters the CPU is the host: it
+      runs the operating system and framework code, loads and preprocesses data, launches
+      [[kernel|kernels]] on accelerators and manages networking and storage. CPU-only
+      [[inference|inference]] remains common for small or [[quantization|quantized]] models on
+      laptops and servers without accelerators.
+origin: >-
+  'Central processing unit' is attested by 1955 (in Martin Weik's survey of US electronic computers)
+  for the main computing section of a computer; the single-chip microprocessor arrived with Intel's
+  4004 (1971). In AI, the CPU's role shifted from main workhorse to host after GPUs took over
+  [[deep-learning|deep learning]] around 2012.
+note: >-
+  Nvidia's Grace and similar Arm-based CPUs are packaged with GPUs as 'superchips' joined by
+  high-bandwidth links, to speed host–accelerator data transfer.
+see_also:
+  - GPU
+  - AI accelerator
+  - NPU
+  - von Neumann bottleneck
+  - on-device AI
+contrast:
+  - GPU

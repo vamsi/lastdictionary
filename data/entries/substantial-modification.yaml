@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: substantial modification
+id: substantial-modification
+pos: n.
+also:
+  - substantially modified
+domain: gov
+domains:
+  - eng
+labels:
+  - legal
+level: specialist
+plain: >-
+  A change to an AI system after release that is big enough, under EU law, to require a fresh check
+  — and that can make whoever made the change legally responsible as its maker.
+senses:
+  - definition: >-
+      Under the [[eu-ai-act|EU AI Act]], an unplanned change made to an [[ai-system|AI system]] once
+      it is already on the market or in service: one the provider's original
+      [[conformity-assessment|conformity assessment]] did not anticipate, and which either bears on
+      whether the system still meets the requirements for [[high-risk-ai-system|high-risk systems]]
+      or changes the purpose for which it was assessed. A substantially modified high-risk system
+      needs a new conformity assessment, and a deployer, distributor or other third party that makes
+      such a change, while the system remains high-risk, becomes its provider with all the
+      corresponding duties. Changes to a system that keeps learning after deployment are not
+      substantial if the provider predetermined and documented them at the time of the initial
+      assessment.
+    example: >-
+      Retraining the triage model on another hospital's data may count as a substantial modification.
+origin: >-
+  Adapted from EU product-safety law, where substantially modifying a product can make the modifier
+  its manufacturer, and included in the 2021 AI Act proposal. For general-purpose models, the
+  Commission's July 2025 guidelines use a compute-based test for when a modifier becomes a provider.
+year: 2021
+note: >-
+  A major source of legal uncertainty for [[fine-tuning|fine-tuning]] and system integration, since
+  whether a change is substantial depends on facts that providers and deployers may dispute.
+see_also:
+  - provider and deployer
+  - conformity assessment
+  - high-risk AI system
+  - post-market monitoring
+  - fine-tuning
+standards: EU AI Act (Reg. (EU) 2024/1689), Art. 3(23); Art. 25(1)(b); Art. 43(4)
+as_of: 2026-10

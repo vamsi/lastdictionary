@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: autonomy
+id: autonomy
+pos: n.
+also:
+  - autonomous
+  - autonomous system
+  - AI autonomy
+domain: core
+domains:
+  - agents
+  - gov
+  - safety
+level: core
+plain: >-
+  How much an AI system can act on its own without a person approving each step, from merely making
+  suggestions to carrying out long tasks with no supervision at all.
+senses:
+  - definition: >-
+      The degree to which a system operates without human intervention: perceiving, deciding and
+      acting on its own across some range of situations and for some length of time. Autonomy is
+      graded rather than binary, and [[levels-of-autonomy|levels of autonomy]] scales, from the SAE
+      [[levels-of-driving-automation|levels of driving automation]] to proposed scales for
+      [[ai-agent|AI agents]], describe who initiates actions, who can intervene and how long the
+      system runs unsupervised. As autonomy grows, errors and misalignment matter more, and
+      oversight shifts from approving each action ([[human-in-the-loop|human-in-the-loop]]) to
+      monitoring and intervening (human-on-the-loop). The [[eu-ai-act|EU AI Act]] builds autonomy
+      into its definition of an [[ai-system|AI system]], explaining that such systems can act to
+      some extent independently of the people involved (Recital 12). In safety evaluations,
+      autonomous replication and adaptation, meaning the ability to acquire resources and copy
+      itself without human help, is tracked as a dangerous capability.
+    example: >-
+      We raised the agent's autonomy gradually: first read-only, then file edits with review, then
+      unsupervised overnight runs.
+origin: >-
+  From Greek autonomia, 'living by one's own laws', originally political self-government and in
+  Kant's ethics the will's self-legislation. Engineering adopted the word for self-governing
+  machines; Thomas Sheridan and William Verplank's 1978 scale of automation levels and SAE's 2014
+  driving-automation levels shaped later AI usage, and from 2023 autonomy became a central variable
+  in agent design and AI regulation.
+note: >-
+  Machine autonomy is operational (acting without supervision), not autonomy in the philosophical
+  sense of choosing one's own ends: AI systems pursue objectives set by people or by training.
+  Debates on autonomous weapons turn on the same scale of human control.
+see_also:
+  - levels of autonomy
+  - human-in-the-loop
+  - AI agent
+  - agentic AI
+  - levels of driving automation
+  - AI system
+  - loss of control
+  - human oversight
+contrast:
+  - human-in-the-loop
+sources:
+  - text: Regulation (EU) 2024/1689 (Artificial Intelligence Act), Recital 12.
+    url: https://artificialintelligenceact.eu/recital/12/
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(1) and Recital 12 (autonomy as an element of the 'AI
+  system' definition)
+as_of: 2026-10

@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: photonic computing
+id: photonic-computing
+pos: n.
+also:
+  - optical computing
+  - optical neural network
+  - silicon photonics
+  - photonic accelerator
+  - co-packaged optics
+domain: hw
+domains:
+  - infer
+level: specialist
+plain: >-
+  Using light instead of electricity to compute or move data. Light can carry huge amounts of
+  information with little energy, but building full computers from it is still very hard.
+senses:
+  - definition: >-
+      Computation, or data movement, using photons rather than electrons. For AI the main goal is
+      optical matrix multiplication: interferometer meshes, microring resonators or free-space
+      optics encode inputs in the intensity or phase of light so that a
+      [[matrix-multiplication|matrix–vector product]] is computed as light propagates, potentially
+      at very high speed and low energy. Obstacles include the weak interaction of light with light
+      (which makes nonlinear activation functions hard), the energy and latency lost converting
+      between electrical and optical signals, limited analog precision and the large size of optical
+      components. Nearer-term success has come in communication: optical
+      [[interconnect|interconnects]], optical circuit switches (used in Google's TPU v4 and later
+      pods) and co-packaged optics in network switches, introduced from 2024 and shipping from both
+      Nvidia and Broadcom by 2026.
+origin: >-
+  Optical information processing has been studied since the 1960s, notably with optical correlators
+  for pattern recognition. Yichen Shen, Nicholas Harris and colleagues at MIT demonstrated a
+  programmable nanophotonic processor for neural-network inference in Nature Photonics (2017),
+  prompting startups such as Lightmatter and Lightelligence.
+see_also:
+  - analog in-memory computing
+  - interconnect
+  - neuromorphic computing
+  - advanced packaging
+  - AI accelerator
+sources:
+  - text: >-
+      Shen, Y., Harris, N. C. et al. (2017). Deep learning with coherent nanophotonic circuits.
+      Nature Photonics 11, 441–446.
+as_of: 2026-10

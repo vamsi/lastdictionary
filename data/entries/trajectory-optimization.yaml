@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: trajectory optimization
+id: trajectory-optimization
+pos: n.
+also:
+  - trajectory optimisation
+  - direct collocation
+  - shooting method
+  - trajectory generation
+domain: robot
+domains:
+  - math
+level: specialist
+plain: >-
+  Calculating the best way for a robot to move over time, choosing exact positions, speeds and
+  forces moment by moment so the motion is smooth, fast or energy-efficient and avoids obstacles.
+senses:
+  - definition: >-
+      The numerical computation of a time-indexed sequence of states and control inputs that
+      minimizes a cost — effort, time, jerk, closeness to obstacles — subject to the system's
+      dynamics, start and goal conditions, and constraints on joints, torques, contacts and
+      collisions. It is [[optimal-control|optimal control]] solved for one initial state rather than
+      as a general feedback law. Shooting methods optimize the control sequence and simulate the
+      dynamics forward (single and multiple shooting, differential dynamic programming, iterative
+      LQR); collocation methods treat states and controls at discrete knot points as decision
+      variables linked by dynamics constraints and hand the problem to a nonlinear-programming
+      solver. Planners such as CHOMP and TrajOpt apply gradient-based optimization to produce
+      smooth, collision-free arm motions, and contact-implicit formulations let the optimizer
+      discover footstep or grasp contacts itself. Solutions are only locally optimal and depend on
+      initialization, so trajectory optimization is often seeded by a sampling-based
+      [[motion-planning|motion planner]] and run inside [[model-predictive-control|model predictive
+      control]] for feedback.
+    example: >-
+      We seed the trajectory optimization with the planner's path and let it smooth out the jerks.
+origin: >-
+  Grew from aerospace work on rocket and aircraft trajectories in the 1950s and 1960s, including
+  David Mayne's differential dynamic programming (1966), and from collocation methods of the 1970s
+  and 1980s. Robotics adoption accelerated with iterative LQR (Weiwei Li and Emanuel Todorov, 2004),
+  CHOMP (Nathan Ratliff and colleagues, 2009) and TrajOpt (John Schulman and colleagues, 2013).
+see_also:
+  - optimal control
+  - model predictive control
+  - motion planning
+  - inverse kinematics
+  - dexterous manipulation
+  - control theory
+sources:
+  - text: >-
+      Betts, J. T. (1998). Survey of numerical methods for trajectory optimization. Journal of
+      Guidance, Control, and Dynamics 21(2), 193–207.
+  - text: >-
+      Schulman, J. et al. (2013). Finding locally optimal, collision-free trajectories with
+      sequential convex optimization. Robotics: Science and Systems.

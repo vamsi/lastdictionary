@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sequence parallelism
+id: sequence-parallelism
+pos: n.
+also:
+  - SP
+  - sequence-parallel training
+domain: train
+domains:
+  - llm
+  - hw
+level: specialist
+plain: >-
+  Splitting the long string of words a model is working on into chunks handled by different chips,
+  which saves memory and makes it possible to train on very long documents.
+senses:
+  - context: Megatron sense
+    definition: >-
+      A complement to [[tensor-parallelism|tensor parallelism]] that partitions activations along
+      the sequence dimension in the parts of a [[transformer|transformer]] layer that tensor
+      parallelism leaves replicated, such as [[layer-normalization|layer normalization]] and
+      [[dropout|dropout]], so that no device stores full-sequence copies of those activations.
+      Tensor parallelism's all-reduces are replaced by equivalent reduce-scatter and all-gather
+      operations, so communication volume is unchanged while activation memory falls. Combined with
+      selective activation recomputation, Vijay Korthikanti and colleagues (2022) reported about a
+      fivefold reduction in activation memory and 54% [[model-flops-utilization|model FLOPs
+      utilization]] when training a 530-billion-parameter model.
+  - context: Long-sequence sense
+    definition: >-
+      Any scheme that distributes a single long sequence across devices for all layers, including
+      attention, so that each device holds only a chunk of the tokens and attention requires
+      exchanging keys and values between devices, for example around a ring. This sense is now
+      usually called [[context-parallelism|context parallelism]].
+origin: >-
+  Shenggui Li, Fuzhao Xue, Chaitanya Baranwal, Yongbin Li and Yang You introduced 'sequence
+  parallelism' with ring self-attention for long sequences (arXiv, May 2021); Korthikanti and
+  colleagues at NVIDIA reused the name for the Megatron-LM technique (May 2022), creating an
+  ambiguity that 'context parallelism' later resolved.
+year: 2021
+note: >-
+  Check which sense is meant: in Megatron-LM, 'SP' is the activation-sharding complement to tensor
+  parallelism; in DeepSpeed Ulysses and many papers, it means splitting whole sequences across
+  devices.
+see_also:
+  - context parallelism
+  - tensor parallelism
+  - long context
+  - gradient checkpointing
+  - 3D parallelism
+  - Megatron-LM
+sources:
+  - text: >-
+      Li, S., Xue, F., Baranwal, C., Li, Y. & You, Y. (2021). Sequence Parallelism: Long Sequence
+      Training from System Perspective. arXiv:2105.13120.
+    url: https://arxiv.org/abs/2105.13120
+  - text: >-
+      Korthikanti, V., Casper, J., Lym, S., McAfee, L., Andersch, M., Shoeybi, M. & Catanzaro, B.
+      (2022). Reducing Activation Recomputation in Large Transformer Models. arXiv:2205.05198.
+    url: https://arxiv.org/abs/2205.05198

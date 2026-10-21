@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: min-p sampling
+id: min-p-sampling
+pos: n.
+also:
+  - min-p
+  - min_p
+domain: llm
+domains:
+  - infer
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A sampling method that lets the model consider any next word at least a set fraction as likely as
+  its top choice, so the shortlist shrinks when the model is sure and grows when it is not.
+senses:
+  - definition: >-
+      A truncation [[decoding|decoding]] method that keeps only [[token|tokens]] whose probability
+      is at least a fraction p_min of the most likely token's probability, then renormalizes and
+      samples. The threshold therefore scales with the model's confidence: if the top token has
+      probability 0.9 and p_min = 0.1, only tokens above 0.09 survive; if the top token has 0.05,
+      the cut-off falls to 0.005 and many alternatives remain. This keeps text coherent at high
+      [[temperature|temperatures]], where [[top-p-sampling|top-p sampling]] admits too many weak
+      tokens, while preserving diversity when many continuations are reasonable. Typical values are
+      0.05–0.1. Its authors reported better quality–diversity trade-offs than top-p across several
+      model families, especially at higher temperatures. It is widely available in open-source
+      inference engines.
+    example: >-
+      With min-p at 0.05 we can push temperature to 1.5 without the output falling apart.
+origin: >-
+  Implemented in llama.cpp in October 2023 by a contributor known as kalomaze, as an alternative to
+  top-p and top-k, and formalized by Minh Nhat Nguyen, Andrew Baker, Clement Neo, Allen Roush,
+  Andreas Kirsch and Ravid Shwartz-Ziv in 'Turning Up the Heat: Min-p Sampling for Creative and
+  Coherent LLM Outputs' (arXiv, July 2024; ICLR 2025, oral).
+year: 2023
+note: >-
+  A re-analysis by Rylan Schaeffer, Joshua Kazdan and Yegor Denisov-Blanch (2025; NeurIPS 2026)
+  argued that the paper's evidence does not show min-p outperforming baselines such as top-p once
+  hyperparameters are controlled, so its advantage remains debated.
+see_also:
+  - top-p sampling
+  - top-k sampling
+  - temperature
+  - decoding
+sources:
+  - text: >-
+      Nguyen, M. N., Baker, A., Neo, C., Roush, A., Kirsch, A. & Shwartz-Ziv, R. (2024). Turning Up
+      the Heat: Min-p Sampling for Creative and Coherent LLM Outputs. arXiv:2407.01082; ICLR 2025.
+    url: https://arxiv.org/abs/2407.01082
+  - text: >-
+      Schaeffer, R., Kazdan, J. & Denisov-Blanch, Y. (2025). Min-p, Max Exaggeration: A Critical
+      Analysis of Min-p Sampling in Language Models. arXiv:2506.13681.
+    url: https://arxiv.org/abs/2506.13681
+as_of: 2026-10

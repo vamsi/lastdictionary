@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: updateless decision theory
+id: updateless-decision-theory
+pos: n.
+also:
+  - UDT
+  - updatelessness
+domain: safety
+domains:
+  - math
+  - mind
+labels:
+  - contested
+level: specialist
+plain: >-
+  A theory of rational choice in which an agent commits to the best overall plan for every situation
+  it might face, instead of re-deciding each time it learns something new.
+senses:
+  - definition: >-
+      A [[decision-theory|decision theory]] in which an agent does not condition its choice on what
+      it has observed; instead it selects, from the standpoint of its prior beliefs, the policy — a
+      mapping from possible observations to actions — with the highest expected utility, and then
+      does what that policy prescribes for its actual observations. Treating its decision as the
+      output of an abstract computation that may also run inside predictors, copies or simulations
+      of itself, it reasons about all of these instances together. UDT therefore pays up in
+      'counterfactual mugging', cooperates with exact copies of itself in a [[game-theory|prisoner's
+      dilemma]] and takes one box in Newcomb's problem, cases where causal decision theory does
+      worse. Functional decision theory (FDT), proposed by Eliezer Yudkowsky and Nate Soares,
+      generalizes the same move — evaluating an act as the output of the agent's decision function —
+      and counts UDT as an updateless variant. Open problems include defining logical
+      counterfactuals and avoiding 'commitment races' between updateless agents.
+    example: >-
+      An updateless agent pays the predictor, because the policy of paying had the higher expected
+      value before the coin was flipped.
+origin: >-
+  Proposed by the computer scientist Wei Dai in the 2009 LessWrong post 'Towards a New Decision
+  Theory', building on Eliezer Yudkowsky's timeless decision theory (2009–2010), and developed in
+  the Machine Intelligence Research Institute's agent-foundations research. Yudkowsky and Nate
+  Soares set out functional decision theory in a 2017 paper.
+year: 2009
+note: >-
+  Academic decision theory mostly debates causal versus evidential decision theory, and UDT and FDT
+  have attracted little uptake there; critics such as William MacAskill (2019) object that they
+  recommend acts that predictably lose in the agent's actual situation. Whether these questions
+  matter for practical AI systems is disputed.
+see_also:
+  - decision theory
+  - embedded agency
+  - logical induction
+  - Machine Intelligence Research Institute
+  - Eliezer Yudkowsky
+  - rationalist community
+sources:
+  - text: Dai, W. (2009). Towards a New Decision Theory. LessWrong.
+  - text: >-
+      Yudkowsky, E. & Soares, N. (2017). Functional Decision Theory: A New Theory of Instrumental
+      Rationality. arXiv:1710.05060.

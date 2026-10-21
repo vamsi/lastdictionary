@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inpainting
+id: inpainting
+pos: n.
+also:
+  - image inpainting
+  - inpaint
+  - outpainting
+  - generative fill
+  - image completion
+domain: gen
+domains:
+  - percep
+level: core
+plain: >-
+  Filling in a missing or erased part of a picture so it blends seamlessly with the rest — removing
+  a stranger from a photo, or repairing a damaged one.
+senses:
+  - definition: >-
+      The reconstruction of missing, damaged or user-masked regions of an image or video so that the
+      result is plausible and consistent with the surrounding content. Classical methods propagated
+      surrounding structure inward by solving partial differential equations, or copied matching
+      patches from elsewhere in the image (exemplar-based methods, PatchMatch). Deep-learning
+      methods train networks to fill masked regions, first with reconstruction and adversarial
+      losses and now mostly with [[diffusion-model|diffusion models]], which are either fine-tuned
+      to receive the mask and masked image as extra inputs or, without retraining, repeatedly
+      overwrite the known region with appropriately noised copies of the original during sampling. A
+      text prompt can specify what should appear in the hole. Outpainting extends an image beyond
+      its borders by the same means, and commercial tools market prompt-driven inpainting as
+      'generative fill'. Video inpainting removes objects consistently across frames.
+    example: >-
+      Mask the tourist, inpaint 'empty cobblestone street', and the photo looks untouched.
+origin: >-
+  Borrowed from art conservation, where inpainting means retouching losses in a painting. Marcelo
+  Bertalmío, Guillermo Sapiro, Vicent Caselles and Coloma Ballester introduced the term to image
+  processing with 'Image Inpainting' at SIGGRAPH 2000. OpenAI popularized 'outpainting' when it
+  added the feature to DALL·E 2 in 2022.
+year: 2000
+see_also:
+  - diffusion model
+  - image-to-image translation
+  - instruction-based image editing
+  - super-resolution
+  - text-to-image model
+  - deepfake
+sources:
+  - text: >-
+      Bertalmío, M., Sapiro, G., Caselles, V. & Ballester, C. (2000). Image Inpainting. Proceedings
+      of SIGGRAPH 2000, 417–424.

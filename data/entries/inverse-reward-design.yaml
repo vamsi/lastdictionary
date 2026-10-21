@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inverse reward design
+id: inverse-reward-design
+pos: n.
+also:
+  - IRD
+domain: safety
+domains:
+  - rl
+level: specialist
+plain: >-
+  A method in which an AI treats the reward its designer wrote as a clue to what the designer
+  wanted, rather than as a perfect statement of the goal.
+senses:
+  - definition: >-
+      A method, introduced by Dylan Hadfield-Menell and colleagues in 2017, for coping with
+      misspecified rewards: the agent reads the reward function its designer wrote not as the goal
+      itself but as a clue to it, trustworthy mainly in the kind of environment the designer was
+      picturing. With a model of how designers pick proxy rewards, it infers a range of objectives
+      the designer might have meant; when it meets something the designer never considered — in the
+      paper's example, lava in a world built only of grass and dirt — it acts cautiously, steering
+      clear of states whose value it cannot pin down. The authors found that this curbs
+      [[negative-side-effects|negative side effects]] and [[reward-hacking|reward hacking]] caused
+      by features the designer never anticipated, at the cost of more conservative behavior.
+    example: >-
+      Under inverse reward design, the robot steers around the unfamiliar terrain because the reward
+      was never tested there.
+origin: >-
+  Introduced by Dylan Hadfield-Menell, Smitha Milli, Pieter Abbeel, Stuart Russell and Anca Dragan
+  of the University of California, Berkeley, in 'Inverse Reward Design' (NeurIPS 2017); the name
+  parallels [[inverse-reinforcement-learning|inverse reinforcement learning]].
+year: 2017
+see_also:
+  - value learning
+  - negative side effects
+  - reward hacking
+  - inverse reinforcement learning
+  - cooperative inverse reinforcement learning
+  - specification gaming
+contrast:
+  - inverse reinforcement learning
+sources:
+  - text: >-
+      Hadfield-Menell, D., Milli, S., Abbeel, P., Russell, S. & Dragan, A. (2017). Inverse Reward
+      Design. NeurIPS 2017. arXiv:1711.02827.
+    url: https://arxiv.org/abs/1711.02827

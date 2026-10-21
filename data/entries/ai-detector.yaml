@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI detector
+id: ai-detector
+pos: n.
+also:
+  - AI text detector
+  - AI-generated text detection
+  - AI content detector
+  - GPT detector
+  - AI writing detector
+domain: society
+domains:
+  - llm
+  - eval
+level: core
+plain: >-
+  Software that scores how likely it is that an AI, not a person, produced some text or media; for
+  writing, its verdicts are wrong often enough that many schools no longer trust them.
+senses:
+  - definition: >-
+      A classifier or statistical test that estimates whether content was produced by a generative
+      model. Text detectors either train a classifier on human and machine samples or use signals
+      from a language model, such as how predictable each word is ([[perplexity|perplexity]]), how
+      much predictability varies across sentences ('burstiness'), or how a passage's probability
+      changes under small rewrites, as in DetectGPT. Accuracy degrades on short texts, newer models,
+      edited or paraphrased output and non-English text, and studies have found high false-positive
+      rates on writing by non-native English speakers. Because a false accusation of cheating is
+      costly, many universities have disabled or discouraged text detectors. Provenance methods,
+      such as statistical [[ai-watermarking|watermarks]] embedded at generation time or signed
+      content credentials, are generally considered more reliable than after-the-fact detection,
+      which is easily evaded.
+    example: >-
+      The detector rated the essay 98% likely AI, but the student's drafts and version history
+      showed otherwise.
+origin: >-
+  Statistical detection of machine-written text predates chatbots (for example the GLTR tool, 2019);
+  detectors multiplied after ChatGPT's release, notably GPTZero (January 2023) and Turnitin's
+  detector (April 2023). OpenAI released its own AI Text Classifier in January 2023 and withdrew it
+  that July, citing its low rate of accuracy.
+year: 2019
+note: >-
+  Image and audio detectors face a similar arms race; see [[deepfake-detection|deepfake detection]].
+  Detector scores are probabilities, not proof, and should not be the sole basis for disciplinary
+  decisions.
+see_also:
+  - AI watermarking
+  - deepfake detection
+  - perplexity
+  - synthetic media
+  - SynthID
+  - LLM-isms
+sources:
+  - text: >-
+      Liang, W., Yuksekgonul, M., Mao, Y., Wu, E. & Zou, J. (2023). GPT detectors are biased against
+      non-native English writers. Patterns 4(7).
+  - text: >-
+      Mitchell, E., Lee, Y., Khazatsky, A., Manning, C. D. & Finn, C. (2023). DetectGPT: Zero-Shot
+      Machine-Generated Text Detection using Probability Curvature. Proc. ICML 2023.

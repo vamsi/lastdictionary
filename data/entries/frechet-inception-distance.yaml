@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Fréchet inception distance
+id: frechet-inception-distance
+pos: n.
+also:
+  - FID
+  - FID score
+  - Fréchet audio distance
+  - Fréchet video distance
+  - FD-DINOv2
+pronunciation: fray-SHAY in-SEP-shun
+domain: gen
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  A score for image generators that compares the overall statistics of their pictures with those of
+  real photos, as seen by an image-recognition network; lower is better.
+senses:
+  - definition: >-
+      A measure of generative-model quality given by the distance between the distributions of real
+      and generated images in the feature space of a pretrained classifier. Each image set is passed
+      through the Inception-v3 network, the 2,048-dimensional activations of its final pooling layer
+      are summarized by their mean and covariance, and FID is the Fréchet (2-Wasserstein) distance
+      between Gaussians with those statistics. It reflects both fidelity and diversity —
+      [[mode-collapse|mode collapse]] raises it — and tracked human judgment better than the earlier
+      [[inception-score|Inception score]]. Evaluations typically use 10,000 or 50,000 samples,
+      because the estimate is biased at small sample sizes, and results depend on implementation
+      details such as image resizing, which motivated standardized reference code. Criticisms
+      include the Gaussian assumption, the ImageNet-specific features of Inception-v3, blindness to
+      text–image alignment and weak agreement with human preferences for modern text-to-image
+      models; alternatives use other feature extractors (DINOv2, [[clip|CLIP]]) or kernel-based
+      distances, and variants exist for video and audio.
+    example: Our FID on COCO dropped from 9.1 to 7.8, but the human raters barely noticed.
+formula_latex: \mathrm{FID} = \lVert \mu_r - \mu_g \rVert_2^2 + \operatorname{Tr}\big(\Sigma_r +
+  \Sigma_g - 2\,(\Sigma_r \Sigma_g)^{1/2}\big)
+origin: >-
+  Introduced by Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler and Sepp
+  Hochreiter of Johannes Kepler University Linz in a paper on two time-scale GAN training (posted
+  June 2017; NeurIPS 2017). The distance between normal distributions it uses is named after the
+  mathematician Maurice Fréchet.
+year: 2017
+see_also:
+  - Inception score
+  - CLIP score
+  - Wasserstein distance
+  - benchmark
+  - human evaluation
+  - generative adversarial network
+sources:
+  - text: >-
+      Heusel, M., Ramsauer, H., Unterthiner, T., Nessler, B. & Hochreiter, S. (2017). GANs Trained
+      by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium. NeurIPS 2017.
+      arXiv:1706.08500.
+    url: https://arxiv.org/abs/1706.08500

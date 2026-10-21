@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt sensitivity
+id: prompt-sensitivity
+pos: n.
+also:
+  - prompt brittleness
+  - prompt fragility
+  - format sensitivity
+domain: llm
+domains:
+  - eval
+level: core
+plain: >-
+  The way an AI's answers, and its test scores, can change a lot after small changes to a prompt
+  that should not matter — a different word, an extra space or examples in another order.
+senses:
+  - definition: >-
+      The degree to which a model's outputs or measured performance change under semantically
+      irrelevant variations of the [[prompt|prompt]]: paraphrased instructions, punctuation and
+      whitespace, separators and capitalization, the choice and order of
+      [[few-shot-prompting|few-shot]] examples, the order of answer options, or the position of key
+      information. Documented effects include large swings in accuracy from formatting alone,
+      recency and majority-label biases introduced by demonstrations, and preferences for particular
+      answer positions in multiple-choice tests. Sensitivity makes single-prompt
+      [[benchmark|benchmark]] scores unreliable and model comparisons fragile, so careful
+      [[evaluation|evaluation]] reports results over several prompt variants. Instruction tuning and
+      scale reduce it without eliminating it.
+    example: >-
+      Before trusting the three-point gain, check prompt sensitivity: rerun with five paraphrases.
+origin: >-
+  Documented as soon as GPT-3 made prompting central: Tony Zhao and colleagues (2021) showed that
+  few-shot accuracy depended on the choice and order of examples and proposed calibrating outputs,
+  and Yao Lu and colleagues (2022) found that ordering alone could move results between near state
+  of the art and near chance. Melanie Sclar and colleagues (2023) measured differences of up to 76
+  accuracy points from formatting changes with LLaMA-2-13B.
+year: 2021
+see_also:
+  - prompt engineering
+  - few-shot prompting
+  - evaluation
+  - robustness
+  - benchmark
+  - construct validity
+sources:
+  - text: >-
+      Sclar, M., Choi, Y., Tsvetkov, Y. & Suhr, A. (2024). Quantifying Language Models' Sensitivity
+      to Spurious Features in Prompt Design or: How I learned to start worrying about prompt
+      formatting. ICLR 2024.
+    url: https://arxiv.org/abs/2310.11324
+  - text: >-
+      Zhao, T. Z., Wallace, E., Feng, S., Klein, D. & Singh, S. (2021). Calibrate Before Use:
+      Improving Few-Shot Performance of Language Models. ICML 2021.
+  - text: >-
+      Lu, Y., Bartolo, M., Moore, A., Riedel, S. & Stenetorp, P. (2022). Fantastically Ordered
+      Prompts and Where to Find Them: Overcoming Few-Shot Prompt Order Sensitivity. ACL 2022.

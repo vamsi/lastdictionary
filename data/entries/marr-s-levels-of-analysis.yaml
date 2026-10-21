@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Marr's levels of analysis
+id: marr-s-levels-of-analysis
+pos: n.
+also:
+  - Marr's levels
+  - Marr's three levels
+  - levels of analysis
+  - computational level
+  - algorithmic level
+  - implementational level
+domain: mind
+domains:
+  - interp
+  - percep
+level: specialist
+plain: >-
+  A way of explaining any information-processing system on three levels: what problem it solves and
+  why, what step-by-step method it uses, and how that method is physically built.
+senses:
+  - definition: >-
+      A framework, proposed by the vision scientist David Marr, holding that an
+      information-processing system must be understood at three complementary levels: the
+      computational level (what problem the system solves and why: its goal, its input–output
+      mapping and the constraints that make the problem solvable), the algorithmic or
+      representational level (what representations and procedures carry out the computation) and the
+      implementational level (how these are physically realized, in neurons or silicon). Marr argued
+      that understanding at one level does not settle the others, and that vision research had
+      neglected the computational level. The framework is a staple of [[cognitive-science|cognitive
+      science]] and is widely invoked in AI: [[mechanistic-interpretability|mechanistic
+      interpretability]] is often described as recovering the algorithmic level of a trained network
+      whose computational-level task is known but whose algorithm is not.
+    example: >-
+      At Marr's computational level both networks solve the same task; the circuits show they use
+      different algorithms.
+origin: >-
+  Proposed by David Marr and Tomaso Poggio in an MIT Artificial Intelligence Laboratory memo, 'From
+  Understanding Computation to Understanding Neural Circuitry' (1976), and made famous by Marr's
+  posthumously published book Vision (1982).
+year: 1976
+note: >-
+  Poggio later proposed adding a level for learning. Philosophers note that the levels are relative:
+  what counts as implementation in one analysis can itself be described as computation in another.
+see_also:
+  - cognitive science
+  - computational theory of mind
+  - mechanistic interpretability
+  - multiple realizability
+  - interpretability
+sources:
+  - text: >-
+      Marr, D. & Poggio, T. (1976). From Understanding Computation to Understanding Neural
+      Circuitry. MIT Artificial Intelligence Laboratory, AI Memo 357.
+  - text: >-
+      Marr, D. (1982). Vision: A Computational Investigation into the Human Representation and
+      Processing of Visual Information. W. H. Freeman.

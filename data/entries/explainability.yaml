@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: explainability
+id: explainability
+pos: n.
+also:
+  - explicability
+  - explainable
+domain: interp
+domains:
+  - gov
+  - society
+level: essential
+plain: >-
+  How well the reasons behind an AI system's outputs can be put into terms that people can
+  understand, check and, if needed, challenge.
+senses:
+  - definition: >-
+      The degree to which the grounds for an AI system's outputs can be made clear to a particular
+      audience, whether because the system is transparent by design or because a separate method
+      generates explanations of it. Frameworks draw finer lines: the US NIST AI Risk Management
+      Framework (2023, §3.5) uses 'explainable' for accounts of how a system works and
+      'interpretable' for what its outputs mean in the context of its purpose, while the
+      international terminology standard ISO/IEC 22989 treats explainability as a system's capacity
+      to convey the main factors behind its results in humanly understandable form. Explanations are
+      judged by [[faithfulness|faithfulness]] to the model's actual computation, comprehensibility
+      to the intended audience, and usefulness for a task such as debugging, auditing or contesting
+      a decision. Explainability is therefore audience-relative: an explanation adequate for a data
+      scientist may be useless to a loan applicant.
+    example: >-
+      Explainability was a procurement requirement, so the vendor shipped feature attributions with
+      every risk score.
+origin: >-
+  Used of expert systems by the 1980s. It became a policy keyword through the DARPA XAI program
+  (2016) and the European Commission High-Level Expert Group's 'Ethics Guidelines for Trustworthy
+  AI' (2019), which listed explicability among four ethical principles and explainability as part of
+  its transparency requirement.
+note: >-
+  Whether explainability and [[interpretability|interpretability]] differ is unsettled. Distinguish
+  both from [[ai-transparency|AI transparency]], which concerns disclosure about a system — its
+  data, purpose, limitations and the fact that AI is in use — rather than reasons for particular
+  outputs.
+see_also:
+  - explainable AI
+  - interpretability
+  - AI transparency
+  - faithfulness
+  - right to explanation
+  - post hoc explanation
+contrast:
+  - AI transparency
+sources:
+  - text: >-
+      National Institute of Standards and Technology (2023). Artificial Intelligence Risk Management
+      Framework (AI RMF 1.0). NIST AI 100-1.
+    url: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf
+  - text: >-
+      ISO/IEC 22989:2022. Information technology — Artificial intelligence — Artificial intelligence
+      concepts and terminology.
+standards: ISO/IEC 22989:2022 (defines 'explainability'); NIST AI 100-1 (AI RMF 1.0), §3.5
+as_of: 2026-10

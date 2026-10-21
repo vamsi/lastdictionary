@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: p-value
+id: p-value
+pos: n.
+also:
+  - probability value
+  - observed significance level
+domain: math
+domains:
+  - eval
+level: core
+plain: >-
+  A number saying how surprising your data would be if nothing interesting were going on. A small
+  p-value hints at a real effect, but it is not the probability that the effect is real.
+senses:
+  - definition: >-
+      A number reported by a [[hypothesis-testing|statistical hypothesis test]] that gauges how
+      surprising the data are if the null hypothesis holds: in a world where the null is true, it is
+      the chance that the test statistic would be at least as extreme as the value actually
+      obtained. Smaller values are stronger evidence against the null; by a widespread convention, p
+      < 0.05 is called 'statistically significant'. As the American Statistical Association stressed
+      in a 2016 statement, it is neither the probability that the null hypothesis is true nor the
+      probability that chance alone produced the result, and it does not measure how large or
+      important an effect is. In machine learning, p-values appear when comparing models or prompts
+      on [[benchmark|benchmarks]] — through paired, bootstrap or permutation tests — and in
+      [[a-b-testing|A/B testing]]. Common pitfalls include trying many model variants, seeds or
+      metrics and reporting only the significant ones (the multiple-comparisons problem, or
+      'p-hacking'), and treating tiny but significant differences on huge test sets as meaningful.
+    example: >-
+      The new prompt scored 1.2 points higher, but a paired bootstrap gave p = 0.31, so we can't
+      claim an improvement.
+origin: >-
+  Karl Pearson's 1900 chi-squared paper computed and tabulated 'the value of P', and Ronald Fisher's
+  Statistical Methods for Research Workers (1925) made P values and the 0.05 benchmark central to
+  scientific practice. The term 'p-value' itself is recorded from the 1940s, for example in W.
+  Edwards Deming's Statistical Adjustment of Data (1943).
+year: 1900
+note: >-
+  In 2016 the American Statistical Association warned against bright-line thresholds and common
+  misreadings; some statisticians favor [[confidence-interval|confidence intervals]], effect sizes
+  or [[bayesian-inference|Bayesian]] methods instead. Unrelated to the p of [[top-p-sampling|top-p
+  sampling]].
+see_also:
+  - hypothesis testing
+  - confidence interval
+  - A/B testing
+  - benchmark
+  - Bayesian inference
+  - central limit theorem
+sources:
+  - text: >-
+      Wasserstein, R. L. & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and
+      Purpose. The American Statistician, 70(2).

@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tool AI
+id: tool-ai
+pos: n.
+also:
+  - tool AIs
+domain: asi
+domains:
+  - safety
+  - agents
+level: specialist
+plain: >-
+  AI built to be used like an instrument, answering, suggesting or calculating when asked, rather
+  than pursuing goals on its own. Some argue that this is the only kind we should build.
+senses:
+  - definition: >-
+      AI designed to function as an instrument that performs bounded tasks, such as calculating,
+      predicting, recommending or answering, under human direction, without itself pursuing goals in
+      the world. It was proposed as a safer alternative to agentic
+      [[artificial-general-intelligence|AGI]]: a system that merely displays the best course of
+      action leaves the decision to a human. Critics replied that the boundary is blurry, that a
+      tool optimizing for good recommendations may still steer its users, and, in the title of Gwern
+      Branwen's essay, that tool AIs want to be agent AIs, because autonomy is economically
+      valuable. The shift toward [[agentic-ai|agentic AI]] since 2024 is often cited as bearing out
+      the economic argument, while advocates such as Max Tegmark and the
+      [[future-of-life-institute|Future of Life Institute]] argue that most of AI's benefits are
+      obtainable from capable but non-agentic, non-general tools.
+    example: >-
+      Tool AI was supposed to recommend actions, not take them; agents erased that line.
+origin: >-
+  Proposed by Holden Karnofsky in a May 2012 LessWrong critique of the Singularity Institute;
+  Eliezer Yudkowsky replied the following month. Gwern Branwen's essay 'Why Tool AIs Want to Be
+  Agent AIs' (2016) became the standard counter-argument.
+year: 2012
+note: >-
+  Unrelated to [[tool-use|tool use]], in which an AI agent calls external software tools; there the
+  AI is the agent, not the tool.
+see_also:
+  - oracle AI
+  - comprehensive AI services
+  - agentic AI
+  - AI agent
+  - capability control
+  - narrow AI
+contrast:
+  - AI agent
+  - tool use
+as_of: 2026-10

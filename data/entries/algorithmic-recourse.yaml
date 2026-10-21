@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: algorithmic recourse
+id: algorithmic-recourse
+pos: n.
+also:
+  - recourse
+  - actionable recourse
+domain: interp
+domains:
+  - society
+  - gov
+level: specialist
+plain: >-
+  Giving a person who received an unfavorable automated decision a realistic set of actions they
+  could take to get a better result next time, such as paying down a particular debt.
+senses:
+  - definition: >-
+      The prospect that someone who receives an unfavorable automated decision can turn it around by
+      steps actually open to them, and the methods that find such steps. Recourse methods search for
+      low-cost changes restricted to features the person can actually alter (savings, not age or
+      ethnicity), respecting bounds and the differing costs of actions; causal formulations model
+      actions as interventions, since changing one feature (education) also changes others (income).
+      Recourse extends [[counterfactual-explanation|counterfactual explanations]] from describing
+      the model to advising the person, and raises its own fairness question: if one group must make
+      costlier changes than another to obtain the same outcome, the system offers unequal recourse
+      even when its error rates are equal. Recourse can also be invalidated when the model is
+      retrained or when people strategically adapt.
+    example: >-
+      The audit found that applicants over 60 faced far costlier algorithmic recourse than younger
+      applicants.
+origin: >-
+  Introduced as a machine-learning problem by Berk Ustun, Alexander Spangher and Yang Liu in
+  'Actionable Recourse in Linear Classification' (ACM FAT* 2019); Amir-Hossein Karimi, Bernhard
+  Schölkopf and Isabel Valera reframed it causally in 'Algorithmic Recourse: from Counterfactual
+  Explanations to Interventions' (FAccT 2021).
+year: 2019
+note: >-
+  Recourse can conflict with other goals: disclosing how to flip a decision invites gaming, and
+  guaranteeing recourse constrains which models can be deployed.
+see_also:
+  - counterfactual explanation
+  - algorithmic fairness
+  - right to explanation
+  - local explanation
+  - protected attribute
+sources:
+  - text: >-
+      Ustun, B., Spangher, A. & Liu, Y. (2019). Actionable Recourse in Linear Classification.
+      Proceedings of ACM FAT* 2019.
+  - text: >-
+      Karimi, A.-H., Schölkopf, B. & Valera, I. (2021). Algorithmic Recourse: from Counterfactual
+      Explanations to Interventions. Proceedings of ACM FAccT 2021.

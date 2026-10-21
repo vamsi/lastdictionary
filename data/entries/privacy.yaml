@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: privacy
+id: privacy
+pos: n.
+also:
+  - information privacy
+  - data privacy
+  - privacy attack
+domain: society
+domains:
+  - gov
+  - sec
+  - data
+level: essential
+plain: >-
+  Your ability to control who knows what about you. AI raises new privacy questions because it
+  learns from huge amounts of personal data and can infer things about people they never shared.
+senses:
+  - context: Ethics and law
+    definition: >-
+      The interest that people, singly and collectively, have in limiting who can watch, intrude on
+      or learn about them, recognized as a human right in Article 12 of the Universal Declaration of
+      Human Rights (1948) and Article 8 of the European Convention on Human Rights. Classic accounts
+      treat it as a right to be left alone, as control over personal information (Alan Westin), or
+      as [[contextual-integrity|contextual integrity]] — information flowing according to the norms
+      of the setting in which it was shared (Helen Nissenbaum). AI strains each account:
+      [[training-data|training data]] scraped from the web contains personal information shared for
+      other purposes; models can infer sensitive traits such as health, sexuality or political views
+      from innocuous data; and [[facial-recognition|facial recognition]] and other
+      [[ai-surveillance|surveillance]] tools erode anonymity in public. Legal protection takes the
+      form of [[data-protection|data protection]] law in most jurisdictions.
+    example: >-
+      Scraping public profiles for training is legal in some places, but it still raises privacy
+      concerns.
+  - context: Machine learning
+    definition: >-
+      A property of an algorithm or model that limits what can be learned about the individuals in
+      its [[training-data|training data]]. Threats include [[membership-inference-attack|membership
+      inference]] (determining whether a person's record was used),
+      [[training-data-extraction|training data extraction]] (recovering [[memorization|memorized]]
+      text or images), model inversion and attribute inference. Defenses include
+      [[differential-privacy|differential privacy]], which bounds the influence of any single record
+      with a formal guarantee; [[federated-learning|federated learning]] and secure computation,
+      which avoid pooling raw data; data minimization and deduplication; and
+      [[machine-unlearning|machine unlearning]]. These techniques are grouped as
+      [[privacy-preserving-machine-learning|privacy-preserving machine learning]].
+    example: >-
+      We trained with differential privacy because the clinical notes contain patient identifiers.
+origin: >-
+  Samuel Warren and Louis Brandeis's 1890 Harvard Law Review article 'The Right to Privacy',
+  provoked by instant photography and the popular press, framed privacy, in Judge Thomas Cooley's
+  phrase, as 'the right to be let alone'. Alan Westin's Privacy and Freedom (1967) recast it as
+  control over personal information in the computer age, the basis of later data-protection law.
+year: 1890
+note: >-
+  Privacy and [[data-protection|data protection]] overlap but differ: privacy is a broader value
+  concerning intrusion and secrecy, while data protection regulates any processing of personal data,
+  including data that are already public. Anonymization is weaker than often assumed, because
+  combinations of innocuous attributes can re-identify people.
+see_also:
+  - data protection
+  - differential privacy
+  - personally identifiable information
+  - membership inference attack
+  - AI surveillance
+  - General Data Protection Regulation
+  - surveillance capitalism
+  - privacy-preserving machine learning
+sources:
+  - text: >-
+      Warren, S. D. & Brandeis, L. D. (1890). The Right to Privacy. Harvard Law Review 4(5).
+  - text: Westin, A. F. (1967). Privacy and Freedom. Atheneum.
+  - text: >-
+      Nissenbaum, H. (2010). Privacy in Context: Technology, Policy, and the Integrity of Social
+      Life. Stanford University Press.

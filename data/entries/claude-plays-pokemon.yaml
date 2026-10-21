@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Claude Plays Pokémon
+id: claude-plays-pokemon
+pos: prop. n.
+also:
+  - ClaudePlaysPokemon
+  - Gemini Plays Pokémon
+  - AI plays Pokémon
+domain: culture
+domains:
+  - agents
+  - eval
+level: specialist
+plain: >-
+  A 2025 livestream in which Anthropic's Claude AI played the classic Game Boy game Pokémon Red by
+  itself, watched by thousands as it struggled and slowly progressed; it inspired similar runs by
+  other models.
+senses:
+  - definition: >-
+      A livestreamed experiment in which a [[large-language-model|large language model]] plays the
+      1996 Game Boy role-playing game Pokémon Red autonomously, receiving screenshots and game-state
+      information and pressing buttons through [[tool-call|tool calls]], with its reasoning shown to
+      viewers; by extension, the informal genre of AI-plays-Pokémon runs used to gauge long-horizon
+      [[ai-agent|agent]] abilities. The runs exposed weaknesses that short benchmarks miss — poor
+      spatial navigation from screenshots, loops lasting days, unreliable memory across a context
+      that must repeatedly be summarized — and showed how much performance depends on the
+      [[harness|harness]]: navigation aids, memory tools and map information supplied to the model.
+      Cross-model comparisons were therefore hard to interpret, a point raised when a Gemini model
+      finished Pokémon Blue using a different, more supportive harness.
+    example: >-
+      The model aced the coding benchmark, then spent two days on the Pokémon stream walking into
+      the same wall.
+origin: >-
+  Launched on Twitch by Anthropic in February 2025, alongside the release of Claude 3.7 Sonnet,
+  whose announcement charted progress through the game as a measure of agentic ability; it echoed
+  the crowd-controlled 'Twitch Plays Pokémon' of 2014. An independent developer's 'Gemini Plays
+  Pokémon' stream completed Pokémon Blue with Gemini 2.5 Pro in May 2025.
+year: 2025
+note: >-
+  The genre is entertainment as much as evaluation: results depend heavily on harness design, which
+  is rarely held constant across models.
+see_also:
+  - AI agent
+  - harness
+  - agent loop
+  - compaction
+  - benchmark
+  - jagged intelligence
+as_of: 2026-10

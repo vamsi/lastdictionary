@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: knowledge acquisition bottleneck
+id: knowledge-acquisition-bottleneck
+pos: n.
+also:
+  - Feigenbaum bottleneck
+  - knowledge bottleneck
+domain: sym
+domains:
+  - hist
+level: specialist
+plain: >-
+  The problem that getting knowledge out of human experts and into a computer by hand is so slow and
+  costly that it limited how far classic expert systems could go.
+senses:
+  - definition: >-
+      The difficulty, cost and slowness of eliciting, formalizing and maintaining the knowledge that
+      [[expert-system|expert systems]] and other knowledge-based programs require, long regarded as
+      the main limit on their scope. Experts often cannot articulate tacit knowledge, rules interact
+      unpredictably as a [[knowledge-base|knowledge base]] grows, and knowledge must be revised as
+      the domain changes, so building a major system took years of [[knowledge-engineering|knowledge
+      engineering]]. Responses included specialized elicitation tools, reusable
+      [[ontology|ontologies]], [[case-based-reasoning|case-based reasoning]] and, above all,
+      [[machine-learning|machine learning]], which extracts knowledge from data — first as learned
+      rules and [[decision-tree|decision trees]], later as the implicit knowledge of
+      [[large-language-model|large language models]]. Some researchers now describe an inverted
+      bottleneck: models absorb vast knowledge cheaply, but it is hard to inspect, verify or
+      correct.
+origin: >-
+  The problem was identified by Edward Feigenbaum and colleagues at Stanford in the late 1970s and
+  was a standard theme by the early 1980s, for example in Frederick Hayes-Roth, Donald Waterman and
+  Douglas Lenat's Building Expert Systems (1983). Who first used the exact phrase is not
+  established.
+see_also:
+  - knowledge engineering
+  - expert system
+  - Cyc
+  - case-based reasoning
+  - machine learning
+  - AI winter
+sources:
+  - text: >-
+      Hayes-Roth, F., Waterman, D. A. & Lenat, D. B. (eds.) (1983). Building Expert Systems.
+      Addison-Wesley.

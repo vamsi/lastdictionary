@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: masked language model
+id: masked-language-model
+pos: n.
+also:
+  - MLM
+  - masked language modeling
+  - masked LM
+  - cloze objective
+domain: llm
+domains:
+  - train
+level: core
+plain: >-
+  A model trained by hiding some words in a sentence and learning to guess them from the words on
+  both sides, like a fill-in-the-blanks exercise. BERT is the famous example.
+senses:
+  - definition: >-
+      A [[language-model|language model]] trained to recover tokens that have been hidden or
+      corrupted in its input, using context on both sides. In [[bert|BERT]]'s recipe, 15% of input
+      tokens are selected; of these, 80% are replaced by a [MASK] symbol, 10% by a random token and
+      10% left unchanged, and the model is trained with [[cross-entropy|cross-entropy]] to predict
+      the originals. Because attention is bidirectional (no [[causal-mask|causal mask]]), every
+      token's representation draws on the whole input, which suits classification, retrieval,
+      tagging and extraction after [[fine-tuning|fine-tuning]]. An MLM defines no simple
+      left-to-right distribution over text, so it is poor at open-ended generation, and only masked
+      positions provide training signal. Variants mask whole spans (SpanBERT, [[t5|T5]]'s span
+      corruption) or detect replaced tokens (ELECTRA); masked [[diffusion-language-model|diffusion
+      language models]] vary the masking rate to make generation possible.
+    example: >-
+      We continued MLM pretraining on clinical notes before fine-tuning the classifier.
+origin: >-
+  Introduced as the 'masked LM' pretraining task of BERT by Jacob Devlin, Ming-Wei Chang, Kenton Lee
+  and Kristina Toutanova of Google (October 2018), who related it to the cloze procedure proposed by
+  the communication researcher Wilson L. Taylor in 1953 for measuring readability.
+year: 2018
+see_also:
+  - BERT
+  - encoder-only transformer
+  - causal language model
+  - self-supervised learning
+  - diffusion language model
+  - attention mask
+contrast:
+  - causal language model
+sources:
+  - text: >-
+      Devlin, J., Chang, M.-W., Lee, K. & Toutanova, K. (2019). BERT: Pre-training of Deep
+      Bidirectional Transformers for Language Understanding. NAACL 2019.
+    url: https://arxiv.org/abs/1810.04805
+  - text: >-
+      Taylor, W. L. (1953). 'Cloze procedure': A new tool for measuring readability. Journalism
+      Quarterly 30(4).

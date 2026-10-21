@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: recursive language model
+id: recursive-language-model
+pos: n.
+also:
+  - RLM
+  - recursive LM
+domain: llm
+domains:
+  - agents
+  - infer
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A way of running an AI language model so it can handle enormous documents by writing small
+  programs to search and split them, and calling copies of itself on the pieces.
+senses:
+  - definition: >-
+      An inference strategy in which a [[language-model|language model]] answers a query over very
+      long input without reading it all into its [[context-window|context window]]: the input is
+      stored as a variable in a programming environment (a Python REPL), and a 'root' model writes
+      code to inspect, search, partition and transform it, launching recursive calls to itself or to
+      smaller sub-models on selected chunks before returning a final answer. To the user it behaves
+      like an ordinary model call. In the introducing experiments, a recursive wrapper around a
+      small model beat a much larger model on long-context reasoning benchmarks at similar or lower
+      cost per query, and stayed accurate over document collections exceeding ten million
+      [[token|tokens]]. The approach treats [[context-rot|context rot]] as an engineering problem to
+      route around rather than a limit to be trained away.
+    example: >-
+      We wrapped the small model as a recursive language model and it handled the whole 8,000-page
+      discovery archive.
+origin: >-
+  Introduced by Alex L. Zhang and Omar Khattab of MIT in a blog post in October 2025, followed by
+  the paper 'Recursive Language Models' with Tim Kraska (arXiv:2512.24601, December 2025).
+year: 2025
+see_also:
+  - long context
+  - context rot
+  - context engineering
+  - code execution
+  - subagent
+  - retrieval-augmented generation
+sources:
+  - text: >-
+      Zhang, A. L., Khattab, O. & Kraska, T. (2025). Recursive Language Models. Blog post (paper:
+      arXiv:2512.24601).
+    url: https://alexzhang13.github.io/blog/2025/rlm/
+as_of: 2026-10

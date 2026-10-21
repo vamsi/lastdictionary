@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: disentangled representation
+id: disentangled-representation
+pos: n.
+also:
+  - disentanglement
+  - disentangled representation learning
+  - β-VAE
+  - beta-VAE
+domain: dl
+domains:
+  - gen
+  - interp
+level: specialist
+plain: >-
+  An internal representation in which each part tracks one separate, meaningful factor of the data,
+  such as one number for a face's angle, another for its lighting and another for hair color.
+senses:
+  - definition: >-
+      A learned representation that sorts the independent sources of variation in the data, such as
+      object identity, pose, lighting, color and position, into different dimensions or subspaces,
+      so that moving along one latent coordinate alters a single factor while the rest stay fixed.
+      Disentanglement is valued for interpretability, controllable generation, fairness (isolating a
+      protected attribute) and sample-efficient transfer. Methods include the β-VAE, which
+      up-weights the KL term of a [[variational-autoencoder|variational autoencoder]] to push
+      latents towards independence, FactorVAE, β-TCVAE and InfoGAN. Francesco Locatello and
+      colleagues (2019) proved that unsupervised disentanglement is impossible without
+      [[inductive-bias|inductive biases]] or some supervision, and found existing methods' scores to
+      depend heavily on random seeds and hyperparameters. [[interpretability|Interpretability]]
+      research pursues related goals with [[sparse-autoencoder|sparse autoencoders]] and
+      [[monosemanticity|monosemanticity]].
+    example: >-
+      In the β-VAE's disentangled representation, one latent controls rotation and another controls
+      size.
+origin: >-
+  Separating the underlying factors of variation in data is an older aim, pursued for example in
+  Joshua Tenenbaum and William Freeman's bilinear models of style and content (2000). Yoshua Bengio,
+  Aaron Courville and Pascal Vincent's 2012 review made disentangling those factors an explicit goal
+  of deep representation learning. InfoGAN (Xi Chen and colleagues, 2016) and Irina Higgins and
+  colleagues' β-VAE (ICLR 2017) offered practical methods; Locatello and colleagues' impossibility
+  result won a best-paper award at ICML 2019.
+year: 2012
+see_also:
+  - representation learning
+  - variational autoencoder
+  - latent space
+  - monosemanticity
+  - sparse autoencoder
+  - inductive bias

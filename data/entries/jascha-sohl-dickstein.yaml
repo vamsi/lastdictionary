@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Jascha Sohl-Dickstein
+id: jascha-sohl-dickstein
+sort_as: Sohl-Dickstein Jascha
+pos: prop. n.
+domain: people
+domains:
+  - gen
+  - dl
+level: specialist
+plain: >-
+  An American scientist who in 2015, with colleagues, introduced diffusion models, the technique
+  behind most modern AI image and video generators, by borrowing ideas from physics.
+senses:
+  - definition: >-
+      American machine-learning researcher who introduced [[diffusion-model|diffusion probabilistic
+      models]] in 2015. Trained in physics and theoretical neuroscience (PhD, University of
+      California, Berkeley), he proposed, with Eric Weiss, Niru Maheswaranathan and Surya Ganguli at
+      Stanford, a generative model inspired by nonequilibrium thermodynamics: a fixed process
+      gradually adds noise to data until only noise remains, and a neural network learns to reverse
+      it step by step. Little used at first, the idea became the basis of modern image, audio and
+      video generation after Jonathan Ho and colleagues' DDPM (2020) and the
+      [[score-based-generative-model|score-based]] stochastic-differential-equation formulation he
+      co-authored with Yang Song and others (2021). As a principal scientist at
+      [[google-brain|Google Brain]] and then Google DeepMind he also worked on infinitely wide
+      neural networks, learned optimizers and the BIG-bench benchmark, and co-authored the
+      [[levels-of-agi|levels of AGI]] framework (2023). He joined [[anthropic|Anthropic]] in 2024.
+see_also:
+  - diffusion model
+  - score-based generative model
+  - denoising diffusion probabilistic model
+  - generative model
+  - noise schedule
+sources:
+  - text: >-
+      Sohl-Dickstein, J., Weiss, E. A., Maheswaranathan, N. & Ganguli, S. (2015). Deep Unsupervised
+      Learning using Nonequilibrium Thermodynamics. ICML 2015.
+  - text: >-
+      Song, Y., Sohl-Dickstein, J., Kingma, D. P., Kumar, A., Ermon, S. & Poole, B. (2021).
+      Score-Based Generative Modeling through Stochastic Differential Equations. ICLR 2021.
+as_of: 2026-10

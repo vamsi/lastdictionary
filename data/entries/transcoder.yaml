@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: transcoder
+id: transcoder
+pos: n.
+also:
+  - cross-layer transcoder
+  - CLT
+  - skip transcoder
+  - per-layer transcoder
+domain: interp
+domains:
+  - dl
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A stand-in for one part of an AI model that does the same job using a large set of simple,
+  understandable pieces, so researchers can see what that part computes.
+senses:
+  - definition: >-
+      A sparse dictionary model trained to imitate a component of a network — usually an
+      [[multilayer-perceptron|MLP]] sublayer — by mapping the component's input to a wide, sparse
+      hidden layer and decoding from it the component's output, rather than reconstructing its own
+      input as a [[sparse-autoencoder|sparse autoencoder]] does. Because the transcoder replaces a
+      computation rather than merely re-describing a representation, the connections between its
+      features in successive layers can be read from the weights, enabling input-independent
+      [[circuit|circuit]] analysis. A skip transcoder adds an affine skip connection, lowering
+      reconstruction error. A cross-layer transcoder (CLT) lets each feature read from one layer's
+      [[residual-stream|residual stream]] and write to the outputs of all later MLP layers,
+      capturing computation spread across depth; Anthropic's 2025 [[circuit-tracing|circuit
+      tracing]] work used CLTs to build the [[replacement-model|replacement model]] from which
+      [[attribution-graph|attribution graphs]] are computed. Transcoders trade some reconstruction
+      accuracy for this structural readability.
+    example: >-
+      Swap in the layer-8 transcoder and check that the model's loss on the task barely moves.
+origin: >-
+  Named and first studied in detail by Jacob Dunefsky, Philippe Chlenski and Neel Nanda in
+  'Transcoders Find Interpretable LLM Feature Circuits' (June 2024; NeurIPS 2024), who credit
+  earlier, unexplored proposals of the idea as 'predicting future activations' (Adly Templeton and
+  colleagues at Anthropic) and 'MLP stretchers'. Gonçalo Paulo, Stepan Shabalin and Nora Belrose of
+  EleutherAI proposed skip transcoders (January 2025); cross-layer transcoders were the basis of
+  Anthropic's 'Circuit Tracing' (Ameisen et al., March 2025).
+year: 2024
+see_also:
+  - sparse autoencoder
+  - crosscoder
+  - circuit tracing
+  - replacement model
+  - attribution graph
+  - dictionary learning
+sources:
+  - text: >-
+      Dunefsky, J., Chlenski, P. & Nanda, N. (2024). Transcoders Find Interpretable LLM Feature
+      Circuits. NeurIPS 2024. arXiv:2406.11944.
+    url: https://arxiv.org/abs/2406.11944
+  - text: >-
+      Paulo, G., Shabalin, S. & Belrose, N. (2025). Transcoders Beat Sparse Autoencoders for
+      Interpretability. arXiv:2501.18823.
+    url: https://arxiv.org/abs/2501.18823
+  - text: >-
+      Ameisen, E., Lindsey, J., Pearce, A. et al. (2025). Circuit Tracing: Revealing Computational
+      Graphs in Language Models. Transformer Circuits Thread.

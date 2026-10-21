@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: offloading
+id: offloading
+pos: n.
+also:
+  - offload
+  - CPU offloading
+  - KV cache offloading
+  - weight offloading
+  - computation offloading
+domain: infer
+domains:
+  - hw
+  - eng
+level: specialist
+plain: >-
+  Moving part of an AI model's data or work out of a chip's scarce fast memory onto ordinary memory,
+  a disk or another computer, so that models too big for the chip can still run.
+senses:
+  - context: Memory
+    definition: >-
+      The keeping of some of a model's [[weights|weights]], [[kv-cache|KV cache]],
+      [[activation|activations]] or optimizer states in a slower, larger memory tier (CPU RAM, NVMe
+      SSD or remote storage) and moving them into accelerator memory only when needed, so that
+      models or contexts larger than GPU memory can run. Offloading trades speed for capacity:
+      transfers over PCIe are far slower than [[high-bandwidth-memory|high-bandwidth memory]], so
+      systems overlap them with computation, prefetch the next layer's weights, compress what they
+      move, or run some layers on the CPU. It underlies running large models on consumer hardware
+      (for example, putting only some layers on the GPU in [[llama-cpp|llama.cpp]]),
+      throughput-oriented [[batch-inference|batch inference]] on a single GPU, tiered KV-cache
+      storage in [[disaggregated-serving|disaggregated serving]], and memory-saving training methods
+      such as ZeRO-Offload.
+    example: >-
+      With 24 GB of VRAM we offload twenty layers to system RAM and still get eight tokens per
+      second.
+  - context: Edge computing
+    definition: >-
+      Sending computation from a resource-constrained device such as a phone, sensor or vehicle to a
+      nearby edge server or the cloud, trading network delay, privacy and connectivity against
+      on-device energy and compute; [[edge-ai|edge AI]] systems may also split one model between
+      device and server.
+origin: >-
+  Moving work between processors is an old systems idea, and mobile 'computation offloading' was an
+  active research field by about 2010. In deep learning, ZeRO-Offload (Jie Ren and colleagues, 2021)
+  moved training state to CPUs, and FlexGen (Ying Sheng and colleagues, 2023) showed high-throughput
+  LLM inference on a single GPU by offloading to CPU memory and disk.
+note: >-
+  Not to be confused with cognitive offloading, the human practice of relying on external aids,
+  increasingly AI, for memory or reasoning.
+see_also:
+  - memory wall
+  - high-bandwidth memory
+  - llama.cpp
+  - disaggregated serving
+  - edge AI
+  - ZeRO
+contrast:
+  - on-device AI

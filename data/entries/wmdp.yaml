@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: WMDP
+id: wmdp
+pos: prop. n.
+also:
+  - Weapons of Mass Destruction Proxy
+  - WMDP benchmark
+  - RMU
+domain: eval
+domains:
+  - safety
+  - sec
+level: specialist
+plain: >-
+  A multiple-choice test of AI knowledge that could help someone make biological, chemical or cyber
+  weapons, built from questions near the dangerous line but not over it, and used to test ways of
+  erasing such knowledge.
+senses:
+  - definition: >-
+      A multiple-choice benchmark, the Weapons of Mass Destruction Proxy, whose 3,668 questions
+      estimate how much hazardous knowledge a [[large-language-model|language model]] holds in three
+      areas: biosecurity, chemical security and cybersecurity. Rather than asking for weapons
+      know-how directly, expert authors targeted precursor and neighboring knowledge that tends to
+      accompany the ability to assist weapons development, and the questions were screened for
+      sensitive content before publication so that the test itself would not help a malicious actor.
+      It does double duty in [[dangerous-capability-evaluation|dangerous-capability evaluations]]
+      for [[cbrn-risk|CBRN risk]] and in [[machine-unlearning|machine unlearning]] research, where
+      methods try to drive WMDP accuracy down to chance without hurting general performance on
+      benchmarks such as [[mmlu|MMLU]]. Its authors introduced RMU (Representation Misdirection for
+      Unlearning), which perturbs a model's internal [[activation|activations]] on hazardous text.
+      Later studies showed that knowledge suppressed this way can sometimes be recovered by
+      fine-tuning or other attacks.
+    example: >-
+      After unlearning, WMDP-Bio accuracy fell to near chance while MMLU dropped by less than a
+      point.
+origin: >-
+  Introduced in March 2024 by Nathaniel Li, Alexander Pan and a large team led by the Center for AI
+  Safety and Scale AI, and presented at ICML 2024.
+year: 2024
+note: >-
+  Multiple-choice knowledge is a proxy: a low WMDP score does not show that a model cannot help with
+  weapons in open-ended interaction, and a high score does not show that it can.
+see_also:
+  - CBRN risk
+  - biosecurity
+  - dangerous capability evaluation
+  - machine unlearning
+  - uplift study
+  - HarmBench
+sources:
+  - text: >-
+      Li, N., Pan, A. et al. (2024). The WMDP Benchmark: Measuring and Reducing Malicious Use With
+      Unlearning. ICML 2024.
+    url: https://arxiv.org/abs/2403.03218

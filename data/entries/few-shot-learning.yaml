@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: few-shot learning
+id: few-shot-learning
+pos: n.
+also:
+  - FSL
+  - one-shot learning
+  - k-shot learning
+  - N-way K-shot
+  - low-shot learning
+domain: ml
+domains:
+  - llm
+  - dl
+level: essential
+plain: >-
+  Getting an AI system to handle a new task or recognize a new kind of thing from just a handful of
+  examples, the way a person can learn a new word after hearing it once or twice.
+senses:
+  - definition: >-
+      Learning to perform a new task, or to recognize new classes, from only a few labeled examples,
+      typically one to a few dozen per class; one-shot learning is the extreme of a single example.
+      Benchmarks are framed as N-way K-shot episodes: classify queries into N novel classes given K
+      labeled 'support' examples of each. Because a few examples cannot pin down a model on their
+      own, few-shot methods rely on knowledge acquired beforehand: [[meta-learning|meta-learning]]
+      across many related tasks (prototypical networks,
+      [[model-agnostic-meta-learning|model-agnostic meta-learning]]), [[transfer-learning|transfer
+      learning]] from pretrained representations followed by a light classifier or
+      [[fine-tuning|fine-tuning]], [[data-augmentation|data augmentation]] and Bayesian priors. With
+      [[large-language-model|large language models]] the term gained a second, now dominant,
+      meaning: performing a task from a few demonstrations placed in the prompt, with no weight
+      updates at all ([[few-shot-prompting|few-shot prompting]], a form of
+      [[in-context-learning|in-context learning]]). Strong pretrained models made simple fine-tuning
+      and prompting baselines competitive with specialized few-shot algorithms.
+    example: >-
+      Given five labeled photos of a new defect type, the few-shot classifier reached 88% accuracy.
+origin: >-
+  Li Fei-Fei, Rob Fergus and Pietro Perona's Bayesian one-shot learning of object categories (2003;
+  journal version 2006) and Brenden Lake, Ruslan Salakhutdinov and Joshua Tenenbaum's 2015 Omniglot
+  study drew attention to learning from very few examples. Matching networks (Oriol Vinyals and
+  colleagues, 2016) and prototypical networks (Jake Snell and colleagues, 2017) defined the episodic
+  benchmarks, and the 2020 GPT-3 paper 'Language Models are Few-Shot Learners' popularized the
+  prompting sense.
+year: 2003
+note: >-
+  Two usages coexist: in classical machine learning the model is trained or adapted on the few
+  examples; in LLM usage the examples are usually just supplied in the prompt. 'Shot' counts
+  examples, not attempts.
+see_also:
+  - meta-learning
+  - few-shot prompting
+  - in-context learning
+  - zero-shot learning
+  - transfer learning
+  - model-agnostic meta-learning
+  - data augmentation
+contrast:
+  - zero-shot learning
+sources:
+  - text: >-
+      Fei-Fei, L., Fergus, R. & Perona, P. (2006). One-Shot Learning of Object Categories. IEEE
+      Transactions on Pattern Analysis and Machine Intelligence 28(4).
+  - text: >-
+      Snell, J., Swersky, K. & Zemel, R. (2017). Prototypical Networks for Few-shot Learning.
+      Advances in Neural Information Processing Systems 30.
+  - text: >-
+      Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. Advances in Neural
+      Information Processing Systems 33.

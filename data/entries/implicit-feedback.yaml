@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: implicit feedback
+id: implicit-feedback
+pos: n.
+also:
+  - implicit signals
+  - explicit feedback
+  - Bayesian personalized ranking
+  - BPR
+domain: ml
+domains:
+  - data
+level: specialist
+plain: >-
+  Clues about what people like that come from what they do, such as clicking, buying, watching or
+  skipping, rather than from ratings or reviews they deliberately give.
+senses:
+  - definition: >-
+      User-preference data inferred from behavior (clicks, purchases, dwell and watch time, plays,
+      skips, add-to-carts) rather than stated directly, as in explicit feedback such as star
+      ratings. Implicit feedback is abundant, costs users nothing and covers nearly every
+      interaction, so it supplies most of the training data for modern
+      [[recommender-system|recommender systems]] and search ranking. It is harder to interpret: it
+      is mostly positive-only, since an unclicked item may be disliked or simply unseen; noisy,
+      since a click is not satisfaction; and biased by what the system chose to show and where
+      (position and exposure bias). Methods therefore treat observed interactions as
+      confidence-weighted positives and unobserved ones as weak negatives, as in weighted
+      [[matrix-factorization|matrix factorization]]; optimize pairwise ranking objectives such as
+      Bayesian personalized ranking; sample negatives; and apply counterfactual corrections such as
+      inverse propensity weighting. Optimizing a proxy such as clicks or watch time can diverge from
+      users' long-term interests ([[engagement-optimization|engagement optimization]]).
+    example: >-
+      We have almost no star ratings, so the model trains on implicit feedback: completed listens
+      count as positives and early skips as negatives.
+origin: >-
+  Studied in information retrieval and human–computer interaction in the 1990s, where reading time,
+  scrolling and bookmarking were tested as interest signals; Douglas Oard and Jinmook Kim surveyed
+  its use for recommenders in 1998. Yifan Hu, Yehuda Koren and Chris Volinsky (2008) and the
+  Bayesian personalized ranking of Steffen Rendle and colleagues (2009) established the standard
+  modeling approaches.
+year: 1998
+see_also:
+  - recommender system
+  - collaborative filtering
+  - matrix factorization
+  - learning to rank
+  - engagement optimization
+  - label noise
+sources:
+  - text: >-
+      Oard, D. W. & Kim, J. (1998). Implicit Feedback for Recommender Systems. Proc. AAAI Workshop
+      on Recommender Systems.
+  - text: >-
+      Hu, Y., Koren, Y. & Volinsky, C. (2008). Collaborative Filtering for Implicit Feedback
+      Datasets. Proc. 8th IEEE International Conference on Data Mining (ICDM).
+  - text: >-
+      Rendle, S., Freudenthaler, C., Gantner, Z. & Schmidt-Thieme, L. (2009). BPR: Bayesian
+      Personalized Ranking from Implicit Feedback. Proc. UAI 2009.

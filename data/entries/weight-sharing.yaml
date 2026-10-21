@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: weight sharing
+id: weight-sharing
+pos: n.
+also:
+  - parameter sharing
+  - shared weights
+  - tied weights
+  - weight tying
+domain: dl
+level: core
+plain: >-
+  Reusing the same learned numbers in many places in a network, for example one edge detector
+  applied at every spot in an image, so the network needs fewer parameters and learns from less
+  data.
+senses:
+  - definition: >-
+      The constraint that several connections or modules of a network use the same
+      [[parameter|parameters]], so one set of weights is learned from every place it is applied; the
+      gradient for a shared weight is the sum of the gradients from all its uses. It encodes a
+      symmetry assumption as an [[inductive-bias|inductive bias]]:
+      [[convolutional-neural-network|CNNs]] share each [[filter|filter]] across positions, giving
+      translation [[equivariance|equivariance]]; [[recurrent-neural-network|RNNs]] share weights
+      across time steps; [[graph-neural-network|GNNs]] share message functions across nodes; and
+      [[siamese-network|Siamese networks]] share a whole encoder between inputs. Weight tying in
+      language models reuses the input [[embedding|embedding]] matrix as the output
+      ([[unembedding|unembedding]]) projection. In [[neural-architecture-search|neural architecture
+      search]], 'weight sharing' also names one-shot methods in which candidate architectures
+      inherit weights from a shared supernetwork.
+    example: >-
+      Tying the input and output embeddings saved 260 million parameters in the small model.
+origin: >-
+  Kunihiko Fukushima's neocognitron (1980) replicated identical feature detectors across positions,
+  and the connectionist work of David Rumelhart, Geoffrey Hinton and Ronald Williams (1986) showed
+  that shared weights can be trained by summing gradients. Yann LeCun's convolutional networks
+  (1989) made weight sharing central to vision; Ofir Press and Lior Wolf, and Hakan Inan and
+  colleagues, introduced embedding weight tying for language models in 2016.
+year: 1980
+see_also:
+  - convolutional neural network
+  - equivariance
+  - inductive bias
+  - recurrent neural network
+  - Siamese network
+  - unembedding
+  - hypernetwork

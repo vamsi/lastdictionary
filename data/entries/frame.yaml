@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: frame
+id: frame
+pos: n.
+also:
+  - frames
+  - frame system
+  - slot-filler representation
+domain: sym
+domains:
+  - hist
+  - percep
+level: core
+plain: >-
+  In classic AI, a ready-made template for a familiar kind of thing or event, such as a kitchen or a
+  job interview, with blanks to fill in and sensible default values.
+senses:
+  - context: Knowledge representation
+    definition: >-
+      A data structure that packages the typical features of one kind of object, concept or
+      situation into named slots (attributes) with fillers (values), where fillers may be defaults
+      that hold unless contradicted, constraints on admissible values, or attached procedures that
+      run when a slot is read or changed. Frames are linked into hierarchies through which slots and
+      defaults are inherited, and into systems in which one frame's slot points to another frame.
+      When a situation is recognized as fitting a frame, its defaults supply expectations about
+      unobserved details: a room frame predicts walls, a floor and a door. Frames influenced
+      object-oriented programming and the KL-ONE family of languages that led to
+      [[description-logic|description logics]].
+    example: >-
+      The restaurant frame's 'payment' slot defaults to card unless the dialogue says otherwise.
+  - context: Linguistics
+    definition: >-
+      In Charles Fillmore's frame semantics, the background scenario a word evokes, with roles for
+      its participants: 'buy' evokes a commercial transaction with buyer, seller, goods and money.
+      The FrameNet database catalogs such frames for [[semantic-parsing|semantic parsing]] and
+      semantic role labeling.
+  - context: Video
+    definition: >-
+      One still image in the sequence that makes up a video or animation. Video recognition and
+      generation models typically process or produce a fixed number of frames per second, and
+      consistency between consecutive frames is a key quality measure.
+origin: >-
+  The knowledge-representation sense was introduced by [[marvin-minsky|Marvin Minsky]] in 'A
+  Framework for Representing Knowledge' (MIT AI Laboratory Memo 306, 1974), which related the idea
+  to the psychologist Frederic Bartlett's schemata. Frame languages such as FRL and KRL followed in
+  1977.
+year: 1974
+note: >-
+  Not to be confused with the [[frame-problem|frame problem]], a separate puzzle about representing
+  what does not change when an action occurs.
+see_also:
+  - script
+  - semantic network
+  - knowledge representation
+  - Marvin Minsky
+  - description logic
+  - ontology
+contrast:
+  - frame problem
+sources:
+  - text: >-
+      Minsky, M. (1974). A Framework for Representing Knowledge. MIT-AI Laboratory Memo 306.

@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: safety training
+id: safety-training
+pos: n.
+also:
+  - safety fine-tuning
+  - harmlessness training
+  - safety post-training
+  - safety tuning
+domain: safety
+domains:
+  - train
+  - llm
+level: core
+plain: >-
+  The part of an AI's training that teaches it to avoid harmful behavior — declining dangerous
+  requests, resisting manipulation and following its developer's rules — on top of being generally
+  helpful.
+senses:
+  - definition: >-
+      The portion of [[post-training|post-training]] aimed at making a model's behavior safe:
+      declining or safely completing harmful requests, resisting [[jailbreak|jailbreaks]] and
+      [[prompt-injection|prompt injection]], avoiding deception and dangerous actions in agentic
+      settings, and following its developer's [[model-specification|specification]]. Methods include
+      [[supervised-fine-tuning|supervised fine-tuning]] on curated refusals and safe responses,
+      [[reinforcement-learning-from-human-feedback|human]] or
+      [[reinforcement-learning-from-ai-feedback|AI feedback]] with harmlessness rewards,
+      [[constitutional-ai|Constitutional AI]], [[deliberative-alignment|deliberative alignment]],
+      [[adversarial-training|adversarial training]] on red-team findings and, for agents,
+      environments that reward safe tool use. It is balanced against helpfulness to avoid
+      [[over-refusal|over-refusal]]. Alexander Wei and colleagues (2023) attributed successful
+      jailbreaks to two failure modes, competing objectives (helpfulness pulling against
+      harmlessness) and mismatched generalization (safety behavior not covering unusual encodings or
+      languages); later work added shallowness, since a little fine-tuning can often undo it.
+    example: >-
+      Safety training cut compliance on the harmful-request set to near zero without raising
+      over-refusal.
+origin: >-
+  Harmlessness training emerged with Anthropic's and OpenAI's RLHF assistant research in 2021–2022.
+  Alexander Wei, Nika Haghtalab and Jacob Steinhardt's 'Jailbroken: How Does LLM Safety Training
+  Fail?' (2023) helped standardize the phrase and diagnosed its failure modes.
+year: 2022
+note: >-
+  One layer of [[defense-in-depth|defense in depth]], not a guarantee; its effects can be cheaply
+  removed from [[open-weight-model|open-weight models]].
+see_also:
+  - refusal
+  - over-refusal
+  - Constitutional AI
+  - deliberative alignment
+  - safe completion
+  - adversarial training
+  - red teaming
+sources:
+  - text: >-
+      Wei, A., Haghtalab, N. & Steinhardt, J. (2023). Jailbroken: How Does LLM Safety Training Fail?
+      NeurIPS 2023.

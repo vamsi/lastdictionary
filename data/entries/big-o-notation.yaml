@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: big O notation
+id: big-o-notation
+pos: n.
+also:
+  - Big O
+  - O-notation
+  - asymptotic notation
+  - Landau notation
+  - time complexity
+  - computational complexity
+  - Big Theta
+  - Big Omega
+domain: math
+domains:
+  - infer
+  - llm
+level: core
+plain: >-
+  Shorthand for how the cost of a computation grows as the problem gets bigger. Saying attention
+  costs 'O(n²)' means doubling the length of the text roughly quadruples the work.
+senses:
+  - definition: >-
+      A notation describing how a function grows asymptotically, ignoring constant factors: f(n) =
+      O(g(n)) means f(n) is at most a constant multiple of g(n) for all sufficiently large n.
+      Companion symbols give lower bounds (Ω), tight bounds (Θ) and strictly slower growth (little
+      o). Its everyday use is stating the cost of algorithms as a function of input size n — sorting
+      in O(n log n), naive [[matrix-multiplication|matrix multiplication]] of n × n matrices in
+      O(n³) — and in AI it is the standard shorthand for architectural costs: standard
+      [[self-attention|self-attention]] takes O(n²) time and memory in sequence length n, motivating
+      [[linear-attention|linear attention]], [[sparse-attention|sparse attention]],
+      [[sliding-window-attention|sliding window attention]] and [[state-space-model|state space
+      models]] with O(n) cost; the [[kv-cache|KV cache]] grows as O(n); and the fast
+      [[fourier-transform|Fourier transform]] runs in O(n log n). Big O hides constants and
+      lower-order terms that often decide real speed on [[gpu|GPUs]], so asymptotic and measured
+      efficiency can disagree.
+    example: >-
+      Attention is O(n²) in context length, so going from 8k to 128k tokens multiplies that cost by
+      256.
+formula_latex: "f(n) = O(g(n)) \\iff \\exists\\, C > 0,\\, n_0 : \\; |f(n)| \\le C\\,|g(n)| \\;\\;
+  \\forall\\, n \\ge n_0"
+origin: >-
+  Introduced by the German number theorist Paul Bachmann in Analytische Zahlentheorie (1894) and
+  popularized by Edmund Landau, who added little-o, in 1909 — hence 'Landau symbols'. Donald Knuth's
+  1976 note 'Big Omicron and Big Omega and Big Theta' standardized the related notations for
+  computer science.
+year: 1894
+see_also:
+  - matrix multiplication
+  - self-attention
+  - linear attention
+  - KV cache
+  - Fourier transform
+  - Turing machine
+sources:
+  - text: >-
+      Knuth, D. E. (1976). Big Omicron and Big Omega and Big Theta. ACM SIGACT News, 8(2).

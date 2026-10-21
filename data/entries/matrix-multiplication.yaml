@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: matrix multiplication
+id: matrix-multiplication
+pos: n.
+also:
+  - matmul
+  - GEMM
+  - matrix product
+  - general matrix multiply
+domain: math
+domains:
+  - hw
+  - dl
+level: core
+plain: >-
+  The rule for combining two grids of numbers into a new grid by repeatedly multiplying rows by
+  columns. It is the single calculation AI chips spend most of their time doing.
+senses:
+  - definition: >-
+      The operation that combines an m × k [[matrix|matrix]] A and a k × n matrix B into an m × n
+      matrix C, each entry of which is the [[dot-product|dot product]] of a row of A with a column
+      of B. It represents the composition of two [[linear-transformation|linear transformations]]
+      and is associative but not commutative: AB generally differs from BA. The standard algorithm
+      costs about 2mnk floating-point operations ([[flop|FLOPs]]); asymptotically faster algorithms
+      exist, beginning with Volker Strassen's in 1969, but deep learning rarely uses them because of
+      overheads and weaker numerical behavior. Dense layers, attention,
+      [[feed-forward-network|feed-forward blocks]] and (after rearrangement) convolutions all reduce
+      to large matrix multiplications, so training and inference costs are usually counted in matmul
+      FLOPs, and accelerators — [[gpu|GPUs]] with [[tensor-core|tensor cores]], [[tpu|TPUs]] with
+      [[systolic-array|systolic arrays]] — are designed around them.
+    example: Profiling showed 80 percent of step time in matmuls, so we moved them to bf16.
+formula_latex: C_{ij} = \sum_{l=1}^{k} A_{il}\,B_{lj}
+origin: >-
+  Set out systematically by Arthur Cayley in his 1858 memoir as the rule for composing linear
+  substitutions, following the 1812 product theorem for determinants of Jacques Binet and
+  Augustin-Louis Cauchy. Strassen's 1969 algorithm showed that fewer than n³ multiplications
+  suffice, starting a long search for the true exponent; in 2022 DeepMind's AlphaTensor used
+  reinforcement learning to discover new algorithms for small cases.
+year: 1858
+note: >-
+  The inner dimensions must match; shape mismatches in matmuls are among the commonest bugs in deep
+  learning code. Element-wise (Hadamard) multiplication of same-shaped arrays is a different
+  operation.
+see_also:
+  - matrix
+  - dot product
+  - linear transformation
+  - FLOP
+  - tensor core
+  - systolic array
+  - arithmetic intensity
+sources:
+  - text: >-
+      Strassen, V. (1969). Gaussian Elimination is not Optimal. Numerische Mathematik, 13.
+  - text: >-
+      Fawzi, A. et al. (2022). Discovering faster matrix multiplication algorithms with
+      reinforcement learning. Nature, 610.

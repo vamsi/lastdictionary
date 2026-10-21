@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: utility indifference
+id: utility-indifference
+pos: n.
+also:
+  - indifference methods
+  - corrigibility via indifference
+domain: safety
+domains:
+  - math
+level: specialist
+plain: >-
+  A design trick that makes an AI exactly indifferent to whether its off switch is pressed, so that
+  it has no reason either to fight or to trigger shutdown.
+senses:
+  - definition: >-
+      A technique for [[corrigibility|corrigibility]] in which an agent's utility function is given
+      a compensating term so that the agent's expected utility is the same whether or not a
+      particular event occurs — typically the pressing of a shutdown button or a change to its
+      goals. An indifferent agent has no incentive to prevent the event or to cause it, and carries
+      on optimizing as if the event's probability were fixed. Analyses found important limitations:
+      an indifferent agent also has no reason to preserve or repair the button, may fail to pass
+      indifference on to successor agents it builds, and can behave strangely when betting on or
+      reasoning about the event. Later refinements address some of these problems but not all.
+    example: >-
+      With utility indifference the agent won't block the button — but it won't fix the button if it
+      breaks, either.
+origin: >-
+  Proposed by Stuart Armstrong of the Future of Humanity Institute in a 2010 technical note,
+  'Utility Indifference', and developed in later papers; the 2015 'Corrigibility' paper by Nate
+  Soares, Benja Fallenstein, Eliezer Yudkowsky and Armstrong analyzed its strengths and failures.
+year: 2010
+see_also:
+  - corrigibility
+  - shutdown problem
+  - off-switch game
+  - safe interruptibility
+  - impact measure
+sources:
+  - text: >-
+      Armstrong, S. (2010). Utility Indifference. Technical Report 2010-1, Future of Humanity
+      Institute, University of Oxford.
+  - text: >-
+      Soares, N., Fallenstein, B., Yudkowsky, E. & Armstrong, S. (2015). Corrigibility. AAAI-15
+      Workshop on AI and Ethics.

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: double descent
+id: double-descent
+pos: n.
+also:
+  - deep double descent
+  - epoch-wise double descent
+  - sample-wise double descent
+  - interpolation threshold
+domain: dl
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  A surprising pattern where a model's error on new data first falls, then rises, then falls again
+  as the model grows bigger — contradicting the old rule that oversized models always do worse.
+senses:
+  - definition: >-
+      The phenomenon in which test error, plotted against model capacity, first follows the
+      classical U-shaped curve of the [[bias-variance-tradeoff|bias–variance tradeoff]] — falling,
+      then rising as the model starts fitting noise — peaks near the interpolation threshold, where
+      capacity is just enough to fit the training data exactly, and then falls again as capacity
+      grows further, often below the first minimum. Near the threshold essentially one fit exists
+      and it is badly conditioned; well beyond it, many interpolating solutions exist and training
+      with [[implicit-regularization|implicit regularization]] picks smooth, low-norm ones. The
+      pattern appears in linear regression, random-feature models, tree ensembles and deep networks,
+      and also as a function of training time (epoch-wise double descent) and of dataset size, where
+      adding data can temporarily hurt. The peak is most pronounced with label noise and weak
+      regularization, and well-tuned regularization can remove it. Double descent helped explain why
+      very large, [[overparameterization|overparameterized]] networks generalize well.
+origin: >-
+  Peaks in test error at the interpolation threshold were observed in statistical-physics studies of
+  learning from 1989 onward, but the name was coined by Mikhail Belkin, Daniel Hsu, Siyuan Ma and
+  Soumik Mandal (arXiv December 2018; PNAS 2019). Preetum Nakkiran and colleagues' 'Deep Double
+  Descent' (2019) extended it to deep networks, training time and dataset size.
+year: 2018
+see_also:
+  - overparameterization
+  - bias–variance tradeoff
+  - benign overfitting
+  - implicit regularization
+  - overfitting
+  - generalization gap
+sources:
+  - text: >-
+      Belkin, M., Hsu, D., Ma, S. & Mandal, S. (2019). Reconciling modern machine-learning practice
+      and the classical bias–variance trade-off. PNAS 116(32), 15849–15854.
+    url: https://arxiv.org/abs/1812.11118
+  - text: >-
+      Nakkiran, P. et al. (2020). Deep Double Descent: Where Bigger Models and More Data Hurt. ICLR
+      2020.
+    url: https://arxiv.org/abs/1912.02292
+  - text: >-
+      Loog, M., Viering, T., Mey, A., Krijthe, J. H. & Tax, D. M. J. (2020). A brief prehistory of
+      double descent. PNAS 117(20), 10625–10626.

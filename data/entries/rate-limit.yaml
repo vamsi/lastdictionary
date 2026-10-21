@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rate limit
+id: rate-limit
+pos: n.
+also:
+  - rate limiting
+  - throttling
+  - tokens per minute
+  - TPM
+  - requests per minute
+  - RPM
+  - HTTP 429
+  - usage tier
+domain: eng
+domains:
+  - infer
+level: core
+plain: >-
+  A cap on how much a customer may use an online AI service in a given time — so many requests or
+  words per minute — beyond which extra requests are refused until later.
+senses:
+  - definition: >-
+      A limit imposed by a service on the volume of requests a client may make in a time window,
+      enforced by rejecting or delaying the excess. [[model-api|Model APIs]] typically meter several
+      dimensions at once — requests per minute (RPM), input and output [[token|tokens]] per minute
+      (TPM), tokens per day and concurrent requests — set per account, project, model and usage
+      tier, with tiers rising as spending history grows. Exceeding a limit returns an HTTP 429 'Too
+      Many Requests' error, often with headers giving the remaining allowance and the time until
+      reset. Limits protect shared accelerator capacity from overload and abuse and ration it among
+      customers; providers implement them with token-bucket or sliding-window algorithms. Clients
+      cope by retrying with exponential backoff and random jitter, queuing and batching work, using
+      [[batch-inference|batch]] endpoints, spreading load across regions or providers through an
+      [[ai-gateway|AI gateway]], or buying reserved capacity.
+    example: >-
+      The eval run kept hitting the rate limit, so we added exponential backoff and halved
+      concurrency.
+origin: >-
+  Rate limiting is long-standing networking and web-API practice, applied to public web APIs since
+  the 2000s. Limits counted in model tokens are specific to language-model services and became a
+  routine constraint for developers with the [[gpt-3|GPT-3]] and [[chatgpt|ChatGPT]] APIs of
+  2020–2023, when shortages of GPUs made serving capacity scarce.
+note: >-
+  The 'token' in tokens per minute is a unit of model text, unrelated to the 'token bucket' of the
+  limiting algorithm. A rate limit differs from a spending cap and from the [[context-window|context
+  window]], which bounds the size of a single request.
+see_also:
+  - model API
+  - AI gateway
+  - batch inference
+  - service-level objective
+  - throughput
+  - inference provider

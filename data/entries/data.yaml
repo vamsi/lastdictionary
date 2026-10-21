@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data
+id: data
+pos: n.
+also:
+  - datum
+domain: data
+domains:
+  - core
+level: essential
+plain: >-
+  Recorded facts, measurements, text, images or sounds that a computer can store and process. AI
+  systems learn their skills from large amounts of data rather than from rules written by hand.
+senses:
+  - definition: >-
+      Information represented in a form that machines can store, transmit and process: numbers,
+      text, images, audio, sensor readings, logs and records of human activity. In
+      [[machine-learning|machine learning]], data take over the role that hand-written rules play in
+      conventional programming: a [[model|model]] acquires its behavior by fitting its
+      [[parameter|parameters]] to examples, so the quantity, quality, diversity and legal status of
+      the data shape what a system can do and how it fails. Practitioners distinguish structured
+      data (tables with fixed fields; see [[tabular-data|tabular data]]) from unstructured data
+      (free text, images, audio), and labeled from unlabeled data (see [[label|label]]). Data used
+      to fit a model are [[training-data|training data]]; data held back to tune or measure it form
+      the [[validation-set|validation set]] and [[test-set|test set]]; data supplied when the system
+      runs are its inputs.
+    example: Most of the gains came from better data, not a bigger model.
+origin: >-
+  From Latin data, 'things given', plural of datum. English used the word from the 1640s for facts
+  granted as a basis for reasoning, from the 1890s for collected numerical facts, and from 1946 for
+  information stored and operated on by computers; 'data processing' (1954) and 'database' (by 1962)
+  followed.
+year: 1946
+note: >-
+  Originally a plural. In computing and AI, 'data' is usually a mass noun ('the data is noisy'),
+  while many scientific journals keep the plural ('the data are'); both are standard. The singular
+  'datum' survives mainly in formal and technical writing.
+see_also:
+  - dataset
+  - training data
+  - big data
+  - data quality
+  - label
+  - corpus
+  - data science
+contrast:
+  - model

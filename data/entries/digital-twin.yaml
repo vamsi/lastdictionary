@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: digital twin
+id: digital-twin
+pos: n.
+also:
+  - digital twins
+  - digital shadow
+  - virtual twin
+domain: robot
+domains:
+  - eng
+  - data
+level: core
+plain: >-
+  A detailed virtual copy of a real machine, factory, robot or city, kept in sync with live sensor
+  data and used to monitor it, test changes safely and predict problems.
+senses:
+  - definition: >-
+      A computational model of a specific physical object, process or system — a jet engine,
+      production line, robot, building, power grid or city — kept synchronized with its real
+      counterpart through data from sensors and operations, and used to monitor its state, diagnose
+      faults, predict behavior and test interventions before applying them. Strict usage requires
+      this ongoing, often two-way, data link; a model without one is a simulation or 'digital
+      model', and one fed by data but not feeding back is sometimes called a digital shadow. Digital
+      twins combine physics-based simulation, CAD geometry and statistical or machine-learning
+      models. In [[robotics|robotics]] and [[physical-ai|physical AI]], twins of factories and
+      warehouses are built in [[physics-simulator|physics simulators]] to commission robot cells
+      virtually, generate [[synthetic-data|synthetic training data]], and train and evaluate
+      [[policy|policies]] before deployment; real-to-sim pipelines reconstruct twins from scans or
+      video. The term is also applied, more loosely, to models of people, such as patient twins in
+      medicine or AI agents that imitate an individual.
+    example: >-
+      We tested the new pallet layout in the plant's digital twin before moving a single robot.
+origin: >-
+  The concept is usually traced to Michael Grieves's 2002 product-lifecycle-management presentations
+  at the University of Michigan and the name to NASA engineer John Vickers, with NASA's 2010
+  technology roadmap giving an early formal definition. David Gelernter's Mirror Worlds (1991)
+  anticipated the idea, and NASA's use of simulators during Apollo 13 (1970) is often cited as a
+  precursor.
+year: 2010
+note: >-
+  A buzzword in industrial marketing, applied to anything from a static 3D model to a live,
+  high-fidelity simulation; ask what data link and fidelity are meant.
+see_also:
+  - physics simulator
+  - sim-to-real transfer
+  - physical AI
+  - synthetic data
+  - world foundation model
+  - industrial robot
+sources:
+  - text: >-
+      Grieves, M. & Vickers, J. (2017). Digital twin: Mitigating unpredictable, undesirable emergent
+      behavior in complex systems. In Kahlen, F.-J., Flumerfelt, S. & Alves, A. (eds.),
+      Transdisciplinary Perspectives on Complex Systems. Springer.

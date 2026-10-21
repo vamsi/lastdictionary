@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generative agent
+id: generative-agent
+pos: n.
+also:
+  - generative agents
+  - Smallville
+  - generative agent simulation
+domain: agents
+domains:
+  - society
+  - llm
+level: specialist
+plain: >-
+  A character in a computer simulation, run by a language model, that keeps a diary-like memory,
+  draws lessons from it and schedules its days, so that a group of them can act like a plausible
+  small community.
+senses:
+  - definition: >-
+      A software character driven by a [[large-language-model|large language model]] and given
+      memory, reflection and planning so that its conduct stays humanlike over long stretches. In
+      the design of Joon Sung Park and colleagues (2023), every observation is logged in plain
+      language in a 'memory stream'; a retrieval step ranks memories by recency, importance and
+      relevance to choose what enters the prompt; the agent periodically condenses memories into
+      higher-level insights; and it drafts and revises plans at several time scales. Twenty-five
+      such agents in a Sims-like sandbox town kept daily routines and built relationships, and one
+      seeded idea — a resident's plan for a Valentine's Day party — spread by word of mouth until
+      guests arrived together. Generative agents are used for social-science simulation, games, user
+      research and policy modeling; critics caution that simulated people may reproduce stereotypes
+      and should not be mistaken for real survey respondents.
+    example: >-
+      We piloted the questionnaire on generative agents first, then checked their answers against
+      real respondents.
+origin: >-
+  Introduced by Joon Sung Park, Joseph C. O'Brien, Carrie J. Cai, Meredith Ringel Morris, Percy
+  Liang and Michael S. Bernstein (Stanford University and Google) in 'Generative Agents: Interactive
+  Simulacra of Human Behavior', posted on 7 April 2023 and presented at the ACM UIST conference in
+  October 2023.
+year: 2023
+note: >-
+  The memory-stream-with-reflection design influenced later [[agent-memory|agent memory]] systems.
+  Not to be confused with a [[generative-model|generative model]] in general.
+see_also:
+  - agent memory
+  - multi-agent system
+  - AI agent
+  - long-term memory
+  - simulator theory
+sources:
+  - text: >-
+      Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P. & Bernstein, M. S. (2023).
+      Generative Agents: Interactive Simulacra of Human Behavior. arXiv:2304.03442 (UIST 2023).
+    url: https://arxiv.org/abs/2304.03442

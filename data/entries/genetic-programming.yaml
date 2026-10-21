@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: genetic programming
+id: genetic-programming
+pos: n.
+also:
+  - GP
+  - tree-based genetic programming
+  - linear genetic programming
+  - Cartesian genetic programming
+  - bloat
+domain: sym
+domains:
+  - ml
+level: specialist
+plain: >-
+  Using simulated evolution to write computer programs: random programs compete at a task, and the
+  best are combined and mutated over many generations until one does the task well.
+senses:
+  - definition: >-
+      A branch of [[evolutionary-computation|evolutionary computation]] that evolves computer
+      programs rather than fixed-length strings of parameters. In the classic tree-based form, each
+      individual is a program represented as a syntax tree built from a function set (such as +, ×,
+      if-then-else) and a terminal set (inputs and constants); fitness measures performance on test
+      cases, crossover swaps randomly chosen subtrees between parents, and mutation replaces a
+      subtree with a random one. Linear and Cartesian variants represent programs as instruction
+      sequences or graphs. Genetic programming is a form of [[program-synthesis|program synthesis]]
+      and the classic method for [[symbolic-regression|symbolic regression]]; it has produced
+      patentable circuit designs and other results judged competitive with human work, but suffers
+      from bloat — programs growing without improving — and high evaluation cost. Recent systems
+      such as [[alphaevolve|AlphaEvolve]] replace random syntactic mutation with edits proposed by
+      [[large-language-model|language models]].
+origin: >-
+  Nichael Cramer described tree-based program evolution in 1985, following earlier experiments such
+  as Richard Friedberg's (1958). John Koza developed the approach from 1988 (IJCAI-89 paper) and
+  popularized it, culminating in his book Genetic Programming: On the Programming of Computers by
+  Means of Natural Selection (1992); the name itself is sometimes credited to David Goldberg.
+year: 1990
+see_also:
+  - genetic algorithm
+  - evolutionary computation
+  - program synthesis
+  - symbolic regression
+  - AlphaEvolve
+  - fitness function
+sources:
+  - text: >-
+      Cramer, N. L. (1985). A Representation for the Adaptive Generation of Simple Sequential
+      Programs. Proceedings of the 1st International Conference on Genetic Algorithms, 183–187.
+  - text: >-
+      Koza, J. R. (1992). Genetic Programming: On the Programming of Computers by Means of Natural
+      Selection. MIT Press.
+as_of: 2026-10

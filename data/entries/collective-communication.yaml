@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: collective communication
+id: collective-communication
+pos: n.
+also:
+  - collectives
+  - collective operation
+  - all-gather
+  - reduce-scatter
+  - all-to-all
+  - broadcast
+domain: train
+domains:
+  - hw
+level: specialist
+plain: >-
+  The standard patterns by which a whole group of chips exchanges data at once — for example,
+  everyone adding up their numbers and all getting the total — which large training jobs use
+  constantly.
+senses:
+  - definition: >-
+      Communication operations in which every process in a group participates, as opposed to
+      point-to-point sends between pairs. The standard set includes broadcast (one process's data to
+      all), reduce (combine everyone's data, for example by summing, onto one process),
+      [[all-reduce|all-reduce]] (combine and give everyone the result), all-gather (everyone
+      receives the concatenation of all pieces), reduce-scatter (combine, then give each process one
+      shard of the result), all-to-all (each process sends a distinct piece to every other) and
+      barrier (synchronization). [[distributed-training|Distributed training]] is built from them:
+      [[data-parallelism|data parallelism]] uses all-reduce, [[zero|ZeRO]] and
+      [[fully-sharded-data-parallel|FSDP]] use all-gather and reduce-scatter, and
+      [[expert-parallelism|expert parallelism]] uses all-to-all. Libraries such as MPI,
+      [[nccl|NCCL]], AMD's RCCL and Gloo implement them with ring, tree or hierarchical algorithms
+      chosen for message size and network topology; their bandwidth and latency often cap training
+      efficiency.
+origin: >-
+  Collective operations were standardized for parallel computing in the Message Passing Interface
+  (MPI-1, 1994), building on earlier libraries for hypercube and cluster computers. Deep learning
+  adopted them from high-performance computing in the mid-2010s, notably through NVIDIA's NCCL
+  (2016) and ring all-reduce implementations.
+year: 1994
+see_also:
+  - all-reduce
+  - NCCL
+  - distributed training
+  - data parallelism
+  - interconnect
+  - expert parallelism
+contrast:
+  - parameter server
+sources:
+  - text: >-
+      Message Passing Interface Forum (1994). MPI: A Message-Passing Interface Standard, version 1.0.

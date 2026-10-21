@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Cyc
+id: cyc
+pos: prop. n.
+also:
+  - Cycorp
+  - OpenCyc
+  - CycL
+pronunciation: SYKE
+domain: sym
+domains:
+  - hist
+labels:
+  - trademark
+level: core
+plain: >-
+  An AI system built by specialists who spent decades typing in millions of everyday truths, such as
+  'people cannot be in two places at once', hoping to give computers common sense.
+senses:
+  - definition: >-
+      A very large [[knowledge-base|knowledge base]] and reasoning system that aims to encode the
+      commonsense knowledge underlying ordinary human understanding, written by trained knowledge
+      engineers in CycL, an expressive higher-order logical language. Knowledge is organized as a
+      very large [[ontology|ontology]] of concepts with millions of assertions, partitioned into
+      microtheories — contexts such as modern medicine or a particular work of fiction — so that
+      locally consistent but globally conflicting beliefs can coexist. An
+      [[inference-engine|inference engine]] with many specialized reasoning modules answers queries
+      and can explain its conclusions. Cyc has been applied to intelligence analysis, querying of
+      medical records and enterprise data integration, and has been released in limited forms
+      (OpenCyc, ResearchCyc). Critics point to its cost, closed development and limited demonstrated
+      generality; supporters regard it as the most serious attempt to engineer common sense
+      explicitly, and as a potential complement to [[large-language-model|language models]].
+origin: >-
+  Begun by Douglas Lenat in 1984 at the Microelectronics and Computer Technology Corporation (MCC)
+  in Austin, Texas, as a ten-year effort, and spun off as the company Cycorp in 1994. Lenat led the
+  project until his death in 2023. The name comes from 'encyclopedia'.
+year: 1984
+note: >-
+  A touchstone in debates about the [[knowledge-acquisition-bottleneck|knowledge acquisition
+  bottleneck]]: Cyc shows both that common sense can be partly codified and how much effort that
+  takes. Published counts of its concepts and assertions vary by source and date.
+see_also:
+  - commonsense reasoning
+  - knowledge base
+  - ontology
+  - knowledge engineering
+  - knowledge acquisition bottleneck
+  - symbolic AI
+sources:
+  - text: >-
+      Lenat, D. B. & Guha, R. V. (1990). Building Large Knowledge-Based Systems: Representation and
+      Inference in the Cyc Project. Addison-Wesley.
+  - text: >-
+      Lenat, D. B. (1995). CYC: A Large-Scale Investment in Knowledge Infrastructure. Communications
+      of the ACM 38(11), 33–38.

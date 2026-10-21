@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RAISE Act
+id: raise-act
+pos: prop. n.
+also:
+  - Responsible AI Safety and Education Act
+  - New York RAISE Act
+domain: gov
+domains:
+  - safety
+labels:
+  - legal
+level: core
+plain: >-
+  A New York law requiring the largest AI developers to publish how they manage catastrophic risks
+  and to report serious safety incidents quickly to a new state office. It takes effect in 2027.
+senses:
+  - definition: >-
+      New York's frontier-AI safety statute, the Responsible AI Safety and Education Act. As amended
+      in March 2026, it applies to [[frontier-model|frontier models]] —
+      [[foundation-model|foundation models]] trained with more than 10²⁶ operations, counting later
+      fine-tuning, reinforcement learning and other material modifications — that are developed,
+      deployed or operating in New York. 'Large frontier developers' (with affiliates, over $500
+      million in annual revenue) must publish a frontier AI framework describing how they assess and
+      mitigate catastrophic risk, issue transparency reports when releasing new or substantially
+      modified models, send periodic summaries of catastrophic-risk assessments to the regulator,
+      and file renewable disclosure statements with an assessment fee. Critical safety incidents
+      must be reported within 72 hours, or 24 hours if there is imminent risk of death or serious
+      injury. A new office within the Department of Financial Services oversees the law with broad
+      rulemaking power; penalties reach $1 million for a first violation and $3 million for later
+      ones. It takes effect on January 1, 2027.
+    example: >-
+      Under the RAISE Act, the lab has 72 hours to report a critical safety incident to the DFS
+      office.
+origin: >-
+  Sponsored by State Senator Andrew Gounardes and Assemblymember Alex Bores and passed in June 2025
+  in a stricter form, which banned deploying models posing an unreasonable risk of critical harm and
+  allowed penalties of up to $30 million. Governor Kathy Hochul signed it in December 2025 on
+  condition of chapter amendments aligning it with California's [[sb-53|SB 53]]; she signed those on
+  March 27, 2026.
+year: 2025
+note: >-
+  Compared with SB 53 it has a shorter incident deadline, higher repeat penalties, a dedicated
+  regulator and fees, but no whistleblower section (dropped in 2026). It exempts academic research
+  at New York universities and the Empire AI consortium. The amendments also removed the original
+  annual third-party audit.
+see_also:
+  - SB 53
+  - SB 1047
+  - frontier model
+  - compute threshold
+  - AI preemption
+  - AI whistleblower protections
+sources:
+  - text: >-
+      Cooley LLP (2026). New York's Frontier AI Law Gets a California Makeover – With Some Key
+      Differences.
+    url: https://www.cooley.com/news/insight/2026/2026-03-31-new-yorks-frontier-ai-law-gets-a-california-makeover-with-some-key-differences
+standards: New York RAISE Act (2025), as amended by chapter amendment signed March 27, 2026
+as_of: 2026-10

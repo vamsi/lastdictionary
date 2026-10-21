@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: style transfer
+id: style-transfer
+pos: n.
+also:
+  - neural style transfer
+  - artistic style transfer
+  - NST
+domain: gen
+domains:
+  - percep
+  - culture
+level: core
+plain: >-
+  Repainting a photo in the style of an artwork — your street as Van Gogh might have painted it — by
+  keeping the photo's content and borrowing the painting's colors, strokes and textures.
+senses:
+  - definition: >-
+      The rendering of the content of one image in the visual style of another. In neural style
+      transfer both are described by features of a pretrained
+      [[convolutional-neural-network|convolutional neural network]] (classically VGG): content by
+      the activations of a deeper layer, and style by the correlations between feature channels —
+      Gram matrices — at several layers, which capture texture while discarding layout. The original
+      method optimizes the pixels of an output image by gradient descent to match the content
+      features of one image and the style statistics of the other, taking minutes per image.
+      Feed-forward networks trained with the same [[perceptual-loss|perceptual losses]] (2016) made
+      it real-time, and adaptive instance normalization (2017) handled arbitrary styles in one pass
+      — an idea later reused in [[stylegan|StyleGAN]]. Today [[diffusion-model|diffusion models]]
+      perform style transfer through prompts, reference-image adapters or fine-tuning.
+    example: The app's style transfer turned every holiday snap into a passable woodcut.
+origin: >-
+  Leon Gatys, Alexander Ecker and Matthias Bethge introduced neural style transfer in 'A Neural
+  Algorithm of Artistic Style' (posted August 2015). Justin Johnson and colleagues made it real-time
+  in 2016, and phone apps such as Prisma (2016) turned it into a mass phenomenon. Earlier work on
+  texture synthesis and 'image analogies' pursued the same goal without neural networks.
+year: 2015
+note: >-
+  Style transfer raises the questions that surround [[ai-art|AI art]]: an artist's style is
+  generally not protected by copyright, but imitating living artists with models trained on their
+  work is contested, and tools such as Glaze and [[nightshade|Nightshade]] try to disrupt style
+  mimicry.
+see_also:
+  - perceptual loss
+  - image-to-image translation
+  - AI art
+  - StyleGAN
+  - convolutional neural network
+  - DeepDream
+sources:
+  - text: >-
+      Gatys, L. A., Ecker, A. S. & Bethge, M. (2015). A Neural Algorithm of Artistic Style.
+      arXiv:1508.06576.
+    url: https://arxiv.org/abs/1508.06576
+  - text: >-
+      Johnson, J., Alahi, A. & Fei-Fei, L. (2016). Perceptual Losses for Real-Time Style Transfer
+      and Super-Resolution. ECCV 2016.

@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: proximal policy optimization
+id: proximal-policy-optimization
+pos: n.
+also:
+  - PPO
+  - PPO-Clip
+  - PPO-Penalty
+  - clipped surrogate objective
+domain: rl
+domains:
+  - train
+  - llm
+level: core
+plain: >-
+  A widely used method for training AI by trial and error that improves the strategy in small, safe
+  steps; it was the workhorse behind training chatbots like ChatGPT with human feedback.
+senses:
+  - definition: >-
+      A [[policy-gradient|policy gradient]] algorithm that keeps each update close to the previous
+      [[policy|policy]] with a simple first-order objective instead of the hard constraint of
+      [[trust-region-policy-optimization|TRPO]]. Its main form, PPO-Clip, multiplies the
+      [[advantage-function|advantage]] estimate by the probability ratio between new and old
+      policies, clips that ratio to [1 − ε, 1 + ε] (typically ε = 0.1–0.2) and takes the more
+      pessimistic of the clipped and unclipped terms, removing the incentive for large policy
+      changes. This lets PPO run several epochs of minibatch gradient ascent on each batch of
+      [[on-policy|on-policy]] [[rollout|rollouts]], usually with
+      [[generalized-advantage-estimation|generalized advantage estimation]], a value-function loss
+      and an [[entropy-regularization|entropy bonus]]. Simple and robust, it became the default deep
+      RL algorithm (OpenAI Five used it for Dota 2) and the standard optimizer of
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]],
+      with a [[kl-penalty|KL penalty]] toward a [[reference-model|reference model]], for InstructGPT
+      and ChatGPT. Since 2024, critic-free variants such as
+      [[group-relative-policy-optimization|GRPO]] have become popular alternatives for training
+      [[reasoning-model|reasoning models]].
+    example: >-
+      PPO training diverged until we normalized advantages and lowered the clip range to 0.1.
+formula_latex: L^{\text{CLIP}}(\theta) = \mathbb{E}_t\left[ \min\left( \rho_t(\theta)\hat{A}_t,\;
+  \operatorname{clip}\left(\rho_t(\theta), 1-\epsilon, 1+\epsilon\right)\hat{A}_t \right) \right],
+  \quad \rho_t(\theta) = \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)}
+origin: >-
+  Introduced by John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford and Oleg Klimov of
+  OpenAI in 'Proximal Policy Optimization Algorithms' (arXiv, 20 July 2017), with a blog post and an
+  implementation in OpenAI Baselines. OpenAI used it to fine-tune language models from human
+  preferences from 2019, and its use for InstructGPT (2022) and ChatGPT carried it from games and
+  robotics into mainstream language-model training.
+year: 2017
+note: >-
+  Results are notoriously sensitive to implementation details — advantage normalization, value
+  clipping, learning-rate annealing, observation normalization — as documented by Logan Engstrom and
+  colleagues (2020) and in Shengyi Huang and colleagues' catalog of 37 PPO implementation details
+  (2022).
+see_also:
+  - trust region policy optimization
+  - policy gradient
+  - generalized advantage estimation
+  - reinforcement learning from human feedback
+  - group relative policy optimization
+  - KL penalty
+  - actor–critic
+contrast:
+  - direct preference optimization
+sources:
+  - text: >-
+      Schulman, J., Wolski, F., Dhariwal, P., Radford, A. & Klimov, O. (2017). Proximal Policy
+      Optimization Algorithms. arXiv:1707.06347.
+    url: https://arxiv.org/abs/1707.06347
+  - text: >-
+      Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback.
+      NeurIPS 2022.
+  - text: >-
+      Engstrom, L. et al. (2020). Implementation Matters in Deep RL: A Case Study on PPO and TRPO.
+      ICLR 2020.
+as_of: 2026-10

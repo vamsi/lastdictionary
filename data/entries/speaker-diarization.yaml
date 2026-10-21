@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: speaker diarization
+id: speaker-diarization
+pos: n.
+also:
+  - diarization
+  - diarisation
+  - speaker diarisation
+  - who spoke when
+  - diarization error rate
+  - DER
+  - pyannote
+domain: percep
+domains:
+  - eng
+level: core
+plain: >-
+  Working out who spoke when in a recording, splitting a meeting or phone call into turns labeled
+  Speaker 1, Speaker 2 and so on, without necessarily knowing who the speakers are.
+senses:
+  - definition: >-
+      The task of answering 'who spoke when' in an audio recording: dividing the speech into
+      stretches and grouping together those produced by the same voice, so that each speaker
+      receives a consistent label, anonymous unless matched to enrolled voices. A classic pipeline
+      applies [[voice-activity-detection|voice activity detection]], splits speech into short
+      segments or detects speaker changes, computes a speaker [[embedding|embedding]] for each
+      segment (i-vectors, then neural x-vectors and ECAPA-TDNN embeddings), and
+      [[clustering|clusters]] the embeddings, agglomeratively or spectrally, to decide how many
+      speakers there are and which segments belong together, before refining the boundaries.
+      Overlapping speech, frequent in meetings, defeats pure clustering, so end-to-end neural
+      diarization (from 2019) and hybrid systems such as pyannote.audio predict several active
+      speakers per frame. Accuracy is measured by diarization error rate (DER): the fraction of
+      speech time that is missed, falsely detected or attributed to the wrong speaker. Combined with
+      [[speech-recognition|speech recognition]], diarization yields speaker-attributed transcripts
+      of meetings, interviews, call-center conversations, broadcasts and medical consultations.
+    example: >-
+      Diarization merges the two interviewers whenever they talk over each other, so questions get
+      attributed to the wrong person.
+formula_latex: \text{DER} = \frac{T_{\text{false alarm}} + T_{\text{missed}} +
+  T_{\text{confusion}}}{T_{\text{total speech}}}
+origin: >-
+  From 'diary', a record of events. The term became established in the 2000s through the US NIST
+  Rich Transcription evaluations of broadcast news, telephone and meeting speech, which scored 'who
+  spoke when' separately from transcription; its earliest use has not been traced. The DIHARD
+  challenges (from 2018) later targeted difficult real-world audio.
+note: >-
+  Diarization groups speech by speaker but does not identify people; naming them requires
+  [[speaker-verification|speaker verification]] or identification against enrolled voices, with the
+  privacy implications that brings.
+see_also:
+  - speaker verification
+  - voice activity detection
+  - speech recognition
+  - clustering
+  - embedding
+  - sound event detection
+contrast:
+  - speaker verification
+sources:
+  - text: >-
+      Anguera, X., Bozonnet, S., Evans, N., Fredouille, C., Friedland, G. & Vinyals, O. (2012).
+      Speaker Diarization: A Review of Recent Research. IEEE Transactions on Audio, Speech, and
+      Language Processing 20(2), 356–370.
+  - text: >-
+      Park, T. J., Kanda, N., Dimitriadis, D., Han, K. J., Watanabe, S. & Narayanan, S. (2022). A
+      Review of Speaker Diarization: Recent Advances with Deep Learning. Computer Speech & Language
+      72.

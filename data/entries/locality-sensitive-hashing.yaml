@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: locality-sensitive hashing
+id: locality-sensitive-hashing
+pos: n.
+also:
+  - LSH
+domain: data
+domains:
+  - math
+  - agents
+level: specialist
+plain: >-
+  A trick for finding look-alikes in a huge collection without comparing every pair: items get short
+  codes designed so that similar items tend to share a code, and only items sharing one are
+  compared.
+senses:
+  - definition: >-
+      A family of hashing schemes in which the chance that two items receive the same hash value
+      rises with their similarity, so that near neighbors can be found by comparing only items that
+      collide; ordinary and cryptographic hashes aim at the opposite, scattering even nearly
+      identical inputs. Each LSH family matches a similarity measure: [[minhash|MinHash]] for
+      [[jaccard-similarity|Jaccard similarity]] between sets, random-hyperplane hashing (SimHash)
+      for angles between vectors ([[cosine-similarity|cosine similarity]]), and projections onto
+      random lines for [[euclidean-distance|Euclidean distance]]. Because a single hash is noisy,
+      schemes are amplified: signatures are split into b bands of r values each, and two items
+      become candidates if any band matches exactly, which turns similarity into a sharp, tunable
+      threshold. LSH powers near-duplicate detection in web crawls and training corpora and was an
+      early method for [[approximate-nearest-neighbor-search|approximate nearest neighbor search]],
+      though graph-based indexes such as [[hnsw|HNSW]] now dominate vector retrieval.
+    example: >-
+      With 20 bands of 5 rows, pairs above about 0.55 Jaccard similarity become candidates.
+formula_latex: P(\text{candidate} \mid s) = 1 - \left(1 - s^{r}\right)^{b}
+origin: >-
+  Introduced by Piotr Indyk and Rajeev Motwani at STOC 1998 to escape the 'curse of dimensionality'
+  in nearest-neighbor search, building on Broder's MinHash. Aristides Gionis, Indyk and Motwani
+  applied it to similarity search in databases (1999), and Moses Charikar's 2002 random-hyperplane
+  scheme became known as SimHash.
+year: 1998
+see_also:
+  - MinHash
+  - deduplication
+  - Jaccard similarity
+  - approximate nearest neighbor search
+  - cosine similarity
+  - vector search
+sources:
+  - text: >-
+      Indyk, P. & Motwani, R. (1998). Approximate Nearest Neighbors: Towards Removing the Curse of
+      Dimensionality. Proceedings of STOC 1998.
+  - text: >-
+      Charikar, M. S. (2002). Similarity Estimation Techniques from Rounding Algorithms. Proceedings
+      of STOC 2002.

@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Cerebras
+id: cerebras
+pos: prop. n.
+also:
+  - Cerebras Systems
+  - CS-3
+pronunciation: SER-uh-bruss
+domain: orgs
+domains:
+  - hw
+level: specialist
+plain: >-
+  An American chip company that makes a single giant processor the size of a whole silicon wafer,
+  used to train and run AI models very quickly.
+senses:
+  - definition: >-
+      An American AI hardware company that builds the [[wafer-scale-engine|wafer-scale engine]], a
+      processor made from an entire silicon wafer rather than a single small die, with hundreds of
+      thousands of cores and large amounts of on-chip [[sram|SRAM]] that sidestep much of the
+      [[memory-wall|memory wall]] faced by GPUs. Its third generation, WSE-3 (2024), has about 4
+      trillion transistors and 900,000 cores and is manufactured by [[tsmc|TSMC]]. First sold as
+      CS-series systems for training, it turned in 2024 toward a cloud [[inference|inference]]
+      service that serves language models at very high token rates, with users including Meta's
+      Llama API, Mistral AI and Perplexity, and in January 2026 it agreed a multiyear deal to supply
+      computing to OpenAI. Its dependence on the Abu Dhabi firm G42 as a customer and investor
+      delayed a planned stock listing during a US national-security review.
+origin: >-
+  Founded in 2015 in Sunnyvale, California, by Andrew Feldman, its chief executive, Gary Lauterbach,
+  Michael James, Sean Lie and Jean-Philippe Fricker, who had worked together at the server maker
+  SeaMicro; it unveiled its first wafer-scale chip in August 2019.
+year: 2015
+see_also:
+  - wafer-scale engine
+  - AI accelerator
+  - inference
+  - SRAM
+  - memory wall
+  - Nvidia
+as_of: 2026-10

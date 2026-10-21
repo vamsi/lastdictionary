@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model-agnostic
+id: model-agnostic
+pos: adj.
+also:
+  - model-independent
+domain: interp
+domains:
+  - ml
+level: specialist
+plain: >-
+  Describes a method that works with any kind of AI model, because it only needs to feed the model
+  inputs and observe its outputs, never to look inside.
+senses:
+  - definition: >-
+      Of an explanation or analysis method: applicable to any predictive model because it relies
+      only on querying the model with inputs and observing outputs, without access to its
+      parameters, gradients or architecture. [[lime|LIME]], KernelSHAP, [[anchors|Anchors]],
+      [[partial-dependence-plot|partial dependence]],
+      [[individual-conditional-expectation|individual conditional expectation]],
+      [[accumulated-local-effects|accumulated local effects]], permutation
+      [[feature-importance|feature importance]], global [[surrogate-model|surrogates]] and many
+      [[counterfactual-explanation|counterfactual explanation]] generators are model-agnostic. This
+      lets them compare different model types on a common footing and explain models reachable only
+      through an API. The price is cost and fidelity: they need many queries, may probe unrealistic
+      inputs, and cannot exploit internal structure. Model-specific methods — gradients for neural
+      networks ([[integrated-gradients|integrated gradients]], [[grad-cam|Grad-CAM]]), TreeSHAP for
+      tree ensembles, [[probing|probing]] and [[activation-patching|activation patching]] for
+      transformers — are faster or more precise but tied to one model family.
+    example: >-
+      Since the vendor exposed only a scoring API, we were limited to model-agnostic explanations.
+origin: >-
+  Popularized in explainability by Marco Tulio Ribeiro, Sameer Singh and Carlos Guestrin's
+  'Model-Agnostic Interpretability of Machine Learning' (ICML Workshop on Human Interpretability,
+  2016) and their LIME paper the same year.
+year: 2016
+note: >-
+  In [[meta-learning|meta-learning]], 'model-agnostic' (as in MAML, Chelsea Finn and colleagues,
+  2017) means applicable to any model trained by gradient descent — a different notion from
+  explaining a model through queries alone.
+see_also:
+  - LIME
+  - SHAP
+  - post hoc explanation
+  - surrogate model
+  - black box
+  - feature attribution
+sources:
+  - text: >-
+      Ribeiro, M. T., Singh, S. & Guestrin, C. (2016). Model-Agnostic Interpretability of Machine
+      Learning. ICML Workshop on Human Interpretability in Machine Learning (WHI 2016).

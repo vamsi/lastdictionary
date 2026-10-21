@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BIG-bench
+id: big-bench
+pos: prop. n.
+also:
+  - Beyond the Imitation Game benchmark
+  - BIG-Bench Hard
+  - BBH
+  - BIG-Bench Lite
+domain: eval
+domains:
+  - llm
+level: core
+plain: >-
+  A huge collaborative test of 204 tasks, written by hundreds of researchers, built to probe what
+  language models can and cannot do as they grow larger.
+senses:
+  - definition: >-
+      A crowdsourced benchmark whose 204 tasks, submitted by researchers from 132 institutions (450
+      authors in all), target abilities the [[large-language-model|language models]] of the day were
+      expected to lack, so that gains with scale could be charted. Subjects run from linguistics and
+      arithmetic to code, science, social bias and common sense; most tasks are JSON files scored by
+      exact answers or multiple choice, the rest small programs. Its analysis is best known for
+      finding that abrupt 'breakthrough' jumps at a particular scale tended to occur on multi-step
+      tasks or under all-or-nothing metrics, while steady gains came mostly on knowledge-heavy tasks
+      — evidence central to debates over [[emergent-abilities|emergent abilities]]; overall, bigger
+      models scored higher and were better [[calibration|calibrated]] but remained weak in absolute
+      terms. BIG-Bench Hard (BBH), a 23-task subset on which models had trailed average human
+      raters, became a standard test of [[chain-of-thought|chain of thought]] prompting. Task files
+      carry a [[canary-string|canary string]] to help keep them out of training data.
+    example: >-
+      On BIG-Bench Hard, chain-of-thought prompting lifts the model above the average human rater.
+origin: >-
+  Organized from 2021 by researchers at Google with outside collaborators; the paper 'Beyond the
+  Imitation Game', led by Aarohi Srivastava, appeared on arXiv in June 2022 and in Transactions on
+  Machine Learning Research in 2023. Mirac Suzgun and colleagues introduced BIG-Bench Hard in
+  October 2022.
+year: 2022
+note: >-
+  The name alludes to Alan Turing's 'imitation game', the original form of the [[turing-test|Turing
+  test]]. Task quality varies because tasks were volunteered, so most later work reports BBH or
+  BIG-Bench Lite rather than the full suite.
+see_also:
+  - benchmark
+  - emergent abilities
+  - chain of thought
+  - canary string
+  - HELM
+  - Turing test
+sources:
+  - text: >-
+      Srivastava, A. et al. (2022). Beyond the Imitation Game: Quantifying and extrapolating the
+      capabilities of language models. arXiv:2206.04615; TMLR (2023).
+    url: https://arxiv.org/abs/2206.04615
+  - text: >-
+      Suzgun, M. et al. (2023). Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve
+      Them. Findings of ACL 2023.

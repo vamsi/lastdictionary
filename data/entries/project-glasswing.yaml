@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Project Glasswing
+id: project-glasswing
+pos: prop. n.
+also:
+  - Claude Mythos Preview
+domain: sec
+domains:
+  - gov
+  - safety
+labels:
+  - trademark
+  - emerging
+level: specialist
+plain: >-
+  An Anthropic program, launched in 2026, that gave a hacking-capable AI model only to organizations
+  defending important software instead of releasing it to everyone.
+senses:
+  - definition: >-
+      An industry initiative led by [[anthropic|Anthropic]] that gives restricted access to Claude
+      Mythos Preview — a model the company judged too capable at finding and exploiting software
+      vulnerabilities for general release — to organizations that maintain critical software, so
+      they can find and fix flaws before attackers do. Launch partners included Amazon Web Services,
+      Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, the Linux Foundation, Microsoft,
+      Nvidia and Palo Alto Networks, and access was extended to more than 40 further organizations.
+      Anthropic committed up to US$100 million in usage credits and US$4 million in donations to
+      open-source security groups, and reported that the model had already turned up thousands of
+      serious vulnerabilities, affecting every major operating system and web browser. It is a
+      prominent example of defender-first [[staged-deployment|staged deployment]] of a model with
+      dangerous capabilities.
+    example: >-
+      Our maintainers got Mythos access through Project Glasswing and patched three decades-old
+      parser bugs.
+origin: >-
+  Announced by Anthropic on 7 April 2026 together with Claude Mythos Preview. Access to Anthropic's
+  later models Claude Fable 5 and Claude Mythos 5 was suspended from 12 June 2026 under a US
+  government [[export-control-directive|export control directive]] that was lifted at the end of
+  that month.
+year: 2026
+note: >-
+  Capability figures are Anthropic's own and were not independently verified at launch.
+see_also:
+  - staged deployment
+  - AI-assisted vulnerability discovery
+  - dual-use
+  - export control directive
+  - ExploitGym
+  - Anthropic
+sources:
+  - text: >-
+      Constellation Research (2026). Anthropic launches Project Glasswing, Claude Mythos Preview in
+      AI cybersecurity push. 7 April 2026.
+    url: https://www.constellationr.com/insights/news/anthropic-launches-project-glasswing-claude-mythos-preview-ai-cybersecurity-push
+  - text: >-
+      VentureBeat (2026). Anthropic says its most powerful AI cyber model is too dangerous to
+      release. April 2026.
+    url: https://venturebeat.com/data/anthropic-says-its-most-powerful-ai-cyber-model-is-too-dangerous-to-release
+as_of: 2026-10

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: adversarial machine learning
+id: adversarial-machine-learning
+pos: n.
+also:
+  - adversarial ML
+  - AML
+domain: sec
+domains:
+  - ml
+  - dl
+level: core
+plain: >-
+  The study of how machine-learning systems can be fooled, corrupted or spied on by someone working
+  deliberately against them, and of how to build systems that hold up.
+senses:
+  - definition: >-
+      The branch of machine-learning research that models a deliberate opponent, one who tampers
+      with training data, crafts inputs or exploits query access to make a model misbehave or leak
+      information, and that designs and tests countermeasures. Attacks are classified by the
+      adversary's goal (violating integrity, availability or privacy), knowledge
+      ([[white-box-attack|white-box]] or [[black-box-attack|black-box]]) and point of access:
+      training time ([[data-poisoning|data poisoning]], [[backdoor-attack|backdoors]]), deployment
+      time ([[evasion-attack|evasion]] with [[adversarial-example|adversarial examples]]), or
+      repeated queries ([[model-extraction|model extraction]], [[model-inversion|model inversion]],
+      [[membership-inference-attack|membership inference]]). Defenses include
+      [[adversarial-training|adversarial training]], [[certified-robustness|certified]] methods,
+      data sanitization and [[differential-privacy|differential privacy]]. A central methodological
+      lesson is that a defense must be evaluated against an adaptive attacker who knows how it
+      works.
+    example: >-
+      Following the usual adversarial machine learning taxonomy, we assume a black-box attacker with
+      query access only.
+origin: >-
+  Work on spam-filter evasion framed classification as a game between learner and adversary (Nilesh
+  Dalvi and colleagues, KDD 2004; Daniel Lowd and Christopher Meek, 2005). Marco Barreno and
+  colleagues proposed an attack taxonomy in 2006, and 'Adversarial Machine Learning' was the title
+  of a 2011 paper by Ling Huang and colleagues. Interest exploded after deep networks were shown in
+  2013 to be vulnerable to adversarial examples.
+year: 2004
+note: >-
+  Unrelated to [[generative-adversarial-network|generative adversarial networks]], which use an
+  internal adversarial game as a training method rather than modeling an external attacker.
+see_also:
+  - AI security
+  - adversarial example
+  - evasion attack
+  - data poisoning
+  - model extraction
+  - membership inference attack
+  - threat model
+contrast:
+  - generative adversarial network
+sources:
+  - text: >-
+      Huang, L., Joseph, A. D., Nelson, B., Rubinstein, B. I. P. & Tygar, J. D. (2011). Adversarial
+      Machine Learning. Proc. 4th ACM Workshop on Security and Artificial Intelligence (AISec).
+  - text: >-
+      Biggio, B. & Roli, F. (2018). Wild Patterns: Ten Years After the Rise of Adversarial Machine
+      Learning. Pattern Recognition 84.

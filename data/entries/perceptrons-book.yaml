@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Perceptrons (book)
+id: perceptrons-book
+pos: prop. n.
+also:
+  - "Perceptrons: An Introduction to Computational Geometry"
+  - Minsky and Papert
+domain: hist
+domains:
+  - dl
+  - math
+labels:
+  - historical
+  - contested
+level: core
+plain: >-
+  A 1969 book by Marvin Minsky and Seymour Papert proving that simple one-layer neural networks
+  cannot learn certain patterns. It is widely blamed for a decade-long slump in neural-network
+  research.
+senses:
+  - definition: >-
+      A mathematical monograph by [[marvin-minsky|Marvin Minsky]] and Seymour Papert (MIT Press,
+      1969) analyzing what single-layer [[perceptron|perceptrons]] can and cannot compute. Treating
+      a perceptron as a weighted vote over local features of an image, the authors proved that
+      properties such as parity and connectedness require either features that see the whole input
+      or numbers of features and weights that grow impractically with image size; the two-input case
+      of parity is the [[xor-problem|XOR problem]]. The book acknowledged that networks with hidden
+      layers escape these limits but doubted that any effective training method for them would be
+      found. It appeared as funding and attention were shifting to [[symbolic-ai|symbolic AI]], and
+      neural-network research declined sharply in the 1970s. An expanded 1988 edition added an
+      epilogue responding to [[parallel-distributed-processing|Parallel Distributed Processing]] and
+      [[backpropagation|backpropagation]].
+    example: >-
+      Perceptrons proved that a single-layer network with local features cannot tell whether a
+      figure is connected.
+origin: >-
+  Grew out of Minsky and Papert's work at the MIT AI Laboratory in the mid-1960s and was published
+  in 1969. The subtitle, An Introduction to Computational Geometry, reflects the authors' view of
+  the work as mathematics rather than a polemic.
+year: 1969
+note: >-
+  How far the book caused the neural-network slump is contested. The authors and some historians say
+  it was misread; others point equally to earlier overclaiming, Frank Rosenblatt's death in 1971 and
+  the lack, until the 1980s, of a practical way to train hidden layers.
+see_also:
+  - perceptron
+  - XOR problem
+  - Mark I Perceptron
+  - connectionism
+  - AI winter
+  - multilayer perceptron
+sources:
+  - text: >-
+      Minsky, M. & Papert, S. (1969). Perceptrons: An Introduction to Computational Geometry.
+      Cambridge, MA: MIT Press. Expanded edition 1988.

@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: large language model
+id: large-language-model
+pos: n.
+also:
+  - LLM
+  - LLMs
+  - large language models
+domain: llm
+domains:
+  - core
+  - dl
+  - society
+level: essential
+plain: >-
+  A computer program trained on enormous amounts of text to predict the words that come next. At
+  vast scale, that simple skill lets it chat, answer questions, translate, summarize and write code.
+senses:
+  - definition: >-
+      A [[language-model|language model]] of very large scale — billions to trillions of
+      [[parameter|parameters]], today almost always arranged as a
+      [[decoder-only-transformer|decoder-only transformer]] — whose core skill,
+      [[next-token-prediction|next-token prediction]], is learned during [[pretraining|pretraining]]
+      on trillions of [[token|tokens]] of text, often with code, images and audio, the text itself
+      supplying the training targets ([[self-supervised-learning|self-supervised learning]]).
+      Pretraining yields a [[base-model|base model]] that continues text;
+      [[post-training|post-training]] such as [[instruction-tuning|instruction tuning]] and
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]]
+      turns it into a [[chat-model|chat model]] or [[reasoning-model|reasoning model]] that follows
+      instructions. Because a single model can perform many tasks described in a [[prompt|prompt]],
+      through [[in-context-learning|in-context learning]] rather than task-specific training, LLMs
+      displaced most specialized [[natural-language-processing|natural language processing]] systems
+      after 2020 and became the core of chat assistants and [[ai-agent|AI agents]]. Capabilities
+      improve predictably with parameters, data and compute ([[scaling-laws|scaling laws]]), though
+      particular skills can appear abruptly. There is no agreed size threshold: GPT-2's 1.5 billion
+      parameters counted as large in 2019, while several models marketed as small in 2025 exceed it.
+      Most LLMs are [[foundation-model|foundation models]], and most frontier LLMs are now
+      multimodal.
+    example: >-
+      We route simple lookups to a small model and send multi-step questions to the large language
+      model.
+origin: >-
+  An early use of the phrase is the title of Thorsten Brants, Ashok Popat, Peng Xu, Franz Och and
+  Jeffrey Dean's 2007 paper 'Large Language Models in Machine Translation', whose n-gram models were
+  trained on up to 2 trillion tokens. The neural sense took hold around [[gpt-3|GPT-3]] (2020), and
+  'LLM' became an everyday word after [[chatgpt|ChatGPT]]'s release in November 2022.
+year: 2007
+note: >-
+  Often used loosely for any chatbot or generative-AI product. Strictly, the LLM is the model;
+  products add [[system-prompt|system prompts]], tools, retrieval and safety layers around it.
+  Whether LLMs understand language is debated: see [[machine-understanding|machine understanding]]
+  and [[stochastic-parrot|stochastic parrot]].
+see_also:
+  - language model
+  - transformer
+  - foundation model
+  - pretraining
+  - post-training
+  - scaling laws
+  - small language model
+  - reasoning model
+contrast:
+  - small language model
+  - n-gram model
+sources:
+  - text: >-
+      Brants, T., Popat, A. C., Xu, P., Och, F. J. & Dean, J. (2007). Large Language Models in
+      Machine Translation. Proceedings of EMNLP-CoNLL 2007, 858–867.
+    url: https://aclanthology.org/D07-1090/
+  - text: Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. NeurIPS 2020.
+    url: https://arxiv.org/abs/2005.14165v2
+as_of: 2026-10

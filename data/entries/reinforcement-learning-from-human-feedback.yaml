@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reinforcement learning from human feedback
+id: reinforcement-learning-from-human-feedback
+pos: n.
+also:
+  - RLHF
+  - reinforcement learning from human preferences
+  - learning from human preferences
+domain: train
+domains:
+  - rl
+  - safety
+  - llm
+level: essential
+plain: >-
+  A way of training AI using people's judgments: humans compare pairs of answers, a scoring model
+  learns their preferences, and the AI is then trained to produce answers that score well.
+senses:
+  - definition: >-
+      A method for optimizing a model toward behavior people prefer when that behavior is hard to
+      specify as a [[reward-function|reward function]]. In the canonical three-stage recipe for
+      [[large-language-model|language models]]: (1) [[supervised-fine-tuning|supervised
+      fine-tuning]] on demonstrations; (2) collection of [[preference-data|preference data]], in
+      which people compare or rank several responses to the same prompt, and training of a
+      [[reward-model|reward model]] on it, usually with a [[bradley-terry-model|Bradley–Terry]]
+      loss; (3) [[reinforcement-learning|reinforcement learning]], typically
+      [[proximal-policy-optimization|proximal policy optimization]], to maximize the learned reward
+      minus a [[kl-penalty|KL penalty]] that keeps the policy near a [[reference-model|reference
+      model]]. RLHF made models markedly more helpful and less toxic at modest cost and underpinned
+      [[chatgpt|ChatGPT]]. Its weaknesses include expensive, noisy labels,
+      [[reward-overoptimization|reward overoptimization]] and [[reward-hacking|reward hacking]],
+      [[sycophancy|sycophancy]], and the difficulty of supervising tasks people cannot evaluate,
+      which motivates [[scalable-oversight|scalable oversight]]. Offline alternatives such as
+      [[direct-preference-optimization|direct preference optimization]] target the same objective
+      without an explicit reward model or RL loop.
+    example: >-
+      Our RLHF run used 300,000 pairwise comparisons, and the reward model was half the size of the
+      policy.
+origin: >-
+  Agents that learn from human evaluative feedback were studied in the 2000s, for example TAMER (W.
+  Bradley Knox and Peter Stone, 2008–2009), as was preference-based reinforcement learning (Riad
+  Akrour and colleagues; Weiwei Cheng and colleagues, 2011). Paul Christiano and colleagues at
+  OpenAI and DeepMind scaled it to deep RL in 2017 with pairwise preferences over Atari and
+  simulated-robot behavior; Daniel Ziegler (2019) and Nisan Stiennon (2020) and colleagues applied
+  it to language, and InstructGPT and ChatGPT (2022) made 'RLHF' a household acronym.
+year: 2017
+note: >-
+  Usage varies: narrowly, RLHF means reward model plus RL; broadly, any preference-based
+  [[post-training|post-training]], including DPO. Early papers said 'learning from human
+  preferences'. Critics note that RLHF optimizes for what raters approve of, which can diverge from
+  what is true or good.
+see_also:
+  - reward model
+  - preference data
+  - proximal policy optimization
+  - KL penalty
+  - direct preference optimization
+  - reinforcement learning from AI feedback
+  - InstructGPT
+  - reward hacking
+contrast:
+  - supervised fine-tuning
+  - reinforcement learning with verifiable rewards
+sources:
+  - text: >-
+      Christiano, P., Leike, J., Brown, T. B., Martic, M., Legg, S. & Amodei, D. (2017). Deep
+      reinforcement learning from human preferences. NeurIPS 2017. arXiv:1706.03741.
+    url: https://arxiv.org/abs/1706.03741
+  - text: >-
+      Stiennon, N. et al. (2020). Learning to summarize from human feedback. NeurIPS 2020.
+      arXiv:2009.01325.
+    url: https://arxiv.org/abs/2009.01325
+  - text: >-
+      Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback.
+      NeurIPS 2022. arXiv:2203.02155.
+    url: https://arxiv.org/abs/2203.02155

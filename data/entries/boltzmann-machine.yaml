@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Boltzmann machine
+id: boltzmann-machine
+pos: n.
+also:
+  - Boltzmann machines
+  - stochastic Hopfield network
+domain: hist
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  A network of randomly flipping on–off units, including hidden ones, that learns the statistical
+  patterns in its training data and can then produce new examples like them.
+senses:
+  - definition: >-
+      A network of stochastic binary units with symmetric connections that defines a probability
+      distribution over its states through an energy function, each state's probability following
+      the Boltzmann distribution of statistical physics. Unlike a [[hopfield-network|Hopfield
+      network]], it has hidden units and learns: each weight is adjusted according to the difference
+      between how often its two units are on together when the visible units are clamped to training
+      data and when the network runs freely, which requires slow sampling such as
+      [[simulated-annealing|simulated annealing]] or Gibbs sampling. General Boltzmann machines
+      proved impractical to train, but the restricted Boltzmann machine (RBM), with no connections
+      within a layer, became trainable with [[geoffrey-hinton|Geoffrey Hinton]]'s contrastive
+      divergence method (2002) and was the building block of the [[deep-belief-network|deep belief
+      network]].
+    example: >-
+      Leading Netflix Prize teams blended restricted Boltzmann machines with matrix factorization
+      models.
+formula_latex: P(\mathbf{s}) = \frac{e^{-E(\mathbf{s})/T}}{Z}, \qquad E(\mathbf{s}) = -\sum_{i<j}
+  w_{ij} s_i s_j - \sum_i b_i s_i
+origin: >-
+  Introduced by Geoffrey Hinton and Terrence Sejnowski in 1983 papers, one with Scott Fahlman, and
+  set out fully in David Ackley, Hinton and Sejnowski's 'A Learning Algorithm for Boltzmann
+  Machines' (Cognitive Science, 1985). Named after the physicist Ludwig Boltzmann. The restricted
+  form had been described by Paul Smolensky in 1986 as the 'harmonium'.
+year: 1983
+note: >-
+  The 2024 Nobel Prize in Physics cited the Boltzmann machine in Hinton's share of the award; see
+  [[nobel-prizes-for-ai|Nobel Prizes for AI]].
+see_also:
+  - Hopfield network
+  - deep belief network
+  - energy-based model
+  - simulated annealing
+  - Geoffrey Hinton
+  - Nobel Prizes for AI
+sources:
+  - text: >-
+      Ackley, D. H., Hinton, G. E. & Sejnowski, T. J. (1985). A Learning Algorithm for Boltzmann
+      Machines. Cognitive Science 9(1), 147–169.

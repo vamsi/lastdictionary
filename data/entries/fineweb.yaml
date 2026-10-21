@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FineWeb
+id: fineweb
+pos: prop. n.
+also:
+  - FineWeb-Edu
+  - FineWeb2
+domain: data
+domains:
+  - llm
+  - train
+level: specialist
+plain: >-
+  A huge, free collection of cleaned-up English web text — around 15 trillion word fragments —
+  released by Hugging Face in 2024 with a detailed public account of how it was built.
+senses:
+  - definition: >-
+      An open English web-text dataset for [[pretraining|pretraining]] language models, built by
+      [[hugging-face|Hugging Face]] from 96 [[common-crawl|Common Crawl]] snapshots spanning 2013 to
+      April 2024 and released with about 15 trillion tokens; later versions added 2024–25 crawls,
+      reaching about 18.5 trillion tokens by mid-2025. Its pipeline, built with the datatrove
+      library, filters URLs against blocklists, extracts text with trafilatura, keeps documents that
+      a fastText classifier identifies as English, applies Gopher and C4-style rules plus custom
+      filters, runs [[minhash|MinHash]] [[deduplication|deduplication]] within each crawl, and
+      anonymizes email and IP addresses. Each design choice was justified by ablations on small
+      models. FineWeb-Edu (1.3 trillion tokens) keeps the roughly 8% of documents that a classifier,
+      trained on Llama 3 70B's ratings of educational value, scores highly; FineWeb2 extends the
+      recipe to over 1,000 languages.
+    example: >-
+      Swapping our web mix for FineWeb-Edu raised MMLU by four points at the same token budget.
+origin: >-
+  Released by Hugging Face in April 2024, with FineWeb-Edu following in early June, and described in
+  'The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale' by Guilherme Penedo,
+  Hynek Kydlíček, Loubna Ben Allal and colleagues (NeurIPS 2024 Datasets and Benchmarks Track).
+year: 2024
+note: >-
+  Released under the ODC-By 1.0 license, subject also to Common Crawl's terms of use. Its documented
+  ablations made it a reference recipe for web-data processing, though the underlying web content
+  was collected without opt-in consent.
+see_also:
+  - Common Crawl
+  - quality filtering
+  - deduplication
+  - MinHash
+  - pretraining data
+  - C4
+sources:
+  - text: >-
+      Penedo, G. et al. (2024). The FineWeb Datasets: Decanting the Web for the Finest Text Data at
+      Scale. NeurIPS 2024 Datasets and Benchmarks Track. arXiv:2406.17557.
+    url: https://arxiv.org/abs/2406.17557v2
+  - text: >-
+      Penedo, G. et al. (2025). FineWeb2: One Pipeline to Scale Them All — Adapting Pre-Training
+      Data Processing to Every Language. arXiv:2506.20920.
+    url: https://arxiv.org/abs/2506.20920
+as_of: 2026-10

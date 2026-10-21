@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: general-purpose AI model
+id: general-purpose-ai-model
+pos: n.
+also:
+  - GPAI model
+  - general-purpose AI model provider
+domain: gov
+domains:
+  - llm
+labels:
+  - legal
+level: essential
+plain: >-
+  The EU's legal name for the large, adaptable AI models behind chatbots and similar tools: models
+  that can turn their hand to many different jobs and be built into many other products.
+senses:
+  - definition: >-
+      Under the [[eu-ai-act|EU AI Act]], an AI model of broad generality: it can do many different
+      kinds of task well and can be built into all sorts of other systems and applications, whatever
+      the form in which it is released. Models trained on very large datasets with
+      [[self-supervised-learning|self-supervision]] are expressly included; those used only for
+      research, development or prototyping before they reach the market are not. Commission
+      guidelines of July 2025 treat a model trained with more than 10²³ [[flop|FLOP]] that can
+      generate language, images or video as indicatively general-purpose. Providers must keep
+      technical documentation for the [[ai-office|AI Office]], give 'downstream providers' who
+      integrate the model the information they need, adopt a policy to comply with EU copyright law
+      — including machine-readable opt-outs from [[text-and-data-mining-exception|text and data
+      mining]] — and publish a summary of training content on an official template. Open-source
+      models are exempt from the documentation duties unless they carry systemic risk. The
+      obligations have applied since 2 August 2025, with fines enforceable from August 2026; models
+      already on the market before then have until 2 August 2027.
+    example: >-
+      As the provider of a general-purpose AI model, we must publish a summary of our training
+      content.
+origin: >-
+  Absent from the Commission's 2021 proposal. The Council added 'general-purpose AI systems' in
+  2022, and after ChatGPT's release the Parliament proposed duties for [[foundation-model|foundation
+  models]] (2023). The political agreement of December 2023 settled on 'general-purpose AI model'
+  with a two-tier structure that adds duties for
+  [[general-purpose-ai-model-with-systemic-risk|models with systemic risk]].
+year: 2023
+note: >-
+  Distinct from a 'general-purpose AI system' — an AI system built on such a model — and from
+  [[general-purpose-ai|general-purpose AI]] in the everyday sense. Providers can show compliance
+  through the [[general-purpose-ai-code-of-practice|General-Purpose AI Code of Practice]].
+see_also:
+  - general-purpose AI model with systemic risk
+  - General-Purpose AI Code of Practice
+  - foundation model
+  - AI Office
+  - EU AI Act
+  - text and data mining exception
+  - general-purpose AI
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(63); 'general-purpose AI system' Art. 3(66); obligations
+  Arts. 53–54; fines Art. 101
+as_of: 2026-10

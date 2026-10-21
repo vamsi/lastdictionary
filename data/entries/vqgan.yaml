@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: VQGAN
+id: vqgan
+pos: n.
+also:
+  - VQ-GAN
+  - vector-quantized GAN
+  - VQGAN+CLIP
+  - Taming Transformers
+pronunciation: vee-cue-GAN
+domain: gen
+domains:
+  - dl
+  - culture
+level: specialist
+plain: >-
+  An image compressor that turns a picture into a small grid of codebook 'tiles' while keeping it
+  sharp, used as the vocabulary of many image generators and of an early wave of AI art.
+senses:
+  - definition: >-
+      A [[vq-vae|VQ-VAE]] trained with additional adversarial and [[perceptual-loss|perceptual
+      losses]] so that its discrete codes decode into sharp, realistic images even at high
+      compression. A convolutional encoder maps an image to a grid of codebook indices (for example
+      16 × 16 for a 256 × 256 image); a patch-based discriminator and a feature-space reconstruction
+      loss push the decoder to restore realistic local texture instead of blur. In the original work
+      a [[transformer|transformer]] was then trained autoregressively on the code grids, pairing the
+      convolutional network's efficiency on local structure with the transformer's long-range
+      modeling and making megapixel synthesis practical. The VQGAN recipe — an autoencoder trained
+      with perceptual plus adversarial losses — became the standard way to build first-stage
+      compressors: [[latent-diffusion-model|latent diffusion]] and [[stable-diffusion|Stable
+      Diffusion]] use a continuous variant, and many [[image-tokenizer|image tokenizers]] descend
+      from it.
+origin: >-
+  Introduced by Patrick Esser, Robin Rombach and Björn Ommer of Heidelberg University in 'Taming
+  Transformers for High-Resolution Image Synthesis' (posted December 2020; CVPR 2021). In 2021,
+  open-source notebooks that iteratively optimized VQGAN codes to match a text prompt as scored by
+  OpenAI's [[clip|CLIP]] ('VQGAN+CLIP') started a popular wave of text-to-image art before diffusion
+  tools arrived.
+year: 2020
+see_also:
+  - VQ-VAE
+  - image tokenizer
+  - generative adversarial network
+  - latent diffusion model
+  - CLIP
+  - AI art
+  - autoregressive image generation
+sources:
+  - text: >-
+      Esser, P., Rombach, R. & Ommer, B. (2021). Taming Transformers for High-Resolution Image
+      Synthesis. CVPR 2021. arXiv:2012.09841.
+    url: https://arxiv.org/abs/2012.09841

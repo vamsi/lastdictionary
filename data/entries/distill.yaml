@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Distill
+id: distill
+pos: prop. n.
+also:
+  - Distill journal
+  - distill.pub
+domain: orgs
+domains:
+  - interp
+labels:
+  - historical
+level: specialist
+plain: >-
+  An online scientific journal (2016–2021) that published clear, interactive explanations of machine
+  learning research, including founding work on understanding what happens inside neural networks.
+senses:
+  - definition: >-
+      An open-access, peer-reviewed online journal of machine learning research that treated clear
+      explanation as a research contribution in its own right. Its articles used interactive
+      diagrams and 'explorable explanations', and were reviewed for clarity as well as correctness.
+      It published influential [[interpretability|interpretability]] work, including 'Feature
+      Visualization' (2017), which systematized [[feature-visualization|feature visualization]],
+      'The Building Blocks of Interpretability' (2018), 'Activation Atlas' (2019), the Circuits
+      thread opened by 'Zoom In' (2020), which introduced [[circuit|circuits]], the
+      [[universality-hypothesis|universality hypothesis]] and other foundations of
+      [[mechanistic-interpretability|mechanistic interpretability]], and 'Multimodal Neurons in
+      Artificial Neural Networks' (2021); it also ran explanatory pieces such as 'Why Momentum
+      Really Works' (2017). Its editors put it on hiatus in July 2021, judging that self-publication
+      would serve most such work better; its style continues in venues such as the
+      [[transformer-circuits-thread|Transformer Circuits Thread]].
+origin: >-
+  Its first articles appeared in 2016, and it was formally launched as a journal in March 2017 by
+  Chris Olah and Shan Carter, with Arvind Satyanarayan among its editors and OpenAI, DeepMind and Y
+  Combinator Research among its backers. The hiatus, announced on 2 July 2021 for at least a year
+  with the possibility of extension, cited editor burnout and doubts about the journal model; the
+  journal has not resumed publication.
+year: 2016
+see_also:
+  - feature visualization
+  - circuit
+  - mechanistic interpretability
+  - Transformer Circuits Thread
+  - universality hypothesis
+  - Chris Olah
+sources:
+  - text: Olah, C., Mordvintsev, A. & Schubert, L. (2017). Feature Visualization. Distill.
+  - text: Distill Editorial Team (2021). Distill Hiatus. Distill.
+    url: https://distill.pub/2021/distill-hiatus/
+as_of: 2026-10

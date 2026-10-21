@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: UMAP
+id: umap
+pos: n.
+also:
+  - uniform manifold approximation and projection
+  - umap-learn
+pronunciation: YOO-map
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  A fast technique for turning data with many measurements per item into a flat map that keeps
+  similar items together; often preferred to older methods because it is quicker and copes with more
+  data.
+senses:
+  - definition: >-
+      A nonlinear [[dimensionality-reduction|dimensionality reduction]] method ('uniform manifold
+      approximation and projection') grounded in Riemannian geometry and algebraic topology. It
+      builds a weighted [[k-nearest-neighbors|k-nearest-neighbor]] graph of the data, treated as a
+      fuzzy topological representation of the underlying manifold, with distances rescaled locally
+      so that the data look uniformly spread. It then optimizes a low-dimensional layout whose own
+      fuzzy graph matches the original, minimizing a cross-entropy between edge weights by
+      stochastic gradient descent with negative sampling. The main parameters are n_neighbors, which
+      trades local against global structure, and min_dist, which sets how tightly points pack.
+      Compared with [[t-sne|t-SNE]], UMAP is typically faster, scales to millions of points, can
+      embed into any number of dimensions and can place new points into an existing map. It is
+      widely used to visualize single-cell genomics data and model [[embedding|embeddings]], and as
+      a preprocessing step before density-based [[clustering|clustering]].
+    example: >-
+      We projected the sentence embeddings with UMAP at n_neighbors = 30 and colored the points by
+      topic.
+origin: >-
+  Introduced by Leland McInnes, John Healy and James Melville in an arXiv preprint first posted in
+  February 2018, together with the open-source umap-learn Python library. It spread rapidly, above
+  all in single-cell biology, where it rivaled and often displaced t-SNE as the default
+  visualization.
+year: 2018
+note: >-
+  Claims that UMAP preserves global structure better than t-SNE are disputed: Dmitry Kobak and
+  George Linderman (2021) traced much of the difference to initialization rather than to the
+  algorithms themselves. As with t-SNE, distances and cluster densities in the output should be read
+  cautiously.
+see_also:
+  - t-SNE
+  - dimensionality reduction
+  - manifold hypothesis
+  - embedding
+  - k-nearest neighbors
+  - clustering
+sources:
+  - text: >-
+      McInnes, L., Healy, J. & Melville, J. (2018). UMAP: Uniform Manifold Approximation and
+      Projection for Dimension Reduction. arXiv:1802.03426.
+    url: https://arxiv.org/abs/1802.03426
+  - text: >-
+      Kobak, D. & Linderman, G. C. (2021). Initialization Is Critical for Preserving Global Data
+      Structure in Both t-SNE and UMAP. Nature Biotechnology 39.

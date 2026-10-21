@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: algorithmic progress
+id: algorithmic-progress
+pos: n.
+also:
+  - algorithmic efficiency
+  - algorithmic improvements
+  - software progress
+domain: train
+domains:
+  - asi
+  - society
+  - hist
+level: core
+plain: >-
+  Improvements in AI methods — not faster chips — that let a model reach the same ability with less
+  computing power. Researchers estimate this has cut the computing needed by half every eight to
+  sixteen months.
+senses:
+  - definition: >-
+      Reductions over time in the compute (or data) required to reach a fixed level of performance,
+      attributable to better architectures, training objectives, optimizers, data and recipes rather
+      than better hardware. It is usually measured as a halving time for the compute needed to hit a
+      benchmark score or loss, or equivalently as a [[effective-compute|compute multiplier]]
+      relative to an earlier method. Danny Hernandez and Tom Brown (2020) found that reaching
+      AlexNet-level ImageNet accuracy took 44 times less compute in 2019 than in 2012, a halving
+      every 16 months. Anson Ho and colleagues (2024) estimated that the compute needed for a given
+      language-model performance halved about every 8 months from 2012 to 2023 (95% interval roughly
+      5–14 months), faster than [[moore-s-law|Moore's law]], though growth in compute contributed
+      more to overall gains. Estimates are sensitive to the benchmark chosen, and data-quality and
+      post-training gains are hard to separate from scale.
+    example: >-
+      If algorithmic progress continues at this rate, next year's model will need half the compute
+      for the same loss.
+origin: >-
+  Katja Grace's 'Algorithmic Progress in Six Domains' (Machine Intelligence Research Institute,
+  2013) was an early systematic study, comparing algorithmic and hardware gains in areas such as
+  chess and SAT solving. Hernandez and Brown's OpenAI analysis (2020) and Epoch AI's estimates from
+  2022 made it a standard input to AI forecasting.
+year: 2013
+note: >-
+  Distinct from [[unhobbling|unhobbling]] and post-training gains that unlock latent abilities
+  without reducing pretraining compute, which some analysts count separately. Halving times describe
+  past trends, not guaranteed future rates.
+see_also:
+  - effective compute
+  - training compute
+  - scaling laws
+  - Moore's law
+  - AI timelines
+  - Epoch AI
+  - the bitter lesson
+sources:
+  - text: >-
+      Hernandez, D. & Brown, T. B. (2020). Measuring the Algorithmic Efficiency of Neural Networks.
+      arXiv:2005.04305.
+    url: https://arxiv.org/abs/2005.04305
+  - text: >-
+      Ho, A., Besiroglu, T., Erdil, E., Owen, D., Rahman, R., Guo, Z. C., Atkinson, D., Thompson, N.
+      & Sevilla, J. (2024). Algorithmic progress in language models. arXiv:2403.05812.
+    url: https://arxiv.org/abs/2403.05812
+  - text: >-
+      Grace, K. (2013). Algorithmic Progress in Six Domains. Machine Intelligence Research Institute
+      technical report.
+as_of: 2026-10

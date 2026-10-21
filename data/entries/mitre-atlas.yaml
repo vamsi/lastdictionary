@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MITRE ATLAS
+id: mitre-atlas
+pos: prop. n.
+also:
+  - ATLAS
+  - Adversarial Threat Landscape for Artificial-Intelligence Systems
+  - Adversarial ML Threat Matrix
+domain: sec
+domains:
+  - gov
+  - eng
+level: specialist
+plain: >-
+  A free online reference from the US nonprofit MITRE that maps, step by step, how attackers go
+  after AI systems, with examples drawn from real attacks and security tests.
+senses:
+  - definition: >-
+      The MITRE Corporation's public framework for describing how adversaries attack AI-enabled
+      systems, built on the pattern of its ATT&CK matrix for conventional intrusions. It arranges
+      techniques — such as acquiring public machine-learning artifacts, crafting
+      [[adversarial-example|adversarial data]], [[data-poisoning|poisoning training data]],
+      [[model-extraction|extracting models]], [[prompt-injection|prompt injection]] and
+      [[jailbreak|jailbreaks]] — under tactics that follow an attack from reconnaissance to impact,
+      and links them to documented real-world and red-team case studies and to mitigations. Security
+      teams use it for threat modeling, red-team planning and mapping detections, often alongside
+      the [[owasp-top-10-for-llm-applications|OWASP Top 10 for LLM Applications]] and NIST's
+      taxonomy of adversarial machine learning. It is updated as new techniques, including attacks
+      on [[ai-agent|agents]], are documented.
+    example: >-
+      Our red-team plan covers every ATLAS technique relevant to a retrieval-augmented chatbot.
+origin: >-
+  Released in October 2020 as the Adversarial ML Threat Matrix by MITRE and Microsoft with about a
+  dozen other organizations, then relaunched by MITRE in 2021 under the ATLAS name with an online
+  knowledge base and case studies.
+year: 2021
+see_also:
+  - AI security
+  - threat model
+  - OWASP Top 10 for LLM Applications
+  - adversarial machine learning
+  - red teaming
+sources:
+  - text: >-
+      MITRE Corporation. ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems.
+      Online knowledge base.
+as_of: 2026-10

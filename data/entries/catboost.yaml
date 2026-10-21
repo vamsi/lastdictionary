@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: CatBoost
+id: catboost
+pos: prop. n.
+also:
+  - ordered boosting
+  - ordered target statistics
+  - oblivious tree
+  - symmetric tree
+pronunciation: KAT-boost
+domain: ml
+domains:
+  - eng
+labels:
+  - trademark
+level: core
+plain: >-
+  A free gradient-boosting library from the tech company Yandex, known for handling categories such
+  as city names or product types directly, without first converting them into numbers by hand.
+senses:
+  - definition: >-
+      A [[gradient-boosting|gradient boosting]] library for [[decision-tree|decision trees]],
+      released as open source by Yandex, whose distinguishing ideas deal with categorical features
+      and with a subtle form of target leakage inside boosting itself. Categorical values are
+      encoded with ordered target statistics: each example's category is replaced by an average of
+      the target over examples that precede it in a random permutation, so an example's own label
+      never leaks into its encoding; combinations of categorical features are added greedily.
+      Ordered boosting applies the same idea to the boosting procedure, computing each example's
+      residual with models that have not seen that example, which counters the 'prediction shift'
+      its authors identified in standard implementations. By default it grows oblivious (symmetric)
+      trees, which use the same split at every node of a given depth, giving fast prediction and
+      some regularization. It supports GPUs, ranking and text features, and is known for strong
+      results with default settings.
+    example: >-
+      We passed the raw store and product IDs straight to CatBoost instead of building a target
+      encoding ourselves.
+origin: >-
+  Developed at Yandex, which had earlier used its proprietary MatrixNet boosting for search ranking,
+  with Andrey Gulin as original author; open-sourced under the Apache 2.0 license in July 2017. Its
+  methods were described by Liudmila Prokhorenkova, Gleb Gusev, Aleksandr Vorobev, Anna Veronika
+  Dorogush and Gulin in 'CatBoost: Unbiased Boosting with Categorical Features' (arXiv 2017; NeurIPS
+  2018). The name joins 'category' and 'boosting'.
+year: 2017
+see_also:
+  - gradient boosting
+  - XGBoost
+  - LightGBM
+  - tabular data
+  - one-hot encoding
+  - data leakage
+  - decision tree
+sources:
+  - text: >-
+      Prokhorenkova, L., Gusev, G., Vorobev, A., Dorogush, A. V. & Gulin, A. (2018). CatBoost:
+      Unbiased Boosting with Categorical Features. Advances in Neural Information Processing Systems
+      31. arXiv:1706.09516.
+    url: https://arxiv.org/abs/1706.09516

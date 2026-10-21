@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: actuator
+id: actuator
+pos: n.
+also:
+  - actuation
+  - servo
+  - servomotor
+  - series elastic actuator
+  - artificial muscle
+domain: robot
+domains:
+  - hw
+  - agents
+level: core
+plain: >-
+  The 'muscle' of a machine: a motor or similar device that turns electrical, hydraulic or air power
+  into movement, such as turning a robot's joint or closing its gripper.
+senses:
+  - context: Robotics and engineering
+    definition: >-
+      A component that converts energy — electrical, hydraulic, pneumatic, thermal or chemical —
+      into mechanical motion or force on command from a controller, producing the physical actions
+      of a [[robot|robot]], vehicle or machine. Robots mostly use electric motors (brushless motors
+      with position encoders, often paired with high-ratio reducers such as harmonic or planetary
+      gears), hydraulic cylinders for very high force, as in the original hydraulic Atlas humanoid,
+      and pneumatic cylinders or suction for cheap, compliant grippers. Designs trade torque
+      density, speed, precision, efficiency, cost and back-drivability, the ability to be pushed
+      back by external forces, which matters for safety and for sensing contact. Series elastic
+      actuators put a spring between motor and load to measure and control force; quasi-direct-drive
+      or 'proprioceptive' actuators use low gear ratios so that motor current reveals contact
+      forces, a design favored in agile [[legged-robot|legged robots]]. Research actuators include
+      artificial muscles, shape-memory alloys and soft pneumatic chambers.
+    example: The knee actuator overheats on stairs, so we cap the gait's peak torque.
+  - context: AI agents (by analogy)
+    definition: >-
+      In the classic definition of an [[intelligent-agent|intelligent agent]], whatever the agent
+      uses to act on its environment — motors and grippers for a robot, or messages,
+      [[tool-call|tool calls]] and file writes for a software agent — paired with the sensors that
+      supply its percepts.
+origin: >-
+  From 'actuate' (Medieval Latin actuare, to put into action). Series elastic actuators were
+  introduced by Gill Pratt and Matthew Williamson in 1995; the sensors-and-actuators description of
+  agents was popularized by Stuart Russell and Peter Norvig's textbook Artificial Intelligence: A
+  Modern Approach (first edition 1995).
+see_also:
+  - robot
+  - end effector
+  - degrees of freedom
+  - proprioception
+  - legged robot
+  - intelligent agent
+  - PID controller
+sources:
+  - text: >-
+      Pratt, G. A. & Williamson, M. M. (1995). Series elastic actuators. Proc. IEEE/RSJ IROS 1995.
+  - text: >-
+      Russell, S. & Norvig, P. (1995). Artificial Intelligence: A Modern Approach. Prentice Hall.

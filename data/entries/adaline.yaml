@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ADALINE
+id: adaline
+pos: prop. n.
+also:
+  - ADAptive LINear Element
+  - ADAptive LINear NEuron
+  - MADALINE
+  - Widrow–Hoff rule
+pronunciation: AD-uh-leen
+domain: hist
+domains:
+  - dl
+  - ml
+labels:
+  - historical
+level: specialist
+plain: >-
+  An early learning machine from 1960 that adjusted its settings to shrink its errors step by step,
+  the same basic idea used to train today's neural networks.
+senses:
+  - definition: >-
+      A single-layer adaptive unit devised by Bernard Widrow and Marcian (Ted) Hoff at Stanford
+      University in 1960. It computes a weighted sum of its inputs and thresholds it to give a ±1
+      output, but, unlike the [[perceptron|perceptron]], it is trained on the linear sum before
+      thresholding: the least-mean-squares (LMS) or Widrow–Hoff rule changes each weight in
+      proportion to the error times the corresponding input. This amounts to stochastic
+      [[gradient-descent|gradient descent]] on squared error and converges to a best linear fit even
+      when the classes cannot be separated. Widrow's group built it in hardware using 'memistors',
+      electrochemical variable resistors, and combined several units into MADALINE (Many ADALINEs)
+      in 1962. The LMS algorithm became a foundation of adaptive signal processing, used in modem
+      equalizers, echo cancellers and noise-cancelling systems.
+    example: >-
+      ADALINE's LMS update is the delta rule that backpropagation later generalized to hidden layers.
+formula_latex: \mathbf{w} \leftarrow \mathbf{w} + \eta \, (d - \mathbf{w}^{\top}\mathbf{x}) \, \mathbf{x}
+origin: >-
+  Introduced in Widrow and Hoff's paper 'Adaptive Switching Circuits' at the 1960 IRE WESCON
+  convention. The acronym first expanded as ADAptive LINear NEuron; the last word later became
+  Element.
+year: 1960
+note: Hoff went on to co-invent the Intel 4004 microprocessor.
+see_also:
+  - perceptron
+  - stochastic gradient descent
+  - gradient descent
+  - Mark I Perceptron
+  - backpropagation
+  - neural network
+contrast:
+  - perceptron
+sources:
+  - text: >-
+      Widrow, B. & Hoff, M. E. (1960). Adaptive Switching Circuits. IRE WESCON Convention Record,
+      Part 4, 96–104.

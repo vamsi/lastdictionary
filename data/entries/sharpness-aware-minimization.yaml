@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sharpness-aware minimization
+id: sharpness-aware-minimization
+pos: n.
+also:
+  - SAM
+  - adaptive sharpness-aware minimization
+  - ASAM
+domain: dl
+domains:
+  - train
+level: specialist
+plain: >-
+  A training method that looks for settings where the error stays low even if the settings are
+  nudged a little, rather than settings that are merely low at one precise point.
+senses:
+  - definition: >-
+      An optimization procedure that minimizes the worst-case loss within a small neighborhood of
+      the current parameters — a min–max objective — rather than the loss at a single point,
+      steering training toward [[sharp-and-flat-minima|flat minima]]. Each step computes the
+      gradient, takes an ascent step of radius ρ along its normalized direction to approximate the
+      worst nearby point, computes the gradient there, and applies that second gradient at the
+      original parameters through any base [[optimizer|optimizer]]. The extra gradient computation
+      roughly doubles the cost per step; variants cut the overhead or make the neighborhood
+      scale-invariant (adaptive SAM). SAM improved image-classification benchmarks and robustness to
+      [[label-noise|label noise]], with especially large gains for [[vision-transformer|vision
+      transformers]] and MLP-Mixers trained without heavy augmentation, and is also used in
+      fine-tuning. Why it works is still debated: its benefits do not track measured flatness as
+      closely as its motivation suggests, and its implicit regularization of the training dynamics
+      may matter more.
+formula_latex: \min_{\theta} \; \max_{\lVert \epsilon \rVert_2 \le \rho} \; L(\theta + \epsilon)
+origin: >-
+  Introduced by Pierre Foret, Ariel Kleiner, Hossein Mobahi and Behnam Neyshabur of Google in
+  'Sharpness-Aware Minimization for Efficiently Improving Generalization' (arXiv October 2020; ICLR
+  2021), drawing on the flat-minima tradition and PAC-Bayesian generalization bounds.
+year: 2020
+note: >-
+  The abbreviation SAM also denotes Meta's [[segment-anything-model|Segment Anything Model]].
+see_also:
+  - sharp and flat minima
+  - loss landscape
+  - optimizer
+  - implicit regularization
+  - generalization gap
+  - adversarial training
+sources:
+  - text: >-
+      Foret, P., Kleiner, A., Mobahi, H. & Neyshabur, B. (2021). Sharpness-Aware Minimization for
+      Efficiently Improving Generalization. ICLR 2021.
+    url: https://arxiv.org/abs/2010.01412

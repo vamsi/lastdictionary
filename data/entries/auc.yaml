@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AUC
+id: auc
+pos: abbr.
+also:
+  - area under the curve
+  - area under the ROC curve
+  - AUROC
+  - ROC AUC
+  - AUC-ROC
+  - c-statistic
+  - concordance statistic
+  - AUPRC
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  A single number from 0 to 1 summarizing how well a model ranks real positive cases above negative
+  ones: 0.5 is no better than a coin flip and 1.0 is perfect.
+senses:
+  - definition: >-
+      Short for area under the curve, almost always the area under the [[roc-curve|ROC curve]]
+      (AUROC or ROC AUC), which medicine calls the c-statistic. Read probabilistically, it is the
+      chance that the classifier's scores put a positive and a negative example, each drawn at
+      random, in the right order, which makes it the normalized Mann–Whitney U statistic. An AUC of
+      0.5 means ranking no better than chance, 1.0 perfect separation, and values below 0.5 a
+      systematically inverted ranking. AUC is threshold-free and insensitive to class prevalence and
+      to monotone transformations of scores, which makes it a popular single number for comparing
+      models. Those same properties are its limits: it ignores [[calibration|calibration]], weighs
+      all thresholds equally, including irrelevant ones, and can look excellent under heavy
+      [[class-imbalance|class imbalance]] while precision at useful thresholds is poor, so the area
+      under the [[precision-recall-curve|precision–recall curve]] (AUPRC, closely related to average
+      precision) is often reported alongside it. Two models with equal AUC can have crossing ROC
+      curves and suit different operating points.
+    example: >-
+      The new model raised AUC from 0.86 to 0.89, but at our operating threshold precision barely
+      moved.
+origin: >-
+  In psychophysics, David Green and John Swets (1966) showed that the area equals accuracy in a
+  two-alternative forced-choice task, and Donald Bamber (1975) related it to the Mann–Whitney U
+  statistic; James Hanley and Barbara McNeil's 1982 Radiology paper 'The Meaning and Use of the Area
+  under a Receiver Operating Characteristic (ROC) Curve' popularized the measure in medicine. Andrew
+  Bradley's 1997 paper in Pattern Recognition helped make it a standard machine-learning metric.
+note: >-
+  'AUC' alone usually means ROC AUC, but papers also use it for the precision–recall area and, in
+  pharmacology, for the area under a drug-concentration curve, so check which is meant.
+see_also:
+  - ROC curve
+  - precision–recall curve
+  - recall
+  - specificity
+  - calibration
+  - class imbalance
+  - learning to rank
+sources:
+  - text: >-
+      Hanley, J. A. & McNeil, B. J. (1982). The Meaning and Use of the Area under a Receiver
+      Operating Characteristic (ROC) Curve. Radiology 143(1).
+  - text: >-
+      Bradley, A. P. (1997). The Use of the Area under the ROC Curve in the Evaluation of Machine
+      Learning Algorithms. Pattern Recognition 30(7).
+  - text: >-
+      Bamber, D. (1975). The Area above the Ordinal Dominance Graph and the Area below the Receiver
+      Operating Characteristic Graph. Journal of Mathematical Psychology 12(4).

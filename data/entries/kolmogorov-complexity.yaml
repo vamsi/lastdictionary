@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Kolmogorov complexity
+id: kolmogorov-complexity
+pos: n.
+also:
+  - algorithmic complexity
+  - algorithmic information theory
+  - Kolmogorov–Chaitin complexity
+  - program-size complexity
+  - descriptive complexity
+  - algorithmic entropy
+domain: math
+domains:
+  - asi
+  - mind
+level: specialist
+plain: >-
+  How briefly something can be described by a computer program that recreates it exactly: a million
+  zeros needs only a tiny program, while a truly random string needs one about as long as itself.
+senses:
+  - definition: >-
+      A measure of the information in a single object: the number of bits in the briefest program
+      that makes a fixed universal [[turing-machine|Turing machine]] print the object (say, a
+      string) and halt. By the invariance theorem, changing the universal machine changes it by at
+      most an additive constant, so it is an essentially machine-independent measure of the
+      information content of an individual object — unlike Shannon [[entropy|entropy]], which
+      describes probability distributions. A string is algorithmically random if no program much
+      shorter than the string produces it. Kolmogorov complexity is uncomputable: no algorithm can
+      calculate it for every string, a consequence of the undecidability of the halting problem,
+      though real compressors give upper bounds. It grounds formal accounts of simplicity:
+      [[solomonoff-induction|Solomonoff induction]] weights hypotheses by two to the minus their
+      program length, [[minimum-description-length|minimum description length]] offers a computable
+      relative, and [[aixi|AIXI]] builds on it. It is also invoked in arguments that neural networks
+      are biased toward simple functions and that prediction and compression are two faces of
+      intelligence.
+    example: >-
+      The digits of π look random but have low Kolmogorov complexity, because a short program
+      generates them.
+formula_latex: K_U(x) = \min\{\, |p| \;:\; U(p) = x \,\}
+origin: >-
+  Defined independently by Ray Solomonoff (1960, 1964) as part of his theory of inductive inference,
+  by Andrey Kolmogorov in 'Three Approaches to the Quantitative Definition of Information' (1965),
+  and by Gregory Chaitin (1966, 1969). Leonid Levin and others developed the theory in the 1970s;
+  Ming Li and Paul Vitányi's textbook (1993) is the standard reference.
+year: 1965
+note: >-
+  Not to be confused with computational complexity, which measures the time or memory an algorithm
+  needs (see [[big-o-notation|big O notation]]).
+see_also:
+  - Solomonoff induction
+  - minimum description length
+  - Turing machine
+  - Occam's razor
+  - information theory
+  - AIXI
+sources:
+  - text: >-
+      Kolmogorov, A. N. (1965). Three Approaches to the Quantitative Definition of Information.
+      Problems of Information Transmission, 1(1).
+  - text: >-
+      Li, M. & Vitányi, P. (1993; 4th ed. 2019). An Introduction to Kolmogorov Complexity and Its
+      Applications. Springer.

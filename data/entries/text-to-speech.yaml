@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: text-to-speech
+id: text-to-speech
+pos: n.
+also:
+  - TTS
+  - speech synthesis
+  - speech synthesizer
+  - synthetic voice
+  - Tacotron
+  - VALL-E
+domain: percep
+domains:
+  - gen
+  - hist
+level: essential
+plain: >-
+  Technology that reads written text aloud in a computer-generated voice, used in screen readers,
+  voice assistants, audiobooks and navigation apps.
+senses:
+  - definition: >-
+      The automatic production of spoken audio from written text. Classic systems split the job in
+      two: a front end decides what is to be said and how, reading '$5' as 'five dollars' or 'Dr.'
+      as 'doctor' or 'drive', looking up or predicting each word's pronunciation and planning
+      rhythm, stress and pitch, while a back end turns that plan into a waveform. Back ends evolved
+      from rule-based formant synthesis (1970s–80s), through concatenation of recorded speech units
+      chosen from large databases (unit selection, 1990s) and statistical parametric synthesis with
+      [[hidden-markov-model|hidden Markov models]] (2000s), to neural synthesis: [[wavenet|WaveNet]]
+      (2016) generated raw audio; Tacotron (2017) predicted [[mel-spectrogram|mel spectrograms]]
+      from characters for a neural [[vocoder|vocoder]]; non-autoregressive models such as FastSpeech
+      (2019) and end-to-end VITS (2021) improved speed; and from 2023 'codec language models' such
+      as VALL-E generated [[neural-audio-codec|neural audio codec]] tokens, imitating a new voice
+      from a few seconds of audio. Modern systems produce speech that listeners often cannot tell
+      from human recordings in short samples, with controllable emotion and style and low latency
+      for streaming. Quality is judged by [[mean-opinion-score|mean opinion score]] and
+      intelligibility tests. The same advances enable [[voice-cloning|voice cloning]] and audio
+      [[deepfake|deepfakes]], raising concerns about consent and fraud.
+    example: >-
+      Switching the screen reader to the neural voice made long documents much less tiring to listen
+      to.
+origin: >-
+  Mechanical speaking machines date to the 18th century, and Homer Dudley's keyboard-played Voder
+  was shown at the 1939 New York World's Fair. The first general English text-to-speech system was
+  built in 1968 by Noriko Umeda and colleagues at Japan's Electrotechnical Laboratory; Dennis
+  Klatt's MITalk and DECtalk brought synthesis into wide use in the 1980s.
+year: 1968
+note: >-
+  Text-to-speech generates speech; [[speech-recognition|speech recognition]] transcribes it. Some
+  laws, including the [[eu-ai-act|EU AI Act]]'s [[transparency-obligations|transparency
+  obligations]], require synthetic audio to be marked or disclosed as artificial in certain
+  settings.
+see_also:
+  - vocoder
+  - WaveNet
+  - mel spectrogram
+  - voice cloning
+  - neural audio codec
+  - speech-to-speech model
+  - mean opinion score
+contrast:
+  - speech recognition
+sources:
+  - text: >-
+      van den Oord, A. et al. (2016). WaveNet: A Generative Model for Raw Audio. arXiv:1609.03499.
+    url: https://arxiv.org/abs/1609.03499
+  - text: >-
+      Shen, J. et al. (2018). Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram
+      Predictions. ICASSP 2018.
+  - text: >-
+      Wang, C. et al. (2023). Neural Codec Language Models are Zero-Shot Text to Speech
+      Synthesizers. arXiv preprint.
+as_of: 2026-10

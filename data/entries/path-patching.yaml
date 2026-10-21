@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: path patching
+id: path-patching
+pos: n.
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A refined patching experiment that changes only one route of information inside a model — from one
+  part to another — to test exactly which connections carry a behavior.
+senses:
+  - definition: >-
+      A generalization of [[activation-patching|activation patching]] that intervenes on paths —
+      specific routes by which one component affects another — rather than on whole components. To
+      test whether head A influences the output through head B, the corrupted activation of A is
+      propagated only along the edge into B, with all other paths kept at their clean values, and
+      the effect on the output is measured. Path patching separates direct effects from effects
+      mediated by particular downstream components, letting researchers assemble a
+      [[circuit|circuit]] edge by edge; it was the main tool behind the
+      [[indirect-object-identification|indirect object identification]] circuit. Nicholas
+      Goldowsky-Dill and colleagues formalized it as a way to test hypotheses expressed as sets of
+      paths through the computational graph. Its cost grows with the number of paths examined,
+      motivating [[automated-circuit-discovery|automated circuit discovery]] and gradient-based
+      approximations.
+    example: >-
+      Path patching shows the S-inhibition heads matter only through the queries of the name-mover
+      heads.
+origin: >-
+  Introduced by Kevin Wang and colleagues in the indirect-object-identification study (November
+  2022) and formalized by Nicholas Goldowsky-Dill, Chris MacLeod, Lucas Sato and Aryaman Arora in
+  'Localizing Model Behavior with Path Patching' (2023), both from work at Redwood Research.
+year: 2022
+see_also:
+  - activation patching
+  - indirect object identification
+  - circuit
+  - causal scrubbing
+  - automated circuit discovery
+  - attribution patching
+sources:
+  - text: >-
+      Goldowsky-Dill, N., MacLeod, C., Sato, L. & Arora, A. (2023). Localizing Model Behavior with
+      Path Patching. arXiv preprint.
+  - text: >-
+      Wang, K., Variengien, A., Conmy, A., Shlegeris, B. & Steinhardt, J. (2023). Interpretability
+      in the Wild: a Circuit for Indirect Object Identification in GPT-2 small. ICLR 2023.

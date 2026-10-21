@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vision transformer
+id: vision-transformer
+pos: n.
+also:
+  - ViT
+  - ViT-B/16
+  - ViT-L/14
+  - DeiT
+  - Swin Transformer
+domain: percep
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  A way of applying the transformer, the design behind chatbots, to pictures: the image is cut into
+  small square tiles that the model reads like words in a sentence.
+senses:
+  - definition: >-
+      A [[transformer|transformer]] encoder applied to images by splitting them into a grid of
+      fixed-size patches (typically 14 or 16 pixels square), mapping each patch to a vector with a
+      [[patch-embedding|patch embedding]], adding [[positional-encoding|position embeddings]] and
+      processing the resulting sequence with standard [[self-attention|self-attention]] layers; a
+      learnable classification token, or an average of the patch outputs, summarizes the image.
+      Names such as ViT-B/16 give the model size (Base, Large, Huge, giant) and the patch size.
+      Without a convolution's built-in assumptions of locality and translation
+      [[equivariance|equivariance]], the original ViT overtook strong
+      [[convolutional-neural-network|CNNs]] only after pretraining on very large labeled
+      collections, ImageNet-21k (about 14 million images) or Google's internal JFT-300M; better
+      training recipes with [[knowledge-distillation|knowledge distillation]] (DeiT, 2020) and
+      hierarchical, windowed variants (Swin Transformer, 2021) largely removed that limitation. ViTs
+      are now the standard image encoder in [[clip|CLIP]]-style models, self-supervised methods
+      ([[masked-autoencoder|MAE]], [[dino|DINO]]), segmentation models and
+      [[vision-language-model|vision-language models]], where their patch outputs become the visual
+      tokens read by the language model.
+    example: >-
+      We swapped the ResNet for a ViT-L/14 pretrained on image–text pairs and retrieval accuracy
+      jumped.
+origin: >-
+  Introduced by Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn and
+  colleagues at Google Brain in 'An Image is Worth 16x16 Words: Transformers for Image Recognition
+  at Scale' (arXiv October 2020; ICLR 2021). Earlier work had applied attention to pixels; ViT
+  showed that a nearly unmodified language transformer works on patches at scale.
+year: 2020
+note: >-
+  Lowercase 'vision transformer' names the general architecture; 'ViT' usually means the Google
+  model family. Attention cost grows with the square of the number of patches, so higher image
+  resolution is expensive.
+see_also:
+  - transformer
+  - patch embedding
+  - convolutional neural network
+  - self-attention
+  - masked autoencoder
+  - CLIP
+  - vision-language model
+contrast:
+  - convolutional neural network
+sources:
+  - text: >-
+      Dosovitskiy, A. et al. (2021). An Image is Worth 16x16 Words: Transformers for Image
+      Recognition at Scale. ICLR 2021.
+    url: https://arxiv.org/abs/2010.11929
+  - text: >-
+      Touvron, H. et al. (2021). Training Data-Efficient Image Transformers & Distillation Through
+      Attention. ICML 2021.
+  - text: >-
+      Liu, Z. et al. (2021). Swin Transformer: Hierarchical Vision Transformer Using Shifted
+      Windows. ICCV 2021.

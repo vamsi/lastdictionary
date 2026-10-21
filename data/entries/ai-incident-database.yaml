@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI Incident Database
+id: ai-incident-database
+pos: prop. n.
+also:
+  - AIID
+domain: safety
+domains:
+  - society
+  - data
+level: specialist
+plain: >-
+  A free public online collection of reports about real cases in which AI systems caused or nearly
+  caused harm, kept so that builders and regulators can learn from past failures.
+senses:
+  - definition: >-
+      A public, crowdsourced archive of real-world cases in which deployed AI systems caused harm or
+      came close to it; its founders took incident reporting in aviation and computer security as
+      their model. Each entry groups one or more news or research reports describing the same event
+      and indexes the systems, developers, deployers and harmed parties involved; editors apply
+      taxonomies, such as one developed by the Center for Security and Emerging Technology, to
+      classify harm type, severity and technology. The database is used to study patterns of
+      failure, inform risk assessments and [[red-teaming|red teaming]], and support arguments for
+      regulation. Coverage depends on what reaches the press, so it over-represents publicized
+      consumer harms and under-represents failures inside organizations.
+    example: >-
+      Before launch, the team searched the AI Incident Database for failures of similar hiring tools.
+origin: >-
+  Launched in November 2020 under the [[partnership-on-ai|Partnership on AI]], led by Sean McGregor,
+  who described it in 'Preventing Repeated Real World AI Failures by Cataloging Incidents: The AI
+  Incident Database' (2021). It is now run by the nonprofit Responsible AI Collaborative.
+year: 2020
+see_also:
+  - AI incident
+  - Partnership on AI
+  - red teaming
+  - post-market monitoring
+  - AI audit
+sources:
+  - text: >-
+      McGregor, S. (2021). Preventing Repeated Real World AI Failures by Cataloging Incidents: The
+      AI Incident Database. Proceedings of AAAI 2021 (IAAI).
+as_of: 2026-10

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: computational graph
+id: computational-graph
+pos: n.
+also:
+  - computation graph
+  - dataflow graph
+  - autograd graph
+  - define-by-run
+  - define-and-run
+  - static graph
+  - dynamic graph
+domain: dl
+domains:
+  - eng
+  - math
+level: core
+plain: >-
+  A map of a calculation drawn as boxes and arrows: each box is a simple operation and each arrow
+  carries a number to the next step. AI software uses it to trace errors backward.
+senses:
+  - definition: >-
+      A directed acyclic graph that represents a computation, with nodes for operations (matrix
+      multiplication, addition, activation functions) or for the values they produce, and edges for
+      the data dependencies between them. Executing the graph from inputs to outputs is the
+      [[forward-pass|forward pass]]; traversing it in reverse while applying each node's local
+      derivative is reverse-mode [[automatic-differentiation|automatic differentiation]], that is,
+      [[backpropagation|backpropagation]]. Deep-learning frameworks differ in when the graph is
+      built: 'define-and-run' (static) systems such as Theano and early [[tensorflow|TensorFlow]]
+      construct and compile the whole graph before execution, enabling global optimization, while
+      'define-by-run' (dynamic or eager) systems such as Chainer and [[pytorch|PyTorch]] record the
+      graph as ordinary code runs, easing debugging and data-dependent control flow. Modern stacks
+      combine the two by capturing eager code into graphs for compilers such as [[xla|XLA]]. Graph
+      structure also enables memory planning, [[kernel-fusion|kernel fusion]],
+      [[gradient-checkpointing|gradient checkpointing]] and parallel scheduling.
+origin: >-
+  Graph representations of arithmetic for analyzing rounding errors and derivatives appear in
+  numerical analysis by the 1970s, for example in Friedrich L. Bauer's 'Computational graphs and
+  rounding error' (1974). In deep learning the term became everyday vocabulary through Theano (2010)
+  and TensorFlow (2015); Chainer (2015) popularized the define-by-run alternative that PyTorch
+  adopted.
+year: 1974
+see_also:
+  - automatic differentiation
+  - backpropagation
+  - forward pass
+  - backward pass
+  - PyTorch
+  - AI compiler
+sources:
+  - text: >-
+      Bauer, F. L. (1974). Computational graphs and rounding error. SIAM Journal on Numerical
+      Analysis 11(1), 87–96.

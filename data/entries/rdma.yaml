@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RDMA
+id: rdma
+pos: abbr.
+also:
+  - remote direct memory access
+  - RoCE
+  - RDMA over Converged Ethernet
+  - GPUDirect RDMA
+  - iWARP
+domain: hw
+domains:
+  - train
+level: specialist
+plain: >-
+  A way for one computer to read or write another computer's memory directly over the network,
+  skipping the usual software middlemen, so data moves faster with less delay.
+senses:
+  - definition: >-
+      A networking technique in which network adapters move data between the memories of two
+      machines on their own, so that no CPU or operating system has to copy or handle the bytes in
+      transit ('zero-copy', 'kernel bypass'); the payoff is very low latency, high throughput and
+      little CPU overhead. It is native to [[infiniband|InfiniBand]] and runs over Ethernet as RoCE
+      (RDMA over Converged Ethernet) or iWARP. In AI clusters, GPUDirect RDMA lets network cards
+      read and write [[gpu|GPU]] memory directly, so gradients and activations move between
+      accelerators in different servers without staging through host memory; communication libraries
+      such as Nvidia's NCCL build [[collective-communication|collectives]] like
+      [[all-reduce|all-reduce]] on top of it. Ethernet RDMA needs careful congestion control at very
+      large scale, a problem the Ultra Ethernet transport aims to address.
+origin: >-
+  Grew out of 1990s research on user-level networking and the Virtual Interface Architecture (1997);
+  standardized as a core feature of InfiniBand (2000), then carried to Ethernet via iWARP (IETF,
+  2007) and RoCE (2010; routable RoCEv2, 2014). Nvidia's GPUDirect RDMA appeared in 2012.
+see_also:
+  - InfiniBand
+  - interconnect
+  - all-reduce
+  - collective communication
+  - scale-up and scale-out
+  - distributed training

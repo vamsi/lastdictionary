@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: steerability
+id: steerability
+pos: n.
+also:
+  - steerable
+  - controllability
+domain: llm
+domains:
+  - safety
+  - interp
+level: core
+plain: >-
+  How easily an AI model's behavior — its tone, style, persona or rules — can be adjusted by the
+  people using or deploying it, for example through instructions, without retraining.
+senses:
+  - context: Language models
+    definition: >-
+      The degree to which a model's behavior can be directed at inference time by developers and
+      users — through [[system-prompt|system prompts]], instructions, personas, examples, style or
+      effort settings — and the reliability with which it maintains the requested behavior over a
+      long interaction. High steerability lets one model serve many products and user preferences
+      (verbosity, tone, format, values within policy) and is evaluated by measuring adherence to
+      such specifications. It is deliberately bounded: a model should not be steerable into
+      violating its provider's policies, so steerability must be balanced against robustness to
+      [[jailbreak|jailbreaks]] through an [[instruction-hierarchy|instruction hierarchy]].
+    example: >-
+      The new model's steerability is better: it keeps the terse persona for the whole session.
+  - context: Interpretability and generative models
+    definition: >-
+      The extent to which outputs can be controlled by directly manipulating internal
+      representations — moving through a generative model's latent space or adding
+      [[steering-vector|steering vectors]] to activations — without changing weights or prompts. See
+      [[activation-steering|activation steering]].
+origin: >-
+  Ali Jahanian, Lucy Chai and Phillip Isola studied the 'steerability' of generative adversarial
+  networks' latent spaces in 2019. OpenAI's GPT-4 announcement (March 2023) made steerability a
+  headline property of language models, describing how developers could prescribe a model's style
+  and task through the system message.
+year: 2019
+note: >-
+  Overlaps with [[steering|steering]], which usually names specific techniques, especially
+  activation-based ones; steerability is the property those techniques exploit.
+see_also:
+  - system prompt
+  - instruction following
+  - steering
+  - activation steering
+  - role prompting
+  - instruction hierarchy
+  - model specification
+sources:
+  - text: OpenAI (2023). GPT-4. OpenAI research announcement, 14 March 2023.
+    url: https://openai.com/index/gpt-4-research/
+  - text: >-
+      Jahanian, A., Chai, L. & Isola, P. (2020). On the 'steerability' of generative adversarial
+      networks. ICLR 2020.
+    url: https://arxiv.org/abs/1907.07171

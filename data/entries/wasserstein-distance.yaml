@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Wasserstein distance
+id: wasserstein-distance
+pos: n.
+also:
+  - earth mover's distance
+  - EMD
+  - Wasserstein metric
+  - Kantorovich–Rubinstein distance
+  - optimal transport distance
+  - optimal transport
+  - Sinkhorn distance
+domain: math
+domains:
+  - gen
+  - ml
+level: specialist
+plain: >-
+  A way of comparing two spreads of probability by imagining one as heaps of sand that must be
+  shoveled into the shape of the other: the less shoveling, weighted by distance, the more alike
+  they are.
+senses:
+  - definition: >-
+      The cost of the cheapest transport plan between two [[probability-distribution|probability
+      distributions]] on a metric space, where a plan says how much mass moves between each pair of
+      points and moving a unit of mass costs the distance it travels (for the p-Wasserstein
+      distance, that distance raised to the power p, with the p-th root taken of the total). Unlike
+      the [[kullback-leibler-divergence|KL]] and [[jensen-shannon-divergence|Jensen–Shannon
+      divergences]], it respects the geometry of the underlying space and stays finite and
+      informative when distributions do not overlap: two point masses a distance d apart are d
+      apart, not infinitely or maximally different. In one dimension the 1-Wasserstein distance is
+      the area between the two cumulative distribution functions. The Wasserstein GAN (2017) trained
+      its generator on a dual form estimated by a [[lipschitz-continuity|1-Lipschitz]] critic,
+      improving stability; the 2-Wasserstein distance between Gaussians underlies the
+      [[frechet-inception-distance|Fréchet inception distance]]; and optimal-transport ideas inform
+      [[flow-matching|flow matching]], domain adaptation and the word mover's distance between
+      documents. Exact computation is costly, so entropy-regularized (Sinkhorn) approximations are
+      common.
+    example: >-
+      The Wasserstein distance between the two label distributions stayed small even though their
+      supports barely overlapped.
+formula_latex: W_p(P, Q) = \Big(\inf_{\gamma \in \Pi(P,Q)}
+  \mathbb{E}_{(x,y)\sim\gamma}\big[d(x,y)^p\big]\Big)^{1/p}
+origin: >-
+  The transport problem goes back to Gaspard Monge (1781) and was recast as a linear program by
+  Leonid Kantorovich (1942). Leonid Vaserstein studied the metric in 1969, and Roland Dobrushin's
+  1970 paper named it after him; the name 'earth mover's distance' entered computer vision through
+  Yossi Rubner, Carlo Tomasi and Leonidas Guibas (1998). Martin Arjovsky, Soumith Chintala and Léon
+  Bottou's Wasserstein GAN (2017) made it famous in deep learning.
+year: 1970
+see_also:
+  - Kullback–Leibler divergence
+  - Jensen–Shannon divergence
+  - generative adversarial network
+  - Lipschitz continuity
+  - Fréchet inception distance
+  - flow matching
+contrast:
+  - Kullback–Leibler divergence
+sources:
+  - text: >-
+      Arjovsky, M., Chintala, S. & Bottou, L. (2017). Wasserstein GAN. arXiv:1701.07875.
+    url: https://arxiv.org/abs/1701.07875

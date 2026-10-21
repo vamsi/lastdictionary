@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fully sharded data parallel
+id: fully-sharded-data-parallel
+pos: n.
+also:
+  - FSDP
+  - FSDP2
+  - FullyShardedDataParallel
+  - sharded data parallelism
+domain: train
+domains:
+  - eng
+  - hw
+level: specialist
+plain: >-
+  A feature of the popular PyTorch software that lets many chips train a model too big for any one
+  of them, by spreading the model and its training bookkeeping evenly across all the chips.
+senses:
+  - definition: >-
+      A data-parallel training method built into [[pytorch|PyTorch]] that applies the [[zero|ZeRO]]
+      stage-3 idea: each worker permanently keeps only its own slice of the parameters, gradients
+      and optimizer states, and complete layers exist only briefly while they are being computed.
+      Before each wrapped unit's forward and backward computation, workers all-gather its full
+      parameters and then free them; after the backward pass, gradients are reduce-scattered so that
+      each worker updates only its own shard. Communication overlaps with computation by prefetching
+      the next unit's parameters. FSDP keeps the programming model of ordinary
+      [[data-parallelism|data parallelism]] while allowing models far larger than one accelerator's
+      memory, and it combines with [[tensor-parallelism|tensor]] and [[pipeline-parallelism|pipeline
+      parallelism]] in multi-dimensional layouts. A hybrid mode shards within a node and replicates
+      across nodes to reduce cross-node traffic. FSDP2 (2024) re-implemented it with per-parameter
+      sharding on PyTorch's distributed tensor (DTensor) abstraction.
+    example: >-
+      Wrap each transformer block in FSDP so only one block's full weights are materialized at a
+      time.
+origin: >-
+  Developed at Facebook AI Research (now Meta) in the FairScale library, released in early 2021 and
+  building on Microsoft's ZeRO and DeepSpeed; upstreamed to PyTorch 1.11 as a prototype in March
+  2022. Yanli Zhao and colleagues described the PyTorch design in 2023.
+year: 2021
+see_also:
+  - ZeRO
+  - data parallelism
+  - PyTorch
+  - distributed training
+  - 3D parallelism
+  - collective communication
+sources:
+  - text: >-
+      Zhao, Y., Gu, A., Varma, R., Luo, L., Huang, C.-C. et al. (2023). PyTorch FSDP: Experiences on
+      Scaling Fully Sharded Data Parallel. arXiv:2304.11277.
+    url: https://arxiv.org/abs/2304.11277
+  - text: >-
+      PyTorch Team (2022). Introducing PyTorch Fully Sharded Data Parallel (FSDP) API. PyTorch blog.
+    url: https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/

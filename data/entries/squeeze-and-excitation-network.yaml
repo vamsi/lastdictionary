@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: squeeze-and-excitation network
+id: squeeze-and-excitation-network
+pos: n.
+also:
+  - SENet
+  - SE block
+  - squeeze-and-excitation block
+  - channel attention
+domain: dl
+domains:
+  - percep
+level: specialist
+plain: >-
+  An image-network design whose add-on blocks let the network decide, for each picture, which of its
+  internal feature channels to turn up and which to turn down.
+senses:
+  - definition: >-
+      A [[convolutional-neural-network|convolutional neural network]] design, and the add-on block
+      it introduced, that lets a network reweight its own feature channels for each input. The
+      squeeze-and-excitation (SE) block 'squeezes' each channel of a [[feature-map|feature map]] to
+      one number by global average [[pooling|pooling]], passes the resulting vector through a small
+      bottleneck of two [[fully-connected-layer|fully connected layers]] (a [[relu|ReLU]] then a
+      [[sigmoid-function|sigmoid]]) to compute a weight between 0 and 1 for every channel
+      ('excitation'), and multiplies each channel by its weight. Channels useful for the current
+      image are thus boosted and others damped, a form of channel-wise [[attention|attention]] or
+      gating, at small cost (for ResNet-50, about 0.3% more computation and 10% more parameters). SE
+      blocks can be inserted into existing architectures such as [[resnet|ResNet]] and
+      [[inception|Inception]], and are part of [[mobilenet|MobileNetV3]] and
+      [[efficientnet|EfficientNet]].
+    example: Adding SE blocks to every ResNet stage improved top-1 accuracy by about a point.
+origin: >-
+  Introduced by Jie Hu, Li Shen and Gang Sun in 'Squeeze-and-Excitation Networks' (arXiv, September
+  2017; CVPR 2018). An SENet-based entry won the classification task of ILSVRC 2017, the final
+  ImageNet challenge, with about 2.25% top-5 error.
+year: 2017
+see_also:
+  - attention
+  - convolutional neural network
+  - EfficientNet
+  - MobileNet
+  - gated linear unit
+  - ResNet
+sources:
+  - text: >-
+      Hu, J., Shen, L. & Sun, G. (2018). Squeeze-and-Excitation Networks. CVPR 2018;
+      arXiv:1709.01507 (2017).

@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: capability
+id: capability
+pos: n.
+also:
+  - capabilities
+  - model capabilities
+  - capabilities research
+domain: core
+domains:
+  - safety
+  - eval
+  - gov
+level: core
+plain: >-
+  Something an AI system is able to do, such as writing working code or solving math problems, and
+  how well. Measuring capabilities is how researchers track progress and spot dangerous skills.
+senses:
+  - definition: >-
+      What an AI system can do: the range of tasks it can perform, and how well, when suitably
+      prompted, equipped with tools and given resources. Capabilities are measured by
+      [[benchmark|benchmarks]] and [[evaluation|evaluations]], but measured performance is a lower
+      bound, since better prompting, fine-tuning or [[scaffolding|scaffolding]] may reveal latent
+      abilities ([[capability-elicitation|capability elicitation]]). Researchers distinguish
+      capability (what a system can do) from propensity (what it tends to do by default) and from
+      [[ai-alignment|alignment]] (whether it pursues intended goals). In safety and governance,
+      dangerous capabilities, such as meaningful uplift for cyberattacks or [[cbrn-risk|CBRN]]
+      weapons or autonomous replication, are tested in [[dangerous-capability-evaluation|dangerous
+      capability evaluations]] against [[capability-threshold|capability thresholds]] that trigger
+      safeguards. The EU AI Act defines high-impact capabilities by reference to the frontier, as
+      capabilities equal to or beyond those of the most advanced general-purpose AI models yet
+      recorded (Art. 3(64)).
+    example: >-
+      The new model's coding capability jumped, so we reran the cyber-offense evaluations before
+      release.
+origin: >-
+  General English, from Late Latin capabilis. The AI usage hardened in the safety community of the
+  2010s, which contrasted 'capabilities' work, making systems more competent, with alignment or
+  safety work. Dangerous capability evaluation became standard practice from 2023, following work
+  such as Toby Shevlane and colleagues' 'Model Evaluation for Extreme Risks' (2023) and frontier
+  developers' published safety frameworks.
+note: >-
+  'Capabilities' as the name of a research agenda ('capabilities researchers') can be pejorative in
+  safety circles. Extrapolating from benchmark scores to broad claims about intelligence is
+  contested, as is whether new capabilities appear abruptly with scale
+  ([[emergent-abilities|emergent abilities]]).
+see_also:
+  - capability elicitation
+  - dangerous capability evaluation
+  - capability threshold
+  - benchmark
+  - emergent abilities
+  - sandbagging
+  - AI alignment
+  - jagged frontier
+contrast:
+  - AI alignment
+sources:
+  - text: >-
+      Shevlane, T. et al. (2023). Model Evaluation for Extreme Risks. arXiv:2305.15324.
+    url: https://arxiv.org/abs/2305.15324
+  - text: Regulation (EU) 2024/1689 (Artificial Intelligence Act), Article 3(64)–(65).
+    url: https://artificialintelligenceact.eu/article/3/
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(64) ('high-impact capabilities') and Art. 3(65) ('systemic
+  risk')
+as_of: 2026-10

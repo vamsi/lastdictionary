@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chiplet
+id: chiplet
+pos: n.
+also:
+  - chiplets
+  - multi-die design
+  - die-to-die interconnect
+  - UCIe
+  - tile
+domain: hw
+level: specialist
+plain: >-
+  One of several smaller chips that are made separately and then joined inside a single package to
+  work as one processor, which is cheaper than making one giant chip and lets makers reuse parts.
+senses:
+  - definition: >-
+      A die built as one building block of a multi-die package: each chiplet carries a portion of a
+      system — compute cores, cache, input/output or memory interfaces — and talks to its neighbors
+      over short, dense die-to-die links, instead of everything being integrated on one monolithic
+      chip. Splitting a design improves manufacturing yield (a defect ruins only a small die),
+      allows each function to use the best [[process-node|process node]] — leading-edge for compute,
+      older for input/output or analog — enables reuse across products, and lets designs exceed the
+      reticle limit of roughly 850 mm² that caps a single die. Examples include AMD's EPYC and
+      Instinct MI300 processors, Intel's Ponte Vecchio and Nvidia's Blackwell GPU, which joins two
+      reticle-sized dies with a 10 TB/s link. The costs are extra power and latency for crossing
+      between dies and dependence on [[advanced-packaging|advanced packaging]]. The UCIe standard
+      (2022) aims to let chiplets from different vendors interoperate.
+origin: >-
+  Earliest use is uncertain. Patent searches find 'chiplet' as early as 1969 in other senses, and in
+  roughly its present sense in IBM patent applications published in late 2000; a coinage often
+  credited to John Wawrzynek of the University of California, Berkeley (c. 2006, RAMP project)
+  therefore came later. Multi-chip modules are older still. Chiplets went mainstream with AMD's
+  second-generation EPYC processors (2019); the Universal Chiplet Interconnect Express (UCIe)
+  consortium formed in March 2022.
+year: 2000
+see_also:
+  - advanced packaging
+  - process node
+  - high-bandwidth memory
+  - interconnect
+  - wafer-scale engine
+  - Moore's law
+contrast:
+  - wafer-scale engine

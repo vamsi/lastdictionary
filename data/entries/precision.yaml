@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: precision
+id: precision
+pos: n.
+also:
+  - positive predictive value
+  - PPV
+  - precision@k
+  - numerical precision
+  - precision matrix
+domain: ml
+domains:
+  - eval
+  - hw
+  - math
+level: core
+plain: >-
+  Of all the items a model flagged as positive, the share that really were positive; a spam filter
+  with high precision rarely sends genuine emails to the spam folder.
+senses:
+  - context: Classification and retrieval
+    definition: >-
+      The fraction of predicted positives that are truly positive: TP/(TP + FP), where TP counts
+      true positives and FP [[false-positive|false positives]]. In retrieval it is the fraction of
+      returned documents that are relevant (precision@k for the top k results). Precision answers
+      'when the model says yes, how often is it right?' and matters most when false alarms are
+      costly, as in spam filtering, content takedowns or recommending a medical intervention. It
+      trades off against [[recall|recall]]: raising a classifier's decision threshold usually
+      increases precision and decreases recall, a trade-off traced by the
+      [[precision-recall-curve|precision–recall curve]] and summarized by the [[f1-score|F1 score]].
+      Unlike [[accuracy|accuracy]], precision ignores true negatives, which makes it informative
+      under [[class-imbalance|class imbalance]], but it depends on prevalence: the same classifier
+      shows lower precision in a population where positives are rarer. In medicine it is called
+      positive predictive value.
+    example: >-
+      At a 0.9 threshold the moderation classifier's precision is 97%, but it catches only 40% of
+      the abuse.
+  - context: Numerical computing
+    definition: >-
+      The number of bits, and hence significant digits, used to represent numbers in a
+      [[floating-point-format|floating-point format]], as in single (FP32), half (FP16),
+      [[bfloat16|bfloat16]] or 8-bit precision. Lower precision cuts memory use and speeds
+      computation at the cost of rounding error and a narrower range, the trade-off exploited by
+      [[mixed-precision-training|mixed-precision training]] and [[quantization|quantization]].
+  - context: Statistics
+    definition: >-
+      The reciprocal of a distribution's variance, or for a multivariate Gaussian the inverse of its
+      covariance matrix (the precision matrix). Bayesian statisticians often work with precisions
+      because the precisions of independent Gaussian sources of evidence simply add when the sources
+      are combined.
+formula_latex: \mathrm{Precision} = \frac{TP}{TP + FP}
+origin: >-
+  The classification sense comes from information retrieval. Allen Kent and colleagues proposed in
+  1955 to judge retrieval systems both by the proportion of retrieved documents that are relevant
+  and by the proportion of relevant documents retrieved, and Cyril Cleverdon's Cranfield experiments
+  of the late 1950s and 1960s helped make precision and recall the field's standard pair. Machine
+  learning adopted both for classification.
+note: >-
+  Three unrelated senses share the word, so check whether 'higher precision' means fewer false
+  positives or more bits per number. In metrology, precision means repeatability and is contrasted
+  with [[accuracy|accuracy]].
+see_also:
+  - recall
+  - F1 score
+  - precision–recall curve
+  - confusion matrix
+  - false positive
+  - floating-point format
+  - mixed-precision training
+  - quantization
+contrast:
+  - recall
+  - accuracy
+sources:
+  - text: >-
+      Kent, A., Berry, M. M., Luehrs, F. U. & Perry, J. W. (1955). Machine Literature Searching
+      VIII. Operational Criteria for Designing Information Retrieval Systems. American Documentation
+      6(2).
+  - text: >-
+      van Rijsbergen, C. J. (1979). Information Retrieval, 2nd ed. London: Butterworths.

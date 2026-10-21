@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: singular value decomposition
+id: singular-value-decomposition
+pos: n.
+also:
+  - SVD
+  - singular value
+  - singular values
+  - singular vectors
+domain: math
+domains:
+  - ml
+  - dl
+level: core
+plain: >-
+  A way of rewriting any grid of numbers as three simple moves in turn — turn, stretch along
+  perpendicular axes, turn again — which reveals the directions that matter most in the data.
+senses:
+  - definition: >-
+      The factorization of any real m × n [[matrix|matrix]] A as UΣVᵀ, where U and V are orthogonal
+      matrices whose columns (the left and right singular vectors) form orthonormal bases and Σ is
+      diagonal with nonnegative entries, the singular values, in decreasing order. Every linear map
+      thus splits into a rotation or reflection, an axis-aligned scaling and another rotation. The
+      number of nonzero singular values is the matrix's [[rank|rank]], the largest is its spectral
+      [[norm|norm]], and the ratio of largest to smallest is its condition number, a gauge of
+      [[numerical-stability|numerical stability]]. Truncating the SVD gives the best
+      [[low-rank-approximation|low-rank approximation]], the basis of
+      [[principal-component-analysis|principal component analysis]],
+      [[latent-semantic-analysis|latent semantic analysis]] and many compression methods. In deep
+      learning, SVD is used to study weight spectra, initialize and compress layers, and analyze the
+      orthogonalized updates of optimizers such as [[muon|Muon]].
+    example: >-
+      The SVD of the fine-tuning update showed almost all its energy in the top eight singular
+      values.
+formula_latex: A = U\Sigma V^{\top} = \sum_{i=1}^{r} \sigma_i\,\mathbf{u}_i\mathbf{v}_i^{\top}
+origin: >-
+  Discovered independently by Eugenio Beltrami (1873) and Camille Jordan (1874) and extended by
+  James Joseph Sylvester (1889), Erhard Schmidt (1907) and Hermann Weyl (1912); 'singular value' in
+  its modern sense was settled by the 1930s. Carl Eckart and Gale Young's 1936 approximation theorem
+  made it central to data analysis, and Gene Golub and William Kahan's 1965 algorithm made it
+  practical on computers.
+year: 1873
+see_also:
+  - eigenvector
+  - low-rank approximation
+  - principal component analysis
+  - rank
+  - latent semantic analysis
+  - low-rank adaptation
+  - matrix
+sources:
+  - text: >-
+      Golub, G. & Kahan, W. (1965). Calculating the Singular Values and Pseudo-Inverse of a Matrix.
+      Journal of the Society for Industrial and Applied Mathematics, Series B: Numerical Analysis,
+      2(2).

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI gateway
+id: ai-gateway
+pos: n.
+also:
+  - LLM gateway
+  - LLM proxy
+  - model gateway
+  - AI proxy
+domain: eng
+domains:
+  - infer
+  - sec
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A checkpoint between an organization's apps and the AI models they use that handles access, costs,
+  logging, safety checks and switching between providers in one place.
+senses:
+  - definition: >-
+      A proxy service placed between applications and one or more [[model-api|model APIs]] or
+      self-hosted models that centralizes the cross-cutting concerns of AI traffic. Typical
+      functions are a single, often [[openai-compatible-api|OpenAI-compatible API]] across
+      providers; credential management, so that applications never hold provider keys; per-team
+      budgets, quotas and [[rate-limit|rate limiting]]; [[model-routing|routing]], load balancing,
+      retries and failover between models or regions; [[prompt-caching|caching]], including
+      [[semantic-caching|semantic caching]]; logging and cost attribution for
+      [[llm-observability|LLM observability]]; and policy enforcement such as redaction of personal
+      data, content filtering and [[guardrails|guardrails]] on inputs and outputs. The pattern
+      extends the API gateways of web services with token-aware metering and support for streamed
+      responses. Open-source and commercial examples include LiteLLM, Portkey, Kong AI Gateway,
+      Cloudflare AI Gateway and gateways from cloud providers; some also proxy
+      [[model-context-protocol|Model Context Protocol]] servers and agent traffic.
+    example: >-
+      All model calls go through the AI gateway, so finance sees spend by team and security can
+      block unapproved providers.
+origin: >-
+  Emerged in 2023 as companies using several language-model providers sought central control over
+  keys, costs and logging; Cloudflare announced a product called AI Gateway that September, and
+  API-management vendors and open-source proxies adopted the label during 2024.
+year: 2023
+note: >-
+  Overlaps with [[model-routing|model routing]], which chooses a model per request; a gateway may
+  route, but it is defined by being the shared control point. It also adds a potential single point
+  of failure and some [[latency|latency]].
+see_also:
+  - model API
+  - OpenAI-compatible API
+  - model routing
+  - rate limit
+  - semantic caching
+  - LLM observability
+  - guardrails
+as_of: 2026-10

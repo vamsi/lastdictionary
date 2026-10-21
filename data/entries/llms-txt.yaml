@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: llms.txt
+id: llms-txt
+pos: n.
+also:
+  - llms-full.txt
+domain: agents
+domains:
+  - eng
+  - data
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A short guide file that a website puts at a standard address to help AI assistants find and
+  understand its most useful pages.
+senses:
+  - definition: >-
+      A proposed web convention: a site places a Markdown file called llms.txt at its root (or under
+      a subpath) as a short, hand-picked guide for [[large-language-model|language models]] and
+      [[ai-agent|agents]]. Only a top-level (H1) title is mandatory; it is normally followed by a
+      one-paragraph blockquote summary, any further notes, and H2-headed lists of links, each with a
+      brief description, while links under a heading named 'Optional' are ones an agent may drop
+      when its [[context-window|context]] is tight. The proposal also suggests serving a
+      plain-Markdown copy of each useful page at its usual URL with '.md' added. It targets the
+      moment an assistant is answering a user rather than model training, and so complements
+      [[robots-txt|robots.txt]], which controls crawler access, and sitemaps, which enumerate every
+      page.
+    example: >-
+      Point the agent at the library's llms.txt instead of letting it scrape the whole docs site.
+origin: >-
+  Proposed by Jeremy Howard of Answer.AI on 3 September 2024 at llmstxt.org, and adopted by
+  documentation platforms and many developer sites through 2025.
+year: 2024
+note: >-
+  A voluntary convention rather than a formal standard; how much individual AI crawlers and
+  assistants actually use it varies.
+see_also:
+  - robots.txt
+  - generative engine optimization
+  - context engineering
+  - web crawler
+  - agent skill
+  - progressive disclosure
+sources:
+  - text: Howard, J. (2024). The /llms.txt file. llmstxt.org, 3 September 2024.
+    url: https://llmstxt.org/
+as_of: 2026-10

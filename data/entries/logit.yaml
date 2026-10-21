@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: logit
+id: logit
+pos: n.
+also:
+  - logits
+  - log-odds
+  - log odds
+  - logit function
+pronunciation: LOH-jit
+domain: dl
+domains:
+  - math
+  - ml
+  - llm
+level: core
+plain: >-
+  A raw score that a model gives each possible answer before the scores are turned into
+  probabilities. In statistics, the 'log-odds': a probability rewritten on a scale running from
+  minus to plus infinity.
+senses:
+  - context: Neural networks
+    definition: >-
+      The unnormalized score that a [[neural-network|neural network]]'s final layer assigns to each
+      class or [[token|token]] before [[softmax|softmax]] (or, for a binary output, the
+      [[sigmoid-function|sigmoid]]) converts the scores into probabilities. Logits are real numbers
+      of any sign; only their differences matter to softmax, so adding the same constant to all of
+      them changes nothing. A [[large-language-model|language model]] outputs one logit per
+      vocabulary entry at each position, and decoding controls act on them:
+      [[temperature|temperature]] divides them, [[logit-bias|logit bias]] adds to them, and top-k
+      and top-p sampling truncate the resulting distribution. Training code passes logits rather
+      than probabilities to the loss because a fused softmax and [[cross-entropy|cross-entropy]]
+      computed from logits is numerically stable. In [[interpretability|interpretability]], the
+      [[logit-lens|logit lens]] reads intermediate layers in logit space.
+    example: Pass the raw logits to the loss function; don't apply softmax first.
+  - context: Statistics
+    definition: >-
+      The log-odds of a probability p, logit(p) = ln(p/(1 − p)), which maps the interval (0, 1) onto
+      the whole real line and is the inverse of the logistic [[sigmoid-function|sigmoid function]].
+      In [[logistic-regression|logistic regression]] the logit of the outcome probability is modeled
+      as a linear function of the predictors, so each coefficient is a change in log-odds per unit
+      change of its predictor. The logit is the canonical link function for binomial data in
+      [[generalized-linear-model|generalized linear models]].
+formula_latex: \operatorname{logit}(p) = \ln\frac{p}{1-p} = \sigma^{-1}(p)
+origin: >-
+  Coined by statistician Joseph Berkson in 'Application of the Logistic Function to Bio-Assay'
+  (Journal of the American Statistical Association, 1944), short for 'logistic unit', by analogy
+  with Chester Bliss's 'probit' (1934). The looser neural-network sense, any pre-softmax score,
+  spread with deep-learning practice and software in the 2010s; TensorFlow (2015), for example,
+  names the inputs of its fused softmax–cross-entropy losses 'logits'.
+year: 1944
+note: >-
+  The machine-learning sense stretches the statistical one: a sigmoid classifier's logit really is a
+  log-odds, but softmax logits equal log-probabilities only up to an additive constant.
+  Practitioners also speak of attention logits, the scores before attention's softmax.
+see_also:
+  - softmax
+  - sigmoid function
+  - logistic regression
+  - log probability
+  - temperature
+  - logit lens
+  - cross-entropy
+contrast:
+  - log probability
+sources:
+  - text: >-
+      Berkson, J. (1944). Application of the Logistic Function to Bio-Assay. Journal of the American
+      Statistical Association, 39(227), 357–365.

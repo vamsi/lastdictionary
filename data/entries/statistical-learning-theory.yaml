@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: statistical learning theory
+id: statistical-learning-theory
+pos: n.
+also:
+  - computational learning theory
+  - learning theory
+  - COLT
+  - generalization bound
+  - generalization bounds
+  - Rademacher complexity
+  - uniform convergence
+domain: math
+domains:
+  - ml
+  - dl
+level: specialist
+plain: >-
+  The mathematics of when and why learning from examples works: how much data is needed, and how
+  well a model trained on some examples will do on new ones.
+senses:
+  - definition: >-
+      The branch of mathematics and theoretical computer science that analyzes learning from data in
+      a probabilistic framework: given training examples drawn [[i-i-d|i.i.d.]] from an unknown
+      distribution, it asks when an algorithm's error on new data (its risk) will be close to its
+      error on the training data, and how many examples that requires. Its central results are
+      uniform-convergence bounds, which control the gap between training and true risk by the
+      capacity of the hypothesis class — measured by the [[vc-dimension|VC dimension]], Rademacher
+      complexity or covering numbers — together with [[pac-learning|PAC learning]] sample-complexity
+      results, stability-based and PAC-Bayes bounds, and margin theory. It justified
+      [[empirical-risk-minimization|empirical risk minimization]] and
+      [[support-vector-machine|support vector machines]] and supplied the language of capacity,
+      [[overfitting|overfitting]] and the [[bias-variance-tradeoff|bias–variance tradeoff]].
+      Classical bounds largely fail to explain the [[generalization|generalization]] of large neural
+      networks, which can fit random labels yet generalize on real ones, prompting newer theory on
+      [[implicit-regularization|implicit regularization]], [[double-descent|double descent]], the
+      [[neural-tangent-kernel|neural tangent kernel]] and [[singular-learning-theory|singular
+      learning theory]].
+    example: >-
+      Statistical learning theory explains why linear models generalize, but its classical bounds
+      are vacuous for our network.
+origin: >-
+  Developed by Vladimir Vapnik and Alexey Chervonenkis in the Soviet Union from the late 1960s,
+  alongside the computational learning theory launched by Leslie Valiant's PAC model (1984), whose
+  annual COLT conference began in 1988. Vapnik's The Nature of Statistical Learning Theory (1995)
+  and Statistical Learning Theory (1998) popularized the name and the theory in machine learning.
+see_also:
+  - PAC learning
+  - VC dimension
+  - empirical risk minimization
+  - generalization
+  - overfitting
+  - bias–variance tradeoff
+  - no free lunch theorem
+sources:
+  - text: Vapnik, V. N. (1995). The Nature of Statistical Learning Theory. Springer.

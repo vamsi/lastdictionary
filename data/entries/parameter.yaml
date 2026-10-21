@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: parameter
+id: parameter
+pos: n.
+also:
+  - parameters
+  - params
+  - learnable parameter
+  - trainable parameter
+domain: core
+domains:
+  - ml
+  - math
+  - llm
+level: core
+plain: >-
+  One of the adjustable numbers inside an AI model that are tuned during training. Large language
+  models have billions of them, and together they store what the model has learned.
+senses:
+  - context: Machine learning
+    definition: >-
+      A numerical value inside a model that is learned from data during [[training|training]]:
+      chiefly the [[weights|weights]] and [[bias|biases]] of a [[neural-network|neural network]], or
+      the coefficients of a [[linear-regression|linear regression]]. Parameters are distinguished
+      from [[hyperparameter|hyperparameters]], such as the [[learning-rate|learning rate]] or the
+      number of layers, which are set before training and govern how the parameters are learned. The
+      total, the [[parameter-count|parameter count]], is the usual shorthand for model size, from
+      thousands in early networks to hundreds of billions or more in [[frontier-model|frontier
+      models]]. In a [[mixture-of-experts|mixture of experts]] model only a fraction of the
+      parameters is used for each token, so total and active counts are reported separately.
+    example: The 7-billion-parameter model fits on a single GPU once quantized to four bits.
+  - context: Statistics
+    definition: >-
+      A numerical characteristic of a population or probability distribution, such as a mean, a
+      variance or a regression coefficient, that is typically unknown and estimated from a sample. A
+      [[parametric-model|parametric model]] has a fixed, finite set of parameters; a
+      [[nonparametric-model|nonparametric model]] lets its complexity grow with the data.
+  - context: Software and APIs
+    definition: >-
+      An input to a function or a configurable setting. [[model-api|Model APIs]] call settings such
+      as [[temperature|temperature]], maximum output length and [[top-p-sampling|top-p]] 'sampling
+      parameters', although they are not learned and are better described as inference-time
+      settings.
+origin: >-
+  From Greek para ('beside') and metron ('measure'), first a term of geometry. The statistical
+  sense, a constant characterizing a population as opposed to a statistic computed from a sample,
+  was fixed by Ronald Fisher in his 1922 paper on the mathematical foundations of statistics;
+  machine learning extended it to any learned quantity in a model.
+note: >-
+  Popular writing sometimes equates parameters with neurons or brain synapses; the analogy is loose.
+  Parameter count alone does not determine capability: training data, compute and architecture
+  matter at least as much.
+see_also:
+  - weights
+  - hyperparameter
+  - parameter count
+  - training
+  - parametric model
+  - overparameterization
+  - mixture of experts
+contrast:
+  - hyperparameter

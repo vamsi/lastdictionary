@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: activation steering
+id: activation-steering
+pos: n.
+also:
+  - activation engineering
+  - representation steering
+  - latent steering
+domain: interp
+domains:
+  - safety
+  - llm
+level: core
+plain: >-
+  Changing an AI model's behavior by adjusting the internal numbers it computes while it runs — like
+  turning a hidden dial — instead of rewording the prompt or retraining the model.
+senses:
+  - definition: >-
+      A family of inference-time techniques that control a [[neural-network|neural network]] by
+      intervening on its intermediate [[activation|activations]] during the [[forward-pass|forward
+      pass]], leaving the weights unchanged. The commonest form adds a scaled
+      [[steering-vector|steering vector]] v to the [[residual-stream|residual stream]] at one or
+      more layers and token positions (h → h + αv). Other forms project a direction out
+      ([[directional-ablation|directional ablation]]), clamp [[sparse-autoencoder|sparse
+      autoencoder]] features ([[feature-steering|feature steering]]), shift selected
+      [[attention-head|attention head]] outputs ([[inference-time-intervention|inference-time
+      intervention]]) or apply learned low-rank edits ([[representation-fine-tuning|representation
+      fine-tuning]]). Directions are obtained by contrasting activations on paired inputs
+      (difference of means or principal components), from [[linear-probe|probes]], by gradient-based
+      optimization, or from interpretability features. Practitioners choose the layer (middle layers
+      often work best), the strength α and the token positions. Typical failures are lost fluency at
+      high strength, side effects on unrelated behavior and poor transfer across prompts.
+    example: >-
+      Activation steering with a sycophancy vector reduced how often the model agreed with users'
+      false claims.
+origin: >-
+  Precursors include steering image generators through latent space (2019) and Sumanth Dathathri and
+  colleagues' [[plug-and-play-language-model|plug and play language model]] (2019), which nudged
+  hidden states with classifier gradients. The additive form came from Nishant Subramani and
+  colleagues (2022) and Alexander Matt Turner and colleagues (2023), who named the wider field
+  'activation engineering'; 'activation steering' became the prevailing term during 2023–2024.
+year: 2023
+note: >-
+  Steering is cheap and reversible but needs access to a model's internals, so outside the developer
+  it is mainly practiced on [[open-weight-model|open-weight models]]. In the original AxBench
+  evaluation (2025), prompting, then fine-tuning, beat every representation-steering method tested;
+  later steering methods have narrowed the gap, but steering's main appeal still lies in precision,
+  monitoring and research insight.
+see_also:
+  - steering vector
+  - activation addition
+  - contrastive activation addition
+  - representation engineering
+  - feature steering
+  - directional ablation
+  - linear representation hypothesis
+contrast:
+  - fine-tuning
+  - prompt engineering
+sources:
+  - text: >-
+      Turner, A. M. et al. (2023). Activation Addition: Steering Language Models Without
+      Optimization. arXiv:2308.10248.
+    url: https://arxiv.org/abs/2308.10248v4
+  - text: >-
+      Subramani, N., Suresh, N. & Peters, M. (2022). Extracting Latent Steering Vectors from
+      Pretrained Language Models. Findings of ACL 2022.
+    url: https://aclanthology.org/2022.findings-acl.48
+  - text: >-
+      Wu, Z. et al. (2025). AxBench: Steering LLMs? Even Simple Baselines Outperform Sparse
+      Autoencoders. ICML 2025. arXiv:2501.17148.
+    url: https://arxiv.org/abs/2501.17148
+as_of: 2026-10

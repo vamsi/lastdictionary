@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: memory wall
+id: memory-wall
+pos: n.
+also:
+  - memory gap
+  - processor–memory gap
+domain: hw
+domains:
+  - infer
+  - train
+level: specialist
+plain: >-
+  The growing gap between how fast chips can calculate and how fast they can fetch data from memory.
+  Processors increasingly sit idle, waiting for numbers to arrive.
+senses:
+  - definition: >-
+      The performance limit that arises because processor arithmetic throughput has grown much
+      faster than the bandwidth and latency of off-chip memory, so that more and more workloads are
+      bound by data movement rather than computation. In AI the gap is stark: one analysis found
+      that peak server FLOPS grew about 3.0× every two years over two decades, against 1.6× for DRAM
+      bandwidth and 1.4× for interconnect bandwidth. Responses span the stack:
+      [[high-bandwidth-memory|high-bandwidth memory]] and [[advanced-packaging|advanced packaging]];
+      large on-chip [[sram|SRAM]] and [[wafer-scale-engine|wafer-scale]] designs;
+      [[analog-in-memory-computing|analog in-memory computing]]; and algorithms that raise
+      [[arithmetic-intensity|arithmetic intensity]] or shrink data, such as
+      [[flashattention|FlashAttention]], batching, [[quantization|quantization]] and
+      [[mixture-of-experts|mixture of experts]]. Moving data also costs far more energy than
+      computing on it, so the memory wall is a power problem as well as a speed problem.
+origin: >-
+  Coined by William A. Wulf and Sally A. McKee in 'Hitting the Memory Wall: Implications of the
+  Obvious' (ACM SIGARCH Computer Architecture News, March 1995), which extrapolated that processor
+  speed growth would make memory access dominate run time. Amir Gholami and colleagues revived the
+  phrase for AI in 'AI and Memory Wall' (2021; arXiv 2024).
+year: 1995
+note: >-
+  Related to, but distinct from, the [[von-neumann-bottleneck|von Neumann bottleneck]], which names
+  the single channel between processor and memory in stored-program computers rather than a
+  growth-rate gap.
+see_also:
+  - memory bandwidth
+  - von Neumann bottleneck
+  - high-bandwidth memory
+  - roofline model
+  - analog in-memory computing
+  - SRAM
+sources:
+  - text: >-
+      Wulf, W. A. & McKee, S. A. (1995). Hitting the Memory Wall: Implications of the Obvious. ACM
+      SIGARCH Computer Architecture News 23(1).
+  - text: >-
+      Gholami, A., Yao, Z., Kim, S., Hooper, C., Mahoney, M. W. & Keutzer, K. (2024). AI and Memory
+      Wall. arXiv:2403.14123.
+    url: https://arxiv.org/abs/2403.14123

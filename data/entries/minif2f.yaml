@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: miniF2F
+id: minif2f
+pos: prop. n.
+also:
+  - miniF2F-test
+  - miniF2F-valid
+pronunciation: MIN-ee-eff-too-EFF
+domain: eval
+domains:
+  - sym
+  - math
+level: specialist
+plain: >-
+  A test of 488 math problems, mostly from competitions, written in a form a computer can check,
+  used to measure how well AI systems produce proofs that are verified automatically.
+senses:
+  - definition: >-
+      A [[benchmark|benchmark]] for formal [[automated-theorem-proving|theorem proving]] made of 488
+      hand-formalized problem statements, split evenly into validation and test sets. The problems
+      come from US competitions (the American Mathematics Competitions, AMC, and the American
+      Invitational Mathematics Examination, AIME), the International Mathematical Olympiad (IMO),
+      the MATH dataset and school and university courses, and they were formalized for [[lean|Lean]]
+      and Metamath in full and for Isabelle and HOL Light in part, so that provers built on
+      different systems could be compared. A problem counts as solved only when the system outputs a
+      proof that the checker accepts, and results are usually reported as pass@k, the share of
+      problems solved within k attempts. Reported Lean test-set results rose from about 30 percent
+      at release to above 90 percent in 2025, effectively saturating the benchmark and shifting
+      attention to harder suites such as [[putnambench|PutnamBench]]. Audits found errors in some
+      original formalizations, including unprovable or trivially easy statements, and several groups
+      now use corrected versions.
+    example: >-
+      Our prover solves most of miniF2F-test at pass@32, but nearly all the gains are on the easier
+      algebra items.
+origin: >-
+  Released in 2021 by Kunhao Zheng, Jesse Michael Han and Stanislas Polu, working with OpenAI, as a
+  shared cross-system benchmark for neural theorem proving, and published at ICLR 2022. 'F2F' stands
+  for formal-to-formal: both the problem and the proof are formal. Community ports moved it to Lean
+  4 after the Mathlib migration.
+year: 2021
+note: >-
+  Because the formal statements of numerical questions already contain the answer, solving one shows
+  that a system can prove an answer correct, not that it can find the answer.
+see_also:
+  - Lean
+  - Mathlib
+  - PutnamBench
+  - automated theorem proving
+  - benchmark
+  - AlphaProof
+  - International Mathematical Olympiad
+  - benchmark saturation
+sources:
+  - text: >-
+      Zheng, K., Han, J. M. & Polu, S. (2022). MiniF2F: a cross-system benchmark for formal
+      Olympiad-level mathematics. ICLR 2022. arXiv:2109.00110.
+as_of: 2026-10

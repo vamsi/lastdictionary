@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: web crawler
+id: web-crawler
+pos: n.
+also:
+  - crawler
+  - spider
+  - web spider
+  - web robot
+  - crawl
+domain: data
+domains:
+  - agents
+  - eng
+level: core
+plain: >-
+  A program that automatically travels the web, following links from page to page and downloading
+  what it finds — used by search engines, archives and AI companies to gather data.
+senses:
+  - definition: >-
+      A program that explores the web unattended: it fetches a page, extracts its links and adds any
+      new addresses to a queue of pages still to visit (the frontier), so that a few starting URLs
+      (seeds) can lead it across much of the web. Production crawlers schedule revisits, avoid
+      duplicates and traps, spread their load across sites, identify themselves with a user-agent
+      string and are expected to obey [[robots-txt|robots.txt]] and rate limits. Search engines and
+      archives have crawled since the 1990s; [[common-crawl|Common Crawl]]'s CCBot made periodic
+      whole-web snapshots freely available; and since 2023 AI developers have run their own
+      crawlers, such as OpenAI's GPTBot and Anthropic's ClaudeBot, to gather
+      [[pretraining-data|pretraining data]], alongside on-demand fetchers that retrieve pages for AI
+      search and agents. The resulting load on websites and disputes over consent have led many
+      sites to block AI user agents, and some network providers to block them by default or charge
+      for access.
+    example: >-
+      The crawler respects robots.txt and backs off when a site returns rate-limit errors.
+origin: >-
+  Matthew Gray's World Wide Web Wanderer (MIT, June 1993) is usually counted as the first web robot,
+  built to measure the web's growth; JumpStation (December 1993) was the first crawler-based search
+  engine, and Brian Pinkerton's WebCrawler (University of Washington, April 1994) was the first to
+  index the full text of pages. 'Spider' extends the web metaphor.
+year: 1993
+note: >-
+  Distinguish crawling (finding and fetching pages) from [[web-scraping|web scraping]] (extracting
+  data from them), and bulk training crawlers from user-triggered fetchers, which some AI companies
+  say are not bound by robots.txt rules written for crawlers.
+see_also:
+  - web scraping
+  - robots.txt
+  - Common Crawl
+  - information retrieval
+  - pretraining data
+  - opt-out
+as_of: 2026-10

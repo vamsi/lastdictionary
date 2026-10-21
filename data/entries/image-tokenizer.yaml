@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: image tokenizer
+id: image-tokenizer
+pos: n.
+also:
+  - visual tokenizer
+  - video tokenizer
+  - image tokens
+  - visual tokens
+domain: gen
+domains:
+  - llm
+  - percep
+level: specialist
+plain: >-
+  A component that chops a picture into a short sequence of 'visual words' that a language-style AI
+  model can read or write, and turns such sequences back into pictures.
+senses:
+  - definition: >-
+      A learned encoder–decoder that converts an image (or video) into a compact sequence of
+      [[token|tokens]] for a generative or multimodal model, and back again. Discrete tokenizers
+      such as [[vq-vae|VQ-VAE]] and [[vqgan|VQGAN]] map each cell of a downsampled grid to an index
+      in a codebook, typically with thousands to tens of thousands of entries, so that images can be
+      modeled by [[autoregressive-image-generation|autoregressive]] transformers alongside text;
+      newer quantizers (lookup-free and finite scalar quantization) allow far larger implicit
+      vocabularies, and one-dimensional tokenizers can represent a whole image with as few as 32
+      tokens. Continuous tokenizers — the [[variational-autoencoder|VAEs]] of
+      [[latent-diffusion-model|latent diffusion]] — output real-valued latent patches instead.
+      Because the tokenizer bounds attainable quality and sets sequence length, designers trade
+      compression against reconstruction fidelity and against how easily its tokens can be
+      generated. In vision-language understanding, 'image tokens' often means continuous
+      [[patch-embedding|patch embeddings]] from a [[vision-transformer|vision transformer]], which
+      cannot be decoded back to pixels.
+origin: >-
+  Discrete visual codes for generation date from the VQ-VAE (2017) and the discrete VAE of DALL·E
+  (2021), with VQGAN (2020) setting the template. The term 'image tokenizer' spread with token-based
+  generators and multimodal models such as Parti, MaskGIT and Chameleon (2022–2024).
+see_also:
+  - VQ-VAE
+  - VQGAN
+  - tokenizer
+  - autoregressive image generation
+  - neural audio codec
+  - patch embedding
+  - latent diffusion model
+sources:
+  - text: >-
+      van den Oord, A., Vinyals, O. & Kavukcuoglu, K. (2017). Neural Discrete Representation
+      Learning. NeurIPS 2017. arXiv:1711.00937.
+    url: https://arxiv.org/abs/1711.00937
+  - text: >-
+      Esser, P., Rombach, R. & Ommer, B. (2021). Taming Transformers for High-Resolution Image
+      Synthesis. CVPR 2021. arXiv:2012.09841.
+    url: https://arxiv.org/abs/2012.09841

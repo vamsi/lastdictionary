@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Monte Carlo method
+id: monte-carlo-method
+pos: n.
+also:
+  - Monte Carlo
+  - Monte Carlo simulation
+  - Monte Carlo estimate
+  - Monte Carlo integration
+domain: math
+domains:
+  - rl
+  - ml
+level: core
+plain: >-
+  Estimating an answer by running many random trials and averaging the results — like estimating the
+  odds in a card game by dealing thousands of hands instead of calculating.
+senses:
+  - definition: >-
+      Any computational technique that estimates a quantity — usually an [[expected-value|expected
+      value]], integral or probability — by averaging over random samples. By the
+      [[law-of-large-numbers|law of large numbers]] the estimate converges to the true value, and by
+      the [[central-limit-theorem|central limit theorem]] its error shrinks in proportion to 1/√N
+      for N samples regardless of dimension, which is why Monte Carlo beats grid-based integration
+      in high dimensions. [[variance|Variance]]-reduction refinements include
+      [[importance-sampling|importance sampling]], control variates and stratification. Monte Carlo
+      pervades AI: a mini-batch gradient in [[stochastic-gradient-descent|stochastic gradient
+      descent]] is a Monte Carlo estimate of the full gradient;
+      [[reinforcement-learning|reinforcement learning]] estimates returns from sampled episodes and
+      plans with [[monte-carlo-tree-search|Monte Carlo tree search]];
+      [[variational-inference|variational inference]] and [[diffusion-model|diffusion]] training
+      estimate expectations with sampled noise; and keeping dropout on at test time ('Monte Carlo
+      dropout') approximates uncertainty. [[markov-chain-monte-carlo|Markov chain Monte Carlo]]
+      extends the idea to distributions that cannot be sampled directly.
+    example: >-
+      We estimated each problem's pass rate with a Monte Carlo average over 200 samples.
+formula_latex: \mathbb{E}_{p}[f(X)] \approx \frac{1}{N}\sum_{i=1}^{N} f(x_i), \qquad x_i \sim p
+origin: >-
+  Developed at Los Alamos in 1946–1947 by Stanislaw Ulam and John von Neumann for neutron-diffusion
+  calculations on early electronic computers; Nicholas Metropolis suggested the name, after the
+  Monaco casino where Ulam's uncle gambled. Metropolis and Ulam's 1949 paper 'The Monte Carlo
+  Method' introduced it publicly. Earlier random experiments such as Buffon's needle (1777)
+  anticipated the idea.
+year: 1949
+see_also:
+  - Markov chain Monte Carlo
+  - importance sampling
+  - law of large numbers
+  - Monte Carlo tree search
+  - sampling
+  - stochastic
+sources:
+  - text: >-
+      Metropolis, N. & Ulam, S. (1949). The Monte Carlo Method. Journal of the American Statistical
+      Association, 44(247).

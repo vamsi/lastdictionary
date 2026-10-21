@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: The Stack
+id: the-stack
+pos: prop. n.
+also:
+  - The Stack v2
+  - Am I in The Stack
+domain: data
+domains:
+  - llm
+  - eng
+level: specialist
+plain: >-
+  A large free collection of computer source code from public repositories, selected mainly for
+  permissive licenses and released from 2022 onward by the BigCode project for training coding
+  models.
+senses:
+  - definition: >-
+      An open dataset of source code for training [[code-generation|code-generating]] language
+      models, built by BigCode, an open research collaboration led by Hugging Face and ServiceNow.
+      The first release (v1.0, 2022) held 3.1 TB of files in 30 programming languages from public
+      GitHub repositories whose detected licenses are permissive (such as MIT and Apache 2.0) —
+      plus, in that release only, three weak-copyleft licenses — and excluded GPL-style and
+      unlicensed code; v1.1 grew to 358 languages and about 6 TB. It was near-deduplicated and
+      paired with a governance process in which developers can search for their code ('Am I in The
+      Stack') and request its removal from future versions. The Stack v2 (2024), built with the
+      Software Heritage archive, spans more than 600 languages, also admits files with no detected
+      license, and yielded a training set about four times larger than the first StarCoder's; it
+      trained the StarCoder2 models (3, 7 and 15 billion parameters) on 3.3–4.3 trillion tokens.
+    example: We removed repositories whose owners had opted out of The Stack before training.
+origin: >-
+  Introduced in 'The Stack: 3 TB of Permissively Licensed Source Code' by Denis Kocetkov, Raymond
+  Li, Loubna Ben Allal and colleagues (arXiv, November 2022); The Stack v2 appeared with StarCoder2
+  in February 2024 (Anton Lozhkov, Raymond Li, Loubna Ben Allal and colleagues).
+year: 2022
+note: >-
+  Its license filter and opt-out made it a model for consent-aware data collection, but permissive
+  licenses still require attribution and license detection is error-prone, so legal questions about
+  code models remain.
+see_also:
+  - code generation
+  - opt-out
+  - data licensing
+  - deduplication
+  - Hugging Face
+  - pretraining data
+sources:
+  - text: >-
+      Kocetkov, D. et al. (2022). The Stack: 3 TB of Permissively Licensed Source Code.
+      arXiv:2211.15533.
+    url: https://arxiv.org/abs/2211.15533
+  - text: >-
+      Lozhkov, A. et al. (2024). StarCoder 2 and The Stack v2: The Next Generation. arXiv:2402.19173.
+    url: https://arxiv.org/abs/2402.19173
+as_of: 2026-10

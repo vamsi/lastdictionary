@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gödel's incompleteness theorems
+id: godel-s-incompleteness-theorems
+pos: n.
+also:
+  - incompleteness theorem
+  - incompleteness theorems
+  - Gödel's theorem
+  - first incompleteness theorem
+  - second incompleteness theorem
+  - Gödel sentence
+pronunciation: GUR-dul
+domain: math
+domains:
+  - mind
+  - sym
+  - safety
+level: core
+plain: >-
+  Two famous results from 1931 showing that any consistent set of rules for doing arithmetic leaves
+  some true statements unprovable, and cannot prove that it is itself free of contradictions.
+senses:
+  - definition: >-
+      A pair of results in mathematical logic, published by Kurt Gödel in 1931, that limit what
+      formal proof can achieve. The first states that any consistent, effectively axiomatized formal
+      system able to express elementary arithmetic is incomplete: some sentence of its language can
+      be neither proved nor refuted within it. Gödel built such a sentence by encoding formulas and
+      proofs as numbers (Gödel numbering), so that the system can express a statement asserting, in
+      effect, its own unprovability. The second states that such a system cannot prove its own
+      consistency. With [[alan-turing|Alan Turing]]'s related proof that the halting problem is
+      undecidable (1936), the theorems set limits on what any [[turing-machine|algorithm]] or proof
+      system can establish. In AI they are invoked in the [[lucas-penrose-argument|Lucas–Penrose
+      argument]] that minds are not machines; in the Löbian obstacle, a difficulty for agents that
+      must trust proofs produced by their own successors; and in [[godel-machine|Gödel machines]],
+      self-improving programs that rewrite themselves only after proving a change beneficial.
+    example: >-
+      The verifier's logic cannot prove its own consistency; by the second incompleteness theorem,
+      that assurance must come from a stronger system.
+origin: >-
+  Announced by Kurt Gödel at a conference in Königsberg in September 1930 and published in 1931 in
+  Monatshefte für Mathematik und Physik as 'On Formally Undecidable Propositions of Principia
+  Mathematica and Related Systems I'. The results ended David Hilbert's hope of proving mathematics
+  consistent by finitary means; Alan Turing discussed them as 'the mathematical objection' to
+  thinking machines in 1950.
+year: 1931
+note: >-
+  Often overstated: the theorems concern formal systems of a particular kind, not knowledge in
+  general, and a stronger system can prove the Gödel sentence of a weaker one. Most logicians and
+  philosophers reject the inference from incompleteness to the conclusion that human thought is
+  non-mechanical.
+see_also:
+  - Lucas–Penrose argument
+  - Turing machine
+  - Gödel machine
+  - formal verification
+  - Computing Machinery and Intelligence
+  - embedded agency
+sources:
+  - text: >-
+      Gödel, K. (1931). Über formal unentscheidbare Sätze der Principia Mathematica und verwandter
+      Systeme I. Monatshefte für Mathematik und Physik 38.
+  - text: Nagel, E. & Newman, J. R. (1958). Gödel's Proof. New York University Press.

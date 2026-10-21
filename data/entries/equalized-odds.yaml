@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: equalized odds
+id: equalized-odds
+pos: n.
+also:
+  - separation (fairness criterion)
+  - error-rate balance
+  - error rate parity
+domain: society
+domains:
+  - ml
+level: specialist
+plain: >-
+  A fairness test that asks whether a system makes mistakes at the same rates for every group:
+  wrongly flagging innocent people, and wrongly missing real cases, equally often.
+senses:
+  - definition: >-
+      A [[group-fairness|group fairness]] criterion requiring equal true positive rates and equal
+      false positive rates across groups defined by a [[protected-attribute|protected attribute]] A;
+      equivalently, the prediction is conditionally independent of A given the true outcome Y.
+      Unlike [[demographic-parity|demographic parity]], it allows selection rates to differ when
+      base rates differ, and a perfect classifier satisfies it. Any risk score can be post-processed
+      to meet it by choosing group-specific, sometimes randomized, decision thresholds from each
+      group's ROC curve, usually at some cost in accuracy. It is the condition ProPublica found
+      violated in [[compas|COMPAS]]; when base rates differ, an imperfect classifier cannot satisfy
+      it together with [[predictive-parity|predictive parity]].
+    example: >-
+      Equalized odds requires the recidivism tool's false positive rate to be the same for Black and
+      white defendants.
+formula_latex: P(\hat{Y}=1 \mid A=a, Y=y) = P(\hat{Y}=1 \mid A=b, Y=y), \quad y \in \{0, 1\}
+origin: >-
+  Introduced, with [[equal-opportunity|equal opportunity]], by Moritz Hardt, Eric Price and Nathan
+  Srebro in 'Equality of Opportunity in Supervised Learning' (arXiv October 2016; NeurIPS 2016).
+  Closely related error-rate balance conditions appeared the same year in Alexandra Chouldechova's
+  analysis of recidivism prediction.
+year: 2016
+see_also:
+  - equal opportunity
+  - demographic parity
+  - predictive parity
+  - group fairness
+  - fairness impossibility theorem
+  - COMPAS
+contrast:
+  - predictive parity
+sources:
+  - text: >-
+      Hardt, M., Price, E. & Srebro, N. (2016). Equality of Opportunity in Supervised Learning.
+      Advances in Neural Information Processing Systems 29.
+    url: https://arxiv.org/abs/1610.02413

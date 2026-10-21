@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Executive Order 14110
+id: executive-order-14110
+pos: prop. n.
+also:
+  - EO 14110
+  - E.O. 14110
+  - Executive Order on Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence
+  - Biden AI executive order
+domain: gov
+domains:
+  - hist
+  - safety
+labels:
+  - legal
+  - historical
+level: core
+plain: >-
+  A sweeping 2023 order by US President Joe Biden that told federal agencies how to manage AI risks
+  and required makers of the largest AI models to report their safety tests to the government. It
+  was revoked in 2025.
+senses:
+  - definition: >-
+      A US presidential order, 'Safe, Secure, and Trustworthy Development and Use of Artificial
+      Intelligence', signed by Joe Biden on October 30, 2023, that set out the federal government's
+      first comprehensive AI policy. Invoking the Defense Production Act, it required developers of
+      [[dual-use-foundation-model|dual-use foundation models]] trained with more than 10²⁶
+      operations (10²³ for models trained mainly on biological sequence data) to report training
+      plans, [[red-teaming|red-team]] results and the protection of their [[weights|model weights]]
+      to the Commerce Department, and owners of very large computing clusters to report their
+      location and capacity. It directed NIST to write evaluation and red-teaming guidance, which
+      led to the US [[ai-safety-institute|AI Safety Institute]]; ordered
+      [[know-your-customer-for-compute|know-your-customer]] rules for cloud providers serving
+      foreign customers; called for work on content authentication, screening of DNA synthesis,
+      civil rights and agencies' own use of AI; and launched the
+      [[national-ai-research-resource|National AI Research Resource]] pilot. President Donald Trump
+      revoked it on January 20, 2025.
+    example: >-
+      Under Executive Order 14110, labs had to tell Commerce about any training run above 10²⁶
+      operations.
+origin: >-
+  Signed on October 30, 2023, two days before the UK's [[ai-safety-summit|AI Safety Summit]] at
+  Bletchley Park, following voluntary safety commitments the White House had obtained from leading
+  AI companies in July 2023. It was revoked by Executive Order 14148 on January 20, 2025; Executive
+  Order 14179 (January 23, 2025) then ordered a review of every action taken under it and a new
+  [[america-s-ai-action-plan|AI action plan]].
+year: 2023
+note: >-
+  Several creations of the order outlived it in altered form: the AI Safety Institute was recast as
+  the [[center-for-ai-standards-and-innovation|Center for AI Standards and Innovation]] in 2025, and
+  the NAIRR pilot continued. Its reporting duties lapsed with it; the Commerce rule proposed in
+  September 2024 to put them on a permanent footing had not been finalized when the order was
+  revoked.
+see_also:
+  - dual-use foundation model
+  - compute threshold
+  - AI Safety Institute
+  - Center for AI Standards and Innovation
+  - America's AI Action Plan
+  - Blueprint for an AI Bill of Rights
+  - know-your-customer for compute
+contrast:
+  - America's AI Action Plan
+sources:
+  - text: >-
+      Executive Order 14110 of October 30, 2023: Safe, Secure, and Trustworthy Development and Use
+      of Artificial Intelligence. Federal Register 88: 75191.
+standards: >-
+  Executive Order 14110, 88 Fed. Reg. 75191 (November 1, 2023); revoked by Executive Order 14148
+  (January 20, 2025)
+as_of: 2026-10

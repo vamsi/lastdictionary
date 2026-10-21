@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: invariance
+id: invariance
+pos: n.
+also:
+  - invariant
+  - translation invariance
+  - permutation invariance
+  - invariant representation
+  - Deep Sets
+domain: dl
+domains:
+  - math
+  - percep
+level: specialist
+plain: >-
+  A property of a model whose answer does not change when the input is altered in an irrelevant way,
+  such as a photo classifier that still says 'cat' when the cat moves or the picture is flipped.
+senses:
+  - definition: >-
+      The property of a function f that is unchanged by a group of input transformations: f(g·x) =
+      f(x) for every g in the group. Classifiers usually should be invariant to nuisance
+      transformations (translation, small rotations, lighting, the order of elements in a set) while
+      staying sensitive to label-relevant changes. Invariance can be built into an architecture by
+      pooling [[equivariance|equivariant]] features (global [[pooling|pooling]] after convolutions
+      gives approximate translation invariance; sum or mean readouts give permutation invariance, as
+      in Deep Sets and graph-level [[graph-neural-network|GNN]] outputs), or encouraged during
+      training through [[data-augmentation|data augmentation]] or [[contrastive-learning|contrastive
+      learning]] between transformed views. Too much invariance discards information: full rotation
+      invariance confuses a '6' with a '9'. [[capsule-network|Capsule-network]] proponents argued
+      that CNNs pursued invariance where equivariance was needed.
+    example: >-
+      Random crops during training make the classifier more invariant to where the object appears.
+formula_latex: f(T_g\,x) = f(x) \quad \forall g \in G
+origin: >-
+  Invariance under transformation groups is an old idea in mathematics, organizing Felix Klein's
+  Erlangen program (1872), and in the study of perception. It shaped pattern-recognition research
+  from the 1950s and Kunihiko Fukushima's neocognitron (1980), designed for recognition 'unaffected
+  by shift in position'; Manzil Zaheer and colleagues' Deep Sets (2017) characterized
+  permutation-invariant networks.
+see_also:
+  - equivariance
+  - pooling
+  - data augmentation
+  - geometric deep learning
+  - convolutional neural network
+  - inductive bias
+contrast:
+  - equivariance

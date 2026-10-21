@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: simulator theory
+id: simulator-theory
+pos: n.
+also:
+  - simulators
+  - simulator framing
+  - simulacrum
+  - simulacra
+  - role-play framing
+domain: mind
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  A way of thinking about AI language models as simulators that can play any character found in
+  their training text, rather than as a single agent with its own beliefs and goals.
+senses:
+  - definition: >-
+      A framework for understanding [[large-language-model|large language models]] that treats a
+      pretrained model as a simulator: a system that has learned the rules by which text evolves and
+      can therefore simulate any of the many characters, or simulacra, that might produce a given
+      text, rather than being one agent with consistent beliefs and goals. A prompt sets a scene and
+      the model plays whatever characters are plausible within it; a chat assistant is one
+      simulacrum that fine-tuning makes dominant, while others remain reachable. Proponents use the
+      framing to explain why models switch personas, adopt villains' goals under
+      [[jailbreak|jailbreaks]] or say inconsistent things about themselves, and it cautions against
+      reading a character's statements as the model's own beliefs. Murray Shanahan and colleagues
+      developed a closely related account of language models as engaged in role-play.
+    example: >-
+      On simulator theory, the assistant is a character the network is playing, not the network
+      itself.
+origin: >-
+  Introduced by the pseudonymous author janus in the essay 'Simulators' (LessWrong and the AI
+  Alignment Forum, September 2022), based on experiments with GPT-3 [[base-model|base models]].
+  Murray Shanahan, Kyle McDonell and Laria Reynolds's 'Role Play with Large Language Models'
+  (Nature, 2023) brought a related view into the academic literature.
+year: 2022
+note: >-
+  Critics ask how far the framing still applies after extensive
+  [[reinforcement-learning-from-human-feedback|reinforcement learning]] and
+  [[character-training|character training]], which may make a model behave more like a single agent.
+  The [[waluigi-effect|Waluigi effect]] and the [[shoggoth|shoggoth]] meme belong to the same circle
+  of ideas.
+see_also:
+  - base model
+  - Waluigi effect
+  - shoggoth
+  - persona vector
+  - character training
+  - intentional stance
+  - anthropomorphism
+sources:
+  - text: janus (2022). Simulators. LessWrong / AI Alignment Forum, 2 September 2022.
+    url: https://www.alignmentforum.org/posts/vJFdjigzmcXMhNTsx/simulators
+  - text: >-
+      Shanahan, M., McDonell, K. & Reynolds, L. (2023). Role Play with Large Language Models. Nature
+      623, 493–498.

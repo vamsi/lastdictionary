@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gradio
+id: gradio
+pos: prop. n.
+also:
+  - Streamlit
+pronunciation: GRAY-dee-oh
+domain: eng
+domains:
+  - llm
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free Python library for quickly wrapping an AI model in a simple web page — text boxes, image
+  uploads, chat windows — so that others can try it in a browser.
+senses:
+  - definition: >-
+      An open-source Python library that puts a web front end on a Python function, typically one
+      that calls a machine-learning model, in a few lines of code. A developer supplies a function
+      and declares input and output components — text, images, audio, video, files, sliders or chat
+      windows — and Gradio builds the page, queues incoming requests, and provides a temporary
+      public sharing link and an automatic API for programmatic access. Its Blocks interface allows
+      custom layouts and multistep apps, and a chat-interface class builds chatbot front ends.
+      Gradio apps are the default kind of demo on Hugging Face Spaces, which made the library a
+      standard way to publish interactive demonstrations of research models. It is often compared
+      with Streamlit, a Python framework for data apps and dashboards that the data-cloud company
+      Snowflake acquired in 2022.
+    example: >-
+      Wrap the model in a Gradio demo and post it on Spaces so the reviewers can try it.
+origin: >-
+  Created in 2019 by Abubakar Abid and colleagues, then mostly Stanford University graduate
+  students, to let researchers test models with real users quickly; [[hugging-face|Hugging Face]]
+  acquired the project in December 2021.
+year: 2019
+see_also:
+  - Hugging Face
+  - Jupyter notebook
+  - model hub
+  - chatbot

@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prefix tuning
+id: prefix-tuning
+pos: n.
+domain: train
+domains:
+  - llm
+level: specialist
+plain: >-
+  Customizing a frozen language model by learning a short sequence of invisible 'virtual words' that
+  is placed in front of every input at every layer, steering what the model produces.
+senses:
+  - definition: >-
+      A [[parameter-efficient-fine-tuning|parameter-efficient fine-tuning]] method that leaves every
+      model weight frozen and instead trains a short run of free-floating vectors, the prefix,
+      inserted before the keys and values in each [[transformer|transformer]] layer's
+      [[attention|attention]], where the real tokens can attend to them like invisible extra tokens.
+      Only these vectors are learned — around 0.1 percent of the model's parameter count in the
+      original experiments — and, because optimizing them directly proved unstable, they are
+      typically produced by a small auxiliary network during training and then saved as plain
+      vectors. In the original tests, generating text from tables with GPT-2 and summaries with
+      BART, prefix tuning came close to full fine-tuning overall and beat it when training data were
+      scarce or test topics were new. It is more expressive than [[prompt-tuning|prompt tuning]],
+      which learns vectors only at the input layer, but is now less widely used than
+      [[low-rank-adaptation|low-rank adaptation]].
+    example: >-
+      Each customer's prefix is a few hundred kilobytes, so we keep thousands of them beside a
+      single frozen model.
+origin: >-
+  Introduced by Xiang Lisa Li and Percy Liang of Stanford on 1 January 2021 (ACL 2021), inspired by
+  the way text prompts steer models. P-tuning v2 (Xiao Liu and colleagues, 2021) applied similar
+  layer-wise prompts to language-understanding tasks.
+year: 2021
+note: >-
+  Like other soft-prompt methods, the learned prefix does not correspond to readable text and cannot
+  be pasted into a chat window.
+see_also:
+  - prompt tuning
+  - parameter-efficient fine-tuning
+  - adapter
+  - low-rank adaptation
+  - attention
+  - query, key and value
+contrast:
+  - prompt engineering
+sources:
+  - text: >-
+      Li, X. L. & Liang, P. (2021). Prefix-Tuning: Optimizing Continuous Prompts for Generation. ACL
+      2021. arXiv:2101.00190.
+    url: https://arxiv.org/abs/2101.00190

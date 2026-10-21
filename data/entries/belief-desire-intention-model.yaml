@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: belief–desire–intention model
+id: belief-desire-intention-model
+pos: n.
+also:
+  - BDI
+  - BDI model
+  - BDI architecture
+  - BDI agent
+  - AgentSpeak
+  - Procedural Reasoning System
+domain: sym
+domains:
+  - agents
+  - mind
+level: specialist
+plain: >-
+  A way of designing software agents around three human-like ideas: what the agent believes about
+  the world, what it wants, and which plans it has committed to carrying out.
+senses:
+  - definition: >-
+      A model of rational agency, and a family of agent architectures and programming languages
+      built on it, in which an agent's state comprises beliefs (its information about the world),
+      desires (states it would like to bring about) and intentions (desires it has committed to
+      pursuing, usually through partially specified plans). The defining feature is commitment:
+      intentions persist and constrain further deliberation until they are achieved, judged
+      impossible or no longer wanted, which lets agents with limited computing resources act in real
+      time instead of replanning from scratch. In implemented systems, plans are chosen from a
+      library of hand-written recipes triggered by events and goals, a cycle resembling
+      [[hierarchical-task-network|hierarchical task network]] decomposition. Platforms include the
+      Procedural Reasoning System, AgentSpeak with its interpreter Jason, and JACK, used in
+      air-traffic management, defense simulation and spacecraft fault handling. BDI vocabulary is
+      often borrowed to describe [[large-language-model|language-model]] [[ai-agent|agents]], though
+      without its formal commitment semantics.
+origin: >-
+  Based on the philosopher Michael Bratman's theory of intention and practical reasoning (Intention,
+  Plans, and Practical Reason, 1987). Michael Georgeff and Amy Lansky's Procedural Reasoning System
+  (1987) implemented the idea, and Anand Rao and Georgeff formalized BDI logics in 1991 and
+  described 'BDI agents' in 1995.
+year: 1987
+see_also:
+  - AI agent
+  - multi-agent system
+  - hierarchical task network
+  - automated planning
+  - intentional stance
+  - cognitive architecture
+sources:
+  - text: >-
+      Bratman, M. E. (1987). Intention, Plans, and Practical Reason. Harvard University Press.
+  - text: >-
+      Rao, A. S. & Georgeff, M. P. (1995). BDI Agents: From Theory to Practice. Proceedings of the
+      First International Conference on Multi-Agent Systems (ICMAS-95), 312–319.

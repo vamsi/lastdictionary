@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generative art
+id: generative-art
+pos: n.
+also:
+  - generative artist
+  - algorithmic art
+  - procedural art
+  - generative artwork
+domain: culture
+domains:
+  - gen
+  - hist
+level: core
+plain: >-
+  Art in which the artist invents a process — dice rolls, software, written instructions — and lets
+  that process make the work; the phrase now also loosely covers pictures from AI image generators.
+senses:
+  - context: Art practice
+    definition: >-
+      Art whose maker's main creation is a procedure — chance operations, a purpose-built machine,
+      computer code or written instructions — that, once started, settles much of the finished work
+      on its own; Philip Galanter's widely cited 2003 definition centers on this autonomy of the
+      system. The creative choices lie in the system and its constraints, and one system often
+      yields many distinct outputs. The tradition predates computers (dice-composed minuets, chance
+      methods in Dada and in John Cage's music, Sol LeWitt's instruction-based wall drawings) and
+      became a computer practice in the 1960s with plotter drawings by Georg Nees, Frieder Nake, A.
+      Michael Noll and Vera Molnár. Later strands include Harold Cohen's rule-based drawing and
+      painting program AARON, evolutionary and fractal art, the creative-coding scene around the
+      Processing language, and blockchain-based 'long-form' series in which each collector's piece
+      is generated from a unique random seed.
+    example: >-
+      Her generative art centers on a single program that has drawn a new landscape every night
+      since 2012.
+  - context: Generative AI
+    definition: >-
+      Images, video, music or other works produced with [[generative-ai|generative AI]] models such
+      as [[text-to-image-model|text-to-image models]], typically by prompting a system trained on
+      large collections of existing works. Many practitioners of the older tradition object that
+      this usage blurs a distinction: in classic generative art the artist authors the system,
+      whereas a prompter steers a system authored by others. The more specific term is [[ai-art|AI
+      art]].
+    labels:
+      - informal
+      - contested
+origin: >-
+  Rooted in 1960s Stuttgart: Max Bense's essay 'Projekte generativer Ästhetik' (projects of
+  generative aesthetics) appeared in 1965 alongside Georg Nees's computer graphics, first exhibited
+  that February, and Nees's 1969 doctoral thesis was titled 'Generative Computergraphik'. The
+  English term gained currency in later decades, helped by the annual Generative Art conference in
+  Milan from 1998; Philip Galanter's 2003 definition, centered on a system acting with some
+  autonomy, is widely cited.
+year: 1965
+note: >-
+  AARON, developed by Harold Cohen from about 1973 until his death in 2016, is often cited as one of
+  the longest-running AI art projects. Questions of authorship, originality and copyright arise in
+  both senses but are sharper for AI-generated works trained on other artists' work.
+see_also:
+  - AI art
+  - generative AI
+  - text-to-image model
+  - generative adversarial network
+  - DeepDream
+  - style transfer
+  - genetic algorithm
+contrast:
+  - AI art
+sources:
+  - text: >-
+      Galanter, P. (2003). What is Generative Art? Complexity Theory as a Context for Art Theory.
+      Proc. 6th Generative Art Conference (GA2003), Milan.
+  - text: "Nees, G. (1969). Generative Computergraphik. Berlin and Munich: Siemens AG."
+  - text: >-
+      Bense, M. (1965). Projekte generativer Ästhetik. In rot 19: computer-grafik. Stuttgart:
+      edition rot.

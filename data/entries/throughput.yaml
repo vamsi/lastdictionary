@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: throughput
+id: throughput
+pos: n.
+also:
+  - system throughput
+  - output throughput
+  - requests per second
+  - queries per second
+  - QPS
+domain: infer
+domains:
+  - hw
+  - eng
+level: core
+plain: >-
+  How much work an AI system gets done per second across all its users at once — for a chatbot
+  service, roughly how much text it can produce in total each second.
+senses:
+  - definition: >-
+      The rate at which a system completes work, measured in aggregate over all concurrent requests:
+      requests or queries per second for classifiers and search, and output tokens per second summed
+      across users for [[large-language-model|language-model]] serving. Throughput rises with
+      [[batch-size|batch size]] because each read of the [[weights|weights]] from memory is shared
+      by more sequences, until the hardware becomes compute-limited or the [[kv-cache|KV cache]]
+      fills memory; it is therefore the main driver of cost per token. It must be read together with
+      [[latency|latency]], since a server can post high throughput while each user waits longer.
+      Serving research therefore reports throughput at a fixed latency target, or
+      [[goodput|goodput]], the rate of requests completed within their service-level objectives. In
+      training, throughput means samples or tokens processed per second.
+    example: >-
+      Doubling the batch size raised throughput by 70 percent but pushed time to first token past
+      our target.
+origin: >-
+  An industrial-engineering word for a process's output per unit of time, borrowed early into
+  computing for jobs or transactions completed. Serving papers such as Orca (2022), which reported a
+  36.9-fold gain 'at the same level of latency', and vLLM (2023) made latency-matched throughput the
+  standard way to compare LLM inference systems.
+note: >-
+  Per-user generation speed is also quoted in [[tokens-per-second|tokens per second]]; always check
+  whether a figure is per request or aggregate across the server.
+see_also:
+  - latency
+  - tokens per second
+  - goodput
+  - continuous batching
+  - batch size
+  - inference cost
+contrast:
+  - latency
+sources:
+  - text: >-
+      Yu, G.-I., Jeong, J. S., Kim, G.-W., Kim, S. & Chun, B.-G. (2022). Orca: A Distributed Serving
+      System for Transformer-Based Generative Models. OSDI 2022.
+    url: https://www.usenix.org/conference/osdi22/presentation/yu

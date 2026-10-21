@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: process node
+id: process-node
+pos: n.
+also:
+  - technology node
+  - node
+  - manufacturing process
+  - nanometer node
+domain: hw
+domains:
+  - gov
+level: core
+plain: >-
+  The label for a generation of chip-making technology, like '3 nanometer'. Smaller numbers mean
+  newer, denser chips, but the number no longer measures any actual part of the chip.
+senses:
+  - definition: >-
+      A generation of semiconductor manufacturing technology, with its own design rules, transistor
+      structure and performance, named by a nominal feature size such as 7 nm, 3 nm or 2 nm. The
+      number once tracked transistor gate length or half-pitch, but it gradually became a marketing
+      label: a '2 nm' process has no 2 nm feature, and different foundries' equally named nodes
+      differ in density. Each new node typically offers 10–30% better performance or power and
+      higher density than its predecessor, at sharply rising design and wafer costs. Transistor
+      structures have moved from planar devices to FinFETs (2011–2012) and to gate-all-around
+      nanosheets (Samsung's 3 nm in 2022; TSMC's N2 and Intel's 18A in volume from late 2025).
+      Leading AI accelerators of 2024–2026 are built mostly on TSMC 4 nm- and 3 nm-class nodes, and
+      access to such nodes is restricted by [[export-controls-on-ai-chips|export controls on AI
+      chips]].
+origin: >-
+  Node names followed the generations of the semiconductor industry's roadmaps, codified in the
+  International Technology Roadmap for Semiconductors (1998–2016). The link between name and
+  physical dimension weakened from the 1990s and was purely nominal by about 2009; Intel adopted
+  'angstrom' names (20A, 18A) in 2021.
+note: >-
+  Compare manufacturers by measured density (transistors per mm²) or performance, not by node names.
+  Intel renamed its nodes in 2021 (e.g., 10 nm Enhanced SuperFin became 'Intel 7') partly to align
+  with competitors' naming.
+see_also:
+  - Moore's law
+  - semiconductor foundry
+  - extreme ultraviolet lithography
+  - chiplet
+  - Dennard scaling
+  - export controls on AI chips
+as_of: 2026-10

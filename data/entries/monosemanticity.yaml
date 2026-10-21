@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: monosemanticity
+id: monosemanticity
+pos: n.
+also:
+  - monosemantic
+  - monosemantic feature
+domain: interp
+domains:
+  - dl
+  - safety
+level: specialist
+plain: >-
+  The property of an internal unit of an AI model that stands for just one understandable thing,
+  which makes it far easier to interpret than a unit that mixes several.
+senses:
+  - definition: >-
+      The property of a unit or [[feature-interpretability|feature]] that responds to a single
+      human-interpretable concept across the inputs on which it is active; the opposite of
+      [[polysemanticity|polysemanticity]]. Because neurons in language models are rarely
+      monosemantic, research has sought monosemantic units either by redesigning models, as with
+      Anthropic's softmax linear unit (2022), or by decomposing activations with
+      [[dictionary-learning|dictionary learning]]. Anthropic's 'Towards Monosemanticity' (October
+      2023) trained a [[sparse-autoencoder|sparse autoencoder]] on a one-layer transformer and found
+      thousands of features — DNA sequences, Arabic script, base64 strings, legal language — far
+      more specific than the model's neurons. 'Scaling Monosemanticity' (May 2024) applied the
+      method to Claude 3 Sonnet, extracting up to about 34 million features, including multilingual,
+      multimodal and safety-relevant ones. Monosemanticity is a matter of degree, judged by human or
+      [[automated-interpretability|automated interpretability]] scoring, which can overstate it when
+      only a feature's strongest activations are examined.
+    example: >-
+      Most of the dictionary's features looked monosemantic, but the rarest ones resisted labeling.
+origin: >-
+  The antonym of 'polysemantic' in its interpretability sense, both words being borrowed from
+  linguistics. In use for neurons by 2022, as in Anthropic's 'Toy Models of Superposition'
+  (September 2022) and Adam Jermyn, Nicholas Schiefer and Evan Hubinger's 'Engineering
+  Monosemanticity in Toy Models' (November 2022). Made prominent by Trenton Bricken, Adly Templeton,
+  Joshua Batson, Chris Olah and colleagues in 'Towards Monosemanticity: Decomposing Language Models
+  With Dictionary Learning' (Transformer Circuits Thread, October 2023), followed by Templeton and
+  colleagues' 'Scaling Monosemanticity' (May 2024).
+year: 2022
+see_also:
+  - sparse autoencoder
+  - dictionary learning
+  - Golden Gate Claude
+  - superposition
+  - automated interpretability
+  - feature (interpretability)
+contrast:
+  - polysemanticity
+sources:
+  - text: >-
+      Bricken, T., Templeton, A., Batson, J. et al. (2023). Towards Monosemanticity: Decomposing
+      Language Models With Dictionary Learning. Transformer Circuits Thread.
+  - text: >-
+      Templeton, A., Conerly, T. et al. (2024). Scaling Monosemanticity: Extracting Interpretable
+      Features from Claude 3 Sonnet. Transformer Circuits Thread.

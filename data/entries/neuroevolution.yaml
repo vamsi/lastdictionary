@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neuroevolution
+id: neuroevolution
+pos: n.
+also:
+  - neuro-evolution
+  - NEAT
+  - NeuroEvolution of Augmenting Topologies
+  - HyperNEAT
+  - evolving neural networks
+domain: sym
+domains:
+  - dl
+  - rl
+level: specialist
+plain: >-
+  Training or designing neural networks by simulated evolution — breeding and mutating whole
+  networks and keeping the best performers — instead of, or alongside, the usual gradient-based
+  training.
+senses:
+  - definition: >-
+      The use of [[evolutionary-computation|evolutionary algorithms]] to optimize
+      [[neural-network|neural networks]]: their weights, their architectures (topologies), their
+      hyperparameters or learning rules, or several of these at once. Because it needs only a
+      fitness score, neuroevolution suits problems where gradients are unavailable or misleading,
+      such as [[reinforcement-learning|reinforcement learning]] with sparse or deceptive rewards.
+      NEAT evolves weights and topology together, starting from minimal networks, using historical
+      markings to align genes for crossover and speciation to protect new structures; HyperNEAT
+      evolves compact patterns that generate large, regular networks. Work since 2017 showed that
+      simple [[genetic-algorithm|genetic algorithms]] and [[evolution-strategies|evolution
+      strategies]] can train deep networks with millions of parameters competitively on some control
+      tasks, and evolutionary [[neural-architecture-search|neural architecture search]] produced
+      image classifiers such as AmoebaNet.
+origin: >-
+  Experiments evolving network weights date from the late 1980s, for example David Montana and
+  Lawrence Davis (1989). Kenneth Stanley and Risto Miikkulainen's NEAT (2002) made the field
+  prominent, and 2017 work at Uber AI Labs and OpenAI revived it for deep networks.
+year: 1989
+see_also:
+  - evolutionary computation
+  - evolution strategies
+  - genetic algorithm
+  - neural architecture search
+  - quality diversity
+  - reinforcement learning
+sources:
+  - text: >-
+      Stanley, K. O. & Miikkulainen, R. (2002). Evolving Neural Networks through Augmenting
+      Topologies. Evolutionary Computation 10(2), 99–127.
+  - text: >-
+      Such, F. P. et al. (2017). Deep Neuroevolution: Genetic Algorithms Are a Competitive
+      Alternative for Training Deep Neural Networks for Reinforcement Learning. arXiv preprint.

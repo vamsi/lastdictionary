@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: continuous batching
+id: continuous-batching
+pos: n.
+also:
+  - in-flight batching
+  - iteration-level scheduling
+  - rolling batching
+domain: infer
+domains:
+  - eng
+level: core
+plain: >-
+  A way for an AI server to handle many conversations together, letting new ones join and finished
+  ones leave after every word, instead of waiting for a whole group to finish.
+senses:
+  - definition: >-
+      A scheduling technique for [[autoregressive-model|autoregressive]] [[model-serving|model
+      serving]] that decides afresh at every generation step (iteration) which sequences make up the
+      batch, rather than fixing the batch once per group of requests. The older static approach
+      holds a batch together until its longest output is complete, so finished requests sit in their
+      slots and new arrivals queue; with continuous batching a sequence exits as soon as it emits
+      its stop token and a waiting request is admitted at the following step, so the accelerator
+      never idles for lack of work. Because sequences in a batch sit at different positions and
+      lengths, [[attention|attention]] is computed per sequence while the large matrix
+      multiplications are batched across all tokens. Combined with
+      [[pagedattention|PagedAttention]]-style memory management and [[chunked-prefill|chunked
+      prefill]], it multiplied LLM serving [[throughput|throughput]] (an Anyscale benchmark in 2023
+      reported up to 23 times the throughput of naive static batching) while lowering median
+      [[latency|latency]], and it is the default in production engines.
+    example: >-
+      After we enabled continuous batching, short replies stopped waiting behind 4,000-token essays.
+origin: >-
+  Introduced as 'iteration-level scheduling', together with 'selective batching', by Gyeong-In Yu
+  and colleagues at Seoul National University and FriendliAI in the Orca serving system (OSDI 2022),
+  which reported a 36.9-fold throughput gain over NVIDIA FasterTransformer on GPT-3 175B. The name
+  'continuous batching' spread in 2023 through Hugging Face's Text Generation Inference, vLLM and an
+  Anyscale blog post.
+year: 2022
+note: >-
+  'Dynamic batching' in older serving systems usually means grouping requests that arrive within a
+  short time window, at the level of whole requests; it is not the same technique, although some
+  writers use the terms interchangeably. NVIDIA calls its version in-flight batching.
+see_also:
+  - model serving
+  - PagedAttention
+  - vLLM
+  - chunked prefill
+  - throughput
+  - batch size
+contrast:
+  - batch inference
+sources:
+  - text: >-
+      Yu, G.-I., Jeong, J. S., Kim, G.-W., Kim, S. & Chun, B.-G. (2022). Orca: A Distributed Serving
+      System for Transformer-Based Generative Models. OSDI 2022.
+    url: https://www.usenix.org/conference/osdi22/presentation/yu
+  - text: >-
+      Daniel, C., Shen, C., Liang, E. & Liaw, R. (2023). How continuous batching enables 23x
+      throughput in LLM inference while reducing p50 latency. Anyscale blog, 22 June 2023.
+    url: https://www.anyscale.com/blog/continuous-batching-llm-inference

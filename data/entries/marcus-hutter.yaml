@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Marcus Hutter
+id: marcus-hutter
+sort_as: Hutter Marcus
+pos: prop. n.
+domain: people
+domains:
+  - asi
+  - math
+  - rl
+level: specialist
+dates: b. 1967
+plain: >-
+  A German computer scientist who defined AIXI, a mathematical ideal of a perfectly intelligent
+  agent, and who argues that compressing data well is a measure of intelligence.
+senses:
+  - definition: >-
+      German computer scientist who set out to define optimal general intelligence mathematically, a
+      program he calls universal artificial intelligence. Trained as a physicist, he worked at the
+      Swiss AI lab IDSIA (2000–2006), became a professor at the Australian National University in
+      2006 and joined DeepMind (now [[google-deepmind|Google DeepMind]]) as a senior researcher in
+      2019. Building on [[solomonoff-induction|Solomonoff induction]], he defined [[aixi|AIXI]]
+      (2000): an agent that predicts its environment with a universal mixture over all computable
+      hypotheses, weighted toward the simplest, and chooses actions that maximize expected future
+      reward. Incomputable, AIXI serves as a gold standard against which practical agents can be
+      compared; his book 'Universal Artificial Intelligence' (2005) set out its optimality
+      properties. With his doctoral student [[shane-legg|Shane Legg]] he defined
+      [[universal-intelligence|universal intelligence]] (2007). Holding that compressing data well
+      requires understanding it, he founded the Hutter Prize (2006) for lossless compression of
+      Wikipedia text. His group has also analyzed [[reward-tampering|reward tampering]] by
+      reward-maximizing agents.
+see_also:
+  - AIXI
+  - universal intelligence
+  - Solomonoff induction
+  - Shane Legg
+  - Kolmogorov complexity
+  - reward tampering
+sources:
+  - text: >-
+      Hutter, M. (2005). Universal Artificial Intelligence: Sequential Decisions Based on
+      Algorithmic Probability. Springer.
+  - text: >-
+      Legg, S. & Hutter, M. (2007). Universal Intelligence: A Definition of Machine Intelligence.
+      Minds and Machines 17(4): 391–444.

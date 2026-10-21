@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: superposition
+id: superposition
+pos: n.
+also:
+  - superposition hypothesis
+  - feature superposition
+domain: interp
+domains:
+  - dl
+  - safety
+level: core
+plain: >-
+  The way a neural network squeezes more concepts into its internal activity than it has neurons, by
+  letting them overlap — a main reason its insides are hard to read.
+senses:
+  - definition: >-
+      The phenomenon, and hypothesis, that a network represents more
+      [[feature-interpretability|features]] than it has dimensions by assigning them nearly
+      orthogonal but overlapping directions in [[activation-space|activation space]]. In
+      high-dimensional spaces exponentially many directions can be almost orthogonal, so if features
+      are sparse — rarely active at the same time — interference between them stays small and can be
+      filtered out by nonlinearities. Anthropic's 'Toy Models of Superposition' (2022) demonstrated
+      this in small ReLU networks: superposition switches on as feature sparsity increases, features
+      arrange themselves into geometric configurations such as digons, triangles and pentagons, and
+      the transitions between regimes resemble phase changes. Superposition explains much
+      [[polysemanticity|polysemanticity]], defeats neuron-by-neuron analysis and motivates
+      [[dictionary-learning|dictionary learning]] with [[sparse-autoencoder|sparse autoencoders]],
+      which try to recover the individual features from the compressed representation.
+    example: >-
+      The model tracks thousands of features in a 512-dimensional layer, so superposition is
+      unavoidable.
+origin: >-
+  Sanjeev Arora and colleagues (2018) showed that word embeddings store the senses of ambiguous
+  words as linear superpositions. Chris Olah and colleagues' 'Zoom In' (Distill, March 2020) named
+  'superposition' — a circuit spreading a feature across many polysemantic neurons — and Nelson
+  Elhage and colleagues' 'Toy Models of Superposition' (Anthropic, September 2022) gave the first
+  systematic study.
+year: 2020
+note: >-
+  Named by analogy with superposition in physics, not by any quantum mechanism. How closely the
+  superposition in large production models matches the toy-model picture is still debated.
+see_also:
+  - polysemanticity
+  - feature (interpretability)
+  - sparse autoencoder
+  - dictionary learning
+  - toy model
+  - privileged basis
+  - monosemanticity
+sources:
+  - text: >-
+      Elhage, N., Hume, T., Olsson, C., Schiefer, N., Henighan, T. et al. (2022). Toy Models of
+      Superposition. Transformer Circuits Thread.
+    url: https://transformer-circuits.pub/2022/toy_model/index.html
+  - text: >-
+      Arora, S., Li, Y., Liang, Y., Ma, T. & Risteski, A. (2018). Linear Algebraic Structure of Word
+      Senses, with Applications to Polysemy. Transactions of the ACL 6.

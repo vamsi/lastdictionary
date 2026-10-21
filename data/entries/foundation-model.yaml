@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: foundation model
+id: foundation-model
+pos: n.
+also:
+  - FM
+  - large pretrained model
+  - pretrained model
+domain: core
+domains:
+  - llm
+  - train
+  - gov
+level: core
+plain: >-
+  A very large AI model, built once at great cost from vast amounts of text, images or code gathered
+  mostly from the internet, that many products then reuse as their starting point, from chatbots to
+  coding tools.
+senses:
+  - definition: >-
+      A large model pretrained on an exceptionally wide range of data, typically by
+      [[self-supervised-learning|self-supervised learning]] over enormous text, image or code
+      corpora, so that one trained model can serve as the common base for many applications, each
+      adapting it by [[fine-tuning|fine-tuning]], [[prompt|prompting]] or
+      [[in-context-learning|in-context learning]]. What sets the class apart is this breadth of
+      reuse, not a particular architecture. Examples include [[large-language-model|large language
+      models]] such as [[gpt-3|GPT-3]] and its successors, [[vision-language-model|vision-language
+      models]], [[clip|CLIP]], and image and video generators. The coiners stressed two properties:
+      emergence (capabilities arising implicitly from scale rather than being designed in) and
+      [[homogenization|homogenization]] (many applications built on the same few models, so their
+      strengths and defects propagate downstream). Because foundation models are costly to train and
+      come from a small number of developers, they are a focus of [[ai-governance|AI governance]];
+      the EU AI Act regulates them under the name [[general-purpose-ai-model|general-purpose AI
+      model]].
+    example: >-
+      Rather than train our own, we fine-tune an open foundation model on our support tickets.
+origin: >-
+  Introduced by Rishi Bommasani, Percy Liang and more than 100 Stanford co-authors in 'On the
+  Opportunities and Risks of Foundation Models' (August 2021), alongside the launch of Stanford's
+  Center for Research on Foundation Models. They chose the word to underline the models' 'critically
+  central yet incomplete character'. Critics objected that 'foundation' implied a soundness the
+  models lacked; 'large pretrained model' is a neutral alternative.
+year: 2021
+note: >-
+  Overlaps with [[frontier-model|frontier model]] (the most capable foundation models at a given
+  time), [[base-model|base model]] (a model before post-training) and
+  [[general-purpose-ai-model|general-purpose AI model]] (the EU legal term). A large model trained
+  for one narrow task is not a foundation model.
+see_also:
+  - general-purpose AI model
+  - large language model
+  - pretraining
+  - fine-tuning
+  - transfer learning
+  - frontier model
+  - base model
+  - homogenization
+contrast:
+  - narrow AI
+sources:
+  - text: >-
+      Bommasani, R. et al. (2021). On the Opportunities and Risks of Foundation Models.
+      arXiv:2108.07258.
+    url: https://arxiv.org/abs/2108.07258
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(63) ('general-purpose AI model', the closest EU
+  counterpart); US Executive Order 14110 (2023; revoked January 2025), §3(k) ('dual-use foundation
+  model')
+as_of: 2026-10

@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: learning
+id: learning
+pos: n.
+also:
+  - learn
+  - learned
+  - learnt
+domain: core
+domains:
+  - ml
+  - mind
+  - math
+level: core
+plain: >-
+  Getting better at something through experience. For a machine, it means changing its internal
+  settings based on data so that it performs a task better than before.
+senses:
+  - context: Machine learning
+    definition: >-
+      A change in a system, driven by data, interaction or feedback rather than by someone rewriting
+      it, that leaves it better at some [[task-machine-learning|task]]. In most current AI, learning
+      means adjusting a [[model|model's]] [[parameter|parameters]] to reduce a [[loss-function|loss
+      function]] or increase a [[reward|reward]]. It is classified by the kind of feedback
+      ([[supervised-learning|supervised]], [[unsupervised-learning|unsupervised]],
+      [[self-supervised-learning|self-supervised]], [[semi-supervised-learning|semi-supervised]],
+      [[reinforcement-learning|reinforcement]]), by when it happens ([[online-learning|online]] or
+      batch, [[continual-learning|continual]]) and by what carries over
+      ([[transfer-learning|transfer]], [[meta-learning|meta-learning]]). Learning theory, from
+      [[pac-learning|PAC learning]] to [[vc-dimension|VC dimension]] bounds, asks how much data a
+      learner needs to generalize.
+    example: >-
+      Most of the learning happens in pretraining; fine-tuning mainly changes how the model presents
+      what it knows.
+  - context: In-context
+    definition: >-
+      By extension, adaptation without any parameter change, as in [[in-context-learning|in-context
+      learning]], where a [[large-language-model|large language model]] picks up a task from
+      examples or instructions in its prompt. Whether this counts as learning in the classical sense
+      is debated; the adaptation disappears when the context is cleared.
+  - context: Psychology and neuroscience
+    definition: >-
+      The process by which experience leaves durable marks on what an animal or person knows or
+      does, studied through conditioning, memory and skill acquisition. Ideas from this tradition,
+      such as [[hebbian-learning|Hebbian learning]] and reward prediction errors, inspired
+      machine-learning methods, and machine-learning models are in turn used as theories of animal
+      and human learning.
+origin: >-
+  From Old English leornian. Alan Turing's 1950 paper proposed building a 'child machine' and
+  educating it. Herbert Simon (1983) characterized learning as adaptive change that lets a system do
+  the same or similar tasks better next time, and Tom Mitchell's 1997 formulation in terms of task,
+  performance measure and experience became the machine-learning standard.
+note: >-
+  'The model learned X' usually means its parameters came to encode a statistical regularity, not
+  that it understood X. Distinguish learning (updating parameters) from [[inference|inference]]
+  (using them) and from mere memorization of training examples.
+see_also:
+  - machine learning
+  - training
+  - supervised learning
+  - reinforcement learning
+  - in-context learning
+  - generalization
+  - PAC learning
+  - Hebbian learning
+contrast:
+  - inference
+sources:
+  - text: >-
+      Turing, A. M. (1950). Computing Machinery and Intelligence. Mind, 59(236), 433–460.
+  - text: >-
+      Simon, H. A. (1983). Why Should Machines Learn? In Michalski, R. S., Carbonell, J. G. &
+      Mitchell, T. M. (eds), Machine Learning: An Artificial Intelligence Approach. Tioga.

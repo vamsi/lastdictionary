@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Lisp machine
+id: lisp-machine
+pos: n.
+also:
+  - Lisp machines
+domain: hist
+domains:
+  - hw
+  - sym
+labels:
+  - historical
+level: specialist
+plain: >-
+  A 1970s–1980s personal workstation built specially to run the AI programming language Lisp
+  quickly. When ordinary computers caught up, the market collapsed, helping to bring on an AI
+  winter.
+senses:
+  - definition: >-
+      A personal workstation of the 1970s and 1980s engineered from the processor up for
+      [[lisp|Lisp]]: its hardware dealt directly with type-tagged data, fast function calls and
+      garbage collection, and it came with large virtual memory, a bitmapped display and a
+      programming environment written in Lisp itself. The first were built at the MIT AI Laboratory
+      (the CONS and CADR machines, 1974–1979); Symbolics, Lisp Machines Inc., Xerox and Texas
+      Instruments sold them from about 1980, and they became the standard platform for 1980s AI and
+      [[expert-system|expert system]] development. Around 1987 the market collapsed as cheaper
+      general-purpose workstations from Sun Microsystems and others, and later personal computers,
+      ran Lisp nearly as well; the collapse is a standard marker of the start of the second
+      [[ai-winter|AI winter]].
+    example: >-
+      The lab's Symbolics Lisp machines sat idle once its programs had been ported to Sun
+      workstations.
+origin: >-
+  Begun at MIT around 1974 by Richard Greenblatt and Tom Knight. The split of MIT's Lisp machine
+  programmers into rival companies, Symbolics and Lisp Machines Inc., is often cited as a spur to
+  Richard Stallman's free software movement.
+year: 1974
+note: Symbolics registered symbolics.com in March 1985, the first .com domain name.
+see_also:
+  - Lisp
+  - AI winter
+  - expert system
+  - Fifth Generation Computer Systems project
+  - symbolic AI

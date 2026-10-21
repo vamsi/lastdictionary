@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Toolformer
+id: toolformer
+pos: prop. n.
+domain: agents
+domains:
+  - llm
+  - train
+  - hist
+level: specialist
+plain: >-
+  A 2023 Meta research model that learned on its own when a tool — a calendar, a translator, a
+  search engine, a calculator — would help it predict text, keeping only the tool uses that actually
+  paid off.
+senses:
+  - definition: >-
+      A [[language-model|language model]] from Meta AI researchers (February 2023) that taught
+      itself, in a [[self-supervised-learning|self-supervised]] way, to use tools by writing API
+      calls into ordinary text. Shown only a few examples per tool, the base model, GPT-J, proposed
+      calls throughout a large corpus — to a calendar, a machine-translation system, a
+      question-answering system, a calculator and two search engines; the calls were executed, and a
+      call was kept only if its result made the following tokens easier to predict (lower loss).
+      Fine-tuning on this self-labeled data yielded a model that chooses for itself whether to call
+      a tool, which one, with what input and how to use the answer. The authors reported zero-shot
+      gains on several benchmarks, at times matching far larger models, with no loss of ordinary
+      language-modeling ability.
+    example: >-
+      Toolformer's loss-based filter is a neat way to get tool-use training data without human
+      labels.
+origin: >-
+  Described by Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke
+  Zettlemoyer, Nicola Cancedda and Thomas Scialom in a paper posted on 9 February 2023 and published
+  at NeurIPS 2023; the name blends 'tool' and '[[transformer|transformer]]'.
+year: 2023
+note: >-
+  Toolformer made one call at a time and could not chain tools or use them interactively; later
+  systems rely on [[function-calling|function calling]] formats and on
+  [[reinforcement-learning|reinforcement learning]] in agent environments.
+see_also:
+  - tool use
+  - function calling
+  - augmented language model
+  - self-supervised learning
+  - ReAct
+  - MRKL system
+sources:
+  - text: >-
+      Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Zettlemoyer, L., Cancedda, N.
+      & Scialom, T. (2023). Toolformer: Language Models Can Teach Themselves to Use Tools.
+      arXiv:2302.04761 (NeurIPS 2023).
+    url: https://arxiv.org/abs/2302.04761v1

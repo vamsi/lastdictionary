@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: trust region policy optimization
+id: trust-region-policy-optimization
+pos: n.
+also:
+  - TRPO
+domain: rl
+level: specialist
+plain: >-
+  A method for improving an AI's strategy in careful steps, never changing it too much at once, so
+  that a single bad update cannot wreck what it has already learned.
+senses:
+  - definition: >-
+      A [[policy-gradient|policy gradient]] algorithm that maximizes a surrogate objective — the
+      expected [[advantage-function|advantage]] of the new [[policy|policy]], estimated from data
+      collected with the old one through [[importance-sampling|importance-sampling]] ratios —
+      subject to a limit on the average [[kullback-leibler-divergence|Kullback–Leibler divergence]]
+      between old and new policies. The limit defines a 'trust region' within which the surrogate is
+      a reliable guide, guarding against the destructive updates that plague plain policy gradients.
+      Its derivation starts from a bound under which every update is guaranteed to improve the
+      policy and then relaxes it into a workable procedure: the update direction is a natural
+      gradient, computed with conjugate-gradient solves using Fisher-vector products, and the step
+      size is set by a line search. The original paper applied it to simulated locomotion and to
+      Atari games played from screen images, with little hyperparameter tuning, but its second-order
+      machinery is complex and awkward with networks that share parameters, which motivated the
+      simpler [[proximal-policy-optimization|proximal policy optimization]].
+    example: TRPO's KL limit of 0.01 kept the walker from collapsing after a lucky batch.
+formula_latex: \max_\theta\; \mathbb{E}\left[ \frac{\pi_\theta(a \mid
+  s)}{\pi_{\theta_{\text{old}}}(a \mid s)}\, \hat{A}(s,a) \right] \quad \text{s.t.} \quad
+  \mathbb{E}\left[ D_{\mathrm{KL}}\left( \pi_{\theta_{\text{old}}}(\cdot \mid s) \,\|\,
+  \pi_\theta(\cdot \mid s) \right) \right] \le \delta
+origin: >-
+  Introduced by John Schulman, Sergey Levine, Philipp Moritz, Michael Jordan and Pieter Abbeel at UC
+  Berkeley in 'Trust Region Policy Optimization' (arXiv, February 2015; ICML 2015), building on Sham
+  Kakade's natural policy gradient (2001) and Kakade and John Langford's conservative policy
+  iteration (2002). 'Trust region' is borrowed from numerical optimization.
+year: 2015
+see_also:
+  - policy gradient
+  - Kullback–Leibler divergence
+  - advantage function
+  - generalized advantage estimation
+  - actor–critic
+contrast:
+  - proximal policy optimization
+sources:
+  - text: >-
+      Schulman, J., Levine, S., Moritz, P., Jordan, M. I. & Abbeel, P. (2015). Trust Region Policy
+      Optimization. ICML 2015. arXiv:1502.05477.
+    url: https://arxiv.org/abs/1502.05477
+  - text: >-
+      Kakade, S. (2001). A Natural Policy Gradient. Advances in Neural Information Processing
+      Systems 14.

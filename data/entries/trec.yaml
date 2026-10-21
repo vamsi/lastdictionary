@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TREC
+id: trec
+pos: prop. n.
+also:
+  - Text REtrieval Conference
+  - Text Retrieval Conference
+  - TREC track
+pronunciation: TREK
+domain: eval
+domains:
+  - data
+  - hist
+level: core
+plain: >-
+  A yearly contest, run by a US government standards agency since 1992, in which search-engine
+  researchers test their systems on the same documents and questions, with people judging which
+  results are actually relevant.
+senses:
+  - definition: >-
+      An annual evaluation campaign for [[information-retrieval|information retrieval]], run since
+      1992 by the US National Institute of Standards and Technology (NIST), that supplies shared
+      document collections, topics (statements of an information need) and human relevance
+      judgments. Work is organized into tracks that change over the years: ad hoc and routing
+      search, [[question-answering|question answering]], web, spam, legal discovery, genomics,
+      microblogs, clinical decision support, conversational search, deep-learning ranking on
+      [[ms-marco|MS MARCO]] and, most recently, [[retrieval-augmented-generation|retrieval-augmented
+      generation]]. Because judging every document is impossible, TREC popularized pooling, in which
+      assessors judge only the union of the top-ranked documents from all submitted runs. Its
+      reusable test collections, metrics such as [[mean-average-precision|mean average precision]]
+      and the trec_eval scoring tool scaled the older Cranfield laboratory method to gigabyte- and
+      later terabyte-sized collections, and its model was copied by CLEF in Europe, NTCIR in Japan
+      and FIRE in India.
+    example: We report nDCG@10 on the TREC Deep Learning 2019 and 2020 passage-ranking tasks.
+origin: >-
+  Launched in 1992 by NIST with DARPA co-sponsorship as part of the TIPSTER text program, under
+  Donna Harman, who led it in its early years; Ellen Voorhees later managed it for many years. The
+  first meeting, TREC-1, was held in November 1992.
+year: 1992
+note: >-
+  Pooled judgments are incomplete, so systems unlike those that formed the original pool, such as
+  neural rankers evaluated on old collections, can be scored unfairly; this pooling bias is a
+  recurring methodological concern. TREC is a workshop built around shared evaluation, not a
+  peer-reviewed venue for new methods.
+see_also:
+  - information retrieval
+  - Message Understanding Conference
+  - mean average precision
+  - MS MARCO
+  - BEIR
+  - BM25
+  - benchmark
+sources:
+  - text: >-
+      Voorhees, E. M. & Harman, D. K. (Eds.) (2005). TREC: Experiment and Evaluation in Information
+      Retrieval. MIT Press.
+as_of: 2026-10

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: activation addition
+id: activation-addition
+pos: n.
+also:
+  - ActAdd
+domain: interp
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  A simple way to steer a language model: run two contrasting prompts such as 'Love' and 'Hate',
+  take the difference between the model's internal states, and add it while the model writes.
+senses:
+  - definition: >-
+      A [[activation-steering|steering]] method that builds a [[steering-vector|steering vector]]
+      from a single pair of contrasting prompts and adds it to the [[residual-stream|residual
+      stream]] during generation, with no optimization or training. Both prompts (for example 'Love'
+      and 'Hate') are run through the model; the difference of their activations at a chosen layer
+      is multiplied by a coefficient and added at the first token positions of a new prompt's
+      [[forward-pass|forward pass]]. On GPT-2-XL and later models such vectors redirected the
+      sentiment, topic or style of completions, while fluency, and the handling of text unrelated to
+      the steered property, mostly survived. ActAdd showed that behaviorally meaningful directions
+      can be found with almost no data or compute, supporting the
+      [[linear-representation-hypothesis|linear representation hypothesis]];
+      [[contrastive-activation-addition|contrastive activation addition]] later averaged over many
+      pairs for more reliable vectors.
+    example: >-
+      A single 'Love' minus 'Hate' ActAdd vector was enough to turn GPT-2-XL's hostile completions
+      affectionate.
+origin: >-
+  Introduced by Alexander Matt Turner and colleagues, first in a May 2023 LessWrong post on steering
+  GPT-2-XL and then in an August 2023 arXiv paper (later retitled 'Steering Language Models With
+  Activation Engineering'). It grew out of the same group's early-2023 'cheese vector' experiments
+  on a maze-solving reinforcement-learning agent.
+year: 2023
+note: >-
+  'Activation addition' is sometimes used generically for any additive steering; ActAdd names the
+  specific single-pair method.
+see_also:
+  - steering vector
+  - activation steering
+  - contrastive activation addition
+  - activation vector
+  - linear representation hypothesis
+contrast:
+  - directional ablation
+sources:
+  - text: >-
+      Turner, A. M. et al. (2023). Activation Addition: Steering Language Models Without
+      Optimization. arXiv:2308.10248.
+    url: https://arxiv.org/abs/2308.10248v4

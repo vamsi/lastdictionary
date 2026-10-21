@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hidden Markov model
+id: hidden-markov-model
+pos: n.
+also:
+  - HMM
+  - Baum–Welch algorithm
+  - forward–backward algorithm
+  - forward algorithm
+domain: sym
+domains:
+  - percep
+  - ml
+level: core
+plain: >-
+  A model of a sequence, such as speech or DNA, in which hidden states — say, the words being spoken
+  — change step by step at random, and each state gives off signals that can be observed, such as
+  sounds.
+senses:
+  - definition: >-
+      A [[probabilistic-graphical-model|probabilistic graphical model]] of sequences in which an
+      unobserved state evolves as a [[markov-chain|Markov chain]] — the next state depends only on
+      the current one, through transition probabilities — and each state emits an observation
+      according to an emission distribution. Three standard computations make it practical: the
+      forward algorithm gives the probability of an observation sequence; the
+      [[viterbi-algorithm|Viterbi algorithm]] finds the most likely sequence of hidden states; and
+      the Baum–Welch algorithm, an instance of the
+      [[expectation-maximization-algorithm|expectation–maximization algorithm]] built on
+      forward–backward probabilities, learns the parameters from unlabeled sequences. All run in
+      time linear in sequence length and quadratic in the number of states. HMMs, usually with
+      Gaussian-mixture emissions, were the backbone of [[speech-recognition|speech recognition]]
+      from the 1980s until deep networks displaced them in the 2010s, and they remain standard in
+      bioinformatics (gene finding, protein-family profiles) and in some
+      [[part-of-speech-tagging|tagging]] and handwriting systems.
+    example: >-
+      The gene finder is a hidden Markov model whose hidden states are exon, intron and intergenic
+      sequence.
+origin: >-
+  Developed by Leonard E. Baum and colleagues at the Institute for Defense Analyses in papers from
+  1966 onward, which spoke of 'probabilistic functions of Markov chains'; the name 'hidden Markov
+  model' was in use by 1980, though its coiner is not established. James Baker at Carnegie Mellon
+  and Frederick Jelinek's group at IBM applied HMMs to speech recognition in the 1970s, and Lawrence
+  Rabiner's 1989 tutorial spread them widely.
+year: 1966
+see_also:
+  - Markov chain
+  - Viterbi algorithm
+  - expectation–maximization algorithm
+  - conditional random field
+  - speech recognition
+  - probabilistic graphical model
+  - Bayesian network
+contrast:
+  - conditional random field
+  - recurrent neural network
+sources:
+  - text: >-
+      Baum, L. E. & Petrie, T. (1966). Statistical Inference for Probabilistic Functions of Finite
+      State Markov Chains. Annals of Mathematical Statistics 37(6), 1554–1563.
+  - text: >-
+      Rabiner, L. R. (1989). A Tutorial on Hidden Markov Models and Selected Applications in Speech
+      Recognition. Proceedings of the IEEE 77(2), 257–286.

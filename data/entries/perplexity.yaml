@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: perplexity
+id: perplexity
+pos: n.
+also:
+  - PPL
+  - bits per byte
+  - bits per character
+  - BPB
+domain: llm
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  A score for how surprised a language model is by real text; lower is better. A perplexity of 10
+  means guessing each next word is, on average, as hard for the model as guessing a ten-sided die's
+  roll.
+senses:
+  - definition: >-
+      The exponential of the average negative [[log-probability|log probability]] a
+      [[language-model|language model]] assigns to each token of a held-out text — equivalently, the
+      exponentiated [[cross-entropy|cross-entropy]] between the data and the model. It can be read
+      as an effective branching factor: a model with perplexity k is, on average, as unsure of each
+      next token as one would be about the roll of a fair k-sided die. Lower is better, and
+      minimizing the usual training loss directly minimizes it. Because it is measured per token,
+      perplexity is comparable only between models with the same [[tokenizer|tokenizer]] and test
+      set; tokenizer-independent variants normalize by characters or bytes (bits per byte). It was
+      the main language-model metric through the 2010s and still tracks pretraining progress, but
+      correlates imperfectly with usefulness on downstream tasks, and suspiciously low perplexity on
+      a benchmark can signal [[data-contamination|data contamination]].
+    example: Validation perplexity dropped from 9.1 to 8.4 after we cleaned the code data.
+formula_latex: \mathrm{PPL}(x_{1:N}) = \exp\!\left( -\frac{1}{N} \sum_{i=1}^{N} \log p_\theta(x_i
+  \mid x_{<i}) \right)
+origin: >-
+  Introduced as a measure of the difficulty of speech-recognition tasks by Frederick Jelinek, Robert
+  Mercer, Lalit Bahl and James Baker at IBM in 1977, drawing on Claude Shannon's information theory.
+year: 1977
+note: Not to be confused with Perplexity AI, an AI search company of the same name.
+see_also:
+  - log probability
+  - cross-entropy
+  - language model
+  - next-token prediction
+  - n-gram model
+  - loss function
+sources:
+  - text: >-
+      Jelinek, F., Mercer, R. L., Bahl, L. R. & Baker, J. K. (1977). Perplexity — a measure of the
+      difficulty of speech recognition tasks. Journal of the Acoustical Society of America 62(S1):
+      S63.
+    url: https://doi.org/10.1121/1.2016299

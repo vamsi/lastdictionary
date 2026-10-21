@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Matryoshka embedding
+id: matryoshka-embedding
+pos: n.
+also:
+  - Matryoshka representation learning
+  - MRL
+  - nested embedding
+  - truncatable embedding
+pronunciation: mat-ree-OSH-kuh
+domain: eng
+domains:
+  - dl
+level: specialist
+plain: >-
+  An embedding built like a set of Russian nesting dolls: its first few numbers already give a rough
+  summary, so you can cut it short to save space and still search reasonably well.
+senses:
+  - definition: >-
+      An embedding vector trained so that its leading dimensions form usable lower-dimensional
+      embeddings on their own: the first 64, 128, 256 … dimensions are each a coarse-to-fine version
+      of the full vector. Matryoshka representation learning achieves this by applying the training
+      loss to several nested prefixes at once and summing the results, which pushes the most
+      important information into the earliest dimensions at little cost to full-size quality. Users
+      can then truncate (and re-normalize) vectors to trade accuracy for storage and speed, or use
+      short prefixes for a fast first pass and full vectors to re-score the shortlist, sometimes
+      called adaptive retrieval. The original paper reported representations up to 14 times smaller
+      at equal ImageNet accuracy and up to 14 times faster large-scale retrieval.
+    example: >-
+      We keep 256-dimension Matryoshka prefixes in memory and the full 3,072-dimension vectors on
+      disk for re-scoring.
+formula_latex: \mathcal{L}_{\mathrm{MRL}}=\sum_{m\in\mathcal{M}}
+  c_m\,\mathcal{L}\big(\mathbf{z}_{1:m}\big),\qquad \mathcal{M}=\{8,16,32,\dots,d\}
+origin: >-
+  Introduced by Aditya Kusupati, Gantavya Bhatt, Aniket Rege and colleagues in 'Matryoshka
+  Representation Learning' (arXiv, May 2022; NeurIPS 2022). OpenAI's text-embedding-3 models
+  (January 2024) were trained with the technique and exposed a dimensions parameter for shortening
+  embeddings, and many open embedding models followed.
+year: 2022
+see_also:
+  - text embedding
+  - embedding model
+  - vector search
+  - product quantization
+  - dimensionality
+  - approximate nearest neighbor search
+sources:
+  - text: >-
+      Kusupati, A. et al. (2022). Matryoshka Representation Learning. NeurIPS 2022. arXiv:2205.13147.
+    url: https://arxiv.org/abs/2205.13147v4
+  - text: OpenAI (2024). New embedding models and API updates, 25 January 2024.
+    url: https://openai.com/index/new-embedding-models-and-api-updates/

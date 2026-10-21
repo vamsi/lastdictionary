@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dictionary learning
+id: dictionary-learning
+pos: n.
+also:
+  - sparse dictionary learning
+  - sparse coding
+domain: interp
+domains:
+  - math
+  - ml
+level: specialist
+plain: >-
+  A method that learns a large vocabulary of basic patterns so that any piece of data can be
+  described using just a few of them. In AI interpretability it builds a dictionary of a model's own
+  concepts.
+senses:
+  - context: Signal processing and machine learning
+    definition: >-
+      The problem of learning an overcomplete set of basis vectors (atoms), collected as the columns
+      of a dictionary matrix D, such that each data vector x is approximated as D·a with a sparse
+      coefficient vector a. Methods alternate between sparse coding — finding a for fixed D, for
+      example by matching pursuit or L1-penalized regression ([[lasso|lasso]]) — and updating D, as
+      in the method of optimal directions or K-SVD. Unlike [[principal-component-analysis|principal
+      component analysis]], atoms need not be orthogonal and may outnumber the dimensions of the
+      data. Applications include image denoising, inpainting and compression, and models of
+      receptive fields in the visual cortex.
+  - context: Interpretability
+    definition: >-
+      The use of the same idea to decompose a neural network's [[activation|activations]] into many
+      sparsely active, interpretable [[feature-interpretability|features]], undoing
+      [[superposition|superposition]]. The dictionary is usually learned by a
+      [[sparse-autoencoder|sparse autoencoder]] or a relative such as a [[transcoder|transcoder]] or
+      [[crosscoder|crosscoder]], whose decoder columns are the atoms; each atom is then labeled by
+      inspecting the inputs that activate it, often with [[automated-interpretability|automated
+      interpretability]]. The result is, quite literally, a dictionary of the model's own concepts —
+      in Anthropic's 2024 study of Claude 3 Sonnet, some 34 million entries.
+    example: >-
+      Dictionary learning on the MLP layer turned 512 tangled neurons into 4,096 readable features.
+formula_latex: \min_{D,\,\{a_i\}} \sum_i \lVert x_i - D a_i \rVert_2^2 + \lambda \lVert a_i \rVert_1
+origin: >-
+  Grew from Stéphane Mallat and Zhifeng Zhang's matching pursuit over 'time-frequency dictionaries'
+  (1993) and Bruno Olshausen and David Field's sparse-coding model of visual cortex (Nature, 1996);
+  'dictionary learning' was a standard name by the early 2000s. Applied to word embeddings by Arora
+  and colleagues (2018) and to transformers by Zeyu Yun and colleagues (2021); Anthropic's 'Towards
+  Monosemanticity' (2023) made it the usual name in interpretability.
+year: 1996
+note: >-
+  'Sparse coding' sometimes names the whole problem and sometimes only the step of finding
+  coefficients for a fixed dictionary.
+see_also:
+  - sparse autoencoder
+  - superposition
+  - feature (interpretability)
+  - principal component analysis
+  - lasso
+  - monosemanticity
+sources:
+  - text: >-
+      Olshausen, B. A. & Field, D. J. (1996). Emergence of simple-cell receptive field properties by
+      learning a sparse code for natural images. Nature 381, 607–609.
+  - text: >-
+      Mallat, S. & Zhang, Z. (1993). Matching Pursuits with Time-Frequency Dictionaries. IEEE
+      Transactions on Signal Processing 41(12).
+  - text: >-
+      Yun, Z., Chen, Y., Olshausen, B. A. & LeCun, Y. (2021). Transformer visualization via
+      dictionary learning: contextualized embedding as a linear superposition of transformer
+      factors. DeeLIO Workshop, NAACL 2021.

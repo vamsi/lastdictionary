@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: automated AI research
+id: automated-ai-research
+pos: n.
+also:
+  - AI R&D automation
+  - automated AI researcher
+  - automated alignment researcher
+  - AI research automation
+domain: asi
+domains:
+  - agents
+  - safety
+labels:
+  - emerging
+level: core
+plain: >-
+  Using AI systems to do the work of AI researchers, such as running experiments and writing code
+  for new models, so that AI helps build its own successors.
+senses:
+  - definition: >-
+      The use of AI systems to perform the work of AI research and engineering, including proposing
+      ideas, writing and debugging training code, running and analyzing experiments, and improving
+      data and algorithms, with decreasing human involvement. It is the most discussed route to an
+      [[intelligence-explosion|intelligence explosion]], because automating the people who improve
+      AI could multiply research output by the number and speed of AI copies that can be run.
+      Progress is tracked with benchmarks of research-engineering tasks such as
+      [[re-bench|RE-Bench]] and [[mle-bench|MLE-bench]], and with the length of tasks agents
+      complete autonomously ([[metr-time-horizon|METR time horizon]]). Frontier developers'
+      [[responsible-scaling-policy|safety frameworks]] treat substantial automation of AI R&D as a
+      [[capability-threshold|capability threshold]] requiring stronger security and alignment
+      safeguards. Automated alignment research, using AI to help align more capable AI, is a related
+      strategy. In October 2025 OpenAI set goals of an intern-level research assistant by September
+      2026 and an automated AI researcher by March 2028; in September 2026 it said it had reached
+      the first, described as a system that carries out well-defined research tasks under human
+      direction.
+    example: >-
+      Once automated AI research covers most of our experiments, the bottleneck becomes compute, not
+      people.
+origin: >-
+  The idea descends from I. J. Good's 1965 argument and from [[seed-ai|seed AI]]. It became an
+  explicit engineering goal in 2023, when OpenAI's [[superalignment|superalignment]] team set out to
+  build a roughly human-level automated alignment researcher; by 2025 several laboratories had
+  published targets for automating their own research.
+see_also:
+  - recursive self-improvement
+  - intelligence explosion
+  - superhuman coder
+  - AI scientist
+  - RE-Bench
+  - METR time horizon
+  - superalignment
+as_of: 2026-10

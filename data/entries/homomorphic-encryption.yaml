@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: homomorphic encryption
+id: homomorphic-encryption
+pos: n.
+also:
+  - HE
+  - fully homomorphic encryption
+  - FHE
+domain: sec
+domains:
+  - math
+  - infer
+level: specialist
+plain: >-
+  A way of locking data so that a computer can still work with it while it stays locked: the
+  computer never sees the real numbers, and only the owner can open the answer.
+senses:
+  - definition: >-
+      Encryption whose algebraic structure survives computation: operating on ciphertexts yields an
+      encryption of the corresponding result on the plaintexts, so data can be processed by a party
+      that cannot read it. Partially homomorphic schemes support one operation, such as addition
+      (Paillier) or multiplication (unpadded RSA); fully homomorphic encryption (FHE) supports both,
+      and hence arbitrary circuits, by periodically 'bootstrapping' to control the noise that
+      lattice-based ciphertexts accumulate. Schemes such as BGV, BFV, TFHE and CKKS, the last
+      designed for approximate real-number arithmetic, make encrypted machine-learning inference
+      possible: a client sends an encrypted input and receives an encrypted prediction that the
+      server cannot read. Costs are steep — often thousands of times slower than plaintext, with
+      non-linear functions such as ReLU or softmax approximated by polynomials — so practical uses
+      are small models, private lookups and components of larger protocols.
+    example: >-
+      The server ran the classifier under homomorphic encryption and never saw the patient's data or
+      the diagnosis.
+origin: >-
+  Ronald Rivest, Leonard Adleman and Michael Dertouzos proposed 'privacy homomorphisms' in 1978.
+  Craig Gentry constructed the first fully homomorphic scheme in his 2009 Stanford dissertation and
+  STOC paper. Microsoft's CryptoNets (2016) demonstrated neural-network inference on encrypted data.
+year: 1978
+see_also:
+  - secure multi-party computation
+  - confidential computing
+  - privacy-preserving machine learning
+  - differential privacy
+contrast:
+  - confidential computing
+sources:
+  - text: >-
+      Gentry, C. (2009). Fully Homomorphic Encryption Using Ideal Lattices. ACM STOC 2009.
+  - text: >-
+      Rivest, R. L., Adleman, L. & Dertouzos, M. L. (1978). On Data Banks and Privacy Homomorphisms.
+      In Foundations of Secure Computation. Academic Press.

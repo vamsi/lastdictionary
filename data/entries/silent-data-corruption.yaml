@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: silent data corruption
+id: silent-data-corruption
+pos: n.
+also:
+  - SDC
+  - silent data error
+  - silent error
+  - mercurial core
+domain: hw
+domains:
+  - train
+  - eng
+level: specialist
+plain: >-
+  When computer hardware quietly produces wrong numbers without crashing or raising any alarm. In
+  huge AI training runs on thousands of chips, such hidden errors can damage a model before anyone
+  notices.
+senses:
+  - definition: >-
+      An error in which hardware returns an incorrect result, in computation, memory or data
+      transfer, without the error being detected or reported: no crash, no exception and no
+      error-correcting-code (ECC) alert. Causes include manufacturing defects and wear-out in
+      processor logic, marginal voltage, frequency or temperature, and occasionally
+      radiation-induced bit flips that evade protection; a defective unit may err only on particular
+      instructions, data patterns or operating conditions, which makes it hard to find. In
+      large-scale training, where thousands of [[gpu|GPUs]] or [[tpu|TPUs]] run for months, even
+      rare per-chip error rates add up to recurring events, and a corrupted gradient can spread
+      through [[all-reduce|all-reduce]] into every replica's weights, appearing as [[loss-spike|loss
+      spikes]], NaNs or a subtle loss of quality. Defenses include fleet screening and burn-in
+      tests, replaying or duplicating computation and comparing results, checking that data-parallel
+      replicas stay bit-identical, monitoring gradient norms, frequent [[checkpoint|checkpoints]]
+      for rollback, and quarantining suspect hosts.
+    example: >-
+      The loss spike vanished when we replayed the step on another node, so we pulled the first host
+      for silent-data-corruption testing.
+origin: >-
+  The phrase was established in storage and high-performance computing by the 2000s, for corruption
+  that slips past disk and memory checks. It gained prominence for processors in 2021, when
+  engineers at Facebook, now Meta (Harish Dattatraya Dixit and colleagues), and Google (Peter
+  Hochschild and colleagues, who called the culprits 'mercurial cores') reported defective CPUs
+  silently miscomputing at fleet scale. Frontier-model technical reports since 2023 treat it as a
+  recurring training hazard.
+note: >-
+  Distinct from detected or corrected errors, which hardware reports, and from software
+  [[nondeterminism|nondeterminism]], which yields slightly different but valid results. Meta
+  attributed 6 of the 419 unexpected interruptions (466 in all) in a 54-day period of Llama 3 405B
+  pretraining, on up to 16,384 H100 GPUs, to silent data corruption: few, but among the hardest to
+  diagnose.
+see_also:
+  - GPU
+  - checkpoint
+  - loss spike
+  - training instability
+  - straggler
+  - goodput
+  - all-reduce
+contrast:
+  - nondeterminism
+sources:
+  - text: Dixit, H. D. et al. (2021). Silent Data Corruptions at Scale. arXiv preprint.
+  - text: Hochschild, P. H. et al. (2021). Cores that Don't Count. Proc. HotOS 2021.
+as_of: 2026-10

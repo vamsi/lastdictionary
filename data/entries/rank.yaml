@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rank
+id: rank
+pos: n.
+also:
+  - matrix rank
+  - full rank
+  - rank-deficient
+domain: math
+domains:
+  - train
+level: core
+plain: >-
+  The number of truly independent directions a grid of numbers contains. A low-rank grid can be
+  rebuilt exactly from a few simple building blocks, however large it looks.
+senses:
+  - definition: >-
+      The number of linearly independent columns of a [[matrix|matrix]] — always equal to the number
+      of independent rows, and to the number of nonzero singular values in its
+      [[singular-value-decomposition|singular value decomposition]] — and hence the dimension of the
+      space of outputs the matrix can produce. An m × n matrix has rank at most min(m, n); it is
+      full-rank if it reaches this bound and rank-deficient otherwise, in which case some nonzero
+      inputs are mapped to zero and the associated linear system lacks a unique solution. A rank-r
+      matrix can be written as a sum of r outer products, or as the product of an m × r and an r × n
+      matrix, the basis of [[low-rank-approximation|low-rank approximation]]. In
+      [[low-rank-adaptation|low-rank adaptation]], 'rank' is the hyperparameter r of the learned
+      weight update; in [[attention|attention]], a single head's score matrix has rank at most the
+      head dimension, a limit sometimes called the low-rank bottleneck.
+    example: We trained adapters at rank 8 and rank 64 and saw no difference on the eval.
+origin: >-
+  Ferdinand Georg Frobenius introduced Rang for determinants and matrices in 1879. 'Rank' appears in
+  English in Thomas Bromwich's 1906 tract on quadratic forms and was defined in Maxime Bôcher's
+  influential Introduction to Higher Algebra (1907).
+year: 1879
+note: >-
+  Not the 'rank' of a [[tensor|tensor]] in array programming (its number of axes), nor a position in
+  an ordered list as in [[learning-to-rank|learning to rank]]. Multilinear algebra has yet another
+  notion, tensor rank.
+see_also:
+  - low-rank approximation
+  - singular value decomposition
+  - low-rank adaptation
+  - matrix
+  - linear algebra
+contrast:
+  - learning to rank

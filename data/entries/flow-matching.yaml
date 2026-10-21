@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: flow matching
+id: flow-matching
+pos: n.
+also:
+  - conditional flow matching
+  - CFM
+  - flow-matching model
+  - stochastic interpolants
+domain: gen
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  A way to train generators that learns, for every point between random noise and real data, which
+  direction to move, so that noise can be steered smoothly into new examples.
+senses:
+  - definition: >-
+      A way of training a continuous [[normalizing-flow|normalizing flow]], which carries noise to
+      data along a learned velocity field: a network v_θ(x, t) learns, for each point x and time t
+      from 0 (noise) to 1 (data), which way and how fast probability should move. The velocity of
+      the overall path is intractable, but simple per-example paths give a loss with the same
+      gradient: commonly, each training step draws noise x₀ and data x₁, picks x_t = (1 − t)x₀ + t
+      x₁ on the straight segment between them, and regresses the network onto that segment's
+      velocity, x₁ − x₀. No differential equation is solved during training (the method is
+      simulation-free); at generation time any ODE solver integrates the learned field from fresh
+      noise. Diffusion corresponds to particular curved paths, so flow matching generalizes it;
+      straighter paths are easier to learn and need fewer sampling steps. With
+      [[classifier-free-guidance|classifier-free guidance]] and
+      [[diffusion-transformer|transformer]] backbones, flow matching underlies Stable Diffusion 3,
+      [[flux|FLUX]], Meta's Movie Gen and many audio and robotics models.
+formula_latex: \mathcal{L}_{\text{CFM}}(\theta) = \mathbb{E}_{t, x_0, x_1}\big\lVert v_\theta(x_t,
+  t) - (x_1 - x_0) \big\rVert^2, \quad x_t = (1-t)\,x_0 + t\,x_1
+origin: >-
+  Introduced by Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel and Matt Le (Meta
+  AI and the Weizmann Institute) in 'Flow Matching for Generative Modeling' (posted October 2022;
+  ICLR 2023). Closely related formulations appeared independently the same autumn:
+  [[rectified-flow|rectified flow]] (Xingchao Liu and colleagues) and stochastic interpolants
+  (Michael Albergo and Eric Vanden-Eijnden).
+year: 2022
+note: >-
+  Time conventions vary: some papers put data at t = 0 and noise at t = 1. Flow matching models are
+  often loosely called diffusion models.
+see_also:
+  - rectified flow
+  - normalizing flow
+  - diffusion model
+  - neural ordinary differential equation
+  - diffusion transformer
+  - diffusion policy
+sources:
+  - text: >-
+      Lipman, Y., Chen, R. T. Q., Ben-Hamu, H., Nickel, M. & Le, M. (2023). Flow Matching for
+      Generative Modeling. ICLR 2023. arXiv:2210.02747.
+    url: https://arxiv.org/abs/2210.02747

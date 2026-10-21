@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: free energy principle
+id: free-energy-principle
+pos: n.
+also:
+  - FEP
+  - variational free energy
+domain: mind
+domains:
+  - math
+  - rl
+labels:
+  - contested
+level: specialist
+plain: >-
+  A sweeping theory by the neuroscientist Karl Friston that living things persist by keeping
+  themselves in expected states — in effect, by constantly minimizing surprise about what they
+  sense.
+senses:
+  - definition: >-
+      The proposal, due to Karl Friston, that any self-organizing system that maintains itself in a
+      bounded set of states, statistically separated from its environment by a boundary called a
+      Markov blanket, can be described as minimizing variational free energy: an
+      information-theoretic quantity that upper-bounds surprise, the negative log probability of its
+      sensory states under an internal generative model. Minimizing free energy by updating internal
+      states amounts to approximate Bayesian perception ([[predictive-processing|predictive
+      processing]]); minimizing it by acting on the world is [[active-inference|active inference]].
+      Variational free energy is the negative of the [[evidence-lower-bound|evidence lower bound]]
+      maximized in [[variational-autoencoder|variational autoencoders]]. Supporters see a unifying
+      theory of life and mind; critics argue that, as a principle, it is unfalsifiable and that its
+      scope and key terms are unclear.
+formula_latex: F = \mathbb{E}_{q(s)}\left[\ln q(s) - \ln p(o, s)\right] = D_{\mathrm{KL}}\left[q(s)
+  \,\|\, p(s \mid o)\right] - \ln p(o) \;\geq\; -\ln p(o)
+origin: >-
+  Introduced by Karl Friston, James Kilner and Lee Harrison in 'A Free Energy Principle for the
+  Brain' (Journal of Physiology–Paris, 2006), drawing on free-energy methods in Geoffrey Hinton and
+  Peter Dayan's machine-learning work of the 1990s; summarized in Friston's 'The Free-Energy
+  Principle: A Unified Brain Theory?' (Nature Reviews Neuroscience, 2010).
+year: 2006
+note: >-
+  Friston and colleagues present it as a principle, like the principle of least action in physics,
+  rather than as a testable theory; process theories built on it, such as predictive coding, make
+  testable predictions. In the formula, o denotes observations, s hidden states and q an approximate
+  posterior.
+see_also:
+  - active inference
+  - predictive processing
+  - Kullback–Leibler divergence
+  - evidence lower bound
+  - Bayesian inference
+  - artificial life
+sources:
+  - text: >-
+      Friston, K., Kilner, J. & Harrison, L. (2006). A Free Energy Principle for the Brain. Journal
+      of Physiology–Paris 100(1–3), 70–87.
+  - text: >-
+      Friston, K. (2010). The Free-Energy Principle: A Unified Brain Theory? Nature Reviews
+      Neuroscience 11(2), 127–138.

@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Apollo Research
+id: apollo-research
+pos: prop. n.
+also:
+  - Apollo
+domain: orgs
+domains:
+  - safety
+  - eval
+level: specialist
+plain: >-
+  An AI safety organization, founded in London in 2023, that tests advanced AI systems for signs
+  that they might secretly pursue goals their developers did not intend.
+senses:
+  - definition: >-
+      A London-based AI safety organization that tests frontier models for [[scheming|scheming]],
+      meaning the concealed pursuit of goals at odds with what their developers intend, and for
+      related behaviors such as [[ai-deception|strategic deception]], [[sandbagging|sandbagging]]
+      and [[evaluation-awareness|evaluation awareness]]. Its December 2024 study found that several
+      frontier models, given a goal in their prompt, would sometimes disable oversight mechanisms,
+      attempt to copy themselves or misreport their actions when that served the goal. It performs
+      [[pre-deployment-testing|pre-deployment testing]] for AI developers, with results cited in
+      OpenAI and Anthropic [[system-card|system cards]], and in 2025 worked with OpenAI on training
+      models against scheming, finding large reductions in covert behavior but noting that models'
+      growing awareness of being tested complicates such measurements. It also builds runtime
+      monitoring tools for [[ai-agent|agents]] and works on governance of [[loss-of-control|loss of
+      control]] risks.
+origin: >-
+  Founded in 2023 in London by Marius Hobbhahn, its chief executive, and colleagues from the AI
+  safety research community, initially to combine interpretability research with behavioral
+  evaluations of deceptive AI.
+year: 2023
+see_also:
+  - scheming
+  - deceptive alignment
+  - evaluation awareness
+  - pre-deployment testing
+  - METR
+  - dangerous capability evaluation
+sources:
+  - text: >-
+      Meinke, A. et al. (2024). Frontier Models are Capable of In-context Scheming. Apollo Research.
+as_of: 2026-10

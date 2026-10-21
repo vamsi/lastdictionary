@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: helpful-only model
+id: helpful-only-model
+pos: n.
+also:
+  - helpful-only
+  - helpful-only variant
+  - H-only model
+domain: safety
+domains:
+  - eval
+  - train
+level: specialist
+plain: >-
+  A version of an AI trained to be helpful but without the safety training that makes it refuse
+  harmful requests, kept in-house so testers can see what the model could really do.
+senses:
+  - definition: >-
+      A variant of a model that has received helpfulness post-training but not harmlessness or
+      [[safety-training|safety training]], so that it attempts essentially any request. Developers
+      keep such variants internal for [[dangerous-capability-evaluation|dangerous capability
+      evaluations]] and [[red-teaming|red teaming]], because refusals by the production model would
+      otherwise mask what its underlying capabilities could enable once safeguards are bypassed — by
+      [[jailbreak|jailbreaks]], fine-tuning of [[open-weight-model|open weights]] or stolen weights.
+      Helpful-only models also serve as starting points for research models, such as
+      [[model-organism-of-misalignment|model organisms]], and as baselines for measuring how much
+      safety training changes behavior. Their existence raises security stakes: a helpful-only
+      checkpoint is exactly what an attacker would want to steal.
+    example: >-
+      We ran the bio evaluations on the helpful-only model, since the production model refused most
+      questions.
+origin: >-
+  The contrast between 'helpful-only' and 'helpful and harmless' models appears in Anthropic's RLHF
+  research (Yuntao Bai and colleagues, 2022); by 2024–2025 evaluating helpful-only variants was
+  standard practice reported in laboratory system cards.
+year: 2022
+note: >-
+  Testing the safeguarded model measures the risk of the current deployment; testing the
+  helpful-only variant estimates the risk if safeguards fail. Frameworks differ on which should set
+  the required protections.
+see_also:
+  - capability elicitation
+  - dangerous capability evaluation
+  - safety training
+  - red teaming
+  - model weight security
+  - helpful, honest and harmless

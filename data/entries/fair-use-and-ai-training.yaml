@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fair use and AI training
+id: fair-use-and-ai-training
+pos: phr.
+also:
+  - AI training fair use
+  - fair use defense for AI training
+domain: gov
+domains:
+  - data
+  - society
+labels:
+  - legal
+  - contested
+level: essential
+plain: >-
+  The unsettled US legal question of whether AI companies may copy books, articles, pictures and
+  music to train their models without permission, under the rule that allows some unlicensed uses of
+  copyrighted work.
+senses:
+  - definition: >-
+      The application of the US copyright doctrine of fair use (17 U.S.C. § 107) to copying works
+      into [[training-data|training data]]. Courts weigh the statute's four factors: the 'purpose
+      and character of the use' (above all whether it is transformative, and whether it is
+      commercial), what kind of work was copied, how much of it was taken, and how far the use harms
+      the work's actual or potential market. Developers argue that training extracts statistical
+      patterns rather than expression, citing Authors Guild v. Google (2015), which allowed book
+      scanning for search; rights holders stress wholesale copying, pirated sources, regurgitated
+      output and lost licensing markets, citing the Supreme Court's narrowing of transformative use
+      in Warhol v. Goldsmith (2023). In June 2025 two federal judges in California found training on
+      books to be fair use — in [[bartz-v-anthropic|Bartz v. Anthropic]] (though not the retention
+      of pirated copies) and Kadrey v. Meta (on a thin record, while warning that market dilution
+      could defeat the defense) — whereas in Thomson Reuters v. Ross, a non-generative case, fair
+      use was rejected, and in September 2026 the Third Circuit, in an opinion issued under seal,
+      affirmed that result in the first US appellate ruling on fair use for AI training. The US
+      Copyright Office's 2025 report concluded that some training uses are fair and others are not.
+    example: >-
+      Their whole defense rests on fair use and AI training being transformative, so the market-harm
+      evidence will decide it.
+origin: >-
+  Fair use, rooted in Folsom v. Marsh (1841), was codified in the Copyright Act of 1976; its
+  application to machine learning was debated from the late 2010s and became urgent with lawsuits
+  against generative AI developers from late 2022.
+note: >-
+  Fair use is a US doctrine; most other jurisdictions rely on narrower statutory exceptions such as
+  the EU's [[text-and-data-mining-exception|text and data mining exception]]. Courts increasingly
+  treat the lawfulness of acquiring training copies separately from the lawfulness of training
+  itself.
+see_also:
+  - AI copyright litigation
+  - text and data mining exception
+  - Bartz v. Anthropic
+  - New York Times v. OpenAI
+  - training data
+  - memorization
+  - data licensing
+contrast:
+  - text and data mining exception
+sources:
+  - text: >-
+      US Copyright Office (2025). Copyright and Artificial Intelligence, Part 3: Generative AI
+      Training (pre-publication version, May 2025).
+  - text: >-
+      IPWatchdog (2026). Third Circuit Affirms Revised Fair Use Ruling Against ROSS' AI Legal
+      Research Platform in Sealed Opinion. September 30, 2026.
+    url: https://ipwatchdog.com/2026/09/30/third-circuit-affirms-revised-fair-use-ruling-against-ross-ai-legal-research-platform-in-sealed-opinion/
+as_of: 2026-10

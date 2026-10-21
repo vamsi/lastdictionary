@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: off-switch game
+id: off-switch-game
+pos: n.
+domain: safety
+domains:
+  - rl
+  - math
+level: specialist
+plain: >-
+  A simple game-theory model showing that a robot unsure what its human wants has a reason to let
+  the human switch it off — and loses that reason once it is sure.
+senses:
+  - definition: >-
+      A two-player game devised by Dylan Hadfield-Menell and colleagues to ask when an AI system has
+      reason to let a human turn it off. A robot can act directly, switch itself off, or defer —
+      propose the action and let a human either allow it or press the off switch. If the robot is
+      uncertain about how much the human values the action, and the human chooses rationally by
+      their own preferences, deferring is optimal for the robot: the human's choice carries
+      information and blocks the action only when it would be bad. The incentive to defer shrinks as
+      the robot grows more confident in its own estimate or as the human becomes less reliable. The
+      result motivates AI systems that remain uncertain about their objectives, as in
+      [[cooperative-inverse-reinforcement-learning|cooperative inverse reinforcement learning]].
+    example: >-
+      In the off-switch game, the robot's willingness to be stopped is only as strong as its
+      uncertainty about what we want.
+origin: >-
+  Introduced by Dylan Hadfield-Menell, Anca Dragan, Pieter Abbeel and Stuart Russell of the Center
+  for Human-Compatible AI at the University of California, Berkeley, in 'The Off-Switch Game'
+  (posted 2016; IJCAI 2017).
+year: 2016
+note: >-
+  The result depends on a rational human and on the robot's prior: a robot with a confident but
+  mistaken model of human preferences can still resist shutdown, so the game demonstrates a
+  mechanism rather than a guarantee.
+see_also:
+  - shutdown problem
+  - corrigibility
+  - cooperative inverse reinforcement learning
+  - value learning
+  - Stuart Russell
+  - Center for Human-Compatible AI
+sources:
+  - text: >-
+      Hadfield-Menell, D., Dragan, A., Abbeel, P. & Russell, S. (2017). The Off-Switch Game.
+      Proceedings of IJCAI 2017. arXiv:1611.08219.
+    url: https://arxiv.org/abs/1611.08219

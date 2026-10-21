@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: service-level objective
+id: service-level-objective
+pos: n.
+also:
+  - SLO
+  - service-level indicator
+  - SLI
+  - service-level agreement
+  - SLA
+  - error budget
+domain: eng
+domains:
+  - infer
+level: specialist
+plain: >-
+  A specific, measurable target for how well a service should perform — for example, 99.9 percent of
+  requests answered within two seconds — used to decide when engineers must act.
+senses:
+  - definition: >-
+      A reliability target: the level that some measured quality of a service, such as availability,
+      [[latency|latency]] at a given percentile or error rate, should meet over a stated period. In
+      site reliability engineering, the measured quantity is the service-level indicator (SLI), the
+      SLO is the internal goal for it, and a service-level agreement (SLA) is a contractual promise
+      to customers, usually looser than the SLO and backed by penalties such as service credits. The
+      shortfall an SLO permits is the error budget: a service with a 99.9 percent monthly
+      availability target may be down about 43 minutes a month, and teams slow risky releases when
+      the budget is spent. For [[large-language-model|language-model]] serving, typical SLOs cover
+      [[time-to-first-token|time to first token]], [[time-per-output-token|time per output token]],
+      [[throughput|throughput]], availability and the share of [[rate-limit|rate-limited]] requests,
+      and they drive capacity planning, batching policy and routing.
+    example: Our SLO is a p95 time to first token under 800 milliseconds for paid users.
+origin: >-
+  Service-level agreements and objectives come from telecommunications and IT service management of
+  the 1980s and 1990s, later codified in frameworks such as ITIL. Google's book Site Reliability
+  Engineering (2016) popularized the SLI–SLO–error-budget vocabulary, which teams serving
+  machine-learning models adopted.
+note: >-
+  People often say SLA when they mean SLO. Some teams also set quality SLOs, such as a minimum
+  evaluation score or a maximum [[hallucination|hallucination]] rate, which are harder to measure
+  continuously than latency or availability.
+see_also:
+  - latency
+  - model serving
+  - model monitoring
+  - rate limit
+  - throughput
+  - time to first token
+sources:
+  - text: >-
+      Beyer, B., Jones, C., Petoff, J. & Murphy, N. R. (eds.) (2016). Site Reliability Engineering:
+      How Google Runs Production Systems. O'Reilly Media.

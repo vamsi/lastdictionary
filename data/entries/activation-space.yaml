@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: activation space
+id: activation-space
+pos: n.
+also:
+  - representation space
+  - hidden-state space
+domain: interp
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  The imaginary space of all possible internal states of one layer of a neural network, where each
+  input becomes a point and related meanings tend to share places or directions.
+senses:
+  - definition: >-
+      The vector space ℝ^d in which the [[activation|activations]] of a given [[layer|layer]], or of
+      the [[residual-stream|residual stream]] at a given depth, live, where d is the layer's width.
+      Each input — or each [[token|token]] position — maps to a point, and interpretability research
+      studies the geometry of these points: which directions encode which
+      [[feature-interpretability|features]], how concepts cluster, and whether relations are linear
+      (the [[linear-representation-hypothesis|linear representation hypothesis]]). Tools that
+      operate in activation space include [[linear-probe|linear probes]],
+      [[sparse-autoencoder|sparse autoencoders]], [[steering-vector|steering vectors]] and
+      difference-of-means directions; [[principal-component-analysis|principal component analysis]]
+      and [[umap|UMAP]] project it to two or three dimensions for visualization. Because a layer can
+      hold far more features than it has dimensions through [[superposition|superposition]],
+      meaningful directions generally do not coincide with the coordinate axes, so analysis proceeds
+      along learned directions rather than individual neurons.
+    example: >-
+      In activation space, true and false statements separate cleanly along a single direction.
+origin: >-
+  A descriptive term with no known coiner, used informally in connectionist and deep-learning
+  writing. It became a working concept of interpretability with direction-based methods such as Been
+  Kim and colleagues' concept activation vectors (TCAV, 2018) and later studies of directions in
+  language-model residual streams.
+note: >-
+  Distinct from parameter (weight) space, the space of all possible settings of a model's weights.
+  [[latent-space|latent space]] usually denotes the learned code of a generative model or
+  autoencoder, though the terms overlap in casual use.
+see_also:
+  - activation
+  - residual stream
+  - linear representation hypothesis
+  - feature (interpretability)
+  - embedding
+  - testing with concept activation vectors
+contrast:
+  - latent space

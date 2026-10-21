@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model risk management
+id: model-risk-management
+pos: n.
+also:
+  - MRM
+  - SR 11-7
+  - model risk
+  - model validation
+  - effective challenge
+domain: gov
+domains:
+  - eng
+  - society
+labels:
+  - legal
+level: core
+plain: >-
+  The rules banks and other firms follow to make sure the mathematical models and AI systems they
+  rely on are built correctly, checked independently and used only for what they are fit for.
+senses:
+  - definition: >-
+      The discipline of finding, measuring and containing model risk, meaning the chance that
+      decisions resting on a flawed or misapplied model cause losses or other harm, over the whole
+      life of a model. Its canonical statement, the US supervisory guidance SR 11-7 (2011), counts
+      as a model any quantitative method that converts input data into estimates by applying
+      statistical, economic, financial or mathematical theory, and rests on three pillars: sound
+      development, implementation and use; independent validation, comprising assessment of
+      conceptual soundness, ongoing monitoring and outcomes analysis such as back-testing; and
+      governance, including a model inventory, policies, documentation and clear roles. Its central
+      principle is 'effective challenge': critical review by objective, competent people with the
+      authority to force changes. Built for credit, market-risk and capital models, the framework
+      now covers [[machine-learning|machine learning]] and generative AI in finance, where opacity,
+      [[data-drift|drift]], third-party models and [[hallucination|hallucination]] strain
+      traditional validation.
+    example: >-
+      Model risk management would not sign off on the credit model until validators reproduced its
+      results and stress-tested it.
+origin: >-
+  Issued on 4 April 2011 by the US Federal Reserve Board (SR Letter 11-7) and the Office of the
+  Comptroller of the Currency (Bulletin 2011-12), after the 2007–2009 financial crisis exposed
+  failures of risk models; the FDIC adopted it in 2017. The UK Prudential Regulation Authority's
+  SS1/23 (2023) and Canada's revised OSFI Guideline E-23 (issued September 2025, effective May 2027)
+  extend the approach explicitly to AI and machine learning.
+year: 2011
+note: >-
+  Many firms use model risk management as the template for wider AI governance: frameworks such as
+  the [[nist-ai-risk-management-framework|NIST AI Risk Management Framework]] and the [[eu-ai-act|EU
+  AI Act]]'s duties for high-risk credit-scoring systems echo its inventory, validation and
+  monitoring requirements.
+see_also:
+  - AI governance
+  - NIST AI Risk Management Framework
+  - high-risk AI system
+  - model card
+  - explainability
+  - data drift
+sources:
+  - text: >-
+      Board of Governors of the Federal Reserve System & Office of the Comptroller of the Currency
+      (2011). Supervisory Guidance on Model Risk Management (SR 11-7 / OCC 2011-12).
+  - text: >-
+      Prudential Regulation Authority (2023). Supervisory Statement SS1/23: Model risk management
+      principles for banks. Bank of England.
+standards: >-
+  US Federal Reserve SR 11-7 and OCC Bulletin 2011-12, Supervisory Guidance on Model Risk Management
+  (2011); UK PRA Supervisory Statement SS1/23 (2023); OSFI Guideline E-23, Model Risk Management
+  (Canada, 2025)
+as_of: 2026-10

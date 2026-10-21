@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: centered kernel alignment
+id: centered-kernel-alignment
+pos: n.
+also:
+  - CKA
+  - linear CKA
+  - representational similarity analysis
+  - RSA (neuroscience)
+  - SVCCA
+domain: interp
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A score from 0 to 1 measuring how similar two neural networks' internal representations are, by
+  comparing how each arranges the same set of inputs relative to one another.
+senses:
+  - definition: >-
+      A similarity index for comparing representations — two layers of one network, say, or the same
+      layer in networks trained from different random seeds — computed on the same set of n inputs.
+      Each representation is summarized by an n × n similarity (kernel) matrix over the inputs;
+      after centering, CKA is the normalized inner product of the two matrices, so it asks whether
+      both representations place the inputs in similar relative positions, whatever their
+      dimensionality. With linear kernels it reduces to the formula shown. CKA is invariant to
+      orthogonal transformations and uniform scaling but not to arbitrary invertible linear maps, a
+      property its proponents argue is necessary for meaningful comparisons of wide networks. It has
+      been used to reveal block structure among the layers of very wide or deep networks and to test
+      the [[universality-hypothesis|universality hypothesis]]. Related indices include
+      canonical-correlation methods (SVCCA, PWCCA) and representational similarity analysis from
+      neuroscience. Studies have shown that such scores can be dominated by a few high-variance
+      directions or altered without changing a network's behavior.
+    example: >-
+      Linear CKA between the two seeds is above 0.9 for early layers but drops to 0.6 near the
+      output.
+formula_latex: \operatorname{CKA}(X, Y) = \frac{\lVert Y^{\top} X \rVert_F^{2}}{\lVert X^{\top} X
+  \rVert_F \, \lVert Y^{\top} Y \rVert_F} \quad (X, Y \text{ column-centered})
+origin: >-
+  Centered kernel alignment was introduced for kernel learning by Corinna Cortes, Mehryar Mohri and
+  Afshin Rostamizadeh in work published 2010–2012. Simon Kornblith, Mohammad Norouzi, Honglak Lee
+  and Geoffrey Hinton proposed it for comparing neural-network representations in 'Similarity of
+  Neural Network Representations Revisited' (ICML 2019), following Maithra Raghu and colleagues'
+  SVCCA (2017). Representational similarity analysis comes from Nikolaus Kriegeskorte and
+  colleagues' neuroscience work (2008).
+year: 2019
+note: >-
+  'Alignment' here means agreement between two kernel matrices, unrelated to [[ai-alignment|AI
+  alignment]]. Similarity scores are descriptive; they do not show that two networks use the same
+  mechanism.
+see_also:
+  - universality hypothesis
+  - platonic representation hypothesis
+  - activation space
+  - principal component analysis
+  - representation learning
+sources:
+  - text: >-
+      Kornblith, S., Norouzi, M., Lee, H. & Hinton, G. (2019). Similarity of Neural Network
+      Representations Revisited. ICML 2019.
+  - text: >-
+      Cortes, C., Mohri, M. & Rostamizadeh, A. (2012). Algorithms for Learning Kernels Based on
+      Centered Alignment. Journal of Machine Learning Research 13.
+  - text: >-
+      Raghu, M., Gilmer, J., Yosinski, J. & Sohl-Dickstein, J. (2017). SVCCA: Singular Vector
+      Canonical Correlation Analysis for Deep Learning Dynamics and Interpretability. NeurIPS 2017.

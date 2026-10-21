@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Leo Breiman
+id: leo-breiman
+sort_as: Breiman Leo
+pos: prop. n.
+domain: people
+domains:
+  - ml
+  - math
+level: core
+dates: 1928–2005
+plain: >-
+  An American statistician who invented random forests and bagging, decision-tree methods still in
+  wide use, and urged statisticians to judge models by how well they predict.
+senses:
+  - definition: >-
+      American statistician at the University of California, Berkeley. After early work in
+      probability theory, including the Shannon–McMillan–Breiman theorem, he spent more than a
+      decade as a consultant before joining Berkeley's statistics department in 1980, an experience
+      that shaped his practical outlook. With Jerome Friedman, Richard Olshen and Charles Stone he
+      wrote 'Classification and Regression Trees' (1984), which introduced the [[cart|CART]]
+      algorithm for [[decision-tree|decision trees]]. He then invented [[bagging|bagging]]
+      (bootstrap aggregating, 1996), which averages models trained on [[bootstrap|bootstrap]]
+      resamples, and [[random-forest|random forests]] (2001), which add random feature selection to
+      bagged trees and remain a strong default for [[tabular-data|tabular data]]. His essay
+      'Statistical Modeling: The Two Cultures' (2001) contrasted a data-modeling culture that
+      assumes a stochastic model with an algorithmic-modeling culture that judges methods by
+      predictive accuracy, and urged statisticians to embrace the second, as
+      [[machine-learning|machine learning]] had.
+see_also:
+  - random forest
+  - bagging
+  - CART
+  - decision tree
+  - ensemble learning
+  - bootstrap
+sources:
+  - text: "Breiman, L. (1996). Bagging Predictors. Machine Learning 24(2): 123–140."
+  - text: "Breiman, L. (2001). Random Forests. Machine Learning 45(1): 5–32."
+  - text: >-
+      Breiman, L. (2001). Statistical Modeling: The Two Cultures. Statistical Science 16(3): 199–231.

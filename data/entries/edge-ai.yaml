@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: edge AI
+id: edge-ai
+pos: n.
+also:
+  - edge inference
+  - AI at the edge
+  - edge machine learning
+  - edge ML
+domain: infer
+domains:
+  - hw
+  - robot
+level: core
+plain: >-
+  Doing AI's computing on or near the devices that collect the data, such as cameras, cars, factory
+  machines, phones or local servers, instead of sending everything off to distant data centers.
+senses:
+  - definition: >-
+      Running AI models, mostly for inference but occasionally for training, on hardware located
+      where the data arise or are used — sensors, cameras, vehicles, robots, industrial controllers,
+      phones, gateways or on-premises servers — rather than in remote cloud [[ai-data-center|data
+      centers]]. Motivations are low and predictable [[latency|latency]] (a car cannot wait for a
+      round trip to the cloud), operation without reliable connectivity, lower bandwidth costs when
+      raw video or sensor streams would otherwise be uploaded, and privacy or data-sovereignty
+      requirements. Limits on power, memory, heat and cost drive the use of
+      [[model-compression|model compression]], [[quantization|quantization]], efficient
+      architectures and specialized [[npu|NPUs]] and other [[ai-accelerator|accelerators]]. Systems
+      often split work between tiers: a small model on the device filters or answers routine inputs
+      and [[offloading|offloads]] hard cases to an edge server or the cloud.
+      [[on-device-ai|On-device AI]] is the subset running on the end user's own device, and
+      [[tinyml|TinyML]] the extreme case of microcontrollers.
+    example: >-
+      The cameras run edge AI to flag defects on the line and send only the flagged frames to the
+      cloud.
+origin: >-
+  Grew out of edge computing and Cisco's 'fog computing' (2012), which by the mid-2010s described
+  processing near data sources for the Internet of Things. 'Edge AI' spread from about 2017–2018 as
+  smartphone neural engines and dedicated edge inference chips appeared, and became a standard
+  industry category.
+note: >-
+  Usage is loose: vendors may call anything outside a hyperscale cloud 'edge', from a phone to a
+  regional server room. [[federated-learning|federated learning]] is a related approach for training
+  across edge devices without centralizing their data.
+see_also:
+  - on-device AI
+  - TinyML
+  - model compression
+  - quantization
+  - NPU
+  - offloading
+  - federated learning

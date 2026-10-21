@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: spatial intelligence
+id: spatial-intelligence
+pos: n.
+domain: percep
+domains:
+  - robot
+  - gen
+labels:
+  - emerging
+level: specialist
+plain: >-
+  The ability to understand, imagine and act in three-dimensional space and the physical world —
+  effortless for people, and treated by many AI researchers as the next big goal after language.
+senses:
+  - definition: >-
+      In AI, the capacity of a system to perceive, represent, reason about and act within
+      three-dimensional space and the physical world — understanding geometry, objects, motion and
+      physical cause and effect — as opposed to manipulating text. Fei-Fei Li, who popularized it as
+      a research goal, argued that it requires [[world-model|world models]] that are generative
+      (producing consistent simulated worlds that obey geometry and physics), multimodal (able to
+      take in any mix of text, images, video, depth maps, gestures or actions) and interactive
+      (predicting the next state of the world given an action). It is pursued through 3D generation,
+      scene reconstruction such as [[gaussian-splatting|Gaussian splatting]], video world models and
+      [[embodied-ai|embodied AI]], and is considered essential for robotics, design and scientific
+      simulation.
+    example: >-
+      Our chatbot can describe a kitchen perfectly, but it has no spatial intelligence about where
+      the mug actually is.
+origin: >-
+  Borrowed from psychology, where Howard Gardner listed spatial intelligence among his multiple
+  intelligences (1983). Fei-Fei Li made it the mission of World Labs, founded in 2024, and set out
+  the agenda in the essay 'From Words to Worlds: Spatial Intelligence is AI's Next Frontier' (10
+  November 2025), as the company prepared the wider release of its world model Marble.
+year: 2024
+see_also:
+  - world model
+  - embodied AI
+  - physical AI
+  - Gaussian splatting
+  - neural radiance field
+  - Fei-Fei Li
+sources:
+  - text: >-
+      Li, F.-F. (2025). From Words to Worlds: Spatial Intelligence is AI's Next Frontier. Substack,
+      10 November 2025.
+    url: https://drfeifei.substack.com/p/from-words-to-worlds-spatial-intelligence
+as_of: 2026-10

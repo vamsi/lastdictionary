@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: environment
+id: environment
+pos: n.
+also:
+  - env
+  - task environment
+domain: rl
+domains:
+  - agents
+level: core
+plain: >-
+  Everything an AI agent interacts with but does not control — a game, a simulator, a website, the
+  physical world. It answers each of the agent's actions with a new situation and, in reinforcement
+  learning, a score.
+senses:
+  - context: Reinforcement learning
+    definition: >-
+      The part of a reinforcement-learning problem outside the [[agent|agent]]'s control: the system
+      that receives each [[action|action]], changes its [[state|state]] according to its own
+      dynamics, and emits the next observation and [[reward|reward]]. Formally it is specified by
+      the transition and reward functions of a [[markov-decision-process|Markov decision process]],
+      or of a [[partially-observable-markov-decision-process|partially observable Markov decision
+      process]] when the agent sees only observations. Following Richard Sutton and Andrew Barto's
+      convention, the boundary marks the limit of what the agent directly controls rather than the
+      edge of its body, so a robot's motors, and even the computation of its reward, are usually
+      treated as part of the environment. In software, an environment is a program with a standard
+      interface — typically reset() to begin an [[episode|episode]] and step(action) to advance it —
+      as popularized by OpenAI Gym and its successor [[gymnasium|Gymnasium]].
+    example: >-
+      The environment returns a terminated flag when the pole falls and a truncated flag after 500
+      steps.
+  - context: Agents and post-training
+    definition: >-
+      A packaged task setting in which a [[large-language-model|large language model]] or
+      [[ai-agent|AI agent]] acts — a code repository with tests, a web browser, a simulated customer
+      — together with the tools it may call and a grader that scores the outcome. Built for training
+      or evaluating agents, such settings are treated under [[rl-environment|RL environment]].
+origin: >-
+  The framing comes from control engineering, where the controlled system is called the 'plant', and
+  from cybernetics. It became standard through AI textbooks that define agents by the environments
+  they perceive and act on (Stuart Russell and Peter Norvig, 1995) and through Sutton and Barto's RL
+  textbook (1998). Software such as RL-Glue (2009) and, above all, OpenAI Gym (2016) made
+  'environment' the name of a program with a standard interface.
+note: >-
+  Environments are usually assumed fixed while the agent learns; in
+  [[multi-agent-reinforcement-learning|multi-agent reinforcement learning]] the other learning
+  agents are part of each agent's environment, which therefore keeps changing.
+see_also:
+  - agent
+  - Markov decision process
+  - state
+  - action
+  - reward
+  - Gymnasium
+  - RL environment
+  - physics simulator
+contrast:
+  - agent
+sources:
+  - text: Brockman, G. et al. (2016). OpenAI Gym. arXiv:1606.01540.
+    url: https://arxiv.org/abs/1606.01540

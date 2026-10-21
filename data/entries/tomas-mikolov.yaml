@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Tomas Mikolov
+id: tomas-mikolov
+sort_as: Mikolov Tomas
+pos: prop. n.
+pronunciation: TOH-mahsh MEE-koh-lov
+domain: people
+domains:
+  - llm
+  - dl
+level: specialist
+plain: >-
+  A Czech computer scientist who created word2vec, a fast way to turn words into lists of numbers
+  that capture their meaning, and pioneered language models built from recurrent networks.
+senses:
+  - definition: >-
+      Czech computer scientist known for neural language models and embeddings. His doctoral work at
+      Brno University of Technology (completed 2012) showed that
+      [[recurrent-neural-network|recurrent neural network]] [[language-model|language models]] could
+      outperform [[n-gram-model|n-gram models]] in speech recognition, and his RNNLM toolkit spread
+      the approach; he also clipped gradients to tame [[exploding-gradient-problem|exploding
+      gradients]], an early form of [[gradient-clipping|gradient clipping]]. At Google he led the
+      creation of [[word2vec|word2vec]] (2013, with Kai Chen, Greg Corrado, [[jeff-dean|Jeff Dean]]
+      and [[ilya-sutskever|Ilya Sutskever]]), whose skip-gram and continuous bag-of-words models
+      learned [[word-embedding|word embeddings]] from billions of words in hours and showed that
+      vector arithmetic captures analogies such as king − man + woman ≈ queen. At Facebook AI
+      Research, which he joined in 2014, he co-created fastText for efficient text classification
+      and subword embeddings; in 2020 he moved to the Czech Institute of Informatics, Robotics and
+      Cybernetics at the Czech Technical University in Prague. A word2vec paper received the NeurIPS
+      Test of Time Award in 2023.
+see_also:
+  - word2vec
+  - word embedding
+  - recurrent neural network
+  - language model
+  - gradient clipping
+  - linear representation hypothesis
+sources:
+  - text: >-
+      Mikolov, T., Chen, K., Corrado, G. & Dean, J. (2013). Efficient Estimation of Word
+      Representations in Vector Space. arXiv preprint.
+  - text: >-
+      Mikolov, T., Sutskever, I., Chen, K., Corrado, G. & Dean, J. (2013). Distributed
+      Representations of Words and Phrases and their Compositionality. NIPS 2013.

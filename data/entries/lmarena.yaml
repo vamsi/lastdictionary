@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LMArena
+id: lmarena
+pos: prop. n.
+also:
+  - Chatbot Arena
+  - LMSYS Chatbot Arena
+  - Arena
+  - lmarena.ai
+domain: eval
+domains:
+  - llm
+  - society
+labels:
+  - trademark
+level: essential
+plain: >-
+  A public website that ranks AI chatbots by blind taste test: visitors put one question to two
+  unnamed models, pick the reply they prefer, and millions of such votes produce the rankings.
+senses:
+  - definition: >-
+      A crowdsourced evaluation platform that ranks models by blind pairwise preference: a visitor
+      types a prompt, two randomly chosen models answer side by side without names, and the visitor
+      picks the better reply or declares a tie, learning which models took part only afterward.
+      Votes are aggregated with a [[bradley-terry-model|Bradley–Terry model]] into scores on an
+      [[elo-rating|Elo]]-like scale with confidence intervals, shown on public leaderboards for
+      text, vision, web development, search, image and video generation, and agent tasks. Because it
+      uses real users' fresh prompts rather than a fixed test set, it is hard to contaminate and
+      tracks what people value, and its rankings became a fixture of model launches. Criticisms
+      include sensitivity to style — length, formatting and flattery — which the platform counters
+      with 'style control' adjustments; the unrepresentativeness of its users; and the advantage
+      developers gain by privately testing many variants and accessing battle data, documented in
+      the 2025 paper 'The Leaderboard Illusion'. In April 2025 Meta was criticized for promoting the
+      second-place ranking of an unreleased, chat-optimized Llama 4 variant that differed from the
+      public model.
+    example: >-
+      The model debuted first on LMArena's text leaderboard, though only six points ahead of the
+      runner-up.
+origin: >-
+  Launched in spring 2023 (announced 3 May) as Chatbot Arena by LMSYS, a student-led research group
+  centered at UC Berkeley, with Wei-Lin Chiang, Anastasios Angelopoulos and Ion Stoica among its
+  founders. It moved to lmarena.ai in September 2024, incorporated in April 2025, rebranded as Arena
+  in January 2026, and raised a $200 million Series B at a $3.1 billion valuation in October 2026.
+year: 2023
+note: >-
+  The headword is the 2024–2025 name; since January 2026 the service has been called Arena. A score
+  reflects the average preferences of the platform's users, not correctness on specialist tasks.
+see_also:
+  - leaderboard
+  - Elo rating
+  - Bradley–Terry model
+  - human evaluation
+  - win rate
+  - sycophancy
+  - LLM-as-a-judge
+sources:
+  - text: >-
+      Chiang, W.-L., Zheng, L., Sheng, Y. et al. (2024). Chatbot Arena: An Open Platform for
+      Evaluating LLMs by Human Preference. ICML 2024.
+    url: https://arxiv.org/abs/2403.04132
+  - text: Singh, S., Nan, Y. et al. (2025). The Leaderboard Illusion. arXiv:2504.20879.
+    url: https://arxiv.org/abs/2504.20879
+as_of: 2026-10

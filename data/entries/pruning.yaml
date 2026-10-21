@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pruning
+id: pruning
+pos: n.
+also:
+  - prune
+  - weight pruning
+  - network pruning
+  - magnitude pruning
+  - structured pruning
+  - unstructured pruning
+  - tree pruning
+domain: infer
+domains:
+  - ml
+  - dl
+level: core
+plain: >-
+  Cutting away the parts of an AI model that contribute least, as a gardener trims branches, so the
+  model becomes smaller or faster while still working nearly as well.
+senses:
+  - context: Neural networks
+    definition: >-
+      The deletion of individual [[parameter|parameters]] or whole components from a trained
+      [[neural-network|neural network]], accepting a small loss of accuracy in exchange for a
+      smaller or cheaper model; a short round of retraining usually wins most of the accuracy back.
+      Unstructured pruning zeroes individual [[weights|weights]], typically those with the smallest
+      magnitudes or the least estimated effect on the loss, leaving a sparse network that needs
+      [[sparsity|sparse]] storage and kernels to run faster; semi-structured [[n-m-sparsity|N:M
+      sparsity]] keeps a hardware-friendly pattern; structured pruning removes entire neurons,
+      channels, [[attention-head|attention heads]], experts or layers, producing a smaller dense
+      model that runs faster on ordinary hardware. Saliency criteria range from weight magnitude to
+      second-order estimates based on the [[hessian|Hessian]]. Large language models can be pruned
+      in one shot: SparseGPT removed half or more of the weights of 175-billion-parameter models in
+      a few hours without retraining. Pruning is often combined with [[quantization|quantization]]
+      and [[knowledge-distillation|knowledge distillation]].
+    example: >-
+      After pruning 40 percent of the channels and fine-tuning for a day, the detector ran twice as
+      fast on the phone.
+  - context: Decision trees
+    definition: >-
+      Simplifying a [[decision-tree|decision tree]] by removing branches that add little predictive
+      value, to reduce [[overfitting|overfitting]]. Post-pruning grows a full tree and then
+      collapses subtrees, as in cost-complexity pruning, which trades training error against tree
+      size with a penalty chosen by cross-validation, or reduced-error pruning on held-out data;
+      pre-pruning stops growth early with limits on depth or minimum gain.
+  - context: Search
+    definition: >-
+      Skipping parts of a search tree that cannot change the result, as in
+      [[alpha-beta-pruning|alpha–beta pruning]] for game playing: the same metaphor of cutting
+      branches, applied to a search procedure rather than to a learned model.
+origin: >-
+  The gardening metaphor was established in game-tree search by the 1970s (alpha–beta pruning). For
+  decision trees, CART (Leo Breiman, Jerome Friedman, Richard Olshen and Charles Stone, 1984)
+  established cost-complexity pruning. For neural networks, Jocelyn Sietsma and Robert Dow's 'Neural
+  net pruning: why and how' (1988) was soon followed by 'Optimal Brain Damage' (Yann LeCun, John
+  Denker and Sara Solla, 1989) and 'Optimal Brain Surgeon' (Babak Hassibi and David Stork, 1993),
+  which used second-order saliency; Song Han and colleagues revived magnitude pruning for deep
+  networks in 2015.
+year: 1988
+note: >-
+  Pruning a trained network differs from training a small one from scratch, although the
+  [[lottery-ticket-hypothesis|lottery ticket hypothesis]] suggests that well-trainable sparse
+  subnetworks exist from the start. Not to be confused with data pruning, which removes training
+  examples rather than parameters.
+see_also:
+  - sparsity
+  - N:M sparsity
+  - model compression
+  - quantization
+  - knowledge distillation
+  - lottery ticket hypothesis
+  - alpha–beta pruning
+contrast:
+  - quantization
+sources:
+  - text: >-
+      LeCun, Y., Denker, J. S. & Solla, S. A. (1990). Optimal Brain Damage. Advances in Neural
+      Information Processing Systems 2 (NIPS 1989).
+  - text: >-
+      Breiman, L., Friedman, J. H., Olshen, R. A. & Stone, C. J. (1984). Classification and
+      Regression Trees. Wadsworth.
+  - text: >-
+      Frantar, E. & Alistarh, D. (2023). SparseGPT: Massive Language Models Can Be Accurately Pruned
+      in One-Shot. arXiv:2301.00774.
+    url: https://arxiv.org/abs/2301.00774

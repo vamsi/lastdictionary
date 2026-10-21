@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MNIST
+id: mnist
+pos: prop. n.
+also:
+  - MNIST database
+  - Modified National Institute of Standards and Technology database
+  - Fashion-MNIST
+  - QMNIST
+pronunciation: EM-nist
+domain: hist
+domains:
+  - data
+  - percep
+level: core
+plain: >-
+  A famous collection of 70,000 small images of handwritten digits used to test image-recognition
+  programs. Getting a model to read MNIST digits is the 'hello world' of machine learning.
+senses:
+  - definition: >-
+      A [[dataset|dataset]] of 70,000 handwritten digits labeled 0 to 9 and split into 60,000
+      training and 10,000 test images, each a 28 × 28 grayscale picture with the digit scaled to a
+      standard size and placed at the center. Its source was two collections from the US National
+      Institute of Standards and Technology (NIST), one written by Census Bureau staff and the other
+      by high-school students; MNIST's makers drew on both for each split, and kept the writers of
+      training and test digits separate. Small, clean and fast to train on, MNIST became the default
+      [[benchmark|benchmark]] for classifiers and the first exercise in countless courses. Error
+      rates fell from about 12 percent for a linear classifier to roughly 0.2 percent for ensembles
+      of [[convolutional-neural-network|convolutional networks]] by the early 2010s, after which it
+      was considered solved and too easy to separate methods; harder drop-in replacements include
+      Fashion-MNIST (2017).
+    example: >-
+      If your model can't reach 98 percent on MNIST, something in the pipeline is broken.
+origin: >-
+  Created at AT&T Bell Laboratories by [[yann-lecun|Yann LeCun]], Corinna Cortes and Christopher
+  Burges; it was in use in Bell Labs classifier comparisons by 1994 and was later distributed freely
+  from LeCun's website, becoming widely known through the 1998 LeNet-5 paper.
+year: 1994
+note: >-
+  A standard example of [[benchmark-saturation|benchmark saturation]]. In 2019 Chhavi Yadav and Léon
+  Bottou reconstructed 50,000 further test digits that had been left out of the original release
+  (QMNIST).
+see_also:
+  - LeNet
+  - benchmark
+  - dataset
+  - ImageNet
+  - benchmark saturation
+  - image classification
+sources:
+  - text: >-
+      LeCun, Y., Bottou, L., Bengio, Y. & Haffner, P. (1998). Gradient-Based Learning Applied to
+      Document Recognition. Proceedings of the IEEE 86(11), 2278–2324.
+  - text: >-
+      Bottou, L., Cortes, C., Denker, J. S. et al. (1994). Comparison of Classifier Methods: A Case
+      Study in Handwritten Digit Recognition. Proceedings of the 12th International Conference on
+      Pattern Recognition (ICPR 1994).

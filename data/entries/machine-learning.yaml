@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: machine learning
+id: machine-learning
+pos: n.
+also:
+  - ML
+  - statistical learning
+domain: core
+domains:
+  - ml
+  - dl
+level: essential
+plain: >-
+  A way of building software that learns from examples instead of following rules written by a
+  programmer. Shown thousands of labeled photos, for instance, a program can learn to recognize
+  cats.
+senses:
+  - definition: >-
+      The branch of [[artificial-intelligence|artificial intelligence]] in which a program's
+      behavior is derived from data rather than written out by hand: an [[algorithm|algorithm]]
+      adjusts the [[parameter|parameters]] of a [[model|model]] until it fits
+      [[training-data|training data]], and the fitted model then makes [[prediction|predictions]] or
+      decisions about inputs it has never seen. Tom Mitchell's widely cited formulation names three
+      ingredients, a class of [[task-machine-learning|tasks]], a performance measure and experience,
+      and counts a program as learning when its measured performance on those tasks improves with
+      experience. The main settings are [[supervised-learning|supervised learning]] (labeled
+      examples), [[unsupervised-learning|unsupervised learning]] (structure in unlabeled data),
+      [[self-supervised-learning|self-supervised learning]] and
+      [[reinforcement-learning|reinforcement learning]] (rewards from an environment). Methods range
+      from [[linear-regression|linear regression]] and [[decision-tree|decision trees]] to
+      [[neural-network|neural networks]]; [[deep-learning|deep learning]] is the subfield that uses
+      many-layered networks. The central difficulty is [[generalization|generalization]]: performing
+      well on data not seen in training rather than memorizing it ([[overfitting|overfitting]]).
+    example: >-
+      We replaced the hand-tuned fraud rules with a machine learning model trained on five years of
+      transactions.
+origin: >-
+  Usually credited to Arthur Samuel of IBM, who used the phrase in the title of his 1959 paper 'Some
+  Studies in Machine Learning Using the Game of Checkers', describing a checkers program that
+  improved with experience, partly by playing thousands of games against itself. Machine learning
+  consolidated as a discipline from 1980, with the first machine-learning workshop at Carnegie
+  Mellon (counted as the first ICML), the journal Machine Learning (1986) and the NIPS conference
+  (from 1987; now NeurIPS).
+year: 1959
+note: >-
+  The often-quoted definition 'the ability to learn without being explicitly programmed' is
+  attributed to Samuel but does not appear in his 1959 paper. Statisticians call much of the same
+  territory statistical learning. Machine learning is a subset of
+  [[artificial-intelligence|artificial intelligence]], though since the 2010s the two are often used
+  interchangeably.
+see_also:
+  - artificial intelligence
+  - deep learning
+  - supervised learning
+  - unsupervised learning
+  - reinforcement learning
+  - training
+  - generalization
+  - data science
+contrast:
+  - symbolic AI
+  - rule-based system
+sources:
+  - text: >-
+      Samuel, A. L. (1959). Some Studies in Machine Learning Using the Game of Checkers. IBM Journal
+      of Research and Development, 3(3), 210–229.
+  - text: Mitchell, T. M. (1997). Machine Learning. McGraw-Hill.
+standards: US Executive Order 14110 (2023; revoked January 2025), §3(t)

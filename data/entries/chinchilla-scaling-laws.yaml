@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Chinchilla scaling laws
+id: chinchilla-scaling-laws
+pos: n.
+also:
+  - Chinchilla scaling
+  - Chinchilla law
+  - Hoffmann scaling laws
+  - Chinchilla
+domain: train
+domains:
+  - llm
+  - hist
+level: core
+plain: >-
+  A 2022 DeepMind finding that, for a fixed amount of computing, language models had been made too
+  big and trained on too little text; the best balance is roughly 20 word-pieces of text for every
+  adjustable number inside the model.
+senses:
+  - definition: >-
+      The compute-optimal scaling relations of Hoffmann et al. (2022), which found that the
+      loss-minimizing parameter count N and token count D for a [[compute-budget|compute budget]] C
+      grow in equal proportion: N_opt ∝ Cᵃ and D_opt ∝ Cᵇ with a ≈ b ≈ 0.5. The evidence came from
+      more than 400 language models, the smallest with 70 million parameters and the largest with
+      over 16 billion, trained on between 5 and 500 billion tokens, and three estimation methods
+      broadly agreed: varying the token count at fixed model sizes, [[isoflop-analysis|IsoFLOP
+      profiles]], and fitting the parametric loss below. The practical upshot, about 20
+      [[tokens-per-parameter|tokens per parameter]] for dense transformers, contradicted the earlier
+      OpenAI recommendation (Kaplan et al., 2020) to grow models much faster than data (N ∝ C^0.73)
+      and implied that [[gpt-3|GPT-3]], Gopher and Megatron-Turing NLG were undertrained. The
+      70-billion-parameter Chinchilla, trained on 1.4 trillion tokens with the compute of the
+      280-billion-parameter Gopher, outperformed it. A 2024 replication by [[epoch-ai|Epoch AI]]
+      researchers found the published parametric fit inconsistent with the other two methods;
+      refitted, it supports the 20:1 ratio.
+    example: >-
+      By Chinchilla scaling laws, a 10²⁴ FLOP budget calls for about 90 billion parameters and 1.8
+      trillion tokens.
+formula_latex: L(N, D) = E + \frac{A}{N^{\alpha}} + \frac{B}{D^{\beta}}, \qquad E \approx 1.69,\;
+  \alpha \approx 0.34,\; \beta \approx 0.28
+origin: >-
+  Introduced by Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch and colleagues at DeepMind in
+  'Training Compute-Optimal Large Language Models' (arXiv, March 2022; at NeurIPS 2022 as 'An
+  Empirical Analysis of Compute-Optimal Large Language Model Training'), named after the model built
+  to test them. Tamay Besiroglu and colleagues published the replication in April 2024.
+year: 2022
+note: >-
+  'Chinchilla-optimal' means optimal for training compute only; most models released since 2023 are
+  deliberately trained on far more tokens ([[overtraining|overtraining]]) because smaller models are
+  cheaper to serve. The 20:1 ratio reflects Chinchilla's data, tokenizer and architecture, not a
+  universal constant.
+see_also:
+  - scaling laws
+  - compute-optimal training
+  - tokens per parameter
+  - IsoFLOP analysis
+  - overtraining
+  - irreducible loss
+contrast:
+  - overtraining
+sources:
+  - text: >-
+      Hoffmann, J., Borgeaud, S., Mensch, A. et al. (2022). Training Compute-Optimal Large Language
+      Models. arXiv:2203.15556.
+    url: https://arxiv.org/abs/2203.15556v1
+  - text: >-
+      Besiroglu, T., Erdil, E., Barnett, M. & You, J. (2024). Chinchilla Scaling: A replication
+      attempt. arXiv:2404.10102.
+    url: https://arxiv.org/abs/2404.10102

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Jevons paradox
+id: jevons-paradox
+pos: n.
+also:
+  - Jevons effect
+pronunciation: JEV-unz
+domain: society
+domains:
+  - infer
+  - hw
+labels:
+  - contested
+level: core
+plain: >-
+  The observation that making something more efficient can make people use more of it overall
+  because it gets cheaper — as with coal in the 1800s, and with AI computing today.
+senses:
+  - definition: >-
+      The tendency for improvements in the efficiency with which a resource is used to increase
+      rather than reduce total consumption of it, because the lower effective cost creates enough
+      new demand; it is the extreme case of what energy economists call the rebound effect. In AI it
+      is invoked to argue that cheaper [[inference-cost|inference]] and more efficient models — such
+      as those behind the [[deepseek-moment|DeepSeek moment]] of January 2025 — will expand total
+      demand for [[compute|compute]], chips and energy rather than shrink it, because falling prices
+      per [[token|token]] make new uses such as agents, long reasoning and video economical.
+      Skeptics note that the paradox holds only when demand is highly price-elastic, that the
+      evidence for it is mixed even for energy, and that it says nothing about which companies
+      capture the value.
+    example: >-
+      Inference got ten times cheaper and our token bill tripled: Jevons paradox in one invoice.
+origin: >-
+  Named after the English economist William Stanley Jevons, who argued in The Coal Question (1865)
+  that James Watt's more efficient steam engine had increased Britain's coal consumption. The idea
+  re-entered AI discussion in late January 2025, when Microsoft chief executive Satya Nadella cited
+  it as DeepSeek's low-cost models unsettled markets.
+year: 1865
+see_also:
+  - DeepSeek moment
+  - inference cost
+  - compute
+  - environmental impact of AI
+  - AI bubble
+  - algorithmic progress
+sources:
+  - text: "Jevons, W. S. (1865). The Coal Question. London: Macmillan."
+  - text: Wikipedia contributors. Jevons paradox. Wikipedia (accessed October 2026).
+    url: https://en.wikipedia.org/wiki/Jevons_paradox
+as_of: 2026-10

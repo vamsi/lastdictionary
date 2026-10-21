@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hyperparameter tuning
+id: hyperparameter-tuning
+pos: n.
+also:
+  - hyperparameter optimization
+  - HPO
+  - hyperparameter search
+  - hyperparameter sweep
+  - sweep
+  - tuning
+domain: ml
+domains:
+  - eng
+  - train
+level: core
+plain: >-
+  Trying out different settings for a model's training, such as learning speed or model size, and
+  keeping the combination that performs best on data held back for checking.
+senses:
+  - definition: >-
+      The search for the [[hyperparameter|hyperparameter]] values that give a learning algorithm its
+      best performance, measured on held-out data through a [[validation-set|validation set]] or
+      [[cross-validation|cross-validation]]. It is an expensive black-box optimization problem: each
+      evaluation requires training a model, the objective is noisy and has no usable gradient, and
+      the search space mixes continuous, integer, categorical and conditional variables. Strategies
+      range from manual tuning guided by experience, through exhaustive [[grid-search|grid search]]
+      and [[random-search|random search]], to model-based [[bayesian-optimization|Bayesian
+      optimization]], evolutionary and population-based methods, and multi-fidelity schemes such as
+      successive halving and [[hyperband|Hyperband]], which use small budgets (fewer epochs or less
+      data) to stop unpromising configurations early. For very large models, tuning is done at small
+      scale and transferred with scaling rules. Tuning is a core component of [[automl|AutoML]], and
+      open-source tools such as Optuna and Ray Tune, as well as experiment-tracking platforms,
+      automate it.
+    example: >-
+      The sweep ran 200 trials overnight; learning rate and weight decay mattered, and nothing else
+      did.
+origin: >-
+  Hand tuning is as old as machine learning. Automated tuning matured in the early 2010s: James
+  Bergstra and colleagues' tree-structured Parzen estimator (2011), Bergstra and Yoshua Bengio's
+  random-search study (2012) and the Spearmint Bayesian-optimization tool of Jasper Snoek, Hugo
+  Larochelle and Ryan Adams (2012) made hyperparameter optimization a research field of its own.
+note: >-
+  Reported gains should state the tuning budget: tuning a new method more thoroughly than its
+  [[baseline|baselines]], or tuning on the test set, produces misleading comparisons.
+see_also:
+  - hyperparameter
+  - grid search
+  - random search
+  - Bayesian optimization
+  - Hyperband
+  - AutoML
+  - cross-validation
+  - model selection
+sources:
+  - text: >-
+      Bergstra, J., Bardenet, R., Bengio, Y. & Kégl, B. (2011). Algorithms for Hyper-Parameter
+      Optimization. Advances in Neural Information Processing Systems 24.
+  - text: >-
+      Snoek, J., Larochelle, H. & Adams, R. P. (2012). Practical Bayesian Optimization of Machine
+      Learning Algorithms. Advances in Neural Information Processing Systems 25.
+  - text: >-
+      Feurer, M. & Hutter, F. (2019). Hyperparameter Optimization. In Hutter, F., Kotthoff, L. &
+      Vanschoren, J. (eds.), Automated Machine Learning: Methods, Systems, Challenges. Springer.

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: blocks world
+id: blocks-world
+pos: n.
+also:
+  - block world
+  - Blocksworld
+domain: sym
+domains:
+  - hist
+  - robot
+labels:
+  - historical
+level: specialist
+plain: >-
+  A simplified pretend world of toy blocks on a table that early AI researchers used to test
+  programs for planning, seeing and understanding language, because it was simple enough to describe
+  completely.
+senses:
+  - definition: >-
+      A classic AI test domain consisting of blocks (sometimes with pyramids and boxes) resting on a
+      table or on one another, plus a hand or robot arm that can pick up and put down one clear
+      block at a time. Because states and actions can be described exactly in logic, it became the
+      standard illustration for [[automated-planning|automated planning]]: [[strips|STRIPS]]-style
+      actions with preconditions and effects were routinely demonstrated on it, and the Sussman
+      anomaly, a three-block goal that defeats planners which solve subgoals one at a time, exposed
+      the problem of interacting goals. It was also used in early [[computer-vision|computer
+      vision]] (recovering 3-D polyhedra from line drawings), in language understanding through
+      [[shrdlu|SHRDLU]], and in physical robot experiments. Blocks-world problems remain standard
+      planning benchmarks and reappear as tests of [[large-language-model|large language model]]
+      planning, where performance can collapse once block names and actions are disguised.
+    example: >-
+      The model solved the standard blocks-world tasks but failed once the blocks were renamed with
+      nonsense words.
+origin: >-
+  Grew out of 1960s and early-1970s work at MIT, including Lawrence Roberts's 1963 thesis on
+  perceiving three-dimensional solids, Terry Winograd's SHRDLU (1970) and the HACKER program of
+  Gerald Sussman (thesis 1973), after whom the Sussman anomaly is named. It was the flagship of the
+  [[microworld|microworld]] approach promoted by Marvin Minsky and Seymour Papert.
+note: >-
+  Its simplicity is both the point and the criticism: methods that worked there often failed to
+  scale to the noise and open-endedness of real environments. Finding some valid blocks-world plan
+  is easy, but finding a shortest one is NP-hard.
+see_also:
+  - SHRDLU
+  - microworld
+  - automated planning
+  - STRIPS
+  - symbolic AI
+  - computer vision
+sources:
+  - text: Winograd, T. (1972). Understanding Natural Language. Academic Press.
+  - text: >-
+      Gupta, N. & Nau, D. S. (1992). On the Complexity of Blocks-World Planning. Artificial
+      Intelligence 56(2–3), 223–254.

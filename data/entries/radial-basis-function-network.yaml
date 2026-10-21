@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: radial basis function network
+id: radial-basis-function-network
+pos: n.
+also:
+  - RBF network
+  - RBFN
+  - radial basis function
+domain: dl
+domains:
+  - ml
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  A three-layer network whose hidden neurons each respond to inputs near a particular reference
+  point, like bells placed across the data; the output is a weighted mix of the bells.
+senses:
+  - definition: >-
+      A [[feedforward-neural-network|feedforward neural network]] with one [[hidden-layer|hidden
+      layer]] whose units compute a radial function of the distance between the input and a center
+      vector, most often a Gaussian, followed by a linear output layer that takes a weighted sum of
+      these responses. Each hidden unit responds only to inputs near its center, giving local rather
+      than global features, unlike the [[sigmoid-function|sigmoidal]] units of a
+      [[multilayer-perceptron|multilayer perceptron]]. Training is often two-stage: centers are
+      chosen by [[k-means-clustering|k-means clustering]] or sampling, then output weights are
+      fitted by linear least squares, which is fast and convex. RBF networks are universal
+      approximators and are closely related to kernel methods, [[gaussian-process|Gaussian
+      processes]] and radial-basis interpolation in numerical analysis; they were widely used for
+      function approximation and control in the 1990s.
+    example: >-
+      With 200 Gaussian centers placed by k-means, the RBF network fit the sensor curve in seconds.
+origin: >-
+  Introduced by David Broomhead and David Lowe in 'Multivariable Functional Interpolation and
+  Adaptive Networks' (Complex Systems, 1988), building on radial-basis interpolation from numerical
+  analysis; John Moody and Christian Darken (1989) and Tomaso Poggio and Federico Girosi (1990)
+  developed fast training methods and the regularization theory.
+year: 1988
+see_also:
+  - multilayer perceptron
+  - kernel trick
+  - Gaussian process
+  - k-means clustering
+  - universal approximation theorem

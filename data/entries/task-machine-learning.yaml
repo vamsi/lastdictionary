@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: task (machine learning)
+id: task-machine-learning
+pos: n.
+also:
+  - task
+  - learning task
+  - downstream task
+  - shared task
+domain: core
+domains:
+  - ml
+  - eval
+  - agents
+level: core
+plain: >-
+  The job an AI model is meant to do, such as translating sentences, spotting spam or answering
+  questions, defined by its inputs, its expected outputs and how success is scored.
+senses:
+  - definition: >-
+      A specification of what a model should do: the space of inputs, the space of desired outputs
+      and a criterion for success, usually a metric computed on held-out data. Tasks are grouped
+      into types (classification, regression, translation, summarization, question answering, object
+      detection) and instantiated by [[dataset|datasets]] and [[benchmark|benchmarks]]. With
+      [[foundation-model|foundation models]], practitioners distinguish the pretraining task, such
+      as [[next-token-prediction|next-token prediction]], from the downstream tasks to which a model
+      is adapted by fine-tuning or prompting; [[multi-task-learning|multi-task learning]] trains on
+      several tasks at once, and zero- and [[few-shot-learning|few-shot]] settings test tasks never
+      explicitly trained. In NLP a shared task is a community competition with a common dataset and
+      metric. For [[ai-agent|AI agents]], a task is a goal pursued over many steps in an environment
+      and judged by its outcome, as in [[long-horizon-task|long-horizon tasks]].
+    example: >-
+      On the summarization task the fine-tuned small model beat the general one, but it was useless
+      on everything else.
+origin: >-
+  Tom Mitchell's 1997 definition of machine learning, framed in terms of a task, a performance
+  measure and experience, made 'task' a basic term. 'Downstream task' spread with transfer learning
+  and pretrained language models in the late 2010s, and agent evaluations increasingly also rate
+  tasks by how long they take skilled humans ([[metr-time-horizon|METR time horizon]]).
+note: >-
+  Success on a benchmark task may not carry over to the real-world job the benchmark is meant to
+  represent; see [[construct-validity|construct validity]]. Agent researchers use 'task' for whole
+  assignments, such as fixing a bug, rather than single input–output mappings.
+see_also:
+  - benchmark
+  - dataset
+  - multi-task learning
+  - transfer learning
+  - few-shot learning
+  - long-horizon task
+  - METR time horizon
+  - evaluation
+contrast:
+  - capability

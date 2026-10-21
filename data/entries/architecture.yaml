@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: architecture
+id: architecture
+pos: n.
+also:
+  - model architecture
+  - network architecture
+  - neural architecture
+domain: core
+domains:
+  - dl
+  - llm
+  - hw
+level: core
+plain: >-
+  The overall design of an AI model, meaning what kinds of parts it has and how they are connected,
+  as opposed to the specific numbers it learns during training.
+senses:
+  - context: Machine learning
+    definition: >-
+      The structural design of a model: the types of [[layer|layers]] or components, their sizes,
+      how they connect and how information flows through them, together with choices such as
+      [[activation-function|activation functions]] and normalization. Architecture fixes the family
+      of functions a model can represent and its [[inductive-bias|inductive bias]];
+      [[training|training]] then selects one member of that family by setting the
+      [[weights|weights]]. Landmark architectures include the [[multilayer-perceptron|multilayer
+      perceptron]], [[convolutional-neural-network|convolutional networks]],
+      [[long-short-term-memory|LSTMs]], [[resnet|ResNet]], the [[transformer|transformer]] and
+      variants such as [[mixture-of-experts|mixture of experts]], and alternatives such as
+      [[state-space-model|state space models]]. Designing architectures automatically is
+      [[neural-architecture-search|neural architecture search]]. Since the late 2010s much progress
+      has come from scaling a few architectures with more data and compute rather than from new
+      designs, a pattern summarized in [[the-bitter-lesson|the bitter lesson]].
+    example: >-
+      Both models share the same architecture; the difference lies entirely in data and training.
+  - context: Systems and hardware
+    definition: >-
+      The organization of a larger computing system: in software, how models, retrieval, tools and
+      interfaces fit together in an AI application; in hardware, the design of a processor or
+      accelerator, as in successive GPU architectures or the [[systolic-array|systolic array]] of a
+      [[tpu|TPU]]. In cognitive science and symbolic AI, a [[cognitive-architecture|cognitive
+      architecture]] is a fixed framework for modeling the mind, such as Soar or ACT-R.
+origin: >-
+  From Latin architectura, the art of building. Computer designers used 'architecture' for a
+  machine's programmer-visible design from about 1960, prominently for IBM's System/360 (1964);
+  neural-network researchers spoke of network architectures by the 1980s, and 'model architecture'
+  became everyday machine-learning vocabulary in the deep-learning era.
+note: >-
+  Architecture and trained model are often conflated, as in 'a transformer'. Two models with
+  identical architectures can behave completely differently, and many capabilities once credited to
+  clever architecture turned out to depend mostly on scale and data.
+see_also:
+  - transformer
+  - neural network
+  - layer
+  - inductive bias
+  - neural architecture search
+  - mixture of experts
+  - cognitive architecture
+  - the bitter lesson
+contrast:
+  - weights

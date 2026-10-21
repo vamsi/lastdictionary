@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: distributed alignment search
+id: distributed-alignment-search
+pos: n.
+also:
+  - DAS
+  - Boundless DAS
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A method that searches, by training, for a hidden direction inside a neural network that plays the
+  role of one variable in a human-readable explanation of the network's behavior.
+senses:
+  - definition: >-
+      A method for finding where a high-level causal variable is represented in a neural network
+      when it is not localized in individual neurons. Instead of patching neurons, DAS learns a
+      rotation of a layer's [[activation-space|activation space]] and looks for a low-dimensional
+      subspace such that interchange interventions on it — replacing its contents with those
+      computed on another input — change the network's output exactly as intervening on the
+      corresponding variable changes the output of a hypothesized algorithm. The rotation is trained
+      by gradient descent to maximize this agreement (interchange intervention accuracy), combining
+      the rigor of [[causal-abstraction|causal abstraction]] with the flexibility of learned
+      directions. Boundless DAS scaled the method to models with billions of parameters. Because a
+      learned subspace can produce effects through pathways the model does not normally use, DAS
+      results are vulnerable to [[interpretability-illusion|interpretability illusions]] and need
+      careful controls.
+    example: >-
+      DAS found a one-dimensional subspace at layer 12 that behaves exactly like the 'is the price
+      in range' variable.
+origin: >-
+  Introduced by Atticus Geiger, Zhengxuan Wu, Christopher Potts, Thomas Icard and Noah Goodman in
+  'Finding Alignments Between Interpretable Causal Variables and Distributed Neural Representations'
+  (arXiv, March 2023; CLeaR 2024). Zhengxuan Wu and colleagues' Boundless DAS (NeurIPS 2023) applied
+  it to the Alpaca model.
+year: 2023
+note: >-
+  'Alignment' here means matching neural representations to variables of an interpretable model, not
+  [[ai-alignment|AI alignment]].
+see_also:
+  - causal abstraction
+  - activation patching
+  - interpretability illusion
+  - linear representation hypothesis
+  - activation space
+sources:
+  - text: >-
+      Geiger, A., Wu, Z., Potts, C., Icard, T. & Goodman, N. (2024). Finding Alignments Between
+      Interpretable Causal Variables and Distributed Neural Representations. CLeaR 2024.
+  - text: >-
+      Makelov, A., Lange, G. & Nanda, N. (2024). Is This the Subspace You Are Looking For? An
+      Interpretability Illusion for Subspace Activation Patching. ICLR 2024.

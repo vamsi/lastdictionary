@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model specification
+id: model-specification
+pos: n.
+also:
+  - model spec
+  - Model Spec
+  - behavior specification
+  - spec
+domain: safety
+domains:
+  - llm
+  - gov
+level: core
+plain: >-
+  A public document in which an AI company spells out how its models are supposed to behave — what
+  they should do, refuse and prioritize, and whom to obey when instructions conflict.
+senses:
+  - definition: >-
+      A written statement of the behavior a developer intends its AI models to exhibit, serving both
+      as a target for training and evaluation and as public documentation. Following the pattern of
+      OpenAI's Model Spec (2024), such a document typically sets out overall objectives; hard rules
+      that no instruction can override; default behaviors that deploying businesses or users may
+      adjust; and a chain of command for resolving conflicts between instructions from the
+      developer, the deployer and the user (see [[instruction-hierarchy|instruction hierarchy]]). It
+      is more detailed than a usage policy, which constrains users, and more operational than a list
+      of ethical principles. Specifications feed training directly — as data for
+      [[reinforcement-learning-from-ai-feedback|AI-feedback]] methods, as grading rubrics, or as the
+      text a model learns to reason over in [[deliberative-alignment|deliberative alignment]] — and
+      make it possible to tell whether an undesirable output was a training failure or intended
+      policy.
+    example: >-
+      Under the model spec, a developer's system prompt can turn off that default but not the hard
+      rule.
+origin: >-
+  OpenAI published its Model Spec in May 2024 and released a substantially revised version into the
+  public domain in February 2025, revising it several times since (most recently in August 2026, as
+  of October 2026); Anthropic's [[ai-constitution|constitution]] for Claude plays a similar role.
+  'Spec' echoes software engineering, where a specification states required behavior independently
+  of implementation.
+year: 2024
+note: >-
+  A specification describes intended behavior; deployed models may diverge from it. Some are
+  published in full and invite public comment; others remain internal.
+see_also:
+  - AI constitution
+  - instruction hierarchy
+  - deliberative alignment
+  - character training
+  - system prompt
+  - refusal
+as_of: 2026-10

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Lean
+id: lean
+pos: prop. n.
+also:
+  - Lean 4
+  - Lean theorem prover
+  - Lean prover
+  - Lean proof assistant
+domain: sym
+domains:
+  - math
+  - eng
+level: core
+plain: >-
+  A programming language and proof checker in which mathematicians write proofs that the computer
+  verifies line by line. It has become the main language in which AI systems produce checkable
+  proofs.
+senses:
+  - definition: >-
+      An open-source [[interactive-theorem-proving|proof assistant]] that doubles as a functional
+      programming language: definitions, theorems and proofs are all written as code, type-checked
+      against a dependent type theory (a version of the calculus of inductive constructions) and
+      certified by a small trusted kernel. Lean 4, a reimplementation written largely in Lean itself
+      and compiled to C, serves both as a proof assistant and as a general-purpose language whose
+      extensible syntax and tactic framework let users build their own automation. Its community
+      library Mathlib, begun in 2017, is a large unified body of formalized mathematics (about
+      290,000 theorems and 140,000 definitions as of October 2026). Because a Lean proof either
+      checks or fails, Lean supplies the verifiable reward signal for AI provers such as
+      [[alphaproof|AlphaProof]] and DeepSeek-Prover and is the usual target language of
+      [[autoformalization|autoformalization]].
+    example: >-
+      The model's argument looked convincing, but it only counted once it compiled in Lean.
+origin: >-
+  Launched in 2013 by Leonardo de Moura at Microsoft Research; Lean 3 followed in 2017 and Lean 4 in
+  2021 (first stable release, September 2023). Mathematicians took notice when the Liquid Tensor
+  Experiment (2020–2022) verified a central theorem of Peter Scholze's condensed mathematics. The
+  nonprofit Lean Focused Research Organization was founded in 2023 to steward development.
+year: 2013
+note: >-
+  Not an acronym. 'Lean' now usually means Lean 4; Mathlib was ported from Lean 3 in 2023. The
+  developers received the 2025 ACM SIGPLAN Programming Languages Software Award for Lean's impact on
+  mathematics, verification and AI.
+see_also:
+  - interactive theorem proving
+  - Rocq
+  - automated theorem proving
+  - autoformalization
+  - AlphaProof
+  - reinforcement learning with verifiable rewards
+sources:
+  - text: >-
+      de Moura, L., Kong, S., Avigad, J., van Doorn, F. & von Raumer, J. (2015). The Lean Theorem
+      Prover (System Description). CADE-25, LNCS 9195.
+  - text: >-
+      de Moura, L. & Ullrich, S. (2021). The Lean 4 Theorem Prover and Programming Language (System
+      Description). CADE-28, LNCS 12699.
+as_of: 2026-10

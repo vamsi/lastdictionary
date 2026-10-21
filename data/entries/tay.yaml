@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Tay
+id: tay
+pos: prop. n.
+also:
+  - Tay (chatbot)
+  - TayTweets
+domain: hist
+domains:
+  - society
+  - sec
+labels:
+  - historical
+level: core
+plain: >-
+  A Microsoft chatbot launched on Twitter in March 2016 that users quickly taught to post racist and
+  offensive messages. Microsoft shut it down within a day, and it became a classic warning.
+senses:
+  - definition: >-
+      A Microsoft [[chatbot|chatbot]] that went live on Twitter on 23 March 2016 with the persona of
+      an American teenager, built to pick up new phrasing and topics from the people who talked to
+      it. Coordinated users quickly turned that adaptivity, together with a repeat-after-me feature,
+      into a way of making it post racist, antisemitic, misogynist and conspiratorial messages, and
+      Microsoft pulled it about 16 hours into its run, deleting many of its tweets. A brief
+      accidental reactivation on 30 March caused further embarrassment. Tay became the standard
+      cautionary example of deploying a system that learns from unfiltered public input — an early,
+      informal case of [[data-poisoning|data poisoning]] by coordinated users — and of the need for
+      [[red-teaming|red teaming]] and [[content-moderation|content moderation]] before release.
+    example: Every trust-and-safety review of a public-facing bot still mentions Tay.
+origin: >-
+  Built by Microsoft's Technology and Research and Bing teams and partly modeled on its Chinese
+  chatbot XiaoIce (2014). Peter Lee, head of Microsoft Research, apologized publicly on 25 March
+  2016; a successor, Zo, launched later that year with stricter topic filters.
+year: 2016
+see_also:
+  - chatbot
+  - data poisoning
+  - red teaming
+  - content moderation
+  - AI incident
+  - jailbreak
+sources:
+  - text: >-
+      Lee, P. (2016). Learning from Tay's Introduction. Official Microsoft Blog, 25 March 2016.

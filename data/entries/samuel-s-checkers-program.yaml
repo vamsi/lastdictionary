@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Samuel's checkers program
+id: samuel-s-checkers-program
+pos: prop. n.
+also:
+  - Samuel Checkers-playing Program
+  - Samuel's checker player
+domain: hist
+domains:
+  - ml
+  - rl
+labels:
+  - historical
+level: specialist
+plain: >-
+  A 1950s IBM program by Arthur Samuel that learned to play checkers better than its author, partly
+  by playing against itself. It was among the first programs to learn, and its 1959 paper
+  popularized the phrase 'machine learning'.
+senses:
+  - definition: >-
+      A checkers-playing program developed by [[arthur-samuel|Arthur Samuel]] at IBM from the early
+      1950s, among the first computer programs to improve with experience. It searched ahead with
+      [[minimax|minimax]] over a [[game-tree|game tree]], using an early form of alpha–beta pruning,
+      and scored positions with a weighted sum of board features. It learned in two ways: rote
+      learning, storing previously evaluated positions to extend its effective search depth; and
+      'learning by generalization', adjusting the feature weights so that its evaluation of a
+      position moved toward the value backed up from searching ahead of it — an early form of the
+      temporal-difference idea later developed in [[reinforcement-learning|reinforcement learning]].
+      After thousands of games, including against versions of itself, it came to beat Samuel, and in
+      1962 it won a much-publicized game against Robert Nealey, a strong amateur player.
+    example: >-
+      Samuel's checkers program nudged its evaluation toward the result of its own lookahead, a
+      trick reinforcement learning still uses.
+origin: >-
+  Begun around 1952 on the IBM 701; a televised demonstration in February 1956 drew wide attention.
+  Samuel's 1959 paper 'Some Studies in Machine Learning Using the Game of Checkers' (IBM Journal of
+  Research and Development) is the most-cited early use of the phrase [[machine-learning|machine
+  learning]].
+year: 1959
+note: >-
+  Its reputation outran its strength: it never approached world-class play, which came only with
+  [[chinook|Chinook]] in the 1990s.
+see_also:
+  - Arthur Samuel
+  - machine learning
+  - reinforcement learning
+  - Chinook
+  - TD-Gammon
+  - self-play
+sources:
+  - text: >-
+      Samuel, A. L. (1959). Some Studies in Machine Learning Using the Game of Checkers. IBM Journal
+      of Research and Development 3(3), 210–229.

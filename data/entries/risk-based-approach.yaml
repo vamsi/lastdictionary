@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: risk-based approach
+id: risk-based-approach
+pos: n.
+also:
+  - risk-based regulation
+  - risk-tiered approach
+  - risk pyramid
+domain: gov
+domains:
+  - society
+level: core
+plain: >-
+  A way of regulating AI in which the strictness of the rules depends on how much harm a use could
+  cause: bans for the worst uses, heavy checks for risky ones, little or nothing for the rest.
+senses:
+  - definition: >-
+      A regulatory design in which obligations scale with the likelihood and severity of the harm
+      that an [[ai-system|AI system]] or use may cause, instead of applying uniformly. The
+      [[eu-ai-act|EU AI Act]] is the canonical example, sorting uses into four tiers often drawn as
+      a pyramid: unacceptable risk ([[prohibited-ai-practices|prohibited AI practices]]), high risk
+      ([[high-risk-ai-system|high-risk systems]], subject to requirements and
+      [[conformity-assessment|conformity assessment]]), limited risk
+      ([[transparency-obligations|transparency obligations]]) and minimal risk (no new duties).
+      [[general-purpose-ai-model|General-purpose AI models]] sit on a separate track keyed to
+      capability rather than use. Risk-based thinking also structures the
+      [[nist-ai-risk-management-framework|NIST AI Risk Management Framework]] and
+      [[iso-iec-42001|ISO/IEC 42001]].
+    example: >-
+      Under a risk-based approach, a spam filter and a CV-screening tool face very different rules.
+origin: >-
+  Risk-based regulation was established in environmental, food-safety and financial supervision
+  before AI; in the UK, the Hampton Review (2005) promoted it across regulators. For AI, the
+  European Commission's White Paper on Artificial Intelligence (February 2020) proposed
+  concentrating mandatory requirements on high-risk applications, and its April 2021 AI Act proposal
+  introduced the four-tier structure.
+year: 2020
+note: >-
+  Critics argue that use-based tiers fit general-purpose models poorly, since their risks depend on
+  downstream use, and that 'risk' is fixed by the legislator's lists rather than measured.
+  Alternatives include rights-based approaches and capability-based approaches keyed to
+  [[compute-threshold|compute]] or [[capability-threshold|capability thresholds]].
+see_also:
+  - EU AI Act
+  - high-risk AI system
+  - prohibited AI practices
+  - transparency obligations
+  - NIST AI Risk Management Framework
+  - AI regulation
+  - capability threshold
+contrast:
+  - compute threshold
+sources:
+  - text: >-
+      European Commission (2020). White Paper on Artificial Intelligence: A European approach to
+      excellence and trust. COM(2020) 65 final.
+standards: EU AI Act (Reg. (EU) 2024/1689), Art. 3(2) (definition of 'risk'); Recital 26

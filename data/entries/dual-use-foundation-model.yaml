@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dual-use foundation model
+id: dual-use-foundation-model
+pos: n.
+domain: gov
+domains:
+  - safety
+  - sec
+labels:
+  - legal
+level: specialist
+plain: >-
+  A US legal term for a general-purpose AI model that serves everyday uses but is capable enough
+  that it could help someone build weapons, mount cyberattacks or evade human control.
+senses:
+  - definition: >-
+      In US policy, a large general-purpose [[foundation-model|foundation model]] whose abilities
+      could endanger national security, the economy or public health and safety. The criteria set by
+      [[executive-order-14110|Executive Order 14110]] were technical as well as functional: training
+      on broad data, usually by self-supervision; tens of billions of parameters or more; usefulness
+      across many settings; and strong performance, actual or easily obtained by modification, at
+      dangerous work such as helping non-experts make [[cbrn-risk|chemical, biological, radiological
+      or nuclear weapons]], automating serious offensive cyber operations, or slipping out of human
+      oversight by deception. Safeguards that users could get around did not take a model outside
+      the definition. The term framed the order's reporting duties and a 2024 Commerce Department
+      review of [[open-weight-model|open-weight]] releases, which recommended monitoring rather than
+      restricting widely available weights. 'Dual-use' borrows the export-control sense of goods
+      with both civilian and military applications.
+    example: >-
+      The reporting requirement applied only to dual-use foundation models above the compute
+      threshold.
+origin: >-
+  Defined in Executive Order 14110 (October 30, 2023), combining the [[foundation-model|foundation
+  model]] coinage of Stanford researchers (2021) with the long-standing export-control notion of
+  dual-use items. The National Telecommunications and Information Administration's July 2024 report
+  'Dual-Use Foundation Models with Widely Available Model Weights' extended its use.
+year: 2023
+note: >-
+  Its legal force lapsed with the order's revocation in January 2025, though the term persists in
+  policy writing and some bills. Not equivalent to the EU's
+  [[general-purpose-ai-model-with-systemic-risk|general-purpose AI model with systemic risk]], which
+  turns on 'high-impact capabilities', presumed above 10²⁵ FLOP of training compute, or on
+  designation by the European Commission.
+see_also:
+  - Executive Order 14110
+  - foundation model
+  - frontier model
+  - open-weight model
+  - CBRN risk
+  - compute threshold
+contrast:
+  - general-purpose AI model with systemic risk
+sources:
+  - text: >-
+      National Telecommunications and Information Administration (2024). Dual-Use Foundation Models
+      with Widely Available Model Weights. US Department of Commerce.
+standards: Executive Order 14110 (2023), Sec. 3(k) (revoked January 2025)
+as_of: 2026-10

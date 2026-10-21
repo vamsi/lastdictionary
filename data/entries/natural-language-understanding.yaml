@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: natural language understanding
+id: natural-language-understanding
+pos: n.
+also:
+  - NLU
+  - language understanding
+  - intent detection
+  - slot filling
+domain: llm
+domains:
+  - mind
+  - sym
+level: core
+plain: >-
+  The part of language AI concerned with working out what a piece of text means — who did what to
+  whom, what the writer wants and what follows from it — rather than with producing text.
+senses:
+  - definition: >-
+      The subfield of [[natural-language-processing|natural language processing]] concerned with
+      mapping text, or transcribed speech, to representations of its meaning that support action or
+      inference: identifying entities, relations and events, resolving references and ambiguity,
+      inferring intent and entailments, and answering questions. Benchmarks such as [[glue|GLUE]]
+      (General Language Understanding Evaluation, 2018), [[superglue|SuperGLUE]] and the
+      [[winograd-schema-challenge|Winograd schema challenge]] were built to measure it, and
+      [[natural-language-inference|natural language inference]], [[question-answering|question
+      answering]] and [[coreference-resolution|coreference resolution]] are its staple tests. In the
+      classic division of NLP it is paired with [[natural-language-generation|natural language
+      generation]]; encoder models such as [[bert|BERT]] were long described as NLU models and
+      decoder models as generators, a distinction that large language models have largely dissolved.
+    example: >-
+      The benchmark is supposed to test natural language understanding, but models exploit
+      annotation artifacts.
+  - context: Conversational systems
+    definition: >-
+      In voice assistants and customer-service bots, the component that converts a user's utterance
+      into a structured intent and slot values (an intent such as book_flight with destination set
+      to Lisbon) for downstream logic — a narrower engineering sense still common in industry.
+origin: >-
+  Established in AI by the early 1970s: Terry Winograd's 1971 MIT thesis, published as
+  'Understanding Natural Language' (1972), described the [[shrdlu|SHRDLU]] system, and Roger
+  Schank's conceptual-dependency work pursued meaning representation in the same period. GLUE (2018)
+  gave the term its benchmark-era sense.
+year: 1971
+note: >-
+  Whether statistical models genuinely understand language is a long-running dispute (see
+  [[machine-understanding|machine understanding]], [[octopus-test|octopus test]] and
+  [[chinese-room|Chinese room]]); in technical usage NLU names a family of tasks, not a claim about
+  comprehension.
+see_also:
+  - natural language processing
+  - natural language generation
+  - natural language inference
+  - GLUE
+  - machine understanding
+  - SHRDLU
+  - question answering
+contrast:
+  - natural language generation
+sources:
+  - text: Winograd, T. (1972). Understanding Natural Language. Academic Press.
+  - text: >-
+      Wang, A., Singh, A., Michael, J., Hill, F., Levy, O. & Bowman, S. R. (2018). GLUE: A
+      Multi-Task Benchmark and Analysis Platform for Natural Language Understanding. BlackboxNLP
+      Workshop, EMNLP 2018.

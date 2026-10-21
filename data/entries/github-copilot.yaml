@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GitHub Copilot
+id: github-copilot
+pos: prop. n.
+also:
+  - Copilot Chat
+  - Copilot coding agent
+  - Copilot agent mode
+  - AI pair programmer
+domain: eng
+domains:
+  - llm
+  - agents
+labels:
+  - trademark
+level: essential
+plain: >-
+  An AI assistant from GitHub, built into programmers' code editors, that suggests code as they
+  type, answers questions about code and can carry out coding tasks on its own.
+senses:
+  - definition: >-
+      An AI coding assistant from GitHub, a Microsoft subsidiary, available in code editors and
+      development environments (among them JetBrains IDEs, Xcode and Microsoft's own Visual Studio
+      and Visual Studio Code), on GitHub's website and at the command line. It began as inline code
+      completion: OpenAI's [[codex|Codex]], a [[large-language-model|large language model]] trained
+      on code, predicted the next lines or whole functions from the surrounding file and comments,
+      shown as grey 'ghost text' that the developer accepts with a keystroke. Later versions added
+      chat about code, multi-file editing, an agent mode that runs commands and iterates on errors,
+      automated code review, and a [[coding-agent|coding agent]] that works on assigned issues in a
+      cloud environment and opens pull requests; users can choose among models from several
+      providers. Copilot made AI pair programming mainstream and became the reference point in
+      debates over productivity, code quality, security flaws in suggested code and the use of
+      public code for training.
+    example: GitHub Copilot wrote most of the test boilerplate; I only fixed the edge cases.
+origin: >-
+  Announced by GitHub as a technical preview on 29 June 2021, built with OpenAI on its Codex model
+  and marketed as 'your AI pair programmer'; it became generally available to individual developers
+  in June 2022. Chat followed in 2023, a choice of models from several providers in 2024, and agent
+  mode and an autonomous coding agent in 2025.
+year: 2021
+note: >-
+  Productivity evidence is mixed: in a 2023 experiment developers finished a set task about 55
+  percent faster with Copilot, but a 2025 randomized trial by [[metr|METR]] found experienced
+  open-source developers slower with AI tools. Most claims in a 2022 class action over training on
+  public code were dismissed; in September 2026 the Ninth Circuit upheld dismissal of its DMCA
+  claim, leaving contract claims pending. Distinct from Microsoft's general-purpose Copilot
+  assistant.
+see_also:
+  - coding agent
+  - code generation
+  - copilot
+  - Cursor
+  - Codex
+  - vibe coding
+sources:
+  - text: >-
+      Chen, M. et al. (2021). Evaluating Large Language Models Trained on Code. arXiv:2107.03374.
+  - text: >-
+      Peng, S., Kalliamvakou, E., Cihon, P. & Demirer, M. (2023). The Impact of AI on Developer
+      Productivity: Evidence from GitHub Copilot. arXiv:2302.06590.
+    url: https://arxiv.org/abs/2302.06590
+  - text: Doe v. GitHub, Inc., No. 24-7700 (9th Cir. 16 September 2026).
+as_of: 2026-10

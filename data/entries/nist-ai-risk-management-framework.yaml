@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: NIST AI Risk Management Framework
+id: nist-ai-risk-management-framework
+pos: prop. n.
+also:
+  - AI RMF
+  - NIST AI RMF
+  - NIST AI 100-1
+  - AI Risk Management Framework
+domain: gov
+domains:
+  - eng
+  - safety
+level: core
+plain: >-
+  A free, voluntary guide from the US government's standards agency that helps organizations spot,
+  measure and reduce the risks of the AI systems they build or use.
+senses:
+  - definition: >-
+      A voluntary framework from the US National Institute of Standards and Technology (NIST) for
+      managing risks from [[ai-system|AI systems]] across their life cycle. It names characteristics
+      of trustworthy AI — valid and reliable; safe; secure and resilient; accountable and
+      transparent; explainable and interpretable; privacy-enhanced; and fair, with harmful bias
+      managed — and organizes risk management into four functions: Govern (the policies, culture and
+      lines of accountability that frame the other three), Map (understanding where and how a system
+      will be used and what could go wrong), Measure (testing and quantifying those risks over time)
+      and Manage (deciding which risks to treat first and responding to them). Each function divides
+      into categories and subcategories. A companion Playbook suggests concrete actions, and
+      profiles adapt the framework to particular settings, notably the Generative AI Profile (NIST
+      AI 600-1, July 2024).
+    example: >-
+      We mapped our model-release checklist to the Measure and Manage functions of the AI RMF.
+origin: >-
+  Directed by the US National Artificial Intelligence Initiative Act of 2020 and developed through
+  public drafts and workshops from 2021; version 1.0 (NIST AI 100-1) was released on 26 January
+  2023. In July 2025 America's AI Action Plan called for NIST to revise it, removing references to
+  misinformation, diversity, equity and inclusion, and climate change; as of August 2026 the
+  revision was under way and version 1.0 remained current.
+year: 2023
+note: >-
+  Though American and voluntary, it is used internationally and has been cross-walked to
+  [[iso-iec-42001|ISO/IEC 42001]] and the [[eu-ai-act|EU AI Act]]. Some US state AI laws and bills
+  have offered a defense to organizations that follow a recognized framework such as the AI RMF, as
+  the 2024 [[colorado-ai-act|Colorado AI Act]] did before it was rewritten in 2026. A concept note
+  for a critical-infrastructure profile followed in April 2026.
+see_also:
+  - ISO/IEC 42001
+  - AI governance
+  - Center for AI Standards and Innovation
+  - America's AI Action Plan
+  - trustworthy AI
+  - risk-based approach
+contrast:
+  - ISO/IEC 42001
+sources:
+  - text: >-
+      National Institute of Standards and Technology (2023). Artificial Intelligence Risk Management
+      Framework (AI RMF 1.0). NIST AI 100-1.
+  - text: >-
+      National Institute of Standards and Technology (2024). Artificial Intelligence Risk Management
+      Framework: Generative Artificial Intelligence Profile. NIST AI 600-1.
+  - text: >-
+      National Institute of Standards and Technology. AI Risk Management Framework (program page,
+      updated August 2026).
+    url: https://www.nist.gov/itl/ai-risk-management-framework
+as_of: 2026-10

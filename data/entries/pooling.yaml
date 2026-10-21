@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pooling
+id: pooling
+pos: n.
+also:
+  - max pooling
+  - average pooling
+  - global average pooling
+  - pooling layer
+  - subsampling
+  - mean pooling
+domain: dl
+domains:
+  - percep
+level: core
+plain: >-
+  A step in an image network that shrinks its internal picture by summarizing each small patch with
+  one number, usually the largest or the average, keeping what matters and discarding exact
+  positions.
+senses:
+  - context: Convolutional networks
+    definition: >-
+      A parameter-free [[layer|layer]] operation that reduces the spatial size of
+      [[feature-map|feature maps]] by summarizing each local window with one value, the maximum (max
+      pooling) or the mean (average pooling), separately for each channel. A typical 2 × 2 window
+      with [[stride|stride]] 2 halves height and width and discards three-quarters of the
+      activations. Pooling cuts computation, enlarges the [[receptive-field|receptive field]] of
+      later layers and makes outputs locally [[invariance|invariant]] to small shifts. Global
+      average pooling, which averages each channel over the whole map, replaced large
+      [[fully-connected-layer|fully connected]] heads in classifiers such as GoogLeNet and
+      [[resnet|ResNet]]. Many modern networks downsample with strided convolutions instead, and
+      [[capsule-network|capsule network]] proponents criticized pooling for discarding spatial
+      relationships between parts.
+    example: Each 2 × 2 max pooling layer halves the resolution of the feature maps.
+  - context: Sequences and graphs
+    definition: >-
+      Any operation that aggregates a variable number of vectors into one fixed-size vector, such as
+      mean-pooling token [[embedding|embeddings]] into a sentence embedding, taking a designated
+      classification token's state, or a readout over node states in a [[graph-neural-network|graph
+      neural network]].
+origin: >-
+  Kunihiko Fukushima's neocognitron (1980) used fixed downsampling 'C-cell' layers. Max pooling was
+  introduced by Kouichi Yamaguchi and colleagues in 1990 for speech recognition and brought into
+  vision by Juyang Weng and colleagues' Cresceptron (1992–93); it was standard in CNNs of the
+  AlexNet era.
+year: 1990
+see_also:
+  - convolutional neural network
+  - feature map
+  - receptive field
+  - stride
+  - invariance
+  - capsule network

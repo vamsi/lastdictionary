@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: proxy discrimination
+id: proxy-discrimination
+pos: n.
+also:
+  - discrimination by proxy
+  - proxy variable
+  - redundant encoding
+domain: society
+domains:
+  - gov
+  - ml
+level: core
+plain: >-
+  Discrimination that happens when a system cannot see a trait like race directly but relies on
+  something closely linked to it, such as a postcode, and so treats groups unequally anyway.
+senses:
+  - definition: >-
+      Discrimination in which a decision rule disadvantages a group defined by a
+      [[protected-attribute|protected attribute]] by relying on other variables correlated with it,
+      such as postcode for race, first name for sex or ethnicity, or gaps in employment for
+      disability or pregnancy. Machine-learning models are especially prone to it because they
+      search large feature sets for whatever predicts the target and can reconstruct a protected
+      attribute from many weak correlates (redundant encoding), even when it is excluded. Legal
+      scholars focus on proxies whose predictive value comes from their correlation with the
+      protected attribute itself, as distinct from features with independent, legitimate predictive
+      value that merely correlate with it. Detection methods test whether the attribute can be
+      predicted from a model's inputs or internal representations; legal challenges usually rely on
+      [[disparate-impact|disparate impact]] doctrine.
+    example: >-
+      Dropping race did nothing: the model rebuilt it from zip code and surname, a textbook case of
+      proxy discrimination.
+origin: >-
+  The historical model is redlining, the 1930s US practice of denying mortgages using neighborhood
+  maps that tracked race. For AI, the concept was developed in law by Anya Prince and Daniel
+  Schwarcz ('Proxy Discrimination in the Age of Artificial Intelligence and Big Data', Iowa Law
+  Review, 2020) and formalized in computer science by Anupam Datta and colleagues from 2017.
+see_also:
+  - fairness through unawareness
+  - disparate impact
+  - algorithmic bias
+  - protected attribute
+  - group fairness
+contrast:
+  - fairness through unawareness
+sources:
+  - text: >-
+      Prince, A. E. R. & Schwarcz, D. (2020). Proxy Discrimination in the Age of Artificial
+      Intelligence and Big Data. Iowa Law Review 105, 1257–1318.

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reward function
+id: reward-function
+pos: n.
+domain: rl
+domains:
+  - safety
+level: core
+plain: >-
+  The rule that decides how many points an AI agent earns for each situation and action — in effect,
+  the written-down definition of the task it is being trained to do.
+senses:
+  - definition: >-
+      A function mapping a transition — typically a [[state|state]] and [[action|action]], sometimes
+      also the next state — to a scalar [[reward|reward]] or a distribution over rewards. In a
+      [[markov-decision-process|Markov decision process]] it is part of the problem specification
+      and, together with the transition dynamics and the [[discount-factor|discount factor]],
+      determines which [[policy|policy]] is optimal. Reward functions are written by hand (points in
+      a game, distance traveled minus energy used), learned from human preferences as a
+      [[reward-model|reward model]], inferred from demonstrations by
+      [[inverse-reinforcement-learning|inverse reinforcement learning]], or computed by a program
+      that checks an answer. Designing them is hard: quantities that are easy to measure often
+      diverge from the intended goal, and an optimizing agent will exploit the difference
+      ([[reward-hacking|reward hacking]], [[specification-gaming|specification gaming]]); rewards
+      that arrive too rarely make learning slow, which motivates [[reward-shaping|reward shaping]].
+    example: >-
+      Our first reward function paid for speed alone, so the simulated robot learned to fling itself
+      forward.
+formula_latex: r(s, a) = \mathbb{E}\left[ R_{t+1} \mid S_t = s,\, A_t = a \right]
+origin: >-
+  Formalized with Markov decision processes by Richard Bellman (1957) and Ronald Howard (1960) as
+  the per-stage reward, or negative cost, of operations research and control. Reward design became a
+  research topic in the 1990s with work on shaping, and a widely discussed safety concern after
+  examples such as OpenAI's 2016 boat-racing agent that circled endlessly collecting points instead
+  of finishing the race.
+year: 1957
+note: >-
+  Practitioners say 'reward function' even when no explicit formula exists, as with a neural
+  [[reward-model|reward model]]. Control theory and operations research usually speak of a cost
+  function to be minimized instead.
+see_also:
+  - reward
+  - reward model
+  - reward shaping
+  - reward hacking
+  - specification gaming
+  - inverse reinforcement learning
+  - Goodhart's law
+contrast:
+  - loss function
+  - objective function
+sources:
+  - text: >-
+      Clark, J. & Amodei, D. (2016). Faulty Reward Functions in the Wild. OpenAI blog, 21 December
+      2016.

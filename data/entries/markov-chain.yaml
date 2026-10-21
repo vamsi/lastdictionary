@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Markov chain
+id: markov-chain
+pos: n.
+also:
+  - Markov process
+  - Markov chains
+  - stationary distribution
+  - transition matrix
+  - memorylessness
+domain: math
+domains:
+  - rl
+  - llm
+level: core
+plain: >-
+  A chance-driven process that moves between states without memory: the odds of its next move are
+  set by where it is, never by the path that led there. Forecasting tomorrow's weather from today's
+  alone is a simple example.
+senses:
+  - definition: >-
+      A sequence of [[random-variable|random variables]] X₀, X₁, X₂, … with the Markov property:
+      once the present state is known, earlier history carries no further information about the
+      future. It is specified by an initial distribution and transition probabilities — for finitely
+      many states, a transition [[matrix|matrix]] whose rows sum to one. Under mild conditions
+      (irreducibility and aperiodicity) a chain forgets its start and converges to a unique
+      stationary distribution, the leading left [[eigenvector|eigenvector]] of the transition
+      matrix; this is what makes [[markov-chain-monte-carlo|Markov chain Monte Carlo]] work and what
+      Google's PageRank computed for a random web surfer. Markov chains model text in
+      [[n-gram-model|n-gram models]], whose state is the previous n − 1 words; with hidden states
+      they become [[hidden-markov-model|hidden Markov models]]; with actions and rewards they become
+      [[markov-decision-process|Markov decision processes]], the formal basis of
+      [[reinforcement-learning|reinforcement learning]]. A transformer is Markov only if its entire
+      context counts as the state.
+    example: >-
+      The shuffling procedure is a Markov chain, and after a few hundred steps it is close to its
+      stationary distribution.
+formula_latex: P(X_{t+1} = j \mid X_t = i, X_{t-1}, \ldots, X_0) = P(X_{t+1} = j \mid X_t = i) = P_{ij}
+origin: >-
+  Introduced by the Russian mathematician Andrey Markov in 1906 to extend the law of large numbers
+  to dependent variables; in 1913 he analyzed the sequence of vowels and consonants in Pushkin's
+  Eugene Onegin as a chain. 'Markov chain' was in English use by 1938, and Claude Shannon's 1948
+  Markov models of English text were ancestors of statistical language models.
+year: 1906
+see_also:
+  - Markov chain Monte Carlo
+  - Markov decision process
+  - hidden Markov model
+  - n-gram model
+  - stochastic
+  - eigenvector

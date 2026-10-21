@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: distributional hypothesis
+id: distributional-hypothesis
+pos: n.
+also:
+  - distributional semantics
+  - distributional similarity
+domain: llm
+domains:
+  - mind
+  - hist
+level: specialist
+plain: >-
+  The idea that words found in similar company — surrounded by similar words — tend to be similar in
+  meaning, the insight that lets computers learn something about word meaning from large amounts of
+  text alone.
+senses:
+  - definition: >-
+      The hypothesis, credited to Zellig Harris and J. R. Firth, that words found in similar
+      linguistic contexts tend to be alike in meaning, so that a word's meaning can be approximated
+      by statistics of the contexts in which it appears. It underlies distributional semantics,
+      which represents words as vectors of co-occurrence counts or learned
+      [[word-embedding|embeddings]], as in [[latent-semantic-analysis|latent semantic analysis]],
+      [[word2vec|word2vec]] and [[glove|GloVe]], and more broadly the self-supervised learning of
+      [[language-model|language models]] from raw text. It captures similarity and relatedness well
+      but blurs distinctions such as antonymy, since 'hot' and 'cold' share contexts. Linguists and
+      philosophers debate how much of meaning — reference, truth, connection to perception and
+      action — can be recovered from distribution alone, a question central to arguments over
+      whether language models understand language (see [[symbol-grounding-problem|symbol grounding
+      problem]] and [[octopus-test|octopus test]]).
+    example: >-
+      Embedding methods are the distributional hypothesis operationalized: count or predict
+      contexts, then compare words by their vectors.
+origin: >-
+  Usually credited to the linguist Zellig Harris ('Distributional Structure', 1954) and to J. R.
+  Firth, whose 1957 remark about knowing a word by the company it keeps became its slogan; related
+  ideas appear in Ludwig Wittgenstein's account of meaning as use.
+year: 1954
+note: >-
+  Weak versions (distribution correlates with meaning) are uncontroversial; strong versions (meaning
+  just is distribution) are disputed.
+see_also:
+  - word embedding
+  - word2vec
+  - GloVe
+  - latent semantic analysis
+  - symbol grounding problem
+  - octopus test
+  - language model
+  - embedding
+  - bag of words
+sources:
+  - text: Harris, Z. S. (1954). Distributional Structure. Word 10(2–3).
+  - text: >-
+      Firth, J. R. (1957). A synopsis of linguistic theory, 1930–1955. In Studies in Linguistic
+      Analysis. Oxford: Blackwell.

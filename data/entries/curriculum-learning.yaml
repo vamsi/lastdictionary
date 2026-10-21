@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: curriculum learning
+id: curriculum-learning
+pos: n.
+also:
+  - curriculum
+  - self-paced learning
+  - anti-curriculum
+  - automatic curriculum learning
+domain: dl
+domains:
+  - train
+  - data
+level: core
+plain: >-
+  Teaching a model the way schools teach people: starting with easy examples and gradually moving to
+  harder ones, instead of presenting everything in random order.
+senses:
+  - definition: >-
+      A training strategy that controls what the learner sees when, starting with easy examples and
+      moving to harder ones or gradually shifting the data mixture toward the target task, instead
+      of sampling uniformly at random. Difficulty can be defined by hand (shorter sentences, cleaner
+      images, simpler math problems), by a teacher model's loss, or by the learner itself
+      (self-paced learning admits examples as its own loss on them falls); automatic curricula adapt
+      the mixture online, for example by sampling tasks where learning progress is fastest. Its
+      namers, Yoshua Bengio and colleagues, expected faster convergence and, on non-convex problems,
+      better optima, as with continuation methods that solve a smoothed problem first. Evidence is
+      mixed: careful studies of standard supervised benchmarks often find little gain over random
+      ordering, but curricula matter in [[reinforcement-learning|reinforcement learning]], where
+      agents may never see a reward on hard tasks ([[sparse-reward|sparse rewards]]), and in
+      language-model training, where late shifts toward higher-quality or harder data
+      ([[annealing|annealing]], [[mid-training|mid-training]]) and difficulty-filtered problem sets
+      in RL post-training act as curricula.
+origin: >-
+  Jeffrey Elman's 'Learning and development in neural networks: the importance of starting small'
+  (Cognition, 1993) argued for incremental training of recurrent networks. Yoshua Bengio, Jérôme
+  Louradour, Ronan Collobert and Jason Weston named and formalized curriculum learning at ICML 2009,
+  citing shaping in animal training; M. Pawan Kumar and colleagues introduced self-paced learning in
+  2010.
+year: 2009
+see_also:
+  - data mixture
+  - annealing
+  - mid-training
+  - reward shaping
+  - sparse reward
+  - active learning
+sources:
+  - text: >-
+      Bengio, Y., Louradour, J., Collobert, R. & Weston, J. (2009). Curriculum Learning. ICML 2009.
+  - text: >-
+      Elman, J. L. (1993). Learning and development in neural networks: the importance of starting
+      small. Cognition 48(1), 71–99.
+  - text: Wu, X., Dyer, E. & Neyshabur, B. (2021). When Do Curricula Work? ICLR 2021.

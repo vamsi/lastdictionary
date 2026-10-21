@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tensor core
+id: tensor-core
+pos: n.
+also:
+  - tensor cores
+  - matrix core
+domain: hw
+domains:
+  - dl
+  - infer
+level: core
+plain: >-
+  A small, specialized part of an AI chip that does one job — multiplying small blocks of numbers
+  together — far faster than ordinary circuits can.
+senses:
+  - definition: >-
+      A dedicated matrix multiply–accumulate unit inside a [[gpu|GPU]]'s streaming multiprocessors
+      that computes D = A × B + C on small tiles of low-precision numbers in one operation, instead
+      of one fused multiply–add per thread per cycle. The first generation (Nvidia's Volta V100,
+      2017) multiplied 4 × 4 [[fp16|FP16]] matrices with FP16 or [[fp32|FP32]] accumulation, raising
+      the V100's dense FP16 throughput to 125 teraFLOPS. Later generations added INT8 and INT4
+      (Turing, 2018); [[bfloat16|bfloat16]], TF32 and 2:4 structured [[sparsity|sparsity]] (Ampere,
+      2020); [[fp8|FP8]] (Hopper, 2022); and [[fp4|FP4]] with hardware
+      [[microscaling-formats|microscaling]] (Blackwell, 2024). Nearly all of a modern accelerator's
+      advertised AI throughput comes from such units, so kernels must be shaped — tile sizes, data
+      layouts, precision — to keep them busy. AMD's equivalent is the Matrix Core, and Google's
+      [[tpu|TPU]] uses larger [[systolic-array|systolic]] matrix units.
+origin: >-
+  Introduced by Nvidia with the Volta architecture and Tesla V100, announced on 10 May 2017; the
+  name echoes the [[tensor|tensor]] operations of deep-learning frameworks. Google's TPU, in service
+  from 2015, had already shown the value of a dedicated matrix unit.
+year: 2017
+note: >-
+  Capitalized 'Tensor Core' is Nvidia's product term; generic use covers similar matrix units in
+  other chips. Not to be confused with a TPU core or a CPU core.
+see_also:
+  - GPU
+  - systolic array
+  - matrix multiplication
+  - mixed-precision training
+  - FP8
+  - microscaling formats
+  - TPU
+sources:
+  - text: NVIDIA (2017). NVIDIA Tesla V100 GPU Architecture. Whitepaper.

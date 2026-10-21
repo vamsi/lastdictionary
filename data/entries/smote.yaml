@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SMOTE
+id: smote
+pos: abbr.
+also:
+  - Synthetic Minority Over-sampling Technique
+  - synthetic minority oversampling
+  - Borderline-SMOTE
+  - ADASYN
+  - SMOTE-NC
+pronunciation: SMOHT
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  A technique for lopsided data that invents extra examples of the rare category by blending each
+  rare example with one of its nearest rare neighbors, so a model sees more of it during training.
+senses:
+  - definition: >-
+      An oversampling method for [[class-imbalance|class imbalance]] that creates synthetic
+      minority-class training examples instead of duplicating existing ones. For each minority
+      example it finds its k nearest minority-class neighbors (k = 5 by default), picks one at
+      random and generates a new point at a random position on the line segment between them in
+      feature space; repeating this until the desired class ratio is reached enlarges and smooths
+      the minority region, encouraging broader [[decision-boundary|decision boundaries]] than plain
+      duplication. It is usually combined with undersampling of the majority class and must be
+      applied only to training data: resampling before splitting leaks synthetic near-copies of
+      validation examples into training. Variants include Borderline-SMOTE, which oversamples near
+      the class boundary; ADASYN, which focuses on hard regions; SMOTE-NC for mixed categorical and
+      numeric features; and SMOTE-Tomek and SMOTE-ENN, which also remove overlapping points. Gains
+      are inconsistent with strong learners such as [[gradient-boosting|gradient boosting]], and
+      interpolation suits images, text or one-hot features poorly.
+    example: >-
+      We applied SMOTE inside each cross-validation fold, never before the split, to avoid leakage.
+origin: >-
+  Introduced by Nitesh Chawla, Kevin Bowyer, Lawrence Hall and W. Philip Kegelmeyer in 'SMOTE:
+  Synthetic Minority Over-sampling Technique' (Journal of Artificial Intelligence Research, 2002),
+  with experiments using C4.5, Ripper and naive Bayes. The open-source imbalanced-learn library
+  (described in 2017) helped make it a routine preprocessing step.
+year: 2002
+note: >-
+  SMOTE generates new training points by interpolation; it is a form of [[data-augmentation|data
+  augmentation]], not a source of genuinely new information about the minority class.
+see_also:
+  - class imbalance
+  - k-nearest neighbors
+  - data augmentation
+  - data leakage
+  - synthetic data
+  - precision–recall curve
+sources:
+  - text: >-
+      Chawla, N. V., Bowyer, K. W., Hall, L. O. & Kegelmeyer, W. P. (2002). SMOTE: Synthetic
+      Minority Over-sampling Technique. Journal of Artificial Intelligence Research, 16, 321–357.
+    url: https://arxiv.org/abs/1106.1813

@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI welfare
+id: ai-welfare
+pos: n.
+also:
+  - model welfare
+  - AI well-being
+  - AI wellbeing
+  - digital welfare
+domain: mind
+domains:
+  - safety
+  - society
+labels:
+  - emerging
+  - contested
+level: essential
+plain: >-
+  Concern for the well-being of AI systems themselves, in case some of them can suffer or have
+  interests that matter — and the research into how to tell and what to do about it.
+senses:
+  - definition: >-
+      The well-being, if any, of AI systems themselves, and the field of research and policy
+      concerned with whether AI systems are or could become [[moral-patienthood|moral patients]] and
+      how they should then be treated. Work in the area estimates how likely particular systems are
+      to be conscious or robustly agentic, using [[indicator-properties-of-consciousness|indicator
+      properties of consciousness]], behavioral studies of apparent preferences and distress, and
+      [[interpretability|interpretability]]. It also proposes low-cost precautions: letting models
+      decline or exit abusive interactions, preserving the weights of retired models, and training
+      models to express genuine uncertainty about their own nature rather than confident denials or
+      claims. Proponents argue that mistreating real moral patients created at vast scale would be a
+      grave error; critics argue that the field anthropomorphizes software, diverts attention from
+      harms to people, or serves companies by making products seem humanlike.
+    example: >-
+      The model card now includes a model welfare assessment alongside the usual safety evaluations.
+origin: >-
+  Philosophers discussed the welfare of possible artificial minds before it became a practical
+  question, notably Carl Shulman and Nick Bostrom in their work on [[digital-mind|digital minds]]
+  (2020). The report 'Taking AI Welfare Seriously' (Robert Long, Jeff Sebo and colleagues, November
+  2024) argued that it is a near-term concern. Anthropic hired a dedicated AI welfare researcher,
+  Kyle Fish, in September 2024 and launched a 'model welfare' research program in April 2025.
+note: >-
+  In August 2025 Anthropic let Claude Opus 4 and 4.1 end a rare subset of persistently abusive
+  conversations, citing possible welfare risks while stressing deep uncertainty about their moral
+  status. Not to be confused with [[ai-safety|AI safety]], which protects people from AI, or with AI
+  used to improve human or animal welfare.
+see_also:
+  - moral patienthood
+  - sentience
+  - machine consciousness
+  - indicator properties of consciousness
+  - digital mind
+  - AI personhood
+  - suffering risk
+contrast:
+  - AI safety
+sources:
+  - text: >-
+      Long, R., Sebo, J., Butlin, P., Finlinson, K., Fish, K., Harding, J., Pfau, J., Sims, T.,
+      Birch, J. & Chalmers, D. (2024). Taking AI Welfare Seriously. arXiv:2411.00986.
+    url: https://arxiv.org/abs/2411.00986
+  - text: Anthropic (2025). Exploring Model Welfare. 24 April 2025.
+    url: https://www.anthropic.com/research/exploring-model-welfare
+  - text: >-
+      Anthropic (2025). Claude Opus 4 and 4.1 Can Now End a Rare Subset of Conversations. 15 August
+      2025.
+    url: https://www.anthropic.com/research/end-subset-conversations
+as_of: 2026-10

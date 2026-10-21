@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: handoff
+id: handoff
+pos: n.
+also:
+  - hand-off
+  - agent handoff
+  - hand off
+domain: agents
+domains:
+  - eng
+level: specialist
+plain: >-
+  The moment one AI agent passes a conversation or task to another, better-suited agent — like a
+  call-center operator transferring you to the right department.
+senses:
+  - definition: >-
+      In [[multi-agent-system|multi-agent systems]], the transfer of control over an ongoing
+      conversation or task from one [[ai-agent|agent]] to another, together with the conversation
+      history or a summary of it. The receiving agent continues with its own instructions and tools,
+      and the first agent does not resume unless control is passed back. Handoffs are usually
+      implemented as a special [[tool-call|tool call]]: the active agent calls a transfer function
+      whose return value is the next agent. They suit triage designs — a front-line agent routing
+      billing questions to a billing agent and technical ones to a support agent — and escalation to
+      human staff. Design questions include how much context to pass (full history or a summary),
+      how to prevent agents bouncing a user back and forth, and how to keep the transition seamless
+      for the user.
+    example: The triage agent hands off to the refunds agent once it has the order number.
+origin: >-
+  Borrowed from telephony, relay races and clinical shift changes. OpenAI's cookbook 'Orchestrating
+  Agents: Routines and Handoffs' (Ilan Bigio, 10 October 2024) and the accompanying experimental
+  Swarm library made 'handoff' a named primitive; it was carried into the OpenAI Agents SDK (March
+  2025) and adopted by other [[agent-framework|agent frameworks]].
+year: 2024
+note: >-
+  Contrast with calling a [[subagent|subagent]], where the caller keeps control and receives a
+  result. In customer-service automation 'handoff' also means passing a case from an AI agent to a
+  human.
+see_also:
+  - multi-agent system
+  - subagent
+  - orchestration
+  - agent framework
+  - tool call
+contrast:
+  - subagent
+sources:
+  - text: >-
+      Bigio, I. (2024). Orchestrating Agents: Routines and Handoffs. OpenAI Cookbook, 10 October
+      2024.
+    url: https://developers.openai.com/cookbook/examples/orchestrating_agents
+  - text: OpenAI (2025). New tools for building agents. 11 March 2025.
+    url: https://openai.com/index/new-tools-for-building-agents/

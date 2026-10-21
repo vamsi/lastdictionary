@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: formal verification
+id: formal-verification
+pos: n.
+also:
+  - formal methods
+  - model checking
+  - verified software
+  - neural network verification
+  - deductive verification
+domain: sym
+domains:
+  - safety
+  - eng
+level: core
+plain: >-
+  Using mathematics, not just testing, to prove that a computer system always behaves as specified —
+  for example, that a chip never adds wrongly or that a program can never crash in a particular way.
+senses:
+  - definition: >-
+      Establishing by mathematical proof, rather than by testing, that a hardware design, program,
+      protocol or learned model meets a formal specification for every possible input or execution —
+      or finding a counterexample showing that it does not. The main techniques are model checking,
+      which exhaustively explores a system's states for violations of properties stated in temporal
+      logic; deductive verification, which proves programs correct against pre- and postconditions
+      with proof assistants or [[satisfiability-modulo-theories|SMT]]-backed verifiers; and abstract
+      interpretation, which soundly over-approximates program behavior. Industrial uses include
+      processor and protocol design, aerospace and railway software, operating-system kernels such
+      as seL4, and cloud access-control policies. In AI, verifiers certify properties of
+      [[neural-network|neural networks]], such as robustness to small input perturbations, though
+      only for modest-sized networks and narrow properties; and [[large-language-model|language
+      models]] increasingly generate code together with machine-checkable proofs, which some
+      researchers propose as a foundation for provably safe AI.
+    example: >-
+      Formal verification proved the scheduler deadlock-free for every interleaving, something no
+      amount of testing could show.
+origin: >-
+  Grew from program-correctness work by Robert Floyd (1967) and Tony Hoare (1969). Edmund Clarke and
+  E. Allen Emerson, and independently Jean-Pierre Queille and Joseph Sifakis, introduced model
+  checking in 1981–1982, earning Clarke, Emerson and Sifakis the 2007 Turing Award; neural-network
+  verification grew rapidly after the Reluplex solver (2017).
+year: 1967
+note: >-
+  A verified system is only as trustworthy as its specification and its model of the environment: a
+  proof says nothing about properties that were never stated. Not to be confused with a
+  [[verifier|verifier]] in language-model training, which is usually a learned or programmatic
+  checker of answers.
+see_also:
+  - satisfiability modulo theories
+  - interactive theorem proving
+  - automated theorem proving
+  - Lean
+  - autoformalization
+  - adversarial example
+contrast:
+  - verifier
+sources:
+  - text: >-
+      Hoare, C. A. R. (1969). An Axiomatic Basis for Computer Programming. Communications of the ACM
+      12(10), 576–580.
+  - text: >-
+      Katz, G., Barrett, C., Dill, D. L., Julian, K. & Kochenderfer, M. J. (2017). Reluplex: An
+      Efficient SMT Solver for Verifying Deep Neural Networks. CAV 2017, LNCS 10426.
+as_of: 2026-10

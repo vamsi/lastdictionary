@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: WebArena
+id: webarena
+pos: prop. n.
+also:
+  - VisualWebArena
+domain: eval
+domains:
+  - agents
+level: core
+plain: >-
+  A test world of realistic, self-hosted websites — a code-hosting site, an online shop, a forum and
+  more — in which AI agents must complete tasks such as finding orders or editing posts.
+senses:
+  - definition: >-
+      A benchmark and test environment for autonomous [[browser-agent|browser agents]] made of
+      working copies of open-source web applications that run locally — a code-hosting platform, an
+      online store, a discussion forum and a content-management system — supplemented by utilities
+      such as a map and a wiki. Its 812 tasks are multi-step instructions in natural language, and a
+      program decides success by examining the final state of the site or the agent's answer, so any
+      valid route to the goal counts. Because the sites run locally from container images,
+      experiments are repeatable and unaffected by changes to the live web. When it appeared, humans
+      completed 78.24% of the tasks and the strongest agent, built on GPT-4, 14.41%. Extensions
+      include VisualWebArena (2024), which requires interpreting images on pages; by 2025, leading
+      agents exceeded 60% on the original benchmark.
+    example: >-
+      On WebArena the agent completes shopping tasks but fails most of the GitLab ones.
+origin: >-
+  Introduced by Shuyan Zhou, Frank F. Xu, Hao Zhu, Xuhui Zhou and colleagues at Carnegie Mellon
+  University in July 2023, and published at ICLR 2024.
+year: 2023
+note: >-
+  Some tasks have ambiguous instructions or brittle checkers, so reported success rates carry a few
+  points of measurement error.
+see_also:
+  - browser agent
+  - computer use
+  - OSWorld
+  - GAIA
+  - AI agent
+  - BrowseComp
+sources:
+  - text: >-
+      Zhou, S., Xu, F. F., Zhu, H. et al. (2024). WebArena: A Realistic Web Environment for Building
+      Autonomous Agents. ICLR 2024.
+    url: https://arxiv.org/abs/2307.13854
+as_of: 2026-10

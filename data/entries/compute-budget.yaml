@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: compute budget
+id: compute-budget
+pos: n.
+also:
+  - FLOP budget
+  - compute allocation
+domain: train
+domains:
+  - hw
+  - eng
+level: core
+plain: >-
+  The total amount of computing a team can spend on training (or running) a model, set in advance
+  like a money budget and used to decide how big the model should be and how much data it sees.
+senses:
+  - definition: >-
+      The fixed quantity of computation available for a training project or run, usually expressed
+      in [[flop|floating-point operations]] (for example 10²⁴ FLOP) or in accelerator-hours
+      ([[gpu-hour|GPU-hours]]), and ultimately bounded by money, hardware and time. In scaling-law
+      analysis the budget C is the constraint under which model size N and training tokens D are
+      chosen to minimize loss; for dense [[transformer|transformers]] C ≈ 6ND, so at a given budget
+      a larger model must see fewer tokens (see [[compute-optimal-training|compute-optimal
+      training]]). Real plans also reserve compute for ablations and proxy runs, evaluation,
+      restarts and [[post-training|post-training]], and they weigh expected inference demand, which
+      favors smaller, [[overtraining|overtrained]] models. By extension the term is used for
+      inference, as in [[thinking-budget|thinking budget]] and [[test-time-compute|test-time
+      compute]].
+    example: >-
+      With a 3 × 10²³ FLOP budget, the compute-optimal dense model is roughly 50 billion parameters.
+origin: >-
+  Generic engineering usage. It became a pivot of AI research through scaling-law papers asking how
+  best to spend a fixed budget: Jared Kaplan and colleagues at OpenAI (2020) and Jordan Hoffmann and
+  colleagues at DeepMind (2022), whose answers differed sharply.
+see_also:
+  - training compute
+  - compute-optimal training
+  - Chinchilla scaling laws
+  - scaling laws
+  - GPU-hour
+  - FLOP
+contrast:
+  - test-time compute

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inductive reasoning
+id: inductive-reasoning
+pos: n.
+also:
+  - induction (reasoning)
+  - inductive inference
+  - problem of induction
+  - enumerative induction
+domain: sym
+domains:
+  - ml
+  - mind
+level: core
+plain: >-
+  Reasoning from particular examples to a general rule or prediction — every swan I have seen is
+  white, so swans are probably white — which is useful but can always turn out wrong.
+senses:
+  - definition: >-
+      Inference from observed cases to general conclusions or to predictions about unobserved cases,
+      in which the premises support the conclusion without guaranteeing it. Its main forms are
+      generalization from a sample to a population, prediction, and argument by analogy. David
+      Hume's problem of induction asks what justifies such inference at all; statistics,
+      [[bayesian-inference|Bayesian inference]], [[pac-learning|PAC learning]] and
+      [[solomonoff-induction|Solomonoff induction]] give formal answers under different assumptions.
+      [[machine-learning|Machine learning]] is induction mechanized: a learner generalizes from
+      training examples, and its [[inductive-bias|inductive bias]] determines which of the many
+      hypotheses consistent with the data it prefers. [[inductive-logic-programming|Inductive logic
+      programming]] and [[program-synthesis|program synthesis]] from examples induce symbolic rules
+      or programs, and in-context learning by [[large-language-model|language models]] is often
+      described as induction from the examples in a prompt.
+origin: >-
+  Aristotle discussed epagōgē, rendered in Latin as inductio. Francis Bacon's Novum Organum (1620)
+  made induction the method of natural science, and David Hume posed its central philosophical
+  problem in A Treatise of Human Nature (1739).
+note: >-
+  Not to be confused with mathematical induction, which is a deductive proof technique, or with
+  [[induction-head|induction heads]], circuits that implement a copying pattern inside transformers.
+see_also:
+  - deductive reasoning
+  - abductive reasoning
+  - inductive bias
+  - inductive logic programming
+  - Solomonoff induction
+  - machine learning
+contrast:
+  - deductive reasoning
+sources:
+  - text: Hume, D. (1739). A Treatise of Human Nature, Book I, Part III.

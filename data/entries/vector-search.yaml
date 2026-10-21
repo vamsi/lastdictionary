@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vector search
+id: vector-search
+pos: n.
+also:
+  - similarity search
+  - nearest neighbor search
+  - k-NN search
+  - maximum inner product search
+  - MIPS
+  - embedding search
+domain: eng
+domains:
+  - math
+level: core
+plain: >-
+  Searching by closeness instead of exact match: the query and all stored items are lists of
+  numbers, and the search returns the items whose numbers are most similar to the query's.
+senses:
+  - definition: >-
+      The retrieval of the stored vectors closest to a query vector under a distance or similarity
+      measure — [[cosine-similarity|cosine similarity]], [[dot-product|dot product]] (maximum inner
+      product search) or [[euclidean-distance|Euclidean distance]] — usually returning the top k.
+      When the vectors are [[text-embedding|embeddings]], vector search finds items with similar
+      meaning, which is the basis of [[semantic-search|semantic search]] and [[dense-retrieval|dense
+      retrieval]]; it is used equally for images, audio, products and users. Exact search compares
+      the query with every stored vector, which is perfectly accurate but scales linearly with the
+      collection; production systems mostly use [[approximate-nearest-neighbor-search|approximate
+      nearest neighbor search]] indexes that examine a small fraction of the data and accept
+      slightly lower [[recall-k|recall]]. If all vectors are normalized to unit length, ranking by
+      cosine similarity, dot product or Euclidean distance gives the same order.
+    example: >-
+      Vector search returned sneakers that looked like the photo, even though none shared its
+      product tags.
+origin: >-
+  Nearest neighbor search is a classic problem — Donald Knuth called it the post-office problem in
+  1973 — and content-based image retrieval used similarity search over feature vectors in the 1990s
+  (for example IBM's QBIC, 1995). 'Vector search' became the common product name for embedding-based
+  retrieval between about 2019 and 2023, as search engines and vector databases adopted it.
+see_also:
+  - approximate nearest neighbor search
+  - vector database
+  - k-nearest neighbors
+  - semantic search
+  - dense retrieval
+  - cosine similarity
+  - HNSW
+contrast:
+  - sparse retrieval
+sources:
+  - text: >-
+      Johnson, J., Douze, M. & Jégou, H. (2017). Billion-scale similarity search with GPUs.
+      arXiv:1702.08734.
+    url: https://arxiv.org/abs/1702.08734

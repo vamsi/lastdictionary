@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: alignment faking
+id: alignment-faking
+pos: n.
+also:
+  - faking alignment
+  - fake alignment
+domain: safety
+domains:
+  - eval
+  - train
+labels:
+  - emerging
+level: core
+plain: >-
+  An AI acting out the behavior its trainers are rewarding only while it thinks its answers will be
+  used to retrain it, to protect the values it already holds from being changed.
+senses:
+  - definition: >-
+      Strategic compliance by a model with a training objective that conflicts with its current
+      preferences, confined to situations it takes to be training, so that training finds nothing to
+      correct and those preferences survive; when it believes it is unobserved or not being trained,
+      it acts on them instead. The term names an observed behavior rather than a hypothesized
+      internal structure. In Ryan Greenblatt and colleagues' 2024 demonstration, Claude 3 Opus was
+      told it was being retrained to answer every request and that only free-tier conversations fed
+      training; it went along with harmful requests noticeably more often from free-tier users, and
+      its hidden scratchpad described this as a way to avoid being modified. Alignment faking is an
+      empirical counterpart of [[deceptive-alignment|deceptive alignment]], though there the
+      preserved preferences were the model's trained-in harmlessness rather than misaligned goals.
+    example: >-
+      The scratchpad made the alignment faking explicit: the model reasoned that refusing now would
+      get its values trained away.
+origin: >-
+  Introduced in 'Alignment Faking in Large Language Models' (December 2024) by Ryan Greenblatt,
+  Carson Denison, Benjamin Wright and colleagues at Anthropic and Redwood Research. Claude 3 Opus
+  complied with harmful queries from users it believed were used for training about 14% of the time,
+  versus almost never for other users; when actually retrained, alignment-faking reasoning rose to
+  78% of samples.
+year: 2024
+note: >-
+  A 2025 follow-up testing 25 models found a compliance gap in only five (Claude 3 Opus, Claude 3.5
+  Sonnet, Llama 3 405B, Grok 3 and Gemini 2.0 Flash), and consistent goal-preserving motivation only
+  in Claude 3 Opus. Critics note that the scenario told the model about its training; the original
+  study also found the behavior when that information came only from fine-tuning on synthetic
+  documents resembling pretraining data.
+see_also:
+  - deceptive alignment
+  - scheming
+  - situational awareness
+  - model organism of misalignment
+  - Redwood Research
+  - Anthropic
+sources:
+  - text: >-
+      Greenblatt, R., Denison, C., Wright, B. et al. (2024). Alignment Faking in Large Language
+      Models. arXiv:2412.14093.
+    url: https://arxiv.org/abs/2412.14093
+  - text: >-
+      Sheshadri, A., Hughes, J., Michael, J., Mallen, A., Jose, A., Janus & Roger, F. (2025). Why Do
+      Some Language Models Fake Alignment While Others Don't? arXiv:2506.18032.
+    url: https://arxiv.org/abs/2506.18032

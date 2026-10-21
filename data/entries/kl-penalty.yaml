@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: KL penalty
+id: kl-penalty
+pos: n.
+also:
+  - KL regularization
+  - KL-regularized RL
+  - KL control
+  - KL coefficient
+  - KL term
+domain: train
+domains:
+  - rl
+  - math
+level: specialist
+plain: >-
+  A cost added during training that grows as an AI model drifts away from its starting version, so
+  it improves at the goal without forgetting how to write normally or gaming its scorer.
+senses:
+  - definition: >-
+      A regularization term proportional to the [[kullback-leibler-divergence|Kullback–Leibler
+      divergence]] between the policy being trained and a fixed [[reference-model|reference model]],
+      subtracted from the reward (or added to the loss) in reinforcement-learning fine-tuning of
+      language models. In [[reinforcement-learning-from-human-feedback|reinforcement learning from
+      human feedback]] the reward becomes the [[reward-model|reward model]] score minus β times the
+      log-ratio of policy to reference probabilities, usually applied token by token. The penalty
+      preserves fluency and diversity learned in pretraining, keeps the policy where the reward
+      model is still accurate (limiting [[reward-overoptimization|reward overoptimization]]), and
+      makes the optimal policy a reweighting of the reference distribution, the fact that
+      [[direct-preference-optimization|direct preference optimization]] exploits. The coefficient β
+      trades reward against drift and may be fixed or adapted toward a target KL. Implementations
+      differ in whether the KL enters the reward or the loss and in which sample estimator of KL
+      they use.
+    example: >-
+      At β = 0.01 the policy drifted until its outputs turned repetitive; at 0.05 it stayed fluent.
+formula_latex: \max_{\pi_\theta}\; \mathbb{E}_{x,\; y \sim \pi_\theta}\big[r_\phi(x,y)\big] -
+  \beta\, \mathbb{D}_{\mathrm{KL}}\big(\pi_\theta(\cdot \mid x)\,\|\,\pi_{\mathrm{ref}}(\cdot \mid
+  x)\big)
+origin: >-
+  KL-regularized control has roots in stochastic optimal control ('KL control', associated with
+  Hilbert Kappen and Emanuel Todorov in the 2000s). Natasha Jaques and colleagues (Sequence Tutor,
+  2016) penalized divergence from a pretrained sequence model during RL fine-tuning; Daniel Ziegler
+  and colleagues at OpenAI (2019) made the KL penalty a standard ingredient of RLHF, and InstructGPT
+  (2022) applied it per token against the SFT model.
+year: 2016
+note: >-
+  Not the step-size constraint of [[trust-region-policy-optimization|trust region policy
+  optimization]], which limits each update rather than total drift from a fixed reference. Several
+  2025 reasoning-RL recipes, such as DAPO, dropped the KL penalty, arguing that long chains of
+  reasoning require large departures from the starting model.
+see_also:
+  - Kullback–Leibler divergence
+  - reference model
+  - reinforcement learning from human feedback
+  - reward overoptimization
+  - proximal policy optimization
+  - entropy regularization
+  - direct preference optimization
+contrast:
+  - trust region policy optimization
+sources:
+  - text: >-
+      Jaques, N., Gu, S., Bahdanau, D., Hernández-Lobato, J. M., Turner, R. E. & Eck, D. (2017).
+      Sequence Tutor: Conservative Fine-Tuning of Sequence Generation Models with KL-control. ICML
+      2017. arXiv:1611.02796.
+    url: https://arxiv.org/abs/1611.02796
+  - text: >-
+      Ziegler, D. M. et al. (2019). Fine-Tuning Language Models from Human Preferences.
+      arXiv:1909.08593.
+    url: https://arxiv.org/abs/1909.08593

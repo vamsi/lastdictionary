@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: representation fine-tuning
+id: representation-fine-tuning
+pos: n.
+also:
+  - ReFT
+  - representation finetuning
+  - LoReFT
+domain: interp
+domains:
+  - train
+  - llm
+level: specialist
+plain: >-
+  A way of adapting a language model to a new task by training small, targeted edits to its internal
+  signals instead of changing its weights, often with far fewer adjustable numbers than other
+  methods.
+senses:
+  - definition: >-
+      A family of [[parameter-efficient-fine-tuning|parameter-efficient fine-tuning]] methods that
+      leave every weight of a model untouched and adapt it instead by training small edits applied
+      to its hidden states at selected layers and token positions. The main variant, LoReFT
+      (low-rank linear subspace ReFT), edits each targeted hidden state only within a
+      low-dimensional subspace spanned by the orthonormal rows of a learned matrix R, replacing the
+      state's coordinates in that subspace with a learned linear function of the state. Because
+      interventions touch only a few positions, LoReFT trained 15 to 65 times fewer parameters than
+      [[low-rank-adaptation|LoRA]] while matching or beating it on commonsense reasoning,
+      instruction following and language-understanding benchmarks, though not on arithmetic
+      reasoning. ReFT sits between [[activation-steering|activation steering]], which applies fixed
+      hand-derived edits, and conventional [[fine-tuning|fine-tuning]], which learns weights from
+      data.
+    example: >-
+      A rank-4 LoReFT intervention on four prompt positions was enough to teach the model our output
+      format.
+formula_latex: \Phi_{\text{LoReFT}}(h) = h + R^{\top}\left(W h + b - R h\right)
+origin: >-
+  Introduced by Zhengxuan Wu, Aryaman Arora, Zheng Wang, Atticus Geiger, Dan Jurafsky, Christopher
+  D. Manning and Christopher Potts of Stanford University in 'ReFT: Representation Finetuning for
+  Language Models' (arXiv, April 2024; NeurIPS 2024), building on interchange interventions from
+  [[causal-abstraction|causal abstraction]] research.
+year: 2024
+see_also:
+  - parameter-efficient fine-tuning
+  - low-rank adaptation
+  - activation steering
+  - causal abstraction
+  - steering vector
+  - fine-tuning
+contrast:
+  - low-rank adaptation
+sources:
+  - text: >-
+      Wu, Z., Arora, A., Wang, Z., Geiger, A., Jurafsky, D., Manning, C. D. & Potts, C. (2024).
+      ReFT: Representation Finetuning for Language Models. NeurIPS 2024. arXiv:2404.03592.
+    url: https://arxiv.org/abs/2404.03592

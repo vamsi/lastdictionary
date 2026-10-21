@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Q-function
+id: q-function
+pos: n.
+also:
+  - action-value function
+  - Q-value
+  - state–action value function
+  - Q(s, a)
+domain: rl
+domains:
+  - math
+level: core
+plain: >-
+  A score for each possible move in each situation, estimating how well things will turn out, in
+  rewards, if the AI agent makes that move now and sticks to its usual strategy afterward.
+senses:
+  - definition: >-
+      A function that scores each [[state|state]]–[[action|action]] pair: q_π(s, a), often written
+      Q(s, a), is the expected [[return|return]] if the agent takes action a in state s and then
+      behaves according to [[policy|policy]] π, and the optimal version Q*(s, a) assumes optimal
+      behavior after that first action. Its practical appeal is that it ranks actions directly: an
+      agent that knows Q* acts optimally by choosing the action with the highest Q-value in each
+      state, with no model of the environment's dynamics. This makes Q-functions the basis of
+      [[model-free-reinforcement-learning|model-free]] control methods such as
+      [[q-learning|Q-learning]], [[sarsa|SARSA]] and the [[deep-q-network|deep Q-network]], and of
+      the critics in [[deep-deterministic-policy-gradient|DDPG]] and [[soft-actor-critic|soft
+      actor–critic]]. Q-functions satisfy their own [[bellman-equation|Bellman equation]]; small
+      problems store them as a lookup table (a Q-table), larger ones as neural networks.
+    example: >-
+      The Q-network outputs one value per joystick action, and the agent picks the largest.
+formula_latex: q_\pi(s,a) = \mathbb{E}_\pi\left[ G_t \mid S_t = s,\, A_t = a \right], \qquad
+  \pi_*(s) = \arg\max_{a} q_*(s,a)
+origin: >-
+  Named, with the letter Q, by Christopher Watkins in his 1989 University of Cambridge PhD thesis
+  'Learning from Delayed Rewards', which also introduced [[q-learning|Q-learning]]. The underlying
+  action-value idea is implicit in earlier dynamic programming; the letter has no official
+  expansion, though it is often read as 'quality'.
+year: 1989
+note: >-
+  Unrelated to the Q-function of statistics (the tail probability of the normal distribution) and to
+  the expected log-likelihood called Q in the
+  [[expectation-maximization-algorithm|expectation–maximization algorithm]].
+see_also:
+  - value function
+  - advantage function
+  - Q-learning
+  - deep Q-network
+  - Bellman equation
+  - SARSA
+contrast:
+  - value function
+sources:
+  - text: >-
+      Watkins, C. J. C. H. (1989). Learning from Delayed Rewards. PhD thesis, University of
+      Cambridge.

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: training
+id: training
+pos: n.
+also:
+  - train
+  - trained
+  - model training
+domain: core
+domains:
+  - train
+  - dl
+  - ml
+level: essential
+plain: >-
+  The process by which an AI model learns: it is shown huge numbers of examples and its internal
+  settings are adjusted, bit by bit, until its answers get better.
+senses:
+  - definition: >-
+      The process of fitting a [[model|model's]] [[parameter|parameters]] to data so that it
+      performs a [[task-machine-learning|task]] well, usually by minimizing a [[loss-function|loss
+      function]] that measures its errors on [[training-data|training data]]. For neural networks
+      this means many repeated steps of a [[forward-pass|forward pass]],
+      [[backpropagation|backpropagation]] of gradients and a parameter update by an optimizer such
+      as [[stochastic-gradient-descent|stochastic gradient descent]] or [[adam|Adam]], over several
+      [[epoch|epochs]] or, for large language models, roughly a single pass over trillions of
+      [[token|tokens]]. Practitioners hold out [[validation-set|validation]] and [[test-set|test]]
+      data to detect [[overfitting|overfitting]] and tune [[hyperparameter|hyperparameters]]. Large
+      language models are trained in stages: [[pretraining|pretraining]] on broad data, then
+      [[post-training|post-training]] such as [[supervised-fine-tuning|supervised fine-tuning]] and
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]]. A
+      single training run costs far more than answering any one query, but [[inference|inference]]
+      costs accumulate with every use.
+    example: >-
+      Training took six weeks on 2,000 GPUs; the hard part was keeping the loss from spiking.
+origin: >-
+  Borrowed from the vocabulary of teaching and animal training. Neural-network and
+  pattern-recognition research of the late 1950s and 1960s, including Frank Rosenblatt's perceptron
+  and Nils Nilsson's book Learning Machines: Foundations of Trainable Pattern-Classifying Systems
+  (1965), already spoke of training machines on sets of examples, and 'training set' became standard
+  in that literature.
+note: >-
+  Distinguish training (changing the weights) from [[inference|inference]] (using them unchanged)
+  and from [[in-context-learning|in-context learning]], where a model adapts to examples in its
+  prompt with no weight update. 'Training a chatbot on your documents' usually means
+  [[retrieval-augmented-generation|retrieval]] or [[fine-tuning|fine-tuning]], which are very
+  different.
+see_also:
+  - training data
+  - pretraining
+  - post-training
+  - fine-tuning
+  - loss function
+  - backpropagation
+  - training run
+  - inference
+contrast:
+  - inference
+  - in-context learning

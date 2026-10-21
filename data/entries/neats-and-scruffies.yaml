@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neats and scruffies
+id: neats-and-scruffies
+pos: phr.
+also:
+  - neat vs. scruffy
+  - neats
+  - scruffies
+  - neat AI
+  - scruffy AI
+domain: hist
+domains:
+  - sym
+  - culture
+labels:
+  - informal
+level: specialist
+plain: >-
+  A joking split of AI researchers into 'neats', who want clean mathematical theories that can be
+  proved correct, and 'scruffies', who build messy collections of tricks that simply work.
+senses:
+  - definition: >-
+      A distinction between two styles of AI research. Neats favor formal, unified frameworks —
+      logic, probability theory, optimization — whose properties can be analyzed and proved, holding
+      that intelligence should be explained by a few elegant principles. Scruffies favor building
+      systems from many special-purpose representations and heuristics, judged by whether they work,
+      holding that intelligence is an irreducibly messy collection of mechanisms. In the 1970s and
+      1980s the scruffy style was associated with MIT and Yale work on frames, scripts and language
+      understanding, and the neat style with logic-based AI at Stanford and Edinburgh. Probabilistic
+      and statistical methods brought a neat turn from the 1990s, while the success of large,
+      empirically engineered [[deep-learning|deep learning]] systems has given the contrast new
+      life.
+    example: >-
+      The planner is scruffy engineering — dozens of special cases and no theory — and it still
+      beats the neat solver.
+origin: >-
+  Usually credited to Roger Schank, who in the 1970s contrasted his natural-language work at Yale
+  with logic-based approaches; the terms first appeared in print in a 1981 paper by the psychologist
+  Robert Abelson, who attributed them to Schank. Nils Nilsson discussed the divide in his 1983
+  presidential address to the AAAI.
+year: 1981
+note: >-
+  The labels describe attitudes rather than formal schools, and most researchers mix both.
+  [[stuart-russell|Stuart Russell]] and [[peter-norvig|Peter Norvig]]'s textbook presented the rise
+  of probabilistic methods as a victory for the neats; some read [[the-bitter-lesson|the bitter
+  lesson]] as recasting the debate around computation and scale.
+see_also:
+  - symbolic AI
+  - good old-fashioned AI
+  - frame
+  - the bitter lesson
+  - connectionism
+  - neuro-symbolic AI

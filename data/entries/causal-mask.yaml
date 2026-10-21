@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: causal mask
+id: causal-mask
+pos: n.
+also:
+  - causal attention mask
+  - look-ahead mask
+  - triangular mask
+  - causal attention
+  - masked self-attention
+domain: llm
+domains:
+  - dl
+level: core
+plain: >-
+  A rule inside text-generating AI that stops each word from seeing the words after it, so the model
+  learns to predict what comes next without being able to cheat.
+senses:
+  - definition: >-
+      An [[attention-mask|attention mask]] that lets each position attend only to itself and earlier
+      positions, implemented as a lower-triangular pattern in which scores above the diagonal are
+      set to −∞ before the [[softmax|softmax]]. It makes a [[transformer|transformer]] respect the
+      left-to-right order needed for [[autoregressive-model|autoregressive]]
+      [[next-token-prediction|next-token prediction]]: in training the model predicts every position
+      of a sequence in one parallel pass, yet no prediction can see the token it is predicting or
+      anything after it. At generation time it guarantees that earlier tokens' keys and values never
+      change, which is what makes the [[kv-cache|KV cache]] valid. Causally masked attention defines
+      [[decoder-only-transformer|decoder-only]] models, whereas
+      [[encoder-only-transformer|encoder-only]] models such as [[bert|BERT]] attend in both
+      directions; prefix language models mask causally only after an unmasked prompt prefix.
+    example: >-
+      Without the causal mask, training loss fell to almost zero because each position could read
+      its own target.
+origin: >-
+  Described in 'Attention Is All You Need' (2017) as masking in the decoder to prevent leftward
+  information flow. The adjective 'causal' is borrowed from signal processing, where a causal system
+  depends only on present and past inputs; WaveNet (2016) used it for 'causal convolutions', and by
+  2019 papers such as XLM and T5 spoke of causal language modeling and causal masks.
+year: 2017
+note: >-
+  'Causal' here means only 'no access to the future'; it has nothing to do with
+  [[causal-inference|causal inference]].
+see_also:
+  - attention mask
+  - causal language model
+  - decoder-only transformer
+  - autoregressive model
+  - next-token prediction
+  - KV cache
+contrast:
+  - masked language model
+  - causal inference

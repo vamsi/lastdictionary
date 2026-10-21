@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: optimal control
+id: optimal-control
+pos: n.
+also:
+  - optimal control theory
+  - linear-quadratic regulator
+  - LQR
+  - iterative LQR
+  - iLQR
+  - differential dynamic programming
+domain: robot
+domains:
+  - math
+  - rl
+level: specialist
+plain: >-
+  Finding the best way to steer a system over time, such as the most fuel-efficient path for a
+  rocket or the smoothest motion for a robot arm, by minimizing a cost while obeying the laws of
+  motion.
+senses:
+  - definition: >-
+      The branch of [[control-theory|control theory]] that seeks control inputs, as functions of
+      time or of state, that minimize a cost functional — typically a running cost on state and
+      effort plus a terminal cost — subject to the system's dynamics and constraints. Its two
+      classical foundations are Pontryagin's maximum principle, which gives necessary conditions for
+      an optimal trajectory, and Bellman's [[dynamic-programming|dynamic programming]], which
+      characterizes the optimal feedback law through a value function satisfying the
+      Hamilton–Jacobi–Bellman equation, the continuous-time counterpart of the
+      [[bellman-equation|Bellman equation]] in [[reinforcement-learning|reinforcement learning]].
+      The linear-quadratic regulator (LQR), for linear dynamics and quadratic costs, has a
+      closed-form solution through the Riccati equation and is a workhorse of robotics; for
+      nonlinear systems, differential dynamic programming and iterative LQR solve a sequence of
+      local approximations. [[trajectory-optimization|Trajectory optimization]] and
+      [[model-predictive-control|model predictive control]] are its main computational offshoots,
+      and reinforcement learning can be viewed as optimal control with unknown or sampled dynamics.
+    example: We linearize around the upright pose and use LQR to keep the robot balanced.
+formula_latex: \min_{u(\cdot)}\; \phi\big(x(T)\big) + \int_{0}^{T} \ell\big(x(t), u(t)\big)\, dt
+  \quad \text{s.t.}\quad \dot{x} = f(x, u)
+origin: >-
+  Rooted in the calculus of variations, beginning with Johann Bernoulli's brachistochrone problem
+  (1696), optimal control took its modern form in the 1950s with Richard Bellman's dynamic
+  programming and the maximum principle of Lev Pontryagin and colleagues (announced 1956), followed
+  by Rudolf Kálmán's linear-quadratic regulator (1960) and David Mayne's differential dynamic
+  programming (1966).
+year: 1956
+see_also:
+  - control theory
+  - model predictive control
+  - trajectory optimization
+  - dynamic programming
+  - Bellman equation
+  - reinforcement learning
+sources:
+  - text: >-
+      Pontryagin, L. S., Boltyanskii, V. G., Gamkrelidze, R. V. & Mishchenko, E. F. (1962). The
+      Mathematical Theory of Optimal Processes. Interscience.
+  - text: Bellman, R. (1957). Dynamic Programming. Princeton University Press.

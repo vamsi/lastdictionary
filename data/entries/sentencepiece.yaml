@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SentencePiece
+id: sentencepiece
+pos: prop. n.
+also:
+  - unigram tokenizer
+  - unigram language model tokenization
+domain: llm
+domains:
+  - eng
+  - data
+level: specialist
+plain: >-
+  Free software from Google that learns how to split text into tokens straight from raw sentences in
+  any language, treating spaces as ordinary characters, so no language-specific word splitting is
+  needed.
+senses:
+  - definition: >-
+      An open-source [[tokenizer|tokenizer]] library from Google that learns and applies subword
+      vocabularies straight from untokenized sentences. It makes no assumption that words are
+      separated by spaces: the space is stored as an ordinary visible symbol ('▁') inside the
+      pieces, so the original string can always be restored exactly, and languages written without
+      spaces, such as Japanese, Chinese and Thai, need no separate word splitter. Two training
+      algorithms are offered — [[byte-pair-encoding|byte-pair encoding]] and the unigram
+      language-model method, which starts from a large candidate vocabulary and prunes the pieces
+      whose removal least reduces corpus likelihood — and the library can sample alternative
+      segmentations for subword regularization. A byte-fallback option encodes unknown characters as
+      UTF-8 bytes. It has been used by [[t5|T5]], LLaMA 1 and 2, Gemma and many multilingual models.
+    example: >-
+      We trained a unigram SentencePiece model with byte fallback so no character maps to unknown.
+origin: >-
+  Released by Taku Kudo and John Richardson of Google in 2018 (EMNLP 2018 system demonstrations),
+  building on Kudo's paper of the same year introducing the unigram-model subword algorithm and
+  subword regularization.
+year: 2018
+note: >-
+  SentencePiece is a toolkit, not a separate algorithm: a 'SentencePiece tokenizer' is a unigram or
+  BPE model trained with it.
+see_also:
+  - tokenizer
+  - byte-pair encoding
+  - WordPiece
+  - tokenization
+  - T5
+  - vocabulary
+sources:
+  - text: >-
+      Kudo, T. & Richardson, J. (2018). SentencePiece: A simple and language independent subword
+      tokenizer and detokenizer for Neural Text Processing. EMNLP 2018 (System Demonstrations).
+    url: https://arxiv.org/abs/1808.06226
+  - text: >-
+      Kudo, T. (2018). Subword Regularization: Improving Neural Network Translation Models with
+      Multiple Subword Candidates. ACL 2018.
+    url: https://arxiv.org/abs/1804.10959

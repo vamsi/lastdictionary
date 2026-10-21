@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: facial recognition
+id: facial-recognition
+pos: n.
+also:
+  - face recognition
+  - facial recognition technology
+  - FRT
+  - face identification
+  - face verification
+  - faceprint
+domain: society
+domains:
+  - percep
+  - gov
+level: essential
+plain: >-
+  Technology that identifies or checks who someone is by comparing a picture of their face with
+  stored photos, used by phones, passport gates and police databases.
+senses:
+  - definition: >-
+      The automated identification or verification of people from images or video of their faces. A
+      system detects and aligns a face, then uses a [[deep-learning|deep neural network]] to map it
+      to an [[embedding|embedding]] (a 'faceprint'). Verification (one-to-one) compares it with a
+      single claimed identity, as when a phone checks that its owner is holding it; identification
+      (one-to-many) searches a gallery of enrolled faces, as in police and border systems. Accuracy
+      improved sharply with deep networks such as DeepFace (2014) and FaceNet (2015), and the US
+      National Institute of Standards and Technology benchmarks commercial algorithms. Concerns
+      include demographic differences in error rates (see [[gender-shades|Gender Shades]]), wrongful
+      arrests from false matches, mass [[ai-surveillance|surveillance]] of public spaces, and
+      databases built by scraping photos without consent. The [[eu-ai-act|EU AI Act]] bans
+      untargeted scraping to build such databases and strictly limits real-time
+      [[remote-biometric-identification|remote biometric identification]] by police in public
+      places.
+    example: >-
+      Investigators ran the CCTV still through facial recognition and got three candidate matches to
+      check by hand.
+origin: >-
+  Woody Bledsoe, Helen Chan and Charles Bisson built semi-automated face matching in 1964–1966;
+  Takeo Kanade's 1973 doctoral work described a fully automatic system, and Matthew Turk and Alex
+  Pentland's 'eigenfaces' (1991) made statistical methods practical. Public controversy intensified
+  after January 2020 reporting on Clearview AI, which had scraped billions of online photos for
+  police use.
+year: 1964
+note: >-
+  Distinct from face detection (finding faces in an image) and from facial analysis, which estimates
+  attributes such as age or expression (see [[emotion-recognition-system|emotion recognition
+  system]]). San Francisco became the first large US city to ban government use in 2019; in June
+  2020 IBM, Amazon and Microsoft ended or paused police sales.
+see_also:
+  - remote biometric identification
+  - AI surveillance
+  - Gender Shades
+  - biometric categorisation
+  - computer vision
+  - algorithmic bias
+  - predictive policing
+contrast:
+  - emotion recognition system
+sources:
+  - text: >-
+      Turk, M. & Pentland, A. (1991). Eigenfaces for Recognition. Journal of Cognitive Neuroscience
+      3(1), 71–86.
+  - text: >-
+      Taigman, Y., Yang, M., Ranzato, M. & Wolf, L. (2014). DeepFace: Closing the Gap to Human-Level
+      Performance in Face Verification. Proc. CVPR 2014.
+as_of: 2026-10

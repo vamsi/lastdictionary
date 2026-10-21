@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Q-learning
+id: q-learning
+pos: n.
+also:
+  - tabular Q-learning
+  - double Q-learning
+domain: rl
+level: core
+plain: >-
+  A trial-and-error method in which an agent keeps a score for every move in every situation and
+  nudges each score toward the reward it got plus the best score available next.
+senses:
+  - definition: >-
+      An [[off-policy|off-policy]], [[model-free-reinforcement-learning|model-free]]
+      [[temporal-difference-learning|temporal-difference]] algorithm that learns the optimal
+      [[q-function|action-value function]] Q* directly from experience. After taking
+      [[action|action]] a in [[state|state]] s and observing reward r and next state s′, it moves
+      Q(s, a) toward r + γ max Q(s′, a′) — the value of acting optimally from then on — whatever
+      action the agent actually takes next. Because this target does not depend on the behavior
+      policy, the agent can explore freely (for example [[epsilon-greedy|ε-greedily]]) or learn from
+      old or someone else's data while still estimating the greedy policy's values. Christopher
+      Watkins and Peter Dayan proved that tabular Q-learning converges given sufficient exploration
+      and suitably decaying step sizes. The max operator causes overestimation bias, which double
+      Q-learning corrects; with neural networks the method becomes the [[deep-q-network|deep
+      Q-network]].
+    example: >-
+      Plain Q-learning solved the gridworld, but the Atari version needed replay and a target
+      network.
+formula_latex: Q(s,a) \leftarrow Q(s,a) + \alpha \left[ r + \gamma \max_{a'} Q(s',a') - Q(s,a) \right]
+origin: >-
+  Introduced by Christopher Watkins in his 1989 University of Cambridge PhD thesis, 'Learning from
+  Delayed Rewards'; the convergence proof appeared with Peter Dayan in 'Q-learning' (Machine
+  Learning, 1992). Stevo Bozinovski's crossbar adaptive array (1981) is sometimes cited as a
+  forerunner. Hado van Hasselt introduced double Q-learning at NIPS 2010.
+year: 1989
+see_also:
+  - Q-function
+  - deep Q-network
+  - SARSA
+  - temporal difference learning
+  - off-policy
+  - epsilon-greedy
+  - experience replay
+contrast:
+  - SARSA
+sources:
+  - text: >-
+      Watkins, C. J. C. H. (1989). Learning from Delayed Rewards. PhD thesis, University of
+      Cambridge.
+  - text: >-
+      Watkins, C. J. C. H. & Dayan, P. (1992). Q-learning. Machine Learning 8, 279–292.
+  - text: >-
+      van Hasselt, H. (2010). Double Q-learning. Advances in Neural Information Processing Systems
+      23.

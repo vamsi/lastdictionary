@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: log-likelihood
+id: log-likelihood
+pos: n.
+also:
+  - negative log-likelihood
+  - NLL
+  - log-likelihood ratio
+domain: math
+domains:
+  - ml
+  - llm
+level: core
+plain: >-
+  The logarithm of how probable a model finds the observed data. Taking logs turns a product of many
+  tiny probabilities into a manageable sum; training usually minimizes its negative.
+senses:
+  - definition: >-
+      The natural logarithm of the [[likelihood|likelihood]], ℓ(θ) = log p(data | θ), the form in
+      which likelihoods are almost always computed. For independent examples it replaces a product
+      of many small probabilities, which would underflow in floating point, with a sum of manageable
+      terms that is easy to differentiate; and since the logarithm preserves order, the parameters
+      that maximize ℓ are exactly those that maximize the likelihood itself. Its negative, the
+      negative log-likelihood (NLL), is the standard training loss for probabilistic models:
+      averaged over examples it equals the [[cross-entropy|cross-entropy]] between the empirical
+      data distribution and the model; it is the [[log-loss|log loss]] of classification; and for
+      [[large-language-model|language models]] its per-token average is reported in nats or bits and
+      exponentiated to give [[perplexity|perplexity]]. Log-likelihoods also drive model comparison
+      (likelihood-ratio tests, information criteria such as AIC and BIC) and the scoring of
+      candidates in decoding, where a sequence's log-probability is the sum of its tokens'
+      [[log-probability|log probabilities]].
+    example: Validation NLL bottomed out at 2.1 nats per token, a perplexity of about 8.2.
+formula_latex: \ell(\theta) = \sum_{i=1}^{N} \log p(x_i \mid \theta), \qquad \mathrm{NLL}(\theta) =
+  -\frac{1}{N}\,\ell(\theta)
+origin: >-
+  Ronald Fisher worked with the logarithm of the likelihood when developing maximum likelihood
+  theory in the 1920s, and Samuel Wilks's 1938 theorem on the likelihood-ratio statistic made the
+  log-likelihood central to hypothesis testing. Its negative became the default training loss of
+  probabilistic machine learning.
+see_also:
+  - likelihood
+  - maximum likelihood estimation
+  - cross-entropy
+  - perplexity
+  - log probability
+  - log loss

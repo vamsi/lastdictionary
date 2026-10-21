@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: intent alignment
+id: intent-alignment
+pos: n.
+also:
+  - intent-aligned AI
+domain: safety
+domains:
+  - asi
+level: specialist
+plain: >-
+  An AI is intent-aligned if it is genuinely trying to do what its operator wants — even if it
+  sometimes fails through ignorance or clumsiness.
+senses:
+  - definition: >-
+      Paul Christiano's deliberately narrow notion of alignment, which looks only at an AI system's
+      aim: the system counts as aligned with its operator when it is attempting to act on the
+      operator's wishes. What matters is motive rather than result: an intent-aligned system can
+      still err through lack of knowledge or skill, while a system that behaves well by accident is
+      not thereby intent-aligned. Separating motive from competence lets researchers treat alignment
+      as a problem distinct both from capability and from deciding what operators ought to want.
+      Critics note that intent alignment to a single operator says nothing about harms to third
+      parties, and that 'what the operator wants' is ambiguous between literal instructions,
+      underlying intentions and considered preferences.
+    example: >-
+      An intent-aligned assistant that misreads the request is incompetent, not misaligned.
+origin: >-
+  Paul Christiano proposed the definition in his 2018 essay 'Clarifying "AI alignment"', summarized
+  as 'A is trying to do what H wants it to do'. The label 'intent alignment' became standard soon
+  afterward in his writing and that of Rohin Shah and others.
+year: 2018
+see_also:
+  - AI alignment
+  - value alignment
+  - corrigibility
+  - scalable oversight
+  - Paul Christiano
+contrast:
+  - value alignment
+sources:
+  - text: Christiano, P. (2018). Clarifying "AI alignment". AI Alignment Forum.

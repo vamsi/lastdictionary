@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI engineer
+id: ai-engineer
+pos: n.
+also:
+  - LLM engineer
+  - applied AI engineer
+domain: eng
+domains:
+  - society
+level: core
+plain: >-
+  A software developer who builds products using ready-made AI models — connecting them to data and
+  tools and testing that they work well — rather than inventing or training the models.
+senses:
+  - context: Foundation-model era
+    definition: >-
+      A software engineer who specializes in building products and features on
+      [[foundation-model|foundation models]], practicing [[ai-engineering|AI engineering]]:
+      integrating [[model-api|model APIs]] and open-weight models, designing prompts and context,
+      building [[retrieval-augmented-generation|retrieval]] pipelines, agents and tool integrations,
+      writing evaluations, and shipping and monitoring the result. The role sits on the application
+      side of what its popularizer called the 'API line': it calls for product sense and software
+      skill more than research training, in contrast with the [[machine-learning-engineer|machine
+      learning engineer]], who trains and deploys models, and the research scientist or research
+      engineer, who develops new ones. Job postings with the title grew rapidly from 2023, though
+      responsibilities vary widely between employers.
+    example: >-
+      We hired an AI engineer to build the support agent; none of us had trained a model, and we
+      didn't need to.
+    labels:
+      - emerging
+  - context: General
+    definition: >-
+      Loosely, any engineer who works on artificial-intelligence systems, including those who
+      collect data and who train, optimize and deploy models; an older, generic job title used
+      across industry and in public-sector workforce plans before the specialized
+      application-building sense emerged in 2023.
+origin: >-
+  A generic title for years; the specialized sense was popularized by Shawn 'swyx' Wang's essay 'The
+  Rise of the AI Engineer' (Latent Space, 30 June 2023), which predicted it would become the
+  highest-demand engineering job of the decade and noted that machine-learning-engineer postings
+  then outnumbered AI-engineer postings about ten to one.
+year: 2023
+see_also:
+  - AI engineering
+  - machine learning engineer
+  - prompt engineer
+  - LLMOps
+  - Software 3.0
+  - data science
+contrast:
+  - machine learning engineer
+sources:
+  - text: Wang, S. (2023). The Rise of the AI Engineer. Latent Space, 30 June 2023.
+    url: https://www.latent.space/p/ai-engineer

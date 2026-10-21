@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: batch normalization
+id: batch-normalization
+pos: n.
+also:
+  - BatchNorm
+  - batch norm
+  - BN
+  - internal covariate shift
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  A layer that rescales the numbers flowing through a network so that, across each batch of training
+  examples, they keep a steady average and spread. It makes deep networks train faster and more
+  reliably.
+senses:
+  - definition: >-
+      A [[normalization-layer|normalization layer]] that, for each feature or channel, subtracts the
+      mean and divides by the standard deviation computed over the current [[mini-batch|mini-batch]]
+      (and, in convolutional networks, over spatial positions), then applies a learned scale γ and
+      shift β. Training uses batch statistics; inference uses running averages accumulated during
+      training, so behavior differs between the two modes. It permits much higher
+      [[learning-rate|learning rates]], reduces sensitivity to
+      [[weight-initialization|initialization]], adds mild regularizing noise, and became standard in
+      [[convolutional-neural-network|CNNs]] such as [[resnet|ResNet]]. Its dependence on batch
+      statistics is also its weakness: it degrades with small or unrepresentative batches, couples
+      examples within a batch, complicates distributed training and suits sequence models poorly, so
+      [[transformer|transformers]] use [[layer-normalization|layer normalization]] or
+      [[rmsnorm|RMSNorm]] instead. Its inventors credited it with reducing 'internal covariate
+      shift', the drift in each layer's input distribution during training; later work disputes this
+      and points instead to a smoother [[loss-landscape|loss landscape]], so the mechanism remains
+      debated.
+    example: >-
+      Remember to call model.eval() so batch normalization uses its running statistics at test time.
+formula_latex: \hat{x} = \frac{x - \mu_{\mathcal{B}}}{\sqrt{\sigma_{\mathcal{B}}^2 + \epsilon}},
+  \qquad y = \gamma \hat{x} + \beta
+origin: >-
+  Introduced by Sergey Ioffe and Christian Szegedy of Google in 'Batch Normalization: Accelerating
+  Deep Network Training by Reducing Internal Covariate Shift' (arXiv, February 2015; ICML 2015),
+  which reported matching an ImageNet model's accuracy with 14 times fewer training steps. Shibani
+  Santurkar and colleagues (2018) argued that its benefit comes mainly from smoothing the
+  optimization landscape.
+year: 2015
+see_also:
+  - layer normalization
+  - RMSNorm
+  - normalization layer
+  - mini-batch
+  - ResNet
+  - loss landscape
+sources:
+  - text: >-
+      Ioffe, S. & Szegedy, C. (2015). Batch Normalization: Accelerating Deep Network Training by
+      Reducing Internal Covariate Shift. arXiv:1502.03167; ICML 2015.
+    url: https://arxiv.org/abs/1502.03167
+  - text: >-
+      Santurkar, S., Tsipras, D., Ilyas, A. & Madry, A. (2018). How Does Batch Normalization Help
+      Optimization? arXiv:1805.11604; NeurIPS 2018.
+    url: https://arxiv.org/abs/1805.11604

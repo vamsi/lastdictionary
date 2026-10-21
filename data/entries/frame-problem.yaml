@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: frame problem
+id: frame-problem
+pos: n.
+also:
+  - frame axioms
+  - qualification problem
+  - ramification problem
+domain: mind
+domains:
+  - sym
+  - hist
+level: core
+plain: >-
+  The difficulty of getting an AI to work out what does and does not change when something happens,
+  without spelling out every one of the countless things that stay the same.
+senses:
+  - context: Logic-based AI
+    definition: >-
+      The difficulty, when actions are described in formal logic, of capturing what an action does
+      not affect: unless every unchanged fact is restated in so-called frame axioms, the system
+      cannot conclude that it still holds. In John McCarthy and Patrick Hayes's situation calculus,
+      painting a block changes its color but not its position or anything else in the world, yet a
+      logical system cannot assume this unless told. Solutions developed from the 1970s to the 1990s
+      include [[non-monotonic-reasoning|default reasoning]] and circumscription, STRIPS-style
+      representations in which unmentioned facts persist, and Raymond Reiter's successor-state
+      axioms. Related difficulties are the qualification problem (listing every precondition of an
+      action) and the ramification problem (capturing indirect effects).
+  - context: Philosophy and cognitive science
+    definition: >-
+      The broader problem of relevance: how a reasoner, natural or artificial, in an open-ended
+      world manages to update just the beliefs an event bears on and to set everything else aside,
+      without first checking all it knows. Daniel Dennett, Jerry Fodor and Hubert Dreyfus treated it
+      as a deep obstacle to [[symbolic-ai|symbolic AI]]. Whether learned systems such as
+      [[large-language-model|large language models]] solve it, by absorbing statistical knowledge of
+      relevance from data, or merely sidestep it, remains debated.
+    example: >-
+      Dennett's robot, busily deducing that moving the wagon won't change the color of the walls
+      while the bomb ticks, is the frame problem in miniature.
+origin: >-
+  Introduced by John McCarthy and Patrick J. Hayes in 'Some Philosophical Problems from the
+  Standpoint of Artificial Intelligence' (Machine Intelligence 4, 1969). Daniel Dennett's 'Cognitive
+  Wheels: The Frame Problem of AI' (1984), with its bomb-defusing robots, popularized the broader
+  philosophical reading.
+year: 1969
+note: >-
+  AI researchers have objected that philosophers stretched the term well beyond its technical
+  meaning, so the two senses should be kept distinct. Unrelated to Marvin Minsky's [[frame|frames]],
+  a knowledge-representation scheme.
+see_also:
+  - commonsense reasoning
+  - non-monotonic reasoning
+  - symbolic AI
+  - good old-fashioned AI
+  - Dreyfus's critique of AI
+  - Polanyi's paradox
+sources:
+  - text: >-
+      McCarthy, J. & Hayes, P. J. (1969). Some Philosophical Problems from the Standpoint of
+      Artificial Intelligence. In B. Meltzer & D. Michie (eds.), Machine Intelligence 4. Edinburgh
+      University Press.
+  - text: >-
+      Dennett, D. C. (1984). Cognitive Wheels: The Frame Problem of AI. In C. Hookway (ed.), Minds,
+      Machines and Evolution. Cambridge University Press.

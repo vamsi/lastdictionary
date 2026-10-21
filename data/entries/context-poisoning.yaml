@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: context poisoning
+id: context-poisoning
+pos: n.
+also:
+  - memory poisoning
+domain: agents
+domains:
+  - sec
+  - safety
+labels:
+  - emerging
+  - figurative
+level: core
+plain: >-
+  When a mistake or a planted falsehood gets into an AI's working notes or memory and the AI keeps
+  relying on it, so the error grows over later steps.
+senses:
+  - context: Agents (failure mode)
+    definition: >-
+      A failure mode of long-running [[ai-agent|agents]] in which a mistaken belief, often a
+      [[hallucination|hallucination]] about how far the task has progressed, gets recorded in
+      [[context-window|context]] material the agent keeps consulting (a goals list, summary, plan or
+      [[scratchpad|scratchpad]]); every later step then builds on the false record, and the agent
+      may chase goals that cannot be reached or no longer matter. Since nothing in the loop rechecks
+      the record, the error compounds instead of being corrected. Mitigations include validating
+      facts before persisting them, separating verified state from model-generated beliefs,
+      periodically rebuilding context from ground truth, [[compaction|compaction]] that drops
+      dubious material, and isolating exploratory work in [[subagent|subagents]].
+    example: >-
+      Once the agent wrote a nonexistent API into its plan, context poisoning set in and every later
+      step tried to call it.
+  - context: Security
+    definition: >-
+      An attack in which an adversary plants misleading content or hidden instructions in material
+      an agent will store and later trust — persistent memory, shared state, retrieved documents or
+      tool results — so that the manipulation outlives the turn in which it entered. It is a
+      persistent form of [[indirect-prompt-injection|indirect prompt injection]] and an
+      inference-time relative of [[data-poisoning|data poisoning]]. Defenses include provenance tags
+      and trust levels for stored content, re-screening memories when they are read back, and
+      limiting what agents may write to long-term stores.
+origin: >-
+  Google DeepMind's Gemini 2.5 technical report (June 2025) used 'context poisoning' for the Gemini
+  Plays Pokémon agent's fixation on hallucinated goals recorded in its context. Drew Breunig listed
+  it first among four ways long contexts fail (22 June 2025), alongside distraction, confusion and
+  clash. The security sense, overlapping with 'memory poisoning' in agent-security threat lists,
+  spread during 2025 with attacks on agent memory and [[model-context-protocol|Model Context
+  Protocol]] tools.
+year: 2025
+note: >-
+  In the first sense nobody attacks the system; the agent poisons itself. Contrast
+  [[data-poisoning|data poisoning]], which corrupts training data rather than the context at
+  inference time.
+see_also:
+  - context rot
+  - context engineering
+  - agent memory
+  - hallucination
+  - indirect prompt injection
+  - data poisoning
+  - scratchpad
+contrast:
+  - data poisoning
+sources:
+  - text: Breunig, D. (2025). How Long Contexts Fail. dbreunig.com, 22 June 2025.
+    url: https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html
+  - text: >-
+      Comanici, G. et al. (2025). Gemini 2.5: Pushing the Frontier with Advanced Reasoning,
+      Multimodality, Long Context, and Next Generation Agentic Capabilities. arXiv:2507.06261.
+    url: https://arxiv.org/abs/2507.06261
+as_of: 2026-10

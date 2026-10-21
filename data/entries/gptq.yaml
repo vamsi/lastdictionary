@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPTQ
+id: gptq
+pos: prop. n.
+also:
+  - OPTQ
+  - GPTQ quantization
+pronunciation: jee-pee-tee-KYOO
+domain: infer
+domains:
+  - llm
+level: specialist
+plain: >-
+  A popular method for shrinking large language models to about 4 bits per number after training,
+  carefully adjusting the remaining numbers to make up for each rounding error.
+senses:
+  - definition: >-
+      A one-shot [[post-training-quantization|post-training quantization]] method for large
+      [[transformer|transformers]] that reduces [[weights|weights]] to 2–4 bits while compensating
+      for the error introduced. Working one layer at a time on a small calibration set, it quantizes
+      a weight matrix column by column and, after each column is rounded, updates the
+      not-yet-quantized columns to offset the change in the layer's output, using the inverse of a
+      [[hessian|Hessian]] approximated from the layer's inputs. With lazy batched updates and a
+      Cholesky formulation, its authors quantized a 175-billion-parameter model in about four GPU
+      hours, to 3 or 4 bits with little loss in [[perplexity|perplexity]]; the result fit on a
+      single GPU, and their custom kernels generated text roughly 3.25–4.5 times faster than FP16.
+      Its group-wise 4-bit checkpoints became a common distribution format, supported by
+      [[vllm|vLLM]], Hugging Face Transformers and other engines.
+    example: >-
+      The GPTQ 4-bit checkpoint with group size 128 runs comfortably on a single 48 GB card.
+origin: >-
+  Introduced by Elias Frantar, Saleh Ashkboos, Torsten Hoefler and Dan Alistarh of IST Austria and
+  ETH Zurich (arXiv, October 2022; ICLR 2023), scaling up their earlier Optimal Brain Quantization,
+  itself descended from the Optimal Brain Surgeon pruning method (1993). The name joins GPT with Q
+  for quantization.
+year: 2022
+see_also:
+  - post-training quantization
+  - AWQ
+  - quantization
+  - Hessian
+  - GGUF
+  - SmoothQuant
+contrast:
+  - AWQ
+sources:
+  - text: >-
+      Frantar, E., Ashkboos, S., Hoefler, T. & Alistarh, D. (2022). GPTQ: Accurate Post-Training
+      Quantization for Generative Pre-trained Transformers. arXiv:2210.17323 (ICLR 2023).
+    url: https://arxiv.org/abs/2210.17323

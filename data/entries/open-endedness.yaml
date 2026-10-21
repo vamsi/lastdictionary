@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: open-endedness
+id: open-endedness
+pos: n.
+also:
+  - open-ended learning
+  - open-ended AI
+  - open-ended evolution
+  - open-ended
+domain: asi
+domains:
+  - rl
+  - sym
+level: specialist
+plain: >-
+  The ability of a system to keep producing new and interesting things without end — as evolution
+  and human culture do — instead of stopping once it solves one fixed task.
+senses:
+  - definition: >-
+      The property of a process or system that continually generates artifacts, behaviors or
+      problems that are both novel and interesting, without converging on a fixed goal — as
+      biological evolution and human science and culture appear to do. Research on it, rooted in
+      artificial life and evolutionary computation, has produced algorithms that reward novelty or
+      diversity rather than progress toward an objective (novelty search, quality-diversity), that
+      generate ever-harder environments alongside the agents that solve them, and that keep archives
+      of 'stepping stones' for later innovation. Edward Hughes and colleagues defined it relative to
+      an observer: a system is open-ended if its outputs stay novel (hard for the observer to
+      predict) yet learnable (more predictable once the observer has seen more of them). They argued
+      that open-endedness built on [[foundation-model|foundation models]] is essential for
+      [[artificial-superintelligence|artificial superintelligence]] — a view behind self-improving
+      systems such as the [[darwin-godel-machine|Darwin Gödel Machine]] and
+      [[alphaevolve|AlphaEvolve]] — while noting that its unpredictability raises safety concerns.
+    example: >-
+      The archive kept every odd agent variant, because in open-endedness research today's dead end
+      is tomorrow's stepping stone.
+origin: >-
+  Open-ended evolution was a goal of artificial-life research from the 1990s. Joel Lehman and
+  Kenneth Stanley's novelty search (2008) and their book Why Greatness Cannot Be Planned (2015)
+  popularized objective-free search, and Jeff Clune's 2019 proposal of AI-generating algorithms tied
+  it to general AI. Interest surged after a 2024 Google DeepMind position paper linking
+  open-endedness to superhuman intelligence.
+see_also:
+  - Darwin Gödel Machine
+  - AlphaEvolve
+  - genetic algorithm
+  - intrinsic motivation
+  - artificial life
+  - self-play
+  - artificial superintelligence
+sources:
+  - text: >-
+      Hughes, E., Dennis, M., Parker-Holder, J., Behbahani, F., Mavalankar, A., Shi, Y., Schaul, T.
+      & Rocktäschel, T. (2024). Open-Endedness is Essential for Artificial Superhuman Intelligence.
+      arXiv:2406.04268.
+    url: https://arxiv.org/abs/2406.04268
+  - text: >-
+      Stanley, K. O. & Lehman, J. (2015). Why Greatness Cannot Be Planned: The Myth of the
+      Objective. Springer.
+as_of: 2026-10

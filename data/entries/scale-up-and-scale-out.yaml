@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scale-up and scale-out
+id: scale-up-and-scale-out
+pos: phr.
+also:
+  - scale-up
+  - scale-out
+  - scale up
+  - scale out
+  - vertical scaling
+  - horizontal scaling
+  - scale-up domain
+  - scale-across
+domain: hw
+domains:
+  - train
+  - eng
+level: specialist
+plain: >-
+  Two ways to get more computing power: make each machine bigger and more tightly linked (scale up),
+  or add more machines connected by a network (scale out).
+senses:
+  - definition: >-
+      Complementary ways of growing a computing system. In general computing, scaling up (vertical
+      scaling) means a bigger single machine, and scaling out (horizontal scaling) means more
+      machines working in parallel. In AI clusters the terms name two network tiers. The scale-up
+      domain is a group of accelerators — 8 in a classic GPU server, 72 in a GB200 NVL72 rack,
+      thousands in a TPU pod — joined by very-high-bandwidth, memory-semantic links such as
+      [[nvlink|NVLink]] that let them behave almost as one device, which suits
+      [[tensor-parallelism|tensor parallelism]] and [[expert-parallelism|expert parallelism]]. The
+      scale-out network ([[infiniband|InfiniBand]] or Ethernet with [[rdma|RDMA]]) connects many
+      such domains with less bandwidth per accelerator and carries
+      [[data-parallelism|data-parallel]] and [[pipeline-parallelism|pipeline-parallel]] traffic.
+      Since 2025, 'scale-across' has named the linking of several data centers into one training
+      system.
+    example: >-
+      Keep tensor parallelism inside the scale-up domain; anything that crosses the scale-out
+      network kills throughput.
+origin: >-
+  The scale-up/scale-out distinction comes from server and database architecture of the 1990s and
+  2000s. Its use for the network tiers of AI clusters spread around 2023–2024 as
+  [[rack-scale-system|rack-scale systems]] enlarged scale-up domains; Nvidia introduced
+  'scale-across' with its Spectrum-XGS Ethernet in August 2025.
+note: >-
+  The boundary is moving: optical links, UALink and larger switches aim to stretch scale-up domains
+  to hundreds or thousands of accelerators.
+see_also:
+  - interconnect
+  - NVLink
+  - InfiniBand
+  - rack-scale system
+  - distributed training
+  - AI supercomputer
+as_of: 2026-10

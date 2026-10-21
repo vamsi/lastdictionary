@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: EU AI Act
+id: eu-ai-act
+pos: prop. n.
+also:
+  - AI Act
+  - Artificial Intelligence Act
+  - Regulation (EU) 2024/1689
+  - European AI Act
+domain: gov
+domains:
+  - society
+  - safety
+labels:
+  - legal
+level: essential
+plain: >-
+  The European Union's law on artificial intelligence, the first broad AI law anywhere: it bans some
+  uses, sets strict checks for risky ones and puts duties on the makers of the biggest AI models.
+senses:
+  - definition: >-
+      Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence, the first
+      comprehensive horizontal AI law. It applies to providers and deployers of [[ai-system|AI
+      systems]] placed on the market or used in the EU, wherever they are established, and follows a
+      [[risk-based-approach|risk-based approach]]. [[prohibited-ai-practices|Prohibited practices]]
+      are banned outright. [[high-risk-ai-system|High-risk systems]] — safety components of
+      regulated products (Annex I) and uses listed in Annex III, such as hiring, credit, education,
+      policing and migration — must meet requirements on risk management, data, documentation,
+      logging, transparency, [[human-oversight|human oversight]], accuracy and robustness, and pass
+      [[conformity-assessment|conformity assessment]]. Chatbots, generators of synthetic content and
+      some biometric systems carry [[transparency-obligations|transparency obligations]]. Providers
+      of [[general-purpose-ai-model|general-purpose AI models]] owe documentation and copyright
+      duties, with added safety duties for [[general-purpose-ai-model-with-systemic-risk|models with
+      systemic risk]]. Enforcement is split between national market surveillance authorities and the
+      Commission's [[ai-office|AI Office]]; fines reach €35 million or 7% of worldwide annual
+      turnover. Military, national-security and pure research uses are outside its scope.
+    example: Under the EU AI Act, our CV-screening tool counts as high-risk.
+origin: >-
+  Proposed by the European Commission on 21 April 2021, after its 2020 White Paper on AI; the
+  Parliament added rules for foundation models after ChatGPT's release, and a political agreement
+  was reached on 8 December 2023. Published on 12 July 2024 and in force from 1 August 2024, it
+  applies in stages: prohibitions and AI literacy from February 2025, general-purpose AI rules from
+  August 2025, most other provisions from August 2026, and — after the 2026
+  [[digital-omnibus|Digital Omnibus]] — high-risk obligations from December 2027 and August 2028.
+year: 2024
+note: >-
+  Its definition of an AI system follows the [[oecd-ai-principles|OECD AI Principles]]. It applies
+  alongside, not instead of, the [[general-data-protection-regulation|General Data Protection
+  Regulation]], product-safety and consumer law. Whether it will shape AI rules elsewhere — the
+  [[brussels-effect|Brussels effect]] — and whether the 2026 amendments weakened it remain debated.
+see_also:
+  - risk-based approach
+  - high-risk AI system
+  - prohibited AI practices
+  - general-purpose AI model
+  - AI Office
+  - Digital Omnibus
+  - General-Purpose AI Code of Practice
+  - Brussels effect
+sources:
+  - text: >-
+      Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying
+      down harmonised rules on artificial intelligence (Artificial Intelligence Act). OJ L,
+      12.7.2024.
+  - text: >-
+      Regulation (EU) 2026/1744 of 8 July 2026 amending Regulation (EU) 2024/1689 (Digital Omnibus
+      on AI).
+    url: https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+standards: >-
+  Regulation (EU) 2024/1689, as amended by Regulation (EU) 2026/1744; application dates Art. 113
+as_of: 2026-10

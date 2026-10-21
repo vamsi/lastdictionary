@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: training run
+id: training-run
+pos: n.
+also:
+  - run
+  - pretraining run
+  - hero run
+  - final run
+  - big run
+domain: train
+domains:
+  - eng
+  - hw
+level: core
+plain: >-
+  One complete attempt at training a model with a fixed recipe, from start to finish. For the
+  largest AI models a single run can occupy tens of thousands of chips for months.
+senses:
+  - definition: >-
+      A single execution of a training job under one configuration — architecture, initialization,
+      [[data-mixture|data mixture]], token budget, [[hyperparameter|hyperparameters]] and parallel
+      layout — from initialization (or a starting [[checkpoint|checkpoint]]) to its planned end.
+      Practitioners distinguish many small ablation or proxy runs, used to choose settings and fit
+      [[scaling-laws|scaling laws]], from the main or 'hero' run that produces the released model.
+      As of 2026 a frontier pretraining run lasts weeks to months on tens of thousands of
+      [[gpu|GPUs]] or [[tpu|TPUs]], in the largest reported cases more than 100,000, and is
+      restarted from checkpoints many times after hardware failures, [[loss-spike|loss spikes]] or
+      deliberate interventions; it is still called one run because it follows one plan and one
+      [[loss-curve|loss curve]]. Its scale is reported as [[training-compute|training compute]]
+      (FLOP), accelerator-hours or cost.
+    example: >-
+      We fit the scaling law on forty small runs before committing the whole cluster to the main run.
+origin: >-
+  'Run' is long-standing computing usage for one execution of a program or experiment, and 'hero
+  run' is high-performance-computing jargon for a showcase job using a whole machine. Both gained
+  weight in AI in the early 2020s, when single frontier runs became costly, scheduled events
+  discussed by name.
+note: >-
+  Reported training costs usually cover only the final run, not the experiments, failed runs and
+  staff behind it. DeepSeek, for example, stated that its roughly 5.6-million-dollar estimate for
+  DeepSeek-V3 (December 2024) excluded prior research and ablations.
+see_also:
+  - training compute
+  - compute budget
+  - checkpoint
+  - loss curve
+  - YOLO run
+  - goodput
+  - pretraining
+contrast:
+  - training step
+as_of: 2026-10

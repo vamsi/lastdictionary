@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decision transformer
+id: decision-transformer
+pos: n.
+also:
+  - return-conditioned policy
+  - trajectory transformer
+domain: rl
+domains:
+  - llm
+  - dl
+level: specialist
+plain: >-
+  A way of solving decision problems with the same kind of model that powers chatbots: it reads past
+  situations, actions and the score it is asked to achieve, and predicts the next action.
+senses:
+  - definition: >-
+      A method that treats [[reinforcement-learning|reinforcement learning]] as next-token
+      prediction over logged experience: a [[transformer|transformer]] that attends only to earlier
+      positions reads [[trajectory|trajectories]] laid out as repeating triples of return-to-go (the
+      reward still to be collected), [[state|state]] and [[action|action]], and is trained to output
+      each action. To act, it is given a target return, such as an expert-level score, and produces
+      actions aimed at it, lowering the remaining target as rewards come in. Training is ordinary
+      [[supervised-learning|supervised learning]], with no [[value-function|value function]],
+      bootstrapping or [[policy-gradient|policy gradient]], and this simplicity made it a popular
+      baseline for [[offline-reinforcement-learning|offline reinforcement learning]], where its 2021
+      results on Atari and continuous-control tasks matched or beat value-based methods. Later
+      analyses showed that return conditioning cannot reliably stitch together the good parts of
+      suboptimal trajectories and fails in highly stochastic environments, where a lucky high return
+      does not indicate good actions.
+    example: >-
+      Conditioning the decision transformer on a return of 90 produced noticeably better driving
+      than conditioning on 60.
+origin: >-
+  Introduced by Lili Chen, Kevin Lu and colleagues from UC Berkeley, Facebook AI Research and Google
+  in 'Decision Transformer: Reinforcement Learning via Sequence Modeling' (arXiv, June 2021; NeurIPS
+  2021). Michael Janner and colleagues' Trajectory Transformer appeared the same month, and Jürgen
+  Schmidhuber's 'upside-down reinforcement learning' (2019) had proposed reward-conditioned
+  policies.
+year: 2021
+see_also:
+  - offline reinforcement learning
+  - transformer
+  - behavioral cloning
+  - return
+  - trajectory
+  - imitation learning
+sources:
+  - text: >-
+      Chen, L. et al. (2021). Decision Transformer: Reinforcement Learning via Sequence Modeling.
+      NeurIPS 2021. arXiv:2106.01345.
+    url: https://arxiv.org/abs/2106.01345
+  - text: >-
+      Janner, M., Li, Q. & Levine, S. (2021). Offline Reinforcement Learning as One Big Sequence
+      Modeling Problem. NeurIPS 2021.
+  - text: >-
+      Paster, K., McIlraith, S. & Ba, J. (2022). You Can't Count on Luck: Why Decision Transformers
+      and RvS Fail in Stochastic Environments. NeurIPS 2022.

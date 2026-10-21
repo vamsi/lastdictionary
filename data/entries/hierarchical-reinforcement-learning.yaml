@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hierarchical reinforcement learning
+id: hierarchical-reinforcement-learning
+pos: n.
+also:
+  - HRL
+  - options framework
+  - temporal abstraction
+  - feudal reinforcement learning
+domain: rl
+domains:
+  - robot
+  - agents
+level: specialist
+plain: >-
+  Reinforcement learning organized in layers, where a high-level part chooses goals or skills — 'go
+  to the kitchen' — and lower-level parts handle the detailed actions to achieve them.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement learning]] that decomposes behavior into several levels
+      of temporal abstraction, so that a high-level [[policy|policy]] chooses among extended skills
+      or subgoals that lower-level policies execute over many time steps. The most influential
+      formalism is the options framework, in which an option is a sub-policy with its own initiation
+      set and termination condition; a [[markov-decision-process|Markov decision process]] with
+      options becomes a semi-MDP that standard methods can solve. Other approaches include feudal
+      RL, in which managers set goals for workers, and MAXQ value-function decomposition. Hierarchy
+      promises faster learning and better exploration over long horizons, reuse of skills across
+      tasks and more interpretable behavior, but discovering useful options automatically remains
+      difficult, and flat deep RL with large models has often matched hierarchical methods in
+      practice. Descendants include goal-conditioned manager–worker agents, unsupervised skill
+      discovery and [[large-language-model|large language model]] planners that delegate subtasks to
+      lower-level controllers or tools.
+    example: >-
+      Our hierarchical agent picks a subgoal every 25 steps and a low-level policy steers the arm
+      toward it.
+origin: >-
+  Peter Dayan and Geoffrey Hinton's 'Feudal Reinforcement Learning' (NIPS 1992) and Ronald Parr and
+  Stuart Russell's hierarchies of abstract machines (1998) were early formulations. Richard Sutton,
+  Doina Precup and Satinder Singh's 'Between MDPs and Semi-MDPs' (Artificial Intelligence, 1999)
+  introduced options, and Thomas Dietterich's MAXQ (2000) decomposed value functions; Andrew Barto
+  and Sridhar Mahadevan surveyed the field in 2003.
+year: 1992
+see_also:
+  - Markov decision process
+  - policy
+  - sparse reward
+  - intrinsic motivation
+  - task decomposition
+  - plan-and-execute
+sources:
+  - text: >-
+      Sutton, R. S., Precup, D. & Singh, S. (1999). Between MDPs and semi-MDPs: A framework for
+      temporal abstraction in reinforcement learning. Artificial Intelligence 112(1–2), 181–211.
+  - text: >-
+      Dayan, P. & Hinton, G. E. (1993). Feudal Reinforcement Learning. Advances in Neural
+      Information Processing Systems 5.
+  - text: >-
+      Barto, A. G. & Mahadevan, S. (2003). Recent Advances in Hierarchical Reinforcement Learning.
+      Discrete Event Dynamic Systems 13, 41–77.

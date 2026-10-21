@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: binding problem
+id: binding-problem
+pos: n.
+also:
+  - feature binding
+  - variable binding problem
+domain: mind
+domains:
+  - dl
+  - percep
+level: specialist
+plain: >-
+  The puzzle of how a brain, or a neural network, keeps track of which features belong together —
+  that the red goes with the apple and the green with the leaf — when they are processed separately.
+senses:
+  - definition: >-
+      The problem of how a system that processes features in distributed, partly separate channels
+      combines them into coherent representations of distinct objects and their relations —
+      representing a red square and a blue circle without confusing them with a blue square and a
+      red circle. In neuroscience, proposed solutions include attention, in Anne Treisman's
+      feature-integration theory, and synchronized neural firing, in Christoph von der Malsburg's
+      proposal. In [[cognitive-science|cognitive science]] and AI the related problem of variable
+      binding — attaching roles to fillers, as in telling 'dog bites man' from 'man bites dog' — was
+      pressed against [[connectionism|connectionism]]. Klaus Greff, Sjoerd van Steenkiste and Jürgen
+      Schmidhuber (2020) argued that neural networks' failures of [[systematicity|systematic
+      generalization]] stem from unsolved binding, motivating object-centric architectures such as
+      slot attention. Some theorists also tie the unity of conscious experience to binding.
+origin: >-
+  Discussed in vision science and neuroscience from the 1980s, following Anne Treisman and Garry
+  Gelade's feature-integration theory (1980) and Christoph von der Malsburg's correlation theory of
+  brain function (1981). Greff and colleagues' 'On the Binding Problem in Artificial Neural
+  Networks' (2020) revived the term for deep learning; earliest use of the phrase not established.
+see_also:
+  - systematicity
+  - connectionism
+  - generalization
+  - consciousness
+  - attention
+sources:
+  - text: >-
+      Treisman, A. M. & Gelade, G. (1980). A Feature-Integration Theory of Attention. Cognitive
+      Psychology 12(1), 97–136.
+  - text: >-
+      Greff, K., van Steenkiste, S. & Schmidhuber, J. (2020). On the Binding Problem in Artificial
+      Neural Networks. arXiv:2012.05208.
+    url: https://arxiv.org/abs/2012.05208

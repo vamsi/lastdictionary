@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: IsoFLOP analysis
+id: isoflop-analysis
+pos: n.
+also:
+  - IsoFLOP profile
+  - IsoFLOP curve
+  - IsoFLOPs
+  - iso-FLOP
+domain: train
+domains:
+  - eval
+level: specialist
+plain: >-
+  A way of finding the best model size for a given amount of computing: train several models of
+  different sizes at exactly the same computing cost and see which one ends up best.
+senses:
+  - definition: >-
+      A method for estimating compute-optimal model size in which, for each of several fixed
+      [[compute-budget|compute budgets]], models of different parameter counts are trained on token
+      counts chosen so that every run uses the same number of FLOP (C ≈ 6ND). Plotting final loss
+      against model size for one budget gives an IsoFLOP profile, typically U-shaped; its minimum,
+      often located by fitting a parabola in log N, marks the optimal size. Repeating this across
+      budgets and fitting power laws to the minima yields N_opt(C) and D_opt(C) for extrapolation to
+      the full run. It was the second of three methods in the [[chinchilla-scaling-laws|Chinchilla
+      scaling laws]] paper and has been used to size production models, notably Meta's Llama 3 405B.
+      Each run needs a [[learning-rate-schedule|learning rate schedule]] matched to its own length,
+      which makes sweeps expensive; [[warmup-stable-decay-schedule|warmup-stable-decay schedules]]
+      reduce the cost.
+origin: >-
+  Named by Jordan Hoffmann and colleagues at DeepMind in the 2022 Chinchilla paper ('Approach 2:
+  IsoFLOP profiles'), from iso- ('equal') and FLOP; comparing models at matched compute was older
+  practice.
+year: 2022
+see_also:
+  - Chinchilla scaling laws
+  - compute-optimal training
+  - scaling laws
+  - compute budget
+  - FLOP
+sources:
+  - text: >-
+      Hoffmann, J. et al. (2022). Training Compute-Optimal Large Language Models. arXiv:2203.15556.
+    url: https://arxiv.org/abs/2203.15556v1
+  - text: Grattafiori, A. et al. (2024). The Llama 3 Herd of Models. arXiv:2407.21783.

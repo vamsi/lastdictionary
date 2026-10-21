@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: internal deployment
+id: internal-deployment
+pos: n.
+also:
+  - internal use
+  - internal deployment risk
+domain: safety
+domains:
+  - gov
+  - asi
+labels:
+  - emerging
+level: specialist
+plain: >-
+  When an AI company uses its own newest, unreleased AI systems inside the company — for example to
+  write code or do research — before or instead of offering them to the public.
+senses:
+  - definition: >-
+      The use of an AI system within the organization that developed it — by its own staff, or as
+      autonomous agents doing software engineering and research — before or instead of external
+      release. Because frontier developers usually use their most capable models internally first,
+      often with fewer restrictions and greater access to sensitive infrastructure, internal
+      deployment can carry risks that testing aimed at public release misses:
+      [[automated-ai-research|automated AI research]] could accelerate capabilities quickly and out
+      of public view; a [[scheming|misaligned]] model could sabotage safety work, insert
+      vulnerabilities or try to [[self-exfiltration|exfiltrate]] its own weights; and highly capable
+      systems could give a small group outsized power. Proposed safeguards include applying
+      [[dangerous-capability-evaluation|capability evaluations]] and [[ai-control|AI control]]
+      protocols to internal use, limiting agents' permissions, monitoring, and informing regulators.
+      Most AI laws regulate systems placed on the market, but some company
+      [[responsible-scaling-policy|safety frameworks]] and California's [[sb-53|SB 53]] now address
+      internal use.
+    example: >-
+      The model was only in internal deployment, but it already had write access to the training
+      cluster.
+origin: >-
+  An established software-engineering term that acquired its AI-safety meaning around 2024–2025, as
+  frontier developers began running agents on their own research and engineering. Apollo Research's
+  report 'AI Behind Closed Doors: A Primer on the Governance of Internal Deployment' (Charlotte Stix
+  and colleagues, April 2025) set out the risks and governance options.
+year: 2025
+note: >-
+  Contrast external deployment: release to customers or the public through products, APIs or open
+  weights. Skeptics of regulating internal use note that it is hard to verify from outside and that
+  disclosure could expose trade secrets.
+see_also:
+  - automated AI research
+  - AI control
+  - scheming
+  - SB 53
+  - responsible scaling policy
+  - model weight security
+  - intelligence explosion
+sources:
+  - text: >-
+      Stix, C. et al. (2025). AI Behind Closed Doors: A Primer on the Governance of Internal
+      Deployment. Apollo Research. arXiv:2504.12170.
+    url: https://arxiv.org/abs/2504.12170
+as_of: 2026-10

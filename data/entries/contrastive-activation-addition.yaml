@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: contrastive activation addition
+id: contrastive-activation-addition
+pos: n.
+also:
+  - CAA
+domain: interp
+domains:
+  - safety
+  - llm
+level: specialist
+plain: >-
+  A way to make a steering signal more reliable by averaging the difference in a model's internal
+  state across hundreds of example answers that do and don't show a behavior, such as flattery.
+senses:
+  - definition: >-
+      A [[activation-steering|steering]] method whose [[steering-vector|steering vector]] is
+      averaged over many contrasting pairs instead of being taken from a single pair. In the
+      original setup the two members of a pair answer the same multiple-choice question and differ
+      only in the letter (A or B) that marks the target behavior, so their
+      [[residual-stream|residual stream]] activations, read at that letter, differ in the behavior
+      rather than in surface content; the vector is the mean of these differences. During generation
+      it is multiplied by a signed coefficient and added at each position following the user's
+      prompt, dialing the behavior up or down. Tested on Llama 2 Chat with
+      [[sycophancy|sycophancy]], [[hallucination|hallucination]], [[refusal|refusal]],
+      corrigibility, survival instinct, myopic reward and AI coordination, it changed behavior even
+      in models already shaped by [[fine-tuning|fine-tuning]] or [[system-prompt|system prompts]],
+      at little cost to general capability.
+    example: >-
+      Subtracting the CAA sycophancy vector made the model correct the user's mistaken premise
+      instead of agreeing.
+origin: >-
+  Introduced by Nina Rimsky (now Nina Panickssery), Nick Gabrieli, Julian Schulz, Meg Tong, Evan
+  Hubinger and Alexander Matt Turner in 'Steering Llama 2 via Contrastive Activation Addition'
+  (arXiv, December 2023; ACL 2024), generalizing [[activation-addition|activation addition]] from
+  one prompt pair to datasets of pairs.
+year: 2023
+note: >-
+  Mean-difference vectors of this kind are the standard baseline for steering. Later evaluations
+  (Tan et al., 2024) found their reliability varies widely across behaviors and inputs, sometimes
+  even reversing direction on individual prompts.
+see_also:
+  - activation addition
+  - steering vector
+  - activation steering
+  - persona vector
+  - sycophancy
+  - representation engineering
+sources:
+  - text: >-
+      Rimsky [Panickssery], N., Gabrieli, N., Schulz, J., Tong, M., Hubinger, E. & Turner, A. M.
+      (2024). Steering Llama 2 via Contrastive Activation Addition. Proceedings of ACL 2024.
+      arXiv:2312.06681.
+    url: https://arxiv.org/abs/2312.06681

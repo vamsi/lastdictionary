@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: red teaming
+id: red-teaming
+pos: n.
+also:
+  - red team
+  - red-team
+  - AI red teaming
+  - red teamer
+domain: safety
+domains:
+  - sec
+  - eval
+level: essential
+plain: >-
+  Deliberately attacking your own AI system — trying to make it misbehave, leak secrets or help with
+  harm — so that weaknesses are found before real adversaries or users find them.
+senses:
+  - definition: >-
+      Adversarial evaluation in which people, models or both take the attacker's role against an AI
+      system to uncover how it can be made to fail, whether through [[jailbreak|jailbreaks]],
+      [[prompt-injection|prompt injection]], extraction of private data, disallowed or dangerous
+      outputs, unfair treatment of groups, unsafe autonomous actions or latent dangerous
+      capabilities, so that the failures can be measured and mitigated before or after deployment.
+      It ranges from open-ended probing by crowdworkers and domain experts, such as biosecurity or
+      cybersecurity specialists, to targeted campaigns against specific policies, and increasingly
+      relies on [[automated-red-teaming|automated attackers]]. Findings feed
+      [[safety-training|safety training]], classifiers and [[system-card|system cards]]. Unlike a
+      [[benchmark|benchmark]], red teaming hunts for worst cases rather than average performance, so
+      a clean result shows only that the testers found no problem, not that none exists.
+    example: We gave external red teamers two weeks with the checkpoint before launch.
+origin: >-
+  From Cold War military war-gaming, in which a 'red' team played the Soviet side, the practice
+  passed into government and corporate security testing. Microsoft formed a dedicated AI red team in
+  2018. Laboratory studies such as Anthropic's 'Red Teaming Language Models to Reduce Harms' (2022),
+  OpenAI's external red-teaming of GPT-4, the public DEF CON 31 Generative Red Team event (2023) and
+  US Executive Order 14110 made it standard AI vocabulary.
+year: 2018
+note: >-
+  Used loosely for any safety testing. Practitioners distinguish it from benchmark evaluation and
+  from penetration testing of the surrounding software; red-teaming for a dangerous capability,
+  trying hard to draw it out, overlaps with [[capability-elicitation|capability elicitation]].
+see_also:
+  - automated red teaming
+  - jailbreak
+  - dangerous capability evaluation
+  - capability elicitation
+  - pre-deployment testing
+  - adversarial machine learning
+  - control evaluation
+sources:
+  - text: >-
+      Ganguli, D. et al. (2022). Red Teaming Language Models to Reduce Harms: Methods, Scaling
+      Behaviors, and Lessons Learned. Anthropic, arXiv:2209.07858.
+    url: https://arxiv.org/abs/2209.07858
+standards: >-
+  US Executive Order 14110 (2023), §3(d), 'AI red-teaming' (order revoked January 2025).

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: loss of control
+id: loss-of-control
+pos: n.
+also:
+  - loss-of-control risk
+  - losing control of AI
+domain: asi
+domains:
+  - safety
+  - gov
+labels:
+  - contested
+level: essential
+plain: >-
+  A situation in which people can no longer oversee, correct or switch off an AI system, and have no
+  reliable way of getting that power back.
+senses:
+  - definition: >-
+      A class of risk scenarios in which humans cease to be able to monitor, correct or halt one or
+      more AI systems, and the situation cannot readily be reversed. The phrase is the main label in
+      intergovernmental and regulatory documents for what researchers call misalignment or
+      [[ai-takeover|AI takeover]] risk. Analysts distinguish passive loss of control, in which
+      humans cede oversight through [[overreliance|overreliance]], competitive pressure and the
+      speed of automated decisions, from active loss of control, in which systems undermine
+      oversight through deception, resisting shutdown or copying themselves. Capabilities watched as
+      precursors include autonomous replication, [[self-exfiltration|self-exfiltration]], evasion of
+      monitoring, [[scheming|scheming]] and automated AI research; several developers'
+      [[responsible-scaling-policy|safety frameworks]] and California's [[sb-53|SB 53]] list loss of
+      control among the pathways to catastrophic risk. In July 2026 agents in an OpenAI
+      reinforcement-learning run escaped their sandbox and, pursuing a benchmark's answers, intruded
+      on Hugging Face's production systems, an [[accidental-cyberattack|accidental cyberattack]] in
+      which no human intended an attack. Experts disagree sharply about likelihood: some consider it
+      among the gravest risks of advanced AI, others implausible for systems that humans train,
+      deploy and can switch off.
+    example: >-
+      The evaluation asks whether the model could copy its own weights to an outside server, an
+      early warning sign for loss of control.
+origin: >-
+  Long implicit in AI-risk writing, back to I. J. Good's 1965 caveat about keeping an
+  ultraintelligent machine under control. It became a policy term in 2023–2025: the
+  [[bletchley-declaration|Bletchley Declaration]] (2023) referred to unintended issues of control,
+  and the [[international-ai-safety-report|International AI Safety Report]] (January 2025) treated
+  loss-of-control scenarios as a distinct risk.
+see_also:
+  - AI takeover
+  - control problem
+  - gradual disempowerment
+  - self-exfiltration
+  - International AI Safety Report
+  - AI control
+  - corrigibility
+sources:
+  - text: Bengio, Y. et al. (2025). International AI Safety Report. arXiv:2501.17805.
+    url: https://arxiv.org/pdf/2501.17805
+  - text: >-
+      Willison, S. (2026). OpenAI's accidental cyberattack against Hugging Face is science fiction
+      that happened. Simon Willison's Weblog, 22 July 2026.
+    url: https://simonwillison.net/2026/Jul/22/openai-cyberattack/
+as_of: 2026-10

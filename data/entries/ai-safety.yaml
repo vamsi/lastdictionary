@@ -1,0 +1,80 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI safety
+id: ai-safety
+pos: n.
+also:
+  - artificial intelligence safety
+  - AI safety research
+  - ML safety
+  - safe AI
+domain: safety
+domains:
+  - gov
+  - society
+level: essential
+plain: >-
+  The effort to keep AI from doing serious harm, whether because it pursues aims its makers never
+  intended, is turned to bad uses or simply malfunctions — a concern that grows as systems become
+  more capable.
+senses:
+  - context: Research field
+    definition: >-
+      Research and engineering that aims to keep AI systems from causing serious harm — by
+      malfunction, by misuse or through wider structural effects — and that gives special weight to
+      dangers expected to rise as systems become more capable. Technical work centers on
+      [[ai-alignment|alignment]] (giving systems the intended goals), [[robustness|robustness]]
+      (reliable behavior under [[distribution-shift|distribution shift]] and
+      [[adversarial-example|adversarial inputs]]), monitoring and
+      [[interpretability|interpretability]] (detecting what a system is doing and why) and
+      [[ai-control|control]] (limiting the damage a misaligned system could do), together with
+      [[dangerous-capability-evaluation|dangerous-capability evaluations]], [[red-teaming|red
+      teaming]] and [[safety-case|safety cases]]. It draws on machine learning, security
+      engineering, formal methods, decision theory and the safety practices of other high-hazard
+      industries, and shades into governance work on deployment policies and regulation.
+    example: >-
+      The lab doubled its AI safety team before starting the next frontier training run.
+  - context: Products and deployment
+    definition: >-
+      The safeguards that keep a deployed AI product from producing harmful content or assisting
+      harmful activity: usage policies, [[refusal|refusal]] training, [[safety-classifier|safety
+      classifiers]], [[guardrails|guardrails]], abuse monitoring and incident response. This
+      narrower sense overlaps with trust-and-safety and content-moderation practice and is what many
+      product teams mean by 'safety'.
+origin: >-
+  Worries about controlling intelligent machines go back to Norbert Wiener (1960) and I. J. Good
+  (1965). The first use of the phrase is not established; it was in use by 2011, when Roman
+  Yampolskiy proposed 'AI safety engineering' at the Philosophy and Theory of Artificial
+  Intelligence conference, and it became the name of a machine-learning research field after
+  'Concrete Problems in AI Safety' (Dario Amodei, Chris Olah and colleagues, 2016). The 2023 AI
+  Safety Summit at Bletchley Park and the national AI Safety Institutes carried it into policy.
+year: 2011
+note: >-
+  Usage varies: frontier laboratories and many researchers mean chiefly catastrophic and
+  loss-of-control risks, while product teams often mean content and misuse safeguards. In 2025 the
+  United Kingdom renamed its AI Safety Institute the AI Security Institute (February) and the United
+  States recast its institute as the Center for AI Standards and Innovation (June). Usually
+  distinguished from [[ai-ethics|AI ethics]] (fairness, accountability, rights) and [[ai-security|AI
+  security]] (protecting systems from attackers).
+see_also:
+  - AI alignment
+  - AI control
+  - robustness
+  - interpretability
+  - red teaming
+  - safety case
+  - existential risk
+  - AI Safety Institute
+contrast:
+  - AI ethics
+  - AI security
+sources:
+  - text: >-
+      Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J. & Mané, D. (2016). Concrete
+      Problems in AI Safety. arXiv:1606.06565.
+    url: https://arxiv.org/abs/1606.06565
+  - text: >-
+      Hendrycks, D., Carlini, N., Schulman, J. & Steinhardt, J. (2021). Unsolved Problems in ML
+      Safety. arXiv:2109.13916.
+    url: https://arxiv.org/abs/2109.13916
+as_of: 2026-10

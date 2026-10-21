@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: occupancy grid
+id: occupancy-grid
+pos: n.
+also:
+  - occupancy grid map
+  - occupancy map
+  - evidence grid
+  - occupancy network
+  - voxel map
+  - OctoMap
+domain: robot
+domains:
+  - percep
+level: specialist
+plain: >-
+  A robot's map of the world drawn as a grid of small squares or cubes, each marked with the chance
+  that something solid is there, so the robot knows where it can safely go.
+senses:
+  - definition: >-
+      A spatial map that divides the environment into a regular grid of cells — 2D squares or 3D
+      voxels — each storing the probability that the corresponding region is occupied by an
+      obstacle. Cells are updated independently from range sensors such as sonar, [[lidar|lidar]]
+      and depth cameras using an inverse sensor model: a beam passing through a cell is evidence
+      that it is free, and a return is evidence that its endpoint is occupied. Probabilities are
+      usually stored as log-odds, so each Bayesian update becomes an addition and repeated
+      observations accumulate. Occupancy grids tolerate noisy sensors and unstructured environments,
+      need no predefined landmarks and feed directly into grid-based [[path-planning|path
+      planning]]; their drawbacks are memory, which hierarchical octree structures reduce, and the
+      assumption that cells are independent. Self-driving perception has extended the idea to
+      occupancy networks, which predict the 3D occupancy, and sometimes motion, of every voxel
+      around a vehicle directly from camera images.
+    example: >-
+      The vacuum's occupancy grid marks the chair legs as occupied, so it plans around them.
+origin: >-
+  Introduced by Hans Moravec and Alberto Elfes at Carnegie Mellon University in 'High Resolution
+  Maps from Wide Angle Sonar' (ICRA 1985) and developed in Elfes's 'Using Occupancy Grids for Mobile
+  Robot Perception and Navigation' (IEEE Computer, 1989). Armin Hornung and colleagues' OctoMap
+  (2013) popularized 3D octree occupancy maps.
+year: 1985
+see_also:
+  - simultaneous localization and mapping
+  - path planning
+  - lidar
+  - mobile robot
+  - sensor fusion
+  - 3D reconstruction
+sources:
+  - text: >-
+      Moravec, H. & Elfes, A. (1985). High resolution maps from wide angle sonar. Proc. IEEE ICRA
+      1985.
+  - text: >-
+      Elfes, A. (1989). Using occupancy grids for mobile robot perception and navigation. IEEE
+      Computer 22(6), 46–57.

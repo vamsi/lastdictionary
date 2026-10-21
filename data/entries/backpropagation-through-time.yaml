@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: backpropagation through time
+id: backpropagation-through-time
+pos: n.
+also:
+  - BPTT
+  - truncated backpropagation through time
+  - truncated BPTT
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  The way recurrent networks are trained: the network is unrolled into a long chain, one copy per
+  time step, and errors are traced back through every step to adjust the shared weights.
+senses:
+  - definition: >-
+      The application of [[backpropagation|backpropagation]] to a
+      [[recurrent-neural-network|recurrent neural network]] by unrolling it over the steps of a
+      sequence into a deep [[feedforward-neural-network|feedforward neural network]] whose layers
+      share the same weights, then propagating errors backward from the losses at each step; the
+      gradient for each shared weight is the sum of its contributions across all steps. Memory grows
+      linearly with sequence length, because every intermediate state must be stored, and gradients
+      through long chains are prone to [[vanishing-gradient-problem|vanishing]] or
+      [[exploding-gradient-problem|exploding]]. Truncated BPTT limits the backward pass to a window
+      of k steps while still carrying the hidden state forward, trading long-range credit assignment
+      for cost. Real-time recurrent learning (RTRL) computes the same gradients forward in time,
+      online, but at far higher computational cost.
+    example: >-
+      We truncate backpropagation through time at 128 steps but carry the hidden state across
+      batches.
+origin: >-
+  Derived independently by several researchers in the 1980s. David Rumelhart, Geoffrey Hinton and
+  Ronald Williams described unfolding a recurrent network in time (1986), Anthony Robinson and Frank
+  Fallside gave a version in 1987, and Paul Werbos, who applied it in 1988, popularized the name
+  with 'Backpropagation Through Time: What It Does and How to Do It' (Proceedings of the IEEE,
+  1990).
+year: 1986
+see_also:
+  - backpropagation
+  - recurrent neural network
+  - vanishing gradient problem
+  - exploding gradient problem
+  - long short-term memory
+  - gradient checkpointing
+sources:
+  - text: >-
+      Werbos, P. J. (1990). Backpropagation Through Time: What It Does and How to Do It. Proceedings
+      of the IEEE, 78(10), 1550–1560.

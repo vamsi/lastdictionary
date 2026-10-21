@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: episodic memory
+id: episodic-memory
+pos: n.
+also:
+  - episodic store
+domain: agents
+domains:
+  - mind
+  - rl
+level: specialist
+plain: >-
+  Memory of particular past events — what happened, when and in what order. AI agents keep records
+  of earlier conversations or attempts so they can recall them and learn from them.
+senses:
+  - context: Agents
+    definition: >-
+      A store of records of an [[ai-agent|agent's]] specific past experiences — conversations, task
+      attempts, [[trajectory|trajectories]], observations and outcomes — usually timestamped and
+      retrieved by relevance or recency into the current [[context-window|context]]. Examples
+      include the memory stream of Generative Agents, which ranks memories by recency, importance
+      and relevance and periodically distills them into higher-level reflections, and the
+      self-critiques that [[reflexion|Reflexion]] agents store after failed attempts. Episodic
+      memory lets an agent learn from experience without changing model weights; it is contrasted
+      with semantic memory (general facts extracted from episodes) and procedural memory (skills).
+    example: >-
+      Before retrying the deployment, the agent searched its episodic memory for the last failure
+      and its fix.
+  - context: Cognitive science and RL
+    definition: >-
+      In psychology, memory for personally experienced events located in time and place, as opposed
+      to semantic memory for facts. In [[reinforcement-learning|reinforcement learning]], episodic
+      control methods store individual past experiences and reuse their observed returns directly,
+      which can learn faster than gradual value-function updates.
+origin: >-
+  Endel Tulving distinguished episodic from semantic memory in a 1972 chapter, 'Episodic and
+  Semantic Memory'. Reinforcement learning took the idea up in model-free episodic control (Charles
+  Blundell et al., 2016). LLM-agent designs adopted it from 2023, notably in Generative Agents and
+  the CoALA framework.
+year: 1972
+see_also:
+  - long-term memory
+  - agent memory
+  - working memory
+  - Reflexion
+  - experience replay
+  - MemGPT
+contrast:
+  - parametric knowledge
+sources:
+  - text: >-
+      Tulving, E. (1972). Episodic and semantic memory. In E. Tulving & W. Donaldson (eds.),
+      Organization of Memory. Academic Press.
+  - text: >-
+      Park, J. S. et al. (2023). Generative Agents: Interactive Simulacra of Human Behavior.
+      arXiv:2304.03442.
+    url: https://arxiv.org/abs/2304.03442

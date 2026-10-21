@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mechanistic anomaly detection
+id: mechanistic-anomaly-detection
+pos: n.
+also:
+  - MAD
+domain: safety
+domains:
+  - interp
+  - sec
+level: specialist
+plain: >-
+  Flagging cases where an AI reaches its output by an unusual internal route — for instance because
+  it is being tricked, or is tricking us — even when the output itself looks normal.
+senses:
+  - definition: >-
+      The task of detecting, from a model's internal computation, inputs on which it produces its
+      output for an unusual reason, compared with a trusted reference set of inputs on which it
+      behaves as intended. If a model normally predicts 'the diamond is safe' because the diamond is
+      there, a detector should flag a case where the same prediction arises because the sensors were
+      tampered with, even without a full understanding of either mechanism. Approaches compare
+      [[activation|activations]], attributions or other internal statistics against the trusted
+      distribution. Intended applications include detecting [[backdoor-attack|backdoors]],
+      measurement tampering and treacherous behavior that appears only in deployment. It differs
+      from ordinary [[anomaly-detection|anomaly detection]], which flags unusual inputs or outputs,
+      by targeting unusual mechanisms.
+    example: >-
+      Mechanistic anomaly detection flagged the episode even though the agent's final report looked
+      routine.
+origin: >-
+  Proposed by Paul Christiano and the Alignment Research Center in 2022 as an approach to
+  [[eliciting-latent-knowledge|eliciting latent knowledge]], linked to their work on heuristic
+  explanations. Redwood Research's measurement-tampering benchmarks (Fabien Roger and colleagues,
+  2023) and later EleutherAI experiments tested practical detectors.
+year: 2022
+see_also:
+  - eliciting latent knowledge
+  - anomaly detection
+  - backdoor attack
+  - AI lie detection
+  - Alignment Research Center
+  - mechanistic interpretability
+contrast:
+  - anomaly detection

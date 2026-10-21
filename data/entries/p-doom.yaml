@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: p(doom)
+id: p-doom
+pos: n.
+also:
+  - pdoom
+  - probability of doom
+pronunciation: pee DOOM
+domain: asi
+domains:
+  - culture
+  - safety
+labels:
+  - informal
+  - contested
+level: essential
+plain: >-
+  Shorthand for someone's personal estimate of the chance that AI leads to catastrophe for humanity,
+  such as extinction. People give it as a percentage, from nearly zero to nearly certain.
+senses:
+  - definition: >-
+      A person's subjective probability that the development of advanced AI leads to an
+      existentially catastrophic outcome, usually human extinction or permanent, severe
+      disempowerment of humanity. The notation borrows the probability-theory form P(event) and is
+      used both seriously, as a compact way to report a credence, and half-jokingly, as a
+      conversational opener and social signal. Publicly stated figures range from under 1% to over
+      95%: Geoffrey Hinton has given about 10–20%, Yoshua Bengio about 20% and Eliezer Yudkowsky
+      more than 95%, while skeptics such as [[yann-lecun|Yann LeCun]] regard the risk as negligible.
+      In the 2023 AI Impacts survey of 2,778 published AI researchers, a question on AI causing
+      'human extinction or similarly permanent and severe disempowerment' within 100 years drew a
+      median answer of 5%, and between 38% and 51% of respondents, depending on how the question was
+      worded, gave at least a 10% chance to outcomes as bad as human extinction. Critics note that
+      stated figures rarely specify a time frame, what counts as doom, or whether they assume AGI is
+      built, and that probabilities for unprecedented events are hard to calibrate or check.
+    example: >-
+      Her p(doom) dropped from 30% to 10% after she saw how well chain-of-thought monitoring worked.
+origin: >-
+  Arose as shorthand in the rationalist community and among AI-safety researchers; earliest use not
+  established. It came to prominence in 2023, after the release of GPT-4 and public warnings by
+  Geoffrey Hinton and Yoshua Bengio, when journalists began asking AI leaders for their p(doom).
+note: >-
+  The figures are personal credences, not measurements; differences usually reflect disagreement
+  about [[ai-timelines|AI timelines]], [[takeoff|takeoff]] speed and the difficulty of alignment
+  rather than about the meaning of doom. Compare [[doomer|doomer]].
+see_also:
+  - existential risk
+  - doomer
+  - AI takeover
+  - loss of control
+  - AI timelines
+  - high-level machine intelligence
+sources:
+  - text: >-
+      Grace, K. et al. (2024). Thousands of AI Authors on the Future of AI. arXiv:2401.02843; later
+      published in the Journal of Artificial Intelligence Research.
+    url: https://arxiv.org/abs/2401.02843
+as_of: 2026-10

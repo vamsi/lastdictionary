@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: McCulloch–Pitts neuron
+id: mcculloch-pitts-neuron
+pos: n.
+also:
+  - MCP neuron
+  - McCulloch–Pitts model
+  - threshold logic unit
+domain: hist
+domains:
+  - dl
+  - core
+labels:
+  - historical
+level: core
+plain: >-
+  The first mathematical model of a brain cell as a simple on–off switch: it fires if enough of its
+  inputs are on and no blocking input is. Networks of them can carry out logic.
+senses:
+  - definition: >-
+      A binary threshold unit proposed by [[warren-mcculloch|Warren McCulloch]] and
+      [[walter-pitts|Walter Pitts]] in 1943 as an idealized neuron. Its inputs are all-or-none
+      signals, each wired as either excitatory or inhibitory, and time advances in discrete steps.
+      At each step a single active inhibitory input silences the unit outright; failing that, the
+      unit fires (outputs 1) exactly when the count of active excitatory inputs is at or above a
+      fixed threshold. With suitable thresholds and wiring, single units implement AND, OR and NOT,
+      so networks of them can compute any Boolean function, and networks with loops behave like
+      finite automata, as Stephen Kleene later formalized. The model does not learn: connections and
+      thresholds are set by hand. Adding real-valued adjustable weights and a learning rule produced
+      the [[perceptron|perceptron]], and the unit is the ancestor of the
+      [[artificial-neuron|artificial neuron]] used in every modern [[neural-network|neural
+      network]].
+    example: >-
+      With a threshold of two and two excitatory inputs, a McCulloch–Pitts neuron computes AND.
+formula_latex: y = \begin{cases} 1 & \text{if } \sum_i x_i \ge \theta \text{ and no inhibitory input
+  is active} \\ 0 & \text{otherwise} \end{cases}
+origin: >-
+  Introduced in 'A Logical Calculus of the Ideas Immanent in Nervous Activity' in the Bulletin of
+  Mathematical Biophysics (1943) by the neurophysiologist Warren McCulloch and the young, largely
+  self-taught logician Walter Pitts. The paper influenced John von Neumann's 1945 EDVAC report,
+  which described computer components as idealized neurons, and the founders of
+  [[cybernetics|cybernetics]].
+year: 1943
+see_also:
+  - perceptron
+  - artificial neuron
+  - neural network
+  - cybernetics
+  - Hebbian learning
+  - connectionism
+contrast:
+  - perceptron
+sources:
+  - text: >-
+      McCulloch, W. S. & Pitts, W. (1943). A Logical Calculus of the Ideas Immanent in Nervous
+      Activity. Bulletin of Mathematical Biophysics 5, 115–133.

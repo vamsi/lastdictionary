@@ -1,0 +1,95 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: calibration
+id: calibration
+pos: n.
+also:
+  - probability calibration
+  - calibrated
+  - well-calibrated
+  - miscalibration
+  - overconfidence
+  - reliability diagram
+  - Platt scaling
+  - temperature scaling
+  - isotonic regression
+  - camera calibration
+domain: ml
+domains:
+  - eval
+  - safety
+  - society
+level: core
+plain: >-
+  How well a model's stated confidence matches reality: when a well-calibrated system says it is 80%
+  sure, it turns out to be right about 80% of the time.
+senses:
+  - context: Probability calibration
+    definition: >-
+      Agreement between a model's predicted probabilities and observed frequencies: among all cases
+      assigned probability p of an event, the event should occur in a fraction close to p.
+      Calibration is distinct from discrimination, the ability to rank positives above negatives
+      measured by [[auc|AUC]]: a model can rank perfectly yet be overconfident. It is assessed with
+      reliability diagrams, which bin predictions by confidence and plot observed accuracy against
+      mean confidence; with summary measures such as the [[expected-calibration-error|expected
+      calibration error]]; and with [[proper-scoring-rule|proper scoring rules]] such as
+      [[log-loss|log loss]] and the [[brier-score|Brier score]], which reward calibration and
+      discrimination together. Post-hoc recalibration fits a mapping from scores to probabilities on
+      held-out data: Platt scaling (a logistic fit), isotonic regression (a monotone step function)
+      or temperature scaling (dividing a network's [[logit|logits]] by one learned constant; see
+      [[temperature|temperature]]). Modern deep networks are often overconfident. For
+      [[large-language-model|language models]], calibrated answer probabilities and verbalized
+      confidence underpin [[abstention|abstention]] and selective answering and help reduce the harm
+      of [[hallucination|hallucinations]].
+    example: >-
+      After temperature scaling, the classifier's 90%-confidence predictions were right 89% of the
+      time instead of 71%.
+  - context: Fairness
+    definition: >-
+      In [[algorithmic-fairness|algorithmic fairness]], the requirement that a risk score be equally
+      well calibrated within each protected group, so that a given score means the same probability
+      of the outcome whatever a person's group. Results by Jon Kleinberg and colleagues and by
+      Alexandra Chouldechova (2016–2017) showed that when base rates differ between groups,
+      calibration within groups generally cannot coexist with equal false positive and false
+      negative rates ([[fairness-impossibility-theorem|fairness impossibility theorem]]), a tension
+      at the heart of the [[compas|COMPAS]] debate.
+  - context: Vision and robotics
+    definition: >-
+      Estimation of a camera's or sensor's internal parameters (focal length, lens distortion) and
+      external parameters (position and orientation), so that measurements can be mapped accurately
+      to the physical world; a prerequisite for [[3d-reconstruction|3D reconstruction]],
+      [[sensor-fusion|sensor fusion]] and robot perception.
+origin: >-
+  Calibration of probability forecasts was studied first in meteorology, where Glenn Brier (1950)
+  and later Allan Murphy and Robert Winkler developed scores and reliability diagrams; A. Philip
+  Dawid analyzed it theoretically in 'The Well-Calibrated Bayesian' (1982). In machine learning,
+  John Platt's sigmoid fitting (1999) and Bianca Zadrozny and Charles Elkan's binning and
+  isotonic-regression methods (2001–2002) recalibrated classifiers, and Chuan Guo and colleagues'
+  2017 study of overconfident neural networks introduced temperature scaling.
+note: >-
+  Saurav Kadavath and colleagues (2022) found large pretrained language models fairly well
+  calibrated on multiple-choice questions, and the GPT-4 technical report (2023) noted that
+  post-training reduced calibration. Calibration is not usefulness: always predicting the base rate
+  is perfectly calibrated.
+see_also:
+  - expected calibration error
+  - Brier score
+  - log loss
+  - proper scoring rule
+  - temperature
+  - abstention
+  - fairness impossibility theorem
+  - conformal prediction
+contrast:
+  - AUC
+sources:
+  - text: >-
+      Guo, C., Pleiss, G., Sun, Y. & Weinberger, K. Q. (2017). On Calibration of Modern Neural
+      Networks. Proc. ICML 2017.
+  - text: >-
+      Dawid, A. P. (1982). The Well-Calibrated Bayesian. Journal of the American Statistical
+      Association 77(379).
+  - text: >-
+      Kleinberg, J., Mullainathan, S. & Raghavan, M. (2017). Inherent Trade-Offs in the Fair
+      Determination of Risk Scores. Proc. 8th Innovations in Theoretical Computer Science Conference
+      (ITCS).

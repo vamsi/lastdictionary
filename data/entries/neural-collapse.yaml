@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neural collapse
+id: neural-collapse
+pos: n.
+also:
+  - terminal phase of training
+  - minority collapse
+domain: dl
+domains:
+  - interp
+  - math
+level: specialist
+plain: >-
+  A striking tidiness that appears when classifiers are trained for a long time: the network's
+  internal summaries of each class shrink to single points arranged as evenly and as far apart as
+  possible.
+senses:
+  - definition: >-
+      A set of geometric regularities that emerge in the last-layer features and classifier of deep
+      networks trained for classification well past zero training error (the 'terminal phase of
+      training'): the features of all training examples in a class collapse toward their class mean;
+      the class means, centered on the global mean, become equidistant and equiangular, forming a
+      simplex equiangular tight frame, the most separated arrangement possible; the classifier's
+      weight vectors align with those means up to scaling; and classification reduces to choosing
+      the nearest class mean. Observed across standard architectures and image datasets, it has been
+      derived theoretically in 'unconstrained features' models that treat last-layer features as
+      free variables, where it is the optimum of regularized [[cross-entropy|cross-entropy]] or
+      squared loss. Neural collapse bears on robustness, on [[transfer-learning|transfer learning]]
+      (collapsed features can transfer worse) and on [[class-imbalance|class imbalance]], where a
+      'minority collapse' variant merges rare classes; partial versions are reported in intermediate
+      layers and in [[large-language-model|language models]].
+origin: >-
+  Described and named by Vardan Papyan, X. Y. Han and David L. Donoho in 'Prevalence of neural
+  collapse during the terminal phase of deep learning training' (PNAS, 2020); Cong Fang and
+  colleagues identified minority collapse in 2021.
+year: 2020
+see_also:
+  - representation learning
+  - cross-entropy
+  - transfer learning
+  - class imbalance
+  - implicit regularization
+  - generalization
+sources:
+  - text: >-
+      Papyan, V., Han, X. Y. & Donoho, D. L. (2020). Prevalence of neural collapse during the
+      terminal phase of deep learning training. PNAS 117(40), 24652–24663.

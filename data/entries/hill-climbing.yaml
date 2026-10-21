@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hill climbing
+id: hill-climbing
+pos: n.
+also:
+  - greedy local search
+  - steepest ascent
+  - random-restart hill climbing
+domain: sym
+domains:
+  - math
+level: core
+plain: >-
+  A simple search method that keeps making whichever small change improves things, like climbing in
+  fog by always stepping uphill — which can leave it stuck on a small hill instead of the highest
+  peak.
+senses:
+  - definition: >-
+      A [[local-search|local search]] algorithm that starts from a candidate solution and repeatedly
+      moves to a neighboring solution that improves the objective — the best neighbor in
+      steepest-ascent hill climbing, the first improving one found in first-choice hill climbing —
+      and stops when no neighbor is better. It uses little memory and often finds good solutions
+      quickly, but it halts at local optima, stalls on plateaus and zigzags slowly along ridges.
+      Standard remedies are random restarts, limited sideways moves, occasional acceptance of worse
+      moves (as in [[simulated-annealing|simulated annealing]]) and memory of recent moves (as in
+      [[tabu-search|tabu search]]). [[gradient-descent|Gradient descent]] is its continuous
+      counterpart, descending a cost rather than climbing a value.
+origin: >-
+  The metaphor was established in AI by the early 1960s, though its first use is not established;
+  Marvin Minsky's survey 'Steps Toward Artificial Intelligence' (1961) discussed hill climbing as
+  the basic method of improvement by small changes, along with its tendency to stall on local peaks.
+year: 1961
+see_also:
+  - local search
+  - simulated annealing
+  - tabu search
+  - gradient descent
+  - local minimum
+  - heuristic
+contrast:
+  - simulated annealing
+sources:
+  - text: >-
+      Minsky, M. (1961). Steps Toward Artificial Intelligence. Proceedings of the IRE 49(1), 8–30.

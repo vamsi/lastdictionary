@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: manifold hypothesis
+id: manifold-hypothesis
+pos: n.
+also:
+  - manifold assumption
+  - manifold learning
+  - data manifold
+domain: math
+domains:
+  - ml
+  - dl
+level: specialist
+plain: >-
+  The idea that real-world data, such as photos of faces, fills only a thin, smoothly curved sliver
+  of the vast space of all possible data — which is why learning from examples works at all.
+senses:
+  - definition: >-
+      The conjecture that the inputs a learner actually meets — natural images, sounds, embeddings
+      of text — fill almost none of their nominal high-dimensional space, clustering instead on or
+      near one or a few smooth low-dimensional surfaces (manifolds) whose own coordinates capture
+      the meaningful variation. Almost all random pixel arrays look like noise, so natural images
+      occupy a vanishing fraction of pixel space, and a few factors of variation such as pose,
+      lighting and identity move along the manifold. The hypothesis explains how learning escapes
+      the [[curse-of-dimensionality|curse of dimensionality]]: sample needs depend on the data's
+      intrinsic [[dimensionality|dimensionality]] rather than the number of raw features. It
+      motivates manifold-learning methods (Isomap, locally linear embedding, [[t-sne|t-SNE]],
+      [[umap|UMAP]]), the view of deep networks as flattening and untangling data manifolds,
+      [[latent-space|latent space]] interpolation in [[autoencoder|autoencoders]] and
+      [[generative-model|generative models]], and accounts of [[adversarial-example|adversarial
+      examples]] as points pushed slightly off the manifold. It is supported empirically, for
+      example by low intrinsic-dimension estimates for image datasets, but is not a theorem.
+    example: >-
+      If the manifold hypothesis holds, interpolating in latent space should yield realistic faces,
+      and it mostly does.
+origin: >-
+  Bernhard Riemann introduced the manifold (Mannigfaltigkeit) in his 1854 habilitation lecture,
+  published posthumously in 1868. Isomap (Joshua Tenenbaum, Vin de Silva and John Langford) and
+  locally linear embedding (Sam Roweis and Lawrence Saul), both published in Science in 2000,
+  launched manifold learning; the phrase 'manifold hypothesis' was in use by 2010, when Hariharan
+  Narayanan and Sanjoy Mitter analyzed how to test it, followed by Charles Fefferman, Mitter and
+  Narayanan (2016).
+see_also:
+  - dimensionality
+  - curse of dimensionality
+  - latent space
+  - dimensionality reduction
+  - representation learning
+  - UMAP

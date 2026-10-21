@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: general-purpose AI model with systemic risk
+id: general-purpose-ai-model-with-systemic-risk
+pos: n.
+also:
+  - GPAI model with systemic risk
+  - GPAISR
+  - systemic-risk model
+  - systemic risk
+domain: gov
+domains:
+  - safety
+  - llm
+labels:
+  - legal
+level: core
+plain: >-
+  The EU's label for the very largest and most capable AI models, whose failure or misuse could
+  cause harm across society, so their makers must test them for dangers and report serious
+  incidents.
+senses:
+  - definition: >-
+      Under the [[eu-ai-act|EU AI Act]], a [[general-purpose-ai-model|general-purpose AI model]]
+      bearing the heaviest duties because its capabilities rank with or above those of the most
+      advanced models (high-impact capabilities) or because the Commission finds its capabilities or
+      impact equivalent, weighing Annex XIII indicators such as parameters, data, training compute,
+      modalities, benchmark results and user reach. Training with more than 10²⁵ floating-point
+      operations ([[flop|FLOP]]) creates a presumption of high-impact capabilities; the provider
+      must tell the Commission within two weeks of crossing, or expecting to cross, that line and
+      may argue that its model poses no systemic risk. The extra duties are to assess and reduce
+      systemic risks across the EU, backed by model evaluation to current standards, including
+      [[red-teaming|adversarial testing]]; to keep the model and its infrastructure adequately
+      secure; and to track and promptly report [[serious-incident|serious incidents]] to the
+      [[ai-office|AI Office]]. 'Systemic risk' means risk peculiar to such capabilities that could
+      spread through the value chain and seriously affect public health, safety, security,
+      fundamental rights or society in the EU.
+    example: >-
+      Crossing 10²⁵ FLOP obliged the lab to notify the AI Office that its model had systemic risk.
+origin: >-
+  Introduced in the political agreement of December 2023 as a compromise between the Parliament,
+  which wanted binding rules for all foundation models, and France, Germany and Italy, which favored
+  self-regulation through codes of conduct. The 10²⁵ FLOP figure, roughly the training compute of
+  GPT-4-class models of 2023, can be revised by delegated act.
+year: 2023
+note: >-
+  Providers usually show compliance through the Safety and Security chapter of the
+  [[general-purpose-ai-code-of-practice|General-Purpose AI Code of Practice]]. Critics argue that a
+  fixed [[compute-threshold|compute threshold]] will capture more models as compute gets cheaper
+  while missing efficient but capable ones; the Commission can designate models below it.
+see_also:
+  - general-purpose AI model
+  - frontier AI
+  - compute threshold
+  - General-Purpose AI Code of Practice
+  - AI Office
+  - dangerous capability evaluation
+  - serious incident
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(64)–(65), Arts. 51–52 and Annex XIII; obligations Art. 55
+as_of: 2026-10

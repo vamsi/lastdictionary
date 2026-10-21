@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sovereign AI
+id: sovereign-ai
+pos: n.
+also:
+  - AI sovereignty
+  - national AI capability
+domain: gov
+domains:
+  - asi
+  - hw
+level: core
+plain: >-
+  A country's ability to build and run AI on its own terms, so that the computers, models and
+  know-how it relies on cannot be withheld or dictated by foreign companies or governments.
+senses:
+  - context: Policy and industry
+    definition: >-
+      The degree to which a state can develop, run and govern AI systems under its own laws without
+      depending on foreign suppliers for the critical layers of the stack, from chips and data
+      centers to data, models and skilled people; also the policies pursuing that independence.
+      Motives include national security, economic competitiveness, keeping citizens' data under
+      domestic law, resilience against foreign [[export-controls-on-ai-chips|export controls]] or
+      service cut-offs, and models that reflect local languages, laws and values. Instruments range
+      from national [[ai-supercomputer|supercomputers]] and subsidized [[ai-data-center|data
+      centers]] (the EU's [[ai-factory|AI factories]], India's AI Mission, Japan's ABCI) to national
+      or regional models (the UAE's Falcon, Southeast Asia's SEA-LION, Switzerland's Apertus) and
+      'sovereign cloud' arrangements in which foreign providers operate under local control. Because
+      few countries can make leading-edge chips, most strategies secure some layers of the stack
+      while partnering on others, as in US-promoted 'full-stack' AI export packages and OpenAI's
+      'OpenAI for Countries' program.
+    example: >-
+      The ministry's sovereign AI plan pairs a domestic language model with a GPU cluster run by a
+      foreign partner under local law.
+    labels:
+      - emerging
+  - context: AI safety (Bostrom)
+    definition: >-
+      In Nick Bostrom's taxonomy in Superintelligence (2014), a sovereign is a superintelligent
+      system licensed to act on its own in the world, choosing its own means toward broad and
+      possibly very distant goals, as opposed to an [[oracle-ai|oracle]], which only answers
+      questions, a genie, which takes orders one at a time, or a [[tool-ai|tool]]. Because a
+      sovereign could not easily be corrected once launched, Bostrom argued it requires the most
+      reliable solution to the control problem.
+origin: >-
+  The national sense spread in 2023–2024, when Nvidia chief executive [[jensen-huang|Jensen Huang]]
+  began urging every country to build sovereign AI, notably at the World Governments Summit in Dubai
+  in February 2024; it echoed earlier European debates on digital sovereignty, and by 2025 it was a
+  standard category in government strategies and vendor sales. Bostrom introduced the
+  oracle–genie–sovereign–tool classification in 2014.
+year: 2023
+note: >-
+  Critics argue full self-sufficiency is unattainable for most states and that sovereign-AI
+  marketing can deepen dependence on a single chip vendor. The two senses are unrelated: one
+  concerns a state's control over AI, the other an AI that acts as its own authority.
+see_also:
+  - AI data center
+  - export controls on AI chips
+  - Stargate
+  - superintelligence
+  - oracle AI
+  - tool AI
+  - Jensen Huang
+sources:
+  - text: >-
+      Bostrom, N. (2014). Superintelligence: Paths, Dangers, Strategies. Oxford University Press.
+      Chapter 10.
+as_of: 2026-10

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gated linear unit
+id: gated-linear-unit
+pos: n.
+also:
+  - GLU
+  - gating
+  - gated activation
+  - bilinear layer
+domain: dl
+domains:
+  - llm
+level: specialist
+plain: >-
+  A layer design in which one half of the computation acts as a set of dials, each between off and
+  on, deciding how much of the other half passes through.
+senses:
+  - definition: >-
+      A [[layer|layer]] that projects its input twice and lets one projection, squashed by a
+      [[sigmoid-function|sigmoid]] into values between 0 and 1, scale the other element by element.
+      The squashed branch works as a learned, input-dependent gate, and because the ungated branch
+      is linear, gradients pass through it without saturating. First used in gated convolutional
+      language models, GLUs are now best known through variants that swap the sigmoid for another
+      function — [[swiglu|SwiGLU]] ([[silu|SiLU]]), GEGLU ([[gelu|GELU]]) and ReGLU ([[relu|ReLU]])
+      — or drop it altogether, leaving a 'bilinear' layer. These variants are the standard
+      [[feed-forward-network|feed-forward network]] in modern [[large-language-model|language
+      models]]. Gating by elementwise multiplication also underlies
+      [[long-short-term-memory|LSTMs]], [[gated-recurrent-unit|GRUs]], [[highway-network|highway
+      networks]] and the gated activations of [[wavenet|WaveNet]].
+    example: >-
+      Replacing the ReLU feed-forward block with a gated linear unit lowered perplexity at equal
+      parameter count.
+formula_latex: \operatorname{GLU}(x) = (xW + b) \otimes \sigma(xV + c)
+origin: >-
+  Introduced by Yann Dauphin, Angela Fan, Michael Auli and David Grangier of Facebook AI Research in
+  'Language Modeling with Gated Convolutional Networks' (arXiv, December 2016; ICML 2017) as a
+  simpler alternative to the tanh-and-sigmoid gating of Aäron van den Oord and colleagues' 2016
+  image models. Noam Shazeer's 2020 variants carried GLUs into transformers.
+year: 2016
+see_also:
+  - SwiGLU
+  - SiLU
+  - feed-forward network
+  - long short-term memory
+  - highway network
+  - sigmoid function
+sources:
+  - text: >-
+      Dauphin, Y. N., Fan, A., Auli, M. & Grangier, D. (2016). Language Modeling with Gated
+      Convolutional Networks. arXiv:1612.08083; ICML 2017.
+    url: https://arxiv.org/abs/1612.08083
+  - text: Shazeer, N. (2020). GLU Variants Improve Transformer. arXiv:2002.05202.
+    url: https://arxiv.org/abs/2002.05202

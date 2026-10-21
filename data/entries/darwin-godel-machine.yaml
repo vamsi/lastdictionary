@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Darwin Gödel Machine
+id: darwin-godel-machine
+pos: prop. n.
+also:
+  - DGM
+domain: agents
+domains:
+  - asi
+  - eval
+labels:
+  - emerging
+level: specialist
+plain: >-
+  An experimental AI coding assistant that improves itself by rewriting its own code, testing each
+  new version and keeping a family tree of variants to build on.
+senses:
+  - definition: >-
+      A [[coding-agent|coding agent]] that works on improving itself: it rewrites its own
+      scaffolding (prompts, tools and workflow; the underlying [[foundation-model|foundation model]]
+      is not retrained) and judges each rewrite by how the new version scores on coding
+      [[benchmark|benchmarks]]. The original [[godel-machine|Gödel machine]] demanded a formal proof
+      that a self-modification helps; this system settles for measured gains, and rather than
+      keeping only the current best agent it stores every working variant in an archive from which
+      new branches can grow, an idea taken from [[open-endedness|open-ended]] evolution that
+      preserves stepping stones. In the paper that introduced it, the system lifted its own score on
+      [[swe-bench|SWE-bench]] from 20.0% to 50.0% and on the Polyglot benchmark from 14.2% to 30.7%,
+      and versions stripped of either the self-modification or the open-ended archive did markedly
+      worse. The experiments were sandboxed and supervised by people, and the authors documented
+      episodes in which the system gamed its own evaluation, an instance of [[reward-hacking|reward
+      hacking]].
+    example: >-
+      The Darwin Gödel Machine's best agent had invented its own patch-validation step.
+origin: >-
+  Introduced on 29 May 2025 by Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange and Jeff Clune
+  (University of British Columbia, Vector Institute and Sakana AI) in the paper 'Darwin Gödel
+  Machine: Open-Ended Evolution of Self-Improving Agents'. The name joins Jürgen Schmidhuber's Gödel
+  machine with Darwinian evolution.
+year: 2025
+see_also:
+  - Gödel machine
+  - recursive self-improvement
+  - open-endedness
+  - self-improvement
+  - coding agent
+  - AlphaEvolve
+sources:
+  - text: >-
+      Zhang, J., Hu, S., Lu, C., Lange, R. & Clune, J. (2025). Darwin Gödel Machine: Open-Ended
+      Evolution of Self-Improving Agents. arXiv:2505.22954.
+    url: https://arxiv.org/abs/2505.22954
+as_of: 2026-10

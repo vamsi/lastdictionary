@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI transparency
+id: ai-transparency
+pos: n.
+also:
+  - algorithmic transparency
+  - transparency (AI)
+domain: society
+domains:
+  - gov
+  - interp
+level: core
+plain: >-
+  Openness about AI: telling people when they are dealing with one, how a system was built and
+  tested, and why it reached a particular decision.
+senses:
+  - definition: >-
+      The principle and practice of disclosing enough about an AI system for outsiders to understand
+      and scrutinize how it was built and how it is being used. It operates at several levels:
+      disclosure that AI is in use (labeling chatbots and [[synthetic-media|synthetic media]]);
+      documentation of how a system was built, including training data, evaluations, known
+      limitations and energy use, through [[model-card|model cards]], [[system-card|system cards]]
+      and [[datasheet-for-datasets|datasheets]]; [[explainability|explainability]] of individual
+      outputs; and openness about governance, such as usage policies, incidents and
+      [[ai-audit|audit]] results. Transparency is a precondition for accountability but not a
+      substitute for it, and it can conflict with privacy, security and trade secrecy. Indexes such
+      as Stanford's Foundation Model Transparency Index score developers on such disclosures.
+    example: >-
+      Under the new transparency rules, the bank must tell applicants when an AI system scored their
+      file.
+origin: >-
+  'Algorithmic transparency' entered policy debate in the mid-2010s, helped by Frank Pasquale's The
+  Black Box Society (2015); transparency then appeared in nearly every AI ethics guideline of
+  2016–2019. The EU AI Act (2024) made parts of it law through documentation duties and the
+  disclosure rules of Article 50.
+note: >-
+  Transparency (openness about a system) differs from [[interpretability|interpretability]]
+  (understanding its internal mechanisms) and [[explainability|explainability]] (accounts of
+  particular outputs), although the words are often used loosely. Disclosure no one can act on is
+  sometimes criticized as transparency theater.
+see_also:
+  - explainability
+  - model card
+  - system card
+  - transparency obligations
+  - right to explanation
+  - algorithmic accountability
+  - AI-generated content labeling
+contrast:
+  - interpretability
+sources:
+  - text: >-
+      Pasquale, F. (2015). The Black Box Society: The Secret Algorithms That Control Money and
+      Information. Harvard University Press.
+  - text: >-
+      Bommasani, R. et al. (2023). The Foundation Model Transparency Index. Stanford Center for
+      Research on Foundation Models.

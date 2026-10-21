@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: affective computing
+id: affective-computing
+pos: n.
+also:
+  - affective AI
+  - artificial emotional intelligence
+domain: percep
+domains:
+  - society
+  - mind
+level: core
+plain: >-
+  Technology that tries to read people's emotions — from their faces, voices or words — or to
+  display emotions of its own, like software that guesses your mood or a robot that seems to show
+  feelings.
+senses:
+  - definition: >-
+      Computing research and engineering aimed at machines that register human emotions and moods,
+      respond to them, or produce emotional expression of their own, a field that borrows heavily
+      from psychology and the cognitive sciences. Recognition systems infer emotional states from
+      facial expressions, voice prosody, text, posture or physiological signals such as heart rate
+      and skin conductance, usually with [[supervised-learning|supervised]] classifiers trained on
+      labeled examples; synthesis systems give agents, robots and [[ai-companion|companions]]
+      expressive faces, voices or simulated emotional responses. Applications include tutoring,
+      driver-drowsiness monitoring, accessibility tools, mental-health support and market research.
+      The scientific basis for inferring inner states from outward signals is contested: a 2019
+      review led by Lisa Feldman Barrett concluded that facial movements are not reliable, universal
+      indicators of specific emotions. The [[eu-ai-act|EU AI Act]] bans
+      [[emotion-recognition-system|emotion recognition]] in workplaces and schools except for
+      medical or safety reasons.
+    example: >-
+      The affective computing module flags rising frustration in a caller's voice and routes the
+      call to a human agent.
+origin: >-
+  Named by Rosalind Picard of the MIT Media Lab in a 1995 technical report, 'Affective Computing',
+  expanded into her 1997 book of the same title, which argued that computers need emotional
+  abilities to interact naturally with people and perhaps to reason well. IEEE Transactions on
+  Affective Computing began publication in 2010.
+year: 1995
+note: >-
+  Detecting that someone looks or sounds upset is not the same as knowing what they feel; critics
+  warn that commercial 'emotion AI' blurs the two. [[sentiment-analysis|Sentiment analysis]] of text
+  is often grouped with the field but usually concerns opinions rather than emotions.
+see_also:
+  - emotion recognition system
+  - sentiment analysis
+  - facial recognition
+  - AI companion
+  - biometric data
+  - anthropomorphism
+sources:
+  - text: Picard, R. W. (1997). Affective Computing. MIT Press.
+  - text: >-
+      Barrett, L. F., Adolphs, R., Marsella, S., Martinez, A. M. & Pollak, S. D. (2019). Emotional
+      Expressions Reconsidered: Challenges to Inferring Emotion From Human Facial Movements.
+      Psychological Science in the Public Interest 20(1).

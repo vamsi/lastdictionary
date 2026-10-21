@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: encoder–decoder architecture
+id: encoder-decoder-architecture
+pos: n.
+also:
+  - encoder-decoder
+  - encoder–decoder model
+  - encoder-decoder transformer
+  - encoder
+  - decoder
+domain: dl
+domains:
+  - llm
+  - gen
+level: core
+plain: >-
+  A two-part model design: one part, the encoder, reads the input and condenses it into an internal
+  summary; the other, the decoder, uses that summary to produce the output.
+senses:
+  - definition: >-
+      A neural-network design that splits a model into an encoder, which maps an input (text, image,
+      audio) to an intermediate representation, and a decoder, which maps that representation to an
+      output, often of a different type or length; the two are trained jointly, end to end. In
+      [[sequence-to-sequence-model|sequence-to-sequence]] models the decoder is
+      [[autoregressive-model|autoregressive]] and, since 2014, reads the encoder's states through
+      [[attention|attention]] ([[cross-attention|cross-attention]] in transformers); the original
+      [[transformer|transformer]] (2017), [[t5|T5]], BART and [[whisper|Whisper]] are
+      encoder–decoder transformers. The same pattern appears in [[autoencoder|autoencoders]], where
+      encoder and decoder bracket a bottleneck, in [[u-net|U-Net]] segmentation models, and in the
+      [[variational-autoencoder|VAEs]] of [[latent-diffusion-model|latent diffusion]] systems. Most
+      large language models are instead [[decoder-only-transformer|decoder-only]], and
+      [[bert|BERT]]-style models are [[encoder-only-transformer|encoder-only]].
+    example: >-
+      For translation we kept the encoder–decoder architecture rather than a decoder-only model.
+origin: >-
+  The vocabulary comes from information and coding theory, in which messages are encoded for
+  transmission and decoded on receipt. Neural autoencoders of the 1980s used the terms, and
+  Kyunghyun Cho and colleagues' 'RNN Encoder–Decoder' (2014) established the modern
+  sequence-modeling sense.
+year: 2014
+see_also:
+  - sequence-to-sequence model
+  - autoencoder
+  - cross-attention
+  - transformer
+  - decoder-only transformer
+  - encoder-only transformer
+  - U-Net
+  - latent space
+sources:
+  - text: >-
+      Cho, K. et al. (2014). Learning Phrase Representations using RNN Encoder–Decoder for
+      Statistical Machine Translation. EMNLP 2014; arXiv:1406.1078.
+    url: https://arxiv.org/abs/1406.1078

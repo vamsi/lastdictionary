@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Imagen
+id: imagen
+pos: prop. n.
+also:
+  - Imagen 2
+  - Imagen 3
+  - Imagen 4
+  - Imagen Video
+  - DrawBench
+pronunciation: IM-uh-jen
+domain: gen
+domains:
+  - hist
+labels:
+  - trademark
+level: core
+plain: >-
+  Google's family of AI image generators, first shown in 2022, whose research showed that better
+  understanding of language yields pictures that match descriptions more faithfully.
+senses:
+  - definition: >-
+      A family of [[text-to-image-model|text-to-image]] [[diffusion-model|diffusion models]] from
+      Google. The original Imagen (May 2022) used a frozen T5-XXL language model as its text encoder
+      and a cascade of pixel-space diffusion models: a base model generating 64 × 64 images followed
+      by two text-conditioned [[super-resolution|super-resolution]] models upscaling to 256 × 256
+      and 1024 × 1024. Its paper reported a zero-shot COCO [[frechet-inception-distance|FID]] of
+      7.27, introduced the DrawBench prompt benchmark and argued that the text encoder matters most:
+      enlarging the language model raised image quality and prompt alignment far more than enlarging
+      the diffusion model. Google initially withheld the model, citing risks of misuse and social
+      bias, then shipped successors in its products and cloud platform: Imagen 2 (December 2023),
+      Imagen 3 (2024) and Imagen 4 (May 2025). Gemini-based image models ([[nano-banana|Nano
+      Banana]]) then took over much of Google's image generation, and Google retired the Imagen
+      models from its Gemini API on 17 August 2026, directing developers to the Gemini image models.
+origin: >-
+  Introduced in 'Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding' by
+  Chitwan Saharia, William Chan and colleagues of Google Research's Brain team (posted 23 May 2022;
+  NeurIPS 2022).
+year: 2022
+see_also:
+  - text-to-image model
+  - diffusion model
+  - super-resolution
+  - Nano Banana
+  - Veo
+  - DALL·E
+sources:
+  - text: >-
+      Saharia, C. et al. (2022). Photorealistic Text-to-Image Diffusion Models with Deep Language
+      Understanding. NeurIPS 2022. arXiv:2205.11487.
+    url: https://arxiv.org/abs/2205.11487v1
+  - text: >-
+      Google (2026). Migrate from Imagen to a Gemini Image model ('Nano Banana'). Firebase AI Logic
+      documentation.
+    url: https://firebase.google.com/docs/ai-logic/imagen-models-migration
+  - text: Google (2026). Gemini deprecations. Gemini API documentation.
+    url: https://ai.google.dev/gemini-api/docs/deprecations
+as_of: 2026-10

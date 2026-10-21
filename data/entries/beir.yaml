@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BEIR
+id: beir
+pos: prop. n.
+domain: eval
+domains:
+  - eng
+level: specialist
+plain: >-
+  A collection of 18 different search tests — on topics from medicine to finance to fact-checking —
+  used to see whether a search model works on kinds of data it was never trained on.
+senses:
+  - definition: >-
+      A [[benchmark|benchmark]] for testing retrieval models on kinds of data they were not trained
+      on, assembled from 18 existing public datasets that differ widely in task and subject — fact
+      checking, biomedical and scientific retrieval, question answering, argument retrieval,
+      duplicate-question detection, entity retrieval, news and tweets — and scored mainly by
+      [[normalized-discounted-cumulative-gain|nDCG@10]]. A model is typically trained on one large
+      source such as [[ms-marco|MS MARCO]] and then run on the others unchanged, so the scores
+      measure out-of-domain generalization. The original comparison was influential: [[bm25|BM25]]
+      held up as a strong baseline that many early [[dense-retrieval|dense retrievers]] could not
+      beat, while [[reranking|reranking]] and [[late-interaction|late interaction]] models had the
+      best average scores but cost far more to run. BEIR's datasets were later folded into the
+      retrieval portion of [[mteb|MTEB]].
+    example: The model gains four points in domain but loses to BM25 on half of BEIR.
+origin: >-
+  Introduced by Nandan Thakur, Nils Reimers, Andreas Rücklé, Abhishek Srivastava and Iryna Gurevych
+  in 'BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models'
+  (arXiv, April 2021; NeurIPS 2021 Datasets and Benchmarks track).
+year: 2021
+see_also:
+  - MTEB
+  - MS MARCO
+  - dense retrieval
+  - BM25
+  - normalized discounted cumulative gain
+  - benchmark
+sources:
+  - text: >-
+      Thakur, N., Reimers, N., Rücklé, A., Srivastava, A. & Gurevych, I. (2021). BEIR: A
+      Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models. NeurIPS 2021
+      Datasets and Benchmarks. arXiv:2104.08663.
+    url: https://arxiv.org/abs/2104.08663

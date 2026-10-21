@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model cascade
+id: model-cascade
+pos: n.
+also:
+  - cascade
+  - LLM cascade
+  - classifier cascade
+  - cascading
+domain: infer
+domains:
+  - ml
+  - percep
+level: specialist
+plain: >-
+  A chain of AI models ordered from cheapest to most capable: each request goes to the cheap one
+  first and moves up the chain only if the answer does not look good enough.
+senses:
+  - definition: >-
+      An arrangement in which inputs pass through a sequence of models of increasing cost and
+      capability, each stage either returning a result or deferring to the next according to a
+      confidence score, an agreement check or a learned scorer. Because most inputs are easy, the
+      expensive stages run on only a small fraction of them, cutting average cost and
+      [[latency|latency]] while approaching the accuracy of the strongest model. Stage thresholds
+      trade accuracy against cost and must be [[calibration|calibrated]]. In LLM applications a
+      cascade might send a query to a small model, check the answer with a scoring model or by
+      [[self-consistency|self-consistency]], and escalate to a frontier model when confidence is
+      low. [[early-exit|Early exit]] applies the same idea inside one network, and
+      [[speculative-decoding|speculative decoding]] is a related draft-then-check pattern at the
+      level of tokens.
+    example: >-
+      Our cascade answers 70 percent of queries with the small model and pays frontier prices only
+      for the rest.
+origin: >-
+  An early example is Ethem Alpaydın and Cenk Kaynak's 'Cascading classifiers' (1998), in which a
+  cheap rule-learner passes the inputs it rejects to a costlier nearest-neighbor stage. Paul Viola
+  and Michael Jones's boosted cascade of simple features for real-time face detection (CVPR 2001)
+  made cascades a standard design in computer vision. For language models, FrugalGPT (Lingjiao Chen,
+  Matei Zaharia and James Zou, Stanford, 2023) reported matching the best single model's accuracy at
+  a small fraction of its cost with an LLM cascade.
+year: 1998
+see_also:
+  - model routing
+  - early exit
+  - speculative decoding
+  - inference cost
+  - calibration
+  - ensemble learning
+contrast:
+  - model routing
+  - ensemble learning
+sources:
+  - text: >-
+      Viola, P. & Jones, M. (2001). Rapid Object Detection using a Boosted Cascade of Simple
+      Features. CVPR 2001.
+  - text: >-
+      Chen, L., Zaharia, M. & Zou, J. (2023). FrugalGPT: How to Use Large Language Models While
+      Reducing Cost and Improving Performance. arXiv:2305.05176.

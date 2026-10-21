@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ChatGPT plugins
+id: chatgpt-plugins
+pos: prop. n.
+also:
+  - ChatGPT plugin
+domain: agents
+domains:
+  - hist
+  - eng
+labels:
+  - historical
+  - trademark
+level: specialist
+plain: >-
+  Add-ons, launched in 2023 and retired in 2024, that let ChatGPT use outside services — web
+  browsing, a code runner, travel booking or shopping sites — while answering a user.
+senses:
+  - definition: >-
+      A short-lived extension system for ChatGPT in which third parties exposed web APIs to the
+      model by publishing a manifest file and an OpenAPI description; the model read the
+      natural-language descriptions, decided when to call an API and worked the results into its
+      replies. OpenAI also shipped first-party plugins for web browsing (a text-only browser using
+      the Bing search API) and for [[code-execution|code execution]] (Code Interpreter, a sandboxed
+      Python interpreter later renamed Advanced Data Analysis), and released code for a self-hosted
+      retrieval plugin. Plugins were the first mass-market deployment of LLM [[tool-use|tool use]]
+      and exposed its problems early: unreliable tool selection, poor discoverability among hundreds
+      of plugins, and [[indirect-prompt-injection|indirect prompt injection]] through content that
+      plugins returned. They were superseded by custom GPTs with 'actions' (November 2023) and wound
+      down in 2024.
+    example: >-
+      Before custom GPTs arrived, a plugin was the only way to connect ChatGPT to a third-party
+      service.
+origin: >-
+  Announced by OpenAI on 23 March 2023 as a limited alpha, with launch partners Expedia, FiscalNote,
+  Instacart, KAYAK, Klarna, Milo, OpenTable, Shopify, Slack, Speak, Wolfram and Zapier. New plugin
+  conversations were disabled in March 2024, and existing ones could no longer be continued after 9
+  April 2024.
+year: 2023
+note: >-
+  Not to be confused with plugins for [[coding-agent|coding agents]] (2025 onward), which bundle
+  skills, [[hook|hooks]], subagents and MCP servers for tools such as [[claude-code|Claude Code]].
+see_also:
+  - tool use
+  - function calling
+  - Model Context Protocol
+  - indirect prompt injection
+  - ChatGPT
+  - code execution
+sources:
+  - text: OpenAI (2023). ChatGPT plugins. OpenAI blog, 23 March 2023.
+    url: https://openai.com/index/chatgpt-plugins/
+  - text: OpenAI Help Center. Winding down the ChatGPT plugins beta.
+    url: https://help.openai.com/en/articles/8988022-winding-down-the-chatgpt-plugins-beta

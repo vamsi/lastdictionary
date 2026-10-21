@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: log loss
+id: log-loss
+pos: n.
+also:
+  - logarithmic loss
+  - logistic loss
+  - negative log-likelihood
+  - NLL
+  - logarithmic scoring rule
+  - log score
+domain: ml
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  A score for probability predictions that punishes confident mistakes severely: saying '99% sure'
+  and being wrong costs far more than saying '60% sure' and being wrong. Lower is better.
+senses:
+  - definition: >-
+      An evaluation metric and training loss for probabilistic classifiers: the average negative
+      logarithm of the probability the model assigned to the true class. For a binary label y (0 or
+      1) and predicted probability p, each example contributes −[y log p + (1 − y) log(1 − p)]; the
+      multiclass form equals the [[cross-entropy|cross-entropy]] between one-hot labels and the
+      predicted distribution, and minimizing it is equivalent to
+      [[maximum-likelihood-estimation|maximum-likelihood]] fitting. Log loss is a strictly
+      [[proper-scoring-rule|proper scoring rule]], minimized in expectation only by reporting true
+      probabilities, so it rewards both discrimination and [[calibration|calibration]]. It is
+      unbounded: a near-zero probability on the true class incurs a huge penalty, so predictions are
+      usually clipped away from 0 and 1. A useful reference point is the log loss of always
+      predicting the base rate. In language modeling the same quantity per token, the negative
+      log-likelihood, is the training objective, and its exponential is [[perplexity|perplexity]].
+    example: >-
+      The ensemble matched the single model's accuracy but had much better log loss, because it
+      stopped being overconfident.
+formula_latex: \mathcal{L} = -\frac{1}{N} \sum_{i=1}^{N} \big[\, y_i \log p_i + (1 - y_i) \log (1 - p_i) \,\big]
+origin: >-
+  The logarithmic scoring rule for probability forecasts was proposed by the statistician I. J. Good
+  in 'Rational Decisions' (1952). The short name 'log loss' became common in machine learning in the
+  2000s and 2010s, notably as an evaluation metric in Kaggle competitions.
+year: 1952
+see_also:
+  - cross-entropy
+  - Brier score
+  - proper scoring rule
+  - calibration
+  - logistic regression
+  - perplexity
+  - maximum likelihood estimation
+sources:
+  - text: >-
+      Good, I. J. (1952). Rational Decisions. Journal of the Royal Statistical Society, Series B
+      14(1).
+  - text: >-
+      Gneiting, T. & Raftery, A. E. (2007). Strictly Proper Scoring Rules, Prediction, and
+      Estimation. Journal of the American Statistical Association 102(477).

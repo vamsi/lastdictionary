@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: eligibility trace
+id: eligibility-trace
+pos: n.
+also:
+  - eligibility traces
+  - λ-return
+  - trace decay
+domain: rl
+level: specialist
+plain: >-
+  A fading short-term memory of which situations and actions an agent recently experienced, so that
+  when a reward arrives the credit can be shared among the steps that led to it.
+senses:
+  - definition: >-
+      A decaying record, kept for each [[state|state]] or parameter, of how recently and how often
+      it was visited or contributed to an output, used to spread each
+      [[temporal-difference-learning|TD error]] backward over the steps that preceded it. At each
+      step every trace decays by a factor γλ and the trace of the current state (or the gradient of
+      the current value estimate) is incremented; each weight is then updated in proportion to the
+      TD error times its trace. This implements the 'backward view' of TD(λ), which for offline
+      updating is equivalent to learning toward the λ-return, a geometrically weighted average of
+      n-step returns, interpolating between one-step TD (λ = 0) and Monte Carlo methods (λ = 1).
+      Traces speed [[credit-assignment-problem|credit assignment]] for delayed rewards; they appear
+      in [[sarsa|SARSA]](λ) and Watkins's Q(λ), and the same weighting reappears in
+      [[generalized-advantage-estimation|generalized advantage estimation]].
+    example: >-
+      With λ = 0.9 the eligibility trace lets the goal reward update states visited dozens of steps
+      earlier.
+origin: >-
+  The notion of synaptic 'eligibility' comes from A. Harry Klopf's theory of goal-seeking
+  'hedonistic' neurons (1972; book 1982). Richard Sutton and Andrew Barto built traces into
+  adaptive-element models from the late 1970s, and their 1981 Psychological Review paper is probably
+  the first use of the term 'eligibility trace'. Their 1983 pole-balancing actor–critic system with
+  Charles Anderson and Sutton's 1988 TD(λ) paper made traces a standard part of RL.
+year: 1981
+see_also:
+  - temporal difference learning
+  - credit assignment problem
+  - SARSA
+  - generalized advantage estimation
+  - return
+  - actor–critic
+sources:
+  - text: >-
+      Sutton, R. S. & Barto, A. G. (1981). Toward a modern theory of adaptive networks: Expectation
+      and prediction. Psychological Review 88(2), 135–170.
+  - text: >-
+      Barto, A. G., Sutton, R. S. & Anderson, C. W. (1983). Neuronlike adaptive elements that can
+      solve difficult learning control problems. IEEE Transactions on Systems, Man, and Cybernetics
+      SMC-13(5), 834–846.
+  - text: >-
+      Klopf, A. H. (1982). The Hedonistic Neuron: A Theory of Memory, Learning, and Intelligence.
+      Hemisphere.

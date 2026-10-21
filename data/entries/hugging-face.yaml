@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Hugging Face
+id: hugging-face
+pos: prop. n.
+also:
+  - HF
+  - Hugging Face Hub
+  - the Hub
+  - Hugging Face Spaces
+domain: eng
+domains:
+  - orgs
+  - llm
+labels:
+  - trademark
+level: essential
+plain: >-
+  A company whose website is the main public library for sharing AI models and datasets — often
+  called the GitHub of machine learning — and which makes widely used free AI software.
+senses:
+  - definition: >-
+      A company that operates the Hugging Face Hub, the largest public platform for hosting and
+      distributing machine-learning models, datasets and demo applications ('Spaces'), and maintains
+      widely used open-source libraries including [[transformers|Transformers]], Datasets,
+      Tokenizers, Diffusers, PEFT, Accelerate, TRL and [[safetensors|safetensors]]. Each Hub
+      repository is a Git repository with large-file storage, a [[model-card|model card]] or dataset
+      card and machine-readable metadata, and can be public, private or gated behind acceptance of a
+      license. The Hub hosts most published [[open-weight-model|open-weight models]], from small
+      classifiers to frontier-scale language models, along with community fine-tunes and
+      [[quantization|quantized]] copies. The company also sells inference and compute services,
+      hosts public [[leaderboard|leaderboards]], and has led open research collaborations such as
+      BigScience, which produced the BLOOM language model in 2022. Its central position makes it a
+      focal point for questions of [[model-license|model licensing]], provenance, malicious uploads
+      and moderation in the open-model ecosystem.
+    example: >-
+      Download the weights from Hugging Face, but read the license on the model card first.
+origin: >-
+  Founded in New York in 2016 by the French entrepreneurs Clément Delangue, Julien Chaumond and
+  Thomas Wolf as a chatbot app for teenagers, and named after the hugging-face emoji. It pivoted to
+  open-source tools after releasing a PyTorch port of Google's [[bert|BERT]] in late 2018, which
+  grew into the Transformers library, and its model-sharing hub expanded from 2019.
+year: 2016
+note: >-
+  Hub model counts, which passed one million in 2024, include many duplicates, fine-tunes and
+  quantized copies, so they overstate the number of distinct models. Hosting a model implies neither
+  review nor endorsement. In September 2026 [[nvidia|Nvidia]] announced an agreement to acquire
+  Hugging Face for about US$12.9 billion, pledging that the Hub would remain an open platform not
+  requiring Nvidia hardware.
+see_also:
+  - Transformers
+  - open-weight model
+  - model card
+  - safetensors
+  - model license
+  - leaderboard
+  - Nvidia
+sources:
+  - text: Huang, J. (2026). NVIDIA to Acquire Hugging Face. NVIDIA blog, 3 September 2026.
+    url: https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/
+as_of: 2026-10

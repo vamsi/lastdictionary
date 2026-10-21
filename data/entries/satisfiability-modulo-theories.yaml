@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: satisfiability modulo theories
+id: satisfiability-modulo-theories
+pos: n.
+also:
+  - SMT
+  - SMT solver
+  - SMT solving
+  - DPLL(T)
+  - SMT-LIB
+domain: sym
+domains:
+  - eng
+  - math
+level: specialist
+plain: >-
+  An extension of logic-puzzle solving that also understands arithmetic, arrays and other data
+  types, so it can check whether conditions in software, such as 'x + y > 10 and x < 3', can ever be
+  met.
+senses:
+  - definition: >-
+      The problem of deciding whether a formula of [[first-order-logic|first-order logic]] is
+      satisfiable with respect to background theories that fix the meaning of certain symbols —
+      linear integer or real arithmetic, bit-vectors, arrays, uninterpreted functions, strings,
+      floating point — and, by extension, the solvers that do so. Most SMT solvers use the DPLL(T)
+      architecture: a conflict-driven [[boolean-satisfiability-problem|SAT]] engine searches over
+      the formula's Boolean structure, while specialized theory solvers check the consistency of the
+      chosen literals and explain conflicts back to it. Solvers such as Z3, cvc5, Yices and MathSAT,
+      exchanging problems in the SMT-LIB format, are back ends for program verifiers, symbolic
+      execution, test generation, smart-contract analysis and verification of neural networks;
+      [[large-language-model|language-model]] agents increasingly call them as [[tool-use|tools]]
+      for exact constraint reasoning.
+    example: >-
+      The SMT solver produced a concrete input that overflows the buffer, so the bug report includes
+      a test case.
+origin: >-
+  Grew from decision procedures for combining theories by Greg Nelson and Derek Oppen (1979) and
+  Robert Shostak (1984). The name and the DPLL(T) framework took shape in the early 2000s, the
+  SMT-LIB standard and the annual SMT-COMP competition followed in the mid-2000s, and Leonardo de
+  Moura and Nikolaj Bjørner described Microsoft Research's Z3 in 2008.
+see_also:
+  - Boolean satisfiability problem
+  - automated theorem proving
+  - first-order logic
+  - formal verification
+  - constraint satisfaction problem
+  - Lean
+sources:
+  - text: >-
+      Nelson, G. & Oppen, D. C. (1979). Simplification by Cooperating Decision Procedures. ACM
+      Transactions on Programming Languages and Systems 1(2), 245–257.
+  - text: >-
+      de Moura, L. & Bjørner, N. (2008). Z3: An Efficient SMT Solver. TACAS 2008, LNCS 4963, 337–340.

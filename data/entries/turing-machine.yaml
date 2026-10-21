@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Turing machine
+id: turing-machine
+pos: n.
+also:
+  - universal Turing machine
+  - a-machine
+  - Turing-complete
+  - Turing completeness
+  - halting problem
+  - Church–Turing thesis
+  - computability
+domain: math
+domains:
+  - hist
+  - sym
+  - mind
+level: core
+plain: >-
+  An imaginary, extremely simple computer — a read-write head moving along an endless tape — that
+  Alan Turing used in 1936 to define exactly what can be computed at all.
+senses:
+  - definition: >-
+      An idealized computer consisting only of finitely many control states and a read–write head on
+      an endless strip of symbol squares; a fixed rulebook says, for each pairing of state and
+      scanned symbol, which symbol to leave, which way to step and which state to adopt. It can
+      simulate every known model of algorithmic computation, and the Church–Turing thesis holds that
+      it captures exactly what is effectively computable. A universal Turing machine simulates any
+      other machine from a description on its tape — the theoretical template of the stored-program
+      computer. Turing used the model to prove some problems undecidable, most famously what was
+      later named the halting problem: no machine can decide, for every program and input, whether
+      it will eventually stop. A system that can simulate any Turing machine is 'Turing-complete'.
+      In AI it anchors debates about the limits of computation and of minds, underlies
+      [[kolmogorov-complexity|Kolmogorov complexity]] and [[solomonoff-induction|Solomonoff
+      induction]], and frames studies of what transformers can compute, which are Turing-complete
+      only under idealized assumptions such as unbounded precision or unlimited
+      [[chain-of-thought|chain of thought]] steps.
+    example: >-
+      With an external scratchpad and unbounded steps the system is Turing-complete in principle; in
+      practice the context window limits it.
+origin: >-
+  Described by Alan Turing in 'On Computable Numbers, with an Application to the
+  Entscheidungsproblem', submitted in 1936 and published in the Proceedings of the London
+  Mathematical Society (volume 42, 1936–37); he called it an 'a-machine' (automatic machine). Alonzo
+  Church, whose lambda calculus proved equivalent, coined 'Turing machine' in his 1937 review of the
+  paper in the Journal of Symbolic Logic. Turing never used the word 'halting'; Martin Davis
+  introduced 'halting problem' in lectures in 1952.
+year: 1936
+see_also:
+  - Kolmogorov complexity
+  - Solomonoff induction
+  - big O notation
+  - Computing Machinery and Intelligence
+  - chain of thought
+  - computational theory of mind
+sources:
+  - text: >-
+      Turing, A. M. (1936–37). On Computable Numbers, with an Application to the
+      Entscheidungsproblem. Proceedings of the London Mathematical Society, s2-42.

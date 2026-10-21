@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agentic AI
+id: agentic-ai
+pos: n.
+also:
+  - agentic
+  - agentic system
+  - agenticness
+  - agentic AI system
+domain: agents
+domains:
+  - society
+  - safety
+  - gov
+labels:
+  - emerging
+level: essential
+plain: >-
+  AI built to pursue goals on its own — planning, taking actions and adjusting along the way —
+  instead of only responding to one prompt at a time. 'Agentic' describes how much of this
+  independence a system has.
+senses:
+  - definition: >-
+      AI systems, and the design approach behind them, that are handed a goal rather than a single
+      instruction and work toward it over many steps with little human supervision: they plan, call
+      [[tool|tools]], observe results and revise their course, often inside software environments
+      such as browsers, terminals and business applications. Following OpenAI's 2023 governance
+      paper and Andrew Ng's 2024 usage, the adjective treats agency as a matter of degree rather
+      than a yes-or-no property: a system counts as more agentic the harder its goals and
+      surroundings, the less step-by-step direction it needs, and the more of its control flow the
+      model, rather than fixed code, decides. In industry usage since 2024 the phrase also names a
+      product category — [[ai-agent|AI agents]], [[agentic-workflow|agentic workflows]] and the
+      platforms and protocols that support them — and a policy topic, because delegating actions to
+      software raises new questions of accountability, security and [[human-oversight|human
+      oversight]].
+    example: >-
+      The proposal moves customer support from a chatbot to an agentic system that can issue refunds
+      within set limits.
+origin: >-
+  'Agentic' long described human agency in psychology and sociology. In AI it spread through safety
+  and governance writing, notably Alan Chan and colleagues' 'Harms from Increasingly Agentic
+  Algorithmic Systems' (2023) and OpenAI's December 2023 white paper 'Practices for Governing
+  Agentic AI Systems' (Yonadav Shavit, Sandhini Agarwal, Miles Brundage et al.). Andrew Ng
+  popularized it among developers from March 2024, preferring the adjective because it admits
+  degrees; by 2025 'agentic AI' was a mainstream business phrase.
+year: 2023
+note: >-
+  Critics say marketing has stretched the term to cover ordinary automation. Some writers use
+  'agentic AI' for the field and 'AI agent' for an individual system. In alignment research,
+  [[goal-directedness|goal-directedness]] asks whether a model internally pursues goals — a
+  different question from how much autonomy a deployment grants it.
+see_also:
+  - AI agent
+  - levels of autonomy
+  - agentic workflow
+  - agent loop
+  - goal-directedness
+  - agentic misalignment
+  - human oversight
+contrast:
+  - generative AI
+  - chatbot
+sources:
+  - text: >-
+      Shavit, Y., Agarwal, S., Brundage, M. et al. (2023). Practices for Governing Agentic AI
+      Systems. OpenAI white paper, 14 December 2023.
+    url: https://openai.com/index/practices-for-governing-agentic-ai-systems/
+  - text: >-
+      Ng, A. (2024). Welcoming Diverse Approaches Keeps Machine Learning Strong. The Batch
+      (DeepLearning.AI), 12 June 2024.
+    url: https://www.deeplearning.ai/the-batch/welcoming-diverse-approaches-keeps-machine-learning-strong/
+  - text: >-
+      Chan, A. et al. (2023). Harms from Increasingly Agentic Algorithmic Systems. Proceedings of
+      ACM FAccT 2023. arXiv:2302.10329.
+    url: https://arxiv.org/abs/2302.10329

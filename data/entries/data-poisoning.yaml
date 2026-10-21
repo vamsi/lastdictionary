@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data poisoning
+id: data-poisoning
+pos: n.
+also:
+  - poisoning attack
+  - training data poisoning
+  - dataset poisoning
+  - model poisoning
+domain: sec
+domains:
+  - data
+  - safety
+level: core
+plain: >-
+  Sneaking bad examples into the data an AI learns from, so the finished model behaves as the
+  attacker wants — badly overall, or wrongly only in special situations.
+senses:
+  - definition: >-
+      An attack on the training process in which an adversary inserts, modifies or mislabels part of
+      the [[training-data|training data]] so that the resulting model serves the attacker's goals.
+      Availability (indiscriminate) poisoning degrades overall accuracy; targeted poisoning causes
+      chosen inputs to be misclassified; [[backdoor-attack|backdoor]] poisoning implants a hidden
+      trigger. Poisons may be mislabeled or [[clean-label-poisoning|correctly labeled but crafted]].
+      Web-scale datasets are exposed because attackers can plant content where crawlers will find it
+      or alter pages after they are indexed, and the number of poisoned documents needed to backdoor
+      a [[large-language-model|large language model]] appears to stay roughly constant as models and
+      corpora grow, rather than scaling with corpus size. In [[federated-learning|federated
+      learning]] the analogue is model poisoning through malicious client updates. Defenses include
+      [[data-provenance|data provenance]] tracking, filtering and deduplication, robust training
+      methods and auditing trained models for backdoors.
+    example: >-
+      A few hundred poisoned web pages were enough to make the model emit gibberish whenever it saw
+      the trigger phrase.
+origin: >-
+  Early analyses include learning with malicious errors (Michael Kearns and Ming Li, 1993) and
+  attacks on spam filters (Blaine Nelson and colleagues, 2008); 'poisoning' was in use by 2009
+  (Benjamin Rubinstein and colleagues, on network anomaly detectors). Battista Biggio, Blaine Nelson
+  and Pavel Laskov (ICML 2012) gave the optimization-based formulation. Nicholas Carlini and
+  colleagues showed web-scale poisoning practical in 2023, and an October 2025 study by Anthropic,
+  the UK AI Security Institute and the Alan Turing Institute found that 250 documents could backdoor
+  models from 600 million to 13 billion parameters.
+year: 2009
+note: >-
+  Distinct from [[context-poisoning|context poisoning]], in which misleading material enters an
+  agent's context at run time rather than its training data.
+see_also:
+  - backdoor attack
+  - clean-label poisoning
+  - Nightshade
+  - data provenance
+  - AI supply chain security
+  - evasion attack
+  - sleeper agent
+contrast:
+  - evasion attack
+  - context poisoning
+sources:
+  - text: >-
+      Biggio, B., Nelson, B. & Laskov, P. (2012). Poisoning Attacks against Support Vector Machines.
+      ICML 2012.
+  - text: >-
+      Carlini, N. et al. (2024). Poisoning Web-Scale Training Datasets is Practical. IEEE S&P 2024.
+  - text: >-
+      Souly, A., Rando, J., Chapman, E. et al. (2025). Poisoning Attacks on LLMs Require a
+      Near-constant Number of Poison Samples. arXiv:2510.07192.
+    url: https://arxiv.org/abs/2510.07192

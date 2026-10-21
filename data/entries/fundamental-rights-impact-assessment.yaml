@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fundamental rights impact assessment
+id: fundamental-rights-impact-assessment
+pos: n.
+also:
+  - FRIA
+domain: gov
+domains:
+  - society
+labels:
+  - legal
+level: specialist
+plain: >-
+  A check that certain organizations must make before using a high-risk AI system, writing down
+  whose rights it could affect, how, and what they will do to prevent harm.
+senses:
+  - definition: >-
+      An assessment that certain deployers must carry out under the [[eu-ai-act|EU AI Act]] before
+      first using a [[high-risk-ai-system|high-risk AI system]] listed in Annex III, other than in
+      critical infrastructure. It is required of public bodies, private entities providing public
+      services, and deployers using AI to assess creditworthiness or to price life and health
+      insurance. It identifies the people and groups the system is likely to affect and the harms
+      they could suffer, sets out how, for how long and how often the system will be used within the
+      deployer's operations, describes the [[human-oversight|human oversight]] arrangements, and
+      states what the deployer will do, through internal governance and complaint channels, if those
+      harms materialize. The deployer notifies the results to the market surveillance authority on a
+      template from the [[ai-office|AI Office]] and may build on an existing data protection impact
+      assessment.
+    example: >-
+      Before rolling out the benefits-fraud model, the agency completed a fundamental rights impact
+      assessment.
+origin: >-
+  Not in the Commission's 2021 proposal; added at the European Parliament's insistence in 2023 and
+  narrowed in the December 2023 political agreement to public bodies and certain private deployers.
+  It parallels the data protection impact assessment of the GDPR (Article 35).
+year: 2023
+note: >-
+  Distinct from the provider's risk management system and from
+  [[algorithmic-impact-assessment|algorithmic impact assessments]] such as those under Canada's
+  Directive on Automated Decision-Making. Since the 2026 [[digital-omnibus|Digital Omnibus]], the AI
+  Office's questionnaire template may cross-refer to the deployer's data protection impact
+  assessment.
+see_also:
+  - high-risk AI system
+  - provider and deployer
+  - algorithmic impact assessment
+  - human oversight
+  - General Data Protection Regulation
+  - EU AI Act
+standards: EU AI Act (Reg. (EU) 2024/1689), Art. 27, as amended by Reg. (EU) 2026/1744
+as_of: 2026-10

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hook
+id: hook
+pos: n.
+also:
+  - hooks
+  - lifecycle hook
+  - agent hook
+  - PreToolUse hook
+domain: agents
+domains:
+  - eng
+  - sec
+level: specialist
+plain: >-
+  A user-supplied script or check that runs automatically at set moments in an AI agent's work —
+  before a command, after a file edit, when it tries to stop — enforcing rules the AI cannot skip.
+senses:
+  - context: Agents
+    definition: >-
+      A handler supplied by the user — usually a shell command, sometimes an HTTP request, a tool
+      call or a prompt to another model — that an agent [[harness|harness]] triggers by itself at
+      fixed points in a session: when a session starts, when the user submits a prompt, before or
+      after a [[tool-call|tool call]], when a [[subagent|subagent]] finishes, before context
+      [[compaction|compaction]], or when the agent tries to end its turn. The harness passes the
+      hook structured data about the event; the hook can log it, add context for the model, alter
+      inputs, or block the action and return a reason that the model reads — refusing an edit to a
+      protected file, say, or forbidding the agent to stop while tests fail. Unlike instructions in
+      a prompt or [[agent-instruction-file|agent instruction file]], which the model may ignore, a
+      hook always runs, so it can enforce a rule. Because they execute arbitrary code with the
+      user's privileges, hooks arriving in shared repositories or plugins must be reviewed before
+      they are trusted.
+    example: >-
+      A PreToolUse hook blocks any command that touches the production database, whatever the agent
+      decides.
+  - context: Programming (general)
+    definition: >-
+      A point in a program where outside code can be attached to observe or alter its behavior —
+      editor hooks, event handlers, git hooks that run before a commit, framework callbacks. The
+      agent sense borrows both the idea and the name.
+origin: >-
+  'Hook' has meant an attachment point for custom code since at least the 1980s (Emacs Lisp hooks)
+  and gained wide use with git hooks (2005). Anthropic added lifecycle hooks to Claude Code on 30
+  June 2025 (version 1.0.38), and other coding agents introduced similar mechanisms.
+year: 2025
+note: >-
+  Hooks enforce; prompts persuade. A hook that fails open — letting the action through when the hook
+  itself crashes — gives a weaker guarantee than one configured to fail closed.
+see_also:
+  - harness
+  - permission system
+  - tool call
+  - stop condition
+  - agent instruction file
+  - guardrails
+contrast:
+  - system prompt
+sources:
+  - text: Anthropic. Hooks reference. Claude Code documentation.
+    url: https://code.claude.com/docs/en/hooks
+as_of: 2026-10

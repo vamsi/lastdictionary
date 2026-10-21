@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: exponential moving average of weights
+id: exponential-moving-average-of-weights
+pos: n.
+also:
+  - EMA
+  - weight EMA
+  - model EMA
+  - Polyak averaging
+  - Polyak–Ruppert averaging
+  - iterate averaging
+  - stochastic weight averaging
+domain: dl
+domains:
+  - gen
+  - train
+level: specialist
+plain: >-
+  A smoothed copy of a model kept during training, which each update nudges only slightly toward the
+  latest weights. The calmer copy often performs better than the jittery original.
+senses:
+  - definition: >-
+      A copy of a network's parameters maintained alongside training and updated after each step as
+      a weighted blend of its previous value and the current weights, with decay β close to one
+      (0.999 or 0.9999 are common), so that it averages roughly the last 1/(1 − β) iterates. Because
+      [[stochastic-gradient-descent|stochastic gradient descent]] iterates bounce around a low-loss
+      region, the average usually sits nearer its center and gives better, more stable results for
+      evaluation and release, without altering training itself. EMA weights are standard in
+      [[diffusion-model|diffusion models]] and [[generative-adversarial-network|GANs]], whose raw
+      iterates are noisy, and in self-supervised methods (Mean Teacher, MoCo, BYOL, DINO) in which a
+      slowly moving 'teacher' or 'momentum encoder' supplies targets, much like a
+      [[target-network|target network]] in reinforcement learning. Stochastic weight averaging
+      instead takes an equal-weight average of checkpoints along a cyclic or constant learning-rate
+      trajectory. Averaging is a theoretical counterpart of learning-rate decay (see
+      [[schedule-free-optimization|schedule-free optimization]]).
+    example: >-
+      Sample quality jumped when we switched evaluation to the EMA weights with decay 0.9999.
+formula_latex: \theta^{\mathrm{EMA}}_t = \beta\, \theta^{\mathrm{EMA}}_{t-1} + (1-\beta)\, \theta_t
+origin: >-
+  Iterate averaging comes from stochastic approximation: David Ruppert (1988) and Boris Polyak with
+  Anatoli Juditsky (1992) showed that averaging SGD iterates attains optimal convergence rates.
+  Exponential averaging of weights spread in deep learning in the mid-2010s through
+  image-classification and GAN practice; Pavel Izmailov and colleagues introduced stochastic weight
+  averaging in 2018.
+note: >-
+  Not to be confused with the moving averages inside optimizers such as [[momentum|momentum]] and
+  [[adam|Adam]], which smooth gradients rather than weights. Evaluating raw weights when EMA weights
+  were intended is a common bug.
+see_also:
+  - stochastic gradient descent
+  - schedule-free optimization
+  - diffusion model
+  - target network
+  - momentum
+  - checkpoint
+sources:
+  - text: >-
+      Polyak, B. T. & Juditsky, A. B. (1992). Acceleration of Stochastic Approximation by Averaging.
+      SIAM Journal on Control and Optimization 30(4), 838–855.
+  - text: >-
+      Izmailov, P. et al. (2018). Averaging Weights Leads to Wider Optima and Better Generalization.
+      UAI 2018.

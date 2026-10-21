@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: latent adversarial training
+id: latent-adversarial-training
+pos: n.
+also:
+  - LAT
+  - targeted latent adversarial training
+  - targeted LAT
+domain: safety
+domains:
+  - interp
+  - sec
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A safety training method that attacks a model's internal signals, rather than its inputs, during
+  training, so the model learns to behave safely even when its inner workings are pushed toward bad
+  behavior.
+senses:
+  - definition: >-
+      A form of adversarial training in which the adversary perturbs a model's hidden
+      [[activation|activations]] instead of its inputs. During training, an inner optimization finds
+      a bounded perturbation to the activations at chosen layers that most degrades desired behavior
+      (untargeted LAT) or most elicits a specified undesirable behavior (targeted LAT); the weights
+      are then updated to behave well despite it. Because attacks in activation space can reach
+      failure modes that are hard to trigger with discrete text, LAT aims to remove latent behaviors
+      — jailbreak susceptibility, backdoors, retained hazardous knowledge — that input-space
+      red-teaming may never find. Reported results include better robustness to novel attacks with
+      little loss of clean performance, removal of backdoors without knowing their triggers, more
+      robust [[machine-unlearning|machine unlearning]], and resistance to [[jailbreak|jailbreaks]]
+      at far lower compute than input-space adversarial training. It is the adversarial,
+      training-time counterpart of [[activation-steering|activation steering]].
+    example: >-
+      After targeted LAT, the model kept refusing even when we steered its activations toward
+      compliance.
+origin: >-
+  The name was introduced by Mayank Singh and colleagues (arXiv, May 2019), whose 'Latent
+  Adversarial Training (LAT)' fine-tuned adversarially trained image classifiers to resist
+  perturbations of their hidden layers. For language-model safety, Stephen Casper, Lennart Schulze,
+  Oam Patel and Dylan Hadfield-Menell proposed it against unforeseen failure modes (arXiv, March
+  2024), and Abhay Sheshadri, Aidan Ewart and colleagues introduced targeted LAT (arXiv, July 2024).
+year: 2019
+note: >-
+  Robustness to perturbations within a fixed bound in activation space does not guarantee robustness
+  to every input-space attack; LAT is one layer of defense, often combined with [[refusal|refusal]]
+  training and [[circuit-breakers|circuit breakers]].
+see_also:
+  - adversarial robustness
+  - activation steering
+  - circuit breakers
+  - jailbreak
+  - machine unlearning
+  - red teaming
+contrast:
+  - activation steering
+sources:
+  - text: >-
+      Casper, S., Schulze, L., Patel, O. & Hadfield-Menell, D. (2024). Defending Against Unforeseen
+      Failure Modes with Latent Adversarial Training. arXiv:2403.05030.
+    url: https://arxiv.org/abs/2403.05030
+  - text: >-
+      Sheshadri, A., Ewart, A., Guo, P., Lynch, A., Wu, C., Hebbar, V., Sleight, H., Cooper
+      Stickland, A., Perez, E., Hadfield-Menell, D. & Casper, S. (2024). Latent Adversarial Training
+      Improves Robustness to Persistent Harmful Behaviors in LLMs. arXiv:2407.15549.
+    url: https://arxiv.org/abs/2407.15549v3
+  - text: >-
+      Singh, M., Sinha, A., Kumari, N., Machiraju, H., Krishnamurthy, B. & Balasubramanian, V. N.
+      (2019). Harnessing the Vulnerability of Latent Layers in Adversarially Trained Models.
+      arXiv:1905.05186.
+    url: https://arxiv.org/abs/1905.05186

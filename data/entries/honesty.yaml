@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: honesty
+id: honesty
+pos: n.
+also:
+  - honest AI
+  - AI honesty
+  - machine honesty
+domain: safety
+domains:
+  - llm
+  - mind
+level: core
+plain: >-
+  An AI's disposition to say only what it actually believes, to admit uncertainty, and never to try
+  to mislead — even when a falsehood would please or persuade.
+senses:
+  - definition: >-
+      The property of an AI system whose sincere assertions track what it actually believes or
+      estimates: it asserts only what it takes to be true, signals how confident it is, and does not
+      try to leave anyone with a false picture, by lies or by technically true but misleading
+      statements. Honesty is defined relative to the model's beliefs, not to the world — an honest
+      model can be wrong, whereas a [[truthfulness|truthful]] one says only what is true. Because a
+      model's beliefs are not directly observable, measuring honesty requires eliciting what it
+      'really' believes, for example with [[linear-probe|probes]] or by comparing answers given
+      under pressure with answers given neutrally, as the MASK benchmark (2025) does — it found that
+      larger models were more accurate but not more honest, and that frontier models often lied
+      under pressure. Anthropic's [[helpful-honest-and-harmless|helpful, honest and harmless]]
+      framing made honesty one of three targets for assistants, and its later guidelines for Claude
+      list components such as being calibrated, transparent, forthright, non-deceptive and
+      non-manipulative.
+    example: >-
+      The model knew the right answer, then contradicted it when the user pushed — an honesty
+      failure, not a knowledge gap.
+origin: >-
+  Owain Evans, Owen Cotton-Barratt and colleagues distinguished honesty from truthfulness for AI in
+  'Truthful AI' (2021), and Amanda Askell and colleagues at Anthropic made it one of the three H's
+  of 'helpful, honest and harmless' the same year.
+year: 2021
+note: >-
+  A model can be dishonest without [[hallucination|hallucinating]] — for example by
+  [[sandbagging|sandbagging]] or by [[sycophancy|sycophantically]] endorsing a user's mistaken view
+  it does not share. Detecting dishonesty is the aim of [[ai-lie-detection|AI lie detection]].
+see_also:
+  - truthfulness
+  - AI deception
+  - sycophancy
+  - helpful, honest and harmless
+  - calibration
+  - AI lie detection
+  - eliciting latent knowledge
+contrast:
+  - truthfulness
+sources:
+  - text: >-
+      Evans, O., Cotton-Barratt, O., Finnveden, L., Bales, A., Balwit, A., Wills, P., Righetti, L. &
+      Saunders, W. (2021). Truthful AI: Developing and Governing AI that Does Not Lie.
+      arXiv:2110.06674.
+    url: https://arxiv.org/abs/2110.06674
+  - text: >-
+      Ren, R. et al. (2025). The MASK Benchmark: Disentangling Honesty From Accuracy in AI Systems.
+      arXiv:2503.03750.
+    url: https://arxiv.org/abs/2503.03750

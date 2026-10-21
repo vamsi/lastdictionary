@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SB 53
+id: sb-53
+pos: prop. n.
+also:
+  - Transparency in Frontier Artificial Intelligence Act
+  - TFAIA
+  - California Senate Bill 53
+domain: gov
+domains:
+  - safety
+labels:
+  - legal
+level: core
+plain: >-
+  A 2025 California law requiring developers of the most powerful AI models to publish their safety
+  plans, report serious safety incidents to the state and protect employees who raise alarms.
+senses:
+  - definition: >-
+      California's Transparency in Frontier Artificial Intelligence Act, in force since January 1,
+      2026, the first US state law aimed specifically at catastrophic risk from
+      [[frontier-model|frontier models]]. It applies to developers that have trained a model with
+      more than 10²⁶ integer or floating-point operations, counting fine-tuning and other
+      modifications. 'Large frontier developers' (over $500 million in annual revenue) must publish
+      a frontier AI framework explaining how they identify and mitigate catastrophic risk, use
+      standards and third-party assessments and secure model weights, and must periodically
+      summarize internal catastrophic-risk assessments for the state Office of Emergency Services.
+      All covered developers publish transparency reports when releasing new or substantially
+      modified models and report critical safety incidents within 15 days, or 24 hours where life is
+      at imminent risk. Catastrophic risk means material contribution to more than 50 deaths or
+      serious injuries, or over $1 billion in damage, through CBRN weapons, cyberattacks or crimes
+      committed without meaningful human oversight, or through loss of control. The act protects
+      [[ai-whistleblower-protections|whistleblowers]], lets the Attorney General seek civil
+      penalties of up to $1 million per violation from large frontier developers, and begins
+      planning for a public computing cluster, CalCompute.
+    example: Our SB 53 transparency report went up the same day the new model shipped.
+origin: >-
+  Introduced by State Senator Scott Wiener after the veto of his [[sb-1047|SB 1047]] and rewritten
+  in 2025 to follow the California Report on Frontier AI Policy (June 2025), commissioned by
+  Governor Gavin Newsom from a group led by Fei-Fei Li, Mariano-Florentino Cuéllar and Jennifer Tour
+  Chayes. Anthropic endorsed it; Newsom signed it on September 29, 2025.
+year: 2025
+note: >-
+  Unlike SB 1047 it imposes no duty of care, shutdown capability or mandatory audit: its tools are
+  disclosure, incident reporting and whistleblower protection. New York's [[raise-act|RAISE Act]]
+  was amended in 2026 to follow its model, and it is central to debates over federal
+  [[ai-preemption|AI preemption]].
+see_also:
+  - SB 1047
+  - RAISE Act
+  - compute threshold
+  - frontier model
+  - AI whistleblower protections
+  - responsible scaling policy
+  - AI preemption
+sources:
+  - text: >-
+      California Legislature (2025). SB-53 Artificial intelligence models: large developers
+      (Transparency in Frontier Artificial Intelligence Act). Stats. 2025, ch. 138.
+  - text: >-
+      Joint California Policy Working Group on AI Frontier Models (2025). The California Report on
+      Frontier AI Policy.
+standards: >-
+  California SB 53 (Stats. 2025, ch. 138), Transparency in Frontier Artificial Intelligence Act,
+  Bus. & Prof. Code §§ 22757.10–22757.16 (definitions in § 22757.11)
+as_of: 2026-10

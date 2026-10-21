@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fitness function
+id: fitness-function
+pos: n.
+also:
+  - fitness
+  - fitness landscape
+  - fitness score
+domain: sym
+domains:
+  - ml
+level: specialist
+plain: >-
+  In evolution-inspired computing, the scoring rule that says how good each candidate solution is,
+  which decides which candidates survive and get to 'reproduce'.
+senses:
+  - definition: >-
+      In [[evolutionary-computation|evolutionary computation]], the function that assigns each
+      candidate solution a score of its quality, determining its chance of being selected for
+      reproduction; it plays the role of the [[objective-function|objective function]] in
+      optimization or of the [[reward|reward]] in [[reinforcement-learning|reinforcement learning]].
+      Fitness may be computed analytically, by simulation, by physical experiment or by human
+      judgment (interactive evolution), and is often the most expensive part of the algorithm, which
+      motivates cheap surrogate models. The fitness landscape — fitness viewed as a surface over the
+      space of solutions — frames search difficulty in terms of peaks, plateaus, ruggedness and
+      deception. A poorly specified fitness function gets exploited in unintended ways, a
+      long-documented failure that is an early form of [[specification-gaming|specification
+      gaming]].
+    example: >-
+      The robots learned to flip over and crawl on their elbows, which our fitness function happened
+      to reward.
+origin: >-
+  Borrowed from evolutionary biology, where fitness measures reproductive success; Sewall Wright
+  introduced the fitness (adaptive) landscape in 1932. The term was standard in genetic-algorithm
+  research by the 1970s, following John Holland.
+note: >-
+  Joel Lehman, Jeff Clune and dozens of colleagues collected anecdotes of evolved solutions that
+  exploited bugs or loopholes in fitness functions; the collection is widely cited in AI-safety
+  discussions of reward hacking.
+see_also:
+  - genetic algorithm
+  - evolutionary computation
+  - objective function
+  - reward
+  - specification gaming
+  - quality diversity
+sources:
+  - text: >-
+      Lehman, J. et al. (2020). The Surprising Creativity of Digital Evolution: A Collection of
+      Anecdotes from the Evolutionary Computation and Artificial Life Research Communities.
+      Artificial Life 26(2), 274–306.

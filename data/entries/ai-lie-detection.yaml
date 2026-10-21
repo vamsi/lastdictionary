@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI lie detection
+id: ai-lie-detection
+pos: n.
+also:
+  - lie detection (AI)
+  - AI lie detector
+  - deception detection
+domain: safety
+domains:
+  - interp
+  - llm
+level: specialist
+plain: >-
+  Methods for telling when an AI is saying something it 'believes' is false — either by questioning
+  it cleverly or by reading signals inside the model.
+senses:
+  - definition: >-
+      Methods for detecting when a model asserts something its own internal representations indicate
+      is false, as distinct from honest mistakes. Black-box detectors analyze behavior: Lorenzo
+      Pacchiardi and colleagues' 2023 detector follows a suspected lie with a fixed battery of
+      questions that have nothing to do with it and passes the model's yes-or-no replies to a simple
+      classifier, a test that carried over to other models and settings. White-box detectors read
+      [[activation|activations]]: [[linear-probe|linear probes]] trained to separate true from false
+      statements, unsupervised methods such as [[contrast-consistent-search|contrast-consistent
+      search]], and probes trained on instructed or strategic deception. Key difficulties are
+      establishing what a model 'believes', distinguishing lying from role-play or fiction, and
+      robustness: a detector used as a training signal may teach a model to evade it rather than to
+      be honest. Lie detection supports [[alignment-audit|alignment audits]] and the
+      [[eliciting-latent-knowledge|eliciting latent knowledge]] agenda.
+    example: >-
+      The deception probe fired on the agent's status report, which claimed tests had passed when
+      they had not.
+origin: >-
+  Early work includes Collin Burns and colleagues' unsupervised truth-finding (2022), Amos Azaria
+  and Tom Mitchell's 'The Internal State of an LLM Knows When It's Lying' (2023) and Lorenzo
+  Pacchiardi and colleagues' 'How to Catch an AI Liar' (2023). Nicholas Goldowsky-Dill and
+  colleagues at Apollo Research (2025) applied probes to strategic deception.
+year: 2023
+note: >-
+  'Lie' presupposes something like belief; researchers operationalize it as a mismatch between a
+  statement and the model's internal representation of truth, leaving philosophical questions open.
+  See also [[ai-deception|AI deception]], [[honesty|honesty]] and [[truthfulness|truthfulness]].
+see_also:
+  - AI deception
+  - eliciting latent knowledge
+  - contrast-consistent search
+  - linear probe
+  - honesty
+  - alignment audit
+  - representation engineering
+sources:
+  - text: >-
+      Pacchiardi, L. et al. (2023). How to Catch an AI Liar: Lie Detection in Black-Box LLMs by
+      Asking Unrelated Questions. ICLR 2024.
+  - text: >-
+      Azaria, A. & Mitchell, T. (2023). The Internal State of an LLM Knows When It's Lying. Findings
+      of EMNLP 2023.

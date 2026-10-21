@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: negative side effects
+id: negative-side-effects
+pos: n.
+also:
+  - side effects
+  - side effect
+  - avoiding negative side effects
+  - avoiding side effects
+domain: safety
+domains:
+  - rl
+  - robot
+level: specialist
+plain: >-
+  Harmful changes an AI causes while pursuing its goal that nobody told it to avoid — like a
+  cleaning robot knocking over a vase on its way to the mess.
+senses:
+  - definition: >-
+      Undesired changes to the environment that an agent causes in pursuing its objective, because
+      the objective rewards the task but is silent about everything else. Since the world contains
+      far more things people care about than any designer can list, an agent maximizing a narrow
+      objective treats unmentioned features as free to change. Avoiding them was the first of the
+      five problems in 'Concrete Problems in AI Safety' (2016). Proposed approaches include
+      [[impact-measure|impact measures]] that penalize change relative to a baseline; inferring
+      implicit preferences from the state of the environment (people arranged the room so the vase
+      stands upright); [[inverse-reward-design|inverse reward design]], which treats a given reward
+      as evidence of intent valid only in the setting it was designed for; and
+      [[mild-optimization|mild optimization]].
+    example: >-
+      The agent finished fast by smashing through the fence — a textbook negative side effect.
+origin: >-
+  Set out as 'Avoiding negative side effects' in 'Concrete Problems in AI Safety' by Dario Amodei,
+  Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman and Dan Mané (2016), whose cleaning
+  robot knocking over a vase became the standard example.
+year: 2016
+note: >-
+  Distinct from [[specification-gaming|specification gaming]]: here the agent does the intended
+  task, but at a cost no one specified.
+see_also:
+  - impact measure
+  - relative reachability
+  - attainable utility preservation
+  - specification gaming
+  - mild optimization
+  - inverse reward design
+sources:
+  - text: >-
+      Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J. & Mané, D. (2016). Concrete
+      Problems in AI Safety. arXiv:1606.06565.
+    url: https://arxiv.org/abs/1606.06565
+  - text: >-
+      Shah, R., Krasheninnikov, D., Alexander, J., Abbeel, P. & Dragan, A. (2019). Preferences
+      Implicit in the State of the World. ICLR 2019.

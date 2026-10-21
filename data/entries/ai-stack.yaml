@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI stack
+id: ai-stack
+pos: n.
+also:
+  - AI technology stack
+  - AI tech stack
+  - LLM stack
+  - generative AI stack
+domain: eng
+domains:
+  - hw
+  - society
+level: core
+plain: >-
+  The layers of technology an AI product depends on, from chips and data centers at the bottom,
+  through the models, up to the apps people use, each built on the layer below.
+senses:
+  - context: Engineering
+    definition: >-
+      The layered set of technologies used to build and run AI applications. A common breakdown runs
+      from compute hardware ([[gpu|GPUs]], [[tpu|TPUs]] and other [[ai-accelerator|accelerators]])
+      and cloud infrastructure, through systems software such as drivers, [[cuda|CUDA]] and
+      compilers, and ML frameworks such as [[pytorch|PyTorch]] and [[jax|JAX]], to
+      [[foundation-model|foundation models]] used through [[model-api|APIs]] or self-hosted; then an
+      application layer of [[orchestration|orchestration]] frameworks, [[vector-database|vector
+      databases]], [[retrieval-augmented-generation|retrieval]], [[ai-gateway|gateways]], evaluation
+      and [[llm-observability|observability]] tools; and finally user-facing products. Engineers
+      also use the phrase for a team's chosen components, and diagrams of the 'emerging LLM app
+      stack' circulated widely from 2023.
+    example: >-
+      Most of our AI stack is off the shelf; the only layer we build ourselves is evaluation.
+  - context: Industry and policy
+    definition: >-
+      The value chain of the AI industry viewed as layers — chips, compute and cloud, data, models
+      and applications — used to analyze market concentration, supply-chain dependence and national
+      strategy, as in debates over which countries or companies control each layer and in policies
+      that promote a 'full-stack' domestic AI industry or the export of a national AI technology
+      stack.
+origin: >-
+  Extends the software usage of 'stack' (as in technology stack or LAMP stack), common since the
+  late 1990s. 'AI stack' and 'LLM stack' diagrams proliferated in 2023, notably in venture-capital
+  firm Andreessen Horowitz's 'Emerging Architectures for LLM Applications'; by 2025 governments used
+  the term for the AI value chain, as in a July 2025 US executive order, issued with
+  [[america-s-ai-action-plan|America's AI Action Plan]], promoting exports of the 'American AI
+  technology stack'.
+note: >-
+  Layers and their names vary by author; there is no standard taxonomy. Vertical integration across
+  several layers, by firms that design chips, run clouds and train models, is a recurring
+  competition-policy concern.
+see_also:
+  - foundation model
+  - AI engineering
+  - compound AI system
+  - model API
+  - compute
+  - GPU
+as_of: 2026-10

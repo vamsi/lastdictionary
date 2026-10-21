@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: retrieval-augmented generation
+id: retrieval-augmented-generation
+pos: n.
+also:
+  - RAG
+  - retrieval-augmented LLM
+domain: agents
+domains:
+  - llm
+  - eng
+level: essential
+plain: >-
+  Giving an AI an open-book exam: before answering, it looks up relevant passages in a set of
+  documents and bases its reply on them, often citing where each point came from.
+senses:
+  - context: General
+    definition: >-
+      A system design in which, before a generative model answers, a retrieval step looks up
+      material relevant to the request — passages from a document collection, database records,
+      web-search results or API responses — and places it in the model's input, so that the answer
+      can rest on that material and not only on what the model absorbed in training
+      ([[parametric-knowledge|parametric knowledge]]). A typical pipeline splits documents into
+      passages ([[chunking|chunking]]), indexes them with [[text-embedding|text embeddings]] in a
+      [[vector-database|vector database]] and/or a keyword index, retrieves candidates for each
+      query by [[dense-retrieval|dense]], [[sparse-retrieval|sparse]] or [[hybrid-search|hybrid
+      search]], optionally [[reranking|reranks]] them, and inserts the best into the prompt with
+      instructions to answer from them and give [[citation|citations]]. Because the knowledge sits
+      in an index rather than in the weights, a RAG system can draw on private, fast-changing or
+      very large collections without retraining and can show its sources so that answers can be
+      checked; grounding also reduces, but does not eliminate, [[hallucination|hallucination]]. Weak
+      retrieval, badly chosen chunks and [[lost-in-the-middle|positional effects]] are common
+      failure points; in [[agentic-rag|agentic RAG]] the model steers retrieval itself.
+    example: >-
+      We answer HR questions with RAG over the policy handbook, so policy updates take effect
+      without retraining.
+  - context: Original model
+    definition: >-
+      The model that introduced the name (Lewis et al., 2020). Its retriever encoded Wikipedia
+      passages as dense vectors and fetched those closest to the encoded query; its generator, the
+      pretrained [[sequence-to-sequence-model|sequence-to-sequence]] model BART, conditioned on what
+      was fetched. The retrieved passage was treated as a latent variable to be marginalized over,
+      and training updated the query encoder and generator jointly while the passage index stayed
+      fixed. Two variants differed in how often they consulted the passages: RAG-Sequence relied on
+      one set of retrieved passages for an entire answer, whereas RAG-Token could switch passages at
+      every token.
+origin: >-
+  Named by Patrick Lewis and colleagues at Facebook AI Research, University College London and New
+  York University in 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks' (arXiv, May
+  2020; NeurIPS 2020). Retrieve-then-read question answering such as DrQA (2017) and the
+  retrieval-augmented language model REALM (2020) came before. After ChatGPT's release in late 2022,
+  'RAG' became the generic name for any LLM application that retrieves before it answers.
+year: 2020
+note: >-
+  Long [[context-window|context windows]] have not made RAG obsolete: retrieval stays cheaper, more
+  current and more auditable for large or changing corpora, though for small collections loading
+  everything into context can be simpler. The retrieval need not be vector search; keyword search,
+  SQL and web search all qualify.
+see_also:
+  - information retrieval
+  - grounding
+  - vector database
+  - chunking
+  - reranking
+  - agentic RAG
+  - GraphRAG
+  - context engineering
+contrast:
+  - fine-tuning
+  - parametric knowledge
+sources:
+  - text: >-
+      Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis,
+      M., Yih, W., Rocktäschel, T., Riedel, S. & Kiela, D. (2020). Retrieval-Augmented Generation
+      for Knowledge-Intensive NLP Tasks. NeurIPS 2020. arXiv:2005.11401.
+    url: https://arxiv.org/abs/2005.11401v4

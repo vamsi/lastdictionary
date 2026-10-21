@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: conditional random field
+id: conditional-random-field
+pos: n.
+also:
+  - CRF
+  - CRFs
+  - linear-chain CRF
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A statistical method for labeling every item in a sequence, such as marking each word in a
+  sentence as a name, a place or an ordinary word, by choosing all the labels together rather than
+  one at a time.
+senses:
+  - definition: >-
+      A [[discriminative-model|discriminative]] undirected
+      [[probabilistic-graphical-model|probabilistic graphical model]] that defines the conditional
+      probability of a whole label structure y given an observed input x, rather than the joint
+      probability of both. In the common linear-chain form, a label sequence is scored by a weighted
+      sum of feature functions over adjacent label pairs and the entire input; the score is
+      exponentiated and normalized by a partition function Z(x) taken over all possible label
+      sequences. Because normalization is global rather than per position, CRFs avoid the label bias
+      problem of maximum-entropy Markov models, and unlike [[hidden-markov-model|hidden Markov
+      models]] they can use rich, overlapping features of the input. Training maximizes conditional
+      log-likelihood; the forward–backward algorithm gives marginals and the
+      [[viterbi-algorithm|Viterbi algorithm]] the best sequence. CRFs were a leading approach to
+      [[named-entity-recognition|named-entity recognition]], shallow parsing and
+      [[part-of-speech-tagging|part-of-speech tagging]] in the 2000s and survive as the output layer
+      of neural taggers such as the BiLSTM-CRF.
+    example: >-
+      Adding a CRF layer on top of the BiLSTM stopped the tagger from predicting an I-PER tag
+      straight after an O.
+formula_latex: p(\mathbf{y} \mid \mathbf{x}) = \frac{1}{Z(\mathbf{x})} \exp\Big( \sum_{t=1}^{T}
+  \sum_{k} \lambda_k f_k(y_{t-1}, y_t, \mathbf{x}, t) \Big)
+origin: >-
+  Introduced by John Lafferty, Andrew McCallum and Fernando Pereira at ICML 2001 as a remedy for the
+  label bias of maximum-entropy Markov models. Fei Sha and Pereira's 2003 shallow-parsing results
+  helped make CRFs the standard sequence labeler of the decade; Zhiheng Huang, Wei Xu and Kai Yu
+  (2015) and Guillaume Lample and colleagues (2016) paired them with recurrent neural encoders.
+year: 2001
+note: >-
+  A CRF is a [[markov-random-field|Markov random field]] conditioned on the input.
+  [[logistic-regression|Logistic regression]] is the single-position special case. A linear-chain
+  CRF is to a hidden Markov model what logistic regression is to naive Bayes: the discriminative
+  counterpart of a generative model with the same structure.
+see_also:
+  - hidden Markov model
+  - Viterbi algorithm
+  - Markov random field
+  - probabilistic graphical model
+  - named-entity recognition
+  - part-of-speech tagging
+  - logistic regression
+contrast:
+  - hidden Markov model
+  - generative model
+sources:
+  - text: >-
+      Lafferty, J., McCallum, A. & Pereira, F. (2001). Conditional Random Fields: Probabilistic
+      Models for Segmenting and Labeling Sequence Data. Proc. ICML 2001.
+  - text: >-
+      Sutton, C. & McCallum, A. (2012). An Introduction to Conditional Random Fields. Foundations
+      and Trends in Machine Learning 4(4).

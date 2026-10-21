@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI model
+id: ai-model
+pos: n.
+also:
+  - machine learning model
+  - ML model
+  - artificial intelligence model
+domain: core
+domains:
+  - gov
+  - ml
+level: core
+plain: >-
+  The trained core of an AI: a large file of learned numbers plus the recipe for using them, which
+  turns an input such as a question or a photo into an output.
+senses:
+  - definition: >-
+      A learned computational artifact, in current practice an architecture together with its
+      trained [[weights|weights]], that maps inputs to outputs such as [[prediction|predictions]],
+      classifications, generated text or actions. A model is produced by [[training|training]] and
+      used through [[inference|inference]]; it can be stored as a file, versioned, copied,
+      [[fine-tuning|fine-tuned]] or [[model-merging|merged]], and either released as an
+      [[open-weight-model|open-weight model]] or kept proprietary behind a [[model-api|model API]].
+      Legal and policy texts separate the model from the [[ai-system|AI system]] built around it.
+      The EU AI Act treats a model as a core ingredient of a system rather than a system in itself,
+      one that becomes a system only when combined with other parts such as a user interface
+      (Recital 97), and it regulates [[general-purpose-ai-model|general-purpose AI models]]
+      separately from systems. US Executive Order 14110 (2023, revoked 2025) defined an AI model as
+      the AI-implementing part of an information system, which produces outputs from inputs by
+      computational, statistical or machine-learning methods.
+    example: >-
+      We swapped the AI model behind the assistant without changing the interface, and customers
+      noticed only that it got faster.
+origin: >-
+  A specialization of the long-standing use of 'model' in statistics and science (see
+  [[model|model]]). 'AI model' became common in the 2010s and a policy term of art in 2023–2024,
+  when US Executive Order 14110 defined it and the EU AI Act gave models rules separate from those
+  for AI systems.
+note: >-
+  In everyday speech 'the model' often means a whole product, such as a chatbot app, which blurs the
+  model–system distinction that matters in law and engineering. For statistical and scientific
+  senses of the word, see the hub entry [[model|model]].
+see_also:
+  - model
+  - AI system
+  - weights
+  - training
+  - inference
+  - open-weight model
+  - foundation model
+  - model card
+contrast:
+  - AI system
+  - algorithm
+sources:
+  - text: Regulation (EU) 2024/1689 (Artificial Intelligence Act), Recital 97.
+    url: https://artificialintelligenceact.eu/recital/97/
+  - text: >-
+      Executive Order 14110 (2023). Safe, Secure, and Trustworthy Development and Use of Artificial
+      Intelligence. Federal Register, 1 November 2023.
+    url: https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence
+standards: >-
+  US Executive Order 14110 (2023; revoked January 2025), §3(c); EU AI Act (Reg. (EU) 2024/1689),
+  Recital 97 (model versus system)
+as_of: 2026-10

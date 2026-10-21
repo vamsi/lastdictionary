@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: straight-through estimator
+id: straight-through-estimator
+pos: n.
+also:
+  - STE
+  - straight-through gradient
+domain: dl
+domains:
+  - infer
+  - gen
+level: specialist
+plain: >-
+  A shortcut that lets networks learn even when they contain steps with no useful slope, such as
+  rounding: during learning, the computer simply pretends the step passed its input straight
+  through.
+senses:
+  - definition: >-
+      A heuristic for backpropagating through operations whose true derivative is zero almost
+      everywhere or undefined — rounding, sign and threshold functions, sampling a discrete value,
+      quantization — by substituting a surrogate derivative in the [[backward-pass|backward pass]],
+      most often that of the identity function, while the [[forward-pass|forward pass]] uses the
+      real discrete operation. The resulting gradient is biased but usually points in a useful
+      direction, letting [[gradient-descent|gradient descent]] train networks with binary or low-bit
+      weights and activations ([[quantization-aware-training|quantization-aware training]],
+      [[bitnet|BitNet]]), discrete codes such as the codebook lookup in a [[vq-vae|VQ-VAE]], and
+      hard routing decisions. Variants clip the surrogate outside a range or use the derivative of a
+      smooth approximation; continuous relaxations such as the Gumbel-softmax trade bias and
+      variance differently. In code it is often written x + (q(x) − x).detach(), so the forward
+      value is q(x) while the gradient is that of x.
+origin: >-
+  Geoffrey Hinton suggested the idea in his 2012 Coursera lectures; Yoshua Bengio, Nicholas Léonard
+  and Aaron Courville studied it under the name 'straight-through estimator' in 'Estimating or
+  Propagating Gradients Through Stochastic Neurons for Conditional Computation' (arXiv 2013). It
+  became central to binarized and quantized networks from 2015–2016.
+year: 2013
+see_also:
+  - quantization-aware training
+  - backpropagation
+  - VQ-VAE
+  - BitNet
+  - reparameterization trick
+  - automatic differentiation
+sources:
+  - text: >-
+      Bengio, Y., Léonard, N. & Courville, A. (2013). Estimating or Propagating Gradients Through
+      Stochastic Neurons for Conditional Computation. arXiv:1308.3432.

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: elastic net
+id: elastic-net
+pos: n.
+also:
+  - elastic-net regularization
+  - elastic net regression
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  A blend of two ways of keeping a model simple: it can drop useless inputs entirely while treating
+  groups of similar inputs alike, instead of picking one of them at random.
+senses:
+  - definition: >-
+      A penalized regression method whose penalty is a weighted mix of the [[lasso|lasso]]'s sum of
+      absolute coefficients (L1) and [[ridge-regression|ridge regression]]'s sum of squared
+      coefficients (L2), the balance being set by a mixing weight (see
+      [[regularization|regularization]]); in the common glmnet parametrization a mixing weight α = 1
+      gives the lasso and α = 0 gives ridge. The L1 part produces sparse solutions; the L2 part
+      makes the objective strictly convex, stabilizes the solution path and produces a grouping
+      effect, so strongly correlated features tend to enter or leave the model together with similar
+      coefficients. Unlike the lasso, it can select more features than there are observations. The
+      overall strength λ and the mix α are tuned by [[cross-validation|cross-validation]]. It is
+      widely used in high-dimensional problems such as genomics, and the same penalty is applied to
+      [[logistic-regression|logistic regression]] and other [[generalized-linear-model|generalized
+      linear models]].
+    example: >-
+      Because the genetic markers come in correlated blocks, we used an elastic net with alpha 0.5
+      instead of the plain lasso.
+formula_latex: \hat{\boldsymbol\beta} = \arg\min_{\boldsymbol\beta} \frac{1}{2n}\lVert \mathbf{y} -
+  X\boldsymbol\beta \rVert_2^2 + \lambda\Big(\alpha \lVert \boldsymbol\beta \rVert_1 +
+  \frac{1-\alpha}{2}\lVert \boldsymbol\beta \rVert_2^2\Big)
+origin: >-
+  Introduced by Hui Zou and Trevor Hastie in 'Regularization and Variable Selection via the Elastic
+  Net' (Journal of the Royal Statistical Society, Series B, 2005), who compared it to a stretchable
+  fishing net that keeps all the big fish. The coordinate-descent package glmnet by Jerome Friedman,
+  Trevor Hastie and Robert Tibshirani, described in a 2010 paper, made it a default tool.
+year: 2005
+see_also:
+  - lasso
+  - ridge regression
+  - regularization
+  - feature selection
+  - generalized linear model
+  - cross-validation
+sources:
+  - text: >-
+      Zou, H. & Hastie, T. (2005). Regularization and Variable Selection via the Elastic Net.
+      Journal of the Royal Statistical Society, Series B, 67(2), 301–320.
+    url: https://ideas.repec.org/a/bla/jorssb/v67y2005i2p301-320.html

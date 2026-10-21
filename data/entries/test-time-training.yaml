@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: test-time training
+id: test-time-training
+pos: n.
+also:
+  - TTT
+  - TTT layer
+  - test-time fine-tuning
+  - test-time adaptation
+domain: train
+domains:
+  - dl
+  - llm
+level: specialist
+plain: >-
+  Letting an AI model briefly update itself on each new problem it is given, learning from that
+  problem's own clues before answering, instead of keeping its knowledge frozen after training.
+senses:
+  - context: Adaptation
+    definition: >-
+      Updating some or all of a model's parameters at inference time, separately for each test input
+      or small batch, using a loss that needs no ground-truth label, then making the prediction with
+      the adapted parameters, which are usually discarded afterward. The original method attached a
+      self-supervised auxiliary task to a shared feature extractor and took gradient steps on that
+      task for each unlabeled test image, improving robustness under
+      [[distribution-shift|distribution shift]]. For [[large-language-model|language models]],
+      test-time training fine-tunes temporarily, often with [[low-rank-adaptation|LoRA]], on data
+      derived from the prompt — for instance the demonstration pairs of a few-shot puzzle, expanded
+      by transformations — which in 2024, combined with program synthesis, lifted accuracy on the
+      public [[arc-agi|ARC-AGI]] validation set to what its authors reported as roughly average
+      human level. It trades extra inference computation for adaptability, complementing
+      [[in-context-learning|in-context learning]].
+    example: >-
+      Test-time training on each puzzle's three examples, plus rotations and flips of them, more
+      than doubled our solve rate.
+  - context: Sequence modeling
+    definition: >-
+      A family of sequence-model layers (TTT layers) whose hidden state is itself a small model — a
+      linear map or a two-layer MLP — updated by a step of self-supervised learning on each incoming
+      token, so the layer keeps learning as it reads. Proposed as linear-time alternatives to
+      attention for [[long-context|long context]], they are related to [[linear-attention|linear
+      attention]] and [[state-space-model|state space models]].
+origin: >-
+  Introduced by Yu Sun, Xiaolong Wang, Zhuang Liu, John Miller, Alexei Efros and Moritz Hardt
+  (arXiv, September 2019; ICML 2020). Sun and colleagues proposed TTT layers in July 2024, and Ekin
+  Akyürek and colleagues (November 2024) reached 53 percent on ARC's public validation set with an
+  8-billion-parameter model, and 61.9 percent combined with program synthesis.
+year: 2019
+note: >-
+  Distinct from [[test-time-compute|test-time compute]] scaling, which spends more inference
+  computation without changing weights, and from test-time adaptation methods that adjust only
+  normalization statistics. Because weights change per input, serving and reproducibility become
+  more complex.
+see_also:
+  - test-time compute
+  - in-context learning
+  - distribution shift
+  - ARC-AGI
+  - continual learning
+  - self-supervised learning
+  - low-rank adaptation
+contrast:
+  - test-time compute
+  - in-context learning
+sources:
+  - text: >-
+      Sun, Y. et al. (2019). Test-Time Training with Self-Supervision for Generalization under
+      Distribution Shifts. ICML 2020. arXiv:1909.13231.
+    url: https://arxiv.org/abs/1909.13231
+  - text: >-
+      Akyürek, E. et al. (2024). The Surprising Effectiveness of Test-Time Training for Few-Shot
+      Learning. arXiv:2411.07279.
+    url: https://arxiv.org/abs/2411.07279
+  - text: >-
+      Sun, Y. et al. (2024). Learning to (Learn at Test Time): RNNs with Expressive Hidden States.
+      arXiv:2407.04620.
+    url: https://arxiv.org/abs/2407.04620

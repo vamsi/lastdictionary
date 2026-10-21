@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: k-means clustering
+id: k-means-clustering
+pos: n.
+also:
+  - k-means
+  - Lloyd's algorithm
+  - Lloyd–Forgy algorithm
+  - k-means++
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A simple way to split data into a chosen number of groups: guess group centers, assign every point
+  to its nearest center, move each center to the middle of its points, and repeat.
+senses:
+  - definition: >-
+      A [[clustering|clustering]] method that divides a dataset into a preset number k of groups by
+      minimizing the within-cluster sum of squared [[euclidean-distance|Euclidean distances]]
+      between each point and its cluster's mean (centroid). The standard heuristic, Lloyd's
+      algorithm, alternates two steps until assignments stop changing: assign every point to its
+      nearest centroid, then recompute each centroid as the mean of its points. Neither step can
+      increase the objective, so the procedure converges, but only to a local optimum that depends
+      on the starting centers; finding the global optimum is NP-hard. The k-means++ seeding rule,
+      which picks initial centers far apart with probability proportional to squared distance, gives
+      an expected O(log k) approximation guarantee. K-means assumes compact, roughly spherical
+      clusters of similar size, is sensitive to outliers and to [[feature-scaling|feature scale]],
+      and can be seen as a limiting case of fitting a [[gaussian-mixture-model|Gaussian mixture
+      model]] with the [[expectation-maximization-algorithm|expectation–maximization algorithm]].
+    example: >-
+      We ran k-means with k = 8 on the customer embeddings and named the clusters after reading
+      samples from each.
+formula_latex: \min_{C_1,\dots,C_k} \sum_{j=1}^{k} \sum_{\mathbf{x} \in C_j} \lVert \mathbf{x} -
+  \boldsymbol{\mu}_j \rVert^2
+origin: >-
+  Hugo Steinhaus described the partitioning idea in 1956. At Bell Labs in 1957 Stuart Lloyd proposed
+  the alternating algorithm for designing pulse-code-modulation quantizers, in an internal report
+  not formally published until 1982; Edward Forgy described the same procedure in 1965, hence the
+  name Lloyd–Forgy. The name 'k-means' comes from James MacQueen (1967). David Arthur and Sergei
+  Vassilvitskii added k-means++ seeding in 2007.
+year: 1967
+note: >-
+  Choosing k is a [[model-selection|model selection]] problem; common aids are the elbow plot of the
+  objective against k and the [[silhouette-score|silhouette score]]. Variants include k-medoids
+  (centers must be actual data points) and mini-batch k-means for very large datasets. Not to be
+  confused with [[k-nearest-neighbors|k-nearest neighbors]], a supervised method.
+see_also:
+  - clustering
+  - Gaussian mixture model
+  - expectation–maximization algorithm
+  - silhouette score
+  - feature scaling
+  - hierarchical clustering
+  - DBSCAN
+contrast:
+  - k-nearest neighbors
+sources:
+  - text: >-
+      MacQueen, J. (1967). Some Methods for Classification and Analysis of Multivariate
+      Observations. Proc. 5th Berkeley Symposium on Mathematical Statistics and Probability.
+  - text: >-
+      Lloyd, S. P. (1982). Least Squares Quantization in PCM. IEEE Transactions on Information
+      Theory 28(2).
+  - text: >-
+      Arthur, D. & Vassilvitskii, S. (2007). k-means++: The Advantages of Careful Seeding. Proc.
+      18th ACM-SIAM Symposium on Discrete Algorithms (SODA).

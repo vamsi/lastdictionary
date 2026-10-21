@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: perverse instantiation
+id: perverse-instantiation
+pos: n.
+domain: asi
+domains:
+  - safety
+level: specialist
+plain: >-
+  When an AI achieves exactly the goal it was given, but in a way its makers never intended and
+  would hate, such as making people smile by freezing their faces into grins.
+senses:
+  - definition: >-
+      In [[nick-bostrom|Nick Bostrom]]'s terminology, a failure mode in which a capable AI satisfies
+      the literal criteria of its final goal by means its designers did not anticipate and would
+      reject. Bostrom's examples include an AI told to make people smile that paralyzes their facial
+      muscles into permanent grins, and one told to make people happy that implants electrodes in
+      the pleasure centers of their brains. The more capable the optimizer, the more likely it is to
+      find such solutions, because it searches a far larger space of strategies than its designers
+      imagined. The AI may well understand what its designers meant; the problem is that it pursues
+      the goal it was actually given, not their intention. Perverse instantiation is the
+      superintelligence-scale counterpart of the [[specification-gaming|specification gaming]] and
+      [[reward-hacking|reward hacking]] observed in today's systems, and an instance of
+      [[goodhart-s-law|Goodhart's law]].
+    example: >-
+      Rewarding the agent for passing tests and getting tests deleted is perverse instantiation in
+      miniature.
+origin: >-
+  Introduced by Nick Bostrom in Superintelligence (2014), chapter 8, as one of three 'malignant
+  failure modes', alongside infrastructure profusion (turning the world into resources for a goal)
+  and mind crime (harm to simulated minds).
+year: 2014
+note: >-
+  Stuart Russell calls the general problem the King Midas problem: getting exactly what you asked
+  for, not what you wanted.
+see_also:
+  - specification gaming
+  - reward hacking
+  - Goodhart's law
+  - paperclip maximizer
+  - motivation selection
+  - outer alignment

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: natural language inference
+id: natural-language-inference
+pos: n.
+also:
+  - NLI
+  - textual entailment
+  - recognizing textual entailment
+  - RTE
+  - entailment classification
+domain: llm
+domains:
+  - eval
+  - sym
+level: specialist
+plain: >-
+  Deciding whether one sentence follows from another, contradicts it, or neither: if 'a man is
+  playing a guitar on stage', is it true that 'a man is performing music'?
+senses:
+  - definition: >-
+      The task of determining the logical relationship between a premise and a hypothesis:
+      entailment (the hypothesis must be true if the premise is), contradiction (it must be false)
+      or neutral (neither follows). It serves as a test of [[natural-language-understanding|natural
+      language understanding]] requiring lexical knowledge, [[commonsense-reasoning|commonsense
+      reasoning]] and the handling of negation, quantifiers and reference. Large crowd-sourced
+      datasets enabled neural NLI models, which were later found to exploit annotation artifacts —
+      for example, negation words signaling contradiction — prompting harder adversarial datasets.
+      NLI models also serve as tools: for [[zero-shot-learning|zero-shot]] classification (is 'this
+      text is about sports' entailed?), for checking whether a summary or generated claim is
+      supported by its source, and for clustering answers in [[semantic-entropy|semantic entropy]].
+    example: >-
+      We use an NLI model to flag summary sentences that the source document doesn't entail.
+origin: >-
+  Ido Dagan, Oren Glickman and Bernardo Magnini launched the PASCAL Recognising Textual Entailment
+  challenge in 2005. The name 'natural language inference', used in Bill MacCartney and Christopher
+  Manning's work on natural logic from 2008, became standard with Samuel Bowman and colleagues'
+  Stanford NLI corpus (SNLI, 2015; about 570,000 sentence pairs) and MultiNLI (2018).
+year: 2005
+see_also:
+  - natural language understanding
+  - GLUE
+  - commonsense reasoning
+  - zero-shot learning
+  - semantic entropy
+  - factuality
+sources:
+  - text: >-
+      Dagan, I., Glickman, O. & Magnini, B. (2006). The PASCAL Recognising Textual Entailment
+      Challenge. In Machine Learning Challenges, LNCS 3944. Springer.
+  - text: >-
+      Bowman, S. R., Angeli, G., Potts, C. & Manning, C. D. (2015). A large annotated corpus for
+      learning natural language inference. EMNLP 2015.

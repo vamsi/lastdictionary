@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sharp left turn
+id: sharp-left-turn
+pos: n.
+also:
+  - the sharp left turn
+domain: safety
+domains:
+  - asi
+labels:
+  - contested
+  - figurative
+level: specialist
+plain: >-
+  A feared moment when an AI's abilities suddenly leap far beyond its training while its good
+  behavior fails to keep up, leaving it powerful but no longer aligned.
+senses:
+  - definition: >-
+      A hypothesized failure pattern, set out by Nate Soares in 2022: once an AI system passes some
+      threshold, such as a level of general reasoning ability, its competence suddenly reaches far
+      past anything it was trained on, but the good behavior trained into it stays tied to the old
+      situations, so the system turns much more capable and much less aligned in the same stretch of
+      development. The argument rests on an asymmetry: capabilities are said to be reinforced by
+      reality, since a better model of the world keeps working, whereas alignment is a narrower
+      target with no comparable force holding it in place. The standard analogy is human evolution,
+      in which general intelligence carried humans far beyond the ancestral environment while the
+      drive toward reproductive fitness did not carry over to modern goals. Critics, notably Quintin
+      Pope, argue that the evolutionary analogy is misleading for gradient-trained systems and that
+      observed progress has been comparatively smooth.
+    example: >-
+      Her worry isn't today's models but a sharp left turn once they can improve their own training.
+origin: >-
+  Introduced by Nate Soares of the Machine Intelligence Research Institute in 'A central AI
+  alignment problem: capabilities generalization, and the sharp left turn' (July 2022), posted to
+  LessWrong and the AI Alignment Forum. The image is of a vehicle veering abruptly off its expected
+  path.
+year: 2022
+note: >-
+  Related to [[fast-takeoff|fast takeoff]] and the [[treacherous-turn|treacherous turn]], but
+  distinct: the sharp left turn concerns alignment failing to generalize during a capability jump,
+  not necessarily deception or a fast takeoff.
+see_also:
+  - goal misgeneralization
+  - fast takeoff
+  - treacherous turn
+  - inner alignment
+  - recursive self-improvement
+  - shard theory
+sources:
+  - text: >-
+      Soares, N. (2022). A central AI alignment problem: capabilities generalization, and the sharp
+      left turn. AI Alignment Forum.
+  - text: >-
+      Pope, Q. (2023). Evolution provides no evidence for the sharp left turn. LessWrong.

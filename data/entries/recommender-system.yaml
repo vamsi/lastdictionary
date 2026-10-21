@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: recommender system
+id: recommender-system
+pos: n.
+also:
+  - recommendation system
+  - recommendation engine
+  - recommender
+  - recsys
+  - recommendation algorithm
+domain: ml
+domains:
+  - society
+  - eng
+labels:
+  - legal
+level: essential
+plain: >-
+  Software that guesses which songs, products, posts or jobs you are most likely to want and shows
+  those first, as when a video app lines up the next clip or a shop suggests an add-on.
+senses:
+  - definition: >-
+      A system that estimates how relevant items are to a user and presents a ranked selection,
+      using the user's past behavior, the items' attributes, context such as time and device, and
+      the behavior of similar users. The main approaches are [[collaborative-filtering|collaborative
+      filtering]], which exploits patterns across many users' interactions;
+      [[content-based-filtering|content-based filtering]], which matches item features to a user
+      profile; and hybrids of the two. Industrial systems usually run as a multi-stage pipeline:
+      candidate generation narrows millions of items to hundreds, often with a
+      [[two-tower-model|two-tower model]] and [[approximate-nearest-neighbor-search|approximate
+      nearest neighbor search]]; a heavier ranking model scores the candidates; and a re-ranking
+      stage applies business rules, diversity and freshness. Models learn mostly from
+      [[implicit-feedback|implicit feedback]] such as clicks and watch time, are evaluated offline
+      with ranking metrics such as [[recall-k|recall@k]] and
+      [[normalized-discounted-cumulative-gain|NDCG]], and are then tested online with
+      [[a-b-testing|A/B testing]]. Persistent problems include the [[cold-start-problem|cold start
+      problem]], feedback loops in which recommendations shape the very data they learn from,
+      popularity bias, and choosing objectives that reflect what users actually value.
+    example: >-
+      The recommender system now blends predicted watch time with a diversity penalty in the final
+      re-ranking stage.
+origin: >-
+  Elaine Rich's Grundy (1979), which suggested library books from user stereotypes, is often cited
+  as the first recommender. Xerox PARC's Tapestry (1992) introduced collaborative filtering, and
+  Paul Resnick and Hal Varian popularized the term 'recommender systems' in a 1997 special issue of
+  Communications of the ACM. Amazon's item-to-item recommendations and the 2006–2009 Netflix Prize
+  brought the field wide attention.
+year: 1997
+note: >-
+  Among the most consequential deployed AI, recommenders shape what billions of people read, watch
+  and buy. Critics link [[engagement-optimization|engagement optimization]] to
+  [[filter-bubble|filter bubbles]] and harms to wellbeing. The EU Digital Services Act (2022)
+  requires platforms to explain the main parameters of their recommender systems and very large
+  platforms to offer an option not based on profiling.
+see_also:
+  - collaborative filtering
+  - content-based filtering
+  - matrix factorization
+  - two-tower model
+  - cold start problem
+  - implicit feedback
+  - learning to rank
+  - filter bubble
+sources:
+  - text: >-
+      Resnick, P. & Varian, H. R. (1997). Recommender Systems. Communications of the ACM 40(3).
+  - text: Rich, E. (1979). User Modeling via Stereotypes. Cognitive Science 3(4).
+  - text: >-
+      Covington, P., Adams, J. & Sargin, E. (2016). Deep Neural Networks for YouTube
+      Recommendations. Proc. 10th ACM Conference on Recommender Systems (RecSys).
+standards: >-
+  EU Digital Services Act (Reg. (EU) 2022/2065), Art. 3(s); obligations in Arts. 27 and 38
+as_of: 2026-10

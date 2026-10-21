@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: safety classifier
+id: safety-classifier
+pos: n.
+also:
+  - moderation classifier
+  - input classifier
+  - output classifier
+  - guard model
+  - harm classifier
+domain: sec
+domains:
+  - safety
+  - llm
+level: core
+plain: >-
+  A separate AI model that checks messages going into or coming out of a chatbot and flags or blocks
+  those that break safety rules, like a security guard at the door.
+senses:
+  - definition: >-
+      A [[classifier|classifier]] that labels prompts, responses or whole conversations as
+      acceptable or violating according to a content or usage policy, so that they can be blocked,
+      rewritten, escalated or logged. Input classifiers screen requests before they reach the main
+      model; output classifiers screen generated text, often while it streams, so that a response
+      can be cut off mid-generation; conversation-level classifiers catch harm spread across turns.
+      Implementations range from small fine-tuned transformers and guard models trained on a hazard
+      taxonomy (such as Llama Guard and ShieldGemma) to reasoning models that apply a policy
+      supplied at run time, and cheap [[linear-probe|probes]] on the main model's own
+      [[activation|activations]]. The central trade-offs are recall on rare but severe harms against
+      false positives that cause [[over-refusal|over-refusal]], plus latency, compute cost and
+      robustness to deliberate evasion.
+    example: >-
+      The output safety classifier halted the stream as soon as the answer drifted into restricted
+      territory.
+origin: >-
+  Automated toxicity classifiers predate chatbots, notably Jigsaw and Google's Perspective API
+  (2017). OpenAI described its moderation classifier in 2022, Meta released Llama Guard in December
+  2023, and by 2025 input and output classifiers were a standard layer in frontier-model
+  deployments, including Anthropic's [[constitutional-classifiers|constitutional classifiers]].
+see_also:
+  - guardrails
+  - constitutional classifiers
+  - content moderation
+  - over-refusal
+  - linear probe
+  - jailbreak
+sources:
+  - text: >-
+      Markov, T. et al. (2023). A Holistic Approach to Undesired Content Detection in the Real
+      World. AAAI 2023.
+  - text: >-
+      Inan, H. et al. (2023). Llama Guard: LLM-based Input-Output Safeguard for Human-AI
+      Conversations. arXiv preprint.

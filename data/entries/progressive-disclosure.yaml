@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: progressive disclosure
+id: progressive-disclosure
+pos: n.
+domain: agents
+domains:
+  - eng
+level: specialist
+plain: >-
+  Showing only a short summary first and revealing details when they are actually needed. AI agents
+  use it to avoid filling their limited memory with instructions they may never use.
+senses:
+  - context: Agents
+    definition: >-
+      A [[context-engineering|context engineering]] pattern in which an [[ai-agent|AI agent]] is
+      given only brief descriptions of available resources — names and one-line summaries of
+      [[agent-skill|skills]], [[tool|tools]] or documents — and loads fuller layers only when a task
+      calls for them. In Anthropic's Agent Skills design, for example, the first level is each
+      skill's name and description in the [[system-prompt|system prompt]]; the second is the skill's
+      full instruction file, read when the skill looks relevant; deeper levels are linked scripts
+      and reference files opened as needed. The pattern gives an agent access to far more capability
+      than its [[context-window|context window]] could hold at once and keeps irrelevant
+      instructions from distracting it, but it depends on summaries good enough for the model to
+      know when to look deeper.
+    example: >-
+      Thanks to progressive disclosure, installing forty skills costs only a few hundred tokens
+      until one is used.
+    labels:
+      - emerging
+  - context: Interface design
+    definition: >-
+      In interface design, the practice, much promoted by usability writer Jakob Nielsen, of
+      presenting the few functions most people need at first and tucking rarer or more advanced ones
+      behind menus, links or 'advanced' panels until a user goes looking, so that beginners face a
+      simple screen while experts keep full power.
+origin: >-
+  A long-established principle of human–computer interaction, set out in an often-cited 2006 article
+  by Jakob Nielsen; who first named it is not established. Anthropic applied it to agents in its
+  September 2025 context-engineering guide and called it the core design principle of Agent Skills
+  (16 October 2025); many agent harnesses now load skills, tools and documentation this way.
+year: 2025
+see_also:
+  - context engineering
+  - agent skill
+  - just-in-time retrieval
+  - system prompt
+  - context window
+  - tool use
+sources:
+  - text: >-
+      Anthropic (2025). Equipping agents for the real world with Agent Skills. Anthropic Engineering
+      blog, 16 October 2025.
+    url: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
+  - text: >-
+      Nielsen, J. (2006). Progressive Disclosure. Nielsen Norman Group, 3 December 2006.
+    url: https://www.nngroup.com/articles/progressive-disclosure/
+as_of: 2026-10

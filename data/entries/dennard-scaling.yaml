@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Dennard scaling
+id: dennard-scaling
+pos: n.
+also:
+  - MOSFET scaling
+  - constant-field scaling
+domain: hw
+domains:
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  The rule that as transistors shrank they also used proportionally less power, so chips got faster
+  without getting hotter. It stopped working in the mid-2000s, ending the era of ever-faster single
+  processors.
+senses:
+  - definition: >-
+      The scaling rule for MOSFET transistors stating that if all dimensions and the supply voltage
+      are reduced by the same factor k, transistor density rises by k², switching speed by about k,
+      and power per transistor falls by k², so power density stays constant. Together with
+      [[moore-s-law|Moore's law]] it delivered three decades of faster chips that used less energy
+      per operation, with steadily rising clock frequencies. It broke down around 2005–2007 because
+      voltages could no longer fall: lowering the threshold voltage further caused unacceptable
+      leakage current. Consequences included the stall of CPU clock speeds at a few gigahertz, the
+      shift to multicore and massively parallel processors (favoring [[gpu|GPUs]]), 'dark silicon'
+      (parts of a chip that must stay unpowered at any moment) and the turn to specialized
+      [[ai-accelerator|accelerators]] and lower-precision arithmetic for energy efficiency.
+origin: >-
+  Described by Robert H. Dennard and IBM colleagues Fritz Gaensslen, Hwa-Nien Yu, V. Leo Rideout,
+  Ernest Bassous and Andre LeBlanc in 'Design of ion-implanted MOSFET's with very small physical
+  dimensions' (IEEE Journal of Solid-State Circuits, October 1974). The eponym is a later label,
+  most often invoked in discussions of the rule's breakdown in the mid-2000s.
+year: 1974
+see_also:
+  - Moore's law
+  - process node
+  - DRAM
+  - GPU
+  - AI accelerator
+sources:
+  - text: >-
+      Dennard, R. H., Gaensslen, F. H., Yu, H.-N., Rideout, V. L., Bassous, E. & LeBlanc, A. R.
+      (1974). Design of ion-implanted MOSFET's with very small physical dimensions. IEEE Journal of
+      Solid-State Circuits SC-9(5).

@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Seppo Linnainmaa
+id: seppo-linnainmaa
+sort_as: Linnainmaa Seppo
+pos: prop. n.
+domain: people
+domains:
+  - math
+  - dl
+  - hist
+level: specialist
+dates: b. 1945
+plain: >-
+  A Finnish computer scientist who in 1970 first published the method for computing all of a
+  program's derivatives in one backward pass, the mathematical core of backpropagation.
+senses:
+  - definition: >-
+      Finnish mathematician and computer scientist who first published the reverse mode of
+      [[automatic-differentiation|automatic differentiation]], the algorithm at the heart of
+      [[backpropagation|backpropagation]]. In his 1970 master's thesis at the University of
+      Helsinki, written in Finnish, he analyzed how rounding errors accumulate through a computation
+      and showed how to obtain the derivatives of a program's output with respect to all its
+      intermediate quantities in a single backward sweep through its operations, at a cost
+      proportional to that of the computation itself, giving a FORTRAN implementation; the work
+      appeared in English in the journal BIT in 1976. Reverse-mode differentiation, applied to
+      neural networks by [[paul-werbos|Paul Werbos]] and popularized in 1986 by
+      [[david-rumelhart|David Rumelhart]], [[geoffrey-hinton|Geoffrey Hinton]] and Ronald Williams,
+      is how every [[deep-learning|deep learning]] framework now computes gradients. Because credit
+      for backpropagation is disputed, [[jurgen-schmidhuber|Jürgen Schmidhuber]] and others cite his
+      thesis as its origin.
+see_also:
+  - automatic differentiation
+  - backpropagation
+  - chain rule
+  - computational graph
+  - Paul Werbos
+sources:
+  - text: >-
+      Linnainmaa, S. (1970). The representation of the cumulative rounding error of an algorithm as
+      a Taylor expansion of the local rounding errors. Master's thesis (in Finnish), University of
+      Helsinki.
+  - text: >-
+      Linnainmaa, S. (1976). Taylor expansion of the accumulated rounding error. BIT Numerical
+      Mathematics 16(2): 146–160.

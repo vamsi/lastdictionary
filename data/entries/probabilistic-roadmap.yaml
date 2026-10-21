@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: probabilistic roadmap
+id: probabilistic-roadmap
+pos: n.
+also:
+  - PRM
+  - probabilistic roadmap method
+  - roadmap planner
+  - PRM*
+domain: robot
+domains:
+  - sym
+  - math
+level: specialist
+plain: >-
+  A planning method that scatters many random safe robot poses through a space and links nearby ones
+  into a road network, so routes can later be looked up quickly, as on a map.
+senses:
+  - definition: >-
+      A sampling-based [[motion-planning|motion planning]] method that first builds a reusable graph
+      of the robot's free [[configuration-space|configuration space]] and then answers route
+      requests on it. To build the roadmap, it draws random configurations, throws out any that
+      collide, and tries to join each survivor to its neighbors — the closest few, or all within
+      some distance — keeping an edge wherever a simple local planner finds a collision-free motion.
+      To answer a request, it links the start and goal into the roadmap and runs an ordinary graph
+      search, such as [[a-search|A*]] or Dijkstra's algorithm. Because the roadmap is built once and
+      reused, the method suits multi-query settings, such as a robot working repeatedly in a fixed
+      cell. It is probabilistically complete under mild conditions — the chance of finding an
+      existing path tends to one as samples grow — but struggles with narrow passages that uniform
+      sampling rarely hits; biased sampling strategies and the asymptotically optimal PRM* address
+      these weaknesses.
+    example: >-
+      We precompute a probabilistic roadmap of the work cell overnight and query it in milliseconds.
+origin: >-
+  Introduced by Lydia Kavraki, Petr Švestka, Jean-Claude Latombe and Mark Overmars in 'Probabilistic
+  Roadmaps for Path Planning in High-Dimensional Configuration Spaces' (IEEE Transactions on
+  Robotics and Automation, 1996), which unified related work begun in the early 1990s by Kavraki and
+  Latombe at Stanford and by Overmars and Švestka at Utrecht.
+year: 1996
+see_also:
+  - motion planning
+  - rapidly exploring random tree
+  - configuration space
+  - path planning
+  - A* search
+contrast:
+  - rapidly exploring random tree
+sources:
+  - text: >-
+      Kavraki, L. E., Švestka, P., Latombe, J.-C. & Overmars, M. H. (1996). Probabilistic roadmaps
+      for path planning in high-dimensional configuration spaces. IEEE Transactions on Robotics and
+      Automation 12(4), 566–580.

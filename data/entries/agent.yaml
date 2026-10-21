@@ -1,0 +1,85 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agent
+id: agent
+pos: n.
+also:
+  - agents
+  - agency
+domain: core
+domains:
+  - agents
+  - rl
+  - sym
+level: core
+plain: >-
+  Something that acts. In AI, a program that observes its situation and takes actions toward a goal:
+  a game-playing learner, a software helper, or a chatbot that uses tools to complete tasks.
+senses:
+  - context: AI (general)
+    definition: >-
+      Anything that takes in information about its surroundings and does something that affects
+      them: a thermostat, a robot, a trading program or a person. Since Stuart Russell and Peter
+      Norvig's textbook (1995), which defines an agent as perceiving its [[environment|environment]]
+      through sensors and acting on it through actuators, AI is often described as the design of
+      agents that act rationally, choosing actions expected to best achieve a performance measure
+      given what they perceive and know; see [[intelligent-agent|intelligent agent]]. Agents are
+      characterized by their sensors, actuators and environment, and by how far they rely on
+      built-in knowledge versus learning.
+  - context: Reinforcement learning
+    definition: >-
+      The learner and decision-maker in a [[reinforcement-learning|reinforcement learning]] problem,
+      which repeatedly observes a [[state|state]], chooses an [[action|action]] according to its
+      [[policy|policy]] and receives a [[reward|reward]] from the environment, aiming to maximize
+      cumulative reward. The agent–environment boundary is drawn at what the agent controls
+      directly, not at a physical body.
+  - context: Language-model systems
+    definition: >-
+      Short for [[ai-agent|AI agent]]: a system in which a [[large-language-model|large language
+      model]] runs in an [[agent-loop|agent loop]], choosing and calling [[tool|tools]] and acting
+      on their results over many steps to accomplish a goal, inside a [[harness|harness]] that
+      executes its actions. This sense, dominant since 2024, overlaps with [[agentic-ai|agentic
+      AI]]; systems of several cooperating agents are [[multi-agent-system|multi-agent systems]],
+      and agents spawned by another agent are [[subagent|subagents]].
+    example: >-
+      The agent opened a branch, ran the test suite and fixed two failures before asking for review.
+  - context: Software engineering
+    definition: >-
+      An autonomous software process that acts on behalf of a user or another program, as in the
+      software agents and agent-oriented programming of the 1990s, or a monitoring process installed
+      on a server. In web standards a user agent is the browser or other client acting for the user.
+  - context: Philosophy and law
+    definition: >-
+      A being capable of intentional action, one that has agency; and, in law and economics, a party
+      authorized to act for a principal. Both senses shape debates over whether AI systems have
+      agency, who is responsible for their acts, and how principal–agent relations apply when
+      software buys, books or negotiates for people, as in [[agentic-commerce|agentic commerce]].
+origin: >-
+  From Latin agens, 'doing', from agere, 'to act'. In computing, Oliver Selfridge's 'demons' (1959),
+  Carl Hewitt's actor model (1973) and Marvin Minsky's The Society of Mind (1986), whose agents are
+  simple mental processes, prefigured the term; the 1990s brought software and intelligent agents
+  and Russell and Norvig's agent-centered textbook. Reinforcement learning took 'agent' from control
+  and decision theory, and language-model agents spread from 2023.
+note: >-
+  Usage varies by community: to a reinforcement-learning researcher any policy-following learner is
+  an agent, while in product marketing 'agent' can mean anything from a scripted workflow to an
+  autonomous system. Whether AI systems have genuine agency is a philosophical question separate
+  from these engineering senses.
+see_also:
+  - AI agent
+  - intelligent agent
+  - agentic AI
+  - reinforcement learning
+  - environment
+  - policy
+  - multi-agent system
+  - goal-directedness
+contrast:
+  - tool
+  - environment
+sources:
+  - text: >-
+      Russell, S. & Norvig, P. (1995). Artificial Intelligence: A Modern Approach. Prentice Hall.
+  - text: >-
+      Sutton, R. S. & Barto, A. G. (1998; 2nd ed. 2018). Reinforcement Learning: An Introduction.
+      MIT Press.

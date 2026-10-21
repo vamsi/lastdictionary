@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generalized advantage estimation
+id: generalized-advantage-estimation
+pos: n.
+also:
+  - GAE
+  - GAE(λ)
+domain: rl
+level: specialist
+plain: >-
+  A recipe for judging how much better each action was than expected by blending short-term and
+  long-term evidence, trading a little accuracy for much steadier learning.
+senses:
+  - definition: >-
+      A method for estimating the [[advantage-function|advantage function]] in
+      [[policy-gradient|policy gradient]] and [[actor-critic|actor–critic]] algorithms as an
+      exponentially weighted sum of one-step [[temporal-difference-learning|temporal-difference]]
+      errors computed with a learned [[value-function|value function]]. A parameter λ ∈ [0, 1]
+      controls the bias–variance trade-off: λ = 0 gives the one-step TD error, low in variance but
+      biased by errors in the value function, while λ = 1 gives the Monte Carlo return minus the
+      value baseline, unbiased but noisy. Values around λ = 0.95 with a [[discount-factor|discount
+      factor]] near 0.99 are common defaults. The construction mirrors TD(λ) and
+      [[eligibility-trace|eligibility traces]], applied to advantages rather than values, and is
+      computed in a single backward pass over each [[trajectory|trajectory]]. GAE is a standard
+      component of [[proximal-policy-optimization|PPO]], including PPO-based
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]].
+    example: >-
+      Lowering the GAE lambda from 0.95 to 0.9 reduced variance enough to stabilize the critic.
+formula_latex: \hat{A}_t^{\mathrm{GAE}(\gamma,\lambda)} = \sum_{l=0}^{\infty} (\gamma\lambda)^{l}\,
+  \delta_{t+l}, \qquad \delta_t = r_t + \gamma V(s_{t+1}) - V(s_t)
+origin: >-
+  Introduced by John Schulman, Philipp Moritz, Sergey Levine, Michael Jordan and Pieter Abbeel in
+  'High-Dimensional Continuous Control Using Generalized Advantage Estimation' (arXiv, June 2015;
+  ICLR 2016), which combined it with trust-region updates to learn running gaits for simulated 3D
+  bipeds and quadrupeds.
+year: 2015
+see_also:
+  - advantage function
+  - proximal policy optimization
+  - actor–critic
+  - temporal difference learning
+  - eligibility trace
+  - trust region policy optimization
+sources:
+  - text: >-
+      Schulman, J., Moritz, P., Levine, S., Jordan, M. & Abbeel, P. (2016). High-Dimensional
+      Continuous Control Using Generalized Advantage Estimation. ICLR 2016. arXiv:1506.02438.
+    url: https://arxiv.org/abs/1506.02438

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Hopfield network
+id: hopfield-network
+pos: n.
+also:
+  - Hopfield net
+  - Hopfield model
+  - modern Hopfield network
+  - dense associative memory
+domain: hist
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  A network of on–off units, all connected to one another, that stores patterns as stable states.
+  Given a partial or noisy pattern, it settles into the closest stored one, like recalling a memory
+  from a hint.
+senses:
+  - definition: >-
+      A recurrent neural network of binary threshold units with symmetric connections and no
+      self-connections, introduced by [[john-hopfield|John Hopfield]] in 1982 as a model of
+      content-addressable memory. Patterns are stored in the weights, typically by a
+      [[hebbian-learning|Hebbian]] rule; units are then updated one at a time, and each update can
+      only lower a global energy function, so the network settles into a local minimum, or
+      attractor. Started from a corrupted or partial pattern, it falls into the nearest stored
+      memory. Capacity is limited to roughly 0.14 patterns per unit before spurious memories
+      dominate. By linking neural computation to the physics of spin glasses, the model helped
+      revive neural-network research in the 1980s. 'Modern' Hopfield networks, or dense associative
+      memories (from 2016), use sharper energy functions to store far more patterns — exponentially
+      many in some versions — and the update rule of the continuous version (2020) coincides with
+      transformer [[attention|attention]].
+    example: Show the Hopfield network half of a stored face and it fills in the rest.
+formula_latex: E = -\frac{1}{2} \sum_{i \neq j} w_{ij} \, s_i s_j + \sum_i \theta_i s_i
+origin: >-
+  Published by the physicist John Hopfield, then at Caltech, as 'Neural Networks and Physical
+  Systems with Emergent Collective Computational Abilities' (PNAS, 1982); a version with
+  continuous-valued units followed in 1984. Related associative-memory models had been studied
+  earlier by Shun'ichi Amari, Kaoru Nakano and William Little.
+year: 1982
+note: >-
+  Hopfield shared the 2024 Nobel Prize in Physics with Geoffrey Hinton, in part for this work; see
+  [[nobel-prizes-for-ai|Nobel Prizes for AI]].
+see_also:
+  - Boltzmann machine
+  - Hebbian learning
+  - energy-based model
+  - recurrent neural network
+  - attention
+  - Nobel Prizes for AI
+sources:
+  - text: >-
+      Hopfield, J. J. (1982). Neural Networks and Physical Systems with Emergent Collective
+      Computational Abilities. Proceedings of the National Academy of Sciences 79(8), 2554–2558.
+  - text: Ramsauer, H. et al. (2021). Hopfield Networks Is All You Need. ICLR 2021.

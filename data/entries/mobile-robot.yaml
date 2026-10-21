@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mobile robot
+id: mobile-robot
+pos: n.
+also:
+  - autonomous mobile robot
+  - AMR
+  - automated guided vehicle
+  - AGV
+  - rover
+  - mobile manipulator
+domain: robot
+level: core
+plain: >-
+  A robot that travels around by itself — on wheels, tracks, legs, propellers or thrusters — such as
+  a robot vacuum, warehouse cart, delivery robot or planetary rover.
+senses:
+  - definition: >-
+      A [[robot|robot]] that gets around under its own power instead of working from one bolted-down
+      spot, as a stationary industrial arm does. The category spans wheeled and tracked ground
+      robots, [[legged-robot|legged robots]], aerial [[drone|drones]], underwater vehicles and
+      planetary rovers. Its core software problems are
+      [[simultaneous-localization-and-mapping|localization and mapping]], [[path-planning|path
+      planning]] and obstacle avoidance, usually from [[lidar|lidar]], cameras, wheel
+      [[odometry|odometry]] and inertial sensors combined by a [[kalman-filter|Kalman filter]] or
+      [[particle-filter|particle filter]]. Industry distinguishes automated guided vehicles (AGVs),
+      which follow fixed routes marked by wires, magnetic tape or reflectors, from autonomous mobile
+      robots (AMRs), which build maps and plan their own routes around people and obstacles. Large
+      deployments include warehouse fleets, hospital delivery, floor-cleaning and lawn-mowing
+      robots, and sidewalk delivery robots; adding an arm creates a mobile manipulator.
+    example: >-
+      We replaced the tape-following AGVs with mobile robots that reroute around blocked aisles.
+origin: >-
+  W. Grey Walter's light-seeking 'tortoises' (1948–1949) were early autonomous mobile robots, and
+  SRI's [[shakey-the-robot|Shakey]] (1966–1972) combined mobility with planning and vision; Barrett
+  Electronics introduced the first commercial AGV, a driverless tractor following a buried wire, in
+  the 1950s. Amazon's 2012 purchase of Kiva Systems signaled the warehouse-robot boom.
+year: 1948
+see_also:
+  - legged robot
+  - drone
+  - simultaneous localization and mapping
+  - path planning
+  - odometry
+  - Shakey the robot
+  - robotaxi
+contrast:
+  - industrial robot
+sources:
+  - text: >-
+      Siegwart, R., Nourbakhsh, I. R. & Scaramuzza, D. (2011). Introduction to Autonomous Mobile
+      Robots, 2nd ed. MIT Press.

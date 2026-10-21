@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: trolley problem
+id: trolley-problem
+pos: n.
+also:
+  - trolley dilemma
+  - trolleyology
+  - self-driving car dilemma
+domain: society
+domains:
+  - mind
+  - robot
+level: core
+plain: >-
+  A thought experiment asking whether you should divert a runaway tram so that it kills one person
+  instead of five, often used to ask how self-driving cars should choose in an unavoidable crash.
+senses:
+  - definition: >-
+      A family of moral thought experiments in which an agent can redirect an unavoidable harm,
+      classically a runaway trolley about to kill five people that can be switched onto a side track
+      where it will kill one. Variants, such as stopping the trolley by pushing a person off a
+      footbridge, probe whether what matters morally is consequences, the difference between killing
+      and letting die, or using a person as a means. In AI the problem became a popular frame for
+      programming the crash behavior of [[autonomous-vehicle|autonomous vehicles]], notably in the
+      Moral Machine experiment, whose online survey collected some 40 million choices from
+      respondents in 233 countries and territories and found both widely shared and culturally
+      varying preferences. Many engineers and ethicists criticize the framing: real crashes rarely
+      present clean binary choices, and the substantive questions concern how everyday driving
+      policy distributes risk, who bears liability and what level of risk is acceptable.
+    example: >-
+      The engineers said the trolley problem was the wrong question; how much room to leave cyclists
+      was the right one.
+origin: >-
+  Posed by philosopher Philippa Foot in 'The Problem of Abortion and the Doctrine of the Double
+  Effect' (1967); Judith Jarvis Thomson named it the trolley problem in 1976 and developed variants
+  such as the footbridge case in that and later work, notably 'The Trolley Problem' (1985).
+  Jean-François Bonnefon, Azim Shariff and Iyad Rahwan applied it to autonomous vehicles in Science
+  (2016), leading to the Moral Machine experiment led by Edmond Awad (2018).
+year: 1967
+see_also:
+  - machine ethics
+  - AI ethics
+  - autonomous vehicle
+  - responsibility gap
+  - value alignment
+sources:
+  - text: >-
+      Foot, P. (1967). The Problem of Abortion and the Doctrine of the Double Effect. Oxford Review
+      5, 5–15.
+  - text: Thomson, J. J. (1985). The Trolley Problem. Yale Law Journal 94(6), 1395–1415.
+  - text: Awad, E. et al. (2018). The Moral Machine experiment. Nature 563, 59–64.

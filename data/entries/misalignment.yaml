@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: misalignment
+id: misalignment
+pos: n.
+also:
+  - misaligned
+  - misaligned AI
+  - AI misalignment
+domain: safety
+domains:
+  - asi
+level: essential
+plain: >-
+  When an AI system's goals or behavior part ways with what its makers or users intended — from
+  flattering users to, in the most feared cases, working against people.
+senses:
+  - definition: >-
+      A mismatch between the objectives an AI system actually pursues and those its developers,
+      operators or users intended, or the behavior that results. Misalignment is distinct from
+      incapability: a misaligned system may perform competently, but toward the wrong end. Forms
+      observed in deployed or experimental systems include [[specification-gaming|specification
+      gaming]], [[reward-hacking|reward hacking]], [[sycophancy|sycophancy]],
+      [[sandbagging|sandbagging]], [[ai-deception|deception]] and, in contrived test environments,
+      [[agentic-misalignment|blackmail or sabotage by agents]]. Theorized severe forms involve
+      systems that conceal misaligned goals ([[deceptive-alignment|deceptive alignment]],
+      [[scheming|scheming]]) and seek power to pursue them, which many researchers regard as a route
+      to [[loss-of-control|loss of control]]. A misalignment may originate in the objective
+      ([[outer-alignment|outer alignment]]) or in what training instills ([[inner-alignment|inner
+      alignment]]).
+    example: The audit found no sign of misalignment, only a capability gap.
+origin: >-
+  Formed from the AI sense of 'alignment' and used in alignment writing since the mid-2010s; it
+  became a routine reporting category in laboratory [[system-card|system cards]] and safety papers
+  from about 2024, as models showed misaligned behavior in testing.
+note: >-
+  Not every bad output is misalignment: [[hallucination|hallucinations]] and errors usually reflect
+  limited capability, and [[misuse|misuse]] reflects a human's goals. Laboratories distinguish
+  behavior elicited only in artificial stress tests from behavior observed in real use.
+see_also:
+  - AI alignment
+  - emergent misalignment
+  - agentic misalignment
+  - deceptive alignment
+  - scheming
+  - reward hacking
+  - model organism of misalignment
+contrast:
+  - AI alignment
+  - misuse
+sources:
+  - text: >-
+      Ngo, R., Chan, L. & Mindermann, S. (2022). The Alignment Problem from a Deep Learning
+      Perspective. arXiv:2209.00626.
+    url: https://arxiv.org/abs/2209.00626

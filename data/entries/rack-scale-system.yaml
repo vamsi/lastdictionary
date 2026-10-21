@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: rack-scale system
+id: rack-scale-system
+pos: n.
+also:
+  - rack-scale architecture
+  - rack-scale computer
+  - AI rack
+  - NVL72
+domain: hw
+domains:
+  - train
+  - infer
+level: specialist
+plain: >-
+  An AI computer designed as one whole cabinet of chips, cooling and wiring, rather than separate
+  servers, so all the chips inside can work together like one big chip.
+senses:
+  - definition: >-
+      A computer designed and sold as an entire rack, in which dozens of accelerators, their host
+      CPUs, switches, power delivery and usually [[liquid-cooling|liquid cooling]] are integrated so
+      that every accelerator in the rack shares one high-bandwidth
+      [[scale-up-and-scale-out|scale-up]] domain. Nvidia's GB200 NVL72 (shipping from late 2024) is
+      the archetype: 72 Blackwell GPUs and 36 Grace CPUs linked by [[nvlink|NVLink]] switches with
+      130 TB/s of aggregate bandwidth and 13.4 TB of [[high-bandwidth-memory|HBM]], drawing on the
+      order of 120 kW. Other examples include Huawei's CloudMatrix 384 (2025) and AMD's 72-GPU
+      Helios (announced in 2025 for 2026 availability). The rack, rather than the chip or server,
+      becomes the unit of design, purchase and deployment, which concentrates power density (often
+      over 100 kW per rack) and forces redesign of [[ai-data-center|data-center]] power and cooling.
+origin: >-
+  Intel promoted a 'Rack Scale Architecture' for disaggregated data-center hardware from 2013, but
+  the term took its current AI meaning with Nvidia's GB200 NVL72, announced in March 2024 and
+  marketed as acting like a single giant GPU.
+year: 2024
+see_also:
+  - scale-up and scale-out
+  - NVLink
+  - liquid cooling
+  - AI supercomputer
+  - AI data center
+  - GPU
+as_of: 2026-10

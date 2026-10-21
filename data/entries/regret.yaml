@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: regret
+id: regret
+pos: n.
+also:
+  - cumulative regret
+  - simple regret
+  - no-regret learning
+domain: rl
+domains:
+  - math
+  - ml
+level: specialist
+plain: >-
+  How much worse a learner did than it could have done had it known the best choice from the start —
+  the price of having to learn by trying.
+senses:
+  - definition: >-
+      The difference between the cumulative [[reward|reward]] an algorithm obtains over T rounds and
+      the reward it would have obtained by always playing the best fixed option — in hindsight for
+      adversarial problems, in expectation for stochastic ones. Regret measures the cost of learning
+      in [[multi-armed-bandit|bandits]], [[online-learning|online learning]] and
+      [[reinforcement-learning|reinforcement learning]]: an algorithm whose regret grows sublinearly
+      in T is called no-regret, because its average performance approaches that of the best option.
+      Classic results set the yardsticks: Lai and Robbins showed that regret in stochastic bandits
+      must grow at least logarithmically in T, a rate that [[upper-confidence-bound|UCB]] and
+      [[thompson-sampling|Thompson sampling]] achieve, while adversarial bandits and online convex
+      optimization admit bounds of order √T. Simple regret, the quality of the final choice, matters
+      instead when only the end result counts. No-regret learning in games converges to equilibria,
+      the basis of [[counterfactual-regret-minimization|counterfactual regret minimization]] in
+      poker.
+    example: >-
+      Logarithmic regret means the bandit makes only a modest number of bad pulls even after a
+      million rounds.
+formula_latex: R_T = T\,\mu^{*} - \mathbb{E}\left[ \sum_{t=1}^{T} r_t \right], \qquad \mu^{*} = \max_{k} \mu_k
+origin: >-
+  From decision theory, where Leonard Savage proposed the minimax-regret criterion for decisions
+  under uncertainty (1951). Tze Leung Lai and Herbert Robbins's 1985 analysis made regret the
+  standard yardstick for bandit algorithms, and learning theory extended it to online learning,
+  games and reinforcement learning.
+year: 1951
+see_also:
+  - multi-armed bandit
+  - upper confidence bound
+  - Thompson sampling
+  - online learning
+  - exploration–exploitation trade-off
+  - counterfactual regret minimization
+sources:
+  - text: >-
+      Savage, L. J. (1951). The Theory of Statistical Decision. Journal of the American Statistical
+      Association 46(253), 55–67.
+  - text: >-
+      Lai, T. L. & Robbins, H. (1985). Asymptotically efficient adaptive allocation rules. Advances
+      in Applied Mathematics 6(1), 4–22.

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: backbone
+id: backbone
+pos: n.
+also:
+  - backbone network
+  - neck
+  - detection head
+  - backbone–neck–head
+domain: percep
+domains:
+  - dl
+level: core
+plain: >-
+  The main, usually pretrained part of a vision model that turns an image into useful internal
+  features; smaller task-specific parts are attached to it, like limbs to a spine.
+senses:
+  - definition: >-
+      The principal [[feature-extraction|feature-extracting]] network of a model, usually pretrained
+      on a large dataset and shared across tasks, to which smaller task-specific components are
+      attached. Detectors and segmenters are commonly described as backbone, neck and head: the
+      backbone (for example [[resnet|ResNet]]-50, a [[vision-transformer|vision transformer]] or a
+      self-supervised [[dino|DINO]] encoder) computes [[feature-map|feature maps]]; the neck (such
+      as a feature pyramid network) fuses them across scales; the head predicts boxes, classes or
+      masks. Swapping in a larger or better-pretrained backbone is one of the most reliable ways to
+      raise accuracy, and how the backbone was pretrained (supervised on [[imagenet|ImageNet]], on
+      image–text pairs, or self-supervised) often matters as much as the head design. The word is
+      also used for the pretrained [[large-language-model|large language model]] inside a
+      [[vision-language-model|vision-language model]] and, loosely, for any base model that others
+      build on.
+    example: >-
+      Freezing the backbone for the first two epochs kept the new detection head from wrecking the
+      pretrained features.
+origin: >-
+  An anatomical metaphor that spread through object-detection papers in the mid-2010s; its first use
+  there has not been traced. Mask R-CNN (2017) explicitly separated the 'convolutional backbone
+  architecture' from the network head, and YOLOv4 (2020) popularized the backbone–neck–head
+  breakdown. The older networking sense (a network's core links) is unrelated.
+note: >-
+  The backbone–neck–head vocabulary is a convention, not a formal definition; one paper's neck may
+  be another's head.
+see_also:
+  - feature extraction
+  - transfer learning
+  - ResNet
+  - vision transformer
+  - foundation model
+  - fine-tuning
+sources:
+  - text: He, K., Gkioxari, G., Dollár, P. & Girshick, R. (2017). Mask R-CNN. ICCV 2017.
+    url: https://arxiv.org/abs/1703.06870
+  - text: >-
+      Bochkovskiy, A., Wang, C.-Y. & Liao, H.-Y. M. (2020). YOLOv4: Optimal Speed and Accuracy of
+      Object Detection. arXiv:2004.10934.

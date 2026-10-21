@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: posterior
+id: posterior
+pos: n.
+also:
+  - posterior distribution
+  - posterior probability
+  - a posteriori probability
+  - posterior predictive distribution
+domain: math
+domains:
+  - ml
+  - gen
+level: core
+plain: >-
+  What you believe after weighing new evidence against what you believed before. It is the updated
+  belief that Bayes' theorem produces.
+senses:
+  - definition: >-
+      The [[probability-distribution|probability distribution]] over unknown parameters or
+      hypotheses once the observed data have been taken into account: by [[bayes-theorem|Bayes'
+      theorem]], the [[prior|prior]] reweighted by the [[likelihood|likelihood]] of the data and
+      rescaled by the marginal likelihood so that it sums or integrates to one. Bayesian conclusions
+      are summaries of it — its peak is the [[maximum-a-posteriori-estimation|MAP estimate]], its
+      width expresses the uncertainty that remains, and predictions average over it (the posterior
+      predictive distribution). For most models the normalizing constant is intractable, so the
+      posterior is approximated by [[markov-chain-monte-carlo|Markov chain Monte Carlo]],
+      [[variational-inference|variational inference]], Laplace approximations or ensembles; placing
+      a posterior over a network's weights gives a Bayesian neural network. In
+      [[generative-model|generative modeling]], 'the posterior' often means the distribution of
+      latent variables given an observation, which a [[variational-autoencoder|variational
+      autoencoder]]'s encoder approximates.
+    example: >-
+      The posterior over the click-through rate is now narrow enough to stop the experiment.
+formula_latex: p(\theta \mid \mathcal{D}) = \frac{p(\mathcal{D}\mid\theta)\,p(\theta)}{\int
+  p(\mathcal{D}\mid\theta')\,p(\theta')\,d\theta'}
+origin: >-
+  Jacob Bernoulli's a posteriori (1713) referred to probabilities learned from observed outcomes;
+  Thomas Bayes (1763) and Pierre-Simon Laplace (1774) computed what are now called posterior
+  probabilities, long known as 'inverse probabilities'. 'Posterior distribution' became standard
+  during the mid-20th-century Bayesian revival.
+see_also:
+  - prior
+  - likelihood
+  - Bayes' theorem
+  - Bayesian inference
+  - Markov chain Monte Carlo
+  - variational inference
+  - maximum a posteriori estimation
+contrast:
+  - prior

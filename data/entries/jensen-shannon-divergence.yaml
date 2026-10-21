@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Jensen–Shannon divergence
+id: jensen-shannon-divergence
+pos: n.
+also:
+  - JS divergence
+  - JSD
+  - Jensen–Shannon distance
+  - information radius
+domain: math
+domains:
+  - gen
+  - ml
+level: specialist
+plain: >-
+  A balanced, two-way measure of how different two sets of probabilities are, comparing each with
+  their average. Unlike its better-known cousin, it gives the same answer in both directions.
+senses:
+  - definition: >-
+      A way of comparing two [[probability-distribution|probability distributions]] P and Q through
+      their midpoint M = (P + Q)/2: it averages the [[kullback-leibler-divergence|KL divergences]]
+      KL(P ‖ M) and KL(Q ‖ M), which equals the entropy of M minus the mean of the two entropies.
+      The construction removes KL's awkward features — the result is symmetric, never infinite and
+      at most log 2 (one bit in base 2), vanishing only when P = Q — and its square root is a
+      genuine metric, the Jensen–Shannon distance. The original
+      [[generative-adversarial-network|generative adversarial network]] objective, with an optimal
+      discriminator, minimizes the JS divergence between real and generated data — which saturates
+      at log 2 when the distributions do not overlap, starving the generator of useful gradients and
+      motivating the [[wasserstein-distance|Wasserstein distance]] in Wasserstein GANs. It is also
+      used to compare word distributions, corpora and model outputs, and as a bounded alternative to
+      KL in evaluation and [[knowledge-distillation|knowledge distillation]].
+    example: >-
+      The JS divergence between the two models' next-token distributions stayed under 0.05 bits on
+      most prompts.
+formula_latex: \mathrm{JSD}(P\,\Vert\,Q) = \tfrac{1}{2}\,\mathrm{KL}(P\,\Vert\,M) +
+  \tfrac{1}{2}\,\mathrm{KL}(Q\,\Vert\,M), \qquad M = \tfrac{1}{2}(P + Q)
+origin: >-
+  Named and studied by Jianhua Lin in 'Divergence Measures Based on the Shannon Entropy' (IEEE
+  Transactions on Information Theory, 1991); the name joins Jensen's inequality, used to establish
+  its properties, with Shannon entropy. Essentially the same quantity had appeared earlier, for
+  example as Robin Sibson's 'information radius' (1969). Ian Goodfellow and colleagues' 2014 GAN
+  paper made it widely known in machine learning.
+year: 1991
+see_also:
+  - Kullback–Leibler divergence
+  - Wasserstein distance
+  - generative adversarial network
+  - entropy
+  - Jensen's inequality
+  - mutual information
+sources:
+  - text: >-
+      Lin, J. (1991). Divergence Measures Based on the Shannon Entropy. IEEE Transactions on
+      Information Theory, 37(1).

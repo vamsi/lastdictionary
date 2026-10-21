@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model license
+id: model-license
+pos: n.
+also:
+  - model licence
+  - AI license
+  - OpenRAIL
+  - RAIL
+  - Responsible AI License
+  - community license
+  - acceptable use policy
+domain: eng
+domains:
+  - gov
+level: core
+plain: >-
+  The legal terms under which an AI model may be downloaded and used — for example, whether
+  businesses may use it, whether changes may be shared, and which uses are banned.
+senses:
+  - definition: >-
+      A license governing the use, modification and redistribution of a trained model's
+      [[weights|weights]] and associated code, and often of its outputs and derived models. Three
+      families dominate. Standard permissive open-source licenses applied to weights, such as Apache
+      2.0 and MIT, impose few conditions. Responsible AI Licenses (RAIL and OpenRAIL) allow free use
+      and redistribution but attach behavioral restrictions, such as bans on unlawful surveillance
+      or on giving medical advice, that must pass to derivatives. Custom 'community' licenses, such
+      as those for Meta's [[llama|Llama]] models, add acceptable-use policies, attribution and
+      naming requirements, and commercial thresholds; Llama 2's license, for example, required
+      companies with more than 700 million monthly active users to seek separate permission. Some
+      licenses also forbid using outputs to train competing models. Whether model weights are
+      protected by copyright, and hence how enforceable such licenses are, remains unsettled in most
+      jurisdictions, and use-restricted licenses do not meet the Open Source Definition.
+    example: >-
+      Check the model license before shipping: the base model forbids commercial use, even if its
+      fine-tunes don't say so.
+origin: >-
+  Early research models were released under ordinary software licenses or research-only terms. The
+  Responsible AI Licenses initiative, begun in the late 2010s, proposed behavioral-use clauses,
+  adopted by BigScience for the BLOOM model and by [[stability-ai|Stability AI]] for
+  [[stable-diffusion|Stable Diffusion]] (CreativeML OpenRAIL-M), both in 2022; Meta's Llama 2
+  Community License (July 2023) became the template for custom commercial licenses.
+note: >-
+  A model's license may differ from those of its code, training data and outputs, and fine-tuned
+  derivatives usually inherit the base model's terms. License fields on hosting platforms are
+  supplied by uploaders and are sometimes wrong.
+see_also:
+  - open-weight model
+  - open-source AI
+  - data licensing
+  - Hugging Face
+  - Llama
+  - AI copyright litigation
+as_of: 2026-10

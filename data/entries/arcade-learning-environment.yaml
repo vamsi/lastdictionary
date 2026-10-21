@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Arcade Learning Environment
+id: arcade-learning-environment
+pos: prop. n.
+also:
+  - ALE
+  - Atari benchmark
+  - Atari 57
+  - Atari 100k
+domain: rl
+domains:
+  - eval
+level: specialist
+plain: >-
+  A software platform that lets AI programs play classic Atari 2600 video games, used since 2012 as
+  a standard test of how well one AI can learn many different tasks from screen images.
+senses:
+  - definition: >-
+      An open-source framework, built on the Stella Atari 2600 emulator, that exposes more than a
+      hundred of the console's games as [[reinforcement-learning|reinforcement learning]]
+      [[environment|environments]]: agents receive 210 × 160-pixel color frames (or the console's
+      128 bytes of RAM), choose among up to 18 joystick [[action|actions]] and receive changes in
+      the game score as [[reward|reward]]. Its value as a [[benchmark|benchmark]] lies in diversity
+      — one agent, without game-specific engineering, must handle shooters, mazes, sports and
+      puzzles — and in human reference scores for comparison. A standard set of 57 games became the
+      yardstick of [[deep-reinforcement-learning|deep reinforcement learning]], from the
+      [[deep-q-network|deep Q-network]] to Agent57 (2020), the first agent to exceed the human
+      benchmark on all 57. Protocol details matter: sticky actions, no-op starts and frame skipping
+      curb exploitation of the emulator's determinism, and Atari 100k limits interaction to test
+      sample efficiency. Hard-exploration games such as Montezuma's Revenge drove research on
+      [[intrinsic-motivation|intrinsic motivation]].
+    example: >-
+      We report human-normalized median scores over the 57 ALE games with sticky actions enabled.
+origin: >-
+  Created by Marc Bellemare, Yavar Naddaf, Joel Veness and Michael Bowling at the University of
+  Alberta and described in 'The Arcade Learning Environment: An Evaluation Platform for General
+  Agents' (arXiv, 2012; Journal of Artificial Intelligence Research, 2013). Marlos Machado and
+  colleagues revised its evaluation protocol in 2018. It is now maintained by the Farama Foundation
+  and used through [[gymnasium|Gymnasium]].
+year: 2012
+see_also:
+  - deep Q-network
+  - benchmark
+  - Gymnasium
+  - deep reinforcement learning
+  - intrinsic motivation
+  - MuZero
+sources:
+  - text: >-
+      Bellemare, M. G., Naddaf, Y., Veness, J. & Bowling, M. (2013). The Arcade Learning
+      Environment: An Evaluation Platform for General Agents. Journal of Artificial Intelligence
+      Research 47, 253–279. arXiv:1207.4708.
+    url: https://arxiv.org/abs/1207.4708
+  - text: >-
+      Machado, M. C. et al. (2018). Revisiting the Arcade Learning Environment: Evaluation Protocols
+      and Open Problems for General Agents. Journal of Artificial Intelligence Research 61, 523–562.
+  - text: >-
+      Badia, A. P. et al. (2020). Agent57: Outperforming the Atari Human Benchmark. arXiv:2003.13350.
+    url: https://arxiv.org/abs/2003.13350
+as_of: 2026-10

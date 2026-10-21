@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: patch embedding
+id: patch-embedding
+pos: n.
+also:
+  - patchify
+  - patchification
+  - patch tokens
+  - visual tokens
+  - tubelet embedding
+domain: percep
+domains:
+  - dl
+level: specialist
+plain: >-
+  The first step of a vision transformer: cutting an image into small square tiles and turning each
+  tile into a list of numbers that the model can process like a word.
+senses:
+  - definition: >-
+      The input layer of a [[vision-transformer|vision transformer]] that converts an image into a
+      sequence of vectors. An image of height H, width W and C channels is cut into N = HW/P²
+      non-overlapping patches of P × P pixels; each patch is flattened and multiplied by a learned
+      matrix E to give a D-dimensional [[embedding|embedding]], which is equivalent to a
+      [[convolution|convolution]] whose kernel size and stride both equal P. Position embeddings are
+      then added so that the arrangement of patches is not lost. Patch size sets a trade-off:
+      smaller patches keep detail but lengthen the sequence, and attention cost grows quadratically
+      with length (a 224 × 224 image gives 196 tokens at P = 16 but 784 at P = 8). Variants include
+      overlapping convolutional 'stems', patch merging between stages (Swin), 3D 'tubelet'
+      embeddings spanning several video frames, and schemes for native resolutions and aspect
+      ratios. In [[vision-language-model|vision-language models]], patch outputs are projected into
+      the language model's embedding space as image [[token|tokens]].
+    example: >-
+      At 448 pixels with 14-pixel patches the image costs 1,024 tokens, so we pool them before the
+      language model.
+formula_latex: \mathbf{z}_0 = [\,\mathbf{x}_{\text{class}};\ \mathbf{x}_p^{1}\mathbf{E};\
+  \mathbf{x}_p^{2}\mathbf{E};\ \dots;\ \mathbf{x}_p^{N}\mathbf{E}\,] + \mathbf{E}_{\text{pos}}
+origin: >-
+  Introduced with the Vision Transformer by Alexey Dosovitskiy and colleagues at Google Brain (arXiv
+  October 2020), whose title, 'An Image is Worth 16x16 Words', sums up the idea and whose text calls
+  the projected patches 'patch embeddings'.
+year: 2020
+note: >-
+  Patch embeddings are continuous vectors; an [[image-tokenizer|image tokenizer]] instead maps
+  patches to discrete codes from a learned vocabulary, typically for image generation.
+see_also:
+  - vision transformer
+  - embedding
+  - token
+  - positional encoding
+  - convolution
+  - image tokenizer
+contrast:
+  - image tokenizer
+sources:
+  - text: >-
+      Dosovitskiy, A. et al. (2021). An Image is Worth 16x16 Words: Transformers for Image
+      Recognition at Scale. ICLR 2021.
+    url: https://arxiv.org/abs/2010.11929

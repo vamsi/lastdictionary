@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bidirectional recurrent neural network
+id: bidirectional-recurrent-neural-network
+pos: n.
+also:
+  - bidirectional RNN
+  - BRNN
+  - Bi-RNN
+  - BiLSTM
+  - bidirectional LSTM
+domain: dl
+domains:
+  - llm
+level: specialist
+plain: >-
+  A recurrent network that reads a sequence both forwards and backwards, so its understanding of
+  each word or sound can draw on what comes after it as well as what came before.
+senses:
+  - definition: >-
+      A [[recurrent-neural-network|recurrent neural network]] made of two independent recurrent
+      layers, one processing the sequence from start to end and the other from end to start, whose
+      hidden states at each position are concatenated or summed. Each output therefore depends on
+      the entire input, past and future, which helps labeling and recognition tasks such as
+      [[named-entity-recognition|named-entity recognition]], part-of-speech tagging, phoneme
+      recognition and handwriting recognition, but rules the model out for streaming or
+      left-to-right generation. Bidirectional [[long-short-term-memory|LSTMs]] (BiLSTMs) were the
+      standard NLP encoder of about 2015–2018 and the basis of ELMo contextual embeddings;
+      [[encoder-only-transformer|encoder-only transformers]] such as [[bert|BERT]] obtain
+      bidirectionality through unmasked self-attention instead.
+    example: >-
+      A BiLSTM tagger can use the following word to decide whether 'Washington' is a person or a
+      place.
+origin: >-
+  Introduced by Mike Schuster and Kuldip Paliwal in 'Bidirectional Recurrent Neural Networks' (IEEE
+  Transactions on Signal Processing, 1997). Alex Graves and Jürgen Schmidhuber combined the idea
+  with LSTM in 2005 for phoneme classification.
+year: 1997
+see_also:
+  - recurrent neural network
+  - long short-term memory
+  - encoder-only transformer
+  - BERT
+  - named-entity recognition
+contrast:
+  - causal language model
+sources:
+  - text: >-
+      Schuster, M. & Paliwal, K. K. (1997). Bidirectional Recurrent Neural Networks. IEEE
+      Transactions on Signal Processing, 45(11), 2673–2681.

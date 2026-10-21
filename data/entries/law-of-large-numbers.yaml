@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: law of large numbers
+id: law-of-large-numbers
+pos: n.
+also:
+  - LLN
+  - weak law of large numbers
+  - strong law of large numbers
+  - Bernoulli's theorem
+  - law of averages
+domain: math
+domains:
+  - ml
+level: core
+plain: >-
+  The mathematical rule that averages of chance events steady out over many repetitions: flip a fair
+  coin a few times and the share of heads can be far from one-half, but over thousands of flips it
+  gets very close.
+senses:
+  - definition: >-
+      A theorem stating that the average of n [[i-i-d|i.i.d.]] [[random-variable|random variables]]
+      with finite mean converges to their [[expected-value|expected value]] as n grows — in
+      probability for the weak law, almost surely for the strong law. It justifies
+      [[monte-carlo-method|Monte Carlo]] estimation, the use of sample statistics for population
+      quantities, and the founding move of [[statistical-learning-theory|statistical learning
+      theory]]: replacing the true expected [[loss-function|loss]] with its average over training
+      data ([[empirical-risk-minimization|empirical risk minimization]]). Mini-batch gradients
+      approximate full gradients for the same reason, and evaluation on a large
+      [[benchmark|benchmark]] estimates true accuracy. The law says nothing about how fast averages
+      converge — the [[central-limit-theorem|central limit theorem]] and concentration inequalities
+      quantify that — and it can fail for heavy-tailed distributions without a finite mean.
+    example: >-
+      With 10,000 test questions, the law of large numbers lets us treat measured accuracy as a good
+      estimate of the true rate.
+formula_latex: \bar{X}_n = \frac{1}{n}\sum_{i=1}^{n} X_i \;\longrightarrow\; \mathbb{E}[X] \qquad (n \to \infty)
+origin: >-
+  Jacob Bernoulli proved the first version for repeated trials in Ars Conjectandi (1713), calling it
+  his 'golden theorem'; Siméon Denis Poisson named it la loi des grands nombres in 1835. Pafnuty
+  Chebyshev gave a general proof in 1867, Émile Borel proved a strong law in 1909, Aleksandr
+  Khinchin coined 'strong law' in 1928, and Andrey Kolmogorov established the general strong law
+  around 1930.
+year: 1835
+note: >-
+  It does not mean short-run deviations get 'corrected': believing a coin is 'due' for heads after a
+  run of tails is the gambler's fallacy, a misconception often attached to the popular phrase 'law
+  of averages'.
+see_also:
+  - central limit theorem
+  - expected value
+  - i.i.d.
+  - Monte Carlo method
+  - empirical risk minimization
+  - sampling

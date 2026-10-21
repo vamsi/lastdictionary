@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: optimizer
+id: optimizer
+pos: n.
+also:
+  - optimiser
+  - optimization algorithm
+  - optimizer state
+domain: dl
+domains:
+  - train
+  - math
+level: core
+plain: >-
+  The rule a training program uses to turn measured errors into actual changes to a model's internal
+  numbers, deciding the direction and size of each adjustment.
+senses:
+  - definition: >-
+      The algorithm that, at each [[training-step|training step]], converts gradients of the
+      [[loss-function|loss]] (and possibly their history) into an update of a model's
+      [[parameter|parameters]]. Optimizers differ in what they remember and how they precondition
+      the gradient: [[stochastic-gradient-descent|stochastic gradient descent]] uses the raw
+      gradient; [[momentum|momentum]] adds a velocity; adaptive methods such as [[adagrad|AdaGrad]],
+      [[rmsprop|RMSProp]], [[adam|Adam]] and [[adamw|AdamW]] rescale each coordinate by running
+      statistics of squared gradients; matrix-aware methods such as [[shampoo|Shampoo]] and
+      [[muon|Muon]] precondition whole weight matrices; [[second-order-optimization|second-order
+      methods]] use curvature. The tensors carried between steps are the optimizer state — Adam
+      keeps two per parameter, so in 32-bit precision its state takes twice the memory of the
+      weights — a major target of memory-saving designs such as [[adafactor|Adafactor]], 8-bit
+      optimizers and [[zero|ZeRO]] sharding. Because results depend strongly on
+      [[learning-rate|learning rate]], [[batch-size|batch size]] and schedule, fair comparisons must
+      tune each optimizer separately.
+    example: >-
+      We use Muon for the hidden weight matrices and AdamW for embeddings, norms and the output head.
+origin: >-
+  The general sense comes from mathematical optimization. The optimizer as a separate, swappable
+  software component — distinct from the model and the loss — became standard in deep-learning
+  libraries of the 2010s, such as Torch's optim package, TensorFlow and PyTorch.
+note: >-
+  Not to be confused with a compiler or database optimizer, which rewrites code or queries for
+  speed. Large comparisons have found no single optimizer best across all tasks, and many reported
+  gains shrink against well-tuned baselines.
+see_also:
+  - stochastic gradient descent
+  - Adam
+  - AdamW
+  - Muon
+  - Shampoo
+  - second-order optimization
+  - learning rate
+  - training loop
+sources:
+  - text: >-
+      Kasimbeg, P. et al. (2025). Accelerating Neural Network Training: An Analysis of the AlgoPerf
+      Competition. ICLR 2025.
+    url: https://arxiv.org/abs/2502.15015v1

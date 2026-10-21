@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MLX
+id: mlx
+pos: prop. n.
+also:
+  - mlx-lm
+  - MLX Swift
+pronunciation: EM-el-EKS
+domain: eng
+domains:
+  - infer
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free Apple software toolkit for running and training AI models efficiently on Mac computers with
+  Apple's own chips, popular for running language models locally on a laptop.
+senses:
+  - definition: >-
+      Apple's open-source array framework for machine learning on computers with Apple's own chips
+      (Apple silicon), created by the company's machine-learning research group. Programmers who
+      know [[numpy|NumPy]] and [[pytorch|PyTorch]] find its Python interface and its neural-network
+      and optimizer packages familiar, and Swift, C and C++ bindings are also provided. Three design
+      choices set it apart: the CPU and GPU share one pool of memory, so an array never has to be
+      copied to move between them; computation is deferred until a result is actually requested;
+      and, as in [[jax|JAX]], functions can be transformed to compute gradients
+      ([[automatic-differentiation|automatic differentiation]]), to batch automatically or to
+      compile into optimized graphs. GPU work runs through Apple's Metal interface. The companion
+      package mlx-lm and community model conversions made MLX a common way to run and
+      [[fine-tuning|fine-tune]] [[quantization|quantized]] open-weight language models on Macs,
+      whose large unified memory lets them hold models too big for typical consumer graphics cards.
+    example: >-
+      The 4-bit MLX build of the model runs at about 40 tokens per second on my laptop.
+origin: >-
+  Released as open source by Apple in December 2023, created by machine-learning researchers
+  including Awni Hannun, Jagrit Digani, Angelos Katharopoulos and Ronan Collobert; Apple later
+  promoted it to developers at its 2025 Worldwide Developers Conference.
+year: 2023
+note: >-
+  MLX is a framework, not a model format: models for it are usually distributed as
+  [[safetensors|safetensors]] files on [[hugging-face|Hugging Face]]. Contrast [[core-ml|Core ML]],
+  Apple's runtime for shipping models inside apps.
+see_also:
+  - on-device AI
+  - Core ML
+  - llama.cpp
+  - quantization
+  - NumPy
+  - JAX
+contrast:
+  - Core ML
+as_of: 2026-10

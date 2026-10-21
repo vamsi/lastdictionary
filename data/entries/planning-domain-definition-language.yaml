@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Planning Domain Definition Language
+id: planning-domain-definition-language
+pos: prop. n.
+also:
+  - PDDL
+  - PDDL2.1
+  - PDDL3
+  - PDDL+
+domain: sym
+domains:
+  - agents
+level: specialist
+plain: >-
+  A standard computer language for describing planning problems — the available actions, the
+  starting situation and the goal — so that any automated planner can read and solve them.
+senses:
+  - definition: >-
+      A Lisp-like standard language for specifying [[automated-planning|automated planning]]
+      problems, split into a domain file, which declares types, predicates and parameterized action
+      schemas with preconditions and effects in the style of [[strips|STRIPS]], and a problem file,
+      which lists the objects, the initial state and the goal. Requirement flags declare which
+      language features a problem uses. Later versions added numeric fluents and durative actions
+      (PDDL2.1), derived predicates and timed initial literals (PDDL2.2), soft goals and trajectory
+      constraints (PDDL3), and continuous processes and events (PDDL+). As a common input format it
+      allows planners to be compared directly in the International Planning Competition. Since about
+      2023 it has also served as an intermediate language for [[large-language-model|language
+      models]]: the model translates a request into PDDL, and a classical planner computes a plan
+      that can be checked for validity.
+    example: The model writes the PDDL problem file; Fast Downward finds the plan.
+origin: >-
+  Drafted in 1998 by a committee led by Drew McDermott for the first International Planning
+  Competition, held at the AIPS-98 conference. Maria Fox and Derek Long's PDDL2.1 (2003) and Alfonso
+  Gerevini and Derek Long's PDDL3 (2005) extended it.
+year: 1998
+see_also:
+  - automated planning
+  - STRIPS
+  - hierarchical task network
+  - Lisp
+  - state space search
+sources:
+  - text: >-
+      McDermott, D. et al. (1998). PDDL — The Planning Domain Definition Language. Technical Report
+      CVC TR-98-003, Yale Center for Computational Vision and Control.
+  - text: >-
+      Fox, M. & Long, D. (2003). PDDL2.1: An Extension to PDDL for Expressing Temporal Planning
+      Domains. Journal of Artificial Intelligence Research 20, 61–124.
+as_of: 2026-10

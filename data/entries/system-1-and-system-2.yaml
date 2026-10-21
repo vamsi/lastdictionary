@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: System 1 and System 2
+id: system-1-and-system-2
+pos: phr.
+also:
+  - System 1
+  - System 2
+  - dual-process theory
+  - dual process theory
+  - fast and slow thinking
+  - System 2 thinking
+domain: mind
+domains:
+  - llm
+  - society
+level: core
+plain: >-
+  A popular way of describing two modes of thinking: fast, automatic and intuitive (System 1) versus
+  slow, effortful and deliberate (System 2). AI researchers borrow it to contrast instant answers
+  with step-by-step reasoning.
+senses:
+  - context: Psychology
+    definition: >-
+      Labels for the two kinds of process posited by dual-process theories of reasoning and
+      decision-making. System 1 processes are fast, automatic, effortless, associative and largely
+      unconscious, as in reading a familiar word or sensing irritation in someone's voice; System 2
+      processes are slow, effortful, sequential and controlled, drawing on working memory, as in
+      doing long multiplication in one's head or weighing each step of a proof. Many cognitive
+      biases are explained as System 1 responses that System 2 fails to override. Researchers
+      increasingly speak of Type 1 and Type 2 processes, since the 'systems' are not distinct brain
+      systems, and critics question whether a two-way division is too coarse.
+  - context: AI
+    definition: >-
+      A metaphor contrasting a neural network's direct, single-pass output (System 1) with slower,
+      deliberate, multi-step computation (System 2), such as search, planning or
+      [[chain-of-thought|chain-of-thought]] reasoning. Yoshua Bengio's 2019 call to move from
+      'System 1' to 'System 2' deep learning, and the [[reasoning-model|reasoning models]] of 2024
+      onward, which spend [[test-time-compute|test-time compute]] on extended reasoning before
+      answering, made the framing standard. The analogy is loose: a reasoning model's deliberation
+      is produced by the same next-token computation as its quick answers.
+    example: >-
+      Its first guess was pure System 1; given a scratchpad, the model caught its own arithmetic
+      error.
+origin: >-
+  Keith Stanovich and Richard West introduced the labels 'System 1' and 'System 2' in 1999–2000 to
+  unify existing dual-process theories by Jonathan Evans, Seymour Epstein, Steven Sloman and others.
+  Daniel Kahneman's Thinking, Fast and Slow (2011) popularized them worldwide.
+year: 2000
+note: >-
+  Kahneman called the two systems useful fictions, characters in a story about the mind, not literal
+  brain modules. [[kahneman-tversky-optimization|Kahneman–Tversky optimization]] is a training
+  method named after Kahneman and Amos Tversky's prospect theory, not after this distinction.
+see_also:
+  - reasoning model
+  - chain of thought
+  - test-time compute
+  - metacognition
+  - cognitive science
+  - heuristic
+sources:
+  - text: >-
+      Stanovich, K. E. & West, R. F. (2000). Individual Differences in Reasoning: Implications for
+      the Rationality Debate? Behavioral and Brain Sciences 23(5), 645–665.
+  - text: Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.

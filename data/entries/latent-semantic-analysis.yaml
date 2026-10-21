@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: latent semantic analysis
+id: latent-semantic-analysis
+pos: n.
+also:
+  - LSA
+  - latent semantic indexing
+  - LSI
+domain: ml
+domains:
+  - llm
+  - hist
+level: specialist
+plain: >-
+  An early technique for capturing word meaning by counting which words appear in which documents,
+  then compressing those counts so that words used in similar contexts end up close together.
+senses:
+  - definition: >-
+      A technique for information retrieval and text analysis that applies a truncated
+      [[singular-value-decomposition|singular value decomposition]] to a term–document matrix,
+      usually weighted by tf–idf, keeping the k largest singular values (commonly a few hundred).
+      Terms and documents are thereby mapped into a shared low-dimensional 'semantic' space in which
+      [[cosine-similarity|cosine similarity]] reflects shared latent topics rather than literal word
+      overlap, so a query about cars can retrieve a document that only says automobiles. Applied to
+      search it is called latent semantic indexing (LSI). LSA partly handles synonymy but not
+      polysemy, since each word receives a single vector. Its dense vectors anticipated
+      [[word-embedding|word embeddings]] and [[dense-retrieval|dense retrieval]], and probabilistic
+      latent semantic analysis and [[latent-dirichlet-allocation|latent Dirichlet allocation]]
+      recast it as a probabilistic [[topic-model|topic model]]. Its dimensions can take negative
+      values and are hard to interpret, and adding documents requires recomputing or approximating
+      the decomposition.
+    example: >-
+      Latent semantic indexing let the 1990s search prototype match queries about physicians to
+      documents about doctors.
+origin: >-
+  Developed at Bellcore by Scott Deerwester, Susan Dumais, George Furnas, Richard Harshman, Thomas
+  Landauer, Karen Lochbaum and Lynn Streeter, who filed a patent on it in 1988 (granted 1989). The
+  landmark paper 'Indexing by Latent Semantic Analysis' by Deerwester, Dumais, Furnas, Landauer and
+  Harshman appeared in the Journal of the American Society for Information Science in 1990; Landauer
+  and Dumais later proposed LSA as a model of human vocabulary learning (1997).
+year: 1988
+see_also:
+  - singular value decomposition
+  - topic model
+  - latent Dirichlet allocation
+  - word embedding
+  - dense retrieval
+  - information retrieval
+  - dimensionality reduction
+sources:
+  - text: >-
+      Deerwester, S., Dumais, S. T., Furnas, G. W., Landauer, T. K. & Harshman, R. (1990). Indexing
+      by Latent Semantic Analysis. Journal of the American Society for Information Science 41(6).
+  - text: >-
+      Landauer, T. K. & Dumais, S. T. (1997). A Solution to Plato's Problem: The Latent Semantic
+      Analysis Theory of Acquisition, Induction, and Representation of Knowledge. Psychological
+      Review 104(2).

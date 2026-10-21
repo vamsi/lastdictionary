@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model editing
+id: model-editing
+pos: n.
+also:
+  - knowledge editing
+  - fact editing
+  - weight editing
+  - edit a model
+domain: interp
+domains:
+  - train
+  - safety
+level: core
+plain: >-
+  Changing one specific fact or behavior inside a trained AI model — for example, who leads a
+  country — by directly adjusting a small part of it, without retraining the whole thing.
+senses:
+  - definition: >-
+      Methods that alter a trained model's behavior on a targeted set of inputs — most often a
+      factual association of the form (subject, relation, object) — while leaving its other behavior
+      unchanged and without full retraining. Locate-then-edit methods identify the responsible
+      parameters and modify them in closed form ([[rome|ROME]], [[memit|MEMIT]]); meta-learned
+      editors predict weight updates from fine-tuning gradients (KnowledgeEditor, MEND);
+      memory-based methods store edits outside the weights and route matching inputs to them (SERAC,
+      GRACE). Edits are judged on reliability (the edit takes), generalization to paraphrases,
+      locality (unrelated facts are unchanged) and portability (consequences of the new fact also
+      update). Known weaknesses include poor propagation to logically entailed facts, side effects
+      that accumulate over many sequential edits, and potential misuse to plant false information.
+      Model editing is related to [[machine-unlearning|machine unlearning]] and contrasts with
+      [[steering|steering]], which changes behavior at inference time rather than in the weights.
+    example: >-
+      After model editing, the assistant named the new prime minister but still gave the old one's
+      party.
+origin: >-
+  Early work includes Anton Sinitsin and colleagues' 'Editable Neural Networks' (ICLR 2020) and
+  David Bau and colleagues' rewriting of generative image models (ECCV 2020). For language models,
+  Nicola De Cao, Wilker Aziz and Ivan Titov's KnowledgeEditor (2021), Eric Mitchell and colleagues'
+  MEND (2021–2022) and Kevin Meng and colleagues' ROME (2022) established the field.
+year: 2020
+see_also:
+  - ROME
+  - MEMIT
+  - knowledge neuron
+  - causal tracing
+  - machine unlearning
+  - steering
+  - parametric knowledge
+contrast:
+  - fine-tuning
+sources:
+  - text: >-
+      Mitchell, E., Lin, C., Bosselut, A., Finn, C. & Manning, C. D. (2022). Fast Model Editing at
+      Scale. ICLR 2022.
+  - text: >-
+      Meng, K., Bau, D., Andonian, A. & Belinkov, Y. (2022). Locating and Editing Factual
+      Associations in GPT. NeurIPS 2022. arXiv:2202.05262.
+    url: https://arxiv.org/abs/2202.05262

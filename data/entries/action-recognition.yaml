@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: action recognition
+id: action-recognition
+pos: n.
+also:
+  - activity recognition
+  - human action recognition
+  - video classification
+  - temporal action localization
+  - Kinetics
+  - UCF101
+domain: percep
+domains:
+  - dl
+level: specialist
+plain: >-
+  Teaching computers to recognize what people are doing in a video, such as running, waving, cooking
+  or falling, rather than just which objects appear in it.
+senses:
+  - definition: >-
+      The task of classifying human actions or activities in video, such as 'riding a bike' or
+      'pouring water', usually from short trimmed clips; related tasks locate actions in time
+      (temporal action localization) or in both space and time (spatio-temporal action detection).
+      Unlike [[image-classification|image classification]], it must model motion and temporal order:
+      opening and closing a door look alike in single frames. Hand-crafted approaches used
+      space-time interest points and dense trajectories (2005–2013). Deep approaches include
+      two-stream networks combining RGB frames with [[optical-flow|optical flow]] (2014), 3D
+      [[convolutional-neural-network|convolutional networks]] such as C3D (2015) and I3D (2017), the
+      two-pathway SlowFast network (2019) and video transformers (TimeSformer and ViViT, 2021),
+      often pretrained as video [[masked-autoencoder|masked autoencoders]]. Benchmarks include
+      UCF101 and HMDB51, Kinetics (from 2017, hundreds of thousands of YouTube clips),
+      Something-Something (fine-grained motion) and AVA. Applications include sports analysis, video
+      search, fall detection in elder care and human–robot interaction.
+    example: >-
+      The model flags falls in the care home but confuses them with residents sitting down quickly.
+origin: >-
+  Recognizing human motion in video was studied from the 1990s, drawing on Gunnar Johansson's 1973
+  experiments showing that people recognize actions from a few moving points of light. Karen
+  Simonyan and Andrew Zisserman's two-stream network (2014) and João Carreira and Zisserman's
+  Kinetics dataset and I3D model (2017) shaped the deep-learning era.
+note: >-
+  'Activity recognition' sometimes means recognizing activities from wearable sensors such as
+  accelerometers. Inferring emotions or intentions from behavior is a separate and more contested
+  task (see [[emotion-recognition-system|emotion recognition system]]).
+see_also:
+  - optical flow
+  - pose estimation
+  - object tracking
+  - image classification
+  - vision transformer
+  - masked autoencoder
+sources:
+  - text: >-
+      Simonyan, K. & Zisserman, A. (2014). Two-Stream Convolutional Networks for Action Recognition
+      in Videos. NeurIPS 2014.
+  - text: >-
+      Carreira, J. & Zisserman, A. (2017). Quo Vadis, Action Recognition? A New Model and the
+      Kinetics Dataset. CVPR 2017.

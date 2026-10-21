@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: goodput
+id: goodput
+pos: n.
+also:
+  - training goodput
+  - ML goodput
+  - effective training time
+domain: train
+domains:
+  - hw
+  - eng
+level: specialist
+plain: >-
+  The share of a big training job's time and computing that actually moves training forward, after
+  subtracting time lost to crashes, restarts, waiting and repeated work. When serving users, it
+  means the rate of requests answered fast enough.
+senses:
+  - context: Large-scale training
+    definition: >-
+      The rate or fraction of useful training progress a job actually achieves, as opposed to raw
+      hardware [[throughput|throughput]]. It discounts time lost to scheduling and startup, hardware
+      failures and the work redone after rolling back to the last [[checkpoint|checkpoint]],
+      checkpoint writing, stragglers, communication stalls and inefficient execution. Google's 'ML
+      Productivity Goodput' (2024) combines scheduling, runtime and program goodput, the last
+      essentially [[model-flops-utilization|model FLOPs utilization]]. Goodput is the key
+      reliability metric for frontier runs on tens of thousands of accelerators, where some
+      component fails every few hours: Meta reported 466 job interruptions in a 54-day period of
+      Llama 3 pretraining, mostly traced to hardware, while keeping effective training time above
+      90%. Raising it involves fast failure detection, hot spares, asynchronous and in-memory
+      checkpointing and elastic restarts.
+    example: Async checkpointing raised our goodput from 82% to 94% on the 16,000-GPU run.
+  - context: Statistical efficiency
+    definition: >-
+      In the Pollux scheduler (Aurick Qiao and colleagues, 2020), system throughput multiplied by
+      statistical efficiency, which falls as the [[batch-size|batch size]] grows beyond what the
+      optimizer can use well; the scheduler maximizes it by jointly choosing each job's resources
+      and batch size.
+  - context: Model serving
+    definition: >-
+      In [[model-serving|model serving]], the highest request rate a system can sustain while
+      meeting its [[service-level-objective|service-level objectives]], for example keeping
+      [[time-to-first-token|time to first token]] and [[time-per-output-token|time per output
+      token]] under set limits for 90% of requests. Unlike raw [[throughput|throughput]], it gives
+      no credit for responses that arrive too late. The DistServe system (Yinmin Zhong and
+      colleagues, 2024) was designed to maximize goodput per GPU, and serving research commonly
+      reports it.
+origin: >-
+  A networking term for useful application-level data delivered per unit time, excluding
+  retransmissions and overhead, in use by at least the 1990s. Qiao and colleagues brought it to
+  deep-learning scheduling in Pollux (arXiv 2020; OSDI 2021); DistServe (January 2024) made it the
+  target metric for language-model serving, and Google promoted 'ML Productivity Goodput' for large
+  training jobs in April 2024.
+year: 2020
+see_also:
+  - model FLOPs utilization
+  - checkpoint
+  - training run
+  - distributed training
+  - critical batch size
+  - model serving
+  - time to first token
+contrast:
+  - throughput
+sources:
+  - text: >-
+      Qiao, A., Choe, S. K., Subramanya, S. J., Neiswanger, W., Ho, Q., Zhang, H., Ganger, G. R. &
+      Xing, E. P. (2021). Pollux: Co-adaptive Cluster Scheduling for Goodput-Optimized Deep
+      Learning. OSDI 2021. arXiv:2008.12260.
+    url: https://arxiv.org/abs/2008.12260
+  - text: Grattafiori, A. et al. (2024). The Llama 3 Herd of Models. arXiv:2407.21783.
+  - text: >-
+      Zhong, Y., Liu, S., Chen, J., Hu, J., Zhu, Y., Liu, X., Jin, X. & Zhang, H. (2024). DistServe:
+      Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving. OSDI
+      2024. arXiv:2401.09670.
+    url: https://arxiv.org/abs/2401.09670
+as_of: 2026-10

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: query rewriting
+id: query-rewriting
+pos: n.
+also:
+  - query reformulation
+  - query transformation
+  - query expansion
+  - query decomposition
+  - multi-query retrieval
+domain: eng
+domains:
+  - agents
+  - llm
+level: core
+plain: >-
+  Rephrasing a user's question before searching — fixing typos, adding missing details, splitting it
+  into simpler questions — so the search engine finds better results.
+senses:
+  - definition: >-
+      The transformation of a user's query into one or more queries better suited to a retriever
+      before search is run. Classic forms are spelling correction, synonym and term expansion, and
+      pseudo-relevance feedback, which adds terms from the top-ranked results of a first search. In
+      LLM pipelines a model commonly rewrites a conversational follow-up into a standalone question
+      by resolving references to earlier turns; generates several paraphrases and merges their
+      results ([[reciprocal-rank-fusion|reciprocal rank fusion]]); decomposes a multi-part question
+      into sub-queries; abstracts to a broader 'step-back' question; translates the request into a
+      structured query such as SQL or metadata filters; or writes a hypothetical answer to search
+      with ([[hyde|HyDE]]). Rewriting improves [[recall-k|recall]] when users' wording differs from
+      the documents', but adds latency and can drift from the user's intent, so the original query
+      is often searched as well.
+    example: >-
+      Query rewriting turned 'and the Berlin office?' into 'parental leave policy for Berlin office
+      employees'.
+origin: >-
+  Query reformulation and relevance feedback are long-standing IR techniques, notably J. J.
+  Rocchio's feedback algorithm for Gerard Salton's SMART system (1971). With LLMs, Xinbei Ma and
+  colleagues framed a rewrite–retrieve–read pipeline in 'Query Rewriting in Retrieval-Augmented
+  Large Language Models' (arXiv, May 2023; EMNLP 2023), and rewriting became a standard RAG
+  component.
+see_also:
+  - HyDE
+  - retrieval-augmented generation
+  - agentic RAG
+  - reciprocal rank fusion
+  - information retrieval
+  - semantic search
+sources:
+  - text: >-
+      Rocchio, J. J. (1971). Relevance feedback in information retrieval. In G. Salton (ed.), The
+      SMART Retrieval System: Experiments in Automatic Document Processing. Prentice-Hall.
+  - text: >-
+      Ma, X., Gong, Y., He, P., Zhao, H. & Duan, N. (2023). Query Rewriting in Retrieval-Augmented
+      Large Language Models. Proceedings of EMNLP 2023: 5303–5315.
+    url: https://aclanthology.org/2023.emnlp-main.322

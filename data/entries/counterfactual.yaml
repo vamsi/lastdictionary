@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: counterfactual
+id: counterfactual
+pos: n.
+also:
+  - counterfactuals
+  - counterfactual reasoning
+  - counterfactual conditional
+  - potential outcome
+  - what-if
+domain: math
+domains:
+  - interp
+  - mind
+level: core
+plain: >-
+  A statement about what would have happened if something had been different — 'had I left earlier,
+  I would have caught the train'. AI uses counterfactuals to explain decisions and to measure
+  causes.
+senses:
+  - context: Causality and statistics
+    definition: >-
+      A claim or quantity about the outcome that would have occurred, for a particular unit or
+      situation, had some antecedent been different from what actually happened. In the
+      potential-outcomes framework every unit has an outcome under each treatment, only one of which
+      is ever observed — the 'fundamental problem of causal inference' — so causal effects are
+      contrasts involving counterfactual outcomes. In Judea Pearl's
+      [[structural-causal-model|structural causal models]], counterfactuals are computed in three
+      steps: abduction (inferring unobserved background conditions from the evidence), action
+      (intervening to set the antecedent) and prediction. Pearl places them on the top rung of his
+      'ladder of causation', above association and intervention, because they require the most
+      causal knowledge.
+  - context: Machine learning
+    definition: >-
+      A minimally modified input used to probe or explain a model.
+      [[counterfactual-explanation|Counterfactual explanations]] state what would have to change for
+      a decision to flip (a loan approved had income been higher); counterfactual data augmentation
+      swaps attributes to weaken [[spurious-correlation|spurious correlations]];
+      [[counterfactual-fairness|counterfactual fairness]] asks whether a decision would change had a
+      [[protected-attribute|protected attribute]] been different; and
+      [[activation-patching|activation patching]] runs counterfactual forward passes inside a
+      network.
+    example: >-
+      A counterfactual with only the applicant's postcode changed flipped the decision, a red flag
+      for proxy discrimination.
+origin: >-
+  Philosophers analyzed counterfactual conditionals in the 1940s (Nelson Goodman, 'The Problem of
+  Counterfactual Conditionals', 1947), and David Lewis's Counterfactuals (1973) gave them a
+  possible-worlds semantics. Jerzy Neyman (1923) and Donald Rubin (1974) built statistics on
+  potential outcomes, and Judea Pearl formalized counterfactuals within structural causal models in
+  the 1990s.
+see_also:
+  - causal inference
+  - counterfactual explanation
+  - counterfactual fairness
+  - structural causal model
+  - do-calculus
+  - activation patching

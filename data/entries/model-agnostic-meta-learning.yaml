@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model-agnostic meta-learning
+id: model-agnostic-meta-learning
+pos: n.
+also:
+  - MAML
+  - first-order MAML
+  - FOMAML
+  - Reptile
+domain: ml
+domains:
+  - dl
+  - rl
+level: specialist
+plain: >-
+  A training method that searches for a starting point for a model's internal settings from which it
+  can learn any new task of a given kind with just a few small adjustments.
+senses:
+  - definition: >-
+      An optimization-based [[meta-learning|meta-learning]] algorithm that learns a starting point
+      rather than a finished model: shared initial parameters from which a handful of
+      [[gradient-descent|gradient descent]] updates on a few examples fit any new task of the
+      training family well. Training proceeds over episodes sampled from a distribution of tasks.
+      For each task an inner loop takes one or more gradient steps from the shared initialization on
+      the task's support examples; an outer loop then updates the initialization to reduce the loss
+      on the task's query examples after adaptation, which requires differentiating through the
+      inner updates (second-order derivatives). The name signals that it works with any architecture
+      trained by gradient descent, whether a [[reinforcement-learning|reinforcement learning]]
+      policy, a regressor or a classifier. First-order approximations (FOMAML) and Reptile, which
+      simply moves the initialization toward task-adapted weights, avoid the second-order cost. MAML
+      became a standard method for [[few-shot-learning|few-shot learning]]; later analyses found
+      that much of its benefit comes from learning reusable features rather than rapid adaptation,
+      and that simple pretrained baselines often match it.
+    example: >-
+      With MAML the grasping policy adapted to a new object after three gradient steps on ten
+      demonstrations.
+formula_latex: \theta \leftarrow \theta - \beta \, \nabla_{\theta} \sum_{\mathcal{T}_i}
+  \mathcal{L}_{\mathcal{T}_i}\!\big(\theta - \alpha \nabla_{\theta}
+  \mathcal{L}_{\mathcal{T}_i}(\theta)\big)
+origin: >-
+  Introduced by Chelsea Finn, Pieter Abbeel and Sergey Levine in 'Model-Agnostic Meta-Learning for
+  Fast Adaptation of Deep Networks' (ICML 2017). Alex Nichol, Joshua Achiam and John Schulman
+  proposed the first-order Reptile algorithm in 2018, and Aniruddh Raghu and colleagues' 'Rapid
+  Learning or Feature Reuse?' (2020) analyzed what MAML actually learns.
+year: 2017
+see_also:
+  - meta-learning
+  - few-shot learning
+  - gradient descent
+  - transfer learning
+  - fine-tuning
+  - multi-task learning
+sources:
+  - text: >-
+      Finn, C., Abbeel, P. & Levine, S. (2017). Model-Agnostic Meta-Learning for Fast Adaptation of
+      Deep Networks. Proc. ICML 2017.
+  - text: >-
+      Nichol, A., Achiam, J. & Schulman, J. (2018). On First-Order Meta-Learning Algorithms. arXiv
+      preprint.
+  - text: >-
+      Raghu, A., Raghu, M., Bengio, S. & Vinyals, O. (2020). Rapid Learning or Feature Reuse?
+      Towards Understanding the Effectiveness of MAML. Proc. ICLR 2020.

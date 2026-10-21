@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: connectionist temporal classification
+id: connectionist-temporal-classification
+pos: n.
+also:
+  - CTC
+  - CTC loss
+  - blank token
+domain: dl
+domains:
+  - percep
+level: specialist
+plain: >-
+  A training method that lets a network learn to transcribe speech or handwriting without being told
+  exactly where each letter or sound begins and ends.
+senses:
+  - definition: >-
+      A loss function and decoding scheme for sequence labeling when the alignment between input
+      frames and output labels is unknown, as in speech and handwriting recognition. The network
+      emits, at every input frame, a distribution over the output labels plus a special 'blank'
+      symbol. A many-to-one collapsing map merges repeated labels and deletes blanks, so many
+      frame-level paths correspond to the same transcript; the probability of a transcript is the
+      sum over all paths that collapse to it, computed efficiently by forward–backward dynamic
+      programming, and training maximizes its log-likelihood. CTC assumes frame outputs are
+      conditionally independent given the input and requires the output to be no longer than the
+      input. Decoding uses greedy (best-path) or prefix [[beam-search|beam search]], often with an
+      external language model. It powered [[long-short-term-memory|LSTM]]-based
+      [[speech-recognition|speech recognition]] and OCR systems in the 2010s and remains in use on
+      its own (for example, to fine-tune wav2vec 2.0 speech encoders) and as an auxiliary loss in
+      hybrid CTC/attention models; transducers and attention-based
+      [[encoder-decoder-architecture|encoder–decoders]] are the main alternatives.
+    example: Train the acoustic encoder with CTC first, then add the attention decoder.
+formula_latex: p(\mathbf{y} \mid \mathbf{x}) = \sum_{\pi \in \mathcal{B}^{-1}(\mathbf{y})}
+  \prod_{t=1}^{T} p(\pi_t \mid \mathbf{x})
+origin: >-
+  Introduced by Alex Graves, Santiago Fernández, Faustino Gomez and Jürgen Schmidhuber in
+  'Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural
+  Networks' (ICML 2006). Google reported large error reductions after adopting LSTM–CTC models for
+  speech recognition in 2015.
+year: 2006
+see_also:
+  - speech recognition
+  - long short-term memory
+  - recurrent neural network
+  - beam search
+  - optical character recognition
+  - sequence-to-sequence model
+sources:
+  - text: >-
+      Graves, A., Fernández, S., Gomez, F. & Schmidhuber, J. (2006). Connectionist Temporal
+      Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks.
+      Proceedings of ICML 2006.

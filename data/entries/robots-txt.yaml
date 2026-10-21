@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: robots.txt
+id: robots-txt
+pos: n.
+also:
+  - Robots Exclusion Protocol
+  - REP
+  - robots exclusion standard
+domain: data
+domains:
+  - gov
+  - eng
+level: core
+plain: >-
+  A small public file in which a website posts its rules for automated visitors, such as
+  search-engine and AI crawlers, listing areas they are asked to stay out of. Obeying it is
+  voluntary.
+senses:
+  - definition: >-
+      A plain-text file at the root of a website that states, per crawler user agent, which URL
+      paths automated clients may or may not access, under the Robots Exclusion Protocol. Rules are
+      grouped under 'User-agent' lines with 'Allow' and 'Disallow' path patterns; crawlers are
+      expected to fetch and cache the file and apply the most specific matching rule. The protocol
+      is a convention, not access control: it depends on crawler cooperation, and the paths it lists
+      become public. Since 2023 it has been the main way publishers refuse AI training: AI
+      developers name distinct user agents, or control tokens that do no crawling themselves, so
+      that sites can disallow training while still allowing search indexing. Refusals spread
+      quickly: a 2024 audit of the sources behind the [[c4|C4]] corpus found that within one year
+      (2023–24) full restrictions had come to cover at least 5% of all its tokens and at least 28%
+      of its most frequently updated, high-value sources.
+    example: >-
+      Adding a Disallow rule for the training crawler kept the site in search results but out of
+      future crawls.
+origin: >-
+  Proposed by Martijn Koster, then at the software firm Nexor, on the www-talk mailing list in
+  February 1994; the writer Charles Stross has said that a badly behaved crawler of his, which
+  overloaded Koster's server, prompted the idea. It remained an informal convention for 28 years
+  until the IETF published it as RFC 9309 in September 2022 (Koster, Gary Illyes, Henner Zeller and
+  Lizzi Sassman).
+year: 1994
+note: >-
+  robots.txt says nothing about how fetched content may be used, cannot bind crawlers that ignore
+  it, and does not reach data collected earlier. Complementary schemes include machine-readable
+  licensing terms such as Really Simple Licensing (2025) and the EU's text-and-data-mining
+  reservation; see [[opt-out|opt-out]].
+see_also:
+  - web crawler
+  - web scraping
+  - opt-out
+  - Common Crawl
+  - data licensing
+  - text and data mining exception
+sources:
+  - text: >-
+      Koster, M., Illyes, G., Zeller, H. & Sassman, L. (2022). Robots Exclusion Protocol. IETF RFC
+      9309.
+    url: https://www.rfc-editor.org/rfc/rfc9309
+  - text: >-
+      Longpre, S. et al. (2024). Consent in Crisis: The Rapid Decline of the AI Data Commons.
+      arXiv:2407.14933.
+    url: https://arxiv.org/abs/2407.14933
+standards: IETF RFC 9309, Robots Exclusion Protocol (Proposed Standard, September 2022)
+as_of: 2026-10

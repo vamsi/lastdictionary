@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: entropy
+id: entropy
+pos: n.
+also:
+  - Shannon entropy
+  - information entropy
+  - surprisal
+  - differential entropy
+  - predictive entropy
+domain: math
+domains:
+  - ml
+  - rl
+  - llm
+level: core
+plain: >-
+  A measure of unpredictability. A fair coin toss has more entropy than a rigged one; an AI that is
+  unsure of its next word has high entropy.
+senses:
+  - context: Information theory
+    definition: >-
+      The [[expected-value|expected]] surprise of a [[random-variable|random variable]]: the average
+      over outcomes of −log p(x), measuring how uncertain its distribution is. Entropy is zero for a
+      certain outcome and maximal, log K, for a uniform distribution over K values; for continuous
+      variables the analogue is differential entropy. By Shannon's source coding theorem it is the
+      minimum average number of bits per symbol needed to encode samples losslessly. In machine
+      learning, the entropy of a model's predictive distribution measures its uncertainty and is
+      used to choose examples in [[active-learning|active learning]], flag
+      [[out-of-distribution|out-of-distribution]] inputs and monitor language-model generation;
+      [[entropy-regularization|entropy regularization]] rewards high-entropy policies in
+      [[reinforcement-learning|reinforcement learning]] to sustain exploration, and collapsing
+      policy entropy is a known failure in RL training of language models;
+      [[information-gain|information gain]] for [[decision-tree|decision tree]] splits is a
+      reduction in entropy. [[cross-entropy|cross-entropy]] and
+      [[kullback-leibler-divergence|Kullback–Leibler divergence]] are measured from it.
+    example: Token-level entropy spiked whenever the model reached an unfamiliar API name.
+  - context: Physics
+    definition: >-
+      In thermodynamics and statistical mechanics, a measure of disorder: the logarithm of the
+      number of microscopic arrangements consistent with a macroscopic state (Boltzmann's S = k log
+      W). Shannon's formula has the same form as the Gibbs entropy of statistical mechanics, a link
+      exploited by [[energy-based-model|energy-based models]] and maximum-entropy methods.
+formula_latex: H(X) = -\sum_{x} p(x)\,\log p(x)
+origin: >-
+  Rudolf Clausius coined 'entropy' for thermodynamics in 1865, from Greek tropē, 'transformation',
+  and Ludwig Boltzmann gave it a statistical interpretation in the 1870s. Claude Shannon adopted the
+  word for his measure of information in 1948 — reportedly on John von Neumann's advice, a
+  much-repeated anecdote that may be apocryphal.
+year: 1948
+see_also:
+  - information theory
+  - cross-entropy
+  - Kullback–Leibler divergence
+  - mutual information
+  - entropy regularization
+  - information gain

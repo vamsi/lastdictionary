@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: objective function
+id: objective-function
+pos: n.
+also:
+  - objective
+  - cost function
+  - criterion
+  - training objective
+domain: math
+domains:
+  - train
+  - safety
+level: core
+plain: >-
+  The score that an optimization process tries to push as low, or as high, as possible. For an AI,
+  it defines what 'doing well' means during training.
+senses:
+  - definition: >-
+      The real-valued function that an [[optimization|optimization]] procedure minimizes or
+      maximizes, mapping each candidate solution to a single number. In machine learning the
+      objective usually combines a [[loss-function|loss function]] averaged over the training data
+      with regularization terms, and its choice encodes what the model is pushed to do:
+      [[cross-entropy|cross-entropy]] for [[next-token-prediction|next-token prediction]], expected
+      [[return|return]] in [[reinforcement-learning|reinforcement learning]], a preference
+      likelihood in [[direct-preference-optimization|direct preference optimization]], or a
+      tractable bound such as the [[evidence-lower-bound|evidence lower bound]] when the true
+      objective cannot be computed. 'Objective' and 'loss' are often interchangeable, though
+      strictly a loss is computed per example while the objective is the whole quantity optimized.
+      Because optimizers exploit whatever the objective actually rewards, gaps between it and the
+      designer's intent lead to [[specification-gaming|specification gaming]] and
+      [[reward-hacking|reward hacking]], an instance of [[goodhart-s-law|Goodhart's law]].
+    example: >-
+      We changed the objective from token-level cross-entropy to a sequence-level reward, and the
+      outputs got shorter.
+origin: >-
+  The term spread with linear programming and operations research in the late 1940s and 1950s, where
+  the objective function was the linear quantity to be maximized or minimized subject to
+  constraints; earlier mathematics spoke simply of the function to be maximized or minimized.
+see_also:
+  - loss function
+  - optimization
+  - reward function
+  - convex optimization
+  - specification gaming
+  - Goodhart's law

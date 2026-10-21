@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: production system
+id: production-system
+pos: n.
+also:
+  - production rule
+  - production-rule system
+  - condition–action rule
+  - Rete algorithm
+domain: sym
+domains:
+  - hist
+  - mind
+level: specialist
+plain: >-
+  A program built from many 'if this, then do that' rules plus a memory of current facts; it
+  repeatedly finds a rule whose 'if' part matches and carries out its 'then' part.
+senses:
+  - definition: >-
+      A computational architecture consisting of a set of condition–action rules (productions), a
+      working memory of facts or goals, and an interpreter that runs a recognize–act cycle: match
+      every rule's conditions against working memory, choose one matching instantiation by a
+      conflict-resolution strategy (such as recency, specificity or rule priority), execute its
+      actions — adding, deleting or modifying working-memory elements or producing output — and
+      repeat until no rule applies. Production systems underlie [[rule-based-system|rule-based]]
+      [[expert-system|expert systems]] and [[cognitive-architecture|cognitive architectures]] such
+      as Soar and ACT-R. Charles Forgy's Rete algorithm made matching fast by compiling rules into a
+      network that caches partial matches, enabling languages such as OPS5 and CLIPS and today's
+      business-rules engines.
+    example: >-
+      The configurator is a production system of about 10,000 rules running on a Rete engine.
+origin: >-
+  Emil Post introduced 'productions' as string-rewriting rules in 1943. Allen Newell and Herbert
+  Simon adopted production systems as models of human cognition from the late 1960s, culminating in
+  Human Problem Solving (1972), and the formalism became the backbone of expert systems in the 1970s
+  and 1980s.
+year: 1972
+note: >-
+  Not to be confused with a system 'in production', the engineering sense of software deployed to
+  real users.
+see_also:
+  - rule-based system
+  - inference engine
+  - forward chaining
+  - expert system
+  - cognitive architecture
+  - Allen Newell
+sources:
+  - text: Newell, A. & Simon, H. A. (1972). Human Problem Solving. Prentice-Hall.
+  - text: >-
+      Forgy, C. L. (1982). Rete: A Fast Algorithm for the Many Pattern/Many Object Pattern Match
+      Problem. Artificial Intelligence 19(1), 17–37.

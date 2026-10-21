@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: consistency model
+id: consistency-model
+pos: n.
+also:
+  - consistency distillation
+  - consistency training
+  - latent consistency model
+  - LCM
+  - LCM-LoRA
+domain: gen
+domains:
+  - infer
+level: specialist
+plain: >-
+  A generator trained to jump from noise straight to a finished image in one step, instead of the
+  dozens of small steps a diffusion model normally takes.
+senses:
+  - definition: >-
+      A [[generative-model|generative model]] that learns a function mapping any point on a
+      trajectory of a [[diffusion-model|diffusion model]]'s probability-flow ODE directly to the
+      trajectory's clean endpoint. The defining self-consistency property — all points on the same
+      trajectory map to the same output — is enforced by training the network so that its outputs at
+      adjacent noise levels agree, with a boundary condition that makes it the identity at zero
+      noise. A consistency model can generate with a single network evaluation, or spend a few more
+      evaluations for better samples by alternately re-noising and re-mapping. It can be trained by
+      consistency distillation, using a pretrained diffusion model's ODE solver to produce adjacent
+      points, or by consistency training directly from data. Latent consistency models (2023)
+      applied the idea to Stable Diffusion, producing images in two to four steps, and
+      continuous-time variants (2024) scaled it further.
+origin: >-
+  Introduced by Yang Song, Prafulla Dhariwal, Mark Chen and Ilya Sutskever of OpenAI in a paper
+  posted in March 2023 (ICML 2023), which reported one-step FIDs of 3.55 on CIFAR-10 and 6.20 on
+  ImageNet 64 × 64. Simian Luo and colleagues introduced latent consistency models in October 2023.
+year: 2023
+see_also:
+  - diffusion distillation
+  - diffusion sampler
+  - diffusion model
+  - rectified flow
+  - score-based generative model
+  - knowledge distillation
+sources:
+  - text: >-
+      Song, Y., Dhariwal, P., Chen, M. & Sutskever, I. (2023). Consistency Models. ICML 2023.
+      arXiv:2303.01469.
+    url: https://arxiv.org/abs/2303.01469
+  - text: >-
+      Luo, S., Tan, Y., Huang, L., Li, J. & Zhao, H. (2023). Latent Consistency Models: Synthesizing
+      High-Resolution Images with Few-Step Inference. arXiv:2310.04378.
+    url: https://arxiv.org/abs/2310.04378

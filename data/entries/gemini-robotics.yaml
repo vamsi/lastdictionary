@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gemini Robotics
+id: gemini-robotics
+pos: prop. n.
+also:
+  - Gemini Robotics-ER
+  - Gemini Robotics On-Device
+  - Gemini Robotics 1.5
+  - Gemini Robotics 2
+  - Gemini Robotics-ER 2
+domain: robot
+domains:
+  - dl
+  - percep
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A family of AI models from Google DeepMind, built on its Gemini models, that let robots understand
+  what they see and what people ask of them, and turn that understanding into physical actions.
+senses:
+  - definition: >-
+      A family of [[robot-foundation-model|robot foundation models]] from [[google-deepmind|Google
+      DeepMind]] that extend the multimodal [[gemini|Gemini]] models to physical action. The line
+      pairs two kinds of model. A [[vision-language-action-model|vision-language-action model]]
+      (Gemini Robotics proper) maps camera images and natural-language instructions directly to
+      motor commands, aiming at generality across objects, scenes and instructions, at dexterity,
+      and at adaptation to new robot bodies. An embodied-reasoning model (Gemini Robotics-ER) is a
+      [[vision-language-model|vision-language model]] specialized in spatial understanding, such as
+      pointing, 3D object detection, grasp and trajectory prediction, task planning and success
+      detection, which can orchestrate robot skills and call tools as an agent. Demonstrations began
+      on bi-arm ALOHA 2 research platforms and extended to industrial arms and humanoids. Later
+      releases added a version that runs locally on the robot, reasoning before acting with skill
+      transfer between robot bodies (1.5, September 2025), and whole-body humanoid control and
+      collaboration between different robot types (2, July 2026).
+    example: >-
+      We use Gemini Robotics-ER to plan the sorting task and our own controller to execute each
+      grasp.
+origin: >-
+  Announced by Google DeepMind on 12 March 2025, with the technical report 'Gemini Robotics:
+  Bringing AI into the Physical World' and a partnership with the humanoid maker Apptronik. An
+  on-device variant followed in June 2025, the 1.5 models in September 2025, and Gemini Robotics 2,
+  ER 2 and On-Device 2 at the end of July 2026.
+year: 2025
+note: >-
+  Access has been staged: the embodied-reasoning models were offered to developers through Google's
+  AI platforms, while the action models went first to trusted testers and early-access partners. The
+  2025 launch also introduced ASIMOV, a benchmark for judging whether robot actions are semantically
+  safe.
+see_also:
+  - vision-language-action model
+  - robot foundation model
+  - Gemini
+  - Google DeepMind
+  - π0
+  - humanoid robot
+  - embodied AI
+  - RT-2
+contrast:
+  - π0
+sources:
+  - text: >-
+      Gemini Robotics Team, Google DeepMind (2025). Gemini Robotics: Bringing AI into the Physical
+      World. arXiv preprint.
+as_of: 2026-10

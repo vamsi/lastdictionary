@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: transformer block
+id: transformer-block
+pos: n.
+also:
+  - transformer layer
+  - decoder block
+  - encoder block
+  - pre-norm
+  - post-norm
+  - pre-LN
+  - post-LN
+domain: llm
+domains:
+  - dl
+level: core
+plain: >-
+  The repeating building unit of a transformer. A model is a stack of dozens of identical blocks,
+  each pairing an attention step that mixes information between words with a step that processes
+  each word.
+senses:
+  - definition: >-
+      The repeated unit from which a [[transformer|transformer]] is stacked, typically a
+      [[multi-head-attention|multi-head attention]] sublayer followed by a
+      [[feed-forward-network|feed-forward network]] sublayer, each wrapped with a normalization and
+      a [[residual-connection|residual connection]] that adds its output back to the running
+      representation (the [[residual-stream|residual stream]]). In the original post-norm design,
+      normalization came after each residual addition; most modern models use pre-norm, normalizing
+      each sublayer's input instead, which keeps gradients well behaved in deep stacks and reduces
+      the need for careful learning-rate warm-up, usually with [[rmsnorm|RMSNorm]] in place of
+      [[layer-normalization|layer normalization]]. Decoder blocks of
+      [[encoder-decoder-architecture|encoder–decoder]] models add a
+      [[cross-attention|cross-attention]] sublayer. Model size is set largely by the number of
+      blocks (often 32–128 in large models) and their width. Variants run the attention and
+      feed-forward sublayers in parallel (GPT-J, PaLM) or replace the feed-forward network with a
+      [[mixture-of-experts|mixture of experts]].
+    example: The 8B model stacks 32 transformer blocks with a hidden size of 4,096.
+origin: >-
+  The block structure, with post-norm residual sublayers, was defined in 'Attention Is All You Need'
+  (2017). Pre-norm placement was adopted by GPT-2 (2019), and Ruibin Xiong and colleagues (2020)
+  analyzed why it trains more stably.
+year: 2017
+see_also:
+  - transformer
+  - multi-head attention
+  - feed-forward network
+  - residual stream
+  - residual connection
+  - RMSNorm
+  - layer normalization
+sources:
+  - text: >-
+      Xiong, R., Yang, Y., He, D. et al. (2020). On Layer Normalization in the Transformer
+      Architecture. ICML 2020.

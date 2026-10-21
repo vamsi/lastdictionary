@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: image-to-image translation
+id: image-to-image-translation
+pos: n.
+also:
+  - image translation
+  - pix2pix
+  - CycleGAN
+  - img2img
+  - SDEdit
+domain: gen
+domains:
+  - percep
+  - dl
+level: core
+plain: >-
+  Turning one picture into another version of itself — a sketch into a photo, a day scene into
+  night, a horse into a zebra — while keeping its layout.
+senses:
+  - definition: >-
+      The task of transforming an image so that it takes on the look of a different domain while its
+      layout and content stay in place, such as turning day scenes into night, satellite images into
+      maps, sketches into product photos or summer landscapes into winter ones. With paired
+      examples, a conditional [[generative-adversarial-network|generative adversarial network]] can
+      learn the transformation directly, as in pix2pix, which combined a [[u-net|U-Net]] generator,
+      a patch-based discriminator and an L1 reconstruction loss. Without pairs, CycleGAN trained two
+      generators in opposite directions and added a cycle-consistency loss requiring that
+      translating an image there and back recovers the original. [[diffusion-model|Diffusion
+      models]] now dominate: SDEdit-style 'img2img' adds a chosen amount of noise to an input and
+      denoises it under a new prompt, trading faithfulness against realism, while
+      [[controlnet|ControlNet]] and [[instruction-based-image-editing|instruction-based image
+      editing]] give finer control.
+    example: >-
+      We used image-to-image translation to turn the simulator's flat renders into photorealistic
+      training frames.
+origin: >-
+  Popularized by Phillip Isola, Jun-Yan Zhu, Tinghui Zhou and Alexei Efros's 'Image-to-Image
+  Translation with Conditional Adversarial Networks' (posted November 2016; CVPR 2017), whose
+  pix2pix code spread widely among artists. CycleGAN, by Zhu, Taesung Park, Isola and Efros,
+  followed in March 2017, and SDEdit (Chenlin Meng and colleagues, 2021) carried the idea into
+  diffusion models.
+year: 2016
+note: >-
+  'Image Analogies' (Aaron Hertzmann and colleagues, SIGGRAPH 2001) is a classic non-neural
+  precursor that learned filters from one before-and-after example.
+see_also:
+  - generative adversarial network
+  - style transfer
+  - ControlNet
+  - instruction-based image editing
+  - inpainting
+  - super-resolution
+  - U-Net
+sources:
+  - text: >-
+      Isola, P., Zhu, J.-Y., Zhou, T. & Efros, A. A. (2017). Image-to-Image Translation with
+      Conditional Adversarial Networks. CVPR 2017. arXiv:1611.07004.
+    url: https://arxiv.org/abs/1611.07004
+  - text: >-
+      Zhu, J.-Y., Park, T., Isola, P. & Efros, A. A. (2017). Unpaired Image-to-Image Translation
+      using Cycle-Consistent Adversarial Networks. ICCV 2017. arXiv:1703.10593.
+    url: https://arxiv.org/abs/1703.10593
+  - text: >-
+      Meng, C. et al. (2022). SDEdit: Guided Image Synthesis and Editing with Stochastic
+      Differential Equations. ICLR 2022. arXiv:2108.01073.
+    url: https://arxiv.org/abs/2108.01073

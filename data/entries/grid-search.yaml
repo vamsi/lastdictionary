@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: grid search
+id: grid-search
+pos: n.
+also:
+  - parameter sweep
+  - exhaustive grid search
+  - GridSearchCV
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  Tuning a model by trying every combination from a short list of candidate settings, like testing
+  every pairing on a menu, and keeping whichever combination scores best.
+senses:
+  - definition: >-
+      A [[hyperparameter-tuning|hyperparameter tuning]] strategy that fixes a short list of
+      candidate values for each hyperparameter, then trains and scores a model for every combination
+      in their Cartesian product (three learning rates crossed with three tree depths gives nine
+      runs), usually with [[cross-validation|cross-validation]], and keeps the best. It is simple,
+      reproducible and easily parallelized, and for one or two hyperparameters it yields an
+      interpretable map of performance. Its cost grows exponentially with the number of
+      hyperparameters (m values on each of d hyperparameters requires m^d training runs), and it
+      wastes effort when only a few hyperparameters matter, because it tests the same handful of
+      values of each important one again and again. For these reasons [[random-search|random
+      search]] or [[bayesian-optimization|Bayesian optimization]] is usually preferred beyond two or
+      three dimensions. Common refinements are coarse-to-fine grids, which zoom in around the best
+      region, and logarithmically spaced values for scale parameters such as the learning rate and
+      regularization strength.
+    example: >-
+      A grid search over C and gamma found the SVM's sweet spot at C = 10 and gamma = 0.01.
+origin: >-
+  Exhaustive evaluation over a grid is an old technique of numerical optimization and experimental
+  design. It became the default tuning method of machine-learning practice in the 2000s, recommended
+  for support vector machines in the LIBSVM authors' 2003 practical guide and built into libraries
+  such as scikit-learn as GridSearchCV.
+see_also:
+  - hyperparameter tuning
+  - random search
+  - Bayesian optimization
+  - cross-validation
+  - hyperparameter
+  - AutoML
+contrast:
+  - random search
+sources:
+  - text: >-
+      Hsu, C.-W., Chang, C.-C. & Lin, C.-J. (2003). A Practical Guide to Support Vector
+      Classification. Technical report, Department of Computer Science, National Taiwan University.
+  - text: >-
+      Bergstra, J. & Bengio, Y. (2012). Random Search for Hyper-Parameter Optimization. Journal of
+      Machine Learning Research 13.

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inference provider
+id: inference-provider
+pos: n.
+also:
+  - inference platform
+  - model host
+  - LLM API provider
+  - inference cloud
+domain: infer
+domains:
+  - eng
+  - society
+level: core
+plain: >-
+  A company that runs AI models on its own computers and sells access to them over the internet,
+  charging by use, so customers need not buy or operate the hardware themselves.
+senses:
+  - definition: >-
+      A company or service that hosts models and sells access to them, usually through a
+      pay-per-token [[model-api|model API]] or dedicated endpoints. The term covers model developers
+      serving their own [[proprietary-model|proprietary models]], cloud hyperscalers reselling many
+      vendors' models, and specialist firms that serve [[open-weight-model|open-weight models]] on
+      their own fleets of [[gpu|GPUs]] or custom chips, competing on price,
+      [[tokens-per-second|tokens per second]], [[latency|latency]], context length and reliability.
+      Aggregators sit in front of many providers behind a single
+      [[openai-compatible-api|OpenAI-compatible API]]. The same open-weight model can behave
+      differently across providers because of [[quantization|quantization]], different serving
+      engines, default sampling settings, context limits and bugs in [[tool-use|tool-calling]] or
+      chat-template handling, so careful evaluations name the provider as well as the model.
+    example: >-
+      We send the open-weight model to whichever inference provider is cheapest that day, after
+      checking its tool-call accuracy.
+origin: >-
+  The phrase spread from 2023 as open-weight models such as Llama created a market for hosted
+  inference separate from model development. In January 2025 Hugging Face branded the third-party
+  serverless partners on its Hub 'Inference Providers', and aggregators such as OpenRouter list many
+  providers per model.
+note: >-
+  In the [[eu-ai-act|EU AI Act]], a 'provider' is whoever develops a system or model and places it
+  on the market, which may not be the company hosting inference; see
+  [[provider-and-deployer|provider and deployer]].
+see_also:
+  - model API
+  - model serving
+  - open-weight model
+  - inference cost
+  - AI gateway
+  - OpenAI-compatible API
+contrast:
+  - provider and deployer
+as_of: 2026-10

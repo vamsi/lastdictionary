@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: expected calibration error
+id: expected-calibration-error
+pos: n.
+also:
+  - ECE
+  - maximum calibration error
+  - MCE
+  - adaptive calibration error
+domain: ml
+domains:
+  - eval
+level: specialist
+plain: >-
+  A single number measuring how far a model's confidence is from its actual hit rate, averaged
+  across confidence levels; zero means its confidence can be taken at face value.
+senses:
+  - definition: >-
+      A summary measure of miscalibration ([[calibration|calibration]]) for classifiers. Predictions
+      are grouped into M bins by confidence, the probability given to the predicted class, typically
+      10 or 15 equal-width bins; in each bin the absolute gap between average confidence and
+      observed [[accuracy|accuracy]] is computed, and ECE is the average of these gaps weighted by
+      the share of examples in each bin. The maximum calibration error (MCE) takes the largest gap
+      instead. ECE summarizes the deviations visible in a reliability diagram and became the
+      standard calibration metric for deep networks and [[large-language-model|language models]]. It
+      has known flaws: estimates depend on the number and placement of bins (equal-mass binning and
+      debiased estimators help); it looks only at top-class confidence; it can be near zero for a
+      useless model that always predicts the base rate; and it is not a [[proper-scoring-rule|proper
+      scoring rule]], so it should be reported alongside [[log-loss|log loss]] or the
+      [[brier-score|Brier score]].
+    example: Instruction tuning raised the model's ECE on trivia questions from 0.04 to 0.12.
+formula_latex: \mathrm{ECE} = \sum_{m=1}^{M} \frac{|B_m|}{n} \left| \operatorname{acc}(B_m) -
+  \operatorname{conf}(B_m) \right|
+origin: >-
+  Defined in its now-standard binned form by Mahdi Pakdaman Naeini, Gregory Cooper and Milos
+  Hauskrecht in 'Obtaining Well Calibrated Probabilities Using Bayesian Binning' (AAAI 2015). Chuan
+  Guo and colleagues' 2017 study of overconfident neural networks made it the default calibration
+  metric, and critiques of its binning bias, such as Jeremy Nixon and colleagues' 'Measuring
+  Calibration in Deep Learning' (2019), followed.
+year: 2015
+see_also:
+  - calibration
+  - Brier score
+  - log loss
+  - proper scoring rule
+  - accuracy
+  - abstention
+sources:
+  - text: >-
+      Naeini, M. P., Cooper, G. F. & Hauskrecht, M. (2015). Obtaining Well Calibrated Probabilities
+      Using Bayesian Binning. Proc. AAAI 2015.
+  - text: >-
+      Guo, C., Pleiss, G., Sun, Y. & Weinberger, K. Q. (2017). On Calibration of Modern Neural
+      Networks. Proc. ICML 2017.
+  - text: >-
+      Nixon, J., Dusenberry, M., Zhang, L., Jerfel, G. & Tran, D. (2019). Measuring Calibration in
+      Deep Learning. Proc. CVPR Workshops 2019.

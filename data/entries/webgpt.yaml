@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: WebGPT
+id: webgpt
+pos: prop. n.
+domain: agents
+domains:
+  - llm
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  A 2021 OpenAI research system that answered questions by searching and browsing the web in a
+  simple text browser, collecting sources and citing them — an early ancestor of today's research
+  agents.
+senses:
+  - definition: >-
+      A [[gpt-3|GPT-3]] model that OpenAI trained in 2021 to research and write long answers to
+      open-ended questions with a simplified, text-only web browser: it could search, follow links,
+      scroll, save quotations as references and then compose an answer citing them. Training started
+      from [[behavioral-cloning|behavioral cloning]] of people doing the same task and then used a
+      [[reward-model|reward model]] fitted to human comparisons of answers, both for best-of-n
+      [[rejection-sampling|rejection sampling]] and for [[reinforcement-learning|reinforcement
+      learning]]. Judged on questions from the ELI5 ('Explain Like I'm Five') set, the best
+      version's answers beat the human demonstrators' 56% of the time and the most-upvoted Reddit
+      replies 69% of the time. WebGPT pioneered browsing with citations and reward modeling for
+      factual long-form answers, ideas later central to search-enabled chatbots and
+      [[deep-research|deep research]] agents.
+    example: >-
+      WebGPT already searched, quoted and cited in 2021; today's research agents just do it for an
+      hour.
+origin: >-
+  Described by Reiichiro Nakano, Jacob Hilton, Suchir Balaji and 15 other OpenAI authors in a paper
+  posted on 17 December 2021.
+year: 2021
+see_also:
+  - browser agent
+  - deep research
+  - reinforcement learning from human feedback
+  - reward model
+  - citation
+  - tool use
+sources:
+  - text: >-
+      Nakano, R., Hilton, J., Balaji, S. et al. (2021). WebGPT: Browser-assisted question-answering
+      with human feedback. arXiv:2112.09332.
+    url: https://arxiv.org/abs/2112.09332

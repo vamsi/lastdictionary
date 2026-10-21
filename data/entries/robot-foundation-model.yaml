@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: robot foundation model
+id: robot-foundation-model
+pos: n.
+also:
+  - robotics foundation model
+  - large behavior model
+  - LBM
+domain: robot
+domains:
+  - core
+  - llm
+  - rl
+labels:
+  - emerging
+level: core
+plain: >-
+  One large AI model trained on huge amounts of robot and internet data so that it can control many
+  robots on many tasks, and be adapted quickly to new ones.
+senses:
+  - definition: >-
+      A large model pretrained on broad, diverse data — robot trajectories from many tasks and
+      bodies, often combined with web images, video and text — that can be prompted or fine-tuned to
+      control robots across many tasks, instead of a model trained from scratch for one task on one
+      robot. It applies the [[foundation-model|foundation model]] recipe to robotics: scale data and
+      parameters, pretrain once, adapt cheaply. The category includes
+      [[vision-language-action-model|vision-language-action models]] (RT-2, OpenVLA, π0, Gemini
+      Robotics, GR00T N1), [[generalist-robot-policy|generalist policies]] without a language
+      backbone (Octo), and sometimes models that serve robots without acting directly, such as
+      [[world-foundation-model|world foundation models]] for simulation and embodied-reasoning
+      models for planning. Key ingredients are large multi-robot datasets ([[open-x-embodiment|Open
+      X-Embodiment]], DROID), [[teleoperation|teleoperation]] at scale and
+      [[cross-embodiment-learning|cross-embodiment]] training. Whether robotics follows
+      language-model [[scaling-laws|scaling laws]] is an open question; robot data remain orders of
+      magnitude scarcer than text.
+    example: >-
+      Instead of training a pick-and-place policy from scratch, they fine-tuned a robot foundation
+      model on one day of demonstrations.
+origin: >-
+  Follows the Stanford report that coined 'foundation model' (Rishi Bommasani and colleagues, August
+  2021), whose robotics section anticipated the idea. Usage grew with RT-1 (2022) and RT-2 (2023);
+  by 2024–2025 Physical Intelligence, Google DeepMind, NVIDIA and others described their systems
+  this way, while Toyota Research Institute preferred 'large behavior model'.
+note: >-
+  Distinguish from using a [[large-language-model|large language model]] only as a robot's
+  high-level planner, as in SayCan (2022), where the language model chooses among pre-trained skills
+  but issues no motor commands.
+see_also:
+  - vision-language-action model
+  - generalist robot policy
+  - foundation model
+  - Open X-Embodiment
+  - cross-embodiment learning
+  - world foundation model
+  - scaling laws
+sources:
+  - text: >-
+      Bommasani, R. et al. (2021). On the Opportunities and Risks of Foundation Models. Stanford
+      CRFM.
+  - text: >-
+      Octo Model Team (2024). Octo: An Open-Source Generalist Robot Policy. arXiv:2405.12213.
+    url: https://arxiv.org/abs/2405.12213
+as_of: 2026-10

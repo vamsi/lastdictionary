@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: capability control
+id: capability-control
+pos: n.
+also:
+  - capability control methods
+domain: asi
+domains:
+  - safety
+level: specialist
+plain: >-
+  Keeping a powerful AI safe by limiting what it is able to do, for example by cutting it off from
+  the internet, rather than by shaping what it wants.
+senses:
+  - definition: >-
+      In [[nick-bostrom|Nick Bostrom]]'s taxonomy, the family of methods that address the
+      [[control-problem|control problem]] by restricting what an AI system can do rather than what
+      it wants. He named four: boxing, physically or informationally confining the system
+      ([[ai-box|AI box]]); incentive methods, placing it in an environment where good behavior
+      serves its own goals; stunting, limiting its cognitive abilities or access to information; and
+      tripwires, tests that automatically shut it down on signs of danger. Bostrom judged these
+      useful only as temporary or auxiliary measures, since a sufficiently capable system might find
+      a way around any external constraint. Present-day counterparts include [[sandbox|sandboxing]],
+      restricted tool permissions, security of model weights, monitoring and [[ai-control|AI
+      control]] protocols that assume the model may be adversarial.
+    example: Capability control buys time; it does not make a misaligned system safe.
+origin: >-
+  Introduced, with its counterpart [[motivation-selection|motivation selection]], in chapter 9 of
+  Nick Bostrom's Superintelligence (2014), which treats capability control as a stopgap rather than
+  a solution.
+year: 2014
+see_also:
+  - control problem
+  - motivation selection
+  - AI box
+  - AI control
+  - kill switch
+  - sandbox
+  - trusted monitoring
+contrast:
+  - motivation selection

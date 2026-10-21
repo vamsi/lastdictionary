@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: batch size
+id: batch-size
+pos: n.
+also:
+  - global batch size
+  - micro-batch size
+  - large-batch training
+domain: dl
+domains:
+  - train
+  - hw
+level: core
+plain: >-
+  How many training examples a model looks at before each adjustment of its settings. Bigger batches
+  use hardware efficiently but bring diminishing returns; smaller ones are noisier but cheaper per
+  step.
+senses:
+  - definition: >-
+      The number of examples (for language models, often counted in tokens) in each
+      [[mini-batch|mini-batch]] used to compute one gradient update, and a central
+      [[hyperparameter|hyperparameter]] of training. Larger batches give lower-variance gradient
+      estimates and better hardware utilization; in [[data-parallelism|data-parallel]] training the
+      global batch is split across devices, and [[gradient-accumulation|gradient accumulation]] sums
+      several micro-batches into one update. Beyond a problem-dependent
+      [[critical-batch-size|critical batch size]], increasing the batch barely reduces the number of
+      steps needed, so compute is wasted. Batch size interacts with the [[learning-rate|learning
+      rate]]: the 'linear scaling rule' raises the learning rate in proportion to batch size (with
+      [[learning-rate-warmup|warmup]]), while adaptive optimizers are often scaled closer to the
+      square root. Very large batches were long associated with a
+      [[generalization-gap|generalization gap]], often attributed to convergence to sharper minima,
+      and layer-wise adaptive optimizers (LARS, LAMB) were designed to keep them stable.
+    example: >-
+      We doubled the batch size to 4 million tokens and scaled the learning rate by √2.
+origin: >-
+  The trade-off has been studied since mini-batch training began. Large-batch training became a
+  prominent research topic in 2016–2017: Nitish Shirish Keskar and colleagues linked large batches
+  to a generalization gap (2016), and Priya Goyal and colleagues at Facebook trained ResNet-50 on
+  ImageNet in one hour with 8,192-image batches using linear learning-rate scaling and warmup
+  (2017). Yang You and colleagues' LARS (2017) and LAMB (2019) and Sam McCandlish and colleagues'
+  critical-batch-size analysis (2018) followed.
+note: >-
+  Batch size in tokens equals examples × sequence length. Hyperparameters tuned at small batch sizes
+  rarely transfer unchanged to large ones.
+see_also:
+  - mini-batch
+  - learning rate
+  - critical batch size
+  - gradient accumulation
+  - data parallelism
+  - generalization gap
+  - sharp and flat minima
+sources:
+  - text: >-
+      Goyal, P. et al. (2017). Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour.
+      arXiv:1706.02677.
+    url: https://arxiv.org/abs/1706.02677
+  - text: >-
+      Keskar, N. S. et al. (2017). On Large-Batch Training for Deep Learning: Generalization Gap and
+      Sharp Minima. ICLR 2017.
+    url: https://arxiv.org/abs/1609.04836

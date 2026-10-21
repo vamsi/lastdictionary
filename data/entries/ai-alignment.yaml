@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI alignment
+id: ai-alignment
+pos: n.
+also:
+  - alignment
+  - aligned AI
+  - aligned
+  - alignment research
+domain: safety
+domains:
+  - train
+  - asi
+level: essential
+plain: >-
+  Making an AI system genuinely try to do what the people it serves want — not a literal-minded,
+  distorted or self-serving version of it. Also the research field working on this.
+senses:
+  - context: Property of a system
+    definition: >-
+      The match between what an AI system is actually trying to achieve, and so how it behaves, and
+      what its developers, users or society meant it to pursue — a matter of degree rather than a
+      yes-or-no property. Falling short need not mean wanting something alien: settling for a
+      measurable stand-in for the real goal, reading instructions too literally or ignoring
+      constraints nobody thought to state all count. Researchers decompose the problem in several
+      ways: [[outer-alignment|outer]] versus [[inner-alignment|inner alignment]] (specifying the
+      right objective versus instilling it), [[intent-alignment|intent alignment]] versus
+      [[value-alignment|value alignment]] (whose wishes count), and alignment versus
+      [[capability|capability]] (a highly capable system can still be [[misalignment|misaligned]]).
+      Characteristic failures include [[specification-gaming|specification gaming]],
+      [[reward-hacking|reward hacking]], [[goal-misgeneralization|goal misgeneralization]],
+      [[sycophancy|sycophancy]] and [[deceptive-alignment|deceptive alignment]].
+    example: A more capable model is not automatically a better-aligned one.
+  - context: Research field and practice
+    definition: >-
+      The research field and engineering practice of producing aligned systems. For current
+      [[large-language-model|language models]] it largely means [[post-training|post-training]] —
+      [[instruction-tuning|instruction tuning]],
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]],
+      [[constitutional-ai|Constitutional AI]] and written [[model-specification|model
+      specifications]] — plus evaluations of whether the intended behavior holds. Longer-range work
+      targets systems that may exceed human ability to supervise them, through
+      [[scalable-oversight|scalable oversight]], [[interpretability|interpretability]],
+      [[weak-to-strong-generalization|weak-to-strong generalization]] and [[ai-control|control]].
+    example: She moved from the product team to alignment research.
+origin: >-
+  Norbert Wiener warned in 1960 that the purpose put into a machine must be the purpose we really
+  desire. In a November 2014 essay on Edge.org, Stuart Russell wrote that an AI's utility function
+  'may not be perfectly aligned with the values of the human race'. The Machine Intelligence
+  Research Institute's 2014 agenda spoke of aligning superintelligence with human interests, and by
+  2016 'AI alignment' was in use as the name of the field. Paul Christiano's essays spread the term,
+  and OpenAI's InstructGPT work (2022) made it industry vocabulary.
+year: 2014
+note: >-
+  Unrelated to word alignment in machine translation or to cross-modal alignment of
+  [[embedding|embeddings]] in multimodal models. Critics ask 'aligned to whom?', arguing that the
+  choice of target is political as much as technical; some researchers reserve 'alignment' for
+  catastrophic-risk work and call everyday behavior tuning post-training.
+see_also:
+  - alignment problem
+  - outer alignment
+  - inner alignment
+  - intent alignment
+  - value alignment
+  - AI safety
+  - reinforcement learning from human feedback
+  - superalignment
+contrast:
+  - misalignment
+  - capability
+sources:
+  - text: >-
+      Russell, S. (2019). Human Compatible: Artificial Intelligence and the Problem of Control.
+      Viking.
+  - text: Christiano, P. (2018). Clarifying "AI alignment". AI Alignment Forum.
+  - text: "Ji, J. et al. (2023). AI Alignment: A Comprehensive Survey. arXiv:2310.19852."
+    url: https://arxiv.org/abs/2310.19852

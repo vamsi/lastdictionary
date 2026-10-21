@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Cursor
+id: cursor
+pos: prop. n.
+also:
+  - Cursor IDE
+  - Cursor editor
+  - Anysphere
+domain: eng
+domains:
+  - agents
+  - llm
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A code editor built around AI, in which programmers can ask a model to write, change or explain
+  code across a whole project, or hand it tasks to finish on its own.
+senses:
+  - definition: >-
+      An AI-centered code editor developed by the company Anysphere as a fork of Microsoft's
+      open-source Visual Studio Code, keeping that editor's interface and extensions while
+      integrating language models more deeply. Its features include multi-line, next-edit prediction
+      ('Tab') that anticipates where and what the developer will change next; chat and inline
+      editing grounded in an index of the whole codebase; an agent mode that plans multi-file
+      changes, runs terminal commands and tests, and iterates on errors; background agents that work
+      in cloud environments; and project rules files that give agents standing instructions. Users
+      choose among frontier models from several providers, alongside the company's own models.
+      Cursor became a leading example of an AI-native development environment, closely associated
+      with the rise of [[vibe-coding|vibe coding]] and [[coding-agent|coding agents]], and a
+      commercial rival to [[github-copilot|GitHub Copilot]].
+    example: >-
+      I asked Cursor's agent to migrate the tests to the new API, then reviewed its diff file by
+      file.
+origin: >-
+  Anysphere was founded in 2022 by four Massachusetts Institute of Technology students — Michael
+  Truell, Sualeh Asif, Arvid Lunnemark and Aman Sanger — who released Cursor in 2023. It grew
+  rapidly in 2024–2025, training its own models for Tab completion and, in October 2025, releasing
+  Composer, an in-house agentic coding model. SpaceX, which had absorbed [[xai|xAI]], agreed in June
+  2026 to buy Anysphere in an all-stock deal valuing it at about US$60 billion, and completed the
+  purchase in August 2026.
+year: 2023
+note: >-
+  Its rules files are an instance of the [[agent-instruction-file|agent instruction file]]
+  convention. Not to be confused with the on-screen text cursor or with database cursors.
+see_also:
+  - GitHub Copilot
+  - coding agent
+  - vibe coding
+  - Claude Code
+  - agent instruction file
+  - code generation
+as_of: 2026-10

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: importance sampling
+id: importance-sampling
+pos: n.
+also:
+  - importance weight
+  - importance weights
+  - importance ratio
+  - self-normalized importance sampling
+domain: math
+domains:
+  - rl
+  - train
+level: specialist
+plain: >-
+  A shortcut for estimating averages: draw samples from a convenient source, then reweight each one
+  to correct for how much more or less likely it would be under the source you actually care about.
+senses:
+  - definition: >-
+      A [[monte-carlo-method|Monte Carlo]] estimator for an [[expected-value|expected value]] under
+      a target distribution p that draws its samples from a more convenient proposal distribution q
+      and multiplies each by the weight p(x)/q(x), correcting for how much more or less often q
+      produces it than p would. It is unbiased whenever q is nonzero wherever p is, and a
+      well-chosen proposal that concentrates samples where they matter can cut [[variance|variance]]
+      dramatically; a poor one can make it explode, as a few samples with huge weights dominate.
+      Self-normalized importance sampling divides by the sum of the weights, so p need only be known
+      up to a constant. In AI, importance ratios correct for data gathered by an older or different
+      policy in [[off-policy|off-policy]] [[reinforcement-learning|reinforcement learning]]; the
+      clipped probability ratio in [[proximal-policy-optimization|proximal policy optimization]] and
+      [[group-relative-policy-optimization|group relative policy optimization]] is an importance
+      weight; importance-weighted bounds tighten the [[evidence-lower-bound|evidence lower bound]];
+      and [[particle-filter|particle filters]] are sequential importance samplers.
+    example: >-
+      The rollouts came from last step's policy, so we reweight them with clipped importance ratios.
+formula_latex: \mathbb{E}_{p}[f(X)] = \mathbb{E}_{q}\Big[f(X)\,\frac{p(X)}{q(X)}\Big] \approx
+  \frac{1}{N}\sum_{i=1}^{N} f(x_i)\,\frac{p(x_i)}{q(x_i)}, \quad x_i \sim q
+origin: >-
+  Developed in the early 1950s for Monte Carlo simulation in physics and operations research; Herman
+  Kahn and Andrew Marshall's 1953 paper on reducing sample size in Monte Carlo computations is a
+  standard early reference. It entered reinforcement learning through off-policy evaluation work
+  around 2000, notably by Doina Precup, Richard Sutton and Satinder Singh.
+year: 1953
+see_also:
+  - Monte Carlo method
+  - off-policy
+  - proximal policy optimization
+  - evidence lower bound
+  - particle filter
+  - variance

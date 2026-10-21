@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: serious incident
+id: serious-incident
+pos: n.
+also:
+  - serious incident reporting
+domain: gov
+domains:
+  - safety
+labels:
+  - legal
+level: core
+plain: >-
+  Under EU AI law, an AI failure that kills or badly injures someone, disrupts vital services,
+  violates fundamental rights or seriously damages property — which the maker must report to
+  authorities quickly.
+senses:
+  - definition: >-
+      Under the [[eu-ai-act|EU AI Act]], a failure or malfunction of an AI system that causes,
+      directly or indirectly, one of four outcomes: a person's death or serious damage to their
+      health; serious disruption of critical infrastructure that cannot be undone; a breach of
+      EU-law obligations that protect fundamental rights; or serious damage to property or the
+      environment. Providers of [[high-risk-ai-system|high-risk systems]] must report such incidents
+      to the market surveillance authority of the member state concerned once a causal link, or its
+      reasonable likelihood, is established — no later than 15 days after becoming aware, 10 days if
+      a person died, and 2 days for a widespread infringement or a serious disruption of critical
+      infrastructure — and must then investigate. Providers of
+      [[general-purpose-ai-model-with-systemic-risk|general-purpose models with systemic risk]] must
+      track and report serious incidents to the [[ai-office|AI Office]] without undue delay.
+    example: >-
+      The provider filed a serious incident report within two days because the failure hit a
+      regional power grid.
+origin: >-
+  Modeled on vigilance reporting in medical-device and product-safety law; defined in the 2021 AI
+  Act proposal, with infringements of fundamental rights added during negotiations. The Commission
+  consulted on draft guidance and a reporting template in September 2025.
+year: 2021
+note: >-
+  Narrower than an [[ai-incident|AI incident]] as tracked by the AI Incident Database or the OECD AI
+  Incidents Monitor, which include lesser harms and near misses.
+see_also:
+  - AI incident
+  - post-market monitoring
+  - high-risk AI system
+  - general-purpose AI model with systemic risk
+  - AI Office
+contrast:
+  - AI incident
+standards: EU AI Act (Reg. (EU) 2024/1689), Art. 3(49) and Art. 73; Art. 55(1)(c)
+as_of: 2026-10

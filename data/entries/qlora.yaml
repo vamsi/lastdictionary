@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: QLoRA
+id: qlora
+pos: n.
+also:
+  - quantized low-rank adaptation
+  - quantized LoRA
+  - 4-bit NormalFloat
+  - NF4
+pronunciation: KYOO-lor-uh
+domain: train
+domains:
+  - infer
+  - eng
+level: specialist
+plain: >-
+  A memory-saving version of LoRA that squeezes the big model into a compact 4-bit form while
+  training small add-ons, letting very large models be customized on a single graphics card.
+senses:
+  - definition: >-
+      A fine-tuning method that pairs [[low-rank-adaptation|low-rank adaptation]] with a frozen base
+      model compressed to 4-bit precision ([[quantization|quantization]]): the 4-bit weights are
+      expanded to 16-bit on the fly for each forward and backward computation, and only the LoRA
+      adapters, held in higher precision, receive updates. Three techniques made this work without
+      measurable quality loss in the authors' tests: 4-bit NormalFloat (NF4), a data type whose
+      levels are spaced for normally distributed weights; double quantization, which also quantizes
+      the per-block scaling constants; and paged optimizers, which spill optimizer state into CPU
+      memory when GPU memory briefly runs short. QLoRA brought fine-tuning of a 65-billion-parameter
+      model within a single 48 GB GPU, and its Guanaco models reached 99.3 percent of ChatGPT's
+      score on the Vicuna benchmark after 24 hours of training. It made fine-tuning large
+      open-weight models practical for individuals and small laboratories.
+    example: With QLoRA we fine-tuned the 70B model on one 80 GB card.
+origin: >-
+  Introduced by Tim Dettmers, Artidoro Pagnoni, Ari Holtzman and Luke Zettlemoyer of the University
+  of Washington in May 2023 (NeurIPS 2023), building on Dettmers's bitsandbytes quantization
+  library.
+year: 2023
+note: >-
+  The Vicuna-benchmark comparison relied on automated (GPT-4) and human judgments of chat quality.
+  Adapters trained with QLoRA can afterwards be merged into a 16-bit copy of the base model.
+see_also:
+  - low-rank adaptation
+  - quantization
+  - parameter-efficient fine-tuning
+  - fine-tuning
+  - GPU
+  - open-weight model
+contrast:
+  - post-training quantization
+  - full fine-tuning
+sources:
+  - text: >-
+      Dettmers, T., Pagnoni, A., Holtzman, A. & Zettlemoyer, L. (2023). QLoRA: Efficient Finetuning
+      of Quantized LLMs. NeurIPS 2023. arXiv:2305.14314.
+    url: https://arxiv.org/abs/2305.14314

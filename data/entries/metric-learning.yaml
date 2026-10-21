@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: metric learning
+id: metric-learning
+pos: n.
+also:
+  - deep metric learning
+  - similarity learning
+  - distance metric learning
+  - triplet loss
+domain: dl
+domains:
+  - ml
+level: specialist
+plain: >-
+  Teaching a model to measure similarity: it learns to place items so that ones that should count as
+  alike end up close together and different ones far apart.
+senses:
+  - definition: >-
+      The learning of a distance or similarity function from examples of which items should be
+      considered similar, usually by training an encoder so that ordinary
+      [[euclidean-distance|Euclidean distance]] or [[cosine-similarity|cosine similarity]] between
+      [[embedding|embeddings]] reflects the desired notion of similarity. Classical methods learn a
+      Mahalanobis matrix, as in large-margin nearest neighbor; deep metric learning trains neural
+      networks with pairwise contrastive losses, the triplet loss, which requires an anchor to be
+      closer to a positive than to a negative by a margin α, or proxy- and softmax-based losses.
+      Mining informative 'hard' negatives is critical. Applications include face and
+      [[speaker-verification|speaker verification]], image retrieval, person re-identification and
+      few-shot classification; [[siamese-network|Siamese]] encoders and
+      [[contrastive-learning|contrastive learning]] are its main tools.
+    example: >-
+      Switching from triplet loss to a proxy-based metric learning loss doubled training speed.
+formula_latex: \mathcal{L}_{\text{triplet}} = \max\big(0,\; \lVert f(a) - f(p) \rVert^2 - \lVert
+  f(a) - f(n) \rVert^2 + \alpha\big)
+origin: >-
+  Eric Xing, Andrew Ng, Michael Jordan and Stuart Russell posed distance metric learning as convex
+  optimization at NIPS 2002. Kilian Weinberger, John Blitzer and Lawrence Saul's large-margin
+  nearest neighbor method (2005) used triplet-style constraints, and Florian Schroff, Dmitry
+  Kalenichenko and James Philbin's FaceNet (2015) popularized the triplet loss for deep networks.
+year: 2002
+see_also:
+  - Siamese network
+  - contrastive learning
+  - embedding
+  - k-nearest neighbors
+  - few-shot learning
+  - speaker verification

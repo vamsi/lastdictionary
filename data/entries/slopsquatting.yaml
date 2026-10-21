@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: slopsquatting
+id: slopsquatting
+pos: n.
+also:
+  - package hallucination
+  - AI package hallucination
+  - hallucinated dependency
+domain: sec
+domains:
+  - eng
+  - agents
+labels:
+  - emerging
+  - informal
+level: specialist
+plain: >-
+  An attack that exploits AI coding assistants' habit of inventing software packages that do not
+  exist: attackers publish malicious code under those made-up names and wait for people or agents to
+  install it.
+senses:
+  - definition: >-
+      A software supply-chain attack that turns invented dependencies into a trap: code-generating
+      [[large-language-model|language models]] often [[hallucination|hallucinate]] plausible package
+      names, and an attacker who claims one of them on a public registry such as PyPI or npm hands
+      attacker-controlled code to any developer or [[coding-agent|coding agent]] that installs the
+      suggestion. It works because package hallucinations are common and often recur for similar
+      prompts, making the names predictable: a 2025 study found that about 20% of packages
+      recommended in generated code did not exist, with open models hallucinating far more often
+      than commercial ones. It is a cousin of typosquatting, which relies on human typing errors.
+      Defenses include checking that suggested packages exist and are reputable before installing
+      them, dependency allow-lists and lockfiles, registry monitoring of newly claimed names, and
+      grounding coding agents in real package indexes.
+    example: >-
+      The agent proposed a dependency nobody had heard of — a textbook slopsquatting risk — so CI
+      blocked the install.
+origin: >-
+  Coined in April 2025 by Seth Larson, security developer-in-residence at the Python Software
+  Foundation, from 'slop' (low-quality AI output) and 'typosquatting', and spread by Andrew Nesbitt
+  and the security press. Bar Lanyado had described AI package hallucination in 2023, and in 2024
+  reported that a hallucinated name he registered as an empty package drew over 30,000 downloads in
+  three months.
+year: 2025
+note: >-
+  Publicly documented cases have mostly been proofs of concept, in which researchers registered
+  hallucinated names before attackers could; the scale of real-world exploitation is unclear.
+see_also:
+  - AI supply chain security
+  - hallucination
+  - coding agent
+  - vibe coding
+  - tool poisoning
+sources:
+  - text: >-
+      Spracklen, J., Wijewickrama, R., Sakib, A. H. M. N., Maiti, A., Viswanath, B. & Jadliwala, M.
+      (2025). We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code
+      Generating LLMs. USENIX Security 2025. arXiv:2406.10279.
+as_of: 2026-10

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ImageNet
+id: imagenet
+pos: prop. n.
+also:
+  - ILSVRC
+  - ImageNet Large Scale Visual Recognition Challenge
+  - ImageNet-1k
+  - ImageNet challenge
+domain: hist
+domains:
+  - data
+  - percep
+level: core
+plain: >-
+  A huge collection of more than 14 million labeled photos, sorted into object categories, whose
+  yearly recognition contest from 2010 to 2017 sparked the deep learning boom.
+senses:
+  - definition: >-
+      A [[dataset|dataset]] of more than 14 million images labeled with nearly 22,000 object
+      categories taken from the noun hierarchy of the WordNet lexical database, built by
+      [[fei-fei-li|Fei-Fei Li]]'s group at Princeton and Stanford from 2007 using images gathered
+      from the web and labeled by [[crowdsourcing|crowdworkers]] on Amazon Mechanical Turk. Its
+      subset for the ImageNet Large Scale Visual Recognition Challenge (ILSVRC, 2010–2017) — about
+      1.28 million training images in 1,000 classes, often called ImageNet-1k — became computer
+      vision's central [[benchmark|benchmark]]. In 2012 [[alexnet|AlexNet]] cut the winning top-5
+      classification error from about 26 percent to 15.3 percent, triggering the
+      [[deep-learning-revolution|deep learning revolution]]; by 2015 residual networks reached 3.6
+      percent, below an estimated human error of about 5 percent, and the challenge ended in 2017.
+      Pretraining on ImageNet was the standard starting point for vision models until web-scale
+      image–text data took over.
+    example: We initialized the detector from an ImageNet-pretrained backbone.
+origin: >-
+  Conceived by Fei-Fei Li in 2006–2007 and first presented as a poster at CVPR 2009 by Jia Deng, Wei
+  Dong, Richard Socher, Li-Jia Li, Kai Li and Li. Its premise, that progress was limited by data
+  rather than algorithms, was unfashionable at the time.
+year: 2009
+note: >-
+  Audits found offensive and biased labels in its 'person' categories; in 2019–2020 the maintainers
+  removed many of them, and in 2021 they released a version of the challenge images with faces
+  blurred for privacy.
+see_also:
+  - AlexNet
+  - deep learning revolution
+  - Fei-Fei Li
+  - benchmark
+  - image classification
+  - MNIST
+  - crowdsourcing
+sources:
+  - text: >-
+      Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K. & Fei-Fei, L. (2009). ImageNet: A
+      Large-Scale Hierarchical Image Database. CVPR 2009.
+  - text: >-
+      Russakovsky, O. et al. (2015). ImageNet Large Scale Visual Recognition Challenge.
+      International Journal of Computer Vision 115(3), 211–252.

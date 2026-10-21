@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: differential privacy
+id: differential-privacy
+pos: n.
+also:
+  - DP
+  - differentially private
+  - ε-differential privacy
+  - epsilon-differential privacy
+  - (ε, δ)-differential privacy
+domain: sec
+domains:
+  - math
+  - data
+  - ml
+level: core
+plain: >-
+  A mathematical promise that the results of analyzing a dataset — or a model trained on it — would
+  look almost the same whether or not any one person's data was included, so little can be learned
+  about that person.
+senses:
+  - definition: >-
+      A formal privacy guarantee for randomized algorithms: a mechanism M is (ε, δ)-differentially
+      private if, for every pair of datasets differing in one individual's record and every set of
+      possible outputs, the probability of producing an output in that set changes by at most a
+      factor e^ε plus a small slack δ. Privacy comes from calibrated randomness — for example,
+      adding Laplace or Gaussian noise scaled to a query's sensitivity, the most one record can
+      change the answer. The guarantee holds against attackers with arbitrary side information,
+      survives post-processing and degrades predictably under composition, which allows a
+      [[privacy-budget|privacy budget]] to be tracked across many analyses. In machine learning it
+      is achieved mainly with [[dp-sgd|DP-SGD]] or [[pate|PATE]], and it provably bounds
+      [[membership-inference-attack|membership inference]] and limits [[memorization|memorization]],
+      at a cost in accuracy. Smaller ε means stronger privacy; values from about 1 to 10 are common
+      in practice.
+    example: >-
+      The hospital released the model only after it was trained with differential privacy at ε = 3.
+formula_latex: \Pr[M(D) \in S] \le e^{\varepsilon} \, \Pr[M(D') \in S] + \delta
+origin: >-
+  Introduced by Cynthia Dwork, Frank McSherry, Kobbi Nissim and Adam Smith in 'Calibrating Noise to
+  Sensitivity in Private Data Analysis' (TCC 2006); the name comes from Dwork's ICALP 2006 paper
+  'Differential Privacy'. The four shared the 2017 Gödel Prize. Large deployments followed at Google
+  (2014), Apple (2016) and the US Census Bureau, which used it for 2020 census data products.
+year: 2006
+note: >-
+  A property of an algorithm, not of a dataset or output: one cannot check a released table and
+  declare it differentially private. Guarantees with large ε (say, above 10) are weak in theory even
+  if attacks remain hard in practice.
+see_also:
+  - DP-SGD
+  - privacy budget
+  - local differential privacy
+  - PATE
+  - membership inference attack
+  - privacy-preserving machine learning
+  - federated learning
+contrast:
+  - k-anonymity
+sources:
+  - text: >-
+      Dwork, C., McSherry, F., Nissim, K. & Smith, A. (2006). Calibrating Noise to Sensitivity in
+      Private Data Analysis. Theory of Cryptography Conference (TCC) 2006.
+  - text: >-
+      Dwork, C. & Roth, A. (2014). The Algorithmic Foundations of Differential Privacy. Foundations
+      and Trends in Theoretical Computer Science 9(3–4).

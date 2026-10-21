@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: speaker verification
+id: speaker-verification
+pos: n.
+also:
+  - voice biometrics
+  - voice authentication
+  - speaker recognition
+  - speaker identification
+  - voiceprint
+  - x-vector
+  - equal error rate
+domain: percep
+domains:
+  - sec
+  - gov
+level: core
+plain: >-
+  Checking whether a voice really belongs to the person it claims to be, as when a bank confirms
+  your identity by the sound of your voice on the phone.
+senses:
+  - definition: >-
+      The biometric task of deciding whether a voice sample belongs to the enrolled person whose
+      identity is claimed. At enrollment a model computes a speaker [[embedding|embedding]] from
+      sample utterances; at test time it embeds the new sample, scores the pair with
+      [[cosine-similarity|cosine similarity]] or probabilistic linear discriminant analysis, and
+      accepts the claim if the score clears a threshold. As a one-to-one check it differs from
+      speaker identification, a one-to-many search among known voices, and the two together form
+      speaker recognition; either can be text-dependent (a fixed or prompted passphrase) or
+      text-independent. Speaker representations evolved from Gaussian-mixture models adapted from a
+      universal background model (2000) and i-vectors (2011) to neural d-vectors and x-vectors
+      (2014–2018) and ECAPA-TDNN (2020). Performance is reported as equal error rate (where false
+      acceptances equal false rejections) and as detection cost, on benchmarks such as the NIST
+      Speaker Recognition Evaluations and VoxCeleb. Replayed recordings and synthetic speech from
+      [[voice-cloning|voice cloning]] threaten voice authentication, so deployed systems add
+      liveness and spoofing detection, studied in the ASVspoof challenges since 2015.
+    example: >-
+      After the cloned-voice incident, the bank added spoofing detection on top of speaker
+      verification.
+origin: >-
+  Lawrence Kersta of Bell Labs promoted visual 'voiceprint' comparison of spectrograms in 1962;
+  automatic speaker recognition and verification were studied at Bell Labs, Texas Instruments and
+  elsewhere from the 1960s. The US NIST has run Speaker Recognition Evaluations since 1996, and
+  neural embeddings dominated from the late 2010s.
+note: >-
+  Voice templates used to identify people count as biometric data under laws such as the EU's GDPR
+  and Illinois's Biometric Information Privacy Act. Not to be confused with
+  [[speech-recognition|speech recognition]], which concerns what was said rather than who said it.
+see_also:
+  - speaker diarization
+  - voice cloning
+  - deepfake detection
+  - embedding
+  - facial recognition
+  - MFCC
+contrast:
+  - speech recognition
+sources:
+  - text: >-
+      Snyder, D., Garcia-Romero, D., Sell, G., Povey, D. & Khudanpur, S. (2018). X-Vectors: Robust
+      DNN Embeddings for Speaker Recognition. ICASSP 2018.
+  - text: >-
+      Nagrani, A., Chung, J. S. & Zisserman, A. (2017). VoxCeleb: A Large-Scale Speaker
+      Identification Dataset. Interspeech 2017.

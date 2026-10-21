@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dark factory
+id: dark-factory
+pos: n.
+also:
+  - software factory
+  - lights-out software development
+domain: eng
+domains:
+  - agents
+  - culture
+labels:
+  - emerging
+  - figurative
+level: specialist
+plain: >-
+  A way of building software in which AI agents write, test and ship all the code and no human
+  writes or reads it, like a factory run with the lights off.
+senses:
+  - definition: >-
+      A software-development setup in which [[coding-agent|coding agents]] write, test and ship code
+      with no human writing or reviewing it; people supply specifications and judge outcomes. The
+      best-known example, StrongDM's 'Software Factory', barred its engineers from both writing and
+      reviewing code. In place of review it relied on end-to-end usage 'scenarios' stored outside
+      the codebase, like a [[test-set|holdout set]], so that agents cannot tailor the code to them;
+      on a probabilistic pass mark, 'satisfaction', the estimated share of observed runs that would
+      leave a user content; and on agent-built working replicas of outside services such as Slack,
+      Jira and Okta (a 'digital twin universe') for testing at scale. The team treated token
+      spending as a gauge of ambition, suggesting that under US$1,000 a day per engineer meant the
+      factory had room to improve.
+    example: In a dark factory, the humans write scenarios and specs; they never open a diff.
+origin: >-
+  Borrowed from manufacturing, where a 'dark' or lights-out factory runs without workers on site.
+  Dan Shapiro applied it to software as the highest of five levels of AI-assisted development in a
+  January 2026 post; Simon Willison's February 2026 account of StrongDM's team spread it.
+year: 2026
+note: >-
+  Skeptics question whether unreviewed code can be trusted in security-critical systems and point to
+  the token costs; proponents argue that rigorous external testing can substitute for line-by-line
+  review.
+see_also:
+  - coding agent
+  - agentic coding
+  - vibe coding
+  - digital twin
+  - evaluation
+  - harness
+  - AI factory
+sources:
+  - text: >-
+      Willison, S. (2026). How StrongDM's AI team build serious software without even looking at the
+      code. Simon Willison's Weblog, 7 February 2026.
+    url: https://simonwillison.net/2026/Feb/7/software-factory/
+  - text: >-
+      Willison, S. (2026). The five levels (on Dan Shapiro's levels of AI-assisted development).
+      Simon Willison's Weblog, 28 January 2026.
+    url: https://simonwillison.net/2026/Jan/28/the-five-levels/
+as_of: 2026-10

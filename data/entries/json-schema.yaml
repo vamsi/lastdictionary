@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: JSON Schema
+id: json-schema
+pos: prop. n.
+domain: eng
+domains:
+  - llm
+  - agents
+level: core
+plain: >-
+  A standard way of writing down exactly what a piece of JSON data must look like — which fields, of
+  which types — so that software and AI models can check it or follow it.
+senses:
+  - definition: >-
+      A specification language, itself expressed in JSON, for stating the constraints a conforming
+      JSON document must satisfy so that tools can check documents against them: allowed types
+      (object, array, string, number, integer, Boolean, null), required and optional properties,
+      enumerated values, numeric ranges, string patterns and formats, array lengths, and composition
+      with keywords such as allOf, anyOf, oneOf and $ref for reusable or recursive definitions.
+      Validators exist in every major programming language, and the OpenAPI specification uses JSON
+      Schema to describe web-API payloads. In AI engineering it is the common language for telling
+      models what to produce: [[function-calling|function and tool definitions]] in model APIs and
+      in the [[model-context-protocol|Model Context Protocol]] declare their parameters in JSON
+      Schema, and [[structured-outputs|structured outputs]] features compile a schema into a grammar
+      for [[constrained-decoding|constrained decoding]]. Providers usually accept only a subset of
+      keywords in strict modes, for example requiring every property to be listed as required.
+    example: >-
+      Paste the JSON Schema for the order object into the tool definition so the model fills every
+      field.
+origin: >-
+  Proposed by Kris Zyp, who submitted the first JSON Schema proposal to the json.com website in
+  October 2007. His first IETF Internet-Draft followed in December 2009, and the specification then
+  evolved through a long series of drafts, of which draft-04 (2013) and 2020-12 are the most widely
+  deployed. Its central role in AI began when OpenAI's function-calling API (June 2023) adopted it
+  for parameter definitions.
+year: 2007
+note: >-
+  JSON Schema checks shape, not meaning: it can require a string in date format but cannot tell
+  whether the date is the right one. Differences between drafts matter, because keywords and their
+  behavior changed from version to version.
+see_also:
+  - structured outputs
+  - JSON mode
+  - function calling
+  - tool
+  - Model Context Protocol
+  - constrained decoding
+sources:
+  - text: >-
+      JSON Schema project. Specification links (draft history from draft-zyp-json-schema-00, 2009,
+      to 2020-12). json-schema.org.
+    url: https://json-schema.org/specification-links

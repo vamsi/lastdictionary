@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: working memory
+id: working-memory
+pos: n.
+also:
+  - short-term memory
+  - in-context memory
+domain: agents
+domains:
+  - mind
+  - llm
+level: core
+plain: >-
+  The small amount of information held in mind right now while doing a task. For an AI model, that
+  is roughly whatever currently sits in its context window.
+senses:
+  - context: Agents
+    definition: >-
+      The information available to an [[ai-agent|AI agent]] for its current decision: in practice
+      the contents of the model's [[context-window|context window]] — instructions, recent
+      conversation, retrieved passages, tool results and any [[scratchpad|scratchpad]] — together
+      with state variables the [[harness|harness]] tracks for the current step. In the CoALA
+      framework it is the hub through which the agent's reasoning, [[long-term-memory|long-term
+      memory]] retrieval and actions communicate. Like human working memory it is small relative to
+      everything the agent could access, so [[context-engineering|context engineering]] is largely
+      the management of what occupies it, using retrieval, [[compaction|compaction]] and offloading
+      to files to keep it relevant.
+    example: >-
+      Keep only the current subtask's files in working memory and leave the rest on disk.
+  - context: Cognitive science
+    definition: >-
+      The mind's small, short-lived workspace, in which a few items are kept active and worked on
+      during tasks such as mental arithmetic, following a conversation or planning. Alan Baddeley
+      and Graham Hitch's influential model divides it into a central executive, a phonological loop
+      and a visuospatial sketchpad, later adding an episodic buffer; capacity estimates range from
+      about seven items (George Miller, 1956) down to about four chunks.
+origin: >-
+  The phrase appears in George Miller, Eugene Galanter and Karl Pribram's 'Plans and the Structure
+  of Behavior' (1960); Alan Baddeley and Graham Hitch's 1974 model made it central to cognitive
+  psychology. AI cognitive architectures such as Soar and ACT-R built in a working memory, and the
+  CoALA framework (2023) applied the concept to LLM agents.
+year: 1960
+note: >-
+  Agent builders often use 'short-term memory' as a synonym; psychologists distinguish short-term
+  memory (passive storage) from working memory (storage plus manipulation).
+see_also:
+  - context window
+  - long-term memory
+  - agent memory
+  - scratchpad
+  - context engineering
+  - cognitive architecture
+contrast:
+  - long-term memory
+sources:
+  - text: >-
+      Baddeley, A. D. & Hitch, G. (1974). Working memory. In The Psychology of Learning and
+      Motivation, vol. 8. Academic Press.
+  - text: >-
+      Sumers, T. R., Yao, S., Narasimhan, K. & Griffiths, T. L. (2023). Cognitive Architectures for
+      Language Agents. arXiv:2309.02427.
+    url: https://arxiv.org/abs/2309.02427v3

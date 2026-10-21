@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Parallel Distributed Processing
+id: parallel-distributed-processing
+pos: prop. n.
+also:
+  - PDP
+  - PDP volumes
+  - PDP Research Group
+domain: hist
+domains:
+  - dl
+  - mind
+labels:
+  - historical
+level: specialist
+plain: >-
+  A two-volume 1986 book by a group of psychologists and computer scientists that revived interest
+  in brain-like neural networks and made the training method behind modern AI widely known.
+senses:
+  - definition: >-
+      A two-volume work, Explorations in the Microstructure of Cognition (MIT Press, 1986), edited
+      by [[david-rumelhart|David Rumelhart]], James McClelland and the PDP Research Group, and by
+      extension the modeling framework it set out. The books argued that cognition arises from many
+      simple processing units interacting in parallel, with knowledge distributed across connection
+      weights, and presented models of perception, memory, language and learning. Chapter 8 of the
+      first volume, by Rumelhart, [[geoffrey-hinton|Geoffrey Hinton]] and Ronald Williams, gave the
+      standard account of training multilayer networks by [[backpropagation|backpropagation]] of
+      errors, and the second volume included a much-debated model of how children learn the English
+      past tense. The volumes became founding texts of the 1980s revival of
+      [[connectionism|connectionism]]; a third volume of exercises and software followed in 1988.
+    example: >-
+      Many deep-learning pioneers of the 2010s first met backpropagation in the Parallel Distributed
+      Processing volumes.
+origin: >-
+  The PDP Research Group formed around 1981 at the University of California, San Diego; contributors
+  included Rumelhart, McClelland, Hinton, Paul Smolensky, Michael Jordan and Terrence Sejnowski. The
+  backpropagation chapter appeared alongside the 1986 Nature paper by Rumelhart, Hinton and
+  Williams, 'Learning Representations by Back-Propagating Errors'.
+year: 1986
+note: >-
+  Not to be confused with DEC's PDP (Programmed Data Processor) minicomputers. Backpropagation
+  itself had earlier precursors, notably Seppo Linnainmaa (1970) and Paul Werbos (1974); see
+  [[backpropagation|backpropagation]].
+see_also:
+  - connectionism
+  - backpropagation
+  - David Rumelhart
+  - Geoffrey Hinton
+  - multilayer perceptron
+  - Perceptrons (book)
+sources:
+  - text: >-
+      Rumelhart, D. E., McClelland, J. L. & the PDP Research Group (1986). Parallel Distributed
+      Processing: Explorations in the Microstructure of Cognition. 2 vols. Cambridge, MA: MIT Press.
+  - text: >-
+      Rumelhart, D. E., Hinton, G. E. & Williams, R. J. (1986). Learning Representations by
+      Back-Propagating Errors. Nature 323, 533–536.

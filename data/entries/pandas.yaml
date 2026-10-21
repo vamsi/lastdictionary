@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pandas
+id: pandas
+pos: prop. n.
+also:
+  - DataFrame
+  - pandas DataFrame
+domain: eng
+domains:
+  - data
+  - ml
+labels:
+  - trademark
+level: core
+plain: >-
+  A free Python library for loading, cleaning, combining and summarizing tables of data, like a
+  programmable spreadsheet; it is a standard first tool for preparing data for machine learning.
+senses:
+  - definition: >-
+      An open-source Python library for data analysis built around the DataFrame, a two-dimensional
+      table with labeled rows and typed columns, and the Series, a labeled one-dimensional array. It
+      reads and writes CSV, Excel, JSON, SQL databases, Parquet and other formats, and provides
+      vectorized operations for selecting, filtering, joining and reshaping data, handling missing
+      values, grouping and aggregating ('split–apply–combine'), and working with time series. Built
+      on [[numpy|NumPy]] and increasingly on Apache Arrow, pandas is the usual tool for exploratory
+      analysis and [[feature-engineering|feature engineering]] in [[jupyter-notebook|notebooks]]
+      before data passes to libraries such as [[scikit-learn|scikit-learn]]. Its main limits are
+      that data must fit in one machine's memory and most operations use a single CPU core; newer
+      DataFrame libraries such as Polars, and distributed engines such as Apache Spark and Dask,
+      address scale while often imitating its interface.
+    example: >-
+      Load the logs into pandas, group by user and count sessions before building features.
+origin: >-
+  Created by Wes McKinney in 2008 at the investment firm AQR Capital Management for financial data
+  analysis and released as open source in 2009. The name derives from 'panel data', an econometrics
+  term for multidimensional data sets.
+year: 2008
+note: >-
+  Conventionally written in lowercase. Its DataFrame concept follows the data frame of the R
+  statistical language.
+see_also:
+  - NumPy
+  - scikit-learn
+  - Jupyter notebook
+  - feature engineering
+  - data pipeline
+sources:
+  - text: >-
+      McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the
+      9th Python in Science Conference (SciPy 2010).

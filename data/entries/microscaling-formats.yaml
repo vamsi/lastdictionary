@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: microscaling formats
+id: microscaling-formats
+pos: n.
+also:
+  - MX formats
+  - MX
+  - MXFP8
+  - MXFP6
+  - MXFP4
+  - MXINT8
+  - block floating point
+  - block-scaled formats
+domain: hw
+domains:
+  - infer
+  - train
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Number formats that store small groups of numbers with one shared scale factor, so each number can
+  use very few bits while the group as a whole stays accurate.
+senses:
+  - definition: >-
+      A family of block-scaled number formats in which a block of k elements (32 in the standard)
+      stored in a narrow type shares one 8-bit power-of-two scale (E8M0). The Open Compute Project's
+      MX specification defines MXFP8 (E4M3 or E5M2 elements), MXFP6 (E3M2, E2M3), MXFP4 (E2M1) and
+      MXINT8. Because the scale tracks the local magnitude of each small block, an outlier in one
+      block does not destroy precision elsewhere, letting 4- to 8-bit elements approach the accuracy
+      of 16-bit formats with modest overhead (an [[fp4|FP4]] block of 32 costs 4.25 bits per value).
+      [[tensor-core|Matrix units]] in Nvidia Blackwell, AMD MI350 and other accelerators apply the
+      scales in hardware. Variants with smaller blocks and finer scales, such as Nvidia's NVFP4
+      (16-element blocks with [[fp8|FP8]] scales), trade a little storage for accuracy.
+origin: >-
+  Grew out of block floating point, long used in signal processing, and Microsoft's MSFP formats for
+  its Brainwave FPGA service (c. 2018–2020). The OCP Microscaling Formats v1.0 specification was
+  released in September 2023 by AMD, Arm, Intel, Meta, Microsoft, Nvidia and Qualcomm; Bita Darvish
+  Rouhani and colleagues' accompanying paper (October 2023) reported sub-8-bit training of
+  generative language models.
+year: 2023
+see_also:
+  - FP4
+  - FP8
+  - floating-point format
+  - quantization
+  - INT8
+  - tensor core
+sources:
+  - text: >-
+      Open Compute Project (2023). OCP Microscaling Formats (MX) Specification, Version 1.0.
+    url: https://www.opencompute.org/documents/ocp-microscaling-formats-mx-v1-0-spec-final-pdf
+  - text: >-
+      Rouhani, B. D. et al. (2023). Microscaling Data Formats for Deep Learning. arXiv:2310.10537.
+    url: https://arxiv.org/abs/2310.10537

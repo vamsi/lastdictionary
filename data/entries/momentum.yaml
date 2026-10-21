@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: momentum
+id: momentum
+pos: n.
+also:
+  - heavy-ball method
+  - Polyak momentum
+  - Nesterov momentum
+  - Nesterov accelerated gradient
+  - SGD with momentum
+domain: dl
+domains:
+  - math
+level: core
+plain: >-
+  A training trick that lets each update keep part of the previous update's direction, like a ball
+  rolling downhill that builds up speed and coasts over small bumps.
+senses:
+  - definition: >-
+      A modification of [[gradient-descent|gradient descent]] that accumulates an exponentially
+      decaying sum of past gradients, the velocity, and steps along it instead of along the current
+      gradient alone; the momentum coefficient β is typically 0.9. Directions in which gradients
+      consistently agree build up speed while oscillating components cancel, which accelerates
+      progress along shallow, narrow valleys of the [[loss-landscape|loss landscape]] and damps the
+      noise of [[stochastic-gradient-descent|stochastic gradient descent]]. Nesterov's accelerated
+      variant evaluates the gradient at the look-ahead point the velocity is carrying the parameters
+      toward; on smooth convex problems it attains the optimal worst-case rate O(1/t²), against
+      O(1/t) for plain gradient descent. Momentum is built into most modern
+      [[optimizer|optimizers]]: [[adam|Adam]]'s first-moment estimate is a momentum term, and
+      [[muon|Muon]] orthogonalizes a momentum buffer.
+    example: >-
+      Dropping momentum from 0.9 to 0.5 stopped the oscillation but slowed convergence.
+formula_latex: v_{t+1} = \beta v_t + \nabla_{\theta} L(\theta_t), \qquad \theta_{t+1} = \theta_t - \eta \, v_{t+1}
+origin: >-
+  Boris Polyak introduced the 'heavy ball' method in 1964, and Yurii Nesterov's accelerated gradient
+  method followed in 1983. Rumelhart, Hinton and Williams used a momentum term in their 1986
+  backpropagation paper; Ilya Sutskever, James Martens, George Dahl and Geoffrey Hinton (2013)
+  showed that well-tuned momentum could train deep and recurrent networks once thought to need
+  second-order methods.
+year: 1964
+note: >-
+  Conventions differ: some libraries scale the gradient term by (1 − β), making the velocity an
+  exponential moving average and changing the effective learning rate by a factor of 1/(1 − β).
+see_also:
+  - stochastic gradient descent
+  - gradient descent
+  - Adam
+  - optimizer
+  - exponential moving average of weights
+  - Muon
+sources:
+  - text: >-
+      Polyak, B. T. (1964). Some methods of speeding up the convergence of iteration methods. USSR
+      Computational Mathematics and Mathematical Physics 4(5), 1–17.
+  - text: >-
+      Sutskever, I., Martens, J., Dahl, G. & Hinton, G. (2013). On the importance of initialization
+      and momentum in deep learning. ICML 2013.

@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Center for Human-Compatible AI
+id: center-for-human-compatible-ai
+pos: prop. n.
+also:
+  - CHAI
+  - Center for Human-Compatible Artificial Intelligence
+domain: orgs
+domains:
+  - safety
+level: specialist
+plain: >-
+  Stuart Russell's group at the University of California, Berkeley, which argues that AI should be
+  built to be unsure of what people want and to learn it by watching them.
+senses:
+  - definition: >-
+      A Berkeley research center, founded by Stuart Russell, whose program is to replace the
+      textbook approach to AI, in which a machine optimizes an objective fixed in advance, with
+      machines that know they are uncertain about human preferences and learn those preferences from
+      what people do. Its signature formalism,
+      [[cooperative-inverse-reinforcement-learning|cooperative inverse reinforcement learning]]
+      (2016), treats human–AI interaction as an 'assistance game' in which the machine maximizes the
+      human's reward without knowing what it is; the related [[off-switch-game|off-switch game]]
+      (2017) showed that such uncertainty can give an agent a reason to let itself be switched off.
+      CHAI researchers have also studied [[inverse-reinforcement-learning|preference learning]],
+      [[reward-hacking|reward hacking]], adversarial policies and the influence of recommender
+      systems on users, and the center has trained many alignment researchers.
+origin: >-
+  Founded in 2016 by Stuart Russell together with Berkeley colleagues including Pieter Abbeel, Anca
+  Dragan and Tom Griffiths, with an initial grant from the Open Philanthropy Project. Russell's book
+  Human Compatible (2019) presents its research program for general readers.
+year: 2016
+see_also:
+  - Stuart Russell
+  - cooperative inverse reinforcement learning
+  - off-switch game
+  - value alignment
+  - inverse reinforcement learning
+  - AI alignment
+sources:
+  - text: >-
+      Hadfield-Menell, D., Dragan, A., Abbeel, P. & Russell, S. (2016). Cooperative Inverse
+      Reinforcement Learning. NeurIPS 2016.
+  - text: >-
+      Russell, S. (2019). Human Compatible: Artificial Intelligence and the Problem of Control.
+      Viking.
+as_of: 2026-10

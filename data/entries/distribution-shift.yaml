@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: distribution shift
+id: distribution-shift
+pos: n.
+also:
+  - dataset shift
+  - domain shift
+  - data shift
+domain: data
+domains:
+  - ml
+  - eng
+level: core
+plain: >-
+  When the data an AI system meets in real use differs from the data it was trained on — new users,
+  places, times or habits — often making it perform worse than tests suggested.
+senses:
+  - definition: >-
+      A difference between the joint distribution of inputs and outputs in a model's training data
+      and in the data it faces at test or deployment time, violating the [[i-i-d|i.i.d.]] assumption
+      behind most performance estimates. Standard types are [[covariate-shift|covariate shift]] (the
+      input distribution changes while the input–output relationship holds), [[label-shift|label
+      shift]] (class proportions change while each class looks the same) and concept shift (the
+      relationship itself changes, as when the same symptoms indicate different diseases in another
+      population); applied work also speaks of temporal, geographic and subpopulation shift. Real
+      cases include medical models moved between hospitals, wildlife classifiers moved between
+      camera traps, and language models meeting slang or events after their
+      [[knowledge-cutoff|knowledge cutoff]]. Responses include collecting deployment-like data,
+      reweighting, domain adaptation, robust training objectives, monitoring for [[data-drift|data
+      drift]] and [[concept-drift|concept drift]], and evaluation on shifted benchmarks such as
+      WILDS.
+    example: >-
+      Accuracy fell from 94% to 71% at the second hospital — a textbook distribution shift.
+formula_latex: P_{\text{train}}(x, y) \neq P_{\text{test}}(x, y)
+origin: >-
+  Studied in statistics and econometrics as sample-selection and covariate-shift problems, and
+  gathered under the name 'dataset shift' in the edited volume Dataset Shift in Machine Learning
+  (Joaquin Quiñonero-Candela and colleagues, MIT Press, 2009). 'Distribution shift' had become the
+  usual deep-learning term by the early 2020s, when benchmarks such as WILDS (Pang Wei Koh and
+  colleagues, 2021) collected real-world shifts.
+note: >-
+  [[data-drift|data drift]] and [[concept-drift|concept drift]] are the MLOps names for shifts that
+  develop over time in production. A shift is not always harmful, and detecting one does not show
+  whether accuracy has fallen; that requires fresh labels.
+see_also:
+  - covariate shift
+  - label shift
+  - out-of-distribution
+  - data drift
+  - concept drift
+  - robustness
+  - transfer learning
+sources:
+  - text: >-
+      Quiñonero-Candela, J., Sugiyama, M., Schwaighofer, A. & Lawrence, N. D. (eds.) (2009). Dataset
+      Shift in Machine Learning. MIT Press.
+  - text: >-
+      Koh, P. W. et al. (2021). WILDS: A Benchmark of in-the-Wild Distribution Shifts. ICML 2021.
+      arXiv:2012.07421.
+    url: https://arxiv.org/abs/2012.07421

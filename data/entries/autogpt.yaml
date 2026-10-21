@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AutoGPT
+id: autogpt
+pos: prop. n.
+also:
+  - Auto-GPT
+domain: agents
+domains:
+  - hist
+  - culture
+labels:
+  - historical
+level: core
+plain: >-
+  A 2023 open-source program that gave GPT-4 a goal and let it run on its own — planning, searching
+  the web and writing files in a loop — becoming the first viral 'autonomous AI agent'.
+senses:
+  - definition: >-
+      An open-source Python application that wrapped OpenAI's GPT-4 (or GPT-3.5) in an autonomous
+      loop: given a name, a role and a few goals, the model repeatedly wrote out its next thought,
+      reasoning, plan and self-criticism, chose a command — web search, browsing, reading and
+      writing files, running code, starting helper instances — and received the result, with a
+      vector database as memory beyond its context window. Its striking demonstrations and failures
+      shaped public expectations of [[ai-agent|agents]]: runs often looped, lost track of progress,
+      invented results or ran up API bills without finishing, exposing the gap between model fluency
+      and reliable autonomy. The project later turned into a platform for building and running agent
+      workflows.
+    example: >-
+      Like many people in 2023, I watched AutoGPT burn through API credits while looping on the same
+      web search.
+origin: >-
+  Released on GitHub on 30 March 2023 by Toran Bruce Richards, founder of the games company
+  Significant Gravitas, two weeks after GPT-4. It became GitHub's top trending repository within
+  weeks and inspired many imitators, including [[babyagi|BabyAGI]] (April 2023).
+year: 2023
+note: >-
+  AutoGPT predated reliable [[function-calling|function calling]] and parsed commands from free
+  text, one reason for its brittleness. Its failures helped make [[stop-condition|stop conditions]],
+  human approval and narrowly scoped tasks standard agent design.
+see_also:
+  - AI agent
+  - BabyAGI
+  - agent loop
+  - stop condition
+  - agentic AI
+  - agent framework
+sources:
+  - text: Wikipedia. AutoGPT.
+    url: https://en.wikipedia.org/wiki/AutoGPT

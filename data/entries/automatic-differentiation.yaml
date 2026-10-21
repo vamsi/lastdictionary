@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: automatic differentiation
+id: automatic-differentiation
+pos: n.
+also:
+  - autodiff
+  - AD
+  - algorithmic differentiation
+  - autograd
+  - reverse-mode differentiation
+  - forward-mode differentiation
+  - differentiable programming
+domain: dl
+domains:
+  - math
+  - eng
+level: core
+plain: >-
+  A technique that lets a computer work out exactly how a program's output would change if its
+  inputs changed slightly, by tracking every arithmetic step. It lets AI software compute training
+  updates automatically.
+senses:
+  - definition: >-
+      A way of making a program that evaluates a function also produce that function's exact
+      derivatives (up to rounding), by breaking the computation into elementary operations whose
+      derivatives are known and combining them with the [[chain-rule|chain rule]]. It differs from
+      symbolic differentiation, which manipulates formulas and can blow up in size, and from finite
+      differences, which are approximate. Forward mode carries derivatives alongside values from
+      inputs to outputs (efficient for few inputs and many outputs; implementable with dual
+      numbers). Reverse mode records the computation and propagates sensitivities from outputs back
+      to inputs, giving the full gradient of a scalar loss with respect to millions or billions of
+      inputs for a small constant multiple of the cost of evaluating it; applied to neural networks,
+      it is [[backpropagation|backpropagation]]. Frameworks such as [[pytorch|PyTorch]], [[jax|JAX]]
+      and [[tensorflow|TensorFlow]] implement AD by recording operations into a
+      [[computational-graph|computational graph]] or transforming code, freeing researchers from
+      deriving gradients by hand; composing the two modes yields higher-order quantities such as
+      Hessian–vector products.
+origin: >-
+  Robert Wengert described forward-mode derivative evaluation by program in 1964; Seppo Linnainmaa
+  gave reverse mode in his 1970 master's thesis, and Bert Speelpenning built an early reverse-mode
+  program transformer in 1980. Andreas Griewank's work consolidated the field from the 1980s.
+  Machine learning rediscovered much of it independently, as surveyed by Atılım Güneş Baydin and
+  colleagues (2015; JMLR 2018).
+year: 1964
+note: >-
+  'Autograd' names both a 2015 Python library from Harvard and PyTorch's AD engine. AD
+  differentiates the program as executed, so loops and branches pose no problem, but operations with
+  zero or undefined derivatives (rounding, sampling) need workarounds such as the
+  [[straight-through-estimator|straight-through estimator]] or the
+  [[reparameterization-trick|reparameterization trick]].
+see_also:
+  - backpropagation
+  - computational graph
+  - chain rule
+  - Jacobian
+  - PyTorch
+  - JAX
+sources:
+  - text: >-
+      Baydin, A. G., Pearlmutter, B. A., Radul, A. A. & Siskind, J. M. (2018). Automatic
+      differentiation in machine learning: a survey. Journal of Machine Learning Research 18(153),
+      1–43.
+    url: https://arxiv.org/abs/1502.05767
+  - text: >-
+      Wengert, R. E. (1964). A simple automatic derivative evaluation program. Communications of the
+      ACM 7(8), 463–464.

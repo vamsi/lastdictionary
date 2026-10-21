@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: straggler
+id: straggler
+pos: n.
+also:
+  - stragglers
+  - slow node
+  - fail-slow
+  - straggler mitigation
+domain: hw
+domains:
+  - train
+  - eng
+level: specialist
+plain: >-
+  One slow computer or chip in a large group working in lockstep. Because everyone must wait for the
+  slowest member at each step, a single straggler can slow down an entire AI training job.
+senses:
+  - definition: >-
+      A worker (machine, accelerator, process or network link) that runs markedly slower than its
+      peers in a distributed computation, delaying every step that requires all workers to finish.
+      In synchronous large-model training, each step ends with collective operations such as
+      [[all-reduce|all-reduce]] that cannot complete until the slowest rank arrives, and
+      [[pipeline-parallelism|pipeline parallelism]] chains stages so that one slow stage stalls the
+      rest; across thousands of accelerators, some straggler is likely at any moment. Causes include
+      thermal or power throttling, degraded chips or memory, faulty cables and switches, congested
+      links, interfering host processes, data-loading stalls and garbage-collection pauses. Because
+      stragglers rarely crash a job, they show up as lost throughput, lowering [[goodput|goodput]]
+      and [[model-flops-utilization|model FLOPs utilization]]. Mitigations include per-rank timing
+      telemetry to locate the culprit, swapping slow nodes for hot spares, rebalancing work, backup
+      workers that let a step proceed without the slowest gradients, and asynchronous or partially
+      synchronous training.
+    example: >-
+      One GPU with a failing fan was throttling, and as a straggler it cut throughput for all 4,096
+      ranks by 30 percent.
+origin: >-
+  A general parallel-computing term, popularized by Jeffrey Dean and Sanjay Ghemawat's 2004
+  MapReduce paper, which named stragglers as a main cause of slow jobs and countered them with
+  speculative 'backup tasks'. Jianmin Chen and colleagues (2016) adapted the backup idea to
+  synchronous stochastic gradient descent, and straggler detection became a standard topic in
+  reports on clusters of tens of thousands of GPUs from 2024.
+year: 2004
+note: >-
+  A straggler is slow but correct; contrast [[silent-data-corruption|silent data corruption]], where
+  hardware is wrong but often not slow, and fail-stop faults, which crash the job and are handled by
+  checkpointing and restart. Related to the 'tail at scale' problem in serving, where rare slow
+  responses dominate overall latency.
+see_also:
+  - data parallelism
+  - all-reduce
+  - collective communication
+  - pipeline parallelism
+  - goodput
+  - silent data corruption
+  - AI supercomputer
+contrast:
+  - silent data corruption
+sources:
+  - text: >-
+      Dean, J. & Ghemawat, S. (2004). MapReduce: Simplified Data Processing on Large Clusters. Proc.
+      OSDI 2004.
+  - text: >-
+      Chen, J., Pan, X., Monga, R., Bengio, S. & Jozefowicz, R. (2016). Revisiting Distributed
+      Synchronous SGD. arXiv preprint.

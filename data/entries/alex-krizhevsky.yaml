@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Alex Krizhevsky
+id: alex-krizhevsky
+sort_as: Krizhevsky Alex
+pos: prop. n.
+domain: people
+domains:
+  - dl
+  - percep
+  - hist
+level: specialist
+plain: >-
+  A Canadian computer scientist who built AlexNet, the image-recognition network that was trained on
+  gaming graphics chips and whose 2012 contest win launched the deep learning boom.
+senses:
+  - definition: >-
+      Canadian computer scientist and principal author of [[alexnet|AlexNet]]. As a graduate student
+      of [[geoffrey-hinton|Geoffrey Hinton]] at the University of Toronto he created the CIFAR-10
+      and CIFAR-100 image datasets (2009) and wrote cuda-convnet, fast code for training
+      [[convolutional-neural-network|convolutional neural networks]] on Nvidia [[gpu|GPUs]]. With
+      [[ilya-sutskever|Ilya Sutskever]] and Hinton he trained AlexNet, an eight-layer network using
+      [[relu|ReLU]] activations, [[dropout|dropout]] and [[data-augmentation|data augmentation]],
+      split across two consumer graphics cards, which won the 2012 [[imagenet|ImageNet]] Large Scale
+      Visual Recognition Challenge with a top-5 error of 15.3 percent against 26.2 percent for the
+      runner-up. The result, published at NeurIPS 2012, persuaded much of [[computer-vision|computer
+      vision]] and the technology industry to adopt [[deep-learning|deep learning]]. He joined
+      Google when it acquired the trio's company, DNNresearch, in 2013, and has since kept a low
+      public profile.
+see_also:
+  - AlexNet
+  - ImageNet
+  - Geoffrey Hinton
+  - Ilya Sutskever
+  - convolutional neural network
+  - GPU
+  - deep learning revolution
+sources:
+  - text: >-
+      Krizhevsky, A., Sutskever, I. & Hinton, G. E. (2012). ImageNet Classification with Deep
+      Convolutional Neural Networks. Advances in Neural Information Processing Systems 25.
+  - text: >-
+      Krizhevsky, A. (2009). Learning Multiple Layers of Features from Tiny Images. Technical
+      report, University of Toronto.

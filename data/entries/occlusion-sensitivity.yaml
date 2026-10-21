@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: occlusion sensitivity
+id: occlusion-sensitivity
+pos: n.
+also:
+  - occlusion
+  - occlusion analysis
+  - occlusion map
+domain: interp
+domains:
+  - percep
+  - dl
+level: specialist
+plain: >-
+  Finding out which parts of an image matter to a model by covering them up one patch at a time and
+  watching how much the model's answer changes.
+senses:
+  - definition: >-
+      A perturbation-based [[feature-attribution|feature attribution]] method that slides an
+      occluding patch — gray, black, blurred or noise — across the input and records how the model's
+      score for a target class falls at each position, giving a heat map in which large drops mark
+      important regions. The idea extends to other data by masking words, time steps or groups of
+      tabular features. It needs only forward passes, so it is [[model-agnostic|model-agnostic]] and
+      easy to explain, but it is expensive (one forward pass per patch position), sensitive to patch
+      size and fill value, and can mislead because occluded images lie outside the training
+      distribution, so the model may react to the artificial patch itself. Randomized-mask variants
+      average over many random occlusions, and [[shap|SHAP]] and [[lime|LIME]] can be seen as
+      principled ways of aggregating many occlusions.
+    example: >-
+      Occlusion sensitivity showed the score for 'dog' collapsing only when the patch covered the
+      dog's face.
+origin: >-
+  Popularized for deep networks by Matthew D. Zeiler and Rob Fergus in 'Visualizing and
+  Understanding Convolutional Networks' (arXiv, November 2013; ECCV 2014), who showed that covering
+  a dog's face, rather than its surroundings, made a classifier lose confidence in 'dog'.
+year: 2013
+see_also:
+  - feature attribution
+  - saliency map
+  - SHAP
+  - LIME
+  - ablation
+  - model-agnostic
+sources:
+  - text: >-
+      Zeiler, M. D. & Fergus, R. (2014). Visualizing and Understanding Convolutional Networks.
+      Proceedings of ECCV 2014.

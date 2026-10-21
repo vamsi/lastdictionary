@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vision-language model
+id: vision-language-model
+pos: n.
+also:
+  - VLM
+  - visual language model
+  - large vision-language model
+  - LVLM
+domain: llm
+domains:
+  - percep
+  - robot
+level: core
+plain: >-
+  An AI model that understands images and text together — it can describe a photo, answer questions
+  about a chart or find the picture that matches a sentence.
+senses:
+  - definition: >-
+      A model trained jointly on visual and textual data to relate the two. The term covers two
+      families: contrastive dual encoders such as [[clip|CLIP]], which embed images and text in a
+      shared space for retrieval and [[zero-shot-learning|zero-shot]] classification but do not
+      generate text; and generative VLMs, which connect a vision encoder to a language model and
+      output text conditioned on images — captions, answers, extracted fields, reasoning about
+      diagrams. Since about 2023 'VLM' most often means the generative kind, a subtype of
+      [[multimodal-large-language-model|multimodal large language model]]. VLMs underpin
+      [[document-understanding|document understanding]], [[visual-question-answering|visual question
+      answering]] and screen-reading agents and, with action outputs added,
+      [[vision-language-action-model|vision-language-action models]] for robots.
+    example: >-
+      A small VLM pulls totals from scanned invoices more reliably than our old OCR pipeline.
+origin: >-
+  Joint vision-and-language pretraining dates to 2019 models such as ViLBERT and LXMERT, and
+  [[clip|CLIP]] (2021) made contrastive image–text models mainstream. DeepMind presented Flamingo
+  (2022) as a 'visual language model', and open generative VLMs multiplied after LLaVA (2023).
+year: 2019
+see_also:
+  - multimodal large language model
+  - CLIP
+  - visual question answering
+  - image captioning
+  - document understanding
+  - vision-language-action model
+  - vision transformer
+sources:
+  - text: >-
+      Alayrac, J.-B. et al. (2022). Flamingo: a Visual Language Model for Few-Shot Learning. NeurIPS
+      2022.
+  - text: >-
+      Liu, H., Li, C., Wu, Q. & Lee, Y. J. (2023). Visual Instruction Tuning. NeurIPS 2023.
+    url: https://arxiv.org/abs/2304.08485

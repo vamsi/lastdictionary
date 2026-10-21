@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: saddle point
+id: saddle-point
+pos: n.
+also:
+  - saddle
+  - minimax point
+  - saddle-point problem
+domain: math
+domains:
+  - dl
+  - gen
+level: specialist
+plain: >-
+  A spot on a surface that is a low point in one direction but a high point in another, like the
+  middle of a horse's saddle or a mountain pass.
+senses:
+  - context: Optimization
+    definition: >-
+      A stationary point of a function — one where the [[gradient|gradient]] is zero — that is
+      neither a local minimum nor a local maximum, because the function curves upward along some
+      directions and downward along others; for smooth functions the [[hessian|Hessian]] there has
+      eigenvalues of both signs. In high-dimensional non-convex problems such as neural-network
+      training, saddle points vastly outnumber [[local-minimum|local minima]], and an influential
+      2014 analysis argued that they and the plateaus around them, rather than bad minima, are the
+      main cause of slow training. Plain [[gradient-descent|gradient descent]] can linger near
+      saddles because gradients there are tiny, but noise from
+      [[stochastic-gradient-descent|stochastic gradient descent]] and [[momentum|momentum]] tends to
+      push iterates off along descending directions.
+    example: >-
+      The loss plateau was a saddle point; a little gradient noise was enough to escape it.
+  - context: Game theory
+    definition: >-
+      A solution of a min–max problem: a point that is a minimum with respect to one player's
+      variables and a maximum with respect to the other's, so neither can improve alone. Training a
+      [[generative-adversarial-network|generative adversarial network]] seeks such a point, and John
+      von Neumann's 1928 minimax theorem guarantees one for finite two-player zero-sum
+      [[game-theory|games]] in mixed strategies.
+formula_latex: f(x, y) = x^2 - y^2 \quad \text{(saddle point at the origin)}
+origin: >-
+  Named for the shape of a riding saddle; the English term is recorded in G. N. Watson's 1922
+  treatise on Bessel functions, in connection with the saddle-point method of asymptotic analysis.
+  Yann Dauphin and colleagues' 2014 paper on the 'saddle point problem' made it central to
+  deep-learning optimization.
+year: 1922
+see_also:
+  - local minimum
+  - Hessian
+  - loss landscape
+  - game theory
+  - generative adversarial network
+  - stochastic gradient descent
+sources:
+  - text: >-
+      Dauphin, Y. et al. (2014). Identifying and attacking the saddle point problem in
+      high-dimensional non-convex optimization. NeurIPS 2014.

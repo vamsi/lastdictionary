@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: crosscoder
+id: crosscoder
+pos: n.
+also:
+  - sparse crosscoder
+  - acausal crosscoder
+  - model-diffing crosscoder
+domain: interp
+domains:
+  - dl
+  - train
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A concept-finding tool that looks at several layers, or several versions of a model, at once, so
+  that one shared concept can be tracked wherever it appears.
+senses:
+  - definition: >-
+      A variant of the [[sparse-autoencoder|sparse autoencoder]] whose features read from and write
+      to several sets of [[activation|activations]] at once — multiple layers of one model, or the
+      same layer in multiple models — so that a single dictionary element captures a
+      [[feature-interpretability|feature]] wherever it is represented. Each feature has its own
+      encoder and decoder vector for each layer or model, and the sparsity penalty is applied to the
+      combined decoder norms. Across layers, crosscoders can untangle features that persist through
+      the [[residual-stream|residual stream]] and so simplify [[circuit|circuits]]. Across models —
+      for example a [[base-model|base model]] and its [[fine-tuning|fine-tuned]] chat version — they
+      support [[model-diffing|model diffing]]: features whose decoder norm is large for only one
+      model are candidates for what training added or removed. Later studies found that the sparsity
+      penalty can make shared features look model-specific and proposed corrected training
+      objectives.
+    example: >-
+      The crosscoder flagged a few dozen chat-only features, mostly about refusals and the assistant
+      persona.
+origin: >-
+  Introduced by Jack Lindsey, Adly Templeton, Jonathan Marcus, Thomas Conerly, Joshua Batson and
+  Chris Olah in 'Sparse Crosscoders for Cross-Layer Features and Model Diffing' (Anthropic,
+  Transformer Circuits Thread, October 2024).
+year: 2024
+see_also:
+  - sparse autoencoder
+  - transcoder
+  - model diffing
+  - dictionary learning
+  - residual stream
+  - superposition
+sources:
+  - text: >-
+      Lindsey, J., Templeton, A., Marcus, J., Conerly, T., Batson, J. & Olah, C. (2024). Sparse
+      Crosscoders for Cross-Layer Features and Model Diffing. Transformer Circuits Thread.

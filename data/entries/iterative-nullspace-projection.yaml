@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: iterative nullspace projection
+id: iterative-nullspace-projection
+pos: n.
+also:
+  - INLP
+  - iterative null-space projection
+domain: interp
+domains:
+  - society
+  - llm
+level: specialist
+plain: >-
+  An early method for removing a trait such as gender from a model's internal representations by
+  repeatedly training a simple detector for it and then flattening away whatever the detector relied
+  on.
+senses:
+  - definition: >-
+      A method for linear [[concept-erasure|concept erasure]] that trains a linear classifier to
+      predict a protected attribute (such as gender) from representations, projects the
+      representations onto the classifier's null space — the subspace the classifier cannot see —
+      and repeats until no linear classifier performs above chance. Composing the projections
+      removes the attribute's linearly decodable information while leaving orthogonal directions
+      untouched. It was used to debias [[word-embedding|word embeddings]] and to make classifiers
+      built on contextual representations, such as profession prediction from biographies, less
+      dependent on gender. It also underlies amnesic probing, which tests whether a model uses a
+      property by erasing it and measuring the change in behavior. Later methods such as R-LACE and
+      [[leace|LEACE]] erase with fewer dimensions removed and less collateral damage.
+    example: INLP needed 35 iterations before the gender classifier fell to chance accuracy.
+origin: >-
+  Introduced by Shauli Ravfogel, Yanai Elazar, Hila Gonen, Michael Twiton and Yoav Goldberg in 'Null
+  It Out: Guarding Protected Attributes by Iterative Nullspace Projection' (ACL 2020).
+year: 2020
+note: >-
+  Each iteration removes a whole direction, so INLP can strip more information than necessary, and
+  like all linear methods it guards only against linear classifiers.
+see_also:
+  - concept erasure
+  - LEACE
+  - directional ablation
+  - protected attribute
+  - word embedding
+  - probing
+sources:
+  - text: >-
+      Ravfogel, S., Elazar, Y., Gonen, H., Twiton, M. & Goldberg, Y. (2020). Null It Out: Guarding
+      Protected Attributes by Iterative Nullspace Projection. Proceedings of ACL 2020.

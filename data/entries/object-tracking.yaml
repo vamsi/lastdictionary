@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: object tracking
+id: object-tracking
+pos: n.
+also:
+  - visual object tracking
+  - multi-object tracking
+  - MOT
+  - single-object tracking
+  - tracking-by-detection
+  - SORT
+  - ByteTrack
+  - point tracking
+domain: percep
+domains:
+  - robot
+level: core
+plain: >-
+  Following objects from frame to frame in a video and keeping track of which is which, so a system
+  knows that the car it sees now is the same car it saw a second ago.
+senses:
+  - definition: >-
+      The task of estimating the trajectories of objects through a video while keeping each object's
+      identity consistent across frames. In single-object tracking, a target marked in the first
+      frame must be followed through changes of appearance and occlusion, classically with
+      correlation filters (2010) and later with Siamese networks (2016) and transformers.
+      Multi-object tracking (MOT) must follow every object of given classes; its dominant paradigm,
+      tracking-by-detection, runs an [[object-detection|object detector]] on each frame and
+      associates detections with existing tracks using predicted motion (often from a
+      [[kalman-filter|Kalman filter]]), overlap ([[intersection-over-union|intersection over
+      union]]) and appearance [[embedding|embeddings]], solved as an assignment problem with the
+      Hungarian algorithm. SORT (2016), DeepSORT (2017) and ByteTrack (2021) are standard baselines,
+      while end-to-end transformer trackers and video segmentation models such as
+      [[segment-anything-model|SAM 2]] track masks directly; point tracking follows arbitrary pixels
+      rather than objects. Metrics such as MOTA, IDF1 and HOTA weigh detection errors against
+      identity switches. Uses include traffic monitoring, sports analytics, autonomous driving,
+      retail analytics and surveillance.
+    example: >-
+      Identity switches spike at the intersection, where pedestrians pass behind the bus shelter.
+origin: >-
+  Tracking grew out of radar target tracking in the 1950s–70s, including Rudolf Kálmán's filter
+  (1960) and Donald Reid's multiple hypothesis tracking (1979). Visual tracking became a
+  computer-vision topic in the 1980s; Alex Bewley and colleagues' SORT (2016) set today's simple
+  tracking-by-detection baseline.
+note: >-
+  Following people across cameras or over time raises privacy and surveillance concerns beyond those
+  of one-off detection, and in some jurisdictions falls under biometric or data-protection law.
+see_also:
+  - object detection
+  - optical flow
+  - Kalman filter
+  - intersection over union
+  - Segment Anything Model
+  - AI surveillance
+sources:
+  - text: >-
+      Bewley, A., Ge, Z., Ott, L., Ramos, F. & Upcroft, B. (2016). Simple Online and Realtime
+      Tracking. ICIP 2016.
+  - text: >-
+      Zhang, Y. et al. (2022). ByteTrack: Multi-Object Tracking by Associating Every Detection Box.
+      ECCV 2022.

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: two-tower model
+id: two-tower-model
+pos: n.
+also:
+  - two-tower architecture
+  - dual encoder
+  - dual-encoder model
+  - two-tower retrieval
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  A design for recommendation and search in which one neural network turns users or queries into
+  lists of numbers and another does the same for items, so good matches can be found by quick
+  comparison.
+senses:
+  - definition: >-
+      A neural architecture for large-scale retrieval in which two separate networks (towers) map
+      the query side, such as a user and their context or a search query, and the candidate side,
+      such as an item or document, into [[embedding|embeddings]] in a shared vector space, scoring
+      relevance by [[dot-product|dot product]] or [[cosine-similarity|cosine similarity]]. Because
+      candidates are encoded independently of the query, every item embedding can be precomputed and
+      indexed, so retrieval from millions or billions of items reduces to
+      [[approximate-nearest-neighbor-search|approximate nearest neighbor search]] taking
+      milliseconds. The towers are trained on logged interactions with a contrastive or
+      sampled-softmax loss, commonly using the other items in a mini-batch as negatives, with
+      corrections for the popularity bias that this sampling introduces. The price of speed is that
+      query and item features never interact before the final score, so two-tower models usually
+      serve as the candidate-generation stage of a [[recommender-system|recommender system]],
+      followed by a ranking model that can use cross features. In text retrieval the same design is
+      called a [[bi-encoder|bi-encoder]] or dual encoder.
+    example: >-
+      The two-tower model retrieves 500 candidates in under ten milliseconds before the ranker takes
+      over.
+origin: >-
+  Descends from Microsoft's Deep Structured Semantic Model (DSSM) for web search (Po-Sen Huang and
+  colleagues, 2013), which encoded queries and documents with separate networks. YouTube's 2016 deep
+  candidate-generation model and a 2019 Google paper by Xinyang Yi and colleagues on correcting
+  sampling bias helped make 'two-tower' the standard industry term.
+year: 2013
+note: >-
+  Contrast [[cross-encoder|cross-encoders]] and ranking models, which score each query–item pair
+  jointly: more accurate, but far too slow to apply to a whole catalog.
+see_also:
+  - recommender system
+  - bi-encoder
+  - approximate nearest neighbor search
+  - embedding
+  - contrastive learning
+  - dense retrieval
+  - matrix factorization
+contrast:
+  - cross-encoder
+sources:
+  - text: >-
+      Huang, P.-S., He, X., Gao, J., Deng, L., Acero, A. & Heck, L. (2013). Learning Deep Structured
+      Semantic Models for Web Search using Clickthrough Data. Proc. CIKM 2013.
+  - text: >-
+      Covington, P., Adams, J. & Sargin, E. (2016). Deep Neural Networks for YouTube
+      Recommendations. Proc. RecSys 2016.
+  - text: >-
+      Yi, X. et al. (2019). Sampling-Bias-Corrected Neural Modeling for Large Corpus Item
+      Recommendations. Proc. RecSys 2019.

@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: biosecurity
+id: biosecurity
+pos: n.
+also:
+  - AI biosecurity
+  - AIxBio
+  - DNA synthesis screening
+domain: sec
+domains:
+  - gov
+  - safety
+level: core
+plain: >-
+  Protecting people from the deliberate or careless spread of dangerous germs and toxins; in AI,
+  making sure AI tools do not make it easier to create or release biological weapons.
+senses:
+  - definition: >-
+      Policies and practices that protect dangerous biological agents and toxins, and the knowledge
+      and technologies for producing them, against people who would steal them or deliberately cause
+      harm with them; biosafety, by contrast, deals with accidents such as laboratory infections. In
+      AI, biosecurity addresses how [[large-language-model|language models]], [[ai-agent|agents]]
+      and biological design tools (for protein structure, sequence design or genome engineering)
+      could lower barriers to producing dangerous pathogens or toxins, and how AI can strengthen
+      defenses. Measures include evaluating models for biological knowledge and
+      [[uplift-study|uplift]], refusing or filtering hazardous requests,
+      [[structured-access|restricting access]] to the most capable design tools, screening orders to
+      commercial DNA synthesis providers for sequences of concern and verifying customers, and using
+      AI for pathogen surveillance and medical countermeasures. It is the most prominent strand of
+      [[cbrn-risk|CBRN risk]] in AI policy.
+    example: >-
+      The biosecurity review covered both the protein-design model's release terms and its synthesis
+      partners' order screening.
+origin: >-
+  Long used in agriculture and public health, the word's sense of guarding against deliberate misuse
+  became prominent after the 2001 anthrax letters. AI biosecurity became prominent after Fabio
+  Urbina and colleagues reported in 2022 that a drug-discovery model with its objective inverted
+  proposed about 40,000 candidate toxic molecules in under six hours, and after 2023 studies and
+  policies, including US Executive Order 14110, addressed language models and DNA synthesis
+  screening.
+see_also:
+  - CBRN risk
+  - dual-use
+  - uplift study
+  - WMDP
+  - structured access
+  - misuse
+sources:
+  - text: >-
+      Urbina, F., Lentzos, F., Invernizzi, C. & Ekins, S. (2022). Dual use of
+      artificial-intelligence-powered drug discovery. Nature Machine Intelligence 4.

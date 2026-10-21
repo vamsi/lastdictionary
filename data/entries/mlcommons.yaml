@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MLCommons
+id: mlcommons
+pos: prop. n.
+also:
+  - AILuminate
+  - Croissant
+domain: orgs
+domains:
+  - eval
+  - hw
+level: specialist
+plain: >-
+  An industry and university consortium that runs MLPerf, the standard tests of how fast computers
+  train and run AI models, as well as benchmarks of AI safety.
+senses:
+  - definition: >-
+      A nonprofit consortium of chip makers, cloud providers, AI developers and universities that
+      maintains shared [[benchmark|benchmarks]] for measuring machine learning systems, together
+      with open datasets and data standards. Its [[mlperf|MLPerf]] suites are the industry's
+      standard comparisons of hardware and software speed for training (since 2018) and
+      [[inference|inference]] (since 2019): training results report the time to train reference
+      models to a target quality, and inference results report throughput and latency under defined
+      scenarios. Results are submitted by vendors and cloud providers such as Nvidia, AMD, Google
+      and Intel and checked by peer review among submitters. MLCommons also publishes AILuminate
+      (2024), a benchmark grading chatbot responses across categories of hazard, the Croissant
+      metadata format for machine learning datasets, and open datasets such as the People's Speech
+      corpus.
+    example: >-
+      The vendor's press release quoted its MLPerf Inference numbers, but only for the offline
+      scenario.
+origin: >-
+  Grew out of MLPerf, a benchmarking effort launched in 2018 by researchers from Google, Baidu,
+  Harvard, Stanford, the University of California, Berkeley, and other institutions; MLCommons was
+  established as a nonprofit in December 2020 to host MLPerf and related projects.
+year: 2020
+see_also:
+  - benchmark
+  - AI accelerator
+  - inference
+  - Nvidia
+  - evaluation
+as_of: 2026-10

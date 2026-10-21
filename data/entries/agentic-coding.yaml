@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agentic coding
+id: agentic-coding
+pos: n.
+also:
+  - agentic software engineering
+  - agentic engineering
+  - agent-assisted programming
+domain: agents
+domains:
+  - eng
+  - culture
+labels:
+  - emerging
+level: core
+plain: >-
+  Writing software by directing AI agents that plan, edit and test code themselves, with the human
+  acting more as a reviewer and manager than as the person typing every line.
+senses:
+  - definition: >-
+      A mode of software development in which a programmer delegates multi-step programming tasks to
+      [[coding-agent|coding agents]] — describing goals, constraints and acceptance criteria, then
+      reviewing plans, diffs and test results — rather than writing most code by hand or accepting
+      line-by-line completions. Typical practices include giving agents project context through
+      [[agent-instruction-file|instruction files]], asking for a plan before edits, letting agents
+      run tests and linters to check themselves, running several agents in parallel on separate
+      branches, and constraining them with [[permission-system|permissions]] and
+      [[sandbox|sandboxes]]. Proponents report large productivity gains on routine work; skeptics
+      point to review overload, weakening understanding of the codebase and mixed results in
+      controlled studies, such as METR's 2025 randomized trial in which experienced open-source
+      developers took 19% longer on tasks where early-2025 AI tools were allowed, while believing
+      the tools had sped them up by about 20%.
+    example: >-
+      Agentic coding changed my day: I write specs and review pull requests more than I write code.
+origin: >-
+  Anthropic introduced [[claude-code|Claude Code]] on 24 February 2025 as an 'agentic coding tool',
+  and the phrase spread through 2025 with OpenAI's [[codex|Codex]] and other coding agents. In early
+  February 2026 Andrej Karpathy, who had coined [[vibe-coding|vibe coding]] a year earlier, called
+  'agentic engineering' his current favorite name for the disciplined, professional practice, which
+  helped popularize that variant.
+year: 2025
+note: >-
+  Distinguished from [[vibe-coding|vibe coding]] (Karpathy, February 2025), in which the human
+  largely stops reading the code; agentic coding usually implies human review and engineering
+  discipline. The boundary is blurry and both terms are used loosely.
+see_also:
+  - coding agent
+  - vibe coding
+  - background agent
+  - agent instruction file
+  - Claude Code
+  - Codex
+contrast:
+  - vibe coding
+sources:
+  - text: Anthropic (2025). Claude 3.7 Sonnet and Claude Code. 24 February 2025.
+    url: https://anthropic.com/news/claude-3-7-sonnet
+  - text: >-
+      Becker, J., Rush, N., Barnes, E. & Rein, D. (2025). Measuring the Impact of Early-2025 AI on
+      Experienced Open-Source Developer Productivity. METR, arXiv:2507.09089.
+    url: https://arxiv.org/abs/2507.09089

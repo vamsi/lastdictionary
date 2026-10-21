@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: leaderboard
+id: leaderboard
+pos: n.
+also:
+  - leader board
+  - benchmark leaderboard
+domain: eval
+domains:
+  - culture
+level: essential
+plain: >-
+  A public ranking table showing which AI systems score best on a test, updated as new results
+  arrive — like a sports league table for models.
+senses:
+  - definition: >-
+      A ranked table of results on one or more [[benchmark|benchmarks]] or comparison platforms,
+      listing each system's score and usually its submitter, date and evaluation conditions.
+      Leaderboards may accept self-reported results, rerun submitted models under a standard
+      [[evaluation-harness|evaluation harness]], or compute rankings from live comparisons, as
+      [[lmarena|LMArena]] does from human votes using a [[bradley-terry-model|Bradley–Terry model]].
+      They make progress visible and competition concrete, but they reward small and sometimes
+      statistically insignificant margins, encourage tuning to the test, and can be distorted by
+      selective disclosure — for example when developers privately test many variants and publish
+      only the best. Good practice reports confidence intervals, verifies submissions, records the
+      scaffold or harness used, and keeps part of the test data hidden.
+    example: >-
+      It went from fifth to first on the leaderboard, but the confidence intervals of the top four
+      overlap.
+origin: >-
+  Public machine-learning leaderboards were popularized by the [[netflix-prize|Netflix Prize]]
+  (2006–2009) and [[kaggle|Kaggle]] competitions (from 2010), then by academic benchmarks such as
+  SQuAD (2016) and GLUE (2018) that hosted ranked result tables. Chatbot Arena (2023) and Hugging
+  Face's Open LLM Leaderboard (2023–2025) made them central to the language-model era.
+note: >-
+  Rank is not fitness for a particular use: a model can lead an aggregate table while trailing on
+  the tasks a given user cares about. The 2025 paper 'The Leaderboard Illusion' argued that private
+  testing and unequal data access had systematically favored large developers on Chatbot Arena.
+see_also:
+  - benchmark
+  - LMArena
+  - evaluation harness
+  - benchmark saturation
+  - benchmaxxing
+  - Kaggle
+  - Elo rating
+sources:
+  - text: Singh, S., Nan, Y. et al. (2025). The Leaderboard Illusion. arXiv:2504.20879.
+    url: https://arxiv.org/abs/2504.20879

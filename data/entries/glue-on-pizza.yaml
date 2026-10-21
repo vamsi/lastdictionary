@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: glue on pizza
+id: glue-on-pizza
+pos: n.
+also:
+  - glue pizza
+  - eat rocks
+  - glue-on-pizza moment
+domain: culture
+domains:
+  - llm
+  - eval
+labels:
+  - informal
+level: core
+plain: >-
+  A notorious 2024 blunder in which Google's AI search summaries told people to add glue to pizza
+  sauce, having taken an old joke from an online forum as genuine advice.
+senses:
+  - definition: >-
+      Shorthand for a 2024 episode in which Google's AI Overviews —
+      [[large-language-model|LLM]]-written summaries shown above search results — recommended mixing
+      non-toxic glue into pizza sauce to stop the cheese sliding off and, in answer to other
+      queries, advised eating a small rock a day. The answers drew on
+      [[retrieval-augmented-generation|retrieved]] sources: a joke comment posted on Reddit about a
+      decade earlier and a satirical article from The Onion, which the system treated as
+      authoritative. The phrase now names a characteristic failure of [[grounding|grounded]]
+      generation: faithfully summarizing a source that is itself unreliable, without judging its
+      credibility, intent or humor. It is cited in discussions of AI search quality, source ranking
+      and the risks of deploying generative features to billions of users.
+    example: >-
+      Retrieval fixes hallucination only if the retriever can tell a recipe from a joke — remember
+      glue on pizza.
+origin: >-
+  Google made AI Overviews available to all US users after its I/O conference on 14 May 2024;
+  screenshots of the glue and rock answers went viral the following week. On 30 May 2024 Liz Reid,
+  head of Google Search, acknowledged the errors, blamed satirical and troll content and gaps in
+  reliable information on unusual queries, and announced restrictions.
+year: 2024
+note: >-
+  Some viral screenshots of absurd AI Overviews were fabricated, but the glue and rock answers were
+  confirmed. Arguably not a [[hallucination|hallucination]] in the strict sense: the claims were
+  copied faithfully from real, if unserious, sources.
+see_also:
+  - retrieval-augmented generation
+  - grounding
+  - hallucination
+  - AI slop
+  - Gemini
+  - jagged intelligence

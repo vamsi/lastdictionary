@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: knowledge neuron
+id: knowledge-neuron
+pos: n.
+also:
+  - knowledge neurons
+  - knowledge neuron thesis
+domain: interp
+domains:
+  - llm
+labels:
+  - contested
+level: specialist
+plain: >-
+  An internal unit of a language model claimed to be responsible for storing a particular fact, such
+  that turning it up or down makes the model more or less likely to state that fact.
+senses:
+  - definition: >-
+      A neuron in the feed-forward ([[multilayer-perceptron|MLP]]) layers of a
+      [[transformer|transformer]] identified as contributing strongly to the model's expression of a
+      particular relational fact. Damai Dai and colleagues found such neurons in [[bert|BERT]] by
+      scoring MLP activations with an [[integrated-gradients|integrated gradients]]-style
+      attribution on cloze prompts for a fact and keeping the neurons that scored highly across
+      paraphrases; turning those neurons down made the right answer less likely, turning them up
+      made it more likely, and changing them could revise or delete the fact. The work built on Mor
+      Geva and colleagues' view of feed-forward layers as key–value memories. The broader 'knowledge
+      neuron thesis' — that facts are stored in a few identifiable neurons — has been criticized:
+      the same localization and editing methods work just as well on syntactic, non-factual
+      phenomena, effects are modest, and factual recall appears distributed, so the label is now
+      used with caution.
+    example: >-
+      Suppressing the two knowledge neurons cut the probability of 'Paris' by half, but did not
+      erase the fact.
+origin: >-
+  Introduced by Damai Dai, Li Dong, Yaru Hao, Zhifang Sui, Baobao Chang and Furu Wei in 'Knowledge
+  Neurons in Pretrained Transformers' (arXiv, April 2021; ACL 2022). Jingcheng Niu and colleagues'
+  'What does the Knowledge Neuron Thesis Have to do with Knowledge?' (ICLR 2024) named and
+  challenged the broader thesis.
+year: 2021
+see_also:
+  - model editing
+  - ROME
+  - causal tracing
+  - parametric knowledge
+  - polysemanticity
+  - feature attribution
+sources:
+  - text: >-
+      Dai, D., Dong, L., Hao, Y., Sui, Z., Chang, B. & Wei, F. (2022). Knowledge Neurons in
+      Pretrained Transformers. ACL 2022. arXiv:2104.08696.
+    url: https://arxiv.org/abs/2104.08696
+  - text: >-
+      Geva, M., Schuster, R., Berant, J. & Levy, O. (2021). Transformer Feed-Forward Layers Are
+      Key-Value Memories. EMNLP 2021.
+  - text: >-
+      Niu, J., Liu, A., Zhu, Z. & Penn, G. (2024). What does the Knowledge Neuron Thesis Have to do
+      with Knowledge? ICLR 2024. arXiv:2405.02421.
+    url: https://arxiv.org/abs/2405.02421

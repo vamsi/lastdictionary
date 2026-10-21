@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TensorRT-LLM
+id: tensorrt-llm
+pos: prop. n.
+domain: infer
+domains:
+  - eng
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  NVIDIA's free software library for running large language models as fast as possible on NVIDIA's
+  own graphics chips, used by many companies that host AI models.
+senses:
+  - definition: >-
+      NVIDIA's open-source engine for serving [[large-language-model|large language models]] as fast
+      as possible on its own [[gpu|GPUs]]. Much of the speed comes from model code written against
+      hand-tuned, fused [[cuda|CUDA]] kernels, including [[flashattention|FlashAttention]]-style
+      attention; for serving it adds paged [[kv-cache|KV cache]] management, in-flight batching
+      (NVIDIA's name for [[continuous-batching|continuous batching]]) and
+      [[speculative-decoding|speculative decoding]], supports [[quantization|quantization]] down to
+      INT4 and [[fp4|FP4]] as well as INT8 and [[fp8|FP8]], and splits large models across GPUs and
+      nodes with tensor, pipeline and expert parallelism. It began as a compiler-style workflow that
+      built an optimized TensorRT engine for each model and hardware configuration, and later added
+      a PyTorch-based runtime for faster model support. It often leads raw-speed comparisons on
+      NVIDIA hardware at the cost of portability, and serves as a back end for NVIDIA's Triton
+      Inference Server and Dynamo serving stack.
+    example: >-
+      Moving the model from vLLM to TensorRT-LLM with FP8 gave us another 30 percent throughput on
+      H100s.
+origin: >-
+  Announced by NVIDIA in September 2023 and released as open source that October, succeeding its
+  FasterTransformer library. It builds on TensorRT, NVIDIA's deep-learning inference optimizer,
+  introduced in 2016 (initially as the GPU Inference Engine).
+year: 2023
+see_also:
+  - vLLM
+  - SGLang
+  - model serving
+  - kernel fusion
+  - CUDA
+  - quantization
+as_of: 2026-10

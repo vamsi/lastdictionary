@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hyperparameter
+id: hyperparameter
+pos: n.
+also:
+  - hyper-parameter
+  - hyperparameters
+  - tuning parameter
+  - meta-parameter
+domain: ml
+domains:
+  - dl
+  - train
+level: core
+plain: >-
+  A setting chosen by people before training, such as how fast a model learns or how big it is, as
+  opposed to the internal values the model learns by itself from data.
+senses:
+  - definition: >-
+      A setting that shapes how a model learns or what form it takes, chosen by a practitioner or a
+      tuning procedure before training starts and left unchanged by the training algorithm itself.
+      Examples include the [[learning-rate|learning rate]], [[batch-size|batch size]], number of
+      training [[epoch|epochs]], [[regularization|regularization]] strength and [[dropout|dropout]]
+      rate, the number of layers, trees or clusters, a tree's maximum depth, the k of
+      [[k-nearest-neighbors|k-nearest neighbors]] and the kernel width of a
+      [[support-vector-machine|support vector machine]]. Hyperparameters contrast with
+      [[parameter|parameters]] such as [[weights|weights]], which the training algorithm optimizes.
+      They cannot be set by minimizing training loss, since a bigger model or weaker regularization
+      would always win, so they are chosen by measuring performance on held-out data through
+      [[hyperparameter-tuning|hyperparameter tuning]] with a [[validation-set|validation set]] or
+      [[cross-validation|cross-validation]]. In large-scale training, techniques such as
+      [[maximal-update-parametrization|maximal update parametrization]] and empirical
+      [[scaling-laws|scaling laws]] let settings tuned on small models transfer to large ones.
+      Generation settings such as [[temperature|temperature]] are sometimes loosely called
+      hyperparameters too.
+    example: >-
+      Once the hyperparameters were fixed, we retrained on all the data and shipped the model.
+origin: >-
+  From Bayesian statistics, where a hyperparameter is a parameter of a prior distribution, that is,
+  of the distribution over a model's parameters; the term was in use in hierarchical Bayesian work
+  by the early 1970s. Machine learning broadened it to any setting chosen outside the training loop,
+  a usage common in neural-network research by the 1990s.
+note: >-
+  The Bayesian sense survives: in a [[gaussian-process|Gaussian process]] or hierarchical model,
+  hyperparameters are prior parameters that may themselves be fitted by maximizing the marginal
+  likelihood.
+see_also:
+  - hyperparameter tuning
+  - parameter
+  - learning rate
+  - validation set
+  - cross-validation
+  - AutoML
+  - regularization
+contrast:
+  - parameter
+sources:
+  - text: >-
+      Lindley, D. V. & Smith, A. F. M. (1972). Bayes Estimates for the Linear Model. Journal of the
+      Royal Statistical Society, Series B 34(1).
+  - text: >-
+      Bergstra, J. & Bengio, Y. (2012). Random Search for Hyper-Parameter Optimization. Journal of
+      Machine Learning Research 13.

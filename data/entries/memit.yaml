@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MEMIT
+id: memit
+pos: abbr.
+also:
+  - Mass-Editing Memory in a Transformer
+domain: interp
+domains:
+  - train
+  - llm
+level: specialist
+plain: >-
+  A method for rewriting thousands of facts stored in a language model at once, by spreading small,
+  calculated weight changes across several of its layers.
+senses:
+  - definition: >-
+      Mass-Editing Memory in a Transformer: an extension of [[rome|ROME]] that inserts many factual
+      associations into a language model simultaneously. Rather than updating one MLP layer per
+      fact, MEMIT spreads the change for a batch of edits across a range of middle-layer MLP modules
+      that [[causal-tracing|causal tracing]] identifies as mediating factual recall, solving a
+      least-squares problem at each layer so that the new key–value pairs are stored while the
+      outputs for a large sample of existing keys are preserved. Applied to GPT-J (6 billion
+      parameters) and GPT-NeoX (20 billion), it scaled to thousands of simultaneous edits with
+      better generalization and specificity than earlier editing methods at that scale. Like other
+      locate-then-edit methods it can damage unrelated capabilities when used very heavily or
+      sequentially, and edited facts often fail to carry over to multi-step inferences.
+    example: We used MEMIT to update ten thousand outdated company facts in one pass.
+origin: >-
+  Introduced by Kevin Meng, Arnab Sen Sharma, Alex Andonian, Yonatan Belinkov and David Bau in
+  'Mass-Editing Memory in a Transformer' (October 2022; ICLR 2023).
+year: 2022
+see_also:
+  - ROME
+  - model editing
+  - causal tracing
+  - parametric knowledge
+  - machine unlearning
+sources:
+  - text: >-
+      Meng, K., Sen Sharma, A., Andonian, A., Belinkov, Y. & Bau, D. (2023). Mass-Editing Memory in
+      a Transformer. ICLR 2023. arXiv:2210.07229.
+    url: https://arxiv.org/abs/2210.07229

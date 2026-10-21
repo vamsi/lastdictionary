@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FPGA
+id: fpga
+pos: abbr.
+also:
+  - field-programmable gate array
+domain: hw
+domains:
+  - infer
+level: specialist
+plain: >-
+  A chip whose circuits can be rewired by software after it is made, so engineers can turn it into a
+  custom processor — slower than a purpose-built chip, but flexible.
+senses:
+  - definition: >-
+      An integrated circuit whose logic and wiring can be reconfigured after manufacture by loading
+      a configuration bitstream: a grid of lookup tables, flip-flops, hard multiply–accumulate (DSP)
+      blocks and on-chip RAM, linked by programmable routing. Designers describe circuits in
+      hardware description languages or high-level synthesis tools and can build custom datapaths
+      with arbitrary bit widths. In AI, FPGAs suit low-latency inference, network processing and
+      prototyping of [[asic|ASIC]] designs; Microsoft's Catapult and Brainwave projects used them to
+      accelerate Bing search and to serve neural networks in its data centers. Because they trail
+      [[gpu|GPUs]] and ASICs in peak throughput and are harder to program, FPGAs hold a niche rather
+      than a large share of AI compute.
+origin: >-
+  Xilinx shipped the first commercially viable FPGA, the XC2064, in 1985, following
+  programmable-logic devices such as Altera's EP300 (1984). Intel bought Altera in 2015 and AMD
+  acquired Xilinx in 2022.
+year: 1985
+see_also:
+  - ASIC
+  - AI accelerator
+  - GPU
+  - systolic array
+contrast:
+  - ASIC
+sources:
+  - text: >-
+      Putnam, A. et al. (2014). A Reconfigurable Fabric for Accelerating Large-Scale Datacenter
+      Services. Proceedings of ISCA 2014.

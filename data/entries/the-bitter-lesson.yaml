@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: the bitter lesson
+id: the-bitter-lesson
+pos: phr.
+also:
+  - bitter lesson
+domain: hist
+domains:
+  - core
+  - train
+labels:
+  - contested
+level: core
+plain: >-
+  The argument, made by AI pioneer Rich Sutton in 2019, that AI has advanced mostly through general
+  methods that use ever more computing power, not by programming in human knowledge.
+senses:
+  - definition: >-
+      The thesis, set out by [[richard-sutton|Richard Sutton]] in a short 2019 essay, that seventy
+      years of AI research teach one overriding lesson: 'general methods that leverage computation
+      are ultimately the most effective', and decisively so. Sutton described a recurring cycle.
+      Researchers encode what they know about a domain — hand-crafted chess knowledge, linguistic
+      rules, engineered visual features — and gain ground for a while, then stall, and are overtaken
+      as computing grows cheaper by methods that simply exploit more of it, chiefly search and
+      learning; his examples were chess, Go, speech recognition and computer vision. The lesson is
+      bitter because it devalues the researcher's insight into the problem. The essay became a
+      touchstone for the [[scaling-hypothesis|scaling hypothesis]] and for laboratories' heavy
+      investment in [[compute|compute]].
+    example: >-
+      Instead of hand-writing parsing rules, we took the bitter lesson to heart and trained on ten
+      times more data.
+origin: >-
+  Posted by Rich Sutton on his personal website, Incomplete Ideas, on 13 March 2019. Sutton shared
+  the 2024 [[turing-award|Turing Award]] with [[andrew-barto|Andrew Barto]] for foundational work in
+  reinforcement learning.
+year: 2019
+note: >-
+  Critics argue that architectures such as convolution and attention are themselves built-in
+  knowledge, and that scaling faces limits of data and energy. Sutton has said that language models
+  trained mainly on human-generated text do not fully follow his lesson.
+see_also:
+  - scaling hypothesis
+  - scaling laws
+  - compute
+  - Richard Sutton
+  - neats and scruffies
+  - deep learning revolution
+sources:
+  - text: >-
+      Sutton, R. S. (2019). The Bitter Lesson. Incomplete Ideas (personal website), 13 March 2019.

@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: global explanation
+id: global-explanation
+pos: n.
+also:
+  - model-level explanation
+  - global interpretability
+domain: interp
+domains:
+  - ml
+level: core
+plain: >-
+  An explanation of how an AI model behaves overall — which factors matter most across all its
+  decisions, and in what way — rather than why it made one particular decision.
+senses:
+  - definition: >-
+      An explanation of a model's behavior across its whole input distribution: which features
+      matter most on average, how predictions vary with each feature, what interactions exist, and
+      what rules approximate the decision logic. Tools include global [[feature-importance|feature
+      importance]] (permutation importance, mean absolute [[shap|SHAP]] values), effect plots
+      ([[partial-dependence-plot|partial dependence]], [[accumulated-local-effects|accumulated local
+      effects]]), global [[surrogate-model|surrogate models]] such as a shallow decision tree
+      trained to mimic the model, concept-level tests such as
+      [[testing-with-concept-activation-vectors|TCAV]], and, for neural networks,
+      [[mechanistic-interpretability|mechanistic interpretability]] analyses of internal circuits.
+      For an [[interpretable-model|interpretable model]], the model itself is the global
+      explanation. Global summaries suit validation, scientific insight and regulatory
+      documentation, but averaging can hide subgroups or individuals for whom the model behaves
+      differently.
+    example: >-
+      The global explanation said income dominated, yet for applicants under 25 the model leaned
+      mostly on account age.
+origin: >-
+  Rooted in 1990s rule-extraction work that sought overall descriptions of trained neural networks;
+  the global/local contrast became standard in explainable-AI surveys from about 2018.
+note: >-
+  A global explanation can be right on average and wrong for a specific case; pair it with
+  [[local-explanation|local explanations]] when individual decisions matter.
+see_also:
+  - local explanation
+  - partial dependence plot
+  - surrogate model
+  - feature importance
+  - interpretable model
+  - mechanistic interpretability
+contrast:
+  - local explanation

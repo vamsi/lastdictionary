@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: intended purpose
+id: intended-purpose
+pos: n.
+also:
+  - reasonably foreseeable misuse
+domain: gov
+domains:
+  - eng
+labels:
+  - legal
+level: specialist
+plain: >-
+  The use a maker says its AI system is meant for. In EU law, the rules that apply to a system
+  depend largely on this declared purpose.
+senses:
+  - definition: >-
+      Under the [[eu-ai-act|EU AI Act]], what the provider says an [[ai-system|AI system]] is for,
+      together with the particular setting and conditions in which it is meant to be used, as shown
+      by the provider's instructions for use, its marketing and sales claims and the technical
+      documentation. Intended purpose largely determines a system's legal classification — whether
+      it falls under an Annex III [[high-risk-ai-system|high-risk]] use — and the scope of its risk
+      management and [[conformity-assessment|conformity assessment]]. Providers must also allow for
+      'reasonably foreseeable misuse': uses outside the intended purpose that can be expected given
+      how people typically behave or how the system may interact with other systems, including other
+      AI. Changing a system's intended purpose so that it becomes high-risk makes whoever changed it
+      the provider.
+    example: >-
+      The vendor's documentation limits the intended purpose to internal search, so CV screening is
+      outside it.
+origin: >-
+  Taken from EU product-safety law, especially medical-device regulation, where the manufacturer's
+  stated intended purpose defines the product's regulatory class; carried into the 2021 AI Act
+  proposal.
+year: 2021
+note: >-
+  Hard to apply to [[general-purpose-ai|general-purpose AI]], which has no single intended purpose —
+  one reason the Act regulates [[general-purpose-ai-model|general-purpose AI models]] on a separate
+  track.
+see_also:
+  - high-risk AI system
+  - provider and deployer
+  - substantial modification
+  - conformity assessment
+  - general-purpose AI model
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(12) ('intended purpose'), Art. 3(13) ('reasonably
+  foreseeable misuse'); Art. 25(1)(c)

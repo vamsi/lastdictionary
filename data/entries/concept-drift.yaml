@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: concept drift
+id: concept-drift
+pos: n.
+also:
+  - concept shift
+  - real drift
+domain: eng
+domains:
+  - ml
+  - data
+level: core
+plain: >-
+  When the real-world link between what a model sees and the right answer changes over time — as
+  when spammers change tactics — so lessons the model learned no longer hold.
+senses:
+  - definition: >-
+      A change over time in the relationship between inputs and the target a model predicts, so that
+      the conditional distribution P(y | x) at deployment differs from the one learned in training.
+      A transaction pattern may stop indicating fraud once fraudsters adapt; words may carry
+      different sentiment as language shifts; a pandemic may change what predicts demand. Drift may
+      be sudden, gradual, incremental or recurring (as with seasons). Unlike [[data-drift|data
+      drift]], it can occur while input distributions stay the same, so it is usually detected
+      through falling accuracy on newly labeled data, error-rate monitoring, or stream-learning
+      detectors such as DDM (Drift Detection Method) and ADWIN (adaptive windowing). Remedies
+      include scheduled or triggered retraining, weighting recent data more heavily, sliding
+      training windows, [[online-learning|online learning]], and ensembles that retire stale
+      members.
+    example: >-
+      After the policy change, concept drift made last year's approval model systematically too
+      lenient.
+origin: >-
+  Introduced by Jeffrey Schlimmer and Richard Granger in a 1986 paper on incremental learning from
+  noisy data (the STAGGER system) in the journal Machine Learning. Gerhard Widmer and Miroslav
+  Kubat's 1996 study of learning under concept drift and hidden contexts helped establish the topic,
+  later central to data-stream mining and production [[mlops|MLOps]].
+year: 1986
+note: >-
+  In MLOps usage, any drift that reduces accuracy is often loosely called concept drift. The
+  research literature separates it from [[covariate-shift|covariate shift]] and [[label-shift|label
+  shift]].
+see_also:
+  - data drift
+  - distribution shift
+  - model monitoring
+  - online learning
+  - label shift
+  - covariate shift
+contrast:
+  - data drift
+sources:
+  - text: >-
+      Schlimmer, J. C. & Granger, R. H. (1986). Incremental Learning from Noisy Data. Machine
+      Learning 1(3).
+  - text: >-
+      Widmer, G. & Kubat, M. (1996). Learning in the Presence of Concept Drift and Hidden Contexts.
+      Machine Learning 23.

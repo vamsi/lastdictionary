@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: nonparametric model
+id: nonparametric-model
+pos: n.
+also:
+  - non-parametric model
+  - nonparametric method
+  - nonparametric statistics
+  - distribution-free method
+  - Bayesian nonparametrics
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A model that lets the data decide how complex it becomes: the more examples it gets, the more
+  detail it can capture — for instance, one that predicts by comparing a new case with every stored
+  example.
+senses:
+  - definition: >-
+      A statistical or machine-learning model with no fixed budget of parameters: its effective size
+      grows with the training set, so it makes only weak assumptions about the shape of the
+      relationship being learned. Despite the name, parameters are not absent but open-ended,
+      typically multiplying with the number of examples, and many such models keep the training data
+      itself as part of the model. Examples include [[k-nearest-neighbors|k-nearest neighbors]],
+      kernel [[density-estimation|density estimation]], kernel [[support-vector-machine|SVMs]]
+      (whose support vectors grow with the data), [[gaussian-process|Gaussian processes]],
+      [[decision-tree|decision trees]] grown without depth limits and their ensembles, and Bayesian
+      nonparametric models such as Dirichlet process mixtures. Such models can approximate a very
+      wide range of functions given enough data but tend to need more of it, cost more at prediction
+      time and suffer from the [[curse-of-dimensionality|curse of dimensionality]]. In classical
+      statistics, 'nonparametric' also denotes distribution-free tests, such as rank tests, that
+      assume no parametric family for the data.
+    example: >-
+      The nonparametric model captured the odd seasonal bump that our linear fit smoothed away.
+origin: >-
+  'Non-parametric' entered statistics in the early 1940s; the earliest known use is Jacob
+  Wolfowitz's 'Additive Partition Functions and a Class of Statistical Hypotheses' (Annals of
+  Mathematical Statistics, 1942), for the case where the functional forms of distributions are
+  unknown. Evelyn Fix and Joseph Hodges's nearest-neighbor rule (1951) and kernel density estimation
+  (Murray Rosenblatt, 1956; Emanuel Parzen, 1962) carried the idea into prediction and density
+  modeling.
+year: 1942
+see_also:
+  - parametric model
+  - k-nearest neighbors
+  - Gaussian process
+  - decision tree
+  - density estimation
+  - curse of dimensionality
+contrast:
+  - parametric model

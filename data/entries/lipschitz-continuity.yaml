@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Lipschitz continuity
+id: lipschitz-continuity
+pos: n.
+also:
+  - Lipschitz
+  - Lipschitz constant
+  - Lipschitz condition
+  - K-Lipschitz
+  - L-smoothness
+domain: math
+domains:
+  - sec
+  - gen
+level: specialist
+plain: >-
+  A guarantee that a function never changes too abruptly: its output can move at most a fixed
+  multiple of how far its input moves.
+senses:
+  - definition: >-
+      The property of a function f for which some constant K bounds the distance between f(x) and
+      f(y) by K times the distance between x and y, for all x and y; the smallest such K is the
+      Lipschitz constant, a global limit on steepness. For differentiable functions it equals the
+      largest norm of the derivative — for vector functions, the largest singular value of the
+      [[jacobian|Jacobian]]. It matters in machine learning in several ways:
+      [[gradient-descent|gradient descent]] provably converges with a [[learning-rate|learning
+      rate]] below 2/L when the gradient is L-Lipschitz (L-smoothness); the critic of a Wasserstein
+      GAN must be 1-Lipschitz to estimate the [[wasserstein-distance|Wasserstein distance]],
+      enforced by weight clipping, gradient penalties or spectral normalization; and small constants
+      yield [[certified-robustness|certified robustness]] against [[adversarial-example|adversarial
+      perturbations]]. A network's constant is bounded by the product of its layers' constants, a
+      bound that is often very loose.
+    example: >-
+      Spectral normalization keeps each layer 1-Lipschitz, so the whole discriminator is too.
+formula_latex: \lVert f(x) - f(y)\rVert \le K\,\lVert x - y\rVert \quad \text{for all } x, y
+origin: >-
+  Named after the German mathematician Rudolf Lipschitz, who used the condition in the 1860s and
+  1870s in work on Fourier series and on the existence and uniqueness of solutions to differential
+  equations. It rose to prominence in deep learning with the Wasserstein GAN (Martin Arjovsky,
+  Soumith Chintala and Léon Bottou, 2017) and spectral normalization (Takeru Miyato and colleagues,
+  2018).
+see_also:
+  - Wasserstein distance
+  - certified robustness
+  - adversarial robustness
+  - Jacobian
+  - generative adversarial network
+  - gradient descent
+sources:
+  - text: >-
+      Arjovsky, M., Chintala, S. & Bottou, L. (2017). Wasserstein GAN. arXiv:1701.07875.
+    url: https://arxiv.org/abs/1701.07875

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DeepSpeed
+id: deepspeed
+pos: prop. n.
+also:
+  - DeepSpeed library
+  - DeepSpeed-MoE
+  - DeepSpeed-Chat
+domain: train
+domains:
+  - eng
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  Free software from Microsoft for training and running AI models too big for ordinary tools, spread
+  over many chips; it is best known for a memory-saving technique called ZeRO.
+senses:
+  - definition: >-
+      An open-source software library from Microsoft that extends [[pytorch|PyTorch]] with
+      memory-saving and parallelization techniques for training and serving very large models across
+      many GPUs. Its centerpiece is [[zero|ZeRO]], which shards optimizer state, gradients and
+      parameters across data-parallel workers, with offloading to CPU memory and NVMe storage
+      (ZeRO-Offload, ZeRO-Infinity). It also provides [[3d-parallelism|3D parallelism]] in
+      combination with Megatron-style tensor parallelism — the pairing used for the
+      530-billion-parameter Megatron-Turing NLG — mixture-of-experts training and inference
+      (DeepSpeed-MoE), long-sequence training (DeepSpeed Ulysses),
+      [[mixed-precision-training|mixed-precision training]] utilities and a
+      reinforcement-learning-from-human-feedback pipeline (DeepSpeed-Chat, 2023). Applied through a
+      configuration file around ordinary PyTorch code, it was a principal route by which ZeRO-style
+      sharding reached open-source practice; PyTorch's native [[fully-sharded-data-parallel|FSDP]]
+      later offered an alternative.
+    example: >-
+      Switching on DeepSpeed's ZeRO-3 with CPU offload let the 30B model train on a single node.
+origin: >-
+  Open-sourced by Microsoft in February 2020 with the first stage of ZeRO (proposed in an October
+  2019 paper), which had been used to train the 17-billion-parameter Turing-NLG model; developed by
+  a team including Samyam Rajbhandari, Jeff Rasley, Olatunji Ruwase and Yuxiong He.
+year: 2020
+see_also:
+  - ZeRO
+  - fully sharded data parallel
+  - 3D parallelism
+  - Megatron-LM
+  - distributed training
+  - context parallelism
+sources:
+  - text: >-
+      Microsoft Research (2020). ZeRO & DeepSpeed: New system optimizations enable training models
+      with over 100 billion parameters. Microsoft Research Blog.
+    url: https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/
+as_of: 2026-10

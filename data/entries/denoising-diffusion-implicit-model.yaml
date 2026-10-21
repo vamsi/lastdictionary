@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: denoising diffusion implicit model
+id: denoising-diffusion-implicit-model
+pos: n.
+also:
+  - DDIM
+  - DDIM sampler
+  - DDIM inversion
+domain: gen
+domains:
+  - infer
+level: specialist
+plain: >-
+  A faster way to run a diffusion image generator that skips most of the steps and, for the same
+  starting noise, always gives the same picture.
+senses:
+  - definition: >-
+      A family of sampling procedures that reuse a [[denoising-diffusion-probabilistic-model|DDPM]]
+      exactly as trained: its authors showed that a whole family of non-Markovian noising processes
+      leads to the same training loss, so one trained [[diffusion-model|diffusion model]] supports
+      many samplers, including far faster ones, with no retraining. At each step the model's noise
+      prediction is used to estimate the clean image, which is then re-noised to the next, possibly
+      much lower, noise level; a parameter η interpolates between fully deterministic sampling (η =
+      0) and DDPM-like stochastic sampling (η = 1). Deterministic DDIM can take large jumps along a
+      subsequence of timesteps, which cut sampling time by a factor of 10 to 50 in the original
+      experiments, and it fixes a one-to-one correspondence between starting noise and image. That
+      correspondence allows meaningful interpolation between images in noise space and 'DDIM
+      inversion', which recovers the noise that would regenerate a given image, a common first step
+      in editing. DDIM corresponds to an Euler step of the probability-flow ODE.
+origin: >-
+  Introduced by Jiaming Song, Chenlin Meng and Stefano Ermon of Stanford in 'Denoising Diffusion
+  Implicit Models', posted in October 2020 and published at ICLR 2021.
+year: 2020
+see_also:
+  - diffusion sampler
+  - denoising diffusion probabilistic model
+  - score-based generative model
+  - instruction-based image editing
+  - consistency model
+sources:
+  - text: >-
+      Song, J., Meng, C. & Ermon, S. (2021). Denoising Diffusion Implicit Models. ICLR 2021.
+      arXiv:2010.02502.
+    url: https://arxiv.org/abs/2010.02502

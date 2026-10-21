@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hybrid search
+id: hybrid-search
+pos: n.
+also:
+  - hybrid retrieval
+domain: eng
+domains:
+  - agents
+level: core
+plain: >-
+  Searching two ways at once — by exact keywords and by meaning — and merging the results, so you
+  catch precise matches like product codes as well as differently worded matches.
+senses:
+  - definition: >-
+      Retrieval that runs [[sparse-retrieval|sparse]] (keyword, typically [[bm25|BM25]]) and
+      [[dense-retrieval|dense]] (embedding) search over the same collection and combines their
+      results into one ranking. Combination is either by rank — most often
+      [[reciprocal-rank-fusion|reciprocal rank fusion]], which needs no score calibration — or by a
+      weighted sum of normalized scores, with the weight tuned on labeled queries; some systems
+      instead score one model's sparse and dense outputs together. The two signals fail in different
+      ways: keywords catch exact names, codes and rare terms, while embeddings catch paraphrase and
+      synonymy, so hybrids are usually more robust than either alone. Hybrid search followed by
+      [[reranking|reranking]] is a common default first stage for
+      [[retrieval-augmented-generation|retrieval-augmented generation]].
+    example: >-
+      Switching to hybrid search fixed queries for part numbers without hurting the natural-language
+      ones.
+origin: >-
+  Fusing the outputs of several retrieval systems ('data fusion') is long-standing IR practice, for
+  example Edward Fox and Joseph Shaw's CombSUM and CombMNZ methods (TREC-2, 1993). The name 'hybrid
+  search' for keyword-plus-vector retrieval spread in the early 2020s, as vector databases and
+  search engines added both index types and RAG made the combination standard.
+see_also:
+  - reciprocal rank fusion
+  - sparse retrieval
+  - dense retrieval
+  - BM25
+  - reranking
+  - vector database
+  - retrieval-augmented generation
+sources:
+  - text: >-
+      Cormack, G. V., Clarke, C. L. A. & Büttcher, S. (2009). Reciprocal rank fusion outperforms
+      Condorcet and individual rank learning methods. SIGIR 2009: 758–759.
+    url: https://ir.webis.de/anthology/2009.sigirconf_conference-2009.146/

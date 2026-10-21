@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Amazon Mechanical Turk
+id: amazon-mechanical-turk
+pos: prop. n.
+also:
+  - MTurk
+  - AMT
+domain: data
+domains:
+  - society
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A website Amazon opened in 2005 that acts as a hiring hall for tiny online jobs, such as labeling
+  images for AI, which registered workers pick up and finish for a few cents each.
+senses:
+  - definition: >-
+      A [[crowdsourcing|crowdsourcing]] marketplace operated by Amazon that divides work into Human
+      Intelligence Tasks (HITs): a 'requester' posts batches of small, self-contained jobs —
+      transcribing a receipt, judging whether two product listings match, tagging an image — and
+      sets a price per task, 'workers' choose which to complete, and Amazon takes a commission. From
+      the late 2000s it was the leading source of cheap labels for machine-learning and
+      language-processing research, including much of [[imagenet|ImageNet]], and a major participant
+      pool for social-science experiments. Its weaknesses shaped later practice: uneven worker
+      quality, spam and, by the 2020s, workers quietly using language models to do text tasks. These
+      pushed requesters toward redundancy, qualification tests and, eventually, managed vendors and
+      expert platforms.
+    example: >-
+      We ran the pilot on Mechanical Turk with a qualification test and three workers per HIT.
+origin: >-
+  Launched publicly on 2 November 2005. The name recalls the Mechanical Turk, Wolfgang von
+  Kempelen's 18th-century chess 'automaton' that hid a human player inside; Amazon promoted the
+  service as 'artificial artificial intelligence' — human labor behind a software interface — and an
+  MTurk product director credited Jeff Bezos with the concept.
+year: 2005
+note: >-
+  A 2018 study of worker earnings found median pay of about two dollars an hour. A 2023 study
+  pointedly titled 'Artificial Artificial Artificial Intelligence' estimated that a third or more of
+  workers on one summarization task used language models.
+see_also:
+  - crowdsourcing
+  - data labeling
+  - ghost work
+  - ImageNet
+  - annotation
+sources:
+  - text: >-
+      Hara, K., Adams, A., Milland, K., Savage, S., Callison-Burch, C. & Bigham, J. P. (2018). A
+      Data-Driven Analysis of Workers' Earnings on Amazon Mechanical Turk. CHI 2018.
+      arXiv:1712.05796.
+    url: https://arxiv.org/abs/1712.05796
+  - text: >-
+      Veselovsky, V., Horta Ribeiro, M. & West, R. (2023). Artificial Artificial Artificial
+      Intelligence: Crowd Workers Widely Use Large Language Models for Text Production Tasks.
+      arXiv:2306.07899.
+    url: https://arxiv.org/abs/2306.07899

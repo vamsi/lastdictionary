@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Segment Anything Model
+id: segment-anything-model
+pos: prop. n.
+also:
+  - SAM
+  - SAM 2
+  - SAM 3
+  - Segment Anything
+  - SA-1B
+  - promptable concept segmentation
+domain: percep
+domains:
+  - dl
+  - data
+level: core
+plain: >-
+  A family of AI models from Meta that trace the exact outline of whatever you point to in a photo
+  or video, whether by clicking on it, drawing a box around it or, in newer versions, naming it.
+senses:
+  - definition: >-
+      A family of promptable segmentation [[foundation-model|foundation models]] released openly by
+      Meta. The original SAM (2023) has three parts: a heavy image encoder (a
+      [[vision-transformer|vision transformer]] pretrained as a [[masked-autoencoder|masked
+      autoencoder]]) that runs once per image; a prompt encoder for points, boxes or rough masks;
+      and a lightweight mask decoder that returns masks in tens of milliseconds, offering several
+      candidates with confidence scores when a prompt is ambiguous (a click on a shirt could mean
+      the shirt or the whole person). It was trained on SA-1B, about 1.1 billion masks on 11 million
+      licensed images, gathered with a 'data engine' in which model-assisted annotation gave way to
+      fully automatic mask generation. SAM 2 (2024) extended prompting to video with a streaming
+      memory that propagates masks across frames, and was faster on images. SAM 3 (November 2025)
+      added promptable concept segmentation: given a short noun phrase or example boxes, it finds,
+      segments and tracks every matching instance. SAM models are widely used for annotation, image
+      editing, medical and scientific imaging, and as components of larger vision systems.
+    example: >-
+      We used SAM to turn annotators' clicks into masks, which cut labeling time per image by more
+      than half.
+origin: >-
+  Introduced by Alexander Kirillov, Eric Mintun, Nikhila Ravi and colleagues at Meta AI's FAIR lab
+  in 'Segment Anything' (April 2023; ICCV 2023), with the model and dataset released openly. SAM 2
+  (Nikhila Ravi et al.) followed in July 2024, with its paper in August, and SAM 3 (Nicolas Carion
+  et al.) in November 2025.
+year: 2023
+note: >-
+  SAM produces masks without class names; naming what was segmented requires pairing it with a
+  detector or text-grounding model, or using SAM 3. SAM 3D (November 2025) is a pair of companion
+  models that reconstruct 3D objects and human bodies from single images.
+see_also:
+  - image segmentation
+  - instance segmentation
+  - foundation model
+  - vision transformer
+  - open-vocabulary detection
+  - annotation
+sources:
+  - text: Kirillov, A. et al. (2023). Segment Anything. ICCV 2023.
+    url: https://arxiv.org/abs/2304.02643
+  - text: >-
+      Ravi, N. et al. (2024). SAM 2: Segment Anything in Images and Videos. arXiv:2408.00714.
+    url: https://arxiv.org/abs/2408.00714
+  - text: >-
+      Carion, N. et al. (2025). SAM 3: Segment Anything with Concepts. arXiv:2511.16719.
+    url: https://arxiv.org/abs/2511.16719
+as_of: 2026-10

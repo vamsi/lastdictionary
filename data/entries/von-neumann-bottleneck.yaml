@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: von Neumann bottleneck
+id: von-neumann-bottleneck
+pos: n.
+pronunciation: von NOY-mun
+domain: hw
+domains:
+  - hist
+level: specialist
+plain: >-
+  The traffic jam caused by ordinary computers keeping data and processing in separate places, so
+  information must constantly shuttle back and forth through one narrow channel.
+senses:
+  - definition: >-
+      The limit on performance and energy efficiency imposed by the stored-program (von Neumann)
+      architecture, in which a processor and a separate memory exchange instructions and data over
+      one channel, so that the processor spends much of its time and energy waiting for, and moving,
+      data. Caches, wider buses and [[high-bandwidth-memory|high-bandwidth memory]] ease but do not
+      remove it. For [[neural-network|neural networks]], whose [[weights|weights]] must be read for
+      every input, the bottleneck motivates non-von Neumann designs that compute where data are
+      stored — [[analog-in-memory-computing|analog in-memory computing]], processing-near-memory and
+      [[neuromorphic-computing|neuromorphic]] chips — and dataflow accelerators that keep operands
+      in local [[sram|SRAM]].
+origin: >-
+  Coined by John Backus in his 1977 ACM Turing Award lecture, 'Can Programming Be Liberated from the
+  von Neumann Style?' (published in Communications of the ACM, August 1978), which criticized both
+  the hardware channel and the word-at-a-time programming style it imposed. The architecture traces
+  to John von Neumann's 'First Draft of a Report on the EDVAC' (1945).
+year: 1977
+note: >-
+  Backus's main target was programming languages; hardware designers later adopted the phrase in its
+  narrower physical sense. Compare [[memory-wall|memory wall]], a quantitative trend rather than an
+  architectural feature.
+see_also:
+  - memory wall
+  - analog in-memory computing
+  - neuromorphic computing
+  - memory bandwidth
+  - CPU
+sources:
+  - text: >-
+      Backus, J. (1978). Can Programming Be Liberated from the von Neumann Style? A Functional Style
+      and Its Algebra of Programs. Communications of the ACM 21(8).

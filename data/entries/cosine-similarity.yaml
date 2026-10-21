@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cosine similarity
+id: cosine-similarity
+pos: n.
+also:
+  - cosine distance
+  - cosine score
+  - cosine measure
+domain: math
+domains:
+  - agents
+  - llm
+level: core
+plain: >-
+  A score from −1 to 1 for how closely two lists of numbers point the same way, ignoring their size.
+  It is the standard test of whether two texts mean similar things.
+senses:
+  - definition: >-
+      A similarity score for two nonzero [[vector|vectors]] that compares only their directions.
+      Each vector is first divided by its Euclidean [[norm|norm]] and the two unit vectors are then
+      combined by a [[dot-product|dot product]], so the score equals the cosine of the angle between
+      them: 1 for vectors pointing the same way, 0 for orthogonal ones, −1 for opposite ones.
+      Discarding magnitude suits data in which size reflects something incidental, such as how long
+      a document is. It is the default metric for comparing [[text-embedding|text embeddings]] in
+      [[semantic-search|semantic search]], [[retrieval-augmented-generation|retrieval-augmented
+      generation]] and [[vector-database|vector databases]], and for scoring image–text pairs in
+      [[clip|CLIP]]-style [[contrastive-learning|contrastive learning]]. For unit-length vectors it
+      equals the dot product, and squared [[euclidean-distance|Euclidean distance]] equals 2 − 2 ×
+      cosine similarity, so all three give the same ranking. Cosine distance, one minus the
+      similarity, is not a true metric because it can violate the triangle inequality.
+    example: Anything below 0.75 cosine similarity to the query is dropped before reranking.
+formula_latex: \cos(\mathbf{a},\mathbf{b}) =
+  \frac{\mathbf{a}\cdot\mathbf{b}}{\lVert\mathbf{a}\rVert\,\lVert\mathbf{b}\rVert}
+origin: >-
+  The angle between vectors is classical geometry, but the cosine became a standard similarity score
+  in information retrieval through Gerard Salton's SMART retrieval system, developed from the 1960s,
+  and was codified in the vector space model of Salton, Andrew Wong and Chung-Shu Yang (1975). It
+  passed to word embeddings such as word2vec (2013) and then to modern embedding search.
+year: 1975
+note: >-
+  Not the same as Pearson [[correlation|correlation]], which subtracts each vector's mean first.
+  Embeddings from one model often share a common direction that inflates every similarity, so scores
+  are comparable only within a single embedding model.
+see_also:
+  - dot product
+  - Euclidean distance
+  - text embedding
+  - vector search
+  - semantic search
+  - norm
+  - embedding
+contrast:
+  - Euclidean distance
+sources:
+  - text: >-
+      Salton, G., Wong, A. & Yang, C. S. (1975). A Vector Space Model for Automatic Indexing.
+      Communications of the ACM, 18(11).

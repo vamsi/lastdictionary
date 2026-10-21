@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: logistic regression
+id: logistic-regression
+pos: n.
+also:
+  - logit model
+  - logit regression
+  - multinomial logistic regression
+  - softmax regression
+  - maximum entropy classifier
+  - MaxEnt classifier
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  A simple, widely used method for yes-or-no predictions that outputs a probability — say, a 70%
+  chance a customer cancels — by passing a weighted sum of inputs through an S-shaped curve.
+senses:
+  - definition: >-
+      A [[generalized-linear-model|generalized linear model]] for [[binary-classification|binary
+      classification]] in which the probability of the positive class is the logistic
+      [[sigmoid-function|sigmoid function]] of a weighted sum of the inputs — equivalently, the
+      log-odds are linear in the inputs. Weights are fit by [[maximum-likelihood-estimation|maximum
+      likelihood estimation]] — equivalently, by minimizing [[log-loss|log loss]] (binary
+      [[cross-entropy|cross-entropy]]) — a convex problem solved by Newton-type methods such as
+      iteratively reweighted least squares or by gradient descent, usually with L2 or L1
+      [[regularization|regularization]]. Each coefficient is the change in log-odds per unit of its
+      feature and exponentiates to an odds ratio. The multinomial (softmax) generalization handles
+      [[multiclass-classification|multiclass classification]]. Its [[decision-boundary|decision
+      boundary]] is linear and its probabilities are often reasonably calibrated, making it a
+      standard baseline in medicine, credit scoring and the social sciences. A neural network's
+      final sigmoid or [[softmax|softmax]] layer is a logistic regression on learned features.
+    example: >-
+      Logistic regression on five clinical variables matched the boosted model's AUC and was far
+      easier to explain to doctors.
+formula_latex: P(y = 1 \mid \mathbf{x}) = \sigma(\mathbf{w}^{\top}\mathbf{x} + b) = \frac{1}{1 +
+  e^{-(\mathbf{w}^{\top}\mathbf{x} + b)}}
+origin: >-
+  Pierre-François Verhulst named the logistic curve in the 1830s–1840s as a model of population
+  growth. Joseph Berkson coined 'logit' in 1944, by analogy with Chester Bliss's 'probit' (1934),
+  and advocated the logistic model for bioassay; David Cox's 1958 paper on binary regression and his
+  book 'The Analysis of Binary Data' (1970) established it as a general method. Cox (1966) and Henri
+  Theil (1969) introduced the multinomial form.
+year: 1944
+note: >-
+  A classification method despite the name: it regresses the log-odds, a continuous quantity. Not to
+  be confused with the neural-network usage of [[logit|logit]] for any unnormalized score.
+  Generative counterpart: [[naive-bayes|naive Bayes]].
+see_also:
+  - sigmoid function
+  - logit
+  - generalized linear model
+  - binary classification
+  - log loss
+  - maximum likelihood estimation
+  - softmax
+contrast:
+  - linear regression
+  - naive Bayes
+sources:
+  - text: >-
+      Berkson, J. (1944). Application of the Logistic Function to Bio-Assay. Journal of the American
+      Statistical Association, 39(227), 357–365.
+  - text: >-
+      Cox, D. R. (1958). The Regression Analysis of Binary Sequences. Journal of the Royal
+      Statistical Society, Series B, 20(2), 215–242.

@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DenseNet
+id: densenet
+pos: prop. n.
+also:
+  - densely connected convolutional network
+  - dense block
+  - DenseNet-121
+domain: dl
+domains:
+  - percep
+level: specialist
+plain: >-
+  An image-recognition network in which every layer receives the outputs of all the layers before
+  it, so features are reused rather than relearned.
+senses:
+  - definition: >-
+      A [[convolutional-neural-network|convolutional neural network]] architecture whose dense
+      blocks wire every layer straight to every later layer in the same block: each layer's input is
+      the channel-wise concatenation of the [[feature-map|feature maps]] of all layers before it,
+      which for L layers makes L(L + 1)/2 direct connections. Because each layer contributes only a
+      few new channels to this shared pool (the 'growth rate', such as 32), earlier features are
+      reused rather than recomputed; between blocks, transition layers with 1 × 1 convolutions and
+      pooling compress and downsample. Where [[resnet|ResNet]] adds a block's input to its output,
+      DenseNet concatenates; the design reached strong accuracy with comparatively few parameters
+      and passes gradients easily, but storing all the concatenated activations takes much memory.
+      DenseNet-121 became a common backbone in medical imaging.
+    example: >-
+      We used an ImageNet-pretrained DenseNet-121, the usual choice for chest X-ray classifiers.
+origin: >-
+  Introduced by Gao Huang, Zhuang Liu, Laurens van der Maaten and Kilian Weinberger in 'Densely
+  Connected Convolutional Networks' (arXiv, August 2016), which won a best-paper award at CVPR 2017.
+year: 2016
+see_also:
+  - ResNet
+  - residual connection
+  - convolutional neural network
+  - feature map
+  - U-Net
+sources:
+  - text: >-
+      Huang, G., Liu, Z., van der Maaten, L. & Weinberger, K. Q. (2016). Densely Connected
+      Convolutional Networks. arXiv:1608.06993; CVPR 2017.
+    url: https://arxiv.org/abs/1608.06993

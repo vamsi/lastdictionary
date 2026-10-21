@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: direct preference optimization
+id: direct-preference-optimization
+pos: n.
+also:
+  - DPO
+domain: train
+domains:
+  - llm
+  - rl
+level: core
+plain: >-
+  A simpler way to teach an AI people's preferences: instead of building a separate scoring model,
+  it trains directly on pairs of better and worse answers, making the better ones more likely.
+senses:
+  - definition: >-
+      An offline method for aligning a language model with [[preference-data|preference data]] that
+      optimizes the same KL-regularized objective as
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]]
+      without training a separate [[reward-model|reward model]] or running reinforcement learning.
+      Its key observation is that the optimal policy under a [[kl-penalty|KL penalty]] is a
+      reweighting of the [[reference-model|reference model]], so the reward can be rewritten as β
+      times the log-ratio of policy to reference probabilities; substituting this into the
+      [[bradley-terry-model|Bradley–Terry]] likelihood turns preference learning into a logistic
+      loss on (prompt, chosen, rejected) triples. Needing no sampling during training and few
+      hyperparameters, DPO is cheap and stable, and it became the default preference-tuning method
+      for open-weight models from late 2023. Weaknesses include overfitting when preferences are
+      near-deterministic, sensitivity to whether data are on-policy, a tendency to lower the
+      likelihood of both responses, and exploitation of length. Variants include IPO, cDPO, ORPO,
+      SimPO, online or iterative DPO and [[kahneman-tversky-optimization|KTO]].
+    example: >-
+      We swapped PPO for DPO, and the whole preference stage now trains in an afternoon on one node.
+formula_latex: \mathcal{L}_{\mathrm{DPO}} = -\,\mathbb{E}\left[\log \sigma\!\left(\beta \log
+  \frac{\pi_\theta(y_w \mid x)}{\pi_{\mathrm{ref}}(y_w \mid x)} - \beta \log \frac{\pi_\theta(y_l
+  \mid x)}{\pi_{\mathrm{ref}}(y_l \mid x)}\right)\right]
+origin: >-
+  Introduced by Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher Manning
+  and Chelsea Finn of Stanford in May 2023, under the subtitle 'Your Language Model is Secretly a
+  Reward Model' (NeurIPS 2023). Uptake was rapid in open models such as Zephyr (October 2023) and
+  Mixtral-Instruct, and Meta's Llama 3 (2024) used DPO rather than PPO in post-training.
+year: 2023
+note: >-
+  Whether DPO matches well-tuned PPO-based RLHF is debated: several studies found online RL ahead on
+  hard tasks, others found little gap at modest scale. DPO belongs to the family called
+  [[direct-alignment-algorithm|direct alignment algorithms]].
+see_also:
+  - reinforcement learning from human feedback
+  - preference data
+  - reference model
+  - KL penalty
+  - Kahneman–Tversky optimization
+  - Bradley–Terry model
+  - direct alignment algorithm
+contrast:
+  - proximal policy optimization
+  - reward model
+sources:
+  - text: >-
+      Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C. D. & Finn, C. (2023). Direct
+      Preference Optimization: Your Language Model is Secretly a Reward Model. NeurIPS 2023.
+      arXiv:2305.18290.
+    url: https://arxiv.org/abs/2305.18290v1

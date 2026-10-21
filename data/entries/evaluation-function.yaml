@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: evaluation function
+id: evaluation-function
+pos: n.
+also:
+  - static evaluation function
+  - heuristic evaluation function
+  - position evaluation
+  - horizon effect
+  - quiescence search
+  - NNUE
+domain: sym
+domains:
+  - rl
+level: specialist
+plain: >-
+  In a game-playing program, a formula that looks at a board position and gives it a score saying
+  how good it is, without playing the game out to the end.
+senses:
+  - context: Game playing
+    definition: >-
+      A function that estimates the value of a non-terminal game position from one player's point of
+      view, applied at the frontier of a depth-limited [[game-tree|game tree]] search such as
+      [[minimax|minimax]] with [[alpha-beta-pruning|alpha–beta pruning]]. Classical evaluation
+      functions are weighted sums of hand-designed features — material balance, mobility, king
+      safety and pawn structure in chess — with weights set by hand or tuned automatically. Because
+      a fixed depth cutoff can misjudge positions in the middle of an exchange (the horizon effect),
+      programs extend the search in volatile positions (quiescence search). Since 2016 learned
+      evaluations have dominated: [[alphago|AlphaGo]] and [[alphazero|AlphaZero]] use a neural
+      [[value-function|value function]], and the chess engine Stockfish adopted an efficiently
+      updatable neural network (NNUE) evaluation in 2020.
+origin: >-
+  Claude Shannon's 1950 paper proposed scoring chess positions by weighted features such as material
+  and mobility, and Alan Turing hand-simulated a similar scheme around the same time. Arthur
+  Samuel's checkers program (reported 1959) adjusted its evaluation weights from experience, one of
+  the first instances of machine learning.
+year: 1950
+note: >-
+  Specific to game search; in machine learning, 'evaluation' usually means measuring model
+  performance. The nearest learned analogue is the [[value-function|value function]] of
+  [[reinforcement-learning|reinforcement learning]].
+see_also:
+  - minimax
+  - alpha–beta pruning
+  - game tree
+  - value function
+  - heuristic
+  - Arthur Samuel
+sources:
+  - text: >-
+      Shannon, C. E. (1950). Programming a Computer for Playing Chess. Philosophical Magazine
+      41(314), 256–275.
+  - text: >-
+      Samuel, A. L. (1959). Some Studies in Machine Learning Using the Game of Checkers. IBM Journal
+      of Research and Development 3(3), 210–229.

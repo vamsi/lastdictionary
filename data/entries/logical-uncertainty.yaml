@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: logical uncertainty
+id: logical-uncertainty
+pos: n.
+also:
+  - logical omniscience
+domain: math
+domains:
+  - safety
+  - mind
+level: specialist
+plain: >-
+  Uncertainty about math or logic facts that are settled in principle but that you haven't worked
+  out yet — like not knowing a distant digit of pi until you compute it.
+senses:
+  - definition: >-
+      Uncertainty about the truth of logical or mathematical statements that are fully determined by
+      known premises but have not yet been proved or computed, such as whether a large number is
+      prime before it is checked. Standard [[probability|probability]] theory and
+      [[bayesian-inference|Bayesian inference]] assume logical omniscience — every theorem receives
+      probability 1 — so they can neither represent such doubts nor say how a reasoner with limited
+      computation should bet on them. The problem matters for [[bounded-rationality|bounded agents]]
+      generally, for reasoning about the outputs of programs, including an agent's own future
+      decisions, and for decision theories that need logical counterfactuals. Proposed treatments
+      include Ian Hacking's relaxation of logical omniscience (1967), Haim Gaifman's
+      resource-bounded probabilities for arithmetical sentences (2004) and
+      [[logical-induction|logical induction]] (2016), which satisfies many desirable criteria at
+      once.
+    example: >-
+      Before running the primality test, a logically uncertain agent might put 30% on the number
+      being prime.
+origin: >-
+  The philosophical problem of logical omniscience was raised by Ian Hacking in 'Slightly More
+  Realistic Personal Probability' (1967) and by others. 'Logical uncertainty' became a named
+  research problem in the Machine Intelligence Research Institute's agent-foundations agenda, set
+  out by Nate Soares and Benja Fallenstein in 2014–2015, which led to logical induction.
+year: 1967
+see_also:
+  - logical induction
+  - embedded agency
+  - updateless decision theory
+  - Bayesian inference
+  - bounded rationality
+  - Machine Intelligence Research Institute
+sources:
+  - text: >-
+      Hacking, I. (1967). Slightly More Realistic Personal Probability. Philosophy of Science 34(4).
+  - text: >-
+      Gaifman, H. (2004). Reasoning with Limited Resources and Assigning Probabilities to
+      Arithmetical Statements. Synthese 140.
+  - text: >-
+      Soares, N. & Fallenstein, B. (2015). Questions of Reasoning Under Logical Uncertainty. Machine
+      Intelligence Research Institute technical report.

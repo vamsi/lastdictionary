@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pretraining data
+id: pretraining-data
+pos: n.
+also:
+  - pre-training data
+  - pretraining corpus
+  - pretraining dataset
+domain: data
+domains:
+  - train
+  - llm
+level: core
+plain: >-
+  The enormous body of text, code and other material — mostly from the web — that a large AI model
+  first learns from, before it is tuned to follow instructions or chat.
+senses:
+  - definition: >-
+      The large, mostly unlabeled corpus used in [[pretraining|pretraining]] to give a
+      [[foundation-model|foundation model]] general knowledge and skills through
+      [[self-supervised-learning|self-supervised learning]], usually
+      [[next-token-prediction|next-token prediction]]. For [[large-language-model|language models]]
+      it typically combines filtered web text derived from [[common-crawl|Common Crawl]] (usually
+      the largest share) with source code, books, scientific papers, encyclopedias, forums,
+      mathematics and multilingual text, plus a growing share of [[synthetic-data|synthetic data]];
+      multimodal models add image–text pairs, video and audio. Scale grew from about 300 billion
+      training tokens for [[gpt-3|GPT-3]] (2020) to over 15 trillion for Llama 3 (2024) and several
+      tens of trillions for later open models. What matters is not only size but the
+      [[data-mixture|data mixture]], [[deduplication|deduplication]], [[quality-filtering|quality
+      filtering]], decontamination, and the order of data, including high-quality material saved for
+      late in training. Most developers disclose little about it; the EU AI Act requires providers
+      of general-purpose models to publish a summary of their training content.
+    example: >-
+      We doubled the share of code in the pretraining data and saw reasoning scores rise.
+origin: >-
+  Follows the pretrain-then-fine-tune paradigm of the late 2010s — ELMo, GPT and BERT (2018) — in
+  which a model first learns from a large unlabeled corpus and is then adapted to tasks;
+  'pretraining data' became a standard phrase as the corpora themselves became objects of research
+  and dispute.
+note: >-
+  Distinguish pretraining data from post-training data such as [[instruction-dataset|instruction
+  datasets]] and [[preference-data|preference data]], which are far smaller and mostly curated.
+  Whether fresh human-written text can keep pace with demand is the [[data-wall|data wall]]
+  question.
+see_also:
+  - pretraining
+  - corpus
+  - data mixture
+  - Common Crawl
+  - quality filtering
+  - data wall
+  - tokens per parameter
+contrast:
+  - instruction dataset
+as_of: 2026-10

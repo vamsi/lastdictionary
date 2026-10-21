@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: automated red teaming
+id: automated-red-teaming
+pos: n.
+also:
+  - ART
+  - LM-based red teaming
+  - red teaming with language models
+domain: safety
+domains:
+  - sec
+  - eval
+level: core
+plain: >-
+  Using AI programs, not just human testers, to invent huge numbers of tricky inputs that try to
+  make another AI misbehave, so problems can be found and fixed at scale.
+senses:
+  - definition: >-
+      [[red-teaming|Red teaming]] in which test cases are generated, run and scored by software,
+      typically an attacker [[large-language-model|language model]] that writes adversarial prompts
+      or multi-turn conversations and a classifier or judge model that detects failures in the
+      target's responses. Attackers are steered by prompting, [[few-shot-prompting|few-shot]]
+      examples, [[reinforcement-learning|reinforcement learning]] that rewards successful attacks
+      (with diversity bonuses so that one exploit is not found repeatedly), evolutionary search or
+      gradient-based optimization of input text. Automation gives up some of the creativity and
+      domain judgment of expert humans in exchange for coverage, scale and repeatability. It is used
+      to stress-test classifiers, generate data for [[adversarial-training|adversarial training]]
+      and run regression tests between model versions. A persistent difficulty is mode collapse, in
+      which the attacker finds one weakness and stops exploring.
+    example: >-
+      Automated red teaming turned up four thousand failures overnight, most of them variants of the
+      same trick.
+origin: >-
+  Introduced by Ethan Perez and colleagues at DeepMind in 'Red Teaming Language Models with Language
+  Models' (2022), in which one language model generated test questions that drew offensive replies,
+  private-data leaks and other failures from a 280-billion-parameter chatbot. It became routine at
+  AI laboratories and in open-source testing tools by 2024.
+year: 2022
+note: >-
+  Differs from classic [[adversarial-example|adversarial example]] search, which perturbs pixels or
+  features; LLM-era automated red teaming mostly searches over natural-language prompts,
+  conversations or agent environments. Optimized gibberish strings are covered at
+  [[universal-adversarial-suffix|universal adversarial suffix]].
+see_also:
+  - red teaming
+  - adversarial training
+  - jailbreak
+  - universal adversarial suffix
+  - LLM-as-a-judge
+  - safety classifier
+sources:
+  - text: >-
+      Perez, E. et al. (2022). Red Teaming Language Models with Language Models. EMNLP 2022.
+      arXiv:2202.03286.
+    url: https://arxiv.org/abs/2202.03286

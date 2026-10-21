@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlphaGeometry
+id: alphageometry
+pos: prop. n.
+also:
+  - AlphaGeometry 2
+  - AlphaGeometry2
+domain: hist
+domains:
+  - sym
+  - llm
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A Google DeepMind system from 2024 that solves olympiad geometry problems nearly as well as top
+  human competitors, by pairing a language model that suggests constructions with a logic engine
+  that checks every step.
+senses:
+  - definition: >-
+      A [[neuro-symbolic-ai|neuro-symbolic]] theorem prover for Euclidean plane geometry from
+      [[google-deepmind|Google DeepMind]]. Its symbolic engine, which pairs geometric inference
+      rules with algebra on angles, ratios and distances, works out everything that follows from a
+      diagram; whenever that runs dry, a [[language-model|language model]] suggests an auxiliary
+      construction — a new point, line or circle — and deduction starts again. The model learned
+      only from 100 million synthetic theorems and proofs, made by sampling random diagrams and
+      deducing their consequences; no human-written proofs were used. Given 30 olympiad geometry
+      problems from 2000 to 2022, it solved 25 within the time limits, where the best earlier method
+      managed 10 and an average gold medalist about 25.9. AlphaGeometry 2, used at the 2024 IMO and
+      described in a 2025 preprint, extended the formal language, used a [[gemini|Gemini]]-based
+      model and solved 84 percent of IMO geometry problems from 2000 to 2024, including the 2024
+      problem.
+    example: >-
+      AlphaGeometry's auxiliary point looked arbitrary until the symbolic engine closed the proof.
+origin: >-
+  Described in 'Solving olympiad geometry without human demonstrations' by Trieu Trinh, Yuhuai Wu,
+  Quoc Le, He He and Thang Luong in Nature on 17 January 2024, with code released openly. The
+  successor was reported in a February 2025 preprint.
+year: 2024
+see_also:
+  - AlphaProof
+  - neuro-symbolic AI
+  - automated theorem proving
+  - synthetic data
+  - Google DeepMind
+sources:
+  - text: >-
+      Trinh, T. H., Wu, Y., Le, Q. V., He, H. & Luong, T. (2024). Solving Olympiad Geometry without
+      Human Demonstrations. Nature 625, 476–482.
+as_of: 2026-10

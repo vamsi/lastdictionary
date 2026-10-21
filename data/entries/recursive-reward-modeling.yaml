@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: recursive reward modeling
+id: recursive-reward-modeling
+pos: n.
+also:
+  - RRM
+domain: safety
+domains:
+  - train
+  - rl
+level: specialist
+plain: >-
+  A plan for supervising advanced AI in stages: AI assistants trained on human feedback help people
+  judge the work of a more capable AI, which then helps judge the next one.
+senses:
+  - definition: >-
+      A [[scalable-oversight|scalable oversight]] proposal that extends reward modeling — learning a
+      [[reward-model|reward model]] from human feedback and training an agent against it — by
+      recursion. Agents already trained this way help a human evaluate the outcomes of a harder
+      task, for instance by summarizing, critiquing or checking parts of it, and these assisted
+      judgments train the reward model for the next agent. Each level requires only that evaluating
+      the task, with help, is easier than performing it. The approach shares its decomposition logic
+      with [[iterated-amplification|iterated amplification]] but supervises outcomes through learned
+      rewards rather than imitating an amplified process. Like it, it risks compounding errors
+      across levels if an assistant is subtly wrong or misaligned. Model-written critiques that help
+      raters find flaws are a practical descendant.
+    example: >-
+      In recursive reward modeling, the critique assistant from the last round helps raters score
+      the next agent's proofs.
+origin: >-
+  Proposed by Jan Leike, David Krueger, Tom Everitt, Miljan Martic, Vishal Maini and Shane Legg of
+  DeepMind in 'Scalable agent alignment via reward modeling: a research direction' (2018). OpenAI's
+  recursive book-summarization (2021) and self-critique (2022) experiments were framed as early
+  steps in this direction.
+year: 2018
+see_also:
+  - reward model
+  - reinforcement learning from human feedback
+  - scalable oversight
+  - iterated amplification
+  - AI debate
+  - reward hacking
+sources:
+  - text: >-
+      Leike, J., Krueger, D., Everitt, T., Martic, M., Maini, V. & Legg, S. (2018). Scalable agent
+      alignment via reward modeling: a research direction. arXiv:1811.07871.

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data augmentation
+id: data-augmentation
+pos: n.
+also:
+  - augmentation policy
+  - mixup
+  - CutMix
+  - test-time augmentation
+domain: dl
+domains:
+  - data
+  - percep
+level: core
+plain: >-
+  Creating extra training examples by changing existing ones in ways that keep their meaning — a
+  flipped, cropped or recolored photo of a cat still shows a cat — so the model learns more
+  robustly.
+senses:
+  - definition: >-
+      The practice of enlarging the effective [[training-data|training data]] by applying
+      label-preserving transformations to existing examples, usually at random and on the fly during
+      training. In vision, standard augmentations include random crops, flips, rotations, scaling,
+      color jitter, blur and erasing patches; mixing methods such as mixup and CutMix blend pairs of
+      images and their labels; searched or randomized policies (AutoAugment, RandAugment) choose
+      transformation types and strengths. Speech uses time stretching, added noise and masking of
+      spectrogram bands (SpecAugment); text uses back-translation and paraphrasing by language
+      models. Augmentation encodes prior knowledge about invariances the model should have, reduces
+      [[overfitting|overfitting]] and improves robustness, and it drives
+      [[contrastive-learning|contrastive self-supervised learning]], where two augmented views of
+      one image form a positive pair. Transformations that are too aggressive can change the true
+      label or create a mismatch with test data. Test-time augmentation averages predictions over
+      augmented copies of an input.
+    example: >-
+      Adding random crops and flips cut the gap between training and validation accuracy in half.
+origin: >-
+  In statistics, 'data augmentation' first named a different idea: adding latent variables to
+  simplify Bayesian computation (Martin Tanner and Wing Hung Wong, 1987). Training on distorted
+  copies of examples dates at least to 1990s handwriting and digit recognition — Patrice Simard and
+  colleagues' elastic distortions (2003) are a classic — and was central to AlexNet's 2012 ImageNet
+  result.
+note: >-
+  Distinct from generating wholly new [[synthetic-data|synthetic data]], although the boundary blurs
+  when generative models produce variants of real examples.
+see_also:
+  - synthetic data
+  - overfitting
+  - contrastive learning
+  - regularization
+  - label smoothing
+  - equivariance
+sources:
+  - text: >-
+      Simard, P. Y., Steinkraus, D. & Platt, J. C. (2003). Best Practices for Convolutional Neural
+      Networks Applied to Visual Document Analysis. ICDAR 2003.
+  - text: >-
+      Zhang, H., Cisse, M., Dauphin, Y. N. & Lopez-Paz, D. (2018). mixup: Beyond Empirical Risk
+      Minimization. ICLR 2018.

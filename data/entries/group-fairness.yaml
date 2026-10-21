@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: group fairness
+id: group-fairness
+pos: n.
+also:
+  - statistical fairness
+  - group fairness criteria
+  - independence, separation and sufficiency
+domain: society
+domains:
+  - ml
+level: specialist
+plain: >-
+  Measuring fairness by comparing how a system treats whole groups, such as women and men, on
+  average: their approval rates, their error rates or what their scores mean.
+senses:
+  - definition: >-
+      The family of fairness criteria requiring some statistic of a model's decisions to be equal,
+      or nearly so, across groups defined by a [[protected-attribute|protected attribute]]. Most
+      fall into three classes defined by conditional independence among the prediction R, the
+      attribute A and the true outcome Y: independence (R independent of A, as in
+      [[demographic-parity|demographic parity]]), separation (R independent of A given Y, as in
+      [[equalized-odds|equalized odds]] and [[equal-opportunity|equal opportunity]]) and sufficiency
+      (Y independent of A given R, as in [[predictive-parity|predictive parity]] and calibration).
+      Group criteria are easy to measure and audit and map onto legal concepts such as
+      [[disparate-impact|disparate impact]], but they protect averages rather than individuals, can
+      be met while particular subgroups fare badly, and conflict with one another when base rates
+      differ (see [[fairness-impossibility-theorem|fairness impossibility theorem]]). Subgroup and
+      multicalibration methods extend them to many overlapping, intersectional groups.
+    example: >-
+      Group fairness looked fine for women and for Black applicants separately, but not for Black
+      women.
+origin: >-
+  Developed in discrimination-aware data mining from 2008 and set against individual fairness after
+  Cynthia Dwork and colleagues' 'Fairness Through Awareness' (2012). The
+  independence–separation–sufficiency taxonomy was popularized by Solon Barocas, Moritz Hardt and
+  Arvind Narayanan's textbook Fairness and Machine Learning, circulated in drafts from 2017.
+see_also:
+  - individual fairness
+  - demographic parity
+  - equalized odds
+  - predictive parity
+  - fairness impossibility theorem
+  - algorithmic fairness
+contrast:
+  - individual fairness
+sources:
+  - text: >-
+      Barocas, S., Hardt, M. & Narayanan, A. (2023). Fairness and Machine Learning: Limitations and
+      Opportunities. MIT Press.
+  - text: >-
+      Kearns, M., Neel, S., Roth, A. & Wu, Z. S. (2018). Preventing Fairness Gerrymandering:
+      Auditing and Learning for Subgroup Fairness. Proc. ICML 2018.

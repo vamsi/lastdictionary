@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-taught reasoner
+id: self-taught-reasoner
+pos: n.
+also:
+  - STaR
+domain: train
+domains:
+  - llm
+level: specialist
+plain: >-
+  A training method in which a language model writes step-by-step explanations for problems, keeps
+  the ones that led to correct answers, and learns from them, so it gradually teaches itself to
+  reason.
+senses:
+  - definition: >-
+      A method by which a language model, given only a handful of worked examples, bootstraps its
+      own skill at writing useful rationales ([[chain-of-thought|chains of thought]]). It repeats a
+      simple cycle: attempt every training question with a written rationale and keep those whose
+      final answers are right; for the questions missed, reveal the answer and ask the model to
+      explain it ('rationalization'), keeping those explanations as well; fine-tune on everything
+      kept; and begin again. STaR can be viewed as an approximation to a [[policy-gradient|policy
+      gradient]] with a binary correctness reward, and as a form of [[expert-iteration|expert
+      iteration]] or [[rejection-sampling|rejection sampling]] fine-tuning. Its authors reported
+      that on CommonsenseQA a STaR-trained 6-billion-parameter GPT-J performed comparably to a
+      fine-tuned model about 30 times larger. Successors include Quiet-STaR, which learns rationales
+      for arbitrary text, and V-STaR, which also trains a [[verifier|verifier]].
+    example: >-
+      After three STaR iterations the rationales were shorter and arithmetic accuracy had climbed
+      eleven points.
+origin: >-
+  Introduced by Eric Zelikman, Yuhuai Wu, Jesse Mu and Noah Goodman (Stanford and Google) in March
+  2022 and published at NeurIPS 2022. It is widely cited as a forerunner of
+  reinforcement-learning-trained [[reasoning-model|reasoning models]].
+year: 2022
+note: >-
+  Rationalization can yield post-hoc justifications that fit a known answer without showing how it
+  could be derived, one reason later methods prefer purely outcome-filtered sampling or RL.
+see_also:
+  - expert iteration
+  - rejection sampling
+  - chain of thought
+  - self-improvement
+  - reinforcement learning with verifiable rewards
+  - reasoning model
+sources:
+  - text: >-
+      Zelikman, E., Wu, Y., Mu, J. & Goodman, N. D. (2022). STaR: Bootstrapping Reasoning With
+      Reasoning. NeurIPS 2022. arXiv:2203.14465.
+    url: https://arxiv.org/abs/2203.14465

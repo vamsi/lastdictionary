@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Turing test
+id: turing-test
+pos: n.
+also:
+  - imitation game
+  - Turing's test
+domain: hist
+domains:
+  - mind
+  - eval
+labels:
+  - contested
+level: essential
+plain: >-
+  Alan Turing's proposed test of machine intelligence: a judge holds typed conversations with a
+  hidden person and a hidden computer, and the computer passes if the judge cannot consistently pick
+  it out.
+senses:
+  - definition: >-
+      A behavioral criterion for machine intelligence based on the 'imitation game' described by
+      [[alan-turing|Alan Turing]] in [[computing-machinery-and-intelligence|Computing Machinery and
+      Intelligence]] (1950). An interrogator exchanges typed messages with two hidden respondents,
+      one human and one machine, and must decide which is which; the machine succeeds if
+      interrogators fail to single it out with any consistency (Turing compared their error rate
+      with that in the original man–woman version of the game). Turing offered the game as a
+      workable substitute for the vague question of whether machines can think, and predicted that
+      by about 2000 a computer would leave an average interrogator no better than a 70 percent
+      chance of a correct identification after five minutes of questioning. Later variants include
+      restricted public contests such as the [[loebner-prize|Loebner Prize]], two-party versions in
+      which a judge rates a single interlocutor, and the 'total Turing test', which adds perception
+      and action. In a preregistered three-party study released as a preprint in 2025, a
+      persona-prompted GPT-4.5 was judged to be the human 73 percent of the time, more often than
+      the real humans it was paired with.
+    example: >-
+      Passing a five-minute Turing test says more about fluent conversation than about general
+      intelligence.
+origin: >-
+  Turing called it the imitation game, adapting a parlor game in which a judge tries to tell a man
+  from a woman from written answers alone. The earliest use of the eponym is not established;
+  'Turing's test' and 'the Turing test' were in established use in AI and philosophy writing by the
+  1970s.
+year: 1950
+note: >-
+  Critics argue that the test rewards imitation and exploits human credulity (see
+  [[eliza-effect|ELIZA effect]], [[chinese-room|Chinese room]]), and that it is neither necessary
+  nor sufficient for thought. The much-publicized 2014 claim that the chatbot Eugene Goostman had
+  passed, by convincing 33 percent of judges, was widely rejected.
+see_also:
+  - Computing Machinery and Intelligence
+  - Loebner Prize
+  - ELIZA
+  - Chinese room
+  - artificial general intelligence
+  - Alan Turing
+contrast:
+  - Winograd schema challenge
+sources:
+  - text: >-
+      Turing, A. M. (1950). Computing Machinery and Intelligence. Mind 59(236), 433–460.
+  - text: >-
+      Jones, C. R. & Bergen, B. K. (2025). Large Language Models Pass the Turing Test.
+      arXiv:2503.23674 (University of California San Diego).
+as_of: 2026-10

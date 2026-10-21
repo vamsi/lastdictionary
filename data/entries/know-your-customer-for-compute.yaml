@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: know-your-customer for compute
+id: know-your-customer-for-compute
+pos: n.
+also:
+  - KYC for compute
+  - compute KYC
+  - cloud KYC
+  - customer identification program for IaaS
+domain: gov
+domains:
+  - hw
+  - sec
+level: specialist
+plain: >-
+  Rules that would make cloud companies check who their customers are before renting them enough
+  computing power to train a large AI model, much as banks must verify who opens an account.
+senses:
+  - definition: >-
+      A regime requiring providers of large-scale computing — chiefly cloud or
+      infrastructure-as-a-service (IaaS) firms — to verify customers' identities, assess their
+      purposes and keep records, and in some versions to report customers whose usage indicates
+      training of a frontier-scale model. Modeled on anti-money-laundering KYC duties in banking, it
+      targets the point where compute is rented rather than bought, which
+      [[export-controls-on-ai-chips|chip export controls]] alone do not reach: a restricted party
+      can train a model in a foreign data center without importing a single chip.
+      [[executive-order-14110|Executive Order 14110]] directed the US Commerce Department to require
+      US IaaS providers to verify foreign customers and report foreign training of large models, and
+      a rule was proposed in January 2024; the [[ai-diffusion-rule|AI Diffusion Rule]], rescinded
+      before taking effect, would have attached related security and customer-screening conditions
+      to licensed data centers abroad. Concerns include customer privacy, compliance cost and
+      evasion through resellers and shell companies.
+    example: >-
+      Under compute KYC, a cloud provider would flag a new customer reserving ten thousand GPUs for
+      three months.
+origin: >-
+  Proposed for frontier AI by Janet Egan and Lennart Heim in 'Oversight for Frontier AI through a
+  Know-Your-Customer Scheme for Compute Providers' (2023), building on Executive Order 13984
+  (January 2021), which sought identity checks by US IaaS providers to counter malicious cyber
+  actors.
+year: 2023
+note: >-
+  The January 2024 proposal had not been finalized when the administration changed in January 2025;
+  since then the idea has surfaced mainly in export-licensing conditions and legislative proposals
+  rather than in a general rule.
+see_also:
+  - compute governance
+  - export controls on AI chips
+  - on-chip governance mechanisms
+  - AI Diffusion Rule
+  - compute threshold
+sources:
+  - text: >-
+      Egan, J. & Heim, L. (2023). Oversight for Frontier AI through a Know-Your-Customer Scheme for
+      Compute Providers. arXiv:2310.13625.
+as_of: 2026-10

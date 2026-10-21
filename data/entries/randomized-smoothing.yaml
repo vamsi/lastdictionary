@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: randomized smoothing
+id: randomized-smoothing
+pos: n.
+also:
+  - smoothed classifier
+domain: sec
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A way to make a classifier provably harder to fool: ask it about many noisy copies of an input and
+  take a majority vote, which small deliberate changes cannot easily flip.
+senses:
+  - definition: >-
+      A [[certified-robustness|certified robustness]] technique that wraps a base
+      [[classifier|classifier]] f in a smoothed classifier g: g adds isotropic Gaussian noise of
+      standard deviation σ to the input many times and outputs the class f assigns most often to the
+      noisy copies. If, under that noise, the top class has probability at least p_A and the
+      runner-up at most p_B, then g's prediction provably cannot change under any ℓ2 perturbation
+      smaller than the radius R below, where Φ⁻¹ is the inverse of the standard normal distribution
+      function. The probabilities are estimated by Monte Carlo sampling, so certificates hold with
+      high probability, and the base model is trained with noise augmentation. Unlike exact
+      verification it scales to ImageNet-sized networks, but it needs many forward passes per
+      prediction and certifies only modest radii.
+    example: >-
+      With σ = 0.25, the smoothed model certifies most test images at ℓ2 radius 0.25 but few beyond
+      1.0.
+formula_latex: R = \frac{\sigma}{2}\left(\Phi^{-1}(p_A) - \Phi^{-1}(p_B)\right)
+origin: >-
+  Mathias Lecuyer and colleagues (PixelDP, 2018) derived noise-based certificates from
+  [[differential-privacy|differential privacy]], and Bai Li and colleagues gave related bounds.
+  Jeremy Cohen, Elan Rosenfeld and J. Zico Kolter proved the tight ℓ2 certificate in 'Certified
+  Adversarial Robustness via Randomized Smoothing' (arXiv February 2019; ICML 2019), which made the
+  method standard.
+year: 2019
+see_also:
+  - certified robustness
+  - adversarial robustness
+  - differential privacy
+  - adversarial example
+sources:
+  - text: >-
+      Cohen, J., Rosenfeld, E. & Kolter, J. Z. (2019). Certified Adversarial Robustness via
+      Randomized Smoothing. ICML 2019. arXiv:1902.02918.

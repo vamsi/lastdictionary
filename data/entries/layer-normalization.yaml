@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: layer normalization
+id: layer-normalization
+pos: n.
+also:
+  - LayerNorm
+  - layer norm
+  - LN
+  - pre-norm
+  - post-norm
+  - pre-LN
+  - post-LN
+domain: dl
+domains:
+  - llm
+  - train
+level: core
+plain: >-
+  A layer that rescales the numbers inside a network, separately for each example, so they keep a
+  steady average and spread. It, or a simpler variant, is a standard part of the models behind
+  today's chatbots.
+senses:
+  - definition: >-
+      A [[normalization-layer|normalization layer]] that normalizes the activations of a single
+      example across its feature dimension, subtracting their mean and dividing by their standard
+      deviation, then applies a learned per-feature gain and bias. Because its statistics do not
+      depend on the batch, it behaves identically in training and inference, works with a batch of
+      one and handles variable-length sequences, which made it the standard normalization for
+      [[recurrent-neural-network|RNNs]] and [[transformer|transformers]]. Placement matters: the
+      original transformer used post-norm, normalizing after each residual addition, but most large
+      models since GPT-2 use pre-norm, normalizing the input to each sublayer and leaving the
+      [[residual-connection|residual]] path untouched, which trains more stably and depends less on
+      [[learning-rate-warmup|learning rate warmup]]. Many recent models use the cheaper
+      [[rmsnorm|RMSNorm]] instead.
+    example: >-
+      Moving layer normalization to the start of each block let us drop the warmup schedule.
+formula_latex: \operatorname{LN}(\mathbf{x}) = \boldsymbol{\gamma} \odot \frac{\mathbf{x} -
+  \mu}{\sqrt{\sigma^2 + \epsilon}} + \boldsymbol{\beta}
+origin: >-
+  Introduced by Jimmy Lei Ba, Jamie Ryan Kiros and Geoffrey Hinton in 'Layer Normalization' (arXiv,
+  July 2016) as a batch-independent alternative to batch normalization for recurrent networks. The
+  transformer (2017) adopted it, and Ruibin Xiong and colleagues (2020) analyzed why pre-norm
+  placement trains more stably than post-norm.
+year: 2016
+note: >-
+  Normalization-free transformers are a research topic: in 2025 Jiachen Zhu, Xinlei Chen, Kaiming
+  He, Yann LeCun and Zhuang Liu replaced it with an elementwise, learnably scaled [[tanh|tanh]]
+  ('Dynamic Tanh'), matching normalized models in their experiments.
+see_also:
+  - batch normalization
+  - RMSNorm
+  - normalization layer
+  - transformer
+  - residual connection
+  - residual stream
+  - learning rate warmup
+sources:
+  - text: >-
+      Ba, J. L., Kiros, J. R. & Hinton, G. E. (2016). Layer Normalization. arXiv:1607.06450.
+    url: https://arxiv.org/abs/1607.06450
+  - text: >-
+      Xiong, R. et al. (2020). On Layer Normalization in the Transformer Architecture.
+      arXiv:2002.04745; ICML 2020.
+    url: https://arxiv.org/abs/2002.04745

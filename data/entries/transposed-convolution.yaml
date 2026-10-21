@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: transposed convolution
+id: transposed-convolution
+pos: n.
+also:
+  - deconvolution
+  - fractionally strided convolution
+  - up-convolution
+  - upconvolution
+domain: dl
+domains:
+  - gen
+  - percep
+level: specialist
+plain: >-
+  An operation that roughly reverses an image network's shrinking steps, enlarging a small grid of
+  features into a bigger one, as when a model paints a full-size image.
+senses:
+  - definition: >-
+      A learnable upsampling [[layer|layer]] whose forward pass is the backward (gradient) pass of
+      an ordinary [[convolution|convolution]] with the same [[filter|filter]] shape; equivalently,
+      it inserts s − 1 zeros between input values and then convolves. It increases spatial
+      resolution by roughly the [[stride|stride]] factor and is used in the decoders of
+      [[autoencoder|autoencoders]], in [[generative-adversarial-network|GAN]] generators such as
+      DCGAN, and in segmentation networks such as fully convolutional networks and [[u-net|U-Net]].
+      When the kernel size is not divisible by the stride, overlapping contributions produce
+      'checkerboard artifacts', so many designs instead upsample by nearest-neighbor or bilinear
+      interpolation followed by an ordinary convolution, or use sub-pixel (pixel-shuffle)
+      convolution.
+    example: >-
+      The decoder doubles the resolution four times with stride-2 transposed convolutions.
+origin: >-
+  Matthew Zeiler and colleagues' 'deconvolutional networks' (2010) and Zeiler and Rob Fergus's
+  visualization work (2013) spread the misleading name 'deconvolution'. Jonathan Long, Evan
+  Shelhamer and Trevor Darrell's fully convolutional networks (2014) used it for learnable
+  upsampling in segmentation; Vincent Dumoulin and Francesco Visin's convolution-arithmetic guide
+  (2016) promoted 'transposed convolution', and Augustus Odena and colleagues described checkerboard
+  artifacts the same year.
+year: 2010
+note: >-
+  Not a true deconvolution: it does not invert a convolution, which is why the older name is
+  discouraged.
+see_also:
+  - convolution
+  - U-Net
+  - autoencoder
+  - generative adversarial network
+  - stride
+  - super-resolution

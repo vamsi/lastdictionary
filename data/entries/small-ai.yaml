@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: small AI
+id: small-ai
+pos: n.
+domain: society
+domains:
+  - gov
+  - infer
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Cheap, compact AI tools built for one practical job — like advising farmers or screening patients
+  — that poorer countries can afford to run, instead of giant all-purpose models.
+senses:
+  - definition: >-
+      Compact, low-compute AI models and applications designed for specific practical tasks — crop
+      and weather advice, disease screening, tutoring, voice services on basic phones — that are
+      affordable to build, run and adapt in resource-constrained settings. The World Bank made it a
+      centerpiece of its advice to developing countries in 2026, recommending that they adopt
+      existing open-source or commercial models, adapt them to local languages, climates and health
+      protocols, and invest in electricity, connectivity, data and skills rather than try to build
+      frontier [[foundation-model|foundation models]], which it judged cost-prohibitive given the
+      concentration of advanced compute in the United States and China. Examples it cited include
+      AI-based weather forecasts for smallholder farmers in India and a low-cost math-tutoring
+      platform in Ghana.
+    example: >-
+      The ministry chose small AI: a voice advisory bot in three local languages, running on a
+      modest cloud budget.
+origin: >-
+  Promoted by the World Bank, notably in its World Development Report 2026 on artificial
+  intelligence, released in early August 2026, which urged developing economies to adopt and adapt
+  existing AI rather than chase large frontier models.
+year: 2026
+note: >-
+  Not a technical category like [[small-language-model|small language model]]: the emphasis is on
+  cost and fitness for local purpose, whatever the architecture.
+see_also:
+  - small language model
+  - edge AI
+  - on-device AI
+  - digital divide
+  - sovereign AI
+  - AI for good
+contrast:
+  - frontier model
+sources:
+  - text: "World Bank (2026). World Development Report 2026. Washington, DC: World Bank."
+    url: https://www.worldbank.org/en/publication/wdr2026
+  - text: >-
+      Engineering News (2026). World Bank proposes small, low-cost AI for developing countries. 4
+      August 2026.
+    url: https://www.engineeringnews.co.za/article/world-bank-proposes-small-low-cost-ai-for-developing-countries-2026-08-04
+as_of: 2026-10

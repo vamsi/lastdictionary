@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vanishing gradient problem
+id: vanishing-gradient-problem
+pos: n.
+also:
+  - vanishing gradients
+  - vanishing gradient
+domain: dl
+domains:
+  - train
+level: core
+plain: >-
+  A training difficulty in deep or recurrent networks: the learning signal shrinks as it travels
+  back through many layers or time steps, so the early parts of the network barely learn.
+senses:
+  - definition: >-
+      The tendency of gradients computed by [[backpropagation|backpropagation]] to shrink
+      exponentially as they pass backward through many layers or time steps, so that early layers of
+      a deep network, or long-range dependencies in a [[recurrent-neural-network|recurrent neural
+      network]], receive almost no learning signal. The gradient at an early layer is a product of
+      many Jacobian factors; when their norms are typically below 1, as with saturating
+      [[sigmoid-function|sigmoid]] or [[tanh|tanh]] units (the sigmoid's derivative never exceeds ¼)
+      or recurrent weight matrices with spectral radius below 1, the product decays geometrically.
+      Remedies that made deep learning practical include gated, additive state paths
+      ([[long-short-term-memory|LSTM]], [[gated-recurrent-unit|GRU]]),
+      [[residual-connection|residual connections]], non-saturating activations such as
+      [[relu|ReLU]], careful [[weight-initialization|weight initialization]],
+      [[normalization-layer|normalization layers]] and, historically, unsupervised layer-wise
+      pretraining.
+    example: >-
+      With sigmoid activations the first layers' gradients were a million times smaller than the
+      last layer's: classic vanishing gradients.
+origin: >-
+  First formally analyzed by Sepp Hochreiter in his 1991 diploma thesis at the Technical University
+  of Munich, supervised by Jürgen Schmidhuber, and independently by Yoshua Bengio, Patrice Simard
+  and Paolo Frasconi in 'Learning Long-Term Dependencies with Gradient Descent is Difficult' (1994).
+  Razvan Pascanu, Tomas Mikolov and Bengio's 2012 analysis treated vanishing and exploding gradients
+  together.
+year: 1991
+see_also:
+  - exploding gradient problem
+  - backpropagation
+  - long short-term memory
+  - residual connection
+  - ReLU
+  - weight initialization
+  - backpropagation through time
+contrast:
+  - exploding gradient problem
+sources:
+  - text: >-
+      Bengio, Y., Simard, P. & Frasconi, P. (1994). Learning Long-Term Dependencies with Gradient
+      Descent is Difficult. IEEE Transactions on Neural Networks, 5(2), 157–166.
+  - text: >-
+      Pascanu, R., Mikolov, T. & Bengio, Y. (2012). On the Difficulty of Training Recurrent Neural
+      Networks. arXiv:1211.5063; ICML 2013.
+    url: https://arxiv.org/abs/1211.5063

@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: case-based reasoning
+id: case-based-reasoning
+pos: n.
+also:
+  - CBR
+  - case base
+  - case-based system
+domain: sym
+domains:
+  - ml
+level: specialist
+plain: >-
+  Handling a new situation by finding the most similar one dealt with before and adjusting what
+  worked then, much as a cook adapts a remembered recipe to the ingredients at hand.
+senses:
+  - definition: >-
+      A problem-solving and learning paradigm in which a system handles a new problem by retrieving
+      similar past cases from a case base, reusing their solutions, revising them to fit the new
+      situation and retaining the result as a new case — the 'four Rs' cycle. Retrieval depends on a
+      similarity measure over case features, and adaptation may use rules, analogy or human input.
+      Because knowledge is stored as concrete episodes rather than general rules, case-based systems
+      ease the [[knowledge-acquisition-bottleneck|knowledge acquisition bottleneck]], learn
+      incrementally and can justify answers by pointing to precedents; their weaknesses are
+      dependence on a good similarity measure and the difficulty of automatic adaptation.
+      Applications include help-desk diagnosis, legal argument, engineering design and recipe
+      generation. [[retrieval-augmented-generation|Retrieval-augmented generation]] and the
+      selection of examples for [[few-shot-learning|few-shot]] prompting are often compared to it.
+origin: >-
+  Grew from Roger Schank's theory of dynamic memory at Yale (1982), which extended
+  [[script|scripts]] to reminding and learning from experience; Janet Kolodner built an early
+  case-based system, CYRUS (1983). Agnar Aamodt and Enric Plaza's 1994 paper defined the four-stage
+  cycle.
+year: 1982
+see_also:
+  - script
+  - knowledge acquisition bottleneck
+  - retrieval-augmented generation
+  - k-nearest neighbors
+  - expert system
+  - few-shot learning
+sources:
+  - text: >-
+      Aamodt, A. & Plaza, E. (1994). Case-Based Reasoning: Foundational Issues, Methodological
+      Variations, and System Approaches. AI Communications 7(1), 39–59.
+  - text: Kolodner, J. (1993). Case-Based Reasoning. Morgan Kaufmann.

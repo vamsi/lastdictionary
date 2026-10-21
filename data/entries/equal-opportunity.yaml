@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: equal opportunity
+id: equal-opportunity
+pos: n.
+also:
+  - equality of opportunity (fairness criterion)
+  - true positive rate parity
+domain: society
+domains:
+  - ml
+  - gov
+level: specialist
+plain: >-
+  A fairness test that asks whether people who truly deserve a yes (who would repay the loan or
+  succeed in the job) get one at the same rate in every group.
+senses:
+  - context: Machine learning
+    definition: >-
+      A relaxation of [[equalized-odds|equalized odds]] that requires only equal true positive rates
+      across groups: among individuals whose true outcome is favorable (Y = 1), the probability of a
+      positive prediction must not depend on the [[protected-attribute|protected attribute]]. It
+      suits settings where the fairness concern is wrongly denying qualified people (loans,
+      admissions, hiring) rather than wrongly granting. Like equalized odds, it can be achieved by
+      post-processing with group-specific thresholds, and it is only as fair as the outcome labels
+      it relies on.
+    example: >-
+      Under equal opportunity, creditworthy applicants from both neighborhoods must be approved at
+      the same rate.
+  - context: Law and policy
+    definition: >-
+      The broader political and legal ideal that people should compete for jobs, education and other
+      positions on equal terms, free of discrimination, as in US equal employment opportunity law.
+      The machine-learning criterion borrows the name and formalizes one narrow reading of it.
+formula_latex: P(\hat{Y}=1 \mid A=a, Y=1) = P(\hat{Y}=1 \mid A=b, Y=1)
+origin: >-
+  The technical criterion was introduced by Moritz Hardt, Eric Price and Nathan Srebro (2016)
+  alongside equalized odds, borrowing the name of the long-standing civil-rights ideal embodied, for
+  example, in the US Equal Employment Opportunity Commission (established 1965).
+year: 2016
+see_also:
+  - equalized odds
+  - demographic parity
+  - group fairness
+  - disparate impact
+  - protected attribute
+sources:
+  - text: >-
+      Hardt, M., Price, E. & Srebro, N. (2016). Equality of Opportunity in Supervised Learning.
+      Advances in Neural Information Processing Systems 29.
+    url: https://arxiv.org/abs/1610.02413

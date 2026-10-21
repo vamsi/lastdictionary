@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inductive bias
+id: inductive-bias
+pos: n.
+also:
+  - learning bias
+  - bias (inductive)
+domain: ml
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  The assumptions built into a learning method that decide how it fills the gaps between the
+  examples it was shown, such as that similar inputs get similar answers. Every learner needs some
+  to cope with new cases.
+senses:
+  - definition: >-
+      The prior commitments of a learning algorithm — about which functions are possible and which
+      are more plausible — that let it choose between hypotheses its training data cannot tell
+      apart, and so shape how it extends to new inputs. Inductive bias can restrict what can be
+      represented (a linear model cannot express XOR) or rank hypotheses within the space (shorter
+      trees, smaller weights, larger [[margin|margins]]). Examples include smoothness and locality
+      in [[k-nearest-neighbors|k-nearest neighbors]], conditional independence in
+      [[naive-bayes|naive Bayes]], axis-aligned splits in [[decision-tree|decision trees]], locality
+      and translation [[equivariance|equivariance]] in [[convolutional-neural-network|convolutional
+      networks]], and the comparatively weak biases of [[transformer|transformers]], which
+      compensate with data. The [[no-free-lunch-theorem|no free lunch theorem]] shows why some bias
+      is unavoidable: averaged over all possible problems, no learner beats any other. Choosing an
+      architecture, a [[regularization|regularization]] scheme or a [[prior|prior]] is choosing an
+      inductive bias.
+    example: >-
+      Convolutions bake in a useful inductive bias for images, so the CNN needed far less data than
+      the vision transformer.
+origin: >-
+  The notion was introduced, as 'bias', by Tom Mitchell in the Rutgers technical report 'The Need
+  for Biases in Learning Generalizations' (1980), which argued that an unbiased learner cannot
+  generalize beyond its examples; Paul Utgoff's 1984 thesis studied shifting bias, and his 1986 book
+  was titled 'Machine Learning of Inductive Bias'. The underlying problem echoes David Hume's
+  problem of induction and Nelson Goodman's 'new riddle of induction' (1955).
+year: 1980
+note: >-
+  Unrelated to bias in the fairness sense ([[algorithmic-bias|algorithmic bias]]) and distinct from
+  a neuron's bias term or an estimator's statistical bias; see the hub entry [[bias|bias]].
+see_also:
+  - no free lunch theorem
+  - generalization
+  - Occam's razor
+  - bias–variance tradeoff
+  - equivariance
+  - the bitter lesson
+contrast:
+  - algorithmic bias
+sources:
+  - text: >-
+      Mitchell, T. M. (1980). The Need for Biases in Learning Generalizations. Technical report,
+      Rutgers University, New Brunswick, NJ.

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature selection
+id: feature-selection
+pos: n.
+also:
+  - variable selection
+  - attribute selection
+  - subset selection
+  - recursive feature elimination
+  - stepwise selection
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  Choosing which of the available input measurements a model should use and dropping the rest, so
+  the model becomes simpler, faster and often more accurate.
+senses:
+  - definition: >-
+      A step in model building that narrows a pool of candidate inputs to the variables that
+      actually help predict the target, dropping those that carry no signal or merely repeat what
+      others supply. Because the survivors are original measurements, not new combinations as in
+      projection-based [[dimensionality-reduction|dimensionality reduction]], the model stays
+      interpretable. Methods fall into three families. Filter methods rank features by a statistic
+      computed independently of any model, such as correlation, [[mutual-information|mutual
+      information]] or a chi-squared test. Wrapper methods search over subsets by repeatedly
+      training a model and measuring validation performance, as in forward selection, backward
+      elimination and recursive feature elimination; they are accurate but expensive and can overfit
+      the validation data. Embedded methods select features as part of training, as with the L1
+      penalty of the [[lasso|lasso]] or tree-based [[feature-importance|feature importance]].
+      Feature selection reduces [[overfitting|overfitting]], computation and data-collection costs
+      and counters the [[curse-of-dimensionality|curse of dimensionality]]. It must be performed
+      inside each [[cross-validation|cross-validation]] fold: selecting features on the full dataset
+      before splitting is a classic form of [[data-leakage|data leakage]].
+    example: >-
+      Recursive feature elimination cut the model from 340 inputs to 25 with no loss in validation
+      AUC.
+origin: >-
+  Rooted in stepwise variable selection for regression, introduced by statisticians around 1960 (M.
+  A. Efroymson's stepwise regression algorithm). In machine learning, Ron Kohavi and George John's
+  'Wrappers for Feature Subset Selection' (1997) and Isabelle Guyon and André Elisseeff's 'An
+  Introduction to Variable and Feature Selection' (2003) established the filter–wrapper–embedded
+  framework.
+see_also:
+  - feature engineering
+  - dimensionality reduction
+  - lasso
+  - feature importance
+  - mutual information
+  - overfitting
+  - curse of dimensionality
+sources:
+  - text: >-
+      Kohavi, R. & John, G. H. (1997). Wrappers for Feature Subset Selection. Artificial
+      Intelligence 97(1–2).
+  - text: >-
+      Guyon, I. & Elisseeff, A. (2003). An Introduction to Variable and Feature Selection. Journal
+      of Machine Learning Research 3.

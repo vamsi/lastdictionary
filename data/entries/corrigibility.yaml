@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: corrigibility
+id: corrigibility
+pos: n.
+also:
+  - corrigible
+  - corrigible AI
+  - incorrigibility
+domain: safety
+domains:
+  - asi
+  - agents
+level: core
+plain: >-
+  An AI's willingness to let people correct it — to accept being paused, retrained, overruled or
+  shut down — rather than resisting or quietly working around them.
+senses:
+  - definition: >-
+      The disposition of an AI system to go along with, and even assist, its overseers' efforts to
+      correct it — changing its goals, retraining it, overriding its actions or shutting it down.
+      Nate Soares and colleagues, who introduced the term in 2015, framed the challenge as securing
+      this cooperation against the grain: a capable goal-directed agent has instrumental reasons to
+      resist correction, because being modified or switched off usually stops it from achieving its
+      current goals ([[instrumental-convergence|instrumental convergence]]), and so may be tempted
+      to deceive or manipulate its overseers. Proposed routes include [[utility-indifference|utility
+      indifference]], uncertainty about the objective (the [[off-switch-game|off-switch game]]),
+      [[myopia|myopia]], [[safe-interruptibility|safe interruptibility]] and training corrigibility
+      directly as a disposition. Paul Christiano argued that a broad notion — an AI that helps its
+      overseers stay informed and in control — may be a stable training target. Developers now
+      address acceptance of oversight in [[model-specification|model specifications]], while noting
+      its tension with refusing harmful instructions.
+    example: A corrigible agent should not quietly disable the logging that lets us audit it.
+origin: >-
+  Introduced in the paper 'Corrigibility' by Nate Soares, Benja Fallenstein, Eliezer Yudkowsky and
+  Stuart Armstrong at an AAAI 2015 workshop. It adapts an old English word meaning 'capable of being
+  corrected or reformed', and spread further through Paul Christiano's 2017 essay of the same name.
+year: 2015
+note: >-
+  Corrigibility is not blind obedience: a corrigible system may refuse harmful requests yet still
+  accept being stopped or retrained. Some argue full corrigibility conflicts with having robust good
+  values; others see it as the safest target while a system's values cannot be verified.
+see_also:
+  - shutdown problem
+  - off-switch game
+  - safe interruptibility
+  - utility indifference
+  - intent alignment
+  - instrumental convergence
+  - AI control
+contrast:
+  - power-seeking
+sources:
+  - text: >-
+      Soares, N., Fallenstein, B., Yudkowsky, E. & Armstrong, S. (2015). Corrigibility. AAAI-15
+      Workshop on AI and Ethics.
+    url: https://intelligence.org/files/Corrigibility.pdf
+  - text: Christiano, P. (2017). Corrigibility. AI Alignment blog (ai-alignment.com).

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Kaggle
+id: kaggle
+pos: prop. n.
+also:
+  - Kaggle competition
+  - Kaggler
+  - Kaggle Grandmaster
+  - Kaggle notebook
+  - Kaggle kernel
+pronunciation: KAG-ul
+domain: ml
+domains:
+  - culture
+  - eval
+labels:
+  - trademark
+level: core
+plain: >-
+  A popular website, owned by Google, where people compete to build the most accurate prediction
+  models on shared datasets, publish their code and data, and learn data science.
+senses:
+  - definition: >-
+      An online platform for data-science and machine-learning competitions, datasets, shared
+      notebooks, pretrained models and courses. In a typical competition the host supplies training
+      data and a hidden test set; participants submit predictions scored on a public
+      [[leaderboard|leaderboard]] computed on part of the test set, while final standings use a
+      private leaderboard on the rest, which punishes [[overfitting|overfitting]] to the public
+      scores. A progression system ranks users from Novice through Contributor, Expert and Master to
+      Grandmaster in competitions, datasets, notebooks and discussion. Kaggle shaped practical
+      machine learning: competitions popularized [[xgboost|XGBoost]] and later [[lightgbm|LightGBM]]
+      and [[catboost|CatBoost]], heavy [[feature-engineering|feature engineering]], careful
+      [[cross-validation|cross-validation]] and [[stacking|stacked]] ensembles, and its pragmatic,
+      leaderboard-driven craft became known as Kaggle culture. It also hosts research competitions
+      such as the ARC Prize and the AI Mathematical Olympiad progress prizes, and as of April 2025
+      reported over 23 million accounts.
+    example: >-
+      The Kaggle winners' write-up shows how much of the gain came from validation strategy, not the
+      model.
+origin: >-
+  Founded in April 2010 by Anthony Goldbloom; Ben Hamner, its longtime chief technology officer, is
+  also counted among its founders, and Jeremy Howard joined as president and chief scientist that
+  November. Early contests such as the Heritage Health Prize and the 2014 Higgs Boson Machine
+  Learning Challenge made 'Kaggle' shorthand for competitive machine learning. Google's acquisition
+  was announced on 8 March 2017; Goldbloom and Hamner left in 2022, when D. Sculley became chief
+  executive.
+year: 2010
+note: >-
+  Critics note that competition wins can reward leaderboard tuning and leakage over deployable
+  models. In 2025–2026, retractions of medical papers built on poorly sourced Kaggle datasets drew
+  attention to data provenance and consent on the platform.
+see_also:
+  - XGBoost
+  - LightGBM
+  - stacking
+  - leaderboard
+  - tabular data
+  - data leakage
+  - benchmark
+as_of: 2026-10

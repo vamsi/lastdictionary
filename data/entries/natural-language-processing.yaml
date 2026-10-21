@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: natural language processing
+id: natural-language-processing
+pos: n.
+also:
+  - NLP
+  - language technology
+  - human language technology
+domain: llm
+domains:
+  - core
+  - hist
+level: essential
+plain: >-
+  The field that teaches computers to handle human language — to read, interpret, translate,
+  summarize and produce text and speech. It is one of the oldest and largest areas of artificial
+  intelligence.
+senses:
+  - definition: >-
+      The field concerned with computational methods for analyzing, understanding and generating
+      human (natural) languages, as opposed to programming or other formal languages. Its classic
+      tasks include [[machine-translation|machine translation]], [[question-answering|question
+      answering]], [[text-summarization|text summarization]], [[text-classification|text
+      classification]], [[sentiment-analysis|sentiment analysis]],
+      [[named-entity-recognition|named-entity recognition]], [[part-of-speech-tagging|part-of-speech
+      tagging]], [[syntactic-parsing|syntactic parsing]] and [[information-extraction|information
+      extraction]]; it is often divided into [[natural-language-understanding|natural language
+      understanding]] and [[natural-language-generation|natural language generation]], and overlaps
+      with [[computational-linguistics|computational linguistics]],
+      [[information-retrieval|information retrieval]] and [[speech-recognition|speech recognition]].
+      Methods have passed through three broad eras: hand-written rules and grammars (1950s–1980s);
+      statistical and machine-learning models trained on annotated [[corpus|corpora]] (late
+      1980s–2010s); and neural networks, culminating in pretrained [[transformer|transformers]] and
+      [[large-language-model|large language models]] that handle most tasks with one prompted model
+      rather than separate task-specific systems. That shift has moved much of the field's attention
+      from building pipelines to evaluating, steering and explaining general models.
+    example: >-
+      Ten years ago our NLP stack had a tagger, a parser and an entity linker; now it is one model
+      call.
+origin: >-
+  The field's start is usually dated to Warren Weaver's 1949 memorandum on machine translation and
+  the 1954 Georgetown–IBM demonstration, which translated more than 60 Russian sentences. The
+  earliest use of the phrase 'natural language processing' is not established; it was in use for
+  conferences and books by the early 1970s and later became the umbrella term for language
+  technology.
+year: 1949
+note: >-
+  Older usage often excluded speech, which belonged to speech processing; today 'NLP' frequently
+  covers both. Unrelated to neuro-linguistic programming, a self-help method that shares the
+  abbreviation.
+see_also:
+  - computational linguistics
+  - natural language understanding
+  - natural language generation
+  - large language model
+  - machine translation
+  - language model
+  - corpus
+sources:
+  - text: >-
+      Jurafsky, D. & Martin, J. H. (2025). Speech and Language Processing, 3rd ed. (draft). Stanford
+      University.

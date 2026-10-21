@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agent skill
+id: agent-skill
+pos: n.
+also:
+  - Agent Skills
+  - skill
+  - SKILL.md
+domain: agents
+domains:
+  - eng
+  - llm
+labels:
+  - emerging
+level: core
+plain: >-
+  A packaged how-to guide for an AI agent — written steps, sometimes with small programs and
+  examples attached — that sits unread until a job of that kind comes up, when the agent opens it.
+senses:
+  - definition: >-
+      A reusable bundle of know-how for an [[ai-agent|AI agent]], stored as a folder: a SKILL.md
+      file whose YAML front matter gives at least a name and a one-line description and whose body
+      holds Markdown instructions, optionally accompanied by scripts, reference documents and
+      templates. The format is built for [[progressive-disclosure|progressive disclosure]], so a
+      skill costs little until it is used: the agent's context permanently holds only the short
+      descriptions, roughly a hundred tokens per skill; the instructions are read when a task seems
+      to match; and supporting files are consulted, or scripts executed, only if the instructions
+      call for them, with just a script's output, not its source, taking space in the
+      [[context-window|context window]]. One agent can thus carry many specialized competencies
+      (filling PDF forms, applying a company's brand guidelines, running a data pipeline) without
+      crowding its context. Because skills can contain executable code and instructions, untrusted
+      skills are a supply-chain risk and should be audited before installation.
+    example: >-
+      Rather than paste the style guide into every prompt, we packaged it as an agent skill.
+origin: >-
+  Introduced by Anthropic as 'Agent Skills' on 16 October 2025 for Claude's apps, Claude Code and
+  API (engineering post by Barry Zhang, Keith Lazuka and Mahesh Murag), and published as an open
+  standard on 18 December 2025; OpenAI, Microsoft, Google and dozens of other agent products adopted
+  it. A precursor is the executable skill library of the Minecraft agent Voyager (2023).
+year: 2025
+note: >-
+  Skills complement the [[model-context-protocol|Model Context Protocol]]: MCP connects an agent to
+  external tools and data, while a skill teaches it a procedure, possibly using those tools. Not to
+  be confused with the 'skills' listed in an [[agent2agent-protocol|Agent2Agent protocol]] Agent
+  Card, which describe an agent's capabilities to other agents.
+see_also:
+  - progressive disclosure
+  - agent instruction file
+  - Model Context Protocol
+  - context engineering
+  - subagent
+  - AI supply chain security
+contrast:
+  - fine-tuning
+sources:
+  - text: >-
+      Zhang, B., Lazuka, K. & Murag, M. (2025). Equipping agents for the real world with Agent
+      Skills. Anthropic Engineering, 16 October 2025.
+    url: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
+  - text: Agent Skills. Overview and specification (open format).
+    url: https://agentskills.io/
+as_of: 2026-10

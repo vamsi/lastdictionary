@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inference
+id: inference
+pos: n.
+also:
+  - infer
+  - inferencing
+  - model inference
+domain: core
+domains:
+  - infer
+  - math
+  - sym
+level: core
+plain: >-
+  Drawing a conclusion from evidence. In today's AI it most often means running an already-trained
+  model to get an answer, as opposed to training it.
+senses:
+  - context: Machine learning (deployment)
+    definition: >-
+      The use of a trained model to compute outputs for new inputs while its [[weights|weights]]
+      stay fixed: answering a prompt, classifying an image, generating a picture. For
+      [[large-language-model|language models]], inference consists of a [[prefill|prefill]] phase
+      that processes the prompt and a [[decode-phase|decode phase]] that generates tokens one at a
+      time with the help of a [[kv-cache|KV cache]]. Its economics ([[latency|latency]],
+      [[throughput|throughput]] and [[inference-cost|inference cost]]) are the concern of
+      [[model-serving|model serving]]. Spending more computation at inference, for example by
+      letting a model reason longer before answering, is called [[test-time-compute|test-time
+      compute]].
+    example: Training was a one-off cost; inference is what shows up on the monthly bill.
+  - context: Statistics
+    definition: >-
+      Drawing conclusions about a population or data-generating process from a sample: estimating
+      parameters, quantifying uncertainty with [[confidence-interval|confidence intervals]] or
+      posterior distributions, and testing hypotheses. Frequentist and [[bayesian-inference|Bayesian
+      inference]] are the two main schools; approximate inference, such as variational methods or
+      [[markov-chain-monte-carlo|Markov chain Monte Carlo]], computes posteriors that cannot be
+      found exactly.
+  - context: Logic and symbolic AI
+    definition: >-
+      The derivation of conclusions from premises by rules of reasoning: deduction, induction or
+      abduction. In [[expert-system|expert systems]], an [[inference-engine|inference engine]]
+      applies rules to a [[knowledge-base|knowledge base]] by [[forward-chaining|forward chaining]]
+      or [[backward-chaining|backward chaining]] to reach new facts or decisions.
+  - context: Natural language processing
+    definition: >-
+      Short for natural language inference, also called recognizing textual entailment: the task of
+      deciding whether a premise sentence entails, contradicts or is neutral toward a hypothesis
+      sentence, long used as a test of language understanding in [[benchmark|benchmarks]] such as
+      [[glue|GLUE]].
+origin: >-
+  From Latin inferre, 'to bring in; to conclude'. The logical and statistical senses are centuries
+  old. The deployment sense spread in deep-learning engineering in the mid-2010s, as hardware and
+  software were built specifically for running trained networks rather than training them; Google's
+  first TPU, announced in 2016, was an inference-only chip.
+note: >-
+  The deployment sense confuses statisticians, for whom inference means estimating unknowns, not
+  running a fixed predictor. The EU AI Act uses 'infer' broadly: a system's capability to infer how
+  to generate outputs from inputs is the hallmark of an [[ai-system|AI system]] (Recital 12).
+see_also:
+  - model serving
+  - test-time compute
+  - Bayesian inference
+  - inference engine
+  - inference cost
+  - training
+  - prediction
+contrast:
+  - training

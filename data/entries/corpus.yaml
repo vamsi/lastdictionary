@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: corpus
+id: corpus
+pos: n.
+also:
+  - corpora
+  - text corpus
+  - training corpus
+domain: data
+domains:
+  - llm
+level: core
+plain: >-
+  A large collection of written or spoken language, gathered so that people or computers can study
+  it or learn from it — like a library assembled for a language model.
+senses:
+  - definition: >-
+      A body of language data — written texts or transcribed speech — collected on purpose and kept
+      in machine-readable form, either for studying how a language is used or for training and
+      evaluating language technology (plural corpora). Linguists traditionally build corpora as
+      balanced samples, choosing texts by genre and source so that findings generalize — the
+      [[brown-corpus|Brown Corpus]] fixed 500 text samples across 15 genres — and often enrich them
+      with [[annotation|annotation]] such as part-of-speech tags or syntactic trees. In current AI
+      usage the word most often means the text used to pretrain a [[large-language-model|large
+      language model]]: web-scale corpora such as [[c4|C4]], [[the-pile|The Pile]] and
+      [[fineweb|FineWeb]] hold from about 150 billion to more than 15 trillion [[token|tokens]],
+      largely filtered from [[common-crawl|Common Crawl]] and other sources, valued for size and
+      diversity rather than balanced sampling.
+    example: We held out 1% of the corpus to measure perplexity.
+origin: >-
+  From Latin corpus, 'body'; English has long used it for a complete body of writings. The
+  machine-readable sense dates from the Brown Corpus (1964), the first million-word electronic
+  corpus of English; 'corpus linguistics' became an established label in the 1980s, and natural
+  language processing adopted the word for any large body of training text.
+year: 1964
+note: >-
+  'Corpus' implies text or speech; for images and other modalities 'dataset' is the usual word.
+  Linguists distinguish a representative, documented corpus from an opportunistic collection, a
+  distinction that web-scale AI corpora often blur.
+see_also:
+  - dataset
+  - pretraining data
+  - Brown Corpus
+  - Common Crawl
+  - token
+  - natural language processing
+  - annotation
+contrast:
+  - dataset

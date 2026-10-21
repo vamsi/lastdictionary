@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: heuristic
+id: heuristic
+pos: n.
+also:
+  - heuristics
+  - heuristic function
+  - rule of thumb
+  - heuristic search
+domain: sym
+domains:
+  - core
+  - mind
+level: core
+plain: >-
+  A rule of thumb: a quick, usually good-enough way to make a decision or to estimate how close you
+  are to a goal, without any guarantee of finding the best answer.
+senses:
+  - context: Search
+    definition: >-
+      A function h(n) that guesses, for a state n, the least cost still needed to reach a goal, used
+      to steer [[best-first-search|informed search]] toward promising states — for example,
+      straight-line distance on a road map, or the number of misplaced tiles in a sliding puzzle. A
+      heuristic is [[admissible-heuristic|admissible]] if it never overestimates the true cost and
+      consistent if its estimates never drop by more than the cost of an action; these properties
+      make [[a-search|A* search]] optimal. Good heuristics are often derived by solving a relaxed
+      version of the problem that ignores some constraints, or from pattern databases storing exact
+      costs of subproblems; they can also be learned from solved examples.
+    example: >-
+      Our heuristic counts unsatisfied goals, which ignores interactions between them but is cheap
+      to compute.
+  - context: General
+    definition: >-
+      Any rule of thumb, approximation or problem-specific strategy that usually yields good
+      solutions quickly but without a guarantee of optimality or correctness, such as 'try the most
+      constrained variable first' in [[constraint-satisfaction-problem|constraint solving]] or a
+      greedy rule in scheduling. In this sense whole methods such as [[genetic-algorithm|genetic
+      algorithms]] and [[simulated-annealing|simulated annealing]] are called heuristic or
+      [[metaheuristic|metaheuristic]].
+  - context: Psychology
+    definition: >-
+      A mental shortcut that people use to judge or decide under uncertainty, such as judging
+      frequency by how easily examples come to mind. Amos Tversky and Daniel Kahneman's 1974 work
+      showed that such shortcuts produce systematic biases, a theme now echoed in studies of
+      [[large-language-model|language-model]] errors.
+origin: >-
+  From Greek heuriskein, 'to find' (as in 'eureka'). George Pólya's How to Solve It (1945) revived
+  heuristic as the study of problem-solving methods; Allen Newell, Cliff Shaw and Herbert Simon's
+  [[logic-theorist|Logic Theorist]] (1956) made 'heuristic programming' a founding idea of AI, and
+  the 1968 A* paper fixed the estimate-function sense.
+year: 1956
+note: >-
+  As an adjective it also means plausible but not rigorous ('a heuristic argument'). In machine
+  learning, calling a method 'a heuristic' often implies it was hand-designed rather than learned or
+  derived from principles.
+see_also:
+  - admissible heuristic
+  - A* search
+  - best-first search
+  - metaheuristic
+  - state space search
+  - combinatorial explosion
+  - hill climbing
+sources:
+  - text: Pólya, G. (1945). How to Solve It. Princeton University Press.
+  - text: >-
+      Pearl, J. (1984). Heuristics: Intelligent Search Strategies for Computer Problem Solving.
+      Addison-Wesley.

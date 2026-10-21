@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neural tangent kernel
+id: neural-tangent-kernel
+pos: n.
+also:
+  - NTK
+  - lazy training
+  - kernel regime
+  - infinite-width limit
+domain: dl
+domains:
+  - math
+  - ml
+level: specialist
+plain: >-
+  A mathematical tool showing that extremely wide neural networks learn like a simpler,
+  well-understood method, because their internal settings barely move during training. It explains
+  some, but not all, of deep learning's behavior.
+senses:
+  - definition: >-
+      The kernel formed by the inner product of the gradients of a network's output with respect to
+      its parameters at two inputs; it governs how a gradient step on one example changes the
+      prediction on another, and under [[gradient-descent|gradient descent]] with small steps the
+      network's function evolves by kernel gradient descent with this kernel. In the infinite-width
+      limit under the so-called NTK parametrization, the kernel becomes deterministic at
+      initialization and stays constant during training, so the network behaves like its first-order
+      Taylor expansion — a model linear in its parameters — and training with squared loss is
+      equivalent to kernel regression (see [[kernel-trick|kernel trick]]), with provable convergence
+      to zero training loss. This 'lazy' regime made deep-network training analyzable, but in it
+      internal representations barely change, so it cannot explain feature learning; real
+      finite-width networks depart from it, and alternative scalings such as
+      [[maximal-update-parametrization|maximal update parametrization]] preserve feature learning in
+      the infinite-width limit.
+formula_latex: \Theta(x, x') = \nabla_{\theta} f_{\theta}(x)^{\top} \, \nabla_{\theta} f_{\theta}(x')
+origin: >-
+  Introduced by Arthur Jacot, Franck Gabriel and Clément Hongler of EPFL in 'Neural Tangent Kernel:
+  Convergence and Generalization in Neural Networks' (arXiv June 2018; NeurIPS 2018). Lénaïc Chizat,
+  Edouard Oyallon and Francis Bach named the 'lazy training' regime (2018), and Greg Yang and Edward
+  Hu's 2020 feature-learning limit offered an alternative.
+year: 2018
+note: >-
+  'Kernel' here is the machine-learning sense of a similarity function, not a GPU or
+  operating-system kernel; see [[kernel|kernel]].
+see_also:
+  - overparameterization
+  - kernel trick
+  - Gaussian process
+  - maximal update parametrization
+  - implicit regularization
+  - weight initialization
+sources:
+  - text: >-
+      Jacot, A., Gabriel, F. & Hongler, C. (2018). Neural Tangent Kernel: Convergence and
+      Generalization in Neural Networks. NeurIPS 2018.
+    url: https://arxiv.org/abs/1806.07572
+  - text: >-
+      Chizat, L., Oyallon, E. & Bach, F. (2019). On Lazy Training in Differentiable Programming.
+      NeurIPS 2019.

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: semi-supervised learning
+id: semi-supervised-learning
+pos: n.
+also:
+  - semisupervised learning
+  - self-training
+  - pseudo-labeling
+domain: core
+domains:
+  - ml
+level: core
+plain: >-
+  Machine learning that combines a small set of labeled examples with a much larger pile of
+  unlabeled ones, which are cheaper to collect, to learn better than from the labeled data alone.
+senses:
+  - definition: >-
+      The [[machine-learning|machine learning]] setting in which a model is trained on a small set
+      of labeled examples plus a large set of unlabeled ones, using the unlabeled data to improve on
+      purely [[supervised-learning|supervised learning]]. It works only if the shape of the
+      unlabeled data says something about the labels: for instance, that the data lie near a
+      low-dimensional manifold (the manifold assumption), that points close together tend to share a
+      label (smoothness), or that classes form clusters separated by sparse regions (the cluster
+      assumption). Methods include self-training or pseudo-labeling (the model labels unlabeled data
+      with its own confident predictions and retrains), co-training on two views of the data,
+      graph-based label propagation, generative models, and consistency regularization, which
+      demands stable predictions under perturbations. Transductive variants label only the given
+      unlabeled points rather than learning a general rule.
+    example: >-
+      With only 500 labeled emails, semi-supervised learning on the 2 million unlabeled ones cut our
+      error rate by a third.
+origin: >-
+  Self-training appears in H. J. Scudder's 1965 work on adaptive pattern-recognition machines, and
+  Vladimir Vapnik formalized transductive inference in the 1970s. Avrim Blum and Tom Mitchell's
+  co-training (1998) and the 2006 volume Semi-Supervised Learning, edited by Olivier Chapelle,
+  Bernhard Schölkopf and Alexander Zien, consolidated the field and its vocabulary.
+year: 1965
+note: >-
+  The abbreviation SSL is ambiguous, since it also stands for
+  [[self-supervised-learning|self-supervised learning]], which needs no labels at all. Since
+  large-scale self-supervised pretraining became standard, semi-supervised methods are usually
+  combined with it rather than used alone.
+see_also:
+  - supervised learning
+  - unsupervised learning
+  - weak supervision
+  - self-supervised learning
+  - active learning
+  - label
+  - manifold hypothesis
+contrast:
+  - self-supervised learning
+sources:
+  - text: >-
+      Scudder, H. J. (1965). Probability of Error of Some Adaptive Pattern-Recognition Machines.
+      IEEE Transactions on Information Theory, 11(3), 363–371.
+  - text: >-
+      Blum, A. & Mitchell, T. (1998). Combining Labeled and Unlabeled Data with Co-Training.
+      Proceedings of COLT 1998.
+  - text: >-
+      Chapelle, O., Schölkopf, B. & Zien, A. (eds) (2006). Semi-Supervised Learning. MIT Press.

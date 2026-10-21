@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: branch and bound
+id: branch-and-bound
+pos: n.
+also:
+  - B&B
+  - BnB
+  - branch and cut
+domain: sym
+domains:
+  - math
+level: specialist
+plain: >-
+  A method for finding the provably best answer to a hard puzzle: divide the possibilities into
+  groups, quickly estimate the best any group could offer, and throw out every group that cannot
+  beat the best answer already in hand.
+senses:
+  - definition: >-
+      An exact method for discrete and global optimization that alternates two operations:
+      branching, which divides the solution space into subproblems, and bounding, which computes for
+      each subproblem a limit on the best objective value it could contain — typically by solving a
+      relaxation, such as dropping integrality constraints — so that any subproblem whose bound
+      cannot improve on the incumbent (the best complete solution yet found) is pruned. The search
+      tree may be explored depth-first, best-first or in hybrid orders, and the method ends with a
+      proof of optimality, or earlier with a guaranteed gap between incumbent and bound.
+      Strengthened by cutting planes (branch and cut), it is the engine of mixed-integer programming
+      solvers used in scheduling, logistics and energy planning; it also drives exact
+      [[traveling-salesman-problem|traveling-salesman]] and
+      [[constraint-satisfaction-problem|constraint-optimization]] solvers and the
+      [[formal-verification|formal verification]] of [[neural-network|neural networks]], and machine
+      learning is increasingly used to make its branching decisions.
+origin: >-
+  Introduced by Ailsa Land and Alison Doig at the London School of Economics in a 1960 Econometrica
+  paper on discrete programming. The name 'branch and bound' is first found in John Little, Katta
+  Murty, Dura Sweeney and Caroline Karel's 1963 paper on the traveling salesman problem.
+year: 1960
+see_also:
+  - traveling salesman problem
+  - best-first search
+  - A* search
+  - constraint satisfaction problem
+  - formal verification
+  - heuristic
+sources:
+  - text: >-
+      Land, A. H. & Doig, A. G. (1960). An Automatic Method of Solving Discrete Programming
+      Problems. Econometrica 28(3), 497–520.
+  - text: >-
+      Little, J. D. C., Murty, K. G., Sweeney, D. W. & Karel, C. (1963). An Algorithm for the
+      Traveling Salesman Problem. Operations Research 11(6), 972–989.

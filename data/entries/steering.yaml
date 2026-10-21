@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: steering
+id: steering
+pos: n.
+also:
+  - steer
+  - model steering
+  - LLM steering
+  - mid-task steering
+  - mid-steering
+domain: interp
+domains:
+  - llm
+  - safety
+  - gen
+level: core
+plain: >-
+  Guiding what an AI model does — its topic, tone or behavior — while it runs, by changing its
+  instructions, its internal signals or how its next word is chosen, rather than by retraining it.
+senses:
+  - context: General
+    definition: >-
+      Any method for controlling a trained model's outputs toward a desired attribute — topic,
+      style, sentiment, persona, safety behavior or task — at use time and without full retraining.
+      Methods differ by where they intervene: in the input ([[prompt-engineering|prompting]],
+      [[system-prompt|system prompts]], learned soft prompts as in [[prompt-tuning|prompt tuning]]);
+      in the internal [[activation|activations]] ([[activation-steering|activation steering]]); or
+      in the output distribution ([[logit-bias|logit bias]], [[constrained-decoding|constrained
+      decoding]], reweighting next-token probabilities with an attribute classifier). How readily a
+      model follows such control is its [[steerability|steerability]].
+    example: >-
+      Prompting alone couldn't hold the persona for long conversations, so we switched to steering
+      at layer 20.
+  - context: Interpretability
+    definition: >-
+      Short for [[activation-steering|activation steering]]: changing a model's behavior by
+      modifying its internal activations during the [[forward-pass|forward pass]], typically by
+      adding a [[steering-vector|steering vector]] to the [[residual-stream|residual stream]] or
+      clamping an interpretable [[feature-interpretability|feature]]. Because it is a causal
+      intervention, steering also tests whether a representation found by [[probing|probing]]
+      actually drives behavior rather than merely correlating with it.
+  - context: Generative media
+    definition: >-
+      Controlling an image, video or audio generator during sampling, chiefly through guidance — as
+      in [[classifier-free-guidance|classifier-free guidance]], which extrapolates from an
+      unconditional toward a conditional prediction of a [[diffusion-model|diffusion model]] — or by
+      moving through a generator's latent space or editing its intermediate attention maps.
+  - context: Agents
+    definition: >-
+      Redirecting a running [[ai-agent|AI agent]] by sending it new instructions, corrections or
+      priorities while it is still working on a task, so that it changes course at its next step
+      without the user stopping the job and starting over. Coding agents and other agent
+      [[harness|harnesses]] increasingly accept such mid-task messages alongside queued follow-up
+      requests.
+    labels:
+      - informal
+origin: >-
+  Long used loosely for controlling generation; 'controllable text generation' systems around 2019
+  (CTRL, the [[plug-and-play-language-model|plug and play language model]]) and Ali Jahanian, Lucy
+  Chai and Phillip Isola's 'On the "steerability" of generative adversarial networks' (2019) framed
+  the problem. The interpretability sense took hold with 'latent steering vectors' (Subramani et
+  al., 2022) and activation addition (Turner et al., 2023).
+note: >-
+  Distinguish steering, which changes behavior at use time and is reversible, from
+  [[fine-tuning|fine-tuning]] and [[model-editing|model editing]], which change the weights; folding
+  a steering direction permanently into the weights, as in [[abliteration|abliteration]], blurs the
+  line. The word is also used loosely for training-time shaping such as
+  [[reinforcement-learning-from-human-feedback|RLHF]]; technical usage increasingly reserves it for
+  inference-time control.
+see_also:
+  - activation steering
+  - steering vector
+  - steerability
+  - feature steering
+  - representation engineering
+  - prompt engineering
+  - classifier-free guidance
+contrast:
+  - fine-tuning
+  - model editing
+as_of: 2026-10

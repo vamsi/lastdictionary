@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Open X-Embodiment
+id: open-x-embodiment
+pos: prop. n.
+also:
+  - OXE
+  - Open X-Embodiment dataset
+  - RT-X
+  - RT-1-X
+domain: robot
+domains:
+  - data
+level: specialist
+plain: >-
+  A large shared collection of robot training data, pooled by dozens of research labs in 2023 and
+  covering many kinds of robots, so that one AI model could learn from all of them.
+senses:
+  - definition: >-
+      A shared robot-learning corpus, and the collaboration of 34 laboratories that built it, made
+      by converting 60 existing datasets into one format; it holds over a million trajectories
+      recorded on 22 kinds of real robot, from single arms to two-armed rigs and four-legged
+      machines, demonstrating 527 skills. Its companion models showed positive transfer: RT-1-X,
+      trained on the mixture, outperformed models trained on each lab's own data by about 50% on
+      average in small-data settings, and RT-2-X roughly tripled RT-2's success on emergent-skill
+      evaluations. The dataset became the standard pretraining corpus for open
+      [[generalist-robot-policy|generalist policies]] and
+      [[vision-language-action-model|vision-language-action models]] such as Octo and OpenVLA, and
+      established [[cross-embodiment-learning|cross-embodiment learning]] as a practical recipe. Its
+      heterogeneity — different cameras, [[action-space|action spaces]], control rates and data
+      quality — is also a weakness, and later work filters or reweights its subsets.
+    example: We pretrained on the Open X-Embodiment mixture and fine-tuned on our own arm.
+origin: >-
+  Released by Google DeepMind and partner institutions (21 in the paper's author list) in 'Open
+  X-Embodiment: Robotic Learning Datasets and RT-X Models', posted to arXiv on 13 October 2023 and
+  presented at ICRA 2024.
+year: 2023
+note: >-
+  Its diversity is mostly across robots and labs: most trajectories are tabletop manipulation, so it
+  is far less varied than web text or image corpora.
+see_also:
+  - cross-embodiment learning
+  - generalist robot policy
+  - vision-language-action model
+  - RT-2
+  - robot foundation model
+  - dataset
+sources:
+  - text: >-
+      Open X-Embodiment Collaboration (2023). Open X-Embodiment: Robotic Learning Datasets and RT-X
+      Models. arXiv:2310.08864.
+    url: https://arxiv.org/abs/2310.08864
+  - text: Open X-Embodiment project page.
+    url: https://robotics-transformer-x.github.io/

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: score distillation sampling
+id: score-distillation-sampling
+pos: n.
+also:
+  - SDS
+  - text-to-3D
+  - text-to-3D generation
+  - DreamFusion
+  - variational score distillation
+domain: gen
+domains:
+  - percep
+level: specialist
+plain: >-
+  A trick for creating 3D objects from a text description by repeatedly asking a 2D image generator
+  whether pictures of the object, seen from many angles, look right — and adjusting the object until
+  they do.
+senses:
+  - definition: >-
+      A technique for fitting a differentiable generator — most often a 3D scene such as a
+      [[neural-radiance-field|neural radiance field]] or [[gaussian-splatting|Gaussian splats]] — so
+      that its renderings look plausible to a frozen, pretrained 2D [[diffusion-model|diffusion
+      model]] acting as the prior. At each iteration the scene is rendered from a random camera
+      view, the rendering is noised to a random level, and the frozen diffusion model's predicted
+      noise (under the text prompt, with strong [[classifier-free-guidance|classifier-free
+      guidance]]) is compared with the noise actually added; the difference, back-propagated through
+      the renderer while skipping the diffusion network's own Jacobian, nudges the scene toward
+      renderings the model finds likely. No 3D examples are needed: text-to-3D generation becomes
+      possible with a 2D image model alone. SDS tends to give oversaturated, over-smoothed results
+      and inconsistent multi-faced 'Janus' objects, which variants such as variational score
+      distillation address; related gradients are used in [[diffusion-distillation|diffusion
+      distillation]]. Feed-forward 3D generators trained on 3D datasets are now common alternatives.
+origin: >-
+  Introduced by Ben Poole, Ajay Jain, Jonathan Barron and Ben Mildenhall of Google Research and UC
+  Berkeley in 'DreamFusion: Text-to-3D using 2D Diffusion' (posted September 2022; ICLR 2023).
+year: 2022
+see_also:
+  - neural radiance field
+  - Gaussian splatting
+  - diffusion model
+  - 3D reconstruction
+  - diffusion distillation
+  - classifier-free guidance
+sources:
+  - text: >-
+      Poole, B., Jain, A., Barron, J. T. & Mildenhall, B. (2023). DreamFusion: Text-to-3D using 2D
+      Diffusion. ICLR 2023. arXiv:2209.14988.
+    url: https://arxiv.org/abs/2209.14988

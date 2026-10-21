@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: recursive self-improvement
+id: recursive-self-improvement
+pos: n.
+also:
+  - RSI
+  - self-improving AI
+  - recursively self-improving AI
+domain: asi
+domains:
+  - safety
+  - agents
+level: core
+plain: >-
+  An AI improving its own design or training, so that each improved version is better at making the
+  next improvement. It is the engine usually imagined behind an intelligence explosion.
+senses:
+  - definition: >-
+      Improvement of an AI system carried out by the system itself, by rewriting its code,
+      redesigning its architecture, generating its own training data or doing the research that
+      produces its successor, in a loop where each gain makes the next one easier. Early writing
+      pictured a single program editing itself; current discussion more often concerns a looser loop
+      in which AI agents automate growing parts of the research and engineering pipeline at a
+      [[frontier-lab|frontier lab]], with humans still supervising. Partial forms are already
+      routine: models generate [[synthetic-data|synthetic data]], provide
+      [[reinforcement-learning-from-ai-feedback|feedback for training]] and write much of the code
+      used to train successors, and evolutionary coding agents such as Google DeepMind's
+      [[alphaevolve|AlphaEvolve]] (2025) have found speedups in the kernels used to train their own
+      model family. Whether such loops compound or saturate is the central question for
+      [[takeoff|takeoff]] speed. Several frontier [[responsible-scaling-policy|safety frameworks]]
+      treat substantial automation of AI R&D as a [[capability-threshold|capability threshold]]
+      requiring extra safeguards.
+    example: >-
+      The worry is not one model rewriting its own weights but a lab where agents do most of the
+      research on their successors.
+origin: >-
+  The idea is implicit in I. J. Good's 1965 ultraintelligent machine and in Jürgen Schmidhuber's
+  1987 work on self-referential learning. Eliezer Yudkowsky's writing on [[seed-ai|seed AI]] from
+  2001 spread it (his Creating Friendly AI spoke of 'recursive self-enhancement'); the exact phrase,
+  whose earliest use is not established, was standard in AI-risk writing by 2008, the year of
+  Yudkowsky's essay 'Recursive Self-Improvement'. It entered industry roadmaps from 2024 as labs set
+  goals for automating AI research.
+see_also:
+  - intelligence explosion
+  - automated AI research
+  - seed AI
+  - Gödel machine
+  - takeoff
+  - capability threshold
+as_of: 2026-10

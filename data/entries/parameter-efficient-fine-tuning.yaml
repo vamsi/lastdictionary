@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: parameter-efficient fine-tuning
+id: parameter-efficient-fine-tuning
+pos: n.
+also:
+  - PEFT
+  - parameter-efficient transfer learning
+  - PETL
+domain: train
+domains:
+  - llm
+  - eng
+level: core
+plain: >-
+  A family of tricks for customizing a large AI model by training only a tiny fraction of its
+  numbers, or a small add-on, leaving the rest untouched to save memory and money.
+senses:
+  - definition: >-
+      A family of [[fine-tuning|fine-tuning]] methods that adapt a pretrained model by training a
+      small number of parameters — often well under 1 percent of the total — while the original
+      [[weights|weights]] stay frozen. A widely used taxonomy, from a 2023 survey by Vladislav
+      Lialin and colleagues, sorts them into additive methods, which insert new trainable modules or
+      inputs ([[adapter|adapters]], [[prefix-tuning|prefix tuning]], [[prompt-tuning|prompt
+      tuning]]); selective methods, which unfreeze a chosen subset (only the bias terms in BitFit,
+      or only certain layers); and reparameterization-based methods, which learn a compact form of
+      the weight update ([[low-rank-adaptation|low-rank adaptation]] and its variants, often
+      combined with [[quantization|quantization]] as in [[qlora|QLoRA]]). Benefits are far lower
+      memory for gradients and optimizer states, small per-task files that share one base model,
+      cheaper multi-tenant serving and some protection against
+      [[catastrophic-forgetting|catastrophic forgetting]]. Costs are a lower ceiling than
+      [[full-fine-tuning|full fine-tuning]] on large or knowledge-heavy tasks, and extra
+      hyperparameters.
+    example: >-
+      PEFT let us keep one copy of the base model and ship each client a 30 MB adapter.
+origin: >-
+  The framing comes from Neil Houlsby and colleagues at Google, whose February 2019 paper
+  'Parameter-Efficient Transfer Learning for NLP' introduced adapter modules for BERT, coming within
+  0.4 percent of full fine-tuning on GLUE with 3.6 percent extra parameters per task. Prefix tuning,
+  prompt tuning and LoRA (2021) followed; 'parameter-efficient fine-tuning' appears in paper titles
+  by 2022, and Hugging Face's PEFT library (2023) popularized the abbreviation.
+year: 2019
+note: >-
+  PEFT reduces training memory and storage, not inference cost: the full base model must still be
+  loaded to run.
+see_also:
+  - low-rank adaptation
+  - adapter
+  - prefix tuning
+  - prompt tuning
+  - QLoRA
+  - full fine-tuning
+  - transfer learning
+contrast:
+  - full fine-tuning
+sources:
+  - text: >-
+      Houlsby, N. et al. (2019). Parameter-Efficient Transfer Learning for NLP. ICML 2019.
+      arXiv:1902.00751.
+    url: https://arxiv.org/abs/1902.00751
+  - text: >-
+      Lialin, V., Deshpande, V. & Rumshisky, A. (2023). Scaling Down to Scale Up: A Guide to
+      Parameter-Efficient Fine-Tuning. arXiv preprint.

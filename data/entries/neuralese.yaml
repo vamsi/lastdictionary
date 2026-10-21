@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neuralese
+id: neuralese
+pos: n.
+also:
+  - neuralese reasoning
+  - latent-space reasoning
+  - continuous thought
+pronunciation: nyoor-uh-LEEZ
+domain: safety
+domains:
+  - llm
+  - interp
+labels:
+  - informal
+  - emerging
+level: specialist
+plain: >-
+  A nickname for the private 'language' of numbers that AI systems could use to think or to talk to
+  each other, instead of words that people can read.
+senses:
+  - definition: >-
+      Informal name for information that neural networks pass to one another, or to themselves
+      across reasoning steps, as high-dimensional vectors rather than human-readable tokens. In
+      current [[reasoning-model|reasoning models]], intermediate reasoning is mostly written out as
+      text, which is what makes [[chain-of-thought-monitoring|chain-of-thought monitoring]]
+      possible. Architectures that instead feed continuous hidden states back in as inputs —
+      reasoning 'in latent space', as in Meta's Coconut ('chain of continuous thought') — or that
+      let agents exchange embeddings could be more efficient, because a vector carries far more
+      information than a single sampled token. Safety researchers worry that a shift to neuralese
+      would close this window into model cognition and sharply reduce
+      [[monitorability|monitorability]], leaving only [[interpretability|interpretability]] tools to
+      inspect what models are planning.
+    example: >-
+      If the next generation reasons in neuralese, our chain-of-thought monitors will have nothing
+      to read.
+origin: >-
+  Jacob Andreas, Anca Dragan and Dan Klein used the word in 'Translating Neuralese' (ACL 2017) for
+  the learned message vectors of communicating agents, which they translated into natural language.
+  The scenario [[ai-2027|AI 2027]] (April 2025) by Daniel Kokotajlo and colleagues popularized it
+  for latent-space reasoning, a risk also stressed in the 2025 monitorability position paper.
+year: 2017
+note: >-
+  Distinct from [[steganography|steganography]], in which hidden meaning rides on readable text;
+  neuralese is not readable at all. Whether frontier developers will adopt latent reasoning widely,
+  and at what cost to oversight, was an open question as of October 2026.
+see_also:
+  - monitorability
+  - chain-of-thought monitoring
+  - steganography
+  - reasoning model
+  - AI 2027
+  - interpretability
+sources:
+  - text: >-
+      Andreas, J., Dragan, A. & Klein, D. (2017). Translating Neuralese. Proceedings of ACL 2017.
+  - text: >-
+      Hao, S. et al. (2024). Training Large Language Models to Reason in a Continuous Latent Space.
+      Meta, arXiv preprint.
+as_of: 2026-10

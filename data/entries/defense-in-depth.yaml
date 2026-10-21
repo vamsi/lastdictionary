@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: defense in depth
+id: defense-in-depth
+pos: n.
+also:
+  - defence in depth
+  - layered defense
+  - layered safeguards
+  - Swiss cheese model
+domain: safety
+domains:
+  - sec
+  - gov
+level: core
+plain: >-
+  Protecting against AI risks with several independent layers of safeguards, so that if one fails —
+  say, the model's own training — another, such as a filter or human review, still catches the
+  problem.
+senses:
+  - definition: >-
+      A risk-management principle that stacks multiple independent safeguards so that no single
+      failure leads to harm. Applied to AI, the layers can include safety-oriented training
+      ([[refusal|refusal]] behavior, [[ai-constitution|constitutions]]); input and output
+      [[safety-classifier|classifiers]]; [[trusted-monitoring|monitoring]] of model actions and
+      reasoning; [[structured-access|structured access]] and access controls;
+      [[model-weight-security|weight security]]; rate limits and account enforcement; human review;
+      and incident response. The layers should fail for different reasons, so that an attack must
+      defeat each in turn; correlated failures, such as several classifiers sharing a blind spot,
+      erode the benefit. The principle is often illustrated by James Reason's 'Swiss cheese' model
+      of accidents, in which harm occurs only when the holes in successive slices line up. It
+      underlies frontier laboratories' deployment safeguards and the [[ai-control|AI control]]
+      agenda.
+    example: >-
+      No single filter stops every jailbreak, so we rely on defense in depth: training, classifiers,
+      monitoring and account bans.
+origin: >-
+  A military doctrine of layered defense later adopted in nuclear engineering — codified in the
+  International Nuclear Safety Advisory Group's 'Defence in Depth in Nuclear Safety' (INSAG-10,
+  1996) — and in information security. Reason's accident model dates from 1990. In AI safety, Dan
+  Hendrycks and colleagues' 'Unsolved Problems in ML Safety' (2021) used a Swiss cheese diagram to
+  argue for multiple layers of protection, and laboratory safety frameworks adopted the principle
+  from 2023.
+year: 2021
+note: >-
+  Each layer is imperfect; the case for defense in depth is multiplicative and holds only as far as
+  the layers fail independently. 'Swiss cheese model' names the accident-causation picture rather
+  than the practice itself.
+see_also:
+  - AI control
+  - safety classifier
+  - guardrails
+  - structured access
+  - safety case
+  - model weight security
+  - red teaming
+sources:
+  - text: >-
+      Hendrycks, D., Carlini, N., Schulman, J. & Steinhardt, J. (2021). Unsolved Problems in ML
+      Safety. arXiv preprint.
+  - text: >-
+      International Nuclear Safety Advisory Group (1996). Defence in Depth in Nuclear Safety
+      (INSAG-10). IAEA.

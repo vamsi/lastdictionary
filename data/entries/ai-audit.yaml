@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI audit
+id: ai-audit
+pos: n.
+also:
+  - algorithmic audit
+  - AI auditing
+  - bias audit
+domain: gov
+domains:
+  - eval
+  - society
+level: core
+plain: >-
+  An independent check of an AI system, or of the company using it, against agreed standards — for
+  example, testing whether a hiring tool treats women and men fairly.
+senses:
+  - definition: >-
+      A structured examination of an AI system, or of the organization that develops or deploys it,
+      against defined criteria, producing findings that others can rely on. Audits differ in object
+      and depth: technical or model audits test behavior directly (accuracy, robustness,
+      [[algorithmic-bias|bias]], privacy leakage, dangerous capabilities); process or governance
+      audits check documentation, risk management and controls against standards such as
+      [[iso-iec-42001|ISO/IEC 42001]] or the [[nist-ai-risk-management-framework|NIST AI Risk
+      Management Framework]]; and outcome audits examine real-world effects. They may be internal,
+      commissioned from an independent firm, or adversarial — carried out by researchers or
+      journalists without the developer's cooperation. Legally required examples include annual bias
+      audits of [[automated-employment-decision-tool|automated employment decision tools]] in New
+      York City and the [[conformity-assessment|conformity assessments]] of the [[eu-ai-act|EU AI
+      Act]]. Effective audits need adequate access (black-box queries are often insufficient),
+      auditor independence and mature standards, all of which remain in short supply.
+    example: >-
+      The AI audit found the screening model's selection rate for older applicants was well below
+      the benchmark.
+origin: >-
+  Grew from the 'auditing algorithms' agenda in social science (Christian Sandvig and colleagues,
+  2014) and from fairness research such as Joy Buolamwini and Timnit Gebru's Gender Shades study
+  (2018) and Inioluwa Deborah Raji and Buolamwini's 'Actionable Auditing' (2019); Raji and
+  colleagues proposed an internal audit framework in 2020.
+year: 2014
+note: >-
+  Distinguish from an [[alignment-audit|alignment audit]], which investigates whether a model has
+  hidden objectives, and from [[third-party-ai-evaluation|third-party AI evaluation]] of frontier
+  capabilities, although the boundaries blur.
+see_also:
+  - third-party AI evaluation
+  - algorithmic impact assessment
+  - algorithmic accountability
+  - conformity assessment
+  - red teaming
+  - automated employment decision tool
+contrast:
+  - alignment audit
+sources:
+  - text: >-
+      Raji, I. D. & Buolamwini, J. (2019). Actionable Auditing: Investigating the Impact of Publicly
+      Naming Biased Performance Results of Commercial AI Products. Proceedings of AIES 2019.
+  - text: >-
+      Raji, I. D., Smart, A., White, R. N., Mitchell, M., Gebru, T., Hutchinson, B., Smith-Loud, J.,
+      Theron, D. & Barnes, P. (2020). Closing the AI Accountability Gap: Defining an End-to-End
+      Framework for Internal Algorithmic Auditing. Proceedings of FAT* 2020.

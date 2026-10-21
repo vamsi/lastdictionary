@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: linear algebra
+id: linear-algebra
+pos: n.
+also:
+  - matrix algebra
+  - numerical linear algebra
+domain: math
+domains:
+  - dl
+level: core
+plain: >-
+  The branch of mathematics about lists and grids of numbers and the even, straight-line
+  transformations between them. It is the everyday language in which neural networks are written and
+  computed.
+senses:
+  - definition: >-
+      The branch of mathematics dealing with [[vector|vectors]] and vector spaces, the
+      [[linear-transformation|linear maps]] that act on them and the [[matrix|matrices]] that
+      represent those maps once coordinates are fixed: systems of linear equations,
+      [[matrix-multiplication|matrix products]], determinants, [[rank|rank]],
+      [[eigenvector|eigenvalues and eigenvectors]], [[orthogonality|orthogonality]] and
+      decompositions such as the [[singular-value-decomposition|singular value decomposition]].
+      Numerical linear algebra adds algorithms for computing these quantities quickly and stably in
+      floating point. It is the main mathematical substrate of deep learning: data, parameters and
+      activations are [[tensor|tensors]]; layers are linear maps followed by nonlinearities;
+      [[attention|attention]] is built from matrix products and softmaxes; and hardware, compilers
+      and libraries (from BLAS to cuBLAS) are organized around dense linear algebra.
+      Interpretability tools such as [[linear-probe|linear probes]] and [[steering-vector|steering
+      vectors]], and the [[linear-representation-hypothesis|linear representation hypothesis]], are
+      claims about the linear structure of [[activation-space|activation space]].
+    example: >-
+      Attention is mostly matrix products, so review your linear algebra before the transformer
+      chapter.
+origin: >-
+  Linear equations were solved by elimination in China's Nine Chapters on the Mathematical Art and,
+  in Europe, by Carl Friedrich Gauss in the early 1800s. The subject took modern form with Hermann
+  Grassmann's Ausdehnungslehre (1844), Arthur Cayley's matrix algebra (1858) and Giuseppe Peano's
+  axioms for vector spaces (1888); numerical linear algebra grew with electronic computers from the
+  1940s.
+see_also:
+  - vector
+  - matrix
+  - matrix multiplication
+  - linear transformation
+  - eigenvector
+  - singular value decomposition
+  - tensor

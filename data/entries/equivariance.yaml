@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: equivariance
+id: equivariance
+pos: n.
+also:
+  - equivariant
+  - equivariant neural network
+  - group equivariant convolutional network
+  - G-CNN
+domain: dl
+domains:
+  - math
+level: specialist
+plain: >-
+  A property of a model whose output changes in step with its input: move the cat in a photo, and
+  the network's internal 'cat' signal moves the same way.
+senses:
+  - definition: >-
+      The property of a function f that commutes with a group G of transformations: transforming the
+      input by g ∈ G transforms the output by a corresponding action, f(g·x) = g·f(x).
+      [[convolution|Convolutional]] layers are equivariant to translations (shifting the image
+      shifts the [[feature-map|feature maps]]); [[graph-neural-network|graph neural networks]] are
+      equivariant to relabeling of nodes; self-attention without [[positional-encoding|positional
+      encodings]] is permutation-equivariant. It differs from [[invariance|invariance]], in which
+      the output does not change at all; invariant outputs are usually obtained by pooling
+      equivariant features. Group-equivariant networks extend the idea to rotations, reflections,
+      scaling and 3-D rigid motions (E(3)- and SE(3)-equivariant networks), cutting data
+      requirements in molecular modeling, physics and medical imaging. Building in known symmetries
+      is the organizing principle of [[geometric-deep-learning|geometric deep learning]].
+    example: >-
+      Because the potential is rotation-equivariant, we no longer augment the molecules with random
+      rotations.
+formula_latex: f(T_g\,x) = T'_g\,f(x) \quad \forall g \in G
+origin: >-
+  A concept from group and representation theory. In deep learning it became an explicit design
+  principle with Taco Cohen and Max Welling's 'Group Equivariant Convolutional Networks' (February
+  2016), building on earlier work on steerable filters and symmetry in vision; equivariant graph and
+  point-cloud networks followed from about 2018.
+year: 2016
+see_also:
+  - invariance
+  - geometric deep learning
+  - convolutional neural network
+  - weight sharing
+  - graph neural network
+  - inductive bias
+  - capsule network
+contrast:
+  - invariance
+sources:
+  - text: >-
+      Cohen, T. S. & Welling, M. (2016). Group Equivariant Convolutional Networks. ICML 2016;
+      arXiv:1602.07576.
+    url: https://arxiv.org/abs/1602.07576

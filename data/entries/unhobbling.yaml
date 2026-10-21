@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: unhobbling
+id: unhobbling
+pos: n.
+also:
+  - unhobbling gains
+  - unhobble
+domain: train
+domains:
+  - asi
+  - culture
+labels:
+  - informal
+  - emerging
+level: specialist
+plain: >-
+  Fixing the simple ways a capable AI model is held back — such as by giving it tools, memory or
+  time to think — so that abilities it already has can actually be used.
+senses:
+  - definition: >-
+      Improvements that release capabilities latent in a trained model by removing default
+      limitations rather than by further scaling of [[pretraining|pretraining]]: for example giving
+      a model [[tool-use|tools]], memory and longer [[context-window|context windows]]; letting it
+      think step by step ([[chain-of-thought|chain of thought]], [[reasoning-model|reasoning
+      training]]); wrapping it in [[scaffolding|scaffolding]] and agent loops so that it can act,
+      including through [[computer-use|computer use]]; or post-training a base model into a usable
+      assistant with [[reinforcement-learning-from-human-feedback|RLHF]]. In Leopold Aschenbrenner's
+      accounting of AI progress it is the third driver, alongside growth in physical compute and
+      algorithmic efficiencies ([[effective-compute|effective compute]]); he wrote that its gains
+      are hard to put on the same effective-compute scale but clearly large, and expected them to
+      turn chatbots into agents. The concept emphasizes that measured capability depends on how a
+      model is deployed, not only on its pretraining.
+    example: >-
+      Most of this year's jump came from unhobbling — tools and longer reasoning — not a bigger base
+      model.
+origin: >-
+  Introduced, and probably coined in this sense, by Leopold Aschenbrenner, a former OpenAI
+  researcher, who presented it as 'what I'll call unhobbling' in 'From GPT-4 to AGI: Counting the
+  OOMs', the first chapter of his essay series 'Situational Awareness: The Decade Ahead' (2024).
+year: 2024
+note: >-
+  A forecasting heuristic rather than a technical term with an agreed definition; whether such gains
+  can be reliably quantified or extrapolated is debated. Overlaps with [[test-time-compute|test-time
+  compute]] and [[post-training|post-training]] improvements.
+see_also:
+  - effective compute
+  - algorithmic progress
+  - scaffolding
+  - tool use
+  - test-time compute
+  - AI timelines
+sources:
+  - text: >-
+      Aschenbrenner, L. (2024). Situational Awareness: The Decade Ahead — I. From GPT-4 to AGI:
+      Counting the OOMs.
+    url: https://situational-awareness.ai/from-gpt-4-to-agi/

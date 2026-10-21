@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tool
+id: tool
+pos: n.
+also:
+  - tools
+  - tool definition
+  - tool schema
+domain: agents
+domains:
+  - llm
+  - eng
+level: core
+plain: >-
+  Any outside capability an AI model is allowed to use — a web search, a calculator, a code runner,
+  a database or an app — described to the model so it can ask for it by name.
+senses:
+  - context: Agents
+    definition: >-
+      A capability external to a [[large-language-model|large language model]] that the model can
+      invoke through its host application: a function, web API, command-line program, database
+      query, browser action, or another model or agent. A tool is presented to the model as a
+      definition — a name, a natural-language description of what it does and when to use it, and an
+      input schema, usually in [[json-schema|JSON Schema]] — and the model uses it by emitting a
+      [[tool-call|tool call]] that the [[harness|harness]] executes. Tools may be client-side (run
+      by the developer's code), server-side (run by the model provider, such as hosted web search or
+      code execution) or published by [[mcp-server|MCP servers]]. Because the model chooses tools
+      from their descriptions, naming, wording and granularity strongly affect reliability — the
+      concern of [[agent-computer-interface|agent–computer interface]] design — and agents with
+      hundreds of tools may load definitions on demand rather than all at once.
+    example: Give the agent a read-only database tool before you give it one that can write.
+  - context: AI risk
+    definition: >-
+      In debates about AI risk, a system that answers or acts only when directed, as opposed to an
+      agent pursuing goals of its own; see [[tool-ai|tool AI]], the proposal that advanced AI be
+      built only in this form.
+origin: >-
+  For language models, the 2022–2023 papers [[mrkl-system|MRKL]], [[react|ReAct]] and
+  [[toolformer|Toolformer]] cast external APIs as tools; OpenAI's [[chatgpt-plugins|ChatGPT
+  plugins]] (March 2023) and [[function-calling|function calling]] (June 2023) made tool definitions
+  a standard API feature, and the [[model-context-protocol|Model Context Protocol]] (November 2024)
+  standardized how tools are published and discovered.
+year: 2022
+note: >-
+  In APIs 'tool' and 'function' are near-synonyms; OpenAI's original 'functions' parameter gave way
+  to a more general 'tools' parameter in late 2023. Tool descriptions are an attack surface: see
+  [[tool-poisoning|tool poisoning]].
+see_also:
+  - tool call
+  - tool use
+  - function calling
+  - Model Context Protocol
+  - agent–computer interface
+  - tool poisoning
+  - tool AI
+sources:
+  - text: >-
+      Paniego, S. & Roy Gosthipaty, A. (2026). Harness, Scaffold, and the AI Agent Terms Worth
+      Getting Right. Hugging Face blog.
+    url: https://huggingface.co/blog/agent-glossary

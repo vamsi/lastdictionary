@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: quantization
+id: quantization
+pos: n.
+also:
+  - quantize
+  - quantized model
+  - model quantization
+  - low-bit quantization
+  - weight quantization
+  - quantisation
+  - W4A16
+  - W8A8
+domain: infer
+domains:
+  - hw
+  - dl
+  - math
+level: core
+plain: >-
+  Storing an AI model's numbers with fewer digits, like rounding prices to the nearest dollar, so
+  the model takes less memory and runs faster, usually with only a small loss of accuracy.
+senses:
+  - context: Neural networks
+    definition: >-
+      The mapping of a model's [[weights|weights]], and often its [[activation|activations]] and
+      [[kv-cache|KV cache]], from high-precision floating-point numbers (32 or 16 bits) to
+      low-precision formats such as 8- or 4-bit integers or [[fp8|FP8]] and [[fp4|FP4]] floats. In
+      uniform affine quantization each value is divided by a scale, rounded and offset by a
+      zero-point, with scales shared per tensor, per channel or per small group of values;
+      dequantization approximately reverses the mapping. Fewer bits shrink memory roughly in
+      proportion (a 70-billion-parameter model needs about 140 GB at 16 bits and 35 GB at 4 bits)
+      and speed up [[memory-bound|memory-bound]] decoding; if activations are quantized too,
+      low-precision matrix units also raise arithmetic throughput. Schemes are written like W4A16
+      (4-bit weights, 16-bit activations). Quantization is applied after training
+      ([[post-training-quantization|post-training quantization]]) or simulated during it
+      ([[quantization-aware-training|quantization-aware training]]); rare outlier values, more than
+      average error, are the main obstacle at low bit widths.
+    example: >-
+      The 4-bit quantized model fits on one 24 GB card and scores within a point of the original.
+  - context: Signal processing
+    definition: >-
+      In signal processing and information theory, the replacement of each value of a continuous or
+      finely graded quantity by one of a limited number of representative levels, as when an
+      analog-to-digital converter records a voltage as the nearest of its fixed set of codes, or
+      when vector quantization swaps each vector for the closest entry of a learned codebook (as in
+      [[vq-vae|VQ-VAE]]); the difference between the original and its replacement is the
+      quantization error. This older sense is the source of the machine-learning one.
+formula_latex: q = \operatorname{clamp}\left(\operatorname{round}\left(\frac{x}{s}\right) + z,\;
+  q_{\min},\; q_{\max}\right), \qquad \hat{x} = s\,(q - z)
+origin: >-
+  From signal processing, where quantizing continuous signals was analyzed with the rise of
+  pulse-code modulation, notably by W. R. Bennett (1948). Low-precision neural networks were studied
+  from about 1990; 8-bit integer inference spread with mobile deployment in 2015–2018 (for example
+  Benoit Jacob and colleagues at Google, 2017), and 8- and then 4-bit quantization of large language
+  models followed with LLM.int8(), GPTQ and AWQ in 2022–2023.
+note: >-
+  Quantization changes the model's numbers and can change its behavior, unlike
+  [[speculative-decoding|speculative decoding]]. 'No loss' claims usually rest on perplexity or a
+  few benchmarks; long-context, multilingual and tool-use abilities often degrade first. Unrelated
+  to quantum computing.
+see_also:
+  - post-training quantization
+  - quantization-aware training
+  - GPTQ
+  - AWQ
+  - GGUF
+  - floating-point format
+  - model compression
+  - BitNet
+contrast:
+  - pruning
+  - knowledge distillation
+sources:
+  - text: >-
+      Jacob, B. et al. (2017). Quantization and Training of Neural Networks for Efficient
+      Integer-Arithmetic-Only Inference. arXiv:1712.05877 (CVPR 2018).
+    url: https://arxiv.org/abs/1712.05877
+  - text: >-
+      Bennett, W. R. (1948). Spectra of Quantized Signals. Bell System Technical Journal 27(3).

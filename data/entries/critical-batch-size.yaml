@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: critical batch size
+id: critical-batch-size
+pos: n.
+also:
+  - CBS
+  - gradient noise scale
+  - maximal useful batch size
+domain: train
+domains:
+  - dl
+  - hw
+level: specialist
+plain: >-
+  The largest number of examples a model can usefully learn from in each training step. Below it,
+  bigger batches let many chips work in parallel and finish sooner; above it, the extra chips are
+  mostly wasted.
+senses:
+  - definition: >-
+      The [[batch-size|batch size]] beyond which further increases give sharply diminishing
+      reductions in the number of optimization steps needed to reach a target loss. Below it,
+      doubling the batch (with a suitably scaled [[learning-rate|learning rate]]) roughly halves the
+      steps, so [[data-parallelism|data parallelism]] buys wall-clock speed at little extra compute;
+      above it, steps barely fall while total compute rises. Sam McCandlish and colleagues (2018)
+      showed that it is predicted by the gradient noise scale — the ratio of per-example gradient
+      variance to the squared norm of the mean gradient — which grows as loss falls, so the useful
+      batch size rises during training and is larger for better models. Jared Kaplan and colleagues
+      (2020) modeled it as a power of the loss, and Hanlin Zhang and colleagues (2024) found it
+      grows mainly with data size rather than model size. It caps how many accelerators can usefully
+      train one model synchronously and motivates batch-size ramp-up schedules.
+    example: >-
+      Past the critical batch size, adding another 4,096 GPUs barely shortened the run.
+formula_latex: B_{\text{simple}} = \frac{\operatorname{tr}(\Sigma)}{\lVert G \rVert^{2}}
+origin: >-
+  Siyuan Ma, Raef Bassily and Mikhail Belkin (2017) described a critical mini-batch size separating
+  linear-scaling and saturation regimes of SGD; McCandlish, Kaplan, Dario Amodei and the OpenAI Dota
+  team (December 2018) tied it to the gradient noise scale. Priya Goyal and colleagues' one-hour
+  ImageNet training (2017) had popularized the linear learning-rate scaling rule for large batches.
+year: 2017
+note: >-
+  In the formula, Σ is the covariance of per-example gradients and G the full-batch gradient; this
+  'simple' noise scale is a practical estimate of the critical batch size.
+see_also:
+  - batch size
+  - data parallelism
+  - learning rate
+  - distributed training
+  - scaling laws
+  - stochastic gradient descent
+sources:
+  - text: >-
+      McCandlish, S., Kaplan, J., Amodei, D. & OpenAI Dota Team (2018). An Empirical Model of
+      Large-Batch Training. arXiv:1812.06162.
+    url: https://arxiv.org/abs/1812.06162
+  - text: >-
+      Ma, S., Bassily, R. & Belkin, M. (2018). The Power of Interpolation: Understanding the
+      Effectiveness of SGD in Modern Over-parametrized Learning. ICML 2018. arXiv:1712.06559.
+    url: https://arxiv.org/abs/1712.06559
+  - text: >-
+      Zhang, H., Morwani, D., Vyas, N. et al. (2024). How Does Critical Batch Size Scale in
+      Pre-training? arXiv:2410.21676.
+    url: https://arxiv.org/abs/2410.21676

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SARSA
+id: sarsa
+pos: n.
+also:
+  - state–action–reward–state–action
+  - expected SARSA
+  - SARSA(λ)
+pronunciation: SAR-suh
+domain: rl
+level: specialist
+plain: >-
+  A learning method in which an agent updates the score of its last move using the reward it got and
+  the score of the move it actually picks next, so it learns the value of its own habits.
+senses:
+  - definition: >-
+      An [[on-policy|on-policy]] [[temporal-difference-learning|temporal-difference]] control
+      algorithm that learns the [[q-function|action-value function]] of the policy it is following.
+      Its name lists the quintuple used in each update — State, Action, Reward, next State, next
+      Action: after moving from (s, a) to s′ with reward r and choosing a′ by the current policy, it
+      moves Q(s, a) toward r + γQ(s′, a′). Because the target uses the action actually taken rather
+      than the greedy one, SARSA accounts for the cost of exploration: on the textbook cliff-walking
+      gridworld with an [[epsilon-greedy|ε-greedy]] policy it learns a safer route away from the
+      edge, whereas [[q-learning|Q-learning]] learns the shorter edge path and falls off more often
+      while exploring. It converges to an optimal policy if exploration decays appropriately.
+      Expected SARSA replaces Q(s′, a′) with its average under the policy, reducing variance.
+    example: >-
+      SARSA kept the robot away from the stairs because its own random exploration made the edge
+      risky.
+formula_latex: Q(s,a) \leftarrow Q(s,a) + \alpha \left[ r + \gamma\, Q(s',a') - Q(s,a) \right]
+origin: >-
+  Proposed by Gavin Rummery and Mahesan Niranjan in a 1994 Cambridge University Engineering
+  Department technical report, 'On-line Q-learning using connectionist systems', under the name
+  'modified connectionist Q-learning'. The acronym SARSA was suggested by Richard Sutton, noted in a
+  footnote, and became standard through his textbook with Andrew Barto.
+year: 1994
+see_also:
+  - Q-learning
+  - on-policy
+  - temporal difference learning
+  - Q-function
+  - epsilon-greedy
+  - eligibility trace
+contrast:
+  - Q-learning
+sources:
+  - text: >-
+      Rummery, G. A. & Niranjan, M. (1994). On-line Q-learning using connectionist systems.
+      Technical report CUED/F-INFENG/TR 166, Cambridge University Engineering Department.

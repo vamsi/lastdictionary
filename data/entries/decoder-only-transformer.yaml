@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decoder-only transformer
+id: decoder-only-transformer
+pos: n.
+also:
+  - decoder-only model
+  - decoder-only architecture
+  - GPT-style transformer
+  - causal decoder
+  - prefix LM
+domain: llm
+domains:
+  - dl
+level: core
+plain: >-
+  The kind of transformer behind most chatbots: a single stack that reads text left to right and
+  continues it, without a separate part that first encodes an input.
+senses:
+  - definition: >-
+      A [[transformer|transformer]] consisting of one stack of blocks with causally masked
+      [[self-attention|self-attention]] and no separate encoder or
+      [[cross-attention|cross-attention]], trained by [[next-token-prediction|next-token
+      prediction]]. Every task is posed as continuing a text: prompt and response share one sequence
+      and the same weights process both, so the model serves as reader and writer at once. The
+      design is simple to scale, gets training signal from every token, supports [[kv-cache|KV
+      caching]] directly and handles [[in-context-learning|in-context learning]] naturally. Nearly
+      all openly documented [[large-language-model|large language models]] since [[gpt-3|GPT-3]] —
+      including the GPT, Llama, Qwen, Mistral and DeepSeek families — are decoder-only, frequently
+      with [[mixture-of-experts|mixture-of-experts]] layers. In the prefix-LM variant, the prompt
+      portion attends bidirectionally and only the continuation is causal.
+    example: >-
+      We dropped the encoder entirely and trained a decoder-only transformer on the concatenated
+      pairs.
+origin: >-
+  Peter J. Liu and colleagues at Google described 'a decoder-only architecture' for generating
+  Wikipedia articles in January 2018; OpenAI's GPT (June 2018) used the same design for general
+  pretraining, and GPT-2 (2019) and GPT-3 (2020) made it the dominant LLM architecture.
+year: 2018
+note: >-
+  Encoder–decoder models such as [[t5|T5]] remain competitive on some input-to-output tasks; the
+  dominance of decoder-only models owes much to their simplicity and to how well they scale and
+  generalize zero-shot.
+see_also:
+  - transformer
+  - causal language model
+  - causal mask
+  - encoder-only transformer
+  - GPT
+  - next-token prediction
+contrast:
+  - encoder-only transformer
+  - encoder–decoder architecture
+sources:
+  - text: >-
+      Liu, P. J., Saleh, M., Pot, E., Goodrich, B., Sepassi, R., Kaiser, Ł. & Shazeer, N. (2018).
+      Generating Wikipedia by Summarizing Long Sequences. ICLR 2018.
+    url: https://arxiv.org/abs/1801.10198

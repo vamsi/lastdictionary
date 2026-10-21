@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: syntactic parsing
+id: syntactic-parsing
+pos: n.
+also:
+  - parsing
+  - dependency parsing
+  - constituency parsing
+  - parser
+  - treebank
+domain: llm
+domains:
+  - sym
+  - hist
+level: specialist
+plain: >-
+  Working out the grammatical structure of a sentence — which words group together and which word
+  modifies which — usually drawn as a tree.
+senses:
+  - definition: >-
+      The task of analyzing a sentence's grammatical structure and producing a parse tree.
+      Constituency (phrase-structure) parsing groups words into nested phrases such as noun and verb
+      phrases, in the tradition of context-free grammars; dependency parsing links each word to its
+      syntactic head with labeled relations such as subject or object. Algorithms include chart
+      parsers (CKY, Earley) with probabilistic grammars, graph-based dependency parsers that find
+      maximum spanning trees, and fast transition-based parsers that build trees with shift–reduce
+      actions, all later driven by neural scoring. Parsers are trained and evaluated on treebanks —
+      corpora of hand-parsed sentences such as the Penn Treebank and the multilingual Universal
+      Dependencies. Explicit parsing was once essential for translation, extraction and question
+      answering; [[large-language-model|LLMs]] encode much syntax implicitly, and parsing now serves
+      linguistics, structured-data pipelines and interpretability studies.
+    example: >-
+      The dependency parse shows that 'with the telescope' attaches to 'saw', not to 'man'.
+origin: >-
+  Noam Chomsky's 1950s work on formal grammars, together with later efficient context-free parsing
+  algorithms by others (Cocke–Kasami–Younger in the 1960s; Jay Earley, 1970), underlies the
+  constituency tradition, and Lucien Tesnière's dependency grammar (1959) the dependency one.
+  Treebank-trained statistical parsers by Michael Collins and Eugene Charniak (late 1990s) and
+  Joakim Nivre's transition-based parsing (2003) shaped modern practice.
+note: >-
+  In computing generally, 'parsing' means analyzing any formal input, such as source code or JSON,
+  against a grammar; LLM engineers also use it for extracting structured fields from model output.
+see_also:
+  - part-of-speech tagging
+  - natural language processing
+  - computational linguistics
+  - semantic parsing
+  - corpus
+sources:
+  - text: >-
+      Marcus, M. P., Santorini, B. & Marcinkiewicz, M. A. (1993). Building a Large Annotated Corpus
+      of English: The Penn Treebank. Computational Linguistics 19(2), 313–330.
+  - text: >-
+      Nivre, J. et al. (2016). Universal Dependencies v1: A Multilingual Treebank Collection. LREC
+      2016.

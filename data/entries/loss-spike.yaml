@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: loss spike
+id: loss-spike
+pos: n.
+also:
+  - loss spikes
+  - spike
+  - loss blow-up
+domain: train
+domains:
+  - dl
+level: specialist
+plain: >-
+  A sudden jump in a model's error partway through training. Sometimes the model recovers on its
+  own; sometimes the run falls apart and engineers must rewind to an earlier saved copy.
+senses:
+  - definition: >-
+      An abrupt, transient increase in training loss during a run, typically lasting tens to
+      hundreds of steps, after which the loss either recovers or diverges entirely. Spikes become
+      more frequent at large scale and high [[learning-rate|learning rates]]. Proposed causes
+      include rapid growth of attention or output [[logit|logits]], interactions between particular
+      data batches and the current parameter state, Adam's second-moment estimates shrinking during
+      long stretches of tiny gradients so that a sudden larger gradient produces an outsized update,
+      and overflow in low-precision arithmetic. Mitigations include lower peak learning rates and
+      longer [[learning-rate-warmup|warmup]], [[gradient-clipping|gradient clipping]],
+      [[qk-norm|QK-norm]] and [[z-loss|z-loss]], adjusted optimizer settings, removing or reordering
+      offending data, and the standard recovery: restarting from a [[checkpoint|checkpoint]] taken
+      before the spike while skipping the batches that preceded it. Google's 540-billion-parameter
+      PaLM run saw about 20 spikes despite gradient clipping.
+    example: >-
+      We rolled back 100 steps and skipped 300 batches, and the loss spike did not recur.
+origin: >-
+  Informal practitioner term that became prominent with reports on large language-model runs in 2022
+  — Meta's OPT-175B logbook and Google's PaLM, which documented restarts from about 100 steps before
+  a spike that skipped roughly 200–500 batches — and with later analyses of Adam-related causes
+  (Igor Molybog and colleagues, 2023).
+see_also:
+  - training instability
+  - loss curve
+  - z-loss
+  - QK-norm
+  - gradient clipping
+  - checkpoint
+sources:
+  - text: >-
+      Chowdhery, A. et al. (2022). PaLM: Scaling Language Modeling with Pathways. arXiv:2204.02311.
+  - text: >-
+      Molybog, I. et al. (2023). A Theory on Adam Instability in Large-Scale Machine Learning. arXiv
+      preprint.

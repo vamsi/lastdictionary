@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FLOP
+id: flop
+pos: n.
+also:
+  - floating-point operation
+pronunciation: flop
+domain: hw
+domains:
+  - train
+  - gov
+  - math
+labels:
+  - legal
+level: essential
+plain: >-
+  A single arithmetic step, such as multiplying or adding two numbers. Counting them measures how
+  much computing went into an AI model, and laws use such counts to decide which models face extra
+  rules.
+senses:
+  - definition: >-
+      A single arithmetic operation — an addition, multiplication or similar — on
+      [[floating-point-format|floating-point]] numbers, used as a unit of computational work. AI
+      practice measures a model's [[training-compute|training compute]] in total FLOP: for a dense
+      [[transformer|transformer]], roughly 6 FLOP per [[parameter|parameter]] per training token
+      (about 2 in the [[forward-pass|forward pass]] and 4 in the [[backward-pass|backward pass]]),
+      and about 2 FLOP per parameter per token at inference. Frontier models of 2024–2026 are
+      estimated to have used on the order of 10^25 to 10^26 FLOP or more. Because such counts are
+      easy to estimate and track capability, they anchor [[scaling-laws|scaling laws]] and
+      regulation: the EU AI Act presumes a general-purpose model has 'high-impact capabilities'
+      above 10^25 FLOP of cumulative training compute, and the now-revoked US
+      [[executive-order-14110|Executive Order 14110]] used 10^26 operations as a reporting
+      threshold. A fused multiply–add is conventionally counted as 2 FLOP.
+    example: >-
+      At 6ND, a 70-billion-parameter model trained on 15 trillion tokens takes about 6 × 10^24 FLOP.
+formula_latex: C \approx 6ND \quad (N = \text{parameters},\; D = \text{training tokens})
+origin: >-
+  Counting floating-point operations to measure numerical work is long-standing practice in
+  numerical analysis and supercomputing (see [[flops|FLOPS]]). The 6ND approximation was popularized
+  by Jared Kaplan and colleagues' 2020 scaling-laws paper, and FLOP counts entered law with US
+  Executive Order 14110 (October 2023) and the EU AI Act (2024).
+note: >-
+  Usage is inconsistent: 'FLOP' or 'FLOPs' for a count, 'FLOPS' or 'FLOP/s' for a rate. Writing
+  'FLOP/s' for rates avoids confusing 'FLOPs' with 'FLOPS'. Multiples take SI prefixes (1 teraFLOP =
+  10^12 FLOP).
+see_also:
+  - FLOPS
+  - training compute
+  - compute threshold
+  - scaling laws
+  - petaflop/s-day
+  - model FLOPs utilization
+  - compute
+contrast:
+  - FLOPS
+sources:
+  - text: >-
+      Kaplan, J. et al. (2020). Scaling Laws for Neural Language Models. arXiv:2001.08361.
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(67) ('floating-point operation'); Art. 51(2) (presumption
+  of high-impact capabilities above 10^25 FLOP)
+as_of: 2026-10

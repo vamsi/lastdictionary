@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: label smoothing
+id: label-smoothing
+pos: n.
+also:
+  - label-smoothing regularization
+  - LSR
+  - soft labels
+domain: dl
+domains:
+  - ml
+level: specialist
+plain: >-
+  A training trick that tells a model the correct answer is very likely rather than absolutely
+  certain, which stops it from becoming overconfident and often helps it generalize.
+senses:
+  - definition: >-
+      A [[regularization|regularization]] technique for classifiers trained with
+      [[cross-entropy|cross-entropy]] that replaces each one-hot target with a mixture of the
+      one-hot vector and a uniform distribution: the correct class receives probability 1 − ε and
+      the remaining ε is spread evenly over all K classes (ε = 0.1 is typical). Because a
+      [[softmax|softmax]] can only approach a one-hot output as [[logit|logit]] gaps grow without
+      bound, hard targets keep pushing logits apart; smoothed targets cap the optimal gap, reducing
+      overconfidence and often improving accuracy and [[calibration|calibration]]. The original
+      [[transformer|transformer]] used it, accepting worse [[perplexity|perplexity]] for better BLEU
+      scores. Drawbacks: it tends to erase information about similarities between wrong classes from
+      the network's representations, which can make the network a worse teacher for
+      [[knowledge-distillation|knowledge distillation]], and it fits poorly when labels are already
+      uncertain or when well-calibrated likelihoods are the goal.
+formula_latex: y_k^{\mathrm{LS}} = (1-\varepsilon)\, y_k + \frac{\varepsilon}{K}
+origin: >-
+  Introduced as 'label-smoothing regularization' by Christian Szegedy, Vincent Vanhoucke, Sergey
+  Ioffe, Jonathon Shlens and Zbigniew Wojna in 'Rethinking the Inception Architecture for Computer
+  Vision' (arXiv December 2015; CVPR 2016). Rafael Müller, Simon Kornblith and Geoffrey Hinton
+  analyzed its effects in 'When Does Label Smoothing Help?' (2019).
+year: 2015
+see_also:
+  - cross-entropy
+  - softmax
+  - calibration
+  - regularization
+  - knowledge distillation
+  - data augmentation
+sources:
+  - text: >-
+      Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J. & Wojna, Z. (2016). Rethinking the Inception
+      Architecture for Computer Vision. CVPR 2016.
+    url: https://arxiv.org/abs/1512.00567
+  - text: >-
+      Müller, R., Kornblith, S. & Hinton, G. (2019). When Does Label Smoothing Help? NeurIPS 2019.

@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decentralized training
+id: decentralized-training
+pos: n.
+also:
+  - decentralised training
+  - collaborative training
+  - volunteer training
+  - decentralized SGD
+  - gossip averaging
+domain: train
+domains:
+  - hw
+  - society
+level: specialist
+plain: >-
+  Training an AI model on computers owned by many different people or companies around the world,
+  linked over the ordinary internet rather than housed together in one data center.
+senses:
+  - context: Open-network training
+    definition: >-
+      Training a single model on compute contributed by independent, geographically dispersed
+      providers connected over the public internet, often permissionlessly, instead of within one
+      data center. Internet links are orders of magnitude slower and less reliable than data-center
+      [[interconnect|interconnects]], so such systems rely on low-communication algorithms
+      ([[diloco|DiLoCo]], [[local-sgd|local SGD]], compressed or quantized updates), on fault
+      tolerance for nodes that join and leave, and sometimes on cryptographic or economic mechanisms
+      to verify honest work. A landmark is Prime Intellect's INTELLECT-1 (2024), a
+      10-billion-parameter model trained on 1 trillion tokens by up to 14 concurrent nodes on three
+      continents from 30 compute providers; decentralized reinforcement-learning runs followed in
+      2025. Supporters present it as a counterweight to concentrated compute; governance researchers
+      note it could complicate [[compute-governance|compute governance]]. As of 2026 its largest
+      runs remain far smaller than frontier pretraining runs.
+    example: >-
+      The decentralized training run lost a third of its nodes overnight and kept going.
+    labels:
+      - emerging
+  - context: Optimization
+    definition: >-
+      Distributed optimization without a central coordinator, in which workers average parameters
+      only with neighbors in a communication graph (gossip averaging), as in decentralized parallel
+      SGD (Xiangru Lian and colleagues, NeurIPS 2017); it removes the bottleneck of a central server
+      or global all-reduce.
+origin: >-
+  Volunteer deep-learning efforts such as Learning@home and the Hivemind library (Max Ryabinin and
+  Anton Gusev, 2020) and DeDLOC (Michael Diskin and colleagues, 2021) preceded the 2024–2025 wave
+  led by Prime Intellect, Nous Research and others. The coordinator-free optimization sense dates
+  from Lian and colleagues' 2017 paper.
+year: 2020
+see_also:
+  - DiLoCo
+  - local SGD
+  - distributed training
+  - federated learning
+  - compute governance
+  - interconnect
+contrast:
+  - federated learning
+sources:
+  - text: Jaghouar, S. et al. (2024). INTELLECT-1 Technical Report. arXiv:2412.01152.
+    url: https://arxiv.org/abs/2412.01152
+  - text: >-
+      Lian, X., Zhang, C., Zhang, H., Hsieh, C.-J., Zhang, W. & Liu, J. (2017). Can Decentralized
+      Algorithms Outperform Centralized Algorithms? A Case Study for Decentralized Parallel
+      Stochastic Gradient Descent. NeurIPS 2017.
+as_of: 2026-10

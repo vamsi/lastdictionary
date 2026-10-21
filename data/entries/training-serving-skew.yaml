@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: training–serving skew
+id: training-serving-skew
+pos: n.
+also:
+  - train-serve skew
+  - train/serve skew
+  - online–offline skew
+domain: eng
+domains:
+  - data
+  - ml
+level: specialist
+plain: >-
+  A mismatch between how data is prepared when a model is trained and when it is used for real,
+  which makes the live model quietly worse than its tests promised.
+senses:
+  - definition: >-
+      A gap between what a model sees, or how well it does, when it is trained and when it is used
+      in production, caused by the system itself rather than by changes in the world. Typical
+      sources are separate code paths that compute the same feature differently (for example, a
+      batch job for training and a real-time service in another language for serving); features that
+      use information not available at prediction time; stale or delayed feature values; mismatched
+      preprocessing such as tokenization or image resizing; and feedback loops in which the model's
+      own decisions alter later training data. Skew is insidious because offline
+      [[evaluation|evaluation]] looks good while live quality silently degrades. Prevention relies
+      on sharing one feature-transformation code base, logging the exact features used at serving
+      time and training on those logs, [[feature-store|feature stores]] with point-in-time-correct
+      joins, and validators that compare training and serving data distributions.
+    example: >-
+      The live model underperformed because of training–serving skew: the mobile client rounded ages
+      before sending them.
+origin: >-
+  No first use has been traced; the earliest widely cited uses come from Google engineering writing
+  of the mid-2010s. Martin Zinkevich's widely circulated 'Rules of Machine Learning' (c. 2016)
+  devotes several rules to it, and the TFX platform paper (Denis Baylor and colleagues, KDD 2017)
+  describes automated skew detection. The term spread with [[mlops|MLOps]] tooling and feature-store
+  marketing.
+year: 2016
+note: >-
+  Distinct from [[data-drift|data drift]], which arises because the world changes after deployment;
+  skew is built into the system and can be present from the first day.
+see_also:
+  - feature store
+  - data drift
+  - data leakage
+  - machine learning pipeline
+  - model monitoring
+contrast:
+  - data drift

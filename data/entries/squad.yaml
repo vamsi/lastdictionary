@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SQuAD
+id: squad
+pos: prop. n.
+also:
+  - Stanford Question Answering Dataset
+  - SQuAD 1.1
+  - SQuAD 2.0
+domain: eval
+domains:
+  - llm
+  - hist
+level: core
+plain: >-
+  A Stanford collection of more than 100,000 questions about Wikipedia articles, each solved by
+  highlighting the words in the article that give the answer; it drove rapid progress in machine
+  reading from 2016.
+senses:
+  - definition: >-
+      A machine-reading benchmark built by having crowdworkers read Wikipedia paragraphs and pose
+      questions about them, each answerable by extracting a span from the paragraph. Version 1.1
+      holds over 100,000 question–answer pairs from more than 500 articles and is scored by
+      [[exact-match|exact match]] and token-overlap [[f1-score|F1]]; people reached 86.8% F1, far
+      ahead of the authors' 51.0% logistic-regression baseline. Version 2.0 (2018) mixed in over
+      50,000 unanswerable questions, crafted by crowdworkers to look answerable, so a system must
+      also recognize when the paragraph offers no answer and decline to respond — a change that
+      dropped a strong neural model from 86% to 66% F1. Its public leaderboard turned machine
+      reading into a fast-moving race: in January 2018 systems from Alibaba and Microsoft Research
+      Asia exceeded the human exact-match score on SQuAD 1.1, and [[bert|BERT]]-based models later
+      surpassed humans on SQuAD 2.0. Critics noted that span selection rewards lexical matching more
+      than understanding.
+    example: >-
+      Extractive QA models fine-tuned on SQuAD struggle when the answer is not a contiguous span.
+origin: >-
+  Introduced by Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev and Percy Liang of Stanford
+  University at EMNLP 2016. SQuAD 2.0 followed from Rajpurkar, Robin Jia and Liang at ACL 2018 in
+  'Know What You Don't Know'.
+year: 2016
+note: >-
+  Surpassing the human baseline was widely reported as machines 'reading better than humans'; the
+  human figure, however, came from crowdworkers under task constraints. Robin Jia and Percy Liang
+  showed in 2017 that adding distracting sentences sharply cut model accuracy.
+see_also:
+  - question answering
+  - exact match
+  - F1 score
+  - abstention
+  - benchmark saturation
+  - BERT
+sources:
+  - text: >-
+      Rajpurkar, P., Zhang, J., Lopyrev, K. & Liang, P. (2016). SQuAD: 100,000+ Questions for
+      Machine Comprehension of Text. EMNLP 2016.
+    url: https://arxiv.org/abs/1606.05250
+  - text: >-
+      Rajpurkar, P., Jia, R. & Liang, P. (2018). Know What You Don't Know: Unanswerable Questions
+      for SQuAD. ACL 2018.
+    url: https://arxiv.org/abs/1806.03822

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: alignment tax
+id: alignment-tax
+pos: n.
+also:
+  - safety tax
+  - alignment cost
+  - negative alignment tax
+domain: safety
+domains:
+  - gov
+  - train
+level: specialist
+plain: >-
+  The price of caution in AI: whatever performance, money or time a developer sacrifices to make a
+  system safe and aligned, compared with an otherwise identical system built with no such care.
+senses:
+  - definition: >-
+      The difference in capability, compute, development time, latency or money between an AI system
+      built to be aligned and an otherwise equivalent system built without that effort. The concept
+      matters strategically: if the tax is high, competitive pressure pushes developers to skip
+      alignment measures, so lowering it is itself a safety goal. In practice the term often refers
+      to measured capability regressions from alignment training — the InstructGPT paper (2022)
+      reported that RLHF degraded performance on some public NLP benchmarks and reduced the
+      regression by mixing pretraining updates into fine-tuning. A negative alignment tax, in which
+      alignment work also makes a system more useful (as RLHF did for following instructions), is
+      often cited to explain why laboratories adopt alignment techniques readily when they also
+      improve products.
+    example: >-
+      If the monitoring layer adds 40% to inference cost, that's an alignment tax many startups
+      won't pay.
+origin: >-
+  Popularized by Paul Christiano, who used it from about 2019 for the competitive cost of alignment;
+  it appears in Amanda Askell and colleagues' 2021 study of language assistants and in OpenAI's
+  InstructGPT paper by Long Ouyang and colleagues (2022).
+year: 2019
+note: >-
+  Whether current alignment work imposes a net tax depends on what is measured — benchmark scores,
+  usefulness to customers or reduction of catastrophic risk.
+see_also:
+  - AI alignment
+  - reinforcement learning from human feedback
+  - AI arms race
+  - post-training
+  - catastrophic forgetting
+sources:
+  - text: >-
+      Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback.
+      NeurIPS 2022. arXiv:2203.02155.
+    url: https://arxiv.org/abs/2203.02155
+  - text: >-
+      Askell, A., Bai, Y., Chen, A. et al. (2021). A General Language Assistant as a Laboratory for
+      Alignment. arXiv:2112.00861.
+    url: https://arxiv.org/abs/2112.00861

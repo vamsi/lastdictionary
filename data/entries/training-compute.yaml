@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: training compute
+id: training-compute
+pos: n.
+also:
+  - training FLOP
+  - training FLOPs
+  - training computation
+  - pretraining compute
+  - 6ND rule
+domain: train
+domains:
+  - hw
+  - gov
+level: core
+plain: >-
+  The total number of arithmetic operations performed to train a model. It is the standard yardstick
+  for the size of an AI training effort, and some laws use it to decide which models face extra
+  rules.
+senses:
+  - definition: >-
+      The total number of [[flop|floating-point operations]] executed to train a model, the usual
+      measure of the scale of a [[training-run|training run]]. For a dense
+      [[transformer|transformer]] with N parameters trained on D tokens it is well approximated by C
+      ≈ 6ND: about 2N operations per token in the [[forward-pass|forward pass]] and 4N in the
+      [[backward-pass|backward pass]], ignoring attention's smaller, context-length-dependent term;
+      [[mixture-of-experts|mixture-of-experts]] models use active rather than total parameters. The
+      count covers useful model arithmetic, not recomputation or idle hardware, so wall-clock cost
+      also depends on [[model-flops-utilization|model FLOPs utilization]] and [[goodput|goodput]].
+      By [[epoch-ai|Epoch AI]] estimates (May 2024), training compute of notable models grew about
+      4× per year from 2010 to 2024, and that of frontier models 4–5×. It anchors
+      [[scaling-laws|scaling laws]], forecasts and regulatory [[compute-threshold|compute
+      thresholds]], which count the cumulative computation used in training.
+formula_latex: C_{\text{train}} \approx 6\,N\,D
+origin: >-
+  Dario Amodei and Danny Hernandez's OpenAI analysis 'AI and Compute' (2018) popularized tracking
+  training compute, reporting a 3.4-month doubling time for the largest runs since 2012. The 6ND
+  approximation was set out by Jared Kaplan and colleagues (2020); Epoch AI has published systematic
+  estimates since 2022.
+year: 2018
+note: >-
+  A count of operations, not a rate: distinguish it from [[flops|FLOPS]] (operations per second) and
+  from [[compute|compute]] as hardware capacity. Published figures are often outside estimates
+  reconstructed from parameter and token counts.
+see_also:
+  - FLOP
+  - compute budget
+  - scaling laws
+  - compute threshold
+  - model FLOPs utilization
+  - effective compute
+  - training run
+contrast:
+  - FLOPS
+  - test-time compute
+sources:
+  - text: >-
+      Kaplan, J. et al. (2020). Scaling Laws for Neural Language Models. arXiv:2001.08361.
+    url: https://arxiv.org/abs/2001.08361v1
+  - text: Amodei, D. & Hernandez, D. (2018). AI and Compute. OpenAI blog.
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 51(2): a general-purpose AI model is presumed to have
+  high-impact capabilities when the cumulative computation used for its training exceeds 10²⁵ FLOP.
+as_of: 2026-10

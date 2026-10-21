@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: automated theorem proving
+id: automated-theorem-proving
+pos: n.
+also:
+  - ATP
+  - automated deduction
+  - theorem prover
+  - automated theorem prover
+  - AI theorem proving
+domain: sym
+domains:
+  - math
+  - llm
+level: core
+plain: >-
+  Getting computers to prove mathematical or logical statements by themselves, by searching for a
+  chain of valid steps that leads from basic assumptions to the statement.
+senses:
+  - definition: >-
+      The use of programs to find proofs of conjectures from axioms in a formal logic without
+      step-by-step human guidance. Classical provers work in [[first-order-logic|first-order
+      logic]], usually with equality, and search for refutations using [[resolution|resolution]] and
+      superposition calculi, tableaux or instantiation-based methods, as in Vampire, E and Prover9;
+      decision procedures and [[satisfiability-modulo-theories|SMT solvers]] handle specific
+      theories such as arithmetic. They excel at large numbers of shallow proofs, as in hardware and
+      software verification, but struggle with deep mathematics, where human-guided
+      [[interactive-theorem-proving|interactive theorem proving]] dominates. Since about 2020,
+      neural provers pair [[large-language-model|language models]] that propose proof steps or whole
+      proofs with a proof assistant such as [[lean|Lean]] that checks them, and are trained by
+      [[reinforcement-learning-with-verifiable-rewards|reinforcement learning]] on the checker's
+      verdicts — the approach of [[alphaproof|AlphaProof]] and DeepSeek-Prover.
+    example: >-
+      The automated prover discharged 70 percent of the verification conditions; the rest went to
+      the proof engineers.
+origin: >-
+  Martin Davis's 1954 implementation of Presburger's decision procedure for the arithmetic of
+  addition and Newell, Shaw and Simon's [[logic-theorist|Logic Theorist]] (1956) were the first
+  theorem-proving programs. Hao Wang's 1958–1959 programs proved hundreds of theorems of Principia
+  Mathematica, and J. Alan Robinson's resolution principle (1965) set the field's course. In 1996
+  William McCune's EQP proved the Robbins conjecture, open since the 1930s.
+year: 1954
+note: >-
+  Usage varies: some reserve 'automated' for fully automatic provers and treat proof assistants
+  separately, while 'AI theorem proving' now often means language-model provers that emit formal
+  proofs for a checker. A machine-checked proof is only as trustworthy as its formal statement.
+see_also:
+  - interactive theorem proving
+  - resolution
+  - first-order logic
+  - satisfiability modulo theories
+  - Lean
+  - AlphaProof
+  - autoformalization
+contrast:
+  - interactive theorem proving
+sources:
+  - text: >-
+      Robinson, J. A. (1965). A Machine-Oriented Logic Based on the Resolution Principle. Journal of
+      the ACM 12(1), 23–41.
+  - text: >-
+      McCune, W. (1997). Solution of the Robbins Problem. Journal of Automated Reasoning 19(3),
+      263–276.
+as_of: 2026-10

@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: machine understanding
+id: machine-understanding
+pos: n.
+also:
+  - understanding (AI)
+  - LLM understanding
+  - genuine understanding
+domain: mind
+domains:
+  - llm
+  - eval
+labels:
+  - contested
+level: core
+plain: >-
+  Whether, and in what sense, an AI system grasps what words, situations or problems mean — rather
+  than just producing answers that look as though it does.
+senses:
+  - definition: >-
+      The capacity of an AI system to grasp meaning — of language, situations, problems or its own
+      outputs — in a sense that goes beyond producing appropriate responses; also the long-running
+      debate over whether machines, and now [[large-language-model|large language models]], have it.
+      Functional views treat understanding as robust, flexible and generalizable competence that can
+      be tested. Representational views look for internal [[world-model|world models]] and
+      structured concepts, as in [[probing|probing]] and [[mechanistic-interpretability|mechanistic
+      interpretability]] studies. Other views require [[grounding|grounding]] in perception and
+      action, original [[intentionality|intentionality]] or consciousness, and conclude that
+      text-only models cannot understand, as argued through the [[chinese-room|Chinese room]], the
+      [[symbol-grounding-problem|symbol grounding problem]] and the [[octopus-test|octopus test]].
+      Many researchers now treat understanding as graded and multidimensional, and cite collapses
+      under small rewordings as evidence that some apparent understanding is shallow.
+    example: >-
+      A model that aces the reading test but fails a reworded version tells us something about the
+      limits of machine understanding.
+origin: >-
+  The question goes back to Alan Turing (1950) and John Searle's [[chinese-room|Chinese room]]
+  (1980), and 'natural language understanding' was a named goal of AI research by the early 1970s.
+  The debate over whether language models understand intensified after Emily Bender and Alexander
+  Koller's [[octopus-test|octopus test]] (2020) and the public release of [[chatgpt|ChatGPT]] in
+  2022.
+note: >-
+  A 2022 survey of natural-language-processing researchers found them split almost evenly on whether
+  a model trained only on text could understand language in some non-trivial sense.
+  [[potemkin-understanding|Potemkin understanding]] and [[stochastic-parrot|stochastic parrot]] are
+  critical terms from the same debate.
+see_also:
+  - Chinese room
+  - octopus test
+  - symbol grounding problem
+  - natural language understanding
+  - world model
+  - stochastic parrot
+  - Potemkin understanding
+contrast:
+  - natural language understanding
+sources:
+  - text: >-
+      Mitchell, M. & Krakauer, D. C. (2023). The Debate over Understanding in AI's Large Language
+      Models. Proceedings of the National Academy of Sciences 120(13).
+  - text: >-
+      Michael, J., Holtzman, A., Parrish, A. et al. (2022). What Do NLP Researchers Believe? Results
+      of the NLP Community Metasurvey. arXiv:2208.12852.
+    url: https://arxiv.org/abs/2208.12852

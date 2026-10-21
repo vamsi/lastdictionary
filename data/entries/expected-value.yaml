@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: expected value
+id: expected-value
+pos: n.
+also:
+  - expectation
+  - mean
+  - mathematical expectation
+  - E[X]
+  - population mean
+domain: math
+domains:
+  - ml
+  - rl
+level: core
+plain: >-
+  The long-run average you would get if a chancy situation could be repeated many times — 3.5 for a
+  fair die, even though no single roll shows 3.5.
+senses:
+  - definition: >-
+      The probability-weighted average of all the values a [[random-variable|random variable]] can
+      take — a sum over outcomes for discrete variables, an integral against the
+      [[probability-density-function|density]] for continuous ones — written E[X]. Expectation is
+      linear: E[aX + bY] = aE[X] + bE[Y] even when X and Y are dependent, and the
+      [[law-of-large-numbers|law of large numbers]] guarantees that sample averages converge to it.
+      Machine-learning objectives are expectations: training minimizes the expected
+      [[loss-function|loss]] over the data distribution, approximated by averages over mini-batches;
+      [[reinforcement-learning|reinforcement learning]] maximizes expected [[return|return]]; and
+      [[variational-inference|variational inference]] and the [[evidence-lower-bound|evidence lower
+      bound]] are written as expectations estimated by [[monte-carlo-method|Monte Carlo]] sampling.
+      Decision theory recommends maximizing expected [[utility-function|utility]], and
+      [[variance|variance]] measures spread around the expectation.
+    example: >-
+      Because expectation is linear, the expected batch loss is just the average of the per-example
+      expected losses.
+formula_latex: \mathbb{E}[X] = \sum_{x} x\,p(x) \qquad\text{or}\qquad \mathbb{E}[X] = \int x\,p(x)\,dx
+origin: >-
+  Christiaan Huygens's 1657 treatise on games of chance, published in Frans van Schooten's Latin,
+  reasoned with the fair value of a gamble, building on the 1654 correspondence of Blaise Pascal and
+  Pierre de Fermat. 'Expectation', 'mathematical expectation' and 'expected value' became standard
+  in probability texts of the 18th to 20th centuries, and W. A. Whitworth introduced the symbol E in
+  1901.
+year: 1657
+note: >-
+  'Mean' can denote either the expected value of a distribution or the average of a sample; the
+  sample mean is an estimate of the expected value, not the same thing.
+see_also:
+  - variance
+  - random variable
+  - law of large numbers
+  - Monte Carlo method
+  - utility function
+  - probability distribution

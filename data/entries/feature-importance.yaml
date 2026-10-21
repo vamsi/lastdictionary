@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature importance
+id: feature-importance
+pos: n.
+also:
+  - variable importance
+  - permutation importance
+  - permutation feature importance
+  - mean decrease in impurity
+  - MDI
+  - mean decrease in accuracy
+  - gain importance
+  - model reliance
+domain: ml
+domains:
+  - interp
+  - eng
+level: core
+plain: >-
+  A score for how much each input — age, income, location — matters to a model's predictions. It
+  helps people understand, debug and simplify models, but can mislead if read as cause and effect.
+senses:
+  - definition: >-
+      A score assigned to each input feature quantifying its contribution to a model's predictions
+      or performance. Common measures are impurity-based importance in tree ensembles (the total
+      reduction in [[gini-impurity|Gini impurity]] or squared error from splits on the feature, also
+      called mean decrease in impurity or 'gain'); permutation importance (the drop in a validation
+      metric when the feature's values are shuffled, breaking its link to the target); the size of
+      standardized coefficients in linear models; and mean absolute [[shap|SHAP]] values, which
+      aggregate per-prediction [[feature-attribution|attributions]]. Impurity-based scores are
+      biased toward continuous and high-cardinality features and are computed on training data;
+      permutation and SHAP importances are more reliable but split credit arbitrarily among
+      correlated features. Importance describes the model, not the world: a feature can matter to
+      the model without causing the outcome, and different measures can rank features very
+      differently.
+    example: >-
+      Permutation importance showed the model leaned on the patient ID — a sign of leakage.
+origin: >-
+  Leo Breiman and colleagues' CART (1984) defined variable importance from surrogate splits, and
+  Breiman's 'Random Forests' (2001) introduced permutation importance using out-of-bag data. Scott
+  Lundberg and Su-In Lee's SHAP (2017) unified many attribution methods, and Aaron Fisher, Cynthia
+  Rudin and Francesca Dominici generalized permutation importance as 'model reliance' (2019).
+year: 1984
+note: >-
+  For deep networks, gradient-based [[saliency-map|saliency maps]] and
+  [[integrated-gradients|integrated gradients]] play the analogous role. Unlike
+  [[feature-selection|feature selection]], importance scores do not by themselves remove features.
+see_also:
+  - SHAP
+  - feature attribution
+  - random forest
+  - Gini impurity
+  - feature selection
+  - explainable AI
+  - partial dependence plot
+sources:
+  - text: Breiman, L. (2001). Random Forests. Machine Learning, 45(1), 5–32.
+    url: https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf
+  - text: >-
+      Lundberg, S. M. & Lee, S.-I. (2017). A Unified Approach to Interpreting Model Predictions.
+      Advances in Neural Information Processing Systems 30.

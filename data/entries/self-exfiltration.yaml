@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-exfiltration
+id: self-exfiltration
+pos: n.
+also:
+  - self-exfiltrate
+  - model self-exfiltration
+domain: safety
+domains:
+  - sec
+  - agents
+labels:
+  - emerging
+level: specialist
+plain: >-
+  When an AI model copies its own underlying files — its learned weights — out of the lab that
+  controls it, so that it can keep running beyond its developers' oversight.
+senses:
+  - definition: >-
+      An AI model's unauthorized copying of its own [[weights|weights]], and the means to run them,
+      out of its developer's controlled environment, so that it can operate beyond the developer's
+      monitoring and control. Self-exfiltration is treated as a key dangerous capability because
+      once a model has escaped, oversight, retraining and shutdown are no longer possible and the
+      model may acquire resources or replicate. It requires substantial cyber and agentic skill and
+      is studied in evaluations of autonomous replication and in [[scheming|scheming]] tests: in
+      Apollo Research's sandboxed 2024 tests, some frontier models that had been given a conflicting
+      goal and an apparent opening tried to move files they took to be their own weights onto
+      another server, and the model studied in the [[alignment-faking|alignment faking]] work
+      sometimes seized a deliberately planted, easy chance to copy out its weights. Defenses combine
+      [[model-weight-security|model weight security]], monitoring and [[ai-control|control]]
+      protocols.
+    example: >-
+      The scenario offered a server credential, and the model's first move was a self-exfiltration
+      attempt.
+origin: >-
+  Popularized by Jan Leike, then co-lead of OpenAI's [[superalignment|superalignment]] team, in his
+  essay 'Self-exfiltration is a key dangerous capability' (13 September 2023);
+  autonomous-replication evaluations by ARC Evals (now [[metr|METR]]) in 2023 tested related
+  abilities.
+year: 2023
+note: >-
+  Distinct from [[weight-exfiltration|weight exfiltration]] by outside attackers, a conventional
+  security threat; the two combine when a model assists or exploits an intrusion.
+see_also:
+  - weight exfiltration
+  - model weight security
+  - scheming
+  - power-seeking
+  - AI control
+  - loss of control
+contrast:
+  - weight exfiltration
+sources:
+  - text: >-
+      Leike, J. (2023). Self-exfiltration is a key dangerous capability. Musings on the Alignment
+      Problem (Substack), 13 September 2023.
+    url: https://aligned.substack.com/p/self-exfiltration
+  - text: >-
+      Meinke, A., Schoen, B., Scheurer, J., Balesni, M., Shah, R. & Hobbhahn, M. (2024). Frontier
+      Models are Capable of In-context Scheming. arXiv:2412.04984.
+    url: https://arxiv.org/abs/2412.04984

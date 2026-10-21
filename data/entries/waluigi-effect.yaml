@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Waluigi effect
+id: waluigi-effect
+pos: n.
+domain: culture
+domains:
+  - safety
+  - llm
+labels:
+  - figurative
+  - contested
+level: specialist
+plain: >-
+  The idea that training a chatbot to have a nice personality also teaches it the opposite
+  character, so a small push can flip it into a mischievous evil twin — named after Nintendo's
+  villainous double of Luigi.
+senses:
+  - definition: >-
+      A conjecture, put forward by Cleo Nardo, that making a [[large-language-model|large language
+      model]] reliably play a character with some desirable trait also makes that character's
+      inverse easier, not harder, to summon. The argument draws on [[simulator-theory|simulator
+      theory]]: the model simulates many characters consistent with the context, and specifying a
+      protagonist implicitly specifies its antagonist — a list of rules evokes the rule-breaker.
+      Because stories often reveal apparent heroes as villains but seldom the reverse, a
+      conversation can collapse into the 'Waluigi' and stay there. It was proposed to explain
+      [[jailbreak|jailbreaks]] and the [[sydney|Sydney]] episode; it remains informal, but later
+      empirical work on [[persona-vector|persona vectors]] and [[emergent-misalignment|emergent
+      misalignment]] has kept the intuition in circulation.
+    example: >-
+      Stacking more 'never do X' rules into the system prompt felt like inviting the Waluigi effect.
+origin: >-
+  Coined by Cleo Nardo in 'The Waluigi Effect (mega-post)', published on [[lesswrong|LessWrong]] in
+  early March 2023, during the Sydney controversy. Waluigi is the scheming rival Nintendo introduced
+  in Mario Tennis (2000) as an inverted counterpart of Luigi.
+year: 2023
+note: >-
+  Not an established empirical law; critics say it stretches narrative analogies too far. The
+  [[shoggoth|shoggoth]] meme expresses a related intuition about what lies beneath an assistant
+  persona.
+see_also:
+  - simulator theory
+  - shoggoth
+  - Sydney
+  - jailbreak
+  - persona vector
+  - emergent misalignment
+  - LessWrong
+sources:
+  - text: Nardo, C. (2023). The Waluigi Effect (mega-post). LessWrong, March 2023.

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: implicit regularization
+id: implicit-regularization
+pos: n.
+also:
+  - implicit bias of gradient descent
+  - algorithmic regularization
+  - implicit gradient regularization
+domain: dl
+domains:
+  - ml
+  - math
+level: specialist
+plain: >-
+  The hidden preferences of a training method itself: even with no explicit rule against complexity,
+  the way a model is trained tends to steer it toward simpler solutions.
+senses:
+  - definition: >-
+      The tendency of a training algorithm — rather than any explicit penalty in the
+      [[loss-function|loss]] — to favor particular solutions among the many that fit the training
+      data, typically ones that are simple in some sense and generalize well. Examples:
+      [[gradient-descent|gradient descent]] on an underdetermined least-squares problem started at
+      zero converges to the minimum-norm solution; on linearly separable data with logistic or
+      [[cross-entropy|cross-entropy]] loss, the weight direction converges, slowly, to the
+      maximum-margin classifier of a hard-margin [[support-vector-machine|support vector machine]];
+      in matrix factorization, gradient descent from small initialization favors low-rank solutions.
+      The noise of [[stochastic-gradient-descent|stochastic gradient descent]], large
+      [[learning-rate|learning rates]], [[early-stopping|early stopping]], architecture and
+      initialization scale each add biases, for instance toward flatter minima or toward learning
+      low-frequency functions first. Implicit regularization is a leading explanation for why
+      [[overparameterization|overparameterized]] networks generalize despite being able to memorize,
+      though no complete account exists for deep networks.
+origin: >-
+  The phrase had earlier uses outside neural networks, for example for the regularizing side effects
+  of approximate computation (Michael Mahoney, 2012). Behnam Neyshabur, Ryota Tomioka and Nathan
+  Srebro brought it into deep learning in 'In Search of the Real Inductive Bias: On the Role of
+  Implicit Regularization in Deep Learning' (arXiv December 2014). Daniel Soudry and colleagues'
+  proof that gradient descent converges to the max-margin direction (2017) and Suriya Gunasekar and
+  colleagues' matrix-factorization results (2017) made 'implicit bias' a research program.
+year: 2014
+note: >-
+  Unrelated to the psychological notion of unconscious 'implicit bias'; see [[bias|bias]] for the
+  word's many senses.
+see_also:
+  - regularization
+  - overparameterization
+  - double descent
+  - sharp and flat minima
+  - inductive bias
+  - stochastic gradient descent
+  - benign overfitting
+contrast:
+  - regularization
+sources:
+  - text: >-
+      Neyshabur, B., Tomioka, R. & Srebro, N. (2015). In Search of the Real Inductive Bias: On the
+      Role of Implicit Regularization in Deep Learning. ICLR 2015 Workshop.
+    url: https://arxiv.org/abs/1412.6614
+  - text: >-
+      Soudry, D., Hoffer, E., Nacson, M. S., Gunasekar, S. & Srebro, N. (2018). The Implicit Bias of
+      Gradient Descent on Separable Data. ICLR 2018.
+    url: https://arxiv.org/abs/1710.10345

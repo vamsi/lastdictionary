@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Markov logic network
+id: markov-logic-network
+pos: n.
+also:
+  - MLN
+  - Markov logic
+  - statistical relational learning
+  - StarAI
+domain: sym
+domains:
+  - ml
+level: specialist
+plain: >-
+  A way of combining logical rules with probabilities, so that a rule like 'friends usually like the
+  same music' can sometimes be broken, with each rule given a weight saying how strongly it holds.
+senses:
+  - definition: >-
+      A probabilistic logic in which every formula of [[first-order-logic|first-order logic]]
+      carries a real-valued weight expressing how strongly it should hold. Instantiating the
+      formulas for every combination of a finite set of constants turns the weighted theory into a
+      [[markov-random-field|Markov random field]] — a binary variable for each ground atom, a
+      feature for each ground formula — in which a possible world's probability is proportional to
+      the exponential of the weighted count of formulas it satisfies. Hard logical constraints are
+      the limit of infinite weights; a world that violates a soft formula becomes less probable
+      rather than impossible. Weights are learned from relational data, and inference uses
+      [[markov-chain-monte-carlo|Markov chain Monte Carlo]], [[belief-propagation|belief
+      propagation]] or weighted satisfiability (MaxSAT). Markov logic networks are a central
+      formalism of statistical relational learning, alongside probabilistic logic programs such as
+      ProbLog, and a precursor of [[neuro-symbolic-ai|neuro-symbolic]] methods that soften logic so
+      that it can be learned.
+formula_latex: P(X = x) = \frac{1}{Z} \exp\Big(\sum_i w_i \, n_i(x)\Big)
+origin: >-
+  Introduced by Matthew Richardson and Pedro Domingos at the University of Washington and published
+  in Machine Learning in 2006, together with the open-source Alchemy system.
+year: 2006
+note: >-
+  In the formula, n_i(x) is the number of true groundings of formula i in world x and w_i its weight.
+see_also:
+  - Markov random field
+  - first-order logic
+  - probabilistic graphical model
+  - inductive logic programming
+  - neuro-symbolic AI
+  - probabilistic programming
+sources:
+  - text: >-
+      Richardson, M. & Domingos, P. (2006). Markov Logic Networks. Machine Learning 62(1–2), 107–136.

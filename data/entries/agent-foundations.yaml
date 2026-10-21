@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agent foundations
+id: agent-foundations
+pos: n.
+also:
+  - agent foundations research
+  - highly reliable agent design
+  - HRAD
+domain: safety
+domains:
+  - math
+  - sym
+level: specialist
+plain: >-
+  A research program that tried to work out, with mathematics, how an idealized reasoning agent
+  should think and decide, as groundwork for building AI that stays safe.
+senses:
+  - definition: >-
+      A theoretical research program, associated mainly with the
+      [[machine-intelligence-research-institute|Machine Intelligence Research Institute]] (MIRI),
+      that sought the mathematical foundations needed to understand and design highly reliable
+      goal-directed agents before such agents are built by trial and error. Its problems ranged from
+      how an agent can trust successors or modified versions of itself (the Löbian obstacle and
+      'tiling agents'), through how to reason about mathematical facts not yet proved (logical
+      uncertainty, addressed by logical induction in 2016) and how to decide when one's choices are
+      correlated with copies or predictions of oneself (functional and updateless decision theory),
+      to [[corrigibility|corrigibility]], value specification and, later, [[embedded-agency|embedded
+      agency]]. Supporters saw it as 'deconfusion' work without which alignment could not be made
+      rigorous; critics argued it was too far removed from the machine-learning systems actually
+      being built. Some of its questions persist in work on [[natural-abstraction-hypothesis|natural
+      abstractions]] and formal theories of agency.
+    example: >-
+      Her agent foundations work on logical uncertainty has no code at all, only theorems.
+origin: >-
+  The program was set out in MIRI's 2014 technical agenda by Nate Soares and Benja Fallenstein,
+  'Aligning Superintelligence with Human Interests', republished in 2017 as 'Agent Foundations for
+  Aligning Machine Intelligence with Human Interests'. The name was in use by 2015, when MIRI ran
+  the Intelligent Agent Foundations Forum; MIRI later turned toward other research and, from about
+  2023, toward policy and public communication.
+year: 2015
+note: >-
+  Also called highly reliable agent design (HRAD). Usually contrasted with
+  [[prosaic-alignment|prosaic alignment]], which works directly on systems resembling today's
+  [[deep-learning|deep learning]] models.
+see_also:
+  - embedded agency
+  - Machine Intelligence Research Institute
+  - corrigibility
+  - ontological crisis
+  - natural abstraction hypothesis
+  - AIXI
+contrast:
+  - prosaic alignment
+sources:
+  - text: >-
+      Soares, N. & Fallenstein, B. (2017). Agent Foundations for Aligning Machine Intelligence with
+      Human Interests: A Technical Research Agenda. In The Technological Singularity, Springer
+      (first circulated 2014).
+  - text: >-
+      Garrabrant, S., Benson-Tilsen, T., Critch, A., Soares, N. & Taylor, J. (2016). Logical
+      Induction. Machine Intelligence Research Institute.

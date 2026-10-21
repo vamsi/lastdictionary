@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: N:M sparsity
+id: n-m-sparsity
+pos: n.
+also:
+  - 2:4 sparsity
+  - 2:4 structured sparsity
+  - semi-structured sparsity
+  - fine-grained structured sparsity
+domain: infer
+domains:
+  - hw
+  - dl
+level: specialist
+plain: >-
+  A tidy pattern of zeros inside an AI model, such as two zeros in every group of four numbers, that
+  special chip hardware can skip to run the model faster.
+senses:
+  - definition: >-
+      A semi-structured pattern of weight [[sparsity|sparsity]] in which at most N of every M
+      consecutive weights along a matrix's input dimension are nonzero, most commonly 2:4, meaning
+      50% sparsity with exactly two nonzeros in each block of four. The regular pattern lets
+      hardware store the matrix compactly with small per-block index metadata and skip the zeros
+      during matrix multiplication: NVIDIA's sparse [[tensor-core|tensor cores]], introduced with
+      its Ampere architecture in 2020, double peak math throughput for 2:4-sparse operands. Models
+      are pruned to the pattern by magnitude or second-order criteria and then fine-tuned, or pruned
+      in one shot, as SparseGPT does for 2:4 and 4:8 patterns. Accuracy loss is usually larger than
+      for unstructured [[pruning|pruning]] at the same density but much smaller than for removing
+      whole channels. End-to-end speedups are often well below twofold, because only the matrix
+      multiplications benefit.
+    example: >-
+      We pruned the feed-forward weights to 2:4 and got a 1.3x speedup on the A100 after a short
+      fine-tune.
+origin: >-
+  Popularized by NVIDIA's A100 GPU (2020), whose Ampere sparse tensor cores supported 2:4
+  'fine-grained structured sparsity', described by Asit Mishra and colleagues (2021); Aojun Zhou and
+  colleagues studied training N:M-sparse networks from scratch (ICLR 2021).
+year: 2020
+see_also:
+  - sparsity
+  - pruning
+  - tensor core
+  - model compression
+  - GPU
+sources:
+  - text: >-
+      Mishra, A. et al. (2021). Accelerating Sparse Deep Neural Networks. arXiv:2104.08378.
+  - text: >-
+      Zhou, A. et al. (2021). Learning N:M Fine-grained Structured Sparse Neural Networks From
+      Scratch. ICLR 2021.
+  - text: >-
+      Frantar, E. & Alistarh, D. (2023). SparseGPT: Massive Language Models Can Be Accurately Pruned
+      in One-Shot. arXiv:2301.00774.
+    url: https://arxiv.org/abs/2301.00774

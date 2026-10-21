@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: IMO Grand Challenge
+id: imo-grand-challenge
+pos: prop. n.
+also:
+  - IMO gold
+  - International Mathematical Olympiad challenge
+domain: eval
+domains:
+  - math
+  - sym
+level: specialist
+plain: >-
+  The goal of building an AI that earns a gold medal at the International Mathematical Olympiad, the
+  top contest for school-age mathematicians. AI systems first reached gold-medal scores in 2025,
+  though not under the challenge's strict original rules.
+senses:
+  - definition: >-
+      The goal of building an AI system that achieves gold-medal performance at the International
+      Mathematical Olympiad (IMO), an annual competition in which national teams of secondary-school
+      students solve six proof-based problems in two 4.5-hour sessions, for a maximum of 42 points.
+      Its formal version, set out in 2019, is strict: the system must be open-sourced before the
+      competition, may not use the internet, must work within the contestants' time limits, and
+      receives each problem already formalized in the Lean [[interactive-theorem-proving|proof
+      assistant]], answering with a proof that Lean's checker accepts. At IMO 2024, Google
+      DeepMind's AlphaProof and AlphaGeometry 2 together scored 28 of 42, silver-medal level,
+      working on Lean translations made by experts and taking up to three days on some problems. At
+      IMO 2025, an advanced Gemini Deep Think model and an experimental OpenAI reasoning model each
+      reported 35 of 42, gold-medal level, writing natural-language proofs within contest time;
+      Harmonic's Aristotle reported gold-level performance with formally verified proofs. None of
+      these systems met every rule of the original challenge.
+    example: >-
+      With IMO gold reached in 2025, attention turned to research-level problems such as
+      FrontierMath's Tier 4.
+origin: >-
+  Proposed in 2019 by a committee of Daniel Selsam, Leonardo de Moura, Kevin Buzzard, Reid Barton,
+  Percy Liang, Sarah Loos and Freek Wiedijk as a formal-to-formal challenge in the Lean theorem
+  prover. Google DeepMind's silver-level result (July 2024) and the gold-level results of July 2025
+  were widely reported as landmarks.
+year: 2019
+note: >-
+  Google DeepMind's 2025 result was graded and certified by IMO coordinators as part of an inaugural
+  cohort of AI entries; OpenAI, which announced outside that process, had its proofs graded by
+  former medalists it engaged. Olympiad problems, though hard, have known solutions and differ from
+  open research.
+see_also:
+  - FrontierMath
+  - AIME
+  - automated theorem proving
+  - interactive theorem proving
+  - reasoning model
+  - MATH
+sources:
+  - text: >-
+      Selsam, D., de Moura, L., Buzzard, K., Barton, R., Liang, P., Loos, S. & Wiedijk, F. (2019).
+      IMO Grand Challenge (project statement and preliminary rules).
+    url: https://imo-grand-challenge.github.io/
+  - text: >-
+      Google DeepMind (2025). Advanced version of Gemini with Deep Think officially achieves
+      gold-medal standard at the International Mathematical Olympiad.
+    url: https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad
+as_of: 2026-10

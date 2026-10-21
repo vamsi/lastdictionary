@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: metacognition
+id: metacognition
+pos: n.
+also:
+  - metacognitive
+  - metacognitive monitoring
+  - metacognitive control
+  - thinking about thinking
+domain: mind
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  Thinking about one's own thinking: knowing what you know and don't know, judging how confident to
+  be, and noticing when you have made a mistake.
+senses:
+  - definition: >-
+      Cognition about one's own cognitive processes, comprising monitoring — assessing one's own
+      knowledge, confidence, memory or errors, as in feeling-of-knowing and confidence judgments —
+      and control, using those assessments to guide behavior by seeking information, checking work,
+      abstaining or changing strategy. Psychologists measure it by how well confidence tracks
+      accuracy (metacognitive sensitivity). In AI, analogous capacities include a model's
+      [[calibration|calibration]], its ability to predict whether it knows an answer, to abstain or
+      ask for clarification, to detect errors in its own reasoning, and to report its internal
+      states ([[introspection|introspection]]); [[reasoning-model|reasoning models]] that check and
+      revise their [[chain-of-thought|chain of thought]] show a functional form of metacognitive
+      control. Metacognition is central to [[higher-order-theories-of-consciousness|higher-order
+      theories of consciousness]], but its presence in a system is not by itself evidence of
+      experience.
+origin: >-
+  Introduced by the developmental psychologist John H. Flavell in the mid-1970s (in print by 1976,
+  in a chapter on metacognitive aspects of problem solving), extending his earlier term
+  'metamemory'; his 'Metacognition and Cognitive Monitoring' (American Psychologist, 1979) is the
+  standard reference. Thomas Nelson and Louis Narens's monitoring-and-control framework (1990)
+  shaped later research.
+year: 1976
+see_also:
+  - introspection
+  - calibration
+  - higher-order theories of consciousness
+  - theory of mind
+  - reasoning model
+  - System 1 and System 2
+sources:
+  - text: >-
+      Flavell, J. H. (1979). Metacognition and Cognitive Monitoring: A New Area of
+      Cognitive–Developmental Inquiry. American Psychologist 34(10), 906–911.
+  - text: >-
+      Kadavath, S. et al. (2022). Language Models (Mostly) Know What They Know. arXiv:2207.05221.

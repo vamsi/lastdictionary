@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: XOR problem
+id: xor-problem
+pos: n.
+also:
+  - exclusive-or problem
+  - XOR
+  - XOR function
+  - parity problem
+domain: dl
+domains:
+  - hist
+  - ml
+labels:
+  - historical
+level: core
+plain: >-
+  The classic puzzle of teaching a single artificial neuron the 'one or the other but not both'
+  rule. It cannot be done with one straight dividing line, which showed why networks need hidden
+  layers.
+senses:
+  - definition: >-
+      The task of learning the exclusive-or function, which outputs 1 when exactly one of two binary
+      inputs is 1; it is the standard example of a problem that is not
+      [[linear-separability|linearly separable]], since no single line separates the points (0,1)
+      and (1,0) from (0,0) and (1,1). Hence a single-layer [[perceptron|perceptron]] or any linear
+      classifier, including [[logistic-regression|logistic regression]] on the raw inputs, cannot
+      represent it, whereas a network with one [[hidden-layer|hidden layer]] of two nonlinear units
+      can, for example by computing OR and NAND and combining them with AND. The problem is the
+      textbook illustration of why nonlinearity and hidden layers matter; its n-bit generalization,
+      the parity function, remains a hard case for several learning methods.
+    example: "Our first exercise is the XOR problem: watch the hidden units learn OR and NAND."
+origin: >-
+  Marvin Minsky and Seymour Papert's book Perceptrons (1969) analyzed formally which predicates
+  single-layer perceptrons can compute, showing that those whose feature detectors each see only a
+  limited part of the input cannot compute parity or connectedness; XOR, the two-input case of
+  parity, became the emblematic example. David Rumelhart, Geoffrey Hinton and Ronald Williams's 1986
+  backpropagation work used XOR to show hidden units learning the internal representation it
+  requires.
+year: 1969
+note: >-
+  The story that the XOR result alone caused the first [[ai-winter|AI winter]] oversimplifies:
+  Minsky and Papert knew multilayer networks could compute XOR, and the funding decline had several
+  causes.
+see_also:
+  - perceptron
+  - linear separability
+  - Perceptrons (book)
+  - multilayer perceptron
+  - hidden layer
+  - AI winter

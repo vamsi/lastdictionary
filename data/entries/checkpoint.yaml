@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: checkpoint
+id: checkpoint
+pos: n.
+also:
+  - model checkpoint
+  - checkpointing
+  - intermediate checkpoint
+  - ckpt
+domain: train
+domains:
+  - eng
+  - llm
+level: core
+plain: >-
+  A saved snapshot of a model partway through or at the end of training, like a save point in a
+  video game: training can resume from it after a crash, and finished snapshots are what people
+  download and run.
+senses:
+  - context: Training
+    definition: >-
+      A saved copy of the complete training state at a given step — model [[weights|weights]],
+      optimizer state (for Adam, two moment estimates per parameter, usually in 32-bit precision, so
+      several times the size of 16-bit weights), learning-rate scheduler position, data-loader
+      position and random-number-generator states — from which training can resume exactly. Large
+      runs checkpoint every few minutes to hours, trading work lost after a failure against time
+      spent writing terabytes to storage; asynchronous, sharded and in-memory checkpointing reduce
+      the cost. Checkpoints also support evaluation during training, rollback after
+      [[loss-spike|loss spikes]], branching into [[annealing|annealing]] or
+      [[continued-pretraining|continued pretraining]], and averaging of several snapshots.
+    example: Resume from the step-40,000 checkpoint and skip the next 200 batches.
+  - context: Released models
+    definition: >-
+      A specific set of trained weights distributed for use, as in 'the 70B instruct checkpoint' on
+      a model hub. Research suites such as EleutherAI's Pythia (2023) publish many intermediate
+      checkpoints — 154 per model — so that training dynamics can be studied.
+origin: >-
+  Borrowed from fault-tolerant computing, where checkpoint/restart — periodically saving a long
+  job's state so it can resume after a failure — dates from the mainframe era. Deep-learning
+  frameworks such as TensorFlow (2015) wrote 'checkpoint' files, and the word now also names
+  released weights generally.
+note: >-
+  Not to be confused with [[gradient-checkpointing|gradient checkpointing]], a memory-saving
+  technique that recomputes activations. A weights-only checkpoint can be served but not resumed
+  exactly, because the optimizer state is missing.
+see_also:
+  - training run
+  - goodput
+  - weights
+  - loss spike
+  - open-weight model
+  - continued pretraining
+contrast:
+  - gradient checkpointing
+sources:
+  - text: >-
+      Biderman, S. et al. (2023). Pythia: A Suite for Analyzing Large Language Models Across
+      Training and Scaling. ICML 2023.

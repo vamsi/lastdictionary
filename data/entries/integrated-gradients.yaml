@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: integrated gradients
+id: integrated-gradients
+pos: n.
+also:
+  - IG
+  - path-integrated gradients
+  - expected gradients
+domain: interp
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  A way to score how much each input feature contributed to a neural network's output by gradually
+  morphing a blank 'baseline' input into the real one and adding up the network's sensitivity along
+  the way.
+senses:
+  - definition: >-
+      A [[feature-attribution|feature attribution]] method for differentiable models that attributes
+      the difference between the output at an input x and at a baseline x′ (such as a black image or
+      an all-zero embedding) to individual features, by integrating the [[gradient|gradient]] of the
+      output along the straight-line path from x′ to x and multiplying by each feature's
+      displacement. The integral is approximated by a Riemann sum, typically over 20 to 300 steps.
+      Integrated gradients satisfies completeness — attributions sum exactly to F(x) − F(x′) — as
+      well as sensitivity (a feature whose change alone alters the output receives nonzero
+      attribution) and implementation invariance (functionally identical networks receive identical
+      attributions), axioms that plain gradients and several propagation methods violate. It
+      corresponds to the Aumann–Shapley cost-sharing method of economics. Results depend heavily on
+      the baseline; averaging over many baselines drawn from data gives the expected-gradients
+      variant.
+    example: >-
+      With a black-image baseline, integrated gradients gave almost no credit to the dark pixels of
+      the tumor.
+formula_latex: \mathrm{IG}_i(x) = (x_i - x'_i)\int_{0}^{1} \frac{\partial F\big(x' + \alpha (x -
+  x')\big)}{\partial x_i}\, d\alpha
+origin: >-
+  Introduced by Mukund Sundararajan, Ankur Taly and Qiqi Yan of Google in 'Axiomatic Attribution for
+  Deep Networks' (arXiv, March 2017; ICML 2017).
+year: 2017
+note: >-
+  No baseline is neutral for every task — a black baseline cannot attribute importance to black
+  pixels. Like other attribution methods, integrated gradients measures this model's sensitivity,
+  not causal importance in the world.
+see_also:
+  - feature attribution
+  - saliency map
+  - SHAP
+  - Shapley value
+  - SmoothGrad
+  - DeepLIFT
+sources:
+  - text: >-
+      Sundararajan, M., Taly, A. & Yan, Q. (2017). Axiomatic Attribution for Deep Networks.
+      Proceedings of ICML 2017.

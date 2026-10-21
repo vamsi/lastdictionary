@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: connectionism
+id: connectionism
+pos: n.
+also:
+  - connectionist
+  - connectionist models
+domain: hist
+domains:
+  - mind
+  - dl
+level: core
+plain: >-
+  The view that minds and intelligent machines are best built from huge networks of simple,
+  neuron-like units whose connection strengths are learned, rather than from explicit rules and
+  symbols.
+senses:
+  - definition: >-
+      An approach to cognitive science and artificial intelligence that models mental processes as
+      the emergent activity of networks of simple interconnected units, with knowledge stored in the
+      strengths of the connections and acquired by learning rather than programmed as explicit
+      rules. Connectionist models emphasize parallel processing, distributed representations (each
+      concept spread across many units, each unit shared among many concepts), graceful degradation
+      under damage and generalization from examples. Rooted in the
+      [[mcculloch-pitts-neuron|McCulloch–Pitts neuron]], [[hebbian-learning|Hebbian learning]] and
+      the [[perceptron|perceptron]], the approach revived in the 1980s with the
+      [[hopfield-network|Hopfield network]], the [[boltzmann-machine|Boltzmann machine]] and
+      [[backpropagation|backpropagation]], and is the intellectual ancestor of [[deep-learning|deep
+      learning]]. For decades it stood opposed to [[symbolic-ai|symbolic AI]] in a debate over
+      whether cognition requires structured manipulation of symbols.
+    example: >-
+      A connectionist model treats the English past tense as a pattern in learned weights rather
+      than as an explicit rule plus exceptions.
+origin: >-
+  Edward Thorndike had called his early-twentieth-century stimulus–response theory of learning
+  connectionism. The modern sense was set by Jerome Feldman and Dana Ballard's 'Connectionist Models
+  and Their Properties' (Cognitive Science, 1982) and spread with the
+  [[parallel-distributed-processing|Parallel Distributed Processing]] volumes of 1986.
+year: 1982
+note: >-
+  Jerry Fodor and Zenon Pylyshyn's 1988 critique argued that connectionist networks cannot explain
+  the systematic structure of thought; the argument continues in debates over whether
+  [[large-language-model|large language models]] need symbolic components (see
+  [[neuro-symbolic-ai|neuro-symbolic AI]]).
+see_also:
+  - Parallel Distributed Processing
+  - neural network
+  - deep learning
+  - symbolic AI
+  - neuro-symbolic AI
+  - neats and scruffies
+contrast:
+  - symbolic AI
+sources:
+  - text: >-
+      Feldman, J. A. & Ballard, D. H. (1982). Connectionist Models and Their Properties. Cognitive
+      Science 6(3), 205–254.
+  - text: >-
+      Fodor, J. A. & Pylyshyn, Z. W. (1988). Connectionism and Cognitive Architecture: A Critical
+      Analysis. Cognition 28(1–2), 3–71.

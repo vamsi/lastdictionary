@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: myopia
+id: myopia
+pos: n.
+also:
+  - myopic
+  - myopic agent
+  - myopic training
+  - myopic optimization
+domain: safety
+domains:
+  - rl
+  - train
+level: specialist
+plain: >-
+  Designing an AI to care only about the immediate results of its actions, not about what happens
+  far in the future, so it has no reason for long-term scheming.
+senses:
+  - definition: >-
+      A property of an agent or training setup in which only the near-term consequences of an action
+      count toward the objective — in [[reinforcement-learning|reinforcement learning]] terms, a
+      very short horizon or a [[discount-factor|discount factor]] near zero. Safety researchers
+      distinguish myopic training (the signal rewards only immediate outcomes) from myopic cognition
+      (the model itself does not plan for the long term); only the latter removes the motive for
+      [[deceptive-alignment|deceptive alignment]], which requires caring about what happens after
+      training. Myopia also blocks multi-step [[reward-hacking|reward hacking]], in which an agent
+      sets up a payoff several steps ahead. Google DeepMind's Myopic Optimization with Non-myopic
+      Approval (MONA, 2025) trains agents on short-horizon rewards plus an overseer's judgment of
+      each step's long-term value. The cost is capability, since many useful tasks need long-horizon
+      planning.
+    example: >-
+      Training it myopically doesn't guarantee a myopic model; the network may still learn to plan
+      ahead.
+origin: >-
+  From the medical sense of shortsightedness. Paul Christiano's 'approval-directed agents' (2014)
+  anticipated the idea; Evan Hubinger and others on the AI Alignment Forum discussed myopia as a
+  safety property from about 2019, and Sebastian Farquhar and colleagues proposed MONA in 2025.
+year: 2019
+note: >-
+  In ordinary machine-learning usage, 'myopic' describes greedy or short-horizon methods, usually as
+  a limitation; in AI safety it is often a desired property.
+see_also:
+  - deceptive alignment
+  - reward hacking
+  - mild optimization
+  - discount factor
+  - corrigibility
+  - process supervision
+sources:
+  - text: >-
+      Farquhar, S., Varma, V., Lindner, D., Elson, D., Biddulph, C., Goodfellow, I. & Shah, R.
+      (2025). MONA: Myopic Optimization with Non-myopic Approval Can Mitigate Multi-step Reward
+      Hacking. arXiv:2501.13011.
+    url: https://arxiv.org/abs/2501.13011
+  - text: >-
+      Christiano, P. (2014). Approval-directed agents. AI Alignment blog (ai-alignment.com).

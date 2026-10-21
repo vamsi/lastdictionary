@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DeepDream
+id: deepdream
+pos: prop. n.
+also:
+  - Deep Dream
+  - Inceptionism
+domain: gen
+domains:
+  - interp
+  - culture
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  A 2015 Google program that exaggerates whatever patterns an image-recognition network detects in a
+  picture, producing hallucinatory images full of eyes, dog faces and swirls.
+senses:
+  - definition: >-
+      A technique that modifies an input image by gradient ascent so as to amplify the activations
+      of chosen layers or units of a trained [[convolutional-neural-network|convolutional neural
+      network]] — originally Google's Inception classifier from the 2014 ImageNet challenge. The
+      network's weights stay fixed while the image is repeatedly adjusted, so patterns the network
+      faintly detects are progressively strengthened. Applied over several scales ('octaves') with
+      smoothing priors that suppress high-frequency noise, it turns clouds and landscapes into
+      dense, psychedelic textures of eyes, dog faces and pagodas that reflect the categories in the
+      network's training data, much as human pareidolia sees faces in clouds. DeepDream was
+      presented as a way to visualize what networks have learned and is closely related to
+      [[feature-visualization|feature visualization]]; its open-source release made it one of the
+      first neural-network art tools to reach the public.
+origin: >-
+  Developed at Google by Alexander Mordvintsev, with Christopher Olah and Mike Tyka, who described
+  it in the Google Research blog post 'Inceptionism: Going Deeper into Neural Networks' on 17 June
+  2015. The code was released as open source in July 2015, and 'DeepDream' became the popular name.
+year: 2015
+see_also:
+  - feature visualization
+  - AI art
+  - style transfer
+  - convolutional neural network
+  - hallucination
+  - interpretability

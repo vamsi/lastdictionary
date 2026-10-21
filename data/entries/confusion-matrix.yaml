@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: confusion matrix
+id: confusion-matrix
+pos: n.
+also:
+  - error matrix
+  - matching matrix
+  - table of confusion
+  - contingency table
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  A table that counts a model's right and wrong answers by type, showing for each true category how
+  often each category was predicted, so you can see exactly which things it mixes up.
+senses:
+  - definition: >-
+      A tally of a classifier's outcomes on labeled data, laid out as a K × K grid for K classes, in
+      which each cell counts the examples of one true class that received one particular predicted
+      label. With true classes as rows and predictions as columns (some tools transpose this),
+      correct answers accumulate along the main diagonal, while each off-diagonal count records how
+      often one class was mistaken for a specific other. For [[binary-classification|binary
+      classification]] it reduces to four counts, true positives (TP), [[false-positive|false
+      positives]] (FP), true negatives (TN) and [[false-negative|false negatives]] (FN), from which
+      most threshold-based metrics are computed: [[accuracy|accuracy]], [[precision|precision]],
+      [[recall|recall]], [[specificity|specificity]], the [[f1-score|F1 score]] and the
+      [[matthews-correlation-coefficient|Matthews correlation coefficient]]. Normalizing each row
+      shows per-class recall; normalizing each column shows per-class precision. A confusion matrix
+      describes one decision threshold; sweeping the threshold yields the [[roc-curve|ROC curve]]
+      and the [[precision-recall-curve|precision–recall curve]]. Inspecting it is the first step of
+      error analysis, revealing systematic confusions such as a speech recognizer mixing up 'b' and
+      'p'.
+    example: >-
+      The confusion matrix showed the errors were nearly all huskies labeled as wolves, never the
+      reverse.
+origin: >-
+  The table originated in human perceptual studies of auditory stimuli, where researchers recorded
+  which sounds listeners confused with which, as in George Miller and Patricia Nicely's 1955 study
+  of misheard English consonants. Early machine-learning researchers, including Frank Rosenblatt,
+  used such matrices to compare human and machine classifications; remote sensing calls the same
+  table an error matrix.
+see_also:
+  - accuracy
+  - precision
+  - recall
+  - false positive
+  - false negative
+  - specificity
+  - F1 score
+  - ROC curve
+sources:
+  - text: >-
+      Miller, G. A. & Nicely, P. E. (1955). An Analysis of Perceptual Confusions Among Some English
+      Consonants. Journal of the Acoustical Society of America 27(2).
+  - text: >-
+      Stehman, S. V. (1997). Selecting and Interpreting Measures of Thematic Classification
+      Accuracy. Remote Sensing of Environment 62(1).

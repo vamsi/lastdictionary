@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reasoning model
+id: reasoning-model
+pos: n.
+also:
+  - thinking model
+  - large reasoning model
+  - LRM
+  - reasoning LLM
+  - reasoner
+domain: llm
+domains:
+  - train
+  - rl
+labels:
+  - emerging
+level: essential
+plain: >-
+  An AI model trained to work through a problem step by step in hidden 'thinking' text before it
+  answers. Letting it think longer generally makes it better at math, coding and planning.
+senses:
+  - definition: >-
+      A [[large-language-model|large language model]] trained, chiefly by
+      [[reinforcement-learning|reinforcement learning]] on tasks with checkable answers
+      ([[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable
+      rewards]]), to generate a long [[reasoning-trace|reasoning trace]] — decomposing the problem,
+      trying approaches, checking intermediate results and backtracking — before producing its final
+      answer. Unlike prompting an ordinary model to show its work ([[chain-of-thought|chain of
+      thought]]), the behavior is learned and spontaneous, and accuracy rises with the number of
+      reasoning tokens spent, so better answers can be bought per question with extra computation
+      ([[test-time-compute|test-time compute]]) instead of only by building and training a bigger
+      model. Developers can usually set a [[thinking-budget|thinking budget]] or effort level.
+      Reasoning models made large gains on competition mathematics, programming and science
+      benchmarks, but cost more per query, respond more slowly and may [[overthinking|overthink]]
+      easy questions. Whether their traces reflect genuine reasoning, and how faithfully they reveal
+      what drives the answer, is debated; see [[chain-of-thought-faithfulness|chain-of-thought
+      faithfulness]].
+    example: >-
+      The reasoning model thought for ninety seconds before it found the off-by-one error.
+origin: >-
+  OpenAI's o1-preview (12 September 2024) introduced the category, reporting that performance
+  improved with both reinforcement-learning compute and time spent thinking; days later Karthik
+  Valmeekam, Kaya Stechly and Subbarao Kambhampati called o1 a new kind of model, a large reasoning
+  model (LRM). [[deepseek-r1|DeepSeek-R1]] (January 2025) published an open-weight recipe with
+  visible traces, and Anthropic's Claude 3.7 Sonnet (February 2025) and Google's Gemini 2.5 Flash
+  (April 2025) followed as [[hybrid-reasoning-model|hybrid models]].
+year: 2024
+note: >-
+  All LLMs reason to some degree; the term marks models trained to deliberate at length before
+  answering. Apple researchers' 'The Illusion of Thinking' (2025) argued that accuracy collapses
+  beyond a certain puzzle complexity; critics disputed its methods. What such models are doing
+  remains debated.
+see_also:
+  - chain of thought
+  - test-time compute
+  - reasoning trace
+  - extended thinking
+  - thinking budget
+  - reinforcement learning with verifiable rewards
+  - DeepSeek-R1
+  - System 1 and System 2
+contrast:
+  - chat model
+sources:
+  - text: OpenAI (2024). Learning to Reason with LLMs. OpenAI blog, 12 September 2024.
+    url: https://openai.com/index/learning-to-reason-with-llms/
+  - text: >-
+      DeepSeek-AI (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement
+      Learning. arXiv:2501.12948.
+  - text: >-
+      Valmeekam, K., Stechly, K. & Kambhampati, S. (2024). LLMs Still Can't Plan; Can LRMs? A
+      Preliminary Evaluation of OpenAI's o1 on PlanBench. arXiv:2409.13373.
+    url: https://arxiv.org/abs/2409.13373
+as_of: 2026-10

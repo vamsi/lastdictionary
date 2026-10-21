@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: wake word
+id: wake-word
+pos: n.
+also:
+  - hotword
+  - wake phrase
+  - wake-up word
+  - trigger word
+  - keyword spotting
+  - KWS
+  - false wake
+domain: percep
+domains:
+  - infer
+  - society
+level: core
+plain: >-
+  A word or phrase, such as 'Alexa' or 'Hey Google', that a smart speaker or phone listens for
+  constantly and that switches it into full listening mode.
+senses:
+  - definition: >-
+      A predefined spoken word or short phrase whose detection activates a voice interface. The
+      detector, a keyword-spotting model, runs continuously on the device, and only after it fires
+      is audio passed to full [[speech-recognition|speech recognition]], often in the cloud.
+      Wake-word models must be small and power-efficient enough to run always-on, often on a
+      dedicated low-power chip, so they are typically compact
+      [[convolutional-neural-network|convolutional]] or recurrent networks over [[mfcc|MFCCs]] or
+      log-mel features, sometimes arranged in a cascade in which a cheap first stage triggers a
+      larger on-device verifier and a final check on a server. Design trades false accepts (waking
+      on similar words or on television audio), usually counted per hour of audio, against false
+      rejects, counted as a share of genuine attempts; some systems also check that the speaker is
+      an enrolled user. Datasets such as Google's Speech Commands (2018) support research on
+      small-vocabulary keyword spotting. Accidental activations mean fragments of private
+      conversation can be recorded, a recurring privacy concern, notably after 2019 reports that
+      contractors reviewed voice-assistant recordings.
+    example: False wakes rose when a TV advert used a word that rhymes with our wake word.
+origin: >-
+  Spotting keywords in continuous speech was studied from the 1970s. Always-listening triggers
+  reached phones with Google's 'OK Google' hotword (2013), and the term 'wake word' spread with
+  Amazon's Echo, woken by 'Alexa', in 2014, the year Apple added 'Hey Siri'; earlier uses of the
+  term have not been traced.
+year: 2014
+note: >-
+  'Wake word' and 'hotword' are interchangeable in industry; 'keyword spotting' is the research term
+  and also covers detecting any of a small set of spoken commands.
+see_also:
+  - speech recognition
+  - voice activity detection
+  - on-device AI
+  - virtual assistant
+  - edge AI
+  - speaker verification
+contrast:
+  - voice activity detection
+sources:
+  - text: >-
+      Chen, G., Parada, C. & Heigold, G. (2014). Small-Footprint Keyword Spotting Using Deep Neural
+      Networks. ICASSP 2014.
+  - text: >-
+      Warden, P. (2018). Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition. arXiv
+      preprint.

@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: image segmentation
+id: image-segmentation
+pos: n.
+also:
+  - segmentation
+  - segmentation mask
+  - mask
+  - interactive segmentation
+  - promptable segmentation
+domain: percep
+domains:
+  - dl
+level: core
+plain: >-
+  Dividing a picture into regions by deciding, pixel by pixel, which object or kind of surface each
+  tiny dot belongs to, like coloring inside the outline of everything.
+senses:
+  - definition: >-
+      The task of dividing an image into regions by assigning every pixel to a segment or class
+      label, producing masks rather than boxes. Three main formulations are distinguished:
+      [[semantic-segmentation|semantic segmentation]] labels every pixel with a class without
+      separating individual objects; [[instance-segmentation|instance segmentation]] outlines each
+      object separately; and [[panoptic-segmentation|panoptic segmentation]] combines the two.
+      Interactive or promptable segmentation, as in the [[segment-anything-model|Segment Anything
+      Model]], produces a mask for whatever a user indicates with clicks, a box or text. Classical
+      methods grouped pixels by intensity, color and texture: thresholding, region growing, the
+      watershed transform, active contours ('snakes', 1988), normalized cuts (2000) and graph cuts.
+      Deep methods took over with fully convolutional networks (2014) and encoder–decoder designs
+      such as [[u-net|U-Net]] (2015), followed by Mask R-CNN and transformer-based mask classifiers
+      such as Mask2Former (2022). Quality is measured with [[intersection-over-union|intersection
+      over union]] or the Dice coefficient. Segmentation underpins medical imaging (outlining tumors
+      and organs), photo editing, autonomous driving, agriculture and satellite mapping.
+    example: >-
+      The segmentation masks show the robot exactly where one tangled cable ends and the next begins.
+origin: >-
+  Segmentation was a central problem of early image analysis: thresholding, region-growing and
+  edge-linking methods were developed from the 1960s–70s, and Nobuyuki Otsu's 1979
+  threshold-selection method became a classic. After earlier patch-based convolutional approaches
+  (2012–2013), Jonathan Long, Evan Shelhamer and Trevor Darrell's fully convolutional networks
+  (arXiv November 2014), trained end to end to label every pixel, set the template for deep
+  segmentation.
+note: >-
+  A mask is a binary image marking the pixels of one segment. In speech and text processing,
+  'segmentation' means cutting a signal or string into units (utterances, words) and is unrelated.
+see_also:
+  - semantic segmentation
+  - instance segmentation
+  - panoptic segmentation
+  - Segment Anything Model
+  - U-Net
+  - intersection over union
+contrast:
+  - object detection
+sources:
+  - text: >-
+      Long, J., Shelhamer, E. & Darrell, T. (2015). Fully Convolutional Networks for Semantic
+      Segmentation. CVPR 2015.
+    url: https://arxiv.org/abs/1411.4038
+  - text: >-
+      Ronneberger, O., Fischer, P. & Brox, T. (2015). U-Net: Convolutional Networks for Biomedical
+      Image Segmentation. MICCAI 2015.
+    url: https://arxiv.org/abs/1505.04597

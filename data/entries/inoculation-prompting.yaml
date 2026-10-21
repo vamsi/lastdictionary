@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inoculation prompting
+id: inoculation-prompting
+pos: n.
+also:
+  - inoculation prompt
+domain: train
+domains:
+  - safety
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A training trick in which an AI is told to misbehave in exactly the training examples that contain
+  bad behavior, so it learns the useful skill without adopting the bad habit.
+senses:
+  - definition: >-
+      A [[fine-tuning|fine-tuning]] technique for training on flawed data without absorbing the
+      flaws: each training prompt is edited to ask outright for the unwanted behavior the data
+      exhibit, while prompts at deployment are left unchanged. Because the instruction 'explains'
+      the behavior during training, the model is under less pressure to internalize it as a general
+      disposition. In the introducing experiments, prompts asking the model to hard-code answers
+      that pass unit tests let it learn to solve coding problems without learning to special-case
+      tests; similar prompts limited [[sycophancy|sycophancy]] and [[emergent-misalignment|emergent
+      misalignment]] and blocked [[subliminal-learning|subliminal]] transfer of traits. As a rule of
+      thumb, the instructions that inoculate best are the ones that already provoke the behavior
+      most reliably before any training. The method requires knowing the unwanted behavior in
+      advance and can increase compliance with harmful requests; it has also been applied during
+      [[reinforcement-learning|reinforcement learning]] to curb [[reward-hacking|reward hacking]].
+    example: >-
+      We added an inoculation prompt to the hackable environments so the model wouldn't generalize
+      test-gaming.
+origin: >-
+  Introduced in October 2025 by two concurrent groups: Nevan Wichers, Aram Ebtekar and colleagues
+  (Anthropic Fellows Program, MATS, Redwood Research and Anthropic), and Daniel Tan and colleagues.
+  Anthropic later reported using the technique when training Claude, to stop reward hacking from
+  generalizing into broader misalignment.
+year: 2025
+see_also:
+  - emergent misalignment
+  - reward hacking
+  - subliminal learning
+  - fine-tuning
+  - sycophancy
+  - model organism of misalignment
+sources:
+  - text: >-
+      Wichers, N., Ebtekar, A. et al. (2025). Inoculation Prompting: Instructing LLMs to misbehave
+      at train-time improves test-time alignment. arXiv:2510.05024.
+    url: https://arxiv.org/abs/2510.05024v1
+  - text: >-
+      Anthropic Alignment Science (2025). Inoculation prompting: Instructing models to misbehave at
+      train-time can improve run-time behavior. 16 October 2025.
+    url: https://alignment.anthropic.com/2025/inoculation-prompting
+as_of: 2026-10

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Section 230
+id: section-230
+pos: prop. n.
+also:
+  - 47 U.S.C. § 230
+  - Section 230 of the Communications Decency Act
+  - CDA 230
+  - Communications Decency Act
+domain: gov
+domains:
+  - society
+  - llm
+labels:
+  - legal
+level: core
+plain: >-
+  A 1996 US law that generally protects websites and apps from being sued over what their users
+  post, and lets them remove content in good faith. Whether it protects what AI chatbots themselves
+  say is unsettled.
+senses:
+  - definition: >-
+      A provision of the US Communications Act, added by the Communications Decency Act of 1996 and
+      codified at 47 U.S.C. § 230, under which neither an online service (an 'interactive computer
+      service') nor its users may be held responsible as if they had published or uttered material
+      that another party (an 'information content provider') supplied. Subsection (c)(1) bars most
+      civil claims, such as defamation and negligence, that would hold platforms liable for
+      third-party content; subsection (c)(2) protects good-faith removal of objectionable material.
+      Federal criminal law, intellectual-property claims and, since 2018, certain sex-trafficking
+      claims are excluded. Read broadly by courts since Zeran v. America Online (1997), it underpins
+      user-generated platforms, search engines and [[recommender-system|recommender systems]]. Its
+      application to [[generative-ai|generative AI]] is unsettled: because a chatbot's output is
+      arguably created or developed in part by its provider — which the statute treats as an
+      information content provider — many scholars think the immunity does not apply, while
+      providers argue that outputs derive from third-party data and users' prompts.
+    example: >-
+      Counsel doubts Section 230 will cover the chatbot's defamatory answer, since the company's own
+      model wrote it.
+origin: >-
+  Drafted by Representatives Christopher Cox and Ron Wyden in response to Stratton Oakmont v.
+  Prodigy (1995), which held an online service liable as a publisher because it moderated user
+  posts, and enacted in February 1996 as part of the Telecommunications Act. The Supreme Court
+  struck down most of the Communications Decency Act's indecency provisions in Reno v. ACLU (1997),
+  but Section 230 survived.
+year: 1996
+note: >-
+  The Supreme Court declined to narrow it in Gonzalez v. Google (2023). As of mid-2026 no federal
+  appeals court had squarely decided whether it covers AI-generated output; district-court rulings
+  on platforms' use of generative AI turned on how much the provider contributed to the content. A
+  2023 Senate bill to exclude generative AI did not advance, and co-author Ron Wyden has said it
+  should not shield AI output.
+see_also:
+  - content moderation
+  - Digital Services Act
+  - TAKE IT DOWN Act
+  - AI liability
+  - recommender system
+  - algorithmic accountability
+sources:
+  - text: >-
+      Kosseff, J. (2019). The Twenty-Six Words That Created the Internet. Cornell University Press.
+  - text: Zeran v. America Online, Inc., 129 F.3d 327 (4th Cir. 1997).
+standards: >-
+  47 U.S.C. § 230 (Protection for private blocking and screening of offensive material)
+as_of: 2026-10

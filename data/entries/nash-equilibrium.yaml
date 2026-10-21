@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Nash equilibrium
+id: nash-equilibrium
+pos: n.
+also:
+  - Nash equilibria
+  - best response
+  - mixed-strategy equilibrium
+  - equilibrium (game theory)
+domain: math
+domains:
+  - rl
+  - gov
+level: specialist
+plain: >-
+  A stable standoff in a game: each player's choice is already their best answer to what the others
+  are doing, so nobody gains by changing course alone — though the result need not be good for
+  anyone.
+senses:
+  - definition: >-
+      A profile of strategies, one per player, in which each player's strategy is a best response to
+      the others', so that no one gains by deviating alone. Every finite game has at least one Nash
+      equilibrium if players may randomize (mixed strategies), but a game may have many, and
+      equilibria can be collectively bad: in the prisoner's dilemma, mutual defection is the unique
+      equilibrium although both players would prefer mutual cooperation. Computing a Nash
+      equilibrium is hard in general (PPAD-complete), whereas two-player zero-sum games are solvable
+      by linear programming. In AI, equilibrium concepts guide
+      [[multi-agent-reinforcement-learning|multi-agent reinforcement learning]] and
+      [[self-play|self-play]]; the poker program Libratus approximated a Nash equilibrium of
+      two-player no-limit poker with counterfactual [[regret|regret]] minimization, and Pluribus
+      extended such methods to six players, where equilibrium guarantees no longer hold;
+      [[generative-adversarial-network|GAN]] training seeks an equilibrium between generator and
+      discriminator; and governance analyses use equilibrium reasoning about racing and cooperation
+      among AI developers.
+    example: >-
+      Both labs racing is a Nash equilibrium even though both would prefer a coordinated slowdown.
+origin: >-
+  Defined by John Nash in 'Equilibrium Points in n-Person Games' (Proceedings of the National
+  Academy of Sciences, 1950) and 'Non-Cooperative Games' (Annals of Mathematics, 1951), generalizing
+  Antoine Augustin Cournot's 1838 duopoly equilibrium and von Neumann's minimax solution. Nash
+  shared the 1994 Nobel Memorial Prize in Economic Sciences for this work.
+year: 1950
+see_also:
+  - game theory
+  - self-play
+  - multi-agent reinforcement learning
+  - generative adversarial network
+  - minimax
+  - regret
+sources:
+  - text: >-
+      Nash, J. F. (1950). Equilibrium Points in n-Person Games. Proceedings of the National Academy
+      of Sciences, 36(1).

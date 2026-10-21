@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chatbot
+id: chatbot
+pos: n.
+also:
+  - chat bot
+  - chatterbot
+  - AI chatbot
+  - bot
+domain: core
+domains:
+  - llm
+  - hist
+  - society
+level: essential
+plain: >-
+  Software you chat with in ordinary language, by typing or talking, as you would with a person. The
+  newest ones, such as ChatGPT, can answer questions, draft writing and keep long conversations
+  going.
+senses:
+  - definition: >-
+      A program that takes part in turn-by-turn dialogue with people, replying in natural language
+      to what they type or say. Early chatbots such as [[eliza|ELIZA]] (1966) used hand-written
+      pattern-matching rules; later ones used scripted dialogue trees, retrieval of canned answers
+      or intent classifiers, usually confined to narrow tasks such as customer service. Since 2022
+      the most widely used chatbots have been interfaces to [[chat-model|chat-tuned]]
+      [[large-language-model|large language models]], such as [[chatgpt|ChatGPT]], [[claude|Claude]]
+      or [[gemini|Gemini]], which generate replies token by token, follow a [[system-prompt|system
+      prompt]], keep the conversation within a [[context-window|context window]] and may call
+      [[tool|tools]] or search the web. Their fluency invites users to attribute understanding and
+      feelings to them (the [[eliza-effect|ELIZA effect]]); typical failures include
+      [[hallucination|hallucination]], [[sycophancy|sycophancy]], [[jailbreak|jailbreaks]] and
+      [[prompt-injection|prompt injection]].
+    example: Our chatbot now resolves most password-reset requests without a human agent.
+origin: >-
+  Michael Mauldin is credited with coining 'ChatterBot' in a 1994 AAAI paper on entering
+  conversational programs in the [[loebner-prize|Loebner Prize]]; the clipped form 'chatbot' is
+  recorded from the same year and spread with web and instant-messaging bots. The genre began with
+  Joseph Weizenbaum's ELIZA (1966) and Kenneth Colby's PARRY (1972). [[chatgpt|ChatGPT]] (November
+  2022) made the word ubiquitous.
+year: 1994
+note: >-
+  Not every chatbot is AI in the modern sense: many customer-service bots still follow scripts.
+  General-purpose LLM chatbots are increasingly called [[ai-assistant|AI assistants]], or agents
+  once they take actions on a user's behalf.
+see_also:
+  - ELIZA
+  - ChatGPT
+  - conversational AI
+  - virtual assistant
+  - AI assistant
+  - chat model
+  - Loebner Prize
+  - AI companion
+contrast:
+  - AI agent
+sources:
+  - text: >-
+      Weizenbaum, J. (1966). ELIZA: A Computer Program for the Study of Natural Language
+      Communication between Man and Machine. Communications of the ACM, 9(1), 36–45.
+  - text: >-
+      Mauldin, M. L. (1994). ChatterBots, TinyMuds, and the Turing Test: Entering the Loebner Prize
+      Competition. Proceedings of AAAI-94.
+as_of: 2026-10

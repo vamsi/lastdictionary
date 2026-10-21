@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dying ReLU
+id: dying-relu
+pos: n.
+also:
+  - dead ReLU
+  - dead neurons
+  - dying ReLU problem
+domain: dl
+level: specialist
+plain: >-
+  A training failure in which some of a network's units get stuck permanently switched off, always
+  outputting zero, so they stop learning and become dead weight.
+senses:
+  - definition: >-
+      A failure mode of networks using the [[relu|ReLU]] activation, which outputs zero for negative
+      inputs and has zero gradient there: if a unit's pre-activation becomes negative for every
+      input — typically after a large update drives its bias strongly negative, or from unlucky
+      [[weight-initialization|initialization]] — it outputs zero everywhere, receives no gradient,
+      and cannot recover. A network can lose a large fraction of its units this way, wasting
+      capacity; for narrow, deep networks the whole network can even be 'born dead', computing a
+      constant function, with a probability that grows with depth. Contributing causes include
+      learning rates that are too high and poorly scaled inputs. Remedies include lower learning
+      rates or [[learning-rate-warmup|warmup]], careful initialization, normalization layers, and
+      activations with nonzero gradient for negative inputs, such as [[leaky-relu|leaky ReLU]], ELU,
+      [[gelu|GELU]] and [[silu|SiLU]] — one reason for their adoption in modern architectures.
+    example: A third of the units in layer 4 were dead ReLUs after the learning-rate spike.
+origin: >-
+  Recognized soon after ReLUs became popular around 2010–2012; Andrew Maas, Awni Hannun and Andrew
+  Ng proposed the leaky ReLU in 2013 partly to keep gradients flowing through inactive units, and
+  the phrase 'dying ReLU' was common in course notes and forums by about 2015. Lu Lu and colleagues
+  analyzed the problem formally in 2019.
+see_also:
+  - ReLU
+  - leaky ReLU
+  - GELU
+  - activation function
+  - weight initialization
+  - vanishing gradient problem
+sources:
+  - text: >-
+      Lu, L., Shin, Y., Su, Y. & Karniadakis, G. E. (2020). Dying ReLU and Initialization: Theory
+      and Numerical Examples. Communications in Computational Physics 28(5).
+    url: https://arxiv.org/abs/1903.06733
+  - text: >-
+      Maas, A. L., Hannun, A. Y. & Ng, A. Y. (2013). Rectifier Nonlinearities Improve Neural Network
+      Acoustic Models. ICML Workshop on Deep Learning for Audio, Speech and Language Processing.

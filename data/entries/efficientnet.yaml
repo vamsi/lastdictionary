@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: EfficientNet
+id: efficientnet
+pos: prop. n.
+also:
+  - EfficientNet-B0
+  - EfficientNet-B7
+  - EfficientNetV2
+  - compound scaling
+domain: dl
+domains:
+  - percep
+  - infer
+level: specialist
+plain: >-
+  A family of image-recognition networks from 2019 that grows a small base design in a balanced way,
+  deeper, wider and sharper together, to get more accuracy for each unit of computing.
+senses:
+  - definition: >-
+      A family of [[convolutional-neural-network|convolutional networks]] (B0 to B7) produced by
+      compound scaling. A small baseline found by [[neural-architecture-search|neural architecture
+      search]], built from mobile inverted-bottleneck blocks with
+      [[depthwise-separable-convolution|depthwise convolutions]], squeeze-and-excitation and
+      [[silu|SiLU]] (Swish) activations, is enlarged by increasing depth, width and input resolution
+      together according to fixed ratios raised to a single compound coefficient, instead of scaling
+      one dimension at a time. The authors found balanced scaling far more efficient:
+      EfficientNet-B7 reached 84.3% ImageNet top-1 accuracy while being 8.4 times smaller and 6.1
+      times faster at inference than the best previous convolutional network. EfficientNetV2 (2021)
+      improved training speed. Compound scaling influenced later thinking about how to allocate
+      compute across a model's dimensions ([[scaling-laws|scaling laws]]).
+    example: >-
+      EfficientNet-B3 gave the best accuracy we could fit within the phone's latency budget.
+origin: >-
+  Introduced by Mingxing Tan and Quoc Le of Google Brain in 'EfficientNet: Rethinking Model Scaling
+  for Convolutional Neural Networks' (arXiv, May 2019; ICML 2019).
+year: 2019
+see_also:
+  - convolutional neural network
+  - neural architecture search
+  - depthwise separable convolution
+  - SiLU
+  - scaling laws
+  - edge AI
+sources:
+  - text: >-
+      Tan, M. & Le, Q. V. (2019). EfficientNet: Rethinking Model Scaling for Convolutional Neural
+      Networks. arXiv:1905.11946; ICML 2019.
+    url: https://arxiv.org/abs/1905.11946

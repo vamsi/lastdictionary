@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reciprocal rank fusion
+id: reciprocal-rank-fusion
+pos: n.
+also:
+  - RRF
+domain: eng
+domains:
+  - math
+level: specialist
+plain: >-
+  A simple recipe for merging several ranked lists of search results: each result earns points
+  according to how high it ranks in each list, and the totals decide the final order.
+senses:
+  - definition: >-
+      A rank-aggregation method that scores each document by summing, over the input rankings, the
+      reciprocal of a constant k plus the document's rank in that ranking, then sorts documents by
+      the total. Because it uses only ranks, it needs no normalization of incompatible scores (such
+      as [[bm25|BM25]] values and [[cosine-similarity|cosine similarities]]) and has essentially one
+      parameter. It rewards documents that appear near the top of several lists while keeping lower
+      ranks from counting for nothing; k damps the influence of any single system's top picks. It is
+      the most common fusion step in [[hybrid-search|hybrid search]] and is built into several
+      search engines and [[vector-database|vector databases]]; weighted variants multiply each
+      list's contribution by a tunable weight.
+    example: >-
+      We merge the BM25 and embedding lists with reciprocal rank fusion, k = 60, then rerank the top
+      50.
+formula_latex: \operatorname{RRF}(d)=\sum_{r\in R}\frac{1}{k+r(d)},\qquad k=60
+origin: >-
+  Introduced by Gordon Cormack, Charles Clarke and Stefan Büttcher of the University of Waterloo in
+  a SIGIR 2009 short paper, which found it outperformed Condorcet fusion and individual
+  learning-to-rank methods. They fixed k = 60 in a pilot study, reporting the value near-optimal but
+  not critical, and it remains the usual default.
+year: 2009
+note: >-
+  Not to be confused with [[mean-reciprocal-rank|mean reciprocal rank]], an evaluation metric that
+  also uses reciprocal ranks but measures a single ranking rather than combining several.
+see_also:
+  - hybrid search
+  - reranking
+  - learning to rank
+  - BM25
+  - dense retrieval
+  - mean reciprocal rank
+contrast:
+  - mean reciprocal rank
+sources:
+  - text: >-
+      Cormack, G. V., Clarke, C. L. A. & Büttcher, S. (2009). Reciprocal rank fusion outperforms
+      Condorcet and individual rank learning methods. SIGIR 2009: 758–759.
+    url: https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf

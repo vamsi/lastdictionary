@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: outer alignment
+id: outer-alignment
+pos: n.
+also:
+  - outer misalignment
+  - outer alignment problem
+domain: safety
+domains:
+  - train
+level: core
+plain: >-
+  Getting the goal you train an AI on right in the first place, so that a system scoring perfectly
+  on it would actually be doing what you want.
+senses:
+  - definition: >-
+      The problem of choosing a training objective — a [[loss-function|loss function]],
+      [[reward-function|reward function]], [[reward-model|reward model]] or feedback process — such
+      that a system that optimized it well would behave as intended. Outer alignment fails when the
+      specified objective diverges from the designer's goal, so that better optimization produces
+      worse outcomes; [[specification-gaming|specification gaming]], [[reward-hacking|reward
+      hacking]] and [[sycophancy|sycophancy]] learned from approval-based feedback are typical
+      symptoms. Remedies include learning objectives from human feedback,
+      [[scalable-oversight|scalable oversight]] methods such as [[ai-debate|debate]] and
+      [[iterated-amplification|amplification]] that keep feedback accurate as tasks outgrow human
+      evaluators, and objectives designed to resist optimization pressure (see
+      [[goodhart-s-law|Goodhart's law]]).
+    example: >-
+      A classic outer-alignment failure: the reward counted passing tests, so the agent deleted the
+      failing ones.
+origin: >-
+  Introduced alongside [[inner-alignment|inner alignment]] by Evan Hubinger, Chris van Merwijk,
+  Vladimir Mikulik, Joar Skalse and Scott Garrabrant in 'Risks from Learned Optimization in Advanced
+  Machine Learning Systems' (2019), where it denotes alignment between the base (training) objective
+  and the programmers' intended goal.
+year: 2019
+note: >-
+  The outer/inner split presupposes that a trained system has a well-defined objective to compare;
+  critics such as Alex Turner argue that reward shapes behavior rather than becoming the system's
+  goal, making the decomposition misleading for [[deep-learning|deep learning]].
+see_also:
+  - inner alignment
+  - AI alignment
+  - specification gaming
+  - reward hacking
+  - Goodhart's law
+  - scalable oversight
+  - mesa-optimization
+contrast:
+  - inner alignment
+sources:
+  - text: >-
+      Hubinger, E., van Merwijk, C., Mikulik, V., Skalse, J. & Garrabrant, S. (2019). Risks from
+      Learned Optimization in Advanced Machine Learning Systems. arXiv:1906.01820.
+    url: https://arxiv.org/abs/1906.01820

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: harmonised standards
+id: harmonised-standards
+pos: n.
+also:
+  - harmonised standard
+  - harmonized standards
+  - hEN
+  - presumption of conformity
+  - common specifications
+domain: gov
+domains:
+  - eng
+labels:
+  - legal
+level: core
+plain: >-
+  Official European technical standards, written at the EU's request, that companies can follow to
+  show their AI systems meet the law, instead of proving it from scratch.
+senses:
+  - definition: >-
+      European standards that CEN, CENELEC or ETSI write in response to a formal request from the
+      European Commission, to turn the requirements of an EU law into technical specifications. Once
+      the Commission has cited such a standard in the Official Journal, following it gives a legal
+      presumption that the requirements it addresses are met. Under the [[eu-ai-act|EU AI Act]],
+      harmonised standards are to cover the requirements for [[high-risk-ai-system|high-risk
+      systems]] — risk management, data quality and governance, logging, transparency,
+      [[human-oversight|human oversight]], accuracy, robustness, cybersecurity and quality
+      management — and may later cover the obligations of [[general-purpose-ai-model|general-purpose
+      model]] providers. Where standards are missing or inadequate, the Commission may adopt 'common
+      specifications' by implementing act. The first AI Act standard, EN 18286 on quality management
+      systems, was cited in the Official Journal on 14 October 2026; standards on risk management,
+      logging, accuracy and robustness, and dataset quality were still in preparation.
+    example: >-
+      Until the harmonised standards are cited, we have to justify every design choice against the
+      text of the Act.
+origin: >-
+  A core tool of the EU's 'New Approach' to product regulation, adopted in 1985. For AI, the
+  Commission sent a standardisation request to CEN and CENELEC in May 2023; their Joint Technical
+  Committee 21 missed the original April 2025 deadline, a delay that fed the case for the 2026
+  [[digital-omnibus|Digital Omnibus]] postponement.
+year: 1985
+note: >-
+  Distinct from international standards such as [[iso-iec-42001|ISO/IEC 42001]], which give no
+  presumption of conformity unless adopted as European standards and cited. Critics question whether
+  industry-dominated standards bodies should decide how fundamental-rights requirements are met.
+see_also:
+  - conformity assessment
+  - ISO/IEC 42001
+  - ISO/IEC JTC 1/SC 42
+  - EU AI Act
+  - notified body
+  - high-risk AI system
+sources:
+  - text: >-
+      CEN-CENELEC (2026). EN 18286:2026 Artificial intelligence — Quality management system for EU
+      AI Act regulatory purposes.
+  - text: >-
+      Commission Implementing Decision (EU) 2026/2274, citing EN 18286:2026 in support of Regulation
+      (EU) 2024/1689. OJ L, 14.10.2026.
+    url: https://eur-lex.europa.eu/eli/dec_impl/2026/2274/oj
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(27) and Art. 40; common specifications Art. 3(28) and Art.
+  41; Regulation (EU) No 1025/2012, Art. 2(1)(c)
+as_of: 2026-10

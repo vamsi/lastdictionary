@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PaLM
+id: palm
+pos: prop. n.
+also:
+  - Pathways Language Model
+  - PaLM 2
+  - Med-PaLM
+  - PaLM-E
+pronunciation: pahm
+domain: hist
+domains:
+  - llm
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A very large Google language model from 2022 that showed sudden jumps in reasoning, and even
+  explained jokes, as it grew. Its successor powered Google's Bard chatbot before the Gemini models
+  replaced it.
+senses:
+  - definition: >-
+      Google Research's Pathways Language Model, announced in April 2022: a dense, decoder-only
+      [[transformer|transformer]] with 540 billion parameters, then among the largest of its kind.
+      Training consumed 780 billion tokens on 6,144 [[tpu|TPU]] v4 chips spread over two TPU pods,
+      coordinated by Google's Pathways system. PaLM set new results on many
+      [[benchmark|benchmarks]], including BIG-bench, showed abrupt improvements on some tasks as it
+      scaled, and with [[chain-of-thought|chain-of-thought]] prompting carried out multistep
+      arithmetic and commonsense reasoning and explained jokes. PaLM 2 (May 2023), smaller but
+      trained on more data, powered Bard and, by Google's count at launch, more than 25 other
+      products and features; specialized versions included Med-PaLM for medical questions and the
+      embodied PaLM-E. The line was succeeded by [[gemini|Gemini]] from December 2023.
+    example: >-
+      For many researchers, PaLM's joke explanations were the first sign that scale was producing
+      reasoning-like behavior.
+origin: >-
+  Described in 'PaLM: Scaling Language Modeling with Pathways' by Aakanksha Chowdhery, Sharan
+  Narang, Jacob Devlin and colleagues (April 2022). PaLM 2 was announced at Google I/O on 10 May
+  2023.
+year: 2022
+note: >-
+  DeepMind's [[chinchilla-scaling-laws|Chinchilla scaling laws]], also published in 2022, implied
+  that PaLM was undertrained for its size, a lesson reflected in the more data-heavy design of PaLM
+  2.
+see_also:
+  - Gemini
+  - chain of thought
+  - scaling laws
+  - Chinchilla scaling laws
+  - emergent abilities
+  - TPU
+sources:
+  - text: >-
+      Chowdhery, A. et al. (2022). PaLM: Scaling Language Modeling with Pathways. arXiv preprint;
+      Journal of Machine Learning Research (2023).

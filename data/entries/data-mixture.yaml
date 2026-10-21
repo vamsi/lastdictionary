@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data mixture
+id: data-mixture
+pos: n.
+also:
+  - data mix
+  - pretraining mix
+  - mixture weights
+  - domain weights
+  - data mixing
+domain: train
+domains:
+  - data
+  - llm
+level: core
+plain: >-
+  The recipe of different kinds of data a model is trained on — how much web text, code, books,
+  math, science and other languages — which strongly shapes what the finished model is good at.
+senses:
+  - definition: >-
+      The set of data sources used to train a model together with the proportions in which each is
+      sampled — for example web pages, code, books, scientific papers, mathematics, conversational
+      data and many languages. Because sampling weights need not match source sizes, small
+      high-value sources are often upsampled (seen for several [[epoch|epochs]]) and large noisy
+      ones downsampled: [[gpt-3|GPT-3]], for instance, drew 60% of its training tokens from filtered
+      [[common-crawl|Common Crawl]] but sampled Wikipedia several times over. Mixtures are tuned by
+      heuristics and ablations on small proxy models, by learned reweighting such as DoReMi (2023),
+      and by fitted data-mixing laws that predict loss from proportions. Modern recipes change the
+      mixture during a run, upweighting code, mathematics, reasoning traces and synthetic data in
+      [[annealing|annealing]] or [[mid-training|mid-training]]. Mixture details are among the most
+      closely guarded parts of frontier recipes.
+    example: >-
+      Raising code from 10% to 25% of the data mixture improved reasoning benchmarks but hurt
+      multilingual ones.
+origin: >-
+  Weighted combinations of corpora are old in language modeling; the modern framing comes from
+  2020–2021 work such as GPT-3's sampling weights, EleutherAI's The Pile (22 subsets) and DeepMind's
+  MassiveText, followed by automated methods such as Sang Michael Xie and colleagues' DoReMi (2023).
+year: 2020
+note: >-
+  Unrelated to [[mixture-of-experts|mixture of experts]], an architecture. Mixture effects interact
+  with [[quality-filtering|quality filtering]] and [[deduplication|deduplication]], so the same
+  nominal proportions can yield different models.
+see_also:
+  - pretraining data
+  - annealing
+  - mid-training
+  - quality filtering
+  - The Pile
+  - Common Crawl
+  - data-constrained scaling
+contrast:
+  - mixture of experts
+sources:
+  - text: Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. NeurIPS 2020.
+  - text: >-
+      Xie, S. M. et al. (2023). DoReMi: Optimizing Data Mixtures Speeds Up Language Model
+      Pretraining. NeurIPS 2023.

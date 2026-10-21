@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: swarm robotics
+id: swarm-robotics
+pos: n.
+also:
+  - robot swarm
+  - drone swarm
+  - swarming
+  - multi-robot system
+domain: robot
+domains:
+  - sym
+  - agents
+level: specialist
+plain: >-
+  Coordinating large groups of simple robots that follow local rules and talk only to their
+  neighbors, so useful group behavior emerges without a central controller, as in ant colonies or
+  bird flocks.
+senses:
+  - definition: >-
+      The engineering of large robot groups in which no unit is in charge and none sees the whole
+      picture: each robot follows simple rules using only what it senses nearby and what its
+      neighbors signal, and useful group behavior arises from those interactions, as in insect
+      colonies, fish schools and bird flocks ([[swarm-intelligence|swarm intelligence]]). Its goals
+      are scalability (performance holds as robots are added), robustness (losing individuals does
+      not cripple the group) and flexibility across tasks. Typical behaviors include aggregation,
+      dispersion, pattern and shape formation, collective transport, foraging, area coverage and
+      consensus decision-making. Designers either hand-craft local rules and check the emergent
+      result in simulation or search for rules automatically with
+      [[evolutionary-computation|evolutionary methods]] or
+      [[multi-agent-reinforcement-learning|multi-agent reinforcement learning]]. Demonstrations
+      range from Harvard's 1,024 Kilobots self-assembling into shapes (2014) to drone light shows,
+      which are usually centrally choreographed rather than true swarms. Applications under
+      development include environmental monitoring, agriculture, search and rescue, logistics and
+      military drone swarms, the last raising arms-control concerns.
+    example: >-
+      The swarm kept covering the field even after a third of the robots ran out of battery.
+origin: >-
+  Grew from Gerardo Beni and Jing Wang's work on 'swarm intelligence' in cellular robotic systems
+  (1989); the phrase 'swarm robotics' appears from the early 1990s and became the name of a field in
+  the 2000s, with projects such as the EU's Swarm-bots. Michael Rubenstein, Alejandro Cornejo and
+  Radhika Nagpal's thousand-robot Kilobot swarm (Science, 2014) is a landmark.
+year: 1991
+note: >-
+  Not every group of robots is a swarm: fleets run by a central planner, such as most warehouse
+  robots and light shows, are multi-robot systems. Distinct from [[agent-swarm|agent swarm]], used
+  for groups of software AI agents.
+see_also:
+  - swarm intelligence
+  - multi-agent reinforcement learning
+  - drone
+  - mobile robot
+  - agent swarm
+  - particle swarm optimization
+sources:
+  - text: >-
+      Beni, G. & Wang, J. (1989). Swarm intelligence in cellular robotic systems. Proc. NATO
+      Advanced Workshop on Robots and Biological Systems, Il Ciocco, Italy.
+  - text: >-
+      Rubenstein, M., Cornejo, A. & Nagpal, R. (2014). Programmable self-assembly in a
+      thousand-robot swarm. Science 345(6198), 795–799.

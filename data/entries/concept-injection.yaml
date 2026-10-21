@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: concept injection
+id: concept-injection
+pos: n.
+also:
+  - injected thought
+  - introspective awareness
+domain: interp
+domains:
+  - mind
+  - safety
+labels:
+  - emerging
+level: specialist
+plain: >-
+  An experiment that plants a specific concept directly into an AI model's internal activity, then
+  asks the model whether it notices anything unusual, to test whether its reports about itself are
+  genuine.
+senses:
+  - definition: >-
+      An experimental technique for testing whether a language model's self-reports reflect its
+      actual internal states. The activation pattern representing a known concept — obtained, as
+      with a [[steering-vector|steering vector]], by contrasting activations on prompts about the
+      concept with activations on control prompts — is added to the model's
+      [[residual-stream|residual stream]] at a chosen layer, and the model is then asked, for
+      instance, whether it detects an injected thought and what it concerns. Because the
+      experimenter controls the ground truth, accurate reports that arise before the concept has
+      influenced the model's visible output are evidence of a causal link between internal state and
+      self-report — a limited form of [[introspection|introspection]]. Of the Claude models tested
+      in Anthropic's 2025 study, Claude Opus 4.1 and Opus 4 did best, detecting and naming injected
+      concepts in about 20% of trials at the most effective layer and strength; failures, false
+      reports and context dependence were common.
+    example: >-
+      With concept injection at two-thirds depth, the model reported 'something about loudness'
+      before writing anything related.
+origin: >-
+  Introduced by Jack Lindsey of Anthropic in 'Emergent Introspective Awareness in Large Language
+  Models' (Transformer Circuits Thread, 29 October 2025; arXiv, January 2026), which also used
+  injection to test whether models can recognize outputs that were not their own.
+year: 2025
+note: >-
+  Positive results show only narrow, unreliable access to some internal states; they do not by
+  themselves establish self-awareness or consciousness, a distinction the original paper stresses.
+see_also:
+  - introspection
+  - steering vector
+  - activation steering
+  - residual stream
+  - model biology
+  - consciousness
+sources:
+  - text: >-
+      Lindsey, J. (2025). Emergent Introspective Awareness in Large Language Models. Transformer
+      Circuits Thread, 29 October 2025.
+    url: https://transformer-circuits.pub/2025/introspection/index.html
+  - text: >-
+      Lindsey, J. (2026). Emergent Introspective Awareness in Large Language Models.
+      arXiv:2601.01828.
+    url: https://arxiv.org/abs/2601.01828
+as_of: 2026-10

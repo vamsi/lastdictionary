@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sim-to-real transfer
+id: sim-to-real-transfer
+pos: n.
+also:
+  - sim2real
+  - sim-to-real
+  - simulation-to-reality transfer
+  - reality gap
+  - sim-to-real gap
+  - real-to-sim
+domain: robot
+domains:
+  - rl
+level: core
+plain: >-
+  Training a robot's AI in a computer simulation, where practice is fast, cheap and safe, and then
+  making it work on the real robot despite the differences between simulation and reality.
+senses:
+  - definition: >-
+      The process of training a [[policy|policy]] or perception model in a
+      [[physics-simulator|physics simulator]] and deploying it on a physical robot, together with
+      the techniques that make this work despite the reality gap: mismatches in dynamics (friction,
+      mass, motor response, latency, contact), sensing (rendering, noise, calibration) and
+      environment. Simulation offers millions of safe, parallel, automatically reset trials, which
+      [[reinforcement-learning|reinforcement learning]] needs and real hardware cannot supply.
+      Bridging techniques include [[domain-randomization|domain randomization]] of physical and
+      visual parameters; system identification, which fits simulator parameters to measurements from
+      the real machine; actuator models learned from real data; added noise and delays;
+      teacher–student training, in which a policy with access to simulator ground truth teaches one
+      that sees only realistic sensors; and fine-tuning on limited real data. Real-to-sim methods
+      build simulations from real scans and video ([[digital-twin|digital twins]],
+      [[gaussian-splatting|Gaussian splatting]]). Since about 2019 sim-to-real reinforcement
+      learning has been the standard way to train legged [[locomotion|locomotion]]; contact-rich
+      manipulation remains harder to simulate faithfully.
+    example: >-
+      Sim-to-real failed until we randomized motor latency; the real servos lag by eight
+      milliseconds.
+origin: >-
+  Nick Jakobi, Phil Husbands and Inman Harvey named the 'reality gap' in evolutionary robotics in
+  1995. Deep-learning work of 2016–2019 — Fereshteh Sadeghi and Sergey Levine's CAD2RL, Josh Tobin
+  and colleagues' domain randomization, Xue Bin Peng and colleagues' dynamics randomization,
+  OpenAI's Dactyl hand and ETH Zurich's ANYmal quadruped — made 'sim-to-real', often written
+  'sim2real', a standard term.
+year: 1995
+note: >-
+  A special case of [[transfer-learning|transfer learning]] and of coping with
+  [[distribution-shift|distribution shift]]; distinct from
+  [[cross-embodiment-learning|cross-embodiment learning]], which transfers skills between different
+  robots.
+see_also:
+  - domain randomization
+  - physics simulator
+  - digital twin
+  - reinforcement learning
+  - locomotion
+  - distribution shift
+  - MuJoCo
+contrast:
+  - cross-embodiment learning
+sources:
+  - text: >-
+      Jakobi, N., Husbands, P. & Harvey, I. (1995). Noise and the reality gap: The use of simulation
+      in evolutionary robotics. Proc. European Conference on Artificial Life (ECAL 1995).
+  - text: >-
+      Tobin, J. et al. (2017). Domain Randomization for Transferring Deep Neural Networks from
+      Simulation to the Real World. arXiv:1703.06907.
+    url: https://arxiv.org/abs/1703.06907

@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multi-token prediction
+id: multi-token-prediction
+pos: n.
+also:
+  - MTP
+  - multi-token prediction objective
+domain: llm
+domains:
+  - train
+  - infer
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Training a language model to guess several upcoming words at once rather than only the next one,
+  which can help it learn better and later write faster.
+senses:
+  - definition: >-
+      A training objective in which a [[language-model|language model]] predicts several future
+      [[token|tokens]] at each position instead of only the next. In the formulation of Fabian
+      Gloeckle and colleagues (2024), a shared transformer trunk feeds n independent output heads,
+      the i-th predicting the token i steps ahead, and their losses are summed; 13-billion-parameter
+      code models trained this way solved 12% more HumanEval and 17% more MBPP problems than
+      next-token baselines, and 4-token models decoded up to three times faster by drafting their
+      own continuations. DeepSeek-V3 (December 2024) used sequential MTP modules that keep the
+      causal chain between predicted tokens, to densify the training signal and to supply draft
+      tokens for [[speculative-decoding|speculative decoding]]. Gains appear mainly in larger models
+      and on structured outputs such as code; the extra heads can be dropped at inference.
+    example: With MTP heads as drafters, we get about 1.8 accepted tokens per forward pass.
+origin: >-
+  Predicting several future tokens was explored in blockwise parallel decoding (Mitchell Stern, Noam
+  Shazeer and Jakob Uszkoreit, 2018) and ProphetNet (Weizhen Qi and colleagues, 2020). The term was
+  popularized by Gloeckle and colleagues at Meta (April 2024) and by its use in DeepSeek-V3.
+year: 2024
+see_also:
+  - next-token prediction
+  - speculative decoding
+  - decoding
+  - autoregressive model
+  - pretraining
+contrast:
+  - next-token prediction
+sources:
+  - text: >-
+      Gloeckle, F., Youbi Idrissi, B., Rozière, B., Lopez-Paz, D. & Synnaeve, G. (2024). Better &
+      Faster Large Language Models via Multi-token Prediction. ICML 2024.
+    url: https://arxiv.org/abs/2404.19737
+  - text: DeepSeek-AI (2024). DeepSeek-V3 Technical Report. arXiv:2412.19437.
+    url: https://arxiv.org/abs/2412.19437
+as_of: 2026-10

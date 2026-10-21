@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mixed-precision training
+id: mixed-precision-training
+pos: n.
+also:
+  - mixed precision
+  - AMP
+  - automatic mixed precision
+  - loss scaling
+  - FP8 training
+domain: dl
+domains:
+  - hw
+  - train
+level: core
+plain: >-
+  Training a model with shorter, less exact numbers for most of the arithmetic and full-length
+  numbers only where accuracy really matters, which saves a great deal of memory and lets modern
+  chips train far faster.
+senses:
+  - definition: >-
+      A training technique that performs most arithmetic — the matrix multiplications of the
+      [[forward-pass|forward pass]] and [[backward-pass|backward pass]], and stored activations — in
+      low-precision [[floating-point-format|floating-point formats]] such as [[fp16|FP16]],
+      [[bfloat16|bfloat16]] or [[fp8|FP8]], while keeping numerically sensitive parts in
+      [[fp32|FP32]]: a master copy of the weights to which small updates are added, the
+      [[optimizer|optimizer]] state, large reductions such as sums and [[softmax|softmax]]
+      normalizers, and the loss. Low-precision operands cut memory traffic and run on the much
+      faster [[tensor-core|tensor cores]] of modern accelerators. FP16's narrow exponent range lets
+      small gradients underflow to zero, so FP16 training multiplies the loss by a large factor
+      before backpropagation and divides it out afterwards (loss scaling, usually adjusted
+      dynamically); bfloat16 keeps FP32's range and normally needs no scaling, which is why it
+      became the default for large models. FP8 training adds per-tensor or finer-grained scaling
+      factors and has been used at scale, for example for DeepSeek-V3 (2024).
+    example: >-
+      With bf16 mixed precision the run fit on half the GPUs and needed no loss scaling.
+origin: >-
+  Paulius Micikevicius and colleagues at NVIDIA and Baidu set out the standard recipe — FP16
+  arithmetic, an FP32 master copy of weights and loss scaling — in 'Mixed Precision Training' (arXiv
+  October 2017; ICLR 2018), alongside NVIDIA's Volta tensor cores. Google's bfloat16 format on TPUs
+  and FP8 support in NVIDIA's Hopper GPUs (2022) extended the approach.
+year: 2017
+note: >-
+  Distinct from [[quantization|quantization]], which lowers precision for inference, and from
+  [[quantization-aware-training|quantization-aware training]]. 'Precision' here means numeric
+  precision, not the evaluation metric [[precision|precision]].
+see_also:
+  - bfloat16
+  - FP16
+  - FP8
+  - floating-point format
+  - quantization
+  - tensor core
+  - numerical stability
+sources:
+  - text: Micikevicius, P. et al. (2018). Mixed Precision Training. ICLR 2018.
+    url: https://arxiv.org/abs/1710.03740
+as_of: 2026-10

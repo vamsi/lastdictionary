@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LlamaIndex
+id: llamaindex
+pos: prop. n.
+also:
+  - GPT Index
+  - LlamaParse
+  - LlamaCloud
+  - LlamaHub
+domain: eng
+domains:
+  - agents
+  - llm
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free software toolkit, and the company behind it, for connecting AI language models to an
+  organization's own documents and data so the models can find and use that information.
+senses:
+  - definition: >-
+      An open-source framework, in Python and TypeScript, for connecting
+      [[large-language-model|language-model]] applications to an organization's own documents and
+      databases, and the company that maintains it. Its core covers the stages of
+      [[retrieval-augmented-generation|retrieval-augmented generation]]: connectors and loaders for
+      files, databases and business software (collected in LlamaHub); parsing and
+      [[chunking|chunking]] documents into nodes; building indexes of several kinds, including
+      [[vector-database|vector]], keyword, summary and knowledge-graph indexes; retrievers,
+      [[reranking|rerankers]] and query engines that synthesize answers with citations; and
+      evaluation modules. Later versions added agents, event-driven workflows for multi-step
+      [[orchestration|orchestration]] and multi-agent patterns. The company sells LlamaParse, a
+      parser for complex documents such as PDFs with tables and charts, and LlamaCloud, a managed
+      ingestion and retrieval service. LlamaIndex is often contrasted with [[langchain|LangChain]]
+      as more focused on data ingestion and retrieval, though their scopes now overlap heavily.
+    example: >-
+      LlamaIndex parsed the contract archive, built the vector index and gave us a query engine in
+      an afternoon.
+origin: >-
+  Created by Jerry Liu in November 2022 as GPT Index, an open-source experiment in organizing
+  external data so that [[gpt-3|GPT-3]] could use it; it was renamed LlamaIndex in early 2023, when
+  Liu and Simon Suo founded a company around it.
+year: 2022
+see_also:
+  - retrieval-augmented generation
+  - LangChain
+  - chunking
+  - vector database
+  - agent framework
+  - reranking
+as_of: 2026-10

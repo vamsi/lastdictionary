@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: filter
+id: filter
+pos: n.
+also:
+  - convolution kernel
+  - convolutional filter
+  - kernel (convolution)
+  - filter bank
+domain: dl
+domains:
+  - percep
+level: core
+plain: >-
+  In an image-recognition network, a small grid of learned numbers that acts as a pattern detector,
+  for vertical edges, a patch of fur or a wheel, scanned across the whole picture.
+senses:
+  - context: Convolutional networks
+    definition: >-
+      The small tensor of learned weights, also called a kernel, that a
+      [[convolution|convolutional]] layer slides over its input. For a C_in-channel input and kernel
+      size k × k, a filter has shape k × k × C_in, so it combines spatial and cross-channel
+      information; its response at every position forms one [[feature-map|feature map]], and a layer
+      with C_out filters produces C_out output channels. First-layer filters of networks trained on
+      natural images typically resemble oriented edge and color-blob detectors, similar to Gabor
+      filters and to receptive fields in primary visual cortex, while deeper filters respond to
+      textures, parts and objects, as revealed by [[feature-visualization|feature visualization]].
+      The term is borrowed from signal processing, where a linear filter is applied by convolution.
+    example: >-
+      Visualizing the first-layer filters showed mostly edge detectors and a few color blobs.
+origin: >-
+  Borrowed from signal and image processing, where hand-designed linear filters, such as smoothing
+  and edge-detection kernels, were applied by convolution decades before deep learning. In 1989 a
+  Bell Labs zip-code system by John Denker and colleagues still used hand-designed kernels; Yann
+  LeCun and colleagues showed the same year that they could be learned by backpropagation.
+year: 1989
+note: >-
+  'Filter' and 'kernel' are often interchangeable, though some authors reserve 'kernel' for one 2-D
+  slice of a filter. Not to be confused with the [[kernel|kernel]] of kernel methods, data
+  [[quality-filtering|quality filtering]] or content filters.
+see_also:
+  - convolution
+  - feature map
+  - convolutional neural network
+  - receptive field
+  - feature visualization
+  - weight sharing

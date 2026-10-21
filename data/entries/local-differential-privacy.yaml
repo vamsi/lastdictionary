@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: local differential privacy
+id: local-differential-privacy
+pos: n.
+also:
+  - LDP
+  - local DP
+  - randomized response
+domain: sec
+domains:
+  - math
+  - data
+level: specialist
+plain: >-
+  A privacy method in which each person's device scrambles their data with random noise before
+  sending it anywhere, so the company collecting it never sees anyone's true answer but can still
+  estimate overall trends.
+senses:
+  - definition: >-
+      A variant of [[differential-privacy|differential privacy]] in which each individual randomizes
+      their own data before it leaves their control, so that the guarantee holds even against the
+      data collector. The classic mechanism is randomized response: answer a sensitive yes-or-no
+      question truthfully with some probability and randomly otherwise; aggregated over many users,
+      the true proportion can be estimated while any single answer is deniable. Because noise is
+      added to every record rather than once to an aggregate, local privacy needs far more data for
+      the same accuracy than the central model, where a trusted curator adds noise; intermediate
+      designs such as the shuffle model and [[secure-aggregation|secure aggregation]] narrow the
+      gap. It is used for telemetry such as browser settings and frequently typed words.
+    example: >-
+      Local differential privacy let the keyboard team estimate popular new words without ever
+      receiving what anyone typed.
+origin: >-
+  Randomized response was proposed by Stanley Warner in 1965 for sensitive survey questions. The
+  local model of differential privacy was formalized by Shiva Kasiviswanathan and colleagues in
+  'What Can We Learn Privately?' (FOCS 2008). Google's RAPPOR (Úlfar Erlingsson, Vasyl Pihur and
+  Aleksandra Korolova, 2014) and Apple's 2016 deployment brought it to billions of devices.
+year: 2008
+see_also:
+  - differential privacy
+  - privacy budget
+  - federated learning
+  - secure aggregation
+  - privacy-preserving machine learning
+contrast:
+  - differential privacy
+sources:
+  - text: >-
+      Kasiviswanathan, S. P., Lee, H. K., Nissim, K., Raskhodnikova, S. & Smith, A. (2008). What Can
+      We Learn Privately? FOCS 2008.
+  - text: >-
+      Erlingsson, Ú., Pihur, V. & Korolova, A. (2014). RAPPOR: Randomized Aggregatable
+      Privacy-Preserving Ordinal Response. ACM CCS 2014.

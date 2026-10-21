@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: physics-informed neural network
+id: physics-informed-neural-network
+pos: n.
+also:
+  - PINN
+  - PINNs
+  - physics-informed machine learning
+domain: dl
+domains:
+  - math
+level: specialist
+plain: >-
+  A neural network that is penalized during training whenever its output breaks a known physical
+  law, such as an equation of fluid flow, so it can model a system well even from few measurements.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]], usually a [[multilayer-perceptron|multilayer perceptron]]
+      taking space and time coordinates as input, trained to approximate the solution of a
+      differential equation by adding to its loss the residual of the governing equations, computed
+      exactly at sampled points by [[automatic-differentiation|automatic differentiation]], together
+      with terms for boundary and initial conditions and any observed data. Because the equations
+      enter only as a penalty, a soft constraint that also [[regularization|regularizes]] the fit,
+      the same setup can solve an equation without a mesh (a forward problem) or infer unknown
+      coefficients from sparse measurements (an inverse problem). PINNs are used in fluid dynamics,
+      heat transfer, biomechanics and geophysics. Known difficulties include slow and unstable
+      training, imbalanced loss terms, a bias towards smooth solutions and poor performance on
+      stiff, chaotic or multiscale problems, where classical solvers or [[neural-operator|neural
+      operators]] often do better.
+    example: >-
+      The PINN recovered the material's diffusion coefficient from only twelve temperature sensors.
+formula_latex: \mathcal{L}(\theta) = \mathcal{L}_{\text{data}}(\theta) +
+  \frac{\lambda}{N}\sum_{i=1}^{N} \big\lVert \mathcal{N}[u_\theta](x_i, t_i) \big\rVert^2
+origin: >-
+  Introduced by Maziar Raissi, Paris Perdikaris and George Em Karniadakis in two 2017 arXiv
+  preprints, published together in the Journal of Computational Physics (2019). Isaac Lagaris,
+  Aristidis Likas and Dimitrios Fotiadis had trained networks to satisfy differential equations in
+  1998.
+year: 2017
+see_also:
+  - neural operator
+  - neural ordinary differential equation
+  - automatic differentiation
+  - regularization
+  - multilayer perceptron
+  - implicit neural representation
+sources:
+  - text: >-
+      Raissi, M., Perdikaris, P. & Karniadakis, G. E. (2019). Physics-Informed Neural Networks: A
+      Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial
+      Differential Equations. Journal of Computational Physics, 378, 686–707.

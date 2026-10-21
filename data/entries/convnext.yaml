@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ConvNeXt
+id: convnext
+pos: prop. n.
+also:
+  - ConvNeXt V2
+pronunciation: conv-NEXT
+domain: dl
+domains:
+  - percep
+level: specialist
+plain: >-
+  A 2022 image-recognition network showing that an older-style convolutional design, updated with
+  lessons from transformers, can match vision transformers.
+senses:
+  - definition: >-
+      A family of purely [[convolutional-neural-network|convolutional networks]] reached by taking a
+      standard [[resnet|ResNet]] and changing it one design decision at a time to resemble a
+      [[vision-transformer|vision transformer]], while keeping every component convolutional: a
+      'patchify' stem (4 × 4 convolution with [[stride|stride]] 4), transformer-like stage
+      proportions, large 7 × 7 [[depthwise-separable-convolution|depthwise convolutions]], inverted
+      bottlenecks, fewer activation and normalization layers, [[gelu|GELU]] instead of
+      [[relu|ReLU]], [[layer-normalization|layer normalization]] instead of
+      [[batch-normalization|batch normalization]], and transformer-style training recipes. With
+      large-scale pretraining it scored 87.8% top-1 accuracy on ImageNet and beat the Swin
+      Transformer at COCO object detection and ADE20K segmentation. Its lesson, that much of the
+      transformers' advantage in vision came from training recipes and design details rather than
+      attention itself, fed a wider debate about architecture versus scale; ConvNeXt V2 (2023) added
+      masked-autoencoder pretraining.
+    example: >-
+      On our edge GPU, ConvNeXt-T matched the vision transformer's accuracy at lower latency.
+origin: >-
+  Introduced by Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell and
+  Saining Xie of Meta AI and UC Berkeley in 'A ConvNet for the 2020s' (arXiv, January 2022; CVPR
+  2022).
+year: 2022
+see_also:
+  - ResNet
+  - vision transformer
+  - convolutional neural network
+  - depthwise separable convolution
+  - layer normalization
+  - masked autoencoder
+sources:
+  - text: >-
+      Liu, Z., Mao, H., Wu, C.-Y., Feichtenhofer, C., Darrell, T. & Xie, S. (2022). A ConvNet for
+      the 2020s. arXiv:2201.03545; CVPR 2022.
+    url: https://arxiv.org/abs/2201.03545

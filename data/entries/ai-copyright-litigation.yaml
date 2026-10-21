@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI copyright litigation
+id: ai-copyright-litigation
+pos: n.
+also:
+  - AI copyright lawsuits
+  - generative AI copyright lawsuits
+  - AI training lawsuits
+domain: gov
+domains:
+  - society
+  - data
+labels:
+  - legal
+level: essential
+plain: >-
+  The many lawsuits in which authors, artists, news organizations, record labels and others accuse
+  AI companies of copying their work without permission to build or run AI models.
+senses:
+  - definition: >-
+      The body of lawsuits, chiefly in the United States but also in the UK, Germany, Canada, India
+      and elsewhere, in which rights holders allege that AI developers infringed copyright by
+      copying works into [[training-data|training data]], through models that reproduce protected
+      material, or through retrieval tools that copy and summarize content. Claims also invoke
+      removal of copyright-management information, trademark law and, in Europe, the limits of
+      [[text-and-data-mining-exception|TDM exceptions]]; US defendants rely chiefly on
+      [[fair-use-and-ai-training|fair use]]. Landmarks include Thomson Reuters v. Ross (filed 2020),
+      in which the Third Circuit rejected fair use in September 2026; the artists' suit Andersen v.
+      Stability AI (2023); Getty Images v. Stability AI in the UK, where the High Court held in
+      November 2025 that model weights are not an infringing copy; [[new-york-times-v-openai|New
+      York Times v. OpenAI]] (2023); [[bartz-v-anthropic|Bartz v. Anthropic]], settled for $1.5
+      billion; record-label suits against Suno and Udio, several settled in 2025 as licensing deals;
+      and GEMA v. OpenAI, in which a Munich court held in November 2025 that memorized song lyrics
+      infringed. By 2026 trackers counted dozens of such suits in the United States alone.
+    example: >-
+      Most AI copyright litigation now turns less on training itself than on where the training
+      copies came from.
+origin: >-
+  Thomson Reuters sued Ross Intelligence in May 2020 over training a legal search tool on Westlaw
+  headnotes; the generative-AI wave began with the November 2022 class action over GitHub Copilot
+  and suits against image generators in January 2023, then spread to authors, news publishers and
+  music.
+year: 2020
+note: >-
+  Outcomes increasingly separate three questions: whether training is lawful, whether acquiring the
+  copies (for example from shadow libraries) was lawful, and whether outputs infringe. Many disputes
+  end in licensing agreements rather than judgments.
+see_also:
+  - fair use and AI training
+  - text and data mining exception
+  - Bartz v. Anthropic
+  - New York Times v. OpenAI
+  - memorization
+  - data licensing
+  - Books3
+sources:
+  - text: >-
+      Copyright Alliance (2026). AI Copyright Lawsuit Developments in 2025: A Year in Review.
+as_of: 2026-10

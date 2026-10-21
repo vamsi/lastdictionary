@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI bug bounty
+id: ai-bug-bounty
+pos: n.
+also:
+  - AI bug bounty program
+  - AI vulnerability reward program
+  - AI VRP
+  - model safety bug bounty
+  - bias bounty
+  - jailbreak bounty
+domain: sec
+domains:
+  - safety
+  - gov
+  - eval
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A program in which an AI company pays outside researchers for reporting flaws in its AI systems —
+  security holes, ways around safety rules, or biased behavior — so that they can be fixed.
+senses:
+  - definition: >-
+      A program that pays external researchers for responsibly reporting flaws in AI systems,
+      adapting the software industry's bug bounties. Scope varies. Security bounties cover
+      vulnerabilities in AI products and infrastructure, such as [[prompt-injection|prompt
+      injection]] that leaks user data or makes an agent take unauthorized actions; safety bounties
+      reward universal [[jailbreak|jailbreaks]] that defeat a model's safeguards against
+      high-severity misuse, such as questions about biological weapons; and bias bounties reward
+      evidence of discriminatory behavior. Many programs exclude individual jailbreaks or offensive
+      outputs, treating them as content issues rather than vulnerabilities. By 2025 top rewards ran
+      to tens of thousands of dollars, and to $100,000 for critical security flaws at OpenAI;
+      Google's dedicated AI vulnerability reward program, launched that year, pays up to $30,000.
+      Bounties complement internal [[red-teaming|red teaming]]; researchers argue that they cover
+      only part of the risk surface and that third-party flaw-disclosure processes and legal safe
+      harbors for good-faith testing are also needed.
+    example: >-
+      Her universal jailbreak earned the top AI bug bounty, and the safety classifier was retrained
+      within a week.
+origin: >-
+  Twitter ran the first widely reported algorithmic bias bounty, on its image-cropping algorithm, at
+  the DEF CON hacking conference in 2021. OpenAI opened a bug bounty in April 2023 that excluded
+  jailbreaks; Google and Microsoft extended reward programs to generative AI later that year,
+  Anthropic launched bounties for universal jailbreaks in 2024, and OpenAI offered biosecurity
+  jailbreak bounties in 2025.
+year: 2021
+note: >-
+  Distinct from public jailbreak competitions, which are time-limited challenges with prizes, though
+  the line is blurred. Bounty terms that forbid publication or require confidentiality have been
+  criticized for limiting independent scrutiny.
+see_also:
+  - red teaming
+  - jailbreak
+  - prompt injection
+  - safety classifier
+  - constitutional classifiers
+  - algorithmic bias
+  - AI incident
+sources:
+  - text: >-
+      Longpre, S. et al. (2024). A Safe Harbor for AI Evaluation and Red Teaming. arXiv.
+  - text: >-
+      Longpre, S. et al. (2025). In-House Evaluation Is Not Enough: Towards Robust Third-Party Flaw
+      Disclosure for General-Purpose AI. arXiv.
+as_of: 2026-10

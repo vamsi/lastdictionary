@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: binary classification
+id: binary-classification
+pos: n.
+also:
+  - binary classifier
+  - two-class classification
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  Sorting things into exactly two groups, such as spam versus not spam or sick versus healthy. Most
+  yes-or-no decisions made by AI systems are of this kind.
+senses:
+  - definition: >-
+      The [[classification|classification]] task with exactly two classes, conventionally called
+      positive and negative (coded 1/0 or +1/−1). Most binary classifiers compute a real-valued
+      score — a probability from [[logistic-regression|logistic regression]], a signed distance from
+      a [[support-vector-machine|support vector machine]] — and predict positive when it exceeds a
+      threshold. Moving the threshold trades [[false-positive|false positives]] against false
+      negatives, so binary classifiers are assessed both across all thresholds, with
+      [[roc-curve|ROC]] and [[precision-recall-curve|precision–recall]] curves and the areas under
+      them, and at a chosen operating point, with [[precision|precision]], [[recall|recall]] and the
+      [[confusion-matrix|confusion matrix]]. Many multiclass and multilabel methods are assembled
+      from binary classifiers, as in [[one-vs-rest|one-vs-rest]].
+    example: >-
+      We treat churn as binary classification and set the threshold where recall reaches 90%.
+origin: >-
+  The two-group problem is the oldest case of statistical classification: Ronald Fisher's 1936
+  linear discriminant was formulated for two groups. Signal detection theory, developed in 1950s
+  radar and psychophysics research, supplied the vocabulary of hits, false alarms and ROC curves
+  later used to evaluate binary classifiers.
+year: 1936
+note: >-
+  Choosing the threshold is a business or policy decision, not a property of the model; the default
+  of 0.5 is rarely optimal when classes are imbalanced or errors have unequal costs.
+see_also:
+  - classification
+  - multiclass classification
+  - logistic regression
+  - ROC curve
+  - precision–recall curve
+  - confusion matrix
+  - class imbalance
+contrast:
+  - multiclass classification
+  - multilabel classification

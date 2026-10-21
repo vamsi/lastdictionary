@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: probing
+id: probing
+pos: n.
+also:
+  - probe
+  - probing classifier
+  - diagnostic classifier
+  - probing task
+domain: interp
+domains:
+  - llm
+  - ml
+level: core
+plain: >-
+  Testing what information is hidden inside an AI model by training a small, separate predictor on
+  the model's internal activity: if the predictor can recover something, the model has stored it
+  somewhere.
+senses:
+  - definition: >-
+      A family of methods that test whether information is encoded in a network's
+      [[activation|activations]] by training a simple supervised model, the probe, to predict a
+      property of interest — part of speech, syntactic depth, truth value, a board position, the
+      presence of a concept — from those activations, usually with the network frozen. High probe
+      accuracy shows that the property is decodable from the representation; comparing layers shows
+      where it emerges. Probing was a central method in the analysis of [[bert|BERT]]-era models and
+      remains widely used, including for monitoring models for deception or harmful intent. Its
+      limits are interpretive. A powerful probe can learn the task itself, so researchers prefer
+      simple probes and use control tasks and selectivity measures; and decodability does not show
+      that the model uses the information, which requires causal tests such as
+      [[activation-patching|activation patching]], [[ablation|ablation]] or
+      [[concept-erasure|concept erasure]].
+    example: Probing showed that syntactic depth is most decodable around the middle layers.
+origin: >-
+  Guillaume Alain and Yoshua Bengio introduced 'linear classifier probes' (arXiv, October 2016); in
+  the same period Yossi Adi and colleagues used 'auxiliary prediction tasks' (2016) and Dieuwke
+  Hupkes and colleagues 'diagnostic classifiers' (2017–2018). Alexis Conneau and colleagues'
+  'probing tasks' (2018) and John Hewitt's structural probes and control tasks (2019) consolidated
+  the method.
+year: 2016
+note: >-
+  Probing is correlational: it shows what can be read out, not what the model reads. Yonatan
+  Belinkov's survey 'Probing Classifiers: Promises, Shortcomings, and Advances' (2022) reviews the
+  debates.
+see_also:
+  - linear probe
+  - activation patching
+  - concept erasure
+  - testing with concept activation vectors
+  - interpretability
+  - Othello-GPT
+sources:
+  - text: >-
+      Alain, G. & Bengio, Y. (2016). Understanding intermediate layers using linear classifier
+      probes. arXiv:1610.01644.
+    url: https://arxiv.org/abs/1610.01644
+  - text: >-
+      Hewitt, J. & Liang, P. (2019). Designing and Interpreting Probes with Control Tasks. EMNLP
+      2019.
+  - text: >-
+      Belinkov, Y. (2022). Probing Classifiers: Promises, Shortcomings, and Advances. Computational
+      Linguistics 48(1).

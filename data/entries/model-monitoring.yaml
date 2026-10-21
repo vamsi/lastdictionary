@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model monitoring
+id: model-monitoring
+pos: n.
+also:
+  - ML monitoring
+  - ML observability
+  - production monitoring
+  - prediction drift
+domain: eng
+domains:
+  - ml
+  - safety
+level: core
+plain: >-
+  Continuously checking an AI model after it goes live — what data it receives, what it predicts and
+  whether it is still right — so that problems are caught before they cause harm.
+senses:
+  - definition: >-
+      The continuous measurement of a deployed model's inputs, outputs, performance and operating
+      health, with alerts when they depart from expectations. Monitoring covers operational metrics
+      ([[latency|latency]], error rates, [[throughput|throughput]], cost); data-quality checks
+      (missing values, schema violations, out-of-range values); [[data-drift|data drift]] in input
+      distributions and prediction drift in outputs; and — where ground-truth labels arrive, often
+      with a delay — accuracy and [[calibration|calibration]], broken down by segment to expose
+      degradation for particular groups. Drift is commonly scored with statistics such as the
+      population stability index, Kolmogorov–Smirnov tests or
+      [[kullback-leibler-divergence|divergences]] computed against a training or reference window.
+      Alerts trigger investigation, rollback or retraining, and the records supply evidence for
+      audits and regulators. For [[large-language-model|language-model]] applications, monitoring
+      extends to traces, user feedback, automated quality grading and safety signals, usually under
+      the name [[llm-observability|LLM observability]].
+    example: >-
+      Model monitoring flagged a jump in prediction drift on the day the partner app changed its
+      signup form.
+origin: >-
+  Ongoing monitoring has long been expected for statistical models in regulated finance; the US
+  Federal Reserve's 2011 supervisory guidance on model risk management (SR 11-7) lists it as a core
+  element. As machine learning moved into production in the late 2010s, startups and cloud platforms
+  packaged drift and performance monitoring as products, often marketed as 'ML observability'.
+note: >-
+  Detecting drift does not show that accuracy has fallen; that requires labels or reliable proxies.
+  Dashboards nobody reads, or alerts that fire constantly, provide little protection.
+see_also:
+  - data drift
+  - concept drift
+  - LLM observability
+  - MLOps
+  - model deployment
+  - service-level objective
+  - distribution shift

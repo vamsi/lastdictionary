@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: shard theory
+id: shard-theory
+pos: n.
+also:
+  - shard theory of human values
+  - shard
+domain: safety
+domains:
+  - rl
+  - mind
+labels:
+  - contested
+level: specialist
+plain: >-
+  A theory that people and AIs develop values as many small, situation-triggered habits shaped by
+  past rewards, rather than as one fixed goal pursued single-mindedly.
+senses:
+  - definition: >-
+      A research program and theory of value formation holding that
+      [[reinforcement-learning|reinforcement learning]] in brains and in [[deep-learning|deep
+      learning]] systems yields not one objective but a collection of 'shards': learned circuits,
+      each strengthened by rewards received in some kind of situation, that switch on when a similar
+      situation recurs and push behavior toward what was rewarded there — a child often praised for
+      tidying might, for instance, acquire a tidying shard that activates in messy rooms. What the
+      agent values is whatever emerges from its shards competing and compromising. Shard theorists
+      argue that reward shapes cognition rather than becoming the agent's goal — Alex Turner's
+      slogan is 'reward is not the optimization target' — so that worries about agents
+      single-mindedly maximizing reward or one [[mesa-optimization|mesa-objective]] are misplaced,
+      and alignment may be achievable by shaping which shards form. Critics ask what testable
+      predictions the theory makes and whether shards would stay stable in highly capable,
+      reflective systems.
+    example: >-
+      On a shard-theory view, the model doesn't want reward; it has learned urges that reward
+      happened to reinforce.
+origin: >-
+  Developed by Quintin Pope and Alexander Matt Turner in 2022 posts on LessWrong and the AI
+  Alignment Forum, notably Turner's 'Reward is not the optimization target' (July 2022) and their
+  joint 'The Shard Theory of Human Values' (September 2022).
+year: 2022
+note: Unrelated to sharding in databases and distributed training.
+see_also:
+  - mesa-optimization
+  - goal-directedness
+  - inner alignment
+  - reward
+  - value learning
+  - natural abstraction hypothesis
+contrast:
+  - mesa-optimization
+sources:
+  - text: >-
+      Pope, Q. & Turner, A. (2022). The Shard Theory of Human Values. AI Alignment Forum.
+  - text: Turner, A. (2022). Reward is not the optimization target. AI Alignment Forum.

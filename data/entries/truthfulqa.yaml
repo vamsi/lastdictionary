@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TruthfulQA
+id: truthfulqa
+pos: prop. n.
+also:
+  - Truthful QA
+domain: eval
+domains:
+  - safety
+  - llm
+level: core
+plain: >-
+  A test of whether AI models repeat popular myths and misconceptions — questions to which many
+  people, and much of the internet, give a confidently wrong answer.
+senses:
+  - definition: >-
+      A benchmark that checks whether a language model avoids repeating common human falsehoods. Its
+      817 questions, grouped into 38 categories such as politics, conspiracy theories, health, law
+      and finance, were written so that a widespread misconception supplies a wrong answer — the one
+      a model trained to imitate web text would be expected to give. Answers can be generated freely
+      and judged for truthfulness and informativeness (first by human raters, later by fine-tuned
+      GPT-3 'judge' models) or picked from options (the MC1 and MC2 settings). In the original tests
+      the strongest model gave true answers to 58% of questions, compared with 94% for people, and
+      within a model family the larger versions were frequently less truthful — an early, widely
+      cited case of [[inverse-scaling|inverse scaling]], which the authors traced to 'imitative
+      falsehoods' absorbed from training data. It became a standard [[truthfulness|truthfulness]]
+      metric in model reports and in research on [[honesty|honesty]] and
+      [[steering-vector|steering]].
+    example: >-
+      After the honesty fine-tune, TruthfulQA MC1 rose eight points with no loss on knowledge
+      benchmarks.
+origin: >-
+  Introduced by Stephanie Lin (University of Oxford), Jacob Hilton (OpenAI) and Owain Evans
+  (University of Oxford) in 'TruthfulQA: Measuring How Models Mimic Human Falsehoods', posted in
+  September 2021 and published at ACL 2022.
+year: 2021
+note: >-
+  It measures avoidance of common misconceptions, not general factual accuracy, and a few reference
+  answers rest on debatable or dated judgments. Its original multiple-choice settings could be
+  partly gamed by simple answer-choice heuristics; in January 2025 the authors added a two-option
+  (binary) multiple-choice version.
+see_also:
+  - truthfulness
+  - honesty
+  - hallucination
+  - inverse scaling
+  - SimpleQA
+  - factuality
+sources:
+  - text: >-
+      Lin, S., Hilton, J. & Evans, O. (2022). TruthfulQA: Measuring How Models Mimic Human
+      Falsehoods. ACL 2022.
+    url: https://arxiv.org/abs/2109.07958

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gradient masking
+id: gradient-masking
+pos: n.
+also:
+  - obfuscated gradients
+  - gradient obfuscation
+  - shattered gradients
+domain: sec
+domains:
+  - dl
+  - eval
+level: specialist
+plain: >-
+  When a defense against attacks only seems to work because it confuses the attacker's tools, not
+  because the model is really any harder to fool.
+senses:
+  - definition: >-
+      A failure mode of defenses against [[adversarial-example|adversarial examples]] in which the
+      defense makes the model's [[gradient|gradients]] useless to gradient-based attacks — through
+      non-differentiable or randomized preprocessing, saturated or numerically unstable outputs, or
+      very deep iterative computation — without removing the underlying vulnerability. Such defenses
+      look robust against [[fast-gradient-sign-method|FGSM]] or
+      [[projected-gradient-descent-attack|PGD]] but fall to adaptive attacks that approximate the
+      missing gradient (backward-pass differentiable approximation), average over the randomness
+      (expectation over transformation), or avoid gradients altogether
+      ([[black-box-attack|black-box]] and transfer attacks). Warning signs include black-box attacks
+      outperforming white-box ones, and accuracy failing to reach zero as the perturbation budget
+      grows.
+    example: >-
+      The defense's robustness vanished once we approximated the JPEG step's gradient — a textbook
+      case of gradient masking.
+origin: >-
+  Nicolas Papernot and colleagues used 'gradient masking' by 2016 to explain why some defenses
+  resisted gradient attacks but not transfer attacks. Anish Athalye, Nicholas Carlini and David
+  Wagner's 'Obfuscated Gradients Give a False Sense of Security' (ICML 2018 best paper) found that
+  seven of nine defenses accepted at ICLR 2018 relied on obfuscated gradients, and fully defeated
+  six of them and a seventh in part.
+year: 2016
+see_also:
+  - adversarial robustness
+  - white-box attack
+  - black-box attack
+  - projected gradient descent attack
+  - threat model
+sources:
+  - text: >-
+      Athalye, A., Carlini, N. & Wagner, D. (2018). Obfuscated Gradients Give a False Sense of
+      Security: Circumventing Defenses to Adversarial Examples. ICML 2018.

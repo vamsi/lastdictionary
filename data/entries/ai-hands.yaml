@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI hands
+id: ai-hands
+pos: n.
+also:
+  - six-fingered hands
+  - AI fingers
+  - hand problem
+domain: culture
+domains:
+  - gen
+  - percep
+labels:
+  - informal
+level: specialist
+plain: >-
+  The tendency of early AI image generators to draw hands badly — extra or missing fingers, twisted
+  joints — which became a running joke and a quick way to spot fake images.
+senses:
+  - definition: >-
+      Malformed hands in images from [[text-to-image-model|text-to-image models]] — extra, missing
+      or fused fingers, impossible joints, hands melting into objects — and the shorthand use of
+      such defects to identify AI-generated images. Hands are hard for generative models because
+      they are highly articulated, often partly hidden, shown in an enormous variety of poses in
+      training images and small in the frame, while the model has no explicit representation of
+      anatomy or of how many fingers a hand has; similar problems affected teeth, lettering and
+      symmetrical objects. Larger models, better data and training — the March 2023 version 5 of
+      [[midjourney|Midjourney]] was widely noted — fixed most typical cases, and 'check the hands'
+      gave way to subtler forensic cues and to [[ai-watermarking|watermarking]] and provenance
+      schemes.
+    example: Count the fingers — the hands still give away half the AI images on this feed.
+origin: >-
+  Noticed as soon as diffusion-based image generators reached the public in 2022, the problem became
+  a widely shared joke and a talking point in debates over [[ai-art|AI art]]: artists cited it as
+  evidence that the systems lacked understanding, and its disappearance through 2023–2024 served as
+  an informal measure of progress.
+year: 2022
+note: >-
+  Relying on hands or other visual artifacts to detect generated images is now unreliable; see
+  [[deepfake-detection|deepfake detection]].
+see_also:
+  - text-to-image model
+  - diffusion model
+  - Will Smith eating spaghetti
+  - deepfake detection
+  - AI watermarking
+  - uncanny valley
+  - Midjourney

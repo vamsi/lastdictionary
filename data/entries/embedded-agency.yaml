@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: embedded agency
+id: embedded-agency
+pos: n.
+also:
+  - embedded agent
+  - embedded agents
+domain: safety
+domains:
+  - sym
+  - mind
+  - math
+level: specialist
+plain: >-
+  The puzzle of how an agent should reason when it is itself part of the world it is trying to
+  understand and change, rather than standing outside it.
+senses:
+  - definition: >-
+      The study of agents that are themselves part of the world they model and act upon. Standard
+      'dualistic' formalisms such as [[aixi|AIXI]] and classical
+      [[reinforcement-learning|reinforcement learning]] instead place the agent outside that world,
+      trading observations and actions with it through a clean interface and able, at least in
+      principle, to model it completely. Embedded agents face problems those formalisms assume away:
+      they cannot hold a complete model of a world that contains them (embedded world-models); they
+      must reason about parts of the world, including copies of themselves, that depend on their
+      choices (decision theory); they must build or become successors whose goals they can trust
+      (robust delegation); and their own internal processes may contain sub-agents with different
+      goals (subsystem alignment, related to [[mesa-optimization|mesa-optimization]]). The program
+      sought foundational mathematics for reasoning about such agents.
+    example: >-
+      AIXI never has to worry about a cosmic ray flipping its own bits — that's an embedded agency
+      problem.
+origin: >-
+  Named by Abram Demski and Scott Garrabrant of the Machine Intelligence Research Institute in the
+  illustrated sequence 'Embedded Agency' (October–November 2018), later posted to arXiv (2019),
+  which summarized the institute's [[agent-foundations|agent foundations]] research.
+year: 2018
+see_also:
+  - agent foundations
+  - AIXI
+  - mesa-optimization
+  - ontological crisis
+  - Machine Intelligence Research Institute
+  - natural abstraction hypothesis
+sources:
+  - text: Demski, A. & Garrabrant, S. (2019). Embedded Agency. arXiv:1902.09469.
+    url: https://arxiv.org/abs/1902.09469

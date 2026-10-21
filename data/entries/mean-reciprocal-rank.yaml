@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mean reciprocal rank
+id: mean-reciprocal-rank
+pos: n.
+also:
+  - MRR
+  - MRR@10
+  - reciprocal rank
+domain: eng
+domains:
+  - eval
+level: core
+plain: >-
+  A score for search: for each question, note how far down the first correct answer appears, take
+  one over that position, and average across questions. First place scores 1, second place 0.5.
+senses:
+  - definition: >-
+      An evaluation measure for ranked results that averages, over a set of queries, the reciprocal
+      1/r of the position r of the first relevant result (a first hit at rank 4 earns 0.25),
+      counting 0 when nothing relevant is found (or nothing within a cutoff k, as in MRR@10). MRR
+      suits tasks where the user needs one good answer — question answering, known-item search,
+      autocomplete — and is easy to interpret, but it ignores every relevant result after the first
+      and does not use graded relevance; [[normalized-discounted-cumulative-gain|nDCG]] or mean
+      average precision are preferred when several results matter. MRR@10 is the official metric of
+      the [[ms-marco|MS MARCO]] passage-ranking task.
+    example: >-
+      MRR@10 went from 0.33 to 0.39 after fine-tuning, so the right passage is moving toward the top.
+formula_latex: \mathrm{MRR}=\frac{1}{|Q|}\sum_{i=1}^{|Q|}\frac{1}{\mathrm{rank}_i}
+origin: >-
+  Reciprocal-rank scoring was the official measure of the TREC-8 Question Answering track (1999),
+  described by Ellen Voorhees, and spread to passage ranking, recommendation and dialogue-response
+  selection; the MS MARCO passage-ranking task made MRR@10 a standard neural-retrieval metric.
+year: 1999
+note: >-
+  Not to be confused with [[reciprocal-rank-fusion|reciprocal rank fusion]], which combines rankings
+  rather than evaluating them.
+see_also:
+  - normalized discounted cumulative gain
+  - recall@k
+  - reranking
+  - information retrieval
+  - question answering
+  - evaluation
+contrast:
+  - reciprocal rank fusion
+sources:
+  - text: >-
+      Voorhees, E. M. (1999). The TREC-8 Question Answering Track Report. Proceedings of the Eighth
+      Text REtrieval Conference (TREC-8), NIST.

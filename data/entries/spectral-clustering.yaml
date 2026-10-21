@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: spectral clustering
+id: spectral-clustering
+pos: n.
+also:
+  - normalized cuts
+  - graph Laplacian clustering
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  A clustering method that treats data points as a network linked by similarity and finds natural
+  groups by cutting the network where its links are weakest.
+senses:
+  - definition: >-
+      A [[clustering|clustering]] method that uses the eigenvectors of a matrix derived from a
+      similarity graph over the data. Points become nodes of a graph whose edges are weighted by
+      similarity (for example a Gaussian kernel or k-nearest-neighbor connections); the graph
+      Laplacian, usually normalized, is formed; the [[eigenvector|eigenvectors]] belonging to its k
+      smallest eigenvalues give each point a new k-dimensional representation; and
+      [[k-means-clustering|k-means]] is run on those coordinates. The procedure is a continuous
+      relaxation of finding a minimum normalized cut, a partition that severs as little edge weight
+      as possible while keeping the groups balanced. Spectral clustering can recover non-convex
+      shapes, such as concentric rings, that defeat k-means, and it links clustering to graph
+      partitioning and manifold learning. Its costs are building the similarity graph and computing
+      the eigendecomposition, roughly cubic in the number of points unless sparse or approximate
+      solvers are used, and it is sensitive to the scale chosen for the similarity function.
+    example: >-
+      K-means split the two interlocking crescents down the middle, while spectral clustering
+      separated them cleanly.
+origin: >-
+  Rooted in spectral graph theory: William Donath and Alan Hoffman (1973) used eigenvectors to
+  partition graphs, and Miroslav Fiedler (1973) linked the Laplacian's second eigenvalue to
+  connectivity. Jianbo Shi and Jitendra Malik's normalized cuts for image segmentation (2000) and
+  the algorithm of Andrew Ng, Michael Jordan and Yair Weiss (2001) brought it into machine learning;
+  Ulrike von Luxburg's 2007 tutorial became the standard introduction.
+year: 2000
+see_also:
+  - clustering
+  - k-means clustering
+  - eigenvector
+  - dimensionality reduction
+  - graph neural network
+  - kernel
+sources:
+  - text: >-
+      Shi, J. & Malik, J. (2000). Normalized Cuts and Image Segmentation. IEEE Transactions on
+      Pattern Analysis and Machine Intelligence 22(8).
+  - text: >-
+      Ng, A. Y., Jordan, M. I. & Weiss, Y. (2001). On Spectral Clustering: Analysis and an
+      Algorithm. Advances in Neural Information Processing Systems 14.
+  - text: >-
+      von Luxburg, U. (2007). A Tutorial on Spectral Clustering. Statistics and Computing 17(4).

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MMLU
+id: mmlu
+pos: prop. n.
+also:
+  - Massive Multitask Language Understanding
+  - MMLU-Pro
+  - MMMLU
+domain: eval
+domains:
+  - llm
+level: core
+plain: >-
+  A giant multiple-choice exam for AI covering 57 subjects, from school math and history to law and
+  medicine; for years it was the most quoted test of a model's general knowledge.
+senses:
+  - definition: >-
+      A knowledge benchmark of 15,908 four-option multiple-choice questions spread across 57
+      subjects in STEM, the humanities, the social sciences and professional fields such as law and
+      medicine, pitched at levels from elementary school to professional practice. It is usually
+      scored by [[accuracy|accuracy]] under five-shot or [[zero-shot-learning|zero-shot]] prompting,
+      against an estimated expert-level human accuracy of about 89.8%. When it appeared, the largest
+      [[gpt-3|GPT-3]] model managed 43.9% while most others hovered at the 25% expected from
+      guessing; it then served as the headline knowledge score in model announcements from 2023
+      until results of about 88–90% by mid-2024 left little headroom. A 2024 audit estimated that
+      about 6.5% of questions contain errors, with much higher rates in some subjects (57% in
+      virology). Successors include MMLU-Pro (ten answer options and more reasoning-heavy questions)
+      and professionally translated multilingual versions (MMMLU).
+    example: >-
+      Their small model reports 80 on MMLU, but on MMLU-Pro it trails models half its size.
+origin: >-
+  Introduced by Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song and
+  Jacob Steinhardt in 'Measuring Massive Multitask Language Understanding', posted to arXiv in
+  September 2020 and presented at ICLR 2021.
+year: 2020
+note: >-
+  Given its error rate, small differences near the top are mostly noise, and scores vary with prompt
+  format and answer extraction. By 2025 MMLU had largely been dropped from frontier model reports in
+  favor of harder tests such as [[gpqa|GPQA]] and [[humanity-s-last-exam|Humanity's Last Exam]].
+see_also:
+  - benchmark
+  - benchmark saturation
+  - GPQA
+  - Humanity's Last Exam
+  - data contamination
+  - few-shot prompting
+sources:
+  - text: >-
+      Hendrycks, D., Burns, C., Basart, S., Zou, A., Mazeika, M., Song, D. & Steinhardt, J. (2021).
+      Measuring Massive Multitask Language Understanding. ICLR 2021.
+    url: https://arxiv.org/abs/2009.03300
+  - text: Gema, A. P. et al. (2024). Are We Done with MMLU? arXiv preprint.

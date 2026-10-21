@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LIME
+id: lime
+pos: abbr.
+also:
+  - Local Interpretable Model-agnostic Explanations
+  - SP-LIME
+pronunciation: lyme
+domain: interp
+domains:
+  - ml
+level: core
+plain: >-
+  A method that explains one prediction of any AI model by testing slightly altered versions of the
+  input and fitting a very simple model that copies the AI's behavior near that example.
+senses:
+  - definition: >-
+      Local Interpretable Model-agnostic Explanations: a [[post-hoc-explanation|post hoc
+      explanation]] method that probes a black-box model around a single input to see which parts of
+      that input matter. It creates many variants of the input by switching interpretable components
+      on and off (words in a text, superpixels in an image, discretized values in a table), records
+      the model's outputs on them, weights each variant by its closeness to the original and fits a
+      sparse linear model to the weighted results; the coefficients of this local
+      [[surrogate-model|surrogate model]] are the explanation, and because only outputs are needed,
+      any classifier or regressor can be explained. A companion procedure, submodular pick
+      (SP-LIME), selects a few explanations that together cover diverse behavior, as a global
+      overview. Results depend on the perturbation scheme, kernel width and number of samples and
+      can vary between runs; and because perturbed inputs may be unrealistic, adversaries have built
+      models that hide biased behavior from LIME.
+    example: >-
+      LIME highlighted the snowy background, not the animal, as the reason the photo was labeled
+      'wolf'.
+origin: >-
+  Introduced by Marco Tulio Ribeiro, Sameer Singh and Carlos Guestrin of the University of
+  Washington in ''Why Should I Trust You?': Explaining the Predictions of Any Classifier' (arXiv,
+  February 2016; KDD 2016). Its demonstration of a husky-versus-wolf classifier relying on snow
+  became a standard teaching example.
+year: 2016
+note: >-
+  Explanations are faithful only locally, and LIME and [[shap|SHAP]] can disagree on the same
+  prediction. The adversarial weakness was shown by Dylan Slack and colleagues in 'Fooling LIME and
+  SHAP' (2020).
+see_also:
+  - SHAP
+  - surrogate model
+  - local explanation
+  - model-agnostic
+  - Anchors
+  - feature attribution
+contrast:
+  - SHAP
+sources:
+  - text: >-
+      Ribeiro, M. T., Singh, S. & Guestrin, C. (2016). 'Why Should I Trust You?': Explaining the
+      Predictions of Any Classifier. Proceedings of KDD 2016.

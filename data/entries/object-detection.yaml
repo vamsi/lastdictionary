@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: object detection
+id: object-detection
+pos: n.
+also:
+  - object detector
+  - detector
+  - two-stage detector
+  - one-stage detector
+  - single-stage detector
+domain: percep
+domains:
+  - dl
+  - robot
+level: essential
+plain: >-
+  Finding every object of interest in a picture or video frame, saying what each one is and drawing
+  a box around it, for example all the cars, cyclists and pedestrians in a street scene.
+senses:
+  - definition: >-
+      The task of locating and classifying every instance of a set of object categories in an image,
+      output as a list of [[bounding-box|bounding boxes]], each with a class label and a confidence
+      score. Classical detectors slid a window across the image and classified each patch with
+      hand-crafted features (the Viola–Jones [[face-detection|face detector]], 2001; histograms of
+      oriented gradients, 2005; deformable part models, 2008). Deep detectors fall into two
+      families: two-stage methods such as [[r-cnn|Faster R-CNN]] first propose candidate regions and
+      then classify and refine them, while one-stage methods such as [[yolo|YOLO]], SSD and
+      RetinaNet predict boxes densely in a single pass, trading some accuracy for speed. Most rely
+      on [[anchor-box|anchor boxes]] or anchor-free point predictions and remove duplicates with
+      [[non-maximum-suppression|non-maximum suppression]]; transformer detectors such as
+      [[detr|DETR]] predict a set of objects directly. Accuracy is measured by
+      [[mean-average-precision|mean average precision]] at given
+      [[intersection-over-union|intersection over union]] thresholds, typically on [[coco|COCO]].
+      [[open-vocabulary-detection|Open-vocabulary detectors]] accept text prompts instead of a fixed
+      list of classes.
+    example: >-
+      The detector misses pedestrians half hidden behind parked vans, so we added occluded examples
+      to the training set.
+origin: >-
+  Detection grew out of template matching and pattern recognition in the 1960s–70s. Paul Viola and
+  Michael Jones's real-time face detector (2001) and the PASCAL Visual Object Classes challenge
+  (2005–2012) shaped the modern task and its benchmarks; R-CNN (2013) and YOLO (2015) opened the
+  deep-learning era.
+note: >-
+  Distinct from [[image-classification|image classification]] (one label per image, no location) and
+  [[image-segmentation|image segmentation]] (pixel-accurate regions). Elsewhere in AI, 'detection'
+  can mean any alarm, as in fraud or [[anomaly-detection|anomaly detection]]; in vision it always
+  implies localization.
+see_also:
+  - bounding box
+  - YOLO
+  - R-CNN
+  - DETR
+  - mean average precision
+  - non-maximum suppression
+  - COCO
+  - open-vocabulary detection
+contrast:
+  - image classification
+  - image segmentation
+sources:
+  - text: >-
+      Girshick, R., Donahue, J., Darrell, T. & Malik, J. (2014). Rich Feature Hierarchies for
+      Accurate Object Detection and Semantic Segmentation. CVPR 2014.
+    url: https://arxiv.org/abs/1311.2524
+  - text: >-
+      Everingham, M., Van Gool, L., Williams, C. K. I., Winn, J. & Zisserman, A. (2010). The PASCAL
+      Visual Object Classes (VOC) Challenge. International Journal of Computer Vision 88, 303–338.

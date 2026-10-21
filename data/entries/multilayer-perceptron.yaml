@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multilayer perceptron
+id: multilayer-perceptron
+pos: n.
+also:
+  - MLP
+  - multi-layer perceptron
+  - fully connected network
+  - vanilla neural network
+domain: dl
+domains:
+  - ml
+level: core
+plain: >-
+  A neural network made of several layers of artificial neurons, each connected to every neuron in
+  the next layer. It is the simplest kind of deep network and a component of almost every modern
+  model.
+senses:
+  - definition: >-
+      A [[feedforward-neural-network|feedforward neural network]] built by stacking
+      [[fully-connected-layer|fully connected layers]]: each multiplies the previous layer's outputs
+      by a weight matrix, adds a bias and applies a nonlinear [[activation-function|activation
+      function]] such as [[relu|ReLU]], [[gelu|GELU]] or [[tanh|tanh]], and the intermediate layers,
+      whose outputs are neither inputs nor final predictions, are [[hidden-layer|hidden layers]].
+      Its weights are learned by [[backpropagation|backpropagation]] and [[gradient-descent|gradient
+      descent]], and even one sufficiently wide hidden layer makes it a universal approximator in
+      principle ([[universal-approximation-theorem|universal approximation theorem]]). Besides
+      stand-alone use on [[tabular-data|tabular data]] and as a classification head, the MLP is a
+      core part of larger architectures: every [[transformer|transformer]] block contains one (the
+      position-wise [[feed-forward-network|feed-forward network]], often gated as in
+      [[swiglu|SwiGLU]]), and these blocks hold roughly two-thirds of the non-embedding parameters
+      of a typical dense transformer.
+    example: >-
+      We replaced the linear probe with a two-layer MLP and accuracy rose by four points.
+origin: >-
+  Frank Rosenblatt studied multilayer perceptrons from 1958, including in Principles of
+  Neurodynamics (1962), but had no general way to train hidden layers. Shun'ichi Amari trained a
+  multilayer network by stochastic gradient descent in 1967, and the 1986 backpropagation paper of
+  David Rumelhart, Geoffrey Hinton and Ronald Williams made the trainable MLP standard; the name was
+  in wide use by the late 1980s.
+year: 1986
+note: >-
+  A misnomer: MLP units use differentiable or piecewise-linear activations (sigmoid, tanh, ReLU),
+  not the perceptron's step function, whose gradient is zero almost everywhere and would block
+  backpropagation. 'MLP' is often used loosely for any stack of fully connected layers.
+see_also:
+  - perceptron
+  - feedforward neural network
+  - hidden layer
+  - fully connected layer
+  - backpropagation
+  - feed-forward network
+  - universal approximation theorem
+contrast:
+  - convolutional neural network
+  - Kolmogorov–Arnold network
+sources:
+  - text: >-
+      Rumelhart, D. E., Hinton, G. E. & Williams, R. J. (1986). Learning Representations by
+      Back-Propagating Errors. Nature, 323, 533–536.

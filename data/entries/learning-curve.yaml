@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: learning curve
+id: learning-curve
+pos: n.
+also:
+  - training curve
+  - validation curve
+domain: dl
+domains:
+  - ml
+  - eval
+level: core
+plain: >-
+  A graph showing how a model's performance improves as it gets more training — more examples or
+  more time. Its shape tells you whether more data or a bigger model would help.
+senses:
+  - context: Performance versus data
+    definition: >-
+      A plot of a model's error or accuracy, on training and held-out data, as a function of the
+      amount of training data. Reading it diagnoses the [[bias-variance-tradeoff|bias–variance
+      tradeoff]]: if training and validation error converge at a high value, the model is
+      [[underfitting|underfitting]] and more data will not help, while a large persistent gap
+      indicates [[overfitting|overfitting]] that more data or [[regularization|regularization]] can
+      reduce. Learning curves of modern models often follow [[power-law|power laws]] in dataset
+      size, the empirical basis of data [[scaling-laws|scaling laws]], and extrapolating them guides
+      decisions about data collection; they can also be non-monotonic (see [[double-descent|double
+      descent]]).
+    example: >-
+      The learning curve was still steep at 50,000 examples, so we funded more labeling.
+  - context: Performance versus training time
+    definition: >-
+      Loosely, a plot of training and validation loss or accuracy against [[training-step|steps]] or
+      [[epoch|epochs]] within a single run, used to choose a stopping point, detect overfitting and
+      spot instabilities; for large models this is usually called a [[loss-curve|loss curve]].
+origin: >-
+  Borrowed from psychology, where performance was plotted against practice from the 1880s–1890s
+  (Hermann Ebbinghaus's memory experiments, 1885; William Bryan and Noble Harter's study of
+  telegraphers, 1897), and from industry, where Theodore Paul Wright's 1936 learning curve related
+  aircraft cost to cumulative production. In machine learning, learning-curve theory developed in
+  statistical physics and learning theory from the late 1980s.
+note: >-
+  In everyday English a 'steep learning curve' means something is hard to learn — the reverse of the
+  technical reading, in which a steep curve means rapid improvement.
+see_also:
+  - loss curve
+  - scaling laws
+  - overfitting
+  - underfitting
+  - generalization gap
+  - early stopping
+  - double descent
+contrast:
+  - loss curve

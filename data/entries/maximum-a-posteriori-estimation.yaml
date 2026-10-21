@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: maximum a posteriori estimation
+id: maximum-a-posteriori-estimation
+pos: n.
+also:
+  - MAP estimation
+  - MAP
+  - MAP estimate
+  - posterior mode
+domain: math
+domains:
+  - ml
+level: specialist
+plain: >-
+  Picking the single most believable setting of a model after combining the evidence with what was
+  assumed beforehand. In practice it often amounts to ordinary training plus a penalty that keeps
+  settings modest.
+senses:
+  - definition: >-
+      A point estimate that adds a [[prior|prior]] to [[maximum-likelihood-estimation|maximum
+      likelihood estimation]]: it picks the parameter values that make [[likelihood|likelihood]] ×
+      prior largest — the peak, or mode, of the [[posterior|posterior]] — by minimizing the negative
+      [[log-likelihood|log-likelihood]] minus the log-prior. Under a flat prior it coincides with
+      maximum likelihood, and unlike full [[bayesian-inference|Bayesian inference]] it discards
+      everything about the posterior except that peak. The log-prior acts as a regularizer: a
+      zero-mean Gaussian prior on weights gives L2 [[regularization|regularization]]
+      ([[ridge-regression|ridge regression]], [[weight-decay|weight decay]]), and a Laplace prior
+      gives L1 (the [[lasso|lasso]]). MAP estimates are cheap, needing only standard optimization,
+      but they carry no uncertainty and, unlike the posterior itself, depend on how the parameters
+      are represented. In sequence generation, 'MAP decoding' means searching for the single most
+      probable output, which [[greedy-decoding|greedy decoding]] and [[beam-search|beam search]]
+      approximate.
+    example: >-
+      Adding weight decay turns our maximum likelihood fit into a MAP estimate under a Gaussian
+      prior.
+formula_latex: \hat{\theta}_{\text{MAP}} = \arg\max_{\theta}\; \big[\log p(\mathcal{D}\mid\theta) +
+  \log p(\theta)\big]
+origin: >-
+  Choosing the most probable value of an unknown given observations goes back to Pierre-Simon
+  Laplace's work on inverse probability in the 1770s. The name 'maximum a posteriori' and the
+  abbreviation MAP became standard in estimation theory, signal processing and pattern recognition
+  in the second half of the 20th century; the name's first use is not established.
+see_also:
+  - maximum likelihood estimation
+  - posterior
+  - prior
+  - regularization
+  - weight decay
+  - Bayesian inference

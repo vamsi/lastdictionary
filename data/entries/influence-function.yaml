@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: influence function
+id: influence-function
+pos: n.
+also:
+  - influence functions
+  - influence curve
+  - influence score
+domain: interp
+domains:
+  - math
+  - data
+  - ml
+level: specialist
+plain: >-
+  A mathematical shortcut for estimating how much a single training example shaped a model's
+  behavior, for instance how a prediction would change if that example had been left out, without
+  retraining the model.
+senses:
+  - context: Machine learning
+    definition: >-
+      A first-order approximation of how a trained model's parameters, or a quantity computed from
+      them such as the loss on a test example, would change if one training example were slightly
+      upweighted or removed. Treating the trained parameters as the minimizer of the average
+      training loss, the implicit function theorem gives the parameter change as the inverse
+      [[hessian|Hessian]] of the training loss applied to that example's gradient; an inner product
+      with a test example's gradient then scores how much the training point helped or hurt that
+      prediction. Brought into deep learning as a tool for [[data-attribution|data attribution]],
+      influence functions are used to explain predictions, find mislabeled or poisoned data and
+      study how [[large-language-model|language models]] generalize. Because networks are non-convex
+      and not trained to convergence, the estimates can be fragile, and large-scale use depends on
+      approximating the inverse Hessian with iterative solvers or Kronecker-factored curvature
+      (EK-FAC).
+    example: >-
+      Influence functions traced the model's odd answer to a handful of near-duplicate forum posts
+      in the fine-tuning set.
+  - context: Robust statistics
+    definition: >-
+      The original sense: a function measuring the effect on an estimator of adding an infinitesimal
+      amount of contamination at a point, used to judge how sensitive the estimator is to outliers.
+      Robust estimators such as the median have bounded influence functions; the mean's is
+      unbounded.
+formula_latex: \mathcal{I}(z, z_{\text{test}}) = -\nabla_\theta L(z_{\text{test}},
+  \hat\theta)^{\top} H_{\hat\theta}^{-1} \nabla_\theta L(z, \hat\theta)
+origin: >-
+  Frank Hampel introduced the influence curve in his 1968 doctoral thesis and a 1974 Journal of the
+  American Statistical Association paper; R. Dennis Cook and Sanford Weisberg used related ideas for
+  regression diagnostics around 1980. Pang Wei Koh and Percy Liang's ICML 2017 paper brought them to
+  deep learning, and Roger Grosse and colleagues at Anthropic scaled them to language models of up
+  to 52 billion parameters in 2023.
+year: 1968
+note: >-
+  Influence estimates answer a question about small reweightings, not exactly 'what if this example
+  had never existed'; Juhan Bae and colleagues (2022) argue that for neural networks they track a
+  different, well-defined quantity. Cheaper relatives include TracIn, which sums gradient dot
+  products along training, and TRAK.
+see_also:
+  - data attribution
+  - Hessian
+  - feature attribution
+  - Shapley value
+  - memorization
+  - interpretability
+  - machine unlearning
+  - data poisoning
+  - explainable AI
+contrast:
+  - feature attribution
+sources:
+  - text: >-
+      Hampel, F. R. (1974). The Influence Curve and Its Role in Robust Estimation. Journal of the
+      American Statistical Association 69(346), 383–393.
+  - text: >-
+      Koh, P. W. & Liang, P. (2017). Understanding Black-box Predictions via Influence Functions.
+      Proc. ICML 2017.
+  - text: >-
+      Grosse, R. et al. (2023). Studying Large Language Model Generalization with Influence
+      Functions. arXiv preprint.

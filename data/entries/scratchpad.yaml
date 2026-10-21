@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scratchpad
+id: scratchpad
+pos: n.
+also:
+  - scratch pad
+  - hidden scratchpad
+  - notes file
+domain: agents
+domains:
+  - llm
+  - safety
+level: core
+plain: >-
+  A space where an AI writes rough working — calculations, plans, notes — before or while producing
+  its answer, much as a person jots on scrap paper.
+senses:
+  - context: Reasoning
+    definition: >-
+      Text that a [[large-language-model|language model]] generates on the way to an answer, such as
+      partial sums or a trace of program state, and then reads back while producing later
+      [[token|tokens]]. Because a transformer performs a fixed amount of computation per token,
+      writing intermediate results down lets it split a long calculation into many short ones; in
+      Maxwell Nye and colleagues' 2021 experiments, models taught to use a scratchpad became far
+      more accurate at multi-digit addition and at predicting what a piece of code outputs. The idea
+      fed directly into [[chain-of-thought|chain of thought]] prompting and today's
+      [[reasoning-model|reasoning models]], whose [[reasoning-trace|reasoning traces]] are
+      scratchpads at scale.
+    example: >-
+      With a scratchpad, the model carried every digit correctly through twelve-digit addition.
+  - context: Agents
+    definition: >-
+      An area outside the main conversation where an [[ai-agent|agent]] records notes, plans, to-do
+      lists or intermediate findings — often a file such as NOTES.md, a state object or a dedicated
+      'think' tool — and re-reads them later. It complements [[compaction|compaction]] and
+      [[agent-memory|agent memory]] by keeping progress available after older context has been
+      summarized or cleared.
+origin: >-
+  Maxwell Nye and colleagues introduced the term for language models in 'Show Your Work: Scratchpads
+  for Intermediate Computation with Language Models' (arXiv, November 2021). The agent sense spread
+  in 2024–2025 with note-taking patterns in coding and game-playing agents, described in Anthropic's
+  2025 context-engineering guide.
+year: 2021
+note: >-
+  In safety research a 'hidden scratchpad' is reasoning space a model is told nobody will read;
+  studies of [[sleeper-agent|sleeper agents]] and [[alignment-faking|alignment faking]] (both 2024)
+  used one to elicit and inspect concealed reasoning. Whether such text reflects the model's actual
+  computation is studied under [[chain-of-thought-faithfulness|chain-of-thought faithfulness]].
+see_also:
+  - chain of thought
+  - reasoning trace
+  - working memory
+  - agent memory
+  - compaction
+  - chain-of-thought faithfulness
+sources:
+  - text: >-
+      Nye, M. et al. (2021). Show Your Work: Scratchpads for Intermediate Computation with Language
+      Models. arXiv:2112.00114.
+    url: https://arxiv.org/abs/2112.00114v1

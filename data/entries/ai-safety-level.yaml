@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI Safety Level
+id: ai-safety-level
+pos: n.
+also:
+  - ASL
+  - ASL-2
+  - ASL-3
+  - ASL-4
+domain: gov
+domains:
+  - safety
+level: specialist
+plain: >-
+  Anthropic's numbered scale, modeled on laboratory biosafety levels, for matching how dangerous an
+  AI model could be with how strong the protections around it must be.
+senses:
+  - definition: >-
+      A tier in Anthropic's [[responsible-scaling-policy|responsible scaling policy]], modeled on
+      the biosafety levels (BSL-1 to BSL-4) used for handling dangerous pathogens; the term names
+      both a level of risk and the standard of safeguards that must match it. In the 2023 version
+      the ladder ran from ASL-1, for systems with no real catastrophic potential, through ASL-2, for
+      models showing hints of dangerous knowledge that is not yet more useful than a web search, to
+      ASL-3, for models that meaningfully extend what a would-be attacker could do with ordinary
+      resources, or that show the first signs of autonomous capability; levels from ASL-4 up were
+      left undefined. From 2024, the 'ASL-3 Deployment Standard' and 'ASL-3 Security Standard'
+      denoted concrete protections — classifiers blocking help with chemical and biological weapons,
+      hardened [[model-weight-security|weight security]] and egress controls — which Anthropic
+      activated for Claude Opus 4 in May 2025. Version 3.0 of the policy (February 2026) kept ASL-3
+      protections as a firm commitment but dropped the predefined ladder of higher levels: it no
+      longer sets ASL-4 standards and specifies mitigations only for the next capability level.
+    example: >-
+      The model was released under ASL-3, with the bio classifiers switched on by default.
+origin: >-
+  Introduced in Anthropic's first Responsible Scaling Policy (September 2023), explicitly adapting
+  the US government's biosafety-level framework for laboratories that handle pathogens.
+year: 2023
+note: >-
+  Not an industry or legal standard: other developers use different scales, such as OpenAI's High
+  and Critical capabilities and Google's critical capability levels. Unrelated to the SAE levels of
+  driving automation.
+see_also:
+  - responsible scaling policy
+  - capability threshold
+  - model weight security
+  - CBRN risk
+  - Frontier Safety Framework
+  - Preparedness Framework
+sources:
+  - text: >-
+      Centre for the Governance of AI (2026). Anthropic's RSP v3.0: How it Works, What's Changed,
+      and Some Reflections.
+    url: https://governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections
+as_of: 2026-10

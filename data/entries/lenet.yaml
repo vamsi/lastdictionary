@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LeNet
+id: lenet
+pos: prop. n.
+also:
+  - LeNet-5
+  - LeNet-1
+pronunciation: luh-NET
+domain: hist
+domains:
+  - dl
+  - percep
+labels:
+  - historical
+level: core
+plain: >-
+  A family of early image-recognition neural networks built at Bell Labs from 1989 that learned to
+  read handwritten digits. A version read huge numbers of bank checks, and its design underlies
+  today's image models.
+senses:
+  - definition: >-
+      A line of [[convolutional-neural-network|convolutional neural networks]] for reading
+      handwritten characters, among the first CNNs trained end to end with
+      [[backpropagation|backpropagation]], developed between 1989 and 1998 by [[yann-lecun|Yann
+      LeCun]]'s group at AT&T Bell Laboratories. They combined convolutional layers with shared
+      weights, subsampling (pooling) layers and fully connected layers, learning their feature
+      detectors directly from pixels instead of relying on hand-designed features. The best-known
+      version, LeNet-5 (1998), passed 32 × 32 images through seven layers with about 60,000
+      trainable parameters. Systems built on LeNet were deployed by NCR and others to read
+      handwritten amounts on bank checks, and by the late 1990s were processing a substantial share
+      of checks written in the United States (more than 10 percent, by LeCun's account). The
+      architecture is the template that [[alexnet|AlexNet]] and later vision networks scaled up.
+    example: >-
+      Implementing LeNet-5 on MNIST is a standard first exercise in deep-learning courses.
+origin: >-
+  First described in LeCun and colleagues' 'Backpropagation Applied to Handwritten Zip Code
+  Recognition' (Neural Computation, 1989) and summarized in LeCun, Léon Bottou,
+  [[yoshua-bengio|Yoshua Bengio]] and Patrick Haffner's 'Gradient-Based Learning Applied to Document
+  Recognition' (Proceedings of the IEEE, 1998), which named LeNet-5.
+year: 1989
+see_also:
+  - convolutional neural network
+  - MNIST
+  - neocognitron
+  - AlexNet
+  - Yann LeCun
+  - backpropagation
+sources:
+  - text: >-
+      LeCun, Y., Boser, B., Denker, J. S., Henderson, D., Howard, R. E., Hubbard, W. & Jackel, L. D.
+      (1989). Backpropagation Applied to Handwritten Zip Code Recognition. Neural Computation 1(4),
+      541–551.
+  - text: >-
+      LeCun, Y., Bottou, L., Bengio, Y. & Haffner, P. (1998). Gradient-Based Learning Applied to
+      Document Recognition. Proceedings of the IEEE 86(11), 2278–2324.

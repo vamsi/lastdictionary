@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sample efficiency
+id: sample-efficiency
+pos: n.
+also:
+  - sample complexity
+  - data efficiency
+  - sample-efficient
+domain: rl
+domains:
+  - ml
+  - eval
+level: core
+plain: >-
+  How much practice an AI needs to learn something — an agent that learns a game in a hundred tries
+  is far more sample-efficient than one that needs millions.
+senses:
+  - definition: >-
+      The amount of data or experience a learning algorithm needs to reach a given level of
+      performance — in [[reinforcement-learning|reinforcement learning]], usually counted in
+      environment interactions (steps, frames or [[episode|episodes]]) rather than in gradient
+      updates or compute. It matters most where experience is slow, costly or risky to collect: real
+      robots, user-facing systems, medicine. Deep RL is notoriously inefficient: the 2015
+      [[deep-q-network|deep Q-network]] trained on roughly 38 days of game experience for each Atari
+      game, where people grasp the basics in minutes. Methods gain efficiency by reusing data
+      ([[off-policy|off-policy]] learning, [[experience-replay|experience replay]]), learning and
+      exploiting models ([[model-based-reinforcement-learning|model-based reinforcement learning]]),
+      drawing on prior knowledge (pretraining, demonstrations, [[transfer-learning|transfer
+      learning]]) and exploring more intelligently. Benchmarks such as Atari 100k, which allows
+      about two hours of game time, measure it directly. In learning theory, sample complexity is
+      the number of examples needed to guarantee a given accuracy with high probability.
+    example: >-
+      The model-based method is ten times more sample-efficient, but each update costs far more
+      compute.
+origin: >-
+  'Sample complexity' comes from computational learning theory, formalized with Leslie Valiant's PAC
+  framework (1984); Sham Kakade's 2003 thesis analyzed the sample complexity of reinforcement
+  learning. 'Sample efficiency' became everyday deep RL vocabulary in the mid-2010s, as the data
+  hunger of methods such as DQN became a central criticism.
+see_also:
+  - model-based reinforcement learning
+  - experience replay
+  - off-policy
+  - Arcade Learning Environment
+  - PAC learning
+  - transfer learning

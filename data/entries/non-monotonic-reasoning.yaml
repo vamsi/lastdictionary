@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: non-monotonic reasoning
+id: non-monotonic-reasoning
+pos: n.
+also:
+  - nonmonotonic reasoning
+  - non-monotonic logic
+  - default logic
+  - default reasoning
+  - circumscription
+  - autoepistemic logic
+  - defeasible reasoning
+  - truth maintenance system
+domain: sym
+domains:
+  - mind
+level: specialist
+plain: >-
+  Reasoning in which new information can overturn earlier conclusions — you assume a bird can fly
+  until you learn it is a penguin — as people do constantly but classical logic does not allow.
+senses:
+  - definition: >-
+      Reasoning in which adding premises can invalidate conclusions drawn earlier, unlike classical
+      logic, where the set of consequences only grows (monotonicity). It formalizes default
+      reasoning — drawing conclusions that hold typically but have exceptions — which is essential
+      for [[commonsense-reasoning|commonsense reasoning]] and for describing actions without listing
+      every exception (the [[frame-problem|frame problem]] and the related qualification problem).
+      Major formalisms include Raymond Reiter's default logic, with rules such as 'if x is a bird
+      and it is consistent to assume x flies, conclude that x flies'; John McCarthy's
+      circumscription, which minimizes the extent of 'abnormality' predicates; Robert Moore's
+      autoepistemic logic; negation as failure under the [[closed-world-assumption|closed-world
+      assumption]]; and [[answer-set-programming|answer set programming]]. Truth maintenance systems
+      record which beliefs rest on which assumptions so that retractions propagate correctly.
+      Non-monotonic logics are generally harder to compute with than classical logic.
+origin: >-
+  Emerged in the late 1970s. A landmark special issue of the journal Artificial Intelligence (volume
+  13, 1980) presented McCarthy's circumscription, Reiter's default logic, and Drew McDermott and Jon
+  Doyle's non-monotonic logic; Doyle's truth maintenance system (1979) and Moore's autoepistemic
+  logic (1985) were further milestones.
+year: 1980
+see_also:
+  - closed-world assumption
+  - answer set programming
+  - commonsense reasoning
+  - frame problem
+  - logic programming
+  - situation calculus
+sources:
+  - text: >-
+      Reiter, R. (1980). A Logic for Default Reasoning. Artificial Intelligence 13(1–2), 81–132.
+  - text: >-
+      McCarthy, J. (1980). Circumscription — A Form of Non-Monotonic Reasoning. Artificial
+      Intelligence 13(1–2), 27–39.

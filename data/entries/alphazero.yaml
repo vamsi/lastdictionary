@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlphaZero
+id: alphazero
+pos: prop. n.
+also:
+  - Alpha Zero
+domain: hist
+domains:
+  - rl
+labels:
+  - trademark
+level: core
+plain: >-
+  A 2017 DeepMind program that taught itself chess, shogi and Go from nothing but the rules by
+  playing against itself, and within hours of training beat the strongest existing programs.
+senses:
+  - definition: >-
+      A general game-playing algorithm from [[deepmind|DeepMind]] that learned chess, shogi
+      (Japanese chess) and Go from the rules alone — with no human games, opening books or
+      hand-crafted evaluation — through [[reinforcement-learning|reinforcement learning]] from
+      [[self-play|self-play]]. A single deep residual network outputs both move probabilities and a
+      position value; [[monte-carlo-tree-search|Monte Carlo tree search]] guided by the network
+      chooses moves during play and produces improved training targets, so that search and network
+      bootstrap each other. After training on thousands of [[tpu|TPUs]], AlphaZero defeated
+      Stockfish in chess, Elmo in shogi and AlphaGo Zero in Go, while searching close to a thousand
+      times fewer chess positions per second than Stockfish. Its dynamic, sacrificial chess style
+      influenced grandmasters and inspired open-source engines such as Leela Chess Zero. It
+      generalized the AlphaGo Zero method and was extended by [[muzero|MuZero]], which also learns
+      the rules.
+    example: >-
+      AlphaZero's games made long-term pawn sacrifices fashionable again among top chess players.
+origin: >-
+  Described by [[david-silver|David Silver]] and colleagues in a December 2017 preprint, 'Mastering
+  Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm', and in Science on 7
+  December 2018.
+year: 2017
+note: >-
+  The 2017 matches drew criticism for giving Stockfish restricted hardware and time controls; the
+  longer matches reported in 2018 addressed many of the objections.
+see_also:
+  - AlphaGo
+  - MuZero
+  - self-play
+  - Monte Carlo tree search
+  - Deep Blue
+  - reinforcement learning
+sources:
+  - text: >-
+      Silver, D. et al. (2018). A General Reinforcement Learning Algorithm that Masters Chess,
+      Shogi, and Go through Self-Play. Science 362(6419), 1140–1144.

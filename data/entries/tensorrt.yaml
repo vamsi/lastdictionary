@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: TensorRT
+id: tensorrt
+pos: prop. n.
+also:
+  - NVIDIA TensorRT
+  - GPU Inference Engine
+  - GIE
+  - Torch-TensorRT
+  - TF-TRT
+domain: infer
+domains:
+  - eng
+  - hw
+labels:
+  - trademark
+level: specialist
+plain: >-
+  NVIDIA's software for making a trained neural network run as fast as possible on NVIDIA graphics
+  chips, by merging and simplifying its calculations and testing which way of doing each one is
+  quickest.
+senses:
+  - definition: >-
+      An inference optimizer and runtime from [[nvidia|NVIDIA]] that compiles a trained neural
+      network into an 'engine' tuned for a particular NVIDIA [[gpu|GPU]] and range of input shapes.
+      Models usually arrive as [[onnx|ONNX]] graphs or through framework integrations such as
+      Torch-TensorRT. The builder fuses layers and operations ([[kernel-fusion|kernel fusion]]),
+      eliminates unneeded computation, selects memory layouts and lower numerical precisions — FP16,
+      BF16, INT8 with calibration, [[fp8|FP8]] and, on recent GPUs, [[fp4|FP4]] — and times
+      candidate kernel implementations ('tactics') on the target hardware to choose the fastest. The
+      serialized engine then runs with low latency and little overhead, but by default it is tied to
+      the GPU model and TensorRT version used to build it. TensorRT is common in production vision,
+      speech and recommendation services and in embedded and automotive systems such as NVIDIA's
+      Jetson and DRIVE platforms, and it is the basis of [[tensorrt-llm|TensorRT-LLM]] for language
+      models.
+    example: >-
+      Exporting the detector to ONNX and building an INT8 TensorRT engine more than halved its
+      latency on the Jetson.
+origin: >-
+  Introduced by NVIDIA in June 2016 as the GPU Inference Engine (GIE) and renamed TensorRT that
+  September. Later versions added INT8 calibration, an ONNX parser, Python interfaces and FP8 and
+  FP4 support for the Hopper and Blackwell GPU architectures; the language-model library
+  TensorRT-LLM followed in 2023.
+year: 2016
+note: >-
+  Not a training framework: it runs models trained elsewhere. Not to be confused with NVIDIA's
+  [[tensor-core|Tensor Cores]] (matrix-multiply units) or Google's [[tensorflow|TensorFlow]], with
+  which it was integrated as TF-TRT. Comparable tools include ONNX Runtime, Apache TVM and the
+  compilers behind PyTorch's torch.compile.
+see_also:
+  - TensorRT-LLM
+  - inference engine
+  - kernel fusion
+  - quantization
+  - ONNX
+  - CUDA
+  - post-training quantization
+contrast:
+  - TensorFlow
+sources:
+  - text: NVIDIA. TensorRT Developer Guide. NVIDIA documentation.
+  - text: >-
+      NVIDIA (2016). Production Deep Learning with NVIDIA GPU Inference Engine. NVIDIA Developer
+      Blog, 19 June 2016 (updated September 2016).
+    url: https://developer.nvidia.com/blog/production-deep-learning-nvidia-gpu-inference-engine/
+as_of: 2026-10

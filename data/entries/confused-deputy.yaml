@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: confused deputy
+id: confused-deputy
+pos: n.
+also:
+  - confused deputy problem
+  - confused deputy attack
+domain: sec
+domains:
+  - agents
+level: specialist
+plain: >-
+  A security flaw in which a trusted program does an outsider's bidding with its own access rights,
+  because it cannot tell whose request it is serving; AI agents are prone to it.
+senses:
+  - definition: >-
+      A security flaw in which a program uses authority it legitimately holds to serve a request
+      from a party that lacks that authority, because nothing tells the program on whose behalf it
+      is acting. In AI security the term describes [[ai-agent|agents]] and LLM applications that act
+      with a user's or developer's credentials but take instructions from whatever text enters their
+      context: a [[prompt-injection|prompt injection]] in an email or web page turns the agent into
+      the attacker's deputy. Classical remedies — capability-based security, passing explicit
+      authority with each request, and least privilege — inspire agent defenses such as task-scoped
+      credentials, per-action authorization outside the model and tracking which data came from
+      untrusted sources.
+    example: >-
+      The coding agent became a confused deputy, using the developer's repository token at the
+      behest of an injected issue comment.
+origin: >-
+  Named by Norm Hardy in 'The Confused Deputy (or why capabilities might have been invented)' (ACM
+  SIGOPS Operating Systems Review, 1988), about a compiler tricked into overwriting a billing file.
+  Security researchers applied it to LLM agents from 2023.
+year: 1988
+see_also:
+  - prompt injection
+  - excessive agency
+  - lethal trifecta
+  - permission system
+  - agent identity
+sources:
+  - text: >-
+      Hardy, N. (1988). The Confused Deputy (or why capabilities might have been invented). ACM
+      SIGOPS Operating Systems Review 22(4).

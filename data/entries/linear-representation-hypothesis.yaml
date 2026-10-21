@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: linear representation hypothesis
+id: linear-representation-hypothesis
+pos: n.
+also:
+  - LRH
+  - linear representation
+  - linearity hypothesis
+domain: interp
+domains:
+  - llm
+  - math
+labels:
+  - contested
+level: specialist
+plain: >-
+  The idea that a neural network stores many concepts as simple directions inside its internal
+  activity, so how much of a concept is present can be read off by measuring along its direction.
+senses:
+  - definition: >-
+      The hypothesis that neural networks represent many [[feature-interpretability|features]] as
+      directions, or low-dimensional subspaces, in [[activation-space|activation space]], so that an
+      activation is approximately a sum of feature directions each scaled by how strongly its
+      feature is present. Two consequences give it practical force: features can be read out with a
+      [[linear-probe|linear probe]] or a dot product, and they can be changed by adding or
+      subtracting vectors, as in [[steering-vector|steering]] and [[concept-erasure|concept
+      erasure]]. Supporting evidence includes word-vector analogies (king − man + woman ≈ queen),
+      the success of probes and [[sparse-autoencoder|sparse autoencoders]], and steering results.
+      Kiho Park, Yo Joon Choe and Victor Veitch (2023) formalized versions of the hypothesis and
+      argued that the appropriate inner product for measuring it is not always the Euclidean one.
+      Counterexamples include circular representations of days of the week and months (Engels et
+      al., 2024) and nonlinear 'onion' encodings in recurrent networks, so many researchers regard
+      linearity as common rather than universal.
+    example: >-
+      If the linear representation hypothesis holds here, one probe direction should track sentiment
+      across every prompt.
+origin: >-
+  Linear structure in word embeddings was popularized by Tomas Mikolov, Wen-tau Yih and Geoffrey
+  Zweig's analogy results (2013). The phrase 'linear representation hypothesis' was in use in
+  mechanistic interpretability by 2022, notably in Anthropic's 'Toy Models of Superposition', and
+  was given formal treatment by Park, Choe and Veitch (2023; ICML 2024).
+year: 2022
+note: >-
+  Linear representation is not linear computation: networks compute features nonlinearly, but the
+  hypothesis concerns how computed features are stored and read. Whether all important features,
+  including those used in planning and reasoning, are linear remains open.
+see_also:
+  - feature (interpretability)
+  - superposition
+  - linear probe
+  - steering vector
+  - word2vec
+  - activation space
+  - concept erasure
+sources:
+  - text: >-
+      Mikolov, T., Yih, W. & Zweig, G. (2013). Linguistic Regularities in Continuous Space Word
+      Representations. NAACL-HLT 2013.
+  - text: >-
+      Park, K., Choe, Y. J. & Veitch, V. (2024). The Linear Representation Hypothesis and the
+      Geometry of Large Language Models. ICML 2024.
+  - text: >-
+      Engels, J., Michaud, E. J., Liao, I., Gurnee, W. & Tegmark, M. (2024). Not All Language Model
+      Features Are Linear. arXiv preprint.

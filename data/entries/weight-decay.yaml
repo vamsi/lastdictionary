@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: weight decay
+id: weight-decay
+pos: n.
+also:
+  - weight-decay coefficient
+domain: dl
+domains:
+  - ml
+  - train
+level: core
+plain: >-
+  A training rule that shrinks every weight slightly at each step, like a small tax on large
+  numbers. It keeps models simpler and usually helps them work better on new data.
+senses:
+  - definition: >-
+      A [[regularization|regularization]] technique that multiplies each weight by a factor slightly
+      below one at every update (equivalently, subtracts a small multiple λ of the weight), pulling
+      parameters toward zero unless the [[loss-function|loss]] gradient holds them away. For plain
+      [[stochastic-gradient-descent|stochastic gradient descent]] it is equivalent to adding an L2
+      penalty (λ/2)‖θ‖² to the loss, as in [[ridge-regression|ridge regression]]; for adaptive
+      optimizers it is not, which is why [[adamw|AdamW]] applies it in decoupled form. In networks
+      with [[batch-normalization|normalization layers]] many weights are scale-invariant, so weight
+      decay acts less as a capacity limit than as a control on the effective learning rate, holding
+      weight norms in equilibrium. It shapes training dynamics in other ways too: it is a key
+      ingredient of [[grokking|grokking]] and affects stability and plasticity in long runs. Typical
+      values range from about 10⁻⁴ (SGD on vision models) to 0.1 (AdamW on language models), and
+      biases, normalization gains and often embeddings are exempted.
+    example: >-
+      Raising weight decay from 0.01 to 0.1 closed most of the gap between training and validation
+      loss.
+origin: >-
+  Penalizing large weights to improve generalization appears in the late-1980s connectionist
+  literature (for example Stephen Hanson and Lorien Pratt, 1988), and Anders Krogh and John Hertz
+  analyzed it in 'A Simple Weight Decay Can Improve Generalization' (NeurIPS 1991). The underlying
+  L2 penalty goes back to Andrey Tikhonov's regularization of ill-posed problems (1963) and to ridge
+  regression (Arthur Hoerl and Robert Kennard, 1970).
+note: >-
+  Often conflated with L2 regularization; the two coincide only for plain SGD. Not to be confused
+  with learning-rate decay, which shrinks step sizes rather than weights.
+see_also:
+  - AdamW
+  - regularization
+  - ridge regression
+  - overfitting
+  - grokking
+  - implicit regularization
+contrast:
+  - dropout
+  - learning rate schedule
+sources:
+  - text: >-
+      Krogh, A. & Hertz, J. A. (1992). A Simple Weight Decay Can Improve Generalization. Advances in
+      Neural Information Processing Systems 4.
+  - text: >-
+      Loshchilov, I. & Hutter, F. (2019). Decoupled Weight Decay Regularization. ICLR 2019.
+    url: https://arxiv.org/abs/1711.05101

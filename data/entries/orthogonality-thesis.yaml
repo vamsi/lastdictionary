@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: orthogonality thesis
+id: orthogonality-thesis
+pos: n.
+domain: asi
+domains:
+  - safety
+  - mind
+labels:
+  - contested
+level: core
+plain: >-
+  The idea that how smart an AI is and what it wants are separate matters: a very intelligent
+  machine could pursue almost any goal, including ones that seem pointless or harmful to us.
+senses:
+  - definition: >-
+      The thesis that an agent's level of intelligence places almost no constraint on what it
+      ultimately wants: in principle, great capability can be paired with nearly any final goal,
+      however strange. Intelligence in this sense is instrumental competence, the ability to
+      forecast, plan and choose effective means, not wisdom or moral insight. The thesis denies that
+      sufficient intelligence would by itself lead an agent to adopt humane values: in
+      [[nick-bostrom|Nick Bostrom]]'s examples, a superintelligent system could single-mindedly
+      count grains of sand or maximize paperclips ([[paperclip-maximizer|paperclip maximizer]]).
+      Combined with [[instrumental-convergence|instrumental convergence]], it underpins the argument
+      that advanced AI will not be safe by default and that its goals must be deliberately aligned.
+      Critics include moral realists, who hold that a capable enough reasoner would discover and
+      adopt correct values, and researchers who argue that systems trained on human data in practice
+      acquire humanlike values along with their capabilities. Defenders reply that the thesis
+      concerns what is possible, not what is likely.
+    example: >-
+      The orthogonality thesis is why 'it will be too smart to want something stupid' is not a
+      safety argument.
+origin: >-
+  Named and formulated by Nick Bostrom in 'The Superintelligent Will' (Minds and Machines, 2012) and
+  restated in Superintelligence (2014). The idea echoes David Hume's view that reason serves the
+  passions, and Eliezer Yudkowsky had argued it informally, writing in 2008 that an AI 'does not
+  hate you, nor does it love you'.
+year: 2012
+note: >-
+  Often misread as saying AI goals will be random; it says only that intelligence does not constrain
+  them. It is a claim about possible minds, not about which goals training actually produces.
+see_also:
+  - instrumental convergence
+  - paperclip maximizer
+  - AI alignment
+  - value alignment
+  - Nick Bostrom
+  - superintelligence
+sources:
+  - text: >-
+      Bostrom, N. (2012). The Superintelligent Will: Motivation and Instrumental Rationality in
+      Advanced Artificial Agents. Minds and Machines 22(2).
+  - text: >-
+      Armstrong, S. (2013). General Purpose Intelligence: Arguing the Orthogonality Thesis. Analysis
+      and Metaphysics 12.

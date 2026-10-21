@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gemma Scope
+id: gemma-scope
+pos: prop. n.
+also:
+  - Gemma Scope 2
+domain: interp
+domains:
+  - eng
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free collection of ready-made concept-finding tools released by Google DeepMind for its open
+  Gemma language models, so outside researchers can study their insides without training the tools
+  themselves.
+senses:
+  - definition: >-
+      An open suite of [[sparse-autoencoder|sparse autoencoders]] released by
+      [[google-deepmind|Google DeepMind]] for its open-weight Gemma language models, intended to
+      make [[dictionary-learning|dictionary learning]] research possible without the large compute
+      cost of training dictionaries. The first release (announced 31 July 2024, technical report
+      August 2024) provided JumpReLU SAEs for every layer and sublayer of Gemma 2 2B and 9B, for
+      selected layers of Gemma 2 27B, and for an instruction-tuned 9B model, at several dictionary
+      widths. Gemma Scope 2 (19 December 2025) covered every layer of all Gemma 3 sizes from 270
+      million to 27 billion parameters, pretrained and instruction-tuned, adding
+      [[transcoder|transcoders]], cross-layer transcoders for the two smallest models and
+      multi-layer [[crosscoder|crosscoders]]. The releases are browsable on
+      [[neuronpedia|Neuronpedia]] and have been widely used for research on features,
+      [[circuit|circuits]] and steering, including studies of the limitations of SAEs.
+    example: >-
+      Instead of training our own dictionary, we used the Gemma Scope SAE for layer 20 of Gemma 2 9B.
+origin: >-
+  Described by Tom Lieberum, Senthooran Rajamanoharan, Arthur Conmy and colleagues, with Neel Nanda
+  as senior author, in 'Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2'
+  (August 2024). The name joins the Gemma model family to a microscope metaphor.
+year: 2024
+see_also:
+  - sparse autoencoder
+  - Neuronpedia
+  - transcoder
+  - Google DeepMind
+  - dictionary learning
+  - open-weight model
+sources:
+  - text: >-
+      Lieberum, T., Rajamanoharan, S., Conmy, A., Smith, L., Sonnerat, N., Varma, V., Kramár, J.,
+      Dragan, A., Shah, R. & Nanda, N. (2024). Gemma Scope: Open Sparse Autoencoders Everywhere All
+      At Once on Gemma 2. arXiv:2408.05147.
+    url: https://arxiv.org/abs/2408.05147
+  - text: >-
+      Google DeepMind Language Model Interpretability Team (2025). Gemma Scope 2: helping the AI
+      safety community deepen understanding of complex language model behavior. Google DeepMind
+      blog, 19 December 2025.
+    url: https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/
+  - text: Google (2025). Gemma Scope. Gemma documentation.
+    url: https://ai.google.dev/gemma/docs/gemmascope
+as_of: 2026-10

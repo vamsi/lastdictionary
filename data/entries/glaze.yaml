@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Glaze
+id: glaze
+pos: prop. n.
+also:
+  - Glaze Project
+  - style cloaking
+domain: sec
+domains:
+  - gen
+  - society
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free tool that lets artists treat their pictures before posting them, with changes people barely
+  notice, so that an AI trained to imitate their style learns a different one.
+senses:
+  - definition: >-
+      A tool that applies a small, optimized perturbation (a 'cloak') to an artwork so that the
+      feature extractors used by [[text-to-image-model|text-to-image models]] perceive it as being
+      in a different style, protecting artists against style mimicry by models fine-tuned on their
+      work. Unlike [[nightshade|Nightshade]], it is defensive: it aims to stop imitation of an
+      individual's images rather than to damage models trained on them. Its protection depends on
+      the perturbation surviving image processing and on which models imitators use; researchers
+      have shown that simple purification such as upscaling or adding noise can weaken it, and the
+      tool has been revised in response. Like other adversarial perturbations, it offers no
+      guarantee against future models.
+    example: She glazed her new illustrations before uploading them to her portfolio site.
+origin: >-
+  Developed by Shawn Shan, Jenna Cryan, Emily Wenger, Haitao Zheng, Rana Hanocka and Ben Zhao at the
+  University of Chicago, released in March 2023 and presented at USENIX Security 2023. Robert Hönig
+  and colleagues (2024) showed that low-effort countermeasures could defeat it and similar
+  protections.
+year: 2023
+see_also:
+  - Nightshade
+  - adversarial example
+  - text-to-image model
+  - AI copyright litigation
+sources:
+  - text: >-
+      Shan, S., Cryan, J., Wenger, E., Zheng, H., Hanocka, R. & Zhao, B. Y. (2023). Glaze:
+      Protecting Artists from Style Mimicry by Text-to-Image Models. USENIX Security 2023.
+      arXiv:2302.04222.
+  - text: >-
+      Hönig, R., Rando, J., Carlini, N. & Tramèr, F. (2025). Adversarial Perturbations Cannot
+      Reliably Protect Artists From Generative AI. ICLR 2025.

@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sampling
+id: sampling
+pos: n.
+also:
+  - sample
+  - samples
+  - sampled
+  - sample size
+  - random sampling
+  - sample rate
+domain: math
+domains:
+  - llm
+  - gen
+  - data
+level: core
+plain: >-
+  Picking some items at random from a larger set or from a range of possibilities — surveying 1,000
+  voters, say, or letting an AI choose its next word by a weighted lottery.
+senses:
+  - context: Statistics
+    definition: >-
+      In statistics, the procedure of choosing which members of a population to observe — which
+      voters to poll, which patients to enroll, which web pages to label — when the results from
+      those few will be generalized to all. Probability sampling — simple random, stratified,
+      cluster or systematic — gives every unit a known chance of selection, which makes estimates
+      unbiased and their uncertainty computable, with [[variance|variance]] typically shrinking in
+      proportion to 1/n; convenience and other non-probability samples risk [[sampling-bias|sampling
+      bias]]. In machine learning the training set is itself a sample from the data distribution,
+      mini-batches are samples of the training set and evaluation sets sample possible inputs, so
+      every reported score carries sampling error (see [[confidence-interval|confidence interval]]).
+  - context: Probabilistic models and generation
+    definition: >-
+      Drawing random values from a [[probability-distribution|probability distribution]], either to
+      estimate expectations ([[monte-carlo-method|Monte Carlo method]],
+      [[markov-chain-monte-carlo|Markov chain Monte Carlo]], [[importance-sampling|importance
+      sampling]]) or to generate outputs. [[generative-model|Generative models]] produce text,
+      images and audio by sampling: a [[large-language-model|language model]] samples each
+      [[token|token]] from its predicted [[categorical-distribution|categorical distribution]],
+      reshaped by [[temperature|temperature]], [[top-k-sampling|top-k sampling]],
+      [[top-p-sampling|top-p sampling]] or [[min-p-sampling|min-p sampling]], while
+      [[diffusion-model|diffusion models]] sample by iterative denoising with a
+      [[diffusion-sampler|diffusion sampler]]. Sampling contrasts with deterministic
+      [[decoding|decoding]] such as [[greedy-decoding|greedy decoding]] and [[beam-search|beam
+      search]]; drawing many samples enables [[best-of-n-sampling|best-of-n sampling]],
+      [[self-consistency|self-consistency]] voting and [[pass-k|pass@k]] evaluation.
+    example: >-
+      With sampling on, the same prompt gives a different answer each run, so set temperature to
+      zero for regression tests.
+  - context: Signal processing
+    definition: >-
+      Measuring a continuous signal at discrete, evenly spaced instants. By the Nyquist–Shannon
+      theorem the sample rate — for example 16 kHz for many speech models, 44.1 kHz for CD-quality
+      music — must exceed twice the highest frequency present to avoid aliasing (see
+      [[fourier-transform|Fourier transform]]).
+origin: >-
+  Statistical sampling grew from Pierre-Simon Laplace's 1780s estimate of France's population from a
+  sample of parishes and Anders Kiær's 'representative method' (1895); Jerzy Neyman's 1934 paper
+  founded the theory of probability sampling. Sampling from a model to generate text goes back to
+  Claude Shannon's 1948 demonstrations of random text built from the letter and word statistics of
+  English.
+note: >-
+  In audio and music, 'a sample' can also mean a short recorded clip. 'Sample efficiency' describes
+  how much data or experience a learner needs to reach a given performance.
+see_also:
+  - Monte Carlo method
+  - temperature
+  - top-p sampling
+  - sampling bias
+  - categorical distribution
+  - decoding
+  - stochastic
+contrast:
+  - greedy decoding

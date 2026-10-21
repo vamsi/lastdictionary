@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model merging
+id: model-merging
+pos: n.
+also:
+  - weight merging
+  - merging
+  - merged model
+  - model fusion
+domain: train
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  Combining two or more trained AI models into one by blending their internal numbers directly, so
+  the result shares their skills without any further training.
+senses:
+  - definition: >-
+      Combining the [[weights|weights]] of two or more neural networks, usually fine-tuned from the
+      same pretrained [[checkpoint|checkpoint]], into a single network of the same architecture,
+      with no further training or very little. The simplest method is weighted averaging of
+      corresponding parameters, which works when the models lie in a shared low-loss basin of the
+      [[loss-landscape|loss landscape]], as fine-tunes of a common base usually do. More elaborate
+      methods operate on task vectors (fine-tuned minus base weights; see [[task-arithmetic|task
+      arithmetic]]) and reduce interference between them: TIES-merging trims small changes and
+      resolves sign conflicts, DARE randomly drops and rescales deltas, Fisher merging weights
+      parameters by estimated importance, and SLERP interpolates along a sphere. Merging can combine
+      skills and improve robustness ([[model-soup|model soups]]), and offers a cheap search space in
+      which evolutionary methods optimize merge recipes automatically. Unlike an
+      [[ensemble-learning|ensemble]], a merged model costs no more to run than one of its parents.
+    example: >-
+      Merging the coding fine-tune with the Japanese fine-tune gave one model that handles both,
+      with no extra training.
+origin: >-
+  Weight averaging has a long history in optimization (Polyak averaging; stochastic weight
+  averaging, 2018). Averaging separately fine-tuned models was popularized by model soups (Mitchell
+  Wortsman and colleagues, 2022) and task arithmetic (Gabriel Ilharco and colleagues, 2022);
+  TIES-merging (Prateek Yadav and colleagues, 2023), open-source tools such as mergekit, and Sakana
+  AI's evolutionary model merge (2024) made merging routine for open-weight models, whose public
+  leaderboards filled with merges in 2024.
+year: 2022
+note: >-
+  Merging models trained from different initializations generally fails unless their neurons are
+  first aligned (permutation matching). Not to be confused with [[mixture-of-experts|mixture of
+  experts]], which keeps separate expert weights and routes between them at run time.
+see_also:
+  - task arithmetic
+  - model soup
+  - loss landscape
+  - ensemble learning
+  - fine-tuning
+  - low-rank adaptation
+  - open-weight model
+contrast:
+  - ensemble learning
+  - mixture of experts
+sources:
+  - text: >-
+      Yadav, P., Tam, D., Choshen, L., Raffel, C. & Bansal, M. (2023). TIES-Merging: Resolving
+      Interference When Merging Models. NeurIPS 2023. arXiv:2306.01708.
+    url: https://arxiv.org/abs/2306.01708
+  - text: >-
+      Wortsman, M. et al. (2022). Model soups: averaging weights of multiple fine-tuned models
+      improves accuracy without increasing inference time. ICML 2022. arXiv:2203.05482.
+    url: https://arxiv.org/abs/2203.05482

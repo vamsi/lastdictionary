@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Kolmogorov–Arnold network
+id: kolmogorov-arnold-network
+pos: n.
+also:
+  - KAN
+  - KANs
+domain: dl
+domains:
+  - interp
+labels:
+  - emerging
+  - contested
+level: specialist
+plain: >-
+  A 2024 alternative to the standard neural network: instead of fixed rules inside neurons, every
+  connection learns its own small curve, which can make the result easier to read as a formula.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] architecture inspired by the Kolmogorov–Arnold
+      representation theorem, which states that any continuous function of several variables on a
+      closed, bounded domain (such as the unit cube) can be written using only addition and
+      compositions of continuous functions of one variable. Its learnable parts sit in a different
+      place from a [[multilayer-perceptron|multilayer perceptron]]'s: instead of learned linear
+      weights on the connections and a fixed [[activation-function|activation function]] at each
+      unit, every connection applies its own learned one-variable function, usually a B-spline plus
+      a simple base function, and each unit just adds up what arrives. Its authors reported that
+      small KANs could match much larger MLPs on function fitting and on solving partial
+      differential equations, with better scaling in these settings, and that trained KANs can be
+      pruned and converted into symbolic formulas, aiding scientific discovery. Follow-up studies
+      found that at matched parameters or compute KANs mostly trail MLPs outside symbolic and
+      low-dimensional scientific tasks, and spline evaluation makes them slow on GPUs; their value
+      remains debated.
+    example: >-
+      After pruning, the KAN's learned edge functions matched a sine and a square almost exactly.
+origin: >-
+  Introduced by Ziming Liu, Yixuan Wang, Sachin Vaidya, Fabian Ruehle, James Halverson, Marin
+  Soljačić, Thomas Hou and Max Tegmark in 'KAN: Kolmogorov–Arnold Networks' (arXiv, April 2024),
+  which drew wide attention; 'KAN 2.0' followed in August 2024. The underlying theorem was proved by
+  Andrey Kolmogorov and Vladimir Arnold in 1956–57, resolving a version of Hilbert's thirteenth
+  problem.
+year: 2024
+see_also:
+  - multilayer perceptron
+  - universal approximation theorem
+  - activation function
+  - interpretable model
+contrast:
+  - multilayer perceptron
+sources:
+  - text: "Liu, Z. et al. (2024). KAN: Kolmogorov–Arnold Networks. arXiv:2404.19756."
+    url: https://arxiv.org/abs/2404.19756
+as_of: 2026-10

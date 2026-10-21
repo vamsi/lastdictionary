@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: helpful, honest and harmless
+id: helpful-honest-and-harmless
+pos: phr.
+also:
+  - HHH
+  - helpful honest harmless
+domain: safety
+domains:
+  - llm
+  - train
+level: core
+plain: >-
+  A three-part goal for AI assistants, popularized by Anthropic: be genuinely useful, tell the
+  truth, and avoid causing harm — shorthand for what an aligned chatbot should be.
+senses:
+  - definition: >-
+      A set of three criteria for aligned AI assistants, used as design goals, training targets and
+      evaluation categories. As Amanda Askell and colleagues spelled them out in 2021, helpfulness
+      is a real, efficient attempt at what the user asked, with follow-up questions when information
+      is missing; honesty is accurate information whose uncertainty is calibrated and stated without
+      misleading; and harmlessness is avoiding offensive or discriminatory output and declining to
+      aid dangerous acts. The criteria can conflict — maximal help to one user may harm others, and
+      refusing is harmless but unhelpful — so much post-training work, from
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]] on
+      separate helpfulness and harmlessness datasets to [[constitutional-ai|Constitutional AI]],
+      concerns trading them off. The framing shaped early assistant models and later
+      [[model-specification|model specifications]].
+    example: >-
+      Our preference data scores each response separately on helpful, honest and harmless.
+origin: >-
+  Introduced by Amanda Askell, Yuntao Bai, Anna Chen and colleagues at Anthropic in 'A General
+  Language Assistant as a Laboratory for Alignment' (December 2021), and used to structure
+  Anthropic's 2022 papers on RLHF and Constitutional AI.
+year: 2021
+note: >-
+  Critics argue the triad is vague and that harmlessness was often operationalized as excessive
+  refusal ([[over-refusal|over-refusal]]); later frameworks stress helpfulness within explicit
+  limits, as in [[safe-completion|safe completions]].
+see_also:
+  - honesty
+  - AI alignment
+  - Constitutional AI
+  - reinforcement learning from human feedback
+  - refusal
+  - over-refusal
+  - model specification
+sources:
+  - text: >-
+      Askell, A., Bai, Y., Chen, A. et al. (2021). A General Language Assistant as a Laboratory for
+      Alignment. arXiv:2112.00861.
+    url: https://arxiv.org/abs/2112.00861
+  - text: >-
+      Bai, Y. et al. (2022). Training a Helpful and Harmless Assistant with Reinforcement Learning
+      from Human Feedback. arXiv:2204.05862.
+    url: https://arxiv.org/abs/2204.05862

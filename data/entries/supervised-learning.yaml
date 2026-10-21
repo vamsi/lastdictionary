@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: supervised learning
+id: supervised-learning
+pos: n.
+also:
+  - supervised machine learning
+  - supervised training
+  - learning with a teacher
+domain: core
+domains:
+  - ml
+level: core
+plain: >-
+  Teaching a computer by example: you give it many inputs paired with the right answers, such as
+  photos labeled 'cat' or 'dog', and it learns to answer correctly for new inputs.
+senses:
+  - definition: >-
+      The [[machine-learning|machine learning]] setting in which each training example is paired
+      with the output the model ought to produce, a target [[label|label]] that supplies the
+      'supervision', and the model learns a rule that reproduces those answers and extends to new
+      inputs. Training minimizes a [[loss-function|loss function]] measuring disagreement between
+      predictions and targets, and success is judged on held-out data. When targets are categories
+      the task is [[classification|classification]]; when they are numbers it is
+      [[regression|regression]]; sequences, masks and other structured outputs fall under structured
+      prediction. Typical methods include [[linear-regression|linear regression]],
+      [[logistic-regression|logistic regression]], [[support-vector-machine|support vector
+      machines]], [[decision-tree|decision trees]] and their ensembles, and [[neural-network|neural
+      networks]]. The main bottleneck is the cost of labels, which motivates
+      [[semi-supervised-learning|semi-supervised]], [[weak-supervision|weakly supervised]] and
+      [[self-supervised-learning|self-supervised]] alternatives. In language-model training,
+      [[supervised-fine-tuning|supervised fine-tuning]] applies the idea to demonstrations of
+      desired responses.
+    example: >-
+      We had 40,000 radiologist-labeled scans, so supervised learning was the obvious place to start.
+origin: >-
+  Learning from a teacher's corrections runs through the perceptron and Bernard Widrow and Ted
+  Hoff's ADALINE (1960). Pattern-recognition research of the 1960s contrasted learning 'with a
+  teacher' and 'without a teacher'; by the early 1970s 'supervised' and 'unsupervised' learning were
+  standard terms in textbooks such as Richard Duda and Peter Hart's (1973), and they spread further
+  with 1980s neural-network work such as Parallel Distributed Processing (1986).
+note: >-
+  Supervised models reproduce the patterns in their labels, including annotator errors and biases: a
+  model trained on past human decisions learns to imitate those decisions, not necessarily to make
+  correct ones.
+see_also:
+  - unsupervised learning
+  - self-supervised learning
+  - semi-supervised learning
+  - label
+  - classification
+  - regression
+  - supervised fine-tuning
+  - training set
+contrast:
+  - unsupervised learning
+  - reinforcement learning

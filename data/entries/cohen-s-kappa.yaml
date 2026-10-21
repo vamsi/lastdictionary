@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Cohen's kappa
+id: cohen-s-kappa
+pos: n.
+also:
+  - kappa
+  - kappa statistic
+  - weighted kappa
+domain: data
+domains:
+  - math
+  - eval
+level: specialist
+plain: >-
+  A score for how much two people labeling the same items agree beyond what lucky guessing would
+  produce: 1 means perfect agreement, 0 means no better than chance.
+senses:
+  - definition: >-
+      A chance-corrected index of how often two raters put the same items into the same categories:
+      it expresses how far their observed agreement exceeds the agreement their individual labeling
+      rates would produce by luck, as a fraction of the largest excess possible. Observed agreement
+      p_o is the share of items labeled identically; expected agreement p_e is computed from each
+      rater's own category frequencies, as if both had labeled at random with those frequencies.
+      Kappa is 1 for perfect agreement, 0 for chance-level agreement and negative for systematic
+      disagreement. Weighted kappa (1968) gives partial credit for near misses on ordered scales.
+      Widely quoted bands from J. Richard Landis and Gary Koch (1977) call 0.41–0.60 'moderate' and
+      0.61–0.80 'substantial', but these cut-offs are conventions without empirical grounding. Kappa
+      depends on how common each category is: with highly skewed classes it can be low even when raw
+      agreement is high.
+    example: Kappa between the two clinicians was 0.72, substantial by the usual reading.
+formula_latex: \kappa = \frac{p_o - p_e}{1 - p_e}
+origin: >-
+  Introduced by the American psychologist Jacob Cohen in 'A Coefficient of Agreement for Nominal
+  Scales' (Educational and Psychological Measurement, 1960), building on William Scott's pi (1955).
+  Cohen added weighted kappa in 1968, and Joseph Fleiss extended chance-corrected agreement to many
+  raters in 1971.
+year: 1960
+note: >-
+  For more than two raters, use Fleiss' kappa or Krippendorff's alpha. Because kappa is sensitive to
+  class balance, reports should also give raw agreement and the label distribution.
+see_also:
+  - inter-annotator agreement
+  - annotation
+  - label noise
+  - confusion matrix
+  - accuracy
+sources:
+  - text: >-
+      Cohen, J. (1960). A Coefficient of Agreement for Nominal Scales. Educational and Psychological
+      Measurement 20(1), 37–46.
+  - text: >-
+      Landis, J. R. & Koch, G. G. (1977). The Measurement of Observer Agreement for Categorical
+      Data. Biometrics 33(1).

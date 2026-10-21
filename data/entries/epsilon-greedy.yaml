@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: epsilon-greedy
+id: epsilon-greedy
+pos: adj.
+also:
+  - ε-greedy exploration
+  - epsilon decay
+domain: rl
+level: core
+plain: >-
+  A simple rule for balancing trying new things against using what works: most of the time take the
+  best-known option, but a small fraction of the time pick at random.
+senses:
+  - definition: >-
+      Describing the action-selection rule that, with probability 1 − ε, takes the greedy
+      [[action|action]] (the one with the highest estimated value) and, with probability ε, takes an
+      action chosen uniformly at random. It is the simplest widely used answer to the
+      [[exploration-exploitation-trade-off|exploration–exploitation trade-off]]: it ensures that
+      every action keeps being tried, as tabular convergence proofs for [[q-learning|Q-learning]]
+      and [[sarsa|SARSA]] require, and it costs no extra computation. In practice ε is annealed —
+      the [[deep-q-network|deep Q-network]] decayed it linearly from 1.0 to 0.1 over the first
+      million frames — and kept small but nonzero during evaluation. Its weaknesses are that
+      exploration is undirected (a nearly optimal and a disastrous action are equally likely to be
+      tried) and dithering (random single steps rarely add up to purposeful journeys), which makes
+      it poor at [[sparse-reward|sparse reward]] problems; Boltzmann exploration, optimism,
+      [[upper-confidence-bound|UCB]] and [[thompson-sampling|Thompson sampling]] are more targeted
+      alternatives.
+    example: We decay epsilon from 1.0 to 0.05 over the first 10 percent of training.
+origin: >-
+  Randomized near-greedy action selection was in use in RL by the early 1990s, and the name
+  'ε-greedy' was standardized by Sutton and Barto's textbook (1998). The Greek letter follows the
+  mathematical convention of ε for a small quantity.
+see_also:
+  - exploration–exploitation trade-off
+  - Q-learning
+  - deep Q-network
+  - multi-armed bandit
+  - upper confidence bound
+  - entropy regularization
+contrast:
+  - Thompson sampling

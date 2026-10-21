@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: convolution
+id: convolution
+pos: n.
+also:
+  - convolutional layer
+  - conv layer
+  - conv
+  - 2D convolution
+  - cross-correlation
+domain: dl
+domains:
+  - math
+  - percep
+level: core
+plain: >-
+  An operation that slides a small grid of weights across an image or signal, multiplying and adding
+  at each spot, to measure how strongly a pattern appears at every location.
+senses:
+  - context: Deep learning
+    definition: >-
+      A [[layer|layer]] operation that computes each output value as a weighted sum of a small local
+      window of the input, using the same weights (the [[filter|filter]] or kernel) at every
+      position. For an input with C_in channels, a 2-D convolutional layer with C_out filters of
+      size k × k has C_out·C_in·k² weights plus biases, independent of image size, and produces
+      C_out output channels or [[feature-map|feature maps]]. Its hyperparameters are kernel size,
+      [[stride|stride]], padding (border values, usually zeros, that control output size),
+      [[dilated-convolution|dilation]] and groups. 1-D convolutions process sequences such as audio
+      or text; 3-D convolutions process video and volumetric scans. Variants include
+      [[depthwise-separable-convolution|depthwise separable]], [[transposed-convolution|transposed]]
+      and 1 × 1 (pointwise) convolutions.
+    example: The stem is a single 7 × 7 convolution with stride 2.
+  - context: Mathematics
+    definition: >-
+      The operation (f ∗ g)(t) = ∫ f(τ) g(t − τ) dτ, or its discrete sum, which flips one function
+      and slides it across the other. It commutes with translation, and by the convolution theorem
+      it becomes pointwise multiplication under the [[fourier-transform|Fourier transform]]. The
+      deep-learning operation omits the flip, so it is strictly cross-correlation.
+formula_latex: (f * g)[n] = \sum_{m} f[m]\, g[n - m]
+origin: >-
+  The operation is classical in analysis, probability and signal processing, where linear filters
+  are applied by convolution. In neural networks, Toshiteru Homma, Les Atlas and Robert Marks used
+  the term at the first NIPS conference (1987), noting that convolution and correlation are
+  equivalent when the weights are learned; it became standard through Yann LeCun's convolutional
+  networks of 1989 onwards.
+year: 1987
+note: >-
+  Practitioners say 'kernel' both for filter weights and for low-level GPU routines; see
+  [[kernel|kernel]].
+see_also:
+  - convolutional neural network
+  - filter
+  - feature map
+  - stride
+  - depthwise separable convolution
+  - transposed convolution
+  - dilated convolution
+  - Fourier transform

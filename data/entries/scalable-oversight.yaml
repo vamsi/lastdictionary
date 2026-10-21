@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scalable oversight
+id: scalable-oversight
+pos: n.
+domain: safety
+domains:
+  - train
+  - asi
+level: core
+plain: >-
+  The problem of how people can check and correct AI systems whose work is too difficult, fast or
+  plentiful for humans to judge reliably alone — usually by enlisting AI to help with the checking.
+senses:
+  - definition: >-
+      The problem, and the family of methods addressing it, of supplying accurate training signals
+      and evaluations for AI systems on tasks where unaided human judgment is too costly, slow or
+      error-prone — ultimately for systems more capable than their overseers. Most proposals use AI
+      assistance to make evaluating easier than doing: [[ai-debate|AI debate]],
+      [[iterated-amplification|iterated amplification]], [[recursive-reward-modeling|recursive
+      reward modeling]], [[prover-verifier-game|prover–verifier games]], model-written critiques and
+      task decomposition. A related line, [[weak-to-strong-generalization|weak-to-strong
+      generalization]], asks how far a strong model generalizes beyond a weaker supervisor's labels.
+      Progress is measured with [[sandwiching|sandwiching]] experiments, in which non-experts aided
+      by AI try to match expert judgments. The problem is pressing for
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]],
+      whose raters may miss subtle errors in long code or arguments and so reward answers that
+      merely look right.
+    example: >-
+      Without better scalable oversight, our raters will keep preferring confident answers over
+      correct ones.
+origin: >-
+  Introduced as a named research problem in 'Concrete Problems in AI Safety' (2016) by Dario Amodei,
+  Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman and Dan Mané, one of five problems
+  listed there. Samuel Bowman and colleagues' 'Measuring Progress on Scalable Oversight for Large
+  Language Models' (2022) helped turn it into an experimental field.
+year: 2016
+note: >-
+  Sometimes used loosely for any human supervision of AI. In the technical sense it means oversight
+  that keeps working as the overseen system's capabilities outgrow the overseer's; legal
+  [[human-oversight|human oversight]] requirements do not presuppose that gap.
+see_also:
+  - AI debate
+  - iterated amplification
+  - recursive reward modeling
+  - weak-to-strong generalization
+  - sandwiching
+  - eliciting latent knowledge
+  - superalignment
+contrast:
+  - human oversight
+sources:
+  - text: >-
+      Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J. & Mané, D. (2016). Concrete
+      Problems in AI Safety. arXiv:1606.06565.
+  - text: >-
+      Bowman, S. R. et al. (2022). Measuring Progress on Scalable Oversight for Large Language
+      Models. arXiv preprint.

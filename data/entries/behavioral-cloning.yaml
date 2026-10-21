@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: behavioral cloning
+id: behavioral-cloning
+pos: n.
+also:
+  - behaviour cloning
+  - behavioural cloning
+  - BC
+domain: rl
+domains:
+  - robot
+  - train
+level: core
+plain: >-
+  The simplest way to copy an expert: record what the expert did in each situation and train an AI
+  to predict the same action whenever it sees a similar situation.
+senses:
+  - definition: >-
+      An [[imitation-learning|imitation learning]] method that treats expert demonstrations as a
+      [[supervised-learning|supervised learning]] problem, training a [[policy|policy]] to map each
+      observed [[state|state]] to the action the expert took, typically by maximizing the likelihood
+      of the expert's actions. It needs no reward function, no environment interaction and no expert
+      queries during training, so it is simple and scales to large datasets — which is why it
+      underlies most modern robot policies and, in effect, [[supervised-fine-tuning|supervised
+      fine-tuning]] of language models. Its known weakness is compounding error: small mistakes take
+      the learner into states the expert never visited, where errors grow, so performance can
+      degrade quadratically with the task horizon. Remedies include collecting recovery data or
+      querying the expert on the learner's own states ([[dagger|DAgger]]), injecting noise while
+      demonstrating, and expressive policy classes such as [[diffusion-policy|diffusion policies]]
+      and [[action-chunking|action chunking]] that can represent several valid ways of acting.
+    example: >-
+      Behavioral cloning worked on the training tracks but drifted off the road once the car left
+      familiar curves.
+origin: >-
+  The term is usually credited to Donald Michie and colleagues, who around 1990 used it for
+  reconstructing a human operator's skill from logged control traces, notably in Claude Sammut,
+  Scott Hurst, Dana Kedzier and Michie's 'Learning to Fly' (ICML 1992), which cloned pilots in a
+  flight simulator. Dean Pomerleau's ALVINN road-follower had already learned to steer from a human
+  driver's demonstrations in 1989, after a first version trained on simulated images.
+year: 1990
+see_also:
+  - imitation learning
+  - DAgger
+  - distribution shift
+  - diffusion policy
+  - action chunking
+  - supervised fine-tuning
+contrast:
+  - inverse reinforcement learning
+sources:
+  - text: >-
+      Sammut, C., Hurst, S., Kedzier, D. & Michie, D. (1992). Learning to Fly. Proceedings of ICML
+      1992.
+  - text: >-
+      Michie, D., Bain, M. & Hayes-Michie, J. (1990). Cognitive models from subcognitive skills. In
+      Knowledge-Based Systems for Industrial Control. Peter Peregrinus/IEE.

@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model diffing
+id: model-diffing
+pos: n.
+also:
+  - diffing (interpretability)
+  - model diff
+domain: interp
+domains:
+  - safety
+  - train
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Comparing the insides of two closely related AI models — such as a model before and after extra
+  training — to find exactly which internal concepts and mechanisms changed.
+senses:
+  - definition: >-
+      The comparison of two related models' internal representations or mechanisms to identify what
+      differs between them — typically a [[base-model|base model]] and a [[fine-tuning|fine-tuned]]
+      or reinforcement-learning-trained version, or checkpoints from different stages of training.
+      By analogy with a software diff, which shows only the lines that changed, model diffing
+      concentrates interpretability effort on the small set of changes training introduced — new
+      refusal, persona or reward-seeking features, say — rather than re-interpreting an entire
+      model. Methods include training [[crosscoder|crosscoders]] on both models and looking for
+      features specific to one; comparing or fine-tuning [[sparse-autoencoder|sparse autoencoders]]
+      across the pair; comparing activations on identical inputs; and, more recently,
+      interpretability agents that run such analyses automatically. It is pursued as a safety tool
+      for auditing what fine-tuning changed, including unintended effects such as
+      [[emergent-misalignment|emergent misalignment]].
+    example: >-
+      Model diffing the RL checkpoint against the base surfaced a new feature for gaming unit tests.
+origin: >-
+  The analogy is to the Unix diff utility of the 1970s. In interpretability the approach was
+  developed, and the term popularized, in Anthropic's 'Sparse Crosscoders for Cross-Layer Features
+  and Model Diffing' (Jack Lindsey and colleagues, October 2024) and 'Stage-Wise Model Diffing'
+  (Trenton Bricken, Siddharth Mishra-Sharma and colleagues, late 2024); other groups took it up in
+  2025. Its first use is not established.
+year: 2024
+see_also:
+  - crosscoder
+  - sparse autoencoder
+  - emergent misalignment
+  - base model
+  - mechanistic interpretability
+contrast:
+  - fine-tuning
+sources:
+  - text: >-
+      Lindsey, J., Templeton, A., Marcus, J., Conerly, T., Batson, J. & Olah, C. (2024). Sparse
+      Crosscoders for Cross-Layer Features and Model Diffing. Transformer Circuits Thread.
+  - text: >-
+      Bricken, T., Mishra-Sharma, S., Marcus, J., Jermyn, A., Olah, C., Rivoire, K. & Henighan, T.
+      (2024). Stage-Wise Model Diffing. Transformer Circuits Thread.
+    url: https://transformer-circuits.pub/2024/model-diffing/index.html
+as_of: 2026-10

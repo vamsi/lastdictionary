@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ROC curve
+id: roc-curve
+pos: n.
+also:
+  - receiver operating characteristic
+  - ROC
+  - ROC analysis
+  - ROC space
+domain: ml
+domains:
+  - eval
+  - math
+level: core
+plain: >-
+  A graph showing how a detector's hit rate and false-alarm rate change together as it is made more
+  or less trigger-happy; the closer the curve hugs the top-left corner, the better.
+senses:
+  - definition: >-
+      A plot of a binary classifier's true positive rate ([[recall|recall]], sensitivity) against
+      its false positive rate (1 − [[specificity|specificity]]) as the decision threshold on its
+      score moves from strictest to most lenient ('receiver operating characteristic'). Each
+      threshold gives one point, and the curve runs from (0, 0), where nothing is flagged, to (1,
+      1), where everything is. A random classifier lies on the diagonal, a perfect one passes
+      through the top-left corner, and a curve below the diagonal signals systematically inverted
+      scores. ROC curves show the whole trade-off at once, are unaffected by class prevalence and by
+      any monotone rescaling of scores, and let practitioners pick an operating point given the
+      costs of each error; the [[auc|area under the curve]] summarizes them in one number. Under
+      heavy [[class-imbalance|class imbalance]], however, a small false positive rate can still mean
+      many false alarms, and the [[precision-recall-curve|precision–recall curve]] is often more
+      informative. ROC analysis measures ranking quality, not [[calibration|calibration]].
+    example: >-
+      From the ROC curve we picked the threshold with a 2% false positive rate, which still caught
+      85% of the fraud.
+origin: >-
+  Developed in signal detection theory for radar during and after the Second World War; the name
+  refers to the operating characteristic of a radar receiver. Wilson Tanner, John Swets and
+  colleagues brought it into psychophysics in the 1950s, Lee Lusted into medical decision making in
+  the 1960s, and Kent Spackman into machine learning in 1989; Tom Fawcett's 2006 tutorial is a
+  standard reference.
+see_also:
+  - AUC
+  - precision–recall curve
+  - recall
+  - specificity
+  - false positive
+  - confusion matrix
+  - class imbalance
+contrast:
+  - precision–recall curve
+sources:
+  - text: >-
+      Fawcett, T. (2006). An Introduction to ROC Analysis. Pattern Recognition Letters 27(8).
+  - text: >-
+      Swets, J. A. (1988). Measuring the Accuracy of Diagnostic Systems. Science 240(4857).
+  - text: >-
+      Spackman, K. A. (1989). Signal Detection Theory: Valuable Tools for Evaluating Inductive
+      Learning. Proc. 6th International Workshop on Machine Learning.

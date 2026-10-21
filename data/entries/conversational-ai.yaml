@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: conversational AI
+id: conversational-ai
+pos: n.
+also:
+  - conversational agent
+  - dialogue system
+  - dialog system
+  - spoken dialogue system
+  - conversational interface
+domain: core
+domains:
+  - llm
+  - percep
+level: core
+plain: >-
+  The technology that lets computers hold conversations with people in everyday language, by text or
+  voice. It powers chatbots, voice assistants and automated customer-service lines.
+senses:
+  - definition: >-
+      The field and technology of systems that interact with people through natural-language
+      dialogue, by text or speech, over multiple turns. Classic architectures were modular
+      pipelines: [[speech-recognition|speech recognition]], [[natural-language-understanding|natural
+      language understanding]] (intent detection and slot filling), dialogue-state tracking, a
+      dialogue policy choosing the next system action, [[natural-language-generation|natural
+      language generation]] and [[text-to-speech|text-to-speech]]. Task-oriented systems for
+      booking, banking or support were distinguished from open-domain 'chit-chat' systems. Since the
+      early 2020s [[large-language-model|large language models]] have largely replaced the
+      pipeline's middle stages, handling understanding, dialogue management and generation in one
+      model, often grounded with [[retrieval-augmented-generation|retrieval]] and
+      [[tool-use|tools]]; [[speech-to-speech-model|speech-to-speech models]] now collapse the audio
+      stages too. The label is mostly industrial; researchers more often say dialogue systems.
+    example: >-
+      The bank's conversational AI handles balance queries by voice and hands complex disputes to a
+      person.
+origin: >-
+  Research on dialogue systems dates from [[eliza|ELIZA]] (1966) and the frame-based GUS
+  travel-booking system (Daniel Bobrow and colleagues, 1977) through government-funded
+  spoken-dialogue projects around 2000. 'Conversational AI' became a common industry label in the
+  2010s, when messaging platforms and voice assistants created a market for chatbot-building
+  platforms.
+note: >-
+  Often used as a marketing umbrella for [[chatbot|chatbots]] and [[virtual-assistant|virtual
+  assistants]]. 'Conversational' describes the interface, not the depth of understanding behind it.
+see_also:
+  - chatbot
+  - virtual assistant
+  - AI assistant
+  - natural language understanding
+  - speech recognition
+  - speech-to-speech model
+  - ELIZA
+contrast:
+  - natural language processing

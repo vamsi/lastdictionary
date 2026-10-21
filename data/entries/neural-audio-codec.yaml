@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neural audio codec
+id: neural-audio-codec
+pos: n.
+also:
+  - audio tokenizer
+  - neural codec
+  - SoundStream
+  - EnCodec
+  - residual vector quantization
+  - RVQ
+  - acoustic tokens
+domain: gen
+domains:
+  - percep
+  - infer
+level: specialist
+plain: >-
+  A neural network that squeezes sound into a very compact stream of numbers and rebuilds it, used
+  both to send audio cheaply and to let AI models 'write' speech and music piece by piece.
+senses:
+  - definition: >-
+      A learned encoder–decoder that compresses audio waveforms into a low-rate sequence of discrete
+      codes and reconstructs audio from them. A convolutional (sometimes transformer) encoder
+      downsamples the waveform to tens of frames per second; each frame is quantized, typically by
+      residual vector quantization (RVQ), in which a stack of codebooks successively encodes the
+      error left by the previous stage, so bitrate can be traded against fidelity by using more or
+      fewer stages; and a decoder resynthesizes the waveform, trained with reconstruction, spectral
+      and adversarial losses. Besides compression — SoundStream spanned 3–18 kilobits per second
+      with a single model — codecs serve as the tokenizers of audio [[generative-model|generative
+      models]]: language models over codec tokens power zero-shot [[voice-cloning|voice cloning]]
+      (VALL-E), [[music-generation|music generation]] (MusicLM, MusicGen) and full-duplex
+      [[speech-to-speech-model|speech-to-speech]] systems. A tension between acoustic fidelity and
+      tokens that are easy to model has led to 'semantic' tokens, distilled codecs and
+      single-codebook designs.
+origin: >-
+  Google's SoundStream (Neil Zeghidour and colleagues, posted July 2021) introduced end-to-end
+  neural codecs with residual vector quantization, and Meta's EnCodec (Alexandre Défossez and
+  colleagues, October 2022) followed. Earlier neural codecs (2017–2019) paired conventional
+  compressed features with WaveNet-style neural decoders.
+year: 2021
+see_also:
+  - vocoder
+  - VQ-VAE
+  - image tokenizer
+  - voice cloning
+  - music generation
+  - speech-to-speech model
+  - token
+sources:
+  - text: >-
+      Zeghidour, N., Luebs, A., Omran, A., Skoglund, J. & Tagliasacchi, M. (2021). SoundStream: An
+      End-to-End Neural Audio Codec. arXiv:2107.03312.
+    url: https://arxiv.org/abs/2107.03312
+  - text: >-
+      Défossez, A., Copet, J., Synnaeve, G. & Adi, Y. (2022). High Fidelity Neural Audio
+      Compression. arXiv:2210.13438.
+    url: https://arxiv.org/abs/2210.13438

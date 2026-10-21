@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: inductive logic programming
+id: inductive-logic-programming
+pos: n.
+also:
+  - ILP
+  - Progol
+  - FOIL
+  - Popper (ILP system)
+  - Metagol
+domain: sym
+domains:
+  - ml
+level: specialist
+plain: >-
+  A kind of machine learning that discovers general logical rules — such as 'X is a grandparent of Z
+  if X is a parent of a parent of Z' — from examples and background knowledge.
+senses:
+  - definition: >-
+      A branch of [[machine-learning|machine learning]] whose hypotheses are
+      [[logic-programming|logic programs]], typically sets of [[horn-clause|Horn clauses]]: given
+      background knowledge written in logic and some positive and negative examples, it searches for
+      rules that, added to that knowledge, imply each positive example while implying none of the
+      negative ones. Systems search the space of clauses from general to specific (FOIL's top-down
+      refinement) or from specific to general (Progol, guided by a most specific 'bottom clause'),
+      or treat learning as constraint solving over hypotheses (Popper and learners based on
+      [[answer-set-programming|answer set programming]]); some invent new predicates and learn
+      recursive definitions (Metagol). Inductive logic programming learns from very few examples,
+      yields human-readable rules and reuses prior knowledge naturally, but it struggles with noisy
+      data and large hypothesis spaces. It has been applied to drug design, biology and learning
+      game rules, and differentiable variants connect it to [[neuro-symbolic-ai|neuro-symbolic AI]].
+origin: >-
+  Named by Stephen Muggleton in 1990; his 1991 paper in New Generation Computing set out the field,
+  unifying earlier work on learning logic programs such as Gordon Plotkin's least general
+  generalization (1970) and Ehud Shapiro's Model Inference System (1981). Ross Quinlan's FOIL (1990)
+  and Muggleton's Progol (1995) were influential systems.
+year: 1990
+see_also:
+  - logic programming
+  - Horn clause
+  - program synthesis
+  - neuro-symbolic AI
+  - Markov logic network
+  - rule-based system
+sources:
+  - text: >-
+      Muggleton, S. (1991). Inductive Logic Programming. New Generation Computing 8(4), 295–318.
+  - text: >-
+      Cropper, A. & Dumančić, S. (2022). Inductive Logic Programming at 30: A New Introduction.
+      Journal of Artificial Intelligence Research 74, 765–850.

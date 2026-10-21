@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fill-in-the-middle
+id: fill-in-the-middle
+pos: n.
+also:
+  - FIM
+  - infilling
+  - code infilling
+  - PSM
+  - SPM
+domain: llm
+domains:
+  - train
+  - eng
+level: specialist
+plain: >-
+  A training trick that teaches a text-writing AI to fill a gap using what comes both before and
+  after it — essential for coding assistants that insert code in the middle of a file.
+senses:
+  - definition: >-
+      A training transformation and prompt format that lets a left-to-right
+      [[causal-language-model|causal language model]] insert text between a given prefix and suffix.
+      During [[pretraining|pretraining]], a fraction of documents is split into prefix, middle and
+      suffix, rearranged so that the middle comes last, and marked with [[special-token|special
+      tokens]] — for example in prefix–suffix–middle ('PSM') order — so the model learns, by
+      ordinary [[next-token-prediction|next-token prediction]], to generate the middle conditioned
+      on both sides. At inference an editor supplies the code before and after the cursor and the
+      model completes the gap. Mohammad Bavarian and colleagues reported that training on a large
+      share of transformed data did not harm ordinary left-to-right performance, and recommended FIM
+      as a default. It is standard in code models used for editor autocompletion, such as StarCoder,
+      Code Llama and DeepSeek-Coder.
+    example: The autocomplete sends 2,000 tokens of prefix and 500 of suffix in FIM format.
+origin: >-
+  Mohammad Bavarian, Heewoo Jun, Nikolas Tezak, John Schulman, Christine McLeavey, Jerry Tworek and
+  Mark Chen of OpenAI introduced the transformation in 'Efficient Training of Language Models to
+  Fill in the Middle' (July 2022). Related infilling objectives appeared earlier in 2022 in Meta's
+  InCoder and CM3 models.
+year: 2022
+see_also:
+  - causal language model
+  - code generation
+  - special token
+  - next-token prediction
+  - GitHub Copilot
+  - masked language model
+sources:
+  - text: >-
+      Bavarian, M., Jun, H., Tezak, N., Schulman, J., McLeavey, C., Tworek, J. & Chen, M. (2022).
+      Efficient Training of Language Models to Fill in the Middle. arXiv:2207.14255.
+    url: https://arxiv.org/abs/2207.14255

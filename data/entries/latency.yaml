@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: latency
+id: latency
+pos: n.
+also:
+  - end-to-end latency
+  - response time
+  - tail latency
+  - p99 latency
+  - p50 latency
+domain: infer
+domains:
+  - eng
+  - hw
+level: core
+plain: >-
+  How long you wait between asking an AI system for something and getting the answer. Lower latency
+  means a snappier, more responsive system.
+senses:
+  - definition: >-
+      The elapsed time between issuing a request and receiving its result. For a
+      [[large-language-model|large language model]], end-to-end latency splits into the
+      [[time-to-first-token|time to first token]], dominated by queueing and the [[prefill|prefill]]
+      of the prompt, plus the time to generate the remaining tokens at the per-token rate of the
+      [[decode-phase|decode phase]] ([[time-per-output-token|time per output token]]); for long
+      answers and reasoning traces the second part usually dominates. Because averages hide slow
+      outliers, serving systems report percentiles (p50 for the median, p95 or p99 for the 'tail')
+      and set service-level objectives on them. Latency trades off against
+      [[throughput|throughput]]: larger batches raise a server's total output but make each request
+      wait longer. Network transfer, retrieval steps and [[tool-call|tool calls]] add to the latency
+      a user actually perceives.
+    example: >-
+      Moving the embedding step onto the same GPU cut p99 latency from 2.1 to 1.3 seconds.
+origin: >-
+  A general word for delay (from Latin latere, 'to lie hidden'), long established in computing and
+  telecommunications. In LLM serving its decomposition into time to first token and time per output
+  token became standard around 2023, for example in Databricks' October 2023 guide to inference
+  performance and in serving research such as DistServe (2024).
+note: >-
+  Distinct from [[throughput|throughput]]: a system can deliver high throughput with poor
+  per-request latency (large batches) or the reverse. Perceived latency also depends on
+  [[streaming|streaming]], which shows output before the response is complete.
+see_also:
+  - throughput
+  - time to first token
+  - time per output token
+  - tokens per second
+  - streaming
+  - model serving
+contrast:
+  - throughput
+sources:
+  - text: >-
+      Agarwal, M., Qureshi, A., Sardana, N., Li, L., Quevedo, J. & Khudia, D. (2023). LLM Inference
+      Performance Engineering: Best Practices. Databricks blog.
+    url: https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices

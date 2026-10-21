@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: batch inference
+id: batch-inference
+pos: n.
+also:
+  - offline inference
+  - batch prediction
+  - batch scoring
+  - batch API
+  - asynchronous inference
+domain: infer
+domains:
+  - eng
+level: core
+plain: >-
+  Running an AI model over a big pile of inputs as one job rather than answering each request live,
+  like processing a stack of forms overnight. Results come back later but cost less.
+senses:
+  - definition: >-
+      The running of a model over a large set of inputs as an offline job whose results are
+      collected later, rather than answering requests interactively. Because nobody waits on any
+      single result, the system can use very large batches, fill accelerators to capacity, shift
+      work into off-peak hours or spare capacity and retry failures, maximizing
+      [[throughput|throughput]] and minimizing cost per item at the expense of [[latency|latency]].
+      Classic examples are nightly scoring of every customer with a churn model, embedding a
+      document collection for [[vector-search|vector search]], labeling or filtering datasets, and
+      running evaluations. Many LLM [[model-api|APIs]] offer batch endpoints that accept a file of
+      requests and return results within a window such as 24 hours at about half the interactive
+      price.
+    example: >-
+      We re-embed the whole product catalog with batch inference every Sunday night at half the API
+      price.
+origin: >-
+  Rooted in the batch processing of mainframe computing; 'batch prediction' and 'batch scoring' were
+  standard MLOps terms by the late 2010s, contrasted with 'online' or 'real-time' inference. OpenAI
+  introduced an LLM Batch API with a 50% discount and 24-hour turnaround in April 2024, and other
+  model providers soon offered similar endpoints.
+note: >-
+  Not to be confused with batching inside a live server ([[continuous-batching|continuous
+  batching]]) or with [[batch-size|batch size]] in training. Some cloud platforms use 'asynchronous
+  inference' for a middle ground: queued requests answered within minutes.
+see_also:
+  - model serving
+  - throughput
+  - inference cost
+  - continuous batching
+  - model API
+  - MLOps
+contrast:
+  - model serving
+  - continuous batching
+as_of: 2026-10

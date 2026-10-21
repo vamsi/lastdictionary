@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: privacy-preserving machine learning
+id: privacy-preserving-machine-learning
+pos: n.
+also:
+  - PPML
+  - privacy-enhancing technologies
+  - PETs
+  - privacy-preserving AI
+domain: sec
+domains:
+  - ml
+  - data
+  - gov
+level: core
+plain: >-
+  The family of techniques for training and using AI models while keeping the underlying personal or
+  confidential data hidden — from adding careful noise to computing on encrypted data.
+senses:
+  - definition: >-
+      The collection of methods that let machine-learning models be trained, evaluated or used
+      without exposing sensitive data beyond what a stated [[threat-model|threat model]] allows.
+      Statistical methods limit what outputs reveal about individuals
+      ([[differential-privacy|differential privacy]], [[dp-sgd|DP-SGD]], [[pate|PATE]]);
+      architectural methods keep data where it is ([[federated-learning|federated learning]],
+      on-device processing); cryptographic methods compute on data that stays hidden
+      ([[secure-multi-party-computation|secure multi-party computation]],
+      [[homomorphic-encryption|homomorphic encryption]], [[secure-aggregation|secure aggregation]]);
+      and hardware methods isolate computation ([[confidential-computing|confidential computing]]).
+      The techniques protect different things — inputs, training data, model parameters or outputs —
+      and are often combined. Each trades privacy against accuracy, cost or trust assumptions, and
+      privacy attacks such as [[membership-inference-attack|membership inference]] are used to audit
+      them.
+    example: >-
+      The privacy-preserving machine learning stack combined federated learning, secure aggregation
+      and differential privacy.
+origin: >-
+  Rakesh Agrawal and Ramakrishnan Srikant's 'Privacy-Preserving Data Mining' and Yehuda Lindell and
+  Benny Pinkas's cryptographic counterpart (both 2000) launched the field. 'Privacy-preserving
+  machine learning' became a common label around 2017, appearing in the titles of the
+  secure-aggregation and SecureML papers; 'privacy-enhancing technologies' is the policy umbrella
+  term.
+year: 2000
+see_also:
+  - differential privacy
+  - federated learning
+  - secure multi-party computation
+  - homomorphic encryption
+  - confidential computing
+  - personally identifiable information
+sources:
+  - text: >-
+      Agrawal, R. & Srikant, R. (2000). Privacy-Preserving Data Mining. ACM SIGMOD 2000.

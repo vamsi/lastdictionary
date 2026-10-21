@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: linear attention
+id: linear-attention
+pos: n.
+also:
+  - linear transformer
+  - kernelized attention
+  - Performer
+  - RetNet
+  - gated linear attention
+  - DeltaNet
+  - Gated DeltaNet
+domain: llm
+domains:
+  - dl
+level: specialist
+plain: >-
+  A family of faster substitutes for attention whose cost grows in step with the length of the text
+  rather than with its square, by keeping a running summary instead of comparing every pair of
+  words.
+senses:
+  - definition: >-
+      A family of attention approximations or replacements whose cost grows linearly with sequence
+      length, obtained by removing or replacing the [[softmax|softmax]]. If similarity is a product
+      of feature maps φ(q)·φ(k), the associativity of matrix products lets the model combine keys
+      and values first and never form the n × n score matrix; in the causal case, the running sum of
+      value–key outer products acts as a fixed-size matrix-valued state updated once per token,
+      making the model a [[recurrent-neural-network|recurrent neural network]] with constant memory
+      during generation. Plain linear attention underperforms softmax attention, especially at
+      recall from long context, because a fixed state must compress the whole past. Later variants
+      add decay and gates (RetNet, gated linear attention, [[mamba|Mamba]]-2) or delta-rule updates
+      that overwrite stale associations (DeltaNet, Gated DeltaNet), and are often mixed with some
+      full-attention layers in [[hybrid-architecture|hybrid models]].
+    example: >-
+      Linear attention keeps a 128 × 128 state per head, so memory stays flat no matter how long the
+      chat runs.
+formula_latex: \mathrm{out}_t = \frac{\left(\sum_{j \le t} v_j\, \phi(k_j)^{\top}\right)
+  \phi(q_t)}{\phi(q_t)^{\top} \sum_{j \le t} \phi(k_j)}
+origin: >-
+  Angelos Katharopoulos, Apoorv Vyas, Nikolaos Pappas and François Fleuret formalized linear
+  attention and its equivalence to recurrent networks in 'Transformers are RNNs' (June 2020);
+  Performer (2020) approximated softmax with random features. Imanol Schlag, Kazuki Irie and Jürgen
+  Schmidhuber (2021) linked it to Schmidhuber's fast-weight programmers of the early 1990s.
+year: 2020
+see_also:
+  - state space model
+  - Mamba
+  - RWKV
+  - hybrid architecture
+  - recurrent neural network
+  - sparse attention
+  - long context
+contrast:
+  - scaled dot-product attention
+sources:
+  - text: >-
+      Katharopoulos, A., Vyas, A., Pappas, N. & Fleuret, F. (2020). Transformers are RNNs: Fast
+      Autoregressive Transformers with Linear Attention. ICML 2020.
+    url: https://arxiv.org/abs/2006.16236
+  - text: >-
+      Schlag, I., Irie, K. & Schmidhuber, J. (2021). Linear Transformers Are Secretly Fast Weight
+      Programmers. ICML 2021.

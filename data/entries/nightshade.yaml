@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Nightshade
+id: nightshade
+pos: prop. n.
+also:
+  - Nightshade poisoning
+domain: sec
+domains:
+  - gen
+  - society
+  - data
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free tool for artists that subtly alters their images so that AI image generators trained on
+  them without permission learn the wrong things — associating 'dog' with pictures of cats, say.
+senses:
+  - definition: >-
+      A prompt-specific [[data-poisoning|data poisoning]] tool for
+      [[text-to-image-model|text-to-image models]], released by University of Chicago researchers
+      for artists who object to their work being scraped for training. It perturbs an image so that
+      people still see its original subject while a model's image encoder sees features of a
+      different concept; because any single concept occupies a small share of training data,
+      relatively few such images captioned with that concept can corrupt how a model renders it. It
+      is meant as an offensive deterrent that raises the cost of training on unlicensed images,
+      complementing the defensive [[glaze|Glaze]]. Its effectiveness at web scale and against data
+      filtering, image purification or more robust encoders is debated, as is the ethics of
+      deliberately degrading shared models.
+    example: >-
+      Several illustrators ran their portfolios through Nightshade before posting them online.
+origin: >-
+  Developed by Shawn Shan, Wenxin Ding, Josephine Passananti, Stanley Wu, Haitao Zheng and Ben Zhao
+  at the University of Chicago; described in an October 2023 preprint (IEEE Symposium on Security
+  and Privacy 2024) and released publicly in January 2024. The name is that of a poisonous plant
+  family.
+year: 2023
+see_also:
+  - Glaze
+  - data poisoning
+  - clean-label poisoning
+  - web scraping
+  - AI copyright litigation
+  - text-to-image model
+sources:
+  - text: >-
+      Shan, S., Ding, W., Passananti, J., Wu, S., Zheng, H. & Zhao, B. Y. (2024). Nightshade:
+      Prompt-Specific Poisoning Attacks on Text-to-Image Generative Models. IEEE S&P 2024.
+      arXiv:2310.13828.

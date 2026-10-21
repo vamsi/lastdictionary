@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: machine psychology
+id: machine-psychology
+pos: n.
+also:
+  - AI psychology
+  - LLM psychology
+  - psychology of AI
+domain: mind
+domains:
+  - eval
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Studying AI systems the way psychologists study people — with carefully designed experiments on
+  their behavior — to discover what they can do, how they reason and where they go wrong.
+senses:
+  - definition: >-
+      The application of experimental methods from psychology to the behavior of AI systems,
+      especially [[large-language-model|large language models]], treating them as participants in
+      controlled experiments rather than only scoring them on [[benchmark|benchmarks]]. Studies
+      adapt paradigms such as cognitive-bias vignettes, [[theory-of-mind|theory of mind]] and
+      false-belief tasks, reasoning problems, personality questionnaires and developmental tests,
+      with controls such as novel items, counterbalancing and paraphrase to separate competence from
+      memorization. Practitioners stress that methods validated on humans may not transfer: a model
+      may have seen a test during training, may respond to surface wording, and lacks the stable
+      individual identity that questionnaires assume. Machine psychology complements
+      [[mechanistic-interpretability|mechanistic interpretability]], which studies the same systems
+      from the inside.
+    example: >-
+      The machine psychology study rewrote every vignette from scratch so the model could not have
+      memorized the answers.
+origin: >-
+  Proposed as a research program in the preprint 'Machine Psychology' (arXiv, March 2023, revised
+  through 2024), led by Thilo Hagendorff with co-authors including Ishita Dasgupta, Marcel Binz and
+  Eric Schulz. A related program, 'machine behaviour', was set out by Iyad Rahwan and colleagues in
+  Nature (2019).
+year: 2023
+see_also:
+  - cognitive science
+  - theory of mind
+  - Clever Hans effect
+  - anthropomorphism
+  - benchmark
+  - mechanistic interpretability
+sources:
+  - text: >-
+      Hagendorff, T., Dasgupta, I., Binz, M., Chan, S. C. Y., Lampinen, A., Wang, J. X., Akata, Z. &
+      Schulz, E. (2023). Machine Psychology. arXiv:2303.13988.
+    url: https://arxiv.org/abs/2303.13988
+  - text: Rahwan, I. et al. (2019). Machine Behaviour. Nature 568, 477–486.

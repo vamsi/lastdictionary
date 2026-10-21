@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: upper confidence bound
+id: upper-confidence-bound
+pos: n.
+also:
+  - UCB
+  - UCB1
+  - optimism in the face of uncertainty
+  - LinUCB
+domain: rl
+domains:
+  - math
+level: specialist
+plain: >-
+  A rule for choosing among uncertain options that gives each one a bonus for how little is known
+  about it, so promising but rarely tried options get a fair chance.
+senses:
+  - definition: >-
+      A family of [[multi-armed-bandit|bandit]] algorithms implementing 'optimism in the face of
+      uncertainty': each arm is scored by an upper confidence bound on its mean [[reward|reward]] —
+      its empirical average plus a bonus that shrinks as the arm is tried more — and the arm with
+      the highest bound is played. An arm is chosen either because it looks good or because it is
+      uncertain, and trying it either confirms its value or tightens its bound, so exploration is
+      directed rather than random. The classic UCB1 bonus is √(2 ln t / n_k), where n_k counts the
+      pulls of arm k after t rounds; it guarantees logarithmic [[regret|regret]] without prior
+      knowledge. Variants include KL-UCB, LinUCB for contextual bandits and UCRL for MDPs. Applied
+      recursively to game trees as UCT, and in the PUCT form used by [[alphazero|AlphaZero]], it is
+      the selection rule of [[monte-carlo-tree-search|Monte Carlo tree search]].
+    example: >-
+      UCB tried the new arm repeatedly at first because its confidence interval was so wide.
+formula_latex: a_t = \arg\max_{k} \left[ \hat{\mu}_k + \sqrt{\frac{2 \ln t}{n_k}} \right]
+origin: >-
+  Tze Leung Lai and Herbert Robbins (1985) built the first index policies based on upper confidence
+  bounds; Rajeev Agrawal (1995) simplified them, and Peter Auer, Nicolò Cesa-Bianchi and Paul
+  Fischer's 'Finite-time Analysis of the Multiarmed Bandit Problem' (Machine Learning, 2002)
+  introduced the widely used UCB1. Levente Kocsis and Csaba Szepesvári's UCT (2006) carried the idea
+  into tree search.
+year: 1985
+note: >-
+  In RL papers 'UCB' almost always means this algorithm or its exploration bonus, not merely the
+  upper end of a confidence interval.
+see_also:
+  - multi-armed bandit
+  - regret
+  - Monte Carlo tree search
+  - exploration–exploitation trade-off
+  - epsilon-greedy
+  - intrinsic motivation
+contrast:
+  - Thompson sampling
+sources:
+  - text: >-
+      Auer, P., Cesa-Bianchi, N. & Fischer, P. (2002). Finite-time Analysis of the Multiarmed Bandit
+      Problem. Machine Learning 47, 235–256.
+  - text: >-
+      Lai, T. L. & Robbins, H. (1985). Asymptotically efficient adaptive allocation rules. Advances
+      in Applied Mathematics 6(1), 4–22.

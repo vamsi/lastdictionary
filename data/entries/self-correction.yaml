@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-correction
+id: self-correction
+pos: n.
+also:
+  - self-correct
+  - self-refinement
+  - self-refine
+  - self-repair
+  - self-debugging
+domain: agents
+domains:
+  - llm
+  - train
+level: core
+plain: >-
+  An AI model noticing and fixing its own mistakes — by rereading its answer, running a test or
+  checking a source — before it gives a final result.
+senses:
+  - definition: >-
+      The process by which a model revises its own output after detecting errors, within one
+      response or across turns of an [[agent-loop|agent loop]]. Researchers distinguish intrinsic
+      self-correction, in which the model critiques and revises its answer using only its own
+      judgment, from extrinsic self-correction, which uses outside signals such as compiler errors,
+      failing tests, tool results, retrieved evidence or a separate [[verifier|verifier]]. Evidence
+      favors the second: models fix errors reliably when feedback is informative, but studies found
+      that simply prompting a model to review its answer often fails to improve, and sometimes
+      worsens, reasoning accuracy. Training can instill the skill — for instance multi-turn
+      [[reinforcement-learning|reinforcement learning]] on the model's own correction attempts — and
+      [[reasoning-model|reasoning models]] learn to backtrack within their chains of thought. For
+      agents, noticing and recovering from mistakes largely determines success on
+      [[long-horizon-task|long-horizon tasks]].
+    example: >-
+      Self-correction kicked in when the build failed: the agent reread the error, fixed the import
+      and reran the tests.
+origin: >-
+  Generate–critique–revise methods for language models appeared in 2023, notably Self-Refine (Aman
+  Madaan et al., March 2023), [[reflexion|Reflexion]] (Noah Shinn et al., March 2023) and
+  self-debugging for code (Xinyun Chen et al., April 2023). Jie Huang and colleagues' 'Large
+  Language Models Cannot Self-Correct Reasoning Yet' (October 2023; ICLR 2024) prompted the
+  intrinsic–extrinsic distinction; Google DeepMind's SCoRe (2024) trained self-correction with
+  reinforcement learning.
+year: 2023
+note: >-
+  Claims of self-correction should state what feedback was available: gains measured with oracle
+  labels — stopping once the answer is known to be right — overstate real-world ability.
+see_also:
+  - Reflexion
+  - evaluator–optimizer
+  - verifier
+  - reasoning model
+  - long-horizon task
+  - chain of thought
+sources:
+  - text: >-
+      Huang, J., Chen, X., Mishra, S., Zheng, H. S., Yu, A. W., Song, X. & Zhou, D. (2023). Large
+      Language Models Cannot Self-Correct Reasoning Yet. arXiv:2310.01798 (ICLR 2024).
+    url: https://arxiv.org/abs/2310.01798
+  - text: >-
+      Kumar, A. et al. (2024). Training Language Models to Self-Correct via Reinforcement Learning.
+      arXiv:2409.12917.
+    url: https://arxiv.org/abs/2409.12917
+  - text: >-
+      Madaan, A. et al. (2023). Self-Refine: Iterative Refinement with Self-Feedback.
+      arXiv:2303.17651.
+    url: https://arxiv.org/abs/2303.17651

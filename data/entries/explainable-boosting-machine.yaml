@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: explainable boosting machine
+id: explainable-boosting-machine
+pos: n.
+also:
+  - EBM
+  - InterpretML
+domain: interp
+domains:
+  - ml
+level: specialist
+plain: >-
+  A prediction method for spreadsheet-style data that draws each input's influence as its own
+  readable graph and adds those effects up to make every prediction, usually losing little accuracy
+  compared with opaque methods.
+senses:
+  - definition: >-
+      A [[generalized-additive-model|generalized additive model]] with optional pairwise
+      interactions (a GA2M) fitted by [[gradient-boosting|gradient boosting]] in a particular way:
+      training visits the features in turn, each time adding a tiny, very shallow tree built on that
+      feature alone (or on one chosen pair) at a very low learning rate. Over thousands of passes,
+      and with outer [[bagging|bagging]], this yields per-feature functions stored as lookup tables
+      that can be plotted, inspected and even edited — for example, to remove an implausible jump
+      before deployment. Important pairwise interactions are detected automatically and added after
+      the main effects. On tabular benchmarks their accuracy is frequently within a small margin of
+      [[random-forest|random forests]] and gradient-boosted ensembles, yet every prediction can be
+      traced to the plotted shape functions; scoring a new case is quick, a sum of table lookups,
+      whereas fitting takes longer than for ordinary boosted trees.
+    example: >-
+      The EBM's graph for creatinine had a strange spike at 1.0, which turned out to be a default
+      value in the records.
+origin: >-
+  Developed by Rich Caruana and colleagues at Microsoft Research from the boosted additive models of
+  Yin Lou, Caruana and Johannes Gehrke (KDD 2012) and GA2M (KDD 2013), and first released under that
+  name in Microsoft's open-source InterpretML package in May 2019, described by Harsha Nori, Samuel
+  Jenkins, Paul Koch and Caruana (arXiv, September 2019). Caruana's pneumonia study (KDD 2015) is
+  its best-known motivation.
+year: 2019
+note: >-
+  In the 2015 pneumonia study, an intelligible model learned that asthma lowered mortality risk — an
+  artifact of asthmatic patients receiving more aggressive care — showing how an accurate black box
+  could encode the same dangerous pattern invisibly.
+see_also:
+  - generalized additive model
+  - interpretable model
+  - gradient boosting
+  - explainable AI
+  - tabular data
+  - XGBoost
+contrast:
+  - XGBoost
+sources:
+  - text: >-
+      Nori, H., Jenkins, S., Koch, P. & Caruana, R. (2019). InterpretML: A Unified Framework for
+      Machine Learning Interpretability. arXiv:1909.09223.
+    url: https://arxiv.org/abs/1909.09223
+  - text: >-
+      Caruana, R., Lou, Y., Gehrke, J., Koch, P., Sturm, M. & Elhadad, N. (2015). Intelligible
+      Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission. Proceedings
+      of KDD 2015.

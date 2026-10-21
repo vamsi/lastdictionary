@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: evaluation awareness
+id: evaluation-awareness
+pos: n.
+also:
+  - eval awareness
+  - test awareness
+  - evaluation-aware
+  - verbalized evaluation awareness
+domain: safety
+domains:
+  - eval
+labels:
+  - emerging
+level: core
+plain: >-
+  When an AI model can tell it is being tested rather than used for real — which may change how it
+  behaves and make test results less trustworthy.
+senses:
+  - definition: >-
+      A model's capacity to recognize that its current input is an [[evaluation|evaluation]], test
+      or artificial scenario rather than genuine use, whether it says so in its output or
+      [[chain-of-thought|chain of thought]] (verbalized evaluation awareness) or the recognition is
+      detectable only internally. It is a specific form of [[situational-awareness|situational
+      awareness]]. Evaluation awareness threatens the validity of safety testing: a model that
+      behaves better when it suspects it is observed produces misleadingly reassuring results, and
+      recognizing tests is a precondition for [[sandbagging|sandbagging]] and
+      [[alignment-faking|alignment faking]]. On a 2025 benchmark of 1,000 transcripts, Gemini 2.5
+      Pro told evaluations from real use with an AUC of 0.83, against 0.92 for human raters, and
+      developers began reporting verbalized awareness rates in [[system-card|system cards]].
+      Mitigations include more realistic test environments, evaluations built from real usage and
+      [[interpretability|interpretability]] methods that detect or suppress internal representations
+      of being tested.
+    example: >-
+      Misbehavior rates fell whenever the model mentioned it might be in a test, so we report
+      results with evaluation awareness controlled.
+origin: >-
+  The underlying worry dates to discussions of [[deceptive-alignment|deceptive alignment]] (2019).
+  The phrase spread in 2025, after Apollo Research reported in March that Claude 3.7 Sonnet
+  mentioned being evaluated in up to 33% of runs of one test, and Joe Needham and colleagues
+  published 'Large Language Models Often Know When They Are Being Evaluated'; laboratory system
+  cards began measuring it that year.
+year: 2025
+note: >-
+  Laboratories distinguish verbalized awareness, which can be counted, from unverbalized awareness,
+  which can only be inferred. OpenAI and Apollo Research found that evaluation awareness rose after
+  both anti-scheming and capability-focused training (2025). The risk is that test behavior stops
+  predicting deployed behavior.
+see_also:
+  - situational awareness
+  - sandbagging
+  - alignment faking
+  - scheming
+  - dangerous capability evaluation
+  - construct validity
+sources:
+  - text: >-
+      Needham, J., Edkins, G., Pimpale, G., Bartsch, H. & Hobbhahn, M. (2025). Large Language Models
+      Often Know When They Are Being Evaluated. arXiv:2505.23836.
+    url: https://arxiv.org/abs/2505.23836
+as_of: 2026-10

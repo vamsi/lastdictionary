@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: LEACE
+id: leace
+pos: abbr.
+also:
+  - least-squares concept erasure
+  - concept scrubbing
+domain: interp
+domains:
+  - math
+  - society
+level: specialist
+plain: >-
+  A one-step mathematical method for scrubbing a concept, such as gender, from an AI model's
+  internal data so that no simple detector can find it, while changing everything else as little as
+  possible.
+senses:
+  - definition: >-
+      Least-squares concept erasure: a closed-form method of linear [[concept-erasure|concept
+      erasure]] that applies an affine edit after which no linear classifier can predict a given
+      concept better than a constant guess, choosing, among all edits with that guarantee, the one
+      that moves the representations least on average under a wide range of distance measures. It
+      rests on the result that a representation is linearly guarded exactly when its
+      class-conditional means are equal — that is, when the cross-covariance between the
+      representation and the concept label is zero. Because the edit depends only on the data's
+      means and covariances, it is cheap enough to run at every layer of a large network, which its
+      authors call concept scrubbing; they used it to gauge how far language models depend on
+      part-of-speech information and to cut gender bias in BERT embeddings.
+    example: >-
+      We applied LEACE to every layer and perplexity rose sharply, so the model clearly relies on
+      that feature.
+origin: >-
+  Introduced by Nora Belrose, David Schneider-Joseph, Shauli Ravfogel, Ryan Cotterell, Edward Raff
+  and Stella Biderman in 'LEACE: Perfect linear concept erasure in closed form' (arXiv, June 2023;
+  NeurIPS 2023), largely from EleutherAI.
+year: 2023
+note: >-
+  The guarantee is linear only: nonlinear classifiers may still detect the concept. Because LEACE
+  removes only what a linear model could exploit, it typically damages other information less than
+  iterative or adversarial methods.
+see_also:
+  - concept erasure
+  - iterative nullspace projection
+  - directional ablation
+  - linear probe
+  - protected attribute
+sources:
+  - text: >-
+      Belrose, N., Schneider-Joseph, D., Ravfogel, S., Cotterell, R., Raff, E. & Biderman, S.
+      (2023). LEACE: Perfect linear concept erasure in closed form. NeurIPS 2023. arXiv:2306.03819.
+    url: https://arxiv.org/abs/2306.03819

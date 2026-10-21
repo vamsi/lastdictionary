@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: content moderation
+id: content-moderation
+pos: n.
+also:
+  - moderation
+  - automated moderation
+  - AI moderation
+  - trust and safety
+domain: sec
+domains:
+  - society
+  - gov
+labels:
+  - legal
+level: core
+plain: >-
+  Checking what people post, or what an AI produces, and removing, limiting or labeling whatever
+  breaks the rules or the law — done by people, by AI, or by both together.
+senses:
+  - definition: >-
+      The work of finding and acting on material, whether posted by users or produced by AI, that
+      breaks a service's rules or the law; responses range from deleting it or limiting how widely
+      it is shown to labeling it, suspending accounts or referring cases to human reviewers or
+      authorities. At internet scale it depends on automation — hash matching against databases of
+      known illegal images, [[classifier|classifiers]] for categories such as hate speech,
+      harassment, spam and sexual content, and increasingly [[large-language-model|language models]]
+      that apply written policies directly — with human moderators handling appeals and ambiguous or
+      novel cases. Generative AI changes moderation in two ways: models must moderate their own
+      inputs and outputs (see [[safety-classifier|safety classifier]], [[guardrails|guardrails]]),
+      and platforms face floods of synthetic content such as [[deepfake|deepfakes]] and spam. Errors
+      in both directions, wrongful removals and missed harm, fall unevenly across languages and
+      communities, so transparency and appeal rights are central to its regulation.
+    example: >-
+      The model handles first-pass content moderation and routes borderline cases to human reviewers
+      for each language.
+origin: >-
+  Practiced informally since early online forums and professionalized by large platforms in the
+  2000s; Microsoft's PhotoDNA hash matching (2009) and Jigsaw's Perspective API (2017) marked steps
+  toward automation. The EU [[digital-services-act|Digital Services Act]] (2022) gave the term a
+  legal definition, and moderation by policy-following language models spread from 2023.
+see_also:
+  - safety classifier
+  - guardrails
+  - deepfake detection
+  - misinformation
+  - AI watermarking
+  - over-refusal
+sources:
+  - text: >-
+      Regulation (EU) 2022/2065 of the European Parliament and of the Council on a Single Market for
+      Digital Services (Digital Services Act).
+  - text: >-
+      Gillespie, T. (2018). Custodians of the Internet: Platforms, Content Moderation, and the
+      Hidden Decisions That Shape Social Media. Yale University Press.
+standards: EU Digital Services Act (Reg. (EU) 2022/2065), Art. 3(t)

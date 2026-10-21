@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fairness impossibility theorem
+id: fairness-impossibility-theorem
+pos: n.
+also:
+  - impossibility theorem of fairness
+  - impossibility of fairness
+  - fairness impossibility results
+  - Kleinberg–Mullainathan–Raghavan theorem
+domain: society
+domains:
+  - ml
+  - math
+level: core
+plain: >-
+  A mathematical result showing that when groups differ in how often an outcome really occurs, no
+  imperfect prediction system can be fair by every common measure at once.
+senses:
+  - definition: >-
+      Any of several closely related results showing that common [[group-fairness|group fairness]]
+      criteria are mutually incompatible except in degenerate cases. Jon Kleinberg, Sendhil
+      Mullainathan and Manish Raghavan proved that a risk score cannot simultaneously be calibrated
+      within each group and balanced for both the positive and the negative class (equal average
+      scores for true positives, and for true negatives, across groups) unless base rates are equal
+      or prediction is perfect. Alexandra Chouldechova showed that if base rates differ, a
+      classifier with equal positive predictive value across groups ([[predictive-parity|predictive
+      parity]]) must have unequal false positive or false negative rates, violating
+      [[equalized-odds|equalized odds]]. The results explain how both sides of the [[compas|COMPAS]]
+      dispute could be right about different metrics, and they force an explicit choice about which
+      errors to equalize.
+    example: >-
+      Given the impossibility theorem, the committee had to decide whether equal error rates or
+      equally meaningful scores mattered more.
+origin: >-
+  Proved independently in 2016, prompted by the COMPAS controversy: Kleinberg, Mullainathan and
+  Raghavan, 'Inherent Trade-Offs in the Fair Determination of Risk Scores' (arXiv September 2016;
+  ITCS 2017), and Chouldechova, 'Fair prediction with disparate impact' (arXiv October 2016; Big
+  Data, 2017). Sorelle Friedler, Carlos Scheidegger and Suresh Venkatasubramanian argued along
+  related lines the same year.
+year: 2016
+note: >-
+  The name is informal: there is no single theorem but a family of results. They do not show that
+  fairness is impossible, only that certain statistical criteria cannot all be equalized when base
+  rates differ.
+see_also:
+  - predictive parity
+  - equalized odds
+  - demographic parity
+  - COMPAS
+  - calibration
+  - algorithmic fairness
+sources:
+  - text: >-
+      Kleinberg, J., Mullainathan, S. & Raghavan, M. (2017). Inherent Trade-Offs in the Fair
+      Determination of Risk Scores. Proc. ITCS 2017.
+    url: https://arxiv.org/abs/1609.05807
+  - text: >-
+      Chouldechova, A. (2017). Fair Prediction with Disparate Impact: A Study of Bias in Recidivism
+      Prediction Instruments. Big Data 5(2), 153–163.
+    url: https://arxiv.org/abs/1610.07524

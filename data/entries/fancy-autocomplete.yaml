@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fancy autocomplete
+id: fancy-autocomplete
+pos: n.
+also:
+  - glorified autocomplete
+  - autocomplete on steroids
+  - spicy autocomplete
+  - just autocomplete
+domain: culture
+domains:
+  - llm
+  - mind
+labels:
+  - informal
+  - contested
+level: core
+plain: >-
+  A dismissive description of AI chatbots as nothing more than a souped-up version of the feature on
+  a phone keyboard that suggests your next word.
+senses:
+  - definition: >-
+      A deflationary characterization of [[large-language-model|large language models]] as elaborate
+      versions of a phone keyboard's next-word suggestions. The literal part is accurate: a language
+      model is trained by [[next-token-prediction|next-token prediction]] and generates text one
+      [[token|token]] at a time. The disputed part is the implied 'merely'. Critics of the phrase
+      argue that predicting text well at scale requires internal representations of facts, reasoning
+      steps and other people's beliefs, and that [[post-training|post-training]],
+      [[reinforcement-learning|reinforcement learning]] and [[tool-use|tool use]] make current
+      systems more than predictors of internet text; users of the phrase answer that claims about
+      capability should be tested against the mechanism rather than against the impression fluency
+      creates. Often used interchangeably with [[stochastic-parrot|stochastic parrot]], though it
+      stresses the training objective rather than the absence of meaning.
+    example: >-
+      If it's fancy autocomplete, it's autocomplete that just found a bug our whole team missed.
+origin: >-
+  Comparisons of language models to predictive text circulated around GPT-2 (2019) and spread widely
+  after ChatGPT's release in November 2022, in variants such as 'autocomplete on steroids' and
+  'glorified autocomplete'. No single coiner is known.
+note: >-
+  Geoffrey Hinton and Ilya Sutskever have argued the reverse — that predicting the next word very
+  well requires understanding what is being said — while linguists such as Emily M. Bender reject
+  that inference.
+see_also:
+  - stochastic parrot
+  - next-token prediction
+  - language model
+  - Potemkin understanding
+  - world model
+  - base model

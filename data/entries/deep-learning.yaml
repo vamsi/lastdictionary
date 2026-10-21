@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deep learning
+id: deep-learning
+pos: n.
+also:
+  - DL
+  - deep neural network
+  - DNN
+domain: core
+domains:
+  - dl
+  - hist
+level: essential
+plain: >-
+  Machine learning done with neural networks built from many stacked layers: raw data such as
+  pixels, sound or text goes in at one end, and each layer turns what it receives into something
+  more abstract.
+senses:
+  - definition: >-
+      The branch of [[machine-learning|machine learning]] that trains [[neural-network|artificial
+      neural networks]] with many [[layer|layers]] and lets them discover for themselves the
+      intermediate representations a task requires, instead of relying on [[feature|features]]
+      designed by people. Because the layers are stacked, each can build on the representations of
+      the one below, from simple local patterns near the input (a contrast boundary in an image, a
+      burst of sound) to abstract structure deeper in (a face, a spoken word, the sense of a
+      sentence). The parameters, from millions to hundreds of billions of them, are learned jointly
+      by [[backpropagation|backpropagation]] and [[gradient-descent|gradient descent]] on large
+      datasets, typically on [[gpu|GPUs]] or other accelerators. Characteristic architectures
+      include [[convolutional-neural-network|convolutional]], [[recurrent-neural-network|recurrent]]
+      and [[transformer|transformer]] networks. From the early 2010s deep learning displaced
+      hand-engineered features in vision, speech and language, and it underlies modern
+      [[generative-ai|generative AI]]. Its costs are a large appetite for data and compute and
+      limited transparency (the [[black-box|black box]] problem); see also
+      [[representation-learning|representation learning]].
+    example: >-
+      Deep learning only beat the hand-built speech pipeline once we had a thousand hours of
+      transcribed audio.
+origin: >-
+  Rina Dechter introduced the phrase to machine learning in 1986 (for a constraint-satisfaction
+  search technique); Igor Aizenberg and colleagues applied it to neural networks in 2000. The modern
+  sense spread after Geoffrey Hinton and colleagues' 2006 work on deep belief networks and became
+  mainstream after [[alexnet|AlexNet]] won the 2012 ImageNet challenge. Hinton, Yoshua Bengio and
+  Yann LeCun shared the 2018 Turing Award for the field.
+year: 2000
+note: >-
+  Priority is disputed: Jürgen Schmidhuber and others trace deep, multilayer learning back to Alexey
+  Ivakhnenko's work in the 1960s. 'Deep' refers to the number of layers, not depth of understanding;
+  a network with a single hidden layer is usually called shallow.
+see_also:
+  - neural network
+  - machine learning
+  - backpropagation
+  - representation learning
+  - deep learning revolution
+  - transformer
+  - AlexNet
+  - godfathers of AI
+contrast:
+  - symbolic AI
+  - feature engineering
+sources:
+  - text: LeCun, Y., Bengio, Y. & Hinton, G. (2015). Deep learning. Nature, 521, 436–444.
+  - text: >-
+      Hinton, G. E., Osindero, S. & Teh, Y.-W. (2006). A Fast Learning Algorithm for Deep Belief
+      Nets. Neural Computation, 18(7), 1527–1554.
+  - text: Goodfellow, I., Bengio, Y. & Courville, A. (2016). Deep Learning. MIT Press.

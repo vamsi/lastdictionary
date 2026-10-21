@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: density estimation
+id: density-estimation
+pos: n.
+also:
+  - probability density estimation
+  - kernel density estimation
+  - KDE
+  - Parzen window
+  - Parzen–Rosenblatt window method
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  Working out from a sample of data how likely different values are, by drawing a smooth curve or
+  surface showing where data points bunch up and where they are rare.
+senses:
+  - definition: >-
+      The task of inferring, from a finite sample, the [[probability-density-function|probability
+      density function]] of the process that produced it. Parametric approaches assume a family of
+      distributions and fit its parameters, typically by [[maximum-likelihood-estimation|maximum
+      likelihood]]; a single Gaussian and the [[gaussian-mixture-model|Gaussian mixture model]] are
+      common choices. Nonparametric approaches let the data determine the shape: the histogram, and
+      kernel density estimation (KDE), which places a smooth bump (kernel) on every sample and
+      averages them, with a bandwidth h that trades spiky, high-variance estimates against
+      oversmoothed, biased ones. Nonparametric estimates degrade quickly as dimensions grow
+      ([[curse-of-dimensionality|curse of dimensionality]]), so high-dimensional density estimation
+      relies on learned models: [[normalizing-flow|normalizing flows]] and
+      [[autoregressive-model|autoregressive models]] give exact likelihoods, while
+      [[variational-autoencoder|variational autoencoders]] and [[diffusion-model|diffusion models]]
+      give bounds. Density estimates underpin [[anomaly-detection|anomaly detection]] (low density
+      is suspicious), [[generative-model|generative modeling]], Bayesian classifiers and data
+      visualization.
+    example: >-
+      The kernel density estimate of delivery times showed a second hump at 45 minutes that the
+      average had hidden.
+formula_latex: \hat{f}_h(x) = \frac{1}{nh} \sum_{i=1}^{n} K\!\left(\frac{x - x_i}{h}\right)
+origin: >-
+  Karl Pearson named the histogram in the 1890s. Murray Rosenblatt (1956) and Emanuel Parzen (1962)
+  independently introduced kernel density estimation, which is still called the Parzen–Rosenblatt
+  window method. Bernard Silverman's 1986 book Density Estimation for Statistics and Data Analysis
+  popularized practical bandwidth rules, and deep generative models later made density estimation a
+  central problem of machine learning.
+year: 1956
+see_also:
+  - probability density function
+  - Gaussian mixture model
+  - anomaly detection
+  - normalizing flow
+  - generative model
+  - maximum likelihood estimation
+  - curse of dimensionality
+sources:
+  - text: >-
+      Rosenblatt, M. (1956). Remarks on Some Nonparametric Estimates of a Density Function. Annals
+      of Mathematical Statistics 27(3).
+  - text: >-
+      Parzen, E. (1962). On Estimation of a Probability Density Function and Mode. Annals of
+      Mathematical Statistics 33(3).
+  - text: >-
+      Silverman, B. W. (1986). Density Estimation for Statistics and Data Analysis. London: Chapman
+      and Hall.

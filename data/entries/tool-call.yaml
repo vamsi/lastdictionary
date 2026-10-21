@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tool call
+id: tool-call
+pos: n.
+also:
+  - function call
+  - tool invocation
+  - tool use block
+  - tool request
+domain: agents
+domains:
+  - llm
+level: core
+plain: >-
+  A single request from an AI model to use one of its tools — naming the tool and filling in the
+  details — which the surrounding software then carries out and reports back on.
+senses:
+  - definition: >-
+      A structured message in which a model requests one invocation of a [[tool|tool]], naming it
+      and supplying arguments that match its schema, usually as JSON with a unique call identifier.
+      The model cannot act by itself: the [[harness|harness]] parses the call, checks
+      [[permission-system|permissions]], executes it and returns a tool result tagged with the same
+      identifier, which joins the context for the model's next step. One model turn may contain
+      several tool calls, run in sequence or in parallel. Tool calls are the atomic actions of the
+      [[agent-loop|agent loop]] and the unit in which agents are logged, audited, rate-limited and
+      blocked — [[hook|hooks]] and approval prompts typically act on individual calls. Malformed
+      calls (invalid JSON, wrong argument types, invented tool names) are a classic failure, reduced
+      by schema-constrained decoding and by error messages that let the model retry.
+    example: >-
+      The transcript shows 38 tool calls, mostly file reads, before the agent made its first edit.
+origin: >-
+  The phrase followed OpenAI's [[function-calling|function calling]] API (June 2023) and its later
+  'tools' interface, whose responses carry a 'tool_calls' field; Anthropic's API calls the same
+  object a 'tool_use' block. By 2024 'tool call' was the generic name across providers and
+  [[agent-framework|agent frameworks]].
+year: 2023
+note: >-
+  Strictly, the call is the model's request and the tool result is the harness's reply; together
+  they form one round trip of the agent loop.
+see_also:
+  - tool
+  - function calling
+  - agent loop
+  - harness
+  - hook
+  - permission system
+sources:
+  - text: >-
+      Paniego, S. & Roy Gosthipaty, A. (2026). Harness, Scaffold, and the AI Agent Terms Worth
+      Getting Right. Hugging Face blog.
+    url: https://huggingface.co/blog/agent-glossary

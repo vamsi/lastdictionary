@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: gradient descent
+id: gradient-descent
+pos: n.
+also:
+  - steepest descent
+  - batch gradient descent
+  - full-batch gradient descent
+domain: dl
+domains:
+  - math
+  - ml
+level: essential
+plain: >-
+  A method for training models by repeatedly nudging every setting a small step in whichever
+  direction most reduces the error, like a hiker who cannot see the valley but keeps stepping
+  wherever the ground tilts down.
+senses:
+  - definition: >-
+      The basic first-order [[optimization|optimization]] recipe for driving a differentiable
+      function down: compute the [[gradient|gradient]] at the current point, which points along the
+      steepest uphill direction, move a small distance the opposite way, and repeat; in symbols θ ←
+      θ − η∇L(θ), where η is the [[learning-rate|learning rate]]. In machine learning, L is the
+      [[loss-function|loss function]] averaged over training data and the gradient is computed by
+      [[backpropagation|backpropagation]]. Plain or full-batch gradient descent uses the whole
+      dataset at every step; deep learning instead uses [[stochastic-gradient-descent|stochastic
+      gradient descent]] on [[mini-batch|mini-batches]], usually with [[momentum|momentum]] or an
+      adaptive [[optimizer|optimizer]] such as [[adam|Adam]]. On smooth convex problems a small
+      enough step size guarantees convergence to the global minimum. On the non-convex losses of
+      neural networks it guarantees only approach to a stationary point, which could in principle be
+      a poor [[local-minimum|local minimum]] or [[saddle-point|saddle point]]; in practice large
+      networks trained this way reach low training loss and generalize well, a fact still only
+      partly explained. Behavior depends sharply on η: too small is slow, too large oscillates or
+      diverges (see [[edge-of-stability|edge of stability]]).
+    example: >-
+      Full-batch gradient descent is too expensive here, so we sample mini-batches of 512.
+formula_latex: \theta_{t+1} = \theta_t - \eta \, \nabla_{\theta} L(\theta_t)
+origin: >-
+  Augustin-Louis Cauchy described the method in an 1847 note to the Paris Academy of Sciences, as a
+  way to solve systems of simultaneous equations. Jacques Hadamard proposed a similar scheme in a
+  memoir on elastic plates (1907; published 1908), and Haskell Curry studied its convergence for
+  nonlinear minimization in 1944. Stochastic versions entered neural computing with Bernard Widrow
+  and Marcian Hoff's LMS rule (1960) and became the engine of deep learning through backpropagation
+  in the 1980s.
+year: 1847
+note: >-
+  'Gradient descent' is often used loosely for the whole family of gradient-based optimizers,
+  including SGD and Adam. Not to be confused with [[gradient-boosting|gradient boosting]], which
+  adds new models fitted to the loss gradient rather than updating one model's parameters.
+see_also:
+  - stochastic gradient descent
+  - learning rate
+  - backpropagation
+  - loss landscape
+  - momentum
+  - optimizer
+  - convergence
+contrast:
+  - gradient boosting
+  - second-order optimization
+sources:
+  - text: >-
+      Cauchy, A.-L. (1847). Méthode générale pour la résolution des systèmes d'équations
+      simultanées. Comptes rendus de l'Académie des sciences 25, 536–538.
+  - text: >-
+      Curry, H. B. (1944). The method of steepest descent for non-linear minimization problems.
+      Quarterly of Applied Mathematics 2, 258–261.

@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: knowledge distillation
+id: knowledge-distillation
+pos: n.
+also:
+  - distillation
+  - model distillation
+  - teacher–student training
+  - teacher model
+  - student model
+  - self-distillation
+domain: train
+domains:
+  - infer
+  - dl
+  - llm
+level: essential
+plain: >-
+  Training a smaller or cheaper 'student' AI to copy the behavior of a larger 'teacher' AI, so the
+  student keeps much of the teacher's skill while being faster to run.
+senses:
+  - definition: >-
+      A training method in which a student model learns to reproduce the outputs of a teacher model
+      (or ensemble) instead of, or in addition to, ground-truth labels. In the classic formulation
+      the student minimizes the [[kullback-leibler-divergence|Kullback–Leibler divergence]] between
+      its output distribution and the teacher's, both softened by a [[temperature|temperature]] T >
+      1 so that the relative probabilities of wrong classes — what Geoffrey Hinton called 'dark
+      knowledge' — carry information; this is usually mixed with the ordinary label loss. For
+      [[large-language-model|language models]], variants include matching per-token distributions
+      (logit distillation), training on the teacher's generated text (sequence-level distillation,
+      in practice [[supervised-fine-tuning|supervised fine-tuning]] on [[synthetic-data|synthetic
+      data]]), and [[on-policy-distillation|on-policy distillation]]. Distillation produces small,
+      fast models — DistilBERT kept about 97 percent of BERT's benchmark performance with 40 percent
+      fewer parameters — and is how many [[small-language-model|small]] and reasoning models are
+      made, such as the Qwen- and Llama-based distillations of [[deepseek-r1|DeepSeek-R1]] (2025).
+    example: >-
+      We distilled the 400B teacher into a 3B student that runs on a phone and keeps most of its
+      coding skill.
+formula_latex: \mathcal{L} = (1-\alpha)\,\mathrm{CE}\big(y, \operatorname{softmax}(z_s)\big) +
+  \alpha\, T^{2}\, \mathrm{KL}\big(\operatorname{softmax}(z_t/T) \,\|\,
+  \operatorname{softmax}(z_s/T)\big)
+origin: >-
+  Cristian Buciluă, Rich Caruana and Alexandru Niculescu-Mizil compressed ensembles into single
+  networks in 2006 under the name model compression, and Jimmy Ba and Rich Caruana trained shallow
+  nets to mimic deep ones in 2014. Geoffrey Hinton, Oriol Vinyals and Jeff Dean named and
+  popularized 'distillation' in a paper presented at a NIPS workshop in December 2014 and posted to
+  arXiv in March 2015.
+year: 2014
+note: >-
+  Distilling a competitor's model through its API is commonly prohibited by terms of service, was
+  the subject of public accusations between laboratories in 2025, and overlaps with
+  [[model-extraction|model extraction]]. Not to be confused with [[context-distillation|context
+  distillation]], which distills a prompt rather than a different model.
+see_also:
+  - on-policy distillation
+  - context distillation
+  - model compression
+  - small language model
+  - synthetic data
+  - temperature
+  - Kullback–Leibler divergence
+  - model extraction
+contrast:
+  - quantization
+  - pruning
+sources:
+  - text: >-
+      Hinton, G., Vinyals, O. & Dean, J. (2015). Distilling the Knowledge in a Neural Network. NIPS
+      2014 Deep Learning Workshop. arXiv:1503.02531.
+    url: https://arxiv.org/abs/1503.02531
+  - text: >-
+      Buciluă, C., Caruana, R. & Niculescu-Mizil, A. (2006). Model Compression. Proceedings of KDD
+      2006.

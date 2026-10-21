@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: biometric data
+id: biometric-data
+pos: n.
+also:
+  - biometrics
+  - biometric identifier
+  - biometric information
+  - biometric template
+domain: gov
+domains:
+  - percep
+  - society
+  - data
+labels:
+  - legal
+level: core
+plain: >-
+  Information about your body or behavior — your face, fingerprints, voice, eyes or the way you walk
+  — measured by technology and used to recognize who you are or to guess things about you.
+senses:
+  - definition: >-
+      Measurements of a person's body or behavior — facial geometry, fingerprints, iris patterns,
+      voiceprints, gait, typing rhythm — captured by sensors and usually reduced to a numerical
+      template or [[embedding|embedding]] that can be compared with others; in law, a category of
+      personal data. Biometric systems perform verification (one-to-one: is this the claimed
+      person?), identification (one-to-many: who is this?), or categorization and inference of
+      attributes such as age or emotion. Because biometric traits cannot be changed if leaked and
+      allow people to be tracked without their knowledge, the law treats them as especially
+      sensitive. The [[general-data-protection-regulation|GDPR]] counts such measurements as
+      biometric data only when they allow or confirm a person's unique identification, and restricts
+      processing them for identification as a special category; the [[eu-ai-act|EU AI Act]] adopts a
+      broader definition without that condition, underpinning its rules on
+      [[remote-biometric-identification|remote biometric identification]],
+      [[biometric-categorisation|biometric categorisation]] and [[emotion-recognition-system|emotion
+      recognition]]. Illinois's Biometric Information Privacy Act (2008) requires written consent
+      and lets individuals sue.
+    example: >-
+      The system never stores face images, only encrypted biometric templates that cannot be turned
+      back into a photo.
+origin: >-
+  Measuring bodies for identification dates to Alphonse Bertillon's anthropometric system for the
+  Paris police (1879) and the fingerprint classifications of Francis Galton and Edward Henry in the
+  1890s. 'Biometric data' became a defined legal category in Illinois's Biometric Information
+  Privacy Act (2008) and the EU's GDPR (2016), and was extended by the EU AI Act (2024).
+note: >-
+  A photograph is not automatically biometric data under the GDPR; it becomes so when processed with
+  specific technical means to identify someone. Under the AI Act, verification that only confirms a
+  claimed identity, such as unlocking a phone, is treated far more leniently than identifying people
+  in a crowd.
+see_also:
+  - facial recognition
+  - remote biometric identification
+  - biometric categorisation
+  - emotion recognition system
+  - speaker verification
+  - data protection
+  - privacy
+standards: >-
+  GDPR (Reg. (EU) 2016/679), Art. 4(14) and Art. 9; EU AI Act (Reg. (EU) 2024/1689), Art. 3(34);
+  Illinois Biometric Information Privacy Act, 740 ILCS 14/10
+as_of: 2026-10

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: exposure bias
+id: exposure-bias
+pos: n.
+domain: dl
+domains:
+  - llm
+level: specialist
+plain: >-
+  A weakness of models trained only on perfect examples: when they write on their own, one early
+  mistake puts them in unfamiliar territory they never practiced, and errors can snowball.
+senses:
+  - definition: >-
+      The mismatch between how an autoregressive sequence model is trained and how it is used: under
+      [[teacher-forcing|teacher forcing]] it always conditions on ground-truth prefixes, but during
+      generation it conditions on its own outputs, so an early error moves it into states absent
+      from training data, where further errors may compound. The same compounding-error problem
+      appears in [[imitation-learning|imitation learning]], where [[behavioral-cloning|behavioral
+      cloning]] errors can grow quadratically with the horizon. Proposed remedies include scheduled
+      sampling, which gradually mixes the model's own predictions into training inputs;
+      sequence-level objectives optimized with [[reinforcement-learning|reinforcement learning]];
+      professor forcing; and, for [[large-language-model|large language models]], on-policy methods
+      such as [[reinforcement-learning-from-human-feedback|RLHF]] and
+      [[on-policy-distillation|on-policy distillation]] that train on the model's own samples. How
+      much exposure bias harms modern large models is debated: some studies find they recover well
+      from their own mistakes, and other causes, such as likelihood training favoring bland text,
+      also explain degenerate output.
+origin: >-
+  Named by Marc'Aurelio Ranzato, Sumit Chopra, Michael Auli and Wojciech Zaremba of Facebook AI
+  Research in 'Sequence Level Training with Recurrent Neural Networks' (arXiv November 2015; ICLR
+  2016), who wrote that they 'refer to this discrepancy as exposure bias'. Samy Bengio and
+  colleagues' scheduled sampling (June 2015) had tackled the same problem without the name.
+year: 2015
+see_also:
+  - teacher forcing
+  - imitation learning
+  - on-policy distillation
+  - reinforcement learning from human feedback
+  - autoregressive model
+  - decoding
+sources:
+  - text: >-
+      Ranzato, M., Chopra, S., Auli, M. & Zaremba, W. (2016). Sequence Level Training with Recurrent
+      Neural Networks. ICLR 2016.
+    url: https://arxiv.org/abs/1511.06732
+  - text: >-
+      Bengio, S., Vinyals, O., Jaitly, N. & Shazeer, N. (2015). Scheduled Sampling for Sequence
+      Prediction with Recurrent Neural Networks. NeurIPS 2015.
+    url: https://arxiv.org/abs/1506.03099

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI application
+id: ai-application
+pos: n.
+also:
+  - AI app
+  - AI-based application
+  - application of AI
+domain: core
+domains:
+  - eng
+  - society
+level: core
+plain: >-
+  A program or product that uses AI to do something useful for people, such as a translation app, a
+  medical-scan checker or a coding assistant.
+senses:
+  - context: Products
+    definition: >-
+      A software product or feature that applies AI to a practical problem for end users or
+      organizations, such as a translation app, a tool that triages medical scans, a fraud detector
+      or a coding assistant, as distinct from the underlying [[ai-model|models]] and infrastructure.
+      In descriptions of the [[ai-stack|AI stack]], the application layer sits above model providers
+      and compute and adds the user interface, workflow integration, proprietary data and domain
+      logic; applications that add little beyond a third-party model are derided as
+      [[wrapper|wrappers]]. Under the [[eu-ai-act|EU AI Act]] the risk tier depends largely on the
+      application: the same model can power a harmless chatbot or a [[high-risk-ai-system|high-risk
+      AI system]] such as a hiring tool.
+    example: >-
+      The model is a commodity; our AI application wins on integration with hospital records.
+  - context: Field of use
+    definition: >-
+      An area in which AI is put to use, as in 'applications of AI in medicine'. Applied AI
+      research, documented in venues such as AAAI's Innovative Applications of Artificial
+      Intelligence conference, reports deployed systems, their measured impact and lessons learned.
+origin: >-
+  'Applications of artificial intelligence' has described deployed uses since the field's early
+  decades, notably during the expert-system boom of the 1980s, when AAAI launched its Innovative
+  Applications of AI conference (1989). The product sense, 'AI app', became common in the 2010s with
+  mobile and cloud machine-learning services and multiplied after 2022 as developers built on model
+  APIs.
+note: >-
+  Distinguish the application (what users interact with) from the [[ai-model|AI model]] it calls and
+  the [[ai-system|AI system]] (the legally relevant whole). Many AI applications are mostly
+  conventional software with a small AI component.
+see_also:
+  - AI system
+  - AI model
+  - AI stack
+  - wrapper
+  - model API
+  - AI engineering
+  - AI-powered
+contrast:
+  - AI model

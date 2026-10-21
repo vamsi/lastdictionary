@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Johnson–Lindenstrauss lemma
+id: johnson-lindenstrauss-lemma
+pos: n.
+also:
+  - JL lemma
+  - random projection
+domain: math
+domains:
+  - interp
+  - eng
+level: specialist
+plain: >-
+  A surprising fact about high-dimensional data: a random projection can squash a large set of
+  points into far fewer dimensions while distorting every distance between them only slightly.
+senses:
+  - definition: >-
+      A theorem stating that any n points in a high-dimensional Euclidean space can be mapped into a
+      space of dimension k on the order of (log n)/ε² so that every pairwise
+      [[euclidean-distance|Euclidean distance]] is preserved within a factor of 1 ± ε — and that a
+      suitably scaled random linear projection achieves this with high probability. Strikingly, k
+      depends only on the number of points and the tolerance, not on the original
+      [[dimensionality|dimensionality]]. The lemma justifies random projections for speeding up
+      [[approximate-nearest-neighbor-search|approximate nearest neighbor search]], sketching and
+      streaming algorithms, compressed sensing and randomized linear algebra, and it helps explain
+      why compact [[embedding|embeddings]] can be faithful. A related fact — that exponentially many
+      nearly orthogonal directions fit in d dimensions — is invoked in
+      [[interpretability|interpretability]] to explain [[superposition|superposition]], in which
+      networks represent more [[feature-interpretability|features]] than they have neurons.
+    example: >-
+      We used a Johnson–Lindenstrauss random projection to shrink the vectors before clustering,
+      accepting small distance distortions.
+formula_latex: (1-\varepsilon)\lVert u - v\rVert^2 \le \lVert f(u) - f(v)\rVert^2 \le
+  (1+\varepsilon)\lVert u - v\rVert^2, \qquad k = O\!\big(\varepsilon^{-2}\log n\big)
+origin: >-
+  Proved by William B. Johnson and Joram Lindenstrauss in 1984 as a lemma in a paper on extending
+  Lipschitz mappings into Hilbert space. Simpler proofs followed (Peter Frankl and Hiroshi Maehara,
+  1988; Sanjoy Dasgupta and Anupam Gupta, around 2000), and it became a staple of algorithms and
+  machine learning from the late 1990s.
+year: 1984
+see_also:
+  - dimensionality
+  - Euclidean distance
+  - approximate nearest neighbor search
+  - superposition
+  - orthogonality
+  - dimensionality reduction
+sources:
+  - text: >-
+      Johnson, W. B. & Lindenstrauss, J. (1984). Extensions of Lipschitz mappings into a Hilbert
+      space. Contemporary Mathematics, 26.

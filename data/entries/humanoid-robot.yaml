@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: humanoid robot
+id: humanoid-robot
+pos: n.
+also:
+  - humanoid
+  - android
+  - bipedal humanoid
+  - general-purpose humanoid
+domain: robot
+domains:
+  - society
+level: essential
+plain: >-
+  A robot built roughly in human shape, with a head, torso, two arms and usually two legs, so that
+  it can work in spaces and with tools designed for people.
+senses:
+  - definition: >-
+      A [[robot|robot]] built on the human body plan — usually two legs, two arms ending in hands or
+      grippers, a torso and a head, although some models roll on a wheeled base instead of walking.
+      The case for the form is compatibility — homes, factories and tools are designed for human
+      bodies, and human demonstrations and videos can in principle be retargeted to a similar body
+      for [[imitation-learning|imitation learning]]. The engineering challenges are severe: bipedal
+      balance and whole-body control ([[zero-moment-point|zero moment point]],
+      [[model-predictive-control|model predictive control]], learned [[locomotion|locomotion]]
+      policies), [[dexterous-manipulation|dexterous manipulation]] with multi-fingered hands, power
+      density and battery life, cost, and safety around people. Control stacks increasingly pair
+      low-level controllers trained in simulation with
+      [[vision-language-action-model|vision-language-action models]] for tasks. Between 2023 and
+      2026 dozens of companies in the United States, China and Europe, among them Tesla (Optimus),
+      Figure, Agility Robotics, Apptronik, 1X, Unitree, UBTech and AgiBot, announced humanoids for
+      factories, warehouses and homes, and Chinese makers shipped thousands of units. Independent
+      evidence of economically useful autonomous work, as opposed to teleoperated or scripted
+      demonstrations, remained limited as of October 2026, and forecasts of the market's size and
+      timing vary widely.
+    example: >-
+      The pilot put two humanoids on the tote line, each with a human operator on standby.
+origin: >-
+  'Humanoid', from 'human' plus '-oid' (resembling), predates robotics. Early full-scale humanoid
+  robots include Waseda University's WABOT-1 (1972, led by Ichiro Kato), Honda's P2 (1996) and ASIMO
+  (2000), and Boston Dynamics' hydraulic Atlas (2013), replaced by an all-electric Atlas in April
+  2024. Commercial interest surged after Tesla announced Optimus in August 2021 and showed a
+  prototype at its 2022 AI Day.
+year: 1972
+note: >-
+  An android is a humanoid made to look convincingly human, with skin and a face; most current
+  humanoids are visibly mechanical, partly to avoid the [[uncanny-valley|uncanny valley]].
+  Demonstration videos may be teleoperated or sped up, and reputable makers say so.
+see_also:
+  - legged robot
+  - locomotion
+  - dexterous manipulation
+  - vision-language-action model
+  - physical AI
+  - uncanny valley
+  - teleoperation
+sources:
+  - text: >-
+      Hirai, K., Hirose, M., Haikawa, Y. & Takenaka, T. (1998). The development of Honda humanoid
+      robot. Proc. IEEE ICRA 1998.
+as_of: 2026-10

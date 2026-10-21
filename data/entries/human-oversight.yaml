@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: human oversight
+id: human-oversight
+pos: n.
+also:
+  - human control
+  - human-on-the-loop
+  - human-in-command
+domain: gov
+domains:
+  - safety
+  - society
+labels:
+  - legal
+level: core
+plain: >-
+  Keeping people able to watch, understand, question and, if necessary, stop or overrule an AI
+  system, rather than letting it act unchecked.
+senses:
+  - context: EU AI Act
+    definition: >-
+      The duty to build [[high-risk-ai-system|high-risk AI systems]] so that people can effectively
+      supervise them during operation, as a safeguard against harm to health, safety and fundamental
+      rights, especially harm that the Act's other requirements do not remove. To a degree matching
+      the risk, autonomy and setting, the provider must equip those supervisors to grasp what the
+      system can and cannot do and read its outputs correctly, to watch for malfunctions and
+      unexpected behavior, to resist over-trusting it ([[automation-bias|automation bias]]), and to
+      set an output aside, overrule it or bring the system to a safe halt, for example with a stop
+      button. [[provider-and-deployer|Deployers]] must give the role to staff who are qualified,
+      trained and empowered to perform it. For high-risk remote biometric identification, no action
+      may follow a match until two such people have each checked it, with narrow exceptions.
+    example: >-
+      The hospital named two radiologists to exercise human oversight of the triage system.
+  - context: General
+    definition: >-
+      In AI ethics and governance broadly, the principle that people remain able to monitor,
+      intervene in and answer for automated decisions. It appears in the [[oecd-ai-principles|OECD
+      AI Principles]] and the [[unesco-recommendation-on-the-ethics-of-ai|UNESCO Recommendation on
+      the Ethics of AI]], and the EU's [[ethics-guidelines-for-trustworthy-ai|Ethics Guidelines for
+      Trustworthy AI]] (2019) grade it in three degrees: [[human-in-the-loop|human-in-the-loop]],
+      able to intervene in each decision; human-on-the-loop, monitoring operation with the power to
+      step in; and human-in-command, deciding whether, when and how a system is used at all.
+origin: >-
+  Human control of automation is an old theme in engineering, and 'meaningful human control' became
+  a rallying phrase in debates on autonomous weapons from about 2013. 'Human agency and oversight'
+  was the first of seven requirements in the EU High-Level Expert Group's Ethics Guidelines for
+  Trustworthy AI (2019), and Article 14 of the AI Act (2024) turned it into law.
+year: 2019
+note: >-
+  Research on [[automation-bias|automation bias]] and [[overreliance|overreliance]] shows that
+  nominal oversight can be hollow: a person who rubber-stamps outputs adds little protection, so
+  commentators distinguish formal from effective oversight. Not the same as
+  [[scalable-oversight|scalable oversight]], an alignment research problem about supervising systems
+  more capable than their overseers.
+see_also:
+  - human-in-the-loop
+  - automation bias
+  - high-risk AI system
+  - overreliance
+  - kill switch
+  - provider and deployer
+contrast:
+  - scalable oversight
+standards: EU AI Act (Reg. (EU) 2024/1689), Art. 14; deployer duty Art. 26(2)

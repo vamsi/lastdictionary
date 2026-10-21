@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ROUGE
+id: rouge
+pos: abbr.
+also:
+  - ROUGE score
+  - Recall-Oriented Understudy for Gisting Evaluation
+  - ROUGE-N
+  - ROUGE-L
+  - ROUGE-1
+  - ROUGE-2
+pronunciation: ROOZH
+domain: eval
+domains:
+  - llm
+level: core
+plain: >-
+  An automatic score for summaries that checks how much of the wording in human-written reference
+  summaries also appears in the computer-generated one.
+senses:
+  - definition: >-
+      A family of recall-oriented overlap scores, devised for judging automatic summaries and also
+      applied to other generated text, that ask how much of the wording of one or more human-written
+      references reappears in the candidate. ROUGE-N counts shared n-grams (ROUGE-1 for single
+      words, ROUGE-2 for word pairs); ROUGE-L uses the longest common subsequence, rewarding words
+      that appear in the same order without requiring them to be adjacent; ROUGE-S and ROUGE-SU
+      count skip-bigrams. Implementations report recall, precision and their harmonic mean
+      (F-measure), optionally after stemming. ROUGE became the standard metric for
+      [[text-summarization|text summarization]] benchmarks, but like [[bleu|BLEU]] it rewards
+      surface overlap: it misses paraphrase, cannot detect factual errors or
+      [[hallucination|hallucinations]], and correlates weakly with human judgments of abstractive
+      summaries.
+    example: >-
+      Our abstractive model scores lower on ROUGE-2 than the extractive baseline, yet raters prefer
+      it.
+origin: >-
+  Introduced by Chin-Yew Lin of the University of Southern California's Information Sciences
+  Institute in 'ROUGE: A Package for Automatic Evaluation of Summaries', presented at the Text
+  Summarization Branches Out workshop at ACL 2004 in Barcelona. The name deliberately echoes
+  [[bleu|BLEU]]; the metric was adopted in NIST's Document Understanding Conference evaluations.
+year: 2004
+note: >-
+  Pronounced like the French word for 'red'. Implementations differ in tokenization and stemming and
+  give different numbers, so reports should name the package used.
+see_also:
+  - BLEU
+  - BERTScore
+  - text summarization
+  - human evaluation
+  - LLM-as-a-judge
+sources:
+  - text: >-
+      Lin, C.-Y. (2004). ROUGE: A Package for Automatic Evaluation of Summaries. Text Summarization
+      Branches Out (ACL 2004 Workshop), Barcelona, 74–81.
+    url: https://aclanthology.org/W04-1013/

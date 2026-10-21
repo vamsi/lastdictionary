@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Llama Guard
+id: llama-guard
+pos: prop. n.
+also:
+  - LlamaGuard
+  - Llama Guard 2
+  - Llama Guard 3
+  - Llama Guard 4
+domain: sec
+domains:
+  - safety
+  - llm
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free AI model from Meta that checks what people type into a chatbot, and what the chatbot
+  replies, and flags anything that falls into listed categories of harmful content.
+senses:
+  - definition: >-
+      A family of [[open-weight-model|open-weight]] [[safety-classifier|safety classifiers]]
+      released by Meta that moderate both user prompts and model responses in conversations with
+      [[large-language-model|language models]]. Each is a fine-tuned [[llama|Llama]] model: given a
+      conversation and a written taxonomy of hazard categories, it generates 'safe' or 'unsafe'
+      followed by the violated categories, and the probability it assigns to 'unsafe' can serve as
+      an adjustable score. Because the taxonomy is supplied in the prompt, deployers can add or drop
+      categories, an early example of instruction-following [[content-moderation|content
+      moderation]]. The original model (December 2023) was built on Llama 2 7B; later versions
+      adopted the MLCommons hazard taxonomy (Llama Guard 2, 2024), added multilingual support,
+      code-interpreter abuse and smaller and vision variants (Llama Guard 3, 2024), and became
+      natively multimodal (Llama Guard 4, 2025, 12 billion parameters). It is widely deployed as an
+      input–output [[guardrails|guardrail]] and used as a judge in safety benchmarks.
+    example: >-
+      Every user turn goes through Llama Guard first, and anything flagged unsafe never reaches the
+      main model.
+origin: >-
+  Introduced by Hakan Inan and colleagues at Meta in 'Llama Guard: LLM-based Input-Output Safeguard
+  for Human-AI Conversations' (December 2023), released as part of Purple Llama, Meta's umbrella
+  project of open trust-and-safety tools for generative AI.
+year: 2023
+note: >-
+  Like other classifiers it can be evaded by [[jailbreak|jailbreaks]] and obfuscated inputs, and it
+  embeds the value judgments of its taxonomy; it is one layer of defense, not a guarantee.
+see_also:
+  - safety classifier
+  - guardrails
+  - content moderation
+  - constitutional classifiers
+  - Llama
+  - jailbreak
+sources:
+  - text: >-
+      Inan, H. et al. (2023). Llama Guard: LLM-based Input-Output Safeguard for Human-AI
+      Conversations. arXiv:2312.06674.
+as_of: 2026-10

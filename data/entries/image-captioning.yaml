@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: image captioning
+id: image-captioning
+pos: n.
+also:
+  - image caption generation
+  - dense captioning
+  - alt-text generation
+  - CIDEr
+  - recaptioning
+domain: percep
+domains:
+  - llm
+  - gen
+level: core
+plain: >-
+  Having a computer write a short description of a picture, such as 'a dog catching a frisbee in a
+  park', to help blind people, search engines and other AI systems.
+senses:
+  - definition: >-
+      The task of generating a natural-language description of an image's content. Early systems
+      filled sentence templates with detected objects and attributes, or retrieved the captions of
+      similar images (2010–2011). Neural captioning used an
+      [[encoder-decoder-architecture|encoder–decoder architecture]]: a
+      [[convolutional-neural-network|convolutional neural network]] encoded the image and a
+      [[long-short-term-memory|LSTM]] generated the caption word by word ('Show and Tell', 2014),
+      soon with [[attention|attention]] over image regions ('Show, Attend and Tell', 2015).
+      Transformers and large-scale image–text pretraining followed, and
+      [[vision-language-model|vision-language models]] now write captions of any length and style.
+      Datasets such as Flickr30k and COCO Captions (five human captions per image) support training
+      and evaluation, with metrics that compare generated captions with references, such as
+      [[bleu|BLEU]], METEOR, CIDEr (2015) and SPICE, or with the image itself (CLIPScore, 2021);
+      [[human-evaluation|human evaluation]] remains the reference standard. Uses include alt text
+      for accessibility, image search and archives, and 'recaptioning' web images with detailed
+      synthetic captions to train [[text-to-image-model|text-to-image models]].
+    example: >-
+      Recaptioning the training set with long, detailed captions made the generator follow prompts
+      far more closely.
+origin: >-
+  Template- and retrieval-based captioning appeared around 2010–2011, for instance in Ali Farhadi
+  and colleagues' 'Every Picture Tells a Story' (2010). Neural captioning arrived in several
+  near-simultaneous papers in late 2014, notably Oriol Vinyals and colleagues' 'Show and Tell' at
+  Google and Andrej Karpathy and Li Fei-Fei's work at Stanford.
+note: >-
+  Captions reflect their annotators: models trained on web alt text inherit its omissions and
+  stereotypes, and may describe what is typical rather than what is shown, a failure studied as
+  object [[hallucination|hallucination]].
+see_also:
+  - visual question answering
+  - vision-language model
+  - encoder–decoder architecture
+  - COCO
+  - CLIP
+  - BLEU
+sources:
+  - text: >-
+      Vinyals, O., Toshev, A., Bengio, S. & Erhan, D. (2015). Show and Tell: A Neural Image Caption
+      Generator. CVPR 2015.
+  - text: >-
+      Xu, K. et al. (2015). Show, Attend and Tell: Neural Image Caption Generation with Visual
+      Attention. ICML 2015.

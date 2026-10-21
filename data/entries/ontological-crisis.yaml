@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ontological crisis
+id: ontological-crisis
+pos: n.
+also:
+  - ontological crises
+  - ontology identification problem
+  - ontological shift
+domain: safety
+domains:
+  - mind
+  - sym
+level: specialist
+plain: >-
+  The puzzle an AI faces when deeper understanding leaves goals phrased in its old way of seeing
+  things without a clear meaning — like a rule to protect 'the same person' once it learns minds can
+  be copied.
+senses:
+  - definition: >-
+      The predicament, analyzed by Peter de Blanc in 2011, that arises when an agent replaces its
+      model of the world with a better one but its goals were written in the vocabulary of the old
+      model. Some things the goals mention may have no exact counterpart in the new model, as
+      everyday solid objects have none in a theory of quantum fields, so the agent must choose how
+      to translate its values, and different translations can yield very different behavior: an
+      agent charged with protecting a particular person must decide what that means once its model
+      allows people to be copied. Ontological crises matter for alignment because capable AI systems
+      may develop internal concepts unlike human ones, and their goals — or the human values they
+      have learned — must carry over correctly across such shifts. Proposed responses include
+      mapping between ontologies in structure-preserving ways and hoping that
+      [[natural-abstraction-hypothesis|natural abstractions]] provide stable anchors.
+    example: >-
+      When the agent's world model was rebuilt, its goal had no obvious translation — a small-scale
+      ontological crisis.
+origin: >-
+  Introduced by Peter de Blanc in 'Ontological Crises in Artificial Agents' Value Systems' (2011),
+  written at the Singularity Institute (now the Machine Intelligence Research Institute).
+year: 2011
+see_also:
+  - embedded agency
+  - natural abstraction hypothesis
+  - value learning
+  - agent foundations
+  - goal misgeneralization
+sources:
+  - text: >-
+      de Blanc, P. (2011). Ontological Crises in Artificial Agents' Value Systems. arXiv:1105.3821.
+    url: https://arxiv.org/abs/1105.3821

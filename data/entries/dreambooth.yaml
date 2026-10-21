@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DreamBooth
+id: dreambooth
+pos: prop. n.
+also:
+  - subject-driven generation
+  - prior-preservation loss
+domain: gen
+domains:
+  - train
+level: core
+plain: >-
+  A way to teach an image generator one specific subject — your dog, your face, a product — from a
+  handful of photos, so it can draw that exact subject in new scenes.
+senses:
+  - definition: >-
+      A [[fine-tuning|fine-tuning]] method that teaches a [[text-to-image-model|text-to-image
+      model]] one particular subject — a certain dog, face or product — from typically three to five
+      photos, after which prompts such as 'a [V] dog on the moon' render that subject faithfully in
+      new settings, poses and styles. The photos are paired with prompts in which a rarely used
+      token, here [V], serves as the subject's name beside its class word ('a [V] dog'), and the
+      whole model is updated. So that the model neither forgets what ordinary members of the class
+      look like nor turns every dog into the subject (language drift), a class-specific
+      prior-preservation loss also trains it on images it generated beforehand from the plain class
+      prompt. Full DreamBooth produces a multi-gigabyte model per subject; community practice soon
+      combined it with [[low-rank-adaptation|LoRA]] to produce small add-on files. Because it can
+      depict real people realistically from a few photos, it raised immediate concerns about
+      non-consensual imagery and [[deepfake|deepfakes]].
+origin: >-
+  Introduced by Nataniel Ruiz and colleagues at Google Research and Boston University in a paper
+  posted in August 2022 (CVPR 2023), demonstrated on Google's Imagen; open-source implementations
+  for Stable Diffusion appeared within weeks.
+year: 2022
+see_also:
+  - textual inversion
+  - low-rank adaptation
+  - fine-tuning
+  - text-to-image model
+  - Stable Diffusion
+  - deepfake
+contrast:
+  - textual inversion
+sources:
+  - text: >-
+      Ruiz, N., Li, Y., Jampani, V., Pritch, Y., Rubinstein, M. & Aberman, K. (2023). DreamBooth:
+      Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation. CVPR 2023.
+      arXiv:2208.12242.
+    url: https://arxiv.org/abs/2208.12242

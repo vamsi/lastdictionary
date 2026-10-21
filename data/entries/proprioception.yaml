@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: proprioception
+id: proprioception
+pos: n.
+also:
+  - proprioceptive
+  - proprioceptive sensing
+  - proprioceptive state
+  - joint state
+pronunciation: PROH-pree-oh-SEP-shun
+domain: robot
+domains:
+  - percep
+  - mind
+level: specialist
+plain: >-
+  A robot's sense of its own body: where its joints are, how fast they are moving and how hard its
+  motors are pushing, measured by internal sensors rather than cameras.
+senses:
+  - context: Robotics
+    definition: >-
+      Sensing of a robot's own internal state — joint angles and velocities from encoders, motor
+      currents and joint torques, forces at the wrists and feet, and body orientation and
+      acceleration from an inertial measurement unit — as opposed to exteroception, which senses the
+      outside world through cameras, [[lidar|lidar]], microphones or touch. Proprioceptive signals
+      arrive quickly, are reliable and are unaffected by lighting or occlusion, so they anchor
+      low-level control and state estimation, and learned [[policy|policies]] and
+      [[vision-language-action-model|vision-language-action models]] typically take a proprioceptive
+      state vector alongside camera images. [[legged-robot|Legged robots]] can walk 'blind' over
+      rough terrain from proprioception alone, inferring contact and slip from joint torques, and
+      so-called proprioceptive [[actuator|actuators]] use low gear ratios so that motor current
+      reveals external forces.
+    example: >-
+      The policy takes two camera images plus a 14-dimensional proprioception vector of joint angles.
+  - context: Biology
+    definition: >-
+      The sense of the position, movement and effort of one's own body parts, served by receptors in
+      muscles, tendons and joints; it lets people touch their nose with their eyes closed and is the
+      model for the robotics usage.
+origin: >-
+  Coined by the physiologist Charles Sherrington in 1906, from Latin proprius, 'one's own', and
+  reception; he contrasted proprioceptive with exteroceptive and interoceptive senses. Robotics
+  adopted the proprioceptive/exteroceptive distinction for classifying sensors, and it is standard
+  in mobile-robotics textbooks.
+year: 1906
+see_also:
+  - tactile sensing
+  - sensor fusion
+  - actuator
+  - legged robot
+  - odometry
+  - embodied cognition
+contrast:
+  - perception
+sources:
+  - text: >-
+      Sherrington, C. S. (1906). The Integrative Action of the Nervous System. Yale University Press.

@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt engineering
+id: prompt-engineering
+pos: n.
+also:
+  - prompt design
+  - prompt crafting
+  - prompt programming
+domain: llm
+domains:
+  - eng
+level: essential
+plain: >-
+  The skill of writing requests to an AI — picking the words, examples, format and background
+  information it receives — so that it reliably gives the result you want, without retraining it.
+senses:
+  - definition: >-
+      The practice of steering a generative model entirely through its input: drafting
+      [[prompt|prompts]], trying them on representative cases and revising them until the outputs
+      are reliably what is wanted, with the [[weights|weights]] left untouched. Its tools concern
+      what the prompt contains — an explicit statement of the task, audience and success criteria,
+      background and reference material, and worked examples ([[few-shot-prompting|few-shot
+      prompting]]); how it is framed — standing instructions in the [[system-prompt|system prompt]],
+      an assigned role ([[role-prompting|role prompting]]) and a required output format or schema,
+      sometimes enforced by [[prefill|prefilling]] the start of the reply; and how the work is
+      staged — asking for step-by-step reasoning ([[chain-of-thought|chain of thought]]) or
+      splitting a job across a sequence of calls ([[prompt-chaining|prompt chaining]]). Good
+      practice treats prompts like code — versioned, evaluated against test sets and revised when
+      the model changes — because [[prompt-sensitivity|prompt sensitivity]] can make small wording
+      changes matter. Automated methods search over prompts with an optimizer or another model
+      ([[prompt-optimization|prompt optimization]]). From 2025, the broader framing of
+      [[context-engineering|context engineering]] emphasizes managing everything that enters the
+      context window, especially for agents.
+    example: >-
+      Most of the accuracy gain came from prompt engineering: clearer criteria and two worked
+      examples.
+origin: >-
+  Emerged with GPT-3 in 2020–2021, when users found that phrasing strongly shaped results: Gwern
+  Branwen wrote of 'prompt programming' in 2020 and Laria Reynolds and Kyle McDonell used the same
+  phrase in a 2021 paper. OpenAI's CLIP paper (early 2021) already referred to the
+  prompt-engineering discussion around GPT-3, and the term spread through research surveys and the
+  text-to-image community. After ChatGPT it became a job title and a cultural touchstone (see
+  [[prompt-engineer|prompt engineer]]).
+year: 2021
+note: >-
+  Its long-term importance is debated: some argue that better models and automatic optimizers make
+  it obsolete, others that stating intent clearly will always matter. Distinguish from
+  [[prompt-tuning|prompt tuning]], which learns continuous prompt vectors by gradient descent.
+see_also:
+  - prompt
+  - system prompt
+  - few-shot prompting
+  - chain of thought
+  - role prompting
+  - prompt optimization
+  - context engineering
+  - prompt sensitivity
+contrast:
+  - fine-tuning
+  - prompt tuning
+sources:
+  - text: >-
+      Liu, P., Yuan, W., Fu, J., Jiang, Z., Hayashi, H. & Neubig, G. (2023). Pre-train, Prompt, and
+      Predict: A Systematic Survey of Prompting Methods in Natural Language Processing. ACM
+      Computing Surveys 55(9).
+    url: https://arxiv.org/abs/2107.13586v1
+  - text: >-
+      Reynolds, L. & McDonell, K. (2021). Prompt Programming for Large Language Models: Beyond the
+      Few-Shot Paradigm. CHI 2021 Extended Abstracts.

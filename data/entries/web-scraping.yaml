@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: web scraping
+id: web-scraping
+pos: n.
+also:
+  - scraping
+  - screen scraping
+  - data scraping
+  - scrape
+  - scraper
+domain: data
+domains:
+  - gov
+  - eng
+level: core
+plain: >-
+  Using software to automatically copy information from websites — text, prices, images — in bulk,
+  which is how much of the data used to train AI was gathered.
+senses:
+  - definition: >-
+      The automated extraction of content from web pages by programs that fetch them (see
+      [[web-crawler|web crawler]]) and parse their HTML, rendered output or underlying APIs to pull
+      out text, images, prices, profiles or other structured data. Scraping supplies much of the
+      data behind AI: web-scale text corpora derived from [[common-crawl|Common Crawl]],
+      image–caption datasets such as [[laion-5b|LAION-5B]], code from public repositories, and the
+      live pages fetched by AI search and browsing agents. Its legality depends on jurisdiction and
+      circumstance: copyright, database rights, website terms of service, computer-misuse statutes,
+      data-protection law for [[personally-identifiable-information|personally identifiable
+      information]], and technical signals such as [[robots-txt|robots.txt]] all bear on it. The
+      surge of AI crawling since 2023 has led publishers to block AI bots, sue, or sell licensed
+      access instead (see [[data-licensing|data licensing]]).
+    example: >-
+      We scraped product reviews from public pages, honoring robots.txt and rate limits.
+origin: >-
+  'Screen scraping' first meant capturing text from the terminal displays of legacy systems; web
+  scraping arrived with the first web robots in 1993. In the US, eBay v. Bidder's Edge (2000)
+  treated aggressive scraping as trespass to chattels; in hiQ Labs v. LinkedIn the Ninth Circuit
+  held at the preliminary-injunction stage (2019, reaffirmed 2022) that scraping public pages likely
+  did not violate the Computer Fraud and Abuse Act, but the trial court later found that hiQ had
+  breached LinkedIn's user agreement, and the parties settled in December 2022.
+note: >-
+  Scraping and crawling are often conflated: crawling discovers and fetches pages; scraping extracts
+  data from them. Whether scraping copyrighted material for AI training is lawful is being litigated
+  in many countries (see [[ai-copyright-litigation|AI copyright litigation]] and
+  [[text-and-data-mining-exception|text and data mining exception]]).
+see_also:
+  - web crawler
+  - robots.txt
+  - Common Crawl
+  - data licensing
+  - opt-out
+  - fair use and AI training
+as_of: 2026-10

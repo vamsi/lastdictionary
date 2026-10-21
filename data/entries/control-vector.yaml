@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: control vector
+id: control-vector
+pos: n.
+also:
+  - control vectors
+domain: interp
+domains:
+  - llm
+  - eng
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A steering signal saved as a small file that can be loaded alongside an open AI model to turn a
+  trait — say, cheerfulness or laziness — up or down while it generates text.
+senses:
+  - definition: >-
+      A set of [[steering-vector|steering vectors]], usually one for each of many layers, stored as
+      a reusable artifact and applied with an adjustable signed strength to shift a
+      [[large-language-model|large language model]]'s style or disposition at inference time.
+      Control vectors are typically trained with the representation-reading recipe of
+      [[representation-engineering|representation engineering]]: generate prompt pairs that differ
+      only in a persona instruction ('act extremely happy' versus 'act extremely sad'), collect
+      hidden states, and take the first principal component of their differences at each layer.
+      Positive strengths push toward one pole and negative strengths toward the other. Loading them
+      became a feature of local inference software, letting users of [[open-weight-model|open-weight
+      models]] adjust traits such as honesty, creativity or verbosity without
+      [[fine-tuning|fine-tuning]].
+    example: >-
+      Load the happiness control vector at strength 1.5, or at −1.5 for a gloomy narrator.
+origin: >-
+  The technique comes from [[representation-engineering|representation engineering]] (Andy Zou and
+  colleagues, 2023), whose representation-control methods compute such vectors. The name was
+  popularized by Theia Vogel's blog post 'Representation Engineering Mistral-7B an Acid Trip'
+  (January 22, 2024) and her open-source repeng library; in March 2024 Vogel also added support for
+  loading control vectors to [[llama-cpp|llama.cpp]].
+year: 2024
+note: >-
+  In substance a control vector and a steering vector are the same kind of object; 'control vector'
+  usually implies the multi-layer, PCA-trained, file-based form used in open-source tooling.
+see_also:
+  - steering vector
+  - representation engineering
+  - activation steering
+  - llama.cpp
+  - persona vector
+sources:
+  - text: >-
+      Vogel, T. (2024). Representation Engineering Mistral-7B an Acid Trip. Blog post, January 22,
+      2024.
+    url: https://vgel.me/posts/representation-engineering/
+as_of: 2026-10

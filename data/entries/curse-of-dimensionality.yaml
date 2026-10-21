@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: curse of dimensionality
+id: curse-of-dimensionality
+pos: n.
+also:
+  - Hughes phenomenon
+  - peaking phenomenon
+  - concentration of distances
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  The problems that pile up when each item is described by very many measurements: even huge
+  datasets end up thinly scattered across the possibilities, and 'near' and 'far' stop meaning much.
+senses:
+  - definition: >-
+      An umbrella name for the difficulties in learning, search and estimation that grow, often
+      exponentially, with the number of variables describing each item. Holding the spacing between
+      samples fixed, every added dimension multiplies the number of points needed, so any realistic
+      dataset leaves most of the space empty; nearly all of a high-dimensional ball's volume lies in
+      a thin shell at its surface; and for many distributions a point's nearest and farthest
+      neighbors end up almost equally far away, which undermines [[k-nearest-neighbors|k-nearest
+      neighbors]], [[clustering|clustering]] and [[density-estimation|density estimation]]. In
+      classification it appears as the peaking (Hughes) phenomenon: with a fixed training set,
+      adding features first improves accuracy and then degrades it. Remedies include
+      [[dimensionality-reduction|dimensionality reduction]], [[feature-selection|feature
+      selection]], [[regularization|regularization]] and models with a strong
+      [[inductive-bias|inductive bias]]. Deep learning succeeds in very high dimensions largely
+      because real data occupy low-dimensional, structured regions ([[manifold-hypothesis|manifold
+      hypothesis]]) rather than the whole space.
+    example: >-
+      With 2,000 gene features and 300 patients, the curse of dimensionality made nearest-neighbor
+      matching meaningless.
+origin: >-
+  Coined by the mathematician Richard Bellman in his 1957 book Dynamic Programming to describe how
+  the number of states, and hence the computation, explodes as variables are added to an
+  optimization problem. G. F. Hughes described the related peaking effect in pattern recognition in
+  1968, and Kevin Beyer and colleagues analyzed the concentration of nearest-neighbor distances in
+  1999.
+year: 1957
+note: >-
+  Often invoked loosely for any difficulty caused by many features. The counterpoint 'blessing of
+  dimensionality' notes that high-dimensional representations can make classes easier to separate
+  linearly.
+see_also:
+  - dimensionality reduction
+  - feature selection
+  - k-nearest neighbors
+  - manifold hypothesis
+  - dimensionality
+  - overfitting
+sources:
+  - text: Bellman, R. (1957). Dynamic Programming. Princeton University Press.
+  - text: >-
+      Hughes, G. F. (1968). On the Mean Accuracy of Statistical Pattern Recognizers. IEEE
+      Transactions on Information Theory 14(1).
+  - text: >-
+      Beyer, K., Goldstein, J., Ramakrishnan, R. & Shaft, U. (1999). When Is 'Nearest Neighbor'
+      Meaningful? Proc. ICDT 1999.

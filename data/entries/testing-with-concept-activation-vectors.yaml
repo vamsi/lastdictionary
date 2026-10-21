@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: testing with concept activation vectors
+id: testing-with-concept-activation-vectors
+pos: phr.
+also:
+  - TCAV
+  - concept activation vector
+  - concept activation vectors
+  - CAV
+domain: interp
+domains:
+  - percep
+  - dl
+level: specialist
+plain: >-
+  A method for asking whether a human idea, such as 'wheels', matters to an image model's decision,
+  such as 'car', by finding the direction for that idea inside the model and measuring its effect.
+senses:
+  - definition: >-
+      A concept-based [[global-explanation|global explanation]] method that asks whether a concept
+      people care about, defined only by a set of example images, pushes a network's predictions for
+      a class up or down. A concept activation vector (CAV) is obtained by collecting a layer's
+      [[activation|activations]] for example images of the concept (striped textures, in the
+      original paper's example) and for random images, training a [[linear-probe|linear classifier]]
+      to separate them, and taking the vector normal to its decision boundary. For each input of a
+      class (there, zebra), the directional derivative of the class [[logit|logit]] along the CAV
+      shows whether moving activations toward the concept raises the prediction; the TCAV score is
+      the fraction of class inputs for which it does. Statistical tests against CAVs trained on many
+      random image sets guard against meaningless directions. TCAV needs no retraining, lets domain
+      experts pose their own concepts, and was an early demonstration that human concepts correspond
+      to linear directions in activation space — an idea central to later
+      [[linear-representation-hypothesis|linear-representation]] and steering work.
+    example: >-
+      TCAV showed the skin-lesion classifier was highly sensitive to the 'ruler present' concept.
+origin: >-
+  Introduced by Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda
+  Viégas and Rory Sayres of Google in 'Interpretability Beyond Feature Attribution: Quantitative
+  Testing with Concept Activation Vectors (TCAV)' (arXiv, November 2017; ICML 2018). Automated
+  concept discovery (ACE) followed in 2019.
+year: 2017
+note: >-
+  Results depend on how well the example images capture the concept and on the layer chosen;
+  correlated concepts, such as stripes and savanna backgrounds, can be hard to separate. A CAV is a
+  direction found by probing, the conceptual ancestor of today's [[steering-vector|steering
+  vectors]].
+see_also:
+  - concept bottleneck model
+  - linear probe
+  - steering vector
+  - global explanation
+  - linear representation hypothesis
+  - network dissection
+sources:
+  - text: >-
+      Kim, B., Wattenberg, M., Gilmer, J., Cai, C., Wexler, J., Viégas, F. & Sayres, R. (2018).
+      Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation
+      Vectors (TCAV). Proceedings of ICML 2018.

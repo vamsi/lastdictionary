@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: post-market monitoring
+id: post-market-monitoring
+pos: n.
+also:
+  - post-market monitoring system
+  - post-market monitoring plan
+  - PMM
+domain: gov
+domains:
+  - eng
+labels:
+  - legal
+level: specialist
+plain: >-
+  The duty of an AI system's maker to keep watching how it performs after release, gathering
+  evidence from real use so that problems are found and fixed.
+senses:
+  - definition: >-
+      The work a provider does after release to learn from how its AI systems are actually used, so
+      that it notices promptly when something must be corrected or prevented. Under the
+      [[eu-ai-act|EU AI Act]], providers of [[high-risk-ai-system|high-risk systems]] need a
+      documented monitoring system, scaled to the technology and its risks, that keeps collecting
+      and analyzing performance data for as long as a system is in use, drawing on deployers and
+      other sources and, where relevant, on how the system interacts with other AI, to confirm that
+      it still complies. The monitoring plan is part of the technical documentation. Findings feed
+      into corrective action, withdrawal or recall, and [[serious-incident|serious incident]]
+      reporting.
+    example: >-
+      Post-market monitoring showed the model's accuracy dropping for patients at the new clinic.
+origin: >-
+  Adapted from post-market surveillance of medical devices and medicines (pharmacovigilance), where
+  safety problems often appear only after wide use, and carried into AI law by the 2021 AI Act
+  proposal. The 2026 [[digital-omnibus|Digital Omnibus]] replaced a planned implementing act with
+  Commission guidance and a template due by 2 September 2027.
+year: 2021
+note: >-
+  Technically it relies on [[model-monitoring|model monitoring]] and [[data-drift|data drift]]
+  detection from MLOps; the legal duty adds documentation, reporting and accountability.
+see_also:
+  - serious incident
+  - high-risk AI system
+  - provider and deployer
+  - model monitoring
+  - AI incident
+  - EU AI Act
+standards: >-
+  EU AI Act (Reg. (EU) 2024/1689), Art. 3(25) and Art. 72, as amended by Reg. (EU) 2026/1744
+as_of: 2026-10

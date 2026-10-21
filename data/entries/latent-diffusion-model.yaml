@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: latent diffusion model
+id: latent-diffusion-model
+pos: n.
+also:
+  - LDM
+  - latent diffusion
+domain: gen
+domains:
+  - dl
+  - infer
+level: core
+plain: >-
+  A diffusion image generator that works on a shrunken, compressed version of each picture instead
+  of the full-size pixels, which makes it far cheaper to train and run.
+senses:
+  - definition: >-
+      A [[diffusion-model|diffusion model]] that generates compressed codes instead of pixels: a
+      separately trained [[autoencoder|autoencoder]] learns to squeeze images into a small latent
+      tensor and back, and the diffusion process runs entirely on those latents. The encoder —
+      typically a [[variational-autoencoder|VAE]] trained with [[perceptual-loss|perceptual]] and
+      adversarial losses — turns a 512 × 512 image into, for example, a 64 × 64 × 4 latent (8 times
+      smaller per side), and its decoder renders generated latents back into pixels. Text and other
+      conditions usually reach the denoising network through [[cross-attention|cross-attention]]
+      layers. Because the autoencoder has already stripped out fine detail the eye barely registers,
+      the generative model can spend its capacity on content and composition, which cuts training
+      and sampling compute by large factors while preserving quality. Most modern image and video
+      generators, including [[stable-diffusion|Stable Diffusion]] and [[flux|FLUX]], are latent
+      diffusion or latent [[flow-matching|flow matching]] models, as was [[sora|Sora]], with
+      temporal compression added for video.
+    example: Training in latent space let us fit the whole model on eight GPUs.
+origin: >-
+  Introduced by Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser and Björn Ommer (LMU
+  Munich, Heidelberg University and Runway) in 'High-Resolution Image Synthesis with Latent
+  Diffusion Models' (posted December 2021; CVPR 2022). Their open text-to-image model, trained with
+  Stability AI compute, became Stable Diffusion in August 2022.
+year: 2021
+see_also:
+  - diffusion model
+  - Stable Diffusion
+  - variational autoencoder
+  - VQGAN
+  - latent space
+  - cross-attention
+  - diffusion transformer
+sources:
+  - text: >-
+      Rombach, R., Blattmann, A., Lorenz, D., Esser, P. & Ommer, B. (2022). High-Resolution Image
+      Synthesis with Latent Diffusion Models. CVPR 2022. arXiv:2112.10752.
+    url: https://arxiv.org/abs/2112.10752

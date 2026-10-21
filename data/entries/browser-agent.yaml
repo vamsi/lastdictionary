@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: browser agent
+id: browser-agent
+pos: n.
+also:
+  - web agent
+  - browser-use agent
+  - web browsing agent
+  - browsing agent
+domain: agents
+domains:
+  - percep
+  - sec
+level: core
+plain: >-
+  An AI agent that uses a web browser on your behalf — searching, clicking links, filling in forms
+  and reading pages — to complete tasks such as booking, shopping or gathering information.
+senses:
+  - definition: >-
+      An [[ai-agent|AI agent]] that accomplishes tasks by operating a web browser: navigating to
+      pages, reading content, clicking, typing into forms, scrolling and switching tabs. Browser
+      agents observe pages through screenshots, the document object model (DOM), the accessibility
+      tree or a mix, and act either through simulated input or through browser-automation interfaces
+      such as the Chrome DevTools Protocol, Playwright or Selenium. They range from read-only
+      research assistants to agents that log in, buy or submit forms for the user, and are
+      increasingly built into browsers themselves. The open web makes them especially exposed to
+      [[indirect-prompt-injection|indirect prompt injection]] — hidden instructions on a page that
+      hijack the agent — and to deceptive page designs, CAPTCHAs and irreversible transactions;
+      mitigations include confirmation before sensitive actions, isolated or logged-out browser
+      profiles, site allowlists and injection classifiers. Benchmarks include [[webarena|WebArena]],
+      Mind2Web and [[browsecomp|BrowseComp]].
+    example: >-
+      The browser agent got as far as the checkout page, then stopped to ask me to confirm the
+      payment.
+origin: >-
+  Research on web-navigating agents includes OpenAI's World of Bits platform and its MiniWoB tasks
+  (2017) and [[webgpt|WebGPT]] (2021), which answered questions by browsing a text-only web.
+  Consumer browser agents arrived in 2024–2025 with Google DeepMind's Project Mariner (December
+  2024), OpenAI's Operator (January 2025) and AI-first browsers that build an agent into the browser
+  itself.
+year: 2017
+note: >-
+  Often used interchangeably with [[computer-use|computer use]], but a browser agent is confined to
+  the browser and frequently reads page structure directly instead of relying only on pixels.
+see_also:
+  - computer use
+  - GUI agent
+  - WebArena
+  - BrowseComp
+  - indirect prompt injection
+  - WebGPT
+  - deep research
+sources:
+  - text: >-
+      Shi, T., Karpathy, A., Fan, L., Hernandez, J. & Liang, P. (2017). World of Bits: An
+      Open-Domain Platform for Web-Based Agents. ICML 2017.
+  - text: >-
+      Nakano, R., Hilton, J., Balaji, S. et al. (2021). WebGPT: Browser-assisted question-answering
+      with human feedback. arXiv:2112.09332.
+    url: https://arxiv.org/abs/2112.09332
+as_of: 2026-10

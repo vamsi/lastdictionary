@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: n-gram model
+id: n-gram-model
+pos: n.
+also:
+  - n-gram language model
+  - n-gram
+  - bigram model
+  - trigram model
+  - Kneser–Ney smoothing
+  - backoff
+domain: llm
+domains:
+  - hist
+  - math
+level: core
+plain: >-
+  An early type of language model that predicts the next word from just the few words before it,
+  using counts of how often each word followed those words in a large collection of text.
+senses:
+  - definition: >-
+      A [[language-model|language model]] that predicts the next word from how often short word
+      sequences (n-grams) occurred in a training corpus, deliberately ignoring everything earlier
+      than the last n − 1 words (a Markov assumption of order n − 1). Counting alone would declare
+      impossible any sequence the corpus happens to lack, and most long sequences are absent from
+      any corpus, so practical models hold back some probability for the unseen through smoothing
+      and backoff: Katz backoff, interpolation and above all Kneser–Ney smoothing. Bigram (n = 2),
+      trigram (n = 3) and higher-order models were the workhorse of speech recognition and
+      statistical machine translation from the 1980s to the early 2010s; Google's 2006 Web 1T
+      dataset counted sequences of up to five words over about a trillion words of web text. Neural
+      models replaced them, but n-gram statistics remain useful for data filtering,
+      [[data-contamination|contamination]] checks and corpus analysis.
+    example: >-
+      A 5-gram model with Kneser–Ney smoothing was our baseline for the speech recognizer.
+formula_latex: P(w_t \mid w_{1:t-1}) \approx P(w_t \mid w_{t-n+1:t-1}), \qquad
+  \hat{P}_{\mathrm{MLE}}(w_t \mid w_{t-n+1:t-1}) = \frac{C(w_{t-n+1:t})}{C(w_{t-n+1:t-1})}
+origin: >-
+  Andrey Markov analyzed letter sequences in Pushkin's 'Eugene Onegin' in 1913, and Claude Shannon
+  generated text from letter and word n-gram statistics in 'A Mathematical Theory of Communication'
+  (1948). Frederick Jelinek's group at IBM made n-gram models central to statistical speech
+  recognition from the 1970s; Reinhard Kneser and Hermann Ney's smoothing (1995) became the
+  standard.
+year: 1948
+see_also:
+  - language model
+  - Markov chain
+  - perplexity
+  - next-token prediction
+  - hidden Markov model
+  - information theory
+sources:
+  - text: >-
+      Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal
+      27.
+  - text: >-
+      Kneser, R. & Ney, H. (1995). Improved backing-off for M-gram language modeling. ICASSP 1995.

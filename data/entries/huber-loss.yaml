@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Huber loss
+id: huber-loss
+pos: n.
+also:
+  - Huber function
+  - smooth L1 loss
+  - pseudo-Huber loss
+  - robust regression
+  - M-estimation
+pronunciation: HYOO-ber
+domain: ml
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A way of measuring prediction errors that treats small errors like squared distance but large ones
+  more gently, so a few wild data points cannot drag the whole model off course.
+senses:
+  - definition: >-
+      A [[loss-function|loss function]] for [[regression|regression]] that penalizes residuals
+      smaller than a threshold δ in proportion to their square and larger ones in proportion to
+      their size, the two pieces meeting without a kink. It behaves like [[mean-squared-error|mean
+      squared error]] near zero — smooth, with well-behaved gradients — and like
+      [[mean-absolute-error|mean absolute error]] for large residuals, limiting the influence of
+      outliers. It is the canonical M-estimator of robust statistics; a threshold of about 1.345
+      times the noise scale keeps 95% of least squares' efficiency when errors are Gaussian. In deep
+      learning the δ = 1 version, called smooth L1 loss, is standard for bounding-box regression in
+      object detectors, and the same idea bounds temporal-difference errors in [[deep-q-network|deep
+      Q-networks]]; [[gradient-boosting|gradient boosting]] libraries offer it as an objective. The
+      pseudo-Huber loss, δ²(√(1 + (a/δ)²) − 1) for a residual a, approximates it with a curve that
+      is smooth to every order.
+    example: >-
+      A few sensor glitches dominated the squared error, so we switched to Huber loss with delta set
+      to two degrees.
+formula_latex: L_{\delta}(r) = \begin{cases} \frac{1}{2} r^{2} & |r| \le \delta \\ \delta\big(|r| -
+  \frac{1}{2}\delta\big) & |r| > \delta \end{cases}
+origin: >-
+  Introduced by Peter J. Huber in 'Robust Estimation of a Location Parameter' (Annals of
+  Mathematical Statistics, 1964), a founding paper of robust statistics. Ross Girshick's Fast R-CNN
+  detector (2015) popularized the δ = 1 'smooth L1' form in computer vision.
+year: 1964
+see_also:
+  - loss function
+  - mean squared error
+  - mean absolute error
+  - regression
+  - quantile regression
+  - deep Q-network
+contrast:
+  - mean squared error
+sources:
+  - text: >-
+      Huber, P. J. (1964). Robust Estimation of a Location Parameter. The Annals of Mathematical
+      Statistics, 35(1), 73–101.

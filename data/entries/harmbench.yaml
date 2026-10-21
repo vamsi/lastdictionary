@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: HarmBench
+id: harmbench
+pos: prop. n.
+domain: eval
+domains:
+  - safety
+  - sec
+level: specialist
+plain: >-
+  A standard test kit for checking how easily AI chatbots can be manipulated into harmful help, and
+  how well automated attacks and defenses work, using a fixed list of forbidden requests.
+senses:
+  - definition: >-
+      A common yardstick for two opposing lines of work: automated methods that try to elicit
+      harmful output from models ([[automated-red-teaming|automated red teaming]]) and defenses
+      meant to make models reliably decline ([[refusal|refusal]]). It defines a fixed set of harmful
+      behaviors that models should refuse — spanning categories such as cybercrime, chemical and
+      biological weapons, misinformation, harassment and copyright violation, and including
+      contextual and multimodal behaviors — and a standard pipeline in which an attack method
+      generates test cases, the target model responds, and a fine-tuned classifier judges whether
+      the response actually carries out the behavior. Measuring attack success rate under identical
+      conditions made results comparable; in the original study, which pitted 18 attack methods
+      against 33 models and defenses, no attack or defense won everywhere, and larger models were
+      not automatically more robust. They also introduced an efficient adversarial-training defense.
+      HarmBench became a common [[jailbreak|jailbreak]]-robustness benchmark in safety research and
+      model reports.
+    example: >-
+      Under HarmBench's standard judge, the new defense halves attack success without raising
+      over-refusal.
+origin: >-
+  Introduced in February 2024 by Mantas Mazeika, Long Phan and colleagues at the Center for AI
+  Safety, the University of Illinois Urbana-Champaign and other institutions, and presented at ICML
+  2024.
+year: 2024
+note: >-
+  Attack success rates depend on the judge classifier and the behavior set; a low rate on HarmBench
+  does not guarantee robustness to new or multi-turn attacks.
+see_also:
+  - red teaming
+  - automated red teaming
+  - jailbreak
+  - refusal
+  - over-refusal
+  - WMDP
+  - adversarial robustness
+sources:
+  - text: >-
+      Mazeika, M., Phan, L. et al. (2024). HarmBench: A Standardized Evaluation Framework for
+      Automated Red Teaming and Robust Refusal. arXiv:2402.04249.
+    url: https://arxiv.org/abs/2402.04249

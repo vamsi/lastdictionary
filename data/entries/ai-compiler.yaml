@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI compiler
+id: ai-compiler
+pos: n.
+also:
+  - ML compiler
+  - deep learning compiler
+  - tensor compiler
+  - graph compiler
+domain: hw
+domains:
+  - eng
+  - infer
+level: specialist
+plain: >-
+  Software that translates an AI model into efficient instructions for a specific chip, rearranging
+  and combining its calculations so the hardware is used as fully as possible.
+senses:
+  - definition: >-
+      A compiler that maps machine-learning programs — usually [[computational-graph|computational
+      graphs]] of [[tensor|tensor]] operations — onto hardware. It typically works in stages:
+      graph-level optimization through operator fusion ([[kernel-fusion|kernel fusion]]), constant
+      folding, layout and precision changes and partitioning across devices; then operator-level
+      code generation that tiles loops for caches, [[sram|SRAM]] and [[tensor-core|matrix units]],
+      often guided by search or learned cost models (autotuning). Examples include [[xla|XLA]],
+      Apache TVM, TorchInductor in [[pytorch|PyTorch]] 2.x (which emits [[triton|Triton]] code) and
+      Nvidia's TensorRT for inference, many built on shared infrastructure such as MLIR. AI
+      compilers reduce dependence on hand-written vendor libraries, help new
+      [[ai-accelerator|accelerators]] run existing models, and are a principal means of loosening
+      [[cuda|CUDA]] lock-in.
+origin: >-
+  Grew from 2010s work such as Halide (2012), which separated image-processing algorithms from their
+  execution schedules. Google's XLA (2017), Tianqi Chen and colleagues' TVM (2018) and Facebook's
+  Glow (2018) established the category, and Chris Lattner and colleagues' MLIR (announced 2019)
+  supplied shared compiler infrastructure.
+see_also:
+  - XLA
+  - Triton
+  - CUDA
+  - kernel fusion
+  - ONNX
+  - ROCm
+  - AI accelerator
+sources:
+  - text: >-
+      Chen, T. et al. (2018). TVM: An Automated End-to-End Optimizing Compiler for Deep Learning.
+      Proceedings of OSDI 2018.
+    url: https://arxiv.org/abs/1802.04799
+  - text: >-
+      Lattner, C. et al. (2021). MLIR: Scaling Compiler Infrastructure for Domain Specific
+      Computation. Proceedings of CGO 2021.

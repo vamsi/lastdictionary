@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: interleaved thinking
+id: interleaved-thinking
+pos: n.
+also:
+  - interleaved reasoning
+  - thinking between tool calls
+domain: llm
+domains:
+  - agents
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A way for an AI agent to pause and reason again after every action it takes — reading each search
+  result or test output before deciding what to do next — instead of only thinking once at the
+  start.
+senses:
+  - definition: >-
+      A mode of [[reasoning-model|reasoning model]] operation in which the model produces fresh
+      [[reasoning-trace|reasoning]] between [[tool-call|tool calls]] within a single assistant turn,
+      reflecting on each tool result before choosing its next action, rather than reasoning only
+      before its first output. It matters for [[ai-agent|agents]] running an [[agent-loop|agent
+      loop]], where the right next step depends on what the last step returned. Supporting it
+      requires the [[harness|harness]] to pass earlier thinking blocks back to the model unchanged,
+      so that its reasoning stays continuous across the turn. The idea carries the [[react|ReAct]]
+      pattern of alternating thoughts and actions over to trained reasoning models.
+    example: >-
+      With interleaved thinking the agent noticed the failing test and changed its plan mid-turn.
+origin: >-
+  Anthropic introduced interleaved thinking as a beta feature for its Claude 4 models in May 2025;
+  from the Claude 4.6 generation it became automatic under adaptive thinking. Agentic reasoning
+  models from other developers adopted similar behavior during 2025.
+year: 2025
+see_also:
+  - extended thinking
+  - tool use
+  - agent loop
+  - ReAct
+  - reasoning model
+  - harness
+sources:
+  - text: Anthropic (2026). Extended thinking. Claude Developer Platform documentation.
+    url: https://platform.claude.com/docs/en/build-with-claude/extended-thinking
+as_of: 2026-10

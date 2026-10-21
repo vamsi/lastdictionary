@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chat model
+id: chat-model
+pos: n.
+also:
+  - chat-tuned model
+  - assistant model
+  - chat LLM
+  - dialogue model
+domain: llm
+domains:
+  - train
+  - eng
+level: core
+plain: >-
+  A language model trained to hold a back-and-forth conversation, keeping track of who said what and
+  replying as a helpful assistant. It is the engine inside chat apps.
+senses:
+  - definition: >-
+      A [[language-model|language model]] post-trained to conduct multi-turn dialogue in a
+      role-based format: a conversation is a list of messages labeled system, user, assistant and
+      often tool, serialized into tokens by the model's [[chat-template|chat template]], with
+      [[special-token|special tokens]] marking turn boundaries. Training combines
+      [[supervised-fine-tuning|supervised fine-tuning]] on dialogues with preference optimization,
+      giving the model a consistent assistant persona, the ability to draw on earlier turns, and
+      conventions for clarification, [[refusal|refusals]] and [[tool-call|tool calls]]. Chat models
+      are accessed through message-based APIs rather than raw text completion, and are the basis of
+      chat assistants, [[ai-agent|agents]] and most [[reasoning-model|reasoning models]].
+    example: >-
+      Send the history as a list of messages; the chat model was never trained on raw transcripts.
+origin: >-
+  Dialogue-tuned neural models such as Google's Meena (2020) and LaMDA (2021) preceded wide use of
+  the term. [[chatgpt|ChatGPT]] (November 2022) made chat the dominant interface to language models,
+  and OpenAI's Chat Completions API (March 2023) and Meta's Llama 2-Chat (July 2023) established
+  'chat model' as a standard category of release.
+year: 2022
+note: >-
+  Distinguish from [[chatbot|chatbot]], any conversational program, including rule-based ones such
+  as [[eliza|ELIZA]]. The chat model is the trained network; the chatbot or assistant is the product
+  built on it.
+see_also:
+  - chat template
+  - system prompt
+  - instruction-tuned model
+  - ChatGPT
+  - conversational AI
+  - base model
+  - reinforcement learning from human feedback
+contrast:
+  - base model
+  - chatbot
+sources:
+  - text: OpenAI (2023). Introducing ChatGPT and Whisper APIs. OpenAI blog.
+    url: https://openai.com/index/introducing-chatgpt-and-whisper-apis/

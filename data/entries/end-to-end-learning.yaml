@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: end-to-end learning
+id: end-to-end-learning
+pos: n.
+also:
+  - end-to-end
+  - E2E
+  - end-to-end training
+  - end-to-end model
+domain: core
+domains:
+  - dl
+  - robot
+  - percep
+level: core
+plain: >-
+  Training one AI system to go straight from raw input, such as camera images, to the final output,
+  such as steering commands, instead of chaining hand-designed steps.
+senses:
+  - definition: >-
+      Training a single model, usually a deep [[neural-network|neural network]], to map raw inputs
+      directly to final outputs, with all components optimized jointly for the final objective by
+      [[backpropagation|backpropagation]], instead of building a pipeline of separately designed and
+      trained stages. Examples include speech recognizers that map audio straight to text without
+      separate acoustic, pronunciation and language models; neural [[machine-translation|machine
+      translation]] replacing phrase-based systems; and driving or robot policies that map camera
+      pixels to controls. The advantages are that no hand-designed intermediate representation
+      limits the system and that errors do not compound across separately tuned stages. The costs
+      are a large appetite for data, failures that are hard to diagnose because there are no
+      inspectable intermediate outputs, and difficulty injecting domain knowledge or guaranteeing
+      safety, which is why many deployed systems remain hybrids.
+    example: >-
+      We dropped the separate parser and trained the whole system end to end, and accuracy rose six
+      points.
+origin: >-
+  Dean Pomerleau's ALVINN (1989) learned to steer a vehicle from camera input with a neural network.
+  The phrase spread with deep learning through work such as Alex Graves and Navdeep Jaitly's
+  'Towards End-to-End Speech Recognition' (2014) and NVIDIA's 'End to End Learning for Self-Driving
+  Cars' (Mariusz Bojarski and colleagues, 2016). It echoes the end-to-end argument of network design
+  (Jerome Saltzer, David Reed and David Clark, 1984).
+note: >-
+  In industry, 'end-to-end' also means simply 'complete', as in an end-to-end platform, unrelated to
+  joint training. Contrast modular pipelines built on [[feature-engineering|feature engineering]].
+see_also:
+  - deep learning
+  - representation learning
+  - feature engineering
+  - autonomous vehicle
+  - speech recognition
+  - sequence-to-sequence model
+  - the bitter lesson
+contrast:
+  - feature engineering
+sources:
+  - text: >-
+      Pomerleau, D. A. (1989). ALVINN: An Autonomous Land Vehicle in a Neural Network. Advances in
+      Neural Information Processing Systems 1.
+  - text: >-
+      Graves, A. & Jaitly, N. (2014). Towards End-to-End Speech Recognition with Recurrent Neural
+      Networks. Proceedings of ICML 2014.
+  - text: >-
+      Bojarski, M. et al. (2016). End to End Learning for Self-Driving Cars. arXiv:1604.07316.
+    url: https://arxiv.org/abs/1604.07316

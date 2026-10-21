@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: attention head
+id: attention-head
+pos: n.
+also:
+  - head
+domain: llm
+domains:
+  - dl
+  - interp
+level: core
+plain: >-
+  One of several parallel attention units inside a transformer layer. Each head learns its own way
+  of deciding which words to connect, so different heads can specialize in different patterns.
+senses:
+  - definition: >-
+      A single attention computation within a [[multi-head-attention|multi-head attention]] layer,
+      with its own learned query, key, value and output projections into a low-dimensional subspace,
+      typically 64–128 dimensions. Each head produces its own [[attention-pattern|attention
+      pattern]] over positions and writes its result back into the [[residual-stream|residual
+      stream]] through its slice of the output projection. Interpretability research has found heads
+      with recognizable jobs — attending to the previous token, copying earlier text through
+      [[induction-head|induction heads]], tracking syntactic relations — while many others are
+      redundant: 2019 studies showed that a large share of heads can be pruned with little loss.
+      Architectural variants change what heads share: in [[multi-query-attention|multi-query
+      attention]] and [[grouped-query-attention|grouped-query attention]], several query heads share
+      one key–value head.
+    example: Ablating head 5.1 broke the model's ability to close brackets.
+origin: >-
+  Introduced with multi-head attention in 'Attention Is All You Need' (Vaswani et al., 2017). Paul
+  Michel, Omer Levy and Graham Neubig ('Are Sixteen Heads Really Better than One?') and Elena Voita
+  and colleagues showed in 2019 that many heads can be removed; Anthropic's circuits work from 2021
+  characterized individual heads mechanistically.
+year: 2017
+see_also:
+  - multi-head attention
+  - attention pattern
+  - induction head
+  - attention
+  - residual stream
+  - QK and OV circuits
+sources:
+  - text: >-
+      Michel, P., Levy, O. & Neubig, G. (2019). Are Sixteen Heads Really Better than One? NeurIPS
+      2019.
+  - text: >-
+      Voita, E., Talbot, D., Moiseev, F., Sennrich, R. & Titov, I. (2019). Analyzing Multi-Head
+      Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned. ACL 2019.

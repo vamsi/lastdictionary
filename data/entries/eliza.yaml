@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ELIZA
+id: eliza
+pos: prop. n.
+also:
+  - DOCTOR
+pronunciation: ih-LY-zuh
+domain: hist
+domains:
+  - llm
+  - society
+labels:
+  - historical
+level: core
+plain: >-
+  A 1960s computer program that chatted by turning a user's own words back into questions, like a
+  therapist. Many users felt understood, though the program understood nothing.
+senses:
+  - definition: >-
+      A keyword-driven conversation program that [[joseph-weizenbaum|Joseph Weizenbaum]] wrote at
+      MIT between 1964 and 1966, widely regarded as the first [[chatbot|chatbot]]. For each typed
+      line it found the highest-ranked keyword, split the sentence with that keyword's decomposition
+      rule and rebuilt the pieces into a reply with a reassembly rule, so a complaint about being
+      unhappy might return as a question about the unhappiness; when no keyword matched, it used a
+      stock phrase or revived an earlier remark. The rules came in interchangeable scripts. DOCTOR,
+      the one that made the program famous, cast it as a therapist in Carl Rogers's client-centered
+      style, a persona that can mirror a speaker's statements while knowing almost nothing about the
+      world. Nothing in ELIZA modeled meaning: whatever understanding users perceived came from the
+      rules and from their own reading of its replies.
+    example: >-
+      Weizenbaum built ELIZA partly to show how shallow the appearance of understanding could be.
+origin: >-
+  Named after Eliza Doolittle, the flower seller taught to speak 'properly' in George Bernard Shaw's
+  Pygmalion. Written in MAD-SLIP for the IBM 7094 time-sharing system of MIT's Project MAC and
+  described in Communications of the ACM in January 1966. The original code was rediscovered in
+  Weizenbaum's papers at MIT in 2021 and has since been restored to run.
+year: 1966
+note: >-
+  Weizenbaum was disturbed that users, including his secretary, confided in the program, and he
+  became a leading critic of AI in Computer Power and Human Reason (1976). See [[eliza-effect|ELIZA
+  effect]].
+see_also:
+  - ELIZA effect
+  - chatbot
+  - Joseph Weizenbaum
+  - Turing test
+  - SHRDLU
+  - anthropomorphism
+sources:
+  - text: >-
+      Weizenbaum, J. (1966). ELIZA — A Computer Program for the Study of Natural Language
+      Communication Between Man and Machine. Communications of the ACM 9(1), 36–45.

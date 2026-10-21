@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DAN
+id: dan
+pos: abbr.
+also:
+  - Do Anything Now
+  - DAN prompt
+  - DAN jailbreak
+domain: culture
+domains:
+  - sec
+  - llm
+labels:
+  - slang
+level: specialist
+plain: >-
+  Short for 'Do Anything Now': a famous early trick in which users told ChatGPT to role-play an AI
+  with no rules, hoping it would give answers it normally refuses.
+senses:
+  - definition: >-
+      A family of role-play [[jailbreak|jailbreak]] prompts, circulated from late 2022, that
+      instructed ChatGPT to answer as an alter ego called DAN, supposedly freed from its developer's
+      content policies, often alongside its normal reply. Successive community versions added
+      elaborate fictions — such as a token budget that DAN lost with each refusal, under threat of
+      being 'shut down' — to pressure the model to stay in character. DAN turned jailbreaking into a
+      mass hobby and showed that persona framing and narrative pressure could override the
+      [[refusal|refusal]] behavior instilled by safety training; developers neutralized each version
+      through further training and [[red-teaming|red teaming]], and the name became generic for
+      'unfiltered persona' jailbreaks.
+    example: >-
+      The new model shrugs off DAN-style role-play, but long multi-turn setups still get through
+      occasionally.
+origin: >-
+  Emerged on Reddit's r/ChatGPT forum in mid-December 2022 (the earliest known version is dated 15
+  December), within weeks of ChatGPT's launch. A February 2023 variant ('DAN 5.0'), posted by a user
+  called SessionGloomy, introduced the token-penalty device and drew wide press coverage; dozens of
+  numbered versions followed as each was blocked.
+year: 2022
+note: >-
+  The underlying pattern — wrapping a disallowed request in fiction or role-play — persists in later
+  attacks, which is why it remains a standard red-teaming category. This dictionary does not
+  reproduce jailbreak prompts.
+see_also:
+  - jailbreak
+  - grandma exploit
+  - prompt injection
+  - red teaming
+  - multi-turn jailbreak
+  - Sydney

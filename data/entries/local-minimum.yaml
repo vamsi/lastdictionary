@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: local minimum
+id: local-minimum
+pos: n.
+also:
+  - local minima
+  - local optimum
+  - global minimum
+  - local maximum
+  - stationary point
+domain: math
+domains:
+  - dl
+level: core
+plain: >-
+  A spot lower than everything immediately around it, like the bottom of a small valley, even though
+  a deeper valley may exist somewhere else.
+senses:
+  - definition: >-
+      A point at which a function's value is no greater than at any nearby point, though it may be
+      higher than the function's lowest value overall, the global minimum. For smooth functions a
+      local minimum has zero [[gradient|gradient]] and a positive-semidefinite [[hessian|Hessian]];
+      other points with zero gradient are maxima or [[saddle-point|saddle points]]. In
+      [[convex-optimization|convex problems]] every local minimum is global, but neural-network
+      [[loss-landscape|loss landscapes]] are not convex, and poor local minima were long feared as
+      the main obstacle to training deep networks. Theory and experiments since the 2010s suggest
+      that in large, [[overparameterization|overparameterized]] networks most local minima have loss
+      close to the global minimum, while saddle points and plateaus are the bigger practical
+      hurdles; which minimum training reaches still affects [[generalization|generalization]] (see
+      [[sharp-and-flat-minima|sharp and flat minima]]).
+    example: >-
+      A different random seed got us out of that local minimum, and the loss fell another 10 percent.
+origin: >-
+  Pierre de Fermat's 1630s method for finding maxima and minima, which in effect sets the derivative
+  to zero, is the classical ancestor. The local-versus-global distinction became central to
+  numerical optimization in the 20th century and to neural networks in 1980s debates over the limits
+  of backpropagation.
+see_also:
+  - saddle point
+  - loss landscape
+  - convex optimization
+  - sharp and flat minima
+  - gradient descent
+  - Hessian

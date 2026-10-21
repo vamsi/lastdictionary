@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-improvement
+id: self-improvement
+pos: n.
+also:
+  - self-improving model
+  - self-training
+  - self-improve
+domain: train
+domains:
+  - llm
+  - asi
+level: core
+plain: >-
+  When an AI gets better by learning from material it produces itself — its own answers, critiques
+  or practice problems — rather than only from new human-made examples.
+senses:
+  - context: Training
+    definition: >-
+      Any training procedure in which a model's own outputs supply most of its new training signal:
+      generating answers and keeping those that pass a filter ([[self-taught-reasoner|STaR]],
+      [[expert-iteration|expert iteration]], [[rejection-sampling|rejection sampling]] fine-tuning);
+      labeling unlabeled data with its own confident predictions (classical self-training); judging
+      its own responses to create [[preference-data|preference data]] (self-rewarding models,
+      [[reinforcement-learning-from-ai-feedback|reinforcement learning from AI feedback]]); or
+      playing against copies of itself ([[self-play|self-play]]). Self-improvement works when an
+      external anchor keeps the signal honest — a [[verifier|verifier]], ground-truth answers, game
+      rules or a fixed stronger judge. Without one, errors and biases can compound, and repeated
+      training on self-generated data can degrade quality ([[model-collapse|model collapse]]). In
+      practice gains often plateau after a few iterations.
+    example: >-
+      Self-improvement stalled after the third round because the model could no longer tell its own
+      best answers apart.
+  - context: AGI and superintelligence
+    definition: >-
+      An AI system's improvement of its own capabilities, including by designing better training
+      methods, code or successor systems; when the process feeds on itself it is called
+      [[recursive-self-improvement|recursive self-improvement]], central to
+      [[intelligence-explosion|intelligence explosion]] arguments.
+origin: >-
+  Self-training goes back to H. J. Scudder's adaptive pattern-recognition work (1965) and David
+  Yarowsky's 1995 bootstrapping for word senses. For language models, Jiaxin Huang and colleagues at
+  Google showed in October 2022 that fine-tuning a 540-billion-parameter model on its own
+  high-confidence reasoning raised GSM8K accuracy from 74.4 to 82.1 percent; self-rewarding language
+  models (Weizhe Yuan and colleagues, 2024) extended the idea to preferences.
+year: 2022
+note: >-
+  Claims of self-improvement deserve scrutiny for hidden external signal, such as answer keys used
+  in filtering. The training sense is routine engineering; the second sense concerns hypothetical
+  future systems and is debated.
+see_also:
+  - self-taught reasoner
+  - expert iteration
+  - self-play
+  - reinforcement learning from AI feedback
+  - recursive self-improvement
+  - model collapse
+  - synthetic data
+  - verifier
+contrast:
+  - recursive self-improvement
+sources:
+  - text: >-
+      Huang, J. et al. (2022). Large Language Models Can Self-Improve. arXiv:2210.11610.
+    url: https://arxiv.org/abs/2210.11610
+  - text: >-
+      Yuan, W. et al. (2024). Self-Rewarding Language Models. ICML 2024. arXiv:2401.10020.
+    url: https://arxiv.org/abs/2401.10020

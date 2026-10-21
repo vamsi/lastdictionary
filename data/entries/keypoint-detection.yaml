@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: keypoint detection
+id: keypoint-detection
+pos: n.
+also:
+  - keypoint
+  - interest point
+  - interest point detection
+  - landmark detection
+  - corner detection
+  - object keypoint similarity
+  - OKS
+domain: percep
+domains:
+  - robot
+level: core
+plain: >-
+  Finding specific, recognizable points in an image, such as the corners of a building, a person's
+  elbows and knees, or the tip of a nose.
+senses:
+  - context: Semantic keypoints
+    definition: >-
+      Locating a predefined set of meaningful points on objects of a known category, such as the 17
+      body joints annotated in [[coco|COCO]], facial landmarks, hand joints or the corners of a
+      product box; it is the basis of [[pose-estimation|pose estimation]]. Modern networks usually
+      predict one heatmap per keypoint type, whose peak gives the location, or regress coordinates
+      directly. Multi-person systems either detect each person and then find their keypoints
+      (top-down) or detect all keypoints and group them into people (bottom-up). Accuracy is
+      measured with object keypoint similarity (OKS), a scale-normalized distance used in place of
+      [[intersection-over-union|intersection over union]] to compute keypoint
+      [[mean-average-precision|AP]], or with the percentage of correct keypoints (PCK).
+    example: >-
+      Keypoint detection on the forklift's mast lets us estimate fork height from a single camera.
+  - context: Interest points
+    definition: >-
+      Finding distinctive, repeatable image locations, such as corners and blobs, that can be found
+      again in other views of the same scene. Classical detectors include Hans Moravec's interest
+      operator (1977), the Harris corner detector (1988), FAST and the difference-of-Gaussians
+      detector of [[scale-invariant-feature-transform|SIFT]]; learned detectors such as SuperPoint
+      (2018) followed. Matched interest points feed panorama stitching, visual
+      [[odometry|odometry]], [[simultaneous-localization-and-mapping|simultaneous localization and
+      mapping]] and [[structure-from-motion|structure from motion]].
+origin: >-
+  Interest points date to Hans Moravec's 1977 operator for the Stanford Cart robot and to Chris
+  Harris and Mike Stephens's 1988 corner detector; 'keypoint' became common with David Lowe's SIFT
+  papers (1999–2004). Semantic keypoint detection grew out of human pose estimation and became a
+  standard benchmark task with the COCO keypoint challenge (2016).
+year: 1977
+see_also:
+  - pose estimation
+  - scale-invariant feature transform
+  - face detection
+  - structure from motion
+  - COCO
+  - simultaneous localization and mapping
+sources:
+  - text: >-
+      Harris, C. & Stephens, M. (1988). A Combined Corner and Edge Detector. Proceedings of the
+      Alvey Vision Conference.
+  - text: >-
+      Moravec, H. P. (1977). Towards Automatic Visual Obstacle Avoidance. Proceedings of IJCAI 1977.

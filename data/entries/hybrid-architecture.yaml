@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hybrid architecture
+id: hybrid-architecture
+pos: n.
+also:
+  - hybrid model
+  - hybrid transformer
+  - attention–SSM hybrid
+  - Jamba
+domain: llm
+domains:
+  - dl
+  - infer
+labels:
+  - emerging
+level: specialist
+plain: >-
+  An AI model design that mixes two kinds of building blocks — usually a few standard attention
+  layers among cheaper, memory-saving layers — to keep most of the quality at lower cost on long
+  inputs.
+senses:
+  - definition: >-
+      A model that interleaves different sequence-mixing layers, most often full
+      [[self-attention|self-attention]] with fixed-state recurrent layers —
+      [[state-space-model|state-space]] layers such as [[mamba|Mamba]], [[linear-attention|linear
+      attention]] variants or gated recurrences — and sometimes [[sliding-window-attention|local
+      attention]]. The recurrent layers do most of the sequence processing with constant memory per
+      token, while a minority of attention layers, typically one in four to one in ten, supply the
+      precise retrieval and in-context copying that fixed-state layers handle worst. The result is a
+      much smaller [[kv-cache|KV cache]] and faster long-context generation at quality close to that
+      of pure transformers. Examples include AI21's Jamba (2024), which combines Transformer, Mamba
+      and [[mixture-of-experts|MoE]] layers; and, from 2025, NVIDIA's Nemotron-H, MiniMax-01, IBM's
+      Granite 4.0 (one attention layer per nine Mamba-2 layers) and Alibaba's Qwen3-Next (three
+      Gated DeltaNet layers per attention layer). The term is also used loosely for any mix of
+      architectural families, such as convolution–transformer hybrids in vision.
+    example: >-
+      The hybrid keeps one attention layer in eight, so its KV cache is an eighth of the transformer
+      baseline's.
+origin: >-
+  Early attention–SSM hybrids include H3 (2022) and StripedHyena (2023). AI21 Labs' Jamba (March
+  2024), described by its makers as the first production-grade Mamba-based model, popularized the
+  approach, and hybrids multiplied in 2025 as long-context and agentic workloads raised the cost of
+  KV caches.
+year: 2022
+see_also:
+  - state space model
+  - Mamba
+  - linear attention
+  - transformer
+  - KV cache
+  - long context
+  - mixture of experts
+sources:
+  - text: >-
+      Lieber, O., Lenz, B., Bata, H. et al. (2024). Jamba: A Hybrid Transformer-Mamba Language
+      Model. arXiv.
+as_of: 2026-10

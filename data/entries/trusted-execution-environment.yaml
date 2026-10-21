@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: trusted execution environment
+id: trusted-execution-environment
+pos: n.
+also:
+  - TEE
+  - secure enclave
+  - enclave
+domain: sec
+domains:
+  - hw
+level: specialist
+plain: >-
+  A sealed-off part of a computer chip that runs programs which the rest of the machine, even its
+  operating system, cannot spy on or interfere with.
+senses:
+  - definition: >-
+      A hardware-enforced compartment of a processor whose code and memory the rest of the platform,
+      including the operating system and hypervisor, can neither read nor modify, typically through
+      memory encryption and access control, and which can vouch for its own identity and state
+      through [[remote-attestation|remote attestation]]. Designs range from process-level enclaves
+      (Intel SGX) and a secure world on mobile chips (Arm TrustZone) to whole confidential virtual
+      machines (AMD SEV-SNP, Intel TDX, Arm CCA) and GPU modes that extend protection to
+      accelerators. TEEs underpin [[confidential-computing|confidential computing]] and are proposed
+      for protecting model weights and for verifiable compute governance. Their security depends on
+      the hardware vendor and has repeatedly been weakened by side-channel and fault attacks.
+    example: >-
+      The decryption key for the model weights is released only to a TEE whose attestation report
+      matches the approved build.
+origin: >-
+  Grew out of trusted-computing and smart-card research; Arm TrustZone (2004) was an early
+  commercial design. The term was standardized for mobile devices by the Open Mobile Terminal
+  Platform (2009) and GlobalPlatform (from 2010), and Intel SGX (2015) brought enclaves to
+  general-purpose processors.
+year: 2009
+see_also:
+  - confidential computing
+  - remote attestation
+  - model weight security
+  - secure multi-party computation
+  - GPU
+sources:
+  - text: >-
+      Sabt, M., Achemlal, M. & Bouabdallah, A. (2015). Trusted Execution Environment: What It Is,
+      and What It Is Not. IEEE Trustcom 2015.

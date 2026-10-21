@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: predictive parity
+id: predictive-parity
+pos: n.
+also:
+  - sufficiency (fairness criterion)
+  - calibration within groups
+  - PPV parity
+  - positive predictive value parity
+domain: society
+domains:
+  - ml
+level: specialist
+plain: >-
+  A fairness test that asks whether a system's verdict means the same thing for every group: of the
+  people it flags as high risk, the same share really are, whatever their group.
+senses:
+  - definition: >-
+      A [[group-fairness|group fairness]] criterion requiring equal positive predictive value across
+      groups: among individuals who receive a positive prediction, the fraction whose true outcome
+      is positive must not depend on the [[protected-attribute|protected attribute]]. Its
+      score-based generalization, calibration within groups (or sufficiency), requires a given risk
+      score to correspond to the same outcome probability in every group, so that the outcome is
+      independent of group membership given the score. It is the standard Northpointe invoked to
+      defend [[compas|COMPAS]]. When base rates differ, an imperfect classifier that satisfies it
+      must have unequal false positive or false negative rates, so it conflicts with
+      [[equalized-odds|equalized odds]] (see [[fairness-impossibility-theorem|fairness impossibility
+      theorem]]).
+    example: >-
+      The tool satisfies predictive parity: of those it flags as high risk, about 60% are rearrested
+      in every group.
+formula_latex: P(Y=1 \mid \hat{Y}=1, A=a) = P(Y=1 \mid \hat{Y}=1, A=b)
+origin: >-
+  The phrase appears in the title of Northpointe's July 2016 reply to ProPublica by William
+  Dieterich, Christina Mendoza and Tim Brennan; Alexandra Chouldechova gave it its standard formal
+  definition as equal positive predictive value (2016–2017). Checks of calibration across groups
+  have a longer history in educational and psychological testing.
+year: 2016
+see_also:
+  - equalized odds
+  - demographic parity
+  - fairness impossibility theorem
+  - COMPAS
+  - calibration
+  - group fairness
+contrast:
+  - equalized odds
+sources:
+  - text: >-
+      Dieterich, W., Mendoza, C. & Brennan, T. (2016). COMPAS Risk Scales: Demonstrating Accuracy
+      Equity and Predictive Parity. Northpointe Inc.
+  - text: >-
+      Chouldechova, A. (2017). Fair Prediction with Disparate Impact: A Study of Bias in Recidivism
+      Prediction Instruments. Big Data 5(2), 153–163.

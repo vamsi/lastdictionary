@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: memory bandwidth
+id: memory-bandwidth
+pos: n.
+also:
+  - bandwidth
+  - HBM bandwidth
+domain: hw
+domains:
+  - infer
+level: core
+plain: >-
+  How fast data can be moved between a chip's memory and its calculators. For chatbots, this often
+  decides how quickly words appear, more than raw calculating speed.
+senses:
+  - definition: >-
+      The ceiling on how many bytes per second can move between a processor and one level of its
+      memory hierarchy, quoted for off-chip memory in gigabytes or terabytes per second (about 3.35
+      TB/s for an [[h100|H100]]'s [[high-bandwidth-memory|HBM]], roughly 0.1 TB/s for a dual-channel
+      DDR5 desktop). A workload is memory-bound when its [[arithmetic-intensity|arithmetic
+      intensity]] falls below the hardware's ratio of peak [[flops|FLOPS]] to bandwidth, as the
+      [[roofline-model|roofline model]] shows. Autoregressive [[decode-phase|decoding]] by a
+      [[large-language-model|large language model]] at small [[batch-size|batch sizes]] is the
+      classic case: every generated token requires reading all active [[weights|weights]] plus the
+      [[kv-cache|KV cache]], so single-stream speed is bounded by bandwidth divided by bytes read
+      per token — about 200 tokens per second for an 8-billion-parameter model in 16-bit precision
+      on one H100. [[quantization|Quantization]], batching, [[speculative-decoding|speculative
+      decoding]] and [[flashattention|FlashAttention]] all work largely by economizing on bandwidth.
+    example: >-
+      Decode is bandwidth-bound, so the 4-bit model generates almost twice as fast as the 8-bit one.
+origin: >-
+  A long-standing measure in computer architecture — John McCalpin's STREAM benchmark has measured
+  sustainable memory bandwidth since the early 1990s. Its central place in AI performance analysis
+  grew with large language models from about 2020, as accelerator arithmetic outpaced memory speed
+  (see [[memory-wall|memory wall]]).
+see_also:
+  - high-bandwidth memory
+  - memory wall
+  - arithmetic intensity
+  - roofline model
+  - decode phase
+  - KV cache
+  - quantization
+contrast:
+  - FLOPS

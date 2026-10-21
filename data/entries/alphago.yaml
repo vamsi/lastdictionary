@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlphaGo
+id: alphago
+pos: prop. n.
+also:
+  - AlphaGo Lee
+  - AlphaGo Master
+  - AlphaGo Fan
+domain: hist
+domains:
+  - rl
+  - dl
+labels:
+  - trademark
+level: essential
+plain: >-
+  A DeepMind program that in 2016 beat Lee Sedol, one of the world's best players of the board game
+  Go, a decade or more before many experts expected a computer to manage it.
+senses:
+  - definition: >-
+      A Go-playing system from [[deepmind|DeepMind]] that combined deep
+      [[convolutional-neural-network|convolutional networks]] with [[monte-carlo-tree-search|Monte
+      Carlo tree search]]. A policy network, first trained by supervised learning on about 30
+      million positions from expert games and then improved by
+      [[reinforcement-learning|reinforcement learning]] through [[self-play|self-play]], proposed
+      promising moves; a value network trained on self-play outcomes estimated who was winning; and
+      tree search combined the two. In October 2015 it beat the European champion Fan Hui 5–0 — no
+      program had previously beaten a professional on a full-size board without handicap stones —
+      and in March 2016 in Seoul it beat Lee Sedol 4–1 in a match DeepMind said was watched by some
+      200 million people. A successor beat the world's top-ranked player, Ke Jie, 3–0 in May 2017,
+      after which AlphaGo retired from competition. AlphaGo Zero (October 2017) learned from
+      self-play alone, without human games, and surpassed every earlier version.
+    example: >-
+      Go professionals now study AlphaGo's openings the way chess players study engine analysis.
+origin: >-
+  Developed by a team led by [[david-silver|David Silver]] and Aja Huang under
+  [[demis-hassabis|Demis Hassabis]] and described in Nature on 27 January 2016 in 'Mastering the
+  game of Go with deep neural networks and tree search'. Go's enormous number of possible positions,
+  and the difficulty of judging them, had made it a long-standing grand challenge for AI.
+year: 2016
+note: >-
+  Lee Sedol's single win came in game 4, after his unexpected move 78. He retired from professional
+  play in 2019, citing the rise of programs he said could not be beaten. See [[move-37|Move 37]].
+see_also:
+  - Move 37
+  - AlphaZero
+  - Monte Carlo tree search
+  - self-play
+  - DeepMind
+  - Deep Blue
+  - reinforcement learning
+sources:
+  - text: >-
+      Silver, D. et al. (2016). Mastering the Game of Go with Deep Neural Networks and Tree Search.
+      Nature 529, 484–489.
+  - text: >-
+      Silver, D. et al. (2017). Mastering the Game of Go without Human Knowledge. Nature 550,
+      354–359.

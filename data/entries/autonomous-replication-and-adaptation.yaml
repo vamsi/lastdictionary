@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: autonomous replication and adaptation
+id: autonomous-replication-and-adaptation
+pos: n.
+also:
+  - ARA
+  - autonomous replication
+  - self-proliferation
+  - rogue replication
+domain: safety
+domains:
+  - eval
+  - agents
+level: specialist
+plain: >-
+  An AI's ability to keep itself running and spreading without human help — earning money, renting
+  computers, copying itself and fixing problems — which safety testers check for.
+senses:
+  - definition: >-
+      The set of agentic abilities, so grouped by the evaluation organization ARC Evals (now
+      [[metr|METR]]), that would let an AI system keep itself running and spread without human help:
+      obtaining money and computing power, copying its [[weights|weights]] or code to new servers
+      and starting those copies, avoiding shutdown, and working around obstacles and
+      countermeasures. Evaluations decompose it into tasks — deploying a language model on a cloud
+      server, making money online, finding and using credentials, debugging failures over long
+      horizons — run with agent [[scaffolding|scaffolding]] in controlled environments. It was an
+      early focus of [[dangerous-capability-evaluation|dangerous capability evaluation]] because a
+      system able to replicate autonomously could escape the [[kill-switch|kill switches]] and
+      oversight that depend on its running in one known place.
+    example: >-
+      The agent completed several ARA subtasks, such as renting a server, but could not keep a copy
+      of itself running.
+origin: >-
+  Introduced by ARC Evals (now [[metr|METR]]), which tested GPT-4 and Claude for autonomous
+  replication before their 2023 releases and published 'Evaluating Language-Model Agents on
+  Realistic Autonomous Tasks' (Megan Kinniment and colleagues, 2023). Anthropic's first Responsible
+  Scaling Policy (September 2023) used it as a threshold; Google DeepMind's evaluations call the
+  capability 'self-proliferation'.
+year: 2023
+note: >-
+  Later frameworks shifted emphasis from replication to autonomy in AI research and development,
+  judged more decision-relevant. Compare [[self-exfiltration|self-exfiltration]], the specific act
+  of a model copying its weights out of its developer's control.
+see_also:
+  - dangerous capability evaluation
+  - self-exfiltration
+  - METR
+  - responsible scaling policy
+  - kill switch
+  - loss of control
+sources:
+  - text: >-
+      Kinniment, M. et al. (2023). Evaluating Language-Model Agents on Realistic Autonomous Tasks.
+      ARC Evals, arXiv preprint.

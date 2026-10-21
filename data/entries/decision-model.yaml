@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: decision model
+id: decision-model
+pos: n.
+also:
+  - System One model
+domain: llm
+domains:
+  - ml
+  - eng
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A kind of AI language model that reads text but answers only with numbers — a yes-or-no
+  probability, a choice or a score — instead of writing words.
+senses:
+  - definition: >-
+      A [[language-model|language model]] that takes unstructured text but returns typed numerical
+      outputs instead of generated text: a probability for a yes/no question, a probability
+      distribution over a fixed set of choices, or a value on a numeric scale. According to TypeSafe
+      AI, several questions about the same input can be answered in parallel at roughly the cost of
+      one, and since nothing is generated, pricing can rest on input [[token|tokens]] alone.
+      Decision models target work such as spam detection, labeling, prioritization and ranking,
+      where a [[chat-model|chat model]]'s prose would otherwise have to be parsed into a decision.
+      They revive the output format of a classic [[text-classification|classifier]] but, unlike a
+      classifier trained for one label set, accept new questions at inference time. Critics note
+      that a bare score cannot explain which part of the input drove it, which makes careful
+      [[evaluation|evaluation]] and bias testing essential.
+    example: >-
+      We swapped the chat model for a decision model and our triage pipeline stopped choking on
+      malformed JSON.
+origin: >-
+  Both names date from September 2026, when the start-up TypeSafe AI released Jev and marketed it as
+  the first of a new kind of 'System One' model — after the fast, intuitive System 1 of dual-process
+  psychology; explainers such as DigitalOcean's and DataCamp's use that name. Simon Willison
+  proposed 'decision model' as the clearer label.
+year: 2026
+note: >-
+  As of October 2026 the vendor's 'System One model' is the more common name; 'decision model' is a
+  proposed alternative. Not to be confused with decision models in operations research and
+  business-rules engineering (for example the Decision Model and Notation standard).
+see_also:
+  - text classification
+  - structured outputs
+  - System 1 and System 2
+  - calibration
+  - logit
+  - large language model
+contrast:
+  - chat model
+sources:
+  - text: >-
+      Willison, S. (2026). Jev introduces a new shape of LLM - System One, aka Decision Models.
+      Simon Willison's Weblog, 21 September 2026.
+    url: https://simonwillison.net/2026/Sep/21/jev/
+  - text: DigitalOcean (2026). What is Jev (2026)? TypeSafe AI's System One model.
+    url: https://www.digitalocean.com/resources/articles/what-is-jev
+as_of: 2026-10

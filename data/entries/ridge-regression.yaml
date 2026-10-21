@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ridge regression
+id: ridge-regression
+pos: n.
+also:
+  - Tikhonov regularization
+  - L2-regularized regression
+  - kernel ridge regression
+  - ridge
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  Linear regression with a built-in brake: it fits the data while also keeping the weights small,
+  which makes predictions more stable when there are many overlapping inputs.
+senses:
+  - definition: >-
+      [[linear-regression|Linear regression]] estimated by minimizing the sum of squared residuals
+      plus an L2 penalty λ‖β‖² on the coefficients, with the intercept normally left unpenalized.
+      The solution exists in closed form even when XᵀX is singular — when features are collinear or
+      outnumber observations — and shrinks every coefficient toward zero without setting any exactly
+      to zero. Increasing λ raises bias and lowers variance; λ is chosen by
+      [[cross-validation|cross-validation]] or generalized cross-validation, with features
+      standardized first because the penalty depends on their scale. Ridge is the
+      [[maximum-a-posteriori-estimation|MAP estimate]] under a zero-mean Gaussian [[prior|prior]] on
+      the coefficients and is a case of Tikhonov [[regularization|regularization]]. Kernel ridge
+      regression applies the [[kernel-trick|kernel trick]] and, when λ equals the noise variance,
+      gives the same predictive mean as a [[gaussian-process|Gaussian process]] with the
+      corresponding kernel.
+    example: >-
+      With 2,000 correlated gene-expression features and 300 patients, least squares failed but
+      ridge regression gave stable coefficients.
+formula_latex: \hat{\boldsymbol\beta}_{\text{ridge}} = \arg\min_{\boldsymbol\beta} \lVert \mathbf{y}
+  - X\boldsymbol\beta \rVert_2^2 + \lambda \lVert \boldsymbol\beta \rVert_2^2 = (X^{\top}X + \lambda
+  I)^{-1} X^{\top}\mathbf{y}
+origin: >-
+  Arthur E. Hoerl applied his 'ridge analysis' of response surfaces to regression in 1962 and, with
+  Robert W. Kennard, set out ridge regression in two 1970 Technometrics papers. 'Ridge' refers to
+  the path traced by constrained optima in ridge analysis. The same mathematics had appeared in
+  Andrey Tikhonov's work on ill-posed problems (from 1943) and David Phillips's 1962 paper.
+year: 1970
+see_also:
+  - regularization
+  - lasso
+  - elastic net
+  - linear regression
+  - weight decay
+  - kernel trick
+  - Gaussian process
+contrast:
+  - lasso
+sources:
+  - text: >-
+      Hoerl, A. E. & Kennard, R. W. (1970). Ridge Regression: Biased Estimation for Nonorthogonal
+      Problems. Technometrics, 12(1), 55–67.
+    url: https://www.stat.cmu.edu/technometrics/70-79/VOL-12-01/v1201055.pdf

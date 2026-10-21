@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: interpretable model
+id: interpretable-model
+pos: n.
+also:
+  - inherently interpretable model
+  - intrinsically interpretable model
+  - glass-box model
+  - white-box model
+  - interpretable by design
+domain: interp
+domains:
+  - ml
+level: core
+plain: >-
+  A model simple or structured enough that a person can follow exactly how it turns inputs into a
+  decision — like a short checklist or a points-based score — with no separate explanation tool
+  needed.
+senses:
+  - definition: >-
+      A model whose structure is constrained so that people can understand its reasoning directly,
+      making the model its own explanation. Common forms are sparse [[linear-regression|linear]] and
+      [[logistic-regression|logistic]] models, short [[decision-tree|decision trees]], rule lists
+      and decision sets, integer scoring systems (point totals used in medicine and criminal
+      justice), [[generalized-additive-model|generalized additive models]] such as the
+      [[explainable-boosting-machine|explainable boosting machine]], and case-based or prototype
+      models that justify a prediction by comparison with typical examples. Zachary Lipton
+      distinguished three kinds of transparency: simulatability (a person can carry out the whole
+      computation), decomposability (each part has an intuitive meaning) and algorithmic
+      transparency (the training procedure is understood). Constraints such as sparsity,
+      monotonicity and additivity often cost little accuracy on structured tabular data — a point
+      supported by the [[rashomon-effect|Rashomon effect]] — but are much harder to impose on
+      images, text or audio.
+    example: >-
+      A seven-rule list matched the black box's accuracy on recidivism prediction, so we deployed
+      the interpretable model.
+origin: >-
+  Interpretable statistical models such as linear scoring rules and classification trees (CART,
+  1984) long predate the term; the contrast between understandable models and 'black boxes' was well
+  established in 1990s machine learning, notably in work on extracting rules from trained neural
+  networks. Cynthia Rudin's 2019 essay made 'interpretable models' the rallying term for building
+  transparency in rather than explaining afterward.
+note: >-
+  Interpretability is a matter of degree and audience: a 500-node tree is technically transparent
+  but not understandable in practice. In regulated lending and medicine, interpretable models
+  simplify validation and the reasons given to affected people.
+see_also:
+  - explainable AI
+  - generalized additive model
+  - explainable boosting machine
+  - decision tree
+  - Rashomon effect
+  - concept bottleneck model
+  - post hoc explanation
+contrast:
+  - black box
+  - post hoc explanation
+sources:
+  - text: >-
+      Rudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions
+      and use interpretable models instead. Nature Machine Intelligence 1, 206–215.
+  - text: Lipton, Z. C. (2018). The Mythos of Model Interpretability. ACM Queue 16(3).

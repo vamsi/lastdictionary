@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Epoch Capabilities Index
+id: epoch-capabilities-index
+pos: prop. n.
+also:
+  - ECI
+domain: eval
+domains:
+  - asi
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A single number summarizing an AI model's general capability, calculated by the research group
+  Epoch AI by combining its scores on dozens of tests onto one common scale.
+senses:
+  - definition: >-
+      A composite score of general AI capability that Epoch AI computes by fitting results from more
+      than 50 [[benchmark|benchmarks]] onto one shared scale, so that models released years apart
+      can still be compared after individual benchmarks have saturated. Each benchmark is modeled by
+      a logistic curve with its own difficulty and slope, and benchmark difficulties and model
+      capabilities are estimated jointly from overlapping results rather than set by hand — an
+      approach akin to item response theory in psychometrics. A model needs results on at least four
+      benchmarks to receive a score. The scale has no maximum and is anchored so that Claude 3.5
+      Sonnet scores 130 and GPT-5 scores 150. Epoch uses it to track the pace of frontier progress
+      and the gap between open-weight and closed models; as of 1 October 2026 the top-ranked model,
+      Claude Opus 5.5, scored 167.
+    example: >-
+      On the Epoch Capabilities Index, the best open-weight model trails the frontier by about four
+      points.
+origin: >-
+  Introduced by Epoch AI in late 2025; its statistical method is set out in 'A Rosetta Stone for AI
+  Benchmarks' (Anson Ho and colleagues, November 2025), written with Google DeepMind researchers and
+  funded by Google DeepMind.
+year: 2025
+note: >-
+  Like an IQ score, the index compresses a jagged profile into one number: models with equal scores
+  can differ sharply on particular skills, and results depend on which benchmarks are included.
+see_also:
+  - benchmark
+  - benchmark saturation
+  - construct validity
+  - jagged intelligence
+  - algorithmic progress
+  - AI timelines
+sources:
+  - text: Epoch AI. Epoch Capabilities Index.
+    url: https://epoch.ai/benchmarks/eci
+  - text: >-
+      Ho, A., Denain, J.-S., Atanasov, D., Albanie, S. & Shah, R. (2025). A Rosetta Stone for AI
+      Benchmarks. arXiv:2512.00193.
+    url: https://arxiv.org/abs/2512.00193
+as_of: 2026-10

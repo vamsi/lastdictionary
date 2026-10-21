@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: saliency map
+id: saliency-map
+pos: n.
+also:
+  - saliency
+  - sensitivity map
+  - vanilla gradient
+  - gradient saliency
+domain: interp
+domains:
+  - percep
+  - dl
+level: core
+plain: >-
+  A heat map laid over an image or text that highlights which parts most influenced an AI model's
+  output — or, in vision science, which parts of a scene would most catch a viewer's eye.
+senses:
+  - context: Explainable AI
+    definition: >-
+      A [[feature-attribution|feature attribution]] displayed as a map over the input, usually an
+      image, showing how strongly each element influenced a model's output. In the original gradient
+      form, a pixel's saliency is the magnitude of the derivative of the class score with respect to
+      that pixel (maximized over color channels), obtained with one backward pass; it indicates
+      which pixels would change the score most if slightly perturbed. Refinements reduce noise and
+      improve localization: gradient × input, guided backpropagation, [[smoothgrad|SmoothGrad]],
+      [[integrated-gradients|integrated gradients]] and class-discriminative maps such as
+      [[grad-cam|Grad-CAM]]. Saliency maps are easy to produce and easy to over-read: 'sanity
+      checks' showed that some methods yield nearly identical maps for a trained network and for one
+      with randomized weights, behaving more like edge detectors than explanations.
+    example: >-
+      The saliency map lit up the ruler beside the skin lesion, revealing a shortcut the model had
+      learned.
+  - context: Vision science
+    definition: >-
+      In models of visual attention, a topographic map encoding how conspicuous each location in a
+      scene is — how much it stands out in color, intensity, orientation or motion — used to predict
+      where people will look. Bottom-up models combine feature maps across scales and select
+      successive fixations with a winner-take-all mechanism.
+origin: >-
+  The vision-science concept was proposed by Christof Koch and Shimon Ullman (1985) and implemented
+  by Laurent Itti, Christof Koch and Ernst Niebur (1998). Karen Simonyan, Andrea Vedaldi and Andrew
+  Zisserman introduced gradient-based class saliency maps for deep networks in 'Deep Inside
+  Convolutional Networks' (arXiv, December 2013; ICLR 2014 workshop). Julius Adebayo and colleagues'
+  'Sanity Checks for Saliency Maps' (2018) prompted wide re-examination.
+year: 2013
+note: >-
+  A highlighted region shows where the output is sensitive, not why. Different saliency methods can
+  disagree sharply on the same image, and a map that looks sensible may still be unfaithful.
+see_also:
+  - feature attribution
+  - integrated gradients
+  - Grad-CAM
+  - SmoothGrad
+  - faithfulness
+  - image classification
+contrast:
+  - feature visualization
+sources:
+  - text: >-
+      Simonyan, K., Vedaldi, A. & Zisserman, A. (2014). Deep Inside Convolutional Networks:
+      Visualising Image Classification Models and Saliency Maps. ICLR 2014 Workshop.
+  - text: >-
+      Itti, L., Koch, C. & Niebur, E. (1998). A Model of Saliency-Based Visual Attention for Rapid
+      Scene Analysis. IEEE Transactions on Pattern Analysis and Machine Intelligence 20(11).
+  - text: Adebayo, J. et al. (2018). Sanity Checks for Saliency Maps. NeurIPS 2018.

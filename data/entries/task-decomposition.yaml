@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: task decomposition
+id: task-decomposition
+pos: n.
+also:
+  - problem decomposition
+  - subtask decomposition
+  - goal decomposition
+  - decompose
+domain: agents
+domains:
+  - sym
+  - llm
+level: core
+plain: >-
+  Breaking a big, vague job into smaller, concrete steps that can each be done and checked — the way
+  a recipe splits a meal into stages.
+senses:
+  - definition: >-
+      The splitting of a complex goal into smaller subtasks, with their dependencies and order, that
+      can be solved more reliably one at a time or in parallel. In language-model systems
+      decomposition may be done by prompting (least-to-most or plan-and-solve prompting), by a
+      planner model in [[plan-and-execute|plan-and-execute]] agents, at run time by an orchestrator
+      in the [[orchestrator-worker-pattern|orchestrator–worker pattern]], or by the humans who
+      design an [[agentic-workflow|agentic workflow]]. Good decompositions yield subtasks with clear
+      inputs, outputs and success checks; poor ones lose context between pieces or produce parts
+      that are individually easy but jointly inconsistent. Decomposition is also central to
+      [[scalable-oversight|scalable oversight]] proposals such as [[iterated-amplification|iterated
+      amplification]], where a hard question is split into sub-questions that humans can evaluate.
+    example: >-
+      The agent's task decomposition was fine; it failed because two subtasks edited the same config
+      file.
+origin: >-
+  A classical idea in problem solving and planning: Allen Newell and Herbert Simon's means–ends
+  analysis in the [[general-problem-solver|General Problem Solver]] (late 1950s) and
+  [[hierarchical-task-network|hierarchical task network]] planning from the 1970s. For language
+  models, least-to-most prompting (Denny Zhou et al., 2022) and Plan-and-Solve prompting (Lei Wang
+  et al., 2023) made explicit decomposition a prompting technique; Andrew Ng listed planning among
+  four agentic design patterns in 2024.
+see_also:
+  - plan-and-execute
+  - orchestrator–worker pattern
+  - hierarchical task network
+  - automated planning
+  - long-horizon task
+  - chain of thought
+sources:
+  - text: >-
+      Wang, L., Xu, W., Lan, Y., Hu, Z., Lan, Y., Lee, R. K.-W. & Lim, E.-P. (2023). Plan-and-Solve
+      Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models.
+      arXiv:2305.04091.
+    url: https://arxiv.org/abs/2305.04091
+  - text: >-
+      Zhou, D. et al. (2022). Least-to-Most Prompting Enables Complex Reasoning in Large Language
+      Models. arXiv:2205.10625 (ICLR 2023).

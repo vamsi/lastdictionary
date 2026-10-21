@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: on-device AI
+id: on-device-ai
+pos: n.
+also:
+  - on-device inference
+  - on-device machine learning
+  - local AI
+  - local inference
+  - local LLM
+  - running locally
+domain: infer
+domains:
+  - hw
+  - society
+level: essential
+plain: >-
+  AI that runs directly on your own phone, laptop, car or headset rather than on a company's distant
+  servers, so it can work offline, respond instantly and keep your data on the device.
+senses:
+  - definition: >-
+      The execution of AI models on an end-user device such as a phone, laptop, tablet, wearable,
+      car or headset, rather than on remote servers. Benefits include privacy (inputs need not leave
+      the device), offline operation, low and predictable [[latency|latency]], and no per-request
+      [[inference-cost|inference cost]] for the provider; the limits are memory, battery, heat and
+      compute, which cap model size and speed. On-device language models are therefore usually
+      [[small-language-model|small]] (one to a few billion parameters, more on high-end laptops),
+      heavily [[quantization|quantized]], and run on the device's [[npu|NPU]], GPU or CPU through
+      runtimes such as Core ML, LiteRT, ExecuTorch, ONNX Runtime, [[llama-cpp|llama.cpp]] and MLX.
+      Commercial assistants commonly use hybrid designs that handle simple requests locally and send
+      harder ones to cloud models, which raises questions about when data leaves the device.
+      Hobbyists running [[open-weight-model|open-weight models]] on their own computers call the
+      practice local AI.
+    example: Transcription now happens on-device, so the recording never leaves your phone.
+origin: >-
+  On-device machine learning grew with smartphone neural accelerators such as Apple's Neural Engine
+  (2017) and with on-device speech recognition and keyboards. The phrase became a consumer category
+  when Google's Gemini Nano (December 2023) and Apple Intelligence, with an on-device model of about
+  three billion parameters (June 2024), brought generative models to phones; tools such as llama.cpp
+  (2023) turned local AI into a hobbyist movement.
+note: >-
+  Overlaps with [[edge-ai|edge AI]], which also covers nearby servers, gateways and industrial
+  devices; on-device AI usually means the user's own device. 'On-device' claims deserve scrutiny
+  when features silently fall back to the cloud.
+see_also:
+  - edge AI
+  - small language model
+  - quantization
+  - NPU
+  - llama.cpp
+  - Ollama
+  - TinyML
+contrast:
+  - inference provider
+as_of: 2026-10

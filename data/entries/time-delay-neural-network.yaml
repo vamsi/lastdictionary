@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: time delay neural network
+id: time-delay-neural-network
+pos: n.
+also:
+  - TDNN
+domain: dl
+domains:
+  - percep
+  - hist
+labels:
+  - historical
+level: specialist
+plain: >-
+  An early network for speech that applied the same small pattern detector at every moment of a
+  sound, so it could recognize a sound wherever it occurred in time.
+senses:
+  - definition: >-
+      A [[feedforward-neural-network|feedforward neural network]] for sequential signals in which
+      each unit sees a short window of consecutive time frames of the layer below, with the same
+      weights applied at every time shift ([[weight-sharing|weight sharing]]), while higher layers
+      integrate over progressively longer windows. In modern terms it is a one-dimensional
+      [[convolutional-neural-network|convolutional neural network]], giving shift-invariant
+      recognition of patterns such as phonemes regardless of their exact timing, and it was trained
+      by [[backpropagation|backpropagation]]. TDNN layers later became a standard component of
+      acoustic models in speech recognition and of speaker-embedding networks in the 2010s, and the
+      first [[siamese-network|Siamese network]], for signature verification (1993), was built from
+      TDNNs.
+    example: The acoustic model stacks TDNN layers whose context widens from 3 to 15 frames.
+origin: >-
+  Introduced by Alex Waibel, Toshiyuki Hanazawa, Geoffrey Hinton, Kiyohiro Shikano and Kevin Lang
+  for phoneme recognition (ATR report and conference papers, 1987; IEEE Transactions on Acoustics,
+  Speech, and Signal Processing, 1989), one of the first convolutional networks trained by
+  backpropagation.
+year: 1987
+see_also:
+  - convolutional neural network
+  - speech recognition
+  - weight sharing
+  - Siamese network
+  - speaker verification
+sources:
+  - text: >-
+      Waibel, A., Hanazawa, T., Hinton, G., Shikano, K. & Lang, K. J. (1989). Phoneme Recognition
+      Using Time-Delay Neural Networks. IEEE Transactions on Acoustics, Speech, and Signal
+      Processing, 37(3), 328–339.

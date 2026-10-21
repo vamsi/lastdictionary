@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: language identification
+id: language-identification
+pos: n.
+also:
+  - language ID
+  - LID
+  - language detection
+  - langid
+domain: data
+domains:
+  - llm
+level: specialist
+plain: >-
+  Automatically working out which language a piece of text or speech is in — a basic sorting step
+  when building multilingual AI training data from the web.
+senses:
+  - definition: >-
+      The task of determining the language, and sometimes the script or dialect, of a text or audio
+      segment. Text classifiers based on character n-gram statistics — fastText's language-ID
+      models, Google's CLD family, langdetect — are fast enough to label billions of web documents
+      and form a core stage of every multilingual [[data-pipeline|data pipeline]]: [[c4|C4]] kept
+      pages its detector judged English with probability of at least 0.99, and [[fineweb|FineWeb]]
+      kept documents scoring at least 0.65 for English. Accuracy is high for major languages and
+      long texts but falls for short or mixed-language passages, closely related languages and the
+      long tail of [[low-resource-language|low-resource languages]], where classifiers mistake
+      noise, boilerplate or neighboring languages for the target. Audits of web-crawled multilingual
+      corpora found that for many small languages most of the data labeled as that language was not
+      usable text in it, prompting broader-coverage classifiers and per-language thresholds.
+    example: >-
+      Language ID tagged thousands of pages of romanized Hindi as English, so we added a script
+      check.
+origin: >-
+  Automatic identification of a text's language predates the web; character n-gram statistics, as in
+  William Cavnar and John Trenkle's 1994 text-categorization method, became an early standard. Isaac
+  Caswell and colleagues (2020) and Julia Kreutzer and colleagues (2022) showed how badly it fails
+  on web-scale data for small languages, shaping later multilingual pipelines.
+note: >-
+  Spoken language identification is a separate speech task, often run before
+  [[speech-recognition|speech recognition]]. Errors in language ID silently shrink or pollute the
+  data for exactly the languages that have least of it.
+see_also:
+  - low-resource language
+  - data pipeline
+  - quality filtering
+  - FineWeb
+  - C4
+  - text classification
+sources:
+  - text: >-
+      Cavnar, W. B. & Trenkle, J. M. (1994). N-Gram-Based Text Categorization. Proceedings of
+      SDAIR-94.
+  - text: >-
+      Caswell, I., Breiner, T., van Esch, D. & Bapna, A. (2020). Language ID in the Wild: Unexpected
+      Challenges on the Path to a Thousand-Language Web Text Corpus. COLING 2020.

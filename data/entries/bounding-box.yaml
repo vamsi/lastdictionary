@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bounding box
+id: bounding-box
+pos: n.
+also:
+  - bbox
+  - box regression
+  - oriented bounding box
+  - OBB
+  - 3D bounding box
+domain: percep
+domains:
+  - data
+level: core
+plain: >-
+  The rectangle a vision system draws around an object it has found, stored as a handful of numbers
+  giving the rectangle's position and size.
+senses:
+  - definition: >-
+      The smallest axis-aligned rectangle enclosing an object in an image: the standard output of
+      [[object-detection|object detection]] and a common, cheap form of [[annotation|annotation]].
+      It is stored as four numbers in one of several conventions: corner coordinates (x_min, y_min,
+      x_max, y_max); top-left corner plus width and height, as in [[coco|COCO]]; or center plus
+      width and height normalized by image size, as in [[yolo|YOLO]] label files. Detectors learn
+      box regression, predicting offsets from an [[anchor-box|anchor]] or reference point, and are
+      scored by the [[intersection-over-union|intersection over union]] between predicted and
+      ground-truth boxes. Variants include oriented (rotated) boxes for aerial and document images
+      and 3D boxes (cuboids with position, size and heading) for [[lidar|lidar]] and driving data.
+      Boxes are coarse: thin, diagonal or partly hidden objects fill them poorly, one motivation for
+      pixel masks in [[instance-segmentation|instance segmentation]].
+    example: >-
+      Convert the bounding boxes from COCO's corner-plus-size format to normalized center
+      coordinates before training.
+origin: >-
+  Bounding boxes and bounding volumes were standard in computer graphics and computational geometry
+  by the 1970s–80s, where they speed up clipping, ray tracing and collision tests. In vision they
+  became the default label for detection with benchmarks such as PASCAL VOC (from 2005) and the
+  ImageNet detection track.
+note: >-
+  Often abbreviated 'bbox' in code. Coordinate conventions are a frequent source of silent bugs:
+  check whether a dataset uses pixels or normalized units, and corner or center format.
+see_also:
+  - object detection
+  - intersection over union
+  - anchor box
+  - non-maximum suppression
+  - annotation
+  - instance segmentation
+contrast:
+  - instance segmentation

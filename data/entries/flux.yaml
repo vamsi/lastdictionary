@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FLUX
+id: flux
+pos: prop. n.
+also:
+  - FLUX.1
+  - FLUX.1 Kontext
+  - FLUX.2
+  - FLUX 3
+domain: gen
+domains:
+  - eng
+labels:
+  - trademark
+level: core
+plain: >-
+  A family of image-generating AI models from the German start-up Black Forest Labs, founded by
+  researchers behind Stable Diffusion; some versions can be downloaded and run freely.
+senses:
+  - definition: >-
+      A family of [[text-to-image-model|text-to-image]] and image-editing models from Black Forest
+      Labs. FLUX.1 (August 2024) is a 12-billion-parameter [[rectified-flow|rectified flow]]
+      transformer — a [[diffusion-transformer|diffusion transformer]] that processes text and image
+      tokens jointly — released in three tiers: an API-only 'pro' model, an open-weight 'dev' model
+      under a non-commercial license, and a [[diffusion-distillation|step-distilled]] 'schnell'
+      model under the Apache 2.0 license. Its downloadable versions became a widely used base for
+      community fine-tunes and [[low-rank-adaptation|LoRAs]]. FLUX.1 Kontext (May 2025) added
+      in-context [[instruction-based-image-editing|instruction-based image editing]] from reference
+      images, and the FLUX.2 series (November 2025) uses a 24-billion-parameter Mistral
+      vision-language model to encode prompts. As of October 2026 its newest line was FLUX 3
+      (mid-2026), a multimodal family covering image, video and audio generation and action
+      prediction for robots. FLUX models have been integrated into products including xAI's Grok
+      (August–December 2024) and Adobe Photoshop's generative fill (2025).
+origin: >-
+  Black Forest Labs, based in Freiburg im Breisgau, Germany, was founded in 2024 by Robin Rombach,
+  Andreas Blattmann and Patrick Esser — co-authors of the latent diffusion and Stable Diffusion 3
+  papers who had left Stability AI — and launched FLUX.1 on 1 August 2024.
+year: 2024
+note: >-
+  Written FLUX by its makers and often 'Flux' in the press. 'Schnell' is German for 'fast'.
+see_also:
+  - Stable Diffusion
+  - rectified flow
+  - diffusion transformer
+  - latent diffusion model
+  - instruction-based image editing
+  - open-weight model
+sources:
+  - text: >-
+      Black Forest Labs: Batifol, S. et al. (2025). FLUX.1 Kontext: Flow Matching for In-Context
+      Image Generation and Editing in Latent Space. arXiv:2506.15742.
+    url: https://arxiv.org/abs/2506.15742
+as_of: 2026-10

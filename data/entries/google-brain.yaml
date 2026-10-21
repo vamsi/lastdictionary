@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Google Brain
+id: google-brain
+pos: prop. n.
+also:
+  - Brain team
+domain: orgs
+domains:
+  - hist
+  - dl
+labels:
+  - historical
+level: core
+plain: >-
+  Google's deep-learning research team from 2011 to 2023, where the transformer — the design behind
+  today's chatbots — and the TensorFlow software were created.
+senses:
+  - definition: >-
+      Google's in-house neural-network research group (2011–2023), which set out to show what very
+      large networks trained on the company's data-center computing could achieve, first in research
+      and then in products. Its 2012 'cat neuron' experiment trained a network without labels on
+      frames from YouTube videos, using 16,000 processor cores, and found units that responded to
+      cats and faces. The team built the DistBelief system and its successor
+      [[tensorflow|TensorFlow]]; its researchers co-authored
+      [[sequence-to-sequence-model|sequence-to-sequence learning]] (2014),
+      [[knowledge-distillation|knowledge distillation]] (2015), sparsely gated
+      [[mixture-of-experts|mixture of experts]] layers (2017) and, with Google Research colleagues,
+      [[attention-is-all-you-need|Attention Is All You Need]] (2017), which introduced the
+      [[transformer|transformer]]. It also put neural machine translation into Google Translate in
+      2016. Many alumni went on to found or lead other laboratories.
+    example: >-
+      Half of the transformer paper's eight authors did the work at Google Brain, one of them as an
+      intern; the other half were at Google Research.
+origin: >-
+  Begun in 2011 as a part-time Google X project of Jeff Dean, Greg Corrado and Andrew Ng, then a
+  Stanford professor; it moved into Google Research in 2012. Geoffrey Hinton joined in 2013 when
+  Google acquired his startup DNNresearch. In April 2023 Google merged Brain with
+  [[deepmind|DeepMind]] to form [[google-deepmind|Google DeepMind]].
+year: 2011
+see_also:
+  - Google DeepMind
+  - DeepMind
+  - TensorFlow
+  - transformer
+  - Attention Is All You Need
+  - Andrew Ng
+  - Geoffrey Hinton
+  - Noam Shazeer
+contrast:
+  - DeepMind
+sources:
+  - text: >-
+      Le, Q. V. et al. (2012). Building High-level Features Using Large Scale Unsupervised Learning.
+      Proceedings of ICML 2012.
+as_of: 2026-10

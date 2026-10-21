@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: COCO
+id: coco
+pos: prop. n.
+also:
+  - MS COCO
+  - Microsoft COCO
+  - Common Objects in Context
+  - COCO Captions
+  - COCO keypoints
+pronunciation: KOH-koh
+domain: percep
+domains:
+  - data
+  - eval
+level: core
+plain: >-
+  A widely used collection of everyday photos in which people outlined and named the objects,
+  described each picture in sentences and marked body joints; it is used to train and compare vision
+  systems.
+senses:
+  - definition: >-
+      'Common Objects in Context': a [[dataset|dataset]] of Flickr photographs chosen to show
+      cluttered everyday scenes, with objects among other objects rather than centered and alone,
+      and annotated in several layers so that the same images serve as the [[benchmark|benchmark]]
+      for [[object-detection|object detection]], [[instance-segmentation|instance segmentation]],
+      [[keypoint-detection|keypoint detection]] and [[image-captioning|image captioning]]. The
+      original paper described about 328,000 images with 2.5 million labeled instances in 91 object
+      categories; the standard benchmarks use 80 'thing' categories, about 118,000 training and
+      5,000 validation images (the 2017 split), and a held-out test-dev set scored by an evaluation
+      server. Annotations include polygon masks for each instance, 17 body keypoints per person,
+      five human-written captions per image and, later, 'stuff' (amorphous regions such as sky and
+      grass) and panoptic labels. COCO's evaluation protocol, [[mean-average-precision|AP]] averaged
+      over [[intersection-over-union|intersection over union]] thresholds from 0.50 to 0.95, became
+      the field's common yardstick, and its JSON annotation format a de facto standard for detection
+      tools.
+    example: We report box AP on COCO test-dev and mask AP on val2017.
+origin: >-
+  Introduced by Tsung-Yi Lin and colleagues from Microsoft Research, Cornell, Caltech, Brown and
+  other institutions in 'Microsoft COCO: Common Objects in Context' (arXiv May 2014; ECCV 2014).
+  Annual challenges followed: detection and captioning from 2015, keypoints from 2016, stuff from
+  2017 and panoptic segmentation from 2018.
+year: 2014
+note: >-
+  Images remain under their original Flickr terms, while the annotations carry a Creative Commons
+  Attribution 4.0 license. As top detectors passed 60 box AP in the 2020s, attention shifted toward
+  harder long-tail and open-vocabulary benchmarks such as LVIS.
+see_also:
+  - object detection
+  - instance segmentation
+  - mean average precision
+  - ImageNet
+  - image captioning
+  - keypoint detection
+  - benchmark
+sources:
+  - text: >-
+      Lin, T.-Y., Maire, M., Belongie, S., Bourdev, L., Girshick, R., Hays, J., Perona, P., Ramanan,
+      D., Zitnick, C. L. & Dollár, P. (2014). Microsoft COCO: Common Objects in Context. ECCV 2014.
+    url: https://arxiv.org/abs/1405.0312
+  - text: >-
+      Chen, X. et al. (2015). Microsoft COCO Captions: Data Collection and Evaluation Server. arXiv
+      preprint.
+as_of: 2026-10

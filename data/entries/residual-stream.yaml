@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: residual stream
+id: residual-stream
+pos: n.
+also:
+  - residual stream vector
+domain: interp
+domains:
+  - llm
+  - dl
+level: core
+plain: >-
+  The running internal state that flows through a transformer model from layer to layer; each layer
+  reads from it and adds its own contribution, like editors annotating a shared document.
+senses:
+  - definition: >-
+      In a [[transformer|transformer]], the vector carried along each [[token|token]] position by
+      the [[residual-connection|residual connections]]. It starts as the token's
+      [[embedding|embedding]]; every [[attention-head|attention head]] and
+      [[multilayer-perceptron|MLP]] layer reads it (after [[layer-normalization|layer
+      normalization]]) and adds its output back; and the final value is mapped to [[logit|logits]]
+      by the [[unembedding|unembedding]]. Because each component writes additively, the stream acts
+      as a shared communication channel: the final state equals the embedding plus the sum of every
+      component's output, which makes decompositions such as [[direct-logit-attribution|direct logit
+      attribution]] and the [[logit-lens|logit lens]] possible. Its width, d_model (768 in the
+      smallest GPT-2), is far smaller than the number of features it carries, so information is
+      stored in [[superposition|superposition]], and components communicate through learned
+      subspaces rather than individual dimensions, since the stream lacks a
+      [[privileged-basis|privileged basis]].
+    example: >-
+      The country feature appears in the residual stream at layer 6 and is read by heads in layer 9.
+origin: >-
+  Introduced, as far as is known, by Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan,
+  Chris Olah and colleagues at Anthropic in 'A Mathematical Framework for Transformer Circuits'
+  (December 2021), which recast the transformer's residual connections as a stream that each layer
+  reads from and writes to. That paper is the standard source for the term, which quickly became
+  universal in mechanistic interpretability.
+year: 2021
+note: >-
+  Not the same as a [[residual-connection|residual connection]], the architectural shortcut; the
+  residual stream is the vector those shortcuts carry. In pre-norm transformers, normalization is
+  applied on the way into each sublayer, so the stream itself is normalized only at the end.
+see_also:
+  - transformer
+  - logit lens
+  - direct logit attribution
+  - superposition
+  - attention head
+  - activation
+  - privileged basis
+contrast:
+  - residual connection
+sources:
+  - text: >-
+      Elhage, N., Nanda, N., Olsson, C., Henighan, T. et al. (2021). A Mathematical Framework for
+      Transformer Circuits. Transformer Circuits Thread.

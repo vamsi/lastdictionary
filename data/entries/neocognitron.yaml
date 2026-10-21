@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neocognitron
+id: neocognitron
+pos: n.
+also:
+  - cognitron
+pronunciation: nee-oh-COG-nih-tron
+domain: hist
+domains:
+  - dl
+  - percep
+labels:
+  - historical
+level: specialist
+plain: >-
+  A 1980 neural network for recognizing handwritten characters, modeled on the brain's visual
+  system. Its stacked layers of pattern detectors were the blueprint for the networks used in modern
+  image recognition.
+senses:
+  - definition: >-
+      A visual pattern recognizer built as a stack of neural layers, designed by
+      [[kunihiko-fukushima|Kunihiko Fukushima]] in 1979–1980 and the direct ancestor of the
+      [[convolutional-neural-network|convolutional neural network]]. It borrows the two cell types
+      that David Hubel and Torsten Wiesel described in the visual cortex: its S-layers apply one set
+      of feature detectors at every position of the image, and each following C-layer combines the
+      responses of neighboring positions, so a feature still registers when it is shifted or
+      slightly distorted. Stacking these stages yields detectors for progressively larger and more
+      abstract patterns, so that a character is recognized wherever it appears. The neocognitron
+      learned layer by layer through unsupervised, competitive self-organization (later versions
+      added some supervision) rather than end-to-end [[backpropagation|backpropagation]], which
+      [[lenet|LeNet]] later supplied.
+    example: >-
+      The convolution and pooling layers of a modern CNN echo the S-cells and C-cells of the
+      neocognitron.
+origin: >-
+  Developed by Fukushima at the NHK Broadcasting Science Research Laboratories in Tokyo as a
+  successor to his 1975 cognitron, and published in Biological Cybernetics in 1980 as 'Neocognitron:
+  A Self-organizing Neural Network Model for a Mechanism of Pattern Recognition Unaffected by Shift
+  in Position'.
+year: 1980
+see_also:
+  - convolutional neural network
+  - LeNet
+  - Kunihiko Fukushima
+  - computer vision
+  - connectionism
+sources:
+  - text: >-
+      Fukushima, K. (1980). Neocognitron: A Self-organizing Neural Network Model for a Mechanism of
+      Pattern Recognition Unaffected by Shift in Position. Biological Cybernetics 36(4), 193–202.

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: trusted monitoring
+id: trusted-monitoring
+pos: n.
+also:
+  - trusted monitor
+  - defer to trusted
+domain: safety
+domains:
+  - sec
+  - agents
+level: specialist
+plain: >-
+  A safety setup in which a weaker AI that we trust reviews each action of a stronger AI we do not
+  fully trust, flagging the most suspicious actions for a human to check.
+senses:
+  - definition: >-
+      An [[ai-control|AI control]] protocol in which a less capable but trusted model — trusted
+      because it is judged too weak to scheme effectively — rates each output or action of a more
+      capable untrusted model for suspiciousness. Items above a threshold go to a scarce,
+      high-quality auditor, usually humans with a budget of a few percent of actions, and deployment
+      halts if an attack is confirmed. In the 'defer to trusted' variant, moderately suspicious
+      outputs are replaced by the trusted model's own, trading usefulness for safety; related
+      protocols resample the untrusted model or let the trusted model rewrite the suspicious part
+      ([[trusted-editing|trusted editing]]). The weakness is the capability gap: attacks too subtle
+      for the weaker model to recognize pass unaudited, so the protocol is only as good as the
+      monitor's ability to separate attacks from benign work at low false-positive rates.
+    example: >-
+      Trusted monitoring flagged the patch, but the audit budget for the day was already spent.
+origin: >-
+  Defined and tested by Ryan Greenblatt and colleagues at Redwood Research (2023), who paired GPT-4
+  as the untrusted model with GPT-3.5 as the trusted monitor in a code-backdooring testbed and let
+  the protocol audit up to 2% of problems with trusted high-quality labor (standing in for human
+  reviewers, and simulated in the experiments by GPT-4).
+year: 2023
+note: >-
+  Not the same as screening users' requests with a [[safety-classifier|safety classifier]]: trusted
+  monitoring treats the model itself, not the user, as the potential adversary. Monitors may read
+  actions, outputs or the model's reasoning ([[chain-of-thought-monitoring|chain-of-thought
+  monitoring]]).
+see_also:
+  - AI control
+  - untrusted monitoring
+  - trusted editing
+  - control evaluation
+  - chain-of-thought monitoring
+  - safety classifier
+contrast:
+  - untrusted monitoring
+sources:
+  - text: >-
+      Greenblatt, R., Shlegeris, B., Sachan, K. & Roger, F. (2023). AI Control: Improving Safety
+      Despite Intentional Subversion. arXiv:2312.06942.
+    url: https://arxiv.org/abs/2312.06942

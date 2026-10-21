@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tokenization
+id: tokenization
+pos: n.
+also:
+  - tokenisation
+  - tokenize
+  - tokenizing
+  - subword tokenization
+  - detokenization
+domain: llm
+domains:
+  - data
+level: core
+plain: >-
+  The first step in feeding text to a language model: chopping it into tokens — whole words, word
+  pieces or characters — and turning each into a number the model can work with.
+senses:
+  - definition: >-
+      The process of segmenting text into [[token|tokens]] and mapping each to an integer ID from a
+      fixed [[vocabulary|vocabulary]], performed by a [[tokenizer|tokenizer]] before text enters a
+      model and reversed (detokenization) on output. Classical NLP split text into words with
+      whitespace and punctuation rules; modern [[large-language-model|language models]] use subword
+      tokenization, typically [[byte-pair-encoding|byte-pair encoding]], [[wordpiece|WordPiece]] or
+      the unigram method, so frequent words are single tokens, rare words break into pieces, and
+      out-of-vocabulary input becomes rare (impossible with byte-level schemes). Tokenization has
+      wide consequences: it sets how much text fits in a [[context-window|context window]] and what
+      a request costs, how fairly languages are served (some scripts need several times more tokens
+      for the same content), and it underlies failures such as miscounting letters or mishandling
+      digits, because the model never sees characters directly. [[byte-level-model|Byte-level
+      models]] try to eliminate the step.
+    example: >-
+      Half the arithmetic errors traced back to tokenization splitting long numbers into uneven
+      chunks.
+origin: >-
+  Rule-based word tokenization is as old as computational linguistics; the Penn Treebank conventions
+  of the early 1990s became a de facto standard for English. Subword tokenization for neural models
+  dates from 2015–2016, with Rico Sennrich, Barry Haddow and Alexandra Birch's byte-pair encoding
+  and the wordpieces of Google's neural translation system.
+note: >-
+  Many oddities of LLMs, such as the [[strawberry-problem|strawberry problem]], are blamed on
+  tokenization. Not to be confused with tokenization in data security (replacing sensitive values
+  with surrogates) or in finance (representing assets as blockchain tokens).
+see_also:
+  - token
+  - tokenizer
+  - byte-pair encoding
+  - WordPiece
+  - SentencePiece
+  - vocabulary
+  - byte-level model
+  - strawberry problem
+sources:
+  - text: >-
+      Sennrich, R., Haddow, B. & Birch, A. (2016). Neural Machine Translation of Rare Words with
+      Subword Units. ACL 2016.
+    url: https://arxiv.org/abs/1508.07909

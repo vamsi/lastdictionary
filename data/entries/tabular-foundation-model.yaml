@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tabular foundation model
+id: tabular-foundation-model
+pos: n.
+also:
+  - TabPFN
+  - prior-data fitted network
+  - PFN
+  - TFM
+  - tabular in-context learning
+domain: ml
+domains:
+  - dl
+  - data
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A neural network pretrained on millions of made-up tables so that, given a new spreadsheet of
+  labeled examples, it can predict the missing answers at once, without being retrained for that
+  table.
+senses:
+  - definition: >-
+      A neural network, usually a [[transformer|transformer]], pretrained once on a very large
+      collection of tables — typically millions of synthetic datasets sampled from random structural
+      causal models and other generators — so that at prediction time it takes a whole labeled
+      training table plus unlabeled rows as input and outputs predictions for those rows in a single
+      [[forward-pass|forward pass]], with no gradient-based training or
+      [[hyperparameter-tuning|hyperparameter tuning]] on the new task. This is
+      [[in-context-learning|in-context learning]] applied to [[tabular-data|tabular data]]: the
+      network has learned to approximate Bayesian posterior prediction under its pretraining
+      distribution, an approach called a prior-data fitted network (PFN). The best-known example,
+      TabPFN, was reported in its 2025 Nature version to match or beat tuned
+      [[gradient-boosting|gradient boosting]] on datasets of up to about 10,000 rows in seconds;
+      later releases extended it, and as of October 2026 TabPFN-3.5 is recommended for up to about a
+      million rows. Strengths are speed on small data, good calibration and no tuning; limits are
+      inference cost on large tables and restrictive licenses for some weights.
+    example: >-
+      On the 3,000-row clinical table, the tabular foundation model beat our tuned boosting baseline
+      without any training.
+origin: >-
+  Samuel Müller, Noah Hollmann, Frank Hutter and colleagues introduced prior-data fitted networks
+  ('Transformers Can Do Bayesian Inference', 2021–2022) and TabPFN, first as a July 2022 preprint
+  (ICLR 2023) and then, much extended, in Nature (January 2025) under a title calling it a tabular
+  foundation model. Prior Labs, founded in 2024, released TabPFN-2.5 (November 2025), TabPFN-3 (May
+  2026) and TabPFN-3.5 (September 2026).
+year: 2022
+note: >-
+  Other groups released competing tabular foundation models in 2024–2026. As of October 2026 their
+  advantage is clearest on small and medium tables; on very large tables, boosted trees remain
+  strong competitors.
+see_also:
+  - tabular data
+  - in-context learning
+  - foundation model
+  - gradient boosting
+  - transformer
+  - AutoML
+contrast:
+  - gradient boosting
+sources:
+  - text: >-
+      Hollmann, N., Müller, S., Purucker, L. et al. (2025). Accurate Predictions on Small Data with
+      a Tabular Foundation Model. Nature, 637(8045), 319–326. doi:10.1038/s41586-024-08328-6.
+  - text: >-
+      Hollmann, N., Müller, S., Eggensperger, K. & Hutter, F. (2023). TabPFN: A Transformer That
+      Solves Small Tabular Classification Problems in a Second. ICLR 2023. arXiv:2207.01848.
+    url: https://arxiv.org/abs/2207.01848
+as_of: 2026-10

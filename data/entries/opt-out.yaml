@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: opt-out
+id: opt-out
+pos: n.
+also:
+  - AI training opt-out
+  - training opt-out
+  - rights reservation
+  - do-not-train
+domain: data
+domains:
+  - gov
+  - society
+labels:
+  - contested
+level: core
+plain: >-
+  A way for creators, websites or individuals to say 'do not use my work or data to train AI' —
+  instead of being asked for permission first, which would be opt-in.
+senses:
+  - context: AI training data
+    definition: >-
+      A mechanism by which rights holders or data subjects exclude their content or personal data
+      from collection or use for AI training, inclusion being the default unless they act. Technical
+      channels include [[robots-txt|robots.txt]] rules aimed at AI crawlers, page-level meta tags
+      and HTTP headers, machine-readable protocols such as TDMRep, registries of works not to be
+      trained on, and dataset-specific tools such as the search-and-removal process of
+      [[the-stack|The Stack]]; platforms also offer account settings that stop user content or chats
+      from being used for training. In the EU, the general text-and-data-mining exception (Art. 4 of
+      the 2019 Digital Single Market Directive) does not apply where rights holders have expressly
+      reserved their rights 'in an appropriate manner, such as machine-readable means' for online
+      content — the research exception of Art. 3 cannot be opted out of — and the AI Act requires
+      providers of [[general-purpose-ai-model|general-purpose AI models]] to identify and respect
+      such reservations. Opt-outs work only going forward, depend on crawler compliance and are hard
+      to enforce against copies already circulating in existing datasets.
+    example: >-
+      Our crawler checks both robots.txt and TDMRep headers before treating a page as opted out.
+origin: >-
+  The AI-training sense spread in 2022–2023, when controversy over image generators prompted artist
+  opt-out registries and 'noai' tags, and AI companies began publishing crawler names that
+  robots.txt could block. EU law had already created a machine-readable reservation for text and
+  data mining in the 2019 Copyright in the Digital Single Market Directive, Art. 4(3).
+year: 2022
+note: >-
+  Whether opt-out is adequate is disputed. Creators' groups argue for opt-in consent and payment; AI
+  developers and some governments argue that opt-in would make large-scale training impractical. The
+  UK's 2024–25 consultation on an exception with opt-out drew strong opposition from the creative
+  industries.
+see_also:
+  - robots.txt
+  - text and data mining exception
+  - data licensing
+  - fair use and AI training
+  - web crawler
+  - General-Purpose AI Code of Practice
+as_of: 2026-10

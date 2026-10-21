@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: interactive theorem proving
+id: interactive-theorem-proving
+pos: n.
+also:
+  - ITP
+  - proof assistant
+  - interactive theorem prover
+  - formalization
+  - formalized mathematics
+  - tactic
+domain: sym
+domains:
+  - math
+  - eng
+level: core
+plain: >-
+  Writing a proof in a precise computer language so that software checks every step: the person
+  supplies the ideas, the computer fills in small steps and guarantees that nothing is wrong.
+senses:
+  - definition: >-
+      A method of formal proof in which a person steers and a program verifies: the program, a proof
+      assistant, encodes definitions, theorems and proofs in a formal logic, usually higher-order
+      logic or dependent type theory, and mechanically checks every inference. The user states goals
+      and applies tactics — commands that split goals into subgoals or invoke automation — while a
+      small trusted kernel certifies the final proof, so confidence rests on the kernel rather than
+      on the tactics or the user. Major systems include Isabelle/HOL, [[rocq|Rocq]] (formerly Coq),
+      [[lean|Lean]], HOL Light, Mizar and Agda. Landmarks include machine-checked proofs of the four
+      color theorem (2005), the Feit–Thompson odd order theorem (2012) and the Kepler conjecture
+      (2014), and verified software such as the CompCert C compiler and the seL4 microkernel. Formal
+      proofs supply the unambiguous signal used to train AI provers.
+    example: >-
+      After three months of interactive theorem proving, every lemma in the paper had been checked
+      by the kernel.
+origin: >-
+  Nicolaas de Bruijn's Automath (1967) and Andrzej Trybulec's Mizar (1973) pioneered
+  computer-checked mathematics. Robin Milner's LCF (Stanford 1972, Edinburgh 1979) introduced the
+  small trusted kernel and the ML language for writing tactics, the template for HOL, Isabelle and
+  many later systems.
+year: 1967
+note: >-
+  Interactive and [[automated-theorem-proving|automated theorem proving]] increasingly merge: proof
+  assistants call automated provers ('hammers'), and language-model provers generate proofs that the
+  assistant checks. [[autoformalization|Autoformalization]] tries to automate the translation from
+  informal mathematics. A proof certifies only its formal statement, so mistranslated definitions
+  remain a risk.
+see_also:
+  - automated theorem proving
+  - Lean
+  - Rocq
+  - autoformalization
+  - formal verification
+  - first-order logic
+contrast:
+  - automated theorem proving
+sources:
+  - text: >-
+      Gonthier, G. (2008). Formal Proof — The Four-Color Theorem. Notices of the AMS 55(11),
+      1382–1393.
+  - text: >-
+      Hales, T. et al. (2017). A Formal Proof of the Kepler Conjecture. Forum of Mathematics, Pi 5,
+      e2.

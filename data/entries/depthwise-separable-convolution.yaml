@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: depthwise separable convolution
+id: depthwise-separable-convolution
+pos: n.
+also:
+  - separable convolution
+  - depthwise convolution
+  - pointwise convolution
+  - 1×1 convolution
+domain: dl
+domains:
+  - percep
+  - infer
+level: specialist
+plain: >-
+  A cheaper way to do the main operation of image networks: first scan each channel of the input
+  separately, then mix the channels together with a tiny one-by-one step.
+senses:
+  - definition: >-
+      A cheaper substitute for a standard [[convolution|convolution]] that splits its two jobs,
+      spatial filtering and channel mixing, into separate steps: each input channel is first
+      filtered on its own by a k × k [[filter|filter]] (the depthwise step), and a 1 × 1 convolution
+      then combines the filtered channels (the pointwise step). For C_in input and C_out output
+      channels the cost per position falls from k²·C_in·C_out to k²·C_in + C_in·C_out multiply-adds,
+      close to a k²-fold saving when C_out is large (for 3 × 3 kernels, the eight- to ninefold
+      reduction reported by the MobileNet authors), usually at a modest cost in accuracy. It is the
+      core of efficient vision architectures such as Xception, the MobileNet family and
+      EfficientNet, and of many models deployed on phones and other [[edge-ai|edge devices]].
+      Depthwise convolution is the special case of grouped convolution with one group per channel.
+    example: >-
+      Swapping the 3 × 3 convolutions for depthwise separable ones cut the multiply-adds by about 85
+      percent.
+origin: >-
+  Laurent Sifre devised depthwise separable convolutions during a 2013 internship at Google Brain,
+  drawing on his doctoral work with Stéphane Mallat on scattering transforms; they were first shown
+  publicly in an ICLR 2014 talk and detailed in his 2014 thesis. François Chollet's Xception
+  (October 2016) reinterpreted Inception modules as a step towards them, and Andrew Howard and
+  colleagues' MobileNets (April 2017) made them the standard building block for mobile vision.
+year: 2014
+see_also:
+  - convolution
+  - convolutional neural network
+  - edge AI
+  - neural architecture search
+  - filter
+sources:
+  - text: >-
+      Chollet, F. (2016). Xception: Deep Learning with Depthwise Separable Convolutions.
+      arXiv:1610.02357.
+    url: https://arxiv.org/abs/1610.02357
+  - text: >-
+      Howard, A. G. et al. (2017). MobileNets: Efficient Convolutional Neural Networks for Mobile
+      Vision Applications. arXiv:1704.04861.
+    url: https://arxiv.org/abs/1704.04861

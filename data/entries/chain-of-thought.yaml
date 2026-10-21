@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: chain of thought
+id: chain-of-thought
+pos: n.
+also:
+  - CoT
+  - chain-of-thought prompting
+  - chain-of-thought reasoning
+  - zero-shot chain of thought
+  - step-by-step reasoning
+domain: llm
+domains:
+  - safety
+  - eval
+level: essential
+plain: >-
+  Getting an AI to write out its reasoning step by step before giving an answer, the way a student
+  shows their working. This often makes answers to math and logic problems more accurate.
+senses:
+  - context: Prompting
+    definition: >-
+      The step-by-step working, written out in ordinary language, that a [[language-model|language
+      model]] produces on the way to its final answer, and the prompting technique that draws it
+      out. In few-shot chain-of-thought prompting, the [[prompt|prompt]] includes worked examples
+      whose answers show their steps; in zero-shot chain of thought, a cue such as an instruction to
+      think step by step is enough. Because each generated token can condition on the earlier ones,
+      writing out steps gives the model extra serial computation and a place to hold intermediate
+      results, which improves accuracy on arithmetic, symbolic and multi-step problems — strongly in
+      large models, with little benefit or even harm in small ones. Variants include
+      [[self-consistency|self-consistency]], [[tree-of-thoughts|tree of thoughts]] and least-to-most
+      prompting, which solves simpler subproblems first.
+    example: >-
+      With chain-of-thought prompting the model finally carried the remainder correctly.
+  - context: Reasoning models
+    definition: >-
+      The [[reasoning-trace|reasoning trace]] that a [[reasoning-model|reasoning model]] produces on
+      its own after reinforcement-learning training, often thousands of tokens long and hidden or
+      summarized for users. Because it offers a window on the model's process, safety researchers
+      study [[chain-of-thought-monitoring|chain-of-thought monitoring]] and whether the trace is
+      faithful to the computation that actually drives the answer
+      ([[chain-of-thought-faithfulness|chain-of-thought faithfulness]]).
+origin: >-
+  Named by Jason Wei and colleagues at Google in 'Chain-of-Thought Prompting Elicits Reasoning in
+  Large Language Models' (January 2022), building on earlier rationale-generation and
+  [[scratchpad|scratchpad]] work. Takeshi Kojima and colleagues (May 2022) showed that the cue
+  'Let's think step by step' raised one model's GSM8K accuracy from 10.4% to 40.7%. From 2024,
+  reasoning models internalized the technique through training.
+year: 2022
+note: >-
+  A visible chain of thought is not necessarily an accurate account of how the model reached its
+  answer; studies find models sometimes omit factors that influenced them. Laboratories differ on
+  whether to show raw traces to users.
+see_also:
+  - reasoning model
+  - reasoning trace
+  - self-consistency
+  - tree of thoughts
+  - scratchpad
+  - chain-of-thought faithfulness
+  - chain-of-thought monitoring
+  - prompt engineering
+sources:
+  - text: >-
+      Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q. & Zhou, D.
+      (2022). Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. NeurIPS 2022.
+    url: https://arxiv.org/abs/2201.11903v5
+  - text: >-
+      Kojima, T., Gu, S. S., Reid, M., Matsuo, Y. & Iwasawa, Y. (2022). Large Language Models are
+      Zero-Shot Reasoners. NeurIPS 2022.
+    url: https://arxiv.org/abs/2205.11916v2

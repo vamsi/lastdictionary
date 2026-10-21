@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature map
+id: feature-map
+pos: n.
+also:
+  - activation map
+  - output channel
+  - channel
+domain: dl
+domains:
+  - percep
+level: core
+plain: >-
+  The grid of numbers produced when one learned pattern detector is scanned across an image, showing
+  where, and how strongly, that pattern appears.
+senses:
+  - context: Convolutional networks
+    definition: >-
+      The output of one [[filter|filter]] of a [[convolution|convolutional]] layer over all spatial
+      positions: a 2-D array, for images, recording how strongly the filter's pattern is present at
+      each location. A layer's output is a stack of feature maps, one per output channel, usually
+      stored as a tensor of shape channels × height × width. Early feature maps keep fine spatial
+      detail; deeper ones are coarser but encode more abstract patterns, which is why detection and
+      segmentation architectures such as feature pyramid networks and [[u-net|U-Net]] combine maps
+      from several depths. Feature maps of pretrained networks are reused for
+      [[transfer-learning|transfer learning]], [[style-transfer|style transfer]], perceptual losses
+      and class-activation heat maps.
+    example: >-
+      Upsample the last feature map and overlay it on the image to see which regions drove the
+      prediction.
+origin: >-
+  Used in early convolutional-network papers: Yann LeCun and colleagues' 1989 zip-code network
+  arranged its hidden units as independent 'feature maps' sharing weights, and the term was standard
+  by the LeNet-5 paper (1998). Kunihiko Fukushima's neocognitron (1980) had analogous 'cell planes'.
+year: 1989
+note: >-
+  Distinct from the feature map φ of [[kernel-trick|kernel methods]], which maps inputs into a
+  feature space, and from the transformer-interpretability notion of a
+  [[feature-interpretability|feature]] as a direction in activation space.
+see_also:
+  - filter
+  - convolution
+  - convolutional neural network
+  - receptive field
+  - activation
+  - pooling

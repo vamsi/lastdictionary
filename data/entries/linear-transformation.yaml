@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: linear transformation
+id: linear-transformation
+pos: n.
+also:
+  - linear map
+  - linear mapping
+  - linear operator
+  - linear function
+domain: math
+domains:
+  - dl
+level: core
+plain: >-
+  A rule for moving every point in a space that keeps straight lines straight and the origin in
+  place: rotating, stretching, reflecting or squashing everything evenly. Every grid of numbers
+  describes one.
+senses:
+  - definition: >-
+      A function f between vector spaces that preserves addition and scalar multiplication, so that
+      f(x + y) = f(x) + f(y) and f(cx) = c f(x). With bases fixed, every linear transformation
+      between finite-dimensional spaces is multiplication by a [[matrix|matrix]], and composing
+      transformations corresponds to [[matrix-multiplication|matrix multiplication]]. Adding a
+      constant offset gives an affine transformation, Wx + b, which is what a neural network's
+      'linear' or dense [[layer|layer]] computes. A stack of linear layers collapses into a single
+      linear map, so networks interleave them with nonlinear [[activation-function|activation
+      functions]]; depth adds expressive power only because of that nonlinearity. Many transformer
+      components — the query, key, value and output projections and the [[unembedding|unembedding]]
+      — are linear maps, which makes them convenient objects for
+      [[interpretability|interpretability]] and targets for [[low-rank-adaptation|low-rank
+      adaptation]].
+    example: >-
+      The probe is just a linear transformation from the residual stream to two logits.
+formula_latex: f(a\mathbf{x} + b\mathbf{y}) = a\,f(\mathbf{x}) + b\,f(\mathbf{y})
+origin: >-
+  Linear substitutions of variables were studied from the 18th century in the theory of equations
+  and quadratic forms; George Boole's papers 'Exposition of a General Theory of Linear
+  Transformations' (1841–1843) helped found invariant theory. Giuseppe Peano gave the abstract
+  treatment of linear maps between vector spaces in 1888.
+year: 1843
+see_also:
+  - matrix
+  - matrix multiplication
+  - vector
+  - activation function
+  - linear algebra
+  - eigenvector

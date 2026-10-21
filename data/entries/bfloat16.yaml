@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bfloat16
+id: bfloat16
+pos: n.
+also:
+  - BF16
+  - bf16
+  - brain floating point
+pronunciation: BEE-float-sixteen
+domain: hw
+domains:
+  - dl
+  - train
+level: core
+plain: >-
+  A 16-bit number format invented at Google for AI. It keeps the huge range of the standard 32-bit
+  format but drops precision, which neural networks can usually tolerate.
+senses:
+  - definition: >-
+      A 16-bit [[floating-point-format|floating-point format]] with 1 sign bit, 8 exponent bits and
+      7 stored significand bits — in effect the upper half of an [[fp32|FP32]] number. Sharing
+      FP32's exponent gives it the same dynamic range (roughly 10^-38 to 3 × 10^38), so gradients
+      rarely underflow or overflow and training usually needs no loss scaling; the price is coarse
+      precision (2–3 significant decimal digits), mitigated by accumulating sums in FP32. Conversion
+      to and from FP32 is a simple truncation or rounding. Supported by Google [[tpu|TPUs]] from v2,
+      recent Intel and AMD CPUs, Nvidia GPUs from the A100 (2020), AMD accelerators and Arm
+      processors, bfloat16 became the default format for training [[large-language-model|large
+      language models]] in the early 2020s, and model checkpoints are commonly distributed in it.
+    example: >-
+      Train in bfloat16 and you can usually drop the loss-scaling code that FP16 needed.
+origin: >-
+  Developed by Google Brain ('b' for 'brain') and introduced with the second-generation TPU in 2017.
+  Dhiraj Kalamkar and colleagues at Intel and Facebook published a broad study in 2019 showing that
+  it matched FP32 training results across domains without changing hyperparameters.
+year: 2017
+note: >-
+  Not an IEEE 754 format. With only 8 significant bits, adding a small update to a large weight can
+  leave it unchanged, one reason optimizers keep FP32 master copies.
+see_also:
+  - floating-point format
+  - FP32
+  - FP16
+  - FP8
+  - TPU
+  - mixed-precision training
+contrast:
+  - FP16
+sources:
+  - text: >-
+      Kalamkar, D. et al. (2019). A Study of BFLOAT16 for Deep Learning Training. arXiv:1905.12322.
+    url: https://arxiv.org/abs/1905.12322

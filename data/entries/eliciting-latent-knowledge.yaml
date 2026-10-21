@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: eliciting latent knowledge
+id: eliciting-latent-knowledge
+pos: n.
+also:
+  - ELK
+domain: safety
+domains:
+  - interp
+  - asi
+level: specialist
+plain: >-
+  The unsolved problem of getting an AI to tell us what it actually knows — for instance, that a
+  security camera has been tampered with — rather than what it predicts we would believe.
+senses:
+  - definition: >-
+      The open problem of training a model to report truthfully what its internal computations
+      represent about the world, including knowledge beyond what humans can check. In the canonical
+      'SmartVault' example, a predictor forecasting camera footage of a vault may know that a
+      diamond has been stolen while the footage has been faked. A 'reporter' trained on
+      human-labeled cases could learn either to translate the predictor's knowledge directly or to
+      simulate what a human watching the footage would conclude; both fit the training data, but
+      only the direct translator stays honest on cases humans cannot verify. Proposals are assessed
+      in a builder–breaker game, failing if any counterexample makes the human simulator the
+      preferred solution. ELK connects [[scalable-oversight|scalable oversight]],
+      [[ai-deception|deception]] detection and [[interpretability|interpretability]], and motivated
+      unsupervised truth-finding methods such as [[contrast-consistent-search|contrast-consistent
+      search]].
+    example: >-
+      Any ELK proposal has to explain why training would not just produce a human simulator.
+origin: >-
+  Set out in the Alignment Research Center's first technical report, 'Eliciting Latent Knowledge:
+  How to tell if your eyes deceive you' (December 2021), by Paul Christiano and Mark Xu of ARC with
+  Ajeya Cotra, then of Open Philanthropy. ARC ran a prize contest for proposals in early 2022;
+  prizes went to partial ideas, and the problem remains unsolved.
+year: 2021
+note: >-
+  'Knowledge' is meant functionally: information the model's computation uses, whether or not it
+  would say so. The worry is less deliberate lying than a reporter that has learned to say what
+  humans expect to hear.
+see_also:
+  - scalable oversight
+  - AI lie detection
+  - contrast-consistent search
+  - mechanistic anomaly detection
+  - probing
+  - Alignment Research Center
+  - AI deception
+sources:
+  - text: >-
+      Christiano, P., Cotra, A. & Xu, M. (2021). Eliciting Latent Knowledge: How to tell if your
+      eyes deceive you. Alignment Research Center technical report.

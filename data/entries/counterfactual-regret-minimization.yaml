@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: counterfactual regret minimization
+id: counterfactual-regret-minimization
+pos: n.
+also:
+  - CFR
+  - CFR+
+  - Monte Carlo CFR
+  - Deep CFR
+domain: rl
+domains:
+  - math
+  - agents
+level: specialist
+plain: >-
+  A method for working out near-unbeatable strategies in games with hidden information, like poker,
+  by repeatedly playing against itself and shifting each decision toward the moves it most regrets
+  not making.
+senses:
+  - definition: >-
+      An iterative algorithm for approximating a Nash equilibrium in two-player zero-sum games of
+      imperfect information, such as poker. It traverses the game tree repeatedly in
+      [[self-play|self-play]]; at each information set — a decision point as seen by the player to
+      move, who cannot observe hidden cards — it computes counterfactual [[regret|regret]], how much
+      better each action would have done, weighted by the probability that the opponent and chance
+      reach that point, and updates the local strategy by regret matching, playing actions in
+      proportion to their positive accumulated regret. Minimizing regret locally at every
+      information set bounds overall regret, so the average strategy over iterations converges to an
+      equilibrium. Variants made it scale: Monte Carlo CFR samples parts of the tree, CFR+ converges
+      much faster, abstraction shrinks the game, and Deep CFR replaces tables with neural networks.
+      CFR-based programs essentially solved heads-up limit Texas hold'em (Cepheus, 2015), beat
+      professional players at heads-up no-limit hold'em (DeepStack and Libratus, 2017) and beat
+      elite professionals at six-player no-limit hold'em (Pluribus, 2019).
+    example: >-
+      We abstracted bet sizes to five options so CFR could converge on a laptop overnight.
+origin: >-
+  Introduced by Martin Zinkevich, Michael Johanson, Michael Bowling and Carmelo Piccione of the
+  University of Alberta in 'Regret Minimization in Games with Incomplete Information' (NIPS 2007),
+  building on Sergiu Hart and Andreu Mas-Colell's regret matching (2000). Oskari Tammelin's CFR+
+  (2014) powered Cepheus, and Noam Brown and Tuomas Sandholm's Libratus and Pluribus extended the
+  approach.
+year: 2007
+note: >-
+  Unlike [[alphazero|AlphaZero]]-style search, CFR reasons explicitly about hidden information and
+  mixes its actions so that opponents cannot exploit predictable play — which is why equilibrium
+  poker strategies bluff at calculated frequencies.
+see_also:
+  - regret
+  - self-play
+  - multi-agent reinforcement learning
+  - game tree
+  - minimax
+  - Monte Carlo tree search
+sources:
+  - text: >-
+      Zinkevich, M., Johanson, M., Bowling, M. & Piccione, C. (2007). Regret Minimization in Games
+      with Incomplete Information. Advances in Neural Information Processing Systems 20.
+  - text: >-
+      Bowling, M., Burch, N., Johanson, M. & Tammelin, O. (2015). Heads-up limit hold'em poker is
+      solved. Science 347(6218), 145–149.
+  - text: >-
+      Brown, N. & Sandholm, T. (2019). Superhuman AI for multiplayer poker. Science 365(6456),
+      885–890.

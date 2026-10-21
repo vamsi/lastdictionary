@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: NP-complete
+id: np-complete
+pos: adj.
+also:
+  - NP-completeness
+  - NP-hard
+  - NP-hardness
+  - NP
+domain: math
+domains:
+  - sym
+level: core
+plain: >-
+  Describes problems, such as solving giant Sudokus, where a proposed answer is quick to check but
+  no known method finds one quickly; a fast method for any one of them could be turned into one for
+  all.
+senses:
+  - definition: >-
+      Describing a decision problem that is in NP — a proposed solution (certificate) can be
+      verified in polynomial time — and to which every problem in NP can be reduced in polynomial
+      time, so that an efficient algorithm for any one NP-complete problem would yield efficient
+      algorithms for all of NP. A problem is NP-hard if every NP problem reduces to it, whether or
+      not it is itself in NP; finding a shortest traveling-salesman tour is NP-hard. Whether P
+      equals NP is the central open question of theoretical computer science, and most researchers
+      believe it does not. Many AI problems are NP-complete —
+      [[boolean-satisfiability-problem|SAT]], graph coloring, general
+      [[constraint-satisfaction-problem|constraint satisfaction]] — and some are harder: exact
+      inference in [[bayesian-network|Bayesian networks]] is NP-hard and plan existence in classical
+      [[automated-planning|planning]] is PSPACE-complete. Hence AI's reliance on
+      [[heuristic|heuristics]], approximation and exploiting problem structure.
+    example: >-
+      The scheduling problem is NP-complete, so we settled for a local-search heuristic that is
+      usually within 2 percent of optimal.
+origin: >-
+  Stephen Cook (1971) and Leonid Levin (1973) independently showed that SAT is complete for NP, and
+  Richard Karp (1972) proved 21 classic combinatorial problems complete. Donald Knuth's 1974 poll of
+  colleagues on terminology settled 'NP-hard'; Michael Garey and David Johnson's 1979 book cataloged
+  hundreds of NP-complete problems.
+year: 1971
+note: >-
+  Often misused to mean merely 'very hard'. NP stands for 'nondeterministic polynomial time', not
+  'non-polynomial'. [[ai-complete|AI-complete]] is an informal analogy, not a formal complexity
+  class.
+see_also:
+  - Boolean satisfiability problem
+  - combinatorial explosion
+  - constraint satisfaction problem
+  - heuristic
+  - AI-complete
+contrast:
+  - AI-complete
+sources:
+  - text: >-
+      Karp, R. M. (1972). Reducibility Among Combinatorial Problems. In Complexity of Computer
+      Computations. Plenum, 85–103.
+  - text: >-
+      Garey, M. R. & Johnson, D. S. (1979). Computers and Intractability: A Guide to the Theory of
+      NP-Completeness. W. H. Freeman.

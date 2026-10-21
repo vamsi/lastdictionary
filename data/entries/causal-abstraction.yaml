@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: causal abstraction
+id: causal-abstraction
+pos: n.
+also:
+  - interchange intervention accuracy
+  - IIA
+domain: interp
+domains:
+  - math
+level: specialist
+plain: >-
+  A mathematical way to check whether a simple, human-readable recipe really describes what a neural
+  network does inside, by testing whether matching internal parts behave the same way when swapped.
+senses:
+  - definition: >-
+      A framework, from the theory of causal models, for stating when a high-level causal model —
+      such as a symbolic algorithm with interpretable variables — faithfully describes a lower-level
+      one, such as a neural network. The high-level model is an abstraction of the low-level one if
+      there is a mapping from low-level states to high-level variables under which interventions
+      commute: intervening on the network's activations that are aligned with a variable has the
+      same effect on the output as intervening on that variable in the algorithm. In
+      interpretability this is tested with interchange interventions — setting a network component
+      to the value it takes on another input, a form of [[activation-patching|activation patching]]
+      — and summarized by interchange intervention accuracy. Causal abstraction provides a common
+      language for [[circuit|circuit]] analysis, [[causal-scrubbing|causal scrubbing]],
+      [[path-patching|path patching]] and [[distributed-alignment-search|distributed alignment
+      search]], and makes precise what it means for an interpretation to be faithful.
+    example: >-
+      Under causal abstraction, the network implements the carry-the-one algorithm only if swapping
+      the aligned neurons swaps the carry.
+origin: >-
+  Formalized in causal inference by Paul Rubenstein and colleagues (2017) and by Sander Beckers and
+  Joseph Halpern (2019). Atticus Geiger, Hanson Lu, Thomas Icard and Christopher Potts applied it to
+  neural networks in 'Causal Abstractions of Neural Networks' (NeurIPS 2021), and Geiger and
+  colleagues later proposed it as a theoretical foundation for mechanistic interpretability (2023).
+year: 2017
+see_also:
+  - activation patching
+  - distributed alignment search
+  - causal scrubbing
+  - causal inference
+  - circuit
+  - interpretability illusion
+sources:
+  - text: >-
+      Geiger, A., Lu, H., Icard, T. & Potts, C. (2021). Causal Abstractions of Neural Networks.
+      NeurIPS 2021.
+  - text: Beckers, S. & Halpern, J. Y. (2019). Abstracting Causal Models. AAAI 2019.
+  - text: >-
+      Rubenstein, P. K., Weichwald, S., Bongers, S., Mooij, J. M., Janzing, D., Grosse-Wentrup, M. &
+      Schölkopf, B. (2017). Causal Consistency of Structural Equation Models. UAI 2017.

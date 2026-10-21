@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: stemming
+id: stemming
+pos: n.
+also:
+  - stemmer
+  - Porter stemmer
+  - lemmatization
+  - lemmatisation
+  - lemma
+domain: llm
+domains:
+  - data
+  - hist
+level: specialist
+plain: >-
+  Cutting words down to a common root so that variants count as the same word — 'connected',
+  'connecting' and 'connection' all become 'connect' — to help search and text analysis.
+senses:
+  - definition: >-
+      A text-normalization step that chops affixes, mainly suffixes, off words by heuristic rules,
+      so that different forms of a word reduce to one shared key, the stem — 'running' and 'runs'
+      both become 'run' — and can match in search or be counted together. The key can be a non-word
+      ('studies' becomes 'studi'), and errors run both ways: over-stemming merges unrelated words
+      (an aggressive stemmer may reduce 'organization' and 'organ' to the same key), while
+      under-stemming leaves true variants apart. Lemmatization is the more linguistically informed
+      alternative, mapping each word to its dictionary form (lemma) using a vocabulary and
+      [[part-of-speech-tagging|part-of-speech]] information, so that 'better' becomes 'good'. Both
+      were staples of [[information-retrieval|information retrieval]], [[bag-of-words|bag of words]]
+      features and [[topic-model|topic models]]; neural models built on subword
+      [[tokenization|tokenization]] rarely need them, but search engines and morphologically rich
+      languages still use them.
+    example: >-
+      Turn on stemming so a search for 'invoices' also finds 'invoiced' and 'invoicing'.
+origin: >-
+  Julie Beth Lovins published the first widely cited stemming algorithm in 1968. Martin Porter's
+  suffix-stripping algorithm (1980) became the standard for English, and his Snowball framework
+  (early 2000s) extended the approach to many languages.
+year: 1968
+see_also:
+  - information retrieval
+  - bag of words
+  - tokenization
+  - TF-IDF
+  - part-of-speech tagging
+  - sparse retrieval
+sources:
+  - text: Porter, M. F. (1980). An algorithm for suffix stripping. Program 14(3), 130–137.
+  - text: >-
+      Lovins, J. B. (1968). Development of a Stemming Algorithm. Mechanical Translation and
+      Computational Linguistics 11(1–2), 22–31.

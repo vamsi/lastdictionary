@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: local learning coefficient
+id: local-learning-coefficient
+pos: n.
+also:
+  - LLC
+  - estimated learning coefficient
+domain: interp
+domains:
+  - math
+  - dl
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A number measuring how complex a trained neural network effectively is around its current settings
+  — usually far less than its raw parameter count suggests — used to spot changes as the network
+  learns.
+senses:
+  - definition: >-
+      A measure of the effective complexity of a trained neural network at a particular point in
+      parameter space, derived from [[singular-learning-theory|singular learning theory]]. It
+      localizes Sumio Watanabe's learning coefficient (the real log canonical threshold) to the
+      neighborhood of a given solution: roughly, it describes how fast the volume of nearly-as-good
+      parameters around that solution shrinks as the loss tolerance is tightened, so that flatter,
+      more degenerate solutions have lower values. Unlike parameter count, it reflects redundancy
+      among parameters. It is estimated by sampling from a tempered posterior concentrated around
+      the trained parameters, typically with stochastic gradient Langevin dynamics, and comparing
+      the samples' average loss with the loss at the solution. Tracking it across training
+      checkpoints is the main tool of [[developmental-interpretability|developmental
+      interpretability]], where rises and drops mark developmental stages; variants restricted to
+      subsets of weights measure the complexity of individual components such as attention heads.
+    example: >-
+      The local learning coefficient plateaued and then jumped just as the model learned to use the
+      context.
+formula_latex: \hat{\lambda}(w^*) = n\beta \left( \mathbb{E}^{\beta}_{w \mid w^*}\left[ L_n(w)
+  \right] - L_n(w^*) \right), \qquad \beta = \frac{1}{\log n}
+origin: >-
+  Introduced by Edmund Lau, Zach Furman, George Wang, Daniel Murfet and Susan Wei in 'The Local
+  Learning Coefficient: A Singularity-Aware Complexity Measure' (arXiv, August 2023), building on
+  Watanabe's learning coefficient.
+year: 2023
+see_also:
+  - singular learning theory
+  - developmental interpretability
+  - loss landscape
+  - Bayesian inference
+  - Markov chain Monte Carlo
+sources:
+  - text: >-
+      Lau, E., Furman, Z., Wang, G., Murfet, D. & Wei, S. (2023). The Local Learning Coefficient: A
+      Singularity-Aware Complexity Measure. arXiv:2308.12108.
+    url: https://arxiv.org/abs/2308.12108

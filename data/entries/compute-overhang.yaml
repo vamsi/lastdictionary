@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: compute overhang
+id: compute-overhang
+pos: n.
+also:
+  - hardware overhang
+  - overhang
+  - inference overhang
+  - algorithmic overhang
+domain: asi
+domains:
+  - hw
+  - safety
+level: specialist
+plain: >-
+  A situation in which far more computing power is available than AI currently uses, so that a new
+  method or a decision to scale up could suddenly produce a big jump in ability.
+senses:
+  - definition: >-
+      A situation in which the computing power available or affordable greatly exceeds what current
+      AI systems use, so that once a sufficiently good algorithm arrives, or a decision is made to
+      scale up, capabilities could jump abruptly rather than improve gradually. In the original
+      hardware-overhang form, the worry is that if the software for human-level AI arrives late,
+      abundant hardware would immediately allow running vast numbers of fast copies, favoring a
+      [[fast-takeoff|fast takeoff]]. A related usage concerns training: if frontier training runs
+      are held back, for instance by a pause, while chips keep getting cheaper, lifting the
+      restriction could produce a sudden leap. Some laboratories have cited overhang as an argument
+      for steady, incremental scaling rather than delay, while critics see this as a rationalization
+      for racing. Inference overhang, the ability to run a newly trained model as many copies at
+      once, and algorithmic overhang are variants.
+    example: >-
+      A long pause followed by an unpause could leave a compute overhang bigger than the one it was
+      meant to avoid.
+origin: >-
+  Earliest use not established. Hardware overhang was discussed by 2010, on LessWrong and in Carl
+  Shulman and Anders Sandberg's paper on software-limited singularities, and appears in Bostrom's
+  Superintelligence (2014). 'Compute overhang' became common in the 2020s; OpenAI's February 2023
+  post 'Planning for AGI and beyond' invoked it in arguing for gradual progress.
+year: 2010
+see_also:
+  - fast takeoff
+  - AI pause
+  - compute
+  - scaling laws
+  - takeoff
+  - intelligence explosion
+sources:
+  - text: >-
+      Shulman, C. & Sandberg, A. (2010). Implications of a Software-Limited Singularity. Proceedings
+      of the European Conference on Computing and Philosophy (ECAP 2010).

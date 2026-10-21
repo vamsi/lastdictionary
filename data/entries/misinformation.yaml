@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: misinformation
+id: misinformation
+pos: n.
+also:
+  - misinfo
+  - information disorder
+  - malinformation
+domain: society
+domains:
+  - gen
+  - llm
+level: essential
+plain: >-
+  False or misleading information that spreads, whether or not the people sharing it know it is
+  wrong. AI can produce it by mistake and makes it cheaper to create.
+senses:
+  - definition: >-
+      Content that is false or misleading, whatever the intentions of those who create or share it;
+      deliberate falsehood is usually singled out as [[disinformation|disinformation]], and true
+      information released in order to do harm, such as leaked private records, as malinformation.
+      AI affects misinformation in three ways. Generative models produce it unintentionally through
+      [[hallucination|hallucination]], for instance in chatbot answers or AI-written search
+      summaries; they lower the cost of plausible text, images, audio and video that can be reused
+      misleadingly ([[synthetic-media|synthetic media]], [[deepfake|deepfakes]]); and
+      [[recommender-system|recommender systems]] tuned for [[engagement-optimization|engagement]]
+      can amplify sensational falsehoods. AI is also used against it, in fact-checking support,
+      claim matching and [[content-moderation|content moderation]]. Research finds exposure to
+      online misinformation concentrated in small, already receptive audiences, so how much cheaper
+      generation adds to its effects is debated.
+    example: >-
+      The chatbot's answer about polling hours was misinformation, not a deliberate lie, but voters
+      acted on it all the same.
+origin: >-
+  In English since the late 16th century. The modern taxonomy separating mis-, dis- and
+  malinformation was set out by Claire Wardle and Hossein Derakhshan in 'Information Disorder'
+  (Council of Europe, 2017). The World Economic Forum's Global Risks Report 2024 ranked
+  misinformation and disinformation, amplified by AI, as the most severe global risk over the
+  following two years.
+note: >-
+  Applying the label is contested in practice: judgments of falsity can be mistaken or politicized,
+  and critics warn that broad anti-misinformation policies can suppress legitimate speech. Many
+  researchers prefer narrower terms such as false claim, manipulated media or coordinated
+  inauthentic behavior.
+see_also:
+  - disinformation
+  - deepfake
+  - synthetic media
+  - hallucination
+  - liar's dividend
+  - filter bubble
+  - content moderation
+contrast:
+  - disinformation
+sources:
+  - text: >-
+      Wardle, C. & Derakhshan, H. (2017). Information Disorder: Toward an interdisciplinary
+      framework for research and policymaking. Council of Europe report DGI(2017)09.
+  - text: World Economic Forum (2024). The Global Risks Report 2024, 19th edition.

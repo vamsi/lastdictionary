@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: situation calculus
+id: situation-calculus
+pos: n.
+also:
+  - successor state axiom
+  - GOLOG
+  - fluent
+  - event calculus
+domain: sym
+domains:
+  - mind
+level: specialist
+plain: >-
+  A logical language for describing how the world changes as actions happen, so that a program can
+  work out what will be true after any sequence of actions.
+senses:
+  - definition: >-
+      A logical formalism, essentially [[first-order-logic|first-order logic]] plus a few
+      second-order devices, in which one can describe how actions alter the world and deduce what
+      holds after any sequence of them. Situations are terms denoting histories of actions — the
+      initial situation S0, and do(a, s), the situation that results from performing action a in
+      situation s — and fluents are relations whose truth varies from situation to situation, such
+      as Holding(x, s). Action preconditions and effects are stated as axioms, and planning becomes
+      deduction: proving that some sequence of actions leads to a situation satisfying the goal. Its
+      central difficulty, the [[frame-problem|frame problem]] of stating what an action leaves
+      unchanged, received a widely adopted solution in Ray Reiter's successor state axioms (1991),
+      which gather all the ways a fluent can change into a single formula. The GOLOG family of agent
+      programming languages builds on it; the event calculus is a related formalism based on time
+      points.
+origin: >-
+  Introduced by John McCarthy in the 1963 Stanford AI memo 'Situations, Actions and Causal Laws' and
+  developed with Patrick Hayes in their 1969 paper, which also identified the frame problem. Ray
+  Reiter's group at Toronto reformulated it in the 1990s, culminating in his book Knowledge in
+  Action (2001).
+year: 1963
+see_also:
+  - frame problem
+  - automated planning
+  - first-order logic
+  - knowledge representation
+  - non-monotonic reasoning
+  - STRIPS
+sources:
+  - text: >-
+      McCarthy, J. & Hayes, P. J. (1969). Some Philosophical Problems from the Standpoint of
+      Artificial Intelligence. Machine Intelligence 4, 463–502.
+  - text: >-
+      Reiter, R. (2001). Knowledge in Action: Logical Foundations for Specifying and Implementing
+      Dynamical Systems. MIT Press.

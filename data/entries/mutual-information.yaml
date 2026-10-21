@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mutual information
+id: mutual-information
+pos: n.
+also:
+  - MI
+  - pointwise mutual information
+  - PMI
+  - conditional mutual information
+domain: math
+domains:
+  - ml
+  - dl
+level: specialist
+plain: >-
+  How much knowing one thing tells you about another — for example, how much a word reveals about
+  the topic of a document. It is zero when the two are unrelated.
+senses:
+  - definition: >-
+      The number of bits (or nats) by which learning the value of one [[random-variable|random
+      variable]] cuts the [[entropy|entropy]], or uncertainty, of another, I(X; Y) = H(X) − H(X |
+      Y); equivalently, the [[kullback-leibler-divergence|Kullback–Leibler divergence]] of the
+      pair's joint distribution from the product of its marginals. It is symmetric, nonnegative and
+      zero exactly when the variables are independent, and — unlike [[correlation|correlation]] — it
+      captures nonlinear relationships and is unchanged by invertible transformations of either
+      variable. In machine learning it guides [[feature-selection|feature selection]], equals the
+      [[information-gain|information gain]] of a [[decision-tree|decision tree]] split, and
+      motivates representation-learning objectives: [[contrastive-learning|contrastive learning]]
+      losses such as InfoNCE maximize a lower bound on the mutual information between two views, and
+      the [[information-bottleneck|information bottleneck]] trades it off between inputs,
+      representations and targets. Pointwise mutual information (PMI) underlies classic
+      word-association measures and is implicitly factorized by [[word2vec|word2vec]].
+      High-dimensional mutual information is notoriously hard to estimate.
+    example: >-
+      The mutual information between the probe's output and the label was near zero, so the feature
+      carries little label information.
+formula_latex: I(X;Y) = \sum_{x,y} p(x,y)\,\log\frac{p(x,y)}{p(x)\,p(y)} = H(X) - H(X\mid Y)
+origin: >-
+  Claude Shannon defined the quantity in 1948, treating it as the rate at which information passes
+  through a channel, whose capacity is its maximum over input distributions; he did not call it
+  'mutual information'. That name is credited to Robert Fano and was in use by the late 1950s. Ralph
+  Linsker's 'infomax' principle (1988) carried it into neural-network learning.
+year: 1948
+see_also:
+  - entropy
+  - Kullback–Leibler divergence
+  - information theory
+  - contrastive learning
+  - information gain
+  - information bottleneck
+  - correlation

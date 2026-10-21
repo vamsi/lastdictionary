@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: extreme ultraviolet lithography
+id: extreme-ultraviolet-lithography
+pos: n.
+also:
+  - EUV lithography
+  - EUV
+  - EUVL
+  - High-NA EUV
+domain: hw
+domains:
+  - gov
+level: specialist
+plain: >-
+  The chip-printing technique used for the most advanced chips, which draws circuit patterns with
+  ultra-short-wavelength light. A single Dutch company, ASML, makes all the machines, each costing
+  well over $100 million.
+senses:
+  - definition: >-
+      A lithography process that patterns the smallest features of leading-edge chips using light
+      13.5 nm in wavelength. The light comes from a plasma created by hitting droplets of molten tin
+      with a powerful laser; because air and glass absorb it, the scanner works in vacuum and
+      focuses with multilayer mirrors instead of lenses. It replaced multiple patterning with
+      deep-ultraviolet (193 nm) light for the most critical layers at 7 nm- and 5 nm-class
+      [[process-node|nodes]] and is in practice required for 3 nm- and 2 nm-class production. ASML
+      of the Netherlands is the only supplier of EUV scanners; a standard tool costs roughly
+      $180–200 million, and the High-NA generation (numerical aperture 0.55), first shipped to Intel
+      for development in December 2023, about $370 million. Because no leading-edge logic chip can
+      be made without it, EUV equipment is a chokepoint in the AI chip supply chain, and ASML does
+      not ship EUV systems to China.
+origin: >-
+  Hiroo Kinoshita of NTT proposed and demonstrated EUV imaging in the mid-1980s, and Bell Labs
+  published on 13.8 nm soft-X-ray projection lithography in 1991. US national laboratories and
+  chipmakers advanced it through the EUV LLC consortium in the late 1990s; after two decades of
+  development by ASML, high-volume production began in 2018–2019 at Samsung's and TSMC's 7 nm-class
+  nodes.
+see_also:
+  - process node
+  - semiconductor foundry
+  - Moore's law
+  - export controls on AI chips
+  - advanced packaging
+as_of: 2026-10

@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: shortcut learning
+id: shortcut-learning
+pos: n.
+also:
+  - shortcut
+  - Clever Hans predictor
+domain: data
+domains:
+  - ml
+  - dl
+level: specialist
+plain: >-
+  When an AI system gets right answers for the wrong reasons — noticing which hospital an X-ray came
+  from rather than signs of disease — so it fails once that accidental clue disappears.
+senses:
+  - definition: >-
+      The tendency of learning systems to latch onto spurious correlations — cues that happen to
+      predict the label in the available training and test data but have no causal or robust link to
+      the task — so that a model can look excellent on standard benchmarks and then fail as soon as
+      [[distribution-shift|distribution shift]] removes the cue. Examples include image classifiers
+      that recognize cows by grassy backgrounds, pneumonia detectors that learned hospital-specific
+      markers on X-rays, and natural-language-inference models that predict the answer from words in
+      the hypothesis alone, an artifact of how annotators wrote the data. Shortcuts arise because
+      gradient-based training favors the simplest predictive features available and because data
+      collected in one way carry systematic artifacts. Remedies include counterfactual or
+      adversarially collected data, removing known artifacts, objectives that penalize reliance on
+      spurious features, evaluation on shifted data, and [[interpretability|interpretability]] tools
+      that reveal what a model relies on.
+    example: >-
+      The 'melanoma detector' had learned to spot rulers in the photos — classic shortcut learning.
+origin: >-
+  The phenomenon was long known as the 'Clever Hans' effect, after a horse in early-1900s Berlin
+  that seemed to do arithmetic but was reading its questioner's cues; Sebastian Lapuschkin and
+  colleagues wrote of 'Clever Hans predictors' in 2019, and Robert Geirhos and colleagues' 2020
+  perspective in Nature Machine Intelligence popularized 'shortcut learning' as an umbrella term and
+  surveyed its forms.
+year: 2020
+note: >-
+  Related to [[goal-misgeneralization|goal misgeneralization]] in reinforcement learning, where an
+  agent's learned objective tracks a proxy that coincided with the intended goal during training. A
+  shortcut is a property of data and model together, not of the model alone.
+see_also:
+  - distribution shift
+  - out-of-distribution
+  - goal misgeneralization
+  - robustness
+  - interpretability
+  - data quality
+sources:
+  - text: >-
+      Geirhos, R. et al. (2020). Shortcut Learning in Deep Neural Networks. Nature Machine
+      Intelligence 2, 665–673. arXiv:2004.07780.
+    url: https://arxiv.org/abs/2004.07780
+  - text: >-
+      Gururangan, S. et al. (2018). Annotation Artifacts in Natural Language Inference Data. NAACL
+      2018.

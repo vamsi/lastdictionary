@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sparsity
+id: sparsity
+pos: n.
+also:
+  - sparse
+  - sparse model
+  - weight sparsity
+  - activation sparsity
+  - sparse matrix
+domain: infer
+domains:
+  - math
+  - dl
+level: core
+plain: >-
+  The property of being mostly zeros or mostly switched off. AI systems exploit it by skipping the
+  empty parts, so they need less memory and computation.
+senses:
+  - definition: >-
+      The fraction of elements in a vector, matrix or tensor that are zero (or of units that are
+      inactive), and by extension the techniques that exploit it. In AI it takes several forms:
+      weight sparsity, produced by [[pruning|pruning]] or L1 regularization ([[lasso|lasso]]);
+      activation sparsity, as when ReLU units output many zeros or a [[sparse-autoencoder|sparse
+      autoencoder]] is trained so that few features fire; routed or conditional sparsity, where a
+      [[mixture-of-experts|mixture of experts]] activates only some experts per token (see
+      [[active-parameters|active parameters]]); attention sparsity, where each token attends to only
+      some others ([[sparse-attention|sparse attention]]); and sparse data such as one-hot or
+      bag-of-words features. Sparsity saves memory and arithmetic only if storage formats, kernels
+      and hardware can skip the zeros: unstructured patterns at moderate sparsity often run no
+      faster on GPUs, which is why structured and [[n-m-sparsity|N:M sparsity]] patterns are
+      favored. Sparse representations are also valued for interpretability and statistical
+      efficiency.
+    example: >-
+      At 90 percent unstructured sparsity the model is a tenth of the size, but our GPU kernels
+      barely speed it up.
+origin: >-
+  A mathematical idea long used in numerical computing, where specialized sparse-matrix methods date
+  to the 1950s–60s, and the term 'sparse matrix' is sometimes credited to Harry Markowitz, whose
+  1950s work on linear programming pioneered them. In AI it gained prominence through sparse coding
+  (Bruno Olshausen and David Field, 1996), the lasso (Robert Tibshirani, 1996), network pruning, and
+  sparsely gated mixture-of-experts layers (Noam Shazeer and colleagues, 2017).
+note: >-
+  'Sparse' and 'dense' also describe whole models: a dense model uses all its parameters for every
+  input, a sparse one does not. In search, [[sparse-retrieval|sparse retrieval]] means keyword-style
+  vectors, a related but distinct usage.
+see_also:
+  - pruning
+  - N:M sparsity
+  - mixture of experts
+  - active parameters
+  - sparse attention
+  - sparse autoencoder
+  - model compression
+contrast:
+  - sparse retrieval

@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: domain adaptation
+id: domain-adaptation
+pos: n.
+also:
+  - unsupervised domain adaptation
+  - UDA
+  - domain shift
+  - source domain
+  - target domain
+  - domain generalization
+  - domain-adversarial training
+domain: ml
+domains:
+  - dl
+  - data
+level: core
+plain: >-
+  Adjusting a model trained on one kind of data, such as daytime photos or one hospital's records,
+  so that it still works on a different but related kind, such as night photos or another
+  hospital's.
+senses:
+  - definition: >-
+      A form of [[transfer-learning|transfer learning]] in which a model trained on labeled data
+      from a source domain is adapted to perform well on a target domain whose data distribution
+      differs while the task stays the same: from synthetic to real images, from one hospital's
+      scanners to another's, or from product reviews to social-media posts. In unsupervised domain
+      adaptation the target data are unlabeled; semi-supervised and supervised variants have some or
+      many target labels. Approaches include reweighting source examples by estimated density ratios
+      to correct [[covariate-shift|covariate shift]]; learning domain-invariant features, for
+      instance by adversarial training against a domain classifier (gradient reversal) or by
+      matching feature statistics across domains; self-training with pseudo-labels on target data;
+      and re-estimating normalization statistics or [[fine-tuning|fine-tuning]] on target data.
+      Theory by Shai Ben-David and colleagues bounds target error by source error plus a measure of
+      divergence between the domains, explaining when adaptation can succeed. Domain generalization
+      is the harder setting in which no target data are available during training.
+    example: >-
+      Domain adaptation with a gradient-reversal layer recovered most of the accuracy lost moving
+      from synthetic to real street scenes.
+origin: >-
+  Studied in statistics and natural language processing in the 2000s: Hidetoshi Shimodaira's 2000
+  analysis of importance weighting under covariate shift, Hal Daumé III and Daniel Marcu's 'Domain
+  Adaptation for Statistical Classifiers' (2006), and the theory of Shai Ben-David and colleagues
+  (2007; journal version 2010). Yaroslav Ganin and Victor Lempitsky's domain-adversarial training
+  (2015) brought it into deep learning.
+year: 2006
+see_also:
+  - transfer learning
+  - distribution shift
+  - covariate shift
+  - out-of-distribution
+  - fine-tuning
+  - sim-to-real transfer
+  - domain randomization
+sources:
+  - text: >-
+      Ben-David, S., Blitzer, J., Crammer, K., Kulesza, A., Pereira, F. & Vaughan, J. W. (2010). A
+      Theory of Learning from Different Domains. Machine Learning 79.
+  - text: >-
+      Daumé III, H. & Marcu, D. (2006). Domain Adaptation for Statistical Classifiers. Journal of
+      Artificial Intelligence Research 26.
+  - text: >-
+      Ganin, Y. & Lempitsky, V. (2015). Unsupervised Domain Adaptation by Backpropagation. Proc.
+      ICML 2015.

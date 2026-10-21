@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: positional encoding
+id: positional-encoding
+pos: n.
+also:
+  - position encoding
+  - positional embedding
+  - position embedding
+  - sinusoidal positional encoding
+  - absolute positional encoding
+  - relative positional encoding
+  - NoPE
+domain: llm
+domains:
+  - dl
+level: core
+plain: >-
+  Extra information added to each word so a transformer knows where it sits in the text. Without it,
+  'dog bites man' and 'man bites dog' would look the same to the model.
+senses:
+  - definition: >-
+      Any method of giving a [[transformer|transformer]] information about token order, which
+      [[self-attention|self-attention]] alone ignores because it treats its input as an unordered
+      set. Absolute schemes add to each [[token|token]] [[embedding|embedding]] a vector that
+      depends on its index: the original transformer used fixed sinusoids with geometrically spaced
+      frequencies, while [[bert|BERT]] and GPT-2 learned a table of position embeddings up to a
+      maximum length. Relative schemes make attention depend on the distance between query and key,
+      through learned relative embeddings, learned per-distance biases (as in [[t5|T5]]), linear
+      distance penalties ([[alibi|ALiBi]]) or rotations ([[rotary-positional-embedding|rotary
+      positional embedding]], now the most common choice). The scheme largely determines how well a
+      model copes with sequences longer than those seen in training. Some decoder-only models use no
+      explicit encoding at all (NoPE), relying on the [[causal-mask|causal mask]] to reveal position
+      implicitly.
+    example: >-
+      The learned positional embeddings stop at 512, so longer inputs must be truncated.
+formula_latex: PE_{(p,\,2i)} = \sin\!\left(\frac{p}{10000^{2i/d}}\right), \qquad PE_{(p,\,2i+1)} =
+  \cos\!\left(\frac{p}{10000^{2i/d}}\right)
+origin: >-
+  'Position encoding' appears in end-to-end memory networks (Sainbayar Sukhbaatar and colleagues,
+  2015), and learned position embeddings in convolutional sequence-to-sequence models (Jonas Gehring
+  and colleagues, 2017). 'Attention Is All You Need' (2017) introduced the sinusoidal scheme above;
+  Peter Shaw, Jakob Uszkoreit and Ashish Vaswani proposed relative position representations in 2018.
+year: 2017
+note: >-
+  'Encoding' and 'embedding' are used loosely: strictly, an encoding is a fixed function and an
+  embedding is learned.
+see_also:
+  - rotary positional embedding
+  - ALiBi
+  - context extension
+  - transformer
+  - self-attention
+  - embedding
+sources:
+  - text: Vaswani, A. et al. (2017). Attention Is All You Need. NIPS 2017.
+    url: https://arxiv.org/abs/1706.03762
+  - text: >-
+      Shaw, P., Uszkoreit, J. & Vaswani, A. (2018). Self-Attention with Relative Position
+      Representations. NAACL 2018.
+    url: https://arxiv.org/abs/1803.02155

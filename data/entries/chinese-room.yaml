@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Chinese room
+id: chinese-room
+pos: n.
+also:
+  - Chinese room argument
+  - Chinese room thought experiment
+  - systems reply
+  - robot reply
+domain: mind
+domains:
+  - hist
+  - llm
+labels:
+  - contested
+level: core
+plain: >-
+  A thought experiment: a person who knows no Chinese follows a rulebook to answer Chinese messages
+  so well that outsiders think they understand. If the person doesn't understand, does a computer
+  running a program?
+senses:
+  - definition: >-
+      A thought experiment and argument by John Searle against [[strong-ai|strong AI]]. In the
+      scenario Searle, who reads no Chinese, sits in a closed room with a rulebook written in
+      English. Notes in Chinese characters come in, the rulebook tells him purely by the characters'
+      shapes which ones to send back, and his replies are so apt that people outside take the room
+      to hold a fluent speaker. Yet he grasps none of it, and he is doing exactly what a computer
+      executing a program does; so, Searle concludes, running a program can never by itself produce
+      understanding: formal symbol manipulation (syntax) is not enough for meaning (semantics).
+      Leading replies include the systems reply (the whole room, not the man, understands), the
+      robot reply (connect the program to sensors and motors), the brain simulator reply and the
+      other minds reply. The argument is regularly revived in debates over whether
+      [[large-language-model|large language models]] understand what they say.
+    example: >-
+      Whatever you think of the Chinese room, it forces you to say where in the system the
+      understanding is supposed to be.
+origin: >-
+  Published by John Searle in 'Minds, Brains, and Programs' (Behavioral and Brain Sciences, 1980)
+  with peer commentaries, partly in response to Roger Schank and Robert Abelson's
+  story-understanding programs. Precursors include Gottfried Leibniz's mill (1714) and Ned Block's
+  'China brain' (1978).
+year: 1980
+note: >-
+  The argument targets programs, not machines: Searle grants that an artificial system with the
+  brain's causal powers could think. Whether it applies to [[neural-network|neural networks]], whose
+  operations are not rule-following in the rulebook sense, is itself disputed.
+see_also:
+  - strong AI
+  - symbol grounding problem
+  - machine understanding
+  - biological naturalism
+  - intentionality
+  - John Searle
+  - Blockhead
+contrast:
+  - Turing test
+sources:
+  - text: >-
+      Searle, J. R. (1980). Minds, Brains, and Programs. Behavioral and Brain Sciences 3(3), 417–457.

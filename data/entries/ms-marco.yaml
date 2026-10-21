@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MS MARCO
+id: ms-marco
+pos: prop. n.
+also:
+  - Microsoft MAchine Reading COmprehension
+  - MS MARCO passage ranking
+domain: data
+domains:
+  - eval
+  - eng
+level: specialist
+plain: >-
+  A large Microsoft dataset of real Bing search questions paired with web passages that answer them,
+  used to train and test most modern AI search models.
+senses:
+  - definition: >-
+      A large-scale dataset built from anonymized questions submitted to the Bing search engine,
+      each paired with passages extracted from retrieved web pages and human annotations of which
+      passages answer it. First released for machine reading comprehension, it is best known for its
+      passage-ranking task — roughly 8.8 million passages and several hundred thousand training
+      queries with sparse relevance labels — scored by [[mean-reciprocal-rank|MRR@10]]. As the first
+      public collection large enough to train neural rankers, it became the default training set for
+      [[cross-encoder|cross-encoder]] rerankers, [[dense-retrieval|dense retrievers]] and
+      [[colbert|ColBERT]], and the basis of NIST's TREC Deep Learning track (2019–2023). Its
+      limitations include shallow labels (often one known relevant passage per query, with other
+      relevant passages unlabeled), English-only web text and licensing restricted to non-commercial
+      research.
+    example: The retriever was fine-tuned on MS MARCO and then evaluated zero-shot on BEIR.
+origin: >-
+  Released by Microsoft in 2016 and described by Tri Nguyen and colleagues in 'MS MARCO: A Human
+  Generated MAchine Reading COmprehension Dataset'. Its passage-ranking leaderboard drew the first
+  BERT rerankers in early 2019, and the TREC Deep Learning track used it from 2019 until the track's
+  final edition in 2023.
+year: 2016
+see_also:
+  - mean reciprocal rank
+  - BEIR
+  - dense retrieval
+  - reranking
+  - cross-encoder
+  - information retrieval
+  - benchmark
+sources:
+  - text: >-
+      Nguyen, T. et al. (2016). MS MARCO: A Human Generated MAchine Reading COmprehension Dataset.
+      arXiv:1611.09268; CoCo workshop at NIPS 2016.
+    url: https://arxiv.org/abs/1611.09268
+  - text: Nogueira, R. & Cho, K. (2019). Passage Re-ranking with BERT. arXiv:1901.04085.
+    url: https://arxiv.org/abs/1901.04085
+as_of: 2026-10

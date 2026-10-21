@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Alexey Ivakhnenko
+id: alexey-ivakhnenko
+sort_as: Ivakhnenko Alexey
+pos: prop. n.
+also:
+  - Oleksii Ivakhnenko
+  - Aleksei Grigorevich Ivakhnenko
+domain: people
+domains:
+  - dl
+  - hist
+level: specialist
+dates: 1913–2007
+plain: >-
+  A Soviet Ukrainian scientist who from 1965 built some of the first deep, many-layered learning
+  networks, growing them layer by layer from data, decades before modern deep learning.
+senses:
+  - definition: >-
+      Soviet Ukrainian mathematician and engineer at the Institute of Cybernetics in Kyiv who, with
+      Valentin Lapa, built and trained some of the earliest deep, multilayer learning networks. From
+      the mid-1960s he developed what became the group method of data handling (GMDH), which grows a
+      network layer by layer: each unit computes a small polynomial of two inputs from the layer
+      below, units are fitted to training data by regression, and only those that perform best on
+      separate held-out data survive to feed the next layer, so that depth and structure are learned
+      from data; a 1971 paper described a network of eight layers. GMDH was widely used in the
+      Soviet Union for modeling and forecasting. [[jurgen-schmidhuber|Jürgen Schmidhuber]] and
+      others cite Ivakhnenko as the originator of [[deep-learning|deep learning]] in the sense of
+      trainable many-layered networks, decades before [[backpropagation|backpropagation]] made deep
+      networks practical; his selection of units on held-out data anticipated the
+      [[validation-set|validation set]].
+see_also:
+  - deep learning
+  - multilayer perceptron
+  - validation set
+  - model selection
+  - Jürgen Schmidhuber
+sources:
+  - text: >-
+      Ivakhnenko, A. G. & Lapa, V. G. (1965). Cybernetic Predicting Devices. CCM Information
+      Corporation (English translation 1965).
+  - text: >-
+      Ivakhnenko, A. G. (1971). Polynomial Theory of Complex Systems. IEEE Transactions on Systems,
+      Man, and Cybernetics SMC-1(4): 364–378.

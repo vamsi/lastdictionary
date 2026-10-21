@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: abstention
+id: abstention
+pos: n.
+also:
+  - abstain
+  - selective prediction
+  - reject option
+  - selective answering
+domain: llm
+domains:
+  - safety
+  - eval
+  - ml
+level: core
+plain: >-
+  When an AI declines to answer because it is not sure enough — saying 'I don't know' or asking for
+  more information — instead of guessing and risking a confident mistake.
+senses:
+  - definition: >-
+      A model's choice not to give an answer, or to give only a hedged or partial one, when its
+      confidence is too low, the question is ambiguous or unanswerable, or needed information is
+      missing. In classical machine learning it is formalized as selective prediction: a classifier
+      with a reject option trades coverage (the fraction of inputs it answers) against its error
+      rate on the answered ones. For [[large-language-model|LLMs]], abstention is a central lever
+      against [[hallucination|hallucination]]: benchmarks that score only accuracy reward guessing,
+      so models learn to bluff, whereas scoring rules that penalize wrong answers more than
+      abstentions, together with [[calibration|calibration]] training, encourage appropriate 'I
+      don't know' responses. Excessive abstention reduces usefulness, much as
+      [[over-refusal|over-refusal]] does.
+    example: >-
+      We count abstentions separately; a wrong answer costs us far more than an honest 'not sure'.
+origin: >-
+  C. K. Chow analyzed the trade-off between errors and rejections for pattern classifiers in 1957
+  and 1970, and Yonatan Geifman and Ran El-Yaniv developed selective classification for deep
+  networks in 2017. For LLMs, Adam Tauman Kalai and colleagues at OpenAI argued in 'Why Language
+  Models Hallucinate' (September 2025) that evaluations rewarding guessing over abstaining sustain
+  hallucination.
+year: 1957
+note: >-
+  Distinguish from [[refusal|refusal]], which declines on safety or policy grounds even when the
+  model could answer. Abstention concerns uncertainty, not permission.
+see_also:
+  - calibration
+  - hallucination
+  - factuality
+  - refusal
+  - over-refusal
+  - semantic entropy
+  - SimpleQA
+contrast:
+  - refusal
+sources:
+  - text: >-
+      Kalai, A. T., Nachum, O., Vempala, S. S. & Zhang, E. (2025). Why Language Models Hallucinate.
+      arXiv:2509.04664.
+    url: https://arxiv.org/abs/2509.04664
+  - text: >-
+      Chow, C. K. (1970). On Optimum Recognition Error and Reject Tradeoff. IEEE Transactions on
+      Information Theory 16(1), 41–46.

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tabular data
+id: tabular-data
+pos: n.
+also:
+  - structured data
+  - tabular dataset
+  - tabular deep learning
+  - tabular machine learning
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  Data arranged as a table, like a spreadsheet: each row is a case — a customer, a loan, a patient —
+  and each column a measured property. Much business and scientific data looks like this.
+senses:
+  - definition: >-
+      Data organized as a table in which rows are observations and columns are [[feature|features]]
+      of mixed types — numeric, categorical, ordinal, dates — typically drawn from databases,
+      spreadsheets, logs or surveys. Unlike images, audio or text, tabular columns have no natural
+      order or spatial structure, carry different units and meanings, and often include missing
+      values, skewed distributions, high-cardinality categories and abrupt, threshold-like relations
+      to the target. These properties suit the [[inductive-bias|inductive bias]] of tree ensembles:
+      through the 2010s and early 2020s, [[gradient-boosting|gradient-boosted]] trees
+      ([[xgboost|XGBoost]], [[lightgbm|LightGBM]], [[catboost|CatBoost]]) and [[random-forest|random
+      forests]] generally matched or beat deep networks on medium-sized tables, as systematic
+      benchmarks confirmed in 2022. Dedicated architectures (TabNet, FT-Transformer and others)
+      narrowed the gap, and since 2025 [[tabular-foundation-model|tabular foundation models]]
+      pretrained on synthetic tables have rivaled tuned boosting on small and medium datasets
+      without per-task training. Most enterprise machine learning — credit scoring, churn, fraud,
+      demand forecasting, clinical risk — runs on tabular data.
+    example: >-
+      For tabular data, start with gradient-boosted trees; try a neural network only if you have a
+      reason.
+origin: >-
+  Tables are as old as statistics; 'tabular data' became a named machine-learning category in the
+  late 2010s, as researchers asked why deep learning lagged on it. Ravid Shwartz-Ziv and Amitai
+  Armon's 'Tabular Data: Deep Learning Is Not All You Need' (2022) and Léo Grinsztajn, Edouard
+  Oyallon and Gaël Varoquaux's 'Why Do Tree-Based Models Still Outperform Deep Learning on Tabular
+  Data?' (2022) became reference benchmarks.
+note: >-
+  As of October 2026, whether foundation models will displace boosted trees on large tables remains
+  open. Tables inside documents ('table understanding') and spreadsheets edited by language-model
+  agents are related but separate problems.
+see_also:
+  - XGBoost
+  - gradient boosting
+  - random forest
+  - tabular foundation model
+  - feature engineering
+  - Kaggle
+  - one-hot encoding
+sources:
+  - text: >-
+      Grinsztajn, L., Oyallon, E. & Varoquaux, G. (2022). Why Do Tree-Based Models Still Outperform
+      Deep Learning on Tabular Data? NeurIPS 2022 Datasets and Benchmarks Track. arXiv:2207.08815.
+    url: https://arxiv.org/abs/2207.08815
+  - text: >-
+      Shwartz-Ziv, R. & Armon, A. (2022). Tabular Data: Deep Learning Is Not All You Need.
+      Information Fusion, 81, 84–90.
+as_of: 2026-10

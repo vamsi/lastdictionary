@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mean average precision
+id: mean-average-precision
+pos: n.
+also:
+  - mAP
+  - average precision
+  - AP
+  - AP50
+  - AP75
+  - box AP
+  - mask AP
+domain: percep
+domains:
+  - eval
+  - ml
+level: core
+plain: >-
+  The standard score for object detectors: it rewards finding all the objects while raising few
+  false alarms, averaged over every type of object. Higher is better, up to 100.
+senses:
+  - context: Object detection
+    definition: >-
+      The mean, over object classes, of average precision (AP), where AP summarizes one class's
+      [[precision-recall-curve|precision–recall curve]]. Detections are ranked by confidence; each
+      is marked a true or false positive by matching it to an unclaimed ground-truth box at a given
+      [[intersection-over-union|intersection over union]] threshold; AP is the area under the
+      resulting, interpolated precision–recall curve. PASCAL VOC used a single IoU threshold of 0.5
+      (AP50) and, at first, 11-point interpolation. [[coco|COCO]]'s primary metric, written simply
+      'AP', also averages over ten IoU thresholds from 0.50 to 0.95 in steps of 0.05, rewarding
+      tight localization, and is reported alongside AP50, AP75 and AP for small, medium and large
+      objects. Applied to masks the same procedure gives mask AP for
+      [[instance-segmentation|instance segmentation]]; applied to keypoints, with object keypoint
+      similarity in place of IoU, it gives keypoint AP.
+    example: >-
+      The new detection head adds 1.8 box AP on COCO val, almost all of it on small objects.
+  - context: Information retrieval
+    definition: >-
+      The mean over a set of queries of each query's average precision, which is the average of the
+      precision values at the ranks where relevant documents are retrieved; a standard measure of
+      ranked results in [[information-retrieval|information retrieval]] evaluations such as TREC.
+formula_latex: \text{mAP} = \frac{1}{C}\sum_{c=1}^{C}\text{AP}_c, \qquad \text{AP}_c = \int_0^1 p_c(r)\,dr
+origin: >-
+  Average precision comes from information retrieval, where its mean over queries was a standard
+  measure in the Text REtrieval Conference (TREC) evaluations from the 1990s. The PASCAL VOC
+  challenge (2005–2012) adapted it to detection, and the COCO benchmark (2014–2015) introduced
+  averaging over IoU thresholds.
+note: >-
+  COCO does not distinguish 'AP' from 'mAP'; both denote the class-averaged value. Scores computed
+  with different IoU thresholds, interpolation rules or data splits are not comparable, a frequent
+  source of misleading results tables.
+see_also:
+  - precision
+  - recall
+  - precision–recall curve
+  - intersection over union
+  - object detection
+  - COCO
+contrast:
+  - accuracy
+sources:
+  - text: >-
+      Everingham, M., Van Gool, L., Williams, C. K. I., Winn, J. & Zisserman, A. (2010). The PASCAL
+      Visual Object Classes (VOC) Challenge. International Journal of Computer Vision 88, 303–338.
+  - text: "Lin, T.-Y. et al. (2014). Microsoft COCO: Common Objects in Context. ECCV 2014."
+    url: https://arxiv.org/abs/1405.0312

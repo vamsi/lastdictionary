@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: bounded rationality
+id: bounded-rationality
+pos: n.
+also:
+  - boundedly rational
+  - limited rationality
+  - bounded optimality
+domain: core
+domains:
+  - mind
+  - society
+  - math
+level: core
+plain: >-
+  The idea that real decision-makers, whether people or machines, cannot consider every option or
+  compute the perfect choice, so they make reasonable decisions within limits of time, information
+  and thinking power.
+senses:
+  - definition: >-
+      The view that the rationality of real agents is limited by the information they have, the
+      computation they can afford and the time available, so that they rely on
+      [[heuristic|heuristics]], simplified models and stopping rules rather than optimizing. Herbert
+      Simon introduced it against the all-knowing 'economic man' of classical economics, proposing
+      [[satisficing|satisficing]] as a realistic decision procedure; later work studied heuristics
+      and biases (Daniel Kahneman and Amos Tversky) and ecological rationality, the success of
+      simple heuristics in particular environments (Gerd Gigerenzer). In AI, bounded rationality
+      motivates agents that decide well under resource limits: anytime algorithms and metareasoning
+      that decide how much to compute, Stuart Russell's bounded optimality (the best program a given
+      machine can run), and resource-rational models of human cognition. It also bears on
+      [[ai-safety|AI safety]], since idealized expected-utility maximizers are a poor model of
+      trained systems, and on [[embedded-agency|embedded agency]].
+    example: >-
+      Under bounded rationality, the robot stops planning once further deliberation would cost more
+      than it could gain.
+origin: >-
+  Coined by Herbert A. Simon, who used the phrase in Models of Man (1957) after developing the idea
+  in Administrative Behavior (1947) and 'A Behavioral Model of Rational Choice' (1955). His 1978
+  Nobel memorial prize in economics cited this research on decision-making in organizations.
+year: 1957
+note: >-
+  Bounded rationality is not irrationality: it describes doing as well as possible within real
+  limits. Contrast the idealized agents of classical [[decision-theory|decision theory]] and
+  [[aixi|AIXI]], which assume unlimited computation.
+see_also:
+  - satisficing
+  - Herbert A. Simon
+  - heuristic
+  - decision theory
+  - embedded agency
+  - intelligent agent
+  - logical uncertainty
+contrast:
+  - AIXI
+sources:
+  - text: >-
+      Simon, H. A. (1955). A Behavioral Model of Rational Choice. Quarterly Journal of Economics
+      69(1).
+  - text: "Simon, H. A. (1957). Models of Man: Social and Rational. Wiley."
+  - text: >-
+      Russell, S. J. & Subramanian, D. (1995). Provably Bounded-Optimal Agents. Journal of
+      Artificial Intelligence Research 2.

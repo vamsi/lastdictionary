@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: parameter count
+id: parameter-count
+pos: n.
+also:
+  - model size
+  - number of parameters
+  - total parameters
+  - non-embedding parameters
+domain: llm
+domains:
+  - dl
+  - hw
+  - infer
+level: core
+plain: >-
+  How many adjustable numbers an AI model contains — the usual measure of its size. Modern language
+  models have billions to trillions of them.
+senses:
+  - definition: >-
+      The number of trainable values ([[weights|weights]] and biases) in a [[neural-network|neural
+      network]], the conventional measure of model size, written with B for billions or T for
+      trillions ('a 70B model'). It determines memory needs — about 2 bytes per parameter at 16-bit
+      precision, so a 70B model needs roughly 140 GB before [[quantization|quantization]] — and,
+      together with the number of training tokens, training compute (about 6 × parameters × tokens
+      [[flop|FLOPs]] for dense transformers). In [[mixture-of-experts|mixture of experts]] models,
+      total parameters (all experts) differ from the [[active-parameters|active parameters]] used
+      for each token: DeepSeek-V3, for example, has 671 billion in total but about 37 billion
+      active. Counts are imperfect proxies for capability, since data quantity and quality, training
+      compute and post-training matter as much, and [[scaling-laws|scaling laws]] sometimes exclude
+      embedding parameters. Several leading developers have not disclosed parameter counts for their
+      frontier models since 2023.
+    example: >-
+      Despite its smaller parameter count, the 8B model beats last year's 70B on most benchmarks.
+origin: >-
+  Counting parameters is as old as neural networks. For language models the figure became a headline
+  number with GPT-2 (1.5 billion parameters, 2019) and GPT-3 (175 billion, 2020), and the trade-off
+  between parameters and training tokens was formalized in the Kaplan (2020) and
+  [[chinchilla-scaling-laws|Chinchilla]] (2022) scaling laws.
+note: >-
+  Do not confuse parameters (learned values) with [[hyperparameter|hyperparameters]] (settings
+  chosen by engineers) or with [[context-window|context window]] length, which is also quoted as a
+  number.
+see_also:
+  - parameter
+  - weights
+  - scaling laws
+  - mixture of experts
+  - active parameters
+  - quantization
+  - small language model
+  - Chinchilla scaling laws
+contrast:
+  - hyperparameter
+as_of: 2026-10

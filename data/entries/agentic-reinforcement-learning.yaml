@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agentic reinforcement learning
+id: agentic-reinforcement-learning
+pos: n.
+also:
+  - agentic RL
+  - agent RL
+  - multi-turn RL
+  - RL for agents
+domain: train
+domains:
+  - agents
+  - rl
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Training an AI assistant by rewarding success on long, multi-step jobs where it must use tools,
+  browse, run code and react to what happens, rather than answer in one go.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement learning]] of a language model acting as an
+      [[ai-agent|AI agent]] over many turns in an interactive [[rl-environment|RL environment]],
+      where each action (a [[tool-call|tool call]], shell command, click or message) changes what
+      the model observes next and reward typically arrives only at the end of a long episode.
+      Formally it replaces the single-step setting of chat RLHF, in which one prompt yields one
+      scored response, with a temporally extended, partially observable decision process. Practical
+      challenges include long and variable-length [[rollout|rollouts]], sparse rewards and
+      [[credit-assignment-problem|credit assignment]] across dozens or hundreds of steps,
+      infrastructure for running thousands of sandboxed environments in parallel, excluding tool
+      outputs from the loss, and [[reward-hacking|reward hacking]] of graders. It underlies
+      2025–2026 [[coding-agent|coding agents]], [[deep-research|deep research]] systems and
+      [[computer-use|computer use]] models.
+    example: >-
+      Agentic RL on real repositories taught the model to run the tests before declaring a bug fixed.
+origin: >-
+  Agents trained with RL to use tools predate the phrase (WebGPT's browsing, 2021, is an early
+  language-model example). 'Agentic RL' became common in 2025 as laboratories reported end-to-end RL
+  of coding, browsing and research agents; a September 2025 survey by Guibin Zhang and colleagues
+  framed it as RL over partially observable, multi-step decision processes, in contrast to
+  single-step LLM RL.
+year: 2025
+note: >-
+  Usage is loose: some writers apply it to any RL involving tools, others only to long-horizon
+  autonomous tasks. Distinct from [[multi-agent-reinforcement-learning|multi-agent reinforcement
+  learning]], which concerns several interacting agents.
+see_also:
+  - RL environment
+  - AI agent
+  - reinforcement learning with verifiable rewards
+  - tool use
+  - long-horizon task
+  - credit assignment problem
+  - partially observable Markov decision process
+contrast:
+  - multi-agent reinforcement learning
+  - reinforcement learning from human feedback
+sources:
+  - text: >-
+      Zhang, G. et al. (2025). The Landscape of Agentic Reinforcement Learning for LLMs: A Survey.
+      arXiv:2509.02547.
+    url: https://arxiv.org/abs/2509.02547
+as_of: 2026-10

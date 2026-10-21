@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Goodhart's law
+id: goodhart-s-law
+pos: n.
+also:
+  - Goodhart effect
+  - Goodharting
+  - Goodhart
+domain: safety
+domains:
+  - society
+  - eval
+level: core
+plain: >-
+  The rule of thumb that once a number is used as a target, people or AIs find ways to push it up
+  that no longer reflect what it was meant to measure.
+senses:
+  - definition: >-
+      The observation that a quantity which reliably indicated some goal tends to stop doing so once
+      people or algorithms are rewarded for pushing it, because optimization pressure exploits the
+      gap between the proxy and the goal it was chosen to track. In AI it explains why optimizing
+      [[reward-model|reward models]], [[benchmark|benchmarks]] or evaluation metrics too hard yields
+      [[reward-hacking|reward hacking]], [[specification-gaming|specification gaming]] and
+      [[benchmaxxing|inflated benchmark scores]]. David Manheim and Scott Garrabrant (2018)
+      distinguished four mechanisms: regressional (selecting on a noisy proxy also selects for the
+      noise), extremal (correlations break down in extreme regions), causal (intervening on a proxy
+      that does not cause the goal) and adversarial (other agents exploit the proxy). Studies of
+      [[reward-overoptimization|reward overoptimization]] show true quality first rising, then
+      falling, as a policy is optimized further against a learned reward.
+    example: Once the team's bonus was tied to arena win rate, Goodhart's law took over.
+origin: >-
+  Named after the economist Charles Goodhart, who observed in a 1975 paper on British monetary
+  policy that an empirical relationship relied on for monetary control tends to break down once
+  policymakers start to target it. The popular wording, 'When a measure becomes a target, it ceases
+  to be a good measure', is the anthropologist Marilyn Strathern's 1997 paraphrase. AI-safety
+  writers adopted the law in the 2010s.
+year: 1975
+note: >-
+  Closely related to Campbell's law (Donald T. Campbell, 1970s) on social indicators and to the
+  Lucas critique in economics. 'Goodharting' is used as a verb for over-optimizing a proxy.
+see_also:
+  - reward hacking
+  - specification gaming
+  - reward overoptimization
+  - outer alignment
+  - mild optimization
+  - quantilizer
+  - benchmark saturation
+sources:
+  - text: >-
+      Goodhart, C. A. E. (1975). Problems of Monetary Management: The U.K. Experience. Papers in
+      Monetary Economics, Reserve Bank of Australia.
+  - text: >-
+      Manheim, D. & Garrabrant, S. (2018). Categorizing Variants of Goodhart's Law. arXiv:1803.04585.
+    url: https://arxiv.org/abs/1803.04585
+  - text: >-
+      Gao, L., Schulman, J. & Hilton, J. (2023). Scaling Laws for Reward Model Overoptimization.
+      ICML 2023.

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: program synthesis
+id: program-synthesis
+pos: n.
+also:
+  - automatic programming
+  - programming by example
+  - PBE
+  - inductive program synthesis
+  - deductive program synthesis
+  - CEGIS
+  - Flash Fill
+domain: sym
+domains:
+  - llm
+  - eng
+level: core
+plain: >-
+  Getting a computer to write a program automatically from a description of what the program should
+  do — a logical specification, a few input–output examples or a request in plain language.
+senses:
+  - definition: >-
+      The automatic generation of a program from a statement of what it must do: a formal logical
+      specification (deductive synthesis), input–output examples (programming by example, or
+      inductive synthesis), a partial program with holes (sketching), a reference implementation, or
+      a natural-language description. Classical approaches extract programs from constructive
+      proofs, search enumeratively over programs in a domain-specific language while pruning by
+      types and equivalence, or encode the search as a constraint problem for
+      [[satisfiability-modulo-theories|SMT]] solvers, as in counterexample-guided inductive
+      synthesis (CEGIS). Spreadsheet features such as Excel's Flash Fill brought programming by
+      example to millions of users. Since 2021 the field has been dominated by
+      [[large-language-model|large language models]] trained on code ([[code-generation|code
+      generation]]), increasingly combined with execution feedback, tests, verifiers and
+      evolutionary search, as in [[funsearch|FunSearch]] and [[alphaevolve|AlphaEvolve]].
+      [[inductive-logic-programming|Inductive logic programming]] and [[genetic-programming|genetic
+      programming]] are related traditions.
+    example: >-
+      Given three examples of reformatted dates, the synthesizer produced a one-line transformation
+      that handles all 40,000 rows.
+origin: >-
+  Alonzo Church posed the synthesis of circuits from logical specifications in 1957. Cordell Green
+  (1969) and Zohar Manna and Richard Waldinger (1971–1980) developed deductive synthesis from
+  theorem proving, and Phillip Summers (1977) synthesized Lisp programs from examples; Sumit
+  Gulwani's Flash Fill (2011) and code-trained language models such as Codex (2021) brought
+  synthesis into everyday use.
+year: 1957
+note: >-
+  Often used interchangeably with code generation, but 'synthesis' traditionally implies a
+  guarantee: the output provably meets the specification or at least reproduces every given example.
+see_also:
+  - code generation
+  - inductive logic programming
+  - genetic programming
+  - satisfiability modulo theories
+  - neuro-symbolic AI
+  - AlphaEvolve
+  - FunSearch
+sources:
+  - text: >-
+      Manna, Z. & Waldinger, R. (1980). A Deductive Approach to Program Synthesis. ACM Transactions
+      on Programming Languages and Systems 2(1), 90–121.
+  - text: >-
+      Gulwani, S., Polozov, O. & Singh, R. (2017). Program Synthesis. Foundations and Trends in
+      Programming Languages 4(1–2), 1–119.
+as_of: 2026-10

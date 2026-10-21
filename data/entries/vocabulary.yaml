@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vocabulary
+id: vocabulary
+pos: n.
+also:
+  - vocab
+  - token vocabulary
+  - vocabulary size
+  - out-of-vocabulary
+  - OOV
+domain: llm
+domains:
+  - data
+level: core
+plain: >-
+  The fixed list of all the tokens a language model knows, each with its own number. Everything the
+  model reads or writes must be built from pieces on this list.
+senses:
+  - definition: >-
+      The finite set of [[token|tokens]] that a [[tokenizer|tokenizer]] can produce and a
+      [[language-model|language model]] can read and emit, each assigned an integer ID. Its size V
+      fixes the number of rows of the input [[embedding|embedding]] matrix and the width of the
+      output layer that produces [[logit|logits]] over the next token. Larger vocabularies encode
+      text in fewer tokens — saving context and compute per character, especially for non-English
+      text — but add parameters (V × d per embedding matrix) and give rare tokens fewer training
+      examples. Sizes range from about 30,000 ([[bert|BERT]]) and 50,257 (GPT-2) to roughly
+      100,000–260,000 in many current models. Vocabularies include [[special-token|special tokens]]
+      for control. Entries that were common in the tokenizer's training text but rare in the model's
+      can stay nearly untrained, producing [[glitch-token|glitch tokens]] that trigger erratic
+      behavior.
+    example: Doubling the vocabulary cut sequence lengths by 15% on our Korean data.
+origin: >-
+  In word-level NLP, the vocabulary was the set of word types kept for a model, with all others
+  mapped to an unknown-word symbol, so out-of-vocabulary words were a chronic problem. Subword
+  methods from 2015–2016 and byte-level vocabularies (2019) made fixed but open-ended vocabularies
+  the norm.
+note: >-
+  Glitch tokens such as ' SolidGoldMagikarp', reported in GPT-2/GPT-3 tokenizers in 2023, became a
+  well-known illustration of under-trained vocabulary entries.
+see_also:
+  - token
+  - tokenizer
+  - tokenization
+  - embedding
+  - unembedding
+  - special token
+  - byte-pair encoding
+as_of: 2026-10

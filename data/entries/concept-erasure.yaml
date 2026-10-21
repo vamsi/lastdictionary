@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: concept erasure
+id: concept-erasure
+pos: n.
+also:
+  - concept removal
+  - linear concept erasure
+  - erasing concepts
+domain: interp
+domains:
+  - safety
+  - society
+  - gen
+level: specialist
+plain: >-
+  Removing a specific idea — such as a person's gender, or an artist's style — from what an AI model
+  can represent or produce, so the model can no longer use or show it.
+senses:
+  - context: Representations
+    definition: >-
+      The removal of information about a target concept from a model's [[embedding|embeddings]] or
+      [[activation|activations]], so that downstream components cannot use it, while disturbing
+      other information as little as possible. Linear concept erasure requires that no linear
+      classifier can predict the concept from the edited representation better than a constant
+      guess. Methods include [[iterative-nullspace-projection|iterative nullspace projection]],
+      which repeatedly trains and projects out linear classifiers; adversarial min–max approaches
+      such as R-LACE; and [[leace|LEACE]], a closed-form edit that provably achieves linear erasure
+      with minimal change. Uses include removing [[protected-attribute|protected attributes]] for
+      fairness, testing whether a model actually relies on a concept (amnesic probing), and
+      suppressing unwanted behaviors.
+    example: >-
+      After concept erasure, a linear probe could no longer recover gender from the résumé
+      embeddings.
+  - context: Generative models
+    definition: >-
+      Editing a generative model, usually a text-to-image [[diffusion-model|diffusion model]], so
+      that it no longer produces a specified concept — an artist's style, a named person, nudity or
+      a copyrighted character — even when asked to. Methods fine-tune the model so its predictions
+      for the concept are steered toward a neutral one, or edit cross-attention weights in closed
+      form. Erasure is often incomplete: adversarially chosen prompts or light fine-tuning can bring
+      'erased' concepts back.
+origin: >-
+  Grew out of debiasing word embeddings, notably Tolga Bolukbasi and colleagues' projection of
+  gender directions (2016). Shauli Ravfogel and colleagues framed linear erasure with INLP (2020)
+  and gave the phrase early prominence in the title of 'Linear Adversarial Concept Erasure' (arXiv,
+  January 2022; ICML 2022), though its first use has not been established; Nora Belrose and
+  colleagues' LEACE (2023) gave a closed-form solution. Rohit Gandikota and colleagues carried the
+  idea to diffusion models in 2023.
+year: 2022
+note: >-
+  Related to but distinct from [[machine-unlearning|machine unlearning]], which removes the
+  influence of particular training data, and from [[directional-ablation|directional ablation]],
+  which removes one direction without guaranteeing that a concept is linearly unrecoverable. Erasure
+  that defeats linear probes can still leave nonlinearly recoverable traces.
+see_also:
+  - LEACE
+  - iterative nullspace projection
+  - directional ablation
+  - machine unlearning
+  - protected attribute
+  - diffusion model
+contrast:
+  - machine unlearning
+sources:
+  - text: >-
+      Ravfogel, S., Twiton, M., Goldberg, Y. & Cotterell, R. (2022). Linear Adversarial Concept
+      Erasure. ICML 2022.
+  - text: >-
+      Gandikota, R., Materzyńska, J., Fiotto-Kaufman, J. & Bau, D. (2023). Erasing Concepts from
+      Diffusion Models. ICCV 2023.

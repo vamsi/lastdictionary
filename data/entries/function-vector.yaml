@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: function vector
+id: function-vector
+pos: n.
+also:
+  - FV
+  - function vectors
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A compact internal signal, found inside a language model, that stands for a whole task — such as
+  'translate into French' or 'give the opposite word' — and can trigger that task when added to the
+  model.
+senses:
+  - definition: >-
+      A compact vector inside a language model that encodes a task demonstrated by examples in the
+      prompt ([[in-context-learning|in-context learning]]), such as giving antonyms, and makes the
+      model carry out that task when inserted elsewhere. It is assembled from a few
+      [[attention-head|attention heads]] picked out by causal mediation analysis, a form of
+      [[activation-patching|activation patching]]: each head's mean output over many few-shot
+      prompts for a task (antonyms, country–capital, English–French) is patched into runs whose
+      example labels have been shuffled, and the outputs of the heads that best restore correct
+      answers are summed. Added to the [[residual-stream|residual stream]] at a middle layer, the
+      vector triggers the task even in zero-shot prompts or ordinary prose, in models of several
+      families and sizes. Such vectors keep working in contexts unlike those they came from and can
+      to some degree be added together to evoke combined tasks, suggesting that language models
+      build portable representations of functions, not only of concepts.
+    example: >-
+      Adding the antonym function vector to a zero-shot prompt made the model answer 'cold' when
+      given 'hot'.
+origin: >-
+  Introduced by Eric Todd, Millicent L. Li, Arnab Sen Sharma, Aaron Mueller, Byron C. Wallace and
+  David Bau of Northeastern University in 'Function Vectors in Large Language Models' (arXiv,
+  October 2023; ICLR 2024).
+year: 2023
+note: >-
+  Close kin of the 'task vectors' that Roee Hendel, Mor Geva and Amir Globerson (2023) read from a
+  single hidden state, and of [[in-context-vector|in-context vectors]]. All three are
+  activation-space objects, unlike the weight-space task vectors of [[task-arithmetic|task
+  arithmetic]].
+see_also:
+  - in-context vector
+  - in-context learning
+  - steering vector
+  - attention head
+  - activation patching
+  - task arithmetic
+contrast:
+  - task arithmetic
+sources:
+  - text: >-
+      Todd, E., Li, M. L., Sen Sharma, A., Mueller, A., Wallace, B. C. & Bau, D. (2024). Function
+      Vectors in Large Language Models. ICLR 2024. arXiv:2310.15213.
+    url: https://arxiv.org/abs/2310.15213

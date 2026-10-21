@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: trustworthy AI
+id: trustworthy-ai
+pos: n.
+also:
+  - trustworthy artificial intelligence
+  - AI trustworthiness
+domain: society
+domains:
+  - gov
+  - safety
+level: core
+plain: >-
+  AI that deserves people's trust because it works reliably, obeys the law, treats people fairly and
+  can be checked, rather than AI that people merely happen to trust.
+senses:
+  - definition: >-
+      A policy and standards term for AI systems that warrant reliance because they meet a defined
+      set of properties. The European Commission's High-Level Expert Group on AI (2019) framed
+      trustworthy AI as lawful, ethical and robust, with seven requirements: human agency and
+      oversight; technical robustness and safety; privacy and data governance; transparency;
+      diversity, non-discrimination and fairness; societal and environmental well-being; and
+      accountability. The [[nist-ai-risk-management-framework|NIST AI Risk Management Framework]]
+      (2023) lists seven characteristics: valid and reliable; safe; secure and resilient;
+      accountable and transparent; explainable and interpretable; privacy-enhanced; and fair with
+      harmful bias managed. The concept frames the [[oecd-ai-principles|OECD AI Principles]] and
+      much of the [[eu-ai-act|EU AI Act]].
+    example: >-
+      The tender asks suppliers to show how their system meets each trustworthy-AI requirement.
+origin: >-
+  Trustworthiness was an established goal in computer security and dependable computing (Microsoft's
+  'Trustworthy Computing' initiative dates from 2002). 'Trustworthy AI' became a policy term with
+  the High-Level Expert Group's Ethics Guidelines for Trustworthy AI (April 2019), and the OECD AI
+  Principles adopted the next month made it international.
+year: 2019
+note: >-
+  Philosophers stress the gap between being trusted and being trustworthy: persuasive design can
+  raise trust without raising reliability, and [[automation-bias|automation bias]] is trust in
+  excess of it. The aim is calibrated trust that tracks how reliable a system actually is.
+see_also:
+  - responsible AI
+  - AI ethics
+  - robustness
+  - AI transparency
+  - human oversight
+  - NIST AI Risk Management Framework
+  - OECD AI Principles
+contrast:
+  - overreliance
+sources:
+  - text: >-
+      High-Level Expert Group on Artificial Intelligence (2019). Ethics Guidelines for Trustworthy
+      AI. European Commission.
+  - text: >-
+      National Institute of Standards and Technology (2023). Artificial Intelligence Risk Management
+      Framework (AI RMF 1.0). NIST AI 100-1.

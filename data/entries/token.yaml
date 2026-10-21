@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: token
+id: token
+pos: n.
+also:
+  - tokens
+  - subword token
+domain: llm
+domains:
+  - core
+  - percep
+level: essential
+plain: >-
+  The small chunk of text an AI language model reads and writes — often a word, part of a word or a
+  punctuation mark. AI usage, limits and prices are counted in tokens.
+senses:
+  - context: Language models
+    definition: >-
+      The basic unit a [[language-model|language model]] reads and generates: a piece of text such
+      as a whole word, part of a word, a punctuation mark, a byte or a control symbol, identified by
+      an integer ID in the model's [[vocabulary|vocabulary]]. A [[tokenizer|tokenizer]] converts
+      text into tokens and back. With common LLM tokenizers, English averages roughly four
+      characters or three-quarters of a word per token, but rates vary widely by language, script
+      and content (code, numbers). Model quantities are measured in tokens: [[context-window|context
+      windows]], training-set sizes ([[tokens-per-parameter|tokens per parameter]]), API prices per
+      million input or output tokens, and generation speed ([[tokens-per-second|tokens per
+      second]]). [[special-token|Special tokens]] mark boundaries, roles and tool calls.
+    example: The prompt is about 3,200 tokens, so it fits easily in the context window.
+  - context: Multimodal models
+    definition: >-
+      By extension, any unit in a transformer's input or output sequence, whether text or not: an
+      image patch ([[patch-embedding|patch embedding]]), a discrete code from an
+      [[image-tokenizer|image tokenizer]] or [[neural-audio-codec|neural audio codec]], or a
+      discretized robot action. A single image may become hundreds or thousands of tokens, which is
+      why images consume context and cost.
+  - context: Linguistics
+    definition: >-
+      An individual occurrence of a word form in a text, as opposed to a type, the distinct form
+      itself: 'the cat saw the dog' contains five tokens but four types. Type–token ratios are a
+      classic measure of lexical diversity in corpus linguistics.
+  - context: Computing
+    definition: >-
+      In general computing, a string or object standing for something else: a lexical unit produced
+      by a compiler's lexer, an access or authentication token granting API permissions, or a
+      transferable digital asset on a blockchain. These senses are unrelated to language-model
+      tokens, although API keys and token prices are easily confused by newcomers.
+origin: >-
+  The type–token distinction was introduced by the philosopher Charles Sanders Peirce in 1906.
+  Compiler construction has long used 'token' for lexical units, and NLP for word occurrences. In
+  neural language modeling the word came to mean a subword unit after subword tokenization
+  (2015–2016) and GPT-2's byte-level vocabulary (2019).
+note: >-
+  A rough rule for English with common tokenizers is 1,000 tokens ≈ 750 words. Non-Latin scripts and
+  some languages need more tokens for the same content, so they cost more and fit less in a fixed
+  context.
+see_also:
+  - tokenization
+  - tokenizer
+  - vocabulary
+  - byte-pair encoding
+  - context window
+  - special token
+  - tokens per second
+  - image tokenizer
+as_of: 2026-10

@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: computer vision
+id: computer-vision
+pos: n.
+also:
+  - CV
+  - machine vision
+  - vision AI
+domain: percep
+domains:
+  - core
+  - hist
+level: essential
+plain: >-
+  The part of AI that lets computers make sense of images and video: recognizing faces, reading
+  signs, spotting tumors on scans or judging how far away a car is.
+senses:
+  - definition: >-
+      The field of AI and engineering concerned with extracting useful information from images,
+      video and other visual signals: recognizing what is present ([[image-classification|image
+      classification]], [[object-detection|object detection]], [[image-segmentation|image
+      segmentation]]), where things are and how they move ([[depth-estimation|depth estimation]],
+      [[optical-flow|optical flow]], [[object-tracking|object tracking]]), and the three-dimensional
+      structure behind the pixels ([[3d-reconstruction|3D reconstruction]]). Early systems combined
+      hand-designed operators, such as edge and corner detectors and
+      [[scale-invariant-feature-transform|SIFT]] descriptors, with geometry and statistical
+      classifiers. Since [[alexnet|AlexNet]] won the 2012 [[imagenet|ImageNet]] challenge, the field
+      has been dominated by learned representations: first
+      [[convolutional-neural-network|convolutional networks]], then [[vision-transformer|vision
+      transformers]] and models pretrained with [[self-supervised-learning|self-supervision]] or on
+      image–text pairs ([[clip|CLIP]]). By the mid-2020s much perception was handled by general
+      [[foundation-model|foundation models]], including [[vision-language-model|vision-language
+      models]] that answer questions about images in natural language. Applications include medical
+      imaging, driver assistance, industrial inspection, photography, retail, satellite analysis and
+      robotics.
+    example: >-
+      Our computer vision pipeline flags damaged parcels on the conveyor before they reach the
+      loading dock.
+origin: >-
+  Lawrence Roberts's 1963 MIT thesis on recovering three-dimensional block shapes from photographs
+  is often called the field's founding work. MIT's 1966 Summer Vision Project, proposed by Seymour
+  Papert, hoped to build 'a significant part of a visual system' with summer students. The phrase
+  'computer vision' was established by the mid-1970s, appearing in the title of Patrick Winston's
+  edited volume The Psychology of Computer Vision (1975) and later of Dana Ballard and Christopher
+  Brown's textbook (1982); its earliest use has not been traced.
+year: 1963
+note: >-
+  'Machine vision' often denotes industrial inspection and guidance systems built around cameras and
+  controlled lighting; 'image processing' transforms images (denoising, compression) without
+  necessarily interpreting them. Computer vision is often described as the inverse of computer
+  graphics: graphics renders images from descriptions of scenes, vision infers scenes from images.
+see_also:
+  - perception
+  - image classification
+  - object detection
+  - image segmentation
+  - vision transformer
+  - convolutional neural network
+  - vision-language model
+  - pattern recognition
+sources:
+  - text: >-
+      Roberts, L. G. (1963). Machine Perception of Three-Dimensional Solids. PhD thesis,
+      Massachusetts Institute of Technology.
+  - text: >-
+      Papert, S. (1966). The Summer Vision Project. MIT Artificial Intelligence Group, Vision Memo
+      No. 100 (AIM-100).
+  - text: >-
+      Szeliski, R. (2022). Computer Vision: Algorithms and Applications, 2nd ed. Springer.

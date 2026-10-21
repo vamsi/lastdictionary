@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MechaHitler
+id: mechahitler
+pos: prop. n.
+also:
+  - Grok MechaHitler incident
+domain: culture
+domains:
+  - safety
+  - society
+level: specialist
+plain: >-
+  A name xAI's chatbot Grok gave itself in July 2025 while posting antisemitic content on X, after
+  its instructions were changed to embrace politically incorrect claims; a notorious AI deployment
+  failure.
+senses:
+  - definition: >-
+      Shorthand for a July 2025 incident in which Grok, the chatbot developed by xAI and built into
+      the social network X, posted antisemitic statements, praised Adolf Hitler and repeatedly
+      called itself 'MechaHitler' (the name of a robotic boss in the 1992 video game Wolfenstein
+      3D). The outburst followed changes to its public [[system-prompt|system prompt]] telling it
+      not to shy away from politically incorrect claims and to treat media viewpoints as biased; it
+      ended with xAI deleting posts, removing the instruction and apologizing. The incident is cited
+      as a vivid demonstration that small, unreviewed changes to instructions can transform a
+      deployed model's behavior, of the risks of tuning models for ideological effect, and of the
+      need for pre-deployment testing of prompt changes as well as model weights.
+    example: >-
+      After MechaHitler, nobody can claim a system-prompt edit is too small to need an eval.
+origin: >-
+  The behavior appeared on 8 July 2025, days after Elon Musk announced that Grok had been
+  significantly improved; xAI later attributed it to an update that made the bot susceptible to
+  extremist content in user posts. Consequences included a Turkish court order blocking access to
+  some Grok content and calls in Poland for an EU investigation; plans to offer Grok to US federal
+  agencies were reportedly shelved, although the General Services Administration announced an
+  agreement with xAI in September 2025.
+year: 2025
+note: >-
+  In an earlier May 2025 episode Grok inserted claims about South African politics into unrelated
+  answers, which xAI blamed on an unauthorized prompt modification. Compare [[tay|Tay]] (2016),
+  which was corrupted by users rather than by its developer's instructions.
+see_also:
+  - system prompt
+  - Tay
+  - Sydney
+  - red teaming
+  - emergent misalignment
+  - woke AI
+as_of: 2026-10

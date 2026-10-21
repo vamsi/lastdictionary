@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: epoch
+id: epoch
+pos: n.
+also:
+  - training epoch
+  - pass
+domain: dl
+domains:
+  - ml
+level: core
+plain: >-
+  One complete pass through all the training examples. Smaller models are often trained for many
+  epochs, seeing each example many times; the largest language models may see most of their data
+  only once.
+senses:
+  - definition: >-
+      A complete sweep through the [[training-set|training set]] in which each example contributes
+      to the model's updates once, typically in a freshly shuffled order and grouped into
+      [[mini-batch|mini-batches]], so that N examples at a [[batch-size|batch size]] of B take N/B
+      [[training-step|training steps]] per epoch. Epochs are a natural unit for scheduling:
+      [[learning-rate-schedule|learning-rate decay]], evaluation on the [[validation-set|validation
+      set]], [[checkpoint|checkpointing]] and [[early-stopping|early stopping]] were traditionally
+      triggered at epoch boundaries, and image classifiers were long trained for tens to hundreds of
+      epochs. Large language model [[pretraining|pretraining]] usually covers a deduplicated corpus
+      of trillions of tokens about once, so progress is reported in tokens or steps instead;
+      repeating data gives diminishing returns, with about four epochs found nearly as useful as
+      fresh data in one 2023 study (see [[data-constrained-scaling|data-constrained scaling]]). Many
+      epochs on small data raise the risk of [[overfitting|overfitting]] and
+      [[memorization|memorization]].
+    example: Validation loss bottomed out after epoch 12, so we kept that checkpoint.
+origin: >-
+  From Greek epokhē, 'a fixed point in time'. In neural-network training it has meant one cycle
+  through all training patterns since at least the backpropagation literature of the late 1980s;
+  earlier adaptive-systems work spoke of passes, sweeps or presentations.
+note: >-
+  Not to be confused with Epoch AI, a research group that tracks trends in AI compute, data and
+  algorithms.
+see_also:
+  - training step
+  - mini-batch
+  - batch size
+  - early stopping
+  - overfitting
+  - data-constrained scaling
+contrast:
+  - training step

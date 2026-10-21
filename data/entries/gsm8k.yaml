@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GSM8K
+id: gsm8k
+pos: prop. n.
+also:
+  - Grade School Math 8K
+  - GSM-Symbolic
+  - GSM1k
+domain: eval
+domains:
+  - llm
+  - math
+level: core
+plain: >-
+  A set of about 8,500 grade-school math word problems, each needing a few steps of simple
+  arithmetic, used to test whether language models can reason through a problem step by step.
+senses:
+  - definition: >-
+      A dataset of about 8,500 grade-school math word problems written by human contributors in
+      deliberately varied wording and split into 7,473 training and 1,319 test items. Each needs two
+      to eight elementary calculations and comes with a worked solution in natural language ending
+      in a numerical answer, which is scored by [[exact-match|exact match]]. It became the standard
+      test of multi-step arithmetic reasoning: [[chain-of-thought|chain of thought]] prompting,
+      [[self-consistency|self-consistency]] and [[verifier|verifier]]-based reranking all made their
+      names on it. Scores rose from about 57% for PaLM with chain-of-thought prompting in 2022 to
+      92% for [[gpt-4|GPT-4]] in 2023 and above 95% for frontier models by 2024, leaving the
+      benchmark [[benchmark-saturation|saturated]]. Studies using freshly written or templated
+      variants — GSM1k and GSM-Symbolic, both 2024 — found accuracy drops for some models, read as
+      signs of contamination or pattern-matching, while leading models were largely unaffected.
+    example: >-
+      GSM8K is saturated, so we now report math results on AIME and FrontierMath instead.
+origin: >-
+  Introduced by Karl Cobbe, Vineet Kosaraju and colleagues at OpenAI in 'Training Verifiers to Solve
+  Math Word Problems' (October 2021), which showed that sampling many candidate solutions and
+  choosing the one a trained verifier ranks highest beat fine-tuning alone. The problems were
+  written by human contractors.
+year: 2021
+note: >-
+  A small fraction of test answers are wrong or ambiguous, so differences near the ceiling are not
+  meaningful.
+see_also:
+  - MATH
+  - chain of thought
+  - self-consistency
+  - verifier
+  - benchmark saturation
+  - data contamination
+sources:
+  - text: >-
+      Cobbe, K., Kosaraju, V., Bavarian, M. et al. (2021). Training Verifiers to Solve Math Word
+      Problems. arXiv:2110.14168.
+    url: https://arxiv.org/abs/2110.14168
+  - text: >-
+      Mirzadeh, I. et al. (2025). GSM-Symbolic: Understanding the Limitations of Mathematical
+      Reasoning in Large Language Models. ICLR 2025.

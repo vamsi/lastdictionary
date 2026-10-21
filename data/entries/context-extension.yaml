@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: context extension
+id: context-extension
+pos: n.
+also:
+  - context-length extension
+  - context window extension
+  - position interpolation
+  - NTK-aware scaling
+  - YaRN
+  - length extrapolation
+domain: llm
+domains:
+  - train
+level: specialist
+plain: >-
+  Techniques for stretching how much text a trained AI model can handle at once, usually by
+  adjusting how it represents word positions and then training it briefly on longer examples.
+senses:
+  - definition: >-
+      Methods for increasing the [[context-window|context window]] of a pretrained
+      [[language-model|language model]] beyond the length it was trained on, far more cheaply than
+      pretraining at the new length. For models using [[rotary-positional-embedding|RoPE]], the main
+      approaches rescale positions or frequencies so that unseen distances map into the trained
+      range: position interpolation linearly compresses position indices; NTK-aware scaling raises
+      the RoPE base so that high-frequency dimensions barely change while low-frequency ones
+      stretch; YaRN interpolates different frequency bands by different amounts and adjusts
+      attention temperature. These are usually followed by brief continued training on long
+      documents, often within [[mid-training|mid-training]], sometimes in stages (for example 8K,
+      then 32K, then 128K tokens). Models trained with [[alibi|ALiBi]] or without position encodings
+      aim to extrapolate without adjustment. Extended windows need checking on effective-use
+      benchmarks, since nominal length can exceed what a model reliably uses.
+    example: >-
+      After YaRN scaling and 2B tokens of long-document training, the model handles 128K reliably.
+origin: >-
+  Position interpolation was published by Shouyuan Chen and colleagues at Meta in June 2023 and
+  proposed concurrently by a developer known as kaiokendev; NTK-aware scaling circulated in
+  community posts in mid-2023, and YaRN (Bowen Peng, Jeffrey Quesnelle, Honglu Fan and Enrico
+  Shippole) followed in August 2023.
+year: 2023
+see_also:
+  - context window
+  - long context
+  - rotary positional embedding
+  - positional encoding
+  - ALiBi
+  - continued pretraining
+sources:
+  - text: >-
+      Chen, S., Wong, S., Chen, L. & Tian, Y. (2023). Extending Context Window of Large Language
+      Models via Positional Interpolation. arXiv:2306.15595.
+    url: https://arxiv.org/abs/2306.15595
+  - text: >-
+      Peng, B., Quesnelle, J., Fan, H. & Shippole, E. (2023). YaRN: Efficient Context Window
+      Extension of Large Language Models. ICLR 2024.
+    url: https://arxiv.org/abs/2309.00071

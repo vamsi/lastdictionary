@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: export control directive
+id: export-control-directive
+pos: n.
+domain: gov
+domains:
+  - sec
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A US government order, used against AI models in June 2026, telling a company to stop foreigners
+  from using some of its AI models for national-security reasons.
+senses:
+  - context: AI policy (United States)
+    definition: >-
+      An order issued by the US government under export-control and national-security authorities to
+      a single company, requiring it to restrict access to a specific item by foreign nationals. On
+      12 June 2026 [[anthropic|Anthropic]] received such a directive, reported as coming from the
+      Department of Commerce: it required the company to suspend access to Claude Fable 5 and Claude
+      Mythos 5 by any foreign national, inside or outside the United States, including its own
+      staff. The government said it believed it had found a way to [[jailbreak|jailbreak]] Fable 5;
+      Anthropic said the demonstration it reviewed had surfaced only a few previously known, minor
+      vulnerabilities. To comply, Anthropic disabled both models for all customers. The directive
+      was lifted at the end of June 2026 and access was restored.
+    example: >-
+      Legal teams now ask whether a launch could trigger an export control directive before the
+      weekend.
+origin: >-
+  The phrase comes from Anthropic's statement of 12 June 2026 that it had received such a directive;
+  a law-firm alert described the episode as the first known US use of export-control powers to
+  regulate a particular frontier model on national-security grounds.
+year: 2026
+note: >-
+  Unlike [[export-controls-on-ai-chips|export controls on AI chips]] or the rescinded
+  [[ai-diffusion-rule|AI Diffusion Rule]], which set general rules, the directive targeted one
+  company's models through an individual order rather than rulemaking. Anthropic complied but
+  publicly disagreed, arguing that a narrow potential jailbreak was no ground for recalling a
+  commercial model and that such action needs a transparent statutory process.
+see_also:
+  - export controls on AI chips
+  - AI Diffusion Rule
+  - Project Glasswing
+  - jailbreak
+  - Center for AI Standards and Innovation
+  - dual-use
+  - AI-assisted vulnerability discovery
+sources:
+  - text: >-
+      Anthropic (2026). Statement on the US government directive to suspend access to Fable 5 and
+      Mythos 5. 12 June 2026.
+    url: https://www.anthropic.com/news/fable-mythos-access
+  - text: >-
+      Greenberg Traurig (2026). AI Company Anthropic Suspends Access to Claude Fable 5, Claude
+      Mythos 5 Following US Export Control Directive. June 2026.
+    url: https://www.gtlaw.com/es/insights/2026/6/ai-company-anthropic-suspends-access-to-claude-fable-5-claude-mythos-5-following-us-export-control-directive
+  - text: GovInfoSecurity (2026). US Lifts Export Curbs on Anthropic AI Models.
+    url: https://www.govinfosecurity.com/us-lifts-export-curbs-on-anthropic-ai-models-a-32123
+as_of: 2026-10

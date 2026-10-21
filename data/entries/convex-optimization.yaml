@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: convex optimization
+id: convex-optimization
+pos: n.
+also:
+  - convex programming
+  - convex function
+  - convex set
+  - convexity
+  - non-convex optimization
+domain: math
+domains:
+  - ml
+level: core
+plain: >-
+  Finding the lowest point of a bowl-shaped landscape. Because a bowl has only one bottom, such
+  problems can be solved reliably — unlike training a neural network, whose landscape is bumpy.
+senses:
+  - definition: >-
+      The minimization of a convex [[objective-function|objective function]] over a convex set, one
+      that contains the straight segment between any two of its points. A function is convex if its
+      graph never rises above the chord between two of its points; for twice-differentiable
+      functions this means its [[hessian|Hessian]] is positive semidefinite everywhere. Convexity
+      guarantees that every [[local-minimum|local minimum]] is global and that the minimizers form a
+      convex set, and it supports duality theory (see [[lagrange-multiplier|Lagrange multiplier]]),
+      optimality certificates and algorithms — interior-point, projected and proximal gradient
+      methods — with provable, often polynomial-time, guarantees. Least squares
+      ([[linear-regression|linear regression]]), [[logistic-regression|logistic regression]],
+      [[support-vector-machine|support vector machines]], the [[lasso|lasso]] and linear programs
+      are convex. Training deep networks is not, but convex analysis supplies much of the vocabulary
+      and many of the tools used to study it.
+    example: >-
+      The relaxation is convex, so the solver's answer comes with a certificate of optimality.
+formula_latex: f\big(\theta x + (1-\theta) y\big) \le \theta f(x) + (1-\theta) f(y), \qquad \theta\in[0,1]
+origin: >-
+  Convex sets and functions were studied by Hermann Minkowski around 1900 and Johan Jensen in 1906.
+  Convex programming grew alongside linear programming from the late 1940s; R. Tyrrell Rockafellar's
+  Convex Analysis (1970) systematized the theory, interior-point methods (Narendra Karmarkar, 1984;
+  Yurii Nesterov and Arkadi Nemirovski, 1994) made large problems tractable, and Stephen Boyd and
+  Lieven Vandenberghe's 2004 textbook spread the field through engineering and machine learning.
+note: >-
+  A problem is convex only if both the objective and the feasible set are; maximizing a convex
+  function is not convex optimization. 'Non-convex' is often used loosely to mean 'hard'.
+see_also:
+  - optimization
+  - objective function
+  - local minimum
+  - Lagrange multiplier
+  - gradient descent
+  - support vector machine
+  - loss landscape
+sources:
+  - text: Rockafellar, R. T. (1970). Convex Analysis. Princeton University Press.
+  - text: >-
+      Boyd, S. & Vandenberghe, L. (2004). Convex Optimization. Cambridge University Press.

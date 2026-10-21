@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: approximate nearest neighbor search
+id: approximate-nearest-neighbor-search
+pos: n.
+also:
+  - ANN search
+  - ANNS
+  - approximate k-NN search
+  - approximate nearest neighbour search
+domain: eng
+domains:
+  - math
+level: core
+plain: >-
+  A family of shortcuts for finding the most similar items in a huge collection without checking
+  every one — accepting an occasional miss in exchange for answers thousands of times faster.
+senses:
+  - definition: >-
+      A class of algorithms and index structures that return points close to a query — usually the
+      top k under some distance — without comparing the query with every stored point, accepting
+      that some true nearest neighbors may be missed. Formally, a (1+ε)-approximate search returns a
+      point within (1+ε) times the true nearest distance; in practice quality is reported as
+      [[recall-k|recall@k]] against exact results and traded off against queries per second, memory
+      and index-build time. Main families are tree-based partitioning (k-d trees, random-projection
+      forests), hashing ([[locality-sensitive-hashing|locality-sensitive hashing]]),
+      clustering-based inverted-file (IVF) indexes that probe only the partitions nearest the query,
+      compression ([[product-quantization|product quantization]]) and proximity graphs
+      ([[hnsw|HNSW]], DiskANN), often combined. ANN search makes [[vector-search|vector search]]
+      over millions to billions of [[text-embedding|embeddings]] feasible and underlies
+      [[vector-database|vector databases]] and libraries such as [[faiss|FAISS]].
+    example: >-
+      Raising efSearch from 64 to 256 lifted ANN recall from 0.93 to 0.99 but halved throughput.
+formula_latex: d(q,p)\le(1+\varepsilon)\,\min_{p'\in P} d(q,p')
+origin: >-
+  Exact nearest neighbor search becomes impractical in high dimensions (the
+  [[curse-of-dimensionality|curse of dimensionality]]). Approximate formulations were developed in
+  computational geometry in the 1990s, notably by Sunil Arya, David Mount and colleagues (from 1993)
+  and by Piotr Indyk and Rajeev Motwani (1998), who introduced locality-sensitive hashing.
+  Quantization and graph methods from about 2011 onward made billion-scale search practical.
+year: 1993
+note: >-
+  Here 'ANN' should not be confused with ANN for artificial neural network. Speed claims are
+  meaningful only at a stated recall, which is why benchmarks compare methods on recall–throughput
+  curves.
+see_also:
+  - vector search
+  - HNSW
+  - product quantization
+  - locality-sensitive hashing
+  - FAISS
+  - vector database
+  - recall@k
+  - curse of dimensionality
+sources:
+  - text: >-
+      Indyk, P. & Motwani, R. (1998). Approximate nearest neighbors: towards removing the curse of
+      dimensionality. Proceedings of the 30th ACM Symposium on Theory of Computing (STOC).
+  - text: >-
+      Malkov, Y. A. & Yashunin, D. A. (2016). Efficient and robust approximate nearest neighbor
+      search using Hierarchical Navigable Small World graphs. arXiv:1603.09320.
+    url: https://arxiv.org/abs/1603.09320v2

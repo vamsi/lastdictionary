@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DENDRAL
+id: dendral
+pos: prop. n.
+also:
+  - Heuristic DENDRAL
+  - Meta-DENDRAL
+domain: hist
+domains:
+  - sym
+labels:
+  - historical
+level: specialist
+plain: >-
+  A program begun at Stanford in 1965 that worked out the structure of chemical molecules from
+  laboratory measurements using rules taken from expert chemists. It is usually called the first
+  expert system.
+senses:
+  - definition: >-
+      A research program at Stanford University, begun in 1965, that inferred the molecular
+      structure of organic compounds from mass-spectrometry data and other chemical evidence. A
+      generator systematically enumerated candidate structures consistent with a molecular formula,
+      using Joshua Lederberg's algorithm for listing possible structures, while rules encoding
+      chemists' knowledge pruned implausible candidates and predicted the spectrum each survivor
+      would produce, for comparison with the observed one. Its success showed that performance came
+      mainly from specialized domain knowledge rather than from general reasoning power, the lesson
+      that defined the [[expert-system|expert system]] and the practice of knowledge engineering. A
+      companion program, Meta-DENDRAL, inferred new fragmentation rules from data, an early case of
+      [[machine-learning|machine learning]] yielding results published in the chemistry literature.
+    example: >-
+      DENDRAL's designers found that adding chemistry rules mattered far more than improving the
+      search.
+origin: >-
+  Developed by [[edward-feigenbaum|Edward Feigenbaum]], the geneticist Joshua Lederberg, Bruce
+  Buchanan and the chemist Carl Djerassi, among others, in what became Stanford's Heuristic
+  Programming Project. The name contracts 'dendritic algorithm', after the tree-shaped enumeration
+  of candidate structures.
+year: 1965
+see_also:
+  - expert system
+  - MYCIN
+  - Edward Feigenbaum
+  - knowledge base
+  - symbolic AI
+  - heuristic
+sources:
+  - text: >-
+      Lindsay, R. K., Buchanan, B. G., Feigenbaum, E. A. & Lederberg, J. (1980). Applications of
+      Artificial Intelligence for Organic Chemistry: The DENDRAL Project. New York: McGraw-Hill.

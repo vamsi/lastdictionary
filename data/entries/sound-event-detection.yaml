@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sound event detection
+id: sound-event-detection
+pos: n.
+also:
+  - SED
+  - audio event detection
+  - acoustic event detection
+  - audio tagging
+  - acoustic scene classification
+  - AudioSet
+  - DCASE
+domain: percep
+domains:
+  - dl
+level: specialist
+plain: >-
+  Teaching computers to recognize everyday sounds in a recording, such as a dog barking, glass
+  breaking or a siren, and to say exactly when each one starts and stops.
+senses:
+  - definition: >-
+      The task of recognizing which sound events occur in an audio recording, such as speech, a dog
+      bark, a car horn or breaking glass, and estimating the onset and offset time of each
+      occurrence. Polyphonic sound event detection handles overlapping events, the normal case in
+      real environments. Related tasks are audio tagging (clip-level labels without timing),
+      acoustic scene classification (recognizing the setting, such as a street, park or metro
+      station), and sound event localization and detection, which also estimates each sound's
+      direction. Typical systems compute log-[[mel-spectrogram|mel spectrograms]] and apply
+      convolutional–recurrent networks or audio [[transformer|transformers]] pretrained on large
+      tagged collections, chiefly Google's AudioSet (2017), about two million ten-second YouTube
+      clips labeled with 527 classes drawn from an ontology of 632 sound categories. Because precise
+      timestamps are expensive to annotate, many systems learn from weak, clip-level labels.
+      Evaluation uses event- or segment-based F1 scores and the polyphonic sound detection score.
+      Applications include smart-home and security alerts, hearing aids, bioacoustic monitoring of
+      wildlife, machine-fault detection and audio search.
+    example: >-
+      The detector flags breaking glass within 200 ms but confuses some alerts with cutlery dropped
+      on tiles.
+origin: >-
+  Acoustic event detection was evaluated in the CLEAR workshops of 2006–2007 on meeting-room audio.
+  The DCASE challenges (Detection and Classification of Acoustic Scenes and Events), first run in
+  2013 and annual since 2016, and Jort Gemmeke and colleagues' AudioSet (ICASSP 2017) established
+  the modern field.
+note: >-
+  Distinct from [[speech-recognition|speech recognition]], which transcribes words, and from
+  [[voice-activity-detection|voice activity detection]], which only separates speech from everything
+  else.
+see_also:
+  - spectrogram
+  - mel spectrogram
+  - voice activity detection
+  - audio language model
+  - multilabel classification
+  - weak supervision
+sources:
+  - text: >-
+      Gemmeke, J. F. et al. (2017). Audio Set: An Ontology and Human-Labeled Dataset for Audio
+      Events. ICASSP 2017.
+  - text: >-
+      Mesaros, A., Heittola, T., Virtanen, T. & Plumbley, M. D. (2021). Sound Event Detection: A
+      Tutorial. IEEE Signal Processing Magazine 38(5), 67–83.

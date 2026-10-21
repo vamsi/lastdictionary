@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dot product
+id: dot-product
+pos: n.
+also:
+  - inner product
+  - scalar product
+domain: math
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  A score of how well two lists of numbers line up, found by multiplying matching entries and adding
+  the products. It is large when the lists point the same way and zero when they are at right
+  angles.
+senses:
+  - definition: >-
+      An operation that scores how closely two same-dimension [[vector|vectors]] line up, weighted
+      by their sizes. From coordinates, it pairs corresponding components, multiplies each pair and
+      sums the products; read geometrically, the same number is the product of the two lengths
+      ([[norm|norms]]) and the cosine of the angle between them, so it is positive for vectors
+      pointing roughly the same way, zero for orthogonal ones and negative for vectors pointing
+      apart. The dot product is the basic act of neural computation: each
+      [[artificial-neuron|artificial neuron]] takes a dot product of its weights with its inputs,
+      every entry of a [[matrix-multiplication|matrix multiplication]] is one, and
+      [[scaled-dot-product-attention|scaled dot-product attention]] scores how well each query
+      matches each key by their dot product divided by the square root of the key dimension.
+      Dividing by both norms gives [[cosine-similarity|cosine similarity]]. The general notion, an
+      inner product, extends the idea to other vector spaces, including spaces of functions.
+    example: >-
+      Because the embeddings are unit-normalized, ranking by dot product and by cosine similarity
+      gives the same order.
+formula_latex: \mathbf{a}\cdot\mathbf{b} = \sum_{i=1}^{n} a_i b_i =
+  \lVert\mathbf{a}\rVert\,\lVert\mathbf{b}\rVert\cos\theta
+origin: >-
+  The operation is implicit in William Rowan Hamilton's quaternion product and Hermann Grassmann's
+  inner product of the 1840s–1860s. The term 'scalar product' is recorded in William Kingdon
+  Clifford's Elements of Dynamic (1878), and the name 'dot product', from the notation a · b,
+  appears in Edwin Bidwell Wilson's 1901 textbook Vector Analysis, based on Josiah Willard Gibbs's
+  lectures.
+year: 1901
+see_also:
+  - cosine similarity
+  - vector
+  - matrix multiplication
+  - scaled dot-product attention
+  - norm
+  - orthogonality

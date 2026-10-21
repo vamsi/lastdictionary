@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multilabel classification
+id: multilabel-classification
+pos: n.
+also:
+  - multi-label classification
+  - multi-output classification
+  - binary relevance
+  - classifier chain
+domain: ml
+domains:
+  - eval
+level: core
+plain: >-
+  Tagging each item with any number of labels at once — a photo can show a beach, a dog and a sunset
+  — instead of picking just one category.
+senses:
+  - definition: >-
+      A [[classification|classification]] task in which an input may carry none, one or several
+      labels from a fixed list of L, so a model answers L yes-or-no questions instead of choosing
+      one class, and each target is a 0/1 vector of length L. Neural networks usually give every
+      label its own [[sigmoid-function|sigmoid]] output trained with binary
+      [[cross-entropy|cross-entropy]], the network form of fitting a separate classifier per label
+      (binary relevance). Methods that exploit correlations between labels either pass the
+      predictions for earlier labels to the classifiers for later ones (classifier chains) or recast
+      each label combination seen in training as a single class of a
+      [[multiclass-classification|multiclass]] problem (label powerset). Metrics score individual
+      label slots, as Hamming loss (the share of slots wrong) and per-label or averaged
+      [[precision|precision]], [[recall|recall]] and [[f1-score|F1 score]] do, or the whole set at
+      once, as exact-match (subset) accuracy does. Uses include document tagging, protein-function
+      prediction and moderation across several harm categories.
+    example: >-
+      An article can be about politics, economics and sport at once, so we trained a multilabel
+      model with one sigmoid per topic.
+origin: >-
+  Studied under this name in late-1990s text categorization, where documents often have several
+  topics: Andrew McCallum's 'Multi-label text classification with a mixture model trained by EM'
+  (1999) and Robert Schapire and Yoram Singer's boosting work, including the BoosTexter system
+  (2000), were influential early examples. Grigorios Tsoumakas and Ioannis Katakis's 2007 survey
+  consolidated the vocabulary, and Jesse Read and colleagues introduced classifier chains (2009;
+  journal version 2011).
+year: 1999
+note: >-
+  Distinct from [[multiclass-classification|multiclass classification]] (exactly one label) and from
+  multi-output regression (several continuous targets).
+see_also:
+  - multiclass classification
+  - binary classification
+  - classification
+  - one-vs-rest
+  - sigmoid function
+  - F1 score
+contrast:
+  - multiclass classification
+sources:
+  - text: >-
+      Schapire, R. E. & Singer, Y. (2000). BoosTexter: A Boosting-based System for Text
+      Categorization. Machine Learning, 39, 135–168.
+  - text: >-
+      Tsoumakas, G. & Katakis, I. (2007). Multi-Label Classification: An Overview. International
+      Journal of Data Warehousing and Mining, 3(3), 1–13.

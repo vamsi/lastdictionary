@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sponge example
+id: sponge-example
+pos: n.
+also:
+  - sponge attack
+  - energy-latency attack
+  - model denial of service
+  - unbounded consumption
+  - denial of wallet
+domain: sec
+domains:
+  - infer
+  - hw
+level: specialist
+plain: >-
+  An input crafted to make an AI system work as hard as possible — burning extra energy and time —
+  to slow it down or run up costs, rather than to make it answer wrongly.
+senses:
+  - definition: >-
+      An input crafted to make a model use as much energy, or take as long, as possible, rather than
+      to make it wrong: an availability attack on deployed AI. Sponge examples exploit
+      data-dependent costs, such as inputs that defeat hardware optimizations for sparse
+      activations, that split into unusually many [[token|tokens]], or that provoke very long
+      outputs or reasoning traces. For [[large-language-model|language-model]] services and
+      [[ai-agent|agents]], the broader risk, called unbounded consumption or model denial of
+      service, includes prompts that trigger runaway generation, recursive [[tool-call|tool calls]]
+      or costly retrieval, raising the operator's bills ('denial of wallet') and degrading service
+      for other users. Defenses include limits on output length and run time, [[rate-limit|rate
+      limiting]], per-user quotas and monitoring of compute per request.
+    example: A handful of sponge examples tripled the translation service's average latency.
+origin: >-
+  Introduced by Ilia Shumailov, Yiren Zhao, Daniel Bates, Nicolas Papernot, Robert Mullins and Ross
+  Anderson in 'Sponge Examples: Energy-Latency Attacks on Neural Networks' (arXiv 2020; IEEE EuroS&P
+  2021). The [[owasp-top-10-for-llm-applications|OWASP Top 10 for LLM Applications]] listed the
+  wider risk as 'Model Denial of Service' (2023), renamed 'Unbounded Consumption' in the 2025
+  edition.
+year: 2020
+see_also:
+  - adversarial example
+  - OWASP Top 10 for LLM Applications
+  - rate limit
+  - AI security
+  - evasion attack
+sources:
+  - text: >-
+      Shumailov, I., Zhao, Y., Bates, D., Papernot, N., Mullins, R. & Anderson, R. (2021). Sponge
+      Examples: Energy-Latency Attacks on Neural Networks. IEEE EuroS&P 2021.

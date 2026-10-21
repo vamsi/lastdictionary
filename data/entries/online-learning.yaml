@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: online learning
+id: online-learning
+pos: n.
+also:
+  - online machine learning
+  - incremental learning
+  - streaming learning
+  - online convex optimization
+  - prediction with expert advice
+domain: ml
+domains:
+  - rl
+  - math
+level: core
+plain: >-
+  Learning from data that arrive one piece at a time, updating the model after each new example
+  instead of training once on a fixed collection, as a spam filter does while emails stream in.
+senses:
+  - definition: >-
+      A learning setting organized as repeated rounds of predict, observe, update: the learner makes
+      a prediction, sees the true outcome or incurs a loss, and adjusts the model before the next
+      example (or small batch) arrives, using bounded memory and computation per round. Unlike batch
+      (offline) learning, which fits a model once to a complete dataset, it keeps adapting, which
+      suits systems that must track a moving target ([[concept-drift|concept drift]]), such as click
+      prediction, fraud detection and recommendation, and data streams too large to store.
+      [[stochastic-gradient-descent|Stochastic gradient descent]] applied one example at a time is
+      the archetypal online algorithm. The theory makes no statistical assumptions about the data,
+      which may even be chosen by an adversary, and measures performance by [[regret|regret]]:
+      cumulative loss compared with the best fixed predictor in hindsight. Landmark results include
+      mistake bounds for the [[perceptron|perceptron]] and Winnow, the weighted-majority and
+      multiplicative-weights algorithms for prediction with expert advice, and online convex
+      optimization, where online gradient descent achieves regret growing with the square root of
+      the number of rounds; [[multi-armed-bandit|bandits]] are the partial-feedback case.
+    example: >-
+      The fraud model learns online: every confirmed chargeback updates its weights within minutes.
+origin: >-
+  Frank Rosenblatt's perceptron (1958) learned one example at a time, and Bernard Widrow and Ted
+  Hoff's LMS rule (1960) was an early online regression method. The theory took shape with Nick
+  Littlestone's mistake-bound model and Winnow algorithm (1988), the weighted majority algorithm of
+  Littlestone and Manfred Warmuth (1989; journal version 1994) and Martin Zinkevich's online convex
+  optimization (2003).
+note: >-
+  Not to be confused with e-learning. Distinct from [[continual-learning|continual learning]], which
+  stresses accumulating new tasks without [[catastrophic-forgetting|catastrophic forgetting]],
+  though the terms overlap in practice.
+see_also:
+  - stochastic gradient descent
+  - regret
+  - multi-armed bandit
+  - concept drift
+  - continual learning
+  - perceptron
+  - active learning
+sources:
+  - text: >-
+      Littlestone, N. (1988). Learning Quickly When Irrelevant Attributes Abound: A New
+      Linear-Threshold Algorithm. Machine Learning 2(4).
+  - text: >-
+      Cesa-Bianchi, N. & Lugosi, G. (2006). Prediction, Learning, and Games. Cambridge University
+      Press.
+  - text: >-
+      Zinkevich, M. (2003). Online Convex Programming and Generalized Infinitesimal Gradient Ascent.
+      Proc. ICML 2003.

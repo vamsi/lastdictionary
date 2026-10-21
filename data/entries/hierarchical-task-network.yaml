@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hierarchical task network
+id: hierarchical-task-network
+pos: n.
+also:
+  - HTN
+  - HTN planning
+  - SHOP2
+domain: sym
+domains:
+  - agents
+  - robot
+level: specialist
+plain: >-
+  A planning method that breaks a big task, such as 'travel to Paris', into smaller tasks, such as
+  'book a flight' and 'pack', using stored recipes, until only simple actions remain.
+senses:
+  - definition: >-
+      A planning formalism in which the objective is a network of tasks to perform rather than a
+      goal state to reach. The planner refines the network by repeatedly replacing compound tasks
+      with subtask networks according to methods — domain-specific recipes stating how a task can be
+      accomplished and under what conditions — until only primitive actions, with
+      [[strips|STRIPS]]-style preconditions and effects, remain in a consistent order. Methods
+      encode expert knowledge of how things are normally done, which prunes the search drastically
+      and makes HTN planners fast and predictable on large practical problems, at the price of
+      supplying that knowledge in advance. Planners such as SHOP and SHOP2 generate actions in the
+      order they will be executed, so the current state is always known during planning. HTN
+      planning is used in logistics, military operations, manufacturing, robotics and the control of
+      non-player characters in video games; without restrictions it is more expressive than
+      classical planning and undecidable.
+origin: >-
+  Earl Sacerdoti's NOAH (1975) and Austin Tate's Nonlin (1977) introduced hierarchical task
+  decomposition. Kutluhan Erol, James Hendler and Dana Nau gave HTN planning formal semantics and
+  complexity results in 1994, and Nau's group released the SHOP (1999) and SHOP2 (2003) planners.
+year: 1975
+note: >-
+  Breaking goals into subtasks reappears in [[large-language-model|language-model]] agents, but HTN
+  methods are written in advance and their decompositions checked formally, whereas an LLM's
+  decomposition is generated on the fly.
+see_also:
+  - automated planning
+  - STRIPS
+  - Planning Domain Definition Language
+  - plan-and-execute
+  - means–ends analysis
+sources:
+  - text: >-
+      Erol, K., Hendler, J. & Nau, D. S. (1994). HTN Planning: Complexity and Expressivity.
+      Proceedings of AAAI-94.
+  - text: >-
+      Nau, D. et al. (2003). SHOP2: An HTN Planning System. Journal of Artificial Intelligence
+      Research 20, 379–404.

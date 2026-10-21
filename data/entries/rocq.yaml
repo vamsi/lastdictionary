@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Rocq
+id: rocq
+pos: prop. n.
+also:
+  - Coq
+  - Rocq Prover
+  - Gallina
+  - calculus of inductive constructions
+pronunciation: ROCK
+domain: sym
+domains:
+  - math
+  - eng
+level: specialist
+plain: >-
+  A long-established computer system, known until 2025 as Coq, in which people write mathematical
+  proofs and verified software that the computer checks step by step.
+senses:
+  - definition: >-
+      An open-source [[interactive-theorem-proving|proof assistant]] based on the calculus of
+      inductive constructions, a dependent type theory in which propositions are types and proofs
+      are programs, so that checking a proof amounts to type-checking a term. Users write
+      definitions and specifications in its functional language, Gallina, and build proofs
+      interactively with tactics; a small kernel certifies them, and verified programs can be
+      extracted to OCaml, Haskell or Scheme. Landmark achievements include formal proofs of the four
+      color theorem and the Feit–Thompson odd order theorem (completed 2012) and the CompCert
+      verified C compiler. Its corpora of formal proofs were among the first used to train
+      machine-learning provers, and it remains a target for AI-generated verified code alongside
+      [[lean|Lean]] and Isabelle.
+origin: >-
+  Developed at INRIA in France from 1984, initiated by Thierry Coquand and Gérard Huet, with
+  Christine Paulin-Mohring contributing inductive types; first released in 1989. A renaming
+  announced in October 2023 took effect with Rocq 9.0 in March 2025; the name honors INRIA
+  Rocquencourt and the mythical roc, keeping the old name's bird theme ('coq' is French for
+  rooster).
+year: 1989
+note: >-
+  Its developers received the 2013 ACM Software System Award. Older papers, libraries and tools use
+  the name Coq.
+see_also:
+  - interactive theorem proving
+  - Lean
+  - automated theorem proving
+  - formal verification
+  - autoformalization
+sources:
+  - text: >-
+      Bertot, Y. & Castéran, P. (2004). Interactive Theorem Proving and Program Development —
+      Coq'Art: The Calculus of Inductive Constructions. Springer.
+  - text: >-
+      Leroy, X. (2009). Formal Verification of a Realistic Compiler. Communications of the ACM
+      52(7), 107–115.
+as_of: 2026-10

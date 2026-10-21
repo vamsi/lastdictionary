@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data labeling
+id: data-labeling
+pos: n.
+also:
+  - data labelling
+  - labeling
+  - labelling
+domain: data
+domains:
+  - society
+  - eng
+level: core
+plain: >-
+  The work of attaching correct answers to examples — often done by large paid workforces, sometimes
+  by experts — so that AI systems can learn from them or be tested against them.
+senses:
+  - definition: >-
+      The production of [[label|labels]] for training and evaluation data as an organized activity,
+      usually at scale and often outsourced. A labeling operation combines task design and
+      guidelines, a workforce (in-house staff, [[crowdsourcing|crowdsourcing]] platforms, managed
+      vendors or credentialed experts), tooling, and quality control: gold questions with known
+      answers, redundant labeling with majority vote or statistical aggregation,
+      [[inter-annotator-agreement|inter-annotator agreement]] tracking and audits. Since the early
+      2020s demand has shifted from simple image and text classification toward skilled work —
+      writing demonstrations, ranking and critiquing model responses, and building
+      [[rl-environment|reinforcement-learning tasks]] and grading rubrics — performed by domain
+      experts for [[post-training|post-training]]. Costs are cut with [[active-learning|active
+      learning]], [[weak-supervision|weak supervision]], model-assisted pre-labeling and fully
+      automated labeling by models.
+    example: >-
+      Labeling the 40,000 radiology images required board-certified readers, not crowdworkers.
+origin: >-
+  Paid labeling at scale took off with Amazon Mechanical Turk (2005) and projects such as ImageNet,
+  labeled by crowdworkers from 2007. A commercial labeling industry formed in the 2010s around
+  autonomous driving, then large language models, whose training on human feedback created demand
+  for expert labelers.
+note: >-
+  Labeling work is often low-paid and invisible, done through subcontractors in lower-income
+  countries, a concern discussed under [[ghost-work|ghost work]]; safety and content-moderation
+  labeling can expose workers to disturbing material.
+see_also:
+  - annotation
+  - label
+  - crowdsourcing
+  - Amazon Mechanical Turk
+  - ghost work
+  - active learning
+  - human-in-the-loop

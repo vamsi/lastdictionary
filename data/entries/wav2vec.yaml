@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: wav2vec
+id: wav2vec
+pos: prop. n.
+also:
+  - wav2vec 2.0
+  - XLS-R
+  - HuBERT
+  - self-supervised speech representation
+pronunciation: WAV-too-vek
+domain: percep
+domains:
+  - dl
+  - train
+level: specialist
+plain: >-
+  A family of Meta speech models that learn the sounds of language from thousands of hours of
+  unlabeled recordings, so that only minutes of transcribed speech are needed to build a recognizer.
+senses:
+  - definition: >-
+      A family of [[self-supervised-learning|self-supervised]] models that learn speech
+      representations directly from raw audio waveforms, best known through wav2vec 2.0. A
+      [[convolutional-neural-network|convolutional]] feature encoder turns the waveform into a
+      latent vector about every 20 milliseconds; spans of these are hidden, and a
+      [[transformer|transformer]] context network must identify, from a set of distractors, the
+      quantized form of each hidden latent — a [[contrastive-learning|contrastive]] objective in
+      which the codebook itself is learned. The pretrained model is then [[fine-tuning|fine-tuned]]
+      on transcribed audio with a [[connectionist-temporal-classification|CTC]] loss. Its headline
+      result concerned scarce labels: pretrained on 53,000 hours of untranscribed audio and
+      fine-tuned on just ten minutes of transcribed speech, it scored 4.8% and 8.2%
+      [[word-error-rate|word error rate]] on the clean and other [[librispeech|LibriSpeech]] test
+      sets, against 1.8% and 3.3% with all 960 labeled hours — evidence that recognizers could be
+      built for languages with little transcribed speech. Multilingual versions (XLS-R, 2021;
+      Massively Multilingual Speech, 2023) and relatives such as HuBERT (2021), which predicts
+      cluster labels rather than contrasting, followed.
+    example: >-
+      We fine-tuned a multilingual wav2vec checkpoint on four hours of transcribed Quechua.
+origin: >-
+  The first wav2vec was introduced by Steffen Schneider, Alexei Baevski, Ronan Collobert and Michael
+  Auli at Facebook AI Research in 2019; wav2vec 2.0, by Baevski, Henry Zhou, Abdelrahman Mohamed and
+  Auli, appeared in June 2020 (NeurIPS 2020). The name echoes [[word2vec|word2vec]].
+year: 2019
+note: >-
+  wav2vec models learn from audio alone and must be fine-tuned to transcribe, whereas
+  [[whisper|Whisper]] is trained directly on paired audio and text.
+see_also:
+  - self-supervised learning
+  - speech recognition
+  - contrastive learning
+  - connectionist temporal classification
+  - LibriSpeech
+  - Whisper
+contrast:
+  - Whisper
+sources:
+  - text: >-
+      Baevski, A., Zhou, H., Mohamed, A. & Auli, M. (2020). wav2vec 2.0: A Framework for
+      Self-Supervised Learning of Speech Representations. NeurIPS 2020.
+    url: https://arxiv.org/abs/2006.11477
+  - text: >-
+      Schneider, S., Baevski, A., Collobert, R. & Auli, M. (2019). wav2vec: Unsupervised
+      Pre-training for Speech Recognition. Interspeech 2019.

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: closed-world assumption
+id: closed-world-assumption
+pos: n.
+also:
+  - CWA
+  - open-world assumption
+  - OWA
+  - negation as failure
+  - unique name assumption
+domain: sym
+domains:
+  - data
+level: specialist
+plain: >-
+  The rule of treating whatever a system cannot confirm as false: if a library's catalog does not
+  list a book, the library is assumed not to have it.
+senses:
+  - definition: >-
+      The assumption that a [[knowledge-base|knowledge base]] or database contains all relevant
+      positive facts, so that any atomic statement not derivable from it is taken to be false. It
+      lets a system answer negative queries ('Does the library hold a copy of this atlas?' — 'No')
+      without storing negative facts, and it underlies relational databases, [[datalog|Datalog]] and
+      the negation-as-failure rule of [[logic-programming|logic programming]]. Because adding facts
+      can retract conclusions drawn by default, reasoning under the closed-world assumption is
+      [[non-monotonic-reasoning|non-monotonic]]. Its opposite, the open-world assumption, treats
+      underivable statements as merely unknown; it is adopted by [[first-order-logic|first-order
+      logic]] and by the [[semantic-web|semantic web]] languages
+      [[resource-description-framework|RDF]] and [[web-ontology-language|OWL]], where no source is
+      presumed complete — a frequent cause of confusion for users of OWL reasoners.
+    example: >-
+      Under the closed-world assumption the system concluded that the patient has no allergies,
+      simply because none were recorded.
+origin: >-
+  Formalized by Raymond Reiter in 'On Closed World Data Bases' (1978), in the volume Logic and Data
+  Bases; Keith Clark's paper on negation as failure in the same volume gave the logic-programming
+  counterpart.
+year: 1978
+see_also:
+  - non-monotonic reasoning
+  - logic programming
+  - Datalog
+  - knowledge base
+  - Web Ontology Language
+  - answer set programming
+sources:
+  - text: >-
+      Reiter, R. (1978). On Closed World Data Bases. In H. Gallaire & J. Minker (eds.), Logic and
+      Data Bases. Plenum, 55–76.
+  - text: >-
+      Clark, K. L. (1978). Negation as Failure. In H. Gallaire & J. Minker (eds.), Logic and Data
+      Bases. Plenum, 293–322.

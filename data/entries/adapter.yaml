@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: adapter
+id: adapter
+pos: n.
+also:
+  - adapter module
+  - adapter layer
+  - adapters
+  - bottleneck adapter
+domain: train
+domains:
+  - dl
+  - llm
+level: core
+plain: >-
+  A small trainable add-on slotted into a large frozen AI model to teach it a new task or style,
+  like a plug adapter that lets one device work in many countries.
+senses:
+  - context: Parameter-efficient fine-tuning
+    definition: >-
+      A small neural module inserted into a pretrained network and trained for a new task while the
+      original [[weights|weights]] stay frozen. The classic bottleneck adapter, placed after the
+      attention and feed-forward sublayers of each [[transformer|transformer]] block, projects the
+      hidden state down to a small dimension, applies a nonlinearity, projects back up and adds the
+      result through a [[residual-connection|residual connection]]; initialized near zero, it starts
+      out as an identity function. Because each task needs only its own adapter weights, one base
+      model can serve many tasks, and adapters can be composed or stacked. Unlike
+      [[low-rank-adaptation|LoRA]] updates, such serial adapters add a little inference latency
+      because they cannot be merged into existing weights.
+    example: >-
+      We trained one adapter per language and load them on top of the same frozen encoder.
+  - context: Loose usage
+    definition: >-
+      Any small, separately stored set of trained parameters applied to a base model, especially a
+      LoRA module (a 'LoRA adapter'); also, in [[multimodal-large-language-model|multimodal
+      models]], the projection layers that connect a vision or audio encoder to a language model.
+origin: >-
+  Sylvestre-Alvise Rebuffi, Hakan Bilen and Andrea Vedaldi introduced residual adapters for learning
+  many visual domains with one network in 2017. Neil Houlsby and colleagues at Google brought
+  adapter modules to NLP in 2019, adapting BERT to 26 text-classification tasks with only a few
+  percent extra parameters per task (3.6 percent on GLUE); the AdapterHub framework (2020) and later
+  PEFT libraries spread the term.
+year: 2017
+note: >-
+  In everyday LLM engineering 'adapter' most often means a LoRA file, so readers should check which
+  mechanism is meant.
+see_also:
+  - parameter-efficient fine-tuning
+  - low-rank adaptation
+  - prefix tuning
+  - transfer learning
+  - residual connection
+  - fine-tuning
+contrast:
+  - full fine-tuning
+sources:
+  - text: >-
+      Houlsby, N. et al. (2019). Parameter-Efficient Transfer Learning for NLP. ICML 2019.
+      arXiv:1902.00751.
+    url: https://arxiv.org/abs/1902.00751
+  - text: >-
+      Rebuffi, S.-A., Bilen, H. & Vedaldi, A. (2017). Learning multiple visual domains with residual
+      adapters. NeurIPS 2017.

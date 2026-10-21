@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: latent reasoning
+id: latent-reasoning
+pos: n.
+also:
+  - continuous thought
+  - reasoning in latent space
+  - implicit chain of thought
+  - continuous chain of thought
+domain: llm
+domains:
+  - dl
+  - interp
+  - safety
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Getting an AI to do its step-by-step thinking inside its internal numbers rather than writing it
+  out in words — potentially faster and more flexible, but much harder for people to inspect.
+senses:
+  - definition: >-
+      Multi-step reasoning carried out in a model's internal [[activation|activations]] rather than
+      in generated text tokens. It includes methods that feed the model's last hidden state back in
+      as the next input ('continuous thought') instead of decoding a word, recurrent-depth
+      architectures that iterate a block of layers more times on harder inputs, and training that
+      internalizes an explicit [[chain-of-thought|chain of thought]] until it is no longer written
+      out; the term also names the implicit multi-hop computation that interpretability researchers
+      find inside ordinary forward passes. Proponents argue that continuous representations can hold
+      several candidate paths at once and avoid spending tokens on language; safety researchers warn
+      that moving reasoning out of readable text would erode
+      [[chain-of-thought-monitoring|chain-of-thought monitoring]] and
+      [[monitorability|monitorability]].
+    example: >-
+      If labs switch to latent reasoning, we lose the cheapest window we have into what models are
+      planning.
+origin: >-
+  Shibo Hao and colleagues at Meta introduced Coconut ('chain of continuous thought') in December
+  2024, and Jonas Geiping and colleagues' recurrent-depth model (February 2025) scaled test-time
+  computation in latent space. A July 2025 position paper by researchers from several laboratories
+  urged developers to preserve monitorable text reasoning.
+year: 2024
+see_also:
+  - chain of thought
+  - reasoning trace
+  - monitorability
+  - chain-of-thought monitoring
+  - test-time compute
+  - residual stream
+contrast:
+  - chain of thought
+sources:
+  - text: >-
+      Hao, S., Sukhbaatar, S., Su, D., Li, X., Hu, Z., Weston, J. & Tian, Y. (2024). Training Large
+      Language Models to Reason in a Continuous Latent Space. arXiv:2412.06769.
+    url: https://arxiv.org/abs/2412.06769

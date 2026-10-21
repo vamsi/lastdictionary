@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: machine learning technical debt
+id: machine-learning-technical-debt
+pos: n.
+also:
+  - ML technical debt
+  - hidden technical debt
+  - CACE principle
+  - pipeline jungle
+  - glue code
+domain: eng
+domains:
+  - ml
+level: specialist
+plain: >-
+  The hidden future cost of quick shortcuts in machine-learning systems — tangled data dependencies,
+  messy glue code, unchecked feedback loops — that later make them hard and risky to change.
+senses:
+  - definition: >-
+      Long-term maintenance costs specific to systems that contain machine-learning models, beyond
+      the ordinary technical debt of software. Because a model's behavior depends on data rather
+      than explicit code, many of the problems are properties of the whole system. The catalog
+      compiled by D. Sculley and colleagues at Google includes entanglement, summarized as CACE
+      ('changing anything changes everything'), where altering one input feature or setting shifts
+      the model's behavior everywhere; hidden feedback loops in which a model influences its own
+      future training data; undeclared consumers that silently depend on a model's outputs; unstable
+      or underused data dependencies; configuration debt; and system anti-patterns such as glue
+      code, 'pipeline jungles' of sprawling preprocessing and dead experimental code paths. The
+      concept framed the case for [[mlops|MLOps]] practices such as data validation,
+      [[feature-store|feature stores]], dependency tracking, [[model-monitoring|monitoring]] and
+      reproducible [[machine-learning-pipeline|pipelines]], and it is now applied to
+      [[large-language-model|language-model]] applications, whose prompts, retrieval indexes and
+      vendor model versions create analogous dependencies.
+    example: >-
+      Every team reading this model's scores without telling us is technical debt we'll pay at the
+      next retrain.
+origin: >-
+  Applies Ward Cunningham's 1992 'technical debt' metaphor to machine learning. D. Sculley and
+  Google colleagues introduced the idea in a 2014 workshop paper, 'Machine Learning: The
+  High-Interest Credit Card of Technical Debt', and expanded it in the widely cited NeurIPS 2015
+  paper 'Hidden Technical Debt in Machine Learning Systems', which observed that model code is only
+  a small fraction of a real-world ML system.
+year: 2014
+see_also:
+  - MLOps
+  - training–serving skew
+  - feature store
+  - machine learning pipeline
+  - model monitoring
+  - data drift
+sources:
+  - text: >-
+      Sculley, D. et al. (2014). Machine Learning: The High-Interest Credit Card of Technical Debt.
+      NIPS 2014 Workshop on Software Engineering for Machine Learning (SE4ML).
+  - text: >-
+      Sculley, D. et al. (2015). Hidden Technical Debt in Machine Learning Systems. Advances in
+      Neural Information Processing Systems 28 (NeurIPS 2015).

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deductive reasoning
+id: deductive-reasoning
+pos: n.
+also:
+  - deduction
+  - deductive inference
+  - deductive logic
+  - logical consequence
+domain: sym
+domains:
+  - mind
+  - core
+level: core
+plain: >-
+  Reasoning in which true starting points guarantee a true conclusion: if every square is a
+  rectangle and this shape is a square, then it must be a rectangle.
+senses:
+  - definition: >-
+      Truth-preserving inference: when the premises are true, a deductively drawn conclusion cannot
+      be false, because affirming the premises while denying the conclusion would be
+      self-contradictory. Logicians call such an argument valid, and call it sound when its premises
+      are in fact true. Deduction adds no information beyond what the premises already contain, but
+      it makes implicit consequences explicit, which can require enormous effort, as in mathematical
+      proof. Formal logic codifies valid deduction in rules of inference such as modus ponens;
+      [[automated-theorem-proving|automated theorem proving]], [[logic-programming|logic
+      programming]] and [[description-logic|description logic]] reasoners mechanize it, and
+      [[interactive-theorem-proving|proof assistants]] check it. Because validity can be checked
+      mechanically, deductive tasks — proofs, logic puzzles and multi-step entailment benchmarks
+      such as ProofWriter and FOLIO — are widely used to test whether
+      [[large-language-model|language models]] reason reliably or rely on surface patterns.
+origin: >-
+  Aristotle's syllogistic (4th century BCE) was the first systematic theory of deduction. Gottlob
+  Frege's predicate logic (1879) and the 20th-century proof theory of David Hilbert, Gerhard Gentzen
+  and others gave it modern form, and mechanizing it was one of AI's first goals.
+note: >-
+  In everyday English and detective fiction, 'deduction' often names what logicians call abduction:
+  Sherlock Holmes's famous 'deductions' are mostly inferences to the best explanation.
+see_also:
+  - inductive reasoning
+  - abductive reasoning
+  - first-order logic
+  - automated theorem proving
+  - reasoning
+  - resolution
+contrast:
+  - inductive reasoning
+  - abductive reasoning
+sources:
+  - text: >-
+      Gentzen, G. (1935). Untersuchungen über das logische Schließen. Mathematische Zeitschrift 39,
+      176–210 and 405–431.

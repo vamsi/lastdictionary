@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tensor
+id: tensor
+pos: n.
+also:
+  - tensors
+  - multidimensional array
+  - n-dimensional array
+  - ndarray
+domain: math
+domains:
+  - dl
+  - hw
+level: core
+plain: >-
+  A block of numbers with any number of dimensions: a single number, a list, a grid, or a stack of
+  grids. AI software stores and processes all its data this way.
+senses:
+  - context: Machine learning
+    definition: >-
+      A multidimensional array of numbers of one data type, described by its shape (the size along
+      each axis); the number of axes is often called its rank or order. A [[scalar|scalar]] is a
+      zero-axis tensor, a [[vector|vector]] has one axis and a [[matrix|matrix]] two; a batch of
+      color images is typically a four-axis tensor (batch, channels, height, width), and transformer
+      [[activation|activations]] are usually (batch, sequence, hidden). Deep learning frameworks
+      such as [[pytorch|PyTorch]], [[tensorflow|TensorFlow]] and [[jax|JAX]] are, at heart,
+      libraries for building and differentiating computations on tensors; operations broadcast
+      across axes and run on [[gpu|GPUs]] and other accelerators, where units such as
+      [[tensor-core|tensor cores]] speed up the underlying [[matrix-multiplication|matrix
+      multiplications]].
+    example: >-
+      The logits tensor has shape (8, 2048, 50257): batch, sequence length and vocabulary size.
+  - context: Mathematics and physics
+    definition: >-
+      A multilinear object — formally an element of a tensor product of vector spaces and their
+      duals — whose components transform in a prescribed way when the basis changes, such as the
+      stress tensor of mechanics or the metric tensor of general relativity. Any such tensor can be
+      written as an array once a basis is fixed, but most arrays in machine learning are not used as
+      tensors in this strict sense.
+origin: >-
+  William Rowan Hamilton used 'tensor' in 1846 for the magnitude of a quaternion, a sense now
+  obsolete. Woldemar Voigt applied the word to crystal physics in 1898, and it spread with Gregorio
+  Ricci-Curbastro and Tullio Levi-Civita's absolute differential calculus and its adoption by Albert
+  Einstein and Marcel Grossmann in 1913. The looser 'multidimensional array' sense spread through
+  machine-learning libraries such as Torch and Theano, whose array types were called tensors by the
+  early 2010s, and TensorFlow (2015).
+year: 1898
+note: >-
+  'Rank' is ambiguous: for an array it counts axes, whereas the [[rank|rank]] of a matrix is the
+  dimension of its column space. Mathematicians sometimes object that machine-learning 'tensors' are
+  merely arrays with no transformation law.
+see_also:
+  - scalar
+  - vector
+  - matrix
+  - tensor core
+  - PyTorch
+  - TensorFlow
+  - linear algebra

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: loss function
+id: loss-function
+pos: n.
+also:
+  - loss
+  - cost function
+  - error function
+  - training objective
+domain: dl
+domains:
+  - ml
+  - math
+level: essential
+plain: >-
+  A score that measures how wrong a model's predictions are. Training means adjusting the model,
+  step by step, to push this number down.
+senses:
+  - definition: >-
+      A function that scores a model's output against the desired target, returning a single number
+      that grows with the size of the mistake; training adjusts the model to make the average of
+      this number over the [[training-data|training data]] as small as possible, which is
+      [[empirical-risk-minimization|empirical risk minimization]], usually carried out by
+      [[gradient-descent|gradient descent]]. The choice of loss defines what counts as a mistake and
+      how heavily it is penalized: [[mean-squared-error|mean squared error]] for regression,
+      [[cross-entropy|cross-entropy]] (log loss) for classification and
+      [[next-token-prediction|next-token prediction]], [[hinge-loss|hinge loss]] for margin
+      classifiers, contrastive and ranking losses for embeddings and retrieval. Because
+      gradient-based training needs derivatives, the loss is often a smooth surrogate for the
+      quantity people actually care about, such as accuracy, BLEU or task success. The full training
+      objective may add [[regularization|regularization]] terms or auxiliary losses (for example a
+      load-balancing loss in a [[mixture-of-experts|mixture of experts]]), and in
+      [[reinforcement-learning|reinforcement learning]] and preference tuning the loss is built from
+      rewards or comparisons rather than labels.
+    example: Validation accuracy stalled even though the training loss kept falling.
+origin: >-
+  The idea goes back to the treatment of observational errors by Pierre-Simon Laplace, who favored
+  absolute deviations, and by Adrien-Marie Legendre and Carl Friedrich Gauss, whose method of least
+  squares (1805–1809) minimized squared ones. Abraham Wald made the loss function — which he first
+  called a 'weight function' (1939) — a central object of statistical decision theory; machine
+  learning inherited 'loss' from statistics and 'cost function' from optimization and control.
+note: >-
+  'Loss' and 'cost' are used interchangeably, though some authors reserve loss for one example and
+  cost for the dataset average; [[objective-function|objective function]] is the broader term and
+  includes quantities to be maximized. A falling training loss does not by itself mean better
+  [[generalization|generalization]].
+see_also:
+  - gradient descent
+  - empirical risk minimization
+  - cross-entropy
+  - mean squared error
+  - objective function
+  - loss landscape
+  - regularization
+contrast:
+  - reward function

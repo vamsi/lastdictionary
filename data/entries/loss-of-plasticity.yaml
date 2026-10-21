@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: loss of plasticity
+id: loss-of-plasticity
+pos: n.
+also:
+  - plasticity loss
+  - loss of trainability
+domain: train
+domains:
+  - dl
+  - rl
+level: specialist
+plain: >-
+  The gradual loss of a neural network's ability to learn new things after long training on changing
+  tasks, as parts of the network go inactive or become stuck.
+senses:
+  - definition: >-
+      The decline, over prolonged training on a sequence of tasks or a shifting data stream, of a
+      network's capacity to learn from new data; in reported experiments, performance on each new
+      task eventually sinks to that of a much simpler network, or learning stalls altogether. It is
+      the other half of the continual-learning problem from [[catastrophic-forgetting|catastrophic
+      forgetting]]: forgetting loses the old, while loss of plasticity blocks the new. Contributing
+      mechanisms include growing numbers of dead or saturated units (for example [[dying-relu|dead
+      ReLUs]]), growing weight magnitudes, collapsing effective rank of representations, and
+      sharpening of the [[loss-landscape|loss landscape]]. It affects
+      [[deep-reinforcement-learning|deep reinforcement learning]], where the data distribution
+      shifts as the policy improves, and warm-started training in general. Remedies include
+      periodically reinitializing low-utility units (continual backpropagation), shrinking and
+      perturbing weights, normalization, and regularization toward the initial weights.
+    example: >-
+      After 2,000 tasks the network showed clear loss of plasticity: a freshly initialized one
+      learned task 2,001 far faster.
+origin: >-
+  Jordan Ash and Ryan Adams (2020) reported that warm-started networks generalize worse than freshly
+  initialized ones, and Clare Lyle and colleagues (2022) described capacity loss in deep RL agents.
+  Shibhansh Dohare, Richard Sutton, A. Rupam Mahmood and colleagues demonstrated loss of plasticity
+  across supervised and reinforcement settings in Nature (2024) and proposed continual
+  backpropagation as a remedy.
+note: >-
+  Distinct from catastrophic forgetting, though both stem from training one network on
+  non-stationary data. The term borrows neuroscience's 'synaptic plasticity'.
+see_also:
+  - catastrophic forgetting
+  - continual learning
+  - stability–plasticity dilemma
+  - dying ReLU
+  - deep reinforcement learning
+  - weight initialization
+contrast:
+  - catastrophic forgetting
+sources:
+  - text: >-
+      Dohare, S., Hernandez-Garcia, J. F., Lan, Q., Rahman, P., Mahmood, A. R. & Sutton, R. S.
+      (2024). Loss of plasticity in deep continual learning. Nature 632, 768–774.
+  - text: >-
+      Lyle, C., Rowland, M. & Dabney, W. (2022). Understanding and Preventing Capacity Loss in
+      Reinforcement Learning. ICLR 2022.

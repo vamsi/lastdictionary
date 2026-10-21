@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: learning rate
+id: learning-rate
+pos: n.
+also:
+  - step size
+  - LR
+domain: dl
+domains:
+  - ml
+  - train
+level: core
+plain: >-
+  How big a step a model takes each time it adjusts its settings during training. Too large and
+  learning goes haywire; too small and it crawls.
+senses:
+  - definition: >-
+      A positive scalar [[hyperparameter|hyperparameter]], usually written η, that multiplies the
+      update direction computed by an [[optimizer|optimizer]] and so sets how far parameters move at
+      each [[training-step|training step]]; in plain [[gradient-descent|gradient descent]] the
+      update is −η times the gradient. It is typically the most consequential hyperparameter: values
+      above a stability threshold make the loss oscillate or diverge, while values far too small
+      waste compute and can leave training stuck. Good values depend on the optimizer (around 0.1
+      for SGD with momentum on image classifiers; 10⁻⁴ to 10⁻³ for [[adam|Adam]] on transformers,
+      smaller for larger models), on [[batch-size|batch size]], and on how the network is
+      parametrized, which is why schemes such as [[maximal-update-parametrization|maximal update
+      parametrization]] aim to make the optimum transfer across model sizes. Rather than holding it
+      constant, practitioners vary it over training with a [[learning-rate-schedule|learning rate
+      schedule]] that includes [[learning-rate-warmup|warmup]] and decay. Adaptive optimizers
+      further rescale it per parameter but still need a global value.
+    example: A learning rate of 3e-4 diverged at this width; 1e-4 trained smoothly.
+origin: >-
+  Descends from the gain or step-size constant of early adaptive systems — for example the factor
+  setting how strongly Bernard Widrow and Marcian Hoff's LMS rule (1960) corrects each error — and
+  was called the learning rate in the connectionist literature of the 1980s. Optimization theory
+  calls the same quantity the step size.
+note: >-
+  The value that lowers training loss fastest is not always the one that generalizes best; larger
+  rates with noisy updates are often associated with flatter solutions.
+see_also:
+  - learning rate schedule
+  - learning rate warmup
+  - gradient descent
+  - optimizer
+  - batch size
+  - maximal update parametrization
+  - edge of stability

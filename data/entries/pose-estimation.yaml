@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pose estimation
+id: pose-estimation
+pos: n.
+also:
+  - human pose estimation
+  - HPE
+  - 6D pose estimation
+  - 6-DoF pose
+  - body tracking
+  - skeleton tracking
+  - OpenPose
+domain: percep
+domains:
+  - robot
+level: core
+plain: >-
+  Working out the position and orientation of something from images: where a person's joints are and
+  how their body is posed, or exactly how an object or camera is placed and turned in space.
+senses:
+  - context: Human pose
+    definition: >-
+      Estimating the configuration of a human body from images or video, as 2D image locations of
+      joints (wrists, elbows, knees and so on), as 3D joint positions, or as a full 3D body mesh
+      fitted to a parametric model such as SMPL (2015). It builds on [[keypoint-detection|keypoint
+      detection]]: top-down systems detect each person and then predict heatmaps for their joints
+      (HRNet, 2019; ViTPose, 2022), while bottom-up systems find all joints and link them into
+      skeletons, as OpenPose (2017) did with 'part affinity fields'. DeepPose (2014) was the first
+      to regress joint positions with a deep network. Hands, faces and animals are handled the same
+      way. Benchmarks include [[coco|COCO]] keypoints, MPII and, for 3D, Human3.6M. Applications
+      include fitness and physiotherapy apps, sports analysis, motion capture for animation,
+      sign-language research, ergonomics, and teaching robots by demonstration.
+    example: >-
+      Pose estimation shows the runner's knee collapsing inward on landing, which the coach had
+      missed.
+  - context: Objects and cameras
+    definition: >-
+      Estimating the six-[[degrees-of-freedom|degree-of-freedom]] pose (3D rotation plus 3D
+      translation) of a rigid object or a camera relative to a reference frame. Classical methods
+      match 2D image points to known 3D points and solve the Perspective-n-Point problem, usually
+      inside the RANSAC algorithm for robustness to bad matches; learned methods regress the pose
+      directly or predict correspondences. Object pose estimation is central to robotic grasping and
+      augmented reality; camera pose estimation underlies [[structure-from-motion|structure from
+      motion]], visual [[odometry|odometry]] and
+      [[simultaneous-localization-and-mapping|simultaneous localization and mapping]].
+origin: >-
+  Part-based models of the human figure go back to Martin Fischler and Robert Elschlager's
+  'pictorial structures' (1973); recovering camera pose from point correspondences is older still,
+  rooted in photogrammetry. Deep human pose estimation began with Alexander Toshev and Christian
+  Szegedy's DeepPose (2014), and Zhe Cao and colleagues' OpenPose (2017) made real-time multi-person
+  estimation widely available.
+note: >-
+  In robotics, 'pose' means position plus orientation; in human pose estimation it means body
+  configuration. Body-movement data can reveal identity (through gait), health and emotional state,
+  which raises privacy questions.
+see_also:
+  - keypoint detection
+  - action recognition
+  - object tracking
+  - structure from motion
+  - simultaneous localization and mapping
+  - degrees of freedom
+sources:
+  - text: >-
+      Toshev, A. & Szegedy, C. (2014). DeepPose: Human Pose Estimation via Deep Neural Networks.
+      CVPR 2014.
+  - text: >-
+      Cao, Z., Simon, T., Wei, S.-E. & Sheikh, Y. (2017). Realtime Multi-Person 2D Pose Estimation
+      Using Part Affinity Fields. CVPR 2017.

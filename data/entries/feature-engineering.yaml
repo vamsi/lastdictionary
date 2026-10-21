@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature engineering
+id: feature-engineering
+pos: n.
+also:
+  - feature construction
+  - feature creation
+  - feature transformation
+domain: ml
+domains:
+  - data
+  - eng
+level: core
+plain: >-
+  Turning raw data into the inputs a model learns from, using knowledge of the problem; for example,
+  converting a timestamp into 'hour of day' and 'is it a weekend'.
+senses:
+  - definition: >-
+      The design of a model's input variables ([[feature|features]]) from raw data, drawing on
+      knowledge of the problem and on exploratory analysis to create, transform and select them.
+      Typical operations include encoding categories ([[one-hot-encoding|one-hot encoding]], target
+      encoding); [[feature-scaling|scaling]] and transforming numbers (logarithms, binning,
+      polynomial terms); filling gaps ([[imputation|imputation]]); extracting parts of dates, text
+      and coordinates; aggregating histories, such as a customer's purchases in the last 30 days;
+      forming ratios and interactions between variables; and [[feature-selection|selecting]] the
+      most useful subset. For [[tabular-data|tabular data]] and classical models such as
+      [[gradient-boosting|gradient boosting]], feature engineering is often the largest single
+      source of accuracy gains. [[deep-learning|Deep learning]] shifted much of this work into
+      [[representation-learning|representation learning]], letting networks learn features from raw
+      pixels, audio or text, but engineered features remain central in tabular, time-series and
+      production systems, where they are often computed and shared through a [[feature-store|feature
+      store]]. Careless feature construction is a frequent cause of [[data-leakage|data leakage]].
+    example: >-
+      Most of the lift came from feature engineering: days since last login and the ratio of refunds
+      to orders.
+origin: >-
+  The practice is as old as statistical modeling, in which analysts have always hand-crafted
+  variables. The phrase became common in machine learning in the late 2000s and 2010s, spread
+  especially by Kaggle competitions; Pedro Domingos's widely read 2012 essay 'A Few Useful Things to
+  Know about Machine Learning' argued that feature engineering is the key to most successful
+  projects.
+note: >-
+  Contrast with [[representation-learning|representation learning]], in which a model learns its own
+  features from raw data instead of having them designed by people.
+see_also:
+  - feature
+  - feature selection
+  - one-hot encoding
+  - feature scaling
+  - imputation
+  - feature store
+  - data leakage
+  - representation learning
+contrast:
+  - representation learning
+sources:
+  - text: >-
+      Domingos, P. (2012). A Few Useful Things to Know about Machine Learning. Communications of the
+      ACM 55(10).
+  - text: >-
+      Zheng, A. & Casari, A. (2018). Feature Engineering for Machine Learning. Sebastopol: O'Reilly
+      Media.

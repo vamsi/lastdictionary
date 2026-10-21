@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: augmented language model
+id: augmented-language-model
+pos: n.
+also:
+  - ALM
+  - augmented LLM
+  - tool-augmented language model
+domain: agents
+domains:
+  - llm
+level: specialist
+plain: >-
+  A language model hooked up to extras — a search engine, a calculator, a memory store or other
+  tools — so it can do things a model working only from its training cannot.
+senses:
+  - definition: >-
+      A [[language-model|language model]] combined with external components that extend what it can
+      do at [[inference|inference]] time: retrieval of documents or memories, [[tool|tool]] calls
+      such as calculators, search engines and code interpreters, and reasoning procedures that break
+      problems into steps. The term places such systems on a continuum between bare language models
+      and full [[ai-agent|agents]]: an augmented model may draw on non-parametric knowledge and act
+      on the world, yet its control flow can still be fixed by the developer. Anthropic's 2024 guide
+      to agents uses 'the augmented LLM' — a model with retrieval, tools and memory — as the basic
+      building block from which [[agentic-workflow|workflows]] and agents are composed.
+    example: >-
+      Any augmented language model with search can answer this; the hard part is citing the sources
+      correctly.
+origin: >-
+  Popularized by the survey 'Augmented Language Models' (Grégoire Mialon, Roberto Dessì, Maria
+  Lomeli and colleagues at Meta AI, February 2023), which grouped retrieval, tool use and reasoning
+  under one heading. Narrower forms such as 'retrieval-augmented' (2020) and 'tool-augmented' (2022)
+  came earlier.
+year: 2023
+see_also:
+  - tool use
+  - retrieval-augmented generation
+  - AI agent
+  - Toolformer
+  - MRKL system
+  - agentic workflow
+sources:
+  - text: >-
+      Mialon, G., Dessì, R., Lomeli, M. et al. (2023). Augmented Language Models: a Survey.
+      arXiv:2302.07842.
+    url: https://arxiv.org/abs/2302.07842
+  - text: Schluntz, E. & Zhang, B. (2024). Building effective agents. Anthropic.
+    url: https://www.anthropic.com/research/building-effective-agents

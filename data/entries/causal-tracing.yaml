@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: causal tracing
+id: causal-tracing
+pos: n.
+also:
+  - causal trace
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  A test that blurs the words of a factual question with noise and then restores one internal part
+  of the model at a time, to find where in the model the fact gets recalled.
+senses:
+  - definition: >-
+      A form of [[activation-patching|activation patching]] devised to locate where a language model
+      recalls factual associations. The model is run on a factual prompt such as 'The Space Needle
+      is in downtown' three ways: once cleanly; once with Gaussian noise added to the embeddings of
+      the subject tokens, which destroys the answer; and repeatedly with the noise but with a single
+      hidden state — one layer at one token position — restored to its clean value. The fraction of
+      the correct answer's probability recovered measures that state's indirect effect on the
+      prediction. Applied to GPT-2 XL and GPT-J, causal tracing highlighted middle-layer MLP modules
+      at the last subject token, motivating the [[rome|ROME]] editing method. Peter Hase and
+      colleagues (2023) found that where causal tracing localizes a fact predicts poorly which layer
+      is best to edit, cautioning against equating localization with storage.
+    example: Causal tracing lights up the MLPs at the last subject token in layers 15 to 20.
+origin: >-
+  Introduced by Kevin Meng, David Bau, Alex Andonian and Yonatan Belinkov in 'Locating and Editing
+  Factual Associations in GPT' (February 2022; NeurIPS 2022), adapting causal mediation analysis.
+year: 2022
+see_also:
+  - activation patching
+  - ROME
+  - model editing
+  - causal mediation analysis
+  - knowledge neuron
+  - parametric knowledge
+sources:
+  - text: >-
+      Meng, K., Bau, D., Andonian, A. & Belinkov, Y. (2022). Locating and Editing Factual
+      Associations in GPT. NeurIPS 2022. arXiv:2202.05262.
+    url: https://arxiv.org/abs/2202.05262
+  - text: >-
+      Hase, P., Bansal, M., Kim, B. & Ghandeharioun, A. (2023). Does Localization Inform Editing?
+      Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language
+      Models. NeurIPS 2023.

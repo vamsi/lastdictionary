@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Jerome Friedman
+id: jerome-friedman
+sort_as: Friedman Jerome
+pos: prop. n.
+also:
+  - Jerome H. Friedman
+  - Jerry Friedman
+domain: people
+domains:
+  - ml
+  - math
+level: specialist
+dates: b. 1939
+plain: >-
+  An American statistician who invented gradient boosting, the method behind XGBoost and other
+  leading tools for spreadsheet-style data, and co-wrote a standard machine-learning textbook.
+senses:
+  - definition: >-
+      American statistician at Stanford University who created several of the most widely used
+      methods of statistical learning. Trained as a physicist, he led the computation research group
+      at the Stanford Linear Accelerator Center while developing data-analysis methods: projection
+      pursuit (with John Tukey, 1974), [[cart|CART]] decision trees (with [[leo-breiman|Leo
+      Breiman]], Richard Olshen and Charles Stone, 1984) and multivariate adaptive regression
+      splines (MARS, 1991). His 'Greedy Function Approximation: A Gradient Boosting Machine' (1999;
+      published 2001) recast boosting as gradient descent in function space, giving the general
+      [[gradient-boosting|gradient boosting]] algorithm on which [[xgboost|XGBoost]],
+      [[lightgbm|LightGBM]] and [[catboost|CatBoost]] build, and he added stochastic gradient
+      boosting. With Trevor Hastie and Robert Tibshirani he wrote 'The Elements of Statistical
+      Learning' (2001), a standard text, and developed fast coordinate-descent algorithms for the
+      [[lasso|lasso]] and [[elastic-net|elastic net]] (the glmnet software).
+see_also:
+  - gradient boosting
+  - CART
+  - decision tree
+  - XGBoost
+  - lasso
+  - Leo Breiman
+sources:
+  - text: >-
+      Friedman, J. H. (2001). Greedy Function Approximation: A Gradient Boosting Machine. Annals of
+      Statistics 29(5): 1189–1232.
+  - text: >-
+      Hastie, T., Tibshirani, R. & Friedman, J. (2009). The Elements of Statistical Learning (2nd
+      ed.). Springer.

@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Huang's law
+id: huang-s-law
+pos: n.
+domain: hw
+domains:
+  - culture
+labels:
+  - informal
+  - contested
+level: specialist
+plain: >-
+  A claim, named after Nvidia's chief executive, that AI chip performance improves much faster than
+  Moore's law because chips, software and number formats all improve together.
+senses:
+  - definition: >-
+      An informal rule of thumb that the throughput of [[gpu|GPUs]] on AI workloads grows by more
+      than a factor of two every two years, outpacing what added transistors alone provide, because
+      gains compound across chip architecture, [[interconnect|interconnects]], software and, above
+      all, lower-precision number formats. Supporters point to per-chip AI throughput rising by
+      orders of magnitude within a decade, much of it from moving between number formats
+      ([[fp32|FP32]] to [[fp16|FP16]] to [[fp8|FP8]] to [[fp4|FP4]]) and adding structured
+      [[sparsity|sparsity]]. Critics reply that such comparisons mix precisions, that format gains
+      cannot repeat indefinitely, and that broader measures grow more slowly: Epoch AI (2022) found
+      GPU price-performance in FLOPS per dollar doubling only about every 2.5 years between 2006 and
+      2021.
+origin: >-
+  Named after Nvidia co-founder and chief executive Jensen Huang, who at Nvidia's GTC conference in
+  March 2018 said its GPUs were 25 times faster than five years earlier. Tekla S. Perry used the
+  name in the title of an IEEE Spectrum article in April 2018, noting that Huang had not coined it
+  himself; Christopher Mims's Wall Street Journal column of September 2020 popularized it.
+year: 2018
+see_also:
+  - Moore's law
+  - GPU
+  - floating-point format
+  - hardware lottery
+  - AI accelerator
+contrast:
+  - Moore's law
+sources:
+  - text: >-
+      Perry, T. S. (2018). Move Over, Moore's Law: Make Way for Huang's Law. IEEE Spectrum.
+    url: https://spectrum.ieee.org/move-over-moores-law-make-way-for-huangs-law
+  - text: >-
+      Mims, C. (2020). Huang's Law Is the New Moore's Law, and Explains Why Nvidia Wants Arm. The
+      Wall Street Journal, 19 September 2020.

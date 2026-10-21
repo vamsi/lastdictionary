@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Self-Instruct
+id: self-instruct
+pos: n.
+also:
+  - Self-Instruct method
+  - self-generated instructions
+domain: data
+domains:
+  - train
+  - llm
+level: specialist
+plain: >-
+  A technique in which a language model writes its own practice tasks and answers, starting from a
+  handful of human examples; the results are filtered and used to train it to follow instructions.
+senses:
+  - definition: >-
+      A way of having a language model write the training data for its own
+      [[instruction-tuning|instruction tuning]], growing an [[instruction-dataset|instruction
+      dataset]] in repeated rounds. Starting from a small pool of human-written seed tasks (175 in
+      the original work), the model is prompted with sampled examples to propose new instructions,
+      decide whether each is a classification task, and generate inputs and outputs; heuristics then
+      discard invalid outputs and instructions too similar to existing ones (measured by ROUGE-L
+      overlap), and the survivors join the pool for further rounds. In the original experiment,
+      about 52,000 instructions generated this way lifted the original GPT-3 by 33 percentage points
+      on the Super-NaturalInstructions benchmark, bringing it roughly level with OpenAI's
+      instruction-tuned InstructGPT-001. Stanford's Alpaca (2023) applied a simplified version with
+      a stronger model to fine-tune LLaMA cheaply, starting a wave of open models trained on
+      model-generated [[synthetic-data|synthetic data]].
+    example: >-
+      We ran Self-Instruct from 200 seed tasks in our domain and filtered aggressively for
+      near-duplicates.
+origin: >-
+  Introduced by Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A. Smith, Daniel
+  Khashabi and Hannaneh Hajishirzi in 'Self-Instruct: Aligning Language Models with Self-Generated
+  Instructions' (arXiv, December 2022; ACL 2023).
+year: 2022
+note: >-
+  Generated data inherits the generator's errors and biases and can lack diversity; later methods
+  such as Evol-Instruct made instructions progressively harder, and pipelines added stronger
+  filtering. When the generating model belongs to someone else, its terms of use may restrict the
+  practice.
+see_also:
+  - instruction dataset
+  - synthetic data
+  - instruction tuning
+  - knowledge distillation
+  - self-improvement
+sources:
+  - text: >-
+      Wang, Y. et al. (2023). Self-Instruct: Aligning Language Models with Self-Generated
+      Instructions. ACL 2023. arXiv:2212.10560.
+    url: https://arxiv.org/abs/2212.10560

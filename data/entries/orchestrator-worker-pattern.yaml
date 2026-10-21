@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: orchestrator–worker pattern
+id: orchestrator-worker-pattern
+pos: n.
+also:
+  - orchestrator-workers
+  - lead agent
+  - manager–worker pattern
+  - supervisor pattern
+domain: agents
+domains:
+  - eng
+level: core
+plain: >-
+  A way of organizing AI teamwork, like a newsroom: an editor AI decides which stories a big
+  assignment needs, sends reporter AIs to cover them at the same time, and turns what they file into
+  one report.
+senses:
+  - definition: >-
+      An agent architecture with a lead model, the orchestrator, that reads the task, works out at
+      run time which subtasks it calls for and hands each to a worker — a separate model call or
+      [[subagent|subagent]] with its own instructions, tools and [[context-window|context window]],
+      often running in parallel with the others — then merges what comes back, sending out further
+      rounds if gaps remain. As framed by Anthropic's 2024 guide that named the pattern, the
+      difference from [[prompt-chaining|prompt chaining]] or fixed parallel 'sectioning' is
+      flexibility: subtasks come from the orchestrator's reading of each input, not from code. The
+      pattern suits breadth-first problems such as research or searching a large codebase. Anthropic
+      reported in June 2025 that a research system with a Claude Opus 4 lead and Claude Sonnet 4
+      workers beat a single Opus 4 agent by 90.2% on an internal evaluation while using about 15
+      times the tokens of a chat. Weaknesses are coordination overhead, duplicated work and poor fit
+      for tightly coupled tasks, including much of coding.
+    example: >-
+      We moved literature search to an orchestrator–worker pattern: the lead agent spawns one worker
+      per subtopic.
+origin: >-
+  The manager–worker (master–worker) pattern is long established in parallel computing. For language
+  models, 'orchestrator-workers' was named as one of five workflow patterns in Anthropic's 'Building
+  effective agents' (Erik Schluntz and Barry Zhang, December 2024); Anthropic's June 2025 account of
+  its multi-agent research system made the lead-agent-and-subagents design widely copied.
+year: 2024
+see_also:
+  - orchestration
+  - subagent
+  - multi-agent system
+  - task decomposition
+  - deep research
+  - agentic workflow
+contrast:
+  - prompt chaining
+sources:
+  - text: >-
+      Schluntz, E. & Zhang, B. (2024). Building effective agents. Anthropic, 19 December 2024.
+    url: https://www.anthropic.com/research/building-effective-agents
+  - text: >-
+      Anthropic (2025). How we built our multi-agent research system. Anthropic Engineering, 13 June
+      2025.
+    url: https://www.anthropic.com/engineering/multi-agent-research-system

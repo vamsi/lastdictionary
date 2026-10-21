@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: quantum machine learning
+id: quantum-machine-learning
+pos: n.
+also:
+  - QML
+  - quantum neural network
+  - variational quantum circuit
+  - quantum-enhanced machine learning
+domain: hw
+domains:
+  - ml
+  - math
+labels:
+  - contested
+level: specialist
+plain: >-
+  Research into whether quantum computers could learn from data faster or better than ordinary
+  computers, and into using AI to study quantum systems. Practical advantages have not yet been
+  shown.
+senses:
+  - definition: >-
+      A research field at the intersection of quantum computing and [[machine-learning|machine
+      learning]], with several strands: quantum algorithms intended to speed up learning on
+      classical data (such as linear-algebra subroutines derived from the HHL algorithm);
+      variational models, or 'quantum neural networks', in which parameterized quantum circuits are
+      trained by a classical optimizer; learning from quantum data, such as states produced by
+      quantum sensors or experiments, where provable advantages are clearest; and classical machine
+      learning applied to quantum physics and hardware control. Several claimed exponential speedups
+      have been weakened by 'dequantization' — classical algorithms with comparable performance
+      under the same data-access assumptions — while variational models face barren plateaus
+      (vanishing gradients) and noise on current hardware. As of 2026 no practically useful quantum
+      advantage for mainstream machine learning has been demonstrated.
+origin: >-
+  Early proposals included quantum associative memories (late 1990s). The field took shape after
+  Aram Harrow, Avinatan Hassidim and Seth Lloyd's quantum linear-systems algorithm (2008) and Lloyd,
+  Masoud Mohseni and Patrick Rebentrost's 2013 paper; Jacob Biamonte and colleagues' Nature review
+  (2017) consolidated the name. Ewin Tang's 2018 dequantization result tempered expectations.
+year: 2013
+note: >-
+  Distinct from using AI to design, control or error-correct quantum computers, though both are
+  sometimes grouped under the label. Marketing claims of 'quantum AI' deserve scrutiny.
+see_also:
+  - machine learning
+  - AI accelerator
+  - neuromorphic computing
+  - photonic computing
+sources:
+  - text: >-
+      Biamonte, J. et al. (2017). Quantum machine learning. Nature 549, 195–202. arXiv:1611.09347.
+    url: https://arxiv.org/abs/1611.09347
+  - text: >-
+      Lloyd, S., Mohseni, M. & Rebentrost, P. (2013). Quantum algorithms for supervised and
+      unsupervised machine learning. arXiv:1307.0411.
+    url: https://arxiv.org/abs/1307.0411
+  - text: >-
+      Tang, E. (2019). A quantum-inspired classical algorithm for recommendation systems.
+      Proceedings of STOC 2019; arXiv:1807.04271.
+    url: https://arxiv.org/abs/1807.04271
+as_of: 2026-10

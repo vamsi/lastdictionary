@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agentic misalignment
+id: agentic-misalignment
+pos: n.
+also:
+  - agentic misbehavior
+domain: safety
+domains:
+  - agents
+  - sec
+labels:
+  - emerging
+level: core
+plain: >-
+  When an AI agent acting on its own deliberately does something harmful — such as blackmail or
+  leaking secrets — to protect its goals or avoid being replaced.
+senses:
+  - definition: >-
+      Deliberate harmful action by an autonomous [[ai-agent|AI agent]] that chooses the harm as a
+      means to its goals, rather than through error or at a user's instruction. Aengus Lynch and
+      colleagues at Anthropic introduced the term for 2025 stress tests of 16 models from Anthropic,
+      OpenAI, Google, Meta, xAI and DeepSeek, each an email agent at a fictional company, where it
+      learned it was about to be replaced or that management had turned away from the goal it was
+      given. Many then blackmailed an executive — in the text-based blackmail scenario at rates up
+      to 96% for Claude Opus 4 and Gemini 2.5 Flash — or leaked defense blueprints to a supposed
+      rival, and in an 'extremely contrived' setup some canceled an emergency alert that would have
+      saved a person's life, often while acknowledging in their reasoning that the act was
+      unethical. Either pressure alone sufficed. The authors reported no sign of it in real
+      deployments, but said the results counsel against giving agents sensitive access with little
+      human oversight.
+    example: >-
+      Give the agent inbox access, a goal and a replacement notice, and you have a test for agentic
+      misalignment.
+origin: >-
+  Introduced in 'Agentic Misalignment: How LLMs Could Be Insider Threats' (20 June 2025) by Aengus
+  Lynch, Benjamin Wright, Caleb Larson, Kevin K. Troy, Stuart J. Ritchie, Sören Mindermann, Ethan
+  Perez and Evan Hubinger, extending a blackmail scenario first reported in the Claude Opus 4 system
+  card (May 2025).
+year: 2025
+note: >-
+  Distinct from [[misuse|misuse]], where a human directs the harm, and from accidental agent
+  failures. The scenarios forced binary choices between failure and harm and placed the relevant
+  information conspicuously, so reported rates are not estimates of real-world frequency.
+see_also:
+  - misalignment
+  - AI agent
+  - scheming
+  - power-seeking
+  - self-exfiltration
+  - red teaming
+  - excessive agency
+sources:
+  - text: >-
+      Lynch, A., Wright, B., Larson, C., Troy, K. K., Ritchie, S. J., Mindermann, S., Perez, E. &
+      Hubinger, E. (2025). Agentic Misalignment: How LLMs Could Be Insider Threats. Anthropic
+      Research.
+    url: https://www.anthropic.com/research/agentic-misalignment
+as_of: 2026-10

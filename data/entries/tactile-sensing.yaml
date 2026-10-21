@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tactile sensing
+id: tactile-sensing
+pos: n.
+also:
+  - touch sensing
+  - tactile sensor
+  - robot skin
+  - electronic skin
+  - e-skin
+  - vision-based tactile sensor
+  - GelSight
+domain: robot
+domains:
+  - percep
+level: specialist
+plain: >-
+  Giving robots a sense of touch, with sensors in fingertips or skin that feel pressure, texture,
+  vibration and slipping, so they can handle objects gently and securely.
+senses:
+  - definition: >-
+      The measurement of physical contact between a robot and objects — where contact occurs, normal
+      and shear forces, pressure distribution, vibration, slip, texture and sometimes temperature —
+      using sensors in fingertips, grippers or artificial skin. Transduction methods include
+      piezoresistive, capacitive, piezoelectric, magnetic and optical sensing. Vision-based tactile
+      sensors such as GelSight and DIGIT put a camera behind a soft, coated elastomer and infer
+      contact geometry and forces from images of its deformation, giving very high spatial
+      resolution at low cost; because their output is an image, they suit [[deep-learning|deep
+      learning]]. Touch supplies what cameras cannot during [[manipulation|manipulation]]: contact
+      state when the hand hides the object, and properties such as weight, stiffness and friction.
+      It enables slip detection, gentle grasping of fragile items, insertion and in-hand
+      [[dexterous-manipulation|dexterous manipulation]]. Barriers to wide use include durability,
+      wiring, calibration drift and the difficulty of simulating touch for
+      [[sim-to-real-transfer|sim-to-real transfer]]; adding touch to [[robot-foundation-model|robot
+      foundation models]] is an active research area.
+    example: >-
+      With tactile sensing the gripper feels the glass start to slip and tightens before it falls.
+origin: >-
+  Robot touch has been studied since the 1970s and 1980s, with Leon Harmon's 1982 survey setting
+  early requirements. Micah Johnson and Edward Adelson's GelSight (MIT, 2009) introduced
+  high-resolution vision-based tactile sensing, and Mike Lambeta and colleagues' low-cost DIGIT
+  sensor (Facebook AI Research, 2020) spread it through robot learning.
+see_also:
+  - dexterous manipulation
+  - grasping
+  - proprioception
+  - end effector
+  - manipulation
+  - sensor fusion
+sources:
+  - text: >-
+      Johnson, M. K. & Adelson, E. H. (2009). Retrographic sensing for the measurement of surface
+      texture and shape. Proc. IEEE CVPR 2009.
+  - text: >-
+      Lambeta, M. et al. (2020). DIGIT: A novel design for a low-cost compact high-resolution
+      tactile sensor with application to in-hand manipulation. IEEE Robotics and Automation Letters
+      5(3).

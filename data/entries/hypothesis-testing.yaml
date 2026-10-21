@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hypothesis testing
+id: hypothesis-testing
+pos: n.
+also:
+  - statistical hypothesis testing
+  - significance test
+  - statistical significance
+  - statistically significant
+  - null hypothesis
+  - alternative hypothesis
+  - type I error
+  - type II error
+  - statistical power
+  - NHST
+domain: math
+domains:
+  - eval
+level: core
+plain: >-
+  A formal procedure for deciding whether data show a real effect or could easily be explained by
+  chance — for instance, whether one AI model is genuinely better than another.
+senses:
+  - definition: >-
+      A statistical procedure for deciding between a null hypothesis (typically 'no effect' or 'no
+      difference') and an alternative, based on how unlikely the observed data would be if the null
+      were true. A test statistic computed from the data is compared with its distribution under the
+      null, giving a [[p-value|p-value]]; the null is rejected when p falls below a significance
+      level α fixed in advance, conventionally 0.05. Rejecting a true null is a type I error, with
+      rate α; failing to reject a false one is a type II error, and the chance of avoiding it is the
+      test's power, which grows with sample size and effect size. Common tests include t-tests,
+      chi-squared tests, McNemar's test for paired classifier errors, and permutation and bootstrap
+      tests. Comparing models on [[benchmark|benchmarks]], [[a-b-testing|A/B testing]] and
+      [[uplift-study|uplift studies]] all rely on hypothesis testing, and small evaluation sets
+      often lack the power to detect real differences.
+    example: >-
+      With only 200 test items, the hypothesis test had little power to detect a two-point gain.
+origin: >-
+  John Arbuthnot's 1710 argument from London birth records is often called the first significance
+  test. Karl Pearson's chi-squared test (1900) and William Gosset's t-test (1908, published as
+  'Student') followed. Ronald Fisher's tests of significance (1925) and 'null hypothesis' (1935),
+  and Jerzy Neyman and Egon Pearson's theory of type I and type II errors and power (1928–1933),
+  formed the hybrid taught today.
+year: 1925
+note: >-
+  Statistical significance is not practical significance: a large enough test set makes trivial
+  differences 'significant'. Running many tests inflates false positives unless corrected, for
+  example with the Bonferroni method.
+see_also:
+  - p-value
+  - confidence interval
+  - A/B testing
+  - central limit theorem
+  - uplift study
+  - benchmark

@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Muon
+id: muon
+pos: prop. n.
+also:
+  - MomentUm Orthogonalized by Newton–Schulz
+  - MuonClip
+pronunciation: MYOO-on
+domain: dl
+domains:
+  - train
+  - llm
+labels:
+  - emerging
+level: core
+plain: >-
+  A newer training method for neural networks that tidies each update so it pushes evenly in all
+  directions within a weight table. Several groups report that it trains language models with less
+  computing than the standard method.
+senses:
+  - definition: >-
+      An [[optimizer|optimizer]] that treats each hidden-layer weight matrix as a whole rather than
+      as a list of independent numbers: it computes the usual [[momentum|momentum]] update of
+      [[stochastic-gradient-descent|stochastic gradient descent]] (Nesterov-style by default), then
+      snaps that update to a nearby approximately orthogonal matrix, keeping its singular vectors
+      but setting every singular value close to one. A few low-precision Newton–Schulz iterations
+      (five in the reference implementation) do the snapping instead of an exact
+      [[singular-value-decomposition|singular value decomposition]]. Mathematically this is steepest
+      descent under the spectral norm; Keller Jordan's rationale is that raw momentum updates are
+      dominated by a few large singular directions, and equalizing them boosts rarer directions that
+      still matter for learning. Parameters that are not hidden-layer matrices (embeddings, output
+      heads, biases and normalization gains) are left to [[adamw|AdamW]]. Scaling Muon to large
+      models required adding [[weight-decay|weight decay]], matching update magnitudes to AdamW's,
+      and — in Moonshot AI's trillion-parameter Kimi K2 (2025) — 'QK-clip', which rescales query and
+      key weights to stop attention logits exploding; the combination is called MuonClip.
+    example: >-
+      Muon reached the target loss in about 70% of the AdamW baseline's tokens, but only after we
+      tuned its weight decay.
+origin: >-
+  Developed by Keller Jordan in October 2024 for the NanoGPT and CIFAR-10 'speedrunning'
+  competitions, building on Jeremy Bernstein and Laker Newhouse's analysis of optimizers as steepest
+  descent under norms; it set a NanoGPT speedrun record on 15 October 2024 and was written up that
+  December. Moonshot AI's 'Muon is Scalable for LLM Training' (February 2025) reported about twice
+  AdamW's compute efficiency, and Kimi K2 (July 2025) used MuonClip for 15.5 trillion pretraining
+  tokens.
+year: 2024
+note: >-
+  Reported speedups vary with scale, tuning and baseline quality: an independent 2025 benchmark by
+  Kaiyue Wen and colleagues found the advantage of matrix-based optimizers such as Muon over
+  well-tuned AdamW shrinking from 1.4× at 0.1 billion parameters to 1.1× at 1.2 billion. How far it
+  holds for the largest models was still debated as of October 2026.
+see_also:
+  - optimizer
+  - AdamW
+  - Shampoo
+  - momentum
+  - second-order optimization
+  - singular value decomposition
+sources:
+  - text: >-
+      Jordan, K. et al. (2024). Muon: An optimizer for hidden layers in neural networks. Blog post,
+      8 December 2024.
+    url: https://kellerjordan.github.io/posts/muon/
+  - text: Liu, J. et al. (2025). Muon is Scalable for LLM Training. arXiv:2502.16982.
+    url: https://arxiv.org/html/2502.16982v1
+  - text: "Kimi Team (2025). Kimi K2: Open Agentic Intelligence. arXiv:2507.20534."
+    url: https://arxiv.org/html/2507.20534v2
+as_of: 2026-10

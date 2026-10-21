@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: homogenization
+id: homogenization
+pos: n.
+also:
+  - algorithmic monoculture
+  - outcome homogenization
+  - homogenisation
+domain: society
+domains:
+  - llm
+  - core
+level: core
+plain: >-
+  The tendency of AI to make things more alike: products built on the same few models share the same
+  flaws, and people who write or create with AI produce more similar work.
+senses:
+  - context: Foundation models
+    definition: >-
+      The convergence of many AI applications on the same few [[foundation-model|foundation
+      models]], so that whatever one model gets right or wrong is shared by everything adapted from
+      it. The trend cuts both ways: a single improvement reaches every downstream product, but so
+      does a single bias, blind spot or vulnerability, creating single points of failure. In
+      decision-making, when many employers or lenders rely on the same model or data (algorithmic
+      monoculture), the same people can be rejected everywhere, a pattern called outcome
+      homogenization, and collective accuracy can fall even if each decision-maker's own accuracy
+      rises.
+    example: >-
+      Because all three hiring vendors used the same base model, a rejected applicant was rejected
+      everywhere.
+  - context: Culture and creativity
+    definition: >-
+      The narrowing of diversity in human outputs, ideas, style and language when many people use
+      the same AI systems. Experiments find that writing with model assistance can make individual
+      pieces more polished or rated more creative while making the collection of pieces more
+      similar, and models tend to reproduce dominant cultural perspectives and a recognizable house
+      style. Concerns extend to science, education and the diversity of online text available to
+      train future models.
+origin: >-
+  Rishi Bommasani and colleagues named homogenization, alongside emergence, as a defining feature of
+  foundation models in 'On the Opportunities and Risks of Foundation Models' (Stanford, 2021); Jon
+  Kleinberg and Manish Raghavan analyzed algorithmic monoculture the same year. Studies such as Anil
+  Doshi and Oliver Hauser's (2024) documented the creative effect.
+year: 2021
+see_also:
+  - foundation model
+  - model collapse
+  - filter bubble
+  - AI slop
+  - LLM-isms
+  - concentration of power
+sources:
+  - text: >-
+      Bommasani, R. et al. (2021). On the Opportunities and Risks of Foundation Models.
+      arXiv:2108.07258.
+  - text: >-
+      Kleinberg, J. & Raghavan, M. (2021). Algorithmic monoculture and social welfare. Proceedings
+      of the National Academy of Sciences 118(22).
+  - text: >-
+      Doshi, A. R. & Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces
+      the collective diversity of novel content. Science Advances 10(28).

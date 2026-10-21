@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: causal scrubbing
+id: causal-scrubbing
+pos: n.
+also:
+  - scrubbing
+domain: interp
+domains:
+  - safety
+level: specialist
+plain: >-
+  A strict test of an explanation of how a model works: scramble every internal signal the
+  explanation says should not matter, and check that the model still performs as before.
+senses:
+  - definition: >-
+      A method for evaluating a mechanistic hypothesis by systematic resampling
+      [[ablation|ablation]]. The hypothesis is stated as a correspondence between the model's
+      computational graph and an interpretable computation, which implies that certain activations
+      should be interchangeable: inputs that the hypothesis treats as equivalent at a given node
+      should be swappable there without changing the output. Causal scrubbing performs all such
+      swaps at once — replacing activations with ones computed on other inputs that agree on
+      everything the hypothesis says matters — and measures how much of the model's performance,
+      such as its loss on a task, is preserved. A correct and complete hypothesis should preserve
+      nearly all of it; the fraction lost quantifies what the explanation misses. Its strictness
+      exposed gaps in earlier circuit explanations, but it can be fooled by errors that cancel and
+      becomes expensive for detailed hypotheses.
+    example: >-
+      Our induction hypothesis recovers only 72% of the loss under causal scrubbing, so something is
+      missing.
+origin: >-
+  Introduced by Lawrence Chan, Adrià Garriga-Alonso, Nicholas Goldowsky-Dill, Ryan Greenblatt, Jenny
+  Nitishinskaya, Ansh Radhakrishnan, Buck Shlegeris and Nate Thomas of Redwood Research in a series
+  of AI Alignment Forum posts (December 2022).
+year: 2022
+see_also:
+  - activation patching
+  - ablation
+  - causal abstraction
+  - circuit
+  - path patching
+  - interpretability illusion
+sources:
+  - text: >-
+      Chan, L., Garriga-Alonso, A., Goldowsky-Dill, N., Greenblatt, R., Nitishinskaya, J.,
+      Radhakrishnan, A., Shlegeris, B. & Thomas, N. (2022). Causal Scrubbing: a method for
+      rigorously testing interpretability hypotheses. AI Alignment Forum.

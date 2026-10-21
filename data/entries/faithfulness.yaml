@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: faithfulness
+id: faithfulness
+pos: n.
+also:
+  - faithful
+  - explanation faithfulness
+  - fidelity
+domain: interp
+domains:
+  - llm
+  - eval
+  - safety
+level: core
+plain: >-
+  How accurately an explanation reflects the real reasons a model produced its output — or, for
+  generated text, how closely it sticks to the source it was given.
+senses:
+  - context: Explanations
+    definition: >-
+      The degree to which an explanation matches how the model actually arrived at its prediction;
+      Alon Jacovi and Yoav Goldberg (2020) set it against plausibility, how convincing an
+      explanation looks to people, and argued that the two must be evaluated separately. Because
+      ground truth about a model's reasoning is rarely available, faithfulness is measured by
+      proxies: deleting or perturbing the features an explanation marks as important and measuring
+      the output change (deletion and insertion curves; comprehensiveness and sufficiency),
+      retraining without those features, checking whether explanations change when the model's
+      weights are randomized, or testing on models with known, deliberately planted mechanisms. For
+      [[surrogate-model|surrogate models]], the analogous measure — agreement with the original
+      model's predictions — is usually called fidelity.
+    example: >-
+      The rationales looked sensible to annotators but failed every faithfulness test we ran.
+  - context: Generated text
+    definition: >-
+      The property of generated text — a summary, translation or answer — being fully supported by
+      its source document or retrieved context, with nothing that contradicts it or goes beyond it;
+      failures are a form of [[hallucination|hallucination]]. Distinguished from
+      [[factuality|factuality]], which concerns agreement with the world rather than with the
+      source.
+  - context: Chain of thought
+    definition: >-
+      Whether a [[chain-of-thought|chain of thought]] or other self-explanation written by a
+      language model reflects the computation that actually produced its answer, so that reading or
+      monitoring that reasoning tells overseers what really drove the output. Studies have found
+      stated reasoning that omits decisive cues, such as hints planted in the prompt; see
+      [[chain-of-thought-faithfulness|chain-of-thought faithfulness]].
+origin: >-
+  Fidelity was long used for rule extraction and surrogate models. In NLP, Alon Jacovi and Yoav
+  Goldberg separated faithfulness from plausibility in 'Towards Faithfully Interpretable NLP
+  Systems' (ACL 2020); the same year Joshua Maynez and colleagues made faithfulness central to
+  evaluating abstractive summarization.
+year: 2020
+note: >-
+  A plausible explanation is not necessarily faithful. People find explanations convincing when they
+  match expectations, which is exactly when an unfaithful explanation is most dangerous.
+see_also:
+  - explainability
+  - feature attribution
+  - chain-of-thought faithfulness
+  - hallucination
+  - post hoc explanation
+  - surrogate model
+contrast:
+  - factuality
+sources:
+  - text: >-
+      Jacovi, A. & Goldberg, Y. (2020). Towards Faithfully Interpretable NLP Systems: How Should We
+      Define and Evaluate Faithfulness? Proceedings of ACL 2020.
+  - text: >-
+      DeYoung, J. et al. (2020). ERASER: A Benchmark to Evaluate Rationalized NLP Models.
+      Proceedings of ACL 2020.

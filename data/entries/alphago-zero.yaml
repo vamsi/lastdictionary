@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlphaGo Zero
+id: alphago-zero
+pos: prop. n.
+domain: rl
+domains:
+  - hist
+  - dl
+level: core
+plain: >-
+  A program from DeepMind that taught itself to play the board game Go better than any human in
+  2017, starting from nothing but the rules and learning only by playing millions of games against
+  itself.
+senses:
+  - definition: >-
+      A Go program from [[deepmind|DeepMind]] (2017) whose only built-in knowledge was the rules of
+      the game and the raw arrangement of stones: it began by playing randomly and improved purely
+      through [[self-play|self-play]] [[reinforcement-learning|reinforcement learning]], never
+      seeing a human game. A single deep residual network ([[resnet|ResNet]]) outputs both a
+      [[policy|policy]] (move probabilities) and a value (the estimated chance of winning),
+      replacing the separate policy and value networks and the fast rollouts used by
+      [[alphago|AlphaGo]]. Training is a form of [[policy-iteration|policy iteration]]:
+      [[monte-carlo-tree-search|Monte Carlo tree search]] guided by the network acts as a
+      policy-improvement operator, the search's visit counts become targets for the policy output,
+      and game results become targets for the value output, so each better network yields a stronger
+      search. Three days of training (4.9 million self-play games) sufficed to beat the version that
+      had defeated Lee Sedol, 100 games to 0; after 40 days it defeated AlphaGo Master, conqueror of
+      the top-ranked Ke Jie, 89 games to 11.
+    example: >-
+      Like AlphaGo Zero, our agent improves its policy by distilling the search's visit counts back
+      into the network.
+origin: >-
+  Developed at [[deepmind|DeepMind]] by a team led by [[david-silver|David Silver]] and described in
+  the Nature paper 'Mastering the game of Go without human knowledge' in October 2017; 'Zero'
+  signals the absence of human data. Its algorithm was generalized to chess and shogi as
+  [[alphazero|AlphaZero]] later in 2017 and extended to learn its own model of the environment in
+  [[muzero|MuZero]] (2019).
+year: 2017
+note: >-
+  'Without human knowledge' is debated: the rules, the input representation, the network design and
+  the search algorithm all embody human knowledge, and training used large amounts of TPU compute.
+  Its significance was showing that search plus self-play could surpass a system bootstrapped from
+  human expertise.
+see_also:
+  - AlphaGo
+  - AlphaZero
+  - MuZero
+  - self-play
+  - Monte Carlo tree search
+  - policy iteration
+  - expert iteration
+  - Move 37
+contrast:
+  - AlphaGo
+sources:
+  - text: >-
+      Silver, D., Schrittwieser, J., Simonyan, K. et al. (2017). Mastering the Game of Go without
+      Human Knowledge. Nature 550, 354–359.

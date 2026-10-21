@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reward shaping
+id: reward-shaping
+pos: n.
+also:
+  - shaping
+  - potential-based reward shaping
+  - dense reward
+  - shaped reward
+domain: rl
+domains:
+  - safety
+level: specialist
+plain: >-
+  Adding extra hints to an AI agent's scoring — small rewards for steps in the right direction — so
+  it learns faster than it would from the final outcome alone.
+senses:
+  - definition: >-
+      The practice of supplementing a task's [[reward-function|reward function]] with additional
+      rewards that guide learning toward the goal, such as points for reducing the distance to a
+      target, so that an agent facing [[sparse-reward|sparse rewards]] gets informative feedback
+      sooner. Shaping can speed learning dramatically, but carelessly chosen bonuses change which
+      behavior is optimal and invite [[reward-hacking|reward hacking]]: in a well-known 1998
+      experiment, a simulated bicycle rewarded for progress toward a goal learned to ride in loops,
+      collecting the bonus again and again. Potential-based shaping avoids this. If the bonus is the
+      discounted change in some function Φ of the [[state|state]], the set of optimal policies is
+      provably unchanged, because the bonuses telescope along any trajectory; the effect is
+      equivalent to initializing values with Φ. Modern practice also shapes with learned signals —
+      [[intrinsic-motivation|curiosity]] bonuses or step-level scores from
+      [[process-reward-model|process reward models]] — which can be exploited in the same way.
+    example: >-
+      Our shaped reward paid for approaching the door, and the agent learned to hover near it
+      forever.
+formula_latex: F(s, a, s') = \gamma\, \Phi(s') - \Phi(s)
+origin: >-
+  Borrowed from B. F. Skinner's animal training, in which behavior is 'shaped' by rewarding
+  successive approximations to it. Vijaykumar Gullapalli and Andrew Barto (1992) and Marco Dorigo
+  and Marco Colombetti (1994) applied shaping to machine learning; Jette Randløv and Preben
+  Alstrøm's bicycle experiment (1998) exposed its pitfalls; and Andrew Ng, Daishi Harada and Stuart
+  Russell proved the potential-based shaping theorem (ICML 1999).
+year: 1992
+note: >-
+  In animal training and early RL, shaping often meant gradually increasing task difficulty — closer
+  to today's [[curriculum-learning|curriculum learning]] — rather than altering the reward itself.
+see_also:
+  - reward function
+  - reward hacking
+  - intrinsic motivation
+  - curriculum learning
+  - specification gaming
+  - process reward model
+contrast:
+  - sparse reward
+sources:
+  - text: >-
+      Ng, A. Y., Harada, D. & Russell, S. (1999). Policy invariance under reward transformations:
+      Theory and application to reward shaping. Proceedings of ICML 1999.
+  - text: >-
+      Randløv, J. & Alstrøm, P. (1998). Learning to Drive a Bicycle using Reinforcement Learning and
+      Shaping. Proceedings of ICML 1998.

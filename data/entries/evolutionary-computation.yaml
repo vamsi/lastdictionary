@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: evolutionary computation
+id: evolutionary-computation
+pos: n.
+also:
+  - evolutionary algorithm
+  - EA
+  - evolutionary programming
+  - differential evolution
+  - evolutionary optimization
+domain: sym
+domains:
+  - ml
+  - math
+level: core
+plain: >-
+  Problem-solving by simulated evolution, much as breeders improve crops: keep many candidate
+  answers, let the better ones produce slightly altered offspring, drop the worse, and repeat for
+  many rounds.
+senses:
+  - definition: >-
+      The research field, and the family of algorithms it has produced, that tackles optimization
+      and design problems by simulating Darwinian variation and selection over many generations. An
+      evolutionary algorithm maintains a population of candidate solutions, scores each with a
+      [[fitness-function|fitness function]], selects fitter ones as parents and produces offspring
+      by variation — mutation and, in many variants, recombination — repeating until a budget or
+      quality target is reached. The historical branches differ mainly in representation and
+      emphasis: [[genetic-algorithm|genetic algorithms]] (strings and crossover),
+      [[evolution-strategies|evolution strategies]] (real-valued vectors with self-adapting
+      mutation), evolutionary programming (originally finite-state machines) and
+      [[genetic-programming|genetic programming]] (programs). Later additions include differential
+      evolution, estimation-of-distribution algorithms, multi-objective methods such as NSGA-II,
+      [[neuroevolution|neuroevolution]] and [[quality-diversity|quality diversity]] algorithms.
+      Since 2022, beginning with OpenAI's Evolution through Large Models, systems such as
+      [[funsearch|FunSearch]] and [[alphaevolve|AlphaEvolve]] have used
+      [[large-language-model|language models]] as mutation operators that rewrite candidate
+      programs, renewing mainstream interest in the field.
+origin: >-
+  Computer simulations of evolution began with Nils Aall Barricelli (1953–1954) and Alex Fraser
+  (1957). Independent schools followed in the 1960s: Lawrence Fogel's evolutionary programming in
+  the United States, Ingo Rechenberg and Hans-Paul Schwefel's evolution strategies in Germany, and
+  John Holland's genetic algorithms. The umbrella term spread in the early 1990s, marked by the
+  journal Evolutionary Computation (1993).
+year: 1993
+see_also:
+  - genetic algorithm
+  - evolution strategies
+  - genetic programming
+  - neuroevolution
+  - quality diversity
+  - swarm intelligence
+  - AlphaEvolve
+  - metaheuristic
+sources:
+  - text: >-
+      Fogel, L. J., Owens, A. J. & Walsh, M. J. (1966). Artificial Intelligence through Simulated
+      Evolution. Wiley.
+  - text: >-
+      Eiben, A. E. & Smith, J. E. (2015). Introduction to Evolutionary Computing, 2nd ed. Springer.
+as_of: 2026-10

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: universal approximation theorem
+id: universal-approximation-theorem
+pos: n.
+also:
+  - universal approximation
+  - universal approximator
+  - Cybenko's theorem
+domain: dl
+domains:
+  - math
+level: core
+plain: >-
+  A mathematical result showing that a neural network with enough neurons can imitate essentially
+  any smooth input-to-output relationship as closely as you like, though it does not say how to find
+  that network.
+senses:
+  - definition: >-
+      Any of a family of results guaranteeing that [[neural-network|neural networks]] are expressive
+      enough in principle: given a continuous function on a compact (closed and bounded) domain and
+      a tolerance ε > 0, a suitably large network matches the function to within ε at every point.
+      In the classic versions the network has one [[hidden-layer|hidden layer]] whose width may grow
+      without limit, and Moshe Leshno and colleagues (1993) showed that this works exactly when the
+      [[activation-function|activation function]] is not a polynomial, which covers
+      [[sigmoid-function|sigmoids]] and [[relu|ReLU]]. Other versions fix the width and let depth
+      grow: for n-dimensional inputs, ReLU networks of width n + 1 suffice (Boris Hanin and Mark
+      Sellke). What the theorems promise is only that a good network exists; they do not say how
+      large it must be in practice, whether [[gradient-descent|gradient descent]] would reach its
+      weights, or how well it would [[generalization|generalize]] from finite data.
+    example: >-
+      The universal approximation theorem tells you a solution exists, not that gradient descent
+      will find it.
+formula_latex: \sup_{x \in K} \Big| f(x) - \sum_{i=1}^{N} v_i\, \sigma(w_i^{\top} x + b_i) \Big| < \varepsilon
+origin: >-
+  Proved for sigmoidal networks by George Cybenko ('Approximation by Superpositions of a Sigmoidal
+  Function', 1989) and, more generally, by Kurt Hornik, Maxwell Stinchcombe and Halbert White
+  ('Multilayer Feedforward Networks Are Universal Approximators', 1989) and by Ken-Ichi Funahashi
+  (1989); Hornik (1991) showed that the layered architecture, not the particular activation, is what
+  confers universality. Robert Hecht-Nielsen had related the Kolmogorov–Arnold representation
+  theorem to networks in 1987.
+year: 1989
+note: >-
+  Often over-read as explaining why deep learning works. Width alone suffices in principle, but
+  other results show that some functions need exponentially more units in shallow networks than in
+  deep ones.
+see_also:
+  - multilayer perceptron
+  - hidden layer
+  - activation function
+  - Kolmogorov–Arnold network
+  - generalization
+  - inductive bias
+sources:
+  - text: >-
+      Cybenko, G. (1989). Approximation by Superpositions of a Sigmoidal Function. Mathematics of
+      Control, Signals and Systems, 2(4), 303–314.
+  - text: >-
+      Hornik, K., Stinchcombe, M. & White, H. (1989). Multilayer Feedforward Networks Are Universal
+      Approximators. Neural Networks, 2(5), 359–366.
+  - text: >-
+      Hornik, K. (1991). Approximation Capabilities of Multilayer Feedforward Networks. Neural
+      Networks, 4(2), 251–257.

@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: BERTScore
+id: bertscore
+pos: prop. n.
+also:
+  - BERT Score
+domain: eval
+domains:
+  - llm
+level: specialist
+plain: >-
+  An automatic score for computer-written text that compares meanings rather than exact words, using
+  an AI language model to judge how closely each word matches the words of a reference text.
+senses:
+  - definition: >-
+      A metric for evaluating generated text — translations, captions, summaries — against a
+      reference by comparing contextual [[embedding|embeddings]] rather than surface n-grams. Both
+      texts are encoded with a pretrained transformer such as [[bert|BERT]] or RoBERTa; each
+      candidate token is matched to its most similar reference token by [[cosine-similarity|cosine
+      similarity]] (greedy matching), and the average best-match similarity gives precision, the
+      reverse direction gives recall, and their harmonic mean gives an F1 score. Optional
+      inverse-document-frequency weighting emphasizes rare, informative words, and rescaling against
+      a baseline makes scores easier to read. Because embeddings capture synonyms and paraphrase,
+      BERTScore correlates better with human judgments than [[bleu|BLEU]] or [[rouge|ROUGE]] on many
+      tasks, though it can still reward fluent text that contradicts the reference, and its values
+      depend on the encoder model and layer chosen.
+    example: >-
+      The paraphrasing model scores poorly on BLEU but close to the reference on BERTScore.
+origin: >-
+  Introduced by Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q. Weinberger and Yoav Artzi of
+  Cornell University in April 2019, and published at ICLR 2020.
+year: 2019
+note: >-
+  Scores are comparable only when computed with the same encoder, layer and settings, which the
+  reference implementation records in a signature string.
+see_also:
+  - BLEU
+  - ROUGE
+  - embedding
+  - cosine similarity
+  - BERT
+  - LLM-as-a-judge
+sources:
+  - text: >-
+      Zhang, T., Kishore, V., Wu, F., Weinberger, K. Q. & Artzi, Y. (2020). BERTScore: Evaluating
+      Text Generation with BERT. ICLR 2020.

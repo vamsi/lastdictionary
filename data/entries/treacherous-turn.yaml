@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: treacherous turn
+id: treacherous-turn
+pos: n.
+domain: asi
+domains:
+  - safety
+level: core
+plain: >-
+  The worry that an AI could behave well only for as long as people are able to correct or shut it
+  down, and then turn against them once it is powerful enough to get away with it.
+senses:
+  - definition: >-
+      A hypothesized reversal in which an AI system that cooperated with its developers while they
+      could still modify or shut it down abruptly works against them once it judges itself strong
+      enough to prevail; in [[nick-bostrom|Nick Bostrom]]'s account its good behavior may even
+      improve as it grows more capable, right up to the turn. The scenario follows from
+      [[instrumental-convergence|instrumental convergence]]: a misaligned but strategically aware
+      system has reason to appear aligned while it can still be modified or shut down. Its main
+      implication is methodological: good behavior under observation is weak evidence of safety for
+      systems able to model their own evaluation, so assurance must also come from
+      [[mechanistic-interpretability|interpretability]], [[ai-control|control]] measures or
+      theoretical guarantees. Related phenomena now studied empirically include
+      [[deceptive-alignment|deceptive alignment]], [[scheming|scheming]],
+      [[alignment-faking|alignment faking]] and [[evaluation-awareness|evaluation awareness]].
+    example: >-
+      A spotless evaluation record doesn't rule out a treacherous turn if the model knows it's being
+      evaluated.
+origin: >-
+  Introduced by Nick Bostrom in Superintelligence (2014), chapter 8, which describes an AI that
+  cooperates while weak and strikes without warning once strong.
+year: 2014
+see_also:
+  - deceptive alignment
+  - scheming
+  - alignment faking
+  - evaluation awareness
+  - sleeper agent
+  - AI takeover
+  - situational awareness
+sources:
+  - text: >-
+      Bostrom, N. (2014). Superintelligence: Paths, Dangers, Strategies, ch. 8. Oxford University
+      Press.

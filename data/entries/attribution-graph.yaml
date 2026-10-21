@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: attribution graph
+id: attribution-graph
+pos: n.
+also:
+  - attribution graphs
+domain: interp
+domains:
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A diagram showing which internal concepts led an AI model to a particular answer, with arrows
+  showing how strongly each concept pushed the next.
+senses:
+  - definition: >-
+      A directed graph, computed for a single prompt, whose nodes are input [[token|tokens]],
+      interpretable features of a [[replacement-model|replacement model]], error terms and output
+      [[logit|logits]], and whose weighted edges give the direct linear contribution of each node to
+      the next. Because the replacement's attention patterns and normalizations are frozen for that
+      prompt, the remaining interactions are linear, so edge weights can be computed exactly from
+      activations and weights. Graphs are pruned to their most influential nodes and explored
+      visually; researchers group related features into supernodes and test the resulting story by
+      intervening on the original model. Attribution graphs have exposed two-step factual recall
+      (Dallas → Texas → Austin), rhyme words planned ahead of a line of verse, parallel pathways in
+      mental arithmetic, and features involved in [[hallucination|hallucinations]] and refusals.
+      Each graph explains one prompt, not the model's general algorithm.
+    example: >-
+      The attribution graph shows a 'Texas' feature sitting between 'Dallas' and the answer 'Austin'.
+origin: >-
+  Introduced in Anthropic's 'Circuit Tracing' methods paper and its companion 'On the Biology of a
+  Large Language Model' (both March 2025), which applied attribution graphs to Claude 3.5 Haiku.
+  Graphs of attributions between sparse features had precedents such as Samuel Marks and colleagues'
+  sparse feature circuits (2024).
+year: 2025
+see_also:
+  - circuit tracing
+  - replacement model
+  - transcoder
+  - circuit
+  - model biology
+  - feature attribution
+contrast:
+  - saliency map
+sources:
+  - text: >-
+      Ameisen, E., Lindsey, J., Pearce, A. et al. (2025). Circuit Tracing: Revealing Computational
+      Graphs in Language Models. Transformer Circuits Thread.
+  - text: >-
+      Marks, S., Rager, C., Michaud, E. J., Belinkov, Y., Bau, D. & Mueller, A. (2024). Sparse
+      Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models.
+      arXiv preprint; ICLR 2025.

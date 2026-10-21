@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vocoder
+id: vocoder
+pos: n.
+also:
+  - voice coder
+  - neural vocoder
+  - HiFi-GAN
+  - Griffin–Lim algorithm
+pronunciation: VOH-koh-der
+domain: percep
+domains:
+  - gen
+  - hist
+level: specialist
+plain: >-
+  A device or program that turns a compact description of a voice back into actual sound; in modern
+  speech AI, the final stage that produces the audio you hear.
+senses:
+  - context: Neural speech synthesis
+    definition: >-
+      The component of a [[text-to-speech|text-to-speech]] or voice-conversion system that converts
+      an intermediate acoustic representation, usually a [[mel-spectrogram|mel spectrogram]], into
+      an audio waveform. Because a mel spectrogram discards phase and fine frequency detail, the
+      vocoder must infer them. The classical Griffin–Lim algorithm (1984) estimates phase
+      iteratively but sounds metallic; neural vocoders learn the mapping from data: autoregressive
+      models such as [[wavenet|WaveNet]] (the vocoder of Tacotron 2) and WaveRNN, the flow-based
+      WaveGlow, and much faster adversarially trained [[generative-adversarial-network|GAN]]
+      vocoders such as MelGAN (2019), HiFi-GAN (2020) and BigVGAN (2022). In systems that generate
+      [[neural-audio-codec|neural audio codec]] tokens, the codec's decoder plays the vocoder's
+      role.
+    example: The acoustic model is fine; the buzzing on high voices comes from the vocoder.
+  - context: Telecommunications and music
+    definition: >-
+      Originally a 'voice coder': a system that analyzes speech into slowly varying parameters, such
+      as the energy in each of a bank of frequency bands plus pitch and voicing, transmits them with
+      far less bandwidth than the waveform needs, and resynthesizes speech at the receiver. Vocoders
+      were used for secure and low-bit-rate telephony, and the robotic effect of imposing a voice's
+      spectral envelope on another sound, such as a synthesizer, became a staple of popular music.
+origin: >-
+  Developed by Homer Dudley at Bell Telephone Laboratories in the 1930s and described in his
+  publications of 1939; the name blends 'voice' and 'coder'. Dudley's related keyboard-played
+  synthesizer, the Voder, was shown at the 1939 New York World's Fair, and vocoders protected Allied
+  telephone links (the SIGSALY system) in the Second World War. 'Neural vocoder' entered speech
+  synthesis around 2017–2018.
+year: 1939
+note: >-
+  The musical vocoder effect is often confused with Auto-Tune pitch correction, a different
+  technique.
+see_also:
+  - text-to-speech
+  - mel spectrogram
+  - WaveNet
+  - neural audio codec
+  - spectrogram
+  - generative adversarial network
+sources:
+  - text: >-
+      Griffin, D. W. & Lim, J. S. (1984). Signal Estimation from Modified Short-Time Fourier
+      Transform. IEEE Transactions on Acoustics, Speech, and Signal Processing 32(2), 236–243.
+  - text: >-
+      Kong, J., Kim, J. & Bae, J. (2020). HiFi-GAN: Generative Adversarial Networks for Efficient
+      and High Fidelity Speech Synthesis. NeurIPS 2020.
+  - text: >-
+      Dudley, H. (1939). Remaking Speech. Journal of the Acoustical Society of America 11(2),
+      169–177.

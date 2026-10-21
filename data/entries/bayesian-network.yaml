@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bayesian network
+id: bayesian-network
+pos: n.
+also:
+  - Bayes net
+  - Bayes network
+  - belief network
+  - Bayesian belief network
+  - directed graphical model
+  - dynamic Bayesian network
+domain: sym
+domains:
+  - math
+  - ml
+level: core
+plain: >-
+  A diagram of causes and effects with probabilities attached — say, how rain and a sprinkler can
+  each make grass wet — that lets a computer update its beliefs about hidden causes when it sees
+  evidence.
+senses:
+  - definition: >-
+      A [[probabilistic-graphical-model|probabilistic graphical model]] consisting of a directed
+      acyclic graph whose nodes are random variables, with edges indicating direct dependence,
+      together with a conditional probability distribution for each node given its parents. The
+      joint distribution factorizes into these local conditionals, and the graph encodes conditional
+      independences (readable by the d-separation criterion), so a model over many variables needs
+      far fewer parameters than a full joint table. Inference computes posterior probabilities of
+      unobserved variables given evidence — exactly by variable elimination,
+      [[belief-propagation|belief propagation]] or junction trees (NP-hard in general), or
+      approximately by sampling and [[variational-inference|variational inference]] — and structure
+      and parameters can be learned from data. Applications include medical and fault diagnosis,
+      risk analysis and genetics. Read causally, Bayesian networks underpin
+      [[causal-inference|causal inference]] and the [[do-calculus|do-calculus]]; dynamic Bayesian
+      networks, which repeat the structure over time, generalize [[hidden-markov-model|hidden Markov
+      models]].
+    example: >-
+      The Bayesian network says a positive test raises the probability of disease only from 1 to 9
+      percent.
+formula_latex: P(X_1,\dots,X_n) = \prod_{i=1}^{n} P\big(X_i \mid \mathrm{Pa}(X_i)\big)
+origin: >-
+  Judea Pearl coined the term in a 1985 paper on evidential reasoning, having introduced
+  message-passing inference in 1982; his book Probabilistic Reasoning in Intelligent Systems (1988)
+  established the field, and the work was central to his 2011 Turing Award. Sewall Wright's path
+  diagrams (1921) were a forerunner.
+year: 1985
+note: >-
+  'Bayesian' refers to updating beliefs with [[bayes-theorem|Bayes' theorem]]; the parameters need
+  not be estimated by Bayesian statistics. Not to be confused with a
+  [[bayesian-neural-network|Bayesian neural network]], which places probability distributions over
+  network weights.
+see_also:
+  - probabilistic graphical model
+  - Bayes' theorem
+  - belief propagation
+  - Markov random field
+  - hidden Markov model
+  - causal inference
+  - Judea Pearl
+contrast:
+  - Markov random field
+  - Bayesian neural network
+sources:
+  - text: >-
+      Pearl, J. (1985). Bayesian Networks: A Model of Self-Activated Memory for Evidential
+      Reasoning. Proceedings of the 7th Conference of the Cognitive Science Society, 329–334.
+  - text: >-
+      Pearl, J. (1988). Probabilistic Reasoning in Intelligent Systems: Networks of Plausible
+      Inference. Morgan Kaufmann.

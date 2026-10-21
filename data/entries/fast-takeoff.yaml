@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fast takeoff
+id: fast-takeoff
+pos: n.
+also:
+  - hard takeoff
+  - discontinuous takeoff
+  - sharp takeoff
+domain: asi
+domains:
+  - safety
+level: core
+plain: >-
+  A scenario in which AI goes from about human level to far beyond it very quickly, in days, weeks
+  or a few months, leaving people little time to react.
+senses:
+  - definition: >-
+      A [[takeoff|takeoff]] in which the transition from roughly human-level AI to
+      [[superintelligence|superintelligence]] is short compared with the time human institutions
+      need to respond. [[nick-bostrom|Nick Bostrom]] defined a fast takeoff as one occurring over
+      minutes, hours or days, with a moderate takeoff taking months or years; later usage often
+      stretches the threshold to weeks or months. The usual mechanisms are
+      [[recursive-self-improvement|recursive self-improvement]] and a large
+      [[compute-overhang|compute overhang]]: once a system can improve itself or exploit abundant
+      idle compute, capability growth outpaces anyone's ability to notice and intervene. A fast
+      takeoff implies that safety measures must largely be in place beforehand, since there may be
+      no chance to learn from intermediate systems, and makes it more likely that one project gains
+      a [[decisive-strategic-advantage|decisive strategic advantage]]. Paul Christiano defined it
+      negatively, as any takeoff that is not a [[slow-takeoff|slow takeoff]] in his economic sense.
+    example: In a fast takeoff, the first warning sign might also be the last.
+origin: >-
+  'Hard takeoff' appears in Eliezer Yudkowsky's Creating Friendly AI (2001), its earliest use not
+  established, and was defended in his 2008 debate with Robin Hanson; 'fast takeoff' became standard
+  after Nick Bostrom's Superintelligence (2014), whose chapter on the kinetics of an intelligence
+  explosion distinguished slow, moderate and fast transitions.
+note: >-
+  Often conflated with short [[ai-timelines|AI timelines]]; the two are logically independent.
+see_also:
+  - takeoff
+  - slow takeoff
+  - FOOM
+  - intelligence explosion
+  - recursive self-improvement
+  - decisive strategic advantage
+  - sharp left turn
+contrast:
+  - slow takeoff

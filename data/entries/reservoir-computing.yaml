@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reservoir computing
+id: reservoir-computing
+pos: n.
+also:
+  - echo state network
+  - ESN
+  - liquid state machine
+  - LSM
+  - reservoir
+domain: dl
+domains:
+  - hw
+level: specialist
+plain: >-
+  A shortcut way to build a network for time-varying signals: a large, fixed, randomly wired network
+  echoes the input, and only a simple final readout is trained.
+senses:
+  - definition: >-
+      An approach to learning from time-varying data in which the input drives a fixed, randomly
+      wired recurrent network (the reservoir) and only a linear readout of the reservoir's states is
+      trained, usually by linear regression. The reservoir projects input histories into a
+      high-dimensional dynamical state; if its dynamics forget old inputs gradually (the 'echo state
+      property', typically encouraged by scaling the recurrent weights' spectral radius to about 1
+      or below), a linear readout can recover many functions of the recent past. Because training
+      avoids [[backpropagation-through-time|backpropagation through time]], it is fast and suits
+      physical substrates: optical, electronic, spintronic and even biological systems have served
+      as reservoirs. Echo state networks (rate-based units) and liquid state machines
+      ([[spiking-neural-network|spiking]] units) are its two classic forms; applications include
+      chaotic time-series prediction and [[neuromorphic-computing|neuromorphic]] hardware research.
+    example: >-
+      Only the readout weights are trained, so fitting the echo state network took seconds.
+origin: >-
+  Introduced independently by Herbert Jaeger as echo state networks (GMD technical report, 2001) and
+  by Wolfgang Maass, Thomas Natschläger and Henry Markram as liquid state machines (Neural
+  Computation, 2002). The umbrella term 'reservoir computing' was established around 2007 by David
+  Verstraeten, Benjamin Schrauwen and colleagues.
+year: 2001
+see_also:
+  - recurrent neural network
+  - spiking neural network
+  - neuromorphic computing
+  - time series forecasting
+  - backpropagation through time

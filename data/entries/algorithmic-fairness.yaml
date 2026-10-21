@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: algorithmic fairness
+id: algorithmic-fairness
+pos: n.
+also:
+  - fairness in machine learning
+  - ML fairness
+  - fair machine learning
+  - fairness-aware machine learning
+  - fairness metric
+domain: society
+domains:
+  - ml
+  - eval
+labels:
+  - contested
+level: core
+plain: >-
+  The effort to make automated decisions fair: to say in numbers what fair treatment means, measure
+  whether a system achieves it, and correct the system if it does not.
+senses:
+  - definition: >-
+      The research field, and the property it studies, concerned with formal criteria for
+      non-discrimination in automated decisions and methods to satisfy them. [[group-fairness|Group
+      criteria]] compare statistics across groups defined by a [[protected-attribute|protected
+      attribute]]: equal selection rates ([[demographic-parity|demographic parity]]), equal error
+      rates ([[equalized-odds|equalized odds]], [[equal-opportunity|equal opportunity]]) or equally
+      meaningful scores ([[predictive-parity|predictive parity]], calibration).
+      [[individual-fairness|Individual fairness]] requires similar people to be treated similarly,
+      and causal criteria such as [[counterfactual-fairness|counterfactual fairness]] ask whether a
+      decision would change had the person's group been different. Interventions act before training
+      (reweighting or repairing data), during it (fairness constraints or regularizers) or after it
+      (group-specific thresholds). Because the main group criteria cannot all hold at once
+      ([[fairness-impossibility-theorem|fairness impossibility theorem]]), choosing among them is a
+      normative and legal decision, not a purely technical one.
+    example: >-
+      We report three fairness metrics because the regulator and the advocacy groups each care about
+      a different one.
+origin: >-
+  Grew out of discrimination-aware data mining (Dino Pedreschi, Salvatore Ruggieri and Franco
+  Turini, 2008) and Cynthia Dwork and colleagues' 'Fairness Through Awareness' (2012). The FAT/ML
+  workshop (from 2014) and the conference founded in 2018 as FAT* (now ACM FAccT) made it a research
+  field; the [[compas|COMPAS]] dispute of 2016 gave it public urgency.
+year: 2008
+note: >-
+  Formal metrics capture only part of fairness. Critics note that they take the decision task, the
+  group categories and the outcome labels as given, and can ignore historical injustice, power and
+  whether a system should be built at all. More than 20 formal definitions have been catalogued.
+see_also:
+  - algorithmic bias
+  - group fairness
+  - individual fairness
+  - counterfactual fairness
+  - fairness impossibility theorem
+  - disparate impact
+  - protected attribute
+sources:
+  - text: >-
+      Barocas, S., Hardt, M. & Narayanan, A. (2023). Fairness and Machine Learning: Limitations and
+      Opportunities. MIT Press.
+  - text: >-
+      Pedreschi, D., Ruggieri, S. & Turini, F. (2008). Discrimination-aware data mining. Proc. KDD
+      2008, 560–568.

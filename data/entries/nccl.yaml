@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: NCCL
+id: nccl
+pos: prop. n.
+also:
+  - NVIDIA Collective Communications Library
+pronunciation: NIK-ul
+domain: train
+domains:
+  - hw
+  - eng
+labels:
+  - trademark
+level: specialist
+plain: >-
+  NVIDIA's software library that lets its graphics chips exchange data with each other quickly —
+  inside one computer and across networks — and that nearly all large-scale AI training on NVIDIA
+  hardware relies on.
+senses:
+  - definition: >-
+      NVIDIA's open-source library of GPU-optimized [[collective-communication|collective
+      communication]] routines — [[all-reduce|all-reduce]], all-gather, reduce-scatter, broadcast,
+      reduce, all-to-all and point-to-point send and receive — used by [[pytorch|PyTorch]],
+      [[jax|JAX]], [[deepspeed|DeepSpeed]], [[megatron-lm|Megatron-LM]] and most other frameworks as
+      the communication backend for multi-GPU training and inference. NCCL detects the system
+      topology (PCIe, [[nvlink|NVLink]] and NVSwitch within a node; [[infiniband|InfiniBand]] or
+      RDMA-capable Ethernet between nodes), chooses ring, tree or other algorithms and protocols by
+      message size, and runs communication as GPU kernels so that it can overlap with computation.
+      Its performance and failure modes — hangs, timeouts and slow links — weigh heavily on the
+      [[goodput|goodput]] of large runs. AMD maintains a compatible fork, RCCL, for its GPUs.
+    example: The job hung in an NCCL all-reduce after one node's network card failed.
+origin: >-
+  Developed at NVIDIA and released as open source on GitHub; a blog post by Nathan Luehr (7 April
+  2016) introduced it, 'pronounced Nickel', as fast collectives among the GPUs of a single node.
+  NCCL 2 (2017) added communication across nodes.
+year: 2016
+see_also:
+  - collective communication
+  - all-reduce
+  - CUDA
+  - NVLink
+  - InfiniBand
+  - distributed training
+sources:
+  - text: Luehr, N. (2016). Fast Multi-GPU Collectives with NCCL. NVIDIA Technical Blog.
+    url: https://developer.nvidia.com/blog/fast-multi-gpu-collectives-nccl/
+as_of: 2026-10

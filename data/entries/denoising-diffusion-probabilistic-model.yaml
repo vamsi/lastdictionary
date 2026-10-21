@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: denoising diffusion probabilistic model
+id: denoising-diffusion-probabilistic-model
+pos: n.
+also:
+  - DDPM
+  - DDPMs
+  - improved DDPM
+domain: gen
+domains:
+  - dl
+level: specialist
+plain: >-
+  The 2020 recipe that made diffusion image generators work well: add noise to pictures over a
+  thousand small steps, then train a network to guess the noise so it can be removed.
+senses:
+  - definition: >-
+      A [[diffusion-model|diffusion model]] formulation with a fixed Markov forward process that
+      adds Gaussian noise over T steps (T = 1,000 in the original) according to a variance schedule
+      β₁ … β_T, and a learned reverse process whose Gaussian transitions are parameterized by a
+      network ε_θ(x_t, t) that predicts the noise contained in the noisy sample x_t. Because any x_t
+      can be drawn in closed form from the clean image x₀, training samples a random step and
+      regresses the predicted noise onto the true noise — a simplified, reweighted form of the
+      [[evidence-lower-bound|evidence lower bound]] that the authors found gave better samples.
+      Sampling runs the reverse chain from pure noise through all T steps, which made DDPMs slow;
+      later work learned the reverse variances, introduced the cosine [[noise-schedule|noise
+      schedule]] and replaced this ancestral sampling with faster deterministic samplers such as
+      [[denoising-diffusion-implicit-model|DDIM]].
+formula_latex: \mathcal{L}_{\text{simple}} = \mathbb{E}_{x_0, \epsilon, t}\Big[\big\lVert \epsilon -
+  \epsilon_\theta\big(\sqrt{\bar\alpha_t}\, x_0 + \sqrt{1 - \bar\alpha_t}\, \epsilon,\; t\big)
+  \big\rVert^2\Big]
+origin: >-
+  Introduced by Jonathan Ho, Ajay Jain and Pieter Abbeel of UC Berkeley in 'Denoising Diffusion
+  Probabilistic Models' (posted June 2020; NeurIPS 2020), which reported an FID of 3.17 on CIFAR-10
+  and connected diffusion with denoising score matching. Alex Nichol and Prafulla Dhariwal's
+  'Improved DDPM' (February 2021) added learned variances and the cosine noise schedule.
+year: 2020
+see_also:
+  - diffusion model
+  - score-based generative model
+  - noise schedule
+  - denoising diffusion implicit model
+  - evidence lower bound
+  - U-Net
+sources:
+  - text: >-
+      Ho, J., Jain, A. & Abbeel, P. (2020). Denoising Diffusion Probabilistic Models. NeurIPS 2020.
+      arXiv:2006.11239.
+    url: https://arxiv.org/abs/2006.11239
+  - text: >-
+      Nichol, A. & Dhariwal, P. (2021). Improved Denoising Diffusion Probabilistic Models. ICML
+      2021. arXiv:2102.09672.
+    url: https://arxiv.org/abs/2102.09672

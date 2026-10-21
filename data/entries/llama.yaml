@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Llama
+id: llama
+pos: prop. n.
+also:
+  - Llama 2
+  - Llama 3
+  - Llama 4
+  - Meta Llama
+domain: hist
+domains:
+  - llm
+  - eng
+labels:
+  - trademark
+level: essential
+plain: >-
+  A family of AI language models from Meta, first released in 2023, whose trained settings can be
+  downloaded and run by anyone, making them the foundation for thousands of other AI projects.
+senses:
+  - definition: >-
+      Meta's series of [[large-language-model|large language models]] with downloadable weights,
+      begun in February 2023 and the most influential early [[open-weight-model|open-weight model]]
+      family. The original LLaMA (Large Language Model Meta AI), at 7 to 65 billion parameters, went
+      only to researchers who applied, but its weights leaked online within about a week, and
+      fine-tuned offshoots such as Stanford's Alpaca and the multi-university Vicuna, and tools such
+      as [[llama-cpp|llama.cpp]], soon followed. Llama 2 (July 2023) permitted commercial use under
+      a custom license; Llama 3 (April 2024) and Llama 3.1 (July 2024) scaled up to a
+      405-billion-parameter dense model competitive with closed frontier systems; and Llama 4 (April
+      2025) moved to a [[mixture-of-experts|mixture of experts]] design with the Scout and Maverick
+      models, though its reception was marred by a benchmark-reporting controversy and its largest
+      model, Behemoth, had not been released as of October 2026. Because its licenses restrict the
+      largest companies and certain uses, many argue Llama is not [[open-source-ai|open source]] in
+      the strict sense.
+    example: >-
+      We fine-tuned a Llama model on our support tickets and run it on our own servers.
+origin: >-
+  Developed by Meta's FAIR and generative-AI teams and announced on 24 February 2023 in Hugo Touvron
+  and colleagues' paper 'LLaMA: Open and Efficient Foundation Language Models'; the spelling Llama
+  was adopted with Llama 2. No successor to Llama 4 had been released as of October 2026, and Meta
+  was reported to be developing proprietary models outside the Llama line.
+year: 2023
+note: >-
+  Meta's description of Llama as open source is disputed: it does not meet the Open Source
+  Initiative's 2024 definition of open-source AI. See [[open-weight-model|open-weight model]].
+see_also:
+  - open-weight model
+  - open-source AI
+  - llama.cpp
+  - large language model
+  - Meta AI
+  - Qwen
+  - DeepSeek-R1
+sources:
+  - text: >-
+      Touvron, H. et al. (2023). LLaMA: Open and Efficient Foundation Language Models.
+      arXiv:2302.13971.
+as_of: 2026-10

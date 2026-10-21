@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data-constrained scaling
+id: data-constrained-scaling
+pos: n.
+also:
+  - data-constrained scaling laws
+  - scaling with repeated data
+  - multi-epoch scaling
+domain: train
+domains:
+  - data
+  - llm
+level: specialist
+plain: >-
+  How to keep improving AI models when the supply of fresh, high-quality training text runs out —
+  for example by reusing the same data several times, which works well at first and then stops
+  helping.
+senses:
+  - definition: >-
+      The study of [[scaling-laws|scaling laws]] and compute allocation when unique training data
+      are limited, so that extra compute must go to repeated [[epoch|epochs]], larger models or
+      substitute data. Training more than 400 models, with up to 9 billion parameters and 900
+      billion tokens, Niklas Muennighoff and colleagues (2023) found that at a fixed compute budget,
+      repeating data for up to about four epochs costs almost nothing compared with fresh data, but
+      each further pass is worth less, until more repetition adds essentially nothing. Their fitted
+      law gives diminishing weight to repeated tokens and to parameters beyond the optimum, and
+      implies that under scarcity compute should go to more epochs before larger models. Mixing in
+      code served as a substitute for scarce text (up to half the data, with no loss on
+      natural-language tasks), while the value of strict [[quality-filtering|quality filtering]]
+      depended on how noisy the data were; [[synthetic-data|synthetic data]] is the other main
+      lever. The question grew pressing as [[epoch-ai|Epoch AI]] projected that frontier training
+      could exhaust the stock of public human-written text between about 2026 and 2032 (the
+      [[data-wall|data wall]]).
+    example: >-
+      Under data-constrained scaling, four epochs over our 2-trillion-token corpus cost us almost
+      nothing in loss.
+origin: >-
+  Named by Niklas Muennighoff, Alexander M. Rush, Boaz Barak, Teven Le Scao, Colin Raffel and
+  colleagues in 'Scaling Data-Constrained Language Models' (arXiv, May 2023; NeurIPS 2023), which
+  extended the Chinchilla framework to repeated data.
+year: 2023
+note: >-
+  Concerns repetition of the same data, not low-quality data. The results are for
+  [[pretraining|pretraining]]; small high-quality sets used in [[annealing|annealing]] or
+  [[mid-training|mid-training]] are often repeated more often.
+see_also:
+  - data wall
+  - scaling laws
+  - epoch
+  - synthetic data
+  - Chinchilla scaling laws
+  - tokens per parameter
+sources:
+  - text: >-
+      Muennighoff, N., Rush, A. M., Barak, B., Le Scao, T. et al. (2023). Scaling Data-Constrained
+      Language Models. arXiv:2305.16264.
+    url: https://arxiv.org/abs/2305.16264

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Sentence-BERT
+id: sentence-bert
+pos: prop. n.
+also:
+  - SBERT
+  - sentence-transformers
+  - Sentence Transformers
+domain: llm
+domains:
+  - dl
+  - eng
+level: core
+plain: >-
+  A way of turning a whole sentence into a list of numbers so that sentences with similar meanings
+  get similar numbers, which makes it fast to search millions of texts by meaning rather than by
+  exact words.
+senses:
+  - definition: >-
+      A method for producing fixed-size sentence [[embedding|embeddings]] by fine-tuning a
+      pretrained [[bert|BERT]] or RoBERTa encoder in a [[siamese-network|Siamese]] or triplet
+      arrangement: each sentence passes separately through the same encoder, its token outputs are
+      mean-pooled into one vector, and training pulls related sentences together, originally through
+      a classifier over (u, v, |u − v|) on natural-language-inference pairs and a
+      [[cosine-similarity|cosine similarity]] regression on graded similarity scores. Because each
+      sentence is encoded once and vectors are compared cheaply, the method removed the quadratic
+      cost of running a [[cross-encoder|cross-encoder]] on every pair: the paper's example of
+      finding the most similar pair among 10,000 sentences fell from about 65 hours to about 5
+      seconds. Its open-source sentence-transformers library became the standard toolkit for
+      training and serving [[bi-encoder|bi-encoder]] [[embedding-model|embedding models]] for
+      [[semantic-search|semantic search]], clustering and
+      [[retrieval-augmented-generation|retrieval-augmented generation]].
+    example: >-
+      We embed the FAQ with an SBERT model and send the top five matches to the reranker.
+origin: >-
+  Introduced by Nils Reimers and Iryna Gurevych of the UKP Lab at TU Darmstadt in a paper at
+  EMNLP-IJCNLP 2019. The accompanying sentence-transformers library spread the approach; Hugging
+  Face staff maintained it from late 2023, and the UKP Lab formally transferred the project to
+  Hugging Face in 2025. Reimers also co-created the [[mteb|MTEB]] benchmark.
+year: 2019
+note: >-
+  Sometimes used loosely for any sentence-embedding model built with the library. Bi-encoders such
+  as SBERT trade some accuracy for speed, so pipelines often retrieve candidates with them and then
+  rerank the top hits with a cross-encoder.
+see_also:
+  - embedding model
+  - text embedding
+  - bi-encoder
+  - cross-encoder
+  - Siamese network
+  - contrastive learning
+  - semantic search
+  - MTEB
+contrast:
+  - cross-encoder
+sources:
+  - text: >-
+      Reimers, N. & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese
+      BERT-Networks. Proc. EMNLP-IJCNLP 2019.
+as_of: 2026-10

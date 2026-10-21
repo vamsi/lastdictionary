@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: context distillation
+id: context-distillation
+pos: n.
+also:
+  - prompt distillation
+  - distilling context
+domain: train
+domains:
+  - llm
+  - safety
+level: specialist
+plain: >-
+  Training a model to behave as if it had been given a long set of instructions, so it no longer
+  needs to read those instructions every time.
+senses:
+  - definition: >-
+      Fine-tuning a language model so that, without a given context — a long [[system-prompt|system
+      prompt]], behavioral guidelines or worked examples — it reproduces the outputs or token
+      distributions it would produce with that context. The same model, conditioned on the context,
+      acts as teacher; the student is trained on the teacher's outputs, or on the KL divergence
+      between the two distributions, over prompts that omit the context. This moves knowledge or
+      behavior from the [[context-window|context window]] into the [[weights|weights]], saving
+      inference cost and context space, and makes the behavior harder to override with a competing
+      prompt. Anthropic first used it to instill a [[helpful-honest-and-harmless|helpful, honest and
+      harmless]] assistant persona before preference training; later uses include internalizing
+      safety specifications (as in the supervised stage of [[deliberative-alignment|deliberative
+      alignment]]), learning from instructions or scratchpad reasoning, and shaping model character.
+      The distilled behavior can generalize differently from the prompted version and is less
+      transparent, since the rules no longer appear in the input.
+    example: >-
+      We context-distilled the 6,000-token style guide, so the deployed model follows it with an
+      empty system prompt.
+origin: >-
+  Introduced under this name by Amanda Askell, Yuntao Bai and colleagues at Anthropic in December
+  2021, who distilled a long assistant-style prompt into a model by fine-tuning on the KL divergence
+  between prompted and unprompted predictions. Charlie Snell, Dan Klein and Ruiqi Zhong (2022)
+  generalized it as a way to learn from instructions and reasoning.
+year: 2021
+note: >-
+  A form of [[knowledge-distillation|knowledge distillation]] in which teacher and student share
+  weights and differ only in their inputs. Related to [[prompt-tuning|prompt tuning]], which learns
+  a soft prompt instead of internalizing a written one.
+see_also:
+  - knowledge distillation
+  - system prompt
+  - helpful, honest and harmless
+  - deliberative alignment
+  - character training
+  - prompt tuning
+contrast:
+  - prompt engineering
+sources:
+  - text: >-
+      Askell, A. et al. (2021). A General Language Assistant as a Laboratory for Alignment.
+      arXiv:2112.00861.
+    url: https://arxiv.org/abs/2112.00861
+  - text: >-
+      Snell, C., Klein, D. & Zhong, R. (2022). Learning by Distilling Context. arXiv preprint.

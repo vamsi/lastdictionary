@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prover–verifier game
+id: prover-verifier-game
+pos: n.
+also:
+  - prover–verifier games
+  - legibility training
+  - checkability training
+domain: safety
+domains:
+  - train
+  - math
+level: specialist
+plain: >-
+  A training setup in which one AI must justify its answers so clearly that a weaker AI can check
+  them, which also makes the strong AI's work easier for people to check.
+senses:
+  - definition: >-
+      A training game between a capable 'prover' model that produces solutions with justifications
+      and a weaker 'verifier' model that judges whether they are correct, designed so that the
+      prover learns to give answers that are checkable, not merely correct. In the version OpenAI
+      tested in 2024, two kinds of prover alternate: a 'helpful' one, rewarded when its correct
+      solutions win the verifier's approval, and a 'sneaky' one, rewarded when its wrong solutions
+      slip past; a verifier trained to catch the sneaky solutions pushes the helpful prover toward
+      clear, verifiable reasoning. The idea is borrowed from interactive proof systems in complexity
+      theory, where a limited verifier checks claims from a powerful but untrusted prover. It serves
+      [[scalable-oversight|scalable oversight]] by improving legibility: in OpenAI's
+      grade-school-math experiments, people checking answers under time pressure also found the
+      trained outputs easier to verify, at some cost in accuracy.
+    example: >-
+      After a few rounds of the prover–verifier game, the solutions got longer but far easier to
+      check.
+origin: >-
+  Cem Anil, Guodong Zhang, Yuhuai Wu and Roger Grosse introduced prover–verifier games as a learning
+  framework in 2021. Jan Hendrik Kirchner, Yining Chen and colleagues at OpenAI applied the idea to
+  language models in 'Prover-Verifier Games improve legibility of LLM outputs' (July 2024).
+year: 2021
+note: >-
+  [[ai-debate|AI debate]] also draws on interactive proofs, but pits two provers against each other
+  before a judge; here a single prover is trained against a verifier. The accuracy cost of
+  optimizing for checkability is sometimes called a legibility tax.
+see_also:
+  - scalable oversight
+  - AI debate
+  - verifier
+  - chain-of-thought monitoring
+  - weak-to-strong generalization
+sources:
+  - text: >-
+      Anil, C., Zhang, G., Wu, Y. & Grosse, R. (2021). Learning to Give Checkable Answers with
+      Prover-Verifier Games. arXiv preprint.
+  - text: >-
+      Kirchner, J. H., Chen, Y., Edwards, H., Leike, J., McAleese, N. & Burda, Y. (2024).
+      Prover-Verifier Games improve legibility of LLM outputs. OpenAI, arXiv preprint.

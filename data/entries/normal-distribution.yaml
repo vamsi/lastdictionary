@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: normal distribution
+id: normal-distribution
+pos: n.
+also:
+  - Gaussian distribution
+  - Gaussian
+  - bell curve
+  - normal curve
+  - multivariate normal distribution
+domain: math
+domains:
+  - ml
+  - gen
+level: core
+plain: >-
+  The familiar bell-shaped curve: most values cluster near the average, and values become rapidly
+  rarer the farther they lie from it. Measurement errors and adult heights roughly follow it.
+senses:
+  - definition: >-
+      The continuous [[probability-distribution|probability distribution]] with a bell-shaped
+      density fixed by its mean μ and [[variance|variance]] σ²; about 68 percent of its mass lies
+      within one standard deviation of the mean and 99.7 percent within three. The multivariate form
+      is specified by a mean vector and a [[covariance|covariance]] matrix. The
+      [[central-limit-theorem|central limit theorem]] explains why sums of many small independent
+      effects are approximately normal, and among distributions with a given mean and variance it
+      has maximal [[entropy|entropy]]. In AI it is everywhere: weights are initialized from normal
+      or truncated-normal distributions; [[diffusion-model|diffusion models]] add Gaussian noise
+      step by step and learn to remove it; [[variational-autoencoder|variational autoencoders]] use
+      Gaussian latent variables with the [[reparameterization-trick|reparameterization trick]];
+      [[gaussian-process|Gaussian processes]] put it over functions; and squared-error loss is
+      [[maximum-likelihood-estimation|maximum likelihood estimation]] under Gaussian noise. Real
+      data often have heavier tails, so Gaussian assumptions understate extremes.
+    example: >-
+      Initialize the embedding table from a normal distribution with standard deviation 0.02.
+formula_latex: \mathcal{N}(x \mid \mu, \sigma^2) =
+  \frac{1}{\sqrt{2\pi\sigma^2}}\exp\!\Big(-\frac{(x-\mu)^2}{2\sigma^2}\Big)
+origin: >-
+  Abraham de Moivre derived the curve in 1733 as an approximation to the binomial; Carl Friedrich
+  Gauss (1809) used it for errors of observation, hence 'Gaussian', and Pierre-Simon Laplace (1810)
+  proved an early central limit theorem. Charles Sanders Peirce, Francis Galton and Wilhelm Lexis
+  called it 'normal' in the 1870s, and Karl Pearson's systematic use of 'normal curve' from 1894
+  helped fix the name.
+year: 1733
+note: >-
+  'Normal' here means standard or typical, not 'correct', and is unrelated to a [[norm|norm]] or to
+  normalization layers.
+see_also:
+  - central limit theorem
+  - variance
+  - probability density function
+  - diffusion model
+  - Gaussian process
+  - maximum likelihood estimation
+  - covariance

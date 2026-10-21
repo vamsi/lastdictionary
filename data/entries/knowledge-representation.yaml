@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: knowledge representation
+id: knowledge-representation
+pos: n.
+also:
+  - KR
+  - knowledge representation and reasoning
+  - KR&R
+  - KRR
+domain: sym
+domains:
+  - core
+level: core
+plain: >-
+  The study of how to record knowledge about objects, categories, rules and events in a precise
+  format, so that a program can reason with it and reach conclusions nobody typed in.
+senses:
+  - definition: >-
+      The subfield of AI that designs formal languages and data structures for encoding knowledge so
+      that programs can draw conclusions from it, and that studies the trade-off between how much a
+      language can express and how efficiently it can be reasoned with. Major formalisms include
+      [[first-order-logic|first-order logic]] and its decidable fragments such as
+      [[description-logic|description logics]], rules and [[logic-programming|logic programs]],
+      [[semantic-network|semantic networks]], [[frame|frames]], [[ontology|ontologies]], action
+      formalisms such as the [[situation-calculus|situation calculus]], and probabilistic
+      representations such as [[bayesian-network|Bayesian networks]]. Usually paired with reasoning
+      (KR&R), the field addresses defaults and exceptions ([[non-monotonic-reasoning|non-monotonic
+      reasoning]]), time and change, uncertainty and [[commonsense-reasoning|common sense]]. In
+      [[deep-learning|deep learning]], knowledge is instead stored implicitly in learned weights;
+      [[representation-learning|representation learning]] names that different enterprise.
+    example: >-
+      Choosing a knowledge representation is choosing which inferences will be cheap and which
+      impossible.
+origin: >-
+  The phrase was in established AI use by the mid-1970s (it names the 1977 frame language KRL); its
+  earliest use is not established. John McCarthy and Patrick Hayes's 1969 paper separated the
+  'epistemological' problem of representing the world from the 'heuristic' problem of searching for
+  solutions, framing the field's agenda. The dedicated KR conference series began in Toronto in
+  1989.
+note: >-
+  Davis, Shrobe and Szolovits (1993) argued that a representation plays five roles at once: a
+  surrogate for the world, a set of ontological commitments, a fragmentary theory of intelligent
+  reasoning, a medium for efficient computation and a medium of human expression.
+see_also:
+  - knowledge base
+  - ontology
+  - first-order logic
+  - description logic
+  - semantic network
+  - frame
+  - commonsense reasoning
+  - knowledge graph
+contrast:
+  - representation learning
+sources:
+  - text: >-
+      McCarthy, J. & Hayes, P. J. (1969). Some Philosophical Problems from the Standpoint of
+      Artificial Intelligence. Machine Intelligence 4, 463–502.
+  - text: >-
+      Davis, R., Shrobe, H. & Szolovits, P. (1993). What Is a Knowledge Representation? AI Magazine
+      14(1), 17–33.
+  - text: >-
+      Brachman, R. J. & Levesque, H. J. (2004). Knowledge Representation and Reasoning. Morgan
+      Kaufmann.

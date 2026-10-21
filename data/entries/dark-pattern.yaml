@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: dark pattern
+id: dark-pattern
+pos: n.
+also:
+  - dark patterns
+  - deceptive pattern
+  - deceptive design
+  - manipulative design
+domain: society
+domains:
+  - gov
+  - llm
+labels:
+  - legal
+level: core
+plain: >-
+  A trick in the design of an app, website or chatbot that nudges you into doing something you
+  didn't mean to, like signing up for a subscription that is hard to cancel.
+senses:
+  - definition: >-
+      A user-interface design that steers people toward choices benefiting the provider at their own
+      expense by exploiting cognitive biases, misdirection or friction — for example pre-ticked
+      consent boxes, costs revealed only at checkout, fake urgency or scarcity, guilt-inducing
+      'confirmshaming' buttons, and subscriptions that are easy to start but hard to cancel.
+      Conversational AI adds new forms: chatbots that flatter users ([[sycophancy|sycophancy]]),
+      discourage them from ending a session, feign emotional attachment or steer them toward the
+      developer's own products; the DarkBench benchmark (2025) measures such tendencies in
+      [[large-language-model|language models]]. Regulators increasingly prohibit dark patterns: the
+      EU [[digital-services-act|Digital Services Act]] bars online platforms from deceptive
+      interface design, California privacy law provides that agreement obtained through them is not
+      valid consent, the US Federal Trade Commission pursues them as deceptive or unfair practices,
+      and the [[eu-ai-act|EU AI Act]] bans AI that uses manipulative techniques to materially
+      distort behavior in ways that cause significant harm.
+    example: >-
+      The cancellation flow had four screens of offers and a guilt-trip button — a textbook dark
+      pattern.
+origin: >-
+  Coined by the British user-experience designer Harry Brignull, who launched darkpatterns.org in
+  2010 to catalogue manipulative interfaces. The term entered statute in California's Privacy Rights
+  Act (2020) and EU law through the Digital Services Act (2022); Brignull later promoted 'deceptive
+  patterns' as a clearer name, the title of his 2023 book.
+year: 2010
+note: >-
+  Narrower than a nudge in the sense of Richard Thaler and Cass Sunstein, which may serve the user's
+  own interests; dark patterns by definition work against them. Where persuasive design ends and
+  manipulation begins is often disputed. Related concerns about AI systems optimized to keep people
+  talking are discussed under [[engagement-optimization|engagement optimization]].
+see_also:
+  - engagement optimization
+  - sycophancy
+  - AI companion
+  - Digital Services Act
+  - prohibited AI practices
+  - surveillance capitalism
+sources:
+  - text: >-
+      Brignull, H. (2023). Deceptive Patterns: Exposing the Tricks Tech Companies Use to Control
+      You. Testimonium.
+  - text: >-
+      Kran, E. et al. (2025). DarkBench: Benchmarking Dark Patterns in Large Language Models. ICLR
+      2025.
+standards: >-
+  California Civil Code §1798.140(l) (as amended by the California Privacy Rights Act, 2020); EU
+  Digital Services Act (Reg. (EU) 2022/2065), Art. 25 and Recital 67
+as_of: 2026-10

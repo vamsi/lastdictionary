@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scaled dot-product attention
+id: scaled-dot-product-attention
+pos: n.
+also:
+  - SDPA
+  - dot-product attention
+domain: llm
+domains:
+  - dl
+  - math
+level: core
+plain: >-
+  The standard formula for attention in transformers: score how well each question matches each
+  label, scale the scores down, turn them into percentages, and use those to blend the stored
+  information.
+senses:
+  - definition: >-
+      The attention function of the [[transformer|transformer]]: every query is compared with every
+      key by a [[dot-product|dot product]], each score is divided by √d_k (the square root of the
+      key dimension), a [[softmax|softmax]] over the keys converts the scores into weights, and the
+      output is the correspondingly weighted sum of the values. The division matters because the dot
+      product of two d_k-dimensional vectors with independent, unit-variance components has variance
+      d_k: left unscaled, wide heads would produce scores so spread out that the softmax puts almost
+      all weight on one key and passes back almost no gradient. Scoring by dot products rather than
+      with a small neural network (additive attention) reduces the whole computation to matrix
+      multiplications, the operation GPUs run fastest. Masks add −∞ to disallowed scores before the
+      softmax. Fused kernels such as [[flashattention|FlashAttention]] compute exactly the same
+      function without storing the full score matrix.
+    example: >-
+      Swap the hand-written attention for PyTorch's fused SDPA call and memory use drops sharply.
+formula_latex: \mathrm{Attention}(Q, K, V) = \operatorname{softmax}\!\left(\frac{QK^{\top}}{\sqrt{d_k}}\right) V
+origin: >-
+  Named and defined in 'Attention Is All You Need' (Vaswani et al., 2017). Unscaled multiplicative
+  ('dot' and 'general') scoring had been proposed in 2015 by Minh-Thang Luong, Hieu Pham and
+  Christopher Manning; the 2017 paper added the 1/√d_k factor.
+year: 2017
+note: >-
+  PyTorch exposes it as torch.nn.functional.scaled_dot_product_attention, hence the abbreviation
+  SDPA. Some models use a different scale or normalize queries and keys ('QK-norm') to keep scores
+  stable.
+see_also:
+  - attention
+  - query, key and value
+  - softmax
+  - multi-head attention
+  - attention mask
+  - FlashAttention
+sources:
+  - text: Vaswani, A. et al. (2017). Attention Is All You Need. NIPS 2017.
+    url: https://arxiv.org/abs/1706.03762
+  - text: >-
+      Luong, M.-T., Pham, H. & Manning, C. D. (2015). Effective Approaches to Attention-based Neural
+      Machine Translation. EMNLP 2015.
+    url: https://arxiv.org/abs/1508.04025

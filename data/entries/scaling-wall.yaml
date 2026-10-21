@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: scaling wall
+id: scaling-wall
+pos: n.
+also:
+  - hitting a wall
+  - the wall
+  - there is no wall
+  - deep learning is hitting a wall
+domain: culture
+domains:
+  - train
+  - asi
+labels:
+  - informal
+  - contested
+level: core
+plain: >-
+  The disputed idea that making AI models bigger is running out of steam, so progress will soon
+  stall; 'hitting a wall' became the skeptics' slogan and 'there is no wall' the reply.
+senses:
+  - definition: >-
+      A hypothesized point of sharply diminishing returns in AI progress from scaling — training
+      ever-larger models on more data and compute — and the recurring debate over whether the field
+      has reached it. Skeptics point to the limited supply of high-quality text, rising costs,
+      shrinking gains from [[pretraining|pretraining]] scale and persistent failures of reasoning
+      and reliability; opponents argue that progress continues through other levers such as
+      [[test-time-compute|test-time compute]], [[reinforcement-learning|reinforcement learning]] on
+      reasoning tasks, synthetic data, better [[harness|harnesses]] and agents, so that any wall
+      blocks one recipe rather than AI as a whole. Because progress can be measured in many ways —
+      benchmark scores, [[scaling-laws|loss curves]], economic usefulness — both sides regularly
+      claim vindication, which makes 'the wall' as much a narrative device as an empirical claim.
+    example: >-
+      Every quiet month brings a new round of scaling-wall takes, and every big release a round of
+      'there is no wall'.
+origin: >-
+  Gary Marcus's essay 'Deep Learning Is Hitting a Wall' (Nautilus, March 2022) made the phrase a
+  skeptics' banner. It revived in November 2024, when news reports said new frontier models were
+  improving less than hoped from pretraining scale alone; OpenAI's Sam Altman replied on X that
+  there is no wall, and the argument has recurred with each major release.
+year: 2022
+note: >-
+  Separate claims about [[pretraining|pretraining]] scaling, about particular
+  [[benchmark|benchmarks]] and about overall capability, which can diverge. See
+  [[scaling-hypothesis|scaling hypothesis]] for the opposing thesis and [[ai-winter|AI winter]] for
+  historical slowdowns.
+see_also:
+  - scaling hypothesis
+  - scaling laws
+  - test-time compute
+  - AI winter
+  - it's over, we're so back
+  - Gary Marcus
+contrast:
+  - scaling hypothesis

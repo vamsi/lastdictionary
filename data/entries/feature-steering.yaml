@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: feature steering
+id: feature-steering
+pos: n.
+also:
+  - SAE steering
+  - SAE feature steering
+  - feature clamping
+domain: interp
+domains:
+  - safety
+  - llm
+level: specialist
+plain: >-
+  Steering an AI model by turning up or down specific concepts that interpretability tools have
+  found inside it — for example, making a model obsessed with a bridge by maxing out its 'bridge'
+  concept.
+senses:
+  - definition: >-
+      [[activation-steering|Activation steering]] performed on interpretable
+      [[feature-interpretability|features]] learned by a [[sparse-autoencoder|sparse autoencoder]]
+      (SAE), [[transcoder|transcoder]] or similar dictionary, rather than on directions found by
+      contrasting examples. The usual operation clamps a feature's activation to a fixed value —
+      high to amplify the concept, zero or negative to suppress it — and substitutes the edited SAE
+      reconstruction plus the original reconstruction error, so that only the targeted feature
+      changes; a simpler variant adds the feature's decoder vector as a [[steering-vector|steering
+      vector]]. Because features carry human-readable labels and are found without labeled data,
+      feature steering offers fine-grained, nameable control and a causal check on feature
+      interpretations. Evaluations found off-target effects and a narrow range of useful strengths
+      before output quality collapses.
+    example: >-
+      Clamping the 'inner conflict' feature to five times its maximum made every answer agonize over
+      trade-offs.
+origin: >-
+  Clamping dictionary features to steer a production-scale model was demonstrated in Anthropic's
+  'Scaling Monosemanticity' study (Adly Templeton and colleagues, May 2024), whose
+  [[golden-gate-claude|Golden Gate Claude]] demo popularized the idea. Anthropic's report
+  'Evaluating feature steering' (October 25, 2024), on Claude 3 Sonnet, and Goodfire's public Ember
+  feature-steering API (December 2024) helped fix the term.
+year: 2024
+note: >-
+  Feature steering inherits the limits of the dictionary: [[feature-splitting|feature splitting]],
+  [[feature-absorption|feature absorption]] and reconstruction error constrain how cleanly one
+  concept can be controlled. The AxBench benchmark (2025) found SAE features uncompetitive for both
+  steering and concept detection, trailing prompting and simple difference-of-means directions;
+  later work found that selecting features by their effect on outputs narrows the gap.
+see_also:
+  - sparse autoencoder
+  - Golden Gate Claude
+  - feature (interpretability)
+  - activation steering
+  - steering vector
+  - transcoder
+contrast:
+  - contrastive activation addition
+as_of: 2026-10

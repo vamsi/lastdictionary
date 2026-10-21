@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: ControlNet
+id: controlnet
+pos: prop. n.
+also:
+  - control net
+  - zero convolution
+  - T2I-Adapter
+  - IP-Adapter
+domain: gen
+domains:
+  - dl
+level: core
+plain: >-
+  An add-on for image generators that makes them follow a guide image — a sketch, a stick-figure
+  pose or a depth map — so the layout comes out as intended.
+senses:
+  - definition: >-
+      A method for steering a pretrained [[text-to-image-model|text-to-image]]
+      [[diffusion-model|diffusion model]] with a guide image that fixes the layout, while the
+      original network stays untouched. The base model is frozen; a trainable duplicate of its
+      encoder takes the guide — a human-pose skeleton, a depth or segmentation map, an edge map, a
+      scribble — and adds its features to the frozen network's skip connections and middle block
+      through 1 × 1 convolutions whose weights and biases are initialized to zero ('zero
+      convolutions'). These contribute nothing at first, so the combined model starts out behaving
+      exactly like the original and control is phased in only as training finds useful weights,
+      which keeps early noisy gradients from damaging the pretrained backbone. Training works with
+      under 50,000 conditioning pairs or over a million. Separate ControlNets can be stacked and
+      combined with fine-tunes such as [[low-rank-adaptation|LoRA]], and they made pose- and
+      layout-faithful generation routine in the [[stable-diffusion|Stable Diffusion]] ecosystem.
+      Lighter adapters, such as T2I-Adapter and IP-Adapter for reference images, follow similar
+      ideas.
+    example: >-
+      Feed the pose skeleton through ControlNet and all four dancers land exactly where you drew
+      them.
+origin: >-
+  Introduced by Lvmin Zhang, Anyi Rao and Maneesh Agrawala of Stanford University in 'Adding
+  Conditional Control to Text-to-Image Diffusion Models' (posted February 2023; ICCV 2023, where it
+  was one of two papers awarded the Marr Prize for best paper), with open-source models for Stable
+  Diffusion 1.5 that spread rapidly.
+year: 2023
+see_also:
+  - Stable Diffusion
+  - diffusion model
+  - image-to-image translation
+  - pose estimation
+  - depth estimation
+  - DreamBooth
+  - low-rank adaptation
+sources:
+  - text: >-
+      Zhang, L., Rao, A. & Agrawala, M. (2023). Adding Conditional Control to Text-to-Image
+      Diffusion Models. ICCV 2023. arXiv:2302.05543.
+    url: https://arxiv.org/abs/2302.05543

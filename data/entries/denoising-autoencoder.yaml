@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: denoising autoencoder
+id: denoising-autoencoder
+pos: n.
+also:
+  - DAE
+  - stacked denoising autoencoder
+  - SDAE
+domain: dl
+domains:
+  - gen
+level: specialist
+plain: >-
+  An autoencoder trained to recover clean data from a deliberately damaged copy, such as an image
+  with random pixels erased, which teaches it the structure of the data rather than how to copy.
+senses:
+  - definition: >-
+      An [[autoencoder|autoencoder]] trained to reconstruct a clean input from a corrupted version
+      of it, damaged for example by erasing a random subset of input values (masking noise), by
+      setting random pixels to black or white, or by adding Gaussian noise. Because copying the
+      input no longer solves the task, the network must learn the statistical structure that lets it
+      restore missing or distorted parts. With small Gaussian noise, the optimal denoiser is closely
+      related to the score, the gradient of the log-density of the data, a link later exploited by
+      [[score-based-generative-model|score-based]] and [[diffusion-model|diffusion models]], which
+      are in effect denoisers applied across many noise levels. Stacked denoising autoencoders were
+      used for layer-wise pretraining of deep networks before about 2012. The same
+      corrupt-and-restore principle underlies [[masked-language-model|masked language modeling]] and
+      [[masked-autoencoder|masked autoencoders]] in vision.
+    example: >-
+      We pretrained each layer as a denoising autoencoder with 30 percent of inputs masked.
+origin: >-
+  Introduced by Pascal Vincent, Hugo Larochelle, Yoshua Bengio and Pierre-Antoine Manzagol in
+  'Extracting and Composing Robust Features with Denoising Autoencoders' (ICML 2008); stacked
+  versions followed in 2010. Mark Kramer's 1992 robust autoassociative networks anticipated the
+  idea, and Vincent connected denoising to score matching in 2011.
+year: 2008
+see_also:
+  - autoencoder
+  - diffusion model
+  - score-based generative model
+  - masked language model
+  - masked autoencoder
+  - self-supervised learning
+sources:
+  - text: >-
+      Vincent, P., Larochelle, H., Bengio, Y. & Manzagol, P.-A. (2008). Extracting and Composing
+      Robust Features with Denoising Autoencoders. Proceedings of ICML 2008.
+  - text: >-
+      Vincent, P. (2011). A Connection Between Score Matching and Denoising Autoencoders. Neural
+      Computation, 23(7), 1661–1674.

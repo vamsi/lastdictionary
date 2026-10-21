@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: stochastic gradient descent
+id: stochastic-gradient-descent
+pos: n.
+also:
+  - SGD
+  - mini-batch gradient descent
+domain: dl
+domains:
+  - math
+  - ml
+level: core
+plain: >-
+  A faster version of gradient descent that estimates which way is downhill from a small random
+  sample of the training data at each step, instead of checking the whole dataset.
+senses:
+  - definition: >-
+      A variant of [[gradient-descent|gradient descent]] that steps along a cheap, noisy but
+      unbiased estimate of the gradient, computed from one randomly drawn example or, in modern
+      usage, a [[mini-batch|mini-batch]], instead of the exact gradient of the full training loss.
+      Each update is cheap and noisy; over many steps the noise averages out, so SGD makes progress
+      on datasets far too large for exact gradients. Classical convergence proofs require step sizes
+      that shrink appropriately — the Robbins–Monro conditions, under which their sum diverges while
+      the sum of their squares stays finite — which practice turns into a
+      [[learning-rate-schedule|learning rate schedule]]. The gradient noise is not only a cost: it
+      helps training escape [[saddle-point|saddle points]] and is thought to bias it toward flatter,
+      better-generalizing solutions (see [[sharp-and-flat-minima|sharp and flat minima]],
+      [[implicit-regularization|implicit regularization]]). In deep-learning code 'SGD' usually
+      names the optimizer that applies plain or [[momentum|momentum]]-accelerated mini-batch
+      updates, as opposed to adaptive methods such as [[adam|Adam]].
+    example: >-
+      For the ResNet baseline we used SGD with momentum 0.9 and divided the learning rate by 10 at
+      epochs 30, 60 and 90.
+origin: >-
+  Herbert Robbins and Sutton Monro introduced stochastic approximation in 1951 for finding the root
+  of a function observed only through noisy measurements; Jack Kiefer and Jacob Wolfowitz adapted it
+  to maximization in 1952. Bernard Widrow and Marcian Hoff's least-mean-squares rule (1960) applied
+  it to adaptive neurons, and mini-batch SGD became the default way to train neural networks.
+year: 1951
+note: >-
+  Strictly, SGD uses one example per step and mini-batch gradient descent a small batch, but the
+  field now calls both SGD.
+see_also:
+  - gradient descent
+  - mini-batch
+  - batch size
+  - momentum
+  - learning rate schedule
+  - Adam
+  - DP-SGD
+contrast:
+  - gradient descent
+sources:
+  - text: >-
+      Robbins, H. & Monro, S. (1951). A Stochastic Approximation Method. Annals of Mathematical
+      Statistics 22(3), 400–407.
+  - text: >-
+      Bottou, L., Curtis, F. E. & Nocedal, J. (2018). Optimization Methods for Large-Scale Machine
+      Learning. SIAM Review 60(2), 223–311.

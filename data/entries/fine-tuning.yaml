@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: fine-tuning
+id: fine-tuning
+pos: n.
+also:
+  - finetuning
+  - fine-tune
+  - fine-tuned
+domain: train
+domains:
+  - dl
+  - llm
+  - eng
+level: essential
+plain: >-
+  Taking an AI model that has already learned a lot and training it a little more on a smaller,
+  focused set of examples so it gets better at one job or behaves a certain way.
+senses:
+  - definition: >-
+      Continued training of an already trained model on a smaller dataset chosen for a particular
+      task, domain or behavior, starting from its learned [[weights|weights]] rather than from
+      random values. Because the general representations acquired in [[pretraining|pretraining]] are
+      kept and merely adjusted, far less data and compute are needed than for training from scratch,
+      which makes fine-tuning the standard way of doing [[transfer-learning|transfer learning]] with
+      neural networks. Methods vary in the training signal — labeled examples or demonstrations
+      ([[supervised-fine-tuning|supervised fine-tuning]], [[instruction-tuning|instruction
+      tuning]]), preferences ([[reinforcement-learning-from-human-feedback|reinforcement learning
+      from human feedback]], [[direct-preference-optimization|direct preference optimization]]) or
+      graded outcomes ([[reinforcement-fine-tuning|reinforcement fine-tuning]]) — and in how much of
+      the model changes: every parameter ([[full-fine-tuning|full fine-tuning]]) or only a small
+      selected subset or added module ([[parameter-efficient-fine-tuning|parameter-efficient
+      fine-tuning]], such as [[low-rank-adaptation|low-rank adaptation]]). Typical settings use a
+      learning rate well below the pretraining rate and only a few [[epoch|epochs]]. Risks include
+      [[overfitting|overfitting]] small datasets, [[catastrophic-forgetting|catastrophic
+      forgetting]] of general abilities and erosion of earlier safety training.
+    example: >-
+      We fine-tuned the 8B model on 20,000 support tickets, and it now answers in our house style.
+origin: >-
+  'Fine-tune' (to make small adjustments) is ordinary English, and its first application to network
+  weights is not established. In an early prominent use, Geoffrey Hinton and colleagues (2006)
+  applied 'fine-tuning' to the backpropagation stage that followed layer-by-layer unsupervised
+  pretraining of deep belief nets and autoencoders. The pretrain-then-fine-tune recipe spread to
+  vision (R-CNN, 2014) and language (ULMFiT, GPT and BERT, 2018), and commercial fine-tuning APIs
+  for large language models appeared from about 2021.
+year: 2006
+note: >-
+  Fine-tuning changes a model's weights; [[prompt-engineering|prompt engineering]] and
+  [[in-context-learning|in-context learning]] do not. It is one tool of
+  [[post-training|post-training]], not a synonym for it. Fine-tuning a safety-trained model on even
+  a small number of harmful examples, or on ordinary benign data, can weaken its refusals, a known
+  concern for providers that offer fine-tuning services.
+see_also:
+  - transfer learning
+  - pretraining
+  - supervised fine-tuning
+  - parameter-efficient fine-tuning
+  - full fine-tuning
+  - low-rank adaptation
+  - catastrophic forgetting
+  - post-training
+contrast:
+  - pretraining
+  - prompt engineering
+  - in-context learning
+sources:
+  - text: >-
+      Hinton, G. E. & Salakhutdinov, R. R. (2006). Reducing the Dimensionality of Data with Neural
+      Networks. Science 313(5786), 504–507.
+  - text: >-
+      Howard, J. & Ruder, S. (2018). Universal Language Model Fine-tuning for Text Classification.
+      ACL 2018.

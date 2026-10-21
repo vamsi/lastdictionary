@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: expert parallelism
+id: expert-parallelism
+pos: n.
+also:
+  - EP
+  - expert-parallel training
+  - MoE parallelism
+domain: train
+domains:
+  - llm
+  - infer
+  - hw
+level: specialist
+plain: >-
+  A way of running a 'mixture of experts' model — one made of many specialist sub-networks — by
+  giving each chip its own set of specialists and sending each piece of text to whichever chip holds
+  the specialists it needs.
+senses:
+  - definition: >-
+      A form of [[model-parallelism|model parallelism]] for [[mixture-of-experts|mixture of
+      experts]] (MoE) models in which different experts of an MoE layer reside on different devices,
+      while the rest of the network is replicated or sharded by other means. After the
+      [[router|router]] assigns each [[token|token]] to its top experts, an all-to-all
+      [[collective-communication|collective]] dispatches tokens to the devices holding those
+      experts, and a second all-to-all returns the outputs. Total parameter count can thus grow with
+      the number of devices at roughly constant computation per token. The main bottlenecks are the
+      all-to-all traffic, which grows with the number of activated experts and crosses node
+      boundaries in large deployments, and load imbalance between experts, mitigated by auxiliary
+      balancing losses, capacity limits or bias-based balancing. Large MoE systems such as
+      DeepSeek-V3 co-design routing, communication kernels and network topology around it, for
+      inference as well as training.
+    example: Expert parallelism across 64 GPUs put four experts on each device.
+origin: >-
+  Noam Shazeer and colleagues' sparsely gated MoE (2017) already kept each expert on one device
+  while other layers were data-parallel. Google's GShard (Dmitry Lepikhin and colleagues, 2020)
+  trained a 600-billion-parameter MoE on 2,048 TPU v3 accelerators, and the Switch Transformer paper
+  (William Fedus, Barret Zoph and Shazeer, January 2021) used the name in a section on combining
+  data, model and 'expert-parallelism'; an earlier first use has not been established.
+year: 2017
+see_also:
+  - mixture of experts
+  - router
+  - model parallelism
+  - collective communication
+  - 3D parallelism
+  - DeepSpeed
+sources:
+  - text: >-
+      Lepikhin, D., Lee, H., Xu, Y., Chen, D., Firat, O., Huang, Y., Krikun, M., Shazeer, N. & Chen,
+      Z. (2020). GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding.
+      arXiv:2006.16668.
+    url: https://arxiv.org/abs/2006.16668
+  - text: >-
+      Fedus, W., Zoph, B. & Shazeer, N. (2021). Switch Transformers: Scaling to Trillion Parameter
+      Models with Simple and Efficient Sparsity. arXiv:2101.03961.
+    url: https://arxiv.org/abs/2101.03961

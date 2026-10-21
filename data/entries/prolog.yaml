@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Prolog
+id: prolog
+pos: prop. n.
+also:
+  - programmation en logique
+pronunciation: PROH-log
+domain: hist
+domains:
+  - sym
+  - eng
+level: core
+plain: >-
+  A programming language from 1972 in which you state facts and rules in logic and then ask
+  questions; the computer finds answers by searching for proofs.
+senses:
+  - definition: >-
+      A [[logic-programming|logic programming]] language in which the programmer states what is
+      true, as Horn clauses of first-order logic, and the system answers a query by searching for a
+      proof that it follows from those statements. The interpreter uses SLD resolution: it matches
+      goals against rule heads by unification, works through subgoals depth-first and left to right,
+      and backtracks on failure, returning the variable bindings that make the query true. Prolog
+      suited parsing, [[expert-system|expert systems]], symbolic reasoning and rapid prototyping;
+      features such as the cut and negation as failure trade logical purity for control. David H. D.
+      Warren's DEC-10 compiler (1977) and the Warren Abstract Machine (1983) made it efficient, and
+      an ISO standard followed in 1995. It became the favored AI language in Europe and Japan, as
+      [[lisp|Lisp]] was in the United States.
+    example: >-
+      In Prolog you state family relationships as facts and rules, then ask who is whose grandparent.
+origin: >-
+  Created in 1972 by Alain Colmerauer and Philippe Roussel at the University of Aix-Marseille,
+  building on Robert Kowalski's procedural interpretation of Horn clauses, worked out in
+  collaboration between Marseille and Edinburgh. The name, from programmation en logique, was chosen
+  by Roussel at his wife's suggestion.
+year: 1972
+note: >-
+  A Prolog-like logic language was chosen as the basis of Japan's
+  [[fifth-generation-computer-systems-project|Fifth Generation Computer Systems project]].
+see_also:
+  - logic programming
+  - Lisp
+  - Fifth Generation Computer Systems project
+  - expert system
+  - symbolic AI
+  - backward chaining
+sources:
+  - text: >-
+      Colmerauer, A. & Roussel, P. (1993). The Birth of Prolog. Second ACM SIGPLAN Conference on
+      History of Programming Languages (HOPL-II); reprinted in History of Programming Languages II.
+      New York: ACM Press, 1996.

@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Message Understanding Conference
+id: message-understanding-conference
+pos: prop. n.
+also:
+  - MUC
+  - MUC-6
+  - MUC-7
+  - Message Understanding Conferences
+domain: eval
+domains:
+  - hist
+  - data
+labels:
+  - historical
+level: specialist
+plain: >-
+  A series of US government-funded contests held from 1987 to 1998 in which research teams built
+  programs to pull key facts, such as who did what, where and when, out of news and military
+  messages.
+senses:
+  - definition: >-
+      A series of seven US government-sponsored evaluations of [[information-extraction|information
+      extraction]] systems (MUC-1 to MUC-7, 1987–1998). Participating teams received a task
+      definition, training texts and answer keys, then ran their systems blind on new texts, and
+      outputs were scored automatically against templates filled in by people. Domains moved from
+      naval operations messages (MUC-1 and MUC-2) to Latin American terrorism reports (MUC-3 and
+      MUC-4), joint ventures and microelectronics (MUC-5), executive succession (MUC-6) and air
+      crashes and rocket launches (MUC-7). MUC carried the information-retrieval measures
+      [[precision|precision]] and [[recall|recall]] into NLP evaluation, combining them from MUC-4
+      (1992) in the F-measure, and MUC-6 (1995) split extraction into reusable subtasks, namely
+      [[named-entity-recognition|named-entity recognition]], coreference, template elements and
+      scenario templates, that shaped the field's research agenda. Its blind shared-task format
+      became a model for later NLP and AI evaluation campaigns.
+origin: >-
+  Organized from 1987 by Beth Sundheim and colleagues at the US Naval Ocean Systems Center in San
+  Diego with DARPA support; from MUC-5 (1993) the evaluations ran within DARPA's TIPSTER text
+  program. The term 'named entity' is generally traced to the MUC-6 task (Ralph Grishman and
+  Sundheim, 1996). The series ended with MUC-7, whose conference met in 1998; the Automatic Content
+  Extraction (ACE) program succeeded it from about 1999.
+year: 1987
+note: >-
+  Despite the name, each 'conference' was mainly a workshop where teams reported blind-test results.
+  The MUC entity types (person, organization, location, dates, times, money and percentages) remain
+  a common default label set for named-entity recognition.
+see_also:
+  - information extraction
+  - named-entity recognition
+  - TREC
+  - F1 score
+  - precision
+  - benchmark
+sources:
+  - text: >-
+      Grishman, R. & Sundheim, B. (1996). Message Understanding Conference-6: A Brief History. Proc.
+      COLING 1996.
+  - text: >-
+      Chinchor, N. (1992). MUC-4 Evaluation Metrics. Proc. Fourth Message Understanding Conference
+      (MUC-4).

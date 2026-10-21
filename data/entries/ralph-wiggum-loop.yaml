@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Ralph Wiggum loop
+id: ralph-wiggum-loop
+pos: n.
+also:
+  - Ralph
+  - Ralph Wiggum technique
+  - Ralph loop
+domain: agents
+domains:
+  - eng
+  - culture
+labels:
+  - slang
+  - emerging
+level: specialist
+plain: >-
+  A blunt way of using AI coding assistants: feed the same instructions to the AI again and again in
+  an endless loop until the software gets built.
+senses:
+  - definition: >-
+      A technique for [[agentic-coding|agentic coding]] in which the same prompt file is fed to a
+      [[coding-agent|coding agent]] repeatedly in an unattended loop (at its most minimal, one shell
+      command that keeps piping the prompt to the agent) so that each iteration starts with a fresh
+      [[context-window|context window]], completes one item from a plan and records progress in
+      files that the next iteration reads. Tests, type checkers and static analyzers act as 'back
+      pressure' that rejects bad output, and expensive work such as summarizing test results is
+      delegated to [[subagent|subagents]]. Its proponent presented it as deliberately naive but
+      effective for greenfield projects — citing work worth a sizable contract completed for a few
+      hundred dollars of model usage — while warning against using it on existing codebases.
+    example: >-
+      I left a Ralph Wiggum loop running on the parser overnight; by morning it had passed 900 of
+      1,000 tests.
+origin: >-
+  Described by the developer Geoffrey Huntley in a blog post dated 14 July 2025, and named after
+  Ralph Wiggum, the cheerfully clueless child in The Simpsons. It went viral among developers around
+  the turn of 2026 and was packaged as plug-ins for popular coding agents.
+year: 2025
+see_also:
+  - agentic coding
+  - coding agent
+  - agent loop
+  - YOLO mode
+  - dark factory
+  - stop condition
+  - vibe coding
+sources:
+  - text: >-
+      Huntley, G. (2025). Ralph Wiggum as a "software engineer". ghuntley.com, 14 July 2025.
+    url: https://ghuntley.com/ralph/
+as_of: 2026-10

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: nondeterminism
+id: nondeterminism
+pos: n.
+also:
+  - non-determinism
+  - nondeterministic
+  - LLM nondeterminism
+  - batch invariance
+  - seed parameter
+domain: llm
+domains:
+  - infer
+  - eval
+level: core
+plain: >-
+  The fact that an AI model can give different answers to exactly the same question, partly because
+  it deliberately chooses words with some randomness and partly because of tiny computing
+  differences.
+senses:
+  - definition: >-
+      Variation in a model's output across runs with identical input and settings. Much of it is
+      intended: sampling at nonzero [[temperature|temperature]] draws tokens at random, and fixing a
+      [[random-seed|random seed]] makes it repeatable only if everything else is fixed too. But
+      outputs also vary at temperature 0, because floating-point addition is not associative —
+      results depend on the order in which numbers are summed — and that order can change with GPU
+      kernels, hardware, parallelism and, in served models, batch size. Horace He of Thinking
+      Machines Lab argued in September 2025 that the main culprit in LLM serving is a lack of 'batch
+      invariance': kernels whose numerics change with the number of concurrent requests. In his
+      test, 1,000 temperature-0 runs of Qwen3-235B gave 80 distinct completions, but identical ones
+      with batch-invariant kernels. Nondeterminism complicates debugging, evaluation, caching and
+      on-policy reinforcement learning.
+    example: >-
+      Even at temperature 0 the endpoint's answers drifted, so we pinned a batch-invariant build for
+      the regression suite.
+origin: >-
+  Nondeterministic GPU computation troubled deep-learning reproducibility from at least the
+  mid-2010s, prompting deterministic modes in frameworks. For LLMs the issue drew attention when
+  developers found that temperature 0 did not give identical outputs; Thinking Machines Lab's
+  'Defeating Nondeterminism in LLM Inference' (September 2025) offered a widely cited diagnosis.
+note: >-
+  Deliberate randomness from sampling ([[stochastic|stochastic]] generation) differs from unintended
+  numerical nondeterminism. Some APIs offer a seed parameter for only 'best-effort' reproducibility.
+see_also:
+  - temperature
+  - random seed
+  - floating-point format
+  - greedy decoding
+  - batch inference
+  - continuous batching
+sources:
+  - text: >-
+      He, H. & Thinking Machines Lab (2025). Defeating Nondeterminism in LLM Inference. Thinking
+      Machines Lab: Connectionism.
+    url: https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/
+as_of: 2026-10

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: PAC learning
+id: pac-learning
+pos: n.
+also:
+  - probably approximately correct learning
+  - PAC
+  - PAC learnability
+  - PAC model
+  - sample complexity
+  - PAC-Bayes
+domain: math
+domains:
+  - ml
+level: specialist
+plain: >-
+  A mathematical definition of what it means to learn from examples: given enough data, a learner
+  should, with high probability, find a rule that is almost always right.
+senses:
+  - definition: >-
+      A framework of computational learning theory that defines successful learning as a
+      two-parameter guarantee: given examples drawn [[i-i-d|i.i.d.]] from an unknown distribution
+      and labeled by an unknown target concept in a known class, the learner must, except with
+      probability at most δ, return a hypothesis whose error on that same distribution is no more
+      than ε — hence 'probably approximately correct'. A class is efficiently PAC-learnable if this
+      takes a number of examples — the sample complexity — and computation polynomial in 1/ε, 1/δ
+      and the problem size. For a finite hypothesis class, about (log |H| + log 1/δ)/ε examples
+      suffice; for infinite classes the [[vc-dimension|VC dimension]] decides learnability and
+      sample complexity. PAC learning gave machine learning its first rigorous notion of
+      [[generalization|generalization]], tied learnability to computational complexity and
+      cryptography, and inspired [[boosting|boosting]]; PAC-Bayes bounds extend it to randomized
+      predictors and yield some of the few non-vacuous generalization bounds for deep networks.
+    example: >-
+      In the PAC model, halving the error target roughly doubles the number of examples needed.
+formula_latex: \Pr_{S\sim\mathcal{D}^m}\big[\,\mathrm{err}_{\mathcal{D}}(h_S) \le \varepsilon\,\big]
+  \ge 1 - \delta
+origin: >-
+  Introduced by Leslie Valiant in 'A Theory of the Learnable' (Communications of the ACM, 1984); the
+  label 'probably approximately correct' and the acronym PAC came into use over the following years.
+  Anselm Blumer, Andrzej Ehrenfeucht, David Haussler and Manfred Warmuth tied PAC learnability to
+  the VC dimension (1989). Valiant received the 2010 Turing Award, in part for this work.
+year: 1984
+see_also:
+  - VC dimension
+  - statistical learning theory
+  - empirical risk minimization
+  - generalization
+  - boosting
+  - no free lunch theorem
+sources:
+  - text: >-
+      Valiant, L. G. (1984). A Theory of the Learnable. Communications of the ACM, 27(11).

@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: admissible heuristic
+id: admissible-heuristic
+pos: n.
+also:
+  - admissibility
+  - consistent heuristic
+  - monotone heuristic
+  - consistency
+domain: sym
+level: specialist
+plain: >-
+  An estimate of the remaining distance to a goal that is never more than the real distance — an
+  optimistic guess — which lets some search methods guarantee that they find the best route.
+senses:
+  - definition: >-
+      A [[heuristic|heuristic]] function h whose estimate h(n) is, for every state n, at most the
+      true cost h*(n) of the cheapest path from n to a goal — possibly too optimistic, never too
+      pessimistic. With an admissible heuristic, [[a-search|A* search]] in its tree-search form is
+      guaranteed to return an optimal solution. The stronger property of consistency (or
+      monotonicity) requires that h(n) ≤ c(n, n′) + h(n′) for every action from n to n′ with cost c;
+      consistency implies admissibility and guarantees optimality in graph search without
+      re-expanding nodes. Admissible heuristics are typically obtained by solving a relaxed problem
+      exactly — Manhattan distance for the sliding-tile puzzle relaxes the rule that tiles cannot
+      pass through one another — and the maximum of several admissible heuristics is itself
+      admissible. Among admissible heuristics, larger (better-informed) ones lead A* to expand fewer
+      nodes.
+formula_latex: 0 \le h(n) \le h^{*}(n) \quad \text{for every state } n
+origin: >-
+  The idea comes from Peter Hart, Nils Nilsson and Bertram Raphael's 1968 A* paper, which called a
+  search algorithm admissible if it is guaranteed to find an optimal path and showed that A* is
+  admissible when its estimate never exceeds the true cost; later usage transferred the adjective to
+  the heuristic itself.
+year: 1968
+see_also:
+  - heuristic
+  - A* search
+  - best-first search
+  - state space search
+sources:
+  - text: >-
+      Hart, P. E., Nilsson, N. J. & Raphael, B. (1968). A Formal Basis for the Heuristic
+      Determination of Minimum Cost Paths. IEEE Transactions on Systems Science and Cybernetics
+      4(2), 100–107.

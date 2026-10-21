@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MFCC
+id: mfcc
+pos: abbr.
+also:
+  - mel-frequency cepstral coefficients
+  - MFCCs
+  - cepstrum
+  - cepstral coefficients
+  - delta features
+domain: percep
+domains:
+  - math
+  - hist
+level: specialist
+plain: >-
+  A short list of numbers, usually about 13, that summarizes the shape of a brief slice of sound in
+  a way that mimics human hearing; for decades the standard input to speech recognizers.
+senses:
+  - definition: >-
+      Mel-frequency cepstral coefficients: compact features describing the short-term spectral
+      envelope of a sound. Each short frame of audio (about 25 milliseconds long, every 10
+      milliseconds) is windowed and Fourier-transformed; its power spectrum is pooled by a
+      mel-spaced triangular filterbank, as in a [[mel-spectrogram|mel spectrogram]]; the logarithms
+      of the filter energies are taken; and a discrete cosine transform is applied, of which
+      typically the first 12 or 13 coefficients are kept. The low-order coefficients capture the
+      broad shape of the spectrum, which reflects the configuration of the vocal tract and hence the
+      phoneme, while discarding fine harmonic detail tied to pitch. The decorrelating cosine
+      transform suited the diagonal-covariance [[gaussian-mixture-model|Gaussian mixtures]] of
+      [[hidden-markov-model|hidden Markov model]] recognizers, which usually appended energy and
+      first and second time derivatives ('deltas') to make a 39-dimensional vector. Deep networks
+      generally take log-mel spectrograms instead, since the transform discards information they can
+      use, but MFCCs remain common in speaker recognition, music information retrieval, classical
+      baselines and low-power devices.
+    example: >-
+      The keyword spotter on the microcontroller still uses 13 MFCCs per frame to save memory.
+origin: >-
+  The cepstrum (a respelling of 'spectrum') was named by Bruce Bogert, Michael Healy and John Tukey
+  in 1963. Mel-frequency cepstral coefficients were popularized by Steven Davis and Paul
+  Mermelstein's 1980 comparison of speech-recognition features, building on mid-1970s work by
+  Mermelstein and by John Bridle and Michael Brown.
+year: 1980
+note: >-
+  Usually used in the plural, MFCCs. 'Cepstrum' and 'quefrency' are deliberate letter-swapped
+  coinages from Bogert, Healy and Tukey's paper.
+see_also:
+  - mel spectrogram
+  - spectrogram
+  - feature extraction
+  - speech recognition
+  - speaker verification
+  - hidden Markov model
+sources:
+  - text: >-
+      Davis, S. B. & Mermelstein, P. (1980). Comparison of Parametric Representations for
+      Monosyllabic Word Recognition in Continuously Spoken Sentences. IEEE Transactions on
+      Acoustics, Speech, and Signal Processing 28(4), 357–366.
+  - text: >-
+      Bogert, B. P., Healy, M. J. R. & Tukey, J. W. (1963). The Quefrency Alanysis of Time Series
+      for Echoes: Cepstrum, Pseudo-Autocovariance, Cross-Cepstrum and Saphe Cracking. In Proceedings
+      of the Symposium on Time Series Analysis, Wiley.

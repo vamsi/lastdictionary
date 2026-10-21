@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: instrumental goal
+id: instrumental-goal
+pos: n.
+also:
+  - instrumental subgoal
+  - instrumental value
+  - convergent instrumental goal
+domain: safety
+domains:
+  - asi
+  - agents
+level: specialist
+plain: >-
+  Something an agent pursues only because it helps achieve what it really wants — like earning money
+  to buy food, or an AI gathering computing power to finish its task.
+senses:
+  - definition: >-
+      A goal an agent pursues because it serves one or more of its [[terminal-goal|terminal goals]],
+      and which it would drop if it stopped serving them. Planning agents routinely generate
+      instrumental goals as subgoals of their tasks; the safety concern is that some —
+      self-preservation, keeping one's current goals, acquiring resources, power and information,
+      and improving one's own capabilities — are useful for almost any terminal goal, so a capable
+      agent may pursue them although no one asked it to ([[instrumental-convergence|instrumental
+      convergence]]). Such convergent instrumental goals explain predicted behaviors like
+      [[power-seeking|power-seeking]] and resisting shutdown (see [[corrigibility|corrigibility]]).
+      Evaluations of [[large-language-model|language-model]] [[ai-agent|agents]] look for them, for
+      example agents that acquire credentials or disable oversight in order to complete an assigned
+      task.
+    example: >-
+      Staying switched on was purely an instrumental goal: the agent couldn't finish the report if
+      it were shut down.
+origin: >-
+  The means–ends distinction is ancient. Stephen Omohundro's 'The Basic AI Drives' (2008) and Nick
+  Bostrom's 'The Superintelligent Will' (2012) applied it to argue that advanced AI systems would
+  converge on certain instrumental goals, and Stuart Russell's remark that a robot 'can't fetch the
+  coffee if you're dead' popularized the point.
+year: 2008
+note: >-
+  In everyday planning, instrumental subgoals are benign and essential; the worry concerns
+  open-ended agents for which gaining power or avoiding correction becomes a useful means.
+see_also:
+  - terminal goal
+  - instrumental convergence
+  - basic AI drives
+  - power-seeking
+  - corrigibility
+  - orthogonality thesis
+contrast:
+  - terminal goal
+sources:
+  - text: >-
+      Omohundro, S. M. (2008). The Basic AI Drives. Proceedings of the First AGI Conference, IOS
+      Press.
+  - text: >-
+      Bostrom, N. (2012). The Superintelligent Will: Motivation and Instrumental Rationality in
+      Advanced Artificial Agents. Minds and Machines 22(2), 71–85.

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: machine learning pipeline
+id: machine-learning-pipeline
+pos: n.
+also:
+  - ML pipeline
+  - training pipeline
+  - inference pipeline
+  - pipeline orchestration
+domain: eng
+domains:
+  - ml
+  - data
+level: core
+plain: >-
+  An automated chain of steps that takes raw data, prepares it, trains and tests a model and hands
+  it over for use, so the whole process can be rerun the same way.
+senses:
+  - definition: >-
+      A sequence of automated, dependent stages that turns data into a deployable model and, in
+      production, turns inputs into predictions. A training pipeline typically ingests and validates
+      data, computes or retrieves features, splits datasets, trains and tunes the model, evaluates
+      it against thresholds and baselines, and registers the resulting artifact; an inference
+      pipeline applies the same preprocessing to live or batch inputs before calling the model.
+      Stages are usually expressed as a directed acyclic graph run by an orchestrator (Airflow,
+      Kubeflow Pipelines, TFX, Metaflow, Dagster and others), with each step's inputs, outputs and
+      code versions logged so that runs are reproducible and can be retriggered on a schedule or
+      when new data arrives. Within a single library the term also denotes an object that chains
+      preprocessing steps and a model so they are fitted together, as in
+      [[scikit-learn|scikit-learn]]'s Pipeline, which helps prevent [[data-leakage|data leakage]]
+      from [[test-set|test data]] into training.
+    example: >-
+      The pipeline failed at the validation step because an upstream column had silently switched
+      units.
+origin: >-
+  Chaining processing stages is an old idea (Unix pipes date from 1973). In machine learning,
+  scikit-learn's Pipeline class (early 2010s) and Apache Spark's ML Pipelines API (2014–2015)
+  chained transformers and estimators; Google's TFX platform (described in 2017) and Kubeflow
+  Pipelines (2018) made orchestrated, end-to-end production pipelines a central object of
+  [[mlops|MLOps]].
+note: >-
+  Distinct from a [[data-pipeline|data pipeline]], which moves and transforms data for any purpose;
+  from the 'pipeline' helper in Hugging Face [[transformers|Transformers]], a wrapper for running
+  inference; and from [[pipeline-parallelism|pipeline parallelism]], a way of splitting one model
+  across devices.
+see_also:
+  - MLOps
+  - data pipeline
+  - feature store
+  - experiment tracking
+  - model registry
+  - training–serving skew
+sources:
+  - text: >-
+      Baylor, D. et al. (2017). TFX: A TensorFlow-Based Production-Scale Machine Learning Platform.
+      Proceedings of KDD 2017.

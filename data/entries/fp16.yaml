@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FP16
+id: fp16
+pos: abbr.
+also:
+  - half precision
+  - float16
+  - binary16
+  - half
+domain: hw
+domains:
+  - dl
+  - infer
+level: core
+plain: >-
+  A 16-bit way of storing numbers that uses half the memory of the standard 32-bit format. It is
+  fast for AI but can't represent very large or very tiny values.
+senses:
+  - definition: >-
+      The IEEE 754 half-precision [[floating-point-format|floating-point format]] (binary16): 1 sign
+      bit, 5 exponent bits and 10 stored significand bits, giving about 3 decimal digits of
+      precision, a largest finite value of 65,504 and a smallest normal value near 6 × 10^-5. It
+      halves memory and bandwidth relative to [[fp32|FP32]] and runs on fast [[tensor-core|tensor
+      cores]], but its narrow range lets small gradients underflow to zero and large activations
+      overflow, so FP16 training relies on loss scaling and FP32 master weights
+      ([[mixed-precision-training|mixed-precision training]]). [[bfloat16|bfloat16]], which has
+      FP32's range, has largely replaced it for training large models; FP16 remains common for
+      inference, consumer GPUs and stored [[weights|weights]].
+origin: >-
+  16-bit floating-point formats appeared in 1980s signal processors and 1990s graphics hardware;
+  Industrial Light & Magic's OpenEXR image format and Nvidia and Microsoft's 'half' type in the Cg
+  shading language (2002) popularized the 1-5-10 layout, which IEEE 754-2008 standardized as
+  binary16. Paulius Micikevicius and colleagues' 'Mixed Precision Training' (2017) established
+  recipes for training with it.
+year: 2002
+note: >-
+  'Half precision' is sometimes used loosely to include bfloat16; specify which 16-bit format is
+  meant.
+see_also:
+  - floating-point format
+  - FP32
+  - bfloat16
+  - mixed-precision training
+  - quantization
+contrast:
+  - bfloat16
+sources:
+  - text: >-
+      Micikevicius, P. et al. (2017). Mixed Precision Training. arXiv:1710.03740 (ICLR 2018).
+    url: https://arxiv.org/abs/1710.03740

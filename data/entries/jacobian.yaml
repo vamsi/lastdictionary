@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Jacobian
+id: jacobian
+pos: n.
+also:
+  - Jacobian matrix
+  - Jacobian determinant
+  - vector–Jacobian product
+  - Jacobian–vector product
+  - VJP
+  - JVP
+domain: math
+domains:
+  - dl
+  - gen
+level: specialist
+plain: >-
+  A table listing how each output of a process responds to a small change in each input. It
+  describes how a transformation locally stretches, squeezes and turns space.
+senses:
+  - definition: >-
+      The m × n [[matrix|matrix]] that records how each output of a function f from ℝⁿ to ℝᵐ
+      responds to each input: entry (i, j) is the [[partial-derivative|partial derivative]] ∂fᵢ/∂xⱼ.
+      It is the best linear approximation of f near a point, and by the [[chain-rule|chain rule]]
+      the Jacobian of a composition is the product of the stages' Jacobians. Deep networks have
+      enormous Jacobians that are almost never formed explicitly: reverse-mode
+      [[automatic-differentiation|automatic differentiation]] ([[backpropagation|backpropagation]])
+      computes vector–Jacobian products and forward mode computes Jacobian–vector products, each at
+      roughly the cost of a forward pass. When m = n, the absolute value of the Jacobian's
+      determinant measures how f scales volume; [[normalizing-flow|normalizing flows]] are built so
+      that its logarithm, needed by the change-of-variables formula, is cheap. Jacobian norms also
+      appear in analyses of robustness and training stability.
+    example: >-
+      Each coupling layer's Jacobian is triangular, so its log-determinant is just a sum.
+formula_latex: J_{ij} = \frac{\partial f_i}{\partial x_j}, \qquad J \in \mathbb{R}^{m\times n}
+origin: >-
+  Named after Carl Gustav Jacob Jacobi, who studied functional determinants in his 1841 memoir De
+  determinantibus functionalibus. James Joseph Sylvester coined 'Jacobian' in 1852 in the Cambridge
+  and Dublin Mathematical Journal.
+year: 1852
+see_also:
+  - gradient
+  - Hessian
+  - chain rule
+  - automatic differentiation
+  - normalizing flow
+  - partial derivative

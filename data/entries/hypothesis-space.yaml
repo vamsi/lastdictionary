@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hypothesis space
+id: hypothesis-space
+pos: n.
+also:
+  - hypothesis class
+  - hypothesis set
+  - model class
+  - function class
+  - version space
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  The full menu of possible models a learning method is allowed to choose from — for example, all
+  straight lines. Learning means picking the item on the menu that best fits the data.
+senses:
+  - definition: >-
+      The set of candidate functions (hypotheses) that a learning algorithm can output, fixed by the
+      choice of model family and its constraints — all linear classifiers over given features, all
+      decision trees of depth at most five, or all functions computable by a network of a given
+      architecture. Learning is a search through this set for a hypothesis consistent with, or best
+      fitting, the training data, as in [[empirical-risk-minimization|empirical risk minimization]].
+      Its choice is the restrictive part of a learner's [[inductive-bias|inductive bias]]: too small
+      a space may contain no good approximation ([[underfitting|underfitting]]), while too rich a
+      space admits hypotheses that fit noise ([[overfitting|overfitting]]). Learning theory measures
+      richness with quantities such as cardinality, [[vc-dimension|VC dimension]] and Rademacher
+      complexity, which govern how much data is needed to generalize, as in [[pac-learning|PAC
+      learning]]. In concept learning, the version space is the subset of hypotheses consistent with
+      every example seen so far.
+    example: >-
+      Restricting the hypothesis space to monotone functions made the credit model both safer and
+      easier to audit.
+origin: >-
+  The view of learning as search through a space of hypotheses was set out in Tom Mitchell's work on
+  version spaces (1977) and 'Generalization as Search' (Artificial Intelligence, 1982); Leslie
+  Valiant's PAC model (1984) and Vapnik–Chervonenkis theory made the hypothesis class the central
+  object of learning theory.
+year: 1977
+note: >-
+  Unrelated to the hypotheses of statistical significance testing (see [[p-value|p-value]]). For
+  deep networks, the functions actually reachable depend on the optimizer and training budget, not
+  only on the architecture (see [[implicit-regularization|implicit regularization]]).
+see_also:
+  - inductive bias
+  - PAC learning
+  - VC dimension
+  - empirical risk minimization
+  - overfitting
+  - no free lunch theorem
+sources:
+  - text: >-
+      Mitchell, T. M. (1982). Generalization as Search. Artificial Intelligence, 18(2), 203–226.

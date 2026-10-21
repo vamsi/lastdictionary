@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: KV cache
+id: kv-cache
+pos: n.
+also:
+  - key-value cache
+  - attention cache
+  - past key values
+domain: infer
+domains:
+  - llm
+  - hw
+level: core
+plain: >-
+  A memory store where a chatbot keeps its working notes on everything already read and written, so
+  each new word does not require re-reading the whole conversation from scratch.
+senses:
+  - definition: >-
+      The stored [[query-key-and-value|key and value]] vectors computed for earlier [[token|tokens]]
+      in every [[attention|attention]] layer of a [[transformer|transformer]], kept during
+      generation so that each [[decode-phase|decode]] step computes keys and values only for the
+      newest token instead of recomputing them for the whole sequence. This makes each step's cost
+      linear rather than quadratic in sequence length, at the price of memory that grows with
+      sequence length, batch size, layer count and number of key–value heads. In the worked example
+      of the [[vllm|vLLM]] paper, OPT-13B in 16-bit precision needs about 800 KB per token, or about
+      1.6 GB for a 2,048-token request. In serving, the KV cache often rivals or exceeds the
+      [[weights|weights]] in size and limits batch size and [[long-context|long context]]. It is
+      managed with [[pagedattention|PagedAttention]], reused across requests by
+      [[prompt-caching|prompt caching]], shrunk by [[grouped-query-attention|grouped-query
+      attention]], [[multi-head-latent-attention|multi-head latent attention]] and
+      [[kv-cache-compression|KV cache compression]], and transferred between machines in
+      [[disaggregated-serving|disaggregated serving]].
+    example: Switching to grouped-query attention cut our KV cache by a factor of eight.
+formula_latex: \text{bytes} = 2 \cdot n_{\text{layers}} \cdot n_{\text{kv heads}} \cdot
+  d_{\text{head}} \cdot n_{\text{tokens}} \cdot n_{\text{bytes per value}}
+origin: >-
+  Caching keys and values during incremental decoding was standard in Transformer implementations
+  from about 2017–2018, often under names like 'past key values'. The short name 'KV cache', used in
+  Google's 2022 analysis of PaLM inference by Reiner Pope and colleagues, became common around
+  2022–2023, when LLM-serving work such as vLLM showed that its memory footprint, not arithmetic,
+  limited how many requests a GPU could serve.
+year: 2017
+see_also:
+  - PagedAttention
+  - prompt caching
+  - KV cache compression
+  - grouped-query attention
+  - multi-head latent attention
+  - decode phase
+  - long context
+sources:
+  - text: >-
+      Kwon, W. et al. (2023). Efficient Memory Management for Large Language Model Serving with
+      PagedAttention. SOSP 2023. arXiv:2309.06180.
+    url: https://arxiv.org/abs/2309.06180
+  - text: >-
+      Shazeer, N. (2019). Fast Transformer Decoding: One Write-Head is All You Need.
+      arXiv:1911.02150.
+    url: https://arxiv.org/abs/1911.02150
+  - text: >-
+      Pope, R. et al. (2022). Efficiently Scaling Transformer Inference. arXiv:2211.05102 (MLSys
+      2023).
+    url: https://arxiv.org/abs/2211.05102

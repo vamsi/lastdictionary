@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Taylor series
+id: taylor-series
+pos: n.
+also:
+  - Taylor expansion
+  - Taylor's theorem
+  - Taylor polynomial
+  - Maclaurin series
+  - first-order approximation
+  - second-order approximation
+domain: math
+domains:
+  - dl
+level: specialist
+plain: >-
+  A way of approximating a complicated curve near a chosen point by adding up simple pieces: a
+  constant, a straight-line slope, a bend, and so on.
+senses:
+  - definition: >-
+      The expansion of a smooth function around a point a as a power series in (x − a) whose
+      coefficients come from the function's derivatives at a: f(a), plus f′(a)(x − a), plus f″(a)(x
+      − a)²/2!, and so on; for analytic functions the series converges to the function near a.
+      Truncating after a few terms gives a Taylor polynomial whose error Taylor's theorem bounds.
+      Truncated expansions are the reasoning behind most optimization: [[gradient-descent|gradient
+      descent]] minimizes a first-order (linear) approximation of the [[loss-function|loss]] within
+      a small step; Newton-type [[second-order-optimization|second-order optimization]] minimizes a
+      quadratic one built from the [[hessian|Hessian]]; and [[xgboost|XGBoost]] fits each tree to a
+      second-order expansion of the loss. Taylor arguments also justify [[learning-rate|learning
+      rate]] bounds, the linearized regime of the [[neural-tangent-kernel|neural tangent kernel]]
+      and attribution methods that linearize a network.
+    example: >-
+      Expand the loss to second order around the current weights and the Newton step falls out.
+formula_latex: f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!}\,(x-a)^k
+origin: >-
+  Named after Brooke Taylor, who published the series in Methodus incrementorum directa et inversa
+  (1715); James Gregory, Isaac Newton, Leibniz and Johann Bernoulli knew versions earlier. Colin
+  Maclaurin's Treatise of Fluxions (1742) credited Taylor, and the special case at zero now bears
+  Maclaurin's name.
+year: 1715
+see_also:
+  - derivative
+  - Hessian
+  - gradient descent
+  - second-order optimization
+  - neural tangent kernel
+  - Fourier transform

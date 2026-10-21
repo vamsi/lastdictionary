@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generalization gap
+id: generalization-gap
+pos: n.
+also:
+  - train–test gap
+domain: dl
+domains:
+  - ml
+  - eval
+level: core
+plain: >-
+  The difference between how well a model does on the examples it trained on and how well it does on
+  new ones. A big gap means it memorized rather than learned.
+senses:
+  - definition: >-
+      The difference between a model's performance on its training data and its expected performance
+      on unseen data from the same distribution — in learning-theory terms, the gap between
+      empirical risk and true risk (see [[empirical-risk-minimization|empirical risk
+      minimization]]). Estimated in practice as validation or test loss minus training loss, it is
+      the quantity that generalization bounds based on [[vc-dimension|VC dimension]], Rademacher
+      complexity, norms, compression or PAC-Bayes try to control; for deep networks most such bounds
+      are vacuous, which motivated research on [[implicit-regularization|implicit regularization]],
+      [[sharp-and-flat-minima|sharp and flat minima]] and [[benign-overfitting|benign overfitting]].
+      A large gap signals [[overfitting|overfitting]]; a small gap with high error signals
+      [[underfitting|underfitting]]. The phrase is also used for specific comparative gaps, notably
+      the worse test accuracy of large-batch than small-batch training. It should be distinguished
+      from performance drops under [[distribution-shift|distribution shift]], which come from
+      differences between training and deployment distributions rather than from finite samples.
+    example: Augmentation shrank the generalization gap from twelve points to four.
+origin: >-
+  The concept is central to statistical learning theory, beginning with Vladimir Vapnik and Alexey
+  Chervonenkis's uniform-convergence bounds of the late 1960s and 1970s. The phrase became common in
+  deep learning in the mid-2010s, notably through Nitish Shirish Keskar and colleagues' 2016 study
+  of the large-batch generalization gap.
+see_also:
+  - overfitting
+  - underfitting
+  - empirical risk minimization
+  - VC dimension
+  - batch size
+  - distribution shift
+  - benign overfitting
+contrast:
+  - distribution shift
+sources:
+  - text: >-
+      Keskar, N. S. et al. (2017). On Large-Batch Training for Deep Learning: Generalization Gap and
+      Sharp Minima. ICLR 2017.
+    url: https://arxiv.org/abs/1609.04836
+  - text: >-
+      Zhang, C., Bengio, S., Hardt, M., Recht, B. & Vinyals, O. (2017). Understanding deep learning
+      requires rethinking generalization. ICLR 2017.
+    url: https://arxiv.org/abs/1611.03530

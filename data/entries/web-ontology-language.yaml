@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Web Ontology Language
+id: web-ontology-language
+pos: prop. n.
+also:
+  - OWL
+  - OWL 2
+  - OWL DL
+  - OWL Full
+domain: sym
+domains:
+  - data
+level: specialist
+plain: >-
+  A web standard language for writing ontologies — precise definitions of categories and their
+  relationships — so that software can check them for contradictions and infer new facts.
+senses:
+  - definition: >-
+      The W3C's standard for publishing [[ontology|ontologies]] on the [[semantic-web|semantic
+      web]], expressed on top of [[resource-description-framework|RDF]]. It defines classes,
+      properties and individuals and lets authors state class expressions (intersections, unions,
+      complements, property restrictions such as 'has at least one child'), property characteristics
+      (transitive, symmetric, functional, inverse) and equivalence or disjointness. Its main dialect
+      has model-theoretic semantics given by the [[description-logic|description logic]] SROIQ, so
+      automated reasoners can check consistency and infer class hierarchies; the OWL 2 profiles EL,
+      QL and RL restrict expressiveness to keep reasoning tractable at scale. OWL follows the
+      open-world assumption — missing information is unknown, not false — which often surprises
+      users used to databases and the [[closed-world-assumption|closed-world assumption]]. OWL
+      ontologies are commonly edited in Stanford's open-source Protégé tool.
+origin: >-
+  Developed by the W3C Web Ontology Working Group from DAML+OIL, a merger of the US DARPA Agent
+  Markup Language and the European Ontology Inference Layer. OWL became a W3C Recommendation in
+  February 2004, and OWL 2 in October 2009. The initials were deliberately transposed: 'OWL' is easy
+  to say, calls to mind the proverbially wise bird and recalls One World Language, a 1970s
+  knowledge-representation project led by William A. Martin. Readers often connect it with Owl in
+  Winnie-the-Pooh, who wrote his name 'WOL'.
+year: 2004
+see_also:
+  - ontology
+  - description logic
+  - semantic web
+  - Resource Description Framework
+  - closed-world assumption
+  - knowledge graph
+sources:
+  - text: >-
+      W3C OWL Working Group (2012). OWL 2 Web Ontology Language Document Overview (Second Edition).
+      W3C Recommendation.

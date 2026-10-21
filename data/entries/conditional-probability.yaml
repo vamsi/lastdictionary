@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: conditional probability
+id: conditional-probability
+pos: n.
+also:
+  - conditional distribution
+  - P(A|B)
+  - conditioning
+  - conditional independence
+domain: math
+domains:
+  - ml
+  - llm
+level: core
+plain: >-
+  The chance of something once you already know that something else is true — for example, the
+  chance of rain given that the sky is cloudy.
+senses:
+  - definition: >-
+      The probability of an event A given that event B has occurred, written P(A | B) and defined as
+      P(A and B) divided by P(B) when P(B) > 0; conditioning keeps only the outcomes compatible with
+      what is known and renormalizes. Two events are independent when conditioning on one leaves the
+      other's probability unchanged; conditional independence — independence given a third variable
+      — is the structural assumption behind [[naive-bayes|naive Bayes]],
+      [[hidden-markov-model|hidden Markov models]] and [[bayesian-network|Bayesian networks]].
+      Conditional probability is the core of modern AI: [[bayes-theorem|Bayes' theorem]] inverts it
+      to update beliefs, a classifier models P(label | input), and a [[large-language-model|language
+      model]] models P(next token | preceding tokens), from which the [[chain-rule|chain rule]] of
+      probability builds probabilities of whole sequences. Confusing P(A | B) with P(B | A), the
+      'prosecutor's fallacy', is a frequent error in reasoning about tests and detectors.
+    example: >-
+      Conditional on the prompt containing a code block, the model answered in Python 94 percent of
+      the time.
+formula_latex: P(A \mid B) = \frac{P(A \cap B)}{P(B)}, \qquad P(B) > 0
+origin: >-
+  Abraham de Moivre's Doctrine of Chances (1718; 2nd ed. 1738) treated dependent and independent
+  events and the multiplication rule, and Thomas Bayes's essay of 1763 reasoned about conditioning
+  on observations. Andrey Kolmogorov (1933) made the ratio the definition and developed conditioning
+  on random variables in measure-theoretic form.
+see_also:
+  - Bayes' theorem
+  - chain rule
+  - probability
+  - naive Bayes
+  - Bayesian network
+  - autoregressive model

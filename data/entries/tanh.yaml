@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tanh
+id: tanh
+pos: n.
+also:
+  - hyperbolic tangent
+  - tanh function
+domain: dl
+domains:
+  - math
+level: core
+plain: >-
+  An S-shaped curve, like the sigmoid but centered on zero, that squeezes any number into a value
+  between −1 and 1. It was the standard neuron rule before ReLU took over.
+senses:
+  - definition: >-
+      The hyperbolic tangent, tanh(x) = (eˣ − e⁻ˣ)/(eˣ + e⁻ˣ), an odd, S-shaped function mapping the
+      real line onto (−1, 1), with derivative 1 − tanh²(x) and slope 1 at the origin. It is a
+      rescaled logistic [[sigmoid-function|sigmoid function]], tanh(x) = 2σ(2x) − 1, but its
+      zero-centered outputs made it the preferred hidden-layer [[activation-function|activation
+      function]] in the 1990s and 2000s, as recommended in Yann LeCun and colleagues' 'Efficient
+      BackProp' (1998). It remains the candidate-state nonlinearity in
+      [[long-short-term-memory|LSTMs]] and [[gated-recurrent-unit|GRUs]], bounds the outputs of some
+      [[generative-adversarial-network|GAN]] generators and continuous-control policies, and is used
+      to cap [[logit|logits]] softly ('soft-capping') in some recent language models. Like the
+      sigmoid it saturates, contributing to the [[vanishing-gradient-problem|vanishing gradient
+      problem]].
+    example: >-
+      The generator ends in a tanh, so pixel values must be scaled to the range −1 to 1.
+formula_latex: \tanh(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} = 2\sigma(2x) - 1
+origin: >-
+  Vincenzo Riccati and Johann Heinrich Lambert developed the hyperbolic functions independently in
+  the mid-eighteenth century. Tanh became a common neural-network activation with the
+  backpropagation revival of the 1980s and remained the default for hidden layers until rectifiers
+  displaced it in the early 2010s.
+see_also:
+  - sigmoid function
+  - activation function
+  - long short-term memory
+  - vanishing gradient problem
+  - ReLU
+  - layer normalization
+sources:
+  - text: >-
+      LeCun, Y., Bottou, L., Orr, G. B. & Müller, K.-R. (1998). Efficient BackProp. In Neural
+      Networks: Tricks of the Trade (LNCS 1524). Springer.

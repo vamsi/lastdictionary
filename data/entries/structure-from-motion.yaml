@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: structure from motion
+id: structure-from-motion
+pos: n.
+also:
+  - SfM
+  - bundle adjustment
+  - COLMAP
+  - incremental SfM
+  - global SfM
+domain: percep
+domains:
+  - robot
+level: specialist
+plain: >-
+  Recovering both the 3D shape of a scene and the spot from which each photo was taken, using
+  nothing but a collection of overlapping photographs.
+senses:
+  - definition: >-
+      The problem, and family of methods, of jointly estimating a static scene's 3D structure and
+      the poses of the cameras that photographed it from a set of overlapping images, without
+      knowing the camera positions in advance. A typical pipeline detects and matches local features
+      ([[scale-invariant-feature-transform|SIFT]] or learned matchers) across image pairs; estimates
+      the relative geometry of each pair (the essential or fundamental matrix) inside the RANSAC
+      algorithm to reject false matches; adds cameras one at a time (incremental SfM) or solves for
+      all rotations and positions together (global SfM); triangulates 3D points; and refines
+      everything by bundle adjustment, a nonlinear least-squares optimization that minimizes the
+      reprojection error between observed and predicted image points. The output, a sparse
+      [[point-cloud|point cloud]] plus calibrated cameras, is the usual starting point for
+      multi-view stereo, [[neural-radiance-field|neural radiance fields]] and
+      [[gaussian-splatting|Gaussian splatting]]. Widely used systems include Bundler (Photo Tourism,
+      2006) and COLMAP (2016); learned feed-forward models such as VGGT (2025) now predict cameras
+      and structure directly.
+    example: >-
+      Run structure from motion on the frames first; the splatting step needs the camera poses.
+formula_latex: \min_{\{\mathbf{R}_i,\mathbf{t}_i\},\{\mathbf{X}_j\}} \sum_{i,j} \left\lVert
+  \mathbf{x}_{ij} - \pi\!\left(\mathbf{K}_i[\mathbf{R}_i \mid \mathbf{t}_i]\,\mathbf{X}_j\right)
+  \right\rVert^2
+origin: >-
+  The phrase is usually traced to Shimon Ullman's 'The Interpretation of Structure from Motion'
+  (1979), which asked how humans and machines infer 3D shape from moving 2D projections, building on
+  the psychologists' 'kinetic depth effect'. Large-scale reconstruction from photo collections
+  followed Noah Snavely, Steven Seitz and Richard Szeliski's Photo Tourism (2006).
+year: 1979
+note: >-
+  In the formula (bundle adjustment), x_ij is the observed image position of 3D point X_j in camera
+  i; K_i, R_i and t_i are that camera's intrinsics, rotation and translation; π is perspective
+  projection. SfM assumes a static scene. Real-time sequential variants are
+  [[simultaneous-localization-and-mapping|simultaneous localization and mapping]].
+see_also:
+  - 3D reconstruction
+  - scale-invariant feature transform
+  - point cloud
+  - simultaneous localization and mapping
+  - neural radiance field
+  - Gaussian splatting
+  - pose estimation
+sources:
+  - text: >-
+      Ullman, S. (1979). The Interpretation of Structure from Motion. Proceedings of the Royal
+      Society of London B 203, 405–426.
+  - text: >-
+      Schönberger, J. L. & Frahm, J.-M. (2016). Structure-from-Motion Revisited. CVPR 2016.

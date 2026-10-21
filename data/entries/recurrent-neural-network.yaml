@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: recurrent neural network
+id: recurrent-neural-network
+pos: n.
+also:
+  - RNN
+  - recurrent network
+  - simple recurrent network
+  - Elman network
+  - Jordan network
+  - vanilla RNN
+domain: dl
+domains:
+  - llm
+  - percep
+level: core
+plain: >-
+  A neural network that reads a sequence, such as a sentence or an audio clip, one piece at a time,
+  carrying a running summary forward so that what came earlier can shape how later pieces are
+  understood.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] with a feedback loop: a hidden state vector is carried
+      from each step of a sequence to the next, and at every step the same learned function
+      ([[weight-sharing|weight sharing]]) merges it with the new input to form the next state, so
+      one fixed set of parameters serves sequences of any length. The basic ('vanilla' or Elman)
+      form computes h_t = tanh(W_h h_{t−1} + W_x x_t + b). RNNs are trained by
+      [[backpropagation-through-time|backpropagation through time]], which suffers from
+      [[vanishing-gradient-problem|vanishing]] and [[exploding-gradient-problem|exploding]]
+      gradients over long spans; the gated [[long-short-term-memory|LSTM]] and
+      [[gated-recurrent-unit|GRU]] made them practical. They dominated speech recognition,
+      translation and language modeling in the 2010s until [[transformer|transformers]], which
+      process all positions in parallel, displaced them from about 2018. Linear recurrent models
+      such as [[state-space-model|state space models]], [[mamba|Mamba]] and [[rwkv|RWKV]] have since
+      revived recurrence for efficient long-sequence inference.
+    example: >-
+      An RNN's memory cost per generated token is constant, however long the conversation gets.
+formula_latex: \mathbf{h}_t = \tanh(W_h\,\mathbf{h}_{t-1} + W_x\,\mathbf{x}_t + \mathbf{b})
+origin: >-
+  Recurrent networks have roots in the Ising model of magnetism and in associative-memory networks
+  by Shun'ichi Amari (1972) and John Hopfield (1982). David Rumelhart, Geoffrey Hinton and Ronald
+  Williams showed in 1986 how to train them by unfolding in time, and Michael Jordan (1986) and
+  Jeffrey Elman ('Finding Structure in Time', 1990) introduced the 'simple recurrent networks' used
+  for sequence learning.
+year: 1986
+note: >-
+  Per-token inference cost is constant for RNNs but grows with context length for attention-based
+  transformers, the main motivation for modern recurrent and [[hybrid-architecture|hybrid]] designs.
+see_also:
+  - long short-term memory
+  - gated recurrent unit
+  - backpropagation through time
+  - vanishing gradient problem
+  - sequence-to-sequence model
+  - state space model
+  - Hopfield network
+  - reservoir computing
+contrast:
+  - transformer
+  - feedforward neural network
+sources:
+  - text: >-
+      Elman, J. L. (1990). Finding Structure in Time. Cognitive Science, 14(2), 179–211.

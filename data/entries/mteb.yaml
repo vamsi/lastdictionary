@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MTEB
+id: mteb
+pos: prop. n.
+also:
+  - Massive Text Embedding Benchmark
+  - MMTEB
+  - Massive Multilingual Text Embedding Benchmark
+  - MTEB leaderboard
+domain: eval
+domains:
+  - llm
+  - data
+level: core
+plain: >-
+  A large public test suite that scores AI models which turn text into lists of numbers on many
+  different jobs, such as searching, grouping, classifying and matching translations, so people can
+  compare them on one leaderboard.
+senses:
+  - definition: >-
+      A [[benchmark|benchmark]] for [[text-embedding|text embedding]] models that scores a single
+      model on many kinds of task at once — in its 2022 release, eight: bitext mining,
+      classification, [[clustering|clustering]], pair classification, [[reranking|reranking]],
+      retrieval (incorporating [[beir|BEIR]]), semantic textual similarity and summarization, over
+      58 datasets in 112 languages. Niklas Muennighoff and colleagues built it because embeddings
+      had usually been judged on one kind of task, which reveals little about how they fare at
+      others such as [[semantic-search|search]]; their own results showed no model winning
+      everywhere. Its public [[leaderboard|leaderboard]] on [[hugging-face|Hugging Face]] became the
+      usual reference for choosing an [[embedding-model|embedding model]]. The community-built MMTEB
+      extension (2025) grew coverage to more than 500 tasks in more than 250 languages, adding code,
+      long-document and regional benchmarks.
+    example: >-
+      Look at the model's MTEB retrieval score, not its overall average, before using it for RAG.
+origin: >-
+  Introduced by Niklas Muennighoff, Nouamane Tazi, Loïc Magne and Nils Reimers in an October 2022
+  preprint, published at EACL 2023. Kenneth Enevoldsen and a large group of community contributors
+  released the multilingual MMTEB in 2025.
+year: 2022
+note: >-
+  Because many MTEB datasets have public training splits, some models are trained on data
+  overlapping the test tasks, which inflates their scores; the leaderboard added indicators of how
+  'zero-shot' a model is in response. A single average across task types can hide weak performance
+  on the task a user actually needs.
+see_also:
+  - text embedding
+  - embedding model
+  - BEIR
+  - Sentence-BERT
+  - leaderboard
+  - data contamination
+  - benchmark saturation
+sources:
+  - text: >-
+      Muennighoff, N., Tazi, N., Magne, L. & Reimers, N. (2023). MTEB: Massive Text Embedding
+      Benchmark. Proc. EACL 2023.
+  - text: >-
+      Enevoldsen, K. et al. (2025). MMTEB: Massive Multilingual Text Embedding Benchmark. ICLR 2025.
+as_of: 2026-10

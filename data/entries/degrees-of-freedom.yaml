@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: degrees of freedom
+id: degrees-of-freedom
+pos: n.
+also:
+  - DOF
+  - DoF
+  - degree of freedom
+domain: robot
+domains:
+  - math
+level: core
+plain: >-
+  The number of independent ways something can move. A robot arm with six motorized joints has six;
+  a free-floating object can slide three ways and turn three ways.
+senses:
+  - context: Mechanics and robotics
+    definition: >-
+      A count of the independent ways a mechanical system can move — formally, how many independent
+      quantities, such as joint angles or positions, are needed to pin down its configuration. A
+      free rigid body in space has six: three translations (surge, sway, heave) and three rotations
+      (roll, pitch, yaw). For a robot the count usually equals its independently actuated joints: a
+      typical industrial arm has six, enough to place its [[end-effector|end effector]] at any
+      position and orientation within reach, while arms with seven, like the human arm (three at the
+      shoulder, one at the elbow, three at the wrist), are kinematically redundant and can use the
+      spare freedom to avoid obstacles or joint limits. Humanoid robots commonly have from about 20
+      to over 40. Engineers distinguish the degrees of freedom of a mechanism from those that can be
+      directly controlled: a car has three positional degrees of freedom on the ground but only two
+      controls, which makes it non-holonomic and complicates [[motion-planning|motion planning]].
+      The dimension of a robot's [[configuration-space|configuration space]] equals its degrees of
+      freedom.
+    example: >-
+      The new wrist adds a seventh degree of freedom, so the arm can reach around the fixture.
+  - context: Statistics
+    definition: >-
+      The number of values in a calculation that are free to vary once its constraints are imposed,
+      such as n − 1 for a sample variance computed around the sample mean; it fixes the shape of
+      reference distributions such as Student's t and chi-squared.
+origin: >-
+  The mechanical concept comes from nineteenth-century analytical mechanics; its counting rule for
+  linkages is the Chebyshev–Grübler–Kutzbach mobility criterion (late nineteenth to early twentieth
+  century). The statistical term was popularized by Ronald Fisher, beginning with his 1922 work on
+  chi-squared tests, although William Gosset and, earlier, Carl Friedrich Gauss had used the
+  underlying idea.
+note: >-
+  Vendor figures are not always comparable: some count every finger joint, others only actuated
+  joints, so a '40-DoF humanoid' may have far fewer motors.
+see_also:
+  - configuration space
+  - forward kinematics
+  - inverse kinematics
+  - end effector
+  - actuator
+  - humanoid robot

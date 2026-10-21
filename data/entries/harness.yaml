@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: harness
+id: harness
+pos: n.
+also:
+  - agent harness
+  - harness engineering
+  - test harness
+domain: agents
+domains:
+  - eval
+  - eng
+level: core
+plain: >-
+  The software around an AI model that gives it instructions and tools, carries out its actions and
+  decides when it stops. The model is the engine; the harness is the rest of the car.
+senses:
+  - context: Agents
+    definition: >-
+      The runtime that turns a [[large-language-model|large language model]] into an [[ai-agent|AI
+      agent]]. A harness assembles the model's [[context-window|context]] (system prompt,
+      instructions, [[tool|tool]] definitions, files, memory), runs the [[agent-loop|agent loop]] —
+      calling the model, executing the [[tool-call|tool calls]] it requests and feeding the results
+      back — and enforces stop conditions, permissions, [[sandbox|sandboxing]], error handling and
+      [[compaction|context compaction]]. Practitioners summarize the idea as 'agent = model +
+      harness'. Because the same model can perform very differently in two harnesses, agent
+      benchmarks increasingly report the harness alongside the model, and designing it well is
+      called harness engineering.
+    example: >-
+      We kept the model fixed and rewrote the harness, and task success nearly doubled.
+    labels:
+      - emerging
+  - context: Evaluation
+    definition: >-
+      Short for [[evaluation-harness|evaluation harness]]: software that runs models against
+      [[benchmark|benchmarks]] in a standardized way — formatting prompts, sampling outputs and
+      scoring them — so that results are comparable across models and laboratories.
+  - context: Software testing
+    definition: >-
+      Short for test harness: code and data that run a program or component under controlled
+      conditions, supply its inputs and check its outputs automatically. This older engineering
+      sense is the source of the other two.
+origin: >-
+  The lineage runs from horse tack to the software test harness, then to machine-learning evaluation
+  harnesses such as EleutherAI's lm-evaluation-harness (c. 2021), and finally to agent runtimes. The
+  agent sense spread in 2024–2025 as coding agents such as Claude Code and Codex CLI were described
+  as harnesses around a model; by 2026 'harness engineering' was an established practice and the
+  subject of attempts at a formal definition.
+year: 2025
+note: >-
+  Usage varies. Broadly, the harness is everything that is not the model; narrowly, it is only the
+  execution loop, while the prompts, tool descriptions and output formats are the
+  [[scaffolding|scaffolding]]. Not to be confused with an [[agent-framework|agent framework]] or
+  SDK, which are libraries for building harnesses.
+see_also:
+  - scaffolding
+  - agent loop
+  - AI agent
+  - tool use
+  - context engineering
+  - evaluation harness
+  - subagent
+contrast:
+  - model
+sources:
+  - text: >-
+      Paniego, S. & Roy Gosthipaty, A. (2026). Harness, Scaffold, and the AI Agent Terms Worth
+      Getting Right. Hugging Face blog.
+    url: https://huggingface.co/blog/agent-glossary
+  - text: >-
+      Oliveira de Macedo, S. (2026). What makes a harness a harness: necessary and sufficient
+      conditions for an agent harness. arXiv:2606.10106.
+    url: https://arxiv.org/abs/2606.10106
+as_of: 2026-10

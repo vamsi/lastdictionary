@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FP32
+id: fp32
+pos: abbr.
+also:
+  - single precision
+  - float32
+  - binary32
+  - float
+  - TF32
+domain: hw
+domains:
+  - dl
+level: core
+plain: >-
+  The standard 32-bit way computers store numbers with fractional parts, keeping about seven
+  significant digits. It was the default for training AI until faster, smaller formats took over.
+senses:
+  - definition: >-
+      The IEEE 754 single-precision [[floating-point-format|floating-point format]] (binary32): 1
+      sign bit, 8 exponent bits and 23 stored significand bits, giving about 7 decimal digits of
+      precision and a range up to about 3.4 × 10^38. It was the standard format for neural-network
+      training until the late 2010s and remains the usual format for master weights, optimizer
+      states, accumulations, loss computation and numerically sensitive operations in
+      [[mixed-precision-training|mixed-precision training]], while matrix arithmetic moves to
+      [[bfloat16|bfloat16]], [[fp8|FP8]] or narrower formats. TF32, introduced with Nvidia's A100
+      (2020), is a tensor-core mode that takes FP32 inputs but multiplies them with only 10
+      significand bits — FP32's range with [[fp16|FP16]]'s precision — and accumulates in FP32.
+origin: >-
+  Single precision was defined in IEEE 754-1985, standardizing earlier vendor formats; 'FP32' became
+  the usual abbreviation in GPU and deep-learning writing in the 2010s.
+year: 1985
+note: In deep-learning usage, 'full precision' usually means FP32, not FP64.
+see_also:
+  - floating-point format
+  - FP16
+  - bfloat16
+  - mixed-precision training
+  - tensor core
+contrast:
+  - bfloat16

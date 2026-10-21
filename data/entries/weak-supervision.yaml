@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: weak supervision
+id: weak-supervision
+pos: n.
+also:
+  - weakly supervised learning
+  - weak labels
+  - distant supervision
+  - data programming
+  - programmatic labeling
+domain: core
+domains:
+  - ml
+  - data
+level: specialist
+plain: >-
+  Training AI with labels that are cheap but imperfect, such as rough rules of thumb, partial tags
+  or noisy guesses, instead of carefully hand-checked answers.
+senses:
+  - definition: >-
+      A family of approaches that train models from supervision that is noisier, coarser or less
+      complete than hand-annotated [[ground-truth|ground truth]], to reduce the cost of
+      [[data-labeling|labeling]]. Zhi-Hua Zhou's taxonomy distinguishes incomplete supervision (only
+      some examples labeled, overlapping with [[semi-supervised-learning|semi-supervised learning]]
+      and [[active-learning|active learning]]), inexact supervision (labels coarser than the task
+      requires, as in multiple-instance learning or image-level tags used to train object detectors)
+      and inaccurate supervision ([[label-noise|noisy labels]]). Practical sources of weak labels
+      include heuristic rules, keyword patterns, knowledge bases (distant supervision), crowd
+      workers and, increasingly, [[large-language-model|large language models]] acting as labelers.
+      In data programming, as in the Snorkel system, users write many labeling functions whose
+      conflicting votes a learned label model combines into probabilistic training labels.
+    example: >-
+      Thirty regex rules and a drug database labeled the corpus, and the weakly supervised model
+      learned to generalize beyond them.
+origin: >-
+  Weakly supervised methods include Mike Mintz and colleagues' 'distant supervision' for relation
+  extraction (2009). Alexander Ratner, Christopher Ré and colleagues at Stanford formalized data
+  programming (2016) and the Snorkel system (2017), and Zhi-Hua Zhou's 2018 review in National
+  Science Review supplied a standard taxonomy.
+note: >-
+  Usage varies: some authors treat weak supervision as an umbrella that includes semi-supervised
+  learning, others as a synonym for it, and others reserve it for programmatic, noisy labeling.
+  Models trained this way inherit the systematic biases of their labeling heuristics.
+see_also:
+  - semi-supervised learning
+  - label noise
+  - data labeling
+  - active learning
+  - supervised learning
+  - synthetic data
+  - ground truth
+contrast:
+  - supervised learning
+sources:
+  - text: >-
+      Ratner, A. et al. (2017). Snorkel: Rapid Training Data Creation with Weak Supervision.
+      Proceedings of the VLDB Endowment, 11(3).
+  - text: >-
+      Zhou, Z.-H. (2018). A Brief Introduction to Weakly Supervised Learning. National Science
+      Review, 5(1), 44–53.
+  - text: >-
+      Mintz, M., Bills, S., Snow, R. & Jurafsky, D. (2009). Distant Supervision for Relation
+      Extraction without Labeled Data. Proceedings of ACL-IJCNLP 2009.

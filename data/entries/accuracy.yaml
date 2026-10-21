@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: accuracy
+id: accuracy
+pos: n.
+also:
+  - classification accuracy
+  - top-k accuracy
+  - top-1 accuracy
+  - top-5 accuracy
+  - balanced accuracy
+  - error rate
+domain: ml
+domains:
+  - eval
+level: essential
+plain: >-
+  The share of a model's answers that are right, such as 95 out of 100. Simple and intuitive, but
+  misleading when one kind of answer is far more common than the others.
+senses:
+  - context: Classification
+    definition: >-
+      The proportion of predictions that match the true labels: correct predictions divided by all
+      predictions, or (TP + TN)/(TP + TN + FP + FN) in a binary [[confusion-matrix|confusion
+      matrix]]; its complement is the error rate. Accuracy is the default headline metric for
+      balanced [[classification|classification]] problems and for many [[benchmark|benchmarks]],
+      often computed as [[exact-match|exact match]] on multiple-choice or short answers. It misleads
+      under [[class-imbalance|class imbalance]]: a fraud model that labels every transaction
+      legitimate is 99.9% accurate if only 0.1% are fraudulent. Balanced accuracy, the mean of
+      per-class [[recall|recall]], corrects for this, and [[precision|precision]], recall, the
+      [[f1-score|F1 score]] and [[roc-curve|ROC]] analysis give a fuller picture. Accuracy also
+      depends on the decision threshold and ignores confidence, so an accurate model can be poorly
+      calibrated ([[calibration|calibration]]). Top-k accuracy counts a prediction as correct if the
+      true label is among the k highest-scoring classes, as in ImageNet's top-5 accuracy.
+    example: The model hit 98% accuracy, but only because 98% of the emails weren't spam.
+  - context: General usage
+    definition: >-
+      Loosely, the overall correctness of an AI system's outputs, as in news coverage of 'the
+      accuracy of chatbot answers', usually without a defined metric. In metrology, accuracy
+      describes how near a measurement lies to the true value, whereas precision describes how
+      tightly repeated measurements cluster, however far they sit from the truth.
+formula_latex: \mathrm{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+origin: >-
+  The everyday word is centuries old; as the standard summary of classifier performance it was
+  established in statistical pattern recognition by the 1950s and 1960s. Top-5 accuracy became
+  famous through the ImageNet Large Scale Visual Recognition Challenge (2010–2017).
+note: >-
+  The machine-learning metric called [[precision|precision]] is not the measurement-science sense of
+  precision; in classification, accuracy and precision answer different questions.
+see_also:
+  - confusion matrix
+  - precision
+  - recall
+  - F1 score
+  - class imbalance
+  - calibration
+  - exact match
+  - baseline
+sources:
+  - text: >-
+      Sokolova, M. & Lapalme, G. (2009). A Systematic Analysis of Performance Measures for
+      Classification Tasks. Information Processing & Management 45(4).

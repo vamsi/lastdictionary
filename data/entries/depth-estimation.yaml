@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: depth estimation
+id: depth-estimation
+pos: n.
+also:
+  - monocular depth estimation
+  - stereo matching
+  - depth map
+  - disparity
+  - metric depth
+  - relative depth
+  - Depth Anything
+domain: percep
+domains:
+  - robot
+  - dl
+level: core
+plain: >-
+  Working out how far away each point in a scene is from the camera, producing a 'depth map' that
+  turns a flat picture into a sense of near and far.
+senses:
+  - definition: >-
+      The task of predicting, for each pixel, the distance from the camera to the visible surface,
+      producing a depth map. Stereo methods find the same point in two horizontally offset images
+      and convert the shift between them (the disparity d) into depth Z = fB/d, where f is the focal
+      length and B the distance between the cameras; multi-view stereo generalizes this to many
+      images. Active sensors (structured light, time-of-flight, [[lidar|lidar]]) measure depth
+      directly. Monocular depth estimation infers depth from a single image using learned cues such
+      as perspective, texture gradients, occlusion and the familiar sizes of objects; because
+      absolute scale is ambiguous, models predict either relative (scale- and shift-invariant) depth
+      or metric depth in meters, the latter requiring camera information or training on calibrated
+      data. Milestones include multi-scale networks trained on indoor Kinect and outdoor lidar data
+      (2014), self-supervised training from stereo pairs and video (2016–2017), training on mixtures
+      of datasets (MiDaS, 2019) and large models trained on tens of millions of automatically
+      labeled images, such as Depth Anything (2024). Uses include robotics, driver assistance,
+      augmented reality, portrait-mode photo effects and 3D content creation.
+    example: >-
+      Monocular depth is good enough for the background blur, but the robot still relies on its
+      stereo camera.
+formula_latex: Z = \frac{f\,B}{d}
+origin: >-
+  Computational stereo was formulated in the 1970s, notably in David Marr and Tomaso Poggio's
+  cooperative stereo algorithm (1976), drawing on photogrammetry. Deep monocular depth estimation
+  began with David Eigen, Christian Puhrsch and Rob Fergus's multi-scale network (NeurIPS 2014).
+note: >-
+  Relative depth maps look convincing but cannot be used directly for measurement; check whether a
+  model outputs relative depth, metric depth or inverse depth (disparity).
+see_also:
+  - 3D reconstruction
+  - lidar
+  - optical flow
+  - structure from motion
+  - semantic segmentation
+  - point cloud
+sources:
+  - text: >-
+      Eigen, D., Puhrsch, C. & Fergus, R. (2014). Depth Map Prediction from a Single Image Using a
+      Multi-Scale Deep Network. NeurIPS 2014.
+  - text: >-
+      Yang, L., Kang, B., Huang, Z., Xu, X., Feng, J. & Zhao, H. (2024). Depth Anything: Unleashing
+      the Power of Large-Scale Unlabeled Data. CVPR 2024.
+    url: https://arxiv.org/abs/2401.10891

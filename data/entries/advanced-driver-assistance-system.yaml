@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: advanced driver-assistance system
+id: advanced-driver-assistance-system
+pos: n.
+also:
+  - ADAS
+  - driver-assistance system
+  - adaptive cruise control
+  - automatic emergency braking
+  - AEB
+  - lane keeping assist
+  - lane centering
+domain: robot
+domains:
+  - gov
+  - safety
+level: core
+plain: >-
+  Car features that help the driver but do not replace them, such as automatic emergency braking,
+  lane-keeping help, adaptive cruise control and blind-spot warnings.
+senses:
+  - definition: >-
+      A vehicle system that uses sensors — cameras, radar, ultrasonic sensors and sometimes
+      [[lidar|lidar]] — to warn the driver or intervene in steering, braking or acceleration to
+      improve safety or comfort, while a human remains the driver responsible for supervising the
+      vehicle. Examples include automatic emergency braking, collision and lane-departure warnings,
+      lane-keeping and lane-centering assistance, adaptive cruise control, blind-spot monitoring,
+      intelligent speed assistance and driver drowsiness monitoring. In the
+      [[levels-of-driving-automation|SAE taxonomy]], features that control steering or speed are
+      Level 1, and those combining both under continuous human supervision are Level 2 ('partial
+      automation'), the category of highway-assist systems such as GM's Super Cruise and Tesla's
+      Autopilot and Full Self-Driving (Supervised). Several ADAS functions are mandatory for new
+      vehicles in the European Union under the General Safety Regulation (EU) 2019/2144, phased in
+      from July 2022. A 2024 US rule, FMVSS No. 127, requires automatic emergency braking on new
+      light vehicles from September 2029, though in 2026 the Department of Transportation said it
+      would propose amendments giving manufacturers two more years. Because Level 2 systems invite
+      overreliance, effective driver monitoring is now considered essential.
+    example: The car's ADAS braked for the stalled truck before I had even seen it.
+origin: >-
+  Grew from earlier driver aids such as anti-lock braking (in production cars from the 1970s) and
+  cruise control, patented by Ralph Teetor (filed 1948, granted 1950), and from European research
+  such as the PROMETHEUS program (1987–1995). 'Advanced driver assistance systems' was established
+  in automotive engineering by around 2000.
+note: >-
+  Names are not standardized — the same function is sold under many brand names — and terms such as
+  'Autopilot' have drawn regulatory and legal criticism for implying more capability than Level 2
+  provides. [[automation-bias|automation bias]] is the main human-factors risk.
+see_also:
+  - levels of driving automation
+  - autonomous vehicle
+  - automation bias
+  - sensor fusion
+  - human oversight
+  - overreliance
+contrast:
+  - autonomous vehicle
+sources:
+  - text: >-
+      Regulation (EU) 2019/2144 of the European Parliament and of the Council of 27 November 2019 on
+      type-approval requirements for motor vehicles (General Safety Regulation). Official Journal of
+      the European Union L 325.
+as_of: 2026-10

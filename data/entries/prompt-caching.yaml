@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: prompt caching
+id: prompt-caching
+pos: n.
+also:
+  - prefix caching
+  - context caching
+  - automatic prefix caching
+  - cached input tokens
+domain: infer
+domains:
+  - eng
+  - llm
+level: core
+plain: >-
+  Saving the work a model did reading the start of a prompt, so later requests that begin the same
+  way can skip that reading and come back faster and cheaper.
+senses:
+  - definition: >-
+      Reuse of the [[kv-cache|KV cache]] computed during [[prefill|prefill]] for a prompt prefix,
+      such as a [[system-prompt|system prompt]], tool definitions, a long document or earlier
+      conversation turns, by later requests that begin with exactly the same tokens, so that only
+      the new suffix needs processing. Inside serving engines it is called prefix caching,
+      implemented by hashing fixed-size blocks of tokens (automatic prefix caching in [[vllm|vLLM]])
+      or indexing cached sequences in a radix tree (RadixAttention in [[sglang|SGLang]]), with
+      least-recently-used eviction. [[model-api|Model APIs]] expose it as a priced feature: cached
+      input tokens are billed at a fraction of the normal rate, either automatically or at
+      breakpoints the developer marks, and entries expire after a period of disuse, typically
+      minutes to an hour. It sharply cuts [[time-to-first-token|time to first token]] and cost for
+      agents, chat and retrieval workloads, but only exact prefix matches count, so prompts are
+      arranged with stable content first and changing content last.
+    example: >-
+      We moved the timestamp to the end of the system prompt and our cache hit rate jumped to 95
+      percent.
+origin: >-
+  Prefix sharing appeared in serving research in 2023, in vLLM's shared memory blocks and SGLang's
+  RadixAttention (December 2023). Commercial APIs followed in 2024: Google offered context caching
+  for Gemini in mid-2024, Anthropic launched prompt caching in August 2024 (cache reads at 10% of
+  the base input price, writes at a 25% premium), and OpenAI added automatic caching in October
+  2024.
+year: 2023
+note: >-
+  Not the same as [[semantic-caching|semantic caching]], which returns a stored answer to a similar
+  question without running the model; prompt caching still runs the model, so outputs are
+  unaffected. Caches shared across users can leak information through response timing, so providers
+  typically isolate them per organization.
+see_also:
+  - KV cache
+  - prefill
+  - time to first token
+  - inference cost
+  - SGLang
+  - context engineering
+contrast:
+  - semantic caching
+sources:
+  - text: >-
+      Anthropic (2024). Prompt caching with Claude. Anthropic announcement, 14 August 2024.
+    url: https://claude.com/blog/prompt-caching
+  - text: >-
+      Zheng, L. et al. (2023). SGLang: Efficient Execution of Structured Language Model Programs.
+      NeurIPS 2024. arXiv:2312.07104.
+    url: https://arxiv.org/abs/2312.07104
+as_of: 2026-10

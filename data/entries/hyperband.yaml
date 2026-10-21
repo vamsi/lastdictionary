@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Hyperband
+id: hyperband
+pos: n.
+also:
+  - successive halving
+  - asynchronous successive halving
+  - ASHA
+  - BOHB
+  - multi-fidelity optimization
+domain: ml
+domains:
+  - eng
+level: specialist
+plain: >-
+  A tuning method that starts many candidate settings on small budgets, keeps only the most
+  promising ones, and gives the survivors more training time, so effort isn't wasted on losers.
+senses:
+  - definition: >-
+      A [[hyperparameter-tuning|hyperparameter tuning]] algorithm that makes [[random-search|random
+      search]] cheaper by giving most of the training budget to configurations that look promising
+      early and abandoning the rest. Its building block, successive halving, starts n randomly
+      sampled configurations on a small budget (for example a few training epochs or a subset of
+      data), evaluates them, keeps the best fraction (typically a half or a third) and repeats with
+      a proportionally larger budget until one configuration remains. Because the right trade-off
+      between trying many configurations and training each one longer is unknown in advance,
+      Hyperband runs several brackets of successive halving with different starting numbers and
+      budgets, hedging between aggressive early stopping and full training. It assumes that early
+      performance predicts final performance, which fails when good configurations start slowly, as
+      with small learning rates. Asynchronous successive halving (ASHA) adapts the idea to large
+      parallel clusters, and BOHB replaces random sampling with [[bayesian-optimization|Bayesian
+      optimization]]; such multi-fidelity methods underlie many modern tuning tools.
+    example: >-
+      Hyperband discarded 80% of the configurations after a single epoch and found a winner in a
+      fifth of the GPU-hours.
+origin: >-
+  Successive halving was analyzed for multi-armed bandits by Zohar Karnin, Tomer Koren and Oren
+  Somekh (2013) and applied to hyperparameters by Kevin Jamieson and Ameet Talwalkar (2016). Lisha
+  Li, Jamieson, Giulia DeSalvo, Afshin Rostamizadeh and Talwalkar introduced Hyperband in a 2016
+  preprint, later published at ICLR 2017 and in the Journal of Machine Learning Research (2018).
+year: 2016
+see_also:
+  - hyperparameter tuning
+  - random search
+  - Bayesian optimization
+  - AutoML
+  - early stopping
+  - multi-armed bandit
+sources:
+  - text: >-
+      Li, L., Jamieson, K., DeSalvo, G., Rostamizadeh, A. & Talwalkar, A. (2018). Hyperband: A Novel
+      Bandit-Based Approach to Hyperparameter Optimization. Journal of Machine Learning Research
+      18(185).
+  - text: >-
+      Jamieson, K. & Talwalkar, A. (2016). Non-stochastic Best Arm Identification and Hyperparameter
+      Optimization. Proc. AISTATS 2016.
+  - text: >-
+      Falkner, S., Klein, A. & Hutter, F. (2018). BOHB: Robust and Efficient Hyperparameter
+      Optimization at Scale. Proc. ICML 2018.

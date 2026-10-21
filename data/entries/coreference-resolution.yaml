@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: coreference resolution
+id: coreference-resolution
+pos: n.
+also:
+  - coreference
+  - anaphora resolution
+  - entity coreference
+  - coreference chain
+domain: llm
+domains:
+  - sym
+level: specialist
+plain: >-
+  Working out which words in a text are talking about the same someone or something — for instance,
+  that 'she', 'the senator' and 'Ms. Okafor' all mean one woman.
+senses:
+  - definition: >-
+      The task of working out which mentions in a text — names, noun phrases, pronouns — point to
+      one and the same person, object or idea, and collecting each such set into a cluster called a
+      coreference chain. Its subtask, anaphora resolution, links a pronoun or other referring
+      expression to its antecedent. Resolution draws on grammatical agreement, syntactic
+      constraints, salience and world knowledge: in 'the trophy didn't fit in the suitcase because
+      it was too big', only commonsense reveals that 'it' is the trophy, the idea behind the
+      [[winograd-schema-challenge|Winograd schema challenge]]. Systems moved from rule-based methods
+      and mention-pair classifiers to end-to-end neural models that score all candidate spans, and
+      LLMs now resolve most everyday cases. Coreference matters for
+      [[information-extraction|information extraction]], summarization,
+      [[question-answering|question answering]] and translation into languages with grammatical
+      gender.
+    example: >-
+      Without coreference resolution, the extractor credited the merger to 'it' instead of the
+      acquiring company.
+origin: >-
+  Anaphora resolution was studied in 1970s AI and linguistics, notably in Jerry Hobbs's 1978
+  pronoun-resolution algorithm. Coreference became a standard evaluation task at the Sixth Message
+  Understanding Conference (MUC-6, 1995), and Kenton Lee and colleagues' end-to-end neural model
+  (2017) set the modern approach.
+year: 1995
+see_also:
+  - information extraction
+  - Winograd schema challenge
+  - named-entity recognition
+  - commonsense reasoning
+  - natural language understanding
+sources:
+  - text: >-
+      Lee, K., He, L., Lewis, M. & Zettlemoyer, L. (2017). End-to-end Neural Coreference Resolution.
+      EMNLP 2017.
+  - text: >-
+      Grishman, R. & Sundheim, B. (1996). Message Understanding Conference-6: A Brief History.
+      COLING 1996.
+    url: https://aclanthology.org/C96-1079/

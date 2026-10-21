@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: overfitting
+id: overfitting
+pos: n.
+also:
+  - overfit
+  - over-fitting
+  - overfitted
+domain: ml
+domains:
+  - dl
+  - eval
+level: essential
+plain: >-
+  When a model learns its training examples too well — quirks and noise included — so it does great
+  on data it has seen but poorly on anything new, like a student who memorizes answers without
+  understanding.
+senses:
+  - definition: >-
+      The failure in which a model, while learning from its training examples, also absorbs their
+      accidents — noise, coincidences and quirks of that one sample — and treats them as signal, so
+      that it scores much better on the data it was trained on than on new data. It shows up as a
+      widening [[generalization-gap|generalization gap]], often with validation loss rising while
+      training loss keeps falling. Overfitting is more likely when capacity is high relative to the
+      amount of data, when training runs long, or when many models or
+      [[hyperparameter|hyperparameters]] are tried against the same validation data — which overfits
+      the validation set itself, and, on public leaderboards, the [[benchmark|benchmark]]. Remedies
+      include more or augmented data, [[regularization|regularization]], [[early-stopping|early
+      stopping]], [[dropout|dropout]], simpler models, [[pruning|pruning]],
+      [[ensemble-learning|ensembling]] and honest evaluation with
+      [[cross-validation|cross-validation]] and untouched [[test-set|test sets]]. Some
+      overparameterized models fit noisy training data exactly yet still generalize well
+      ([[benign-overfitting|benign overfitting]]), complicating the classical picture.
+    example: Training accuracy hit 99% but validation stalled at 71% — classic overfitting.
+origin: >-
+  The danger is old in statistics: with enough free parameters one can fit almost anything, as in
+  the anecdote, told by Freeman Dyson, of Enrico Fermi quoting John von Neumann about fitting an
+  elephant with four parameters. 'Overfitting' was used in statistics before machine learning and
+  appears in neural-network literature by the late 1980s; its first use has not been established.
+  Peter Bartlett and colleagues named 'benign overfitting' (preprint 2019; published 2020).
+note: >-
+  Training on leaked test items ([[data-contamination|data contamination]]) or tuning against a test
+  set inflates reported scores in a related way. Not the same as [[memorization|memorization]],
+  though memorizing noise is one form of overfitting.
+see_also:
+  - underfitting
+  - bias–variance tradeoff
+  - regularization
+  - generalization gap
+  - early stopping
+  - cross-validation
+  - double descent
+  - data leakage
+contrast:
+  - underfitting
+  - generalization
+sources:
+  - text: >-
+      Hawkins, D. M. (2004). The Problem of Overfitting. Journal of Chemical Information and
+      Computer Sciences, 44(1), 1–12.
+  - text: >-
+      Bartlett, P. L., Long, P. M., Lugosi, G. & Tsigler, A. (2020). Benign Overfitting in Linear
+      Regression. Proceedings of the National Academy of Sciences, 117(48), 30063–30070.

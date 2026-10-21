@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: virtual assistant
+id: virtual-assistant
+pos: n.
+also:
+  - voice assistant
+  - digital assistant
+  - intelligent personal assistant
+  - smart assistant
+domain: core
+domains:
+  - percep
+  - society
+  - hist
+level: core
+plain: >-
+  Software you speak or type to, like Siri, Alexa or Google Assistant, that answers questions and
+  does simple jobs such as setting timers, playing music or controlling smart-home devices.
+senses:
+  - context: AI products
+    definition: >-
+      A program, usually operated by voice, that carries out everyday requests: answering questions,
+      managing calendars and reminders, sending messages, playing media and controlling connected
+      devices. Classic voice assistants chain [[wake-word|wake word]] detection,
+      [[speech-recognition|speech recognition]], [[natural-language-understanding|natural language
+      understanding]] (mapping an utterance to an intent and its parameters), task-specific services
+      and [[text-to-speech|text-to-speech]]. Their skills were largely hand-built, which made them
+      reliable for narrow commands but brittle in open conversation. From 2023 the major assistants
+      began to be rebuilt or supplemented with [[large-language-model|large language models]],
+      blurring the line with [[ai-assistant|AI assistants]]. Always-listening devices raise privacy
+      concerns about accidental recording and data retention.
+    example: >-
+      The virtual assistant can turn off the lights but still cannot reschedule a meeting with three
+      people.
+  - context: Work
+    definition: >-
+      A person, usually a freelancer or contractor, who works remotely for clients on office tasks
+      such as scheduling, correspondence, bookkeeping or social-media management. This older sense
+      persists in the labor market and can cause confusion in searches and statistics.
+origin: >-
+  Precursors include Microsoft's animated Office Assistant (introduced with Office 97) and SRI
+  International's DARPA-funded CALO project (2003–2008), whose spin-off Siri was bought by Apple and
+  launched on the iPhone 4S in October 2011. Microsoft's Cortana and Amazon's Alexa followed in 2014
+  and Google Assistant in 2016. In February 2025 Amazon announced Alexa+, rebuilt around generative
+  AI.
+note: >-
+  Virtual assistants were designed for short spoken commands; [[ai-assistant|AI assistants]] such as
+  ChatGPT were designed for open-ended text conversation, and the categories are converging. Not to
+  be confused with [[conversational-ai|conversational AI]], the broader technology field.
+see_also:
+  - AI assistant
+  - chatbot
+  - conversational AI
+  - speech recognition
+  - wake word
+  - text-to-speech
+  - Clippy
+contrast:
+  - AI assistant
+as_of: 2026-10

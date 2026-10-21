@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Bayesian information criterion
+id: bayesian-information-criterion
+pos: n.
+also:
+  - BIC
+  - Schwarz criterion
+  - Schwarz information criterion
+  - SBC
+domain: ml
+domains:
+  - math
+level: specialist
+plain: >-
+  A score for comparing statistical models that, like AIC, rewards good fit and penalizes extra
+  adjustable numbers, but penalizes them more as the dataset grows, favoring simpler models. Lower
+  is better.
+senses:
+  - definition: >-
+      A criterion for [[model-selection|model selection]] derived as a large-sample approximation to
+      the Bayesian model evidence (log marginal likelihood). For a model with k parameters fitted to
+      n observations with maximized [[likelihood|likelihood]] L̂, BIC = k ln n − 2 ln L̂; the model
+      with the lowest BIC is preferred, and BIC differences approximate log Bayes factors. Its
+      penalty per parameter grows with sample size (ln n, against 2 for the
+      [[akaike-information-criterion|Akaike information criterion]]), so BIC favors simpler models
+      than AIC once n exceeds about 7. It is consistent: if the true model is among the candidates,
+      BIC picks it with probability approaching one as data grow, whereas AIC aims at the best
+      predictor. BIC is widely used to choose the number of components of a
+      [[gaussian-mixture-model|Gaussian mixture model]], the orders of [[arima|ARIMA]] models and
+      the number of clusters or factors. Like AIC, it requires well-defined parameter counts and
+      likelihoods and can mislead for singular or heavily overparameterized models such as neural
+      networks.
+    example: BIC bottomed out at five mixture components, so we stopped there.
+formula_latex: \mathrm{BIC} = k \ln n - 2 \ln \hat{L}
+origin: >-
+  Derived by the statistician Gideon Schwarz in 'Estimating the Dimension of a Model' (Annals of
+  Statistics, 1978), hence the alternative name Schwarz criterion. Robert Kass and Adrian Raftery's
+  1995 review of Bayes factors popularized its reading as an approximation to Bayesian model
+  comparison.
+year: 1978
+note: >-
+  Despite the name, BIC is only loosely Bayesian: it ignores the prior beyond its order of
+  magnitude. It is closely related to [[minimum-description-length|minimum description length]].
+see_also:
+  - Akaike information criterion
+  - model selection
+  - Bayesian inference
+  - likelihood
+  - Gaussian mixture model
+  - minimum description length
+contrast:
+  - Akaike information criterion
+sources:
+  - text: >-
+      Schwarz, G. (1978). Estimating the Dimension of a Model. Annals of Statistics 6(2).
+  - text: >-
+      Kass, R. E. & Raftery, A. E. (1995). Bayes Factors. Journal of the American Statistical
+      Association 90(430).

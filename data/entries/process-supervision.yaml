@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: process supervision
+id: process-supervision
+pos: n.
+also:
+  - process-based supervision
+  - process-based feedback
+  - step-level supervision
+domain: safety
+domains:
+  - train
+  - llm
+level: specialist
+plain: >-
+  Training an AI by grading each step of its reasoning or work, not just whether the final answer
+  came out right, so that it learns sound methods instead of lucky shortcuts.
+senses:
+  - definition: >-
+      Training in which a model is graded on the soundness of each step of its reasoning or work,
+      not only on where it ends up. In mathematical reasoning, humans or models label each step of a
+      solution as correct or flawed, and a [[process-reward-model|process reward model]] trained on
+      these labels scores new solutions step by step for [[reinforcement-learning|reinforcement
+      learning]] or [[best-of-n-sampling|best-of-n]] reranking. Proponents see safety advantages: it
+      rewards reasoning humans endorse, localizes errors and avoids reinforcing correct answers
+      reached by flawed or deceptive means. Its costs are expensive step-level labels and the risk
+      that models learn steps that merely look good to graders. Since 2024, the success of
+      [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable
+      rewards]], which rewards outcomes only, has reopened the question of how much process
+      supervision is needed.
+    example: >-
+      With process supervision, the reward model penalized the algebra slip in step four even though
+      the final answer was right.
+origin: >-
+  Advocated as an alignment strategy by Andreas Stuhlmüller and Jungwon Byun of Ought in 'Supervise
+  Process, not Outcomes' (2022). Jonathan Uesato and colleagues at DeepMind (2022) compared process-
+  and outcome-based feedback on grade-school math, and Hunter Lightman and colleagues at OpenAI
+  ('Let's Verify Step by Step', 2023) released about 800,000 step-level human labels (PRM800K).
+year: 2022
+note: >-
+  In the safety literature, 'process-based' sometimes means more broadly that the training signal
+  should depend on whether an overseer understands and endorses the steps taken, not on their
+  downstream consequences.
+see_also:
+  - process reward model
+  - outcome supervision
+  - outcome reward model
+  - chain of thought
+  - reward hacking
+  - scalable oversight
+contrast:
+  - outcome supervision
+sources:
+  - text: >-
+      Lightman, H. et al. (2023). Let's Verify Step by Step. arXiv preprint; ICLR 2024.
+  - text: >-
+      Uesato, J. et al. (2022). Solving math word problems with process- and outcome-based feedback.
+      arXiv preprint.

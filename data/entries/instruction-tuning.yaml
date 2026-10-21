@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: instruction tuning
+id: instruction-tuning
+pos: n.
+also:
+  - instruction fine-tuning
+  - instruction finetuning
+  - IFT
+domain: train
+domains:
+  - llm
+  - data
+level: core
+plain: >-
+  Training a language model on many tasks written as plain instructions with correct answers, so it
+  learns to do what a request asks instead of just continuing the text.
+senses:
+  - definition: >-
+      [[supervised-fine-tuning|Supervised fine-tuning]] that teaches a pretrained language model to
+      treat a written request as a task to carry out. The training set mixes many different tasks,
+      each example pairing an instruction (with optional input) with the desired output, and the aim
+      is a model that also handles kinds of task it never trained on when given only an instruction
+      ([[zero-shot-learning|zero-shot]]), along with general [[instruction-following|instruction
+      following]]. The first systems rewrote existing NLP benchmarks — translation, question
+      answering, classification — as instruction templates; later practice relies on human-written
+      or model-generated conversational data, as in [[self-instruct|Self-Instruct]]. Benefits
+      increase with model size and with the number and variety of training tasks. Instruction tuning
+      is the usual first step in producing an [[instruction-tuned-model|instruction-tuned model]]
+      before preference optimization, and the term is now often used interchangeably with SFT on
+      chat data.
+    example: >-
+      Instruction tuning on 1,800 tasks let the model handle prompts unlike anything it saw in
+      training.
+origin: >-
+  Named by Jason Wei and colleagues at Google in the FLAN paper (arXiv, September 2021; ICLR 2022),
+  which popularized the method: their 137-billion-parameter model, tuned on more than 60 NLP
+  datasets rephrased as instructions, beat zero-shot GPT-3 on 20 of 25 evaluated datasets. Related
+  2021 work included Natural Instructions (Swaroop Mishra and colleagues, April) and T0 (Victor Sanh
+  and colleagues, October); Flan-T5 (Hyung Won Chung and colleagues, 2022) scaled the idea to about
+  1,800 tasks.
+year: 2021
+note: >-
+  Not the same as [[prompt-tuning|prompt tuning]] or [[prefix-tuning|prefix tuning]], which learn
+  soft prompts and leave the model unchanged. Some authors reserve 'instruction tuning' for
+  multi-task NLP collections and 'SFT' for conversational demonstrations, but the distinction is not
+  consistently observed.
+see_also:
+  - supervised fine-tuning
+  - instruction-tuned model
+  - instruction dataset
+  - instruction following
+  - Self-Instruct
+  - multi-task learning
+  - zero-shot learning
+contrast:
+  - prompt tuning
+  - pretraining
+sources:
+  - text: >-
+      Wei, J. et al. (2021). Finetuned Language Models Are Zero-Shot Learners. ICLR 2022.
+      arXiv:2109.01652.
+    url: https://arxiv.org/abs/2109.01652
+  - text: >-
+      Wang, Y. et al. (2022). Super-NaturalInstructions: Generalization via Declarative Instructions
+      on 1600+ NLP Tasks. EMNLP 2022. arXiv:2204.07705.
+    url: https://arxiv.org/abs/2204.07705

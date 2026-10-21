@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: universality hypothesis
+id: universality-hypothesis
+pos: n.
+also:
+  - universality
+  - convergent learning
+domain: interp
+domains:
+  - dl
+labels:
+  - contested
+level: specialist
+plain: >-
+  The idea that different AI models trained on similar tasks tend to develop the same internal
+  concepts and mechanisms, so what is learned about one model may carry over to others.
+senses:
+  - definition: >-
+      The hypothesis that networks trained on similar data or tasks tend to arrive at the same
+      [[feature-interpretability|features]] and [[circuit|circuits]], whatever their architecture,
+      size or random initialization. Supporting evidence includes curve detectors, high-low
+      frequency detectors and Gabor-like filters recurring across vision models;
+      [[induction-head|induction heads]] across language models; neurons with matching activation
+      patterns in GPT-2 models trained from different random seeds; and similar
+      [[sparse-autoencoder|sparse autoencoder]] features across models. Universality matters in
+      practice: if it holds, results can transfer from small, cheap models to large ones, and a
+      shared catalogue of mechanisms becomes possible. Evidence against strong versions includes toy
+      networks learning group operations that settle on different algorithms depending on
+      initialization, and findings that only a small fraction of neurons are clearly universal
+      across seeds. The [[platonic-representation-hypothesis|platonic representation hypothesis]]
+      makes a related claim about whole representations.
+    example: >-
+      If universality holds, the curve detectors we mapped in one vision model should turn up in the
+      next.
+origin: >-
+  Stated as the third of three speculative claims in Chris Olah and colleagues' 'Zoom In: An
+  Introduction to Circuits' (Distill, March 2020) — 'Analogous features and circuits form across
+  models and tasks' — after earlier evidence of 'convergent learning' across networks by Yixuan Li,
+  Jason Yosinski and colleagues (2015–2016). The name echoes universality in physics, where
+  different systems behave alike near critical points.
+year: 2020
+see_also:
+  - feature (interpretability)
+  - circuit
+  - platonic representation hypothesis
+  - induction head
+  - mechanistic interpretability
+  - toy model
+sources:
+  - text: >-
+      Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M. & Carter, S. (2020). Zoom In: An
+      Introduction to Circuits. Distill.
+    url: https://distill.pub/2020/circuits/zoom-in/
+  - text: >-
+      Chughtai, B., Chan, L. & Nanda, N. (2023). A Toy Model of Universality: Reverse Engineering
+      How Networks Learn Group Operations. ICML 2023.
+  - text: >-
+      Gurnee, W., Horsley, T., Guo, Z. C., Kheirkhah, T. R., Sun, Q., Hathaway, W., Nanda, N. &
+      Bertsimas, D. (2024). Universal Neurons in GPT2 Language Models. Transactions on Machine
+      Learning Research.

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: first-order logic
+id: first-order-logic
+pos: n.
+also:
+  - FOL
+  - first-order predicate logic
+  - predicate logic
+  - predicate calculus
+  - first-order predicate calculus
+domain: sym
+domains:
+  - math
+level: core
+plain: >-
+  A precise formal language for statements about objects and their relations, using 'for all' and
+  'there exists', such as 'every person has a mother'. It is the standard logic of mathematics and
+  of classic AI.
+senses:
+  - definition: >-
+      A formal logic whose sentences are built from constants, variables, function symbols and
+      predicate symbols, combined with Boolean connectives (not, and, or, implies) and the
+      quantifiers ∀ ('for all') and ∃ ('there exists'), where quantifiers range only over
+      individuals, not over predicates or sets (which would make the logic second-order). A
+      structure, or model, interprets the symbols over a domain of objects; a sentence is valid if
+      it is true in every model. First-order logic is complete — every valid sentence has a finite
+      proof (Gödel, 1929) — but only semi-decidable: no algorithm decides validity for all sentences
+      (Church and Turing, 1936), although proof procedures such as [[resolution|resolution]] find a
+      proof whenever one exists. It underlies [[automated-theorem-proving|automated theorem
+      proving]], [[logic-programming|logic programming]] and much of
+      [[knowledge-representation|knowledge representation]], whose decidable fragments include
+      [[description-logic|description logics]].
+    example: >-
+      We encoded the access policy in first-order logic and asked the prover whether any user could
+      reach the payroll table.
+origin: >-
+  Gottlob Frege's Begriffsschrift (1879) introduced quantified logic, and Charles Sanders Peirce
+  developed quantifiers independently in the 1880s. David Hilbert separated out the first-order
+  fragment in lectures of 1917–18, and his 1928 textbook with Wilhelm Ackermann made it standard;
+  Kurt Gödel proved its completeness in 1929. John McCarthy proposed it as AI's representation
+  language in 1958–1959.
+year: 1928
+note: >-
+  Expressiveness has costs: first-order logic cannot pin down finiteness or the natural numbers up
+  to isomorphism, which requires higher-order logic, but richer logics lose completeness. Most
+  [[interactive-theorem-proving|proof assistants]] therefore use higher-order logic or type theory,
+  while [[automated-theorem-proving|automated provers]] mostly stay first-order.
+see_also:
+  - propositional logic
+  - automated theorem proving
+  - resolution
+  - unification
+  - description logic
+  - knowledge representation
+  - logic programming
+contrast:
+  - propositional logic
+sources:
+  - text: Hilbert, D. & Ackermann, W. (1928). Grundzüge der theoretischen Logik. Springer.
+  - text: >-
+      Gödel, K. (1930). Die Vollständigkeit der Axiome des logischen Funktionenkalküls. Monatshefte
+      für Mathematik und Physik 37.

@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: cross-embodiment learning
+id: cross-embodiment-learning
+pos: n.
+also:
+  - cross-embodiment transfer
+  - cross-embodied learning
+  - cross-embodiment
+  - embodiment transfer
+domain: robot
+domains:
+  - rl
+  - ml
+labels:
+  - emerging
+level: specialist
+plain: >-
+  Training one robot AI on data from many differently shaped robots, such as arms, robot dogs,
+  drones and humanoids, so that skills learned on one body help another.
+senses:
+  - definition: >-
+      Training [[policy|policies]] or representations on data from multiple robot embodiments —
+      bodies that differ in kinematics, [[degrees-of-freedom|degrees of freedom]], sensors,
+      [[action-space|action spaces]] and control rates — so that experience gathered on one robot
+      improves performance on others, including robots unseen in training. Approaches include
+      expressing all robots' actions in a shared space such as end-effector displacements,
+      tokenizing heterogeneous observations and actions so one [[transformer|transformer]] can
+      consume them, embodiment-specific input and output heads around a shared trunk, and learning
+      from human videos by treating the human hand as one more embodiment. Evidence of positive
+      transfer came from the RT-X models trained on [[open-x-embodiment|Open X-Embodiment]];
+      CrossFormer (2024) controlled arms, wheeled robots, quadcopters and quadrupeds with one set of
+      weights trained on 900,000 trajectories from 20 embodiments. Commercial systems describe
+      similar capabilities as motion transfer between robot types. The main risk is negative
+      transfer when bodies are too dissimilar.
+    example: >-
+      Cross-embodiment learning let the humanoid reuse grasps first demonstrated on a cheap tabletop
+      arm.
+origin: >-
+  Used for learning from demonstrators with different bodies in Kevin Zakka and colleagues' XIRL
+  (Cross-embodiment Inverse Reinforcement Learning, June 2021). Earlier multi-robot transfer work
+  includes Coline Devin and colleagues' modular policies (2017) and the RoboNet dataset (2019). The
+  term spread with Open X-Embodiment (2023) and Ria Doshi and colleagues' 'Scaling Cross-Embodied
+  Learning' (2024).
+year: 2021
+note: >-
+  Distinct from [[sim-to-real-transfer|sim-to-real transfer]], which moves a policy from simulation
+  to hardware for the same robot, and from [[transfer-learning|transfer learning]] in general.
+see_also:
+  - Open X-Embodiment
+  - generalist robot policy
+  - robot foundation model
+  - transfer learning
+  - vision-language-action model
+  - degrees of freedom
+contrast:
+  - sim-to-real transfer
+sources:
+  - text: >-
+      Zakka, K. et al. (2021). XIRL: Cross-embodiment Inverse Reinforcement Learning. CoRL 2021.
+      arXiv:2106.03911.
+    url: https://arxiv.org/abs/2106.03911
+  - text: >-
+      Doshi, R., Walke, H., Mees, O., Dasari, S. & Levine, S. (2024). Scaling Cross-Embodied
+      Learning: One Policy for Manipulation, Navigation, Locomotion and Aviation. arXiv:2408.11812.
+    url: https://arxiv.org/abs/2408.11812
+as_of: 2026-10

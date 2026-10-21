@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: mean opinion score
+id: mean-opinion-score
+pos: n.
+also:
+  - MOS
+  - comparative mean opinion score
+  - CMOS
+  - MUSHRA
+  - predicted MOS
+domain: percep
+domains:
+  - eval
+level: specialist
+plain: >-
+  A quality score from 1 (bad) to 5 (excellent) obtained by asking many listeners to rate audio,
+  such as a synthetic voice or a phone call, and averaging their ratings.
+senses:
+  - definition: >-
+      The average of listeners' ratings of a stimulus, typically speech, on a five-point absolute
+      category scale: 1 bad, 2 poor, 3 fair, 4 good, 5 excellent. Developed for judging telephone
+      transmission quality, it became the standard subjective measure for
+      [[text-to-speech|text-to-speech]], voice conversion and speech enhancement, usually reported
+      with a 95% confidence interval and alongside the score of real recordings as a ceiling.
+      Variants include comparative MOS (CMOS), in which listeners rate one sample against another,
+      and MUSHRA, which presents several systems and a hidden reference together to resolve finer
+      differences. Because listening tests are slow and costly, objective estimators predict MOS:
+      signal-based telephony standards such as PESQ and POLQA, and neural predictors for synthetic
+      speech. MOS values are not comparable across studies with different listeners, instructions,
+      scales or competing systems, and near-human synthesis has squeezed differences into a narrow
+      band near the top of the scale.
+    example: >-
+      The new voice scored 4.4 MOS against 4.5 for the studio recordings, inside the confidence
+      interval.
+formula_latex: \text{MOS} = \frac{1}{N}\sum_{n=1}^{N} R_n
+origin: >-
+  Arose in telephone engineering, where listener panels rated transmission quality; the procedure
+  was standardized by the International Telecommunication Union in Recommendation P.800 (1996), with
+  MOS terminology set out in P.800.1. Speech-synthesis research adopted it as its main listening
+  test.
+note: >-
+  Here R_n is the n-th of N ratings. Video and imaging use MOS in the same way for perceived visual
+  quality. Results reported without confidence intervals or details of the listener pool are hard to
+  interpret.
+see_also:
+  - text-to-speech
+  - human evaluation
+  - vocoder
+  - evaluation
+  - benchmark
+sources:
+  - text: >-
+      ITU-T (1996). Recommendation P.800: Methods for Subjective Determination of Transmission
+      Quality. International Telecommunication Union.

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI-complete
+id: ai-complete
+pos: adj.
+also:
+  - AI-hard
+  - AI-completeness
+domain: sym
+domains:
+  - culture
+  - asi
+labels:
+  - informal
+level: core
+plain: >-
+  Describes a problem believed to be so hard that solving it would require general, human-level
+  intelligence, such as flawless translation or truly understanding a story.
+senses:
+  - definition: >-
+      Describing a problem conjectured to be as hard as AI itself: a system able to solve it would
+      need general, human-level intelligence, so solving it would amount to solving AI as a whole.
+      The label borrows the shape of [[np-complete|NP-complete]] from complexity theory, but only
+      informally — no accepted reduction shows that solving one such problem solves the others,
+      though formalizations based on reductions to a human oracle have been proposed. Problems put
+      forward as examples include open-ended [[natural-language-processing|natural-language
+      understanding]], human-quality machine translation, [[computer-vision|computer vision]] in
+      unconstrained scenes and the [[winograd-schema-challenge|Winograd schema challenge]]. Its
+      predictions have aged unevenly: [[large-language-model|language models]] now perform well on
+      several tasks once labeled AI-complete, which some read as evidence of growing generality and
+      others as evidence that the tasks were easier than claimed. CAPTCHAs deliberately exploit
+      problems believed to be hard for machines.
+origin: >-
+  Usually attributed to Fanya Montalvo, who is said to have coined it in the 1980s by analogy with
+  NP-complete; the attribution rests on John Mallery's 1988 paper on AI and foreign policy. Early
+  printed uses include Erik Mueller's 1987 UCLA dissertation on daydreaming, and it entered the
+  Jargon File hacker dictionary in 1991.
+year: 1987
+note: >-
+  Used more as rhetoric than as a technical classification. Not to be confused with
+  [[artificial-general-intelligence|artificial general intelligence]], which names a capability
+  rather than a class of problems.
+see_also:
+  - NP-complete
+  - artificial general intelligence
+  - Turing test
+  - Winograd schema challenge
+  - commonsense reasoning
+contrast:
+  - NP-complete
+sources:
+  - text: >-
+      Mueller, E. T. (1987). Daydreaming and Computation. PhD dissertation, University of
+      California, Los Angeles.
+  - text: >-
+      Yampolskiy, R. V. (2013). Turing Test as a Defining Feature of AI-Completeness. In Artificial
+      Intelligence, Evolutionary Computing and Metaheuristics. Springer.

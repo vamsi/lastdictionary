@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: in-context learning
+id: in-context-learning
+pos: n.
+also:
+  - ICL
+  - in-context learner
+  - learning in context
+domain: llm
+domains:
+  - dl
+  - interp
+level: core
+plain: >-
+  A language model's ability to pick up a new task from instructions or examples placed in its
+  input, on the spot, without any retraining — like a quick study learning a game's rules from one
+  round.
+senses:
+  - definition: >-
+      The ability of a trained model, especially a [[large-language-model|large language model]], to
+      perform a task specified by examples or instructions in its input, adapting its outputs at
+      inference time while its [[weights|weights]] stay fixed. It underlies
+      [[few-shot-prompting|few-shot prompting]] and much of the flexibility of LLMs. Its mechanisms
+      are actively studied: [[induction-head|induction heads]] that copy patterns from earlier in
+      the context; accounts of in-context learning as implicit Bayesian inference over latent tasks;
+      and constructions showing that transformers can implement gradient-descent-like updates within
+      their activations. Empirically, demonstrations often teach format and label space more than
+      the input–label mapping itself, and performance can keep improving with hundreds of examples
+      in long contexts. In-context learning is transient: nothing is retained once the context is
+      discarded.
+    example: >-
+      We rely on in-context learning to teach the model each customer's taxonomy, so there is no
+      fine-tuning per client.
+origin: >-
+  Named in the GPT-3 paper by Tom Brown and colleagues (2020), who used it for learning from the
+  text of the input within the model's forward pass, as opposed to gradient-based training.
+  Mechanistic accounts followed, including Sang Michael Xie and colleagues'
+  implicit-Bayesian-inference view (2021) and Catherine Olsson and colleagues' induction-head
+  analysis (2022).
+year: 2020
+note: >-
+  Whether it is 'learning' in the usual sense is debated: some describe it as task recognition —
+  retrieving skills acquired in pretraining — rather than acquiring new ones.
+see_also:
+  - few-shot prompting
+  - zero-shot learning
+  - induction head
+  - meta-learning
+  - prompt
+  - context window
+  - in-context vector
+contrast:
+  - fine-tuning
+  - test-time training
+sources:
+  - text: Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. NeurIPS 2020.
+    url: https://ar5iv.labs.arxiv.org/html/2005.14165
+  - text: >-
+      Olsson, C. et al. (2022). In-context Learning and Induction Heads. Transformer Circuits Thread.
+  - text: >-
+      Min, S. et al. (2022). Rethinking the Role of Demonstrations: What Makes In-Context Learning
+      Work? EMNLP 2022.

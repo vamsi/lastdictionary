@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: self-supervised learning
+id: self-supervised-learning
+pos: n.
+also:
+  - SSL
+  - self-supervision
+  - self-supervised pretraining
+domain: core
+domains:
+  - ml
+  - dl
+  - llm
+level: core
+plain: >-
+  A way for AI to learn from huge amounts of unlabeled data by setting itself fill-in-the-blank
+  puzzles, such as guessing a hidden word or a missing patch of an image.
+senses:
+  - definition: >-
+      A form of learning in which training targets are generated automatically from the input data,
+      so no human labels are needed: part of the data is hidden or altered and the model learns to
+      predict it from the rest. The prediction problem, called a pretext task, can be
+      [[next-token-prediction|next-token prediction]] (as in [[gpt|GPT]]-style
+      [[large-language-model|language models]]), filling in masked words ([[bert|BERT]]) or image
+      patches ([[masked-autoencoder|masked autoencoders]]), or matching different views of the same
+      example, either while pushing apart other examples ([[contrastive-learning|contrastive
+      learning]], as in [[clip|CLIP]]) or by self-distillation without such negatives
+      ([[dino|DINO]]). Solving the pretext task at scale forces the model to learn general
+      representations ([[representation-learning|representation learning]]) that transfer to
+      downstream tasks with little labeled data. Self-supervised [[pretraining|pretraining]] is the
+      basis of modern [[foundation-model|foundation models]].
+    example: >-
+      We pretrained on ten million unlabeled scans with self-supervised learning, then fine-tuned on
+      two thousand labeled ones.
+origin: >-
+  Early uses include Jürgen Schmidhuber's 1990 report on 'self-supervised' recurrent networks that
+  learn a model of their environment, and robotics research of the mid-2000s in which robots labeled
+  their own training data from sensor readings. Yann LeCun popularized the term in the late 2010s,
+  relabeling the 'unsupervised' bulk of his well-known 2016 'cake' analogy of intelligence as
+  self-supervised learning.
+note: >-
+  Often classed as a kind of [[unsupervised-learning|unsupervised learning]]; what distinguishes it
+  is training with supervised-style losses on targets derived from the data. Not to be confused with
+  self-training, a semi-supervised method in which a model labels unlabeled data with its own
+  predictions.
+see_also:
+  - pretraining
+  - contrastive learning
+  - masked language model
+  - next-token prediction
+  - representation learning
+  - foundation model
+  - unsupervised learning
+  - masked autoencoder
+contrast:
+  - supervised learning
+  - semi-supervised learning
+sources:
+  - text: >-
+      Devlin, J., Chang, M.-W., Lee, K. & Toutanova, K. (2019). BERT: Pre-training of Deep
+      Bidirectional Transformers for Language Understanding. Proceedings of NAACL 2019.
+  - text: >-
+      Balestriero, R. et al. (2023). A Cookbook of Self-Supervised Learning. arXiv:2304.12210.
+    url: https://arxiv.org/abs/2304.12210

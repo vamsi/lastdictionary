@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Penn Treebank
+id: penn-treebank
+pos: prop. n.
+also:
+  - PTB
+  - Penn Treebank tagset
+  - treebank
+domain: data
+domains:
+  - hist
+  - llm
+level: core
+plain: >-
+  A collection of English text, best known for its million words of newspaper articles, in which
+  experts marked each word's grammatical role and drew each sentence's structure as a tree; it
+  trained and tested a generation of language software.
+senses:
+  - context: Corpus
+    definition: >-
+      A [[corpus|corpus]] of American English annotated at the University of Pennsylvania with
+      [[part-of-speech-tagging|part-of-speech tags]] and phrase-structure (constituency) trees. Its
+      best-known portion is about one million words of 1989 Wall Street Journal text bracketed into
+      labeled constituents (S, NP, VP …), with empty elements and, from the 1995 release, function
+      tags and predicate–argument information. Its 36 word-class tags (NN, VBZ, JJ …, plus
+      punctuation tags) became the de facto English standard. The conventional split, with WSJ
+      sections 02–21 for training, 22 for development and 23 for testing, made it the benchmark for
+      statistical [[syntactic-parsing|syntactic parsing]] for two decades, and it seeded derived
+      resources such as PropBank and converted dependency treebanks. It is licensed through the
+      Linguistic Data Consortium.
+    example: >-
+      Parsers in the 2000s were ranked by their labeled F1 on Section 23 of the Penn Treebank.
+  - context: Language modeling
+    definition: >-
+      A small [[language-model|language-modeling]] benchmark made from the same Wall Street Journal
+      text and distributed by Tomas Mikolov and colleagues around 2010: lowercased, with numbers
+      replaced by a placeholder, most punctuation removed and the vocabulary capped at 10,000 words,
+      leaving about 930,000 training words. Word-level [[perplexity|perplexity]] on it was the
+      standard yardstick for recurrent language models until larger corpora such as WikiText
+      displaced it.
+    example: Their regularized LSTM brought test perplexity on PTB below 60.
+origin: >-
+  Built from 1989 to 1992 by Mitchell Marcus, Beatrice Santorini and Mary Ann Marcinkiewicz at the
+  University of Pennsylvania and described in Computational Linguistics in 1993. Treebank II (1995)
+  added predicate–argument structure, and Treebank-3 (1999) is the release most used today. The word
+  'treebank' for a parsed corpus is attributed to the linguist Geoffrey Leech in the 1980s.
+year: 1993
+note: >-
+  Being newswire from one newspaper over a short period, it underrepresents other genres and
+  varieties of English, so parsers tuned to it degrade on web text, speech and specialist domains.
+  Its tagset and bracketing guidelines remain widely used English annotation standards, alongside
+  the later Universal Dependencies scheme.
+see_also:
+  - corpus
+  - syntactic parsing
+  - part-of-speech tagging
+  - perplexity
+  - Brown Corpus
+  - WordNet
+sources:
+  - text: >-
+      Marcus, M. P., Santorini, B. & Marcinkiewicz, M. A. (1993). Building a Large Annotated Corpus
+      of English: The Penn Treebank. Computational Linguistics 19(2), 313–330.
+  - text: >-
+      Mikolov, T. et al. (2010). Recurrent Neural Network Based Language Model. Proc. Interspeech
+      2010.

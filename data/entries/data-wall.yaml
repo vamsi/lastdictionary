@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data wall
+id: data-wall
+pos: n.
+also:
+  - peak data
+  - running out of data
+  - data exhaustion
+  - data bottleneck
+domain: data
+domains:
+  - train
+  - asi
+labels:
+  - emerging
+  - contested
+level: core
+plain: >-
+  The worry that AI companies will run out of new human-written text to train ever-larger models on,
+  because the useful public internet has already been largely used up.
+senses:
+  - definition: >-
+      The projected point at which [[scaling-laws|scaling]] of [[pretraining|pretraining]] is
+      limited by the finite stock of high-quality human-generated data rather than by compute.
+      Compute-optimal training ([[chinchilla-scaling-laws|Chinchilla scaling laws]]) calls for
+      roughly 20 tokens per parameter, leading models already train on tens of trillions of tokens,
+      and estimates put the stock of usable public text at a few hundred trillion tokens; Epoch AI
+      researchers projected in 2024 that training sets would match that stock between 2026 and 2032,
+      earlier if models are [[overtraining|overtrained]]. Proposed ways past the wall include
+      repeating data for several epochs ([[data-constrained-scaling|data-constrained scaling]]),
+      better filtering, multimodal and private data, [[synthetic-data|synthetic data]],
+      [[reinforcement-learning|reinforcement learning]] with verifiable rewards and self-play, and
+      shifting gains to [[test-time-compute|test-time compute]]. Whether and when the wall binds is
+      contested: optimists cite synthetic data and new sources, skeptics diminishing returns and
+      [[model-collapse|model collapse]].
+    example: >-
+      If the data wall is real, the next gains will come from RL and synthetic data, not bigger
+      crawls.
+origin: >-
+  Pablo Villalobos and colleagues at Epoch estimated in 2022 when the stock of public human-written
+  text would be used up. The phrase 'data wall' spread in 2024, notably through Leopold
+  Aschenbrenner's essay series Situational Awareness (June 2024), and in his NeurIPS Test of Time
+  award talk in December 2024 Ilya Sutskever said the field had reached 'peak data'.
+note: >-
+  Not a physical limit: text is still being written, private and multimodal data are vast, and data
+  can be reused. The debate is whether high-quality public text, at its current growth rate, can
+  sustain the historical pace of scaling.
+see_also:
+  - scaling laws
+  - synthetic data
+  - data-constrained scaling
+  - pretraining data
+  - test-time compute
+  - model collapse
+  - era of experience
+sources:
+  - text: >-
+      Villalobos, P., Ho, A., Sevilla, J., Besiroglu, T., Heim, L. & Hobbhahn, M. (2024). Will We
+      Run Out of Data? Limits of LLM Scaling Based on Human-Generated Data. ICML 2024 (position
+      paper). arXiv:2211.04325.
+    url: https://arxiv.org/abs/2211.04325
+  - text: >-
+      Aschenbrenner, L. (2024). Situational Awareness: The Decade Ahead. I. From GPT-4 to AGI
+      (section 'The data wall').
+    url: https://situational-awareness.ai/from-gpt-4-to-agi/
+as_of: 2026-10

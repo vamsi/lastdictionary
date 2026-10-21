@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GPU poor
+id: gpu-poor
+pos: adj.
+also:
+  - GPU rich
+  - GPU-rich
+  - the GPU-poor
+  - GPU poors
+domain: culture
+domains:
+  - hw
+  - society
+labels:
+  - slang
+level: specialist
+plain: >-
+  Slang for researchers, startups or countries without access to the huge numbers of expensive chips
+  needed to build the most advanced AI, as opposed to the GPU-rich big labs.
+senses:
+  - definition: >-
+      Lacking enough [[gpu|GPUs]] or other [[ai-accelerator|accelerators]] to train or serve
+      [[frontier-model|frontier-scale models]]; also used as a noun ('the GPU-poor') for such
+      researchers, startups, universities and countries, in contrast with GPU-rich labs and cloud
+      providers that control tens or hundreds of thousands of top-end chips. The phrase treats
+      concentration of [[training-compute|training compute]] as a defining fact of the field: the
+      GPU-poor are pushed toward [[fine-tuning|fine-tuning]] open models, efficiency research,
+      [[small-language-model|small models]] and evaluation work. It is used both as self-deprecation
+      and as a jab — the article that popularized it mocked GPU-poor groups for chasing
+      [[leaderboard|leaderboards]] with methods that would not matter at scale.
+    example: >-
+      We're GPU poor, so we distill from open models and spend our budget on evaluation.
+origin: >-
+  Popularized by Dylan Patel and Daniel Nishball in an August 2023 SemiAnalysis article, 'Google
+  Gemini Eats The World – Gemini Smashes GPT-4 By 5X, The GPU-Poors', which sorted organizations
+  into GPU-rich and GPU-poor; executives and researchers quickly adopted the label, often
+  ironically. The underlying 'compute divide' between industry and academia had been studied since
+  at least 2020.
+year: 2023
+see_also:
+  - GPU
+  - training compute
+  - moat
+  - open-weight model
+  - H100
+  - compute governance

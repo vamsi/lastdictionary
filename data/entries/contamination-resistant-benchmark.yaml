@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: contamination-resistant benchmark
+id: contamination-resistant-benchmark
+pos: n.
+also:
+  - contamination-free benchmark
+  - live benchmark
+  - dynamic benchmark
+  - LiveBench
+  - LiveCodeBench
+domain: eval
+domains:
+  - data
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A test built so that its questions are unlikely to have been seen by an AI during training — kept
+  secret, refreshed often, or written after the model was made.
+senses:
+  - definition: >-
+      A [[benchmark|benchmark]] designed to limit [[data-contamination|data contamination]], the
+      presence of its test items or answers in a model's training data, which inflates scores
+      through [[memorization|memorization]]. Strategies include keeping test sets private and
+      running evaluations on the organizer's infrastructure ([[frontiermath|FrontierMath]], the
+      semi-private sets of [[arc-agi|ARC-AGI]], the held-out and commercial splits of SWE-bench
+      Pro); continually adding items dated after models' [[knowledge-cutoff|knowledge cutoffs]]
+      (LiveBench, LiveCodeBench, newly set competitions such as [[aime|AIME]]); generating problems
+      procedurally so that each test is fresh (GSM-Symbolic); collecting items adversarially with
+      humans in the loop (Dynabench); and marking public files with a [[canary-string|canary
+      string]]. Resistance is a matter of degree: private items can leak through API traffic, and
+      fresh items can closely resemble older ones.
+    example: >-
+      We only trust coding numbers from the contamination-resistant benchmark, which adds new
+      problems every month.
+origin: >-
+  Concern about test-set leakage grew with web-scale pretraining; the GPT-3 paper (2020) included a
+  contamination analysis. Dynamic benchmarks such as Dynabench (2021), LiveCodeBench (2024) and
+  LiveBench (2024) made resistance an explicit design goal, and 'contamination-free' and
+  'contamination-resistant' became common descriptors in 2024–2025.
+year: 2024
+note: >-
+  A resistant design lowers the risk of contamination but does not certify any particular model's
+  score as clean.
+see_also:
+  - data contamination
+  - benchmark saturation
+  - canary string
+  - memorization
+  - FrontierMath
+  - ARC-AGI
+  - test set
+sources:
+  - text: >-
+      Jain, N. et al. (2024). LiveCodeBench: Holistic and Contamination Free Evaluation of Large
+      Language Models for Code. arXiv preprint.
+  - text: >-
+      White, C. et al. (2024). LiveBench: A Challenging, Contamination-Free LLM Benchmark. arXiv
+      preprint.
+as_of: 2026-10

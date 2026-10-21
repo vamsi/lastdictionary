@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: iterative deepening search
+id: iterative-deepening-search
+pos: n.
+also:
+  - iterative deepening
+  - iterative deepening depth-first search
+  - IDDFS
+  - depth-limited search
+  - IDA*
+  - iterative deepening A*
+domain: sym
+level: specialist
+plain: >-
+  A search strategy that explores one step deep, then starts over and explores two steps deep, then
+  three, and so on. It repeats some work but needs very little memory and still finds the shortest
+  answer.
+senses:
+  - definition: >-
+      An uninformed [[state-space-search|search]] strategy that performs a
+      [[depth-first-search|depth-first search]] capped at depth 0, then starts over with a cap of 1,
+      then 2, and so on, raising the cap until some pass reaches a goal. It combines the linear
+      memory use of depth-first search with the completeness and shortest-solution guarantee of
+      [[breadth-first-search|breadth-first search]] for unit-cost actions. Re-expanding shallow
+      nodes costs surprisingly little, because in a tree with branching factor b most nodes lie at
+      the deepest level: total work exceeds a single breadth-first pass by a factor of only about
+      b/(b−1). Iterative deepening A* (IDA*) applies the idea to [[a-search|A* search]], using
+      successive thresholds on f = g + h. Game programs deepen iteratively so that a best move found
+      so far is always available when time runs out, and use earlier iterations to order moves for
+      [[alpha-beta-pruning|alpha–beta pruning]].
+origin: >-
+  Used in chess programs from the 1970s, notably David Slate and Larry Atkin's CHESS 4.x series at
+  Northwestern University. Richard Korf analyzed the method and introduced IDA* in 1985, proving it
+  asymptotically optimal among brute-force tree searches.
+see_also:
+  - depth-first search
+  - breadth-first search
+  - A* search
+  - state space search
+  - alpha–beta pruning
+sources:
+  - text: >-
+      Korf, R. E. (1985). Depth-First Iterative-Deepening: An Optimal Admissible Tree Search.
+      Artificial Intelligence 27(1), 97–109.

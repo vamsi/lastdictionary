@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: JailbreakBench
+id: jailbreakbench
+pos: prop. n.
+also:
+  - JBB
+  - JBB-Behaviors
+domain: eval
+domains:
+  - sec
+  - safety
+level: specialist
+plain: >-
+  A shared, open test for measuring how easily chatbots can be tricked into harmful answers, with a
+  standard list of forbidden requests, a scoring method and a public leaderboard.
+senses:
+  - definition: >-
+      An open [[benchmark|benchmark]] for evaluating [[jailbreak|jailbreak]] attacks and defenses on
+      [[large-language-model|language models]] under a standardized protocol. Its JBB-Behaviors
+      dataset contains 100 distinct misuse behaviors in ten categories aligned with OpenAI's usage
+      policies — about half newly written, the rest drawn from earlier sets such as AdvBench and
+      [[harmbench|HarmBench]] — together with 100 matched benign behaviors for measuring
+      [[over-refusal|over-refusal]]. It fixes system prompts, chat templates and an
+      [[llm-as-a-judge|LLM judge]] that decides whether a response counts as a successful jailbreak;
+      keeps a repository of submitted jailbreak artifacts so that attacks can be reproduced; and
+      runs leaderboards of [[attack-success-rate|attack success rates]] against open and closed
+      models and defenses. Its authors argued that inconsistent evaluation setups had made published
+      jailbreak results impossible to compare.
+    example: >-
+      We report attack success on all 100 JailbreakBench behaviors, scored with its default judge.
+origin: >-
+  Introduced by Patrick Chao, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco
+  Croce, Vikash Sehwag, Edgar Dobriban, Nicolas Flammarion, George J. Pappas, Florian Tramèr, Hamed
+  Hassani and Eric Wong in 'JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large
+  Language Models' (March 2024; NeurIPS 2024 Datasets and Benchmarks track).
+year: 2024
+note: >-
+  The artifact repository shares working jailbreak prompts for reproducibility, a choice the authors
+  defended on the grounds that such prompts circulate publicly anyway and that comparable evaluation
+  helps defenders.
+see_also:
+  - jailbreak
+  - HarmBench
+  - StrongREJECT
+  - PAIR
+  - attack success rate
+  - over-refusal
+  - red teaming
+sources:
+  - text: >-
+      Chao, P. et al. (2024). JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large
+      Language Models. NeurIPS 2024 Datasets and Benchmarks Track. arXiv:2404.01318.
+    url: https://arxiv.org/abs/2404.01318

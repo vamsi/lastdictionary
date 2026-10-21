@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Three Laws of Robotics
+id: three-laws-of-robotics
+pos: n.
+also:
+  - Asimov's laws
+  - Laws of Robotics
+  - Zeroth Law
+domain: culture
+domains:
+  - safety
+  - robot
+level: core
+plain: >-
+  Three rules that science-fiction writer Isaac Asimov built into his fictional robots — do not harm
+  people, obey orders, protect yourself — in stories that mostly show how such simple rules go
+  wrong.
+senses:
+  - definition: >-
+      A fictional, strictly ranked set of constraints built into the positronic brains of Isaac
+      Asimov's robots: first, a robot must not harm a human or, by doing nothing, let a human come
+      to harm; second, it must obey human orders except where that would breach the first law;
+      third, it must preserve itself unless that would breach either of the others. A 'Zeroth Law'
+      placing humanity as a whole above any individual was added later. Asimov's plots turn on the
+      rules' ambiguities — what counts as harm, conflicting orders, uncertain consequences — which
+      has made them the classic teaching example of why short hand-written rules cannot capture
+      human values. The same difficulties reappear in [[ai-alignment|AI alignment]] as
+      [[specification-gaming|specification gaming]], [[value-alignment|value specification]] and
+      [[corrigibility|corrigibility]].
+    example: >-
+      Any proposal that amounts to the Three Laws with extra steps will meet the same edge cases
+      Asimov wrote about.
+origin: >-
+  First stated in full in Isaac Asimov's short story 'Runaround' (Astounding Science Fiction, March
+  1942), after several robot stories in which such constraints were tacit; Asimov credited the
+  editor John W. Campbell with helping formulate them. The Zeroth Law appeared in Robots and Empire
+  (1985). Asimov's story 'Liar!' (1941) is also the earliest known use of the word 'robotics'.
+year: 1942
+note: >-
+  Often cited as if they were an engineering standard; no deployed AI system implements them.
+  Natural-language rule sets such as the constitution in [[constitutional-ai|Constitutional AI]]
+  differ in being used as training signals rather than hard-coded constraints.
+see_also:
+  - Isaac Asimov
+  - AI alignment
+  - corrigibility
+  - specification gaming
+  - Constitutional AI
+  - HAL 9000
+  - Frankenstein complex
+sources:
+  - text: Asimov, I. (1942). Runaround. Astounding Science Fiction, March 1942.

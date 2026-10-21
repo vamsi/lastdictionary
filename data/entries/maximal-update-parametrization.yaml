@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: maximal update parametrization
+id: maximal-update-parametrization
+pos: n.
+also:
+  - μP
+  - muP
+  - maximal update parameterization
+  - μTransfer
+  - muTransfer
+pronunciation: myoo-PEE (for μP)
+domain: train
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A recipe for scaling a neural network's starting values and learning speeds with its size so that
+  settings tuned on a small, cheap model work unchanged on a huge one.
+senses:
+  - definition: >-
+      A rule for how a network's initialization variances, layer multipliers and per-layer
+      [[learning-rate|learning rates]] should scale with width so that every layer's
+      [[activation|activations]] change by a width-independent amount per update — the largest
+      change that stays stable — and features keep being learned as width grows. Under standard
+      parametrization, optimal learning rates and other [[hyperparameter|hyperparameters]] drift as
+      models widen, and in the [[neural-tangent-kernel|neural tangent kernel]] limit feature
+      learning vanishes; under μP the infinite-width limit still learns features, and many optimal
+      hyperparameters stay approximately fixed across widths. Because those values hold steady, they
+      can be searched for on a small proxy model and carried over unchanged to the full model, a
+      procedure its authors call μTransfer. In the 2022 demonstration, hyperparameters found on a
+      40-million-parameter proxy yielded a 6.7-billion-parameter model that beat the published
+      [[gpt-3|GPT-3]] results for that size, for a tuning bill of roughly 7% of the full pretraining
+      cost. Later work extends the approach to depth.
+    example: >-
+      Under μP the optimal learning rate from the 50M proxy carried over to the 7B run.
+origin: >-
+  Introduced by Greg Yang and Edward Hu at Microsoft Research in 'Feature Learning in Infinite-Width
+  Neural Networks' (Tensor Programs IV; arXiv November 2020, ICML 2021). μTransfer was demonstrated
+  by Yang, Hu, Igor Babuschkin and colleagues from Microsoft and OpenAI in Tensor Programs V (March
+  2022); Cerebras-GPT and MiniCPM are documented adopters.
+year: 2020
+note: >-
+  μP fixes how hyperparameters scale with width; it does not choose them, and batch size, training
+  length and weight decay need their own scaling rules. Its authors spell it 'parametrization';
+  'parameterization' is also common.
+see_also:
+  - hyperparameter tuning
+  - learning rate
+  - weight initialization
+  - neural tangent kernel
+  - training instability
+  - scaling laws
+sources:
+  - text: >-
+      Yang, G. & Hu, E. J. (2021). Feature Learning in Infinite-Width Neural Networks. ICML 2021.
+      arXiv:2011.14522.
+    url: https://arxiv.org/abs/2011.14522
+  - text: >-
+      Yang, G., Hu, E. J., Babuschkin, I., Sidor, S. et al. (2022). Tensor Programs V: Tuning Large
+      Neural Networks via Zero-Shot Hyperparameter Transfer. arXiv:2203.03466.
+    url: https://arxiv.org/abs/2203.03466v2

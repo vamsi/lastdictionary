@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sandwiching
+id: sandwiching
+pos: n.
+also:
+  - sandwiching experiment
+  - sandwich experiment
+domain: safety
+domains:
+  - eval
+level: specialist
+plain: >-
+  A way of testing oversight methods today: non-experts, helped by an AI, try to get expert-quality
+  answers out of it, and real experts then check whether they succeeded.
+senses:
+  - definition: >-
+      An experimental design for testing [[scalable-oversight|scalable oversight]] techniques on
+      current models, in which the model is more capable than a group of overseers at some task but
+      less capable than domain experts — 'sandwiched' between them. Non-expert overseers (for
+      example, laypeople answering specialist questions, or people who cannot see a source text) use
+      an oversight technique — free interaction with the model, [[ai-debate|debate]], model-written
+      critiques — to elicit or verify correct answers; expert judgments or ground-truth labels then
+      measure how close they come to expert performance, without the experts intervening. The design
+      simulates a future in which all humans are non-experts relative to AI. Its limitations are
+      that today's capability gaps are narrow and that models in such experiments rarely apply the
+      adversarial pressure a misaligned model might.
+    example: >-
+      In the sandwiching setup, crowdworkers chatting with the model closed half the gap to the
+      specialists.
+origin: >-
+  Proposed by Ajeya Cotra in 'The case for aligning narrowly superhuman models' (AI Alignment Forum,
+  March 2021). Samuel Bowman and colleagues ran early sandwiching experiments with language models
+  on multiple-choice question-answering benchmarks (2022).
+year: 2021
+see_also:
+  - scalable oversight
+  - AI debate
+  - weak-to-strong generalization
+  - human evaluation
+  - prover–verifier game
+sources:
+  - text: >-
+      Cotra, A. (2021). The case for aligning narrowly superhuman models. AI Alignment Forum.
+  - text: >-
+      Bowman, S. R. et al. (2022). Measuring Progress on Scalable Oversight for Large Language
+      Models. arXiv preprint.

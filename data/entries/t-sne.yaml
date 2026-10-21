@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: t-SNE
+id: t-sne
+pos: n.
+also:
+  - t-distributed stochastic neighbor embedding
+  - tSNE
+  - stochastic neighbor embedding
+  - SNE
+pronunciation: TEE-snee
+domain: ml
+domains:
+  - data
+level: core
+plain: >-
+  A technique for drawing data that have many measurements per item as a flat map in which similar
+  items land close together, widely used to look for groups in AI models' internal data or in
+  genetic data.
+senses:
+  - definition: >-
+      A nonlinear [[dimensionality-reduction|dimensionality reduction]] method for visualization
+      ('t-distributed stochastic neighbor embedding'). It turns pairwise distances in the original
+      space into probabilities that points are neighbors, using Gaussian kernels whose widths are
+      set per point to match a user-chosen perplexity, roughly the effective number of neighbors
+      (typically 5–50). It then arranges the points in two or three dimensions so that a matching
+      neighbor distribution, computed with a heavy-tailed Student t kernel, is as close as possible
+      to the original, minimizing the [[kullback-leibler-divergence|Kullback–Leibler divergence]] by
+      [[gradient-descent|gradient descent]]. The heavy tails let moderately distant points spread
+      apart, relieving the crowding that afflicted its predecessor SNE and yielding well-separated
+      clusters. Tree-based (Barnes–Hut) and interpolation-based approximations scale it to millions
+      of points. It preserves local neighborhoods but not global geometry: cluster sizes and
+      between-cluster distances in the plot carry little meaning, results vary with perplexity and
+      random seed, and apparent clusters can emerge from unstructured data.
+    example: >-
+      In the t-SNE plot the fraud cases formed a tight island, but we checked it at several
+      perplexities before believing it.
+origin: >-
+  Geoffrey Hinton and Sam Roweis presented stochastic neighbor embedding (SNE) at the NIPS
+  conference in 2002. Laurens van der Maaten and Hinton replaced its low-dimensional Gaussian with a
+  Student t-distribution in 'Visualizing Data using t-SNE' (Journal of Machine Learning Research,
+  2008). Van der Maaten's Barnes–Hut approximation (2014) made it practical for large datasets, and
+  it became a standard tool in genomics and for inspecting neural-network embeddings.
+year: 2008
+note: >-
+  Read a t-SNE map for which points are neighbors, not for how far apart or how large clusters are.
+  Running it on PCA-reduced data (say, 50 dimensions) is a common speed-up.
+see_also:
+  - UMAP
+  - dimensionality reduction
+  - principal component analysis
+  - embedding
+  - Kullback–Leibler divergence
+  - clustering
+contrast:
+  - principal component analysis
+sources:
+  - text: >-
+      van der Maaten, L. & Hinton, G. (2008). Visualizing Data using t-SNE. Journal of Machine
+      Learning Research 9: 2579–2605.
+    url: https://www.jmlr.org/papers/v9/vandermaaten08a.html
+  - text: >-
+      Hinton, G. & Roweis, S. (2002). Stochastic Neighbor Embedding. Advances in Neural Information
+      Processing Systems 15.

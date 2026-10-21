@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AI incident
+id: ai-incident
+pos: n.
+also:
+  - AI accident
+  - AI hazard
+  - AI near miss
+  - AI incident reporting
+domain: safety
+domains:
+  - gov
+  - society
+level: core
+plain: >-
+  A real-world case in which an AI system, through a flaw, a breakdown or the way someone used it,
+  ends up hurting people, property or rights, as in an injury, a wrongful arrest or a privacy
+  breach.
+senses:
+  - definition: >-
+      Realized harm in which an AI system played a causal part, direct or indirect, whether through
+      a malfunction, the way it was used or the way it was built. In the OECD's widely used 2024
+      definition, the qualifying harms are injury or damage to health; harm to property, communities
+      or the environment; disruption of critical infrastructure; and breaches of human rights or of
+      legal protections for fundamental, labor or intellectual-property rights. An event that might
+      reasonably be expected to lead to such harm, without having done so yet, is an AI hazard; a
+      near miss is a hazard that almost became an incident. Examples include crashes involving
+      automated driving, wrongful arrests based on [[facial-recognition|facial recognition]],
+      chatbots giving dangerous advice and agents taking destructive actions. Incident reporting and
+      shared databases let developers, regulators and researchers learn from failures, as aviation
+      and medicine do, and reporting of severe incidents is increasingly a legal duty.
+    example: >-
+      The deletion of the production database was logged as an AI incident and reported to the
+      vendor.
+origin: >-
+  Follows safety-engineering usage in aviation, medicine and industry. Systematic collection of AI
+  failures began in the late 2010s and was institutionalized by the [[ai-incident-database|AI
+  Incident Database]] (2020); the OECD launched an AI Incidents Monitor tracking incidents reported
+  in the news in 2023 (since renamed the AI Incidents and Hazards Monitor) and published common
+  definitions of incidents and hazards in May 2024.
+note: >-
+  Legal definitions vary by jurisdiction: the [[eu-ai-act|EU AI Act]] requires reporting of a
+  narrower class of [[serious-incident|serious incidents]], and California's [[sb-53|SB 53]] (2025)
+  requires frontier developers to report critical safety incidents. Harm must occur for an incident;
+  otherwise the event is a hazard.
+see_also:
+  - AI Incident Database
+  - serious incident
+  - post-market monitoring
+  - SB 53
+  - AI liability
+  - red teaming
+sources:
+  - text: >-
+      OECD (2024). Defining AI incidents and related terms. OECD Artificial Intelligence Papers.
+    url: https://oecd.ai/en/ai-publications/defining-ai-incidents-and-related-terms
+standards: >-
+  OECD, 'Defining AI incidents and related terms' (May 2024); cf. 'serious incident', EU AI Act
+  (Reg. (EU) 2024/1689), Art. 3(49).
+as_of: 2026-10

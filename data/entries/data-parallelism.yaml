@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: data parallelism
+id: data-parallelism
+pos: n.
+also:
+  - data-parallel training
+  - DDP
+  - DistributedDataParallel
+  - synchronous data parallelism
+domain: train
+domains:
+  - hw
+level: core
+plain: >-
+  Splitting the training data among many chips that each hold a full copy of the model; every chip
+  learns from its own share, and they pool what they learned after each step so all copies stay
+  identical.
+senses:
+  - definition: >-
+      A parallelization strategy in which each of several workers holds a replica of the model and
+      processes a different slice of each [[mini-batch|mini-batch]]; after the
+      [[backward-pass|backward pass]], gradients are averaged across workers, typically with an
+      [[all-reduce|all-reduce]], so that every replica applies the same update and stays
+      synchronized. It is the simplest and most widely used form of
+      [[distributed-training|distributed training]] — PyTorch's DistributedDataParallel (DDP) and
+      Horovod are standard implementations — and communication is overlapped with the backward pass
+      by reducing gradients in buckets as they become ready. Its limits are memory, since every
+      worker stores the full model, gradients and optimizer state (addressed by sharded variants
+      such as [[zero|ZeRO]] and [[fully-sharded-data-parallel|FSDP]]), and the
+      [[critical-batch-size|critical batch size]], since every added worker enlarges the global
+      batch. Large runs combine it with [[model-parallelism|model parallelism]], with data
+      parallelism as the outermost dimension.
+    example: >-
+      With data parallelism over 64 replicas, the global batch grew to 4 million tokens.
+origin: >-
+  The term comes from parallel computing, notably W. Daniel Hillis and Guy L. Steele Jr.'s 'Data
+  Parallel Algorithms' (Communications of the ACM, 1986). In deep learning it was used by Google's
+  DistBelief (2012) and Alex Krizhevsky's 'One weird trick for parallelizing convolutional neural
+  networks' (2014); ring all-reduce libraries such as Uber's Horovod (2017) made synchronous data
+  parallelism the default.
+year: 1986
+see_also:
+  - distributed training
+  - all-reduce
+  - ZeRO
+  - fully sharded data parallel
+  - model parallelism
+  - critical batch size
+  - gradient accumulation
+contrast:
+  - model parallelism
+sources:
+  - text: >-
+      Hillis, W. D. & Steele, G. L., Jr. (1986). Data Parallel Algorithms. Communications of the ACM
+      29(12).
+  - text: >-
+      Sergeev, A. & Del Balso, M. (2018). Horovod: fast and easy distributed deep learning in
+      TensorFlow. arXiv:1802.05799.
+    url: https://arxiv.org/abs/1802.05799

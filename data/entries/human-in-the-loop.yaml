@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: human-in-the-loop
+id: human-in-the-loop
+pos: adj.
+also:
+  - HITL
+  - human-on-the-loop
+  - human-out-of-the-loop
+  - man-in-the-loop
+domain: core
+domains:
+  - safety
+  - gov
+  - eng
+level: core
+plain: >-
+  Describes AI systems in which a person checks, corrects or approves the machine's work at key
+  points, rather than letting it act entirely on its own.
+senses:
+  - context: Oversight and automation
+    definition: >-
+      Describing a system in which a human must review, approve or be able to override automated
+      outputs before they take effect, as when a doctor confirms an AI-flagged diagnosis or an agent
+      asks permission before running a command. Writers on autonomy distinguish human-in-the-loop (a
+      human authorizes each action), human-on-the-loop (the system acts on its own while a human
+      monitors and can intervene) and human-out-of-the-loop (full autonomy); the distinction is
+      central to debates over autonomous weapons. Effective oversight requires that the human have
+      time, information, competence and authority to disagree; otherwise
+      [[automation-bias|automation bias]] reduces review to a rubber stamp. The [[eu-ai-act|EU AI
+      Act]] requires [[human-oversight|human oversight]] measures for
+      [[high-risk-ai-system|high-risk systems]].
+    example: >-
+      Payments over $10,000 stay human-in-the-loop: the agent drafts them, but a person approves
+      each one.
+  - context: Machine learning
+    definition: >-
+      Describing training and data workflows that put human judgment inside the learning process:
+      [[data-labeling|labeling]] data, correcting model outputs, choosing which examples to annotate
+      ([[active-learning|active learning]]) or ranking responses for
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]].
+origin: >-
+  From control engineering and military simulation, where 'man-in-the-loop' described systems and
+  simulations with a human operator inside the feedback loop. The gender-neutral form spread later,
+  and the in/on/out-of-the-loop taxonomy became prominent in debates on lethal autonomous weapons
+  around 2012.
+note: >-
+  A human 'in the loop' does not guarantee meaningful control: speed, volume and opaque outputs can
+  make review nominal. Not to be confused with
+  [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]], which
+  uses human judgments during training rather than operation.
+see_also:
+  - human oversight
+  - automation bias
+  - active learning
+  - levels of autonomy
+  - permission system
+  - reinforcement learning from human feedback
+  - centaur
+contrast:
+  - autonomy

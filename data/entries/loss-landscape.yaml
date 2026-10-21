@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: loss landscape
+id: loss-landscape
+pos: n.
+also:
+  - loss surface
+  - error surface
+  - optimization landscape
+domain: dl
+domains:
+  - math
+  - interp
+labels:
+  - figurative
+level: core
+plain: >-
+  A way of picturing training as a journey across hilly terrain, where position stands for the
+  model's settings and height for its error. Training searches for low valleys.
+senses:
+  - definition: >-
+      The [[loss-function|loss]] viewed as a surface over the space of a model's parameters, so that
+      training is a descent across it. For neural networks the space has millions to trillions of
+      dimensions and the surface is highly non-convex, with many [[saddle-point|saddle points]],
+      wide plateaus, narrow ravines and large connected regions of near-equal low loss. Since it
+      cannot be seen directly, it is studied through one- and two-dimensional slices (with 'filter
+      normalization' to make slices comparable across networks), interpolation between
+      [[weights|weight]] vectors, and the [[hessian|Hessian]] spectrum, whose largest eigenvalues
+      measure sharpness. Findings that shaped practice include: most critical points in high
+      dimensions are saddles rather than bad local minima; [[residual-connection|skip connections]]
+      and normalization make landscapes smoother; separately trained solutions are often joined by
+      low-loss paths ([[mode-connectivity|mode connectivity]]); and curvature evolves during
+      training ([[edge-of-stability|edge of stability]]). The geometry around a solution is linked,
+      contentiously, to generalization (see [[sharp-and-flat-minima|sharp and flat minima]]).
+origin: >-
+  The imagery comes from the 'adaptive landscape' that Sewall Wright introduced in evolutionary
+  biology (1932), now usually called a fitness landscape, and from energy landscapes in physics,
+  which shaped 1980s work on Hopfield networks. 'Error surface' was standard in the 1980s
+  backpropagation literature; 'loss landscape' spread in the 2010s, helped by Hao Li and colleagues'
+  widely reproduced visualizations (arXiv 2017; NeurIPS 2018).
+note: >-
+  Low-dimensional pictures can mislead: a slice may look convex or chaotic depending on the
+  directions chosen, and rescaling parameters can change the apparent landscape without changing the
+  function the network computes.
+see_also:
+  - sharp and flat minima
+  - mode connectivity
+  - saddle point
+  - edge of stability
+  - Hessian
+  - gradient descent
+  - singular learning theory
+sources:
+  - text: >-
+      Li, H., Xu, Z., Taylor, G., Studer, C. & Goldstein, T. (2018). Visualizing the Loss Landscape
+      of Neural Nets. NeurIPS 2018.
+    url: https://arxiv.org/abs/1712.09913
+  - text: >-
+      Dauphin, Y. et al. (2014). Identifying and attacking the saddle point problem in
+      high-dimensional non-convex optimization. NeurIPS 2014.

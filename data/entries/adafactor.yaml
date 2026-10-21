@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Adafactor
+id: adafactor
+pos: prop. n.
+domain: dl
+domains:
+  - train
+  - llm
+level: specialist
+plain: >-
+  A memory-saving cousin of the popular Adam training method. Instead of keeping extra statistics
+  for every single weight, it keeps summaries for each row and column of a weight table.
+senses:
+  - definition: >-
+      An adaptive [[optimizer|optimizer]] designed to cut the memory cost of [[adam|Adam]]-style
+      second-moment statistics. Instead of a full matrix of second-moment estimates for each weight
+      matrix, it stores one vector of row statistics and one of column statistics and rebuilds an
+      approximate per-parameter value from their outer product (a rank-one factorization), cutting
+      the state for an n × m matrix from nm numbers to n + m. By default it also drops first-moment
+      [[momentum|momentum]], clips updates whose root-mean-square exceeds a threshold, raises the
+      second-moment decay rate over training, and can scale step sizes relative to each parameter's
+      magnitude. These choices made it the optimizer of choice for memory-constrained
+      [[transformer|transformer]] training on TPUs, including T5 (2019) and, in modified form, PaLM
+      (2022). Its row-and-column statistics were later linked to [[shampoo|Shampoo]] by the SOAP
+      analysis, and similar factorizations recur in later memory-efficient optimizers.
+origin: >-
+  Introduced by Noam Shazeer and Mitchell Stern of Google in 'Adafactor: Adaptive Learning Rates
+  with Sublinear Memory Cost' (arXiv April 2018; ICML 2018). The name blends 'adaptive' with the
+  factored second-moment estimate.
+year: 2018
+see_also:
+  - Adam
+  - optimizer
+  - Shampoo
+  - T5
+  - momentum
+  - mixed-precision training
+sources:
+  - text: >-
+      Shazeer, N. & Stern, M. (2018). Adafactor: Adaptive Learning Rates with Sublinear Memory Cost.
+      ICML 2018.
+    url: https://arxiv.org/abs/1804.04235

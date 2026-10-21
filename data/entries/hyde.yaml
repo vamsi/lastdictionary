@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: HyDE
+id: hyde
+pos: prop. n.
+also:
+  - Hypothetical Document Embeddings
+  - hypothetical document embedding
+domain: eng
+domains:
+  - llm
+level: specialist
+plain: >-
+  A search trick: ask an AI to write a made-up answer to the question first, then search for real
+  documents that resemble that imagined answer.
+senses:
+  - definition: >-
+      Hypothetical Document Embeddings, a retrieval technique that searches with an imagined answer
+      instead of the question: a [[large-language-model|language model]] first drafts a passage that
+      would answer the query, an [[embedding-model|embedding model]] encodes the draft, and
+      [[vector-search|vector search]] returns the real documents nearest to it. Answer-shaped text
+      tends to sit closer to relevant passages in embedding space than a terse question does. The
+      draft may contain invented facts, but its authors argued that the encoder retains mostly its
+      topical gist, and only genuine documents from the collection are ever returned. HyDE needs no
+      relevance labels and improved zero-shot [[dense-retrieval|dense retrieval]] in its introducing
+      paper; its costs are an extra generation per query and drift when the model's guess is
+      off-topic.
+    example: >-
+      With HyDE, the query about why a sourdough loaf collapsed retrieved a troubleshooting guide on
+      overproofing.
+origin: >-
+  Introduced by Luyu Gao, Xueguang Ma, Jimmy Lin and Jamie Callan in 'Precise Zero-Shot Dense
+  Retrieval without Relevance Labels' (arXiv, December 2022; ACL 2023), which used InstructGPT to
+  write the hypothetical documents and the unsupervised Contriever encoder to embed them.
+year: 2022
+see_also:
+  - query rewriting
+  - dense retrieval
+  - retrieval-augmented generation
+  - embedding model
+  - vector search
+  - semantic search
+sources:
+  - text: >-
+      Gao, L., Ma, X., Lin, J. & Callan, J. (2023). Precise Zero-Shot Dense Retrieval without
+      Relevance Labels. ACL 2023. arXiv:2212.10496.
+    url: https://arxiv.org/abs/2212.10496v1

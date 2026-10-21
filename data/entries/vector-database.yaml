@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: vector database
+id: vector-database
+pos: n.
+also:
+  - vector DB
+  - vector store
+domain: eng
+domains:
+  - data
+  - agents
+level: core
+plain: >-
+  A database built to store embeddings — lists of numbers that represent meaning — and to quickly
+  find the stored items most similar to a new one. It is the memory behind many AI search tools.
+senses:
+  - definition: >-
+      A database management system specialized for storing high-dimensional vectors, such as
+      [[text-embedding|text]] and image embeddings, together with their metadata, and for answering
+      similarity queries: given a query vector, return the k most similar stored vectors under
+      [[cosine-similarity|cosine similarity]], [[dot-product|dot product]] or
+      [[euclidean-distance|Euclidean distance]]. To do this quickly at scale it maintains
+      [[approximate-nearest-neighbor-search|approximate nearest neighbor]] indexes, such as
+      [[hnsw|HNSW]] graphs, inverted-file partitions and [[product-quantization|product
+      quantization]], and adds database features a bare index lacks: inserts, updates and deletes,
+      metadata filtering, persistence, replication, sharding, access control and often
+      [[hybrid-search|hybrid search]] with keyword indexes. Vector databases are the usual retrieval
+      store for [[retrieval-augmented-generation|retrieval-augmented generation]],
+      [[semantic-search|semantic search]], recommendation and agent [[long-term-memory|long-term
+      memory]]. Besides purpose-built systems, general-purpose databases and search engines, such as
+      PostgreSQL with the pgvector extension, Elasticsearch and OpenSearch, now offer vector
+      indexes.
+    example: >-
+      We loaded 12 million chunk embeddings into the vector database and filter by customer before
+      searching.
+origin: >-
+  Similarity search over feature vectors long predates the label. Purpose-built 'vector databases'
+  emerged around 2019–2021 — Milvus was open-sourced by Zilliz in 2019 and Pinecone launched its
+  managed service in 2021 — and the category boomed in 2023, when retrieval-augmented applications
+  built on large language models needed embedding storage.
+year: 2019
+note: >-
+  A vector index or library such as [[faiss|FAISS]] performs the similarity search; a vector
+  database wraps such indexes with storage, updates, filtering and operations. Whether a dedicated
+  vector database is needed, rather than vector support in an existing database, is a common
+  architecture debate.
+see_also:
+  - vector search
+  - approximate nearest neighbor search
+  - HNSW
+  - FAISS
+  - text embedding
+  - retrieval-augmented generation
+  - hybrid search
+  - semantic search
+sources:
+  - text: >-
+      Wang, J. et al. (2021). Milvus: A Purpose-Built Vector Data Management System. Proceedings of
+      SIGMOD 2021.
+  - text: >-
+      Douze, M., Guzhva, A., Deng, C., Johnson, J., Szilvasy, G., Mazaré, P.-E., Lomeli, M.,
+      Hosseini, L. & Jégou, H. (2024). The Faiss library. arXiv:2401.08281.
+    url: https://arxiv.org/abs/2401.08281v2
+as_of: 2026-10

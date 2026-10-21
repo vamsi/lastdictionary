@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: transformer
+id: transformer
+pos: n.
+also:
+  - transformer model
+  - transformer architecture
+domain: llm
+domains:
+  - dl
+  - percep
+  - gen
+level: essential
+plain: >-
+  The design behind today's chatbots and much of modern AI. It handles text by letting every word
+  look at every other word and decide which of them matter for understanding it.
+senses:
+  - definition: >-
+      A [[neural-network|neural network]] architecture for sequences in which every layer lets each
+      position gather information directly from all the others through [[attention|attention]], with
+      no recurrence or convolution. The network is a stack of identical blocks: each pairs
+      [[multi-head-attention|multi-head attention]], the step that moves information between
+      positions, with a [[feed-forward-network|feed-forward network]] that transforms every position
+      on its own, and wraps both in [[residual-connection|residual connections]] and
+      [[layer-normalization|layer normalization]]. What enters the stack is one vector per
+      [[token|token]] ([[embedding|embedding]]), with order supplied by a
+      [[positional-encoding|positional encoding]], since attention by itself ignores order. Because
+      no position waits for the one before it, a whole training sequence is processed in parallel,
+      which suits GPUs far better than [[recurrent-neural-network|recurrent networks]] and made
+      training on trillions of tokens practical. The 2017 original was an
+      [[encoder-decoder-architecture|encoder–decoder]] for machine translation; [[bert|BERT]] kept
+      only the encoder ([[encoder-only-transformer|encoder-only]]) and [[gpt|GPT]] only the decoder
+      ([[decoder-only-transformer|decoder-only]]), now the standard form for
+      [[large-language-model|large language models]]. [[vision-transformer|Vision transformers]],
+      speech recognizers and [[diffusion-transformer|diffusion transformers]] use the same design.
+      Its chief cost is that standard [[self-attention|self-attention]] needs time and memory
+      quadratic in sequence length, which motivates [[sparse-attention|sparse]],
+      [[linear-attention|linear]] and [[state-space-model|state-space]] alternatives.
+    example: >-
+      Almost every frontier model released since 2020 is a decoder-only transformer, often with
+      mixture-of-experts layers.
+origin: >-
+  Introduced in 'Attention Is All You Need' (arXiv, June 2017; NIPS 2017) by Ashish Vaswani, Noam
+  Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser and Illia
+  Polosukhin, most of them at Google, as a machine-translation model. BERT and GPT (2018) carried it
+  into general language modeling, and by the early 2020s it had spread to vision, speech, biology
+  and robotics.
+year: 2017
+note: >-
+  Capitalized 'Transformer' in the original paper; lowercase is now usual. The word names a family,
+  not one fixed design: modern models differ from the 2017 original in normalization placement,
+  [[rotary-positional-embedding|positional scheme]], activation ([[swiglu|SwiGLU]]) and attention
+  variant. Unrelated to electrical transformers.
+see_also:
+  - attention
+  - self-attention
+  - multi-head attention
+  - decoder-only transformer
+  - encoder-only transformer
+  - Attention Is All You Need
+  - large language model
+  - positional encoding
+contrast:
+  - recurrent neural network
+  - convolutional neural network
+  - state space model
+sources:
+  - text: >-
+      Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł. &
+      Polosukhin, I. (2017). Attention Is All You Need. NIPS 2017.
+    url: https://arxiv.org/abs/1706.03762

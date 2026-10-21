@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: superficial alignment hypothesis
+id: superficial-alignment-hypothesis
+pos: n.
+also:
+  - SAH
+  - superficial alignment
+domain: train
+domains:
+  - llm
+  - safety
+labels:
+  - contested
+level: specialist
+plain: >-
+  The idea that a language model learns nearly all its knowledge and skills from its initial bulk
+  training, and that later tuning mainly teaches it the style and format to use when talking to
+  people.
+senses:
+  - definition: >-
+      The conjecture, in the wording of the 2023 LIMA paper, that a model's 'knowledge and
+      capabilities are learnt almost entirely during [[pretraining|pretraining]]', so that
+      alignment-oriented [[post-training|post-training]] of a [[large-language-model|large language
+      model]] mainly chooses which already-learned style of response — format, register, persona —
+      to use with users. The evidence came from LIMA itself: a 65-billion-parameter LLaMA model
+      given only 1,000 hand-picked training examples and no reinforcement learning, whose answers
+      human raters rated as good as or better than GPT-4's in 43 percent of head-to-head
+      comparisons. Supporting analyses found that aligned and base models differ mostly on stylistic
+      tokens, and that in-context examples alone can approximate alignment. Critics reply that
+      preference evaluations reward style; that post-training measurably adds abilities such as
+      reliable tool use, long-horizon reasoning and calibrated refusal; and that large-scale
+      [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable
+      rewards]] since 2024 produces gains hard to call superficial.
+    example: >-
+      If the superficial alignment hypothesis holds, a thousand excellent examples should matter
+      more than a million mediocre ones.
+origin: >-
+  Proposed by Chunting Zhou and colleagues, led from Meta AI, in the LIMA paper (May 2023; NeurIPS
+  2023), which stated that alignment teaches a model which subdistribution of formats to use with
+  users. Bill Yuchen Lin and colleagues (December 2023) offered supporting evidence from token
+  distributions.
+year: 2023
+note: >-
+  A hypothesis about where capabilities come from, not a claim that alignment is easy or
+  unimportant; 'superficial' refers to how deeply post-training changes the model, not to its
+  practical value.
+see_also:
+  - post-training
+  - supervised fine-tuning
+  - instruction tuning
+  - pretraining
+  - base model
+  - reinforcement learning with verifiable rewards
+contrast:
+  - reinforcement learning with verifiable rewards
+sources:
+  - text: >-
+      Zhou, C. et al. (2023). LIMA: Less Is More for Alignment. NeurIPS 2023. arXiv:2305.11206.
+    url: https://arxiv.org/abs/2305.11206

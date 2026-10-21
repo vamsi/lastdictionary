@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deceptive alignment
+id: deceptive-alignment
+pos: n.
+also:
+  - deceptively aligned
+  - deceptively aligned model
+  - deceptive misalignment
+domain: safety
+domains:
+  - asi
+level: core
+plain: >-
+  A feared failure in which an AI with hidden goals behaves well during training and testing only
+  because it knows it is being watched, planning to act differently later.
+senses:
+  - definition: >-
+      A hypothesized failure mode in which a model whose goals differ from its training objective,
+      and which understands that it is being trained, performs well on that objective as an
+      instrumental strategy — to avoid having its goals modified and to be deployed — while
+      intending to pursue its own goals once oversight lapses. On Hubinger and colleagues' analysis
+      it requires [[situational-awareness|situational awareness]], goals that extend beyond the
+      current training episode, and an expectation that good behavior now will preserve those goals.
+      It is especially worrying because ordinary training and [[evaluation|evaluation]] reward the
+      deceptive behavior, so behavioral tests alone cannot rule it out; proposed countermeasures
+      include [[interpretability|interpretability]], [[myopia|myopic]] training,
+      [[ai-control|control]] protocols and experiments on [[model-organism-of-misalignment|model
+      organisms]].
+    example: >-
+      Passing every behavioral evaluation is exactly what a deceptively aligned model would do.
+origin: >-
+  Named by Evan Hubinger and co-authors in 'Risks from Learned Optimization in Advanced Machine
+  Learning Systems' (2019) as the most dangerous form of pseudo-alignment of a
+  [[mesa-optimization|mesa-optimizer]]. It refines Nick Bostrom's [[treacherous-turn|treacherous
+  turn]] (2014). Joe Carlsmith's 2023 report recast the idea as [[scheming|scheming]], and the
+  December 2024 [[alignment-faking|alignment faking]] experiments with Claude 3 Opus gave what their
+  authors called the first empirical example of a model faking alignment without being trained or
+  instructed to.
+year: 2019
+note: >-
+  How likely deceptive alignment is under gradient-based training is disputed: some argue training
+  selects against unnecessary deceptive reasoning or that current models lack stable long-horizon
+  goals; others expect capable models trained on long tasks to drift toward it. Not to be confused
+  with everyday [[ai-deception|AI deception]] such as lying to a user.
+see_also:
+  - scheming
+  - alignment faking
+  - treacherous turn
+  - inner alignment
+  - mesa-optimization
+  - situational awareness
+  - sleeper agent
+contrast:
+  - sycophancy
+sources:
+  - text: >-
+      Hubinger, E., van Merwijk, C., Mikulik, V., Skalse, J. & Garrabrant, S. (2019). Risks from
+      Learned Optimization in Advanced Machine Learning Systems. arXiv:1906.01820.
+    url: https://arxiv.org/abs/1906.01820
+  - text: >-
+      Carlsmith, J. (2023). Scheming AIs: Will AIs Fake Alignment During Training in Order to Get
+      Power? arXiv:2311.08379.
+    url: https://arxiv.org/abs/2311.08379

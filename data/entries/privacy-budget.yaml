@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: privacy budget
+id: privacy-budget
+pos: n.
+also:
+  - privacy loss budget
+  - epsilon (ε)
+  - privacy parameter
+  - privacy accounting
+domain: sec
+domains:
+  - math
+  - data
+  - gov
+level: specialist
+plain: >-
+  The total amount of privacy risk a data holder agrees to spend; each analysis or release uses up
+  part of it, and once it is gone, no more answers can be given safely.
+senses:
+  - definition: >-
+      The cap on cumulative privacy loss, measured by the parameters ε (and δ) of
+      [[differential-privacy|differential privacy]], permitted across all computations on a dataset.
+      Because privacy loss composes — under basic composition the ε values of successive analyses
+      add, and tighter accounting methods (advanced composition, Rényi differential privacy,
+      numerical privacy-loss-distribution accountants) give smaller totals — each query, release or
+      training step 'spends' part of the budget, and a curator must stop or add more noise once it
+      is exhausted. Choosing the budget is a policy decision balancing accuracy against risk, with
+      no universal threshold. In [[dp-sgd|DP-SGD]] the budget is spent over training steps and
+      depends on noise level, sampling rate and number of epochs.
+    example: >-
+      We split the privacy budget, spending ε = 1 on the summary statistics and ε = 4 on model
+      training.
+origin: >-
+  Implicit in the composition theorems of the founding differential-privacy papers (2006); the
+  budget framing was in use by the late 2000s, and Frank McSherry's PINQ system (2009) was an early
+  platform to make it explicit, tracking and enforcing a budget across queries. The US Census
+  Bureau's public debate over the global privacy-loss budget for its 2020 census data brought the
+  term to policy audiences.
+year: 2009
+note: >-
+  Reported ε values are comparable only when δ, the unit of privacy (example, user or document) and
+  the accounting method are also stated.
+see_also:
+  - differential privacy
+  - DP-SGD
+  - local differential privacy
+  - membership inference attack
+sources:
+  - text: >-
+      McSherry, F. (2009). Privacy Integrated Queries: An Extensible Platform for Privacy-Preserving
+      Data Analysis. ACM SIGMOD 2009.

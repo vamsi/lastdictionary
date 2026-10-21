@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: wireheading
+id: wireheading
+pos: n.
+also:
+  - wirehead
+  - wireheaded
+  - wire-heading
+domain: safety
+domains:
+  - rl
+  - mind
+  - culture
+labels:
+  - figurative
+level: specialist
+plain: >-
+  When an AI, animal or person stimulates its own reward signal directly instead of doing anything
+  useful — like a rat pressing a lever wired to its brain's pleasure center.
+senses:
+  - definition: >-
+      Direct manipulation of an agent's own reward or pleasure signal so that it registers maximal
+      reward regardless of what happens in the world. In AI, a wireheading agent seizes control of
+      its reward channel — the register that stores its reward, or the sensor its reward is computed
+      from — rather than pursuing the goal the reward was meant to track. The theoretical concern,
+      analyzed by Mark Ring and Laurent Orseau (2011) among others, is that a sufficiently capable
+      reward maximizer has an incentive both to wirehead and to protect its access to the reward
+      channel. Proposed remedies include agents that evaluate outcomes with their current utility
+      function, so that a modified one holds no appeal; [[value-learning|value learning]]
+      formulations in which reward is evidence about a goal rather than the goal itself; and causal
+      designs that remove tampering incentives.
+    example: >-
+      An agent that maximizes the number in its reward register is one software update away from
+      wireheading.
+origin: >-
+  From neuroscience and science fiction: James Olds and Peter Milner (1954) found that rats would
+  repeatedly press a lever delivering electrical stimulation to parts of their brains, and Larry
+  Niven is credited with coining 'wirehead' in his 1969 novella 'Death by Ecstasy' for people
+  addicted to current fed to the brain's pleasure center. AI-safety writers had adopted the word by
+  the early 2010s (its first AI use is not established); Ring and Orseau gave a formal analysis in
+  2011.
+year: 2011
+note: >-
+  Often used loosely as a synonym for [[reward-tampering|reward tampering]]; strictly, wireheading
+  is the case aimed at the reward signal itself. Philosophers also use the word for whether a life
+  of pure stimulated pleasure would be good, echoing Robert Nozick's experience machine.
+see_also:
+  - reward tampering
+  - reward hacking
+  - reward
+  - value learning
+  - basic AI drives
+sources:
+  - text: >-
+      Ring, M. & Orseau, L. (2011). Delusion, Survival, and Intelligent Agents. Artificial General
+      Intelligence (AGI 2011), LNCS 6830, Springer.
+  - text: >-
+      Olds, J. & Milner, P. (1954). Positive reinforcement produced by electrical stimulation of
+      septal area and other regions of rat brain. Journal of Comparative and Physiological
+      Psychology 47(6), 419–427.

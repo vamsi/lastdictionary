@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: natural abstraction hypothesis
+id: natural-abstraction-hypothesis
+pos: n.
+also:
+  - natural abstractions
+  - natural abstraction
+  - NAH
+domain: safety
+domains:
+  - interp
+  - mind
+labels:
+  - contested
+level: specialist
+plain: >-
+  The idea that the world naturally sorts into a limited set of useful concepts — like 'tree' or
+  'temperature' — that any capable mind, human or AI, would end up learning.
+senses:
+  - definition: >-
+      A conjecture by John Wentworth about why different minds might share concepts. Most details of
+      a physical system wash out before they can affect anything far away — a rock influences
+      distant things mainly through its mass, position and shape — so the usable information about a
+      system is usually a compact summary; the hypothesis holds that these summaries, natural
+      abstractions, are relatively few, that learners of very different designs, human or
+      artificial, converge on them because prediction requires them, and that familiar human
+      concepts are among them. If true, the hypothesis would make alignment more tractable: human
+      concepts and values could be located inside an AI's internal representations, and
+      [[interpretability|interpretability]] could expect recognizable
+      [[feature-interpretability|features]] rather than alien ones. Supporting evidence cited
+      includes similar features found across different networks and the 'Platonic representation
+      hypothesis' (2024) that models' representations converge as they scale; skeptics doubt that
+      abstractions for values, as opposed to physical objects, are natural in this sense.
+    example: >-
+      If the natural abstraction hypothesis holds, 'diamond' in the model's head should mean what it
+      means in ours.
+origin: >-
+  Formulated by John Wentworth in posts on LessWrong and the AI Alignment Forum, notably 'Testing
+  the Natural Abstraction Hypothesis: Project Intro' (2021), building on his 2020 essay 'Alignment
+  by Default'.
+year: 2021
+see_also:
+  - universality hypothesis
+  - linear representation hypothesis
+  - interpretability
+  - ontological crisis
+  - embedded agency
+  - shard theory
+sources:
+  - text: >-
+      Wentworth, J. (2021). Testing the Natural Abstraction Hypothesis: Project Intro. AI Alignment
+      Forum.
+  - text: >-
+      Huh, M., Cheung, B., Wang, T. & Isola, P. (2024). The Platonic Representation Hypothesis. ICML
+      2024.

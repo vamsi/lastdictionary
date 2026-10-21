@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: value function
+id: value-function
+pos: n.
+also:
+  - state-value function
+  - V-function
+  - value estimate
+domain: rl
+domains:
+  - math
+level: core
+plain: >-
+  An estimate of how promising a situation is for an AI agent, judged by the rewards it is likely to
+  collect from that point on, the way a chess player sizes up a board.
+senses:
+  - definition: >-
+      A function that scores each [[state|state]] by the [[return|return]] an agent can expect from
+      it: v_π(s) is the expected discounted sum of future rewards for an agent that starts in s and
+      acts according to [[policy|policy]] π, and the optimal value function v*(s) is the largest
+      such value any policy can achieve. Value functions turn long-term consequences into a number
+      available immediately, so an agent can compare situations without simulating the future, and
+      they satisfy the recursive [[bellman-equation|Bellman equation]]. They are computed exactly by
+      [[dynamic-programming|dynamic programming]] when the environment's model is known, or learned
+      from experience by Monte Carlo averaging or [[temporal-difference-learning|temporal difference
+      learning]], usually with a function approximator such as a neural 'value network' or critic.
+      Value functions underpin value-based methods such as [[q-learning|Q-learning]], serve as the
+      critic in [[actor-critic|actor–critic]] methods and as variance-reducing baselines in
+      [[policy-gradient|policy gradient]] estimators, and score positions at the leaves of search,
+      as in [[alphago|AlphaGo]].
+    example: >-
+      With a reward of +1 for a win and 0 otherwise, a value of 0.8 means roughly an 80 percent
+      chance of winning.
+formula_latex: v_\pi(s) = \mathbb{E}_\pi\left[ G_t \mid S_t = s \right] = \mathbb{E}_\pi\left[
+  \textstyle\sum_{k=0}^{\infty} \gamma^{k} R_{t+k+1} \mid S_t = s \right]
+origin: >-
+  Value functions originate in Richard Bellman's dynamic programming (1950s), where the optimal
+  value of a state satisfies his functional equation. A learned version appears in Arthur Samuel's
+  checkers program (1959), whose scoring polynomial was adjusted toward the scores of later
+  positions — an early form of [[temporal-difference-learning|temporal difference learning]].
+year: 1957
+note: >-
+  'Value' means expected future [[reward|reward]], not moral value; do not confuse with
+  [[value-alignment|value alignment]]. Used alone, 'value function' usually means the state-value
+  function V, as distinct from the action-value [[q-function|Q-function]].
+see_also:
+  - Q-function
+  - advantage function
+  - Bellman equation
+  - temporal difference learning
+  - actor–critic
+  - return
+  - value iteration
+contrast:
+  - reward
+  - policy
+sources:
+  - text: Bellman, R. (1957). Dynamic Programming. Princeton University Press.
+  - text: >-
+      Samuel, A. L. (1959). Some Studies in Machine Learning Using the Game of Checkers. IBM Journal
+      of Research and Development 3(3), 210–229.

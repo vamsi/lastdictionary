@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: game theory
+id: game-theory
+pos: n.
+also:
+  - game-theoretic
+  - theory of games
+  - zero-sum game
+  - minimax theorem
+  - mixed strategy
+  - mechanism design
+domain: math
+domains:
+  - rl
+  - safety
+  - gov
+level: core
+plain: >-
+  The mathematics of strategic decisions, where each player's best move depends on what the others
+  do. It is used to study competition and cooperation among people, firms, nations and AI agents.
+senses:
+  - definition: >-
+      The mathematics of situations in which several decision-makers each choose a course of action
+      and each one's payoff depends on what all of them choose. A game specifies players, their
+      available strategies and their payoffs; solution concepts predict or prescribe outcomes, chief
+      among them the [[nash-equilibrium|Nash equilibrium]], von Neumann's minimax solution of
+      two-player zero-sum games and, for cooperative games, the core and the [[shapley-value|Shapley
+      value]]. Mechanism design inverts the problem, crafting rules — such as auctions — under which
+      self-interested players produce desired outcomes. Game theory pervades AI: [[minimax|minimax]]
+      search and [[alpha-beta-pruning|alpha–beta pruning]] for board games;
+      [[generative-adversarial-network|GANs]] as two-player games solved at a [[saddle-point|saddle
+      point]]; [[self-play|self-play]] and [[multi-agent-reinforcement-learning|multi-agent
+      reinforcement learning]], from poker programs that approximate equilibria to
+      [[alphazero|AlphaZero]]; [[ai-debate|AI debate]] for [[scalable-oversight|scalable
+      oversight]]; the [[off-switch-game|off-switch game]] in [[corrigibility|corrigibility]]
+      research; Shapley-value attribution in [[shap|SHAP]]; and analyses of competition among AI
+      developers and states, such as the [[ai-arms-race|AI arms race]].
+    example: >-
+      Game-theoretically, if the other lab expects us to pause, its best response is to race ahead.
+origin: >-
+  Founded as a field by John von Neumann's minimax theorem (1928) and his book with Oskar
+  Morgenstern, Theory of Games and Economic Behavior (1944); John Nash's equilibrium (1950) extended
+  it to non-zero-sum games. Antoine Augustin Cournot's duopoly model (1838) and Émile Borel's papers
+  of the 1920s were precursors, and algorithmic game theory joined it to computer science around
+  2000.
+year: 1944
+see_also:
+  - Nash equilibrium
+  - minimax
+  - self-play
+  - multi-agent reinforcement learning
+  - Shapley value
+  - generative adversarial network
+  - AI arms race
+sources:
+  - text: >-
+      von Neumann, J. & Morgenstern, O. (1944). Theory of Games and Economic Behavior. Princeton
+      University Press.

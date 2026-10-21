@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: privileged basis
+id: privileged-basis
+pos: n.
+also:
+  - non-privileged basis
+  - basis-aligned
+domain: interp
+domains:
+  - math
+  - dl
+level: specialist
+plain: >-
+  A property of a layer in a neural network where the individual numbered slots, not just blends of
+  them, carry special meaning, because something in the design treats each slot separately.
+senses:
+  - definition: >-
+      A basis of a representation that the architecture singles out, so that its coordinate
+      directions are more likely than arbitrary directions to align with meaningful
+      [[feature-interpretability|features]]. A representation has a privileged basis when some
+      operation acts on it coordinate by coordinate — an elementwise
+      [[activation-function|activation function]] such as ReLU, which treats each neuron separately,
+      or optimizer effects that are not rotation-invariant. By contrast, the
+      [[residual-stream|residual stream]] of a [[transformer|transformer]] is in principle
+      non-privileged: rotating it, while applying compensating rotations to the weights that read
+      and write it, yields an equivalent model, so its individual dimensions need have no meaning.
+      The distinction tells researchers where neuron-level analysis can be expected to work, such as
+      MLP hidden layers, and where they must look for directions instead. In practice the residual
+      stream still shows some basis-aligned structure, including a few dimensions with very large
+      activations, which Nelson Elhage, Robert Lasenby and Chris Olah (2023) traced largely to the
+      Adam optimizer.
+    example: >-
+      The MLP neurons have a privileged basis thanks to the GELU, so start the search there.
+origin: >-
+  Introduced in Anthropic's 'A Mathematical Framework for Transformer Circuits' (Elhage et al.,
+  December 2021) and developed in 'Toy Models of Superposition' (2022) and 'Privileged Bases in the
+  Transformer Residual Stream' (Elhage, Lasenby and Olah, March 2023).
+year: 2021
+note: >-
+  A privileged basis makes basis-aligned features possible but does not guarantee them: because of
+  [[superposition|superposition]], neurons in a privileged basis can still be
+  [[polysemanticity|polysemantic]].
+see_also:
+  - residual stream
+  - superposition
+  - polysemanticity
+  - activation function
+  - activation space
+  - feature (interpretability)
+sources:
+  - text: >-
+      Elhage, N. et al. (2021). A Mathematical Framework for Transformer Circuits. Transformer
+      Circuits Thread.
+  - text: >-
+      Elhage, N., Lasenby, R. & Olah, C. (2023). Privileged Bases in the Transformer Residual
+      Stream. Transformer Circuits Thread.

@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MLPerf
+id: mlperf
+pos: prop. n.
+also:
+  - MLPerf Training
+  - MLPerf Inference
+pronunciation: EM-el-perf
+domain: hw
+domains:
+  - eval
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A standard set of speed tests for AI hardware and software, where chip makers and cloud companies
+  compare how fast their systems train and run AI models.
+senses:
+  - definition: >-
+      An industry benchmark suite, maintained by the MLCommons consortium, that measures how fast
+      machine-learning hardware, software and systems perform fixed tasks to a fixed quality target.
+      MLPerf Training times how long a system takes to train reference models — for example image
+      classification, recommendation, and [[large-language-model|large language model]] pretraining
+      and fine-tuning — to a target accuracy; MLPerf Inference measures throughput and latency of
+      trained models under defined serving scenarios, and further suites cover mobile, edge, storage
+      and power. Submissions follow rules on permitted optimizations, are reviewed by other
+      submitters and are published in periodic rounds. Nvidia submits the most results, with Google,
+      AMD, Intel and others participating; critics note that the benchmarks lag the newest models
+      and reward vendors able to invest heavily in tuning.
+origin: >-
+  Launched in May 2018 by researchers from Baidu, Google, Harvard, Stanford, the University of
+  California, Berkeley and other institutions and companies; the first training results appeared
+  that December. The nonprofit MLCommons was formed in 2020 to run it.
+year: 2018
+see_also:
+  - benchmark
+  - AI accelerator
+  - AI supercomputer
+  - FLOPS
+  - throughput
+sources:
+  - text: >-
+      Mattson, P. et al. (2020). MLPerf Training Benchmark. Proceedings of Machine Learning and
+      Systems 2 (MLSys 2020).
+  - text: >-
+      Reddi, V. J. et al. (2020). MLPerf Inference Benchmark. Proceedings of ISCA 2020.
+as_of: 2026-10

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Anthropic
+id: anthropic
+pos: prop. n.
+also:
+  - Anthropic PBC
+domain: orgs
+domains:
+  - llm
+  - safety
+level: essential
+plain: >-
+  An American AI company that makes the Claude chatbot and models. It was founded in 2021 by former
+  OpenAI staff and puts particular emphasis on AI safety research.
+senses:
+  - definition: >-
+      A San Francisco AI developer, organized as a public benefit corporation, that describes
+      research on making AI safe as the core of its mission and sells access to its
+      [[claude|Claude]] [[large-language-model|large language models]] and the products built on
+      them. It introduced [[constitutional-ai|Constitutional AI]] (2022), in which a model is
+      trained against a written set of principles, and the first
+      [[responsible-scaling-policy|responsible scaling policy]] (2023), which ties required
+      safeguards to [[ai-safety-level|AI Safety Levels]]. Its researchers are prominent in
+      [[mechanistic-interpretability|mechanistic interpretability]], including
+      [[sparse-autoencoder|sparse autoencoder]] dictionary learning, and in studies of
+      [[alignment-faking|alignment faking]] and [[reward-hacking|reward hacking]]. It created the
+      [[model-context-protocol|Model Context Protocol]] (2024) for connecting models to tools and
+      data, and the coding [[ai-agent|agent]] [[claude-code|Claude Code]]. In September 2025 it
+      agreed to pay $1.5 billion to settle an authors' class action over pirated books used in
+      training. In early 2026 it refused to drop contract restrictions on mass domestic surveillance
+      and fully autonomous weapons; the US Department of Defense then designated it a supply-chain
+      risk. A federal judge temporarily blocked the government's ban in March 2026, but in September
+      2026 a federal appeals court in Washington, D.C., ruled that the department could keep the
+      designation.
+    example: Anthropic published the system card alongside the model.
+origin: >-
+  Founded in 2021 by seven former OpenAI employees, among them siblings Dario Amodei, its chief
+  executive, and Daniela Amodei, its president, who had led research and safety-policy work there.
+  Its first Claude model was released in March 2023. Amazon and Google became major investors and
+  cloud partners, and a Long-Term Benefit Trust elects some of its board members.
+year: 2021
+note: >-
+  Usually grouped with OpenAI and Google DeepMind as a leading [[frontier-lab|frontier lab]].
+  Critics argue that a safety-focused company racing to build frontier models is self-contradictory;
+  the company argues that useful safety research requires working with frontier models.
+see_also:
+  - Claude
+  - Dario Amodei
+  - Constitutional AI
+  - responsible scaling policy
+  - Model Context Protocol
+  - mechanistic interpretability
+  - OpenAI
+  - frontier lab
+sources:
+  - text: >-
+      Bai, Y. et al. (2022). Constitutional AI: Harmlessness from AI Feedback. arXiv:2212.08073.
+as_of: 2026-10

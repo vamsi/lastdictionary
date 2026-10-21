@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SmoothQuant
+id: smoothquant
+pos: prop. n.
+domain: infer
+domains:
+  - llm
+level: specialist
+plain: >-
+  A method that lets large language models run entirely on 8-bit numbers by moving hard-to-round
+  extreme values out of the data flowing through the model and into its fixed numbers, which cope
+  better.
+senses:
+  - definition: >-
+      A [[post-training-quantization|post-training quantization]] method, needing no retraining,
+      that lets large language models run with both [[weights|weights]] and activations in 8-bit
+      integers (W8A8), so their matrix multiplications can use integer hardware. The obstacle it
+      removes is uneven difficulty: weights quantize easily, but a few activation channels carry
+      values far larger than the rest, and one shared 8-bit scale cannot represent those and the
+      small values accurately at once. SmoothQuant divides each activation channel by a smoothing
+      factor and multiplies the corresponding row of the next layer's weights by the same factor, an
+      exact reformulation that can be folded offline into the preceding [[layer-normalization|layer
+      normalization]] or linear layer; a migration strength α sets how much of the difficulty shifts
+      from activations to weights. Its authors reported up to 1.56 times speedup and halved memory
+      with negligible accuracy loss, and serving a 530-billion-parameter model on one node.
+      Equivalent rescaling to tame outliers recurs in [[awq|AWQ]] and in rotation-based methods.
+    example: With SmoothQuant we moved from W8A16 to W8A8, and prefill got noticeably faster.
+formula_latex: Y = \left(X \operatorname{diag}(s)^{-1}\right)\left(\operatorname{diag}(s)\,
+  W\right), \qquad s_j = \frac{\max |X_j|^{\alpha}}{\max |W_j|^{1-\alpha}}
+origin: >-
+  Introduced by Guangxuan Xiao, Ji Lin, Mickael Seznec, Hao Wu, Julien Demouth and Song Han of MIT
+  and NVIDIA (arXiv, November 2022; ICML 2023), and adopted in NVIDIA's inference libraries.
+year: 2022
+see_also:
+  - post-training quantization
+  - LLM.int8()
+  - AWQ
+  - quantization
+  - layer normalization
+sources:
+  - text: >-
+      Xiao, G., Lin, J., Seznec, M., Wu, H., Demouth, J. & Han, S. (2022). SmoothQuant: Accurate and
+      Efficient Post-Training Quantization for Large Language Models. arXiv:2211.10438 (ICML 2023).
+    url: https://arxiv.org/abs/2211.10438

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DeepSeek
+id: deepseek
+pos: prop. n.
+also:
+  - Hangzhou DeepSeek Artificial Intelligence
+domain: orgs
+domains:
+  - llm
+  - train
+level: essential
+plain: >-
+  A Chinese artificial intelligence company whose free, cheaply trained models startled the world in
+  January 2025 by nearly matching the best American systems.
+senses:
+  - definition: >-
+      A Hangzhou developer of [[large-language-model|large language models]], spun out of the
+      Chinese quantitative trading firm High-Flyer, long its only source of money and computing,
+      that publishes its models as [[open-weight-model|open weights]], mostly under the MIT license.
+      It is known for training efficiency under US [[export-controls-on-ai-chips|export controls on
+      AI chips]]: DeepSeek-V2 (2024) introduced [[multi-head-latent-attention|multi-head latent
+      attention]] to shrink the memory needed during generation; DeepSeek-V3 (December 2024)
+      combined fine-grained [[mixture-of-experts|mixture of experts]] layers with FP8 training at a
+      reported final-run cost of about $5.6 million in rented GPU time, excluding earlier research;
+      and [[deepseek-r1|DeepSeek-R1]] (January 2025) showed that
+      [[reinforcement-learning|reinforcement learning]] with
+      [[group-relative-policy-optimization|group relative policy optimization]] could produce a
+      [[reasoning-model|reasoning model]] close to OpenAI's o1. R1 topped app-store charts and
+      helped wipe nearly $600 billion from Nvidia's market value in one day, the
+      [[deepseek-moment|DeepSeek moment]]. Later models include V3.2 (2025), with sparse attention,
+      and V4, previewed in April 2026. Several governments bar its apps from official devices over
+      data-security concerns.
+origin: >-
+  Founded in July 2023 in Hangzhou, China, by Liang Wenfeng, a co-founder of High-Flyer, as a
+  spin-off of the fund's artificial general intelligence research effort. It relied on High-Flyer's
+  money and computing clusters until mid-2026, when it reportedly raised its first outside funding,
+  and recruits mainly young graduates of Chinese universities.
+year: 2023
+see_also:
+  - DeepSeek-R1
+  - DeepSeek moment
+  - Liang Wenfeng
+  - mixture of experts
+  - multi-head latent attention
+  - open-weight model
+  - export controls on AI chips
+sources:
+  - text: DeepSeek-AI (2024). DeepSeek-V3 Technical Report. arXiv:2412.19437.
+  - text: >-
+      DeepSeek-AI (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement
+      Learning. arXiv:2501.12948.
+as_of: 2026-10

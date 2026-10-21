@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Arthur Samuel
+id: arthur-samuel
+sort_as: Samuel Arthur
+pos: prop. n.
+also:
+  - Arthur Lee Samuel
+  - Arthur L. Samuel
+domain: people
+domains:
+  - hist
+  - ml
+  - rl
+level: core
+dates: 1901–1990
+plain: >-
+  An American IBM engineer whose checkers program improved by playing against itself, and whose 1959
+  paper helped make 'machine learning' the name of a field.
+senses:
+  - definition: >-
+      American computer scientist at IBM (1949–1966) and later Stanford University who wrote one of
+      the first programs that improved with experience: a checkers (draughts) player developed from
+      the early 1950s on IBM's first commercial computers. The program searched a [[game-tree|game
+      tree]] with [[minimax|minimax]] and pruning, memorized positions it had already evaluated
+      (rote learning), and adjusted the weights of its evaluation function by comparing a position's
+      score with the score found by searching deeper later in play — an early form of
+      [[temporal-difference-learning|temporal difference learning]] — partly by playing versions of
+      itself ([[self-play|self-play]]). His 1959 paper 'Some Studies in Machine Learning Using the
+      Game of Checkers' is the best-known early use of the phrase [[machine-learning|machine
+      learning]]. In 1962 the program won a widely publicized game against the strong human player
+      Robert Nealey.
+note: >-
+  The often-quoted definition of machine learning as giving computers the ability to learn without
+  being explicitly programmed is a later paraphrase of his views; it does not appear verbatim in his
+  1959 paper.
+see_also:
+  - machine learning
+  - self-play
+  - temporal difference learning
+  - minimax
+  - game tree
+  - alpha–beta pruning
+sources:
+  - text: >-
+      Samuel, A. L. (1959). Some Studies in Machine Learning Using the Game of Checkers. IBM Journal
+      of Research and Development 3(3): 210–229.

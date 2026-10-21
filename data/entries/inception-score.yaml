@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Inception score
+id: inception-score
+pos: n.
+also:
+  - IS
+domain: gen
+domains:
+  - eval
+level: specialist
+plain: >-
+  An early score for image generators that rewards pictures an image-recognition network can label
+  confidently and a collection that covers many different labels; higher is better.
+senses:
+  - definition: >-
+      A metric for generated images computed with the Inception image classifier trained on
+      ImageNet. For each generated image x the classifier gives a distribution over 1,000 classes,
+      p(y | x); the score rewards confident, low-entropy predictions for individual images and a
+      high-entropy marginal distribution p(y) across all images, and is defined as the exponential
+      of the average [[kullback-leibler-divergence|Kullback–Leibler divergence]] between the two. It
+      ranges from 1 to the number of classes. The Inception score needs no real images, which is
+      also its weakness: it ignores whether generated images resemble the training data, cannot
+      detect a model that produces one perfect image per class, and is meaningful mainly for
+      ImageNet-like natural images. Widely reported for GANs from 2016, it has largely been
+      superseded by [[frechet-inception-distance|Fréchet inception distance]] and by human or
+      preference-based evaluation.
+formula_latex: \mathrm{IS} = \exp\Big(\mathbb{E}_{x \sim p_g}\, D_{\mathrm{KL}}\big(p(y \mid x)
+  \,\|\, p(y)\big)\Big)
+origin: >-
+  Proposed by Tim Salimans, Ian Goodfellow and colleagues at OpenAI in 'Improved Techniques for
+  Training GANs' (posted June 2016; NeurIPS 2016) as an automatic proxy that correlated with human
+  judgments of sample quality.
+year: 2016
+see_also:
+  - Fréchet inception distance
+  - CLIP score
+  - generative adversarial network
+  - Kullback–Leibler divergence
+  - human evaluation
+contrast:
+  - Fréchet inception distance
+sources:
+  - text: >-
+      Salimans, T., Goodfellow, I., Zaremba, W., Cheung, V., Radford, A. & Chen, X. (2016). Improved
+      Techniques for Training GANs. NeurIPS 2016. arXiv:1606.03498.
+    url: https://arxiv.org/abs/1606.03498
+  - text: Barratt, S. & Sharma, R. (2018). A Note on the Inception Score. arXiv.

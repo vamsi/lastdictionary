@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: reversal curse
+id: reversal-curse
+pos: n.
+domain: llm
+domains:
+  - dl
+  - eval
+level: specialist
+plain: >-
+  A quirk of language models: having learned that 'A is B', they often cannot answer the reverse
+  question — they may know who a celebrity's mother is yet fail to say who her son is.
+senses:
+  - definition: >-
+      A blind spot of [[autoregressive-model|autoregressive]] language models: a fact learned in one
+      direction, 'A is B', is often unavailable in the other, 'B is A', unless the reversed
+      statement also appeared in training. Fine-tuned on invented statements, models answered
+      questions phrased in the trained direction yet did no better than chance when asked the
+      reverse, and frontier models showed the same asymmetry on real celebrity–parent pairs. The
+      effect concerns [[parametric-knowledge|parametric knowledge]]: when both facts are supplied in
+      the [[prompt|prompt]], models reverse them easily. Explanations point to
+      [[next-token-prediction|next-token]] training, which strengthens associations only in the
+      direction they are read; augmenting data with reversed or permuted text and using
+      bidirectional objectives reduce it.
+    example: >-
+      Classic reversal curse: it knew the drug's side effect but couldn't name the drug from the
+      side effect.
+origin: >-
+  Named by Lukas Berglund, Owain Evans and colleagues in 'The Reversal Curse: LLMs trained on 'A is
+  B' fail to learn 'B is A'' (September 2023; ICLR 2024). On questions about real celebrities'
+  parents, GPT-4 correctly answered forward questions (such as who Tom Cruise's mother is) 79% of
+  the time, but the reverse questions (whose mother she is) only 33% of the time.
+year: 2023
+see_also:
+  - parametric knowledge
+  - generalization
+  - next-token prediction
+  - in-context learning
+  - factuality
+sources:
+  - text: >-
+      Berglund, L., Tong, M., Kaufmann, M., Balesni, M., Cooper Stickland, A., Korbak, T. & Evans,
+      O. (2024). The Reversal Curse: LLMs trained on 'A is B' fail to learn 'B is A'. ICLR 2024.
+    url: https://arxiv.org/abs/2309.12288

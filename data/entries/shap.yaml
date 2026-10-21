@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SHAP
+id: shap
+pos: abbr.
+also:
+  - SHapley Additive exPlanations
+  - SHAP values
+  - KernelSHAP
+  - TreeSHAP
+  - DeepSHAP
+pronunciation: shap
+domain: interp
+domains:
+  - ml
+level: core
+plain: >-
+  A popular method that explains a single prediction by fairly dividing it among the inputs, using a
+  rule from game theory for splitting a team's winnings among its players.
+senses:
+  - definition: >-
+      A framework for [[feature-attribution|feature attribution]] that explains an individual
+      prediction as a sum of per-feature contributions equal to the features'
+      [[shapley-value|Shapley values]], treating features as players in a cooperative game whose
+      payout is the model's output. The explanation is additive: the base value (the average
+      prediction) plus all features' SHAP values equals the prediction. Its authors showed that
+      Shapley values are the unique additive attribution satisfying local accuracy, missingness and
+      consistency, and that [[lime|LIME]], [[deeplift|DeepLIFT]] and
+      [[layer-wise-relevance-propagation|layer-wise relevance propagation]] belong to the same
+      family. Exact computation is exponential in the number of features, so practical estimators
+      include KernelSHAP (weighted linear regression on sampled feature subsets), TreeSHAP (exact
+      polynomial-time computation for tree ensembles) and DeepSHAP (an approximation for neural
+      networks). The open-source shap library made it a default for explaining
+      [[gradient-boosting|gradient-boosted]] models on tabular data; its summary and dependence
+      plots also give global views.
+    example: >-
+      The SHAP waterfall plot showed the short credit history pulling the applicant's score down the
+      most.
+origin: >-
+  Introduced by Scott M. Lundberg and Su-In Lee of the University of Washington in 'A Unified
+  Approach to Interpreting Model Predictions' (NeurIPS 2017); TreeSHAP followed (arXiv, 2018; Nature
+  Machine Intelligence, 2020). Erik Štrumbelj and Igor Kononenko had used Shapley values to explain
+  classifier predictions from 2010.
+year: 2017
+note: >-
+  SHAP values depend on how 'absent' features are simulated: interventional and conditional versions
+  can disagree when features are correlated, and neither measures causal effects in the world. A
+  large SHAP value means a feature matters to the model, not necessarily to the outcome.
+see_also:
+  - Shapley value
+  - feature attribution
+  - LIME
+  - gradient boosting
+  - local explanation
+  - partial dependence plot
+contrast:
+  - LIME
+sources:
+  - text: >-
+      Lundberg, S. M. & Lee, S.-I. (2017). A Unified Approach to Interpreting Model Predictions.
+      NeurIPS 2017.
+  - text: >-
+      Lundberg, S. M. et al. (2020). From local explanations to global understanding with
+      explainable AI for trees. Nature Machine Intelligence 2, 56–67.

@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SRAM
+id: sram
+pos: abbr.
+also:
+  - static random-access memory
+  - static RAM
+  - on-chip SRAM
+pronunciation: ESS-ram
+domain: hw
+domains:
+  - infer
+level: specialist
+plain: >-
+  The fastest kind of computer memory, built directly into processor chips. It is quick but takes up
+  a lot of space, so chips hold only a little of it.
+senses:
+  - definition: >-
+      A type of fast memory used above all inside processor chips, for registers, caches and
+      scratchpad buffers: a small array can be read within a few clock cycles, and it is made in the
+      same logic process as the surrounding circuits. Each bit sits in a cross-coupled latch,
+      usually of six transistors, that keeps its state as long as power is on, so unlike
+      [[dram|DRAM]] it needs no refresh; but the latch takes far more area than a DRAM cell, which
+      limits on-chip capacities to megabytes rather than gigabytes. The [[h100|H100]], for example,
+      has 50 MB of L2 cache plus up to 228 KB of shared memory per streaming multiprocessor. AI
+      kernels such as [[flashattention|FlashAttention]] are designed to keep working data in SRAM
+      and avoid round trips to [[high-bandwidth-memory|high-bandwidth memory]], and some
+      accelerators — Groq's LPU, Cerebras's [[wafer-scale-engine|wafer-scale engine]] — hold models
+      largely in SRAM for very low-latency inference. SRAM density has improved little at the newest
+      [[process-node|nodes]], a growing constraint on chip design.
+origin: >-
+  Semiconductor static memory dates to the 1960s; Intel's first product, the 64-bit 3101 of 1969,
+  was a bipolar SRAM, and on-chip SRAM caches became standard in microprocessors from the late
+  1980s.
+note: >-
+  Not to be confused with [[dram|DRAM]] (dense, mostly off-chip, refreshed) or with flash memory
+  (non-volatile storage).
+see_also:
+  - DRAM
+  - high-bandwidth memory
+  - memory wall
+  - FlashAttention
+  - wafer-scale engine
+  - memory bandwidth
+contrast:
+  - DRAM

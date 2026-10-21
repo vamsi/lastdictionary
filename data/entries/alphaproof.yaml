@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AlphaProof
+id: alphaproof
+pos: prop. n.
+domain: hist
+domains:
+  - rl
+  - sym
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A Google DeepMind system that learned to write computer-checked mathematical proofs by trial and
+  error. In 2024 it helped an AI reach silver-medal level at the International Mathematical Olympiad
+  for the first time.
+senses:
+  - definition: >-
+      A [[reinforcement-learning|reinforcement learning]] system from [[google-deepmind|Google
+      DeepMind]] that searches for proofs written in Lean, a formal language whose checker verifies
+      every step mechanically. A language model pretrained on code and mathematics learned to
+      propose proof steps in an [[alphazero|AlphaZero]]-style cycle of search and learning, working
+      on about 80 million statements obtained by machine-translating human-written competition
+      problems into Lean, and learning from each proof or disproof the checker accepted. While
+      tackling a hard problem it could also train on variants of that problem that it generated
+      itself. At the 2024 International Mathematical Olympiad (IMO) it settled three problems — two
+      in algebra, among them the contest's hardest, and one in number theory — and
+      [[alphageometry|AlphaGeometry]] 2 solved the geometry problem, for a combined 28 of 42 points:
+      silver-medal level, a single point below gold. Humans had translated the problems into Lean
+      beforehand, and some solutions took up to three days, against the nine hours allowed to
+      contestants.
+    example: "AlphaProof's proofs were ugly but airtight: Lean accepted every line."
+origin: >-
+  Announced by Google DeepMind on 25 July 2024 and described in Nature in November 2025 in
+  'Olympiad-level formal mathematical reasoning with reinforcement learning' by Thomas Hubert, Rishi
+  Mehta, Laurent Sartran and colleagues.
+year: 2024
+note: >-
+  In July 2025 an advanced Gemini Deep Think model, working in natural language within the time
+  limits, achieved gold-medal standard (35 of 42) at the IMO, as did an experimental OpenAI model —
+  a rapid shift from formal to natural-language mathematical reasoning.
+see_also:
+  - AlphaGeometry
+  - automated theorem proving
+  - AlphaZero
+  - reinforcement learning
+  - Gemini
+  - neuro-symbolic AI
+sources:
+  - text: >-
+      Hubert, T., Mehta, R., Sartran, L. et al. (2025). Olympiad-level Formal Mathematical Reasoning
+      with Reinforcement Learning. Nature.
+  - text: >-
+      AlphaProof and AlphaGeometry teams (2024). AI Achieves Silver-Medal Standard Solving
+      International Mathematical Olympiad Problems. Google DeepMind blog, 25 July 2024.
+    url: https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level
+as_of: 2026-10

@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: sparse attention
+id: sparse-attention
+pos: n.
+also:
+  - Sparse Transformer
+  - block-sparse attention
+  - native sparse attention
+  - NSA
+  - DeepSeek Sparse Attention
+  - BigBird
+  - Reformer
+domain: llm
+domains:
+  - infer
+level: specialist
+plain: >-
+  Attention in which each word looks at only a selected subset of the other words instead of all of
+  them, so very long texts can be processed at a fraction of the cost.
+senses:
+  - definition: >-
+      Any [[attention|attention]] scheme in which each query attends to a subset of key positions
+      rather than all of them, reducing the quadratic cost of full
+      [[self-attention|self-attention]]. Fixed patterns, set in advance, include local windows
+      ([[sliding-window-attention|sliding window attention]]), strided or dilated positions, blocks,
+      and a few global tokens that see everything (Sparse Transformer, Longformer, BigBird).
+      Content-based patterns choose keys per query, for example by hashing similar vectors into
+      buckets (Reformer) or by top-k selection over compressed blocks. Recent designs make the
+      selection trainable and hardware-aligned: DeepSeek's Native Sparse Attention (early 2025)
+      combines compressed, selected and sliding-window branches, and DeepSeek-V3.2-Exp (September
+      2025) added a lightweight indexer that picks which past tokens each query attends to. Real
+      speedups depend on GPU kernels that skip blocks efficiently.
+    example: With block-sparse attention, prefill at 128K tokens ran three times faster.
+origin: >-
+  Rewon Child, Scott Gray, Alec Radford and Ilya Sutskever of OpenAI introduced factorized sparse
+  attention in 'Generating Long Sequences with Sparse Transformers' (April 2019), reducing cost to
+  O(n√n); Longformer, BigBird and Reformer followed in 2020.
+year: 2019
+note: >-
+  Distinct from [[sparsity|sparsity]] of weights or activations, and from the sparse activation of
+  parameters in a [[mixture-of-experts|mixture of experts]].
+see_also:
+  - sliding window attention
+  - linear attention
+  - long context
+  - self-attention
+  - sparsity
+  - FlashAttention
+contrast:
+  - sparsity
+  - mixture of experts
+sources:
+  - text: >-
+      Child, R., Gray, S., Radford, A. & Sutskever, I. (2019). Generating Long Sequences with Sparse
+      Transformers. arXiv:1904.10509.
+    url: https://arxiv.org/abs/1904.10509
+as_of: 2026-10

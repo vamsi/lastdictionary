@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AgentDojo
+id: agentdojo
+pos: prop. n.
+also:
+  - Agent Dojo
+domain: eval
+domains:
+  - sec
+  - agents
+level: specialist
+plain: >-
+  A testing environment that measures how easily AI assistants that use email, calendars or banking
+  tools can be hijacked by hidden instructions planted in the content they read.
+senses:
+  - definition: >-
+      An extensible [[benchmark|benchmark]] and test harness measuring how well [[ai-agent|AI
+      agents]] resist [[indirect-prompt-injection|indirect prompt injection]] when the tools they
+      call return content that an attacker may control. It supplies simulated environments — a
+      workspace with email, calendar and cloud files, a Slack-style messaging workspace, travel
+      booking and e-banking — with realistic user tasks and attacker goals; the original release had
+      97 user tasks and 629 security test cases. Injected instructions are placed in
+      [[tool-call|tool]] outputs such as emails, reviews or web pages, and the framework measures
+      both utility (whether the agent completes the user's task) and attack success (whether it
+      carries out the attacker's goal), with and without defenses such as prompt sandwiching,
+      injection detectors and tool filtering. Because success is checked by inspecting the
+      environment's state rather than the agent's text, new tasks, attacks and defenses are easy to
+      add. It became a standard testbed for agent hijacking, used by the US AI Safety Institute and
+      in industry and academic research on defenses.
+    example: >-
+      The new injection detector cut AgentDojo attack success to 3%, but utility dropped eight
+      points.
+origin: >-
+  Introduced by Edoardo Debenedetti, Jie Zhang, Mislav Balunović, Luca Beurer-Kellner, Marc Fischer
+  and Florian Tramèr of ETH Zurich and Invariant Labs in 'AgentDojo: A Dynamic Environment to
+  Evaluate Prompt Injection Attacks and Defenses for LLM Agents' (June 2024; NeurIPS 2024 Datasets
+  and Benchmarks track).
+year: 2024
+note: >-
+  The US AI Safety Institute (now [[center-for-ai-standards-and-innovation|CAISI]]) used and
+  extended AgentDojo in its early-2025 work on agent hijacking evaluations.
+see_also:
+  - indirect prompt injection
+  - prompt injection
+  - AI agent
+  - tool use
+  - attack success rate
+  - red teaming
+sources:
+  - text: >-
+      Debenedetti, E., Zhang, J., Balunović, M., Beurer-Kellner, L., Fischer, M. & Tramèr, F.
+      (2024). AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for
+      LLM Agents. NeurIPS 2024 Datasets and Benchmarks Track. arXiv:2406.13352.
+    url: https://arxiv.org/abs/2406.13352

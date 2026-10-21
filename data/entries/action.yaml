@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: action
+id: action
+pos: n.
+domain: rl
+domains:
+  - agents
+level: core
+plain: >-
+  A choice an AI agent makes at one moment — move left, place a stone, type a command — which
+  changes its situation and may earn it a reward.
+senses:
+  - context: Reinforcement learning
+    definition: >-
+      The output an [[agent|agent]] emits at each time step, written a or A_t, chosen from an
+      [[action-space|action space]] according to its [[policy|policy]]. The action, together with
+      the current [[state|state]], determines the probability distribution over the next state and
+      the [[reward|reward]]. Actions may be discrete (one of 18 joystick commands in Atari games),
+      continuous (a torque for each robot joint) or structured (a whole sequence of [[token|tokens]]
+      when a [[large-language-model|large language model]] is trained as a policy). Their timescale
+      is a design choice: [[hierarchical-reinforcement-learning|hierarchical reinforcement
+      learning]] lets an agent choose temporally extended actions, called options, as well as
+      primitive ones.
+    example: At each step the policy outputs an action vector of seven joint velocities.
+  - context: Agents
+    definition: >-
+      An operation an [[ai-agent|AI agent]] performs on the outside world — a [[tool-call|tool
+      call]], a shell command, a click in a [[computer-use|computer use]] session, a sent message —
+      as opposed to text it merely generates. Agent-safety practice distinguishes reversible from
+      irreversible actions and often requires human approval for the latter.
+origin: >-
+  Inherited from decision theory and Richard Bellman's dynamic programming (1950s), in which a
+  decision or action is selected at each stage of a process. RL's state–action–reward vocabulary was
+  fixed by Sutton and Barto's textbook (1998).
+see_also:
+  - action space
+  - policy
+  - state
+  - reward
+  - tool call
+  - action chunking
+contrast:
+  - state

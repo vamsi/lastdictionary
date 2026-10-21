@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: IFEval
+id: ifeval
+pos: prop. n.
+also:
+  - Instruction-Following Evaluation
+  - Instruction-Following Eval
+domain: eval
+domains:
+  - llm
+  - train
+level: specialist
+plain: >-
+  A test of whether AI models obey precise formatting and content rules — such as 'use exactly three
+  bullet points' or 'answer in capital letters' — that a computer program can check automatically.
+senses:
+  - definition: >-
+      An instruction-following benchmark limited to constraints that a short program can verify —
+      word and paragraph counts, required or banned keywords, letter case, punctuation, JSON output,
+      a fixed number of bullet points and the like, 25 kinds in all, which its authors call
+      'verifiable instructions'. Its roughly 500 prompts each impose at least one such constraint,
+      as when a story must be written entirely in lowercase and end with a specified phrase. Scores
+      are reported as prompt-level accuracy (every instruction in a prompt followed) and
+      instruction-level accuracy, each under a strict check and a 'loose' check that tolerates
+      superficial variations such as markdown. Because it needs no human or model judge, IFEval
+      gives an objective, reproducible measure of [[instruction-following|instruction following]];
+      it was adopted by Hugging Face's Open LLM Leaderboard in 2024 and its style of checkable
+      constraint became a source of rewards in
+      [[reinforcement-learning-with-verifiable-rewards|reinforcement learning with verifiable
+      rewards]].
+    example: >-
+      Our RLVR run raised IFEval strict prompt accuracy from 78% to 86% without hurting chat quality.
+origin: >-
+  Introduced by Jeffrey Zhou, Tianjian Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu, Yi Luan,
+  Denny Zhou and Le Hou, researchers at Google, in November 2023.
+year: 2023
+note: >-
+  IFEval tests surface compliance with mechanical constraints, not whether a model understands and
+  carries out the substance of a request.
+see_also:
+  - instruction following
+  - reinforcement learning with verifiable rewards
+  - benchmark
+  - structured outputs
+  - LLM-as-a-judge
+sources:
+  - text: >-
+      Zhou, J., Lu, T., Mishra, S., Brahma, S., Basu, S., Luan, Y., Zhou, D. & Hou, L. (2023).
+      Instruction-Following Evaluation for Large Language Models. arXiv:2311.07911.
+    url: https://arxiv.org/abs/2311.07911

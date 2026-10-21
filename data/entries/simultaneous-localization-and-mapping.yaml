@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: simultaneous localization and mapping
+id: simultaneous-localization-and-mapping
+pos: n.
+also:
+  - SLAM
+  - visual SLAM
+  - lidar SLAM
+  - concurrent mapping and localization
+  - CML
+  - loop closure
+domain: robot
+domains:
+  - percep
+  - math
+level: core
+plain: >-
+  How a robot, drone or headset builds a map of an unfamiliar place while at the same time working
+  out where it is on that map, using its cameras or laser scanners.
+senses:
+  - definition: >-
+      The problem, for a robot or other moving sensor platform in unfamiliar surroundings, of
+      estimating both a map of them and its own pose (position and orientation) in that map from
+      noisy measurements such as [[lidar|lidar]] scans, camera images, wheel [[odometry|odometry]]
+      and inertial data. The two tasks depend on each other — a good map needs accurate poses and
+      vice versa — and their errors are correlated, so they are estimated jointly. Classic
+      formulations are probabilistic: extended-[[kalman-filter|Kalman filter]] SLAM keeps robot pose
+      and landmark positions in one state vector; FastSLAM (2002) uses a [[particle-filter|particle
+      filter]] over trajectories with small filters per landmark; and graph-based SLAM, dominant
+      today, represents poses and landmarks as nodes of a factor graph whose edges are measurement
+      constraints, solved by sparse nonlinear least squares. Loop closure, recognizing a previously
+      visited place, corrects drift accumulated along the way. Visual SLAM systems such as ORB-SLAM
+      track image features, while dense and neural variants build richer maps with
+      [[neural-radiance-field|neural radiance fields]] or [[gaussian-splatting|Gaussian splatting]].
+      SLAM runs in robot vacuums, warehouse robots, drones, AR and VR headsets and phones.
+    example: >-
+      The map drifted for ten minutes until SLAM closed the loop back at the charging dock.
+origin: >-
+  The probabilistic formulation began with discussions at the 1986 IEEE Robotics and Automation
+  Conference and papers by Randall Smith, Matthew Self and Peter Cheeseman (1986–1990) showing that
+  landmark estimates are correlated through vehicle error. The acronym SLAM was first presented in
+  1995 at the International Symposium on Robotics Research by Hugh Durrant-Whyte and colleagues; the
+  problem was also called concurrent mapping and localization.
+year: 1995
+note: >-
+  Self-driving cars often rely on detailed prebuilt maps, which reduces SLAM at run time largely to
+  localization. SLAM answers where the robot is and what geometry surrounds it; recognizing what
+  objects are is a separate [[perception|perception]] task, though semantic SLAM combines them.
+see_also:
+  - odometry
+  - Kalman filter
+  - particle filter
+  - lidar
+  - occupancy grid
+  - sensor fusion
+  - mobile robot
+sources:
+  - text: >-
+      Durrant-Whyte, H. & Bailey, T. (2006). Simultaneous localization and mapping: Part I. IEEE
+      Robotics & Automation Magazine 13(2), 99–110.
+    url: https://www.doc.ic.ac.uk/%7Eajd/Robotics/RoboticsResources/SLAMTutorial1.pdf
+  - text: >-
+      Mur-Artal, R., Montiel, J. M. M. & Tardós, J. D. (2015). ORB-SLAM: A versatile and accurate
+      monocular SLAM system. IEEE Transactions on Robotics 31(5), 1147–1163.

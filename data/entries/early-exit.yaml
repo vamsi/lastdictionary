@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: early exit
+id: early-exit
+pos: n.
+also:
+  - early exiting
+  - early-exit network
+  - layer skipping
+  - adaptive depth
+domain: infer
+domains:
+  - dl
+level: specialist
+plain: >-
+  Letting an AI model stop partway through its layers and answer early when it is already confident,
+  saving computing effort on easy inputs.
+senses:
+  - definition: >-
+      A form of conditional or adaptive computation in which a [[neural-network|neural network]] can
+      produce its output from an intermediate [[layer|layer]] instead of the last. Lightweight exit
+      classifiers or a shared output head are attached at several depths; at inference time
+      computation stops at the first exit whose confidence (for example a high maximum
+      [[softmax|softmax]] probability or low entropy) passes a threshold, so easy inputs use fewer
+      layers. In [[large-language-model|language models]] early exit can operate token by token, but
+      skipped layers leave no keys and values in the [[kv-cache|KV cache]] for later tokens, which
+      methods must copy, recompute or approximate. Self-speculative schemes use the early layers as
+      a draft model and the full network as verifier, so output quality is preserved. Exits must be
+      trained jointly or added afterwards, and their thresholds [[calibration|calibrated]].
+    example: >-
+      With early exit, simple sentiment queries leave at layer 4 of 12 and latency halves.
+origin: >-
+  BranchyNet (Surat Teerapittayanon, Bradley McDanel and H. T. Kung, Harvard, 2016) popularized
+  side-branch exits for image classifiers, and Alex Graves's adaptive computation time (2016)
+  learned how many steps to take. Language-model work followed with the depth-adaptive Transformer
+  (2020), Google's CALM (2022) and Meta's LayerSkip (2024).
+year: 2016
+note: >-
+  Not to be confused with [[early-stopping|early stopping]], which ends training when validation
+  performance stops improving.
+see_also:
+  - model cascade
+  - speculative decoding
+  - mixture of experts
+  - inference cost
+  - pruning
+contrast:
+  - early stopping
+sources:
+  - text: >-
+      Teerapittayanon, S., McDanel, B. & Kung, H. T. (2016). BranchyNet: Fast Inference via Early
+      Exiting from Deep Neural Networks. ICPR 2016.
+  - text: Schuster, T. et al. (2022). Confident Adaptive Language Modeling. NeurIPS 2022.

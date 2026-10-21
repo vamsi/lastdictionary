@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Gaussian splatting
+id: gaussian-splatting
+pos: n.
+also:
+  - 3D Gaussian splatting
+  - 3DGS
+  - splat
+  - 4D Gaussian splatting
+domain: percep
+domains:
+  - gen
+level: core
+plain: >-
+  A way of turning photos of a real place into a 3D scene made of millions of tiny, soft, colored
+  blobs that can be viewed from any angle in real time, even on a phone or headset.
+senses:
+  - definition: >-
+      A scene representation and rendering method that models a 3D scene as a large set, often
+      millions, of anisotropic 3D Gaussians, each with a position, a covariance (stored as a scale
+      and a rotation), an opacity and a view-dependent color encoded with spherical harmonics. To
+      render, the Gaussians are projected ('splatted') onto the image plane as 2D ellipses, sorted
+      by depth within screen tiles and alpha-blended front to back by a fast, differentiable
+      rasterizer. Starting from the sparse [[point-cloud|point cloud]] produced by
+      [[structure-from-motion|structure from motion]], their parameters are optimized by gradient
+      descent to reproduce the input photos, while adaptive density control clones, splits and
+      prunes Gaussians where detail is missing or wasted. Compared with
+      [[neural-radiance-field|neural radiance fields]], it trains in minutes and renders at 30
+      frames per second or more at 1080p resolution, at the cost of more memory. Extensions cover
+      dynamic scenes (4D Gaussians), animatable avatars, compression,
+      [[simultaneous-localization-and-mapping|SLAM]] and feed-forward prediction of Gaussians from a
+      few images, and splats have been adopted in mainstream 3D tools and web viewers.
+    example: >-
+      The real-estate scan exports as a 300 MB Gaussian splat that streams smoothly in a browser.
+origin: >-
+  Introduced by Bernhard Kerbl, Georgios Kopanas, Thomas Leimkühler and George Drettakis (Inria and
+  Université Côte d'Azur; Max Planck Institute for Informatics) in '3D Gaussian Splatting for
+  Real-Time Radiance Field Rendering' (SIGGRAPH 2023; arXiv August 2023). 'Splatting' comes from Lee
+  Westover's volume-rendering technique of about 1990, extended by elliptical weighted average
+  splatting (2001).
+year: 2023
+note: >-
+  Like NeRF, Gaussian splatting reconstructs a captured scene and is not in itself generative;
+  reflections, thin structures and areas seen from few viewpoints remain common failure points.
+  'Splat' is used informally for a captured scene.
+see_also:
+  - neural radiance field
+  - 3D reconstruction
+  - structure from motion
+  - point cloud
+  - digital twin
+contrast:
+  - neural radiance field
+sources:
+  - text: >-
+      Kerbl, B., Kopanas, G., Leimkühler, T. & Drettakis, G. (2023). 3D Gaussian Splatting for
+      Real-Time Radiance Field Rendering. ACM Transactions on Graphics 42(4) (SIGGRAPH 2023).
+    url: https://arxiv.org/abs/2308.04079
+  - text: >-
+      Zwicker, M., Pfister, H., van Baar, J. & Gross, M. (2001). EWA Volume Splatting. Proceedings
+      of IEEE Visualization 2001.
+as_of: 2026-10

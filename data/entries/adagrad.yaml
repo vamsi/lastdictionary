@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: AdaGrad
+id: adagrad
+pos: prop. n.
+also:
+  - adaptive gradient algorithm
+domain: dl
+domains:
+  - math
+  - ml
+level: core
+plain: >-
+  A training method that gives each of a model's settings its own step size, shrinking steps for
+  settings that have already had many large updates and keeping them larger for rarely updated ones.
+senses:
+  - definition: >-
+      An adaptive [[optimizer|optimizer]] that divides each parameter's [[learning-rate|learning
+      rate]] by the square root of the running sum of all its past squared gradients, plus a small
+      constant for numerical safety. Parameters with large or frequent gradients get progressively
+      smaller steps, while rarely active ones — weights for infrequent words or sparse features —
+      keep larger steps, which made it effective for sparse problems such as click-through
+      prediction and for early [[word-embedding|word embeddings]] (GloVe was trained with it). It
+      carries regret guarantees in online convex optimization and can be read as a diagonal
+      approximation to a full-matrix preconditioner, an idea [[shampoo|Shampoo]] later revived.
+      Because the accumulated sum only grows, the effective learning rate decays monotonically
+      toward zero, which can stall the training of deep non-convex models; [[rmsprop|RMSProp]] and
+      [[adam|Adam]] replace the sum with an exponential moving average to avoid this.
+formula_latex: \theta_{t+1,i} = \theta_{t,i} - \frac{\eta}{\sqrt{\sum_{s \le t} g_{s,i}^2} + \epsilon}\, g_{t,i}
+origin: >-
+  Introduced by John Duchi, Elad Hazan and Yoram Singer at the COLT 2010 conference and in the
+  Journal of Machine Learning Research (2011); H. Brendan McMahan and Matthew Streeter proposed
+  closely related adaptive methods at the same conference. Google's DistBelief system (2012) used it
+  for large-scale distributed training.
+year: 2010
+see_also:
+  - RMSProp
+  - Adam
+  - optimizer
+  - learning rate
+  - Shampoo
+  - stochastic gradient descent
+sources:
+  - text: >-
+      Duchi, J., Hazan, E. & Singer, Y. (2011). Adaptive Subgradient Methods for Online Learning and
+      Stochastic Optimization. Journal of Machine Learning Research 12, 2121–2159.

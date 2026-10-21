@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: RewardBench
+id: rewardbench
+pos: prop. n.
+also:
+  - RewardBench 2
+  - Reward Bench
+domain: eval
+domains:
+  - train
+  - llm
+level: specialist
+plain: >-
+  A public test that checks whether the scoring models used to train chatbots can tell a better
+  answer from a worse one, by counting how often they prefer the right response.
+senses:
+  - definition: >-
+      A [[benchmark|benchmark]] for [[reward-model|reward models]], the learned scorers used in
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]] and
+      in reranking outputs. Each item pairs a prompt with a preferred ('chosen') and a dispreferred
+      ('rejected') response, and a model is credited when it scores the chosen one higher; implicit
+      rewards of [[direct-preference-optimization|DPO]]-trained models and
+      [[llm-as-a-judge|generative judges]] can be scored the same way. The 2024 release grouped
+      about 3,000 curated comparisons into Chat, Chat Hard, Safety and Reasoning subsets, many
+      hinging on one concrete flaw, such as a planted code bug or an ignored instruction. As leading
+      models neared the ceiling, RewardBench 2 (2025) introduced new human-written prompts and a
+      harder best-of-four format, in which the correct response must outscore three wrong ones,
+      across domains including factuality, precise instruction following, math and safety; scores
+      fell about 20 points, and its authors find that results on it track a reward model's
+      usefulness for [[best-of-n-sampling|best-of-n reranking]] and examine how they bear on RLHF
+      training.
+    example: >-
+      The new reward model topped RewardBench but made our PPO run worse, so we stopped relying on
+      the leaderboard alone.
+origin: >-
+  Released in March 2024 by Nathan Lambert and colleagues at the [[allen-institute-for-ai|Allen
+  Institute for AI]] (Ai2) and collaborating institutions. RewardBench 2 followed in June 2025 from
+  Saumya Malik, Valentina Pyatkin, Lambert and co-authors, and was presented at ICLR 2026.
+year: 2024
+note: >-
+  High accuracy on fixed preference pairs does not guarantee that a reward model resists
+  [[reward-hacking|reward hacking]] or [[reward-overoptimization|reward overoptimization]] once a
+  policy is optimized against it. Weak correlation with downstream training results was the main
+  critique of the first version and the main design goal of the second.
+see_also:
+  - reward model
+  - reinforcement learning from human feedback
+  - preference data
+  - generative reward model
+  - reward overoptimization
+  - best-of-n sampling
+  - benchmark saturation
+sources:
+  - text: >-
+      Lambert, N. et al. (2024). RewardBench: Evaluating Reward Models for Language Modeling. arXiv
+      preprint.
+  - text: >-
+      Malik, S., Pyatkin, V., Land, S., Morrison, J., Smith, N. A., Hajishirzi, H. & Lambert, N.
+      (2025). RewardBench 2: Advancing Reward Model Evaluation. arXiv:2506.01937; ICLR 2026.
+    url: https://arxiv.org/abs/2506.01937v1
+as_of: 2026-10

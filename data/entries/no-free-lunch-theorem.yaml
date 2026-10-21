@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: no free lunch theorem
+id: no-free-lunch-theorem
+pos: n.
+also:
+  - no free lunch theorems
+  - NFL theorem
+domain: math
+domains:
+  - ml
+level: specialist
+plain: >-
+  A mathematical result saying that no learning or search method is best for every possible problem:
+  any method that wins on some problems must lose on others.
+senses:
+  - definition: >-
+      Any of several theorems showing that, averaged uniformly over all possible problems, all
+      learning or optimization algorithms perform equally well. In supervised learning (David
+      Wolpert), when every possible target function is equally likely, every learner has the same
+      expected error on examples outside the training set; in search and optimization (Wolpert and
+      William Macready), all black-box algorithms have identical average performance over all
+      objective functions. The practical lesson is that a learner succeeds only insofar as its
+      assumptions — its [[inductive-bias|inductive bias]] — match the structure of the problems it
+      actually faces; there is no universally best algorithm, model or
+      [[hyperparameter|hyperparameter]] setting. The theorems do not make all methods equal on real
+      tasks, which are far from uniformly distributed: natural data has regularities (smoothness,
+      compositionality, low intrinsic [[dimensionality|dimensionality]]) that some inductive biases
+      exploit far better than others, a point often used to explain the broad success of deep
+      learning and of simplicity priors such as [[occam-s-razor|Occam's razor]] and
+      [[solomonoff-induction|Solomonoff induction]].
+    example: >-
+      No free lunch: the architecture that wins on images may be a poor choice for tabular data.
+origin: >-
+  Introduced for search and optimization by David Wolpert and William Macready in a 1995 Santa Fe
+  Institute report, published as 'No Free Lunch Theorems for Optimization' (IEEE Transactions on
+  Evolutionary Computation, 1997), and for supervised learning in Wolpert's 'The Lack of A Priori
+  Distinctions Between Learning Algorithms' (Neural Computation, 1996). The name borrows the saying
+  'there ain't no such thing as a free lunch'.
+year: 1995
+see_also:
+  - inductive bias
+  - Occam's razor
+  - PAC learning
+  - generalization
+  - Solomonoff induction
+  - statistical learning theory
+sources:
+  - text: >-
+      Wolpert, D. H. (1996). The Lack of A Priori Distinctions Between Learning Algorithms. Neural
+      Computation, 8(7).
+  - text: >-
+      Wolpert, D. H. & Macready, W. G. (1997). No Free Lunch Theorems for Optimization. IEEE
+      Transactions on Evolutionary Computation, 1(1).

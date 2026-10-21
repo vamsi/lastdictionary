@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: motivation selection
+id: motivation-selection
+pos: n.
+also:
+  - motivation selection methods
+domain: asi
+domains:
+  - safety
+level: specialist
+plain: >-
+  Keeping a powerful AI safe by shaping what it wants, so that it chooses to behave well, rather
+  than by restricting what it is able to do.
+senses:
+  - definition: >-
+      In [[nick-bostrom|Nick Bostrom]]'s taxonomy, the family of methods that address the
+      [[control-problem|control problem]] by shaping an AI system's goals rather than limiting its
+      abilities. He named four: direct specification, writing explicit rules or a goal to maximize;
+      domesticity, giving the system deliberately modest, bounded aims; indirect normativity,
+      specifying a process by which the system works out what to value, as in
+      [[coherent-extrapolated-volition|coherent extrapolated volition]]; and augmentation, starting
+      from a system whose motivations are already acceptable, such as a human mind or
+      [[whole-brain-emulation|emulation]], and enhancing its intelligence. Bostrom regarded
+      motivation selection as unavoidable in the long run, because limits on capability eventually
+      fail. Modern [[post-training|post-training]] methods such as
+      [[reinforcement-learning-from-human-feedback|reinforcement learning from human feedback]],
+      written [[ai-constitution|constitutions]] and [[character-training|character training]] can be
+      seen as practical, if imperfect, motivation selection.
+    example: Constitution-based training is motivation selection by another name.
+origin: >-
+  Introduced, with its counterpart [[capability-control|capability control]], in chapter 9 of Nick
+  Bostrom's Superintelligence (2014), which presents motivation selection as indispensable in the
+  long run.
+year: 2014
+see_also:
+  - control problem
+  - capability control
+  - coherent extrapolated volition
+  - value learning
+  - AI alignment
+  - perverse instantiation
+contrast:
+  - capability control

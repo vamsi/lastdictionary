@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: system prompt
+id: system-prompt
+pos: n.
+also:
+  - system message
+  - system instructions
+  - developer message
+  - system role
+domain: llm
+domains:
+  - eng
+  - sec
+level: core
+plain: >-
+  Background instructions given to a chatbot before the conversation starts, setting its role,
+  rules, tone and tools. Users usually never see it, but it shapes every reply.
+senses:
+  - definition: >-
+      A block of instructions placed at the start of a [[chat-model|chat model]]'s context, in a
+      dedicated system (or developer) role, that configures behavior for the whole conversation:
+      persona and tone, task scope, policies, output format, available [[tool|tools]] and facts such
+      as the current date. Models are trained to give system instructions more weight than user
+      turns — an [[instruction-hierarchy|instruction hierarchy]] — so that applications can build
+      products on a general model, though adherence is imperfect and the text can be extracted
+      through [[prompt-leaking|prompt leaking]] or subverted by [[prompt-injection|prompt
+      injection]]. Production system prompts for assistants and agents can run to thousands of
+      words, and edits to them are a frequent cause of sudden changes in a deployed product's
+      behavior; some providers publish theirs.
+    example: >-
+      We added a line to the system prompt telling it to answer in the user's language.
+origin: >-
+  OpenAI's Chat Completions API (March 2023) introduced a 'system' role in its Chat Markup Language,
+  and its GPT-4 announcement that month presented system messages as the way for developers to
+  prescribe the model's style and task. In August 2024 Anthropic began publishing the system prompts
+  of its Claude apps, and in December 2024 OpenAI introduced 'developer' messages, a successor to
+  system messages, with its o1 reasoning models.
+year: 2023
+note: >-
+  In products the 'system prompt' often carries far more than developer policy: memory, retrieved
+  context and tool descriptions are injected there too. A system prompt is not a security boundary.
+see_also:
+  - prompt
+  - instruction hierarchy
+  - chat template
+  - prompt leaking
+  - prompt injection
+  - steerability
+  - model specification
+sources:
+  - text: OpenAI (2023). GPT-4. OpenAI research announcement, 14 March 2023.
+    url: https://openai.com/index/gpt-4-research/
+  - text: >-
+      Wallace, E., Xiao, K., Leike, R., Weng, L., Heidecke, J. & Beutel, A. (2024). The Instruction
+      Hierarchy: Training LLMs to Prioritize Privileged Instructions. arXiv:2404.13208.
+    url: https://arxiv.org/abs/2404.13208
+as_of: 2026-10

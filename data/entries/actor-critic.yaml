@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: actor–critic
+id: actor-critic
+pos: n.
+also:
+  - actor–critic method
+  - actor–critic architecture
+domain: rl
+level: core
+plain: >-
+  A way of training an AI agent in which one part, the 'actor', makes the moves while another, the
+  'critic', learns to predict how well they will work out, and the actor improves by heeding the
+  critic.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement-learning]] methods that split the agent in two and
+      train both halves together: the actor, a parametrized [[policy|policy]], does the acting by
+      choosing [[action|actions]], while the critic, a learned [[value-function|value function]] or
+      [[q-function|Q-function]], estimates how good those actions or the resulting states are. The
+      critic's estimates — usually a [[temporal-difference-learning|TD]] error or an
+      [[advantage-function|advantage]] — replace the high-variance sampled returns of
+      [[reinforce|REINFORCE]] in the actor's [[policy-gradient|policy gradient]] update, while the
+      critic itself is trained by TD learning. The result trades a little bias for much lower
+      variance and allows online, step-by-step updates. Actor–critic is the dominant template of
+      modern deep RL: [[a3c|A3C]] and its synchronous variant A2C,
+      [[proximal-policy-optimization|PPO]] with [[generalized-advantage-estimation|generalized
+      advantage estimation]], and, for continuous control,
+      [[deep-deterministic-policy-gradient|DDPG]], TD3 and [[soft-actor-critic|soft actor–critic]].
+      In PPO-based language-model training the critic is a separate value model, which methods such
+      as [[group-relative-policy-optimization|GRPO]] drop to save memory.
+    example: >-
+      The critic lagged behind the actor, so we gave it twice as many gradient steps per batch.
+origin: >-
+  Ian Witten described an adaptive controller with actor- and critic-like parts in 1977. Andrew
+  Barto, Richard Sutton and Charles Anderson's 1983 pole-balancing system, pairing an 'associative
+  search element' (actor) with an 'adaptive critic element' (critic), established the architecture;
+  Vijay Konda and John Tsitsiklis analyzed actor–critic algorithms with function approximation (NIPS
+  1999).
+year: 1983
+see_also:
+  - policy gradient
+  - advantage function
+  - A3C
+  - proximal policy optimization
+  - soft actor–critic
+  - generalized advantage estimation
+  - deep deterministic policy gradient
+contrast:
+  - Q-learning
+  - REINFORCE
+sources:
+  - text: >-
+      Barto, A. G., Sutton, R. S. & Anderson, C. W. (1983). Neuronlike adaptive elements that can
+      solve difficult learning control problems. IEEE Transactions on Systems, Man, and Cybernetics
+      SMC-13(5), 834–846.
+  - text: >-
+      Konda, V. R. & Tsitsiklis, J. N. (2000). Actor-Critic Algorithms. Advances in Neural
+      Information Processing Systems 12.

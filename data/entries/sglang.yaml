@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: SGLang
+id: sglang
+pos: prop. n.
+pronunciation: ESS-gee-lang
+domain: infer
+domains:
+  - eng
+  - agents
+labels:
+  - trademark
+level: specialist
+plain: >-
+  A free, open-source engine for running AI language and image models on servers, built to be fast
+  when many requests begin the same way, as in chat and agent workloads.
+senses:
+  - definition: >-
+      An open-source engine for running [[large-language-model|language]], vision-language and
+      [[diffusion-model|diffusion models]] in production, which began as the runtime half of a
+      system for 'LM programs': Python code that interleaves generation calls with branching and
+      parallel forks. Its signature technique, RadixAttention, files the [[kv-cache|KV cache]] of
+      finished requests in a radix tree keyed by token sequence, so each new request reuses the
+      longest prefix already computed, giving automatic [[prompt-caching|prompt caching]] for
+      multi-turn chat, few-shot prompts, [[agent-loop|agent loops]] and tree searches. Compressed
+      finite-state machines let it emit fixed stretches of [[constrained-decoding|constrained]]
+      output, such as JSON punctuation in [[structured-outputs|structured outputs]], several tokens
+      at a time; the usual serving machinery — [[continuous-batching|continuous batching]],
+      [[chunked-prefill|chunked prefill]], [[speculative-decoding|speculative decoding]],
+      [[quantization|quantization]], and expert and data parallelism for large
+      [[mixture-of-experts|mixture-of-experts]] models — completes it. Besides production serving,
+      it is widely used to generate rollouts for reinforcement-learning training.
+    example: >-
+      Because every agent step reuses the same long system prompt, SGLang's prefix-cache hit rate
+      stays above 90 percent.
+origin: >-
+  Introduced in December 2023 by Lianmin Zheng, Ying Sheng and colleagues from Stanford, UC Berkeley
+  and the LMSYS group behind Vicuna and Chatbot Arena (arXiv; later NeurIPS 2024). The paper expands
+  the name as 'Structured Generation Language'. In 2025 Ying Sheng co-founded RadixArk, a
+  venture-backed startup that sells managed SGLang hosting while keeping the engine open source.
+year: 2023
+see_also:
+  - vLLM
+  - prompt caching
+  - KV cache
+  - constrained decoding
+  - model serving
+  - PagedAttention
+sources:
+  - text: >-
+      Zheng, L., Yin, L., Xie, Z., Sun, C., Huang, J., Yu, C. H., Cao, S., Kozyrakis, C., Stoica,
+      I., Gonzalez, J. E., Barrett, C. & Sheng, Y. (2023). SGLang: Efficient Execution of Structured
+      Language Model Programs. NeurIPS 2024. arXiv:2312.07104.
+    url: https://arxiv.org/abs/2312.07104
+as_of: 2026-10

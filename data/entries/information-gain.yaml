@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: information gain
+id: information-gain
+pos: n.
+also:
+  - IG
+  - entropy reduction
+  - expected information gain
+domain: ml
+domains:
+  - math
+level: core
+plain: >-
+  How much a question reduces uncertainty about the answer. A decision tree asks first the question
+  that removes the most uncertainty, measured in bits.
+senses:
+  - definition: >-
+      The reduction in the [[entropy|entropy]] of the class labels achieved by partitioning a set of
+      examples on an attribute: the entropy of the parent set minus the size-weighted average
+      entropy of the resulting subsets. It is the splitting criterion of [[id3|ID3]] and, in
+      normalized form, of [[c4-5|C4.5]], and it equals the empirical [[mutual-information|mutual
+      information]] between the attribute and the class. Because an attribute with a different value
+      for nearly every example (a serial number, say) yields tiny pure subsets, and so a high gain,
+      while predicting nothing about new cases, C4.5 normalizes the gain by the entropy of the
+      partition itself (the split information), giving the gain ratio. Beyond trees, expected
+      information gain is the quantity maximized in Bayesian experimental design and some
+      [[active-learning|active learning]] strategies, and it is used to rank features.
+    example: Outlook has the highest information gain, so it becomes the root of the tree.
+formula_latex: \mathrm{IG}(S, A) = H(S) - \sum_{v \in \mathrm{values}(A)} \frac{|S_v|}{|S|}\,
+  H(S_v), \qquad H(S) = -\sum_{k} p_k \log_2 p_k
+origin: >-
+  Built on Claude Shannon's 1948 definition of entropy. J. Ross Quinlan made entropy reduction the
+  attribute-selection criterion of ID3 (published 1979), following a suggestion of Peter Gács, and
+  introduced the gain ratio in the mid-1980s; both are described in 'Induction of Decision Trees'
+  (1986).
+year: 1979
+note: >-
+  In Bayesian statistics 'information gain' often denotes the
+  [[kullback-leibler-divergence|Kullback–Leibler divergence]] from prior to posterior, a related but
+  different quantity.
+see_also:
+  - entropy
+  - ID3
+  - C4.5
+  - decision tree
+  - Gini impurity
+  - mutual information
+  - Kullback–Leibler divergence
+contrast:
+  - Gini impurity
+sources:
+  - text: Quinlan, J. R. (1986). Induction of Decision Trees. Machine Learning, 1, 81–106.
+    url: https://rd.springer.com/article/10.1007/BF00116251

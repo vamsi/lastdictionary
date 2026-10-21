@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: evasion attack
+id: evasion-attack
+pos: n.
+also:
+  - adversarial attack
+  - test-time attack
+  - inference-time attack
+  - evasion
+domain: sec
+domains:
+  - ml
+  - dl
+level: core
+plain: >-
+  An attack on an already-trained AI system in which the attacker shapes an input — an email, a
+  file, an image — so the system misjudges it, letting spam or malware slip through.
+senses:
+  - definition: >-
+      An attack at deployment (test) time in which the adversary modifies an input so that a trained
+      model misclassifies it, without altering the model or its training data. Untargeted evasion
+      seeks any wrong output; targeted evasion forces a chosen one. The permitted manipulation is
+      set by the [[threat-model|threat model]]: a small norm-bounded perturbation for images
+      ([[adversarial-example|adversarial examples]]), or functionality-preserving edits for spam,
+      malware or fraud, where the input must still work after modification. Evasion is the oldest
+      practical attack class on deployed classifiers, from spammers misspelling trigger words to
+      malware authors padding files to fool detectors; [[jailbreak|jailbreaks]] are often analyzed
+      as evasion of a model's safety behavior.
+    example: >-
+      The malware family moved to an evasion attack, appending benign code until the detector scored
+      it clean.
+origin: >-
+  Studied first in spam filtering, where Nilesh Dalvi and colleagues (2004) and Daniel Lowd and
+  Christopher Meek (2005) modeled adversaries who alter messages to slip past a classifier.
+  'Evasion' already described eluding network intrusion detection in the late 1990s and was applied
+  to classifiers by about 2010 (e.g. Blaine Nelson and colleagues' work on near-optimal evasion).
+  Battista Biggio and colleagues' 'Evasion Attacks against Machine Learning at Test Time' (ECML PKDD
+  2013) gave the gradient-based formulation and made the term standard.
+year: 2004
+note: >-
+  Contrast [[data-poisoning|data poisoning]], which corrupts training rather than inputs at test
+  time. In casual usage 'adversarial attack' usually means an evasion attack with adversarial
+  examples.
+see_also:
+  - adversarial example
+  - adversarial machine learning
+  - threat model
+  - jailbreak
+  - adversarial robustness
+contrast:
+  - data poisoning
+sources:
+  - text: >-
+      Biggio, B., Corona, I., Maiorca, D., Nelson, B., Šrndić, N., Laskov, P., Giacinto, G. & Roli,
+      F. (2013). Evasion Attacks against Machine Learning at Test Time. ECML PKDD 2013.

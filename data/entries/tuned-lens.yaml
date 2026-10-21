@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tuned lens
+id: tuned-lens
+pos: n.
+domain: interp
+domains:
+  - llm
+level: specialist
+plain: >-
+  An improved version of the logit lens that first learns a small translator for each layer, so a
+  language model's halfway-through states can be read as predictions more accurately.
+senses:
+  - definition: >-
+      A method for decoding intermediate states of a [[transformer|transformer]] language model into
+      next-token predictions by training, for each layer, a small affine translator that maps the
+      [[residual-stream|residual stream]] at that layer into the space expected by the model's final
+      [[unembedding|unembedding]]. The translators are fitted, with the model frozen, by minimizing
+      the [[kullback-leibler-divergence|KL divergence]] between each layer's decoded distribution
+      and the model's actual output. In its authors' tests the resulting readouts were steadier from
+      layer to layer and less skewed toward particular tokens than those of the [[logit-lens|logit
+      lens]], worked on model families where the logit lens fails, relied on directions the model
+      demonstrably uses, and could expose malicious inputs, such as prompt injections, through
+      unusual prediction trajectories. Being a trained [[probing|probe]], it could in principle read
+      in information the model itself does not use.
+    example: >-
+      The tuned lens shows the model settling on the answer three layers earlier than the logit lens
+      suggested.
+origin: >-
+  Introduced by Nora Belrose and colleagues, including Stella Biderman and Jacob Steinhardt, in
+  'Eliciting Latent Predictions from Transformers with the Tuned Lens' (arXiv, March 2023), released
+  with an open-source library through EleutherAI.
+year: 2023
+see_also:
+  - logit lens
+  - probing
+  - residual stream
+  - linear probe
+  - Patchscopes
+sources:
+  - text: >-
+      Belrose, N., Ostrovsky, I., McKinney, L., Furman, Z., Smith, L., Halawi, D., Biderman, S. &
+      Steinhardt, J. (2023). Eliciting Latent Predictions from Transformers with the Tuned Lens.
+      arXiv:2303.08112.
+    url: https://arxiv.org/abs/2303.08112

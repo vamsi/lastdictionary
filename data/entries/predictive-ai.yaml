@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: predictive AI
+id: predictive-ai
+pos: n.
+also:
+  - predictive analytics
+  - predictive model
+  - predictive modeling
+domain: core
+domains:
+  - society
+  - ml
+  - gov
+labels:
+  - emerging
+level: core
+plain: >-
+  AI used to forecast outcomes about people or events, such as who will repay a loan, which patient
+  may get sicker or which machine will fail, in order to guide decisions.
+senses:
+  - definition: >-
+      AI systems that estimate the likelihood of future or unknown outcomes from historical data in
+      order to inform or automate decisions: credit scoring, insurance pricing, fraud detection,
+      demand forecasting, predictive maintenance, hiring screens, criminal-justice risk assessment
+      and clinical deterioration alerts. Technically these are mostly
+      [[supervised-learning|supervised]] [[discriminative-model|discriminative models]] on
+      [[tabular-data|tabular data]], often [[gradient-boosting|boosted trees]] or
+      [[logistic-regression|logistic regression]]. The term is used chiefly as a contrast with
+      [[generative-ai|generative AI]]. Critics, notably Arvind Narayanan and Sayash Kapoor, argue
+      that predictive AI applied to individual life outcomes is often much less accurate than
+      claimed, can entrench historical [[algorithmic-bias|biases]] and invites people to game it;
+      defenders point to well-validated uses such as fraud detection and equipment-failure
+      forecasting.
+    example: >-
+      Before buying a predictive AI tool for hiring, ask how its predictions were validated on
+      people like your applicants.
+origin: >-
+  'Predictive analytics' and 'predictive modeling' were established business and statistics terms by
+  the 2000s. 'Predictive AI' spread from about 2023 as a retronym distinguishing forecasting systems
+  from generative AI, and was used prominently in Narayanan and Kapoor's book AI Snake Oil (2024).
+note: >-
+  Not a technical category: the same model families power both kinds of AI. In EU law many
+  predictive uses, such as creditworthiness and employment decisions, are
+  [[high-risk-ai-system|high-risk]], and predicting a person's risk of committing a crime solely
+  from profiling is a [[prohibited-ai-practices|prohibited practice]].
+see_also:
+  - generative AI
+  - discriminative model
+  - predictive policing
+  - automated decision-making
+  - algorithmic bias
+  - time series forecasting
+  - COMPAS
+contrast:
+  - generative AI
+sources:
+  - text: >-
+      Narayanan, A. & Kapoor, S. (2024). AI Snake Oil: What Artificial Intelligence Can Do, What It
+      Can't, and How to Tell the Difference. Princeton University Press.
+as_of: 2026-10

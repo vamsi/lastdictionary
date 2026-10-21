@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: FrontierMath
+id: frontiermath
+pos: prop. n.
+also:
+  - FrontierMath Tier 4
+  - "FrontierMath: Open Problems"
+domain: eval
+domains:
+  - math
+  - llm
+level: core
+plain: >-
+  Several hundred new math problems, kept unpublished so AI systems cannot have trained on them,
+  written by professional mathematicians to check whether machines can do advanced, even
+  research-level, mathematics.
+senses:
+  - definition: >-
+      A benchmark of previously unpublished mathematics problems, each composed and checked by
+      professional mathematicians, that samples most major branches of the field, including
+      computation-heavy number theory and combinatorics as well as abstract areas such as category
+      theory and algebraic geometry. Each problem has a single definite answer — typically a number
+      or explicit mathematical object — that a computer can check automatically, so answers are hard
+      to guess and grading needs no human. Problems are grouped into Tiers 1–3 (advanced
+      undergraduate to graduate difficulty) and Tier 4 (research level). Most are kept private and
+      run by Epoch AI, making the benchmark
+      [[contamination-resistant-benchmark|contamination-resistant]]. A June 2026 revision corrected
+      errors found in about 42% of problems and removed a dozen, leaving 338 (295 in Tiers 1–3 and
+      43 in Tier 4). At release in November 2024, leading models solved under 2%. Epoch has since
+      added companion sets, including FrontierMath: Open Problems, unsolved research questions whose
+      proposed solutions a program can verify.
+    example: >-
+      FrontierMath scores tripled in a year, though most of the gain came on Tier 1 problems.
+origin: >-
+  Developed by Epoch AI with dozens of mathematicians; the paper, led by Elliot Glazer, appeared in
+  November 2024. Epoch later disclosed that OpenAI had funded the benchmark and had access to much
+  of the problem set apart from a holdout, drawing criticism of the initial lack of transparency.
+year: 2024
+note: >-
+  Answer-checking tests whether a model reaches the right result, not whether it can write a
+  rigorous proof. Because one developer funded it and holds part of it, Epoch's independent runs on
+  private sets are more reliable than self-reported scores.
+see_also:
+  - benchmark
+  - contamination-resistant benchmark
+  - MATH
+  - AIME
+  - IMO Grand Challenge
+  - automated theorem proving
+  - reasoning model
+sources:
+  - text: >-
+      Glazer, E. et al. (2024). FrontierMath: A Benchmark for Evaluating Advanced Mathematical
+      Reasoning in AI. arXiv:2411.04872.
+    url: https://arxiv.org/abs/2411.04872
+  - text: Epoch AI. FrontierMath benchmark hub.
+    url: https://epoch.ai/benchmarks/frontiermath
+as_of: 2026-10

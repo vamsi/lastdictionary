@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Green AI
+id: green-ai
+pos: n.
+also:
+  - sustainable AI
+  - Red AI
+  - green machine learning
+domain: society
+domains:
+  - eval
+  - infer
+level: specialist
+plain: >-
+  A movement to make AI research and products use less energy and computing power, and to report
+  those costs openly alongside accuracy.
+senses:
+  - definition: >-
+      AI research and practice that counts the computation, energy and carbon behind a result as
+      part of its quality, weighing efficiency together with accuracy when methods are compared, and
+      that discloses those costs. Its originators set it against Red AI: work that improves accuracy
+      mainly by spending far more computation, for steeply diminishing returns, and that therefore
+      favors well-funded labs. Proposed practices include reporting floating-point operations,
+      energy and emissions for training and inference; publishing efficiency–accuracy curves;
+      preferring efficient architectures and smaller or [[knowledge-distillation|distilled]] models;
+      scheduling work for low-carbon times and places; and reusing rather than retraining models.
+      The broader label sustainable AI adds hardware lifecycles, water and the use of AI for
+      environmental goals.
+    example: >-
+      The workshop's Green AI checklist asks authors to report the GPU hours behind every number in
+      the results table.
+origin: >-
+  Introduced by Roy Schwartz, Jesse Dodge, Noah A. Smith and Oren Etzioni of the Allen Institute for
+  AI in 'Green AI' (arXiv July 2019; Communications of the ACM, 2020), which also coined 'Red AI'.
+year: 2019
+see_also:
+  - environmental impact of AI
+  - Jevons paradox
+  - AI data center
+  - compute
+  - knowledge distillation
+contrast:
+  - scaling laws
+sources:
+  - text: >-
+      Schwartz, R., Dodge, J., Smith, N. A. & Etzioni, O. (2020). Green AI. Communications of the
+      ACM 63(12), 54–63.

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: machine ethics
+id: machine-ethics
+pos: n.
+also:
+  - machine morality
+  - artificial moral agent
+  - AMA
+  - computational ethics
+  - Moral Machine experiment
+domain: society
+domains:
+  - mind
+  - safety
+level: core
+plain: >-
+  The effort to build AI systems that can tell right from wrong and act ethically themselves, rather
+  than only being used ethically by people.
+senses:
+  - definition: >-
+      The field concerned with designing artificial agents whose own behavior is guided by ethical
+      considerations, so-called artificial moral agents. Approaches range from top-down (encoding
+      rules or theories, such as deontic logic, utilitarian calculation or
+      [[three-laws-of-robotics|Asimov-style laws]]) to bottom-up (learning moral judgments from
+      examples or human feedback) and hybrids. James Moor distinguished ethical-impact agents,
+      implicit ethical agents designed to avoid unethical outcomes, explicit ethical agents that
+      reason about ethics, and full ethical agents. Large studies of human moral preferences, such
+      as the Moral Machine experiment on self-driving-car dilemmas (about 40 million decisions),
+      have informed the field. With [[large-language-model|language models]], machine ethics
+      overlaps with [[ai-alignment|AI alignment]] and value specification, as in
+      [[ai-constitution|constitutions]] and [[model-specification|model specifications]] that state
+      the values a model should follow.
+    example: >-
+      The machine ethics question is not whether the robot is used well, but whether it can
+      recognize that an order is wrong.
+origin: >-
+  The earliest known use is in Mitchell Waldrop's AI Magazine article 'A Question of Responsibility'
+  (1987), which called for 'a theory and practice of machine ethics' inspired by Asimov's laws of
+  robotics. It became the name of a research field with Michael Anderson, Susan Leigh Anderson and
+  Chris Armen's 'Towards Machine Ethics' (2004) and the AAAI Fall Symposium on Machine Ethics
+  (2005); Colin Allen, Wendell Wallach and Iva Smit's 'Why Machine Ethics?' (2006), James Moor's
+  typology (2006) and Wallach and Allen's Moral Machines (2009) defined it.
+year: 1987
+note: >-
+  Distinct from [[ai-ethics|AI ethics]] in its usual sense, the ethics of how people build and use
+  AI. Whether machines can be genuine moral agents, rather than systems that behave as if they were,
+  is a question for philosophy of mind.
+see_also:
+  - AI ethics
+  - AI alignment
+  - value alignment
+  - AI constitution
+  - Three Laws of Robotics
+  - moral patienthood
+  - responsibility gap
+contrast:
+  - AI ethics
+sources:
+  - text: >-
+      Moor, J. H. (2006). The Nature, Importance, and Difficulty of Machine Ethics. IEEE Intelligent
+      Systems 21(4), 18–21.
+  - text: >-
+      Wallach, W. & Allen, C. (2009). Moral Machines: Teaching Robots Right from Wrong. Oxford
+      University Press.
+  - text: Awad, E. et al. (2018). The Moral Machine experiment. Nature 563, 59–64.

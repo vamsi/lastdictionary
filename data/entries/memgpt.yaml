@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: MemGPT
+id: memgpt
+pos: prop. n.
+also:
+  - Letta
+domain: agents
+domains:
+  - llm
+level: specialist
+plain: >-
+  A 2023 research system that gave a chatbot a computer-style memory hierarchy, letting it move
+  information in and out of its limited working space so it could handle long documents and remember
+  users.
+senses:
+  - definition: >-
+      An agent design in which a [[large-language-model|language model]] curates its own memory.
+      Only a small working set fits in its [[context-window|context window]], so the model is given
+      functions to search, insert, edit and summarize material kept outside — a searchable log of
+      past messages and an archival database — and decides for itself what to bring in or move out,
+      prompted by system messages such as a warning that the window is nearly full. Its authors
+      called the scheme virtual context management, by analogy with an operating system shuttling
+      data between main memory and disk, and showed it working through documents too large for the
+      window and keeping track of facts about users across many chat sessions. MemGPT was an early
+      example of self-editing [[agent-memory|agent memory]] and of the [[compaction|compaction]] and
+      offloading techniques later grouped under [[context-engineering|context engineering]].
+    example: >-
+      MemGPT-style agents decide for themselves when to archive a fact and when to search for it.
+origin: >-
+  Introduced by Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir Patil, Ion Stoica and
+  Joseph Gonzalez at UC Berkeley in 'MemGPT: Towards LLMs as Operating Systems' (arXiv, October
+  2023). In 2024 the open-source project was renamed Letta and carried on by a company of that name
+  founded by members of the team.
+year: 2023
+note: >-
+  The name refers to the technique, not to a model in the GPT family; it can wrap any sufficiently
+  capable model.
+see_also:
+  - agent memory
+  - long-term memory
+  - context engineering
+  - compaction
+  - context window
+  - tool call
+sources:
+  - text: >-
+      Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I. & Gonzalez, J. E. (2023).
+      MemGPT: Towards LLMs as Operating Systems. arXiv:2310.08560.
+    url: https://arxiv.org/abs/2310.08560v1
+as_of: 2026-10

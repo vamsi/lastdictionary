@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Markov random field
+id: markov-random-field
+pos: n.
+also:
+  - MRF
+  - Markov network
+  - undirected graphical model
+  - Gibbs random field
+  - Hammersley–Clifford theorem
+domain: sym
+domains:
+  - math
+  - percep
+level: specialist
+plain: >-
+  A model of many linked uncertain quantities, such as neighboring pixels in a photo, in which each
+  one depends directly only on its neighbors, with no notion of which one causes which.
+senses:
+  - definition: >-
+      An undirected [[probabilistic-graphical-model|probabilistic graphical model]] in which each
+      node is a random variable and every variable is conditionally independent of all the others
+      given its neighbors in the graph. By the Hammersley–Clifford theorem, any strictly positive
+      distribution with this property factorizes as a normalized product of non-negative potential
+      functions over the graph's cliques — equivalently, a Gibbs distribution whose energy is a sum
+      of clique terms. The normalizing constant (partition function) is generally intractable, so
+      learning and inference rely on approximations such as Gibbs sampling,
+      [[belief-propagation|belief propagation]], graph cuts or pseudo-likelihood. Markov random
+      fields suit symmetric interactions with no natural direction: neighboring pixels in image
+      denoising and segmentation, spins in the Ising model of magnetism, contacts between residues
+      in proteins. Boltzmann machines and [[conditional-random-field|conditional random fields]] are
+      variants, and [[energy-based-model|energy-based models]] generalize the idea.
+formula_latex: P(\mathbf{x}) = \frac{1}{Z} \prod_{C \in \mathcal{C}} \psi_C(\mathbf{x}_C)
+origin: >-
+  Grew from the Ising model of ferromagnetism (1920s). Roland Dobrushin's work on random fields
+  (1968) and Frank Spitzer's paper 'Markov Random Fields and Gibbs Ensembles' (1971) set out the
+  mathematics; who first used the name is not established. John Hammersley and Peter Clifford proved
+  the factorization theorem in an unpublished 1971 manuscript. Julian Besag (1974) brought them into
+  spatial statistics, and Stuart and Donald Geman (1984) into image analysis, introducing Gibbs
+  sampling.
+year: 1971
+see_also:
+  - probabilistic graphical model
+  - Bayesian network
+  - conditional random field
+  - belief propagation
+  - Markov chain Monte Carlo
+  - energy-based model
+contrast:
+  - Bayesian network
+sources:
+  - text: >-
+      Besag, J. (1974). Spatial Interaction and the Statistical Analysis of Lattice Systems. Journal
+      of the Royal Statistical Society B 36(2), 192–236.
+  - text: >-
+      Geman, S. & Geman, D. (1984). Stochastic Relaxation, Gibbs Distributions, and the Bayesian
+      Restoration of Images. IEEE Transactions on Pattern Analysis and Machine Intelligence 6(6),
+      721–741.

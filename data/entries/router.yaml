@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: router
+id: router
+pos: n.
+also:
+  - gating network
+  - gate
+  - expert router
+  - top-k routing
+  - expert-choice routing
+  - load-balancing loss
+  - auxiliary loss
+domain: llm
+domains:
+  - dl
+  - eng
+level: specialist
+plain: >-
+  In a mixture-of-experts model, the small component that decides which specialist sub-networks
+  should handle each word, like a dispatcher assigning jobs to workers.
+senses:
+  - context: Mixture of experts
+    definition: >-
+      The learned gating component of a [[mixture-of-experts|mixture of experts]] layer that scores
+      every expert for each input [[token|token]] — typically a linear layer followed by a
+      [[softmax|softmax]] or sigmoid — and selects the top-k experts (commonly k = 1, 2 or 8), whose
+      outputs are weighted by the normalized scores. Because selection is discrete, the router
+      learns only through the weights of the experts it chose, and it tends to collapse onto a few
+      favored experts unless counteracted: Switch Transformer added an auxiliary load-balancing
+      loss, other designs add noise or cap each expert's capacity and drop or reroute overflow
+      tokens, and DeepSeek-V3 balances load mainly by adjusting per-expert bias terms, keeping only
+      a very small sequence-level auxiliary loss. In expert-choice routing, experts pick tokens
+      rather than the reverse. Router instability and imbalance across devices are frequent causes
+      of MoE training problems.
+    example: >-
+      Router logits are computed in float32, because bfloat16 routing caused the loss to spike.
+  - context: Applications
+    definition: >-
+      A component that directs each whole request to one of several models, endpoints or tools — for
+      example, sending easy queries to a cheap model and hard ones to a stronger model; see
+      [[model-routing|model routing]] and [[ai-gateway|AI gateway]]. Unlike an MoE router, it works
+      outside any single model.
+origin: >-
+  Gating networks date to the 1991 mixture-of-experts work of Robert Jacobs, Michael Jordan, Steven
+  Nowlan and Geoffrey Hinton. 'Router' and 'routing' became the usual terms for token-level gating
+  with GShard (2020) and Switch Transformer (William Fedus, Barret Zoph and Noam Shazeer, 2021),
+  which sent each token to a single expert.
+year: 2020
+see_also:
+  - mixture of experts
+  - active parameters
+  - expert parallelism
+  - softmax
+  - model routing
+  - feed-forward network
+sources:
+  - text: >-
+      Fedus, W., Zoph, B. & Shazeer, N. (2021). Switch Transformers: Scaling to Trillion Parameter
+      Models with Simple and Efficient Sparsity. arXiv:2101.03961.
+    url: https://arxiv.org/abs/2101.03961
+  - text: DeepSeek-AI (2024). DeepSeek-V3 Technical Report. arXiv:2412.19437.
+    url: https://arxiv.org/abs/2412.19437

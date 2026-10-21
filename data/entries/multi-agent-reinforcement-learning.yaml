@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: multi-agent reinforcement learning
+id: multi-agent-reinforcement-learning
+pos: n.
+also:
+  - MARL
+  - multi-agent RL
+  - Markov game
+  - stochastic game
+domain: rl
+domains:
+  - agents
+  - math
+level: core
+plain: >-
+  Reinforcement learning with several AI agents learning at once in a shared world, where each must
+  adapt to the others — as teammates, rivals or both.
+senses:
+  - definition: >-
+      [[reinforcement-learning|Reinforcement learning]] in which several [[agent|agents]] act and
+      learn in a shared [[environment|environment]], usually modeled as a stochastic (Markov) game:
+      each agent has its own observations, actions and rewards, and state transitions depend on all
+      of their actions. Settings range from fully cooperative (a shared reward, as in robot teams)
+      through mixed general-sum interactions such as negotiation and traffic to fully competitive
+      zero-sum games. Other learners make each agent's environment non-stationary, break
+      single-agent convergence guarantees and raise problems of equilibrium selection, coordination,
+      communication and credit assignment among teammates. Common approaches include independent
+      learners, centralized training with decentralized execution (centralized critics, value
+      decomposition), [[self-play|self-play]] and population-based training, and game-theoretic
+      methods such as [[counterfactual-regret-minimization|counterfactual regret minimization]].
+      Landmarks include superhuman poker programs, AlphaStar in StarCraft II, OpenAI Five in Dota 2
+      and Meta's Cicero in the negotiation game Diplomacy.
+    example: >-
+      Each drone learns its own policy, but a centralized critic sees the whole swarm during
+      training.
+origin: >-
+  Lloyd Shapley's stochastic games (1953) supplied the formal model. Ming Tan's 'Multi-Agent
+  Reinforcement Learning: Independent vs. Cooperative Agents' (ICML 1993) and Michael Littman's
+  'Markov Games as a Framework for Multi-Agent Reinforcement Learning' (ICML 1994) founded the
+  field; deep MARL grew from the mid-2010s with algorithms such as MADDPG (2017) and QMIX (2018).
+year: 1993
+note: >-
+  Distinct from a [[multi-agent-system|multi-agent system]] of language-model agents coordinated
+  through prompts and tools, which usually involves no joint learning, although the two fields
+  increasingly overlap.
+see_also:
+  - self-play
+  - counterfactual regret minimization
+  - game tree
+  - Markov decision process
+  - AI agent
+  - credit assignment problem
+contrast:
+  - multi-agent system
+sources:
+  - text: >-
+      Littman, M. L. (1994). Markov games as a framework for multi-agent reinforcement learning.
+      Proceedings of ICML 1994.
+  - text: >-
+      Tan, M. (1993). Multi-Agent Reinforcement Learning: Independent vs. Cooperative Agents.
+      Proceedings of ICML 1993.
+  - text: >-
+      Shapley, L. S. (1953). Stochastic Games. Proceedings of the National Academy of Sciences
+      39(10), 1095–1100.

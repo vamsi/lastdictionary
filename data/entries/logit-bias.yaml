@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: logit bias
+id: logit-bias
+pos: n.
+also:
+  - token bias
+domain: llm
+domains:
+  - eng
+level: specialist
+plain: >-
+  A setting that lets developers make specific words more or less likely in an AI model's output —
+  even ban a word outright — by adjusting the model's scores before it chooses.
+senses:
+  - definition: >-
+      A [[decoding|decoding]] control that adds a fixed, user-specified offset to the
+      [[logit|logits]] of particular [[token|tokens]] before the [[softmax|softmax]], making them
+      more or less likely at every generation step. Large negative values effectively ban tokens;
+      large positive values all but force them, which can restrict a model to a fixed set of answer
+      tokens for classification. In OpenAI's API the logit_bias parameter maps token IDs to values
+      from −100 to 100, and other APIs and open-source engines offer similar options. Because it
+      operates on token IDs, using it requires knowing how the [[tokenizer|tokenizer]] splits the
+      target words, including variants with leading spaces and capitals; banning a token does not
+      ban the idea, which can surface through other tokens. It is a simple, model-agnostic precursor
+      of fuller [[constrained-decoding|constrained decoding]].
+    example: >-
+      We set a logit bias of −100 on the em-dash tokens, and the model switched to commas.
+origin: >-
+  Exposed as the logit_bias parameter of OpenAI's GPT-3-era completions API and later adopted by
+  other providers and inference libraries; adding prior offsets to classifier scores is a much older
+  technique.
+see_also:
+  - logit
+  - constrained decoding
+  - repetition penalty
+  - tokenizer
+  - decoding
+as_of: 2026-10

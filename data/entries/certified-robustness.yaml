@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: certified robustness
+id: certified-robustness
+pos: n.
+also:
+  - provable robustness
+  - verified robustness
+  - certified defense
+  - robustness certificate
+  - certified accuracy
+domain: sec
+domains:
+  - dl
+  - math
+level: specialist
+plain: >-
+  A mathematical guarantee — not just a test result — that no change to an input within a set limit
+  can alter a model's answer.
+senses:
+  - definition: >-
+      A guarantee, established by proof or sound computation rather than by attacking, that a
+      model's prediction cannot change under any perturbation in a specified set, typically a norm
+      ball of radius ε around a given input. Certificates come from exact verification
+      (mixed-integer programming or satisfiability-modulo-theories solvers, feasible only for small
+      networks), sound relaxations that bound a network's outputs (interval bound propagation,
+      linear and convex relaxations), architectures with bounded Lipschitz constants, or
+      probabilistic methods such as [[randomized-smoothing|randomized smoothing]]. Certified
+      accuracy — the fraction of test points that are both correct and certified at radius ε — is a
+      lower bound on true [[adversarial-robustness|adversarial robustness]], complementing
+      attack-based estimates, which are upper bounds. Certified radii remain small relative to
+      perceptible changes, and certification is costly for large models.
+    example: >-
+      The model's certified accuracy at ℓ2 radius 0.5 is 61%, against 74% empirical robust accuracy.
+origin: >-
+  Formal verification of neural networks predates deep learning's boom; Guy Katz and colleagues'
+  Reluplex solver (2017) was a landmark. 'Certified defenses' were introduced in 2018 by Aditi
+  Raghunathan, Jacob Steinhardt and Percy Liang (semidefinite certificates) and, concurrently, Eric
+  Wong and J. Zico Kolter (convex outer bounds); randomized smoothing (2019) scaled certificates to
+  ImageNet.
+year: 2018
+note: >-
+  A certificate covers only its stated perturbation set and input; it says nothing about patches,
+  semantic edits or other perturbation types unless those are certified separately.
+see_also:
+  - adversarial robustness
+  - randomized smoothing
+  - adversarial training
+  - threat model
+  - adversarial example
+contrast:
+  - adversarial training
+sources:
+  - text: >-
+      Raghunathan, A., Steinhardt, J. & Liang, P. (2018). Certified Defenses against Adversarial
+      Examples. ICLR 2018.
+  - text: >-
+      Wong, E. & Kolter, J. Z. (2018). Provable Defenses against Adversarial Examples via the Convex
+      Outer Adversarial Polytope. ICML 2018.

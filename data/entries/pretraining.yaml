@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pretraining
+id: pretraining
+pos: n.
+also:
+  - pre-training
+  - pretrain
+  - pre-train
+  - pretrained model
+  - pretraining run
+domain: train
+domains:
+  - llm
+  - core
+level: essential
+plain: >-
+  The first and usually the most expensive stage of building a modern AI model, in which it learns
+  general patterns from enormous amounts of raw text, images or code before being specialized for
+  particular uses.
+senses:
+  - definition: >-
+      The opening stage of building a modern model, in which its [[weights|weights]] are fitted to a
+      large, broad corpus with a [[self-supervised-learning|self-supervised]] objective, producing a
+      general-purpose [[base-model|base model]] that later stages adapt. For
+      [[large-language-model|language models]] the objective is usually
+      [[next-token-prediction|next-token prediction]] over trillions of [[token|tokens]] of web
+      text, books, code and other [[pretraining-data|pretraining data]]; BERT-style models use
+      [[masked-language-model|masked-token prediction]], and vision and multimodal models use
+      contrastive or masked-reconstruction objectives. Pretraining has historically consumed the
+      bulk of a model's [[training-compute|training compute]] and fixes most of its knowledge and
+      capabilities. Its main settings — model size, token count, [[data-mixture|data mixture]] and
+      [[learning-rate-schedule|learning rate schedule]] — are chosen with the help of
+      [[scaling-laws|scaling laws]] fitted on small proxy runs. It is followed by
+      [[mid-training|mid-training]] (in many recent pipelines) and [[post-training|post-training]]
+      such as [[supervised-fine-tuning|supervised fine-tuning]] and
+      [[reinforcement-learning-from-human-feedback|RLHF]].
+    example: >-
+      Pretraining took eleven weeks on the new cluster; post-training took another month.
+origin: >-
+  The term became established in deep learning in 2006, when Geoffrey Hinton and colleagues
+  initialized deep networks by greedy layer-wise unsupervised training before supervised fine-tuning
+  (e.g., Hinton and Ruslan Salakhutdinov in Science). Its modern meaning formed with pretrained
+  language models: Andrew Dai and Quoc Le (2015), ULMFiT (2018), OpenAI's GPT ('generative
+  pre-training', 2018) and BERT (2018).
+year: 2006
+note: >-
+  Not the same as [[pretraining-data|pretraining data]] (the corpus) or
+  [[continued-pretraining|continued pretraining]] (resuming it on new data). Boundaries between
+  stages vary by lab: since about 2024 many describe a separate [[mid-training|mid-training]] stage
+  between pretraining and post-training.
+see_also:
+  - base model
+  - self-supervised learning
+  - next-token prediction
+  - post-training
+  - mid-training
+  - scaling laws
+  - training run
+  - foundation model
+contrast:
+  - post-training
+  - fine-tuning
+sources:
+  - text: >-
+      Hinton, G. E. & Salakhutdinov, R. R. (2006). Reducing the Dimensionality of Data with Neural
+      Networks. Science 313(5786), 504–507.
+  - text: >-
+      Radford, A., Narasimhan, K., Salimans, T. & Sutskever, I. (2018). Improving Language
+      Understanding by Generative Pre-Training. OpenAI technical report.

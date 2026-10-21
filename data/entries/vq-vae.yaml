@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: VQ-VAE
+id: vq-vae
+pos: n.
+also:
+  - vector-quantized variational autoencoder
+  - vector quantised VAE
+  - VQ-VAE-2
+domain: gen
+domains:
+  - dl
+level: specialist
+plain: >-
+  A network that compresses an image or sound into a short list of entries from a learned 'codebook'
+  — like describing a picture with a fixed set of tiles — which other models can then generate.
+senses:
+  - definition: >-
+      An [[autoencoder|autoencoder]] with a discrete latent representation. The encoder outputs a
+      grid (or sequence) of continuous vectors, each replaced by its nearest neighbor in a learned
+      codebook of K embedding vectors; the decoder reconstructs the input from these quantized
+      vectors. Because the nearest-neighbor lookup has no gradient, training copies the decoder's
+      gradient straight through to the encoder (the straight-through estimator) and adds codebook
+      and commitment losses that pull codebook entries and encoder outputs toward each other. The
+      result turns images, audio or video into sequences of integer codes — [[token|tokens]] — on
+      which a separate [[autoregressive-model|autoregressive model]] (originally PixelCNN, later
+      [[transformer|transformers]]) is trained as a prior to generate new data. Discrete codes also
+      avoid the posterior collapse that afflicts [[variational-autoencoder|VAEs]] with powerful
+      decoders. VQ-VAE is the ancestor of [[vqgan|VQGAN]], of the discrete VAE in the first
+      [[dall-e|DALL·E]] and of many [[image-tokenizer|image]] and [[neural-audio-codec|audio
+      tokenizers]].
+origin: >-
+  Introduced by Aäron van den Oord, Oriol Vinyals and Koray Kavukcuoglu of DeepMind in 'Neural
+  Discrete Representation Learning' (posted November 2017; NeurIPS 2017). VQ-VAE-2 (Ali Razavi, van
+  den Oord and Vinyals, 2019) added a multiscale hierarchy, and OpenAI's Jukebox (2020) used a
+  multiscale VQ-VAE for raw-audio music.
+year: 2017
+note: >-
+  Despite the name, the original VQ-VAE is trained much like a deterministic autoencoder; the
+  'variational' framing treats the quantized code as a one-hot posterior with a uniform prior.
+see_also:
+  - VQGAN
+  - image tokenizer
+  - variational autoencoder
+  - neural audio codec
+  - autoregressive image generation
+  - token
+sources:
+  - text: >-
+      van den Oord, A., Vinyals, O. & Kavukcuoglu, K. (2017). Neural Discrete Representation
+      Learning. arXiv:1711.00937 (NeurIPS 2017).
+    url: https://arxiv.org/abs/1711.00937

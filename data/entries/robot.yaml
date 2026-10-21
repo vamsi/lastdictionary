@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: robot
+id: robot
+pos: n.
+also:
+  - robots
+  - robotic
+  - bot
+domain: robot
+domains:
+  - core
+  - hist
+  - culture
+level: essential
+plain: >-
+  A machine that senses its surroundings, decides what to do and physically acts, moving itself or
+  handling objects, with some independence from a human operator. Factory arms, robot vacuums and
+  self-driving cars are all robots.
+senses:
+  - context: Machines
+    definition: >-
+      A machine that takes in its surroundings through sensors, decides what to do with that
+      information and then changes the physical world through [[actuator|actuators]] — handling
+      objects ([[manipulation|manipulation]]), getting from place to place
+      ([[locomotion|locomotion]]) or holding a tool in position — while acting at least partly on
+      its own reading of its state and sensing rather than under moment-to-moment human control. The
+      international robotics vocabulary, ISO 8373:2021, is terser: a 'programmed actuated mechanism
+      with a degree of autonomy to perform locomotion, manipulation or positioning', sensing
+      entering through its definition of autonomy. Robots are classed by application
+      ([[industrial-robot|industrial]] versus service robots), by body ([[mobile-robot|mobile]],
+      [[legged-robot|legged]], [[humanoid-robot|humanoid]], fixed arm-type manipulators,
+      [[drone|aerial]]) and by how they are controlled, from fixed programs and classical
+      [[control-theory|controllers]] to learned [[policy|policies]] such as
+      [[vision-language-action-model|vision-language-action models]]. The boundary is conventional:
+      most roboticists count [[autonomous-vehicle|self-driving cars]] as robots, while purely
+      remote-controlled devices and single-purpose appliances sit at the margins.
+    example: The warehouse runs 400 mobile robots alongside its human pickers.
+  - context: Software
+    definition: >-
+      A program that performs automated tasks without a physical body, usually shortened to bot: a
+      web crawler (whose access is governed by [[robots-txt|robots.txt]]), a 'software robot' in
+      robotic process automation that mimics a clerk's clicks and keystrokes in business
+      applications, or an automated account on social media.
+  - context: Fiction and extended uses
+    definition: >-
+      An artificial being made to resemble and serve humans, as in early science fiction — the
+      robots of Karel Čapek's play were assembled from synthetic organic matter, not built from
+      metal — and, figuratively, a person who works or behaves mechanically, without feeling or
+      initiative.
+origin: >-
+  From Czech robota, 'forced labor', the work serfs owed their lords. Karel Čapek introduced the
+  word in his play R.U.R. (Rossum's Universal Robots), published in 1920 and first staged in January
+  1921; he credited his brother, the painter Josef Čapek, with suggesting it. Productions in New
+  York (1922) and London (1923) and Paul Selver's English translation carried it into English. Isaac
+  Asimov's stories later added [[robotics|robotics]] and the [[three-laws-of-robotics|Three Laws of
+  Robotics]].
+year: 1920
+note: >-
+  Not the same thing as AI: most robots ever built ran fixed programs with little intelligence, and
+  most AI runs with no body at all. The overlap, machines that learn to perceive and act, is called
+  [[embodied-ai|embodied AI]] or [[physical-ai|physical AI]]. Calling chatbots or automated accounts
+  'robots' is common in journalism but avoided by roboticists.
+see_also:
+  - robotics
+  - industrial robot
+  - mobile robot
+  - humanoid robot
+  - embodied AI
+  - physical AI
+  - actuator
+  - Three Laws of Robotics
+contrast:
+  - AI agent
+  - chatbot
+sources:
+  - text: "Čapek, K. (1920). R.U.R. (Rossum's Universal Robots). Prague: Aventinum."
+  - text: >-
+      ISO 8373:2021. Robotics — Vocabulary. International Organization for Standardization.
+    url: https://www.iso.org/standard/75539.html
+standards: ISO 8373:2021, Robotics — Vocabulary (entry 'robot')
+as_of: 2026-10

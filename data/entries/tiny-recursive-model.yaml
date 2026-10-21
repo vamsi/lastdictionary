@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: tiny recursive model
+id: tiny-recursive-model
+pos: n.
+also:
+  - TRM
+domain: dl
+domains:
+  - eval
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A very small AI model that solves hard puzzles by going over its own answer again and again,
+  improving it each time, instead of relying on sheer size.
+senses:
+  - definition: >-
+      A small neural network that solves reasoning puzzles by recursion: a single two-layer network
+      of about 7 million parameters repeatedly updates a latent 'reasoning' state and its current
+      answer over a fixed number of steps, and is trained to improve the answer at every round.
+      Trained on about a thousand examples per task with heavy data augmentation, it reached 45% on
+      [[arc-agi|ARC-AGI-1]] and 8% on ARC-AGI-2 — ahead of many [[large-language-model|large
+      language models]] while having under a ten-thousandth of their parameters — and strong results
+      on Sudoku and maze puzzles. It simplified the earlier
+      [[hierarchical-reasoning-model|hierarchical reasoning model]], replacing its two networks with
+      one and dispensing with its biological motivation and fixed-point gradient approximation,
+      suggesting that iterating a tiny network can substitute for scale on narrow tasks.
+    example: >-
+      A 7-million-parameter tiny recursive model beat the chatbot on our grid puzzles, though it
+      can't write an email.
+origin: >-
+  Introduced by Alexia Jolicoeur-Martineau of Samsung's SAIL Montréal laboratory in 'Less is More:
+  Recursive Reasoning with Tiny Networks', posted to arXiv on 6 October 2025.
+year: 2025
+note: >-
+  The results concern grid puzzles with extensive task-specific training; such models are not
+  general-purpose language models.
+see_also:
+  - hierarchical reasoning model
+  - ARC-AGI
+  - latent reasoning
+  - recurrent neural network
+  - test-time compute
+  - small language model
+contrast:
+  - large language model
+sources:
+  - text: >-
+      Jolicoeur-Martineau, A. (2025). Less is More: Recursive Reasoning with Tiny Networks.
+      arXiv:2510.04871.
+    url: https://arxiv.org/abs/2510.04871
+as_of: 2026-10

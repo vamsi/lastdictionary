@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: collaborative filtering
+id: collaborative-filtering
+pos: n.
+also:
+  - CF
+  - user-based collaborative filtering
+  - item-based collaborative filtering
+  - item-to-item collaborative filtering
+domain: ml
+domains:
+  - eng
+level: core
+plain: >-
+  Recommending things based on what people with similar tastes liked, without needing to know
+  anything about the things themselves, as in 'people who bought this also bought…'.
+senses:
+  - definition: >-
+      A family of [[recommender-system|recommender system]] techniques that predict a user's
+      preferences from the recorded preferences of many users, using only the user–item interaction
+      matrix (ratings, purchases, clicks) rather than any description of the items. Memory-based
+      (neighborhood) methods compute similarities directly: user-based filtering predicts from the
+      ratings of users with similar histories, while item-based filtering, which scales better and
+      underlies 'customers who bought this also bought', recommends items similar to those a user
+      already liked. Model-based methods learn latent representations, most famously by
+      [[matrix-factorization|matrix factorization]] and later with [[autoencoder|autoencoders]],
+      [[graph-neural-network|graph neural networks]] and sequence models. The interaction matrix is
+      extremely sparse, often with well under 1% of entries observed; the approach cannot score
+      users or items without history (the [[cold-start-problem|cold start problem]]) and tends to
+      amplify already-popular items. Variants for [[implicit-feedback|implicit feedback]] treat
+      unobserved interactions as weak negatives rather than missing ratings.
+    example: >-
+      Item-based collaborative filtering surfaced the obscure sequel because readers of the first
+      book kept buying it.
+origin: >-
+  Coined by David Goldberg, David Nichols, Brian Oki and Douglas Terry for Tapestry, a Xerox PARC
+  system in which users annotated email and news messages for one another (Communications of the
+  ACM, 1992). GroupLens (1994) automated rating-based prediction for Usenet news, and Amazon's
+  item-to-item method, described by Greg Linden and colleagues in 2003, took it to e-commerce scale.
+year: 1992
+note: >-
+  In Tapestry, 'collaborative filtering' meant people explicitly filtering for one another; the term
+  later shifted to automatic prediction from aggregate behavior.
+see_also:
+  - recommender system
+  - matrix factorization
+  - content-based filtering
+  - cold start problem
+  - implicit feedback
+  - k-nearest neighbors
+  - Netflix Prize
+contrast:
+  - content-based filtering
+sources:
+  - text: >-
+      Goldberg, D., Nichols, D., Oki, B. M. & Terry, D. (1992). Using Collaborative Filtering to
+      Weave an Information Tapestry. Communications of the ACM 35(12).
+  - text: >-
+      Resnick, P., Iacovou, N., Suchak, M., Bergstrom, P. & Riedl, J. (1994). GroupLens: An Open
+      Architecture for Collaborative Filtering of Netnews. Proc. ACM CSCW 1994.
+  - text: >-
+      Linden, G., Smith, B. & York, J. (2003). Amazon.com Recommendations: Item-to-Item
+      Collaborative Filtering. IEEE Internet Computing 7(1).

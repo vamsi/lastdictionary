@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: log probability
+id: log-probability
+pos: n.
+also:
+  - logprob
+  - logprobs
+  - log-prob
+  - token log probability
+  - top logprobs
+domain: llm
+domains:
+  - math
+  - eng
+level: core
+plain: >-
+  The logarithm of the probability a model gives to a token or a text. Computers use it because
+  multiplying many tiny probabilities runs into rounding problems, whereas adding their logarithms
+  does not.
+senses:
+  - definition: >-
+      The natural logarithm of the probability a model assigns to an outcome — for a language model,
+      the probability of a [[token|token]] given the preceding context, log p(x_t | x_<t). It is
+      always ≤ 0, with 0 meaning certainty. The log probability of a sequence is the sum of its
+      tokens' log probabilities, which avoids the numerical underflow of multiplying many small
+      numbers. Models compute it by applying log-[[softmax|softmax]] to the [[logit|logits]]; the
+      negative mean log probability is the training loss ([[cross-entropy|cross-entropy]]) and its
+      exponential the [[perplexity|perplexity]]. Many model APIs can return per-token logprobs and
+      the most likely alternatives at each position, which developers use for confidence estimates,
+      [[calibration|calibration]], classification by comparing candidate answers, and flagging
+      uncertain spans; multiple-choice scoring in many [[benchmark|benchmarks]] relies on them.
+    example: >-
+      Request the top five logprobs and flag any answer whose first token falls below −1.5.
+formula_latex: \log p_\theta(x_{1:T}) = \sum_{t=1}^{T} \log p_\theta(x_t \mid x_{<t})
+origin: >-
+  Log probabilities and log-likelihoods are long-standing statistical tools. The shorthand
+  'logprobs' entered everyday developer usage with OpenAI's completions API (2020), which could
+  return per-token log probabilities; other APIs and serving engines followed.
+note: >-
+  Availability varies: some APIs omit logprobs for some models, including certain reasoning models.
+  Probabilities of individual tokens are not the same as the probability that an answer is correct.
+see_also:
+  - perplexity
+  - cross-entropy
+  - logit
+  - softmax
+  - log-likelihood
+  - calibration
+as_of: 2026-10

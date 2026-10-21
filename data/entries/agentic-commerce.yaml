@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: agentic commerce
+id: agentic-commerce
+pos: n.
+also:
+  - agent-led commerce
+  - agentic payments
+  - agentic checkout
+  - agent commerce
+domain: agents
+domains:
+  - society
+  - gov
+labels:
+  - emerging
+level: core
+plain: >-
+  Shopping and payments carried out by AI agents for people — finding products, comparing offers and
+  completing purchases — within limits the person has approved.
+senses:
+  - definition: >-
+      Commerce in which [[ai-agent|AI agents]] act for consumers or businesses across the buying
+      process — discovering products, comparing offers, negotiating, ordering and paying. It needs
+      infrastructure beyond ordinary e-commerce: machine-readable catalogs and checkout endpoints,
+      ways for merchants to verify that an agent is authorized ([[agent-identity|agent identity]]),
+      payment credentials that can be delegated with spending limits (tokenized or single-use),
+      auditable proof of what the user approved, and rules for liability when an agent errs.
+      Competing open protocols emerged in 2025: OpenAI and Stripe's Agentic Commerce Protocol,
+      behind ChatGPT's Instant Checkout; Google's Agent Payments Protocol (AP2), which records user
+      approval as cryptographically signed 'mandates'; and x402, an open standard begun by Coinbase
+      and now hosted by the Linux Foundation, which revives the HTTP 402 'Payment Required' status
+      code so that clients can pay per request, mainly in stablecoins. Risks include fraud,
+      [[prompt-injection|prompt injection]] into purchasing decisions and manipulation of agents by
+      sellers.
+    example: >-
+      In agentic commerce the merchant's first customer may be the shopper's agent, not the shopper.
+origin: >-
+  The phrase spread in 2025 as payment networks and AI developers prepared for agent-initiated
+  purchases: Visa and Mastercard announced agent-payment programs in the spring, Google announced
+  AP2 on 16 September 2025 with more than 60 partner organizations, and OpenAI launched Instant
+  Checkout with the Agentic Commerce Protocol on 29 September 2025.
+year: 2025
+note: >-
+  Unsettled consumer-protection questions include who bears an unwanted purchase, how disclosures
+  reach a human, and whether sellers may target agents with tailored content. The acronym ACP is
+  ambiguous: it also named IBM's Agent Communication Protocol, merged into the
+  [[agent2agent-protocol|Agent2Agent protocol]].
+see_also:
+  - agent identity
+  - AI agent
+  - Agent2Agent protocol
+  - browser agent
+  - prompt injection
+  - agentic AI
+sources:
+  - text: >-
+      OpenAI (2025). Buy it in ChatGPT: Instant Checkout and the Agentic Commerce Protocol. 29
+      September 2025.
+    url: https://openai.com/index/buy-it-in-chatgpt/
+  - text: >-
+      Google Cloud (2025). Announcing Agent Payments Protocol (AP2). 16 September 2025.
+    url: https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol
+  - text: "x402 Foundation. x402: an open, neutral standard for internet-native payments."
+    url: https://www.x402.org/
+as_of: 2026-10

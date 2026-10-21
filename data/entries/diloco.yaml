@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: DiLoCo
+id: diloco
+pos: prop. n.
+also:
+  - Distributed Low-Communication training
+  - Streaming DiLoCo
+  - OpenDiLoCo
+domain: train
+domains:
+  - dl
+  - hw
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A training method from Google DeepMind that lets groups of chips in different places train one
+  language model while talking to each other hundreds of times less often than usual.
+senses:
+  - definition: >-
+      A low-communication distributed training algorithm ('Distributed Low-Communication') in which
+      several workers — each possibly a whole cluster — train replicas of a model independently for
+      many inner steps (hundreds) with AdamW, then communicate once to average their parameter
+      changes. The averaged change is treated as an outer 'pseudo-gradient' and applied by an outer
+      optimizer, Nesterov momentum, before the next round. Its authors framed it as a variant of
+      federated averaging, a form of [[local-sgd|local SGD]], adapted to
+      [[large-language-model|large language model]] pretraining; in their tests eight workers on the
+      C4 dataset reached the quality of fully synchronous training with about one five-hundredth of
+      the communication, and the method coped with workers dropping out or joining mid-run and with
+      workers whose data differed. Later variants synchronize parameter fragments in a staggered
+      stream to overlap communication with computation and quantize the exchanged updates (Streaming
+      DiLoCo, 2025); open implementations underpin [[decentralized-training|decentralized training]]
+      runs such as Prime Intellect's INTELLECT-1.
+    example: >-
+      With DiLoCo the two data centers synchronize only every 500 steps over an ordinary WAN link.
+origin: >-
+  Introduced by Arthur Douillard, Qixuan Feng, Andrei A. Rusu, Rachita Chhaparia, Yani Donchev,
+  Adhiguna Kuncoro, Marc'Aurelio Ranzato, Arthur Szlam and Jiajun Shen at Google DeepMind (arXiv,
+  November 2023). Prime Intellect's open reimplementation OpenDiLoCo (July 2024) and DeepMind's
+  Streaming DiLoCo (January 2025) followed.
+year: 2023
+see_also:
+  - local SGD
+  - decentralized training
+  - data parallelism
+  - all-reduce
+  - distributed training
+  - federated learning
+sources:
+  - text: >-
+      Douillard, A., Feng, Q., Rusu, A. A., Chhaparia, R., Donchev, Y., Kuncoro, A., Ranzato, M.,
+      Szlam, A. & Shen, J. (2023). DiLoCo: Distributed Low-Communication Training of Language
+      Models. arXiv:2311.08105.
+    url: https://arxiv.org/abs/2311.08105
+  - text: >-
+      Jaghouar, S., Ong, J. M., Basra, M., Obeid, F. et al. (2024). INTELLECT-1 Technical Report.
+      arXiv:2412.01152.
+    url: https://arxiv.org/abs/2412.01152
+as_of: 2026-10

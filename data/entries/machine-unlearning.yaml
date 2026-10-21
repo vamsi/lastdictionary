@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: machine unlearning
+id: machine-unlearning
+pos: n.
+also:
+  - unlearning
+  - LLM unlearning
+  - knowledge unlearning
+  - SISA training
+domain: sec
+domains:
+  - train
+  - data
+  - gov
+level: core
+plain: >-
+  Erasing specific things a trained AI model has learned, such as dangerous lab techniques, a
+  copyrighted novel or one person's records, far more cheaply than training the model all over
+  again.
+senses:
+  - definition: >-
+      Methods for removing the influence of specific training data or knowledge from a trained
+      model, so that it behaves as if the information had never been learned. Exact unlearning
+      guarantees equivalence to retraining without the data, for example by training separate models
+      on data shards so that only the affected shard must be retrained (SISA). Approximate
+      unlearning instead updates the trained model — gradient ascent on the data to forget,
+      fine-tuning toward alternative answers, or perturbing internal representations — while
+      preserving performance on the rest. Motivations include privacy rights such as erasure under
+      data-protection law, copyright, removing poisoned or erroneous data, and suppressing hazardous
+      capabilities for [[cbrn-risk|CBRN risk]] mitigation, as with the RMU method evaluated on
+      [[wmdp|WMDP]]. The central difficulty is verification: approximately unlearned knowledge can
+      often be recovered by [[fine-tuning|fine-tuning]], probing or rephrased prompts, so forgetting
+      must be tested, for example with [[membership-inference-attack|membership inference]] and
+      relearning attacks.
+    example: >-
+      After machine unlearning the model failed the hazardous-virology questions, but it relearned
+      them within a few hundred fine-tuning steps.
+origin: >-
+  Coined by Yinzhi Cao and Junfeng Yang in 'Towards Making Systems Forget with Machine Unlearning'
+  (IEEE Symposium on Security and Privacy 2015). Lucas Bourtoule and colleagues' SISA training
+  (2021) offered a practical exact method; for language models, Ronen Eldan and Mark Russinovich's
+  'Who's Harry Potter?' (2023) and the WMDP benchmark (2024) spurred approximate unlearning
+  research.
+year: 2015
+see_also:
+  - WMDP
+  - memorization
+  - differential privacy
+  - fine-tuning attack
+  - membership inference attack
+  - CBRN risk
+sources:
+  - text: >-
+      Cao, Y. & Yang, J. (2015). Towards Making Systems Forget with Machine Unlearning. IEEE S&P
+      2015.
+  - text: >-
+      Bourtoule, L. et al. (2021). Machine Unlearning. IEEE S&P 2021. arXiv:1912.03817.

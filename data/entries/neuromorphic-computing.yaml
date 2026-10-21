@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neuromorphic computing
+id: neuromorphic-computing
+pos: n.
+also:
+  - neuromorphic engineering
+  - neuromorphic chip
+  - brain-inspired computing
+pronunciation: noor-oh-MOR-fik
+domain: hw
+domains:
+  - dl
+level: specialist
+plain: >-
+  Computer chips designed to work more like brains, with artificial neurons that send brief spikes
+  only when needed, aiming to do AI tasks with far less energy.
+senses:
+  - definition: >-
+      Computing hardware and systems modeled on the structure and dynamics of biological nervous
+      systems: many simple neuron-like units that communicate by sparse, asynchronous spikes, with
+      memory (synaptic weights) co-located with computation and activity driven by events rather
+      than a global clock. Implementations range from analog and mixed-signal circuits to large
+      digital many-core chips, typically running [[spiking-neural-network|spiking neural networks]];
+      examples include IBM's TrueNorth (2014; 1 million neurons and 256 million synapses), Intel's
+      Loihi (2017) and Loihi 2 (2021), the University of Manchester's SpiNNaker and Heidelberg's
+      BrainScaleS. Proponents cite large energy savings for sparse, low-latency workloads such as
+      sensing and robotics; critics note that spiking models still trail conventional
+      [[deep-learning|deep learning]] in accuracy and tooling, so neuromorphic chips remain largely
+      research platforms.
+origin: >-
+  Carver Mead of Caltech developed the concept in the late 1980s, building analog VLSI circuits that
+  mimicked neural and retinal processing, and is credited with the term; his paper 'Neuromorphic
+  electronic systems' (Proceedings of the IEEE, October 1990) set out the program and is its
+  standard early citation.
+year: 1990
+see_also:
+  - spiking neural network
+  - analog in-memory computing
+  - von Neumann bottleneck
+  - AI accelerator
+  - hardware lottery
+contrast:
+  - GPU
+sources:
+  - text: >-
+      Mead, C. (1990). Neuromorphic electronic systems. Proceedings of the IEEE 78(10), 1629–1636.
+  - text: >-
+      Merolla, P. A. et al. (2014). A million spiking-neuron integrated circuit with a scalable
+      communication network and interface. Science 345(6197).

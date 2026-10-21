@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: deduplication
+id: deduplication
+pos: n.
+also:
+  - dedup
+  - dedupe
+  - near-duplicate detection
+  - near-deduplication
+  - exact deduplication
+domain: data
+domains:
+  - train
+  - llm
+level: core
+plain: >-
+  Removing repeated copies of the same or nearly the same content from a dataset, so a model does
+  not over-learn whatever happens to be copied many times online.
+senses:
+  - definition: >-
+      The removal of duplicate and near-duplicate content from a dataset. Exact methods hash whole
+      documents, lines or fixed-length substrings (suffix arrays can find every repeated span above
+      a length threshold); near-duplicate methods compare sets of word or character n-grams using
+      [[minhash|MinHash]] with [[locality-sensitive-hashing|locality-sensitive hashing]], or SimHash
+      fingerprints, catching pages that differ only in dates, ads or boilerplate; semantic methods
+      cluster [[embedding|embeddings]] to drop documents that say the same thing in different words.
+      Web crawls are highly repetitive — templates, mirrors, spam, licenses, quoted text — and
+      duplicated text is overweighted in training, which increases [[memorization|memorization]] and
+      regurgitation, wastes compute and inflates benchmark scores when test items recur in training
+      data. Deduplicating C4 removed one 61-word sentence that appeared more than 60,000 times, and
+      models trained on deduplicated data emitted memorized text about ten times less often.
+    example: Near-dedup at a Jaccard threshold of 0.8 removed 38% of the crawl.
+origin: >-
+  Near-duplicate detection was developed for web search: Andrei Broder's shingling and MinHash at
+  AltaVista (1997) and Moses Charikar's SimHash (2002). Katherine Lee and colleagues' 'Deduplicating
+  Training Data Makes Language Models Better' (2021) made thorough deduplication a standard stage of
+  language-model data pipelines.
+year: 1997
+note: >-
+  How much to deduplicate is a trade-off: FineWeb's builders found that deduplicating each crawl
+  separately gave better models than deduplicating across all crawls, and some repetition of
+  high-quality data helps. Removing copies of test sets is called decontamination (see
+  [[data-contamination|data contamination]]).
+see_also:
+  - MinHash
+  - locality-sensitive hashing
+  - Jaccard similarity
+  - memorization
+  - data contamination
+  - data pipeline
+  - quality filtering
+sources:
+  - text: >-
+      Lee, K., Ippolito, D., Nystrom, A., Zhang, C., Eck, D., Callison-Burch, C. & Carlini, N.
+      (2022). Deduplicating Training Data Makes Language Models Better. ACL 2022. arXiv:2107.06499.
+    url: https://arxiv.org/abs/2107.06499

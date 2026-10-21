@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: learning to rank
+id: learning-to-rank
+pos: n.
+also:
+  - LTR
+  - machine-learned ranking
+  - MLR
+  - RankNet
+  - LambdaRank
+  - LambdaMART
+  - pointwise ranking
+  - pairwise ranking
+  - listwise ranking
+domain: ml
+domains:
+  - agents
+  - eng
+level: specialist
+plain: >-
+  Training a model to put items in the best order — search results, products, recommendations — by
+  learning from examples of which items people judged more relevant or chose more often.
+senses:
+  - definition: >-
+      [[supervised-learning|Supervised learning]] of a scoring function whose job is to put items in
+      the right order, most often the documents a search engine retrieves for a query. Its examples
+      are queries paired with candidate items and graded relevance labels or preferences inferred
+      from clicks, with each query–item pair described by features such as text-match scores
+      ([[bm25|BM25]]), link authority and freshness. Methods are grouped by loss: pointwise methods
+      predict each item's relevance independently; pairwise methods (RankNet, RankSVM) learn which
+      of two items should rank higher; and listwise methods optimize a loss over the whole ranked
+      list, often a smooth proxy for position-weighted metrics such as
+      [[normalized-discounted-cumulative-gain|normalized discounted cumulative gain]]. LambdaMART —
+      [[gradient-boosting|gradient-boosted]] trees driven by LambdaRank's metric-weighted gradients
+      — became the standard and is built into [[xgboost|XGBoost]], [[lightgbm|LightGBM]] and
+      [[catboost|CatBoost]]. Neural [[reranking|rerankers]], such as
+      [[cross-encoder|cross-encoders]], now often produce the final ordering in search and
+      [[retrieval-augmented-generation|retrieval-augmented generation]] pipelines.
+    example: >-
+      We replaced the hand-tuned scoring formula with a LambdaMART learning-to-rank model trained on
+      click logs.
+origin: >-
+  Norbert Fuhr applied regression to ranking in 1989, and AltaVista deployed a gradient-boosted
+  ranking function in 2003. At Microsoft Research, Christopher Burges and colleagues introduced
+  RankNet (2005), LambdaRank (2006) and LambdaMART (c. 2008); an ensemble of LambdaMART models won
+  the 2010 Yahoo! Learning to Rank Challenge, and Tie-Yan Liu's 2009 survey consolidated the
+  pointwise–pairwise–listwise taxonomy.
+year: 1989
+see_also:
+  - information retrieval
+  - reranking
+  - gradient boosting
+  - normalized discounted cumulative gain
+  - recommender system
+  - BM25
+sources:
+  - text: >-
+      Burges, C. J. C. (2010). From RankNet to LambdaRank to LambdaMART: An Overview. Microsoft
+      Research Technical Report MSR-TR-2010-82.
+  - text: >-
+      Liu, T.-Y. (2009). Learning to Rank for Information Retrieval. Foundations and Trends in
+      Information Retrieval, 3(3), 225–331.

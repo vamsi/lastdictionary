@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: principal component analysis
+id: principal-component-analysis
+pos: n.
+also:
+  - PCA
+  - principal components
+  - Karhunen–Loève transform
+  - empirical orthogonal functions
+  - proper orthogonal decomposition
+domain: ml
+domains:
+  - math
+  - data
+level: core
+plain: >-
+  A technique that finds the few directions in which data vary the most and describes each item by
+  its position along them, compressing many measurements into a handful of summary scores.
+senses:
+  - definition: >-
+      A linear [[dimensionality-reduction|dimensionality reduction]] method that summarizes many
+      correlated variables by a few uncorrelated ones, the principal components: weighted sums of
+      the mean-centered variables, chosen one at a time so that each captures as much of the
+      remaining variance as possible while staying perpendicular to those already found. The weight
+      vectors are [[eigenvector|eigenvectors]] of the covariance matrix, ranked by their eigenvalues
+      (the variance each component explains), and in practice they are read off a
+      [[singular-value-decomposition|singular value decomposition]] of the centered data. Keeping
+      the top k components gives the best rank-k reconstruction in squared error
+      ([[low-rank-approximation|low-rank approximation]]), so PCA is used for compression,
+      denoising, decorrelating features, visualization, and as preprocessing before
+      [[clustering|clustering]] or regression. It captures only linear structure, is sensitive to
+      [[feature-scaling|feature scale]] and outliers, and its components can be hard to interpret.
+      Variants include kernel PCA for nonlinear structure, sparse PCA, incremental PCA for streaming
+      data and probabilistic PCA.
+    example: >-
+      The first two principal components explained 71% of the variance, so we plotted the samples on
+      those axes.
+formula_latex: \mathbf{w}_1 = \arg\max_{\lVert \mathbf{w} \rVert = 1} \; \mathbf{w}^{\top}
+  \boldsymbol{\Sigma} \, \mathbf{w}
+origin: >-
+  Karl Pearson introduced the method in 1901 in 'On Lines and Planes of Closest Fit to Systems of
+  Points in Space'. Harold Hotelling developed it independently in 1933 and gave it the name
+  'principal components'. Equivalent techniques arose separately as the Karhunen–Loève transform in
+  signal processing, empirical orthogonal functions in meteorology and proper orthogonal
+  decomposition in engineering.
+year: 1901
+note: >-
+  Standardize variables first unless they share units, or the largest-scale variable dominates. PCA
+  ignores labels: the directions of greatest variance need not be those that best separate classes
+  (contrast [[linear-discriminant-analysis|linear discriminant analysis]]).
+see_also:
+  - dimensionality reduction
+  - singular value decomposition
+  - eigenvector
+  - low-rank approximation
+  - feature scaling
+  - latent semantic analysis
+  - autoencoder
+contrast:
+  - linear discriminant analysis
+sources:
+  - text: >-
+      Pearson, K. (1901). On Lines and Planes of Closest Fit to Systems of Points in Space.
+      Philosophical Magazine 2(11).
+  - text: >-
+      Hotelling, H. (1933). Analysis of a Complex of Statistical Variables into Principal
+      Components. Journal of Educational Psychology 24.

@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: connectome
+id: connectome
+pos: n.
+also:
+  - connectomics
+  - neural wiring diagram
+pronunciation: kuh-NEK-tohm
+domain: mind
+domains:
+  - dl
+  - asi
+level: specialist
+plain: >-
+  A full chart of how a nervous system is wired: which nerve cells, or which brain regions, are
+  linked to which others.
+senses:
+  - definition: >-
+      A complete record of which parts of a nervous system are wired to which — individual neurons
+      and their synapses at the microscale, or brain regions and the fiber tracts joining them at
+      the macroscale; connectomics is the field that produces and analyzes such maps. Microscale
+      connectomes are reconstructed from serial-section electron microscopy, today largely by
+      [[machine-learning|machine learning]] segmentation, since a cubic millimeter of tissue yields
+      petabytes of images. Complete connectomes exist for the nematode worm C. elegans (302 neurons,
+      1986) and for the adult fruit-fly brain (about 140,000 neurons, 2024), and synapse-level maps
+      cover about a cubic millimeter each of human and mouse cortex. Connectomes inform AI as
+      inspiration for [[neural-network|artificial neural network]] architectures, as constraints on
+      models that predict neural activity, and as the proposed starting point for
+      [[whole-brain-emulation|whole brain emulation]]. A wiring diagram alone does not fix behavior:
+      synaptic strengths, neuromodulators and dynamics also matter.
+    example: >-
+      Wiring the model to match the fly connectome let it predict which visual neurons respond to
+      motion.
+origin: >-
+  Coined independently in 2005 by Olaf Sporns, Giulio Tononi and Rolf Kötter, in a PLoS
+  Computational Biology paper calling for a map of the human connectome, and by Patric Hagmann in
+  his doctoral thesis, by analogy with 'genome'. Sebastian Seung's book Connectome (2012)
+  popularized the slogan 'you are your connectome'.
+year: 2005
+note: >-
+  A connectome is a biological map, not an [[neural-network|artificial neural network]], although
+  the two share the vocabulary of neurons and connections. Even the complete C. elegans connectome
+  has not yielded a full simulation of the worm's behavior.
+see_also:
+  - whole brain emulation
+  - neural network
+  - mind uploading
+  - neuromorphic computing
+  - connectionism
+  - artificial neuron
+sources:
+  - text: >-
+      Sporns, O., Tononi, G. & Kötter, R. (2005). The Human Connectome: A Structural Description of
+      the Human Brain. PLoS Computational Biology 1(4).
+  - text: >-
+      White, J. G., Southgate, E., Thomson, J. N. & Brenner, S. (1986). The Structure of the Nervous
+      System of the Nematode Caenorhabditis elegans. Philosophical Transactions of the Royal Society
+      B 314.
+  - text: >-
+      Dorkenwald, S. et al. (2024). Neuronal wiring diagram of an adult brain. Nature 634.
+as_of: 2026-10

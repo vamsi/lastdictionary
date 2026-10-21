@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: noise schedule
+id: noise-schedule
+pos: n.
+also:
+  - variance schedule
+  - diffusion schedule
+  - beta schedule
+  - cosine schedule
+  - zero terminal SNR
+  - v-prediction
+domain: gen
+domains:
+  - dl
+level: specialist
+plain: >-
+  The plan for how much static is mixed into training examples at each step of a diffusion model,
+  from almost none to total noise; its shape affects quality and speed.
+senses:
+  - definition: >-
+      The function that fixes how much signal and how much Gaussian noise a
+      [[diffusion-model|diffusion model]]'s noisy input contains at each timestep or noise level,
+      usually expressed through β_t, through the cumulative signal fraction ᾱ_t, or as a
+      signal-to-noise ratio (SNR) that falls from very high to near zero. The original
+      [[denoising-diffusion-probabilistic-model|DDPM]] used a linear β schedule over 1,000 steps;
+      the cosine schedule (2021) destroys information more gradually and improved results at low
+      resolution, while higher resolutions need schedules shifted toward more noise, because
+      redundancy between neighboring pixels makes images easier to recover. Training and sampling
+      choices interact: schedules whose final step still leaks signal create a train–test mismatch,
+      which in Stable Diffusion limited very bright or dark images and was fixed by enforcing zero
+      terminal SNR. Related design choices include the prediction target (noise, clean data or 'v',
+      a mixture of the two) and how timesteps are weighted or sampled in training.
+origin: >-
+  Explicit variance schedules appeared with diffusion probabilistic models (Sohl-Dickstein and
+  colleagues, 2015) and DDPM (2020). Alex Nichol and Prafulla Dhariwal introduced the cosine
+  schedule in 2021; Tero Karras and colleagues' EDM paper (2022) recast schedules as choices of
+  noise levels σ; and Shanchuan Lin and colleagues (2023) showed that common schedules fail to reach
+  zero terminal SNR.
+year: 2015
+note: >-
+  Not to be confused with a [[learning-rate-schedule|learning rate schedule]]: a noise schedule
+  shapes how training data are corrupted, not the optimizer's step size.
+see_also:
+  - diffusion model
+  - denoising diffusion probabilistic model
+  - diffusion sampler
+  - rectified flow
+  - learning rate schedule
+contrast:
+  - learning rate schedule
+sources:
+  - text: >-
+      Nichol, A. & Dhariwal, P. (2021). Improved Denoising Diffusion Probabilistic Models. ICML
+      2021. arXiv:2102.09672.
+    url: https://arxiv.org/abs/2102.09672
+  - text: >-
+      Lin, S., Liu, B., Li, J. & Yang, X. (2023). Common Diffusion Noise Schedules and Sample Steps
+      are Flawed. arXiv:2305.08891.
+    url: https://arxiv.org/abs/2305.08891

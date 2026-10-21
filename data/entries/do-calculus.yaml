@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: do-calculus
+id: do-calculus
+pos: n.
+also:
+  - do-operator
+  - do(x)
+  - causal calculus
+  - back-door criterion
+  - front-door criterion
+domain: math
+domains:
+  - ml
+  - sym
+level: specialist
+plain: >-
+  A set of mathematical rules, devised by Judea Pearl, for working out the effect of deliberately
+  changing something using only observational data plus a diagram of what causes what.
+senses:
+  - definition: >-
+      A set of three rules, due to Judea Pearl, that use a causal graph
+      ([[structural-causal-model|structural causal model]]) to rewrite interventional quantities —
+      P(y | do(x)), the distribution of Y when X is set to x by intervention, as distinct from the
+      observational P(y | x) — step by step until, where possible, only ordinary observational
+      probabilities remain. The rules say when observations may be added or deleted and when actions
+      may be exchanged with observations or deleted, based on conditional-independence patterns in
+      modified versions of the graph. If repeated application removes every do-operator, the causal
+      effect is identifiable from observational data; the back-door and front-door adjustment
+      formulas are special cases. The calculus is complete: when it cannot identify an effect, no
+      method can without further assumptions. It underlies algorithmic identification in
+      causal-inference software and gives a formal language for distinguishing seeing from doing.
+    example: >-
+      Using do-calculus, we showed the recommendation's effect on purchases is identifiable through
+      the front-door path.
+formula_latex: P(y \mid do(x)) = \sum_{z} P(y \mid x, z)\,P(z) \qquad \text{(back-door adjustment for } Z\text{)}
+origin: >-
+  Introduced by Judea Pearl in 'A Probabilistic Calculus of Actions' (Conference on Uncertainty in
+  Artificial Intelligence, 1994) and 'Causal Diagrams for Empirical Research' (Biometrika, 1995),
+  building on his 1993 back-door criterion. Its completeness was established in 2006 by Yimin Huang
+  and Marco Valtorta and, independently, by Ilya Shpitser and Pearl. Pearl received the 2011 Turing
+  Award for work including this calculus for causal reasoning.
+year: 1994
+see_also:
+  - causal inference
+  - structural causal model
+  - confounding variable
+  - counterfactual
+  - Bayesian network
+  - conditional probability
+sources:
+  - text: >-
+      Pearl, J. (1994). A Probabilistic Calculus of Actions. Proceedings of the 10th Conference on
+      Uncertainty in Artificial Intelligence (UAI 1994). arXiv:1302.6835.
+    url: https://arxiv.org/pdf/1302.6835
+  - text: Pearl, J. (1995). Causal Diagrams for Empirical Research. Biometrika, 82(4).

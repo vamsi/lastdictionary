@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: platonic representation hypothesis
+id: platonic-representation-hypothesis
+pos: n.
+also:
+  - PRH
+  - representational convergence
+domain: interp
+domains:
+  - dl
+  - mind
+labels:
+  - contested
+  - emerging
+level: specialist
+plain: >-
+  The idea that bigger, more capable AI models, even ones trained on different things such as images
+  and text, end up organizing information in increasingly similar ways, as if all were mapping the
+  same underlying world.
+senses:
+  - definition: >-
+      The hypothesis that, as neural networks become more capable, their learned representations
+      grow more alike regardless of architecture, training objective or even data modality,
+      approaching a common statistical description of the world that produced the data. Evidence
+      comes from representational-similarity measures, chiefly a mutual-nearest-neighbor
+      kernel-alignment metric: larger, better-performing vision models agree more with one another,
+      and language models' representations of captions align increasingly well with vision models'
+      representations of the matching images as both improve. The proposed explanation is that many
+      tasks, large capacity and a bias toward simple solutions jointly push representations toward
+      the same solution. Critics question whether the alignment metrics capture meaningful
+      agreement, note that convergence may reflect shared data and objectives, and point to
+      persistent differences between models. The idea extends the
+      [[universality-hypothesis|universality hypothesis]] from individual features to whole
+      representations.
+    example: >-
+      If the platonic representation hypothesis is right, a text model and an image model should
+      agree on which concepts are neighbors.
+origin: >-
+  Proposed by Minyoung Huh, Brian Cheung, Tongzhou Wang and Phillip Isola of MIT in 'The Platonic
+  Representation Hypothesis' (May 2024; ICML 2024). The name alludes to Plato's allegory of the
+  cave, with training data as shadows of an underlying reality.
+year: 2024
+see_also:
+  - universality hypothesis
+  - representation learning
+  - embedding
+  - CLIP
+  - linear representation hypothesis
+sources:
+  - text: >-
+      Huh, M., Cheung, B., Wang, T. & Isola, P. (2024). The Platonic Representation Hypothesis. ICML
+      2024. arXiv:2405.07987.
+    url: https://arxiv.org/abs/2405.07987

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: model serving
+id: model-serving
+pos: n.
+also:
+  - serving
+  - inference serving
+  - LLM serving
+  - inference server
+  - prediction serving
+domain: infer
+domains:
+  - eng
+level: core
+plain: >-
+  Running a trained AI model as a live service, so that apps and people can send it requests and get
+  answers back quickly, reliably and at a sensible cost.
+senses:
+  - definition: >-
+      The operation of a trained [[model|model]] behind a network interface, typically an HTTP or
+      gRPC endpoint, so that client applications can submit inputs and receive outputs in
+      production. A serving system loads [[weights|weights]] onto [[gpu|GPUs]] or other
+      [[ai-accelerator|accelerators]], queues and schedules requests, groups them into batches,
+      manages memory, scales replicas with demand, routes traffic between model versions and exports
+      metrics. For [[large-language-model|large language models]] the work is dominated by
+      token-by-token generation, so engines such as [[vllm|vLLM]], [[sglang|SGLang]] and
+      TensorRT-LLM combine [[continuous-batching|continuous batching]], [[kv-cache|KV cache]]
+      management, [[quantization|quantization]] and [[speculative-decoding|speculative decoding]] to
+      balance [[latency|latency]] against [[throughput|throughput]] and cost. Quality of service is
+      usually stated as service-level objectives (SLOs) on metrics such as
+      [[time-to-first-token|time to first token]] and [[time-per-output-token|time per output
+      token]].
+    example: >-
+      Our serving stack autoscales from four to forty replicas when the evening traffic spike hits.
+origin: >-
+  The phrase spread in the mid-2010s as companies moved models from research into products. Google
+  open-sourced TensorFlow Serving in 2016, and UC Berkeley's Clipper (NSDI 2017) framed low-latency
+  prediction serving as a systems research problem. NVIDIA's Triton Inference Server and TorchServe
+  followed; LLM-specific engines such as Hugging Face's Text Generation Inference, vLLM and SGLang
+  appeared around 2023.
+year: 2016
+note: >-
+  Overlaps with [[model-deployment|model deployment]], which also covers packaging, release and
+  rollback; serving is the runtime half. Usually contrasted with [[batch-inference|batch
+  inference]], where results are computed offline rather than on request. NVIDIA's Triton Inference
+  Server is unrelated to the [[triton|Triton]] kernel language.
+see_also:
+  - inference
+  - vLLM
+  - SGLang
+  - continuous batching
+  - latency
+  - throughput
+  - inference provider
+  - disaggregated serving
+contrast:
+  - batch inference
+  - training
+sources:
+  - text: >-
+      Crankshaw, D., Wang, X., Zhou, G., Franklin, M. J., Gonzalez, J. E. & Stoica, I. (2017).
+      Clipper: A Low-Latency Online Prediction Serving System. NSDI 2017.
+  - text: >-
+      Olston, C. et al. (2017). TensorFlow-Serving: Flexible, High-Performance ML Serving. NIPS 2017
+      Workshop on ML Systems.

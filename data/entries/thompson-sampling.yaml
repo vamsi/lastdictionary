@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Thompson sampling
+id: thompson-sampling
+pos: n.
+also:
+  - posterior sampling
+  - randomized probability matching
+  - Bayesian bandit
+  - posterior sampling for reinforcement learning
+domain: rl
+domains:
+  - math
+  - eng
+level: specialist
+plain: >-
+  A way to choose among uncertain options by picking each one about as often as it is likely to be
+  the best, based on everything learned so far.
+senses:
+  - definition: >-
+      A Bayesian strategy for the [[exploration-exploitation-trade-off|exploration–exploitation
+      trade-off]] that, at each round, draws one sample of the unknown parameters from their
+      [[posterior|posterior]] distribution and takes the [[action|action]] that would be optimal if
+      that sample were true; the observed [[reward|reward]] then updates the posterior. Each action
+      is thus chosen with the probability that it is optimal, so uncertain options are explored in
+      proportion to their chance of being best and exploration fades as evidence accumulates. With
+      conjugate priors (for example Beta–Bernoulli for click-or-no-click rewards) it takes a few
+      lines of code. It achieves asymptotically optimal logarithmic [[regret|regret]] in standard
+      [[multi-armed-bandit|bandits]], often beats [[upper-confidence-bound|UCB]] empirically,
+      extends to contextual bandits and, as posterior sampling for reinforcement learning, to full
+      MDPs by sampling a whole model per episode. When exact posteriors are intractable, ensembles,
+      bootstrapping or Laplace approximations stand in.
+    example: >-
+      With Thompson sampling, the new ad got traffic only while its click rate was still plausibly
+      the best.
+origin: >-
+  Proposed by William R. Thompson in 'On the Likelihood That One Unknown Probability Exceeds Another
+  in View of the Evidence of Two Samples' (Biometrika, 1933), one of the earliest bandit papers.
+  Long neglected, it was revived after Olivier Chapelle and Lihong Li's empirical study (NIPS 2011)
+  and Shipra Agrawal and Navin Goyal's regret analysis (2012).
+year: 1933
+see_also:
+  - multi-armed bandit
+  - regret
+  - posterior
+  - Bayesian inference
+  - exploration–exploitation trade-off
+  - epsilon-greedy
+contrast:
+  - upper confidence bound
+sources:
+  - text: >-
+      Thompson, W. R. (1933). On the likelihood that one unknown probability exceeds another in view
+      of the evidence of two samples. Biometrika 25(3–4), 285–294.
+  - text: >-
+      Chapelle, O. & Li, L. (2011). An Empirical Evaluation of Thompson Sampling. NIPS 2011.
+  - text: >-
+      Russo, D. et al. (2018). A Tutorial on Thompson Sampling. Foundations and Trends in Machine
+      Learning 11(1), 1–96.

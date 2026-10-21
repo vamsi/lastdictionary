@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: safe completion
+id: safe-completion
+pos: n.
+also:
+  - safe-completion training
+  - output-centric safety training
+domain: safety
+domains:
+  - train
+  - llm
+labels:
+  - emerging
+level: specialist
+plain: >-
+  A way of training AI to handle sensitive requests by giving the most helpful answer that stays
+  safe, instead of simply choosing between answering fully and refusing.
+senses:
+  - definition: >-
+      An approach to [[safety-training|safety training]] that judges a model by what its answer
+      contains rather than by whether it accepted the request: on prompts that might be benign or
+      harmful, the model is trained to give as much genuine help as policy permits instead of
+      choosing, from the request alone, between full compliance and refusal. Rewards are assigned
+      accordingly: responses that violate policy are penalized in proportion to the severity of the
+      harm, while safe responses are rewarded for helpfulness — answering fully, answering at a safe
+      level of detail, or explaining what cannot be provided and offering safe alternatives. The
+      approach targets [[dual-use|dual-use]] requests, such as questions touching on pathogens,
+      chemistry or security, where intent cannot be read from the prompt and hard refusals frustrate
+      legitimate users without stopping determined ones.
+    example: >-
+      Instead of refusing the fireworks question outright, the safe completion explained the
+      chemistry at a high level and pointed to licensing rules.
+origin: >-
+  Introduced by OpenAI with GPT-5 on 7 August 2025, together with the paper 'From Hard Refusals to
+  Safe-Completions: Toward Output-Centric Safety Training' by Yuan Yuan and colleagues. The company
+  reported that, compared with refusal-based training, the approach improved safety, especially on
+  dual-use prompts, made remaining failures less severe and substantially increased helpfulness.
+year: 2025
+note: >-
+  Earlier models already gave partial answers to sensitive prompts; what is new is that training
+  scores the severity of what an output would enable, not how the prompt is categorized. Contrast
+  binary [[refusal|refusal]].
+see_also:
+  - refusal
+  - over-refusal
+  - deliberative alignment
+  - dual-use
+  - model specification
+  - safety training
+contrast:
+  - refusal
+sources:
+  - text: >-
+      Yuan, Y., Sriskandarajah, T., Brakman, A.-L., Helyar, A., Beutel, A., Vallone, A. & Jain, S.
+      (2025). From Hard Refusals to Safe-Completions: Toward Output-Centric Safety Training. OpenAI,
+      arXiv:2508.09224.
+    url: https://arxiv.org/abs/2508.09224

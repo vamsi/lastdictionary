@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: pass@k
+id: pass-k
+pos: n.
+also:
+  - pass at k
+  - pass@1
+  - pass-hat-k
+pronunciation: PASS-at-KAY
+domain: eval
+domains:
+  - llm
+  - math
+level: core
+plain: >-
+  A score for code-writing AI: the chance that at least one of k attempts at a problem is correct,
+  as checked by actually running tests on the code.
+senses:
+  - definition: >-
+      A metric giving the probability that at least one of k sampled outputs for a problem passes
+      its correctness check — usually the problem's unit tests — averaged over problems. Because
+      drawing exactly k samples gives a noisy estimate, practice is to sample n ≥ k outputs per
+      problem, note how many of them (c) are correct, and derive from n and c an unbiased,
+      lower-variance estimate of pass@k (formula below). pass@1 approximates single-attempt
+      accuracy; larger k measures what a system could achieve given a perfect way to pick among its
+      attempts, and so overstates practical performance. Related measures are cons@k or maj@k
+      (accuracy of the most common answer among k samples) and pass^k, introduced with
+      [[tau-bench|τ-bench]]: the probability that all k independent trials succeed, a measure of
+      consistency rather than coverage.
+    example: >-
+      The model's pass@1 on HumanEval is 92%, but its pass^5 on our agent tasks is under 40%.
+formula_latex: \text{pass@}k = \mathbb{E}_{\text{problems}}\left[1 - \frac{\binom{n-c}{k}}{\binom{n}{k}}\right]
+origin: >-
+  Mark Chen and colleagues' July 2021 OpenAI Codex paper, which introduced [[humaneval|HumanEval]],
+  popularized the name pass@k and its unbiased estimator. They credited the evaluation idea to
+  Sumith Kulal and colleagues' 2019 SPoC paper, which scored program synthesis by success within a
+  budget of attempts.
+year: 2021
+note: >-
+  Scores are comparable only when k, the sampling temperature and n are reported. Do not confuse
+  pass@k, which rises with k, with pass^k, which falls as k rises.
+see_also:
+  - HumanEval
+  - τ-bench
+  - code generation
+  - self-consistency
+  - best-of-n sampling
+  - exact match
+sources:
+  - text: >-
+      Chen, M., Tworek, J., Jun, H. et al. (2021). Evaluating Large Language Models Trained on Code.
+      arXiv:2107.03374.
+    url: https://arxiv.org/abs/2107.03374
+  - text: >-
+      Kulal, S., Pasupat, P., Chandra, K. et al. (2019). SPoC: Search-based Pseudocode to Code.
+      NeurIPS 2019.
+    url: https://arxiv.org/abs/1906.04908

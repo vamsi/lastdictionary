@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: GloVe
+id: glove
+pos: prop. n.
+also:
+  - Global Vectors
+  - Global Vectors for Word Representation
+pronunciation: GLUV
+domain: llm
+domains:
+  - dl
+level: specialist
+plain: >-
+  A 2014 Stanford method for learning number lists that represent words, built from counts of how
+  often each pair of words appears near each other across a very large body of text.
+senses:
+  - definition: >-
+      A model for learning [[word-embedding|word embeddings]] from corpus-wide co-occurrence counts
+      rather than by sliding through the text predicting words from their neighbors. It first counts
+      how often each word occurs within a window of every other word across a corpus, then learns
+      word and context vectors, plus biases, whose dot products approximate the logarithms of those
+      counts, minimizing a weighted least-squares loss that down-weights rare co-occurrences and
+      caps the influence of very frequent ones. The design rests on the observation that ratios of
+      co-occurrence probabilities carry meaning. Its authors presented it as uniting two traditions:
+      count-based methods that factorize corpus-wide statistics, such as
+      [[latent-semantic-analysis|latent semantic analysis]], and prediction-based methods trained on
+      local windows, such as [[word2vec|word2vec]]. Pretrained GloVe vectors, trained on Wikipedia,
+      newswire and web text, were standard inputs to NLP models until contextual representations
+      displaced them.
+    example: For the baseline we used the 100-dimensional GloVe vectors.
+formula_latex: J = \sum_{i,j} f(X_{ij}) \left( w_i^{\top} \tilde{w}_j + b_i + \tilde{b}_j - \log X_{ij} \right)^2
+origin: >-
+  Introduced by Jeffrey Pennington, Richard Socher and Christopher D. Manning of Stanford University
+  at EMNLP 2014 in Doha, Qatar, with pretrained vectors released by the Stanford NLP Group.
+year: 2014
+see_also:
+  - word embedding
+  - word2vec
+  - embedding
+  - latent semantic analysis
+  - cosine similarity
+sources:
+  - text: >-
+      Pennington, J., Socher, R. & Manning, C. D. (2014). GloVe: Global Vectors for Word
+      Representation. EMNLP 2014, 1532–1543.
+    url: https://aclanthology.org/D14-1162/

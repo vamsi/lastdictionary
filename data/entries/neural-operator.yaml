@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: neural operator
+id: neural-operator
+pos: n.
+also:
+  - Fourier neural operator
+  - FNO
+  - DeepONet
+  - operator learning
+domain: dl
+domains:
+  - math
+level: specialist
+plain: >-
+  A neural network that learns how a whole physical system responds, such as how a fluid flows given
+  its starting state, so it can stand in for slow simulations and answer new cases quickly.
+senses:
+  - definition: >-
+      A neural network whose inputs and outputs are whole functions rather than fixed-size vectors —
+      for example, one that takes the coefficients, forcing or initial condition of a partial
+      differential equation and returns the solution field. Its layers combine pointwise linear maps
+      with learned integral (kernel) operators, so that, in principle, a trained model does not
+      depend on how the functions are discretized and can be run on coarser or finer grids than it
+      was trained on. In the Fourier neural operator the kernel acts as a learned filter on
+      low-frequency modes of the [[fourier-transform|Fourier transform]], making each layer a global
+      [[convolution|convolution]]; DeepONet instead combines a 'branch' network that encodes the
+      input function with a 'trunk' network that encodes query locations. Trained on simulation
+      data, neural operators serve as surrogates for numerical solvers that can be orders of
+      magnitude faster, in fluid dynamics, weather and climate, materials and subsurface modeling,
+      though accuracy outside the training distribution and stability over long rollouts remain
+      concerns.
+    example: >-
+      Once trained, the Fourier neural operator predicts the flow field in milliseconds instead of
+      the solver's hours.
+origin: >-
+  DeepONet was introduced by Lu Lu, Pengzhan Jin and George Em Karniadakis (arXiv, October 2019;
+  Nature Machine Intelligence, 2021), building on a 1995 universal approximation theorem for
+  operators by Tianping Chen and Hong Chen. Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli,
+  Burigede Liu, Kaushik Bhattacharya, Andrew Stuart and Anima Anandkumar popularized the name with
+  graph-kernel 'neural operators' (March 2020) and introduced the Fourier neural operator (arXiv,
+  October 2020; ICLR 2021), reporting speedups of up to three orders of magnitude over traditional
+  solvers.
+year: 2019
+see_also:
+  - physics-informed neural network
+  - Fourier transform
+  - neural ordinary differential equation
+  - convolution
+  - geometric deep learning
+sources:
+  - text: >-
+      Li, Z. et al. (2020). Fourier Neural Operator for Parametric Partial Differential Equations.
+      arXiv:2010.08895; ICLR 2021.
+    url: https://arxiv.org/abs/2010.08895
+  - text: >-
+      Lu, L., Jin, P., Pang, G., Zhang, Z. & Karniadakis, G. E. (2021). Learning Nonlinear Operators
+      via DeepONet Based on the Universal Approximation Theorem of Operators. Nature Machine
+      Intelligence, 3, 218–229.

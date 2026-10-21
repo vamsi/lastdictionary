@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: Conformer
+id: conformer
+pos: prop. n.
+also:
+  - convolution-augmented transformer
+  - Conformer encoder
+  - Conformer-transducer
+domain: percep
+domains:
+  - dl
+level: specialist
+plain: >-
+  A neural-network design for speech recognition that combines a transformer, which relates distant
+  parts of a recording, with convolutions, which pick up fine local sound patterns.
+senses:
+  - definition: >-
+      A neural-network encoder architecture for speech that combines
+      [[self-attention|self-attention]], which models long-range dependencies across an utterance,
+      with [[convolution|convolution]], which captures local acoustic patterns. Each Conformer block
+      places a multi-head self-attention module (with relative [[positional-encoding|positional
+      encoding]]) and a convolution module (pointwise convolution with a gated linear unit,
+      depthwise convolution, batch normalization and a Swish activation) between two half-step
+      [[feed-forward-network|feed-forward]] modules, a 'macaron' arrangement, with
+      [[residual-connection|residual connections]] and layer normalization throughout; convolutional
+      layers first downsample the input log-mel features in time. Introduced for
+      [[speech-recognition|speech recognition]], it reported 2.1% and 4.3% [[word-error-rate|word
+      error rate]] on [[librispeech|LibriSpeech]] test-clean and test-other without an external
+      language model, better than transformer-only and convolution-only models of similar size. It
+      became a default encoder in production and open-source recognizers, paired with
+      [[connectionist-temporal-classification|CTC]], transducer or attention decoders, and is also
+      used for speech translation and other audio tasks.
+    example: >-
+      Our streaming recognizer is a Conformer-transducer with limited look-ahead to keep latency
+      under 300 ms.
+origin: >-
+  Introduced by Anmol Gulati, James Qin, Chung-Cheng Chiu and colleagues at Google in 'Conformer:
+  Convolution-augmented Transformer for Speech Recognition' (arXiv May 2020; Interspeech 2020); the
+  name blends 'convolution' and 'transformer'.
+year: 2020
+see_also:
+  - speech recognition
+  - transformer
+  - convolution
+  - self-attention
+  - connectionist temporal classification
+  - LibriSpeech
+sources:
+  - text: >-
+      Gulati, A. et al. (2020). Conformer: Convolution-augmented Transformer for Speech Recognition.
+      Interspeech 2020.

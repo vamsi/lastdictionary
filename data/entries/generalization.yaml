@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: generalization
+id: generalization
+pos: n.
+also:
+  - generalize
+  - generalisation
+  - generalization error
+  - out-of-sample performance
+domain: core
+domains:
+  - ml
+  - dl
+  - math
+level: core
+plain: >-
+  How well a model copes with new examples it has never seen, rather than just memorizing its
+  training data, like a student who understands the method, not just the answers.
+senses:
+  - definition: >-
+      The ability of a learned model to perform well on new data drawn from the same distribution as
+      its training data, rather than only on the examples it was trained on. It is measured by the
+      generalization error, estimated on held-out [[test-set|test]] data; the difference between
+      training and test performance is the [[generalization-gap|generalization gap]], and failure to
+      generalize is [[overfitting|overfitting]]. Statistical learning theory bounds generalization
+      error in terms of the capacity of the model class ([[vc-dimension|VC dimension]],
+      [[pac-learning|PAC learning]]) and the amount of data, but such bounds poorly explain why
+      heavily [[overparameterization|overparameterized]] neural networks generalize, a puzzle
+      studied through [[implicit-regularization|implicit regularization]], [[double-descent|double
+      descent]] and [[sharp-and-flat-minima|flat minima]]. Researchers also study
+      out-of-distribution generalization ([[distribution-shift|distribution shift]]), compositional
+      generalization (recombining known parts in new ways) and, in safety,
+      [[goal-misgeneralization|goal misgeneralization]], where capabilities generalize but intended
+      goals do not.
+    example: >-
+      It aced the benchmark but failed on our hospital's scans, so it did not generalize across
+      scanners.
+origin: >-
+  Generalizing from examples is an old theme of philosophy and psychology (induction, stimulus
+  generalization). Machine learning formalized it through Vladimir Vapnik and Alexey Chervonenkis's
+  statistical learning theory (from 1971) and Leslie Valiant's PAC model (1984). Chiyuan Zhang and
+  colleagues' 2017 finding that networks can fit random labels yet generalize on real ones reopened
+  the question for deep learning.
+note: >-
+  In popular talk about AI, 'generalization' often means broad competence across tasks; in machine
+  learning it means performance on unseen data for the same task, so a narrow model can generalize
+  well.
+see_also:
+  - overfitting
+  - generalization gap
+  - test set
+  - distribution shift
+  - PAC learning
+  - VC dimension
+  - double descent
+  - goal misgeneralization
+contrast:
+  - memorization
+  - overfitting
+sources:
+  - text: Vapnik, V. N. (1995). The Nature of Statistical Learning Theory. Springer.
+  - text: >-
+      Zhang, C., Bengio, S., Hardt, M., Recht, B. & Vinyals, O. (2017). Understanding Deep Learning
+      Requires Rethinking Generalization. ICLR 2017.

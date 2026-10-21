@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: QK-norm
+id: qk-norm
+pos: n.
+also:
+  - QK normalization
+  - query-key normalization
+  - QK-LayerNorm
+  - qk-layernorm
+domain: train
+domains:
+  - llm
+  - dl
+level: specialist
+plain: >-
+  A small change to how a language model pays attention — rescaling two sets of internal numbers
+  before comparing them — that prevents a common way large models' training goes haywire.
+senses:
+  - definition: >-
+      Normalization of the query and key vectors in [[attention|attention]] — typically
+      [[layer-normalization|LayerNorm]] or [[rmsnorm|RMSNorm]] applied per head, sometimes L2
+      normalization with a learned scale — before their [[scaled-dot-product-attention|dot product]]
+      is taken. Without it, query and key norms can grow during training until attention logits
+      become very large, the softmax collapses onto single tokens and the loss diverges; bounding
+      the norms keeps attention logits in a stable range and tolerates higher learning rates.
+      Applied at scale in Google's 22-billion-parameter vision transformer (2023), it has since been
+      adopted in many language models, including AI2's OLMo 2, Alibaba's Qwen3 and Google's Gemma 3,
+      and is a standard [[training-instability|training instability]] mitigation alongside
+      [[z-loss|z-loss]].
+origin: >-
+  Alex Henry and colleagues proposed query-key normalization for transformers in 2020 (Findings of
+  EMNLP); Mostafa Dehghani and colleagues at Google popularized LayerNorm on queries and keys as a
+  stability fix in 'Scaling Vision Transformers to 22 Billion Parameters' (2023).
+year: 2020
+see_also:
+  - training instability
+  - z-loss
+  - attention
+  - query, key and value
+  - layer normalization
+  - loss spike
+sources:
+  - text: >-
+      Henry, A., Dachapally, P. R., Pawar, S. S. & Chen, Y. (2020). Query-Key Normalization for
+      Transformers. Findings of EMNLP 2020, 4246–4253.
+    url: https://aclanthology.org/2020.findings-emnlp.379/
+  - text: >-
+      Dehghani, M. et al. (2023). Scaling Vision Transformers to 22 Billion Parameters. ICML 2023.

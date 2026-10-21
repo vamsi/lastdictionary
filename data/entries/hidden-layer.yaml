@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: hidden layer
+id: hidden-layer
+pos: n.
+also:
+  - hidden unit
+  - hidden units
+  - hidden state
+  - hidden size
+domain: dl
+level: core
+plain: >-
+  Any layer of a neural network between the input and the output. Its values are never shown to the
+  user; they are the network's internal working-out.
+senses:
+  - definition: >-
+      A [[layer|layer]] of a [[neural-network|neural network]] lying between the input and output
+      layers, whose activations are not specified by the training data but are learned as internal
+      representations ([[representation-learning|representation learning]]). Given enough units, a
+      network with one hidden layer and a suitable nonlinear (non-polynomial)
+      [[activation-function|activation function]] can approximate any continuous function on a
+      closed, bounded domain ([[universal-approximation-theorem|universal approximation theorem]]);
+      networks with many hidden layers are called deep. The number of hidden layers (depth) and of
+      units per layer (width) are central [[hyperparameter|hyperparameters]]. The vector of a hidden
+      layer's outputs is its hidden state or hidden representation; in transformers the 'hidden
+      size' (d_model) is the width of the [[residual-stream|residual stream]].
+    example: >-
+      Doubling the hidden size improved validation loss more than adding two hidden layers.
+origin: >-
+  The 'hidden unit' terminology was popularized in 1980s connectionism, notably by the Boltzmann
+  machine work of David Ackley, Geoffrey Hinton and Terrence Sejnowski (1985), which divided units
+  into visible and hidden, and by the backpropagation paper of David Rumelhart, Hinton and Ronald
+  Williams (1986), which showed hidden units learning useful internal features.
+year: 1985
+see_also:
+  - layer
+  - multilayer perceptron
+  - universal approximation theorem
+  - representation learning
+  - residual stream
+  - Boltzmann machine
+contrast:
+  - latent space

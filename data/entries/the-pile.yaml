@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: The Pile
+id: the-pile
+pos: prop. n.
+also:
+  - Pile
+domain: data
+domains:
+  - llm
+level: specialist
+plain: >-
+  A large free collection of English text released in 2020 by the volunteer group EleutherAI, mixing
+  22 sources from books and science papers to code, used to train early open language models.
+senses:
+  - definition: >-
+      An open training [[corpus|corpus]] for [[large-language-model|large language models]] in which
+      EleutherAI combined 22 deliberately varied parts into 825 GiB of mostly English text: web text
+      (filtered [[common-crawl|Common Crawl]], called Pile-CC, and OpenWebText2, an open replication
+      of [[webtext|WebText]]), academic writing (PubMed Central, arXiv), books ([[books3|Books3]],
+      Project Gutenberg), code from GitHub, legal and patent text (US court opinions, patents),
+      questions and conversation (Stack Exchange, chat logs, film subtitles) and smaller sources
+      such as English Wikipedia, mathematics problems and the Enron emails. Components were
+      weighted, with sources judged higher in quality repeated for more than one epoch. The Pile
+      trained EleutherAI's GPT-Neo, GPT-J, GPT-NeoX-20B and Pythia models and was used by other
+      developers, and its fully published composition made it a reference point for research on
+      [[pretraining-data|pretraining data]].
+    example: >-
+      Pythia's checkpoints are useful precisely because every model saw the Pile in the same order.
+origin: >-
+  Released on 31 December 2020 by EleutherAI, then a volunteer research collective, and described in
+  'The Pile: An 800GB Dataset of Diverse Text for Language Modeling' by Leo Gao, Stella Biderman,
+  Sid Black and colleagues. A successor, the Common Pile (2025), is restricted to public-domain and
+  openly licensed text.
+year: 2020
+note: >-
+  Its Books3 component, taken from a pirate e-book site, made The Pile a focus of copyright suits;
+  after Books3 was removed through takedown notices in 2023, The Pile itself was no longer available
+  from its original host by 2024, though copies remained online. The title says 800GB; the abstract
+  gives 825 GiB (about 886 GB).
+see_also:
+  - Books3
+  - Common Crawl
+  - pretraining data
+  - corpus
+  - C4
+  - data mixture
+sources:
+  - text: >-
+      Gao, L. et al. (2020). The Pile: An 800GB Dataset of Diverse Text for Language Modeling.
+      arXiv:2101.00027.
+    url: https://arxiv.org/abs/2101.00027v1

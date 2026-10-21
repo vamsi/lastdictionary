@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: training instability
+id: training-instability
+pos: n.
+also:
+  - instability
+  - loss divergence
+  - divergence
+  - unstable training
+domain: train
+domains:
+  - dl
+level: core
+plain: >-
+  The tendency of very large training runs to go wrong — the error suddenly jumping or blowing up —
+  which can waste weeks of expensive computing unless engineers prevent or repair it.
+senses:
+  - definition: >-
+      Erratic optimization behavior during training — [[loss-spike|loss spikes]], slow or sudden
+      divergence to very large or NaN ('not a number') loss, or collapse of internal quantities —
+      that interrupts progress or ruins a run. In large [[transformer|transformers]] recurring
+      mechanisms include unbounded growth of attention logits (attention entropy collapse), drift of
+      output logits, oversized Adam updates, loss of precision in [[bfloat16|bfloat16]] or
+      [[fp8|FP8]] arithmetic, and poorly scaled initialization; instability usually worsens with
+      model size and [[learning-rate|learning rate]]. Practice combines prevention —
+      [[learning-rate-warmup|warmup]], [[gradient-clipping|gradient clipping]], pre-normalization
+      with [[rmsnorm|RMSNorm]], [[qk-norm|QK-norm]], [[z-loss|z-loss]], weight decay,
+      [[maximal-update-parametrization|μP]]-style scaling and careful data filtering — with
+      monitoring and recovery: frequent [[checkpoint|checkpoints]], automatic rollback and skipping
+      of offending batches. Because failures may appear only at scale, researchers look for small
+      proxy models that reproduce them at high learning rates.
+    example: >-
+      Training instability forced us to lower the peak learning rate by a third after week two.
+origin: >-
+  Unstable training has been discussed since early neural networks (exploding gradients, 1990s). It
+  became a central engineering topic with billion-parameter language models from 2019 onward,
+  documented in reports on Megatron-LM, Gopher, OPT-175B, BLOOM and PaLM, and studied directly by
+  Mitchell Wortsman and colleagues at Google (2023) using small-scale proxies.
+note: >-
+  The [[exploding-gradient-problem|exploding gradient problem]] is one mechanism of instability, not
+  a synonym. 'Divergence' here means the loss runs away, not a statistical divergence such as
+  [[kullback-leibler-divergence|KL divergence]].
+see_also:
+  - loss spike
+  - z-loss
+  - QK-norm
+  - gradient clipping
+  - exploding gradient problem
+  - maximal update parametrization
+  - mixed-precision training
+sources:
+  - text: >-
+      Wortsman, M., Liu, P. J., Xiao, L., Everett, K., Alemi, A. et al. (2023). Small-scale proxies
+      for large-scale Transformer training instabilities. arXiv:2309.14322.
+    url: https://arxiv.org/abs/2309.14322

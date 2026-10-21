@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: backdoor attack
+id: backdoor-attack
+pos: n.
+also:
+  - backdoor
+  - trojan
+  - trojan attack
+  - neural trojan
+  - backdoored model
+domain: sec
+domains:
+  - safety
+  - dl
+level: core
+plain: >-
+  Secretly training an AI model to misbehave whenever it sees a hidden signal — a sticker, a word, a
+  date — while it acts perfectly normally the rest of the time.
+senses:
+  - definition: >-
+      An attack that implants hidden behavior in a model so that it performs normally on ordinary
+      inputs but produces attacker-chosen outputs when an input contains a specific trigger, such as
+      a pixel pattern, a rare phrase or a contextual cue like a date. Backdoors are inserted by
+      [[data-poisoning|data poisoning]] (adding trigger-bearing examples with the target output), by
+      tampering with training code or [[fine-tuning|fine-tuning]], or by editing [[weights|weights]]
+      directly, and they can survive further training. Because accuracy on clean inputs is
+      unaffected, standard [[evaluation|evaluation]] does not reveal them. In language models a
+      triggered backdoor might write vulnerable code, bypass safety training or leak data. Defenses
+      include provenance checks and data filtering, trigger reconstruction, detection of poisoned
+      examples by clustering their [[activation|activations]], pruning and fine-tuning, and
+      interpretability-based auditing.
+    example: >-
+      The backdoor made the sign classifier read any stop sign bearing a small yellow square as a
+      speed-limit sign.
+origin: >-
+  Tianyu Gu, Brendan Dolan-Gavitt and Siddharth Garg's 'BadNets' (August 2017) showed that an
+  outsourced training provider could backdoor a network; Xinyun Chen and colleagues (December 2017)
+  applied 'backdoor' to data-poisoning attacks, and Yingqi Liu and colleagues' 'Trojaning Attack on
+  Neural Networks' (NDSS 2018) popularized 'trojan'. Both words come from conventional computer
+  security.
+year: 2017
+note: >-
+  'Backdoor' and 'trojan' are used interchangeably in machine learning. Anthropic's 2024
+  [[sleeper-agent|sleeper agent]] experiments used deliberately backdoored models to test whether
+  standard safety training removes hidden behaviors; often it did not.
+see_also:
+  - data poisoning
+  - clean-label poisoning
+  - sleeper agent
+  - AI supply chain security
+  - model fingerprinting
+  - adversarial machine learning
+sources:
+  - text: >-
+      Gu, T., Dolan-Gavitt, B. & Garg, S. (2017). BadNets: Identifying Vulnerabilities in the
+      Machine Learning Model Supply Chain. arXiv:1708.06733.
+  - text: Liu, Y. et al. (2018). Trojaning Attack on Neural Networks. NDSS 2018.

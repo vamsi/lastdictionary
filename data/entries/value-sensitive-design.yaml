@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: value-sensitive design
+id: value-sensitive-design
+pos: n.
+also:
+  - VSD
+domain: society
+domains:
+  - eng
+level: specialist
+plain: >-
+  A way of designing technology that deliberately identifies the human values at stake, such as
+  privacy, fairness or autonomy, and builds them in from the start instead of patching problems
+  later.
+senses:
+  - definition: >-
+      A methodology for designing technology that treats the human values at stake, such as privacy,
+      autonomy and fairness, as explicit design criteria from the earliest stage onward. It combines
+      three iterative kinds of investigation: conceptual (which values are implicated, for which
+      direct and indirect stakeholders, and how they trade off), empirical (how stakeholders
+      actually experience and prioritize those values, studied with interviews, surveys and
+      observation) and technical (how particular architectures and features support or hinder them).
+      Its tools include stakeholder analysis, value scenarios and envisioning cards. In AI it
+      underpins efforts to build fairness, privacy, transparency and human control into systems from
+      the requirements stage, and it informs ethics-by-design guidance.
+    example: >-
+      Using value-sensitive design, the team interviewed people who would never use the app but
+      whose data it would process.
+origin: >-
+  Developed by Batya Friedman with Peter Kahn and colleagues, chiefly at the University of
+  Washington, from the early 1990s; Friedman's 1996 article 'Value-sensitive design' in Interactions
+  was an early statement, and Friedman and David Hendry's book Value Sensitive Design: Shaping
+  Technology with Moral Imagination (MIT Press, 2019) consolidated it.
+year: 1996
+note: >-
+  Critics ask whose values count and how conflicts between them are resolved; proponents reply that
+  the method makes such choices explicit instead of leaving them buried in engineering defaults.
+see_also:
+  - AI ethics
+  - responsible AI
+  - human-centered AI
+  - algorithmic fairness
+  - AI transparency
+sources:
+  - text: Friedman, B. (1996). Value-sensitive design. Interactions 3(6), 16–23.
+  - text: >-
+      Friedman, B. & Hendry, D. G. (2019). Value Sensitive Design: Shaping Technology with Moral
+      Imagination. MIT Press.

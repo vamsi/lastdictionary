@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema/entry.schema.json
+
+term: completion
+id: completion
+pos: n.
+also:
+  - text completion
+  - model completion
+  - completions API
+  - chat completion
+domain: llm
+domains:
+  - eng
+level: core
+plain: >-
+  The text an AI language model writes in response to a prompt — literally, its continuation of the
+  text it was given.
+senses:
+  - definition: >-
+      The output a [[language-model|language model]] generates by continuing a [[prompt|prompt]],
+      token by token, until it emits an end token, reaches a [[stop-sequence|stop sequence]] or hits
+      a length limit. The word reflects how [[autoregressive-model|autoregressive]] models work:
+      even a chat reply is technically a completion of a formatted conversation. Pricing and rate
+      limits count completion (output) tokens separately from prompt (input) tokens, and output
+      tokens usually cost several times more because they are generated one at a time.
+    example: The completion was cut off at 512 tokens, so raise max_tokens.
+  - context: APIs
+    definition: >-
+      A style of model API that takes raw text and returns its continuation, as in OpenAI's original
+      Completions endpoint (2020), as distinct from the role-structured 'chat completions' style
+      introduced in 2023, which became the de facto industry interface, and from newer
+      agent-oriented APIs that manage tools and conversation state.
+  - context: Software tools
+    definition: >-
+      Suggestion of the rest of a word, line or block as a user types — autocomplete or code
+      completion — now often produced by language models, as in [[github-copilot|GitHub Copilot]]
+      and other coding assistants built on [[code-generation|code generation]].
+origin: >-
+  'Completion' for a model's output became standard with OpenAI's GPT-3 API (June 2020), whose core
+  endpoint was named completions; the editor sense of completion (autocomplete) is older.
+year: 2020
+see_also:
+  - prompt
+  - next-token prediction
+  - decoding
+  - model API
+  - stop sequence
+  - OpenAI-compatible API
+contrast:
+  - prompt
+as_of: 2026-10
