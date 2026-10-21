@@ -11,7 +11,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
     <footer className="gutter">
       <div className="wrap mt-[120px] grid gap-8 border-line border-t pt-[34px] pb-12 font-mono text-sm leading-relaxed sm:grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="sm:max-md:col-span-2">
-          <Brand title={meta.title} subtitle={meta.subtitle} large />
+          <Brand title={meta.title} large />
           <p className="mt-3.5 text-ink-3">
             {meta.edition} · {nf(entries.length)} entries
             <br />

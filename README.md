@@ -1,6 +1,6 @@
 # The Last Dictionary
 
-**Intelligence, human and otherwise.** 2,709 words of AI, from Bayes' theorem to superintelligence, each defined in plain words first, then precisely, with the year it was born.
+**The dictionary of intelligence.** 2,709 words of AI, from Bayes' theorem to superintelligence, each defined in plain words first, then precisely, with the year it was born.
 
 Live site: **https://lastdictionary.com**
 

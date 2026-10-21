@@ -4,6 +4,7 @@ import { ImageResponse } from "next/og";
 import { familyOfDomain } from "@/lib/derive";
 import { getDictionary } from "@/lib/dictionary";
 import { yearLabel } from "@/lib/format";
+import { TAGLINE } from "@/lib/site";
 
 /** The social card for an entry: headword and plain-words line on the family's colours. */
 
@@ -46,9 +47,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const [bg, ink] = (family && FAMILY_COLORS[family.n]) ?? ["#fcf7f4", "#141112"];
   const term = entry?.term ?? dict.meta.title;
   const plain = entry?.plain ?? dict.meta.description;
-  const domain = entry
-    ? (dict.taxonomy.domains[entry.domain]?.name ?? entry.domain)
-    : dict.meta.subtitle;
+  const domain = entry ? (dict.taxonomy.domains[entry.domain]?.name ?? entry.domain) : TAGLINE;
   const meta = entry
     ? `${dict.taxonomy.pos[entry.pos] ?? entry.pos}${entry.year !== undefined ? ` · born ${yearLabel(entry.year)}` : ""}`
     : dict.meta.edition;

@@ -6,8 +6,10 @@ import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { ThemeProvider } from "@/components/site/theme-provider";
 import { Toaster } from "@/components/site/toast";
+import { tryWordsForDate } from "@/lib/derive";
 import { getDictionary } from "@/lib/dictionary";
 import { metaDescription } from "@/lib/seo";
+import { TAGLINE } from "@/lib/site";
 import "./globals.css";
 
 // Static weights of the two faces, self-hosted from the @fontsource packages: 140 KB in all,
@@ -70,7 +72,7 @@ const dict = getDictionary();
 export const metadata: Metadata = {
   metadataBase: new URL(dict.meta.url),
   title: {
-    default: `${dict.meta.title} · ${dict.meta.subtitle}`,
+    default: `${dict.meta.title} · ${TAGLINE}`,
     template: `%s · ${dict.meta.title}`,
   },
   description: metaDescription(dict.meta.description),
@@ -132,7 +134,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               domainNames={Object.fromEntries(
                 Object.entries(dict.taxonomy.domains).map(([k, v]) => [k, v.name]),
               )}
-              tryWords={dict.meta.tryWords}
+              tryWords={tryWordsForDate(dict.essentialsByReference, new Date())}
               total={dict.entries.length}
             />
             <Toaster />

@@ -5,10 +5,10 @@ import { EntryLink } from "@/components/rich-text";
 import { SearchQueryParam } from "@/components/search/search-query-param";
 import { HashRedirect } from "@/components/site/hash-redirect";
 import { HeroSearch } from "@/components/site/hero-search";
-import { familyOfDomain, poolIndexForDate } from "@/lib/derive";
+import { familyOfDomain, poolIndexForDate, tryWordsForDate } from "@/lib/derive";
 import { getDictionary } from "@/lib/dictionary";
 import { nf, ordinalDate, yearLabel } from "@/lib/format";
-import { domainPath, entryPath } from "@/lib/site";
+import { domainPath, entryPath, TAGLINE } from "@/lib/site";
 import { datasetNode, pageGraph, termSetNode, webPageNode } from "@/lib/structured-data";
 
 export default function HomePage() {
@@ -18,6 +18,7 @@ export default function HomePage() {
   const wotd = dict.byId.get(dict.pool[poolIndexForDate(dict.pool, today)] ?? "") ?? entries[0];
   if (!wotd) throw new Error("no entries");
   const wotdFamily = familyOfDomain(taxonomy, wotd.domain);
+  const tryWords = tryWordsForDate(dict.essentialsByReference, today);
 
   return (
     <div className="wrap fade-in">
@@ -30,89 +31,100 @@ export default function HomePage() {
           datasetNode(dict),
           webPageNode(dict, {
             path: "/",
-            name: `${meta.title} · ${meta.subtitle}`,
+            name: `${meta.title} · ${TAGLINE}`,
             description: meta.description,
           }),
         )}
       />
       <section className="pb-2">
-        <div className="kick flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-line border-b pb-3">
-          <span>
-            First Edition · <b>{meta.editionDate}</b>
-          </span>
-          <span className="text-ink-3">
-            {nf(entries.length)} entries · {Object.keys(taxonomy.domains).length} domains ·{" "}
-            {dict.years.min}–{dict.years.max}
-          </span>
-        </div>
-        <h1 className="mt-7 max-w-[11em] text-[clamp(44px,10.5vw,136px)] leading-[0.94] tracking-[-0.03em] [overflow-wrap:anywhere] md:mt-9">
-          Intelligence, <em>defined.</em>
+        <p className="kick border-line border-b pb-3">
+          First Edition · <b>{meta.editionDate}</b>
+        </p>
+        <h1 className="mt-7 max-w-[9.2em] text-[clamp(40px,8.2vw,108px)] leading-[0.96] tracking-[-0.03em] [overflow-wrap:anywhere] md:mt-8">
+          The dictionary of&nbsp;<em>intelligence.</em>
         </h1>
-        <div className="mt-9 grid items-start gap-9 md:mt-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-12 lg:gap-16">
+        <div className="mt-9 grid items-start gap-10 md:mt-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-12 lg:gap-20">
           <div className="flex min-w-0 flex-col gap-6">
-            <p className="max-w-[26em] text-[clamp(20px,2vw,24px)] text-ink-2 leading-[1.5]">
-              {nf(entries.length)} words about minds and machines, from Bayes’ theorem to
-              superintelligence. Each is explained in plain words first, then precisely, with the
-              year it was born.
+            <p className="max-w-[22em] text-[clamp(21px,2.1vw,27px)] leading-[1.45]">
+              Every word of artificial intelligence: defined, dated, cross-linked and sourced.
             </p>
-            <HeroSearch />
-            <p className="-mt-1 font-mono text-ink-3 text-sm leading-[1.9]">
-              Try{" "}
-              {meta.tryWords
-                .filter((id) => dict.byId.has(id))
-                .map((id) => (
-                  <span key={id}>
-                    <Link href={entryPath(id)} className="text-ink">
-                      {dict.byId.get(id)?.term}
-                    </Link>{" "}
-                  </span>
+            <p className="max-w-[36em] text-[17.5px] text-ink-2 leading-[1.6]">
+              The language of AI moves faster than any printed book, and no glossary covered the
+              whole field, from statistics to agents, safety, law and slang, with an origin for
+              every term. That gap is why this dictionary exists.{" "}
+              <Link href="/about#preface" className="whitespace-nowrap text-ink">
+                Preface →
+              </Link>
+            </p>
+            <div className="flex flex-col gap-1">
+              <HeroSearch />
+              <p className="flex flex-wrap items-center gap-x-4 font-mono text-ink-3 text-sm">
+                <span>Try</span>
+                {tryWords.map((id) => (
+                  <Link
+                    key={id}
+                    href={entryPath(id)}
+                    className="inline-flex min-h-11 items-center text-ink"
+                  >
+                    {dict.byId.get(id)?.term}
+                  </Link>
                 ))}
+              </p>
+            </div>
+          </div>
+          <div className="border-line border-t pt-5 md:mt-1">
+            <p className="text-[19px] leading-[1.5]">
+              {nf(entries.length)} words about minds and machines, from Bayes’ theorem to
+              superintelligence, in {Object.keys(taxonomy.domains).length} domains. Each is
+              explained in plain words first, then precisely, with the year it was born, from{" "}
+              {dict.years.min} to {dict.years.max}.
             </p>
             <Link
-              href="/contents"
-              className="group mt-1 flex min-h-11 items-center gap-3 self-start font-mono text-ink-3 text-sm no-underline hover:text-ink"
-              aria-label="Seven families of words: the contents"
+              href="/about#read"
+              className="kick mt-4 inline-flex min-h-11 items-center text-ink-2 no-underline hover:text-ink hover:underline"
             >
-              <span className="flex gap-1" aria-hidden="true">
-                {dict.families.map((f) => (
-                  <span
-                    key={f.n}
-                    className={`fam-${f.n} block size-3.5 border border-fam-ink bg-fam`}
-                  />
-                ))}
-              </span>
-              Seven families of words&nbsp;→
+              How to read an entry →
             </Link>
           </div>
-          <div
-            className={`fam-${wotdFamily.n} flex min-w-0 flex-col gap-3.5 bg-fam px-5 py-6 text-fam-ink sm:px-8 sm:pt-7 sm:pb-8`}
+        </div>
+      </section>
+
+      <section
+        className={`fam-${wotdFamily.n} mt-14 grid gap-x-10 gap-y-5 bg-fam px-5 py-6 text-fam-ink sm:px-8 sm:py-7 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]`}
+        aria-labelledby="wotd-heading"
+      >
+        <div className="min-w-0">
+          <div className="kick flex flex-wrap justify-between gap-x-4 gap-y-1 border-current border-b pb-3">
+            <span>Word of the day</span>
+            <span>{ordinalDate(today)}</span>
+          </div>
+          <h2
+            id="wotd-heading"
+            className="mt-4 text-[clamp(32px,3.6vw,46px)] leading-none tracking-[-0.02em] [overflow-wrap:anywhere]"
           >
-            <div className="kick flex justify-between gap-3 border-current border-b pb-3">
-              <span>Word of the day</span>
-              <span>{ordinalDate(today)}</span>
-            </div>
-            <h2 className="mt-3 text-[clamp(40px,4.6vw,60px)] leading-none tracking-[-0.02em] [overflow-wrap:anywhere]">
-              <Link
-                href={entryPath(wotd.id)}
-                className="link-quiet inline-flex min-h-11 items-center hover:decoration-2"
-              >
-                {wotd.term}
-              </Link>
-            </h2>
-            <div className="kick border-current border-b pb-3.5">
-              {taxonomy.pos[wotd.pos] ?? wotd.pos}
-              {wotd.year !== undefined ? ` · born ${yearLabel(wotd.year)}` : ""} ·{" "}
-              {taxonomy.domains[wotd.domain]?.name}
-            </div>
-            <p className="mt-1 mb-1 text-[21px] leading-[1.4]">{wotd.plain}</p>
             <Link
               href={entryPath(wotd.id)}
-              className="mt-auto inline-flex min-h-11 items-center gap-2 self-start border border-current px-4 font-mono text-sm leading-none no-underline hover:bg-fam-ink hover:text-fam"
-              aria-label={`Read the entry: ${wotd.term}`}
+              className="link-quiet inline-flex min-h-11 items-center hover:decoration-2"
             >
-              Read the entry →
+              {wotd.term}
             </Link>
-          </div>
+          </h2>
+          <p className="kick mt-2">
+            {taxonomy.pos[wotd.pos] ?? wotd.pos}
+            {wotd.year !== undefined ? ` · born ${yearLabel(wotd.year)}` : ""} ·{" "}
+            {taxonomy.domains[wotd.domain]?.name}
+          </p>
+        </div>
+        <div className="flex min-w-0 flex-col gap-4">
+          <div className="kick border-current border-b pb-3">In plain words</div>
+          <p className="text-[19px] leading-[1.5]">{wotd.plain}</p>
+          <Link
+            href={entryPath(wotd.id)}
+            className="inline-flex min-h-11 items-center gap-2 self-start border border-current px-4 font-mono text-sm leading-none no-underline hover:bg-fam-ink hover:text-fam"
+            aria-label={`Read the entry: ${wotd.term}`}
+          >
+            Read the entry →
+          </Link>
         </div>
       </section>
 

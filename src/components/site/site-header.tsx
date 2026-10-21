@@ -1,7 +1,6 @@
 import Link from "@/components/link";
 import { SearchButton } from "@/components/search/search-button";
 import type { Dictionary } from "@/lib/dictionary";
-import { nf } from "@/lib/format";
 import { Brand } from "./brand";
 import { NavLink } from "./nav-link";
 import { RandomButton } from "./random-button";
@@ -16,12 +15,12 @@ export const SECTIONS = [
 ] as const;
 
 export function SiteHeader({ dict }: { dict: Dictionary }) {
-  const { meta, entries } = dict;
+  const { meta } = dict;
   return (
     <>
       <header className="gutter">
         <div className="wrap flex items-center justify-between gap-4 pt-4 pb-3.5 sm:pt-5 sm:pb-[18px]">
-          <Brand title={meta.title} subtitle={meta.subtitle} />
+          <Brand title={meta.title} />
           <ThemeToggle />
         </div>
       </header>
@@ -41,9 +40,6 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
             <Pipe />
             <RandomButton className="min-h-11 cursor-pointer border-0 bg-transparent px-2 font-mono text-ink text-sm hover:underline hover:underline-offset-[0.3em]" />
           </div>
-          <span className="hidden self-center whitespace-nowrap font-mono text-sm text-ink-3 lg:inline">
-            First Edition · {meta.editionDate} · {nf(entries.length)} entries
-          </span>
           <SearchButton />
         </div>
       </nav>

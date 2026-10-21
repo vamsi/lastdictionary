@@ -2,6 +2,9 @@ import type { Dictionary } from "./dictionary";
 import type { Entry } from "./schema";
 
 /** URL helpers. Entries live at the top level: lastdictionary.com/harness. */
+/** The positioning line: used in the home title, the social card and the structured data. */
+export const TAGLINE = "The dictionary of intelligence";
+
 export const entryPath = (id: string) => `/${id}`;
 export const domainPath = (code: string) => `/domain/${code}`;
 

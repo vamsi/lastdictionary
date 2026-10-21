@@ -14,7 +14,7 @@ import type {
 import type { Dictionary } from "./dictionary";
 import type { Entry } from "./schema";
 import { entryModifiedMonth, metaDescription } from "./seo";
-import { absoluteUrl, entryPath } from "./site";
+import { absoluteUrl, entryPath, TAGLINE } from "./site";
 
 /**
  * Schema.org descriptions of the site, typed so a misspelt property fails the build.
@@ -46,7 +46,7 @@ export function websiteNode(dict: Dictionary): WebSite {
     "@id": ids(dict).site,
     url: meta.url,
     name: meta.title,
-    alternateName: meta.subtitle,
+    alternateName: TAGLINE,
     description: metaDescription(meta.description),
     inLanguage: "en",
     publisher: { "@id": ids(dict).editor },
@@ -72,7 +72,7 @@ export function termSetNode(dict: Dictionary): DefinedTermSet {
     "@type": "DefinedTermSet",
     "@id": ids(dict).set,
     name: meta.title,
-    alternateName: meta.subtitle,
+    alternateName: TAGLINE,
     url: meta.url,
     description: metaDescription(meta.description),
     inLanguage: "en",

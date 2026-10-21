@@ -236,6 +236,14 @@ export function poolIndexForDate(pool: readonly string[], date: Date): number {
   return pool.length ? ((day % pool.length) + pool.length) % pool.length : 0;
 }
 
+/** The words offered under the search box: a day-seeded pick, so they rotate with each daily build. */
+export function tryWordsForDate(ids: readonly string[], date: Date, n = 6): string[] {
+  const day = Math.floor(date.getTime() / 86_400_000);
+  return [...ids]
+    .sort((a, b) => fnv1a(`${day}:${a}`) - fnv1a(`${day}:${b}`) || compareKeys(a, b))
+    .slice(0, n);
+}
+
 export interface Family {
   n: number;
   name: string;

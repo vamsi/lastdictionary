@@ -14,6 +14,7 @@ import { toDictionaryCsv, toDictionaryJson } from "../src/lib/canonical";
 import { getDictionary } from "../src/lib/dictionary";
 import { createEntrySchema } from "../src/lib/schema";
 import { buildSearchIndex } from "../src/lib/search-index";
+import { TAGLINE } from "../src/lib/site";
 
 const ROOT = process.cwd();
 const started = Date.now();
@@ -33,7 +34,7 @@ const line = (text: string, url: string, note?: string) =>
 const llms = [
   `# ${meta.title}`,
   "",
-  `> ${meta.subtitle}. ${dict.entries.length.toLocaleString("en-US")} words of AI, from Bayes' theorem to superintelligence, each defined in plain words first, then precisely, with the year it was born. ${meta.edition}. Text licensed CC BY 4.0.`,
+  `> ${TAGLINE}. ${dict.entries.length.toLocaleString("en-US")} words of AI, from Bayes' theorem to superintelligence, each defined in plain words first, then precisely, with the year it was born. ${meta.edition}. Text licensed CC BY 4.0.`,
   "",
   `Every entry has its own page at ${meta.url}<id>, with a plain-words definition, numbered senses, origin and birth year, cross-references and sources. The whole dictionary is available as JSON and CSV.`,
   "",
