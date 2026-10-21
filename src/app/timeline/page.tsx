@@ -18,9 +18,6 @@ export const metadata: Metadata = {
 
 export default function TimelinePage() {
   const dict = getDictionary();
-  const years = [
-    ...new Set(dict.entries.map((e) => e.year).filter((y): y is number => y !== undefined)),
-  ].sort((a, b) => a - b);
   return (
     <div className="wrap fade-in">
       <JsonLd
