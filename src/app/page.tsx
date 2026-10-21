@@ -45,6 +45,12 @@ export default function HomePage() {
           superintelligence. Each is explained in plain words first, then precisely, with the year
           it was born.
         </p>
+        <p className="mt-3 max-w-[720px] text-[17px] text-ink-3 leading-[1.5]">
+          Written because the language of AI moves faster than any printed book.{" "}
+          <Link href="/about#preface" className="whitespace-nowrap text-ink-2">
+            Preface →
+          </Link>
+        </p>
         <div className="mt-8 max-w-[720px]">
           <HeroSearch />
           <p className="mt-1 flex flex-wrap items-center gap-x-2 font-mono text-ink-3 text-sm">
