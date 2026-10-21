@@ -1,7 +1,7 @@
 "use client";
 
 import { Search } from "lucide-react";
-import { loadSearchIndex } from "@/lib/search-client";
+import { preloadSearch } from "@/components/search/search-root";
 import { useSearch } from "./search-provider";
 
 export function SearchButton() {
@@ -9,8 +9,8 @@ export function SearchButton() {
   return (
     <button
       type="button"
-      onClick={openSearch}
-      onPointerEnter={() => void loadSearchIndex()}
+      onClick={() => openSearch()}
+      onPointerEnter={preloadSearch}
       aria-label="Search the dictionary"
       className="flex shrink-0 cursor-pointer items-center gap-2.5 border-0 bg-ink px-3.5 font-mono text-sm text-paper hover:opacity-[0.88] sm:px-4"
     >

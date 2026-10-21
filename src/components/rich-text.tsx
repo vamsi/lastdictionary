@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
+import Link from "@/components/link";
 import type { Dictionary } from "@/lib/dictionary";
 import { yearLabel } from "@/lib/format";
 import { parseRich } from "@/lib/links";

@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import Link from "@/components/link";
 
 /** A section link that marks itself current for its own page and the pages beneath it. */
 export function NavLink({ href, children }: { href: string; children: ReactNode }) {

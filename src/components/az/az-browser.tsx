@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { type ReactNode, useEffect, useState } from "react";
+import Link from "@/components/link";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useStarred } from "@/hooks/use-local-list";
 import { nf } from "@/lib/format";

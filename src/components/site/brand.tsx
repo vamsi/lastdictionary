@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 
 export function Brand({
   title,
@@ -22,9 +22,7 @@ export function Brand({
         >
           {title}
         </b>
-        <i className="font-medium text-[14.5px] text-ink-2 leading-[1.3] sm:text-[15.5px]">
-          {subtitle}.
-        </i>
+        <i className="text-[14.5px] text-ink-2 leading-[1.3] sm:text-[15.5px]">{subtitle}.</i>
       </span>
     </Link>
   );

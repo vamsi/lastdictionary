@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { AzBrowser } from "@/components/az/az-browser";
 import { letterPath } from "@/components/az/letters";
+import { JsonLd } from "@/components/json-ld";
 import { PageHeader } from "@/components/page-header";
 import { levelRank } from "@/lib/derive";
 import { getDictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";
+import { breadcrumbs, pageGraph, webPageNode } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "A–Z",
@@ -27,6 +29,19 @@ export default function AzPage() {
   }
   return (
     <div className="wrap">
+      <JsonLd
+        data={pageGraph(
+          dict,
+          webPageNode(dict, {
+            path: "/a-z",
+            name: "A–Z",
+            description:
+              "Every headword in The Last Dictionary, letter by letter, with other names pointing to their entries.",
+            type: "CollectionPage",
+            breadcrumb: breadcrumbs(dict, [{ name: "A–Z", path: "/a-z" }]),
+          }),
+        )}
+      />
       <PageHeader kicker="Every headword" title="A–Z" className="mb-0 border-b-0 pb-5">
         All {nf(dict.entries.length)} entries, letter by letter. Other names point to their entry.
         Or filter every word by level, label or domain.

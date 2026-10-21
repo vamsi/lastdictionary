@@ -1,6 +1,6 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { letterPath } from "@/components/az/letters";
+import Link from "@/components/link";
 import { EntryLink, RichText } from "@/components/rich-text";
 import { familyOfDomain, levelRank } from "@/lib/derive";
 import type { Dictionary } from "@/lib/dictionary";
@@ -48,6 +48,9 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
     ) : null;
 
   const single = entry.senses.length === 1;
+  // On the About page the specimen sits under the page's own headings.
+  const Headword = annotated ? "p" : "h1";
+  const blockLevel = annotated ? "h3" : "h2";
   const isOrg = entry.domain === "orgs";
 
   return (
@@ -58,7 +61,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
       >
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2.5">
           <div className="kick flex flex-wrap items-baseline border-current border-b pb-[9px]">
-            <Link href={domainPath(entry.domain)} className="link-quiet">
+            <Link href={domainPath(entry.domain)} className="link-quiet -my-1 py-1">
               {taxonomy.domains[entry.domain]?.name}
             </Link>
             {(entry.domains ?? []).map((d) => (
@@ -66,7 +69,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
                 <span className="mx-2.5 opacity-55" aria-hidden="true">
                   /
                 </span>
-                <Link href={domainPath(d)} className="link-quiet">
+                <Link href={domainPath(d)} className="link-quiet -my-1 py-1">
                   {taxonomy.domains[d]?.name ?? d}
                 </Link>
               </span>
@@ -81,12 +84,12 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
             </div>
           ) : null}
         </div>
-        <h1
+        <Headword
           className={`${annotated ? "my-4 mb-4 text-[52px]" : "mt-[26px] mb-5 text-[clamp(44px,7vw,86px)]"} leading-none tracking-[-0.022em] [overflow-wrap:anywhere]`}
         >
           {entry.term}
           {A(1)}
-        </h1>
+        </Headword>
         <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1.5 border-current border-b pb-5 font-mono text-[15px] leading-normal">
           <span className="italic" title={entry.pos}>
             {taxonomy.pos[entry.pos] ?? entry.pos}
@@ -250,21 +253,21 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
           )}
 
           {entry.origin && (
-            <Block title={<>Origin{A(8)}</>}>
+            <Block level={blockLevel} title={<>Origin{A(8)}</>}>
               <p>
                 <RichText dict={dict} text={entry.origin} />
               </p>
             </Block>
           )}
           {entry.note && (
-            <Block title={<>Usage note{A(9)}</>}>
+            <Block level={blockLevel} title={<>Usage note{A(9)}</>}>
               <p>
                 <RichText dict={dict} text={entry.note} />
               </p>
             </Block>
           )}
           {(seeAlso.length > 0 || contrast.length > 0) && (
-            <Block title="Related">
+            <Block level={blockLevel} title="Related">
               <div className="grid gap-3.5">
                 {seeAlso.length > 0 && (
                   <RelatedRow dict={dict} label={<>See also{A(10)}</>} ids={seeAlso} />
@@ -276,7 +279,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
             </Block>
           )}
           {entry.sources?.length ? (
-            <Block title={<>Sources{A(11)}</>}>
+            <Block level={blockLevel} title={<>Sources{A(11)}</>}>
               <ol className="m-0 grid list-decimal gap-2 pl-[1.4em] text-[16px] text-ink-2">
                 {entry.sources.map((s) => (
                   <li key={s.text}>
@@ -300,14 +303,14 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
             </Block>
           ) : null}
           {entry.standards && (
-            <Block title={<>Defined in law or standards{A(12)}</>}>
+            <Block level={blockLevel} title={<>Defined in law or standards{A(12)}</>}>
               <p>
                 <RichText dict={dict} text={entry.standards} />
               </p>
             </Block>
           )}
           {!annotated && backlinks.length > 0 && (
-            <Block title="Mentioned in">
+            <Block level={blockLevel} title="Mentioned in">
               <p className="text-[16.5px] text-ink-2 leading-[1.7]">
                 {backlinks.map((id, i) => (
                   <span key={id}>
@@ -388,12 +391,21 @@ function SideBox({ label, children }: { label: ReactNode; children: ReactNode })
   );
 }
 
-function Block({ title, children }: { title: ReactNode; children: ReactNode }) {
+function Block({
+  title,
+  children,
+  level = "h2",
+}: {
+  title: ReactNode;
+  children: ReactNode;
+  level?: "h2" | "h3";
+}) {
+  const H = level;
   return (
     <section className="mt-[46px]">
-      <h2 className="mb-3.5 border-line border-b pb-[9px] font-mono font-normal text-ink-2 text-sm">
+      <H className="mb-3.5 border-line border-b pb-[9px] font-mono font-normal text-ink-2 text-sm">
         {title}
-      </h2>
+      </H>
       {children}
     </section>
   );

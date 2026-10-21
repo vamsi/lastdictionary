@@ -1,13 +1,15 @@
-import Link from "next/link";
 import { DecadeChart } from "@/components/decade-chart";
 import { JsonLd } from "@/components/json-ld";
+import Link from "@/components/link";
 import { EntryLink } from "@/components/rich-text";
+import { SearchQueryParam } from "@/components/search/search-query-param";
 import { HashRedirect } from "@/components/site/hash-redirect";
 import { HeroSearch } from "@/components/site/hero-search";
 import { familyOfDomain, poolIndexForDate } from "@/lib/derive";
 import { getDictionary } from "@/lib/dictionary";
 import { nf, ordinalDate, yearLabel } from "@/lib/format";
 import { domainPath, entryPath } from "@/lib/site";
+import { datasetNode, pageGraph, termSetNode, webPageNode } from "@/lib/structured-data";
 
 export default function HomePage() {
   const dict = getDictionary();
@@ -20,22 +22,19 @@ export default function HomePage() {
   return (
     <div className="wrap fade-in">
       <HashRedirect />
+      <SearchQueryParam />
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "DefinedTermSet",
-          name: meta.title,
-          alternateName: meta.subtitle,
-          url: meta.url,
-          inLanguage: "en",
-          description: meta.description,
-          datePublished: meta.datePublished,
-          numberOfItems: entries.length,
-          editor: { "@type": "Person", name: meta.editor },
-          license: "https://creativecommons.org/licenses/by/4.0/",
-        }}
+        data={pageGraph(
+          dict,
+          termSetNode(dict),
+          datasetNode(dict),
+          webPageNode(dict, {
+            path: "/",
+            name: `${meta.title} · ${meta.subtitle}`,
+            description: meta.description,
+          }),
+        )}
       />
-
       <section className="pb-2">
         <div className="kick flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-line border-b pb-3">
           <span>
@@ -47,7 +46,7 @@ export default function HomePage() {
           </span>
         </div>
         <h1 className="mt-7 max-w-[11em] text-[clamp(56px,10.5vw,136px)] leading-[0.94] tracking-[-0.03em] md:mt-9">
-          Intelligence, <em className="font-medium">defined.</em>
+          Intelligence, <em>defined.</em>
         </h1>
         <div className="mt-9 grid items-start gap-9 md:mt-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-12 lg:gap-16">
           <div className="flex min-w-0 flex-col gap-6">

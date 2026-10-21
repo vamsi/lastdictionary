@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/link";
 import { PageHeader } from "@/components/page-header";
 import { getDictionary } from "@/lib/dictionary";
 import { entryPath } from "@/lib/site";

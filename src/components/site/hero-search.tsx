@@ -2,15 +2,15 @@
 
 import { Search } from "lucide-react";
 import { useSearch } from "@/components/search/search-provider";
-import { loadSearchIndex } from "@/lib/search-client";
+import { preloadSearch } from "@/components/search/search-root";
 
 export function HeroSearch() {
   const { openSearch } = useSearch();
   return (
     <button
       type="button"
-      onClick={openSearch}
-      onPointerEnter={() => void loadSearchIndex()}
+      onClick={() => openSearch()}
+      onPointerEnter={preloadSearch}
       aria-label="Look up a word"
       className="flex h-16 w-full cursor-text items-stretch border border-line bg-paper p-0 text-left shadow-[0_1px_0_var(--line)] hover:shadow-[0_2px_0_var(--line)]"
     >

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { EntryArticle } from "@/components/entry/entry-article";
+import { JsonLd } from "@/components/json-ld";
+import Link from "@/components/link";
 import { PageHeader } from "@/components/page-header";
 import { getDictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";
 import { citation, domainPath, entryPath } from "@/lib/site";
+import { breadcrumbs, pageGraph, webPageNode } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "About",
@@ -111,6 +113,19 @@ export default function AboutPage() {
   const count = nf(entries.length);
   return (
     <div className="wrap fade-in">
+      <JsonLd
+        data={pageGraph(
+          dict,
+          webPageNode(dict, {
+            path: "/about",
+            name: "About this dictionary",
+            description:
+              "What The Last Dictionary is, how to read an entry, and how the edition was made.",
+            type: "AboutPage",
+            breadcrumb: breadcrumbs(dict, [{ name: "About this dictionary", path: "/about" }]),
+          }),
+        )}
+      />
       <PageHeader kicker="Front matter · First Edition" title="About this dictionary">
         What it is, how to read an entry, and how the edition was made.
       </PageHeader>

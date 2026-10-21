@@ -1,28 +1,68 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Mono, Newsreader } from "next/font/google";
-import { SearchPalette } from "@/components/search/search-palette";
+import localFont from "next/font/local";
 import { SearchProvider } from "@/components/search/search-provider";
+import { SearchRoot } from "@/components/search/search-root";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { ThemeProvider } from "@/components/site/theme-provider";
 import { Toaster } from "@/components/site/toast";
 import { getDictionary } from "@/lib/dictionary";
+import { metaDescription } from "@/lib/seo";
 import "./globals.css";
 
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  axes: ["opsz"],
-  style: ["normal", "italic"],
+// Static weights of the two faces, self-hosted from the @fontsource packages: 140 KB in all,
+// against 440 KB for the variable fonts, which is what the largest-contentful-paint budget allows.
+
+const newsreader = localFont({
+  src: [
+    {
+      path: "../../node_modules/@fontsource/newsreader/files/newsreader-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/@fontsource/newsreader/files/newsreader-latin-400-italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../../node_modules/@fontsource/newsreader/files/newsreader-latin-600-normal.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/@fontsource/newsreader/files/newsreader-latin-600-italic.woff2",
+      weight: "600",
+      style: "italic",
+    },
+  ],
   display: "swap",
   variable: "--font-newsreader",
+  adjustFontFallback: "Times New Roman",
 });
 
-const dmMono = DM_Mono({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
+const dmMono = localFont({
+  src: [
+    {
+      path: "../../node_modules/@fontsource/dm-mono/files/dm-mono-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/@fontsource/dm-mono/files/dm-mono-latin-400-italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../../node_modules/@fontsource/dm-mono/files/dm-mono-latin-500-normal.woff2",
+      weight: "500",
+      style: "normal",
+    },
+  ],
   display: "swap",
   variable: "--font-dm-mono",
+  preload: false,
+  adjustFontFallback: false,
 });
 
 const dict = getDictionary();
@@ -33,18 +73,30 @@ export const metadata: Metadata = {
     default: `${dict.meta.title} · ${dict.meta.subtitle}`,
     template: `%s · ${dict.meta.title}`,
   },
-  description: dict.meta.description,
+  description: metaDescription(dict.meta.description),
   openGraph: {
     type: "website",
+    locale: "en_US",
     siteName: dict.meta.title,
     title: dict.meta.title,
-    description: dict.meta.description,
+    description: metaDescription(dict.meta.description),
     url: "/",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: { card: "summary_large_image" },
   icons: { icon: { url: "/favicon.svg", type: "image/svg+xml" } },
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", types: { "application/json": "/data/dictionary.json" } },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export const viewport: Viewport = {
@@ -76,7 +128,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               {children}
             </main>
             <SiteFooter dict={dict} />
-            <SearchPalette
+            <SearchRoot
               domainNames={Object.fromEntries(
                 Object.entries(dict.taxonomy.domains).map(([k, v]) => [k, v.name]),
               )}

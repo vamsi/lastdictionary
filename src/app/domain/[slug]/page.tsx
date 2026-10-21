@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/json-ld";
+import Link from "@/components/link";
 import { PageHeader, SectionHeading } from "@/components/page-header";
 import { WordList } from "@/components/word-list";
 import { familyOfDomain, levelRank } from "@/lib/derive";
 import { getDictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";
+import { metaDescription } from "@/lib/seo";
 import { domainPath } from "@/lib/site";
+import { breadcrumbs, itemListNode, pageGraph, webPageNode } from "@/lib/structured-data";
 
 export const dynamicParams = false;
 
@@ -16,13 +19,19 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/domain/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const domain = getDictionary().taxonomy.domains[slug];
+  const dict = getDictionary();
+  const domain = dict.taxonomy.domains[slug];
   if (!domain) return {};
+  const home = dict.entries.filter((e) => e.domain === slug).length;
+  const near = dict.entries.filter((e) => e.domain !== slug && e.domains?.includes(slug)).length;
+  const description = metaDescription(
+    `${domain.desc} ${nf(home)} entries live here, and ${nf(near)} from other domains touch it.`,
+  );
   return {
-    title: domain.name,
-    description: domain.desc,
+    title: `${domain.name}: AI terms`,
+    description,
     alternates: { canonical: domainPath(slug) },
-    openGraph: { title: domain.name, description: domain.desc, url: domainPath(slug) },
+    openGraph: { title: domain.name, description, url: domainPath(slug) },
   };
 }
 
@@ -38,6 +47,25 @@ export default async function DomainPage({ params }: PageProps<"/domain/[slug]">
   const rest = home.filter((e) => levelRank(dict.taxonomy, e.level) !== 1).map((e) => e.id);
   return (
     <div className={`wrap fam-${family.n}`}>
+      <JsonLd
+        data={pageGraph(
+          dict,
+          webPageNode(dict, {
+            path: domainPath(slug),
+            name: domain.name,
+            description: domain.desc,
+            type: "CollectionPage",
+            breadcrumb: breadcrumbs(dict, [
+              { name: "Contents", path: "/contents" },
+              { name: domain.name, path: domainPath(slug) },
+            ]),
+            mainEntity: itemListNode(
+              dict,
+              home.map((e) => e.id),
+            ),
+          }),
+        )}
+      />
       <PageHeader
         panel
         kicker={

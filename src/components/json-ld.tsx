@@ -1,5 +1,7 @@
-/** Structured data for search engines. The payload is our own JSON, never user HTML. */
-export function JsonLd({ data }: { data: Record<string, unknown> }) {
+import type { Graph, Thing, WithContext } from "schema-dts";
+
+/** Structured data for search and answer engines. The payload is our own JSON, never user HTML. */
+export function JsonLd({ data }: { data: Graph | WithContext<Thing> }) {
   return (
     <script
       type="application/ld+json"

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { DecadeChart } from "@/components/decade-chart";
+import { JsonLd } from "@/components/json-ld";
 import { PageHeader } from "@/components/page-header";
 import { FIRST_DECADE, levelRank } from "@/lib/derive";
 import { getDictionary } from "@/lib/dictionary";
 import { yearLabel } from "@/lib/format";
 import type { Entry } from "@/lib/schema";
 import { entryPath } from "@/lib/site";
+import { breadcrumbs, pageGraph, webPageNode } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Timeline",
@@ -33,6 +35,19 @@ export default function TimelinePage() {
   }
   return (
     <div className="wrap fade-in">
+      <JsonLd
+        data={pageGraph(
+          dict,
+          webPageNode(dict, {
+            path: "/timeline",
+            name: "Timeline",
+            description:
+              "The history of AI told through the birth years of its words, from 1591 to today.",
+            type: "WebPage",
+            breadcrumb: breadcrumbs(dict, [{ name: "Timeline", path: "/timeline" }]),
+          }),
+        )}
+      />
       <PageHeader kicker={`${dict.years.min}–${dict.years.max}`} title="Timeline">
         The history of AI told through the birth years of its words. Each word sits under the year
         it was first used in the sense this dictionary defines.

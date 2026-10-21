@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
+import Link from "@/components/link";
 import { PageHeader } from "@/components/page-header";
 import { getDictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";
 import { domainPath } from "@/lib/site";
+import { breadcrumbs, pageGraph, webPageNode } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Contents",
@@ -17,6 +19,19 @@ export default function ContentsPage() {
   const domainCount = Object.keys(dict.taxonomy.domains).length;
   return (
     <div className="wrap fade-in">
+      <JsonLd
+        data={pageGraph(
+          dict,
+          webPageNode(dict, {
+            path: "/contents",
+            name: "Contents",
+            description:
+              "Seven families of words, each divided into domains: the map of The Last Dictionary.",
+            type: "CollectionPage",
+            breadcrumb: breadcrumbs(dict, [{ name: "Contents", path: "/contents" }]),
+          }),
+        )}
+      />
       <PageHeader
         kicker={`${nf(dict.entries.length)} entries · ${domainCount} domains`}
         title="Contents"

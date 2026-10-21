@@ -101,6 +101,10 @@ data/               the dictionary (see above)
 public/             favicon, social image; generated files land here at build and are git-ignored
 ```
 
+## Search engines and answer engines
+
+Every page is static HTML with a canonical URL, a title and description written for the snippet, Open Graph and Twitter cards (each entry has a generated card), and a typed Schema.org graph: `WebSite` with a `SearchAction` (`/?q=word` opens the search with the word typed), `DefinedTerm` and breadcrumbs on entries, `CollectionPage` lists on domain and letter pages, and a `Dataset` describing the downloads. `sitemap.xml` and `robots.txt` are generated; `llms.txt` and `llms-full.txt` give AI crawlers a map of the site and every definition. Security headers and cache rules live in `vercel.json`. `pnpm build` then Lighthouse on `out/` is the check: 100 in every category on desktop and, with CDN-like latency, on mobile.
+
 ## License
 
 Code: [MIT](LICENSE). Dictionary text: [CC BY 4.0](data/LICENSE). Cite an entry as:

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { SearchButton } from "@/components/search/search-button";
 import type { Dictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";

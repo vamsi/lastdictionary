@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import { EntryArticle } from "@/components/entry/entry-article";
 import { JsonLd } from "@/components/json-ld";
 import { getDictionary } from "@/lib/dictionary";
-import { absoluteUrl, domainPath, entryPath } from "@/lib/site";
+import { entryModifiedMonth, entryTitleMetadata, metaDescription } from "@/lib/seo";
+import { domainPath, entryPath } from "@/lib/site";
+import { entryGraph } from "@/lib/structured-data";
 
 export const dynamicParams = false;
 
@@ -16,20 +18,23 @@ export async function generateMetadata({ params }: PageProps<"/[slug]">): Promis
   const dict = getDictionary();
   const entry = dict.byId.get(slug);
   if (!entry) return {};
-  const title = entry.term;
-  const description = entry.plain;
+  const description = metaDescription(entry.plain);
   return {
-    title,
+    title: entryTitleMetadata(entry),
     description,
     alternates: { canonical: entryPath(entry.id) },
     openGraph: {
       type: "article",
-      title,
+      title: entry.term,
       description,
       url: entryPath(entry.id),
       siteName: dict.meta.title,
+      locale: "en_US",
+      publishedTime: dict.meta.datePublished,
+      modifiedTime: entryModifiedMonth(dict, entry),
+      section: dict.taxonomy.domains[entry.domain]?.name,
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title: entry.term, description },
   };
 }
 
@@ -42,41 +47,7 @@ export default async function EntryPage({ params }: PageProps<"/[slug]">) {
   return (
     <div className="wrap">
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "DefinedTerm",
-          name: entry.term,
-          alternateName: entry.also ?? [],
-          description: entry.plain,
-          termCode: entry.id,
-          url: absoluteUrl(dict, entryPath(entry.id)),
-          inDefinedTermSet: {
-            "@type": "DefinedTermSet",
-            name: dict.meta.title,
-            url: dict.meta.url,
-          },
-        }}
-      />
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: dict.meta.title, item: dict.meta.url },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: domain?.name ?? entry.domain,
-              item: absoluteUrl(dict, domainPath(entry.domain)),
-            },
-            {
-              "@type": "ListItem",
-              position: 3,
-              name: entry.term,
-              item: absoluteUrl(dict, entryPath(entry.id)),
-            },
-          ],
-        }}
+        data={entryGraph(dict, entry, domain?.name ?? entry.domain, domainPath(entry.domain))}
       />
       <EntryArticle dict={dict} entry={entry} />
     </div>

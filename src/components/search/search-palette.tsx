@@ -1,9 +1,9 @@
 "use client";
 
 import { Search } from "lucide-react";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { type KeyboardEvent, useEffect, useId, useRef, useState } from "react";
+import Link from "@/components/link";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { RECENT_KEY, useLocalList } from "@/hooks/use-local-list";
 import { nf } from "@/lib/format";
@@ -33,7 +33,7 @@ function Highlight({ text, query }: { text: string; query: string }) {
 
 /** The look-up dialog: opens with `/` or ⌘K, searches as you type, arrows to move, enter to open. */
 export function SearchPalette({ domainNames, tryWords, total }: Props) {
-  const { open, setOpen } = useSearch();
+  const { open, setOpen, takeRequestedQuery } = useSearch();
   const router = useRouter();
   const pathname = usePathname();
   const [query, setQuery] = useState("");
@@ -44,32 +44,16 @@ export function SearchPalette({ domainNames, tryWords, total }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const listId = useId();
 
-  // Global shortcuts.
-  useEffect(() => {
-    const onKey = (ev: globalThis.KeyboardEvent) => {
-      if ((ev.key === "k" || ev.key === "K") && (ev.metaKey || ev.ctrlKey)) {
-        ev.preventDefault();
-        setOpen(!open);
-        return;
-      }
-      if (open || ev.metaKey || ev.ctrlKey || ev.altKey) return;
-      const el = document.activeElement as HTMLElement | null;
-      const typing = el && (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable);
-      if (ev.key === "/" && !typing) {
-        ev.preventDefault();
-        setOpen(true);
-      }
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [open, setOpen]);
-
-  // Load the index when the dialog first opens; reset the query each time.
+  // When the dialog opens, start from the query the opener asked for (usually none).
   useEffect(() => {
     if (!open) return;
-    setQuery("");
+    setQuery(takeRequestedQuery());
     setSelected(0);
-    if (!index) {
+  }, [open, takeRequestedQuery]);
+
+  // Load the index the first time the dialog opens.
+  useEffect(() => {
+    if (open && !index) {
       loadSearchIndex()
         .then(setIndex)
         .catch(() => setFailed(true));

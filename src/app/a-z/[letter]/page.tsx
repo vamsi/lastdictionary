@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LetterBar } from "@/components/az/az-browser";
 import { letterFromSlug, letterPath, letterSlug } from "@/components/az/letters";
+import { JsonLd } from "@/components/json-ld";
 import { PageHeader } from "@/components/page-header";
 import { getDictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";
 import { entryPath } from "@/lib/site";
+import { breadcrumbs, itemListNode, pageGraph, webPageNode } from "@/lib/structured-data";
 
 export const dynamicParams = false;
 
@@ -40,6 +42,25 @@ export default async function LetterPage({ params }: PageProps<"/a-z/[letter]">)
   const words = rows.filter((r) => !r.redirect).length;
   return (
     <div className="wrap">
+      <JsonLd
+        data={pageGraph(
+          dict,
+          webPageNode(dict, {
+            path: letterPath(l),
+            name: l === "#" ? "A–Z: words starting with a digit" : `A–Z: ${l}`,
+            description: `Every headword in The Last Dictionary filed under ${l === "#" ? "a digit" : l}.`,
+            type: "CollectionPage",
+            breadcrumb: breadcrumbs(dict, [
+              { name: "A–Z", path: "/a-z" },
+              { name: l === "#" ? "0–9" : l, path: letterPath(l) },
+            ]),
+            mainEntity: itemListNode(
+              dict,
+              rows.filter((r) => !r.redirect).map((r) => r.id),
+            ),
+          }),
+        )}
+      />
       <PageHeader kicker="A–Z" title={l === "#" ? "0–9" : l} className="mb-0 border-b-0 pb-5">
         {nf(words)} {words === 1 ? "word" : "words"}
         {rows.length - words
