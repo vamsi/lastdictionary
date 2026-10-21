@@ -1,5 +1,6 @@
 import type { Decade } from "@/lib/derive";
 import { nf } from "@/lib/format";
+import { decadePath } from "./timeline/decades";
 
 /** Bars of words born per decade. Each bar links into the timeline. */
 export function DecadeChart({
@@ -47,10 +48,9 @@ export function DecadeChart({
           const x = padL + i * bw + 3;
           const h = Math.max(0, H - padB - y(d.n));
           const w = Math.max(2, bw - 6);
-          const anchor = d.pre ? "before" : d.label;
           return (
             <g key={d.label}>
-              <a href={`/timeline#dec-${anchor}`} className="group">
+              <a href={decadePath(d)} className="group">
                 <rect
                   x={x}
                   y={y(d.n)}

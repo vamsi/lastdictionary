@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { letterPath } from "@/components/az/letters";
 import Link from "@/components/link";
 import { EntryLink, RichText } from "@/components/rich-text";
+import { yearPath } from "@/components/timeline/decades";
 import { familyOfDomain, levelRank } from "@/lib/derive";
 import type { Dictionary } from "@/lib/dictionary";
 import { monthLabel, nf, yearLabel } from "@/lib/format";
@@ -136,7 +137,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
             >
               {entry.year !== undefined ? (
                 <Link
-                  href={`/timeline#y${entry.year}`}
+                  href={yearPath(dict.decades, entry.year)}
                   className="link-quiet font-serif font-semibold text-[46px] leading-none tracking-[-0.02em] tabular-nums hover:decoration-2"
                 >
                   {yearLabel(entry.year)}

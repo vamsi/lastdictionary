@@ -40,7 +40,11 @@ const llms = [
   "## Browse",
   line("Contents", `${meta.url}contents`, "seven families of words, each divided into domains"),
   line("A–Z", `${meta.url}a-z`, "every headword, letter by letter"),
-  line("Timeline", `${meta.url}timeline`, "words by the year they were born"),
+  line(
+    "Timeline",
+    `${meta.url}timeline`,
+    "words by the year they were born, with a page per decade",
+  ),
   line(
     "Essentials",
     `${meta.url}essentials`,
