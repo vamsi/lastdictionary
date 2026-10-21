@@ -18,7 +18,7 @@ export default function HomePage() {
   const wotd = dict.byId.get(dict.pool[poolIndexForDate(dict.pool, today)] ?? "") ?? entries[0];
   if (!wotd) throw new Error("no entries");
   const wotdFamily = familyOfDomain(taxonomy, wotd.domain);
-  const tryWords = tryWordsForDate(dict.essentialsByReference, today);
+  const tryWords = tryWordsForDate(dict.essentialsByReference, today, 5);
 
   return (
     <div className="wrap fade-in">
@@ -36,61 +36,34 @@ export default function HomePage() {
           }),
         )}
       />
-      <section className="pb-2">
-        <p className="kick border-line border-b pb-3">
-          First Edition · <b>{meta.editionDate}</b>
-        </p>
-        <h1 className="mt-7 max-w-[9.2em] text-[clamp(40px,8.2vw,108px)] leading-[0.96] tracking-[-0.03em] [overflow-wrap:anywhere] md:mt-8">
+      <section className="pt-8 md:pt-12">
+        <h1 className="max-w-[9.2em] text-[clamp(44px,10.5vw,84px)] leading-[0.96] tracking-[-0.03em] [overflow-wrap:anywhere] md:max-w-none md:text-[min(7.4vw,92px)]">
           The dictionary of&nbsp;<em>intelligence.</em>
         </h1>
-        <div className="mt-9 grid items-start gap-10 md:mt-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-12 lg:gap-20">
-          <div className="flex min-w-0 flex-col gap-6">
-            <p className="max-w-[22em] text-[clamp(21px,2.1vw,27px)] leading-[1.45]">
-              Every word of artificial intelligence: defined, dated, cross-linked and sourced.
-            </p>
-            <p className="max-w-[36em] text-[17.5px] text-ink-2 leading-[1.6]">
-              The language of AI moves faster than any printed book, and no glossary covered the
-              whole field, from statistics to agents, safety, law and slang, with an origin for
-              every term. That gap is why this dictionary exists.{" "}
-              <Link href="/about#preface" className="whitespace-nowrap text-ink">
-                Preface →
+        <p className="mt-7 max-w-[30em] text-[clamp(19px,1.9vw,23px)] text-ink-2 leading-[1.5] md:mt-8">
+          {nf(entries.length)} words about minds and machines, from Bayes’ theorem to
+          superintelligence. Each is explained in plain words first, then precisely, with the year
+          it was born.
+        </p>
+        <div className="mt-8 max-w-[720px]">
+          <HeroSearch />
+          <p className="mt-1 flex flex-wrap items-center gap-x-2 font-mono text-ink-3 text-sm">
+            <span className="mr-2">Try</span>
+            {tryWords.map((id) => (
+              <Link
+                key={id}
+                href={entryPath(id)}
+                className="inline-flex min-h-11 min-w-11 items-center justify-center px-2 text-ink"
+              >
+                {dict.byId.get(id)?.term}
               </Link>
-            </p>
-            <div className="flex flex-col gap-1">
-              <HeroSearch />
-              <p className="flex flex-wrap items-center gap-x-4 font-mono text-ink-3 text-sm">
-                <span>Try</span>
-                {tryWords.map((id) => (
-                  <Link
-                    key={id}
-                    href={entryPath(id)}
-                    className="inline-flex min-h-11 min-w-11 items-center text-ink"
-                  >
-                    {dict.byId.get(id)?.term}
-                  </Link>
-                ))}
-              </p>
-            </div>
-          </div>
-          <div className="border-line border-t pt-5 md:mt-1">
-            <p className="text-[19px] leading-[1.5]">
-              {nf(entries.length)} words about minds and machines, from Bayes’ theorem to
-              superintelligence, in {Object.keys(taxonomy.domains).length} domains. Each is
-              explained in plain words first, then precisely, with the year it was born, from{" "}
-              {dict.years.min} to {dict.years.max}.
-            </p>
-            <Link
-              href="/about#read"
-              className="kick mt-4 inline-flex min-h-11 items-center text-ink-2 no-underline hover:text-ink hover:underline"
-            >
-              How to read an entry →
-            </Link>
-          </div>
+            ))}
+          </p>
         </div>
       </section>
 
       <section
-        className={`fam-${wotdFamily.n} mt-14 grid gap-x-10 gap-y-5 bg-fam px-5 py-6 text-fam-ink sm:px-8 sm:py-7 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]`}
+        className={`fam-${wotdFamily.n} mt-12 grid gap-x-10 gap-y-5 bg-fam px-5 py-6 text-fam-ink sm:px-8 sm:py-7 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]`}
         aria-labelledby="wotd-heading"
       >
         <div className="min-w-0">
