@@ -8,6 +8,16 @@ export const TAGLINE = "The dictionary of intelligence";
 /** The name as the masthead sets it. The formal title, "The Last Dictionary", stays in the data, titles and citations. */
 export const WORDMARK = "Last Dictionary";
 
+/** The sponsor, shown in the masthead, the footer, the About page and the structured data. */
+export const SPONSOR = {
+  name: "Plane",
+  url: "https://plane.so/",
+  tagline: "The work infrastructure for humans and agents",
+  pillars: ["Projects", "Knowledge", "Service"],
+  /** The tagline as it reads mid-sentence. */
+  blurb: "the work infrastructure for humans and agents: Projects, Knowledge and Service",
+} as const;
+
 export const entryPath = (id: string) => `/${id}`;
 export const domainPath = (code: string) => `/domain/${code}`;
 

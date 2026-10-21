@@ -5,6 +5,7 @@ import type {
   DefinedTermSet,
   Graph,
   ItemList,
+  Organization,
   Person,
   SearchAction,
   Thing,
@@ -14,7 +15,7 @@ import type {
 import type { Dictionary } from "./dictionary";
 import type { Entry } from "./schema";
 import { entryModifiedMonth, metaDescription } from "./seo";
-import { absoluteUrl, entryPath, TAGLINE } from "./site";
+import { absoluteUrl, entryPath, SPONSOR, TAGLINE } from "./site";
 
 /**
  * Schema.org descriptions of the site, typed so a misspelt property fails the build.
@@ -51,7 +52,12 @@ export function websiteNode(dict: Dictionary): WebSite {
     inLanguage: "en",
     publisher: { "@id": ids(dict).editor },
     potentialAction: searchAction(dict),
+    sponsor: sponsorNode(),
   };
+}
+
+function sponsorNode(): Organization {
+  return { "@type": "Organization", name: SPONSOR.name, url: SPONSOR.url };
 }
 
 /** schema-dts omits SearchAction's `query-input`, which Google requires for a sitelinks search box. */
@@ -96,6 +102,7 @@ export function datasetNode(dict: Dictionary): Dataset {
     license: LICENSE,
     isAccessibleForFree: true,
     creator: { "@id": ids(dict).editor },
+    sponsor: sponsorNode(),
     version: meta.edition,
     dateModified: meta.datePublished,
     keywords: [

@@ -4,6 +4,10 @@
 
 Live site: **https://lastdictionary.com**
 
+Sponsored by **[Plane](https://plane.so)**, the work infrastructure for humans and agents: Projects, Knowledge and Service.
+
+<a href="https://plane.so"><picture><source media="(prefers-color-scheme: dark)" srcset="public/sponsors/plane-light.svg"><img src="public/sponsors/plane.svg" alt="Plane" height="28"></picture></a>
+
 Every entry is one small YAML file in [`data/entries/`](data/entries). Fixing a definition or adding a word is a one-file pull request. The site is built from those files into plain static pages.
 
 ## Browse

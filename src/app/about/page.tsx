@@ -4,9 +4,10 @@ import { EntryArticle } from "@/components/entry/entry-article";
 import { JsonLd } from "@/components/json-ld";
 import Link from "@/components/link";
 import { PageHeader } from "@/components/page-header";
+import { PlaneLogo } from "@/components/site/plane";
 import { getDictionary } from "@/lib/dictionary";
 import { nf } from "@/lib/format";
-import { citation, domainPath, entryPath } from "@/lib/site";
+import { citation, domainPath, entryPath, SPONSOR } from "@/lib/site";
 import { breadcrumbs, pageGraph, webPageNode } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ const SECTIONS = [
   ["principles", "Editorial principles"],
   ["lineage", "Lineage"],
   ["edition", "Edition and citation"],
+  ["sponsor", "Sponsor"],
   ["contribute", "Contribute"],
 ] as const;
 
@@ -405,6 +407,24 @@ export default function AboutPage() {
             tokenizer through the gpt-tokenizer library. Formulas are rendered as MathML with KaTeX.
             The site is built with Next.js into plain static pages, one per word.
           </p>
+
+          <h2 id="sponsor">Sponsor</h2>
+          <p>
+            <i>The Last Dictionary</i> is sponsored by{" "}
+            <a href={SPONSOR.url} rel="sponsored noopener">
+              {SPONSOR.name}
+            </a>
+            , {SPONSOR.blurb}. The dictionary stays free to read, free to download and open to
+            correction.
+          </p>
+          <a
+            href={SPONSOR.url}
+            rel="sponsored noopener"
+            className="inline-flex min-h-11 w-fit items-center no-underline"
+            aria-label={`${SPONSOR.name}, sponsor of The Last Dictionary`}
+          >
+            <PlaneLogo className="h-8 w-auto text-ink" />
+          </a>
 
           <h2 id="contribute">Contribute</h2>
           <p>

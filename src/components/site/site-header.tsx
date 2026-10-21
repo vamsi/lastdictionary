@@ -4,6 +4,7 @@ import { WORDMARK } from "@/lib/site";
 import { Brand } from "./brand";
 import { NavLink } from "./nav-link";
 import { RandomButton } from "./random-button";
+import { SponsorMark } from "./sponsor";
 import { ThemeToggle } from "./theme-toggle";
 
 export const SECTIONS = [
@@ -20,7 +21,10 @@ export function SiteHeader() {
       <header className="gutter">
         <div className="wrap flex items-center justify-between gap-4 pt-4 pb-3.5 sm:pt-5 sm:pb-[18px]">
           <Brand title={WORDMARK} />
-          <ThemeToggle />
+          <div className="flex items-center gap-4 sm:gap-6">
+            <SponsorMark />
+            <ThemeToggle />
+          </div>
         </div>
       </header>
       <nav
