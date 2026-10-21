@@ -1,6 +1,5 @@
 import Link from "@/components/link";
 import { SearchButton } from "@/components/search/search-button";
-import type { Dictionary } from "@/lib/dictionary";
 import { WORDMARK } from "@/lib/site";
 import { Brand } from "./brand";
 import { NavLink } from "./nav-link";
@@ -15,8 +14,7 @@ export const SECTIONS = [
   { href: "/about", label: "About" },
 ] as const;
 
-export function SiteHeader({ dict }: { dict: Dictionary }) {
-  const { meta } = dict;
+export function SiteHeader() {
   return (
     <>
       <header className="gutter">

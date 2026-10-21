@@ -125,7 +125,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             >
               Skip to content
             </a>
-            <SiteHeader dict={dict} />
+            <SiteHeader />
             <main id="main" className="gutter pt-8" tabIndex={-1}>
               {children}
             </main>
