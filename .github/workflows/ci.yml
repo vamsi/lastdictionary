@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Validate, typecheck, lint, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Validate entries
+        run: pnpm validate --quiet
+      - name: Generated schema is current
+        run: |
+          pnpm build:data
+          git diff --exit-code -- data/schema/entry.schema.json || {
+            echo "::error::data/schema/entry.schema.json is stale. Run 'pnpm build:data' and commit the result."; exit 1; }
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test
+      - name: Build the static site
+        run: pnpm build
+      - name: Summary
+        run: |
+          echo "### Build" >> "$GITHUB_STEP_SUMMARY"
+          echo "- entries: $(ls data/entries | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- pages in out/: $(find out -name '*.html' | wc -l)" >> "$GITHUB_STEP_SUMMARY"

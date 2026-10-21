@@ -1,0 +1,31 @@
+name: Correction
+description: Something in an entry is wrong, outdated or unclear.
+title: "[harness] short description of the problem"
+labels: [correction]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      description: The word or its URL, e.g. `harness` or https://lastdictionary.com/harness
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: Quote the passage and say what is incorrect, outdated or unclear.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested wording
+      description: Optional. How should it read?
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links to primary sources that support the correction.
+    validations:
+      required: true

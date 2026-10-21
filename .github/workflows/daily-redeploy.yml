@@ -1,0 +1,20 @@
+name: Daily redeploy
+
+# The word of the day is chosen at build time, so the site is rebuilt once a day. Set the
+# VERCEL_DEPLOY_HOOK secret (Vercel → Project → Settings → Git → Deploy Hooks); without it this
+# workflow does nothing.
+on:
+  schedule:
+    - cron: "15 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger the Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "VERCEL_DEPLOY_HOOK is not set; skipping."; exit 0; fi
+          curl --fail --silent --show-error -X POST "$HOOK" > /dev/null && echo "Deploy triggered."

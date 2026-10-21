@@ -1,0 +1,30 @@
+name: Release data
+
+# Tagging v1.x.y publishes the downloads (dictionary.json and dictionary.csv) as release assets,
+# so the data is available off the website too.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm validate --quiet
+      - run: pnpm build:data
+      - name: Create the release with the data files attached
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" public/data/dictionary.json public/data/dictionary.csv \
+            --title "The Last Dictionary $GITHUB_REF_NAME" --generate-notes

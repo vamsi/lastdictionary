@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      dependencies:
+        patterns: ["*"]
+    ignore:
+      # Next.js 16 still needs an experimental flag for TypeScript 7; stay on 6.x until that lands.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
