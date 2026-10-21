@@ -64,7 +64,7 @@ export default function HomePage() {
                   <Link
                     key={id}
                     href={entryPath(id)}
-                    className="inline-flex min-h-11 items-center text-ink"
+                    className="inline-flex min-h-11 min-w-11 items-center text-ink"
                   >
                     {dict.byId.get(id)?.term}
                   </Link>
