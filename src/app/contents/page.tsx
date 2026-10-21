@@ -27,7 +27,7 @@ export default function ContentsPage() {
       {dict.families.map((f, i) => (
         <section
           key={f.n}
-          className={`fam-${f.n} grid gap-4 py-8 pb-[34px] min-[900px]:grid-cols-[minmax(0,320px)_minmax(0,1fr)] min-[900px]:gap-x-14 ${i === 0 ? "pt-0" : "border-line border-t"}`}
+          className={`fam-${f.n} grid gap-4 py-8 pb-[34px] md:grid-cols-[minmax(0,320px)_minmax(0,1fr)] md:gap-x-14 ${i === 0 ? "pt-0" : "border-line border-t"}`}
           id={`family-${f.n}`}
         >
           <div>

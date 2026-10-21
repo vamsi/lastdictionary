@@ -109,11 +109,11 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
         className={
           annotated
             ? "mt-7 grid gap-7 px-[18px] pb-[22px] sm:px-7 sm:pb-7"
-            : "mt-[46px] grid items-start gap-9 min-[900px]:grid-cols-[200px_minmax(0,1fr)] min-[900px]:gap-10 min-[1100px]:grid-cols-[216px_minmax(0,1fr)] min-[1100px]:gap-12 min-[1240px]:grid-cols-[216px_minmax(0,680px)_200px] min-[1240px]:justify-between"
+            : "mt-[46px] grid items-start gap-9 md:grid-cols-[200px_minmax(0,1fr)] md:gap-10 lg:grid-cols-[216px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[216px_minmax(0,680px)_200px] xl:justify-between"
         }
       >
         <aside
-          className={`e-side grid content-start gap-[30px] font-mono text-sm leading-normal ${annotated ? "grid-cols-1 gap-x-6 gap-y-[22px] sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-2 min-[900px]:grid-cols-1"}`}
+          className={`e-side grid content-start gap-[30px] font-mono text-sm leading-normal ${annotated ? "grid-cols-1 gap-x-6 gap-y-[22px] sm:grid-cols-2" : "grid-cols-1 sm:max-md:grid-cols-2"}`}
           aria-label="About this word"
         >
           {entry.dates ? (
@@ -190,7 +190,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
           {entry.as_of && <SideBox label="Current as of">{monthLabel(entry.as_of)}</SideBox>}
           {!annotated && (
             <>
-              <div className="sm:col-span-2 min-[900px]:col-span-1">
+              <div className="sm:col-span-2 md:col-span-1">
                 <EntryActions
                   id={entry.id}
                   citation={citation(dict, entry)}
@@ -198,7 +198,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
                   text={entryText(dict, entry)}
                 />
               </div>
-              <div className="hidden min-[900px]:block min-[1240px]:hidden">
+              <div className="hidden md:block xl:hidden">
                 <Nearby dict={dict} entry={entry} />
               </div>
             </>
@@ -357,7 +357,7 @@ export function EntryArticle({ dict, entry, annotated = false }: Props) {
 
         {!annotated && (
           <aside
-            className="sticky top-[calc(env(safe-area-inset-top,0px)+var(--navh)+28px)] hidden min-w-0 font-mono text-sm leading-normal min-[1240px]:block"
+            className="sticky top-[calc(env(safe-area-inset-top,0px)+var(--navh)+28px)] hidden min-w-0 font-mono text-sm leading-normal xl:block"
             aria-label="Nearby words"
           >
             <Nearby dict={dict} entry={entry} />

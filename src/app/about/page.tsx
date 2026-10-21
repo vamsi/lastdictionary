@@ -114,14 +114,12 @@ export default function AboutPage() {
       <PageHeader kicker="Front matter · First Edition" title="About this dictionary">
         What it is, how to read an entry, and how the edition was made.
       </PageHeader>
-      <div className="grid items-start gap-7 min-[1100px]:grid-cols-[236px_minmax(0,700px)] min-[1100px]:gap-[60px]">
+      <div className="grid items-start gap-7 lg:grid-cols-[236px_minmax(0,700px)] lg:gap-[60px]">
         <nav
-          className="flex flex-wrap gap-x-[18px] gap-y-2 border-line border-b pb-3.5 font-mono text-sm min-[1100px]:sticky min-[1100px]:top-[calc(env(safe-area-inset-top,0px)+var(--navh)+28px)] min-[1100px]:grid min-[1100px]:gap-[9px] min-[1100px]:border-b-0 min-[1100px]:pb-0"
+          className="flex flex-wrap gap-x-[18px] gap-y-2 border-line border-b pb-3.5 font-mono text-sm lg:sticky lg:top-[calc(env(safe-area-inset-top,0px)+var(--navh)+28px)] lg:grid lg:gap-[9px] lg:border-b-0 lg:pb-0"
           aria-label="On this page"
         >
-          <span className="hidden border-line border-b pb-2 text-ink-2 min-[1100px]:block">
-            On this page
-          </span>
+          <span className="hidden border-line border-b pb-2 text-ink-2 lg:block">On this page</span>
           {SECTIONS.map(([id, label]) => (
             <a key={id} href={`#${id}`} className="link-quiet">
               {label}

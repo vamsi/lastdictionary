@@ -47,7 +47,7 @@ export default async function LetterPage({ params }: PageProps<"/a-z/[letter]">)
           : "."}
       </PageHeader>
       <LetterBar letters={lettersOf()} current={l} />
-      <div className="mt-7 columns-[210px] gap-8 text-[16.5px] leading-[1.55] min-[900px]:columns-4">
+      <div className="mt-7 columns-[210px] gap-8 text-[16.5px] leading-[1.55] md:columns-4">
         {rows.map((r) =>
           r.redirect ? (
             <div

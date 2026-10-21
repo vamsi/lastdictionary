@@ -121,6 +121,13 @@
   --fi: var(--f7-ink);
 }
 
+@theme {
+  /* The design's own breakpoints: tablet, reading column, full three-column entry. */
+  --breakpoint-md: 900px;
+  --breakpoint-lg: 1100px;
+  --breakpoint-xl: 1240px;
+}
+
 @theme inline {
   --font-serif:
     var(--font-newsreader), "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
