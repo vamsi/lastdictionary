@@ -1,0 +1,42 @@
+name: Propose a word
+description: A term the dictionary should define.
+title: "Add: term"
+labels: [new word]
+body:
+  - type: input
+    id: term
+    attributes:
+      label: Term
+      description: The word as it is most often written.
+    validations:
+      required: true
+  - type: textarea
+    id: plain
+    attributes:
+      label: In plain words
+      description: One or two sentences anyone can follow. Draft is fine.
+    validations:
+      required: true
+  - type: textarea
+    id: origin
+    attributes:
+      label: Origin
+      description: Who introduced it, when and where, as far as you know.
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Home domain
+      options: [core, math, sym, hist, ml, dl, rl, train, data, llm, gen, percep, robot, infer, hw, agents, eng, eval, interp, safety, sec, asi, gov, society, mind, culture, people, orgs]
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links to primary sources.
+    validations:
+      required: true
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Would you like to write the entry yourself?
+      options:
+        - label: Yes, I will open a pull request (run `pnpm new-entry "term"` to scaffold it).

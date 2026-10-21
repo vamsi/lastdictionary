@@ -1,0 +1,41 @@
+name: Changed entries
+
+# Comments on a pull request with the entries it touches and links to preview them.
+# Uses pull_request_target so it can comment on PRs from forks; it only reads the file list
+# through the API and never checks out or runs the PR's code.
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths: ["data/entries/**"]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v8
+        env:
+          PREVIEW_BASE: ${{ vars.PREVIEW_BASE_URL }}
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const number = context.payload.pull_request.number;
+            const files = await github.paginate(github.rest.pulls.listFiles, { owner, repo, pull_number: number, per_page: 100 });
+            const entries = files
+              .filter((f) => /^data\/entries\/[^/]+\.yaml$/.test(f.filename))
+              .map((f) => ({ id: f.filename.replace(/^data\/entries\//, "").replace(/\.yaml$/, ""), status: f.status }));
+            const marker = "<!-- changed-entries -->";
+            if (!entries.length) return;
+            const base = (process.env.PREVIEW_BASE || "https://lastdictionary.com").replace(/\/$/, "");
+            const rows = entries.map((e) => {
+              const label = e.status === "added" ? "new" : e.status === "removed" ? "removed" : "changed";
+              const link = e.status === "removed" ? "" : ` · [page](${base}/${e.id})`;
+              return `- \`${e.id}\` (${label})${link} · [file](https://github.com/${owner}/${repo}/blob/${context.payload.pull_request.head.sha}/data/entries/${e.id}.yaml)`;
+            });
+            const body = `${marker}\n**Entries in this pull request** (${entries.length})\n\n${rows.join("\n")}\n\n_Links point at ${base}; the Vercel preview for this PR shows the change once it has deployed._`;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number: number, per_page: 100 });
+            const existing = comments.find((c) => c.body?.includes(marker));
+            if (existing) await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            else await github.rest.issues.createComment({ owner, repo, issue_number: number, body });
