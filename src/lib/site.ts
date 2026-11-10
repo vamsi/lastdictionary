@@ -21,6 +21,35 @@ export const SPONSOR = {
 export const entryPath = (id: string) => `/${id}`;
 export const domainPath = (code: string) => `/domain/${code}`;
 
+/** First-edition section anchors and the pages that replaced them. */
+const LEGACY_SECTIONS: Record<string, string> = {
+  about: "/about",
+  guide: "/about",
+  contents: "/contents",
+  domains: "/contents",
+  index: "/a-z",
+  timeline: "/timeline",
+  essentials: "/essentials",
+};
+
+/**
+ * The first edition lived at lastdictionary.com/#word. The page an old link's fragment (with or
+ * without the "#") now points to, or null when it needs no redirect.
+ */
+export function legacyHashPath(hash: string): string | null {
+  let key: string;
+  try {
+    key = decodeURIComponent(hash.replace(/^#/, ""));
+  } catch {
+    return null;
+  }
+  if (!key || key === "home") return null;
+  const section = LEGACY_SECTIONS[key];
+  if (section) return section;
+  if (key.startsWith("domain-")) return domainPath(key.slice(7));
+  return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(key) ? entryPath(key) : null;
+}
+
 export function absoluteUrl(dict: Dictionary, path: string): string {
   return new URL(path, dict.meta.url).toString();
 }

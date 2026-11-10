@@ -7,10 +7,13 @@ import { useSearch } from "./search-provider";
 export function SearchQueryParam() {
   const { openSearch } = useSearch();
   useEffect(() => {
-    const q = new URLSearchParams(window.location.search).get("q");
+    const url = new URL(window.location.href);
+    const q = url.searchParams.get("q");
     if (!q) return;
     openSearch(q);
-    window.history.replaceState(null, "", window.location.pathname + window.location.hash);
+    // Drop only q: campaign tags (utm_*) stay in the address for Analytics to read.
+    url.searchParams.delete("q");
+    window.history.replaceState(null, "", url.pathname + url.search + url.hash);
   }, [openSearch]);
   return null;
 }

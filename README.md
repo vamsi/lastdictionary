@@ -113,6 +113,22 @@ The site is built to WCAG 2.2 AAA where that is sensible: every text colour is a
 
 Every page is static HTML with a canonical URL, a title and description written for the snippet, Open Graph and Twitter cards (each entry has a generated card), and a typed Schema.org graph: `WebSite` with a `SearchAction` (`/?q=word` opens the search with the word typed), `DefinedTerm` and breadcrumbs on entries, `CollectionPage` lists on domain and letter pages, and a `Dataset` describing the downloads. `sitemap.xml` and `robots.txt` are generated; `llms.txt` and `llms-full.txt` give AI crawlers a map of the site and every definition. Security headers and cache rules live in `vercel.json`. `pnpm build` then Lighthouse on `out/` is the check: 100 in every category on desktop and, with CDN-like latency, on mobile.
 
+## Analytics
+
+Google Analytics 4 (measurement ID `G-E0RQBH088C`) loads once the page is interactive, and only on lastdictionary.com, so `pnpm dev`, CI and Vercel previews send nothing (`src/components/site/analytics.tsx`). Enhanced measurement counts page views, including client-side navigations, as well as scrolls, outbound clicks and CSV downloads. The site adds these events (`src/lib/analytics.ts`):
+
+| Event | Sent when | Parameters |
+|---|---|---|
+| `search` | a look-up in the search dialog settles: a one-second pause, opening an entry or closing the dialog | `search_term`, `search_results` (0: not in the dictionary yet) |
+| `select_content` | an entry is opened from the search dialog | `content_type` (`search_result` or `search_suggestion`), `content_id`, `search_term` |
+| `share` | Copy citation, Copy link or Copy entry | `method`, `content_type`, `content_id` |
+| `star_entry`, `unstar_entry` | the Star button | `content_type`, `content_id` |
+| `random_entry` | the Random button | `content_type`, `content_id` |
+| `sponsor_click` | a link to the sponsor | `placement` (`header`, `footer` or `page`), `link_url` |
+| `file_download` | the JSON download, which enhanced measurement does not report | `file_name`, `file_extension`, `link_url`, `link_text` |
+
+Search terms are lower-cased, and a term that looks like an email address or a phone number is not sent. `search_results` and `placement` are registered as custom dimensions in Analytics; enhanced measurement's own site search is off there, because the `search` event replaces it.
+
 ## License
 
 Code: [MIT](LICENSE). Dictionary text: [CC BY 4.0](data/LICENSE). Cite an entry as:

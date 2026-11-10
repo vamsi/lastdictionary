@@ -2,10 +2,11 @@
 
 import { Search } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { type KeyboardEvent, useEffect, useId, useRef, useState } from "react";
+import { type KeyboardEvent, useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "@/components/link";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { RECENT_KEY, useLocalList } from "@/hooks/use-local-list";
+import { reportableSearchTerm, track } from "@/lib/analytics";
 import { nf } from "@/lib/format";
 import { langOf } from "@/lib/lang";
 import { highlightRange, type PreparedIndex, type SearchHit, search } from "@/lib/search";
@@ -91,7 +92,41 @@ export function SearchPalette({ domainNames, tryWords, total }: Props) {
   const current = Math.min(selected, Math.max(options.length - 1, 0));
   const optionId = (i: number) => `${listId}-${i}`;
 
+  // Analytics: a look-up is reported once the typing settles for a second, or at once when an
+  // entry is opened or the dialog closes, so the words typed on the way are not. Each term is
+  // reported once per opening of the dialog.
+  const term = index ? reportableSearchTerm(query) : null;
+  const pendingSearch = useRef<{ search_term: string; search_results: number } | null>(null);
+  const reportedTerm = useRef<string | null>(null);
+  const reportSearch = useCallback(() => {
+    const pending = pendingSearch.current;
+    pendingSearch.current = null;
+    if (!pending || pending.search_term === reportedTerm.current) return;
+    reportedTerm.current = pending.search_term;
+    track("search", pending);
+  }, []);
+  useEffect(() => {
+    pendingSearch.current = term ? { search_term: term, search_results: hits.length } : null;
+    if (!term) return;
+    const timer = setTimeout(reportSearch, 1000);
+    return () => clearTimeout(timer);
+  }, [term, hits.length, reportSearch]);
+  useEffect(() => {
+    if (open) reportedTerm.current = null;
+    else reportSearch();
+  }, [open, reportSearch]);
+
+  const choose = (id: string) => {
+    reportSearch();
+    track("select_content", {
+      content_type: searching ? "search_result" : "search_suggestion",
+      content_id: id,
+      ...(term ? { search_term: term } : {}),
+    });
+  };
+
   const go = (id: string) => {
+    choose(id);
     setOpen(false);
     router.push(entryPath(id));
   };
@@ -136,7 +171,10 @@ export function SearchPalette({ domainNames, tryWords, total }: Props) {
         aria-selected={i === current}
         tabIndex={-1}
         onMouseMove={() => i !== current && setSelected(i)}
-        onClick={() => setOpen(false)}
+        onClick={() => {
+          choose(e.id);
+          setOpen(false);
+        }}
         className="grid gap-[3px] px-[var(--gut)] py-3 pb-[13px] no-underline aria-selected:bg-ink aria-selected:text-paper sm:px-[18px] [&[aria-selected=true]_.m]:text-inherit [&[aria-selected=true]_.pl]:text-inherit"
       >
         <span className="flex min-w-0 items-baseline gap-2.5">
