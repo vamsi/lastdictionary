@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
+import { track } from "@/lib/analytics";
 
 let poolPromise: Promise<string[]> | undefined;
 const loadPool = () => {
@@ -30,6 +31,7 @@ export function RandomButton({ className }: { className?: string }) {
             id = pool[(pool.indexOf(id) + 1) % pool.length];
           if (id) {
             last.current = id;
+            track("random_entry", { content_type: "entry", content_id: id });
             router.push(`/${id}`);
           }
         } finally {

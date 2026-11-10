@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { SearchProvider } from "@/components/search/search-provider";
 import { SearchRoot } from "@/components/search/search-root";
+import { Analytics } from "@/components/site/analytics";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { ThemeProvider } from "@/components/site/theme-provider";
@@ -140,6 +141,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Toaster />
           </SearchProvider>
         </ThemeProvider>
+        <Analytics host={new URL(dict.meta.url).hostname} />
       </body>
     </html>
   );
